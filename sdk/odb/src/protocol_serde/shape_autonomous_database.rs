@@ -688,6 +688,15 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "adminPasswordSourceSummary" => {
+                            builder = builder.set_admin_password_source_summary(
+                                crate::protocol_serde::shape_admin_password_source_summary::de_admin_password_source_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -210,6 +210,8 @@ pub struct AutonomousDatabase {
     pub next_long_term_backup_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the Autonomous Database was restored after deletion.</p>
     pub time_undeleted: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The summary of the admin password source configuration for the Autonomous Database.</p>
+    pub admin_password_source_summary: ::std::option::Option<crate::types::AdminPasswordSourceSummary>,
 }
 impl AutonomousDatabase {
     /// <p>The unique identifier of the Autonomous Database.</p>
@@ -642,6 +644,10 @@ impl AutonomousDatabase {
     pub fn time_undeleted(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_undeleted.as_ref()
     }
+    /// <p>The summary of the admin password source configuration for the Autonomous Database.</p>
+    pub fn admin_password_source_summary(&self) -> ::std::option::Option<&crate::types::AdminPasswordSourceSummary> {
+        self.admin_password_source_summary.as_ref()
+    }
 }
 impl AutonomousDatabase {
     /// Creates a new builder-style object to manufacture [`AutonomousDatabase`](crate::types::AutonomousDatabase).
@@ -757,6 +763,7 @@ pub struct AutonomousDatabaseBuilder {
     pub(crate) time_until_reconnect_clone_enabled: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_long_term_backup_time_stamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) time_undeleted: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) admin_password_source_summary: ::std::option::Option<crate::types::AdminPasswordSourceSummary>,
 }
 impl AutonomousDatabaseBuilder {
     /// <p>The unique identifier of the Autonomous Database.</p>
@@ -2255,6 +2262,20 @@ impl AutonomousDatabaseBuilder {
     pub fn get_time_undeleted(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.time_undeleted
     }
+    /// <p>The summary of the admin password source configuration for the Autonomous Database.</p>
+    pub fn admin_password_source_summary(mut self, input: crate::types::AdminPasswordSourceSummary) -> Self {
+        self.admin_password_source_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The summary of the admin password source configuration for the Autonomous Database.</p>
+    pub fn set_admin_password_source_summary(mut self, input: ::std::option::Option<crate::types::AdminPasswordSourceSummary>) -> Self {
+        self.admin_password_source_summary = input;
+        self
+    }
+    /// <p>The summary of the admin password source configuration for the Autonomous Database.</p>
+    pub fn get_admin_password_source_summary(&self) -> &::std::option::Option<crate::types::AdminPasswordSourceSummary> {
+        &self.admin_password_source_summary
+    }
     /// Consumes the builder and constructs a [`AutonomousDatabase`](crate::types::AutonomousDatabase).
     pub fn build(self) -> crate::types::AutonomousDatabase {
         crate::types::AutonomousDatabase {
@@ -2361,6 +2382,7 @@ impl AutonomousDatabaseBuilder {
             time_until_reconnect_clone_enabled: self.time_until_reconnect_clone_enabled,
             next_long_term_backup_time_stamp: self.next_long_term_backup_time_stamp,
             time_undeleted: self.time_undeleted,
+            admin_password_source_summary: self.admin_password_source_summary,
         }
     }
 }

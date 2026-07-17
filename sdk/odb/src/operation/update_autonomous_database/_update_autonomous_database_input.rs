@@ -89,6 +89,10 @@ pub struct UpdateAutonomousDatabaseInput {
     pub encryption_key_provider: ::std::option::Option<crate::types::EncryptionKeyProviderInput>,
     /// <p>The configuration of the encryption key to use for the Autonomous Database.</p>
     pub encryption_key_configuration: ::std::option::Option<crate::types::EncryptionKeyConfigurationInput>,
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub admin_password_source: ::std::option::Option<crate::types::AdminPasswordSource>,
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub admin_password_source_configuration: ::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput>,
 }
 impl UpdateAutonomousDatabaseInput {
     /// <p>The unique identifier of the Autonomous Database to update.</p>
@@ -273,6 +277,14 @@ impl UpdateAutonomousDatabaseInput {
     pub fn encryption_key_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionKeyConfigurationInput> {
         self.encryption_key_configuration.as_ref()
     }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn admin_password_source(&self) -> ::std::option::Option<&crate::types::AdminPasswordSource> {
+        self.admin_password_source.as_ref()
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn admin_password_source_configuration(&self) -> ::std::option::Option<&crate::types::AdminPasswordSourceConfigurationInput> {
+        self.admin_password_source_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateAutonomousDatabaseInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -323,6 +335,8 @@ impl ::std::fmt::Debug for UpdateAutonomousDatabaseInput {
         formatter.field("time_of_auto_refresh_start", &self.time_of_auto_refresh_start);
         formatter.field("encryption_key_provider", &self.encryption_key_provider);
         formatter.field("encryption_key_configuration", &self.encryption_key_configuration);
+        formatter.field("admin_password_source", &self.admin_password_source);
+        formatter.field("admin_password_source_configuration", &self.admin_password_source_configuration);
         formatter.finish()
     }
 }
@@ -380,6 +394,8 @@ pub struct UpdateAutonomousDatabaseInputBuilder {
     pub(crate) time_of_auto_refresh_start: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) encryption_key_provider: ::std::option::Option<crate::types::EncryptionKeyProviderInput>,
     pub(crate) encryption_key_configuration: ::std::option::Option<crate::types::EncryptionKeyConfigurationInput>,
+    pub(crate) admin_password_source: ::std::option::Option<crate::types::AdminPasswordSource>,
+    pub(crate) admin_password_source_configuration: ::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput>,
 }
 impl UpdateAutonomousDatabaseInputBuilder {
     /// <p>The unique identifier of the Autonomous Database to update.</p>
@@ -1015,6 +1031,37 @@ impl UpdateAutonomousDatabaseInputBuilder {
     pub fn get_encryption_key_configuration(&self) -> &::std::option::Option<crate::types::EncryptionKeyConfigurationInput> {
         &self.encryption_key_configuration
     }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn admin_password_source(mut self, input: crate::types::AdminPasswordSource) -> Self {
+        self.admin_password_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn set_admin_password_source(mut self, input: ::std::option::Option<crate::types::AdminPasswordSource>) -> Self {
+        self.admin_password_source = input;
+        self
+    }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn get_admin_password_source(&self) -> &::std::option::Option<crate::types::AdminPasswordSource> {
+        &self.admin_password_source
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn admin_password_source_configuration(mut self, input: crate::types::AdminPasswordSourceConfigurationInput) -> Self {
+        self.admin_password_source_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn set_admin_password_source_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput>,
+    ) -> Self {
+        self.admin_password_source_configuration = input;
+        self
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn get_admin_password_source_configuration(&self) -> &::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput> {
+        &self.admin_password_source_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateAutonomousDatabaseInput`](crate::operation::update_autonomous_database::UpdateAutonomousDatabaseInput).
     pub fn build(
         self,
@@ -1066,6 +1113,8 @@ impl UpdateAutonomousDatabaseInputBuilder {
             time_of_auto_refresh_start: self.time_of_auto_refresh_start,
             encryption_key_provider: self.encryption_key_provider,
             encryption_key_configuration: self.encryption_key_configuration,
+            admin_password_source: self.admin_password_source,
+            admin_password_source_configuration: self.admin_password_source_configuration,
         })
     }
 }
@@ -1118,6 +1167,8 @@ impl ::std::fmt::Debug for UpdateAutonomousDatabaseInputBuilder {
         formatter.field("time_of_auto_refresh_start", &self.time_of_auto_refresh_start);
         formatter.field("encryption_key_provider", &self.encryption_key_provider);
         formatter.field("encryption_key_configuration", &self.encryption_key_configuration);
+        formatter.field("admin_password_source", &self.admin_password_source);
+        formatter.field("admin_password_source_configuration", &self.admin_password_source_configuration);
         formatter.finish()
     }
 }

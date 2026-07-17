@@ -92,6 +92,8 @@ pub struct GetStreamSessionOutput {
     pub application_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides details about the stream session's exported files.</p>
     pub export_files_metadata: ::std::option::Option<crate::types::ExportFilesMetadata>,
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetStreamSessionOutput {
@@ -230,6 +232,10 @@ impl GetStreamSessionOutput {
     pub fn export_files_metadata(&self) -> ::std::option::Option<&crate::types::ExportFilesMetadata> {
         self.export_files_metadata.as_ref()
     }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetStreamSessionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -255,6 +261,7 @@ impl ::std::fmt::Debug for GetStreamSessionOutput {
         formatter.field("created_at", &self.created_at);
         formatter.field("application_arn", &self.application_arn);
         formatter.field("export_files_metadata", &self.export_files_metadata);
+        formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -296,6 +303,7 @@ pub struct GetStreamSessionOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_files_metadata: ::std::option::Option<crate::types::ExportFilesMetadata>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetStreamSessionOutputBuilder {
@@ -755,6 +763,20 @@ impl GetStreamSessionOutputBuilder {
     pub fn get_export_files_metadata(&self) -> &::std::option::Option<crate::types::ExportFilesMetadata> {
         &self.export_files_metadata
     }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -788,6 +810,7 @@ impl GetStreamSessionOutputBuilder {
             created_at: self.created_at,
             application_arn: self.application_arn,
             export_files_metadata: self.export_files_metadata,
+            role_arn: self.role_arn,
             _request_id: self._request_id,
         }
     }
@@ -816,6 +839,7 @@ impl ::std::fmt::Debug for GetStreamSessionOutputBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("application_arn", &self.application_arn);
         formatter.field("export_files_metadata", &self.export_files_metadata);
+        formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

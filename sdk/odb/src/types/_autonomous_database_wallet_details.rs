@@ -8,6 +8,8 @@ pub struct AutonomousDatabaseWalletDetails {
     pub status: ::std::option::Option<crate::types::AutonomousDatabaseWalletStatus>,
     /// <p>The date and time when the Autonomous Database wallet was last rotated.</p>
     pub time_rotated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The summary of the password source configuration for the Autonomous Database wallet.</p>
+    pub password_source_summary: ::std::option::Option<crate::types::WalletPasswordSourceSummary>,
 }
 impl AutonomousDatabaseWalletDetails {
     /// <p>The current status of the Autonomous Database wallet.</p>
@@ -17,6 +19,10 @@ impl AutonomousDatabaseWalletDetails {
     /// <p>The date and time when the Autonomous Database wallet was last rotated.</p>
     pub fn time_rotated(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.time_rotated.as_ref()
+    }
+    /// <p>The summary of the password source configuration for the Autonomous Database wallet.</p>
+    pub fn password_source_summary(&self) -> ::std::option::Option<&crate::types::WalletPasswordSourceSummary> {
+        self.password_source_summary.as_ref()
     }
 }
 impl AutonomousDatabaseWalletDetails {
@@ -32,6 +38,7 @@ impl AutonomousDatabaseWalletDetails {
 pub struct AutonomousDatabaseWalletDetailsBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AutonomousDatabaseWalletStatus>,
     pub(crate) time_rotated: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) password_source_summary: ::std::option::Option<crate::types::WalletPasswordSourceSummary>,
 }
 impl AutonomousDatabaseWalletDetailsBuilder {
     /// <p>The current status of the Autonomous Database wallet.</p>
@@ -62,11 +69,26 @@ impl AutonomousDatabaseWalletDetailsBuilder {
     pub fn get_time_rotated(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.time_rotated
     }
+    /// <p>The summary of the password source configuration for the Autonomous Database wallet.</p>
+    pub fn password_source_summary(mut self, input: crate::types::WalletPasswordSourceSummary) -> Self {
+        self.password_source_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The summary of the password source configuration for the Autonomous Database wallet.</p>
+    pub fn set_password_source_summary(mut self, input: ::std::option::Option<crate::types::WalletPasswordSourceSummary>) -> Self {
+        self.password_source_summary = input;
+        self
+    }
+    /// <p>The summary of the password source configuration for the Autonomous Database wallet.</p>
+    pub fn get_password_source_summary(&self) -> &::std::option::Option<crate::types::WalletPasswordSourceSummary> {
+        &self.password_source_summary
+    }
     /// Consumes the builder and constructs a [`AutonomousDatabaseWalletDetails`](crate::types::AutonomousDatabaseWalletDetails).
     pub fn build(self) -> crate::types::AutonomousDatabaseWalletDetails {
         crate::types::AutonomousDatabaseWalletDetails {
             status: self.status,
             time_rotated: self.time_rotated,
+            password_source_summary: self.password_source_summary,
         }
     }
 }

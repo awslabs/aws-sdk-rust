@@ -53,6 +53,8 @@ pub use crate::types::_terms_enforcement_type::TermsEnforcementType;
 
 pub use crate::types::_terms_type::TermsType;
 
+pub use crate::types::_password_hashing_algorithm_type::PasswordHashingAlgorithmType;
+
 pub use crate::types::_user_import_job_type::UserImportJobType;
 
 pub use crate::types::_user_pool_policy_type::UserPoolPolicyType;
@@ -176,6 +178,8 @@ pub use crate::types::_username_attribute_type::UsernameAttributeType;
 pub use crate::types::_default_email_option_type::DefaultEmailOptionType;
 
 pub use crate::types::_email_sending_account_type::EmailSendingAccountType;
+
+pub use crate::types::_eums_sms_configuration_type::EumsSmsConfigurationType;
 
 pub use crate::types::_message_template_type::MessageTemplateType;
 
@@ -405,6 +409,8 @@ mod _email_sending_account_type;
 
 mod _encryption_key_type;
 
+mod _eums_sms_configuration_type;
+
 mod _event_context_data_type;
 
 mod _event_feedback_type;
@@ -478,6 +484,8 @@ mod _notify_email_type;
 mod _number_attribute_constraints_type;
 
 mod _o_auth_flow_type;
+
+mod _password_hashing_algorithm_type;
 
 mod _password_policy_type;
 

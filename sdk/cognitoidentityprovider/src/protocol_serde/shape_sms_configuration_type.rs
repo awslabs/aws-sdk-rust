@@ -12,6 +12,12 @@ pub fn ser_sms_configuration_type(
     if let Some(var_2) = &input.sns_region {
         object.key("SnsRegion").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.eums_sms {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("EumsSms").start_object();
+        crate::protocol_serde::shape_eums_sms_configuration_type::ser_eums_sms_configuration_type(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -58,6 +64,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "EumsSms" => {
+                            builder = builder.set_eums_sms(crate::protocol_serde::shape_eums_sms_configuration_type::de_eums_sms_configuration_type(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -67,9 +80,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::sms_configuration_type_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

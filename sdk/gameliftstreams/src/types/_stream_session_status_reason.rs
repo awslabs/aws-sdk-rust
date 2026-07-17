@@ -15,6 +15,7 @@
 ///     StreamSessionStatusReason::ApiTerminated => { /* ... */ },
 ///     StreamSessionStatusReason::ApplicationExit => { /* ... */ },
 ///     StreamSessionStatusReason::AppLogS3DestinationError => { /* ... */ },
+///     StreamSessionStatusReason::AssumeRoleFailed => { /* ... */ },
 ///     StreamSessionStatusReason::ConnectionTimeout => { /* ... */ },
 ///     StreamSessionStatusReason::IdleTimeout => { /* ... */ },
 ///     StreamSessionStatusReason::InternalError => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum StreamSessionStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     AppLogS3DestinationError,
     #[allow(missing_docs)] // documentation missing in model
+    AssumeRoleFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectionTimeout,
     #[allow(missing_docs)] // documentation missing in model
     IdleTimeout,
@@ -80,6 +83,7 @@ impl ::std::convert::From<&str> for StreamSessionStatusReason {
             "apiTerminated" => StreamSessionStatusReason::ApiTerminated,
             "applicationExit" => StreamSessionStatusReason::ApplicationExit,
             "applicationLogS3DestinationError" => StreamSessionStatusReason::AppLogS3DestinationError,
+            "assumeRoleFailed" => StreamSessionStatusReason::AssumeRoleFailed,
             "connectionTimeout" => StreamSessionStatusReason::ConnectionTimeout,
             "idleTimeout" => StreamSessionStatusReason::IdleTimeout,
             "internalError" => StreamSessionStatusReason::InternalError,
@@ -105,6 +109,7 @@ impl StreamSessionStatusReason {
             StreamSessionStatusReason::ApiTerminated => "apiTerminated",
             StreamSessionStatusReason::ApplicationExit => "applicationExit",
             StreamSessionStatusReason::AppLogS3DestinationError => "applicationLogS3DestinationError",
+            StreamSessionStatusReason::AssumeRoleFailed => "assumeRoleFailed",
             StreamSessionStatusReason::ConnectionTimeout => "connectionTimeout",
             StreamSessionStatusReason::IdleTimeout => "idleTimeout",
             StreamSessionStatusReason::InternalError => "internalError",
@@ -121,6 +126,7 @@ impl StreamSessionStatusReason {
             "apiTerminated",
             "applicationExit",
             "applicationLogS3DestinationError",
+            "assumeRoleFailed",
             "connectionTimeout",
             "idleTimeout",
             "internalError",
@@ -154,6 +160,7 @@ impl ::std::fmt::Display for StreamSessionStatusReason {
             StreamSessionStatusReason::ApiTerminated => write!(f, "apiTerminated"),
             StreamSessionStatusReason::ApplicationExit => write!(f, "applicationExit"),
             StreamSessionStatusReason::AppLogS3DestinationError => write!(f, "applicationLogS3DestinationError"),
+            StreamSessionStatusReason::AssumeRoleFailed => write!(f, "assumeRoleFailed"),
             StreamSessionStatusReason::ConnectionTimeout => write!(f, "connectionTimeout"),
             StreamSessionStatusReason::IdleTimeout => write!(f, "idleTimeout"),
             StreamSessionStatusReason::InternalError => write!(f, "internalError"),

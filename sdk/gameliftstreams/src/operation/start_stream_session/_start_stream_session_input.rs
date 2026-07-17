@@ -36,6 +36,8 @@ pub struct StartStreamSessionInput {
     pub additional_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Configuration settings for sharing the stream session's performance stats with the client</p>
     pub performance_stats_configuration: ::std::option::Option<crate::types::PerformanceStatsConfiguration>,
+    /// <p>The ARN of an AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on your behalf during the stream session. The role grants Amazon GameLift Streams permission to obtain temporary credentials for your application. The role's trust policy must allow the <code>gameliftstreams.amazonaws.com</code> service principal to assume it. The role name must start with <code>GameLiftStreams-</code>.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartStreamSessionInput {
     /// <p>A unique identifier that represents a client request. The request is idempotent, which ensures that an API request completes only once. When users send a request, Amazon GameLift Streams automatically populates this field.</p>
@@ -103,6 +105,10 @@ impl StartStreamSessionInput {
     pub fn performance_stats_configuration(&self) -> ::std::option::Option<&crate::types::PerformanceStatsConfiguration> {
         self.performance_stats_configuration.as_ref()
     }
+    /// <p>The ARN of an AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on your behalf during the stream session. The role grants Amazon GameLift Streams permission to obtain temporary credentials for your application. The role's trust policy must allow the <code>gameliftstreams.amazonaws.com</code> service principal to assume it. The role name must start with <code>GameLiftStreams-</code>.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for StartStreamSessionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -120,6 +126,7 @@ impl ::std::fmt::Debug for StartStreamSessionInput {
         formatter.field("additional_launch_args", &self.additional_launch_args);
         formatter.field("additional_environment_variables", &self.additional_environment_variables);
         formatter.field("performance_stats_configuration", &self.performance_stats_configuration);
+        formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -147,6 +154,7 @@ pub struct StartStreamSessionInputBuilder {
     pub(crate) additional_launch_args: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) additional_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) performance_stats_configuration: ::std::option::Option<crate::types::PerformanceStatsConfiguration>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StartStreamSessionInputBuilder {
     /// <p>A unique identifier that represents a client request. The request is idempotent, which ensures that an API request completes only once. When users send a request, Amazon GameLift Streams automatically populates this field.</p>
@@ -383,6 +391,20 @@ impl StartStreamSessionInputBuilder {
     pub fn get_performance_stats_configuration(&self) -> &::std::option::Option<crate::types::PerformanceStatsConfiguration> {
         &self.performance_stats_configuration
     }
+    /// <p>The ARN of an AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on your behalf during the stream session. The role grants Amazon GameLift Streams permission to obtain temporary credentials for your application. The role's trust policy must allow the <code>gameliftstreams.amazonaws.com</code> service principal to assume it. The role name must start with <code>GameLiftStreams-</code>.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of an AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on your behalf during the stream session. The role grants Amazon GameLift Streams permission to obtain temporary credentials for your application. The role's trust policy must allow the <code>gameliftstreams.amazonaws.com</code> service principal to assume it. The role name must start with <code>GameLiftStreams-</code>.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The ARN of an AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on your behalf during the stream session. The role grants Amazon GameLift Streams permission to obtain temporary credentials for your application. The role's trust policy must allow the <code>gameliftstreams.amazonaws.com</code> service principal to assume it. The role name must start with <code>GameLiftStreams-</code>.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`StartStreamSessionInput`](crate::operation::start_stream_session::StartStreamSessionInput).
     pub fn build(
         self,
@@ -402,6 +424,7 @@ impl StartStreamSessionInputBuilder {
             additional_launch_args: self.additional_launch_args,
             additional_environment_variables: self.additional_environment_variables,
             performance_stats_configuration: self.performance_stats_configuration,
+            role_arn: self.role_arn,
         })
     }
 }
@@ -421,6 +444,7 @@ impl ::std::fmt::Debug for StartStreamSessionInputBuilder {
         formatter.field("additional_launch_args", &self.additional_launch_args);
         formatter.field("additional_environment_variables", &self.additional_environment_variables);
         formatter.field("performance_stats_configuration", &self.performance_stats_configuration);
+        formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

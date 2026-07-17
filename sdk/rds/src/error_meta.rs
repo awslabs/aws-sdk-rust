@@ -1220,6 +1220,9 @@ impl From<crate::operation::create_db_cluster::CreateDBClusterError> for Error {
             crate::operation::create_db_cluster::CreateDBClusterError::DbClusterQuotaExceededFault(inner) => {
                 Error::DbClusterQuotaExceededFault(inner)
             }
+            crate::operation::create_db_cluster::CreateDBClusterError::DbClusterRoleQuotaExceededFault(inner) => {
+                Error::DbClusterRoleQuotaExceededFault(inner)
+            }
             crate::operation::create_db_cluster::CreateDBClusterError::DbInstanceNotFoundFault(inner) => Error::DbInstanceNotFoundFault(inner),
             crate::operation::create_db_cluster::CreateDBClusterError::DbSubnetGroupDoesNotCoverEnoughAZs(inner) => {
                 Error::DbSubnetGroupDoesNotCoverEnoughAZs(inner)
@@ -5538,6 +5541,9 @@ impl From<crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Er
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::DbClusterQuotaExceededFault(inner) => {
                 Error::DbClusterQuotaExceededFault(inner)
             }
+            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::DbClusterRoleQuotaExceededFault(inner) => {
+                Error::DbClusterRoleQuotaExceededFault(inner)
+            }
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error::DbSubnetGroupNotFoundFault(inner) => {
                 Error::DbSubnetGroupNotFoundFault(inner)
             }
@@ -5608,6 +5614,9 @@ impl From<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFr
             }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::DbClusterQuotaExceededFault(inner) => {
                 Error::DbClusterQuotaExceededFault(inner)
+            }
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::DbClusterRoleQuotaExceededFault(inner) => {
+                Error::DbClusterRoleQuotaExceededFault(inner)
             }
             crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError::DbClusterSnapshotNotFoundFault(inner) => {
                 Error::DbClusterSnapshotNotFoundFault(inner)
@@ -5715,6 +5724,9 @@ impl From<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBCluste
             ) => Error::DbClusterParameterGroupNotFoundFault(inner),
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterQuotaExceededFault(inner) => {
                 Error::DbClusterQuotaExceededFault(inner)
+            }
+            crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterRoleQuotaExceededFault(inner) => {
+                Error::DbClusterRoleQuotaExceededFault(inner)
             }
             crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError::DbClusterSnapshotNotFoundFault(inner) => {
                 Error::DbClusterSnapshotNotFoundFault(inner)

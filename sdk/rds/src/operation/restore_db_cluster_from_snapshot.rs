@@ -271,6 +271,8 @@ pub enum RestoreDBClusterFromSnapshotError {
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
+    /// <p>You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.</p>
+    DbClusterRoleQuotaExceededFault(crate::types::error::DbClusterRoleQuotaExceededFault),
     /// <p><code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// <p><code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.</p>
@@ -347,6 +349,7 @@ impl RestoreDBClusterFromSnapshotError {
             Self::DbClusterAlreadyExistsFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbClusterRoleQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterSnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -381,6 +384,10 @@ impl RestoreDBClusterFromSnapshotError {
     /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotError::DbClusterQuotaExceededFault`.
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::DbClusterQuotaExceededFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotError::DbClusterRoleQuotaExceededFault`.
+    pub fn is_db_cluster_role_quota_exceeded_fault(&self) -> bool {
+        matches!(self, Self::DbClusterRoleQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `RestoreDBClusterFromSnapshotError::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
@@ -469,6 +476,7 @@ impl ::std::error::Error for RestoreDBClusterFromSnapshotError {
             Self::DbClusterAlreadyExistsFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::std::option::Option::Some(_inner),
@@ -499,6 +507,7 @@ impl ::std::fmt::Display for RestoreDBClusterFromSnapshotError {
             Self::DbClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::DbClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
@@ -543,6 +552,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBClus
             Self::DbClusterAlreadyExistsFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -73,6 +73,8 @@ pub use crate::types::_clone_to_refreshable_configuration::CloneToRefreshableCon
 
 pub use crate::types::_aws_encryption_key_configuration_input::AwsEncryptionKeyConfigurationInputBuilder;
 
+pub use crate::types::_customer_managed_aws_secret_configuration_input::CustomerManagedAwsSecretConfigurationInputBuilder;
+
 pub use crate::types::_autonomous_database_connection_strings::AutonomousDatabaseConnectionStringsBuilder;
 
 pub use crate::types::_autonomous_database_apex::AutonomousDatabaseApexBuilder;
@@ -84,6 +86,10 @@ pub use crate::types::_autonomous_database_connection_urls::AutonomousDatabaseCo
 pub use crate::types::_disaster_recovery_configuration::DisasterRecoveryConfigurationBuilder;
 
 pub use crate::types::_encryption_summary::EncryptionSummaryBuilder;
+
+pub use crate::types::_admin_password_source_summary::AdminPasswordSourceSummaryBuilder;
+
+pub use crate::types::_wallet_password_source_summary::WalletPasswordSourceSummaryBuilder;
 
 pub use crate::types::_autonomous_database_peer_summary::AutonomousDatabasePeerSummaryBuilder;
 
@@ -138,6 +144,8 @@ pub use crate::types::_aws_encryption_key_configuration::AwsEncryptionKeyConfigu
 pub use crate::types::_oci_encryption_key_configuration::OciEncryptionKeyConfigurationBuilder;
 
 pub use crate::types::_okv_encryption_key_configuration::OkvEncryptionKeyConfigurationBuilder;
+
+pub use crate::types::_customer_managed_aws_secret_configuration::CustomerManagedAwsSecretConfigurationBuilder;
 
 pub use crate::types::_db_iorm_config::DbIormConfigBuilder;
 

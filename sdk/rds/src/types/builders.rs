@@ -75,6 +75,8 @@ pub use crate::types::_timezone::TimezoneBuilder;
 
 pub use crate::types::_tag_specification::TagSpecificationBuilder;
 
+pub use crate::types::_db_cluster_associated_role::DbClusterAssociatedRoleBuilder;
+
 pub use crate::types::_cluster_pending_modified_values::ClusterPendingModifiedValuesBuilder;
 
 pub use crate::types::_scaling_configuration_info::ScalingConfigurationInfoBuilder;

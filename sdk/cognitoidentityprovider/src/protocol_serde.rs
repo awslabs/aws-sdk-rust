@@ -849,6 +849,8 @@ pub(crate) mod shape_custom_email_lambda_version_config_type;
 
 pub(crate) mod shape_custom_sms_lambda_version_config_type;
 
+pub(crate) mod shape_eums_sms_configuration_type;
+
 pub(crate) mod shape_explicit_auth_flows_list_type;
 
 pub(crate) mod shape_failover_type;

@@ -735,4 +735,35 @@ impl UpdateAutonomousDatabaseFluentBuilder {
     pub fn get_encryption_key_configuration(&self) -> &::std::option::Option<crate::types::EncryptionKeyConfigurationInput> {
         self.inner.get_encryption_key_configuration()
     }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn admin_password_source(mut self, input: crate::types::AdminPasswordSource) -> Self {
+        self.inner = self.inner.admin_password_source(input);
+        self
+    }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn set_admin_password_source(mut self, input: ::std::option::Option<crate::types::AdminPasswordSource>) -> Self {
+        self.inner = self.inner.set_admin_password_source(input);
+        self
+    }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn get_admin_password_source(&self) -> &::std::option::Option<crate::types::AdminPasswordSource> {
+        self.inner.get_admin_password_source()
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn admin_password_source_configuration(mut self, input: crate::types::AdminPasswordSourceConfigurationInput) -> Self {
+        self.inner = self.inner.admin_password_source_configuration(input);
+        self
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn set_admin_password_source_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput>,
+    ) -> Self {
+        self.inner = self.inner.set_admin_password_source_configuration(input);
+        self
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn get_admin_password_source_configuration(&self) -> &::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput> {
+        self.inner.get_admin_password_source_configuration()
+    }
 }

@@ -711,6 +711,8 @@ pub(crate) mod shape_custom_db_engine_version_quota_exceeded_fault;
 
 pub(crate) mod shape_db_cluster_already_exists_fault;
 
+pub(crate) mod shape_db_cluster_associated_role;
+
 pub(crate) mod shape_db_cluster_automated_backup_not_found_fault;
 
 pub(crate) mod shape_db_cluster_automated_backup_quota_exceeded_fault;

@@ -113,6 +113,8 @@ pub use crate::types::_timezone::Timezone;
 
 pub use crate::types::_tag_specification::TagSpecification;
 
+pub use crate::types::_db_cluster_associated_role::DbClusterAssociatedRole;
+
 pub use crate::types::_upgrade_rollout_order::UpgradeRolloutOrder;
 
 pub use crate::types::_cluster_pending_modified_values::ClusterPendingModifiedValues;
@@ -390,6 +392,8 @@ mod _custom_engine_version_status;
 mod _database_insights_mode;
 
 mod _db_cluster;
+
+mod _db_cluster_associated_role;
 
 mod _db_cluster_automated_backup;
 

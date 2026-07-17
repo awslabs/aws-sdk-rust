@@ -247,6 +247,17 @@ pub fn ser_restore_db_cluster_to_point_in_time_input_input_input(
     if let Some(var_92) = &input.enable_internet_access_gateway {
         scope_91.boolean(*var_92);
     }
+    #[allow(unused_mut)]
+    let mut scope_93 = writer.prefix("AssociatedRoles");
+    if let Some(var_94) = &input.associated_roles {
+        let mut list_96 = scope_93.start_list(false, Some("DBClusterAssociatedRole"));
+        for item_95 in var_94 {
+            #[allow(unused_mut)]
+            let mut entry_97 = list_96.entry();
+            crate::protocol_serde::shape_db_cluster_associated_role::ser_db_cluster_associated_role(entry_97, item_95)?;
+        }
+        list_96.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

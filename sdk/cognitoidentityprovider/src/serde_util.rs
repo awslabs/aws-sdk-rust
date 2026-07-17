@@ -400,15 +400,6 @@ pub(crate) fn refresh_token_rotation_type_correct_errors(
     builder
 }
 
-pub(crate) fn sms_configuration_type_correct_errors(
-    mut builder: crate::types::builders::SmsConfigurationTypeBuilder,
-) -> crate::types::builders::SmsConfigurationTypeBuilder {
-    if builder.sns_caller_arn.is_none() {
-        builder.sns_caller_arn = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn terms_description_type_correct_errors(
     mut builder: crate::types::builders::TermsDescriptionTypeBuilder,
 ) -> crate::types::builders::TermsDescriptionTypeBuilder {
@@ -511,6 +502,15 @@ pub(crate) fn custom_sms_lambda_version_config_type_correct_errors(
     }
     if builder.lambda_arn.is_none() {
         builder.lambda_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn eums_sms_configuration_type_correct_errors(
+    mut builder: crate::types::builders::EumsSmsConfigurationTypeBuilder,
+) -> crate::types::builders::EumsSmsConfigurationTypeBuilder {
+    if builder.caller_arn.is_none() {
+        builder.caller_arn = Some(Default::default())
     }
     builder
 }

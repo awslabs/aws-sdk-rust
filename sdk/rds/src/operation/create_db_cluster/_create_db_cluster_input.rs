@@ -449,6 +449,9 @@ pub struct CreateDbClusterInput {
     /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters</p>
     pub with_express_configuration: ::std::option::Option<bool>,
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>,
 }
 impl CreateDbClusterInput {
     /// <p>A list of Availability Zones (AZs) where you specifically want to create DB instances in the DB cluster.</p>
@@ -1024,6 +1027,13 @@ impl CreateDbClusterInput {
     pub fn with_express_configuration(&self) -> ::std::option::Option<bool> {
         self.with_express_configuration
     }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
+    pub fn associated_roles(&self) -> &[crate::types::DbClusterAssociatedRole] {
+        self.associated_roles.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CreateDbClusterInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -1087,6 +1097,7 @@ impl ::std::fmt::Debug for CreateDbClusterInput {
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.field("with_express_configuration", &self.with_express_configuration);
+        formatter.field("associated_roles", &self.associated_roles);
         formatter.finish()
     }
 }
@@ -1160,6 +1171,7 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) master_user_authentication_type: ::std::option::Option<crate::types::MasterUserAuthenticationType>,
     pub(crate) with_express_configuration: ::std::option::Option<bool>,
+    pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>,
 }
 impl CreateDbClusterInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -3001,6 +3013,29 @@ impl CreateDbClusterInputBuilder {
     pub fn get_with_express_configuration(&self) -> &::std::option::Option<bool> {
         &self.with_express_configuration
     }
+    /// Appends an item to `associated_roles`.
+    ///
+    /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
+    ///
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn associated_roles(mut self, input: crate::types::DbClusterAssociatedRole) -> Self {
+        let mut v = self.associated_roles.unwrap_or_default();
+        v.push(input);
+        self.associated_roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>) -> Self {
+        self.associated_roles = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>> {
+        &self.associated_roles
+    }
     /// Consumes the builder and constructs a [`CreateDbClusterInput`](crate::operation::create_db_cluster::CreateDbClusterInput).
     pub fn build(
         self,
@@ -3065,6 +3100,7 @@ impl CreateDbClusterInputBuilder {
             tag_specifications: self.tag_specifications,
             master_user_authentication_type: self.master_user_authentication_type,
             with_express_configuration: self.with_express_configuration,
+            associated_roles: self.associated_roles,
         })
     }
 }
@@ -3130,6 +3166,7 @@ impl ::std::fmt::Debug for CreateDbClusterInputBuilder {
         formatter.field("tag_specifications", &self.tag_specifications);
         formatter.field("master_user_authentication_type", &self.master_user_authentication_type);
         formatter.field("with_express_configuration", &self.with_express_configuration);
+        formatter.field("associated_roles", &self.associated_roles);
         formatter.finish()
     }
 }

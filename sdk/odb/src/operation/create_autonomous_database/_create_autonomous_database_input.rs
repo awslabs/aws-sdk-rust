@@ -77,6 +77,10 @@ pub struct CreateAutonomousDatabaseInput {
     pub encryption_key_provider: ::std::option::Option<crate::types::EncryptionKeyProviderInput>,
     /// <p>The configuration of the encryption key to use for the Autonomous Database.</p>
     pub encryption_key_configuration: ::std::option::Option<crate::types::EncryptionKeyConfigurationInput>,
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub admin_password_source: ::std::option::Option<crate::types::AdminPasswordSource>,
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub admin_password_source_configuration: ::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput>,
     /// <p>A client-provided token to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The list of resource tags to apply to the Autonomous Database. Each tag is a key-value pair with no predefined name, type, or namespace.</p>
@@ -241,6 +245,14 @@ impl CreateAutonomousDatabaseInput {
     pub fn encryption_key_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionKeyConfigurationInput> {
         self.encryption_key_configuration.as_ref()
     }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn admin_password_source(&self) -> ::std::option::Option<&crate::types::AdminPasswordSource> {
+        self.admin_password_source.as_ref()
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn admin_password_source_configuration(&self) -> ::std::option::Option<&crate::types::AdminPasswordSourceConfigurationInput> {
+        self.admin_password_source_configuration.as_ref()
+    }
     /// <p>A client-provided token to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -290,6 +302,8 @@ impl ::std::fmt::Debug for CreateAutonomousDatabaseInput {
         formatter.field("source_configuration", &self.source_configuration);
         formatter.field("encryption_key_provider", &self.encryption_key_provider);
         formatter.field("encryption_key_configuration", &self.encryption_key_configuration);
+        formatter.field("admin_password_source", &self.admin_password_source);
+        formatter.field("admin_password_source_configuration", &self.admin_password_source_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -343,6 +357,8 @@ pub struct CreateAutonomousDatabaseInputBuilder {
     pub(crate) source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     pub(crate) encryption_key_provider: ::std::option::Option<crate::types::EncryptionKeyProviderInput>,
     pub(crate) encryption_key_configuration: ::std::option::Option<crate::types::EncryptionKeyConfigurationInput>,
+    pub(crate) admin_password_source: ::std::option::Option<crate::types::AdminPasswordSource>,
+    pub(crate) admin_password_source_configuration: ::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -895,6 +911,37 @@ impl CreateAutonomousDatabaseInputBuilder {
     pub fn get_encryption_key_configuration(&self) -> &::std::option::Option<crate::types::EncryptionKeyConfigurationInput> {
         &self.encryption_key_configuration
     }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn admin_password_source(mut self, input: crate::types::AdminPasswordSource) -> Self {
+        self.admin_password_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn set_admin_password_source(mut self, input: ::std::option::Option<crate::types::AdminPasswordSource>) -> Self {
+        self.admin_password_source = input;
+        self
+    }
+    /// <p>The source of the admin password for the Autonomous Database. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the admin password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn get_admin_password_source(&self) -> &::std::option::Option<crate::types::AdminPasswordSource> {
+        &self.admin_password_source
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn admin_password_source_configuration(mut self, input: crate::types::AdminPasswordSourceConfigurationInput) -> Self {
+        self.admin_password_source_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn set_admin_password_source_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput>,
+    ) -> Self {
+        self.admin_password_source_configuration = input;
+        self
+    }
+    /// <p>The configuration of the admin password source for the Autonomous Database.</p>
+    pub fn get_admin_password_source_configuration(&self) -> &::std::option::Option<crate::types::AdminPasswordSourceConfigurationInput> {
+        &self.admin_password_source_configuration
+    }
     /// <p>A client-provided token to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -974,6 +1021,8 @@ impl CreateAutonomousDatabaseInputBuilder {
             source_configuration: self.source_configuration,
             encryption_key_provider: self.encryption_key_provider,
             encryption_key_configuration: self.encryption_key_configuration,
+            admin_password_source: self.admin_password_source,
+            admin_password_source_configuration: self.admin_password_source_configuration,
             client_token: self.client_token,
             tags: self.tags,
         })
@@ -1019,6 +1068,8 @@ impl ::std::fmt::Debug for CreateAutonomousDatabaseInputBuilder {
         formatter.field("source_configuration", &self.source_configuration);
         formatter.field("encryption_key_provider", &self.encryption_key_provider);
         formatter.field("encryption_key_configuration", &self.encryption_key_configuration);
+        formatter.field("admin_password_source", &self.admin_password_source);
+        formatter.field("admin_password_source_configuration", &self.admin_password_source_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.finish()

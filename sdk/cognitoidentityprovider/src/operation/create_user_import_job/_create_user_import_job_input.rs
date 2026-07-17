@@ -10,6 +10,9 @@ pub struct CreateUserImportJobInput {
     pub user_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>You must specify an IAM role that has permission to log import-job results to Amazon CloudWatch Logs. This parameter is the ARN of that role.</p>
     pub cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub password_hashing_algorithm: ::std::option::Option<crate::types::PasswordHashingAlgorithmType>,
 }
 impl CreateUserImportJobInput {
     /// <p>A friendly name for the user import job.</p>
@@ -23,6 +26,11 @@ impl CreateUserImportJobInput {
     /// <p>You must specify an IAM role that has permission to log import-job results to Amazon CloudWatch Logs. This parameter is the ARN of that role.</p>
     pub fn cloud_watch_logs_role_arn(&self) -> ::std::option::Option<&str> {
         self.cloud_watch_logs_role_arn.as_deref()
+    }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn password_hashing_algorithm(&self) -> ::std::option::Option<&crate::types::PasswordHashingAlgorithmType> {
+        self.password_hashing_algorithm.as_ref()
     }
 }
 impl CreateUserImportJobInput {
@@ -39,6 +47,7 @@ pub struct CreateUserImportJobInputBuilder {
     pub(crate) job_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) cloud_watch_logs_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) password_hashing_algorithm: ::std::option::Option<crate::types::PasswordHashingAlgorithmType>,
 }
 impl CreateUserImportJobInputBuilder {
     /// <p>A friendly name for the user import job.</p>
@@ -86,6 +95,23 @@ impl CreateUserImportJobInputBuilder {
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_watch_logs_role_arn
     }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn password_hashing_algorithm(mut self, input: crate::types::PasswordHashingAlgorithmType) -> Self {
+        self.password_hashing_algorithm = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn set_password_hashing_algorithm(mut self, input: ::std::option::Option<crate::types::PasswordHashingAlgorithmType>) -> Self {
+        self.password_hashing_algorithm = input;
+        self
+    }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn get_password_hashing_algorithm(&self) -> &::std::option::Option<crate::types::PasswordHashingAlgorithmType> {
+        &self.password_hashing_algorithm
+    }
     /// Consumes the builder and constructs a [`CreateUserImportJobInput`](crate::operation::create_user_import_job::CreateUserImportJobInput).
     pub fn build(
         self,
@@ -95,6 +121,7 @@ impl CreateUserImportJobInputBuilder {
             job_name: self.job_name,
             user_pool_id: self.user_pool_id,
             cloud_watch_logs_role_arn: self.cloud_watch_logs_role_arn,
+            password_hashing_algorithm: self.password_hashing_algorithm,
         })
     }
 }

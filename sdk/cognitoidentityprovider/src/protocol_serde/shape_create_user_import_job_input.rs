@@ -12,5 +12,8 @@ pub fn ser_create_user_import_job_input_input(
     if let Some(var_3) = &input.cloud_watch_logs_role_arn {
         object.key("CloudWatchLogsRoleArn").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.password_hashing_algorithm {
+        object.key("PasswordHashingAlgorithm").string(var_4.as_str());
+    }
     Ok(())
 }

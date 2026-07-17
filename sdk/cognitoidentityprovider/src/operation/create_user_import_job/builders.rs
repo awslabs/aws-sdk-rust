@@ -159,4 +159,21 @@ impl CreateUserImportJobFluentBuilder {
     pub fn get_cloud_watch_logs_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_watch_logs_role_arn()
     }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn password_hashing_algorithm(mut self, input: crate::types::PasswordHashingAlgorithmType) -> Self {
+        self.inner = self.inner.password_hashing_algorithm(input);
+        self
+    }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn set_password_hashing_algorithm(mut self, input: ::std::option::Option<crate::types::PasswordHashingAlgorithmType>) -> Self {
+        self.inner = self.inner.set_password_hashing_algorithm(input);
+        self
+    }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn get_password_hashing_algorithm(&self) -> &::std::option::Option<crate::types::PasswordHashingAlgorithmType> {
+        self.inner.get_password_hashing_algorithm()
+    }
 }

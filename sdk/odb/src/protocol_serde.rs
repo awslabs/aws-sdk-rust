@@ -307,6 +307,8 @@ pub(crate) mod shape_update_odb_peering_connection_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_admin_password_source_configuration_input;
+
 pub(crate) mod shape_autonomous_database;
 
 pub(crate) mod shape_autonomous_database_backup;
@@ -391,6 +393,10 @@ pub(crate) mod shape_transportable_tablespace;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_wallet_password_source_configuration_input;
+
+pub(crate) mod shape_admin_password_source_summary;
+
 pub(crate) mod shape_autonomous_database_apex;
 
 pub(crate) mod shape_autonomous_database_backup_summary;
@@ -426,6 +432,8 @@ pub(crate) mod shape_cross_region_data_guard_configuration;
 pub(crate) mod shape_cross_region_disaster_recovery_configuration;
 
 pub(crate) mod shape_customer_contacts;
+
+pub(crate) mod shape_customer_managed_aws_secret_configuration_input;
 
 pub(crate) mod shape_database_clone_configuration;
 
@@ -487,6 +495,10 @@ pub(crate) mod shape_system_version_summary;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_wallet_password_source_summary;
+
+pub(crate) mod shape_admin_password_source_configuration;
+
 pub(crate) mod shape_cloud_autonomous_vm_cluster_resource_details;
 
 pub(crate) mod shape_cross_region_s3_restore_sources_access_list;
@@ -519,6 +531,8 @@ pub(crate) mod shape_service_network_endpoint;
 
 pub(crate) mod shape_sts_access;
 
+pub(crate) mod shape_wallet_password_source_configuration;
+
 pub(crate) mod shape_weeks_of_month;
 
 pub(crate) mod shape_zero_etl_access;
@@ -526,6 +540,8 @@ pub(crate) mod shape_zero_etl_access;
 pub(crate) mod shape_aws_encryption_key_configuration;
 
 pub(crate) mod shape_cross_region_s3_restore_sources_access;
+
+pub(crate) mod shape_customer_managed_aws_secret_configuration;
 
 pub(crate) mod shape_database_connection_string_profile;
 

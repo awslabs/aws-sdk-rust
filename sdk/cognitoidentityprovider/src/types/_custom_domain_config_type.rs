@@ -6,14 +6,14 @@
 pub struct CustomDomainConfigType {
     /// <p>The Amazon Resource Name (ARN) of an Certificate Manager SSL certificate. You use this certificate for the subdomain of your custom domain.</p>
     pub certificate_arn: ::std::string::String,
-    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that CloudFront uses when communicating with viewers (clients). Valid values are as follows:</p>
+    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that Amazon CloudFront supports when communicating with clients. For specific guidance, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>. Valid values are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TLS_V1</code>: Supports TLS 1.0 and later. Provides the broadest client compatibility.</p></li>
+    /// <p><code>TLS_V1_3_2025</code> (strictest): A post-quantum-ready policy requiring TLS 1.3. It provides the strongest security posture and is ideal for workloads where all clients and browsers are updated to the latest versions. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.3_2025</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_2_2021</code>: Supports TLS 1.2 and later with 2021 cipher suites. Recommended minimum for most use cases.</p></li>
+    /// <p><code>TLS_V1_2_2021</code> (recommended): A post-quantum-ready policy which prefers TLS 1.3 but allows fallback to TLS 1.2 to accommodate older clients. It is the recommended minimum for typical commercial-grade consumer applications. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.2_2021</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_3_2025</code>: Supports TLS 1.3 and later with 2025 cipher suites. Provides the strongest security posture.</p></li>
+    /// <p><code>TLS_V1</code> (strongly discouraged): Permits fallback to TLS 1.0. It offers the broadest compatibility, including support for legacy clients that are more than a decade old. This compatibility comes at the expense of allowing TLS versions and cryptographic algorithms that are no longer considered safe for commercial use. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1</a>.</p></li>
     /// </ul>
     pub security_policy: ::std::option::Option<crate::types::SecurityPolicyType>,
 }
@@ -23,14 +23,14 @@ impl CustomDomainConfigType {
         use std::ops::Deref;
         self.certificate_arn.deref()
     }
-    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that CloudFront uses when communicating with viewers (clients). Valid values are as follows:</p>
+    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that Amazon CloudFront supports when communicating with clients. For specific guidance, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>. Valid values are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TLS_V1</code>: Supports TLS 1.0 and later. Provides the broadest client compatibility.</p></li>
+    /// <p><code>TLS_V1_3_2025</code> (strictest): A post-quantum-ready policy requiring TLS 1.3. It provides the strongest security posture and is ideal for workloads where all clients and browsers are updated to the latest versions. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.3_2025</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_2_2021</code>: Supports TLS 1.2 and later with 2021 cipher suites. Recommended minimum for most use cases.</p></li>
+    /// <p><code>TLS_V1_2_2021</code> (recommended): A post-quantum-ready policy which prefers TLS 1.3 but allows fallback to TLS 1.2 to accommodate older clients. It is the recommended minimum for typical commercial-grade consumer applications. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.2_2021</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_3_2025</code>: Supports TLS 1.3 and later with 2025 cipher suites. Provides the strongest security posture.</p></li>
+    /// <p><code>TLS_V1</code> (strongly discouraged): Permits fallback to TLS 1.0. It offers the broadest compatibility, including support for legacy clients that are more than a decade old. This compatibility comes at the expense of allowing TLS versions and cryptographic algorithms that are no longer considered safe for commercial use. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1</a>.</p></li>
     /// </ul>
     pub fn security_policy(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
         self.security_policy.as_ref()
@@ -66,40 +66,40 @@ impl CustomDomainConfigTypeBuilder {
     pub fn get_certificate_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.certificate_arn
     }
-    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that CloudFront uses when communicating with viewers (clients). Valid values are as follows:</p>
+    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that Amazon CloudFront supports when communicating with clients. For specific guidance, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>. Valid values are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TLS_V1</code>: Supports TLS 1.0 and later. Provides the broadest client compatibility.</p></li>
+    /// <p><code>TLS_V1_3_2025</code> (strictest): A post-quantum-ready policy requiring TLS 1.3. It provides the strongest security posture and is ideal for workloads where all clients and browsers are updated to the latest versions. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.3_2025</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_2_2021</code>: Supports TLS 1.2 and later with 2021 cipher suites. Recommended minimum for most use cases.</p></li>
+    /// <p><code>TLS_V1_2_2021</code> (recommended): A post-quantum-ready policy which prefers TLS 1.3 but allows fallback to TLS 1.2 to accommodate older clients. It is the recommended minimum for typical commercial-grade consumer applications. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.2_2021</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_3_2025</code>: Supports TLS 1.3 and later with 2025 cipher suites. Provides the strongest security posture.</p></li>
+    /// <p><code>TLS_V1</code> (strongly discouraged): Permits fallback to TLS 1.0. It offers the broadest compatibility, including support for legacy clients that are more than a decade old. This compatibility comes at the expense of allowing TLS versions and cryptographic algorithms that are no longer considered safe for commercial use. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1</a>.</p></li>
     /// </ul>
     pub fn security_policy(mut self, input: crate::types::SecurityPolicyType) -> Self {
         self.security_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that CloudFront uses when communicating with viewers (clients). Valid values are as follows:</p>
+    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that Amazon CloudFront supports when communicating with clients. For specific guidance, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>. Valid values are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TLS_V1</code>: Supports TLS 1.0 and later. Provides the broadest client compatibility.</p></li>
+    /// <p><code>TLS_V1_3_2025</code> (strictest): A post-quantum-ready policy requiring TLS 1.3. It provides the strongest security posture and is ideal for workloads where all clients and browsers are updated to the latest versions. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.3_2025</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_2_2021</code>: Supports TLS 1.2 and later with 2021 cipher suites. Recommended minimum for most use cases.</p></li>
+    /// <p><code>TLS_V1_2_2021</code> (recommended): A post-quantum-ready policy which prefers TLS 1.3 but allows fallback to TLS 1.2 to accommodate older clients. It is the recommended minimum for typical commercial-grade consumer applications. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.2_2021</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_3_2025</code>: Supports TLS 1.3 and later with 2025 cipher suites. Provides the strongest security posture.</p></li>
+    /// <p><code>TLS_V1</code> (strongly discouraged): Permits fallback to TLS 1.0. It offers the broadest compatibility, including support for legacy clients that are more than a decade old. This compatibility comes at the expense of allowing TLS versions and cryptographic algorithms that are no longer considered safe for commercial use. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1</a>.</p></li>
     /// </ul>
     pub fn set_security_policy(mut self, input: ::std::option::Option<crate::types::SecurityPolicyType>) -> Self {
         self.security_policy = input;
         self
     }
-    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that CloudFront uses when communicating with viewers (clients). Valid values are as follows:</p>
+    /// <p>The security policy for the custom domain. Defines the minimum TLS version and cipher suites that Amazon CloudFront supports when communicating with clients. For specific guidance, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers between viewers and CloudFront</a>. Valid values are as follows:</p>
     /// <ul>
     /// <li>
-    /// <p><code>TLS_V1</code>: Supports TLS 1.0 and later. Provides the broadest client compatibility.</p></li>
+    /// <p><code>TLS_V1_3_2025</code> (strictest): A post-quantum-ready policy requiring TLS 1.3. It provides the strongest security posture and is ideal for workloads where all clients and browsers are updated to the latest versions. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.3_2025</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_2_2021</code>: Supports TLS 1.2 and later with 2021 cipher suites. Recommended minimum for most use cases.</p></li>
+    /// <p><code>TLS_V1_2_2021</code> (recommended): A post-quantum-ready policy which prefers TLS 1.3 but allows fallback to TLS 1.2 to accommodate older clients. It is the recommended minimum for typical commercial-grade consumer applications. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1.2_2021</a>.</p></li>
     /// <li>
-    /// <p><code>TLS_V1_3_2025</code>: Supports TLS 1.3 and later with 2025 cipher suites. Provides the strongest security posture.</p></li>
+    /// <p><code>TLS_V1</code> (strongly discouraged): Permits fallback to TLS 1.0. It offers the broadest compatibility, including support for legacy clients that are more than a decade old. This compatibility comes at the expense of allowing TLS versions and cryptographic algorithms that are no longer considered safe for commercial use. <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported protocols and ciphers for TLSv1</a>.</p></li>
     /// </ul>
     pub fn get_security_policy(&self) -> &::std::option::Option<crate::types::SecurityPolicyType> {
         &self.security_policy

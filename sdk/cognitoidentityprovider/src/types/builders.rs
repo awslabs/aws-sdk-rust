@@ -133,6 +133,8 @@ pub use crate::types::_custom_email_lambda_version_config_type::CustomEmailLambd
 
 pub use crate::types::_inbound_federation_lambda_type::InboundFederationLambdaTypeBuilder;
 
+pub use crate::types::_eums_sms_configuration_type::EumsSmsConfigurationTypeBuilder;
+
 pub use crate::types::_message_template_type::MessageTemplateTypeBuilder;
 
 pub use crate::types::_advanced_security_additional_flows_type::AdvancedSecurityAdditionalFlowsTypeBuilder;

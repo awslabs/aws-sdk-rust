@@ -122,4 +122,18 @@ impl InitializeServiceFluentBuilder {
     pub fn get_oci_identity_domain(&self) -> &::std::option::Option<bool> {
         self.inner.get_oci_identity_domain()
     }
+    /// <p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+    pub fn autonomous_database_oci_aws_secrets_manager_integration(mut self, input: crate::types::Access) -> Self {
+        self.inner = self.inner.autonomous_database_oci_aws_secrets_manager_integration(input);
+        self
+    }
+    /// <p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+    pub fn set_autonomous_database_oci_aws_secrets_manager_integration(mut self, input: ::std::option::Option<crate::types::Access>) -> Self {
+        self.inner = self.inner.set_autonomous_database_oci_aws_secrets_manager_integration(input);
+        self
+    }
+    /// <p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+    pub fn get_autonomous_database_oci_aws_secrets_manager_integration(&self) -> &::std::option::Option<crate::types::Access> {
+        self.inner.get_autonomous_database_oci_aws_secrets_manager_integration()
+    }
 }

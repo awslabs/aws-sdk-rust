@@ -5,11 +5,17 @@
 pub struct InitializeServiceInput {
     /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
     pub oci_identity_domain: ::std::option::Option<bool>,
+    /// <p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+    pub autonomous_database_oci_aws_secrets_manager_integration: ::std::option::Option<crate::types::Access>,
 }
 impl InitializeServiceInput {
     /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
     pub fn oci_identity_domain(&self) -> ::std::option::Option<bool> {
         self.oci_identity_domain
+    }
+    /// <p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+    pub fn autonomous_database_oci_aws_secrets_manager_integration(&self) -> ::std::option::Option<&crate::types::Access> {
+        self.autonomous_database_oci_aws_secrets_manager_integration.as_ref()
     }
 }
 impl InitializeServiceInput {
@@ -24,6 +30,7 @@ impl InitializeServiceInput {
 #[non_exhaustive]
 pub struct InitializeServiceInputBuilder {
     pub(crate) oci_identity_domain: ::std::option::Option<bool>,
+    pub(crate) autonomous_database_oci_aws_secrets_manager_integration: ::std::option::Option<crate::types::Access>,
 }
 impl InitializeServiceInputBuilder {
     /// <p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p>
@@ -40,12 +47,27 @@ impl InitializeServiceInputBuilder {
     pub fn get_oci_identity_domain(&self) -> &::std::option::Option<bool> {
         &self.oci_identity_domain
     }
+    /// <p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+    pub fn autonomous_database_oci_aws_secrets_manager_integration(mut self, input: crate::types::Access) -> Self {
+        self.autonomous_database_oci_aws_secrets_manager_integration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+    pub fn set_autonomous_database_oci_aws_secrets_manager_integration(mut self, input: ::std::option::Option<crate::types::Access>) -> Self {
+        self.autonomous_database_oci_aws_secrets_manager_integration = input;
+        self
+    }
+    /// <p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p>
+    pub fn get_autonomous_database_oci_aws_secrets_manager_integration(&self) -> &::std::option::Option<crate::types::Access> {
+        &self.autonomous_database_oci_aws_secrets_manager_integration
+    }
     /// Consumes the builder and constructs a [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::initialize_service::InitializeServiceInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::initialize_service::InitializeServiceInput {
             oci_identity_domain: self.oci_identity_domain,
+            autonomous_database_oci_aws_secrets_manager_integration: self.autonomous_database_oci_aws_secrets_manager_integration,
         })
     }
 }

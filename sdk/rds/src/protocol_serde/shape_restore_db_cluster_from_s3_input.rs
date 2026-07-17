@@ -234,6 +234,17 @@ pub fn ser_restore_db_cluster_from_s3_input_input_input(
         }
         list_90.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_92 = writer.prefix("AssociatedRoles");
+    if let Some(var_93) = &input.associated_roles {
+        let mut list_95 = scope_92.start_list(false, Some("DBClusterAssociatedRole"));
+        for item_94 in var_93 {
+            #[allow(unused_mut)]
+            let mut entry_96 = list_95.entry();
+            crate::protocol_serde::shape_db_cluster_associated_role::ser_db_cluster_associated_role(entry_96, item_94)?;
+        }
+        list_95.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -351,6 +351,17 @@ pub fn ser_create_db_cluster_input_input_input(
     if let Some(var_133) = &input.with_express_configuration {
         scope_132.boolean(*var_133);
     }
+    #[allow(unused_mut)]
+    let mut scope_134 = writer.prefix("AssociatedRoles");
+    if let Some(var_135) = &input.associated_roles {
+        let mut list_137 = scope_134.start_list(false, Some("DBClusterAssociatedRole"));
+        for item_136 in var_135 {
+            #[allow(unused_mut)]
+            let mut entry_138 = list_137.entry();
+            crate::protocol_serde::shape_db_cluster_associated_role::ser_db_cluster_associated_role(entry_138, item_136)?;
+        }
+        list_137.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

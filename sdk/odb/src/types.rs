@@ -7,6 +7,8 @@ pub use crate::types::_oci_onboarding_status::OciOnboardingStatus;
 
 pub use crate::types::_oci_identity_domain::OciIdentityDomain;
 
+pub use crate::types::_access::Access;
+
 pub use crate::types::_character_set_type::CharacterSetType;
 
 pub use crate::types::_db_workload::DbWorkload;
@@ -39,6 +41,10 @@ pub use crate::types::_encryption_key_provider_input::EncryptionKeyProviderInput
 
 pub use crate::types::_encryption_key_configuration_input::EncryptionKeyConfigurationInput;
 
+pub use crate::types::_admin_password_source::AdminPasswordSource;
+
+pub use crate::types::_admin_password_source_configuration_input::AdminPasswordSourceConfigurationInput;
+
 pub use crate::types::_autonomous_database_resource_status::AutonomousDatabaseResourceStatus;
 
 pub use crate::types::_autonomous_database::AutonomousDatabase;
@@ -52,6 +58,10 @@ pub use crate::types::_permission_level::PermissionLevel;
 pub use crate::types::_refreshable_mode::RefreshableMode;
 
 pub use crate::types::_wallet_type::WalletType;
+
+pub use crate::types::_wallet_password_source::WalletPasswordSource;
+
+pub use crate::types::_wallet_password_source_configuration_input::WalletPasswordSourceConfigurationInput;
 
 pub use crate::types::_autonomous_database_wallet_details::AutonomousDatabaseWalletDetails;
 
@@ -72,8 +82,6 @@ pub use crate::types::_cloud_vm_cluster::CloudVmCluster;
 pub use crate::types::_db_node::DbNode;
 
 pub use crate::types::_db_node_resource_status::DbNodeResourceStatus;
-
-pub use crate::types::_access::Access;
 
 pub use crate::types::_odb_network::OdbNetwork;
 
@@ -119,6 +127,8 @@ pub use crate::types::_clone_to_refreshable_configuration::CloneToRefreshableCon
 
 pub use crate::types::_aws_encryption_key_configuration_input::AwsEncryptionKeyConfigurationInput;
 
+pub use crate::types::_customer_managed_aws_secret_configuration_input::CustomerManagedAwsSecretConfigurationInput;
+
 pub use crate::types::_database_type::DatabaseType;
 
 pub use crate::types::_net_services_architecture::NetServicesArchitecture;
@@ -149,9 +159,13 @@ pub use crate::types::_refreshable_status::RefreshableStatus;
 
 pub use crate::types::_encryption_summary::EncryptionSummary;
 
+pub use crate::types::_admin_password_source_summary::AdminPasswordSourceSummary;
+
 pub use crate::types::_repeat_cadence::RepeatCadence;
 
 pub use crate::types::_autonomous_database_wallet_status::AutonomousDatabaseWalletStatus;
+
+pub use crate::types::_wallet_password_source_summary::WalletPasswordSourceSummary;
 
 pub use crate::types::_autonomous_database_peer_summary::AutonomousDatabasePeerSummary;
 
@@ -187,6 +201,8 @@ pub use crate::types::_odb_peering_connection_summary::OdbPeeringConnectionSumma
 
 pub use crate::types::_oci_aws_integration::OciAwsIntegration;
 
+pub use crate::types::_oci_iam_role_status::OciIamRoleStatus;
+
 pub use crate::types::_shape_type::ShapeType;
 
 pub use crate::types::_day_of_week::DayOfWeek;
@@ -198,6 +214,10 @@ pub use crate::types::_external_id_type::ExternalIdType;
 pub use crate::types::_encryption_key_provider::EncryptionKeyProvider;
 
 pub use crate::types::_encryption_key_configuration::EncryptionKeyConfiguration;
+
+pub use crate::types::_admin_password_source_configuration::AdminPasswordSourceConfiguration;
+
+pub use crate::types::_wallet_password_source_configuration::WalletPasswordSourceConfiguration;
 
 pub use crate::types::_month::Month;
 
@@ -235,6 +255,8 @@ pub use crate::types::_oci_encryption_key_configuration::OciEncryptionKeyConfigu
 
 pub use crate::types::_okv_encryption_key_configuration::OkvEncryptionKeyConfiguration;
 
+pub use crate::types::_customer_managed_aws_secret_configuration::CustomerManagedAwsSecretConfiguration;
+
 pub use crate::types::_month_name::MonthName;
 
 pub use crate::types::_iam_role_status::IamRoleStatus;
@@ -248,6 +270,14 @@ pub use crate::types::_managed_resource_status::ManagedResourceStatus;
 pub use crate::types::_cross_region_s3_restore_sources_access::CrossRegionS3RestoreSourcesAccess;
 
 mod _access;
+
+mod _admin_password_source;
+
+mod _admin_password_source_configuration;
+
+mod _admin_password_source_configuration_input;
+
+mod _admin_password_source_summary;
 
 mod _autonomous_database;
 
@@ -318,6 +348,10 @@ mod _cross_region_disaster_recovery_configuration;
 mod _cross_region_s3_restore_sources_access;
 
 mod _customer_contact;
+
+mod _customer_managed_aws_secret_configuration;
+
+mod _customer_managed_aws_secret_configuration_input;
 
 mod _data_collection_options;
 
@@ -423,6 +457,8 @@ mod _oci_encryption_key_configuration;
 
 mod _oci_iam_role;
 
+mod _oci_iam_role_status;
+
 mod _oci_identity_domain;
 
 mod _oci_onboarding_status;
@@ -490,6 +526,14 @@ mod _validation_exception_field;
 mod _validation_exception_reason;
 
 mod _vpc_endpoint_type;
+
+mod _wallet_password_source;
+
+mod _wallet_password_source_configuration;
+
+mod _wallet_password_source_configuration_input;
+
+mod _wallet_password_source_summary;
 
 mod _wallet_type;
 

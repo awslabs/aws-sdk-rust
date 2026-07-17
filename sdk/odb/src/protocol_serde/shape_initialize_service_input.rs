@@ -6,5 +6,8 @@ pub fn ser_initialize_service_input_input(
     if let Some(var_1) = &input.oci_identity_domain {
         object.key("ociIdentityDomain").boolean(*var_1);
     }
+    if let Some(var_2) = &input.autonomous_database_oci_aws_secrets_manager_integration {
+        object.key("autonomousDatabaseOciAwsSecretsManagerIntegration").string(var_2.as_str());
+    }
     Ok(())
 }

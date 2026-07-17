@@ -34,6 +34,15 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "passwordSourceSummary" => {
+                            builder = builder.set_password_source_summary(
+                                crate::protocol_serde::shape_wallet_password_source_summary::de_wallet_password_source_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

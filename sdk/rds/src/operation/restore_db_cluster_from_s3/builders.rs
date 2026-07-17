@@ -28,6 +28,7 @@ impl crate::operation::restore_db_cluster_from_s3::builders::RestoreDbClusterFro
 /// <p>For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p><note>
 /// <p>This operation only applies to Aurora DB clusters. The source DB engine must be MySQL.</p>
 /// </note>
+/// <p>You can use the <code>AssociatedRoles</code> parameter to associate one or more Amazon Web Services Identity and Access Management (IAM) roles with the Aurora DB cluster when you restore it from Amazon S3.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RestoreDBClusterFromS3FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -1041,5 +1042,24 @@ impl RestoreDBClusterFromS3FluentBuilder {
     /// </ul>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
+    }
+    ///
+    /// Appends an item to `AssociatedRoles`.
+    ///
+    /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
+    ///
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from Amazon S3. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    pub fn associated_roles(mut self, input: crate::types::DbClusterAssociatedRole) -> Self {
+        self.inner = self.inner.associated_roles(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from Amazon S3. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>) -> Self {
+        self.inner = self.inner.set_associated_roles(input);
+        self
+    }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from Amazon S3. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>> {
+        self.inner.get_associated_roles()
     }
 }

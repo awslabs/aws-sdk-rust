@@ -12,8 +12,20 @@ pub fn ser_create_autonomous_database_wallet_input_input(
     if let Some(var_3) = &input.password {
         object.key("password").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("clientToken").string(var_4.as_str());
+    if let Some(var_4) = &input.password_source {
+        object.key("passwordSource").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.password_source_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("passwordSourceConfiguration").start_object();
+        crate::protocol_serde::shape_wallet_password_source_configuration_input::ser_wallet_password_source_configuration_input(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
     }
     Ok(())
 }

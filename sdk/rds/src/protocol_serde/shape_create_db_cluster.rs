@@ -80,6 +80,24 @@ pub fn de_create_db_cluster_http_error(
             }
             tmp
         }),
+        "DBClusterRoleQuotaExceeded" => crate::operation::create_db_cluster::CreateDBClusterError::DbClusterRoleQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DbClusterRoleQuotaExceededFaultBuilder::default();
+                output = crate::protocol_serde::shape_db_cluster_role_quota_exceeded_fault::de_db_cluster_role_quota_exceeded_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_db_cluster::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "DBInstanceNotFound" => crate::operation::create_db_cluster::CreateDBClusterError::DbInstanceNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp = {

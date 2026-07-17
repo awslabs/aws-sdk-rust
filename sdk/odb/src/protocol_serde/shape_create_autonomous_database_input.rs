@@ -183,18 +183,30 @@ pub fn ser_create_autonomous_database_input_input(
         crate::protocol_serde::shape_encryption_key_configuration_input::ser_encryption_key_configuration_input(&mut object_54, var_53)?;
         object_54.finish();
     }
-    if let Some(var_55) = &input.client_token {
-        object.key("clientToken").string(var_55.as_str());
+    if let Some(var_55) = &input.admin_password_source {
+        object.key("adminPasswordSource").string(var_55.as_str());
     }
-    if let Some(var_56) = &input.tags {
+    if let Some(var_56) = &input.admin_password_source_configuration {
         #[allow(unused_mut)]
-        let mut object_57 = object.key("tags").start_object();
-        for (key_58, value_59) in var_56 {
+        let mut object_57 = object.key("adminPasswordSourceConfiguration").start_object();
+        crate::protocol_serde::shape_admin_password_source_configuration_input::ser_admin_password_source_configuration_input(
+            &mut object_57,
+            var_56,
+        )?;
+        object_57.finish();
+    }
+    if let Some(var_58) = &input.client_token {
+        object.key("clientToken").string(var_58.as_str());
+    }
+    if let Some(var_59) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_60 = object.key("tags").start_object();
+        for (key_61, value_62) in var_59 {
             {
-                object_57.key(key_58.as_str()).string(value_59.as_str());
+                object_60.key(key_61.as_str()).string(value_62.as_str());
             }
         }
-        object_57.finish();
+        object_60.finish();
     }
     Ok(())
 }

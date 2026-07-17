@@ -253,6 +253,17 @@ pub fn ser_restore_db_cluster_from_snapshot_input_input_input(
     if let Some(var_95) = &input.enable_internet_access_gateway {
         scope_94.boolean(*var_95);
     }
+    #[allow(unused_mut)]
+    let mut scope_96 = writer.prefix("AssociatedRoles");
+    if let Some(var_97) = &input.associated_roles {
+        let mut list_99 = scope_96.start_list(false, Some("DBClusterAssociatedRole"));
+        for item_98 in var_97 {
+            #[allow(unused_mut)]
+            let mut entry_100 = list_99.entry();
+            crate::protocol_serde::shape_db_cluster_associated_role::ser_db_cluster_associated_role(entry_100, item_98)?;
+        }
+        list_99.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -208,6 +208,13 @@ pub(crate) fn de_get_stream_session(
                             .transpose()?,
                     );
                 }
+                "RoleArn" => {
+                    builder = builder.set_role_arn(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "SessionLengthSeconds" => {
                     builder = builder.set_session_length_seconds(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

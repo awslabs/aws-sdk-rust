@@ -280,6 +280,9 @@ pub struct RestoreDbClusterFromSnapshotInput {
     /// <p>This parameter must be used together with <code>EnableVPCNetworking</code> set to <code>false</code>. When both parameters are specified, IAM database authentication is required. You must also specify <code>EnableIAMDatabaseAuthentication</code>.</p>
     /// <p>Valid for Cluster Type: Aurora PostgreSQL clusters</p>
     pub enable_internet_access_gateway: ::std::option::Option<bool>,
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from a snapshot. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>,
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// <p>Provides the list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -648,6 +651,13 @@ impl RestoreDbClusterFromSnapshotInput {
     pub fn enable_internet_access_gateway(&self) -> ::std::option::Option<bool> {
         self.enable_internet_access_gateway
     }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from a snapshot. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
+    pub fn associated_roles(&self) -> &[crate::types::DbClusterAssociatedRole] {
+        self.associated_roles.as_deref().unwrap_or_default()
+    }
 }
 impl RestoreDbClusterFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
@@ -700,6 +710,7 @@ pub struct RestoreDbClusterFromSnapshotInputBuilder {
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) enable_vpc_networking: ::std::option::Option<bool>,
     pub(crate) enable_internet_access_gateway: ::std::option::Option<bool>,
+    pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>,
 }
 impl RestoreDbClusterFromSnapshotInputBuilder {
     /// Appends an item to `availability_zones`.
@@ -1883,6 +1894,29 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
     pub fn get_enable_internet_access_gateway(&self) -> &::std::option::Option<bool> {
         &self.enable_internet_access_gateway
     }
+    /// Appends an item to `associated_roles`.
+    ///
+    /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
+    ///
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from a snapshot. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn associated_roles(mut self, input: crate::types::DbClusterAssociatedRole) -> Self {
+        let mut v = self.associated_roles.unwrap_or_default();
+        v.push(input);
+        self.associated_roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from a snapshot. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>) -> Self {
+        self.associated_roles = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from a snapshot. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>> {
+        &self.associated_roles
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromSnapshotInput`](crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotInput).
     pub fn build(
         self,
@@ -1931,6 +1965,7 @@ impl RestoreDbClusterFromSnapshotInputBuilder {
             tag_specifications: self.tag_specifications,
             enable_vpc_networking: self.enable_vpc_networking,
             enable_internet_access_gateway: self.enable_internet_access_gateway,
+            associated_roles: self.associated_roles,
         })
     }
 }

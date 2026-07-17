@@ -12,6 +12,8 @@ pub struct SmsConfigurationType {
     /// <p>The Amazon Web Services Region to use with Amazon SNS integration. You can choose the same Region as your user pool, or a supported <b>Legacy Amazon SNS alternate Region</b>.</p>
     /// <p>Amazon Cognito resources in the Asia Pacific (Seoul) Amazon Web Services Region must use your Amazon SNS configuration in the Asia Pacific (Tokyo) Region. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html">SMS message settings for Amazon Cognito user pools</a>.</p>
     pub sns_region: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for sending SMS messages through Amazon Web Services End User Messaging SMS, as an alternative to Amazon SNS. In a user pool, provide either the Amazon SNS configuration (<code>SnsCallerArn</code>) or this configuration, but not both. In Amazon Web Services Regions where Amazon SNS is not available, this configuration is required.</p>
+    pub eums_sms: ::std::option::Option<crate::types::EumsSmsConfigurationType>,
 }
 impl SmsConfigurationType {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS caller. This is the ARN of the IAM role in your Amazon Web Services account that Amazon Cognito will use to send SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>.</p>
@@ -29,6 +31,10 @@ impl SmsConfigurationType {
     pub fn sns_region(&self) -> ::std::option::Option<&str> {
         self.sns_region.as_deref()
     }
+    /// <p>The configuration for sending SMS messages through Amazon Web Services End User Messaging SMS, as an alternative to Amazon SNS. In a user pool, provide either the Amazon SNS configuration (<code>SnsCallerArn</code>) or this configuration, but not both. In Amazon Web Services Regions where Amazon SNS is not available, this configuration is required.</p>
+    pub fn eums_sms(&self) -> ::std::option::Option<&crate::types::EumsSmsConfigurationType> {
+        self.eums_sms.as_ref()
+    }
 }
 impl SmsConfigurationType {
     /// Creates a new builder-style object to manufacture [`SmsConfigurationType`](crate::types::SmsConfigurationType).
@@ -44,10 +50,10 @@ pub struct SmsConfigurationTypeBuilder {
     pub(crate) sns_caller_arn: ::std::option::Option<::std::string::String>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
     pub(crate) sns_region: ::std::option::Option<::std::string::String>,
+    pub(crate) eums_sms: ::std::option::Option<crate::types::EumsSmsConfigurationType>,
 }
 impl SmsConfigurationTypeBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon SNS caller. This is the ARN of the IAM role in your Amazon Web Services account that Amazon Cognito will use to send SMS messages. SMS messages are subject to a <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html">spending limit</a>.</p>
-    /// This field is required.
     pub fn sns_caller_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_caller_arn = ::std::option::Option::Some(input.into());
         self
@@ -95,19 +101,27 @@ impl SmsConfigurationTypeBuilder {
     pub fn get_sns_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.sns_region
     }
+    /// <p>The configuration for sending SMS messages through Amazon Web Services End User Messaging SMS, as an alternative to Amazon SNS. In a user pool, provide either the Amazon SNS configuration (<code>SnsCallerArn</code>) or this configuration, but not both. In Amazon Web Services Regions where Amazon SNS is not available, this configuration is required.</p>
+    pub fn eums_sms(mut self, input: crate::types::EumsSmsConfigurationType) -> Self {
+        self.eums_sms = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for sending SMS messages through Amazon Web Services End User Messaging SMS, as an alternative to Amazon SNS. In a user pool, provide either the Amazon SNS configuration (<code>SnsCallerArn</code>) or this configuration, but not both. In Amazon Web Services Regions where Amazon SNS is not available, this configuration is required.</p>
+    pub fn set_eums_sms(mut self, input: ::std::option::Option<crate::types::EumsSmsConfigurationType>) -> Self {
+        self.eums_sms = input;
+        self
+    }
+    /// <p>The configuration for sending SMS messages through Amazon Web Services End User Messaging SMS, as an alternative to Amazon SNS. In a user pool, provide either the Amazon SNS configuration (<code>SnsCallerArn</code>) or this configuration, but not both. In Amazon Web Services Regions where Amazon SNS is not available, this configuration is required.</p>
+    pub fn get_eums_sms(&self) -> &::std::option::Option<crate::types::EumsSmsConfigurationType> {
+        &self.eums_sms
+    }
     /// Consumes the builder and constructs a [`SmsConfigurationType`](crate::types::SmsConfigurationType).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`sns_caller_arn`](crate::types::builders::SmsConfigurationTypeBuilder::sns_caller_arn)
-    pub fn build(self) -> ::std::result::Result<crate::types::SmsConfigurationType, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::SmsConfigurationType {
-            sns_caller_arn: self.sns_caller_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "sns_caller_arn",
-                    "sns_caller_arn was not specified but it is required when building SmsConfigurationType",
-                )
-            })?,
+    pub fn build(self) -> crate::types::SmsConfigurationType {
+        crate::types::SmsConfigurationType {
+            sns_caller_arn: self.sns_caller_arn.unwrap_or_default(),
             external_id: self.external_id,
             sns_region: self.sns_region,
-        })
+            eums_sms: self.eums_sms,
+        }
     }
 }

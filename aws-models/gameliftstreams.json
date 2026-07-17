@@ -1347,7 +1347,7 @@
                 "traits": {
                     "smithy.api#length": {
                         "min": 0,
-                        "max": 1024
+                        "max": 4096
                     }
                 }
             },
@@ -1631,6 +1631,11 @@
                         "type": "ArrayOfString",
                         "documentation": "Filters access by a list of tag keys that are allowed in the request",
                         "externalDocumentation": "${DocHomeURL}IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys"
+                    },
+                    "gameliftstreams:RoleArn": {
+                        "type": "ARN",
+                        "documentation": "Filters access by the ARN of the IAM role passed to Amazon GameLift Streams to assume for the stream session",
+                        "externalDocumentation": "${DocHomeURL}service-authorization/latest/reference/list_gameliftstreams.html#list_gameliftstreams-policy-keys"
                     }
                 },
                 "aws.iam#supportedPrincipalTypes": [
@@ -2672,10 +2677,27 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Provides details about the stream session's exported files. </p>"
                     }
+                },
+                "RoleArn": {
+                    "target": "com.amazonaws.gameliftstreams#IamRoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>"
+                    }
                 }
             },
             "traits": {
                 "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.gameliftstreams#IamRoleArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#length": {
+                    "min": 20,
+                    "max": 2048
+                },
+                "smithy.api#pattern": "^arn:aws[a-zA-Z-]*:iam::\\d{12}:role/.+$",
+                "smithy.api#sensitive": {}
             }
         },
         "com.amazonaws.gameliftstreams#Id": {
@@ -3780,6 +3802,9 @@
             ],
             "traits": {
                 "aws.api#dataPlane": {},
+                "aws.iam#conditionKeys": [
+                    "gameliftstreams:RoleArn"
+                ],
                 "aws.iam#iamAction": {
                     "documentation": "Grants permission to create a stream session",
                     "resources": {
@@ -3881,6 +3906,12 @@
                     "target": "com.amazonaws.gameliftstreams#PerformanceStatsConfiguration",
                     "traits": {
                         "smithy.api#documentation": "<p>Configuration settings for sharing the stream session's performance stats with the client</p>"
+                    }
+                },
+                "RoleArn": {
+                    "target": "com.amazonaws.gameliftstreams#IamRoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of an AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on your behalf during the stream session. The role grants Amazon GameLift Streams permission to obtain temporary credentials for your application. The role's trust policy must allow the <code>gameliftstreams.amazonaws.com</code> service principal to assume it. The role name must start with <code>GameLiftStreams-</code>.</p>"
                     }
                 }
             },
@@ -4015,6 +4046,12 @@
                     "target": "com.amazonaws.gameliftstreams#ExportFilesMetadata",
                     "traits": {
                         "smithy.api#documentation": "<p>Provides details about the stream session's exported files. </p>"
+                    }
+                },
+                "RoleArn": {
+                    "target": "com.amazonaws.gameliftstreams#IamRoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>"
                     }
                 }
             },
@@ -4468,6 +4505,12 @@
                         "smithy.api#enumValue": "applicationLogS3DestinationError"
                     }
                 },
+                "ASSUME_ROLE_FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "assumeRoleFailed"
+                    }
+                },
                 "APPLICATION_EXIT": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -4567,6 +4610,12 @@
                     "target": "com.amazonaws.gameliftstreams#LocationName",
                     "traits": {
                         "smithy.api#documentation": "<p>The location where Amazon GameLift Streams hosts and streams your application. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href=\"https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html\">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>. </p>"
+                    }
+                },
+                "RoleArn": {
+                    "target": "com.amazonaws.gameliftstreams#IamRoleArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>"
                     }
                 }
             },

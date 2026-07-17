@@ -2,7 +2,7 @@
 
 /// <p>Describes an Amazon GameLift Streams stream session. To retrieve additional details for the stream session, call <a href="https://docs.aws.amazon.com/gameliftstreams/latest/apireference/API_GetStreamSession.html">GetStreamSession</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StreamSessionSummary {
     /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the stream session resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamsession/sg-1AB2C3De4/ABC123def4567</code>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
@@ -66,6 +66,8 @@ pub struct StreamSessionSummary {
     pub export_files_metadata: ::std::option::Option<crate::types::ExportFilesMetadata>,
     /// <p>The location where Amazon GameLift Streams hosts and streams your application. For example, <code>us-east-1</code>. For a complete list of locations that Amazon GameLift Streams supports, refer to <a href="https://docs.aws.amazon.com/gameliftstreams/latest/developerguide/regions-quotas.html">Regions, quotas, and limitations</a> in the <i>Amazon GameLift Streams Developer Guide</i>.</p>
     pub location: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StreamSessionSummary {
     /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the stream session resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamsession/sg-1AB2C3De4/ABC123def4567</code>.</p>
@@ -150,6 +152,27 @@ impl StreamSessionSummary {
     pub fn location(&self) -> ::std::option::Option<&str> {
         self.location.as_deref()
     }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
+    }
+}
+impl ::std::fmt::Debug for StreamSessionSummary {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StreamSessionSummary");
+        formatter.field("arn", &self.arn);
+        formatter.field("user_id", &self.user_id);
+        formatter.field("status", &self.status);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.field("protocol", &self.protocol);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("application_arn", &self.application_arn);
+        formatter.field("export_files_metadata", &self.export_files_metadata);
+        formatter.field("location", &self.location);
+        formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl StreamSessionSummary {
     /// Creates a new builder-style object to manufacture [`StreamSessionSummary`](crate::types::StreamSessionSummary).
@@ -159,7 +182,7 @@ impl StreamSessionSummary {
 }
 
 /// A builder for [`StreamSessionSummary`](crate::types::StreamSessionSummary).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct StreamSessionSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -172,6 +195,7 @@ pub struct StreamSessionSummaryBuilder {
     pub(crate) application_arn: ::std::option::Option<::std::string::String>,
     pub(crate) export_files_metadata: ::std::option::Option<crate::types::ExportFilesMetadata>,
     pub(crate) location: ::std::option::Option<::std::string::String>,
+    pub(crate) role_arn: ::std::option::Option<::std::string::String>,
 }
 impl StreamSessionSummaryBuilder {
     /// <p>An <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon Resource Name (ARN)</a> that uniquely identifies the stream session resource. Example ARN: <code>arn:aws:gameliftstreams:us-west-2:111122223333:streamsession/sg-1AB2C3De4/ABC123def4567</code>.</p>
@@ -440,6 +464,20 @@ impl StreamSessionSummaryBuilder {
     pub fn get_location(&self) -> &::std::option::Option<::std::string::String> {
         &self.location
     }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub fn set_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.role_arn = input;
+        self
+    }
+    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon GameLift Streams assumes on behalf of your application during the stream session.</p>
+    pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.role_arn
+    }
     /// Consumes the builder and constructs a [`StreamSessionSummary`](crate::types::StreamSessionSummary).
     pub fn build(self) -> crate::types::StreamSessionSummary {
         crate::types::StreamSessionSummary {
@@ -453,6 +491,24 @@ impl StreamSessionSummaryBuilder {
             application_arn: self.application_arn,
             export_files_metadata: self.export_files_metadata,
             location: self.location,
+            role_arn: self.role_arn,
         }
+    }
+}
+impl ::std::fmt::Debug for StreamSessionSummaryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StreamSessionSummaryBuilder");
+        formatter.field("arn", &self.arn);
+        formatter.field("user_id", &self.user_id);
+        formatter.field("status", &self.status);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.field("protocol", &self.protocol);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("application_arn", &self.application_arn);
+        formatter.field("export_files_metadata", &self.export_files_metadata);
+        formatter.field("location", &self.location);
+        formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

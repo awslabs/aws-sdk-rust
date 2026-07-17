@@ -9,6 +9,10 @@ pub struct CreateAutonomousDatabaseWalletInput {
     pub wallet_type: ::std::option::Option<crate::types::WalletType>,
     /// <p>The password to encrypt the keys inside the wallet.</p>
     pub password: ::std::option::Option<::std::string::String>,
+    /// <p>The source of the password for encrypting the wallet. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub password_source: ::std::option::Option<crate::types::WalletPasswordSource>,
+    /// <p>The configuration of the password source for the Autonomous Database wallet.</p>
+    pub password_source_configuration: ::std::option::Option<crate::types::WalletPasswordSourceConfigurationInput>,
     /// <p>A client-provided token to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -25,6 +29,14 @@ impl CreateAutonomousDatabaseWalletInput {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
+    /// <p>The source of the password for encrypting the wallet. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn password_source(&self) -> ::std::option::Option<&crate::types::WalletPasswordSource> {
+        self.password_source.as_ref()
+    }
+    /// <p>The configuration of the password source for the Autonomous Database wallet.</p>
+    pub fn password_source_configuration(&self) -> ::std::option::Option<&crate::types::WalletPasswordSourceConfigurationInput> {
+        self.password_source_configuration.as_ref()
+    }
     /// <p>A client-provided token to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -36,6 +48,8 @@ impl ::std::fmt::Debug for CreateAutonomousDatabaseWalletInput {
         formatter.field("autonomous_database_id", &self.autonomous_database_id);
         formatter.field("wallet_type", &self.wallet_type);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("password_source", &self.password_source);
+        formatter.field("password_source_configuration", &self.password_source_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -54,6 +68,8 @@ pub struct CreateAutonomousDatabaseWalletInputBuilder {
     pub(crate) autonomous_database_id: ::std::option::Option<::std::string::String>,
     pub(crate) wallet_type: ::std::option::Option<crate::types::WalletType>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
+    pub(crate) password_source: ::std::option::Option<crate::types::WalletPasswordSource>,
+    pub(crate) password_source_configuration: ::std::option::Option<crate::types::WalletPasswordSourceConfigurationInput>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAutonomousDatabaseWalletInputBuilder {
@@ -87,7 +103,6 @@ impl CreateAutonomousDatabaseWalletInputBuilder {
         &self.wallet_type
     }
     /// <p>The password to encrypt the keys inside the wallet.</p>
-    /// This field is required.
     pub fn password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.password = ::std::option::Option::Some(input.into());
         self
@@ -100,6 +115,34 @@ impl CreateAutonomousDatabaseWalletInputBuilder {
     /// <p>The password to encrypt the keys inside the wallet.</p>
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.password
+    }
+    /// <p>The source of the password for encrypting the wallet. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn password_source(mut self, input: crate::types::WalletPasswordSource) -> Self {
+        self.password_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source of the password for encrypting the wallet. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn set_password_source(mut self, input: ::std::option::Option<crate::types::WalletPasswordSource>) -> Self {
+        self.password_source = input;
+        self
+    }
+    /// <p>The source of the password for encrypting the wallet. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn get_password_source(&self) -> &::std::option::Option<crate::types::WalletPasswordSource> {
+        &self.password_source
+    }
+    /// <p>The configuration of the password source for the Autonomous Database wallet.</p>
+    pub fn password_source_configuration(mut self, input: crate::types::WalletPasswordSourceConfigurationInput) -> Self {
+        self.password_source_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of the password source for the Autonomous Database wallet.</p>
+    pub fn set_password_source_configuration(mut self, input: ::std::option::Option<crate::types::WalletPasswordSourceConfigurationInput>) -> Self {
+        self.password_source_configuration = input;
+        self
+    }
+    /// <p>The configuration of the password source for the Autonomous Database wallet.</p>
+    pub fn get_password_source_configuration(&self) -> &::std::option::Option<crate::types::WalletPasswordSourceConfigurationInput> {
+        &self.password_source_configuration
     }
     /// <p>A client-provided token to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -126,6 +169,8 @@ impl CreateAutonomousDatabaseWalletInputBuilder {
             autonomous_database_id: self.autonomous_database_id,
             wallet_type: self.wallet_type,
             password: self.password,
+            password_source: self.password_source,
+            password_source_configuration: self.password_source_configuration,
             client_token: self.client_token,
         })
     }
@@ -136,6 +181,8 @@ impl ::std::fmt::Debug for CreateAutonomousDatabaseWalletInputBuilder {
         formatter.field("autonomous_database_id", &self.autonomous_database_id);
         formatter.field("wallet_type", &self.wallet_type);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
+        formatter.field("password_source", &self.password_source);
+        formatter.field("password_source_configuration", &self.password_source_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

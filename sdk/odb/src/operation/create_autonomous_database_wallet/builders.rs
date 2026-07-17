@@ -150,6 +150,34 @@ impl CreateAutonomousDatabaseWalletFluentBuilder {
     pub fn get_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_password()
     }
+    /// <p>The source of the password for encrypting the wallet. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn password_source(mut self, input: crate::types::WalletPasswordSource) -> Self {
+        self.inner = self.inner.password_source(input);
+        self
+    }
+    /// <p>The source of the password for encrypting the wallet. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn set_password_source(mut self, input: ::std::option::Option<crate::types::WalletPasswordSource>) -> Self {
+        self.inner = self.inner.set_password_source(input);
+        self
+    }
+    /// <p>The source of the password for encrypting the wallet. When set to <code>CUSTOMER_MANAGED_AWS_SECRET</code>, the password is retrieved from an Amazon Web Services Secrets Manager secret.</p>
+    pub fn get_password_source(&self) -> &::std::option::Option<crate::types::WalletPasswordSource> {
+        self.inner.get_password_source()
+    }
+    /// <p>The configuration of the password source for the Autonomous Database wallet.</p>
+    pub fn password_source_configuration(mut self, input: crate::types::WalletPasswordSourceConfigurationInput) -> Self {
+        self.inner = self.inner.password_source_configuration(input);
+        self
+    }
+    /// <p>The configuration of the password source for the Autonomous Database wallet.</p>
+    pub fn set_password_source_configuration(mut self, input: ::std::option::Option<crate::types::WalletPasswordSourceConfigurationInput>) -> Self {
+        self.inner = self.inner.set_password_source_configuration(input);
+        self
+    }
+    /// <p>The configuration of the password source for the Autonomous Database wallet.</p>
+    pub fn get_password_source_configuration(&self) -> &::std::option::Option<crate::types::WalletPasswordSourceConfigurationInput> {
+        self.inner.get_password_source_configuration()
+    }
     /// <p>A client-provided token to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

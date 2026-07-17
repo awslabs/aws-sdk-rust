@@ -8,6 +8,10 @@ pub struct OciIamRole {
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub aws_integration: ::std::option::Option<crate::types::OciAwsIntegration>,
+    /// <p>The current lifecycle status of the IAM service role.</p>
+    pub status: ::std::option::Option<crate::types::OciIamRoleStatus>,
+    /// <p>Additional information about the current status of the IAM service role, if applicable.</p>
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl OciIamRole {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role.</p>
@@ -17,6 +21,14 @@ impl OciIamRole {
     /// <p>The Amazon Web Services integration configuration settings for the Amazon Web Services Identity and Access Management (IAM) service role.</p>
     pub fn aws_integration(&self) -> ::std::option::Option<&crate::types::OciAwsIntegration> {
         self.aws_integration.as_ref()
+    }
+    /// <p>The current lifecycle status of the IAM service role.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OciIamRoleStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Additional information about the current status of the IAM service role, if applicable.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+        self.status_reason.as_deref()
     }
 }
 impl OciIamRole {
@@ -32,6 +44,8 @@ impl OciIamRole {
 pub struct OciIamRoleBuilder {
     pub(crate) iam_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_integration: ::std::option::Option<crate::types::OciAwsIntegration>,
+    pub(crate) status: ::std::option::Option<crate::types::OciIamRoleStatus>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl OciIamRoleBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) service role.</p>
@@ -62,11 +76,41 @@ impl OciIamRoleBuilder {
     pub fn get_aws_integration(&self) -> &::std::option::Option<crate::types::OciAwsIntegration> {
         &self.aws_integration
     }
+    /// <p>The current lifecycle status of the IAM service role.</p>
+    pub fn status(mut self, input: crate::types::OciIamRoleStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current lifecycle status of the IAM service role.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::OciIamRoleStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current lifecycle status of the IAM service role.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::OciIamRoleStatus> {
+        &self.status
+    }
+    /// <p>Additional information about the current status of the IAM service role, if applicable.</p>
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Additional information about the current status of the IAM service role, if applicable.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>Additional information about the current status of the IAM service role, if applicable.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// Consumes the builder and constructs a [`OciIamRole`](crate::types::OciIamRole).
     pub fn build(self) -> crate::types::OciIamRole {
         crate::types::OciIamRole {
             iam_role_arn: self.iam_role_arn,
             aws_integration: self.aws_integration,
+            status: self.status,
+            status_reason: self.status_reason,
         }
     }
 }

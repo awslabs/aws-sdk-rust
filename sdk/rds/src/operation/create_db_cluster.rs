@@ -270,6 +270,8 @@ pub enum CreateDBClusterError {
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
+    /// <p>You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.</p>
+    DbClusterRoleQuotaExceededFault(crate::types::error::DbClusterRoleQuotaExceededFault),
     /// <p><code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.</p>
     DbInstanceNotFoundFault(crate::types::error::DbInstanceNotFoundFault),
     /// <p>Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one Availability Zone.</p>
@@ -347,6 +349,7 @@ impl CreateDBClusterError {
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbClusterRoleQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbInstanceNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -385,6 +388,10 @@ impl CreateDBClusterError {
     /// Returns `true` if the error kind is `CreateDBClusterError::DbClusterQuotaExceededFault`.
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::DbClusterQuotaExceededFault(_))
+    }
+    /// Returns `true` if the error kind is `CreateDBClusterError::DbClusterRoleQuotaExceededFault`.
+    pub fn is_db_cluster_role_quota_exceeded_fault(&self) -> bool {
+        matches!(self, Self::DbClusterRoleQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `CreateDBClusterError::DbInstanceNotFoundFault`.
     pub fn is_db_instance_not_found_fault(&self) -> bool {
@@ -474,6 +481,7 @@ impl ::std::error::Error for CreateDBClusterError {
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -505,6 +513,7 @@ impl ::std::fmt::Display for CreateDBClusterError {
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::DbInstanceNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
@@ -550,6 +559,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDBClust
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbInstanceNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupDoesNotCoverEnoughAZs(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

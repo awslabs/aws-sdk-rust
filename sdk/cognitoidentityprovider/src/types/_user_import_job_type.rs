@@ -48,6 +48,9 @@ pub struct UserImportJobType {
     pub failed_users: i64,
     /// <p>The message returned when the user import job is completed.</p>
     pub completion_message: ::std::option::Option<::std::string::String>,
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub password_hashing_algorithm: ::std::option::Option<crate::types::PasswordHashingAlgorithmType>,
 }
 impl UserImportJobType {
     /// <p>The friendly name of the user import job.</p>
@@ -120,6 +123,11 @@ impl UserImportJobType {
     pub fn completion_message(&self) -> ::std::option::Option<&str> {
         self.completion_message.as_deref()
     }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn password_hashing_algorithm(&self) -> ::std::option::Option<&crate::types::PasswordHashingAlgorithmType> {
+        self.password_hashing_algorithm.as_ref()
+    }
 }
 impl UserImportJobType {
     /// Creates a new builder-style object to manufacture [`UserImportJobType`](crate::types::UserImportJobType).
@@ -145,6 +153,7 @@ pub struct UserImportJobTypeBuilder {
     pub(crate) skipped_users: ::std::option::Option<i64>,
     pub(crate) failed_users: ::std::option::Option<i64>,
     pub(crate) completion_message: ::std::option::Option<::std::string::String>,
+    pub(crate) password_hashing_algorithm: ::std::option::Option<crate::types::PasswordHashingAlgorithmType>,
 }
 impl UserImportJobTypeBuilder {
     /// <p>The friendly name of the user import job.</p>
@@ -383,6 +392,23 @@ impl UserImportJobTypeBuilder {
     pub fn get_completion_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.completion_message
     }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn password_hashing_algorithm(mut self, input: crate::types::PasswordHashingAlgorithmType) -> Self {
+        self.password_hashing_algorithm = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn set_password_hashing_algorithm(mut self, input: ::std::option::Option<crate::types::PasswordHashingAlgorithmType>) -> Self {
+        self.password_hashing_algorithm = input;
+        self
+    }
+    /// <p>The password hashing algorithm used to generate the hashes in the CSV file for this import job.</p>
+    /// <p>Valid values: <code>BCRYPT</code> | <code>SCRYPT</code> | <code>ARGON2ID</code> | <code>PBKDF2_SHA256</code></p>
+    pub fn get_password_hashing_algorithm(&self) -> &::std::option::Option<crate::types::PasswordHashingAlgorithmType> {
+        &self.password_hashing_algorithm
+    }
     /// Consumes the builder and constructs a [`UserImportJobType`](crate::types::UserImportJobType).
     pub fn build(self) -> crate::types::UserImportJobType {
         crate::types::UserImportJobType {
@@ -399,6 +425,7 @@ impl UserImportJobTypeBuilder {
             skipped_users: self.skipped_users.unwrap_or_default(),
             failed_users: self.failed_users.unwrap_or_default(),
             completion_message: self.completion_message,
+            password_hashing_algorithm: self.password_hashing_algorithm,
         }
     }
 }

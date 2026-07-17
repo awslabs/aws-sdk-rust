@@ -279,6 +279,8 @@ pub enum RestoreDBClusterToPointInTimeError {
     DbClusterParameterGroupNotFoundFault(crate::types::error::DbClusterParameterGroupNotFoundFault),
     /// <p>The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB cluster quota.</p>
     DbClusterQuotaExceededFault(crate::types::error::DbClusterQuotaExceededFault),
+    /// <p>You have exceeded the maximum number of IAM roles that can be associated with the specified DB cluster.</p>
+    DbClusterRoleQuotaExceededFault(crate::types::error::DbClusterRoleQuotaExceededFault),
     /// <p><code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.</p>
     DbClusterSnapshotNotFoundFault(crate::types::error::DbClusterSnapshotNotFoundFault),
     /// <p><code>DBSubnetGroupName</code> doesn't refer to an existing DB subnet group.</p>
@@ -353,6 +355,7 @@ impl RestoreDBClusterToPointInTimeError {
             Self::DbClusterNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterParameterGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DbClusterRoleQuotaExceededFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbClusterSnapshotNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DbSubnetGroupNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DomainNotFoundFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -393,6 +396,10 @@ impl RestoreDBClusterToPointInTimeError {
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::DbClusterQuotaExceededFault`.
     pub fn is_db_cluster_quota_exceeded_fault(&self) -> bool {
         matches!(self, Self::DbClusterQuotaExceededFault(_))
+    }
+    /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::DbClusterRoleQuotaExceededFault`.
+    pub fn is_db_cluster_role_quota_exceeded_fault(&self) -> bool {
+        matches!(self, Self::DbClusterRoleQuotaExceededFault(_))
     }
     /// Returns `true` if the error kind is `RestoreDBClusterToPointInTimeError::DbClusterSnapshotNotFoundFault`.
     pub fn is_db_cluster_snapshot_not_found_fault(&self) -> bool {
@@ -475,6 +482,7 @@ impl ::std::error::Error for RestoreDBClusterToPointInTimeError {
             Self::DbClusterNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbClusterSnapshotNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
             Self::DomainNotFoundFault(_inner) => ::std::option::Option::Some(_inner),
@@ -505,6 +513,7 @@ impl ::std::fmt::Display for RestoreDBClusterToPointInTimeError {
             Self::DbClusterNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbClusterQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => _inner.fmt(f),
             Self::DbClusterSnapshotNotFoundFault(_inner) => _inner.fmt(f),
             Self::DbSubnetGroupNotFoundFault(_inner) => _inner.fmt(f),
             Self::DomainNotFoundFault(_inner) => _inner.fmt(f),
@@ -549,6 +558,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RestoreDBClus
             Self::DbClusterNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterParameterGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DbClusterRoleQuotaExceededFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbClusterSnapshotNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DbSubnetGroupNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DomainNotFoundFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

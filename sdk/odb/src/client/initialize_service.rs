@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`oci_identity_domain(bool)`](crate::operation::initialize_service::builders::InitializeServiceFluentBuilder::oci_identity_domain) / [`set_oci_identity_domain(Option<bool>)`](crate::operation::initialize_service::builders::InitializeServiceFluentBuilder::set_oci_identity_domain):<br>required: **false**<br><p>The Oracle Cloud Infrastructure (OCI) identity domain configuration for service initialization.</p><br>
+    ///   - [`autonomous_database_oci_aws_secrets_manager_integration(Access)`](crate::operation::initialize_service::builders::InitializeServiceFluentBuilder::autonomous_database_oci_aws_secrets_manager_integration) / [`set_autonomous_database_oci_aws_secrets_manager_integration(Option<Access>)`](crate::operation::initialize_service::builders::InitializeServiceFluentBuilder::set_autonomous_database_oci_aws_secrets_manager_integration):<br>required: **false**<br><p>Specifies whether to enable or disable the OCI service-account role for Amazon Web Services Secrets Manager integration with Autonomous Database.</p><br>
     /// - On success, responds with [`InitializeServiceOutput`](crate::operation::initialize_service::InitializeServiceOutput)
     /// - On failure, responds with [`SdkError<InitializeServiceError>`](crate::operation::initialize_service::InitializeServiceError)
     pub fn initialize_service(&self) -> crate::operation::initialize_service::builders::InitializeServiceFluentBuilder {

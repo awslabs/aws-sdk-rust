@@ -203,6 +203,8 @@ pub struct RestoreDbClusterFromS3Input {
     /// <p><code>cluster-auto-backup</code> - The DB cluster's automated backup.</p></li>
     /// </ul>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from Amazon S3. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    pub associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>,
 }
 impl RestoreDbClusterFromS3Input {
     /// <p>A list of Availability Zones (AZs) where instances in the restored DB cluster can be created.</p>
@@ -491,6 +493,12 @@ impl RestoreDbClusterFromS3Input {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from Amazon S3. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_roles.is_none()`.
+    pub fn associated_roles(&self) -> &[crate::types::DbClusterAssociatedRole] {
+        self.associated_roles.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for RestoreDbClusterFromS3Input {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -533,6 +541,7 @@ impl ::std::fmt::Debug for RestoreDbClusterFromS3Input {
         formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
         formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("associated_roles", &self.associated_roles);
         formatter.finish()
     }
 }
@@ -585,6 +594,7 @@ pub struct RestoreDbClusterFromS3InputBuilder {
     pub(crate) master_user_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) associated_roles: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>,
 }
 impl RestoreDbClusterFromS3InputBuilder {
     /// Appends an item to `availability_zones`.
@@ -1528,6 +1538,26 @@ impl RestoreDbClusterFromS3InputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
+    /// Appends an item to `associated_roles`.
+    ///
+    /// To override the contents of this collection use [`set_associated_roles`](Self::set_associated_roles).
+    ///
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from Amazon S3. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    pub fn associated_roles(mut self, input: crate::types::DbClusterAssociatedRole) -> Self {
+        let mut v = self.associated_roles.unwrap_or_default();
+        v.push(input);
+        self.associated_roles = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from Amazon S3. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    pub fn set_associated_roles(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>>) -> Self {
+        self.associated_roles = input;
+        self
+    }
+    /// <p>A list of Amazon Web Services Identity and Access Management (IAM) roles to associate with the DB cluster when it's restored from Amazon S3. Each role grants the DB cluster permission to access other Amazon Web Services on your behalf. For each role, specify a role ARN and, optionally, the feature name (such as <code>s3Import</code>, <code>s3Export</code>, or <code>Lambda</code>).</p>
+    pub fn get_associated_roles(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbClusterAssociatedRole>> {
+        &self.associated_roles
+    }
     /// Consumes the builder and constructs a [`RestoreDbClusterFromS3Input`](crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Input).
     pub fn build(
         self,
@@ -1574,6 +1604,7 @@ impl RestoreDbClusterFromS3InputBuilder {
             master_user_secret_kms_key_id: self.master_user_secret_kms_key_id,
             engine_lifecycle_support: self.engine_lifecycle_support,
             tag_specifications: self.tag_specifications,
+            associated_roles: self.associated_roles,
         })
     }
 }
@@ -1618,6 +1649,7 @@ impl ::std::fmt::Debug for RestoreDbClusterFromS3InputBuilder {
         formatter.field("master_user_secret_kms_key_id", &self.master_user_secret_kms_key_id);
         formatter.field("engine_lifecycle_support", &self.engine_lifecycle_support);
         formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("associated_roles", &self.associated_roles);
         formatter.finish()
     }
 }

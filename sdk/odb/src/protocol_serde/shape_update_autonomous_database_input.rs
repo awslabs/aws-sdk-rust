@@ -209,5 +209,17 @@ pub fn ser_update_autonomous_database_input_input(
         crate::protocol_serde::shape_encryption_key_configuration_input::ser_encryption_key_configuration_input(&mut object_59, var_58)?;
         object_59.finish();
     }
+    if let Some(var_60) = &input.admin_password_source {
+        object.key("adminPasswordSource").string(var_60.as_str());
+    }
+    if let Some(var_61) = &input.admin_password_source_configuration {
+        #[allow(unused_mut)]
+        let mut object_62 = object.key("adminPasswordSourceConfiguration").start_object();
+        crate::protocol_serde::shape_admin_password_source_configuration_input::ser_admin_password_source_configuration_input(
+            &mut object_62,
+            var_61,
+        )?;
+        object_62.finish();
+    }
     Ok(())
 }

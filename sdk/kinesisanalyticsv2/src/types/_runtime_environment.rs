@@ -21,6 +21,7 @@
 ///     RuntimeEnvironment::Flink16 => { /* ... */ },
 ///     RuntimeEnvironment::Flink18 => { /* ... */ },
 ///     RuntimeEnvironment::Flink22 => { /* ... */ },
+///     RuntimeEnvironment::Flink23 => { /* ... */ },
 ///     RuntimeEnvironment::Sql10 => { /* ... */ },
 ///     RuntimeEnvironment::ZeppelinFlink10 => { /* ... */ },
 ///     RuntimeEnvironment::ZeppelinFlink20 => { /* ... */ },
@@ -72,6 +73,8 @@ pub enum RuntimeEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     Flink22,
     #[allow(missing_docs)] // documentation missing in model
+    Flink23,
+    #[allow(missing_docs)] // documentation missing in model
     Sql10,
     #[allow(missing_docs)] // documentation missing in model
     ZeppelinFlink10,
@@ -95,6 +98,7 @@ impl ::std::convert::From<&str> for RuntimeEnvironment {
             "FLINK-1_6" => RuntimeEnvironment::Flink16,
             "FLINK-1_8" => RuntimeEnvironment::Flink18,
             "FLINK-2_2" => RuntimeEnvironment::Flink22,
+            "FLINK-2_3" => RuntimeEnvironment::Flink23,
             "SQL-1_0" => RuntimeEnvironment::Sql10,
             "ZEPPELIN-FLINK-1_0" => RuntimeEnvironment::ZeppelinFlink10,
             "ZEPPELIN-FLINK-2_0" => RuntimeEnvironment::ZeppelinFlink20,
@@ -123,6 +127,7 @@ impl RuntimeEnvironment {
             RuntimeEnvironment::Flink16 => "FLINK-1_6",
             RuntimeEnvironment::Flink18 => "FLINK-1_8",
             RuntimeEnvironment::Flink22 => "FLINK-2_2",
+            RuntimeEnvironment::Flink23 => "FLINK-2_3",
             RuntimeEnvironment::Sql10 => "SQL-1_0",
             RuntimeEnvironment::ZeppelinFlink10 => "ZEPPELIN-FLINK-1_0",
             RuntimeEnvironment::ZeppelinFlink20 => "ZEPPELIN-FLINK-2_0",
@@ -142,6 +147,7 @@ impl RuntimeEnvironment {
             "FLINK-1_6",
             "FLINK-1_8",
             "FLINK-2_2",
+            "FLINK-2_3",
             "SQL-1_0",
             "ZEPPELIN-FLINK-1_0",
             "ZEPPELIN-FLINK-2_0",
@@ -178,6 +184,7 @@ impl ::std::fmt::Display for RuntimeEnvironment {
             RuntimeEnvironment::Flink16 => write!(f, "FLINK-1_6"),
             RuntimeEnvironment::Flink18 => write!(f, "FLINK-1_8"),
             RuntimeEnvironment::Flink22 => write!(f, "FLINK-2_2"),
+            RuntimeEnvironment::Flink23 => write!(f, "FLINK-2_3"),
             RuntimeEnvironment::Sql10 => write!(f, "SQL-1_0"),
             RuntimeEnvironment::ZeppelinFlink10 => write!(f, "ZEPPELIN-FLINK-1_0"),
             RuntimeEnvironment::ZeppelinFlink20 => write!(f, "ZEPPELIN-FLINK-2_0"),
