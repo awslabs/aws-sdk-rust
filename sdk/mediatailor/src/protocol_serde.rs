@@ -177,6 +177,10 @@ pub(crate) mod shape_ad_decision_server_configuration;
 
 pub(crate) mod shape_ads_interaction_log;
 
+pub(crate) mod shape_ads_personalization_concurrency;
+
+pub(crate) mod shape_ads_personalization_timeouts;
+
 pub(crate) mod shape_audience_media;
 
 pub(crate) mod shape_audiences;

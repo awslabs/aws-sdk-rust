@@ -9009,6 +9009,30 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The ability to perform Scenario-related actions.</p>"
                     }
+                },
+                "Trigger": {
+                    "target": "com.amazonaws.quicksight#CapabilityState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ability to manage trigger-related settings for flows and automations.</p>"
+                    }
+                },
+                "ScheduleTrigger": {
+                    "target": "com.amazonaws.quicksight#CapabilityState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ability to create, view, edit, delete, and run schedule triggers for flows and automations.</p>"
+                    }
+                },
+                "InboundEmailTrigger": {
+                    "target": "com.amazonaws.quicksight#CapabilityState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ability to create, view, edit, delete, and run inbound email triggers for flows and automations.</p>"
+                    }
+                },
+                "QuickEventTrigger": {
+                    "target": "com.amazonaws.quicksight#CapabilityState",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>"
+                    }
                 }
             },
             "traits": {
@@ -62351,6 +62375,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "ATHENA"
+                    }
+                },
+                "GLUE_DATA_CATALOG": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "GLUE_DATA_CATALOG"
                     }
                 }
             }

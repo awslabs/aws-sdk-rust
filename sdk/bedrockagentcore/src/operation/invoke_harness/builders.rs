@@ -194,6 +194,62 @@ impl InvokeHarnessFluentBuilder {
     pub fn get_runtime_user_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_runtime_user_id()
     }
+    /// <p>W3C trace context parent header containing version, trace ID, parent span ID, and trace flags.</p>
+    pub fn trace_parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trace_parent(input.into());
+        self
+    }
+    /// <p>W3C trace context parent header containing version, trace ID, parent span ID, and trace flags.</p>
+    pub fn set_trace_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trace_parent(input);
+        self
+    }
+    /// <p>W3C trace context parent header containing version, trace ID, parent span ID, and trace flags.</p>
+    pub fn get_trace_parent(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trace_parent()
+    }
+    /// <p>W3C trace context state header for vendor-specific trace information.</p>
+    pub fn trace_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trace_state(input.into());
+        self
+    }
+    /// <p>W3C trace context state header for vendor-specific trace information.</p>
+    pub fn set_trace_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trace_state(input);
+        self
+    }
+    /// <p>W3C trace context state header for vendor-specific trace information.</p>
+    pub fn get_trace_state(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trace_state()
+    }
+    /// <p>Trace ID for maintaining observability through the operation.</p>
+    pub fn trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.trace_id(input.into());
+        self
+    }
+    /// <p>Trace ID for maintaining observability through the operation.</p>
+    pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_trace_id(input);
+        self
+    }
+    /// <p>Trace ID for maintaining observability through the operation.</p>
+    pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_trace_id()
+    }
+    /// <p>W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2</p>
+    pub fn baggage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.baggage(input.into());
+        self
+    }
+    /// <p>W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2</p>
+    pub fn set_baggage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_baggage(input);
+        self
+    }
+    /// <p>W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2</p>
+    pub fn get_baggage(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_baggage()
+    }
     ///
     /// Appends an item to `messages`.
     ///

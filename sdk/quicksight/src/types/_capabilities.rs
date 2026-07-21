@@ -461,6 +461,14 @@ pub struct Capabilities {
     pub story: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform Scenario-related actions.</p>
     pub scenario: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to manage trigger-related settings for flows and automations.</p>
+    pub trigger: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, view, edit, delete, and run schedule triggers for flows and automations.</p>
+    pub schedule_trigger: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, view, edit, delete, and run inbound email triggers for flows and automations.</p>
+    pub inbound_email_trigger: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>
+    pub quick_event_trigger: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl Capabilities {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -1376,6 +1384,22 @@ impl Capabilities {
     pub fn scenario(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.scenario.as_ref()
     }
+    /// <p>The ability to manage trigger-related settings for flows and automations.</p>
+    pub fn trigger(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.trigger.as_ref()
+    }
+    /// <p>The ability to create, view, edit, delete, and run schedule triggers for flows and automations.</p>
+    pub fn schedule_trigger(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.schedule_trigger.as_ref()
+    }
+    /// <p>The ability to create, view, edit, delete, and run inbound email triggers for flows and automations.</p>
+    pub fn inbound_email_trigger(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.inbound_email_trigger.as_ref()
+    }
+    /// <p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>
+    pub fn quick_event_trigger(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.quick_event_trigger.as_ref()
+    }
 }
 impl Capabilities {
     /// Creates a new builder-style object to manufacture [`Capabilities`](crate::types::Capabilities).
@@ -1616,6 +1640,10 @@ pub struct CapabilitiesBuilder {
     pub(crate) generate_analyses: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) story: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) scenario: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) trigger: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) schedule_trigger: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) inbound_email_trigger: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) quick_event_trigger: ::std::option::Option<crate::types::CapabilityState>,
 }
 impl CapabilitiesBuilder {
     /// <p>The ability to export to CSV files from the UI.</p>
@@ -4813,6 +4841,62 @@ impl CapabilitiesBuilder {
     pub fn get_scenario(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.scenario
     }
+    /// <p>The ability to manage trigger-related settings for flows and automations.</p>
+    pub fn trigger(mut self, input: crate::types::CapabilityState) -> Self {
+        self.trigger = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to manage trigger-related settings for flows and automations.</p>
+    pub fn set_trigger(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.trigger = input;
+        self
+    }
+    /// <p>The ability to manage trigger-related settings for flows and automations.</p>
+    pub fn get_trigger(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.trigger
+    }
+    /// <p>The ability to create, view, edit, delete, and run schedule triggers for flows and automations.</p>
+    pub fn schedule_trigger(mut self, input: crate::types::CapabilityState) -> Self {
+        self.schedule_trigger = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, view, edit, delete, and run schedule triggers for flows and automations.</p>
+    pub fn set_schedule_trigger(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.schedule_trigger = input;
+        self
+    }
+    /// <p>The ability to create, view, edit, delete, and run schedule triggers for flows and automations.</p>
+    pub fn get_schedule_trigger(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.schedule_trigger
+    }
+    /// <p>The ability to create, view, edit, delete, and run inbound email triggers for flows and automations.</p>
+    pub fn inbound_email_trigger(mut self, input: crate::types::CapabilityState) -> Self {
+        self.inbound_email_trigger = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, view, edit, delete, and run inbound email triggers for flows and automations.</p>
+    pub fn set_inbound_email_trigger(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.inbound_email_trigger = input;
+        self
+    }
+    /// <p>The ability to create, view, edit, delete, and run inbound email triggers for flows and automations.</p>
+    pub fn get_inbound_email_trigger(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.inbound_email_trigger
+    }
+    /// <p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>
+    pub fn quick_event_trigger(mut self, input: crate::types::CapabilityState) -> Self {
+        self.quick_event_trigger = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>
+    pub fn set_quick_event_trigger(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.quick_event_trigger = input;
+        self
+    }
+    /// <p>The ability to create, view, edit, delete, and run Quick event triggers for flows and automations.</p>
+    pub fn get_quick_event_trigger(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.quick_event_trigger
+    }
     /// Consumes the builder and constructs a [`Capabilities`](crate::types::Capabilities).
     pub fn build(self) -> crate::types::Capabilities {
         crate::types::Capabilities {
@@ -5044,6 +5128,10 @@ impl CapabilitiesBuilder {
             generate_analyses: self.generate_analyses,
             story: self.story,
             scenario: self.scenario,
+            trigger: self.trigger,
+            schedule_trigger: self.schedule_trigger,
+            inbound_email_trigger: self.inbound_email_trigger,
+            quick_event_trigger: self.quick_event_trigger,
         }
     }
 }

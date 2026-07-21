@@ -41,6 +41,10 @@ pub use crate::types::_ad_conditioning_configuration::AdConditioningConfiguratio
 
 pub use crate::types::_ad_decision_server_configuration::AdDecisionServerConfiguration;
 
+pub use crate::types::_ads_personalization_timeouts::AdsPersonalizationTimeouts;
+
+pub use crate::types::_ads_personalization_concurrency::AdsPersonalizationConcurrency;
+
 pub use crate::types::_dash_configuration::DashConfiguration;
 
 pub use crate::types::_hls_configuration::HlsConfiguration;
@@ -208,6 +212,10 @@ mod _ads_interaction_exclude_event_type;
 mod _ads_interaction_log;
 
 mod _ads_interaction_publish_opt_in_event_type;
+
+mod _ads_personalization_concurrency;
+
+mod _ads_personalization_timeouts;
 
 mod _alert;
 

@@ -10,6 +10,8 @@ pub enum HarnessContentBlockDelta {
     Text(::std::string::String),
     /// <p>A tool result delta.</p>
     ToolResult(::std::vec::Vec<crate::types::HarnessToolResultBlockDelta>),
+    /// <p>A tool result metadata delta.</p>
+    ToolResultMetadata(crate::types::HarnessToolResultMetadataBlockDelta),
     /// <p>A tool use input delta.</p>
     ToolUse(crate::types::HarnessToolUseBlockDelta),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -62,6 +64,19 @@ impl HarnessContentBlockDelta {
     pub fn is_tool_result(&self) -> bool {
         self.as_tool_result().is_ok()
     }
+    /// Tries to convert the enum instance into [`ToolResultMetadata`](crate::types::HarnessContentBlockDelta::ToolResultMetadata), extracting the inner [`HarnessToolResultMetadataBlockDelta`](crate::types::HarnessToolResultMetadataBlockDelta).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tool_result_metadata(&self) -> ::std::result::Result<&crate::types::HarnessToolResultMetadataBlockDelta, &Self> {
+        if let HarnessContentBlockDelta::ToolResultMetadata(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ToolResultMetadata`](crate::types::HarnessContentBlockDelta::ToolResultMetadata).
+    pub fn is_tool_result_metadata(&self) -> bool {
+        self.as_tool_result_metadata().is_ok()
+    }
     /// Tries to convert the enum instance into [`ToolUse`](crate::types::HarnessContentBlockDelta::ToolUse), extracting the inner [`HarnessToolUseBlockDelta`](crate::types::HarnessToolUseBlockDelta).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tool_use(&self) -> ::std::result::Result<&crate::types::HarnessToolUseBlockDelta, &Self> {
@@ -86,6 +101,7 @@ impl ::std::fmt::Debug for HarnessContentBlockDelta {
             HarnessContentBlockDelta::ReasoningContent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             HarnessContentBlockDelta::Text(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             HarnessContentBlockDelta::ToolResult(val) => f.debug_tuple("ToolResult").field(&val).finish(),
+            HarnessContentBlockDelta::ToolResultMetadata(val) => f.debug_tuple("ToolResultMetadata").field(&val).finish(),
             HarnessContentBlockDelta::ToolUse(val) => f.debug_tuple("ToolUse").field(&val).finish(),
             HarnessContentBlockDelta::Unknown => f.debug_tuple("Unknown").finish(),
         }

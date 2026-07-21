@@ -56,6 +56,10 @@ pub struct PlaybackConfiguration {
     pub ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
     /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
 }
 impl PlaybackConfiguration {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -162,6 +166,14 @@ impl PlaybackConfiguration {
     pub fn function_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
         self.function_mapping.as_ref()
     }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn ads_personalization_timeouts(&self) -> ::std::option::Option<&crate::types::AdsPersonalizationTimeouts> {
+        self.ads_personalization_timeouts.as_ref()
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn ads_personalization_concurrency(&self) -> ::std::option::Option<&crate::types::AdsPersonalizationConcurrency> {
+        self.ads_personalization_concurrency.as_ref()
+    }
 }
 impl PlaybackConfiguration {
     /// Creates a new builder-style object to manufacture [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
@@ -201,6 +213,8 @@ pub struct PlaybackConfigurationBuilder {
     pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
     pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
     pub(crate) function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
+    pub(crate) ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
+    pub(crate) ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
 }
 impl PlaybackConfigurationBuilder {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -587,6 +601,34 @@ impl PlaybackConfigurationBuilder {
     pub fn get_function_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
         &self.function_mapping
     }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn ads_personalization_timeouts(mut self, input: crate::types::AdsPersonalizationTimeouts) -> Self {
+        self.ads_personalization_timeouts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn set_ads_personalization_timeouts(mut self, input: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>) -> Self {
+        self.ads_personalization_timeouts = input;
+        self
+    }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn get_ads_personalization_timeouts(&self) -> &::std::option::Option<crate::types::AdsPersonalizationTimeouts> {
+        &self.ads_personalization_timeouts
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn ads_personalization_concurrency(mut self, input: crate::types::AdsPersonalizationConcurrency) -> Self {
+        self.ads_personalization_concurrency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn set_ads_personalization_concurrency(mut self, input: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>) -> Self {
+        self.ads_personalization_concurrency = input;
+        self
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn get_ads_personalization_concurrency(&self) -> &::std::option::Option<crate::types::AdsPersonalizationConcurrency> {
+        &self.ads_personalization_concurrency
+    }
     /// Consumes the builder and constructs a [`PlaybackConfiguration`](crate::types::PlaybackConfiguration).
     pub fn build(self) -> crate::types::PlaybackConfiguration {
         crate::types::PlaybackConfiguration {
@@ -619,6 +661,8 @@ impl PlaybackConfigurationBuilder {
             ad_conditioning_configuration: self.ad_conditioning_configuration,
             ad_decision_server_configuration: self.ad_decision_server_configuration,
             function_mapping: self.function_mapping,
+            ads_personalization_timeouts: self.ads_personalization_timeouts,
+            ads_personalization_concurrency: self.ads_personalization_concurrency,
         }
     }
 }

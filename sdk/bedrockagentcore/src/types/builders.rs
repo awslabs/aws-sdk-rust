@@ -275,6 +275,8 @@ pub use crate::types::_harness_tool_result_block_start::HarnessToolResultBlockSt
 
 pub use crate::types::_harness_tool_use_block_delta::HarnessToolUseBlockDeltaBuilder;
 
+pub use crate::types::_harness_tool_result_metadata_block_delta::HarnessToolResultMetadataBlockDeltaBuilder;
+
 pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_external_proxy::ExternalProxyBuilder;

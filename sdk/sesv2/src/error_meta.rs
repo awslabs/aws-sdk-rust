@@ -2430,6 +2430,43 @@ impl From<crate::operation::put_account_details::PutAccountDetailsError> for Err
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_pricing_attributes::PutAccountPricingAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_account_pricing_attributes::PutAccountPricingAttributesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_account_pricing_attributes::PutAccountPricingAttributesError> for Error {
+    fn from(err: crate::operation::put_account_pricing_attributes::PutAccountPricingAttributesError) -> Self {
+        match err {
+            crate::operation::put_account_pricing_attributes::PutAccountPricingAttributesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::put_account_pricing_attributes::PutAccountPricingAttributesError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_account_pricing_attributes::PutAccountPricingAttributesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_account_pricing_attributes::PutAccountPricingAttributesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError, R>>
     for Error
 where

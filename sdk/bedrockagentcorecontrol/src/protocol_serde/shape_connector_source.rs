@@ -28,6 +28,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "version" => {
+                            builder = builder.set_version(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -53,6 +60,9 @@ pub fn ser_connector_source(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
         object.key("connectorId").string(input.connector_id.as_str());
+    }
+    if let Some(var_1) = &input.version {
+        object.key("version").string(var_1.as_str());
     }
     Ok(())
 }

@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveCustomerOutput {
-    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p><important>
+    /// <p>For new SaaS product integrations, this field is not populated. Use <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> to identify customers instead.</p>
+    /// </important>
     pub customer_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The product code is returned to confirm that the buyer is registering for your product. Subsequent <code>BatchMeterUsage</code> calls should be made using this product code.</p>
     pub product_code: ::std::option::Option<::std::string::String>,
@@ -17,7 +19,9 @@ pub struct ResolveCustomerOutput {
     _request_id: Option<String>,
 }
 impl ResolveCustomerOutput {
-    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p><important>
+    /// <p>For new SaaS product integrations, this field is not populated. Use <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> to identify customers instead.</p>
+    /// </important>
     pub fn customer_identifier(&self) -> ::std::option::Option<&str> {
         self.customer_identifier.as_deref()
     }
@@ -59,17 +63,23 @@ pub struct ResolveCustomerOutputBuilder {
     _request_id: Option<String>,
 }
 impl ResolveCustomerOutputBuilder {
-    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p><important>
+    /// <p>For new SaaS product integrations, this field is not populated. Use <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> to identify customers instead.</p>
+    /// </important>
     pub fn customer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p><important>
+    /// <p>For new SaaS product integrations, this field is not populated. Use <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> to identify customers instead.</p>
+    /// </important>
     pub fn set_customer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_identifier = input;
         self
     }
-    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is used to identify an individual customer in your application.</p><important>
+    /// <p>For new SaaS product integrations, this field is not populated. Use <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> to identify customers instead.</p>
+    /// </important>
     pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_identifier
     }

@@ -13,6 +13,7 @@
 /// # let servicetype = unimplemented!();
 /// match servicetype {
 ///     ServiceType::Athena => { /* ... */ },
+///     ServiceType::GlueDataCatalog => { /* ... */ },
 ///     ServiceType::Qbusiness => { /* ... */ },
 ///     ServiceType::Redshift => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ServiceType {
     #[allow(missing_docs)] // documentation missing in model
     Athena,
     #[allow(missing_docs)] // documentation missing in model
+    GlueDataCatalog,
+    #[allow(missing_docs)] // documentation missing in model
     Qbusiness,
     #[allow(missing_docs)] // documentation missing in model
     Redshift,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ServiceType {
     fn from(s: &str) -> Self {
         match s {
             "ATHENA" => ServiceType::Athena,
+            "GLUE_DATA_CATALOG" => ServiceType::GlueDataCatalog,
             "QBUSINESS" => ServiceType::Qbusiness,
             "REDSHIFT" => ServiceType::Redshift,
             other => ServiceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ServiceType {
     pub fn as_str(&self) -> &str {
         match self {
             ServiceType::Athena => "ATHENA",
+            ServiceType::GlueDataCatalog => "GLUE_DATA_CATALOG",
             ServiceType::Qbusiness => "QBUSINESS",
             ServiceType::Redshift => "REDSHIFT",
             ServiceType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ServiceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ATHENA", "QBUSINESS", "REDSHIFT"]
+        &["ATHENA", "GLUE_DATA_CATALOG", "QBUSINESS", "REDSHIFT"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ServiceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceType::Athena => write!(f, "ATHENA"),
+            ServiceType::GlueDataCatalog => write!(f, "GLUE_DATA_CATALOG"),
             ServiceType::Qbusiness => write!(f, "QBUSINESS"),
             ServiceType::Redshift => write!(f, "REDSHIFT"),
             ServiceType::Unknown(value) => write!(f, "{value}"),

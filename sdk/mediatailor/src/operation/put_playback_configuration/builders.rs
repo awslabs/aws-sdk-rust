@@ -391,4 +391,32 @@ impl PutPlaybackConfigurationFluentBuilder {
     pub fn get_function_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
         self.inner.get_function_mapping()
     }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn ads_personalization_timeouts(mut self, input: crate::types::AdsPersonalizationTimeouts) -> Self {
+        self.inner = self.inner.ads_personalization_timeouts(input);
+        self
+    }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn set_ads_personalization_timeouts(mut self, input: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>) -> Self {
+        self.inner = self.inner.set_ads_personalization_timeouts(input);
+        self
+    }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn get_ads_personalization_timeouts(&self) -> &::std::option::Option<crate::types::AdsPersonalizationTimeouts> {
+        self.inner.get_ads_personalization_timeouts()
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn ads_personalization_concurrency(mut self, input: crate::types::AdsPersonalizationConcurrency) -> Self {
+        self.inner = self.inner.ads_personalization_concurrency(input);
+        self
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn set_ads_personalization_concurrency(mut self, input: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>) -> Self {
+        self.inner = self.inner.set_ads_personalization_concurrency(input);
+        self
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn get_ads_personalization_concurrency(&self) -> &::std::option::Option<crate::types::AdsPersonalizationConcurrency> {
+        self.inner.get_ads_personalization_concurrency()
+    }
 }

@@ -84,6 +84,16 @@ pub(crate) fn de_put_playback_configuration(
                             .transpose()?,
                     );
                 }
+                "AdsPersonalizationConcurrency" => {
+                    builder = builder.set_ads_personalization_concurrency(
+                        crate::protocol_serde::shape_ads_personalization_concurrency::de_ads_personalization_concurrency(tokens, _value, depth + 1)?,
+                    );
+                }
+                "AdsPersonalizationTimeouts" => {
+                    builder = builder.set_ads_personalization_timeouts(
+                        crate::protocol_serde::shape_ads_personalization_timeouts::de_ads_personalization_timeouts(tokens, _value, depth + 1)?,
+                    );
+                }
                 "AvailSuppression" => {
                     builder = builder.set_avail_suppression(crate::protocol_serde::shape_avail_suppression::de_avail_suppression(
                         tokens,

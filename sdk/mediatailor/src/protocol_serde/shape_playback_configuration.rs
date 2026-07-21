@@ -190,6 +190,24 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "AdsPersonalizationTimeouts" => {
+                            builder = builder.set_ads_personalization_timeouts(
+                                crate::protocol_serde::shape_ads_personalization_timeouts::de_ads_personalization_timeouts(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "AdsPersonalizationConcurrency" => {
+                            builder = builder.set_ads_personalization_concurrency(
+                                crate::protocol_serde::shape_ads_personalization_concurrency::de_ads_personalization_concurrency(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

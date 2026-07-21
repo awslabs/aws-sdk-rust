@@ -175,6 +175,8 @@ pub(crate) mod shape_put_account_dedicated_ip_warmup_attributes;
 
 pub(crate) mod shape_put_account_details;
 
+pub(crate) mod shape_put_account_pricing_attributes;
+
 pub(crate) mod shape_put_account_sending_attributes;
 
 pub(crate) mod shape_put_account_suppression_attributes;
@@ -334,6 +336,8 @@ pub(crate) mod shape_not_found_exception;
 pub(crate) mod shape_put_account_dedicated_ip_warmup_attributes_input;
 
 pub(crate) mod shape_put_account_details_input;
+
+pub(crate) mod shape_put_account_pricing_attributes_input;
 
 pub(crate) mod shape_put_account_sending_attributes_input;
 
@@ -518,6 +522,8 @@ pub(crate) mod shape_overall_volume;
 pub(crate) mod shape_placement_statistics;
 
 pub(crate) mod shape_policy_map;
+
+pub(crate) mod shape_pricing_attributes;
 
 pub(crate) mod shape_recommendations_list;
 

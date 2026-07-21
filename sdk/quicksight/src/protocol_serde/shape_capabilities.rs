@@ -687,6 +687,18 @@ pub fn ser_capabilities(
     if let Some(var_228) = &input.scenario {
         object.key("Scenario").string(var_228.as_str());
     }
+    if let Some(var_229) = &input.trigger {
+        object.key("Trigger").string(var_229.as_str());
+    }
+    if let Some(var_230) = &input.schedule_trigger {
+        object.key("ScheduleTrigger").string(var_230.as_str());
+    }
+    if let Some(var_231) = &input.inbound_email_trigger {
+        object.key("InboundEmailTrigger").string(var_231.as_str());
+    }
+    if let Some(var_232) = &input.quick_event_trigger {
+        object.key("QuickEventTrigger").string(var_232.as_str());
+    }
     Ok(())
 }
 
@@ -2303,6 +2315,34 @@ where
                         }
                         "Scenario" => {
                             builder = builder.set_scenario(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Trigger" => {
+                            builder = builder.set_trigger(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ScheduleTrigger" => {
+                            builder = builder.set_schedule_trigger(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "InboundEmailTrigger" => {
+                            builder = builder.set_inbound_email_trigger(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "QuickEventTrigger" => {
+                            builder = builder.set_quick_event_trigger(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

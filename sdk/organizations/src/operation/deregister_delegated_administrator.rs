@@ -295,7 +295,7 @@ pub enum DeregisterDelegatedAdministratorError {
     /// <li>
     /// <p>ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization that doesn't yet have enough information to exist as a standalone account. This account requires you to first complete phone verification. Follow the steps at <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master">Removing a member account from your organization</a> in the <i>Organizations User Guide</i>.</p></li>
     /// <li>
-    /// <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create in one day.</p></li>
+    /// <p>ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that can be in progress at a time.</p></li>
     /// <li>
     /// <p>ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't fully active. You must complete the account setup before you create an organization.</p></li>
     /// <li>
@@ -426,7 +426,7 @@ pub enum DeregisterDelegatedAdministratorError {
     /// <li>
     /// <p>INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a party.</p></li>
     /// <li>
-    /// <p>INVALID_PATTERN: You provided a value that doesn't match the required pattern.</p></li>
+    /// <p>INVALID_PATTERN: You provided a value that doesn't match the required pattern. The service also validates your free-text field values against common cross-site scripting (XSS) patterns and rejects requests that contain matching values.</p></li>
     /// <li>
     /// <p>INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.</p></li>
     /// <li>

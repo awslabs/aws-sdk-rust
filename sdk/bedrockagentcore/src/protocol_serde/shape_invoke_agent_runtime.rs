@@ -275,9 +275,31 @@ pub fn ser_invoke_agent_runtime_headers(
         })?;
         builder = builder.header("Mcp-Protocol-Version", header_value);
     }
-    if let ::std::option::Option::Some(inner_11) = &input.runtime_user_id {
+    if let ::std::option::Option::Some(inner_11) = &input.mcp_method {
         let formatted_12 = inner_11.as_str();
         let header_value = formatted_12;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "mcp_method",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("Mcp-Method", header_value);
+    }
+    if let ::std::option::Option::Some(inner_13) = &input.mcp_name {
+        let formatted_14 = inner_13.as_str();
+        let header_value = formatted_14;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "mcp_name",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("Mcp-Name", header_value);
+    }
+    if let ::std::option::Option::Some(inner_15) = &input.runtime_user_id {
+        let formatted_16 = inner_15.as_str();
+        let header_value = formatted_16;
         let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "runtime_user_id",
@@ -286,9 +308,9 @@ pub fn ser_invoke_agent_runtime_headers(
         })?;
         builder = builder.header("X-Amzn-Bedrock-AgentCore-Runtime-User-Id", header_value);
     }
-    if let ::std::option::Option::Some(inner_13) = &input.trace_id {
-        let formatted_14 = inner_13.as_str();
-        let header_value = formatted_14;
+    if let ::std::option::Option::Some(inner_17) = &input.trace_id {
+        let formatted_18 = inner_17.as_str();
+        let header_value = formatted_18;
         let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "trace_id",
@@ -297,9 +319,9 @@ pub fn ser_invoke_agent_runtime_headers(
         })?;
         builder = builder.header("X-Amzn-Trace-Id", header_value);
     }
-    if let ::std::option::Option::Some(inner_15) = &input.trace_parent {
-        let formatted_16 = inner_15.as_str();
-        let header_value = formatted_16;
+    if let ::std::option::Option::Some(inner_19) = &input.trace_parent {
+        let formatted_20 = inner_19.as_str();
+        let header_value = formatted_20;
         let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "trace_parent",
@@ -308,9 +330,9 @@ pub fn ser_invoke_agent_runtime_headers(
         })?;
         builder = builder.header("traceparent", header_value);
     }
-    if let ::std::option::Option::Some(inner_17) = &input.trace_state {
-        let formatted_18 = inner_17.as_str();
-        let header_value = formatted_18;
+    if let ::std::option::Option::Some(inner_21) = &input.trace_state {
+        let formatted_22 = inner_21.as_str();
+        let header_value = formatted_22;
         let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "trace_state",
@@ -319,9 +341,9 @@ pub fn ser_invoke_agent_runtime_headers(
         })?;
         builder = builder.header("tracestate", header_value);
     }
-    if let ::std::option::Option::Some(inner_19) = &input.baggage {
-        let formatted_20 = inner_19.as_str();
-        let header_value = formatted_20;
+    if let ::std::option::Option::Some(inner_23) = &input.baggage {
+        let formatted_24 = inner_23.as_str();
+        let header_value = formatted_24;
         let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
             ::aws_smithy_types::error::operation::BuildError::invalid_field(
                 "baggage",

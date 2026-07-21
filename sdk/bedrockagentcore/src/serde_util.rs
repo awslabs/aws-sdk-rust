@@ -2088,6 +2088,15 @@ pub(crate) fn harness_tool_result_block_start_correct_errors(
     builder
 }
 
+pub(crate) fn harness_tool_result_metadata_block_delta_correct_errors(
+    mut builder: crate::types::builders::HarnessToolResultMetadataBlockDeltaBuilder,
+) -> crate::types::builders::HarnessToolResultMetadataBlockDeltaBuilder {
+    if builder.metadata.is_none() {
+        builder.metadata = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn harness_tool_use_block_delta_correct_errors(
     mut builder: crate::types::builders::HarnessToolUseBlockDeltaBuilder,
 ) -> crate::types::builders::HarnessToolUseBlockDeltaBuilder {

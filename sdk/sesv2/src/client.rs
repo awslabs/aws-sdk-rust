@@ -315,6 +315,8 @@ mod put_account_dedicated_ip_warmup_attributes;
 
 mod put_account_details;
 
+mod put_account_pricing_attributes;
+
 mod put_account_sending_attributes;
 
 mod put_account_suppression_attributes;

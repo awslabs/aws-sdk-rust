@@ -53,6 +53,8 @@ pub use crate::types::_account_details::AccountDetails;
 
 pub use crate::types::_vdm_attributes::VdmAttributes;
 
+pub use crate::types::_pricing_attributes::PricingAttributes;
+
 pub use crate::types::_dedicated_ip::DedicatedIp;
 
 pub use crate::types::_dedicated_ip_pool::DedicatedIpPool;
@@ -98,6 +100,8 @@ pub use crate::types::_import_destination_type::ImportDestinationType;
 pub use crate::types::_mail_type::MailType;
 
 pub use crate::types::_contact_language::ContactLanguage;
+
+pub use crate::types::_pricing_plan::PricingPlan;
 
 pub use crate::types::_suppression_validation_attributes::SuppressionValidationAttributes;
 
@@ -540,6 +544,10 @@ mod _overall_volume;
 mod _pinpoint_destination;
 
 mod _placement_statistics;
+
+mod _pricing_attributes;
+
+mod _pricing_plan;
 
 mod _query_error_code;
 

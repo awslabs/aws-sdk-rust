@@ -31,6 +31,10 @@ pub use crate::types::_ad_conditioning_configuration::AdConditioningConfiguratio
 
 pub use crate::types::_ad_decision_server_configuration::AdDecisionServerConfigurationBuilder;
 
+pub use crate::types::_ads_personalization_timeouts::AdsPersonalizationTimeoutsBuilder;
+
+pub use crate::types::_ads_personalization_concurrency::AdsPersonalizationConcurrencyBuilder;
+
 pub use crate::types::_dash_configuration::DashConfigurationBuilder;
 
 pub use crate::types::_hls_configuration::HlsConfigurationBuilder;

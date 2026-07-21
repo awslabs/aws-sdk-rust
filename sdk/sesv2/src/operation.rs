@@ -229,6 +229,9 @@ pub mod put_account_dedicated_ip_warmup_attributes;
 /// Types for the `PutAccountDetails` operation.
 pub mod put_account_details;
 
+/// Types for the `PutAccountPricingAttributes` operation.
+pub mod put_account_pricing_attributes;
+
 /// Types for the `PutAccountSendingAttributes` operation.
 pub mod put_account_sending_attributes;
 

@@ -99,6 +99,13 @@ pub(crate) fn de_get_account(
                             .transpose()?,
                     );
                 }
+                "PricingAttributes" => {
+                    builder = builder.set_pricing_attributes(crate::protocol_serde::shape_pricing_attributes::de_pricing_attributes(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "ProductionAccessEnabled" => {
                     builder = builder.set_production_access_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

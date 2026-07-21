@@ -6,12 +6,18 @@
 pub struct ConnectorSource {
     /// <p>The identifier for the connector integration (for example, <code>bedrock-knowledge-bases</code>).</p>
     pub connector_id: ::std::string::String,
+    /// <p>The version of the connector to use (for example, <code>1.1.0</code>). If you don't specify a version, the service uses the latest available version.</p>
+    pub version: ::std::option::Option<::std::string::String>,
 }
 impl ConnectorSource {
     /// <p>The identifier for the connector integration (for example, <code>bedrock-knowledge-bases</code>).</p>
     pub fn connector_id(&self) -> &str {
         use std::ops::Deref;
         self.connector_id.deref()
+    }
+    /// <p>The version of the connector to use (for example, <code>1.1.0</code>). If you don't specify a version, the service uses the latest available version.</p>
+    pub fn version(&self) -> ::std::option::Option<&str> {
+        self.version.as_deref()
     }
 }
 impl ConnectorSource {
@@ -26,6 +32,7 @@ impl ConnectorSource {
 #[non_exhaustive]
 pub struct ConnectorSourceBuilder {
     pub(crate) connector_id: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
 }
 impl ConnectorSourceBuilder {
     /// <p>The identifier for the connector integration (for example, <code>bedrock-knowledge-bases</code>).</p>
@@ -43,6 +50,20 @@ impl ConnectorSourceBuilder {
     pub fn get_connector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connector_id
     }
+    /// <p>The version of the connector to use (for example, <code>1.1.0</code>). If you don't specify a version, the service uses the latest available version.</p>
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the connector to use (for example, <code>1.1.0</code>). If you don't specify a version, the service uses the latest available version.</p>
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version = input;
+        self
+    }
+    /// <p>The version of the connector to use (for example, <code>1.1.0</code>). If you don't specify a version, the service uses the latest available version.</p>
+    pub fn get_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version
+    }
     /// Consumes the builder and constructs a [`ConnectorSource`](crate::types::ConnectorSource).
     /// This method will fail if any of the following fields are not set:
     /// - [`connector_id`](crate::types::builders::ConnectorSourceBuilder::connector_id)
@@ -54,6 +75,7 @@ impl ConnectorSourceBuilder {
                     "connector_id was not specified but it is required when building ConnectorSource",
                 )
             })?,
+            version: self.version,
         })
     }
 }

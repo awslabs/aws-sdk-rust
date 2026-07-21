@@ -11,6 +11,14 @@ pub struct InvokeHarnessInput {
     pub runtime_session_id: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
     pub runtime_user_id: ::std::option::Option<::std::string::String>,
+    /// <p>W3C trace context parent header containing version, trace ID, parent span ID, and trace flags.</p>
+    pub trace_parent: ::std::option::Option<::std::string::String>,
+    /// <p>W3C trace context state header for vendor-specific trace information.</p>
+    pub trace_state: ::std::option::Option<::std::string::String>,
+    /// <p>Trace ID for maintaining observability through the operation.</p>
+    pub trace_id: ::std::option::Option<::std::string::String>,
+    /// <p>W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2</p>
+    pub baggage: ::std::option::Option<::std::string::String>,
     /// <p>The messages to send to the agent.</p>
     pub messages: ::std::option::Option<::std::vec::Vec<crate::types::HarnessMessage>>,
     /// <p>The model configuration to use for this invocation. If specified, overrides the harness default.</p>
@@ -48,6 +56,22 @@ impl InvokeHarnessInput {
     /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
     pub fn runtime_user_id(&self) -> ::std::option::Option<&str> {
         self.runtime_user_id.as_deref()
+    }
+    /// <p>W3C trace context parent header containing version, trace ID, parent span ID, and trace flags.</p>
+    pub fn trace_parent(&self) -> ::std::option::Option<&str> {
+        self.trace_parent.as_deref()
+    }
+    /// <p>W3C trace context state header for vendor-specific trace information.</p>
+    pub fn trace_state(&self) -> ::std::option::Option<&str> {
+        self.trace_state.as_deref()
+    }
+    /// <p>Trace ID for maintaining observability through the operation.</p>
+    pub fn trace_id(&self) -> ::std::option::Option<&str> {
+        self.trace_id.as_deref()
+    }
+    /// <p>W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2</p>
+    pub fn baggage(&self) -> ::std::option::Option<&str> {
+        self.baggage.as_deref()
     }
     /// <p>The messages to send to the agent.</p>
     ///
@@ -115,6 +139,10 @@ pub struct InvokeHarnessInputBuilder {
     pub(crate) qualifier: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_user_id: ::std::option::Option<::std::string::String>,
+    pub(crate) trace_parent: ::std::option::Option<::std::string::String>,
+    pub(crate) trace_state: ::std::option::Option<::std::string::String>,
+    pub(crate) trace_id: ::std::option::Option<::std::string::String>,
+    pub(crate) baggage: ::std::option::Option<::std::string::String>,
     pub(crate) messages: ::std::option::Option<::std::vec::Vec<crate::types::HarnessMessage>>,
     pub(crate) model: ::std::option::Option<crate::types::HarnessModelConfiguration>,
     pub(crate) system_prompt: ::std::option::Option<::std::vec::Vec<crate::types::HarnessSystemContentBlock>>,
@@ -184,6 +212,62 @@ impl InvokeHarnessInputBuilder {
     /// <p>An identifier for the end user making the request. This value is passed through to the runtime container.</p>
     pub fn get_runtime_user_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime_user_id
+    }
+    /// <p>W3C trace context parent header containing version, trace ID, parent span ID, and trace flags.</p>
+    pub fn trace_parent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trace_parent = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>W3C trace context parent header containing version, trace ID, parent span ID, and trace flags.</p>
+    pub fn set_trace_parent(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trace_parent = input;
+        self
+    }
+    /// <p>W3C trace context parent header containing version, trace ID, parent span ID, and trace flags.</p>
+    pub fn get_trace_parent(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_parent
+    }
+    /// <p>W3C trace context state header for vendor-specific trace information.</p>
+    pub fn trace_state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trace_state = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>W3C trace context state header for vendor-specific trace information.</p>
+    pub fn set_trace_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trace_state = input;
+        self
+    }
+    /// <p>W3C trace context state header for vendor-specific trace information.</p>
+    pub fn get_trace_state(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_state
+    }
+    /// <p>Trace ID for maintaining observability through the operation.</p>
+    pub fn trace_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.trace_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Trace ID for maintaining observability through the operation.</p>
+    pub fn set_trace_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.trace_id = input;
+        self
+    }
+    /// <p>Trace ID for maintaining observability through the operation.</p>
+    pub fn get_trace_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.trace_id
+    }
+    /// <p>W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2</p>
+    pub fn baggage(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.baggage = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2</p>
+    pub fn set_baggage(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.baggage = input;
+        self
+    }
+    /// <p>W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2</p>
+    pub fn get_baggage(&self) -> &::std::option::Option<::std::string::String> {
+        &self.baggage
     }
     /// Appends an item to `messages`.
     ///
@@ -364,6 +448,10 @@ impl InvokeHarnessInputBuilder {
             qualifier: self.qualifier,
             runtime_session_id: self.runtime_session_id,
             runtime_user_id: self.runtime_user_id,
+            trace_parent: self.trace_parent,
+            trace_state: self.trace_state,
+            trace_id: self.trace_id,
+            baggage: self.baggage,
             messages: self.messages,
             model: self.model,
             system_prompt: self.system_prompt,

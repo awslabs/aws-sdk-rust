@@ -68,6 +68,16 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'reasoningContent' cannot be null")
                             })?,
                         )),
+                        "toolResultMetadata" => Some(crate::types::HarnessContentBlockDelta::ToolResultMetadata(
+                            crate::protocol_serde::shape_harness_tool_result_metadata_block_delta::de_harness_tool_result_metadata_block_delta(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolResultMetadata' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::HarnessContentBlockDelta::Unknown)

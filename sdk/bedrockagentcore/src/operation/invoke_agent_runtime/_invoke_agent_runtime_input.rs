@@ -13,6 +13,18 @@ pub struct InvokeAgentRuntimeInput {
     pub runtime_session_id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the MCP protocol being used.</p>
     pub mcp_protocol_version: ::std::option::Option<::std::string::String>,
+    /// <p>The MCP method being invoked. For example, <code>tools/call</code>, <code>resources/read</code>, or <code>prompts/get</code>.</p>
+    pub mcp_method: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the MCP resource, tool, or prompt being accessed. The value depends on the method:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tools/call</code> – The tool name.</p></li>
+    /// <li>
+    /// <p><code>resources/read</code> – The resource URI.</p></li>
+    /// <li>
+    /// <p><code>prompts/get</code> – The prompt name.</p></li>
+    /// </ul>
+    pub mcp_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the runtime user.</p>
     pub runtime_user_id: ::std::option::Option<::std::string::String>,
     /// <p>The trace identifier for request tracking.</p>
@@ -52,6 +64,22 @@ impl InvokeAgentRuntimeInput {
     /// <p>The version of the MCP protocol being used.</p>
     pub fn mcp_protocol_version(&self) -> ::std::option::Option<&str> {
         self.mcp_protocol_version.as_deref()
+    }
+    /// <p>The MCP method being invoked. For example, <code>tools/call</code>, <code>resources/read</code>, or <code>prompts/get</code>.</p>
+    pub fn mcp_method(&self) -> ::std::option::Option<&str> {
+        self.mcp_method.as_deref()
+    }
+    /// <p>The name of the MCP resource, tool, or prompt being accessed. The value depends on the method:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tools/call</code> – The tool name.</p></li>
+    /// <li>
+    /// <p><code>resources/read</code> – The resource URI.</p></li>
+    /// <li>
+    /// <p><code>prompts/get</code> – The prompt name.</p></li>
+    /// </ul>
+    pub fn mcp_name(&self) -> ::std::option::Option<&str> {
+        self.mcp_name.as_deref()
     }
     /// <p>The identifier of the runtime user.</p>
     pub fn runtime_user_id(&self) -> ::std::option::Option<&str> {
@@ -98,6 +126,8 @@ impl ::std::fmt::Debug for InvokeAgentRuntimeInput {
         formatter.field("mcp_session_id", &self.mcp_session_id);
         formatter.field("runtime_session_id", &self.runtime_session_id);
         formatter.field("mcp_protocol_version", &self.mcp_protocol_version);
+        formatter.field("mcp_method", &self.mcp_method);
+        formatter.field("mcp_name", &self.mcp_name);
         formatter.field("runtime_user_id", &self.runtime_user_id);
         formatter.field("trace_id", &self.trace_id);
         formatter.field("trace_parent", &self.trace_parent);
@@ -126,6 +156,8 @@ pub struct InvokeAgentRuntimeInputBuilder {
     pub(crate) mcp_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_session_id: ::std::option::Option<::std::string::String>,
     pub(crate) mcp_protocol_version: ::std::option::Option<::std::string::String>,
+    pub(crate) mcp_method: ::std::option::Option<::std::string::String>,
+    pub(crate) mcp_name: ::std::option::Option<::std::string::String>,
     pub(crate) runtime_user_id: ::std::option::Option<::std::string::String>,
     pub(crate) trace_id: ::std::option::Option<::std::string::String>,
     pub(crate) trace_parent: ::std::option::Option<::std::string::String>,
@@ -206,6 +238,58 @@ impl InvokeAgentRuntimeInputBuilder {
     /// <p>The version of the MCP protocol being used.</p>
     pub fn get_mcp_protocol_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.mcp_protocol_version
+    }
+    /// <p>The MCP method being invoked. For example, <code>tools/call</code>, <code>resources/read</code>, or <code>prompts/get</code>.</p>
+    pub fn mcp_method(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mcp_method = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The MCP method being invoked. For example, <code>tools/call</code>, <code>resources/read</code>, or <code>prompts/get</code>.</p>
+    pub fn set_mcp_method(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mcp_method = input;
+        self
+    }
+    /// <p>The MCP method being invoked. For example, <code>tools/call</code>, <code>resources/read</code>, or <code>prompts/get</code>.</p>
+    pub fn get_mcp_method(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mcp_method
+    }
+    /// <p>The name of the MCP resource, tool, or prompt being accessed. The value depends on the method:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tools/call</code> – The tool name.</p></li>
+    /// <li>
+    /// <p><code>resources/read</code> – The resource URI.</p></li>
+    /// <li>
+    /// <p><code>prompts/get</code> – The prompt name.</p></li>
+    /// </ul>
+    pub fn mcp_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mcp_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the MCP resource, tool, or prompt being accessed. The value depends on the method:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tools/call</code> – The tool name.</p></li>
+    /// <li>
+    /// <p><code>resources/read</code> – The resource URI.</p></li>
+    /// <li>
+    /// <p><code>prompts/get</code> – The prompt name.</p></li>
+    /// </ul>
+    pub fn set_mcp_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mcp_name = input;
+        self
+    }
+    /// <p>The name of the MCP resource, tool, or prompt being accessed. The value depends on the method:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tools/call</code> – The tool name.</p></li>
+    /// <li>
+    /// <p><code>resources/read</code> – The resource URI.</p></li>
+    /// <li>
+    /// <p><code>prompts/get</code> – The prompt name.</p></li>
+    /// </ul>
+    pub fn get_mcp_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mcp_name
     }
     /// <p>The identifier of the runtime user.</p>
     pub fn runtime_user_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -346,6 +430,8 @@ impl InvokeAgentRuntimeInputBuilder {
             mcp_session_id: self.mcp_session_id,
             runtime_session_id: self.runtime_session_id,
             mcp_protocol_version: self.mcp_protocol_version,
+            mcp_method: self.mcp_method,
+            mcp_name: self.mcp_name,
             runtime_user_id: self.runtime_user_id,
             trace_id: self.trace_id,
             trace_parent: self.trace_parent,
@@ -366,6 +452,8 @@ impl ::std::fmt::Debug for InvokeAgentRuntimeInputBuilder {
         formatter.field("mcp_session_id", &self.mcp_session_id);
         formatter.field("runtime_session_id", &self.runtime_session_id);
         formatter.field("mcp_protocol_version", &self.mcp_protocol_version);
+        formatter.field("mcp_method", &self.mcp_method);
+        formatter.field("mcp_name", &self.mcp_name);
         formatter.field("runtime_user_id", &self.runtime_user_id);
         formatter.field("trace_id", &self.trace_id);
         formatter.field("trace_parent", &self.trace_parent);

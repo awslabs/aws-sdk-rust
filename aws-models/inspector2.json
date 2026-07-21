@@ -5167,7 +5167,7 @@
                     "min": 1,
                     "max": 128
                 },
-                "smithy.api#pattern": "^(?!aws:)[\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*$"
+                "smithy.api#pattern": "^[\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*$"
             }
         },
         "com.amazonaws.inspector2#ConnectorTagMap": {
@@ -16560,7 +16560,7 @@
                     "min": 1,
                     "max": 512
                 },
-                "smithy.api#pattern": "^(?:/(?:\\.[-\\w]+|[-\\w]+(?:\\.[-\\w]+)?))+/?$"
+                "smithy.api#pattern": "^(?:(?:/(?:\\.[-\\w]+|[-\\w]+(?:[. ][-\\w]+)*))+/?|[A-Za-z]:\\\\(?:[-\\w]+(?:[. ][-\\w]+)*\\\\)*[-\\w]+(?:[. ][-\\w]+)*)$"
             }
         },
         "com.amazonaws.inspector2#PathList": {

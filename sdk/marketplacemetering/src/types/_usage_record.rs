@@ -9,7 +9,9 @@ pub struct UsageRecord {
     /// <p>Your application can meter usage for up to 24 hours in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
     /// <p>At the end of each billing cycle, you have a 6-hour grace period to submit usage records for the previous billing month before 06:00 UTC on the first day of the next month.</p>
     pub timestamp: ::aws_smithy_types::DateTime,
-    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p><important>
+    /// <p><code>CustomerIdentifier</code> is not supported for new SaaS product integrations. Use <code>CustomerAWSAccountId</code> to identify the buyer.</p>
+    /// </important>
     pub customer_identifier: ::std::string::String,
     /// <p>During the process of registering a product on Amazon Web Services Marketplace, dimensions are specified. These represent different units of value in your application.</p>
     pub dimension: ::std::string::String,
@@ -33,7 +35,9 @@ impl UsageRecord {
     pub fn timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.timestamp
     }
-    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p><important>
+    /// <p><code>CustomerIdentifier</code> is not supported for new SaaS product integrations. Use <code>CustomerAWSAccountId</code> to identify the buyer.</p>
+    /// </important>
     pub fn customer_identifier(&self) -> &str {
         use std::ops::Deref;
         self.customer_identifier.deref()
@@ -107,17 +111,23 @@ impl UsageRecordBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
-    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p><important>
+    /// <p><code>CustomerIdentifier</code> is not supported for new SaaS product integrations. Use <code>CustomerAWSAccountId</code> to identify the buyer.</p>
+    /// </important>
     pub fn customer_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p><important>
+    /// <p><code>CustomerIdentifier</code> is not supported for new SaaS product integrations. Use <code>CustomerAWSAccountId</code> to identify the buyer.</p>
+    /// </important>
     pub fn set_customer_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_identifier = input;
         self
     }
-    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p>
+    /// <p>The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code> operation and represents an individual buyer in your application.</p><important>
+    /// <p><code>CustomerIdentifier</code> is not supported for new SaaS product integrations. Use <code>CustomerAWSAccountId</code> to identify the buyer.</p>
+    /// </important>
     pub fn get_customer_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_identifier
     }

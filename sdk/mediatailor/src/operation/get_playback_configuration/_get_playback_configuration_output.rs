@@ -55,6 +55,10 @@ pub struct GetPlaybackConfigurationOutput {
     pub ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
     /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
     _request_id: Option<String>,
 }
 impl GetPlaybackConfigurationOutput {
@@ -162,6 +166,14 @@ impl GetPlaybackConfigurationOutput {
     pub fn function_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
         self.function_mapping.as_ref()
     }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn ads_personalization_timeouts(&self) -> ::std::option::Option<&crate::types::AdsPersonalizationTimeouts> {
+        self.ads_personalization_timeouts.as_ref()
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn ads_personalization_concurrency(&self) -> ::std::option::Option<&crate::types::AdsPersonalizationConcurrency> {
+        self.ads_personalization_concurrency.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetPlaybackConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -206,6 +218,8 @@ pub struct GetPlaybackConfigurationOutputBuilder {
     pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
     pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
     pub(crate) function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
+    pub(crate) ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
+    pub(crate) ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
     _request_id: Option<String>,
 }
 impl GetPlaybackConfigurationOutputBuilder {
@@ -593,6 +607,34 @@ impl GetPlaybackConfigurationOutputBuilder {
     pub fn get_function_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
         &self.function_mapping
     }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn ads_personalization_timeouts(mut self, input: crate::types::AdsPersonalizationTimeouts) -> Self {
+        self.ads_personalization_timeouts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn set_ads_personalization_timeouts(mut self, input: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>) -> Self {
+        self.ads_personalization_timeouts = input;
+        self
+    }
+    /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
+    pub fn get_ads_personalization_timeouts(&self) -> &::std::option::Option<crate::types::AdsPersonalizationTimeouts> {
+        &self.ads_personalization_timeouts
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn ads_personalization_concurrency(mut self, input: crate::types::AdsPersonalizationConcurrency) -> Self {
+        self.ads_personalization_concurrency = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn set_ads_personalization_concurrency(mut self, input: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>) -> Self {
+        self.ads_personalization_concurrency = input;
+        self
+    }
+    /// <p>The concurrency settings for ad decision server interactions. These settings control how many simultaneous ADS requests MediaTailor makes per manifest request.</p>
+    pub fn get_ads_personalization_concurrency(&self) -> &::std::option::Option<crate::types::AdsPersonalizationConcurrency> {
+        &self.ads_personalization_concurrency
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -634,6 +676,8 @@ impl GetPlaybackConfigurationOutputBuilder {
             ad_conditioning_configuration: self.ad_conditioning_configuration,
             ad_decision_server_configuration: self.ad_decision_server_configuration,
             function_mapping: self.function_mapping,
+            ads_personalization_timeouts: self.ads_personalization_timeouts,
+            ads_personalization_concurrency: self.ads_personalization_concurrency,
             _request_id: self._request_id,
         }
     }

@@ -16,6 +16,8 @@ pub struct HarnessGeminiModelConfig {
     pub top_p: ::std::option::Option<f32>,
     /// <p>The topK set when calling the model.</p>
     pub top_k: ::std::option::Option<i32>,
+    /// <p>Provider-specific parameters passed through to the Gemini model provider unchanged.</p>
+    pub additional_params: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl HarnessGeminiModelConfig {
     /// <p>The Gemini model ID.</p>
@@ -44,6 +46,10 @@ impl HarnessGeminiModelConfig {
     pub fn top_k(&self) -> ::std::option::Option<i32> {
         self.top_k
     }
+    /// <p>Provider-specific parameters passed through to the Gemini model provider unchanged.</p>
+    pub fn additional_params(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
+        self.additional_params.as_ref()
+    }
 }
 impl HarnessGeminiModelConfig {
     /// Creates a new builder-style object to manufacture [`HarnessGeminiModelConfig`](crate::types::HarnessGeminiModelConfig).
@@ -62,6 +68,7 @@ pub struct HarnessGeminiModelConfigBuilder {
     pub(crate) temperature: ::std::option::Option<f32>,
     pub(crate) top_p: ::std::option::Option<f32>,
     pub(crate) top_k: ::std::option::Option<i32>,
+    pub(crate) additional_params: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl HarnessGeminiModelConfigBuilder {
     /// <p>The Gemini model ID.</p>
@@ -150,6 +157,20 @@ impl HarnessGeminiModelConfigBuilder {
     pub fn get_top_k(&self) -> &::std::option::Option<i32> {
         &self.top_k
     }
+    /// <p>Provider-specific parameters passed through to the Gemini model provider unchanged.</p>
+    pub fn additional_params(mut self, input: ::aws_smithy_types::Document) -> Self {
+        self.additional_params = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provider-specific parameters passed through to the Gemini model provider unchanged.</p>
+    pub fn set_additional_params(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
+        self.additional_params = input;
+        self
+    }
+    /// <p>Provider-specific parameters passed through to the Gemini model provider unchanged.</p>
+    pub fn get_additional_params(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
+        &self.additional_params
+    }
     /// Consumes the builder and constructs a [`HarnessGeminiModelConfig`](crate::types::HarnessGeminiModelConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`model_id`](crate::types::builders::HarnessGeminiModelConfigBuilder::model_id)
@@ -172,6 +193,7 @@ impl HarnessGeminiModelConfigBuilder {
             temperature: self.temperature,
             top_p: self.top_p,
             top_k: self.top_k,
+            additional_params: self.additional_params,
         })
     }
 }

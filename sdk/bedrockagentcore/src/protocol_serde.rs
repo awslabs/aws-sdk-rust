@@ -853,6 +853,8 @@ pub(crate) mod shape_harness_tool_result_block_start;
 
 pub(crate) mod shape_harness_tool_result_blocks_delta;
 
+pub(crate) mod shape_harness_tool_result_metadata_block_delta;
+
 pub(crate) mod shape_harness_tool_use_block_delta;
 
 pub(crate) mod shape_harness_tool_use_block_start;

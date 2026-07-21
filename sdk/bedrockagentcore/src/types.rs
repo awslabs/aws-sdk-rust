@@ -443,6 +443,8 @@ pub use crate::types::_harness_tool_use_block_delta::HarnessToolUseBlockDelta;
 
 pub use crate::types::_harness_reasoning_content_block_delta::HarnessReasoningContentBlockDelta;
 
+pub use crate::types::_harness_tool_result_metadata_block_delta::HarnessToolResultMetadataBlockDelta;
+
 pub use crate::types::_command_execution_status::CommandExecutionStatus;
 
 pub use crate::types::_s3_location::S3Location;
@@ -886,6 +888,8 @@ mod _harness_tool_result_block_delta;
 mod _harness_tool_result_block_start;
 
 mod _harness_tool_result_content_block;
+
+mod _harness_tool_result_metadata_block_delta;
 
 mod _harness_tool_type;
 

@@ -18,99 +18,111 @@ pub fn ser_put_playback_configuration_input_input(
     if let Some(var_5) = &input.ad_decision_server_url {
         object.key("AdDecisionServerUrl").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.avail_suppression {
+    if let Some(var_6) = &input.ads_personalization_concurrency {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("AvailSuppression").start_object();
-        crate::protocol_serde::shape_avail_suppression::ser_avail_suppression(&mut object_7, var_6)?;
+        let mut object_7 = object.key("AdsPersonalizationConcurrency").start_object();
+        crate::protocol_serde::shape_ads_personalization_concurrency::ser_ads_personalization_concurrency(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.bumper {
+    if let Some(var_8) = &input.ads_personalization_timeouts {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Bumper").start_object();
-        crate::protocol_serde::shape_bumper::ser_bumper(&mut object_9, var_8)?;
+        let mut object_9 = object.key("AdsPersonalizationTimeouts").start_object();
+        crate::protocol_serde::shape_ads_personalization_timeouts::ser_ads_personalization_timeouts(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.cdn_configuration {
+    if let Some(var_10) = &input.avail_suppression {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("CdnConfiguration").start_object();
-        crate::protocol_serde::shape_cdn_configuration::ser_cdn_configuration(&mut object_11, var_10)?;
+        let mut object_11 = object.key("AvailSuppression").start_object();
+        crate::protocol_serde::shape_avail_suppression::ser_avail_suppression(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.configuration_aliases {
+    if let Some(var_12) = &input.bumper {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("ConfigurationAliases").start_object();
-        for (key_14, value_15) in var_12 {
-            {
-                #[allow(unused_mut)]
-                let mut object_16 = object_13.key(key_14.as_str()).start_object();
-                for (key_17, value_18) in value_15 {
-                    {
-                        object_16.key(key_17.as_str()).string(value_18.as_str());
-                    }
-                }
-                object_16.finish();
-            }
-        }
+        let mut object_13 = object.key("Bumper").start_object();
+        crate::protocol_serde::shape_bumper::ser_bumper(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_19) = &input.dash_configuration {
+    if let Some(var_14) = &input.cdn_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("DashConfiguration").start_object();
-        crate::protocol_serde::shape_dash_configuration_for_put::ser_dash_configuration_for_put(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_15 = object.key("CdnConfiguration").start_object();
+        crate::protocol_serde::shape_cdn_configuration::ser_cdn_configuration(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_21) = &input.function_mapping {
+    if let Some(var_16) = &input.configuration_aliases {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("FunctionMapping").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_17 = object.key("ConfigurationAliases").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                #[allow(unused_mut)]
+                let mut object_20 = object_17.key(key_18.as_str()).start_object();
+                for (key_21, value_22) in value_19 {
+                    {
+                        object_20.key(key_21.as_str()).string(value_22.as_str());
+                    }
+                }
+                object_20.finish();
             }
         }
-        object_22.finish();
+        object_17.finish();
     }
-    if let Some(var_25) = &input.insertion_mode {
-        object.key("InsertionMode").string(var_25.as_str());
-    }
-    if let Some(var_26) = &input.live_pre_roll_configuration {
+    if let Some(var_23) = &input.dash_configuration {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("LivePreRollConfiguration").start_object();
-        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_24 = object.key("DashConfiguration").start_object();
+        crate::protocol_serde::shape_dash_configuration_for_put::ser_dash_configuration_for_put(&mut object_24, var_23)?;
+        object_24.finish();
     }
-    if let Some(var_28) = &input.manifest_processing_rules {
+    if let Some(var_25) = &input.function_mapping {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("ManifestProcessingRules").start_object();
-        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_29, var_28)?;
-        object_29.finish();
+        let mut object_26 = object.key("FunctionMapping").start_object();
+        for (key_27, value_28) in var_25 {
+            {
+                object_26.key(key_27.as_str()).string(value_28.as_str());
+            }
+        }
+        object_26.finish();
     }
-    if let Some(var_30) = &input.name {
-        object.key("Name").string(var_30.as_str());
+    if let Some(var_29) = &input.insertion_mode {
+        object.key("InsertionMode").string(var_29.as_str());
     }
-    if let Some(var_31) = &input.personalization_threshold_seconds {
+    if let Some(var_30) = &input.live_pre_roll_configuration {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("LivePreRollConfiguration").start_object();
+        crate::protocol_serde::shape_live_pre_roll_configuration::ser_live_pre_roll_configuration(&mut object_31, var_30)?;
+        object_31.finish();
+    }
+    if let Some(var_32) = &input.manifest_processing_rules {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("ManifestProcessingRules").start_object();
+        crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_33, var_32)?;
+        object_33.finish();
+    }
+    if let Some(var_34) = &input.name {
+        object.key("Name").string(var_34.as_str());
+    }
+    if let Some(var_35) = &input.personalization_threshold_seconds {
         object.key("PersonalizationThresholdSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_31).into()),
+            ::aws_smithy_types::Number::NegInt((*var_35).into()),
         );
     }
-    if let Some(var_32) = &input.slate_ad_url {
-        object.key("SlateAdUrl").string(var_32.as_str());
+    if let Some(var_36) = &input.slate_ad_url {
+        object.key("SlateAdUrl").string(var_36.as_str());
     }
-    if let Some(var_33) = &input.tags {
+    if let Some(var_37) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_34 = object.key("tags").start_object();
-        for (key_35, value_36) in var_33 {
+        let mut object_38 = object.key("tags").start_object();
+        for (key_39, value_40) in var_37 {
             {
-                object_34.key(key_35.as_str()).string(value_36.as_str());
+                object_38.key(key_39.as_str()).string(value_40.as_str());
             }
         }
-        object_34.finish();
+        object_38.finish();
     }
-    if let Some(var_37) = &input.transcode_profile_name {
-        object.key("TranscodeProfileName").string(var_37.as_str());
+    if let Some(var_41) = &input.transcode_profile_name {
+        object.key("TranscodeProfileName").string(var_41.as_str());
     }
-    if let Some(var_38) = &input.video_content_source_url {
-        object.key("VideoContentSourceUrl").string(var_38.as_str());
+    if let Some(var_42) = &input.video_content_source_url {
+        object.key("VideoContentSourceUrl").string(var_42.as_str());
     }
     Ok(())
 }
