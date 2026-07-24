@@ -49,6 +49,8 @@ pub(crate) mod shape_admin_get_device;
 
 pub(crate) mod shape_admin_get_user;
 
+pub(crate) mod shape_admin_get_user_auth_factors;
+
 pub(crate) mod shape_admin_initiate_auth;
 
 pub(crate) mod shape_admin_link_provider_for_user;
@@ -312,6 +314,8 @@ pub(crate) mod shape_admin_enable_user_input;
 pub(crate) mod shape_admin_forget_device_input;
 
 pub(crate) mod shape_admin_get_device_input;
+
+pub(crate) mod shape_admin_get_user_auth_factors_input;
 
 pub(crate) mod shape_admin_get_user_input;
 

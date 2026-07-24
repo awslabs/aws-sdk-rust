@@ -1218,7 +1218,8 @@ impl DefaultResolver {
         clippy::needless_borrow,
         clippy::useless_asref,
         clippy::redundant_closure_call,
-        clippy::clone_on_copy
+        clippy::clone_on_copy,
+        clippy::single_char_add_str
     )]
     fn resolve_endpoint<'a>(
         &'a self,
@@ -1282,7 +1283,7 @@ impl DefaultResolver {
                                         out.push_str("https://cognito-idp-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -1303,7 +1304,7 @@ impl DefaultResolver {
                                         out.push_str("https://cognito-idp-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -1339,7 +1340,7 @@ impl DefaultResolver {
                                         out.push_str("https://cognito-idp.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -1360,7 +1361,7 @@ impl DefaultResolver {
                                         out.push_str("https://cognito-idp.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out

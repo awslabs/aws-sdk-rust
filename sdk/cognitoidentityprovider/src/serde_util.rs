@@ -20,6 +20,15 @@ pub(crate) fn admin_get_user_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn admin_get_user_auth_factors_output_output_correct_errors(
+    mut builder: crate::operation::admin_get_user_auth_factors::builders::AdminGetUserAuthFactorsOutputBuilder,
+) -> crate::operation::admin_get_user_auth_factors::builders::AdminGetUserAuthFactorsOutputBuilder {
+    if builder.username.is_none() {
+        builder.username = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_identity_provider_output_output_correct_errors(
     mut builder: crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder,
 ) -> crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder {

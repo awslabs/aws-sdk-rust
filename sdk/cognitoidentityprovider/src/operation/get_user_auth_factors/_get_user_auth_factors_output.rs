@@ -10,6 +10,7 @@ pub struct GetUserAuthFactorsOutput {
     /// <p>The MFA options that are activated for the user. The possible values in this list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and <code>SOFTWARE_TOKEN_MFA</code>.</p>
     pub user_mfa_setting_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
+    /// <p><code>PASSWORD</code> can only be used as a first authentication factor. <code>SOFTWARE_TOKEN</code> can only be used as an MFA factor. <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code> can be used as either a first authentication factor or an MFA factor. <code>WEB_AUTHN</code> is available as an MFA factor only when passkey MFA is enabled at the user pool level.</p>
     pub configured_user_auth_factors: ::std::option::Option<::std::vec::Vec<crate::types::AuthFactorType>>,
     _request_id: Option<String>,
 }
@@ -30,6 +31,7 @@ impl GetUserAuthFactorsOutput {
         self.user_mfa_setting_list.as_deref().unwrap_or_default()
     }
     /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
+    /// <p><code>PASSWORD</code> can only be used as a first authentication factor. <code>SOFTWARE_TOKEN</code> can only be used as an MFA factor. <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code> can be used as either a first authentication factor or an MFA factor. <code>WEB_AUTHN</code> is available as an MFA factor only when passkey MFA is enabled at the user pool level.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configured_user_auth_factors.is_none()`.
     pub fn configured_user_auth_factors(&self) -> &[crate::types::AuthFactorType] {
@@ -124,6 +126,7 @@ impl GetUserAuthFactorsOutputBuilder {
     /// To override the contents of this collection use [`set_configured_user_auth_factors`](Self::set_configured_user_auth_factors).
     ///
     /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
+    /// <p><code>PASSWORD</code> can only be used as a first authentication factor. <code>SOFTWARE_TOKEN</code> can only be used as an MFA factor. <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code> can be used as either a first authentication factor or an MFA factor. <code>WEB_AUTHN</code> is available as an MFA factor only when passkey MFA is enabled at the user pool level.</p>
     pub fn configured_user_auth_factors(mut self, input: crate::types::AuthFactorType) -> Self {
         let mut v = self.configured_user_auth_factors.unwrap_or_default();
         v.push(input);
@@ -131,11 +134,13 @@ impl GetUserAuthFactorsOutputBuilder {
         self
     }
     /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
+    /// <p><code>PASSWORD</code> can only be used as a first authentication factor. <code>SOFTWARE_TOKEN</code> can only be used as an MFA factor. <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code> can be used as either a first authentication factor or an MFA factor. <code>WEB_AUTHN</code> is available as an MFA factor only when passkey MFA is enabled at the user pool level.</p>
     pub fn set_configured_user_auth_factors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AuthFactorType>>) -> Self {
         self.configured_user_auth_factors = input;
         self
     }
     /// <p>The authentication types that are available to the user with <code>USER_AUTH</code> sign-in, for example <code>\["PASSWORD", "WEB_AUTHN"\]</code>.</p>
+    /// <p><code>PASSWORD</code> can only be used as a first authentication factor. <code>SOFTWARE_TOKEN</code> can only be used as an MFA factor. <code>EMAIL_OTP</code>, <code>SMS_OTP</code>, and <code>WEB_AUTHN</code> can be used as either a first authentication factor or an MFA factor. <code>WEB_AUTHN</code> is available as an MFA factor only when passkey MFA is enabled at the user pool level.</p>
     pub fn get_configured_user_auth_factors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AuthFactorType>> {
         &self.configured_user_auth_factors
     }

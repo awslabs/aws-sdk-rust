@@ -119,15 +119,26 @@ impl ClientRateLimiter {
 
         if amount > it.current_capacity {
             let sleep_time = (amount - it.current_capacity) / it.fill_rate;
-            debug!(
-                amount,
-                it.current_capacity,
-                it.fill_rate,
-                sleep_time,
-                "client rate limiter delayed a request"
-            );
-            // Capacity unchanged; caller sleeps and re-acquires.
-            Err(Duration::from_secs_f64(sleep_time))
+            let dur = Duration::from_secs_f64(sleep_time);
+            if dur.is_zero() {
+                // Shortfall is sub-nanosecond (float boundary). Returning Err(0ns)
+                // makes the orchestrator's re-acquire loop spin: sleep(0) never
+                // advances the clock, so capacity never grows and we'd re-check
+                // forever. Treat it as available and grant, clamping to keep
+                // capacity >= 0 (preserving the never-negative invariant).
+                it.current_capacity = (it.current_capacity - amount).max(0.0);
+                Ok(())
+            } else {
+                debug!(
+                    amount,
+                    it.current_capacity,
+                    it.fill_rate,
+                    sleep_time,
+                    "client rate limiter delayed a request"
+                );
+                // Capacity unchanged; caller sleeps and re-acquires.
+                Err(dur)
+            }
         } else {
             it.current_capacity -= amount;
             Ok(())
@@ -415,7 +426,7 @@ impl ClientRateLimiterBuilder {
 
 #[cfg(test)]
 mod tests {
-    use super::{cubic_throttle, ClientRateLimiter};
+    use super::{cubic_throttle, ClientRateLimiter, INITIAL_REQUEST_COST};
     use crate::client::retries::client_rate_limiter::RequestReason;
     use approx::assert_relative_eq;
     use aws_smithy_async::rt::sleep::AsyncSleep;
@@ -805,6 +816,41 @@ mod tests {
 
         let inner = rate_limiter.inner.lock().unwrap();
         assert_relative_eq!(inner.current_capacity, 0.0, epsilon = 0.01);
+    }
+
+    #[tokio::test]
+    async fn test_sub_nanosecond_shortfall_grants_instead_of_returning_zero_delay() {
+        let rate_limiter = ClientRateLimiter::builder()
+            .time_of_last_throttle(0.0)
+            .previous_time_bucket(0.0)
+            .build();
+        rate_limiter.update_rate_limiter(0.0, true); // enable throttling
+
+        // Force capacity infinitesimally below the InitialRequest cost so the
+        // computed wait (shortfall / fill_rate) rounds below 1ns. Pin
+        // `last_timestamp` so the acquire below refills ~nothing.
+        {
+            let mut inner = rate_limiter.inner.lock().unwrap();
+            inner.current_capacity = INITIAL_REQUEST_COST - 1e-12;
+            inner.last_timestamp = Some(0.5);
+        }
+
+        // Previously this returned `Err(0ns)`, which spins the orchestrator's
+        // re-acquire loop (sleep(0) never advances capacity). It must now grant.
+        let result =
+            rate_limiter.acquire_permission_to_send_a_request(0.5, RequestReason::InitialRequest);
+        assert!(
+            result.is_ok(),
+            "a sub-nanosecond shortfall must grant, not return Err(0ns)"
+        );
+
+        // Capacity must remain non-negative (the #4632 invariant).
+        let inner = rate_limiter.inner.lock().unwrap();
+        assert!(
+            inner.current_capacity >= 0.0,
+            "capacity must not go negative, was {}",
+            inner.current_capacity
+        );
     }
 
     // This test is only testing that we don't fail basic math and panic. It does include an

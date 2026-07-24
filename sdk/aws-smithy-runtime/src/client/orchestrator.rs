@@ -31,7 +31,7 @@ use aws_smithy_runtime_api::client::ser_de::{
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::byte_stream::ByteStream;
 use aws_smithy_types::config_bag::ConfigBag;
-use aws_smithy_types::retry::{MergeRetryConfig, RetryConfig};
+use aws_smithy_types::retry::{MergeRetryConfig, RetryConfig, RetrySpec};
 use aws_smithy_types::timeout::{MergeTimeoutConfig, TimeoutConfig};
 use endpoints::apply_endpoint;
 use std::mem;
@@ -325,6 +325,15 @@ async fn try_op(
             debug!("delaying for {delay:?}");
             sleep.await;
         }
+        // Acquire an adaptive-rate-limiter send token before each retry send
+        // (the initial attempt acquired its token above). This is a no-op
+        // unless the client is in adaptive mode under Retry Behavior 2.1 -- see
+        // `acquire_adaptive_send_token`.
+        if i > 1 {
+            halt_on_err!([ctx] => acquire_adaptive_send_token(cfg, runtime_components)
+                .await
+                .map_err(OrchestratorError::other));
+        }
         let attempt_timeout_config =
             MaybeTimeoutConfig::new(runtime_components, cfg, TimeoutKind::OperationAttempt);
         trace!(attempt_timeout_config = ?attempt_timeout_config);
@@ -374,6 +383,51 @@ async fn try_op(
                 )));
                 retry_delay = Some((delay, sleep_impl.sleep(delay)));
                 continue;
+            }
+        }
+    }
+}
+
+// Acquires one send token from the adaptive client-side rate limiter before a
+// retry send, mirroring the Retry Behavior 2.1 spec's `GetSendToken()` step,
+// which charges one token per attempt (the initial attempt is charged earlier,
+// in `try_op`'s send loop).
+//
+// This is meaningful only in `adaptive` retry mode under Retry Behavior 2.1, and
+// is a deliberate no-op otherwise:
+//   - non-adaptive modes (`standard`/`legacy`) have no rate limiter, so the
+//     retry strategy OKs the send immediately; and
+//   - pre-2.1 adaptive folds the limiter delay into the retry backoff instead
+//     (see `check_rate_limiter_for_delay`), so it is left untouched here.
+//
+// When the bucket has no capacity, the strategy returns a delay instead of
+// charging the token. We sleep that delay and then re-acquire, so capacity is
+// re-checked after the wait and is never driven negative -- concurrent attempts
+// may have drained the bucket while we waited, and it must stay >= 0.
+async fn acquire_adaptive_send_token(
+    cfg: &ConfigBag,
+    runtime_components: &RuntimeComponents,
+) -> Result<(), BoxError> {
+    let is_v2_1 = cfg
+        .load::<RetryConfig>()
+        .and_then(|rc| rc.retry_spec())
+        .is_some_and(|s| s.is_at_least(RetrySpec::V2_1));
+    if !is_v2_1 {
+        return Ok(());
+    }
+    let retry_strategy = runtime_components.retry_strategy();
+    loop {
+        match retry_strategy.should_attempt_initial_request(runtime_components, cfg)? {
+            // `GetSendToken` only gates on rate-limiter capacity; it never
+            // forbids the send, so both `Yes` and `No` mean "proceed".
+            ShouldAttempt::Yes | ShouldAttempt::No => return Ok(()),
+            ShouldAttempt::YesAfterDelay(delay) => {
+                let sleep_impl = runtime_components.sleep_impl().ok_or(
+                    "the retry strategy requested a delay before sending a retry, \
+                     but no 'async sleep' implementation was set",
+                )?;
+                debug!("adaptive rate limiter delayed a retry send by {delay:?}");
+                sleep_impl.sleep(delay).await;
             }
         }
     }

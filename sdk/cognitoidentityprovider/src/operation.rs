@@ -40,6 +40,9 @@ pub mod admin_get_device;
 /// Types for the `AdminGetUser` operation.
 pub mod admin_get_user;
 
+/// Types for the `AdminGetUserAuthFactors` operation.
+pub mod admin_get_user_auth_factors;
+
 /// Types for the `AdminInitiateAuth` operation.
 pub mod admin_initiate_auth;
 

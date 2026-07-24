@@ -3982,7 +3982,8 @@ impl DefaultResolver {
         clippy::needless_borrow,
         clippy::useless_asref,
         clippy::redundant_closure_call,
-        clippy::clone_on_copy
+        clippy::clone_on_copy,
+        clippy::single_char_add_str
     )]
     fn resolve_endpoint<'a>(
         &'a self,
@@ -4034,10 +4035,10 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis");
@@ -4046,7 +4047,7 @@ impl DefaultResolver {
                                         out.push_str("-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4083,10 +4084,10 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis");
@@ -4095,7 +4096,7 @@ impl DefaultResolver {
                                         out.push_str("-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4129,19 +4130,19 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&https_custom_endpoint_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4175,19 +4176,19 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&https_custom_endpoint_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4218,10 +4219,10 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis");
@@ -4230,7 +4231,7 @@ impl DefaultResolver {
                                         out.push_str("-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4261,10 +4262,10 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis");
@@ -4273,7 +4274,7 @@ impl DefaultResolver {
                                         out.push_str("-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4304,19 +4305,19 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&plain_custom_endpoint_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4347,19 +4348,19 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&plain_custom_endpoint_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4386,16 +4387,16 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4422,16 +4423,16 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4458,16 +4459,16 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4494,16 +4495,16 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_prefix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&stream_id_suffix_value.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4526,13 +4527,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_3.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4552,13 +4553,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_3.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4578,13 +4579,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_3.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4604,13 +4605,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_3.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4629,7 +4630,7 @@ impl DefaultResolver {
                                 out.push_str(" from ARN doesn't match with partition name: ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.name());
-                                out.push('.');
+                                out.push_str(".");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4654,7 +4655,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_ssa_3.service());
-                                out.push('.');
+                                out.push_str(".");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4679,13 +4680,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_1.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4705,13 +4706,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_1.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4731,13 +4732,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_1.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4757,13 +4758,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_1.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4782,7 +4783,7 @@ impl DefaultResolver {
                                 out.push_str(" from ARN doesn't match with partition name: ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.name());
-                                out.push('.');
+                                out.push_str(".");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4804,7 +4805,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_ssa_1.service());
-                                out.push('.');
+                                out.push_str(".");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4820,13 +4821,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_2.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4846,13 +4847,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_2.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4872,13 +4873,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_2.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -4898,13 +4899,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_ssa_2.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
                                         out.push_str("-kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4923,7 +4924,7 @@ impl DefaultResolver {
                                 out.push_str(" from ARN doesn't match with partition name: ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.name());
-                                out.push('.');
+                                out.push_str(".");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4945,7 +4946,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_ssa_2.service());
-                                out.push('.');
+                                out.push_str(".");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4969,7 +4970,7 @@ impl DefaultResolver {
                                         out.push_str("https://kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -5005,7 +5006,7 @@ impl DefaultResolver {
                                         out.push_str("https://kinesis-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -5023,7 +5024,7 @@ impl DefaultResolver {
                                         out.push_str("https://kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -5041,7 +5042,7 @@ impl DefaultResolver {
                                         out.push_str("https://kinesis.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out

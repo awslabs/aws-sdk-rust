@@ -356,7 +356,8 @@ impl DefaultResolver {
         clippy::needless_borrow,
         clippy::useless_asref,
         clippy::redundant_closure_call,
-        clippy::clone_on_copy
+        clippy::clone_on_copy,
+        clippy::single_char_add_str
     )]
     fn resolve_endpoint<'a>(
         &'a self,
@@ -392,7 +393,7 @@ impl DefaultResolver {
                                         out.push_str("://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&parsed_arn.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         #[allow(clippy::needless_borrow)]
@@ -441,7 +442,7 @@ impl DefaultResolver {
                                 out.push_str("` but Kvs ARN has `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&parsed_arn.partition());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -452,7 +453,7 @@ impl DefaultResolver {
                                 out.push_str("CloudFront-KeyValueStore is not supported in partition `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&parsed_arn.partition());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -463,7 +464,7 @@ impl DefaultResolver {
                                 out.push_str("ARN resource type is invalid. Expected `key-value-store`, found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_type.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -477,7 +478,7 @@ impl DefaultResolver {
                                 out.push_str("Provided ARN must be a global resource ARN. Found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&parsed_arn.region());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -488,7 +489,7 @@ impl DefaultResolver {
                                 out.push_str("Provided ARN is not a valid CloudFront Service ARN. Found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&parsed_arn.service());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }

@@ -3532,7 +3532,8 @@ impl DefaultResolver {
         clippy::needless_borrow,
         clippy::useless_asref,
         clippy::redundant_closure_call,
-        clippy::clone_on_copy
+        clippy::clone_on_copy,
+        clippy::single_char_add_str
     )]
     fn resolve_endpoint<'a>(
         &'a self,
@@ -3614,7 +3615,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -3638,7 +3639,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -3662,7 +3663,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -3686,7 +3687,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -3757,7 +3758,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3express-control-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -3781,7 +3782,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3express-control.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -3809,7 +3810,7 @@ impl DefaultResolver {
                                 out.push_str("` but ARN has `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_partition_ssa_3.name());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -3889,7 +3890,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_partition_ssa_1.dual_stack_dns_suffix());
                                         out
@@ -3919,7 +3920,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_partition_ssa_1.dns_suffix());
                                         out
@@ -3949,7 +3950,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_partition_ssa_1.dual_stack_dns_suffix());
                                         out
@@ -4007,7 +4008,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_partition_ssa_1.dns_suffix());
                                         out
@@ -4033,7 +4034,7 @@ impl DefaultResolver {
                                 out.push_str("Expected an outpost type `accesspoint`, found `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&outpost_type_ssa_1.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4050,7 +4051,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&access_point_arn.account_id());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4082,7 +4083,7 @@ impl DefaultResolver {
                                 out.push_str("` but ARN has `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_partition_ssa_1.name());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4093,7 +4094,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&outpost_id_ssa_1.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4147,7 +4148,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_partition_ssa_2.dual_stack_dns_suffix());
                                         out
@@ -4177,7 +4178,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_partition_ssa_2.dns_suffix());
                                         out
@@ -4207,7 +4208,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_partition_ssa_2.dual_stack_dns_suffix());
                                         out
@@ -4265,7 +4266,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&arn_partition_ssa_2.dns_suffix());
                                         out
@@ -4291,7 +4292,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: Expected an outpost type `bucket`, found `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&outpost_type_ssa_2.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4305,7 +4306,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&bucket_arn.account_id());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4334,7 +4335,7 @@ impl DefaultResolver {
                                 out.push_str("` but ARN has `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_partition_ssa_2.name());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4345,7 +4346,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The outpost Id must only contain a-z, A-Z, 0-9 and `-`., found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&outpost_id_ssa_2.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -4362,7 +4363,7 @@ impl DefaultResolver {
                                         out.push_str("://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&account_id.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         #[allow(clippy::needless_borrow)]
@@ -4417,7 +4418,7 @@ impl DefaultResolver {
                                         out.push_str(".s3-control-fips.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4441,7 +4442,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-control-fips.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4469,7 +4470,7 @@ impl DefaultResolver {
                                         out.push_str(".s3-control-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4493,7 +4494,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-control-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4521,7 +4522,7 @@ impl DefaultResolver {
                                         out.push_str(".s3-control.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4545,7 +4546,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-control.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4573,7 +4574,7 @@ impl DefaultResolver {
                                         out.push_str(".s3-control.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -4597,7 +4598,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-control.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out

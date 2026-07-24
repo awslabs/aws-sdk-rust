@@ -107,6 +107,15 @@ pub(crate) fn list_report_versions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn put_compliance_inquiry_feedback_output_output_correct_errors(
+    mut builder: crate::operation::put_compliance_inquiry_feedback::builders::PutComplianceInquiryFeedbackOutputBuilder,
+) -> crate::operation::put_compliance_inquiry_feedback::builders::PutComplianceInquiryFeedbackOutputBuilder {
+    if builder.submitted_at.is_none() {
+        builder.submitted_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn inquiry_detail_correct_errors(
     mut builder: crate::types::builders::InquiryDetailBuilder,
 ) -> crate::types::builders::InquiryDetailBuilder {

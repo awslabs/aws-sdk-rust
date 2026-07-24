@@ -10356,7 +10356,8 @@ impl DefaultResolver {
         clippy::needless_borrow,
         clippy::useless_asref,
         clippy::redundant_closure_call,
-        clippy::clone_on_copy
+        clippy::clone_on_copy,
+        clippy::single_char_add_str
     )]
     fn resolve_endpoint<'a>(
         &'a self,
@@ -10428,7 +10429,7 @@ impl DefaultResolver {
                                         out.push_str("://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         #[allow(clippy::needless_borrow)]
@@ -10459,7 +10460,7 @@ impl DefaultResolver {
                                         out.push_str("://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         #[allow(clippy::needless_borrow)]
@@ -10497,13 +10498,13 @@ impl DefaultResolver {
                                         out.push_str(&s3_e_fips.as_ref());
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&s3_e_ds.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -10539,15 +10540,15 @@ impl DefaultResolver {
                                         out.push_str(".s3express");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&s3_e_fips.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&s3express_availability_zone_id.as_ref());
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&s3_e_ds.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -10606,10 +10607,10 @@ impl DefaultResolver {
                                         out.push_str(&s3_e_fips.as_ref());
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&s3_e_ds.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -10672,7 +10673,7 @@ impl DefaultResolver {
                                         out.push_str(".ec2.s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -10707,7 +10708,7 @@ impl DefaultResolver {
                                         out.push_str(".op-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&outpost_id_ssa_2.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         out
@@ -10745,7 +10746,7 @@ impl DefaultResolver {
                                         out.push_str(".s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -10772,7 +10773,7 @@ impl DefaultResolver {
                                 out.push_str("Unrecognized hardware type: \"Expected hardware type o or e but got ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&hardware_type.as_ref());
-                                out.push('"');
+                                out.push_str("\"");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -10834,7 +10835,7 @@ impl DefaultResolver {
                                         out.push_str(".s3-fips.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -10886,7 +10887,7 @@ impl DefaultResolver {
                                         out.push_str(".s3-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -10987,7 +10988,7 @@ impl DefaultResolver {
                                         out.push_str(".s3.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -11040,7 +11041,7 @@ impl DefaultResolver {
                                         out.push_str("://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         #[allow(clippy::needless_borrow)]
@@ -11097,7 +11098,7 @@ impl DefaultResolver {
                                         out.push_str("://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         #[allow(clippy::needless_borrow)]
@@ -11225,7 +11226,7 @@ impl DefaultResolver {
                                         out.push_str(".s3.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -11285,10 +11286,10 @@ impl DefaultResolver {
                                         out.push_str("://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_1.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         #[allow(clippy::needless_borrow)]
@@ -11318,13 +11319,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_1.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
                                         out.push_str(".s3-object-lambda-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_partition.dns_suffix());
                                         out
@@ -11352,13 +11353,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_1.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
                                         out.push_str(".s3-object-lambda.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_partition.dns_suffix());
                                         out
@@ -11382,7 +11383,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&access_point_name_ssa_1.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -11393,7 +11394,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&bucket_arn.account_id());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -11423,7 +11424,7 @@ impl DefaultResolver {
                                 out.push_str("`) has `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&bucket_partition.name());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -11443,7 +11444,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: Object Lambda ARNs only support `accesspoint` arn types, but found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_type.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -11464,13 +11465,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_1.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
                                         out.push_str(".s3-accesspoint-fips.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_partition.dns_suffix());
                                         out
@@ -11498,13 +11499,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_1.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
                                         out.push_str(".s3-accesspoint-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_partition.dns_suffix());
                                         out
@@ -11532,13 +11533,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_1.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
                                         out.push_str(".s3-accesspoint.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_partition.dns_suffix());
                                         out
@@ -11568,10 +11569,10 @@ impl DefaultResolver {
                                         out.push_str("://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_1.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         #[allow(clippy::needless_borrow)]
@@ -11601,13 +11602,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_1.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
                                         out.push_str(".s3-accesspoint.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_partition.dns_suffix());
                                         out
@@ -11681,7 +11682,7 @@ impl DefaultResolver {
                                 out.push_str("` but bucket referred to partition `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&bucket_arn.partition());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -11715,13 +11716,13 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_2.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&outpost_id_ssa_1.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&url.authority());
                                         out
@@ -11756,16 +11757,16 @@ impl DefaultResolver {
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&access_point_name_ssa_2.as_ref());
-                                        out.push('-');
+                                        out.push_str("-");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.account_id());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&outpost_id_ssa_1.as_ref());
                                         out.push_str(".s3-outposts.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_arn.region());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&bucket_partition.dns_suffix());
                                         out
@@ -11795,7 +11796,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The access point name may only contain a-z, A-Z, 0-9 and `-`. Found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&access_point_name_ssa_2.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -11822,7 +11823,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: The outpost Id may only contain a-z, A-Z, 0-9 and `-`. Found: `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&outpost_id_ssa_1.as_ref());
-                                out.push('`');
+                                out.push_str("`");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -11840,7 +11841,7 @@ impl DefaultResolver {
                                 out.push_str(" (type: ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_type.as_ref());
-                                out.push(')');
+                                out.push_str(")");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -11874,7 +11875,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-fips.dualstack.us-east-1.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -11902,10 +11903,10 @@ impl DefaultResolver {
                                         out.push_str("https://s3-fips.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -11932,7 +11933,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-fips.us-east-1.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -11960,10 +11961,10 @@ impl DefaultResolver {
                                         out.push_str("https://s3-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -11990,7 +11991,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3.dualstack.us-east-1.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -12018,10 +12019,10 @@ impl DefaultResolver {
                                         out.push_str("https://s3.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -12109,7 +12110,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -12137,7 +12138,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -12165,10 +12166,10 @@ impl DefaultResolver {
                                         out.push_str("https://s3.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
-                                        out.push('/');
+                                        out.push_str("/");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&uri_encoded_bucket.as_ref());
                                         out
@@ -12220,7 +12221,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-object-lambda-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -12244,7 +12245,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-object-lambda.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -12288,7 +12289,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-fips.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -12332,7 +12333,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3-fips.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -12376,7 +12377,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3.dualstack.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -12490,7 +12491,7 @@ impl DefaultResolver {
                                         out.push_str("https://s3.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
-                                        out.push('.');
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out

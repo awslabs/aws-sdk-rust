@@ -9,6 +9,7 @@ pub struct CustomerManagedAwsSecretConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that OCI assumes to retrieve the secret value.</p>
     pub iam_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of Oracle Cloud Identifier (OCID) used as the external ID when assuming the IAM role.</p>
+    /// <p>The valid values depend on the operation. For the <code>CreateAutonomousDatabase</code> operation, only <code>compartment_ocid</code> and <code>tenant_ocid</code> are allowed. For the <code>UpdateAutonomousDatabase</code> and <code>CreateAutonomousDatabaseWallet</code> operations, <code>database_ocid</code>, <code>compartment_ocid</code>, and <code>tenant_ocid</code> are all allowed.</p>
     pub external_id_type: ::std::option::Option<crate::types::ExternalIdType>,
 }
 impl CustomerManagedAwsSecretConfigurationInput {
@@ -21,6 +22,7 @@ impl CustomerManagedAwsSecretConfigurationInput {
         self.iam_role_arn.as_deref()
     }
     /// <p>The type of Oracle Cloud Identifier (OCID) used as the external ID when assuming the IAM role.</p>
+    /// <p>The valid values depend on the operation. For the <code>CreateAutonomousDatabase</code> operation, only <code>compartment_ocid</code> and <code>tenant_ocid</code> are allowed. For the <code>UpdateAutonomousDatabase</code> and <code>CreateAutonomousDatabaseWallet</code> operations, <code>database_ocid</code>, <code>compartment_ocid</code>, and <code>tenant_ocid</code> are all allowed.</p>
     pub fn external_id_type(&self) -> ::std::option::Option<&crate::types::ExternalIdType> {
         self.external_id_type.as_ref()
     }
@@ -70,16 +72,19 @@ impl CustomerManagedAwsSecretConfigurationInputBuilder {
         &self.iam_role_arn
     }
     /// <p>The type of Oracle Cloud Identifier (OCID) used as the external ID when assuming the IAM role.</p>
+    /// <p>The valid values depend on the operation. For the <code>CreateAutonomousDatabase</code> operation, only <code>compartment_ocid</code> and <code>tenant_ocid</code> are allowed. For the <code>UpdateAutonomousDatabase</code> and <code>CreateAutonomousDatabaseWallet</code> operations, <code>database_ocid</code>, <code>compartment_ocid</code>, and <code>tenant_ocid</code> are all allowed.</p>
     pub fn external_id_type(mut self, input: crate::types::ExternalIdType) -> Self {
         self.external_id_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of Oracle Cloud Identifier (OCID) used as the external ID when assuming the IAM role.</p>
+    /// <p>The valid values depend on the operation. For the <code>CreateAutonomousDatabase</code> operation, only <code>compartment_ocid</code> and <code>tenant_ocid</code> are allowed. For the <code>UpdateAutonomousDatabase</code> and <code>CreateAutonomousDatabaseWallet</code> operations, <code>database_ocid</code>, <code>compartment_ocid</code>, and <code>tenant_ocid</code> are all allowed.</p>
     pub fn set_external_id_type(mut self, input: ::std::option::Option<crate::types::ExternalIdType>) -> Self {
         self.external_id_type = input;
         self
     }
     /// <p>The type of Oracle Cloud Identifier (OCID) used as the external ID when assuming the IAM role.</p>
+    /// <p>The valid values depend on the operation. For the <code>CreateAutonomousDatabase</code> operation, only <code>compartment_ocid</code> and <code>tenant_ocid</code> are allowed. For the <code>UpdateAutonomousDatabase</code> and <code>CreateAutonomousDatabaseWallet</code> operations, <code>database_ocid</code>, <code>compartment_ocid</code>, and <code>tenant_ocid</code> are all allowed.</p>
     pub fn get_external_id_type(&self) -> &::std::option::Option<crate::types::ExternalIdType> {
         &self.external_id_type
     }

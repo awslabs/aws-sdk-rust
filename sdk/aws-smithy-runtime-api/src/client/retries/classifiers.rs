@@ -248,7 +248,27 @@ impl Default for RetryClassifierPriority {
 pub trait ClassifyRetry: Send + Sync + fmt::Debug {
     /// Run this classifier on the [`InterceptorContext`] to determine if the previous request
     /// should be retried. Returns a [`RetryAction`].
+    ///
+    /// Prefer implementing [`classify_retry_v2`](ClassifyRetry::classify_retry_v2) when a
+    /// classifier needs the [`RetryAction`] accumulated by earlier-running classifiers (e.g. to
+    /// refine an already-retryable verdict). This method has no access to that cumulative verdict;
+    /// it remains the required building block that `classify_retry_v2` delegates to by default.
     fn classify_retry(&self, ctx: &InterceptorContext) -> RetryAction;
+
+    /// Run this classifier with awareness of the [`RetryAction`] accumulated by
+    /// earlier-running (lower-priority) classifiers. `previous` is the running
+    /// result of classification so far ([`RetryAction::NoActionIndicated`] until
+    /// some classifier sets one).
+    ///
+    /// The default implementation ignores `previous` and delegates to
+    /// [`classify_retry`](ClassifyRetry::classify_retry), so existing classifiers
+    /// are unaffected. Override this to refine a verdict produced by an
+    /// earlier-running classifier — for example, to attach a server-directed
+    /// delay to an already-retryable response.
+    fn classify_retry_v2(&self, ctx: &InterceptorContext, previous: &RetryAction) -> RetryAction {
+        let _ = previous;
+        self.classify_retry(ctx)
+    }
 
     /// The name of this retry classifier.
     ///
@@ -289,6 +309,10 @@ impl ClassifyRetry for SharedRetryClassifier {
         self.0.classify_retry(ctx)
     }
 
+    fn classify_retry_v2(&self, ctx: &InterceptorContext, previous: &RetryAction) -> RetryAction {
+        self.0.classify_retry_v2(ctx, previous)
+    }
+
     fn name(&self) -> &'static str {
         self.0.name()
     }
@@ -325,7 +349,7 @@ impl ValidateConfig for SharedRetryClassifier {
 #[cfg(test)]
 mod tests {
     use super::{ClassifyRetry, RetryAction, RetryClassifierPriority, SharedRetryClassifier};
-    use crate::client::interceptors::context::InterceptorContext;
+    use crate::client::interceptors::context::{Input, InterceptorContext};
 
     #[test]
     fn test_preset_priorities() {
@@ -493,5 +517,86 @@ mod tests {
             ],
             actual
         );
+    }
+
+    fn test_ctx() -> InterceptorContext {
+        InterceptorContext::new(Input::erase("input"))
+    }
+
+    // A classifier that only implements `classify_retry`, returning a fixed
+    // verdict and ignoring the context.
+    #[derive(Debug)]
+    struct FixedClassifier(RetryAction);
+
+    impl ClassifyRetry for FixedClassifier {
+        fn classify_retry(&self, _ctx: &InterceptorContext) -> RetryAction {
+            self.0.clone()
+        }
+
+        fn name(&self) -> &'static str {
+            "fixed"
+        }
+    }
+
+    // The default `classify_retry_v2` implementation must ignore `previous` and
+    // delegate to `classify_retry`, so classifiers that don't override it are
+    // unaffected by the newer signature.
+    #[test]
+    fn default_classify_retry_v2_delegates_and_ignores_previous() {
+        let ctx = test_ctx();
+        let classifier = FixedClassifier(RetryAction::transient_error());
+
+        // Regardless of what `previous` is, the result matches `classify_retry`.
+        for previous in [
+            RetryAction::NoActionIndicated,
+            RetryAction::RetryForbidden,
+            RetryAction::throttling_error(),
+        ] {
+            assert_eq!(
+                classifier.classify_retry_v2(&ctx, &previous),
+                classifier.classify_retry(&ctx),
+            );
+        }
+    }
+
+    // A classifier whose `classify_retry_v2` behaves observably differently from
+    // its `classify_retry`: it echoes back the `previous` verdict.
+    #[derive(Debug)]
+    struct PreviousEchoClassifier;
+
+    impl ClassifyRetry for PreviousEchoClassifier {
+        fn classify_retry(&self, _ctx: &InterceptorContext) -> RetryAction {
+            RetryAction::NoActionIndicated
+        }
+
+        fn classify_retry_v2(
+            &self,
+            _ctx: &InterceptorContext,
+            previous: &RetryAction,
+        ) -> RetryAction {
+            previous.clone()
+        }
+
+        fn name(&self) -> &'static str {
+            "previous-echo"
+        }
+    }
+
+    // `SharedRetryClassifier` must forward `classify_retry_v2` to the wrapped
+    // classifier's override rather than falling back to `classify_retry`.
+    #[test]
+    fn shared_classifier_forwards_classify_retry_v2_to_inner() {
+        let ctx = test_ctx();
+        let shared = SharedRetryClassifier::new(PreviousEchoClassifier);
+
+        // If forwarding were (incorrectly) routed to `classify_retry`, this
+        // would be `NoActionIndicated` instead of the echoed `previous`.
+        assert_eq!(
+            shared.classify_retry_v2(&ctx, &RetryAction::throttling_error()),
+            RetryAction::throttling_error(),
+        );
+
+        // The plain `classify_retry` path remains unaffected.
+        assert_eq!(shared.classify_retry(&ctx), RetryAction::NoActionIndicated);
     }
 }

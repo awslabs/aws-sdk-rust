@@ -35,7 +35,7 @@ use std::borrow::Cow;
 use std::time::Duration;
 
 /// Default connect timeout for all clients with BehaviorVersion >= v2026_01_12
-const DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_millis(3100);
+pub(crate) const DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_millis(3100);
 
 fn default_plugin<CompFn>(name: &'static str, components_fn: CompFn) -> StaticRuntimePlugin
 where

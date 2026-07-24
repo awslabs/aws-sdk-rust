@@ -191,6 +191,8 @@ mod list_tags_for_resource;
 
 mod put_account_settings;
 
+mod put_compliance_inquiry_feedback;
+
 mod tag_resource;
 
 mod untag_resource;

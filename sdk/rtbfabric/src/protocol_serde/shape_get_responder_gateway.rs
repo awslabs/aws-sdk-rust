@@ -179,13 +179,6 @@ pub(crate) fn de_get_responder_gateway(
                             .transpose()?,
                     );
                 }
-                "inboundLinksCount" => {
-                    builder = builder.set_inbound_links_count(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
                 "linksRequestedCount" => {
                     builder = builder.set_links_requested_count(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

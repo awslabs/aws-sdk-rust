@@ -147,6 +147,8 @@ pub use crate::types::_delivery_medium_type::DeliveryMediumType;
 
 pub use crate::types::_mfa_option_type::MfaOptionType;
 
+pub use crate::types::_auth_factor_type::AuthFactorType;
+
 pub use crate::types::_new_device_metadata_type::NewDeviceMetadataType;
 
 pub use crate::types::_auth_event_type::AuthEventType;
@@ -212,8 +214,6 @@ pub use crate::types::_replica_role_type::ReplicaRoleType;
 pub use crate::types::_domain_status_type::DomainStatusType;
 
 pub use crate::types::_limit_class::LimitClass;
-
-pub use crate::types::_auth_factor_type::AuthFactorType;
 
 pub use crate::types::_user_verification_type::UserVerificationType;
 

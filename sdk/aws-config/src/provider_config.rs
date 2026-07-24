@@ -17,6 +17,7 @@ use aws_smithy_runtime_api::client::http::HttpClient;
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::RetryConfig;
+use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::os_shim_internal::{Env, Fs};
 use aws_types::region::Region;
 use aws_types::sdk_config::SharedHttpClient;
@@ -41,6 +42,7 @@ pub struct ProviderConfig {
     time_source: SharedTimeSource,
     http_client: Option<SharedHttpClient>,
     retry_config: Option<RetryConfig>,
+    timeout_config: Option<TimeoutConfig>,
     sleep_impl: Option<SharedAsyncSleep>,
     region: Option<Region>,
     use_fips: Option<bool>,
@@ -63,6 +65,7 @@ impl Debug for ProviderConfig {
             .field("time_source", &self.time_source)
             .field("http_client", &self.http_client)
             .field("retry_config", &self.retry_config)
+            .field("timeout_config", &self.timeout_config)
             .field("sleep_impl", &self.sleep_impl)
             .field("region", &self.region)
             .field("use_fips", &self.use_fips)
@@ -80,6 +83,7 @@ impl Default for ProviderConfig {
             time_source: SharedTimeSource::default(),
             http_client: None,
             retry_config: None,
+            timeout_config: None,
             sleep_impl: default_async_sleep(),
             region: None,
             use_fips: None,
@@ -114,6 +118,7 @@ impl ProviderConfig {
             time_source: SharedTimeSource::new(StaticTimeSource::new(UNIX_EPOCH)),
             http_client: None,
             retry_config: None,
+            timeout_config: None,
             sleep_impl: None,
             region: None,
             use_fips: None,
@@ -158,6 +163,7 @@ impl ProviderConfig {
             time_source: SharedTimeSource::default(),
             http_client: None,
             retry_config: None,
+            timeout_config: None,
             sleep_impl: None,
             region: None,
             use_fips: None,
@@ -184,6 +190,7 @@ impl ProviderConfig {
             time_source,
             http_client: None,
             retry_config: None,
+            timeout_config: None,
             sleep_impl,
             region: None,
             use_fips: None,
@@ -235,6 +242,9 @@ impl ProviderConfig {
             .use_dual_stack(self.use_dual_stack().unwrap_or_default())
             .service_config(service_config)
             .behavior_version(crate::BehaviorVersion::latest());
+        if let Some(timeout_config) = self.timeout_config.as_ref() {
+            builder.set_timeout_config(Some(timeout_config.clone()));
+        }
         builder.set_http_client(self.http_client.clone());
         builder.set_sleep_impl(self.sleep_impl.clone());
         builder.build()
@@ -434,10 +444,86 @@ impl ProviderConfig {
     }
 
     /// Override the retry config for this configuration
+    ///
+    /// This is honored by the inner clients (e.g. STS, SSO) used by credential providers in the
+    /// default chain.
+    ///
+    /// Note: this value is consumed while building the provider and is **not** reflected in the
+    /// outer client's configuration. When such a provider is passed to the config loader's
+    /// `credentials_provider(...)`, the identity cache derives its `load_timeout` from the outer
+    /// client's `RetryConfig`, so it cannot see the retry count set here. If this provider retries
+    /// more than the outer client, set the identity cache's `load_timeout` explicitly to avoid
+    /// cutting credential resolution short.
     pub fn with_retry_config(self, retry_config: RetryConfig) -> Self {
         ProviderConfig {
             retry_config: Some(retry_config),
             ..self
         }
+    }
+
+    /// Override the timeout config for this configuration
+    ///
+    /// This is honored by the inner clients (e.g. STS, SSO) used by credential providers in the
+    /// default chain, allowing a caller to explicitly control credential-resolution timeouts
+    /// independently of the outer service client.
+    ///
+    /// Note: like [`with_retry_config`](Self::with_retry_config), this value is consumed while
+    /// building the provider and is **not** reflected in the outer client's configuration. When
+    /// such a provider is passed to the config loader's `credentials_provider(...)`, the identity
+    /// cache derives its `load_timeout` from the outer client's `TimeoutConfig` (the connect and
+    /// operation-attempt timeouts), so it cannot see the timeouts set here. If this provider uses
+    /// longer timeouts than the outer client, set the identity cache's `load_timeout` explicitly
+    /// to avoid cutting credential resolution short.
+    pub fn with_timeout_config(self, timeout_config: TimeoutConfig) -> Self {
+        ProviderConfig {
+            timeout_config: Some(timeout_config),
+            ..self
+        }
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::ProviderConfig;
+    use aws_smithy_types::retry::RetryConfig;
+    use aws_smithy_types::timeout::TimeoutConfig;
+    use std::time::Duration;
+
+    // The inner clients (STS, SSO, ...) used by the default chain are built from
+    // `client_config()`, so this test checks that BOTH retry and timeout set on a
+    // `ProviderConfig` are threaded into the `SdkConfig` those inner clients consume.
+    #[test]
+    fn client_config_threads_retry_and_timeout() {
+        let timeout = TimeoutConfig::builder()
+            .operation_timeout(Duration::from_secs(3))
+            .connect_timeout(Duration::from_secs(1))
+            .build();
+        let conf = ProviderConfig::empty()
+            .with_retry_config(RetryConfig::standard().with_max_attempts(7))
+            .with_timeout_config(timeout.clone());
+
+        let sdk_config = conf.client_config();
+
+        assert_eq!(
+            7,
+            sdk_config
+                .retry_config()
+                .expect("retry config threaded to inner client config")
+                .max_attempts()
+        );
+        assert_eq!(
+            Some(&timeout),
+            sdk_config.timeout_config(),
+            "timeout config threaded to inner client config"
+        );
+    }
+
+    // When no timeout is configured, `client_config()` should leave timeout unset (inner clients
+    // fall back to their own defaults) while retry still defaults to standard.
+    #[test]
+    fn client_config_without_timeout_leaves_it_unset() {
+        let sdk_config = ProviderConfig::empty().client_config();
+        assert!(sdk_config.timeout_config().is_none());
+        assert_eq!(3, sdk_config.retry_config().unwrap().max_attempts());
     }
 }

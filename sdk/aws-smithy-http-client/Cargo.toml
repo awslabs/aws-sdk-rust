@@ -61,7 +61,7 @@ version = "1.3.0"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client"]
-version = "1.13.0"
+version = "1.14.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
@@ -212,7 +212,7 @@ version = "1.3.0"
 [dev-dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["test-util"]
-version = "1.13.0"
+version = "1.14.0"
 
 [dev-dependencies.aws-smithy-types]
 path = "../aws-smithy-types"

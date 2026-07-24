@@ -51,6 +51,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_account_settings;
 
+pub(crate) mod shape_put_compliance_inquiry_feedback;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -74,6 +76,8 @@ pub(crate) mod shape_export_compliance_inquiry_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_put_account_settings_input;
+
+pub(crate) mod shape_put_compliance_inquiry_feedback_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 

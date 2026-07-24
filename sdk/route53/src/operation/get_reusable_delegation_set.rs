@@ -269,41 +269,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetReusableDe
 // The get_* functions below are generated from JMESPath expressions in the
 // operationContextParams trait. They target the operation's input shape.
 
-#[allow(unreachable_code, unused_variables)]
-#[cfg(test)]
-mod get_reusable_delegation_set_test {
-
-    /// This test validates that delegation set id is correctly trimmed
-    /// Test ID: GetReusableDelegationSetTrimDelegationSetId
-    #[::tokio::test]
-    #[::tracing_test::traced_test]
-    async fn get_reusable_delegation_set_trim_delegation_set_id_request() {
-        let (http_client, request_receiver) = ::aws_smithy_http_client::test_util::capture_request(None);
-        let config_builder = crate::config::Config::builder()
-            .with_test_defaults()
-            // TODO(https://github.com/smithy-lang/smithy-rs/issues/4177):
-            //  Until the incorrect separation is addressed, we need to rely on this workaround.
-            .allow_no_auth()
-            .endpoint_url("https://example.com");
-        let config_builder = config_builder.region(::aws_types::region::Region::new("us-east-1"));
-        let mut config_builder = config_builder;
-        config_builder.set_region(Some(crate::config::Region::new("us-east-1")));
-
-        let config = config_builder.http_client(http_client).build();
-        let client = crate::Client::from_conf(config);
-        let result = client
-            .get_reusable_delegation_set()
-            .set_id(::std::option::Option::Some("/delegationset/DELEGATIONSETID".to_owned()))
-            .send()
-            .await;
-        let _ = dbg!(result);
-        let http_request = request_receiver.expect_request();
-        let uri: ::http_1x::Uri = http_request.uri().parse().expect("invalid URI sent");
-        ::pretty_assertions::assert_eq!(http_request.method(), "GET", "method was incorrect");
-        ::pretty_assertions::assert_eq!(uri.path(), "/2013-04-01/delegationset/DELEGATIONSETID", "path was incorrect");
-    }
-}
-
 /// Error type for the `GetReusableDelegationSetError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]

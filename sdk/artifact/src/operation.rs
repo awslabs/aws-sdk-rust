@@ -43,6 +43,9 @@ pub mod list_tags_for_resource;
 /// Types for the `PutAccountSettings` operation.
 pub mod put_account_settings;
 
+/// Types for the `PutComplianceInquiryFeedback` operation.
+pub mod put_compliance_inquiry_feedback;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

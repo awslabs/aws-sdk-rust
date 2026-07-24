@@ -541,6 +541,52 @@ impl From<crate::operation::put_account_settings::PutAccountSettingsError> for E
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError> for Error {
+    fn from(err: crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError) -> Self {
+        match err {
+            crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_compliance_inquiry_feedback::PutComplianceInquiryFeedbackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

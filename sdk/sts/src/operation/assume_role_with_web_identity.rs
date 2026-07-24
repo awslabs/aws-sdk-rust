@@ -129,9 +129,17 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AssumeR
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
                 crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
             >::new())
-            .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
-                crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
-            >::new());
+            .with_retry_classifier(
+                ::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                    crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
+                >::builder()
+                .transient_errors({
+                    let mut transient_errors: Vec<&'static str> = ::aws_runtime::retries::classifiers::TRANSIENT_ERRORS.into();
+                    transient_errors.push("IDPCommunicationError");
+                    ::std::borrow::Cow::Owned(transient_errors)
+                })
+                .build(),
+            );
 
         ::std::borrow::Cow::Owned(rcb)
     }

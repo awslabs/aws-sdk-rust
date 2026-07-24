@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-applicationinsights = "1.106.0"
+//! aws-sdk-applicationinsights = "1.107.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -199,11 +199,11 @@ mod sdk_feature_tracker;
 
 mod serialization_settings;
 
+mod cbor_errors;
+
 mod endpoint_lib;
 
 mod lens;
-
-mod json_errors;
 
 mod serde_util;
 

@@ -783,6 +783,51 @@ impl From<crate::operation::admin_get_user::AdminGetUserError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError> for Error {
+    fn from(err: crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError) -> Self {
+        match err {
+            crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError::UserNotFoundException(inner) => {
+                Error::UserNotFoundException(inner)
+            }
+            crate::operation::admin_get_user_auth_factors::AdminGetUserAuthFactorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_initiate_auth::AdminInitiateAuthError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

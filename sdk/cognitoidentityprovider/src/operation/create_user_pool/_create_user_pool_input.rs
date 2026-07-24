@@ -32,6 +32,14 @@ pub struct CreateUserPoolInput {
     pub sms_authentication_message: ::std::option::Option<::std::string::String>,
     /// <p>Sets multi-factor authentication (MFA) to be on, off, or optional. When <code>ON</code>, all users must set up MFA before they can sign in. When <code>OPTIONAL</code>, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose <code>OPTIONAL</code>.</p>
     /// <p>When <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.</p>
+    /// <p>The <code>CreateUserPool</code> operation supports only SMS MFA configuration. If you set <code>MfaConfiguration</code> to either of these values, include an <code>SmsConfiguration</code> in the same request:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON</code> – Requires MFA for all users</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> – Makes MFA optional for each user</p></li>
+    /// </ul>
+    /// <p>If you omit <code>SmsConfiguration</code>, the operation returns an <code>InvalidParameterException</code>. To configure TOTP or email MFA, use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> operation. You can also use <code>SetUserPoolMfaConfig</code> to add MFA factors later.</p>
     pub mfa_configuration: ::std::option::Option<crate::types::UserPoolMfaType>,
     /// <p>The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"> Verifying updates to email addresses and phone numbers</a>.</p>
     pub user_attribute_update_settings: ::std::option::Option<crate::types::UserAttributeUpdateSettingsType>,
@@ -125,6 +133,14 @@ impl CreateUserPoolInput {
     }
     /// <p>Sets multi-factor authentication (MFA) to be on, off, or optional. When <code>ON</code>, all users must set up MFA before they can sign in. When <code>OPTIONAL</code>, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose <code>OPTIONAL</code>.</p>
     /// <p>When <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.</p>
+    /// <p>The <code>CreateUserPool</code> operation supports only SMS MFA configuration. If you set <code>MfaConfiguration</code> to either of these values, include an <code>SmsConfiguration</code> in the same request:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON</code> – Requires MFA for all users</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> – Makes MFA optional for each user</p></li>
+    /// </ul>
+    /// <p>If you omit <code>SmsConfiguration</code>, the operation returns an <code>InvalidParameterException</code>. To configure TOTP or email MFA, use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> operation. You can also use <code>SetUserPoolMfaConfig</code> to add MFA factors later.</p>
     pub fn mfa_configuration(&self) -> ::std::option::Option<&crate::types::UserPoolMfaType> {
         self.mfa_configuration.as_ref()
     }
@@ -423,18 +439,42 @@ impl CreateUserPoolInputBuilder {
     }
     /// <p>Sets multi-factor authentication (MFA) to be on, off, or optional. When <code>ON</code>, all users must set up MFA before they can sign in. When <code>OPTIONAL</code>, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose <code>OPTIONAL</code>.</p>
     /// <p>When <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.</p>
+    /// <p>The <code>CreateUserPool</code> operation supports only SMS MFA configuration. If you set <code>MfaConfiguration</code> to either of these values, include an <code>SmsConfiguration</code> in the same request:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON</code> – Requires MFA for all users</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> – Makes MFA optional for each user</p></li>
+    /// </ul>
+    /// <p>If you omit <code>SmsConfiguration</code>, the operation returns an <code>InvalidParameterException</code>. To configure TOTP or email MFA, use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> operation. You can also use <code>SetUserPoolMfaConfig</code> to add MFA factors later.</p>
     pub fn mfa_configuration(mut self, input: crate::types::UserPoolMfaType) -> Self {
         self.mfa_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sets multi-factor authentication (MFA) to be on, off, or optional. When <code>ON</code>, all users must set up MFA before they can sign in. When <code>OPTIONAL</code>, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose <code>OPTIONAL</code>.</p>
     /// <p>When <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.</p>
+    /// <p>The <code>CreateUserPool</code> operation supports only SMS MFA configuration. If you set <code>MfaConfiguration</code> to either of these values, include an <code>SmsConfiguration</code> in the same request:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON</code> – Requires MFA for all users</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> – Makes MFA optional for each user</p></li>
+    /// </ul>
+    /// <p>If you omit <code>SmsConfiguration</code>, the operation returns an <code>InvalidParameterException</code>. To configure TOTP or email MFA, use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> operation. You can also use <code>SetUserPoolMfaConfig</code> to add MFA factors later.</p>
     pub fn set_mfa_configuration(mut self, input: ::std::option::Option<crate::types::UserPoolMfaType>) -> Self {
         self.mfa_configuration = input;
         self
     }
     /// <p>Sets multi-factor authentication (MFA) to be on, off, or optional. When <code>ON</code>, all users must set up MFA before they can sign in. When <code>OPTIONAL</code>, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose <code>OPTIONAL</code>.</p>
     /// <p>When <code>MfaConfiguration</code> is <code>OPTIONAL</code>, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.</p>
+    /// <p>The <code>CreateUserPool</code> operation supports only SMS MFA configuration. If you set <code>MfaConfiguration</code> to either of these values, include an <code>SmsConfiguration</code> in the same request:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ON</code> – Requires MFA for all users</p></li>
+    /// <li>
+    /// <p><code>OPTIONAL</code> – Makes MFA optional for each user</p></li>
+    /// </ul>
+    /// <p>If you omit <code>SmsConfiguration</code>, the operation returns an <code>InvalidParameterException</code>. To configure TOTP or email MFA, use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a> operation. You can also use <code>SetUserPoolMfaConfig</code> to add MFA factors later.</p>
     pub fn get_mfa_configuration(&self) -> &::std::option::Option<crate::types::UserPoolMfaType> {
         &self.mfa_configuration
     }

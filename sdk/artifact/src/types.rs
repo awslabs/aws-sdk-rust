@@ -13,6 +13,8 @@ pub use crate::types::_inquiry_summary::InquirySummary;
 
 pub use crate::types::_inquiry_detail::InquiryDetail;
 
+pub use crate::types::_feedback_rating::FeedbackRating;
+
 pub use crate::types::_report_detail::ReportDetail;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
@@ -26,6 +28,8 @@ pub use crate::types::_inquiry_status_message::InquiryStatusMessage;
 pub use crate::types::_input_source::InputSource;
 
 pub use crate::types::_query_summary::QuerySummary;
+
+pub use crate::types::_feedback_reason_code::FeedbackReasonCode;
 
 pub use crate::types::_customer_agreement_summary::CustomerAgreementSummary;
 
@@ -62,6 +66,10 @@ mod _citation;
 mod _customer_agreement_state;
 
 mod _customer_agreement_summary;
+
+mod _feedback_rating;
+
+mod _feedback_reason_code;
 
 mod _input_source;
 

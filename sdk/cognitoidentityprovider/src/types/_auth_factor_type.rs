@@ -15,6 +15,7 @@
 ///     AuthFactorType::EmailOtp => { /* ... */ },
 ///     AuthFactorType::Password => { /* ... */ },
 ///     AuthFactorType::SmsOtp => { /* ... */ },
+///     AuthFactorType::SoftwareToken => { /* ... */ },
 ///     AuthFactorType::WebAuthn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum AuthFactorType {
     #[allow(missing_docs)] // documentation missing in model
     SmsOtp,
     #[allow(missing_docs)] // documentation missing in model
+    SoftwareToken,
+    #[allow(missing_docs)] // documentation missing in model
     WebAuthn,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for AuthFactorType {
             "EMAIL_OTP" => AuthFactorType::EmailOtp,
             "PASSWORD" => AuthFactorType::Password,
             "SMS_OTP" => AuthFactorType::SmsOtp,
+            "SOFTWARE_TOKEN" => AuthFactorType::SoftwareToken,
             "WEB_AUTHN" => AuthFactorType::WebAuthn,
             other => AuthFactorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,14 @@ impl AuthFactorType {
             AuthFactorType::EmailOtp => "EMAIL_OTP",
             AuthFactorType::Password => "PASSWORD",
             AuthFactorType::SmsOtp => "SMS_OTP",
+            AuthFactorType::SoftwareToken => "SOFTWARE_TOKEN",
             AuthFactorType::WebAuthn => "WEB_AUTHN",
             AuthFactorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EMAIL_OTP", "PASSWORD", "SMS_OTP", "WEB_AUTHN"]
+        &["EMAIL_OTP", "PASSWORD", "SMS_OTP", "SOFTWARE_TOKEN", "WEB_AUTHN"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthFactorType {
@@ -113,6 +118,7 @@ impl ::std::fmt::Display for AuthFactorType {
             AuthFactorType::EmailOtp => write!(f, "EMAIL_OTP"),
             AuthFactorType::Password => write!(f, "PASSWORD"),
             AuthFactorType::SmsOtp => write!(f, "SMS_OTP"),
+            AuthFactorType::SoftwareToken => write!(f, "SOFTWARE_TOKEN"),
             AuthFactorType::WebAuthn => write!(f, "WEB_AUTHN"),
             AuthFactorType::Unknown(value) => write!(f, "{value}"),
         }

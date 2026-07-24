@@ -177,8 +177,9 @@ impl ClassifyRetry for HttpStatusCodeClassifier {
 }
 
 /// Given an iterator of retry classifiers and an interceptor context, run retry classifiers on the
-/// context. Each classifier is passed the classification result from the previous classifier (the
-/// 'root' classifier is passed `None`.)
+/// context. Each classifier is passed the [`RetryAction`] accumulated by the previously-run
+/// classifiers (the first classifier is passed [`RetryAction::NoActionIndicated`]) via
+/// [`ClassifyRetry::classify_retry_v2`], so a later classifier may refine an earlier verdict.
 pub fn run_classifiers_on_ctx(
     classifiers: impl Iterator<Item = SharedRetryClassifier>,
     ctx: &InterceptorContext,
@@ -187,7 +188,7 @@ pub fn run_classifiers_on_ctx(
     let mut result = RetryAction::NoActionIndicated;
 
     for classifier in classifiers {
-        let new_result = classifier.classify_retry(ctx);
+        let new_result = classifier.classify_retry_v2(ctx, &result);
 
         // If the result is `NoActionIndicated`, continue to the next classifier
         // without overriding any previously-set result.
@@ -220,12 +221,15 @@ mod test {
     };
     use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, InterceptorContext};
     use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
-    use aws_smithy_runtime_api::client::retries::classifiers::{ClassifyRetry, RetryAction};
+    use aws_smithy_runtime_api::client::retries::classifiers::{
+        ClassifyRetry, RetryAction, RetryReason, SharedRetryClassifier,
+    };
     use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind};
     use std::fmt;
+    use std::time::Duration;
 
-    use super::TransientErrorClassifier;
+    use super::{run_classifiers_on_ctx, TransientErrorClassifier};
 
     #[derive(Debug, PartialEq, Eq, Clone)]
     struct UnmodeledError;
@@ -315,5 +319,120 @@ mod test {
             "I am a timeout error".into(),
         )));
         assert_eq!(policy.classify_retry(&ctx), RetryAction::transient_error(),);
+    }
+
+    // A classifier that returns a fixed verdict from `classify_retry` (and thus,
+    // via the default impl, from `classify_retry_v2`).
+    #[derive(Debug)]
+    struct StaticClassifier {
+        name: &'static str,
+        action: RetryAction,
+    }
+
+    impl ClassifyRetry for StaticClassifier {
+        fn classify_retry(&self, _ctx: &InterceptorContext) -> RetryAction {
+            self.action.clone()
+        }
+
+        fn name(&self) -> &'static str {
+            self.name
+        }
+    }
+
+    // A classifier that refines an already-retryable verdict by attaching a
+    // fixed delay, mimicking how `AwsErrorCodeClassifier` tucks an
+    // `x-amz-retry-after` delay into a verdict produced by an earlier-running
+    // classifier. It only refines a retryable `previous` that has no delay yet;
+    // otherwise it abstains with `NoActionIndicated`.
+    #[derive(Debug)]
+    struct DelayRefiningClassifier;
+
+    impl ClassifyRetry for DelayRefiningClassifier {
+        fn classify_retry(&self, _ctx: &InterceptorContext) -> RetryAction {
+            RetryAction::NoActionIndicated
+        }
+
+        fn classify_retry_v2(
+            &self,
+            _ctx: &InterceptorContext,
+            previous: &RetryAction,
+        ) -> RetryAction {
+            if let RetryAction::RetryIndicated(RetryReason::RetryableError {
+                kind,
+                retry_after: None,
+            }) = previous
+            {
+                RetryAction::retryable_error_with_explicit_delay(*kind, Duration::from_secs(5))
+            } else {
+                RetryAction::NoActionIndicated
+            }
+        }
+
+        fn name(&self) -> &'static str {
+            "delay-refining"
+        }
+    }
+
+    // `run_classifiers_on_ctx` passes each classifier the verdict accumulated by
+    // the previously-run classifiers via `classify_retry_v2`, so a later
+    // classifier can refine an earlier one's verdict (attaching a delay here).
+    #[test]
+    fn run_classifiers_on_ctx_lets_later_classifier_refine_earlier_verdict() {
+        let ctx = InterceptorContext::new(Input::doesnt_matter());
+        let classifiers = vec![
+            SharedRetryClassifier::new(StaticClassifier {
+                name: "transient",
+                action: RetryAction::transient_error(),
+            }),
+            SharedRetryClassifier::new(DelayRefiningClassifier),
+        ];
+
+        assert_eq!(
+            run_classifiers_on_ctx(classifiers.into_iter(), &ctx),
+            RetryAction::retryable_error_with_explicit_delay(
+                ErrorKind::TransientError,
+                Duration::from_secs(5),
+            ),
+        );
+    }
+
+    // The refining classifier must not fabricate a retry on its own: if no
+    // earlier classifier marked the response retryable, the refinement abstains
+    // and the overall result is `NoActionIndicated`. This matches the behavior
+    // of other SDKs (e.g. Java v2), where `x-amz-retry-after` only supplies a
+    // backoff delay for an already-retryable error and never forces a retry.
+    #[test]
+    fn run_classifiers_on_ctx_refiner_does_not_fabricate_retry() {
+        let ctx = InterceptorContext::new(Input::doesnt_matter());
+        let classifiers = vec![SharedRetryClassifier::new(DelayRefiningClassifier)];
+
+        assert_eq!(
+            run_classifiers_on_ctx(classifiers.into_iter(), &ctx),
+            RetryAction::NoActionIndicated,
+        );
+    }
+
+    // When the refining classifier abstains (returns `NoActionIndicated` because
+    // the earlier verdict already carries a delay), `run_classifiers_on_ctx`
+    // preserves that earlier verdict rather than clobbering it.
+    #[test]
+    fn run_classifiers_on_ctx_preserves_earlier_verdict_when_refiner_abstains() {
+        let ctx = InterceptorContext::new(Input::doesnt_matter());
+        let already_delayed = RetryAction::retryable_error_with_explicit_delay(
+            ErrorKind::TransientError,
+            Duration::from_secs(1),
+        );
+        let classifiers = vec![
+            SharedRetryClassifier::new(StaticClassifier {
+                name: "already-delayed",
+                action: already_delayed.clone(),
+            }),
+            SharedRetryClassifier::new(DelayRefiningClassifier),
+        ];
+
+        assert_eq!(
+            run_classifiers_on_ctx(classifiers.into_iter(), &ctx),
+            already_delayed,
+        );
     }
 }

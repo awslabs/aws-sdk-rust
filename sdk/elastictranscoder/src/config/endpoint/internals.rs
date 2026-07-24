@@ -5,7 +5,8 @@
     clippy::nonminimal_bool,
     clippy::comparison_to_empty,
     clippy::redundant_pattern_matching,
-    clippy::useless_asref
+    clippy::useless_asref,
+    clippy::single_char_add_str
 )]
 pub(super) fn resolve_endpoint(
     _params: &crate::config::endpoint::Params,
@@ -48,7 +49,7 @@ pub(super) fn resolve_endpoint(
                                     out.push_str("https://elastictranscoder-fips.");
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&region.as_ref() as &str);
-                                    out.push('.');
+                                    out.push_str(".");
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&partition_result.dual_stack_dns_suffix());
                                     out
@@ -69,7 +70,7 @@ pub(super) fn resolve_endpoint(
                             out.push_str("https://elastictranscoder-fips.");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&region.as_ref() as &str);
-                            out.push('.');
+                            out.push_str(".");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dns_suffix());
                             out
@@ -88,7 +89,7 @@ pub(super) fn resolve_endpoint(
                             out.push_str("https://elastictranscoder.");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&region.as_ref() as &str);
-                            out.push('.');
+                            out.push_str(".");
                             #[allow(clippy::needless_borrow)]
                             out.push_str(&partition_result.dual_stack_dns_suffix());
                             out
@@ -105,7 +106,7 @@ pub(super) fn resolve_endpoint(
                     out.push_str("https://elastictranscoder.");
                     #[allow(clippy::needless_borrow)]
                     out.push_str(&region.as_ref() as &str);
-                    out.push('.');
+                    out.push_str(".");
                     #[allow(clippy::needless_borrow)]
                     out.push_str(&partition_result.dns_suffix());
                     out

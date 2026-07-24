@@ -162,6 +162,8 @@ mod admin_get_device;
 
 mod admin_get_user;
 
+mod admin_get_user_auth_factors;
+
 mod admin_initiate_auth;
 
 mod admin_link_provider_for_user;

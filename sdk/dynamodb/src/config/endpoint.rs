@@ -8191,7 +8191,8 @@ impl DefaultResolver {
         clippy::needless_borrow,
         clippy::useless_asref,
         clippy::redundant_closure_call,
-        clippy::clone_on_copy
+        clippy::clone_on_copy,
+        clippy::single_char_add_str
     )]
     fn resolve_endpoint<'a>(
         &'a self,
@@ -8270,7 +8271,7 @@ let partition_result = context.partition_result.as_ref().expect("Guaranteed to h
 out.push_str("https://dynamodb-fips.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dual_stack_dns_suffix());
 out })
@@ -8288,7 +8289,7 @@ let partition_result = context.partition_result.as_ref().expect("Guaranteed to h
 out.push_str("https://dynamodb.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dns_suffix());
 out })
@@ -8301,7 +8302,7 @@ let partition_result = context.partition_result.as_ref().expect("Guaranteed to h
 out.push_str("https://dynamodb-fips.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dns_suffix());
 out })
@@ -8323,7 +8324,7 @@ out.push_str(&parsed_arn_ssa_2.account_id());
 out.push_str(".ddb.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dual_stack_dns_suffix());
 out })
@@ -8342,7 +8343,7 @@ out.push_str(&parsed_arn_ssa_1.account_id());
 out.push_str(".ddb.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dual_stack_dns_suffix());
 out })
@@ -8361,7 +8362,7 @@ out.push_str(&account_id.as_ref());
 out.push_str(".ddb.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dual_stack_dns_suffix());
 out })
@@ -8391,7 +8392,7 @@ let partition_result = context.partition_result.as_ref().expect("Guaranteed to h
 out.push_str("https://dynamodb.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dual_stack_dns_suffix());
 out })
@@ -8413,7 +8414,7 @@ out.push_str(&parsed_arn_ssa_2.account_id());
 out.push_str(".ddb.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dns_suffix());
 out })
@@ -8432,7 +8433,7 @@ out.push_str(&parsed_arn_ssa_1.account_id());
 out.push_str(".ddb.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dns_suffix());
 out })
@@ -8451,7 +8452,7 @@ out.push_str(&account_id.as_ref());
 out.push_str(".ddb.");
 #[allow(clippy::needless_borrow)]
 out.push_str(&region.as_ref());
-out.push('.');
+out.push_str(".");
 #[allow(clippy::needless_borrow)]
 out.push_str(&partition_result.dns_suffix());
 out })
@@ -8522,7 +8523,7 @@ out })
                                     out.push_str("https://dynamodb.");
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&region.as_deref().unwrap_or_default());
-                                    out.push('.');
+                                    out.push_str(".");
                                     #[allow(clippy::needless_borrow)]
                                     out.push_str(&if let Some(inner) = partition_result {
                                         inner.dual_stack_dns_suffix()

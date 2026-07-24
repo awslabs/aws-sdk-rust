@@ -39,7 +39,7 @@ impl CreateComplianceInquiryInput {
 impl ::std::fmt::Debug for CreateComplianceInquiryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateComplianceInquiryInput");
-        formatter.field("name", &self.name);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("inquiry_content", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("support_mode", &self.support_mode);
@@ -162,7 +162,7 @@ impl CreateComplianceInquiryInputBuilder {
 impl ::std::fmt::Debug for CreateComplianceInquiryInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateComplianceInquiryInputBuilder");
-        formatter.field("name", &self.name);
+        formatter.field("name", &"*** Sensitive Data Redacted ***");
         formatter.field("inquiry_content", &"*** Sensitive Data Redacted ***");
         formatter.field("client_token", &self.client_token);
         formatter.field("support_mode", &self.support_mode);
