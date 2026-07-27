@@ -6,7 +6,7 @@
 pub struct S3Destination {
     /// <p>The name of the Amazon S3 bucket used as the destination of a data export file.</p>
     pub s3_bucket: ::std::string::String,
-    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    /// <p>The Amazon Web Services account ID that owns the S3 bucket used as the destination for the data export.</p>
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
     /// <p>The S3 path prefix you want prepended to the name of your data export.</p>
     pub s3_prefix: ::std::string::String,
@@ -21,7 +21,7 @@ impl S3Destination {
         use std::ops::Deref;
         self.s3_bucket.deref()
     }
-    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    /// <p>The Amazon Web Services account ID that owns the S3 bucket used as the destination for the data export.</p>
     pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_owner.as_deref()
     }
@@ -73,17 +73,17 @@ impl S3DestinationBuilder {
     pub fn get_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket
     }
-    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    /// <p>The Amazon Web Services account ID that owns the S3 bucket used as the destination for the data export.</p>
     pub fn s3_bucket_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    /// <p>The Amazon Web Services account ID that owns the S3 bucket used as the destination for the data export.</p>
     pub fn set_s3_bucket_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_owner = input;
         self
     }
-    /// <p>The AWS Account ID that owns the S3 bucket used as the destination for the data export.</p>
+    /// <p>The Amazon Web Services account ID that owns the S3 bucket used as the destination for the data export.</p>
     pub fn get_s3_bucket_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_owner
     }

@@ -32,6 +32,8 @@ pub struct GetDataQualityRuleRecommendationRunOutput {
     pub created_ruleset_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the security configuration created with the data quality encryption option.</p>
     pub data_quality_security_configuration: ::std::option::Option<::std::string::String>,
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub additional_run_options: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
     _request_id: Option<String>,
 }
 impl GetDataQualityRuleRecommendationRunOutput {
@@ -91,6 +93,10 @@ impl GetDataQualityRuleRecommendationRunOutput {
     pub fn data_quality_security_configuration(&self) -> ::std::option::Option<&str> {
         self.data_quality_security_configuration.as_deref()
     }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn additional_run_options(&self) -> ::std::option::Option<&crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
+        self.additional_run_options.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDataQualityRuleRecommendationRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -122,6 +128,7 @@ pub struct GetDataQualityRuleRecommendationRunOutputBuilder {
     pub(crate) recommended_ruleset: ::std::option::Option<::std::string::String>,
     pub(crate) created_ruleset_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_quality_security_configuration: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_run_options: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
     _request_id: Option<String>,
 }
 impl GetDataQualityRuleRecommendationRunOutputBuilder {
@@ -321,6 +328,23 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
     pub fn get_data_quality_security_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_quality_security_configuration
     }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn additional_run_options(mut self, input: crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions) -> Self {
+        self.additional_run_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn set_additional_run_options(
+        mut self,
+        input: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
+    ) -> Self {
+        self.additional_run_options = input;
+        self
+    }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
+        &self.additional_run_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -347,6 +371,7 @@ impl GetDataQualityRuleRecommendationRunOutputBuilder {
             recommended_ruleset: self.recommended_ruleset,
             created_ruleset_name: self.created_ruleset_name,
             data_quality_security_configuration: self.data_quality_security_configuration,
+            additional_run_options: self.additional_run_options,
             _request_id: self._request_id,
         }
     }

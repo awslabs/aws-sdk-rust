@@ -6,7 +6,7 @@
 pub struct S3MonitoringConfiguration {
     /// <p>Amazon S3 destination URI for log publishing.</p>
     pub log_uri: ::std::string::String,
-    /// <p>The Amazon resource name (ARN) of the encryption key for logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the encryption key for logs.</p>
     pub encryption_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl S3MonitoringConfiguration {
@@ -15,7 +15,7 @@ impl S3MonitoringConfiguration {
         use std::ops::Deref;
         self.log_uri.deref()
     }
-    /// <p>The Amazon resource name (ARN) of the encryption key for logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the encryption key for logs.</p>
     pub fn encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.encryption_key_arn.as_deref()
     }
@@ -50,17 +50,17 @@ impl S3MonitoringConfigurationBuilder {
     pub fn get_log_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_uri
     }
-    /// <p>The Amazon resource name (ARN) of the encryption key for logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the encryption key for logs.</p>
     pub fn encryption_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.encryption_key_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon resource name (ARN) of the encryption key for logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the encryption key for logs.</p>
     pub fn set_encryption_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.encryption_key_arn = input;
         self
     }
-    /// <p>The Amazon resource name (ARN) of the encryption key for logs.</p>
+    /// <p>The Amazon Resource Name (ARN) of the encryption key for logs.</p>
     pub fn get_encryption_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.encryption_key_arn
     }

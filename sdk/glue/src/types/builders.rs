@@ -115,6 +115,8 @@ pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_data_quality_aggregated_metrics::DataQualityAggregatedMetricsBuilder;
 
+pub use crate::types::_data_quality_rule_recommendation_run_additional_run_options::DataQualityRuleRecommendationRunAdditionalRunOptionsBuilder;
+
 pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptionsBuilder;
 
 pub use crate::types::_dev_endpoint::DevEndpointBuilder;
@@ -220,6 +222,8 @@ pub use crate::types::_table_version_error::TableVersionErrorBuilder;
 pub use crate::types::_custom_entity_type::CustomEntityTypeBuilder;
 
 pub use crate::types::_data_quality_result::DataQualityResultBuilder;
+
+pub use crate::types::_data_quality_ruleset_evaluation_run::DataQualityRulesetEvaluationRunBuilder;
 
 pub use crate::types::_iterable_form_item::IterableFormItemBuilder;
 
@@ -356,6 +360,14 @@ pub use crate::types::_data_quality_rule_result::DataQualityRuleResultBuilder;
 pub use crate::types::_data_quality_analyzer_result::DataQualityAnalyzerResultBuilder;
 
 pub use crate::types::_data_quality_observation::DataQualityObservationBuilder;
+
+pub use crate::types::_row_level_results_options::RowLevelResultsOptionsBuilder;
+
+pub use crate::types::_profiling_results_options::ProfilingResultsOptionsBuilder;
+
+pub use crate::types::_data_quality_rule_results_options::DataQualityRuleResultsOptionsBuilder;
+
+pub use crate::types::_observation_results_options::ObservationResultsOptionsBuilder;
 
 pub use crate::types::_mapping_entry::MappingEntryBuilder;
 
@@ -697,6 +709,10 @@ pub use crate::types::_o_auth2_properties::OAuth2PropertiesBuilder;
 
 pub use crate::types::_metric_based_observation::MetricBasedObservationBuilder;
 
+pub use crate::types::_catalog_table_config_options::CatalogTableConfigOptionsBuilder;
+
+pub use crate::types::_distribution_results_options::DistributionResultsOptionsBuilder;
+
 pub use crate::types::_predecessor::PredecessorBuilder;
 
 pub use crate::types::_code_gen_node_arg::CodeGenNodeArgBuilder;
@@ -718,6 +734,8 @@ pub use crate::types::_orphan_file_deletion_metrics::OrphanFileDeletionMetricsBu
 pub use crate::types::_timestamped_inclusion_annotation::TimestampedInclusionAnnotationBuilder;
 
 pub use crate::types::_run_identifier::RunIdentifierBuilder;
+
+pub use crate::types::_distribution_data::DistributionDataBuilder;
 
 pub use crate::types::_client_credentials_properties::ClientCredentialsPropertiesBuilder;
 

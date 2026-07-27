@@ -29,7 +29,7 @@ pub struct Endpoint {
     pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
     /// <p>The server URL of the endpoint.</p>
     pub server_url: ::std::option::Option<::std::string::String>,
-    /// <p>The auth proxy URL of the endpoint.</p>
+    /// <p>The authentication proxy URL of the endpoint.</p>
     pub auth_proxy_url: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the endpoint was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -94,7 +94,7 @@ impl Endpoint {
     pub fn server_url(&self) -> ::std::option::Option<&str> {
         self.server_url.as_deref()
     }
-    /// <p>The auth proxy URL of the endpoint.</p>
+    /// <p>The authentication proxy URL of the endpoint.</p>
     pub fn auth_proxy_url(&self) -> ::std::option::Option<&str> {
         self.auth_proxy_url.as_deref()
     }
@@ -328,17 +328,17 @@ impl EndpointBuilder {
     pub fn get_server_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.server_url
     }
-    /// <p>The auth proxy URL of the endpoint.</p>
+    /// <p>The authentication proxy URL of the endpoint.</p>
     pub fn auth_proxy_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auth_proxy_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The auth proxy URL of the endpoint.</p>
+    /// <p>The authentication proxy URL of the endpoint.</p>
     pub fn set_auth_proxy_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auth_proxy_url = input;
         self
     }
-    /// <p>The auth proxy URL of the endpoint.</p>
+    /// <p>The authentication proxy URL of the endpoint.</p>
     pub fn get_auth_proxy_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_proxy_url
     }

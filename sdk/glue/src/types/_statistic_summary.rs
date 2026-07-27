@@ -14,6 +14,8 @@ pub struct StatisticSummary {
     pub statistic_name: ::std::option::Option<::std::string::String>,
     /// <p>The value of the statistic.</p>
     pub double_value: f64,
+    /// <p>The distribution value for the statistic.</p>
+    pub distribution_value: ::std::option::Option<crate::types::DistributionData>,
     /// <p>The evaluation level of the statistic. Possible values: <code>Dataset</code>, <code>Column</code>, <code>Multicolumn</code>.</p>
     pub evaluation_level: ::std::option::Option<crate::types::StatisticEvaluationLevel>,
     /// <p>The list of columns referenced by the statistic.</p>
@@ -47,6 +49,10 @@ impl StatisticSummary {
     /// <p>The value of the statistic.</p>
     pub fn double_value(&self) -> f64 {
         self.double_value
+    }
+    /// <p>The distribution value for the statistic.</p>
+    pub fn distribution_value(&self) -> ::std::option::Option<&crate::types::DistributionData> {
+        self.distribution_value.as_ref()
     }
     /// <p>The evaluation level of the statistic. Possible values: <code>Dataset</code>, <code>Column</code>, <code>Multicolumn</code>.</p>
     pub fn evaluation_level(&self) -> ::std::option::Option<&crate::types::StatisticEvaluationLevel> {
@@ -85,6 +91,7 @@ impl ::std::fmt::Debug for StatisticSummary {
         formatter.field("run_identifier", &self.run_identifier);
         formatter.field("statistic_name", &self.statistic_name);
         formatter.field("double_value", &self.double_value);
+        formatter.field("distribution_value", &self.distribution_value);
         formatter.field("evaluation_level", &self.evaluation_level);
         formatter.field("columns_referenced", &self.columns_referenced);
         formatter.field("referenced_datasets", &self.referenced_datasets);
@@ -110,6 +117,7 @@ pub struct StatisticSummaryBuilder {
     pub(crate) run_identifier: ::std::option::Option<crate::types::RunIdentifier>,
     pub(crate) statistic_name: ::std::option::Option<::std::string::String>,
     pub(crate) double_value: ::std::option::Option<f64>,
+    pub(crate) distribution_value: ::std::option::Option<crate::types::DistributionData>,
     pub(crate) evaluation_level: ::std::option::Option<crate::types::StatisticEvaluationLevel>,
     pub(crate) columns_referenced: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) referenced_datasets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -187,6 +195,20 @@ impl StatisticSummaryBuilder {
     /// <p>The value of the statistic.</p>
     pub fn get_double_value(&self) -> &::std::option::Option<f64> {
         &self.double_value
+    }
+    /// <p>The distribution value for the statistic.</p>
+    pub fn distribution_value(mut self, input: crate::types::DistributionData) -> Self {
+        self.distribution_value = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution value for the statistic.</p>
+    pub fn set_distribution_value(mut self, input: ::std::option::Option<crate::types::DistributionData>) -> Self {
+        self.distribution_value = input;
+        self
+    }
+    /// <p>The distribution value for the statistic.</p>
+    pub fn get_distribution_value(&self) -> &::std::option::Option<crate::types::DistributionData> {
+        &self.distribution_value
     }
     /// <p>The evaluation level of the statistic. Possible values: <code>Dataset</code>, <code>Column</code>, <code>Multicolumn</code>.</p>
     pub fn evaluation_level(mut self, input: crate::types::StatisticEvaluationLevel) -> Self {
@@ -305,6 +327,7 @@ impl StatisticSummaryBuilder {
             run_identifier: self.run_identifier,
             statistic_name: self.statistic_name,
             double_value: self.double_value.unwrap_or_default(),
+            distribution_value: self.distribution_value,
             evaluation_level: self.evaluation_level,
             columns_referenced: self.columns_referenced,
             referenced_datasets: self.referenced_datasets,
@@ -322,6 +345,7 @@ impl ::std::fmt::Debug for StatisticSummaryBuilder {
         formatter.field("run_identifier", &self.run_identifier);
         formatter.field("statistic_name", &self.statistic_name);
         formatter.field("double_value", &self.double_value);
+        formatter.field("distribution_value", &self.distribution_value);
         formatter.field("evaluation_level", &self.evaluation_level);
         formatter.field("columns_referenced", &self.columns_referenced);
         formatter.field("referenced_datasets", &self.referenced_datasets);

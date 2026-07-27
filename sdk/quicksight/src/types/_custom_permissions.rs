@@ -10,6 +10,8 @@ pub struct CustomPermissions {
     pub custom_permissions_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of actions in the custom permissions profile.</p>
     pub capabilities: ::std::option::Option<crate::types::Capabilities>,
+    /// <p>The governance configuration for the custom permissions profile. When you enable governance for a category, Amazon Quick denies access to any current or new capability in that category unless you explicitly set that capability to <code>ALLOW</code> in <code>Capabilities</code>.</p>
+    pub governance: ::std::option::Option<crate::types::Governance>,
 }
 impl CustomPermissions {
     /// <p>The Amazon Resource Name (ARN) of the custom permissions profile.</p>
@@ -23,6 +25,10 @@ impl CustomPermissions {
     /// <p>A set of actions in the custom permissions profile.</p>
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::Capabilities> {
         self.capabilities.as_ref()
+    }
+    /// <p>The governance configuration for the custom permissions profile. When you enable governance for a category, Amazon Quick denies access to any current or new capability in that category unless you explicitly set that capability to <code>ALLOW</code> in <code>Capabilities</code>.</p>
+    pub fn governance(&self) -> ::std::option::Option<&crate::types::Governance> {
+        self.governance.as_ref()
     }
 }
 impl CustomPermissions {
@@ -39,6 +45,7 @@ pub struct CustomPermissionsBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) custom_permissions_name: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<crate::types::Capabilities>,
+    pub(crate) governance: ::std::option::Option<crate::types::Governance>,
 }
 impl CustomPermissionsBuilder {
     /// <p>The Amazon Resource Name (ARN) of the custom permissions profile.</p>
@@ -83,12 +90,27 @@ impl CustomPermissionsBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::Capabilities> {
         &self.capabilities
     }
+    /// <p>The governance configuration for the custom permissions profile. When you enable governance for a category, Amazon Quick denies access to any current or new capability in that category unless you explicitly set that capability to <code>ALLOW</code> in <code>Capabilities</code>.</p>
+    pub fn governance(mut self, input: crate::types::Governance) -> Self {
+        self.governance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. When you enable governance for a category, Amazon Quick denies access to any current or new capability in that category unless you explicitly set that capability to <code>ALLOW</code> in <code>Capabilities</code>.</p>
+    pub fn set_governance(mut self, input: ::std::option::Option<crate::types::Governance>) -> Self {
+        self.governance = input;
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. When you enable governance for a category, Amazon Quick denies access to any current or new capability in that category unless you explicitly set that capability to <code>ALLOW</code> in <code>Capabilities</code>.</p>
+    pub fn get_governance(&self) -> &::std::option::Option<crate::types::Governance> {
+        &self.governance
+    }
     /// Consumes the builder and constructs a [`CustomPermissions`](crate::types::CustomPermissions).
     pub fn build(self) -> crate::types::CustomPermissions {
         crate::types::CustomPermissions {
             arn: self.arn,
             custom_permissions_name: self.custom_permissions_name,
             capabilities: self.capabilities,
+            governance: self.governance,
         }
     }
 }

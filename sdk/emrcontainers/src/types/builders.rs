@@ -7,6 +7,8 @@ pub use crate::types::_container_provider::ContainerProviderBuilder;
 
 pub use crate::types::_security_configuration_data::SecurityConfigurationDataBuilder;
 
+pub use crate::types::_scheduler_configuration::SchedulerConfigurationBuilder;
+
 pub use crate::types::_job_run::JobRunBuilder;
 
 pub use crate::types::_job_template::JobTemplateBuilder;
@@ -32,6 +34,8 @@ pub use crate::types::_authentication_configuration::AuthenticationConfiguration
 pub use crate::types::_retry_policy_execution::RetryPolicyExecutionBuilder;
 
 pub use crate::types::_certificate::CertificateBuilder;
+
+pub use crate::types::_scheduler_status::SchedulerStatusBuilder;
 
 pub use crate::types::_spark_submit_job_driver::SparkSubmitJobDriverBuilder;
 

@@ -29,6 +29,8 @@ pub struct DescribeAiRecommendationJobOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The compute resource specification for the recommendation job.</p>
     pub compute_spec: ::std::option::Option<crate::types::AiRecommendationComputeSpec>,
+    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    pub adapter_source: ::std::option::Option<crate::types::AiAdapterSource>,
     /// <p>A timestamp that indicates when the recommendation job was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A timestamp that indicates when the recommendation job started running.</p>
@@ -94,6 +96,10 @@ impl DescribeAiRecommendationJobOutput {
     pub fn compute_spec(&self) -> ::std::option::Option<&crate::types::AiRecommendationComputeSpec> {
         self.compute_spec.as_ref()
     }
+    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    pub fn adapter_source(&self) -> ::std::option::Option<&crate::types::AiAdapterSource> {
+        self.adapter_source.as_ref()
+    }
     /// <p>A timestamp that indicates when the recommendation job was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
@@ -142,6 +148,7 @@ pub struct DescribeAiRecommendationJobOutputBuilder {
     pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::AiRecommendation>>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) compute_spec: ::std::option::Option<crate::types::AiRecommendationComputeSpec>,
+    pub(crate) adapter_source: ::std::option::Option<crate::types::AiAdapterSource>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -344,6 +351,20 @@ impl DescribeAiRecommendationJobOutputBuilder {
     pub fn get_compute_spec(&self) -> &::std::option::Option<crate::types::AiRecommendationComputeSpec> {
         &self.compute_spec
     }
+    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    pub fn adapter_source(mut self, input: crate::types::AiAdapterSource) -> Self {
+        self.adapter_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    pub fn set_adapter_source(mut self, input: ::std::option::Option<crate::types::AiAdapterSource>) -> Self {
+        self.adapter_source = input;
+        self
+    }
+    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    pub fn get_adapter_source(&self) -> &::std::option::Option<crate::types::AiAdapterSource> {
+        &self.adapter_source
+    }
     /// <p>A timestamp that indicates when the recommendation job was created.</p>
     /// This field is required.
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -432,6 +453,7 @@ impl DescribeAiRecommendationJobOutputBuilder {
             recommendations: self.recommendations,
             role_arn: self.role_arn,
             compute_spec: self.compute_spec,
+            adapter_source: self.adapter_source,
             creation_time: self.creation_time,
             start_time: self.start_time,
             end_time: self.end_time,

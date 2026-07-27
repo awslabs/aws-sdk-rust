@@ -48,17 +48,23 @@ pub fn ser_create_ai_recommendation_job_input_input(
         crate::protocol_serde::shape_ai_recommendation_compute_spec::ser_ai_recommendation_compute_spec(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_15) = &input.tags {
-        let mut array_16 = object.key("Tags").start_array();
-        for item_17 in var_15 {
+    if let Some(var_15) = &input.adapter_source {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("AdapterSource").start_object();
+        crate::protocol_serde::shape_ai_adapter_source::ser_ai_adapter_source(&mut object_16, var_15)?;
+        object_16.finish();
+    }
+    if let Some(var_17) = &input.tags {
+        let mut array_18 = object.key("Tags").start_array();
+        for item_19 in var_17 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_20, item_19)?;
+                object_20.finish();
             }
         }
-        array_16.finish();
+        array_18.finish();
     }
     Ok(())
 }

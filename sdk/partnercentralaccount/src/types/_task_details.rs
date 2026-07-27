@@ -20,6 +20,8 @@ pub struct TaskDetails {
     pub translation_source_locale: ::std::string::String,
     /// <p>The updated localized content for the partner profile.</p>
     pub localized_contents: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedContent>>,
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If you omit this field, the service retains the existing headquarters value.</p>
+    pub headquarters: ::std::option::Option<crate::types::Headquarters>,
 }
 impl TaskDetails {
     /// <p>The updated display name for the partner profile.</p>
@@ -62,6 +64,10 @@ impl TaskDetails {
     pub fn localized_contents(&self) -> &[crate::types::LocalizedContent] {
         self.localized_contents.as_deref().unwrap_or_default()
     }
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If you omit this field, the service retains the existing headquarters value.</p>
+    pub fn headquarters(&self) -> ::std::option::Option<&crate::types::Headquarters> {
+        self.headquarters.as_ref()
+    }
 }
 impl TaskDetails {
     /// Creates a new builder-style object to manufacture [`TaskDetails`](crate::types::TaskDetails).
@@ -82,6 +88,7 @@ pub struct TaskDetailsBuilder {
     pub(crate) industry_segments: ::std::option::Option<::std::vec::Vec<crate::types::IndustrySegment>>,
     pub(crate) translation_source_locale: ::std::option::Option<::std::string::String>,
     pub(crate) localized_contents: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedContent>>,
+    pub(crate) headquarters: ::std::option::Option<crate::types::Headquarters>,
 }
 impl TaskDetailsBuilder {
     /// <p>The updated display name for the partner profile.</p>
@@ -214,6 +221,20 @@ impl TaskDetailsBuilder {
     pub fn get_localized_contents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalizedContent>> {
         &self.localized_contents
     }
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If you omit this field, the service retains the existing headquarters value.</p>
+    pub fn headquarters(mut self, input: crate::types::Headquarters) -> Self {
+        self.headquarters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If you omit this field, the service retains the existing headquarters value.</p>
+    pub fn set_headquarters(mut self, input: ::std::option::Option<crate::types::Headquarters>) -> Self {
+        self.headquarters = input;
+        self
+    }
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If you omit this field, the service retains the existing headquarters value.</p>
+    pub fn get_headquarters(&self) -> &::std::option::Option<crate::types::Headquarters> {
+        &self.headquarters
+    }
     /// Consumes the builder and constructs a [`TaskDetails`](crate::types::TaskDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`display_name`](crate::types::builders::TaskDetailsBuilder::display_name)
@@ -268,6 +289,7 @@ impl TaskDetailsBuilder {
                 )
             })?,
             localized_contents: self.localized_contents,
+            headquarters: self.headquarters,
         })
     }
 }

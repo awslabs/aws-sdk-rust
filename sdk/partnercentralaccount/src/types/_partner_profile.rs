@@ -20,6 +20,8 @@ pub struct PartnerProfile {
     pub translation_source_locale: ::std::string::String,
     /// <p>A list of localized content versions for different languages and regions.</p>
     pub localized_contents: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedContent>>,
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If no headquarters location is set, this field is not included in the response.</p>
+    pub headquarters: ::std::option::Option<crate::types::Headquarters>,
     /// <p>The unique identifier of the partner profile.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
 }
@@ -64,6 +66,10 @@ impl PartnerProfile {
     pub fn localized_contents(&self) -> &[crate::types::LocalizedContent] {
         self.localized_contents.as_deref().unwrap_or_default()
     }
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If no headquarters location is set, this field is not included in the response.</p>
+    pub fn headquarters(&self) -> ::std::option::Option<&crate::types::Headquarters> {
+        self.headquarters.as_ref()
+    }
     /// <p>The unique identifier of the partner profile.</p>
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
@@ -88,6 +94,7 @@ pub struct PartnerProfileBuilder {
     pub(crate) industry_segments: ::std::option::Option<::std::vec::Vec<crate::types::IndustrySegment>>,
     pub(crate) translation_source_locale: ::std::option::Option<::std::string::String>,
     pub(crate) localized_contents: ::std::option::Option<::std::vec::Vec<crate::types::LocalizedContent>>,
+    pub(crate) headquarters: ::std::option::Option<crate::types::Headquarters>,
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
 }
 impl PartnerProfileBuilder {
@@ -221,6 +228,20 @@ impl PartnerProfileBuilder {
     pub fn get_localized_contents(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LocalizedContent>> {
         &self.localized_contents
     }
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If no headquarters location is set, this field is not included in the response.</p>
+    pub fn headquarters(mut self, input: crate::types::Headquarters) -> Self {
+        self.headquarters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If no headquarters location is set, this field is not included in the response.</p>
+    pub fn set_headquarters(mut self, input: ::std::option::Option<crate::types::Headquarters>) -> Self {
+        self.headquarters = input;
+        self
+    }
+    /// <p>The ISO 3166 country and subdivision codes for the partner's headquarters location. If no headquarters location is set, this field is not included in the response.</p>
+    pub fn get_headquarters(&self) -> &::std::option::Option<crate::types::Headquarters> {
+        &self.headquarters
+    }
     /// <p>The unique identifier of the partner profile.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
@@ -289,6 +310,7 @@ impl PartnerProfileBuilder {
                 )
             })?,
             localized_contents: self.localized_contents,
+            headquarters: self.headquarters,
             profile_id: self.profile_id,
         })
     }

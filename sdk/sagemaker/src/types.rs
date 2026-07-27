@@ -25,6 +25,8 @@ pub use crate::types::_ai_recommendation_inference_specification::AiRecommendati
 
 pub use crate::types::_ai_recommendation_compute_spec::AiRecommendationComputeSpec;
 
+pub use crate::types::_ai_adapter_source::AiAdapterSource;
+
 pub use crate::types::_ai_dataset_config::AiDatasetConfig;
 
 pub use crate::types::_ai_workload_configs::AiWorkloadConfigs;
@@ -1517,6 +1519,10 @@ pub use crate::types::_ai_recommendation_instance_type::AiRecommendationInstance
 
 pub use crate::types::_ai_capacity_reservation_preference::AiCapacityReservationPreference;
 
+pub use crate::types::_ai_adapter_model_package_entry::AiAdapterModelPackageEntry;
+
+pub use crate::types::_ai_adapter_s3_entry::AiAdapterS3Entry;
+
 pub use crate::types::_ai_workload_input_data_config::AiWorkloadInputDataConfig;
 
 pub use crate::types::_hyper_parameter_specification::HyperParameterSpecification;
@@ -1774,6 +1780,8 @@ pub use crate::types::_ai_cloud_watch_logs::AiCloudWatchLogs;
 pub use crate::types::_ai_recommendation_model_details::AiRecommendationModelDetails;
 
 pub use crate::types::_ai_recommendation_deployment_configuration::AiRecommendationDeploymentConfiguration;
+
+pub use crate::types::_ai_recommendation_adapter_details::AiRecommendationAdapterDetails;
 
 pub use crate::types::_algorithm_status_item::AlgorithmStatusItem;
 
@@ -2347,6 +2355,12 @@ mod _agent_version;
 
 mod _aggregation_transformation_value;
 
+mod _ai_adapter_model_package_entry;
+
+mod _ai_adapter_s3_entry;
+
+mod _ai_adapter_source;
+
 mod _ai_benchmark_endpoint;
 
 mod _ai_benchmark_inference_component;
@@ -2378,6 +2392,8 @@ mod _ai_model_source;
 mod _ai_model_source_s3;
 
 mod _ai_recommendation;
+
+mod _ai_recommendation_adapter_details;
 
 mod _ai_recommendation_compute_spec;
 

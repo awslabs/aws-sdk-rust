@@ -21,6 +21,8 @@ pub struct CreateAiRecommendationJobInput {
     pub optimize_model: ::std::option::Option<bool>,
     /// <p>The compute resource specification for the recommendation job. You can specify up to 3 instance types to consider, and optionally provide capacity reservation configuration.</p>
     pub compute_spec: ::std::option::Option<crate::types::AiRecommendationComputeSpec>,
+    /// <p>The LoRA adapter source for the recommendation job. Specify either a list of model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent, the recommendation job runs without LoRA adapter support.</p>
+    pub adapter_source: ::std::option::Option<crate::types::AiAdapterSource>,
     /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -61,6 +63,10 @@ impl CreateAiRecommendationJobInput {
     pub fn compute_spec(&self) -> ::std::option::Option<&crate::types::AiRecommendationComputeSpec> {
         self.compute_spec.as_ref()
     }
+    /// <p>The LoRA adapter source for the recommendation job. Specify either a list of model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent, the recommendation job runs without LoRA adapter support.</p>
+    pub fn adapter_source(&self) -> ::std::option::Option<&crate::types::AiAdapterSource> {
+        self.adapter_source.as_ref()
+    }
     /// <p>The metadata that you apply to Amazon Web Services resources to help you categorize and organize them.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -88,6 +94,7 @@ pub struct CreateAiRecommendationJobInputBuilder {
     pub(crate) inference_specification: ::std::option::Option<crate::types::AiRecommendationInferenceSpecification>,
     pub(crate) optimize_model: ::std::option::Option<bool>,
     pub(crate) compute_spec: ::std::option::Option<crate::types::AiRecommendationComputeSpec>,
+    pub(crate) adapter_source: ::std::option::Option<crate::types::AiAdapterSource>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateAiRecommendationJobInputBuilder {
@@ -223,6 +230,20 @@ impl CreateAiRecommendationJobInputBuilder {
     pub fn get_compute_spec(&self) -> &::std::option::Option<crate::types::AiRecommendationComputeSpec> {
         &self.compute_spec
     }
+    /// <p>The LoRA adapter source for the recommendation job. Specify either a list of model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent, the recommendation job runs without LoRA adapter support.</p>
+    pub fn adapter_source(mut self, input: crate::types::AiAdapterSource) -> Self {
+        self.adapter_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The LoRA adapter source for the recommendation job. Specify either a list of model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent, the recommendation job runs without LoRA adapter support.</p>
+    pub fn set_adapter_source(mut self, input: ::std::option::Option<crate::types::AiAdapterSource>) -> Self {
+        self.adapter_source = input;
+        self
+    }
+    /// <p>The LoRA adapter source for the recommendation job. Specify either a list of model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent, the recommendation job runs without LoRA adapter support.</p>
+    pub fn get_adapter_source(&self) -> &::std::option::Option<crate::types::AiAdapterSource> {
+        &self.adapter_source
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -260,6 +281,7 @@ impl CreateAiRecommendationJobInputBuilder {
             inference_specification: self.inference_specification,
             optimize_model: self.optimize_model,
             compute_spec: self.compute_spec,
+            adapter_source: self.adapter_source,
             tags: self.tags,
         })
     }

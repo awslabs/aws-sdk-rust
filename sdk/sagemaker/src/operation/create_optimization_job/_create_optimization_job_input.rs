@@ -41,6 +41,10 @@ pub struct CreateOptimizationJobInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A VPC in Amazon VPC that your optimized model has access to.</p>
     pub vpc_config: ::std::option::Option<crate::types::OptimizationVpcConfig>,
+    /// <p>The Amazon Resource Name (ARN) of the training plan to use for this optimization job.</p>
+    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. Currently, you can specify at most one training plan.</p>
+    /// <p>For more information about how to reserve GPU capacity for your optimization jobs using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve capacity with training plans</a>.</p>
+    pub training_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateOptimizationJobInput {
     /// <p>A custom name for the new optimization job.</p>
@@ -107,6 +111,14 @@ impl CreateOptimizationJobInput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::OptimizationVpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the training plan to use for this optimization job.</p>
+    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. Currently, you can specify at most one training plan.</p>
+    /// <p>For more information about how to reserve GPU capacity for your optimization jobs using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve capacity with training plans</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.training_plan_arns.is_none()`.
+    pub fn training_plan_arns(&self) -> &[::std::string::String] {
+        self.training_plan_arns.as_deref().unwrap_or_default()
+    }
 }
 impl CreateOptimizationJobInput {
     /// Creates a new builder-style object to manufacture [`CreateOptimizationJobInput`](crate::operation::create_optimization_job::CreateOptimizationJobInput).
@@ -130,6 +142,7 @@ pub struct CreateOptimizationJobInputBuilder {
     pub(crate) stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::OptimizationVpcConfig>,
+    pub(crate) training_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CreateOptimizationJobInputBuilder {
     /// <p>A custom name for the new optimization job.</p>
@@ -365,6 +378,32 @@ impl CreateOptimizationJobInputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::OptimizationVpcConfig> {
         &self.vpc_config
     }
+    /// Appends an item to `training_plan_arns`.
+    ///
+    /// To override the contents of this collection use [`set_training_plan_arns`](Self::set_training_plan_arns).
+    ///
+    /// <p>The Amazon Resource Name (ARN) of the training plan to use for this optimization job.</p>
+    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. Currently, you can specify at most one training plan.</p>
+    /// <p>For more information about how to reserve GPU capacity for your optimization jobs using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve capacity with training plans</a>.</p>
+    pub fn training_plan_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.training_plan_arns.unwrap_or_default();
+        v.push(input.into());
+        self.training_plan_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the training plan to use for this optimization job.</p>
+    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. Currently, you can specify at most one training plan.</p>
+    /// <p>For more information about how to reserve GPU capacity for your optimization jobs using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve capacity with training plans</a>.</p>
+    pub fn set_training_plan_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.training_plan_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the training plan to use for this optimization job.</p>
+    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. Currently, you can specify at most one training plan.</p>
+    /// <p>For more information about how to reserve GPU capacity for your optimization jobs using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve capacity with training plans</a>.</p>
+    pub fn get_training_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.training_plan_arns
+    }
     /// Consumes the builder and constructs a [`CreateOptimizationJobInput`](crate::operation::create_optimization_job::CreateOptimizationJobInput).
     pub fn build(
         self,
@@ -382,6 +421,7 @@ impl CreateOptimizationJobInputBuilder {
             stopping_condition: self.stopping_condition,
             tags: self.tags,
             vpc_config: self.vpc_config,
+            training_plan_arns: self.training_plan_arns,
         })
     }
 }

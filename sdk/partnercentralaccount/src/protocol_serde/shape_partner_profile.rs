@@ -74,6 +74,10 @@ where
                                     crate::protocol_serde::shape_localized_content_list::de_localized_content_list(tokens, _value, depth + 1)?,
                                 );
                             }
+                            "Headquarters" => {
+                                builder =
+                                    builder.set_headquarters(crate::protocol_serde::shape_headquarters::de_headquarters(tokens, _value, depth + 1)?);
+                            }
                             "ProfileId" => {
                                 builder = builder.set_profile_id(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

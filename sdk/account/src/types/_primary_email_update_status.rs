@@ -13,6 +13,8 @@
 /// # let primaryemailupdatestatus = unimplemented!();
 /// match primaryemailupdatestatus {
 ///     PrimaryEmailUpdateStatus::Accepted => { /* ... */ },
+///     PrimaryEmailUpdateStatus::Completed => { /* ... */ },
+///     PrimaryEmailUpdateStatus::Failed => { /* ... */ },
 ///     PrimaryEmailUpdateStatus::Pending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +47,10 @@ pub enum PrimaryEmailUpdateStatus {
     #[allow(missing_docs)] // documentation missing in model
     Accepted,
     #[allow(missing_docs)] // documentation missing in model
+    Completed,
+    #[allow(missing_docs)] // documentation missing in model
+    Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +60,8 @@ impl ::std::convert::From<&str> for PrimaryEmailUpdateStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACCEPTED" => PrimaryEmailUpdateStatus::Accepted,
+            "COMPLETED" => PrimaryEmailUpdateStatus::Completed,
+            "FAILED" => PrimaryEmailUpdateStatus::Failed,
             "PENDING" => PrimaryEmailUpdateStatus::Pending,
             other => PrimaryEmailUpdateStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +79,15 @@ impl PrimaryEmailUpdateStatus {
     pub fn as_str(&self) -> &str {
         match self {
             PrimaryEmailUpdateStatus::Accepted => "ACCEPTED",
+            PrimaryEmailUpdateStatus::Completed => "COMPLETED",
+            PrimaryEmailUpdateStatus::Failed => "FAILED",
             PrimaryEmailUpdateStatus::Pending => "PENDING",
             PrimaryEmailUpdateStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCEPTED", "PENDING"]
+        &["ACCEPTED", "COMPLETED", "FAILED", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for PrimaryEmailUpdateStatus {
@@ -101,6 +111,8 @@ impl ::std::fmt::Display for PrimaryEmailUpdateStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PrimaryEmailUpdateStatus::Accepted => write!(f, "ACCEPTED"),
+            PrimaryEmailUpdateStatus::Completed => write!(f, "COMPLETED"),
+            PrimaryEmailUpdateStatus::Failed => write!(f, "FAILED"),
             PrimaryEmailUpdateStatus::Pending => write!(f, "PENDING"),
             PrimaryEmailUpdateStatus::Unknown(value) => write!(f, "{value}"),
         }

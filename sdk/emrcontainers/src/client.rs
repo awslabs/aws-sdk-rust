@@ -210,3 +210,5 @@ mod start_job_run;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_virtual_cluster;

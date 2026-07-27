@@ -18,6 +18,8 @@ pub struct TaskSummary {
     pub risk_type: ::std::option::Option<crate::types::RiskType>,
     /// <p>The current execution status of the task.</p>
     pub execution_status: ::std::option::Option<crate::types::TaskExecutionStatus>,
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub task_hours: ::std::option::Option<f64>,
     /// <p>The date and time the task was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the task was last updated, in UTC format.</p>
@@ -53,6 +55,10 @@ impl TaskSummary {
     pub fn execution_status(&self) -> ::std::option::Option<&crate::types::TaskExecutionStatus> {
         self.execution_status.as_ref()
     }
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub fn task_hours(&self) -> ::std::option::Option<f64> {
+        self.task_hours
+    }
     /// <p>The date and time the task was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -80,6 +86,7 @@ pub struct TaskSummaryBuilder {
     pub(crate) title: ::std::option::Option<::std::string::String>,
     pub(crate) risk_type: ::std::option::Option<crate::types::RiskType>,
     pub(crate) execution_status: ::std::option::Option<crate::types::TaskExecutionStatus>,
+    pub(crate) task_hours: ::std::option::Option<f64>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -183,6 +190,20 @@ impl TaskSummaryBuilder {
     pub fn get_execution_status(&self) -> &::std::option::Option<crate::types::TaskExecutionStatus> {
         &self.execution_status
     }
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub fn task_hours(mut self, input: f64) -> Self {
+        self.task_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub fn set_task_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.task_hours = input;
+        self
+    }
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub fn get_task_hours(&self) -> &::std::option::Option<f64> {
+        &self.task_hours
+    }
     /// <p>The date and time the task was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -228,6 +249,7 @@ impl TaskSummaryBuilder {
             title: self.title,
             risk_type: self.risk_type,
             execution_status: self.execution_status,
+            task_hours: self.task_hours,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })

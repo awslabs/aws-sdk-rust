@@ -75,6 +75,18 @@ where
                         "sessionEnabled" => {
                             builder = builder.set_session_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "schedulerConfiguration" => {
+                            builder = builder.set_scheduler_configuration(
+                                crate::protocol_serde::shape_scheduler_configuration::de_scheduler_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "schedulerStatus" => {
+                            builder = builder.set_scheduler_status(crate::protocol_serde::shape_scheduler_status::de_scheduler_status(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

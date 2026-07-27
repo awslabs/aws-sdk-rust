@@ -46,6 +46,44 @@ where
                                     .transpose()?,
                             );
                         }
+                        "RowLevelResults" => {
+                            builder = builder.set_row_level_results(
+                                crate::protocol_serde::shape_row_level_results_options::de_row_level_results_options(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "ProfilingResults" => {
+                            builder = builder.set_profiling_results(
+                                crate::protocol_serde::shape_profiling_results_options::de_profiling_results_options(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "ObservationScope" => {
+                            builder = builder.set_observation_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ObservationConfiguration::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ObservationMode" => {
+                            builder = builder.set_observation_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ObservationMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "DataQualityRuleResults" => {
+                            builder = builder.set_data_quality_rule_results(
+                                crate::protocol_serde::shape_data_quality_rule_results_options::de_data_quality_rule_results_options(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "ObservationResults" => {
+                            builder = builder.set_observation_results(
+                                crate::protocol_serde::shape_observation_results_options::de_observation_results_options(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -78,6 +116,36 @@ pub fn ser_data_quality_evaluation_run_additional_run_options(
     }
     if let Some(var_4) = &input.custom_log_group_prefix {
         object.key("CustomLogGroupPrefix").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.row_level_results {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("RowLevelResults").start_object();
+        crate::protocol_serde::shape_row_level_results_options::ser_row_level_results_options(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.profiling_results {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("ProfilingResults").start_object();
+        crate::protocol_serde::shape_profiling_results_options::ser_profiling_results_options(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.observation_scope {
+        object.key("ObservationScope").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.observation_mode {
+        object.key("ObservationMode").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.data_quality_rule_results {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("DataQualityRuleResults").start_object();
+        crate::protocol_serde::shape_data_quality_rule_results_options::ser_data_quality_rule_results_options(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.observation_results {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("ObservationResults").start_object();
+        crate::protocol_serde::shape_observation_results_options::ser_observation_results_options(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

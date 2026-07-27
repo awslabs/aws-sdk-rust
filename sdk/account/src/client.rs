@@ -181,6 +181,8 @@ mod get_gov_cloud_account_information;
 
 mod get_primary_email;
 
+mod get_primary_email_update_status;
+
 mod get_region_opt_status;
 
 mod list_regions;

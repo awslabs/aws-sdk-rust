@@ -31,6 +31,9 @@ pub mod batch_get_custom_entity_types;
 /// Types for the `BatchGetDataQualityResult` operation.
 pub mod batch_get_data_quality_result;
 
+/// Types for the `BatchGetDataQualityRulesetEvaluationRun` operation.
+pub mod batch_get_data_quality_ruleset_evaluation_run;
+
 /// Types for the `BatchGetDevEndpoints` operation.
 pub mod batch_get_dev_endpoints;
 

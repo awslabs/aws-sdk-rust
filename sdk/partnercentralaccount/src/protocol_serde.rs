@@ -229,6 +229,8 @@ pub(crate) mod shape_connection_type_detail;
 
 pub(crate) mod shape_error_detail;
 
+pub(crate) mod shape_headquarters;
+
 pub(crate) mod shape_industry_segment_list;
 
 pub(crate) mod shape_localized_content;

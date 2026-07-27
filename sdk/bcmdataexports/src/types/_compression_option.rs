@@ -14,6 +14,7 @@
 /// match compressionoption {
 ///     CompressionOption::Gzip => { /* ... */ },
 ///     CompressionOption::Parquet => { /* ... */ },
+///     CompressionOption::Zip => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum CompressionOption {
     Gzip,
     #[allow(missing_docs)] // documentation missing in model
     Parquet,
+    #[allow(missing_docs)] // documentation missing in model
+    Zip,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for CompressionOption {
         match s {
             "GZIP" => CompressionOption::Gzip,
             "PARQUET" => CompressionOption::Parquet,
+            "ZIP" => CompressionOption::Zip,
             other => CompressionOption::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl CompressionOption {
         match self {
             CompressionOption::Gzip => "GZIP",
             CompressionOption::Parquet => "PARQUET",
+            CompressionOption::Zip => "ZIP",
             CompressionOption::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GZIP", "PARQUET"]
+        &["GZIP", "PARQUET", "ZIP"]
     }
 }
 impl ::std::convert::AsRef<str> for CompressionOption {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for CompressionOption {
         match self {
             CompressionOption::Gzip => write!(f, "GZIP"),
             CompressionOption::Parquet => write!(f, "PARQUET"),
+            CompressionOption::Zip => write!(f, "ZIP"),
             CompressionOption::Unknown(value) => write!(f, "{value}"),
         }
     }

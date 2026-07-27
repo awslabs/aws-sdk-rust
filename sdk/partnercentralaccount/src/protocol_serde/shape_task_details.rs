@@ -74,6 +74,10 @@ where
                                     crate::protocol_serde::shape_localized_content_list::de_localized_content_list(tokens, _value, depth + 1)?,
                                 );
                             }
+                            "Headquarters" => {
+                                builder =
+                                    builder.set_headquarters(crate::protocol_serde::shape_headquarters::de_headquarters(tokens, _value, depth + 1)?);
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -136,6 +140,12 @@ pub fn ser_task_details(
             }
         }
         array_4.finish();
+    }
+    if let Some(var_7) = &input.headquarters {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("Headquarters").start_object();
+        crate::protocol_serde::shape_headquarters::ser_headquarters(&mut object_8, var_7)?;
+        object_8.finish();
     }
     Ok(())
 }

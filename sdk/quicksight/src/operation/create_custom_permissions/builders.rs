@@ -150,6 +150,20 @@ impl CreateCustomPermissionsFluentBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::Capabilities> {
         self.inner.get_capabilities()
     }
+    /// <p>The governance configuration for the custom permissions profile. When governance controls are defined for a category, any capabilities in that category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code> are denied. Even newly added capabilities in the category are implicitly disabled when Amazon Quick releases them.</p>
+    pub fn governance(mut self, input: crate::types::Governance) -> Self {
+        self.inner = self.inner.governance(input);
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. When governance controls are defined for a category, any capabilities in that category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code> are denied. Even newly added capabilities in the category are implicitly disabled when Amazon Quick releases them.</p>
+    pub fn set_governance(mut self, input: ::std::option::Option<crate::types::Governance>) -> Self {
+        self.inner = self.inner.set_governance(input);
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. When governance controls are defined for a category, any capabilities in that category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code> are denied. Even newly added capabilities in the category are implicitly disabled when Amazon Quick releases them.</p>
+    pub fn get_governance(&self) -> &::std::option::Option<crate::types::Governance> {
+        self.inner.get_governance()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

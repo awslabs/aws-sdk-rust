@@ -242,17 +242,17 @@ impl CreateManagedEndpointFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The idle timeout in minutes for the managed endpoint session.</p>
+    /// <p>The number of idle minutes before the managed endpoint session times out.</p>
     pub fn session_idle_timeout_in_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.session_idle_timeout_in_minutes(input);
         self
     }
-    /// <p>The idle timeout in minutes for the managed endpoint session.</p>
+    /// <p>The number of idle minutes before the managed endpoint session times out.</p>
     pub fn set_session_idle_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_session_idle_timeout_in_minutes(input);
         self
     }
-    /// <p>The idle timeout in minutes for the managed endpoint session.</p>
+    /// <p>The number of idle minutes before the managed endpoint session times out.</p>
     pub fn get_session_idle_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_session_idle_timeout_in_minutes()
     }

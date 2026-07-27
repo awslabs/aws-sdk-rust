@@ -26,6 +26,8 @@ pub struct Task {
     pub execution_status: ::std::option::Option<crate::types::TaskExecutionStatus>,
     /// <p>The location of the task execution logs.</p>
     pub logs_location: ::std::option::Option<crate::types::LogLocation>,
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub task_hours: ::std::option::Option<f64>,
     /// <p>The date and time the task was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the task was last updated, in UTC format.</p>
@@ -79,6 +81,10 @@ impl Task {
     pub fn logs_location(&self) -> ::std::option::Option<&crate::types::LogLocation> {
         self.logs_location.as_ref()
     }
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub fn task_hours(&self) -> ::std::option::Option<f64> {
+        self.task_hours
+    }
     /// <p>The date and time the task was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -110,6 +116,7 @@ pub struct TaskBuilder {
     pub(crate) target_endpoint: ::std::option::Option<crate::types::Endpoint>,
     pub(crate) execution_status: ::std::option::Option<crate::types::TaskExecutionStatus>,
     pub(crate) logs_location: ::std::option::Option<crate::types::LogLocation>,
+    pub(crate) task_hours: ::std::option::Option<f64>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -275,6 +282,20 @@ impl TaskBuilder {
     pub fn get_logs_location(&self) -> &::std::option::Option<crate::types::LogLocation> {
         &self.logs_location
     }
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub fn task_hours(mut self, input: f64) -> Self {
+        self.task_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub fn set_task_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.task_hours = input;
+        self
+    }
+    /// <p>The number of active work hours consumed by the task during execution.</p>
+    pub fn get_task_hours(&self) -> &::std::option::Option<f64> {
+        &self.task_hours
+    }
     /// <p>The date and time the task was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -324,6 +345,7 @@ impl TaskBuilder {
             target_endpoint: self.target_endpoint,
             execution_status: self.execution_status,
             logs_location: self.logs_location,
+            task_hours: self.task_hours,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })

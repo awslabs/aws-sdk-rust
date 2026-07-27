@@ -28,6 +28,9 @@ pub mod get_gov_cloud_account_information;
 /// Types for the `GetPrimaryEmail` operation.
 pub mod get_primary_email;
 
+/// Types for the `GetPrimaryEmailUpdateStatus` operation.
+pub mod get_primary_email_update_status;
+
 /// Types for the `GetRegionOptStatus` operation.
 pub mod get_region_opt_status;
 

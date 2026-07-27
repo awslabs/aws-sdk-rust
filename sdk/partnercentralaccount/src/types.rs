@@ -67,6 +67,8 @@ pub use crate::types::_connection_type_detail::ConnectionTypeDetail;
 
 pub use crate::types::_partner_summary::PartnerSummary;
 
+pub use crate::types::_headquarters::Headquarters;
+
 pub use crate::types::_partner_domain::PartnerDomain;
 
 pub use crate::types::_error_detail::ErrorDetail;
@@ -134,6 +136,8 @@ mod _error_detail;
 mod _field_validation_code;
 
 mod _field_validation_error;
+
+mod _headquarters;
 
 mod _industry_segment;
 

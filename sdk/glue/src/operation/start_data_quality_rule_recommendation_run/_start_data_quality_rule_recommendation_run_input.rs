@@ -18,6 +18,8 @@ pub struct StartDataQualityRuleRecommendationRunInput {
     pub data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub additional_run_options: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
 }
 impl StartDataQualityRuleRecommendationRunInput {
     /// <p>The data source (Glue table) associated with this run.</p>
@@ -48,6 +50,10 @@ impl StartDataQualityRuleRecommendationRunInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn additional_run_options(&self) -> ::std::option::Option<&crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
+        self.additional_run_options.as_ref()
+    }
 }
 impl StartDataQualityRuleRecommendationRunInput {
     /// Creates a new builder-style object to manufacture [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
@@ -67,6 +73,7 @@ pub struct StartDataQualityRuleRecommendationRunInputBuilder {
     pub(crate) created_ruleset_name: ::std::option::Option<::std::string::String>,
     pub(crate) data_quality_security_configuration: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_run_options: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
 }
 impl StartDataQualityRuleRecommendationRunInputBuilder {
     /// <p>The data source (Glue table) associated with this run.</p>
@@ -169,6 +176,23 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn additional_run_options(mut self, input: crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions) -> Self {
+        self.additional_run_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn set_additional_run_options(
+        mut self,
+        input: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
+    ) -> Self {
+        self.additional_run_options = input;
+        self
+    }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
+        &self.additional_run_options
+    }
     /// Consumes the builder and constructs a [`StartDataQualityRuleRecommendationRunInput`](crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunInput).
     pub fn build(
         self,
@@ -185,6 +209,7 @@ impl StartDataQualityRuleRecommendationRunInputBuilder {
                 created_ruleset_name: self.created_ruleset_name,
                 data_quality_security_configuration: self.data_quality_security_configuration,
                 client_token: self.client_token,
+                additional_run_options: self.additional_run_options,
             },
         )
     }

@@ -9,6 +9,8 @@ pub struct CreateCustomPermissionsInput {
     pub custom_permissions_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of actions to include in the custom permissions profile.</p>
     pub capabilities: ::std::option::Option<crate::types::Capabilities>,
+    /// <p>The governance configuration for the custom permissions profile. When governance controls are defined for a category, any capabilities in that category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code> are denied. Even newly added capabilities in the category are implicitly disabled when Amazon Quick releases them.</p>
+    pub governance: ::std::option::Option<crate::types::Governance>,
     /// <p>The tags to associate with the custom permissions profile.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -24,6 +26,10 @@ impl CreateCustomPermissionsInput {
     /// <p>A set of actions to include in the custom permissions profile.</p>
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::Capabilities> {
         self.capabilities.as_ref()
+    }
+    /// <p>The governance configuration for the custom permissions profile. When governance controls are defined for a category, any capabilities in that category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code> are denied. Even newly added capabilities in the category are implicitly disabled when Amazon Quick releases them.</p>
+    pub fn governance(&self) -> ::std::option::Option<&crate::types::Governance> {
+        self.governance.as_ref()
     }
     /// <p>The tags to associate with the custom permissions profile.</p>
     ///
@@ -46,6 +52,7 @@ pub struct CreateCustomPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) custom_permissions_name: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<crate::types::Capabilities>,
+    pub(crate) governance: ::std::option::Option<crate::types::Governance>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateCustomPermissionsInputBuilder {
@@ -93,6 +100,20 @@ impl CreateCustomPermissionsInputBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::Capabilities> {
         &self.capabilities
     }
+    /// <p>The governance configuration for the custom permissions profile. When governance controls are defined for a category, any capabilities in that category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code> are denied. Even newly added capabilities in the category are implicitly disabled when Amazon Quick releases them.</p>
+    pub fn governance(mut self, input: crate::types::Governance) -> Self {
+        self.governance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. When governance controls are defined for a category, any capabilities in that category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code> are denied. Even newly added capabilities in the category are implicitly disabled when Amazon Quick releases them.</p>
+    pub fn set_governance(mut self, input: ::std::option::Option<crate::types::Governance>) -> Self {
+        self.governance = input;
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. When governance controls are defined for a category, any capabilities in that category not explicitly set to <code>ALLOW</code> in <code>Capabilities</code> are denied. Even newly added capabilities in the category are implicitly disabled when Amazon Quick releases them.</p>
+    pub fn get_governance(&self) -> &::std::option::Option<crate::types::Governance> {
+        &self.governance
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -124,6 +145,7 @@ impl CreateCustomPermissionsInputBuilder {
             aws_account_id: self.aws_account_id,
             custom_permissions_name: self.custom_permissions_name,
             capabilities: self.capabilities,
+            governance: self.governance,
             tags: self.tags,
         })
     }

@@ -9,6 +9,8 @@ pub struct UpdateCustomPermissionsInput {
     pub custom_permissions_name: ::std::option::Option<::std::string::String>,
     /// <p>A set of actions to include in the custom permissions profile.</p>
     pub capabilities: ::std::option::Option<crate::types::Capabilities>,
+    /// <p>The governance configuration for the custom permissions profile. The <code>UpdateCustomPermissions</code> operation replaces all existing <code>Capabilities</code> and <code>Governance</code> values. If you omit this parameter, Amazon Quick removes governance from the profile and the existing custom permission behavior applies.</p>
+    pub governance: ::std::option::Option<crate::types::Governance>,
 }
 impl UpdateCustomPermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the custom permissions profile that you want to update.</p>
@@ -22,6 +24,10 @@ impl UpdateCustomPermissionsInput {
     /// <p>A set of actions to include in the custom permissions profile.</p>
     pub fn capabilities(&self) -> ::std::option::Option<&crate::types::Capabilities> {
         self.capabilities.as_ref()
+    }
+    /// <p>The governance configuration for the custom permissions profile. The <code>UpdateCustomPermissions</code> operation replaces all existing <code>Capabilities</code> and <code>Governance</code> values. If you omit this parameter, Amazon Quick removes governance from the profile and the existing custom permission behavior applies.</p>
+    pub fn governance(&self) -> ::std::option::Option<&crate::types::Governance> {
+        self.governance.as_ref()
     }
 }
 impl UpdateCustomPermissionsInput {
@@ -38,6 +44,7 @@ pub struct UpdateCustomPermissionsInputBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) custom_permissions_name: ::std::option::Option<::std::string::String>,
     pub(crate) capabilities: ::std::option::Option<crate::types::Capabilities>,
+    pub(crate) governance: ::std::option::Option<crate::types::Governance>,
 }
 impl UpdateCustomPermissionsInputBuilder {
     /// <p>The ID of the Amazon Web Services account that contains the custom permissions profile that you want to update.</p>
@@ -84,6 +91,20 @@ impl UpdateCustomPermissionsInputBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::Capabilities> {
         &self.capabilities
     }
+    /// <p>The governance configuration for the custom permissions profile. The <code>UpdateCustomPermissions</code> operation replaces all existing <code>Capabilities</code> and <code>Governance</code> values. If you omit this parameter, Amazon Quick removes governance from the profile and the existing custom permission behavior applies.</p>
+    pub fn governance(mut self, input: crate::types::Governance) -> Self {
+        self.governance = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. The <code>UpdateCustomPermissions</code> operation replaces all existing <code>Capabilities</code> and <code>Governance</code> values. If you omit this parameter, Amazon Quick removes governance from the profile and the existing custom permission behavior applies.</p>
+    pub fn set_governance(mut self, input: ::std::option::Option<crate::types::Governance>) -> Self {
+        self.governance = input;
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. The <code>UpdateCustomPermissions</code> operation replaces all existing <code>Capabilities</code> and <code>Governance</code> values. If you omit this parameter, Amazon Quick removes governance from the profile and the existing custom permission behavior applies.</p>
+    pub fn get_governance(&self) -> &::std::option::Option<crate::types::Governance> {
+        &self.governance
+    }
     /// Consumes the builder and constructs a [`UpdateCustomPermissionsInput`](crate::operation::update_custom_permissions::UpdateCustomPermissionsInput).
     pub fn build(
         self,
@@ -95,6 +116,7 @@ impl UpdateCustomPermissionsInputBuilder {
             aws_account_id: self.aws_account_id,
             custom_permissions_name: self.custom_permissions_name,
             capabilities: self.capabilities,
+            governance: self.governance,
         })
     }
 }

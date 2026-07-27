@@ -7,7 +7,7 @@ pub struct GetManagedEndpointSessionCredentialsOutput {
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The structure containing the session credentials.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
-    /// <p>The structure containing the session token being returned.</p>
+    /// <p>The session credentials that the operation returns.</p>
     pub endpoint_credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>The date and time when the session token will expire.</p>
     pub expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -22,7 +22,7 @@ impl GetManagedEndpointSessionCredentialsOutput {
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
-    /// <p>The structure containing the session token being returned.</p>
+    /// <p>The session credentials that the operation returns.</p>
     pub fn endpoint_credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.endpoint_credentials.as_ref()
     }
@@ -82,17 +82,17 @@ impl GetManagedEndpointSessionCredentialsOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
         &self.credentials
     }
-    /// <p>The structure containing the session token being returned.</p>
+    /// <p>The session credentials that the operation returns.</p>
     pub fn endpoint_credentials(mut self, input: crate::types::Credentials) -> Self {
         self.endpoint_credentials = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The structure containing the session token being returned.</p>
+    /// <p>The session credentials that the operation returns.</p>
     pub fn set_endpoint_credentials(mut self, input: ::std::option::Option<crate::types::Credentials>) -> Self {
         self.endpoint_credentials = input;
         self
     }
-    /// <p>The structure containing the session token being returned.</p>
+    /// <p>The session credentials that the operation returns.</p>
     pub fn get_endpoint_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
         &self.endpoint_credentials
     }

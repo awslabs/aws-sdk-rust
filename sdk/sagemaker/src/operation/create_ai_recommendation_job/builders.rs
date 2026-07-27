@@ -234,6 +234,20 @@ impl CreateAIRecommendationJobFluentBuilder {
     pub fn get_compute_spec(&self) -> &::std::option::Option<crate::types::AiRecommendationComputeSpec> {
         self.inner.get_compute_spec()
     }
+    /// <p>The LoRA adapter source for the recommendation job. Specify either a list of model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent, the recommendation job runs without LoRA adapter support.</p>
+    pub fn adapter_source(mut self, input: crate::types::AiAdapterSource) -> Self {
+        self.inner = self.inner.adapter_source(input);
+        self
+    }
+    /// <p>The LoRA adapter source for the recommendation job. Specify either a list of model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent, the recommendation job runs without LoRA adapter support.</p>
+    pub fn set_adapter_source(mut self, input: ::std::option::Option<crate::types::AiAdapterSource>) -> Self {
+        self.inner = self.inner.set_adapter_source(input);
+        self
+    }
+    /// <p>The LoRA adapter source for the recommendation job. Specify either a list of model package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent, the recommendation job runs without LoRA adapter support.</p>
+    pub fn get_adapter_source(&self) -> &::std::option::Option<crate::types::AiAdapterSource> {
+        self.inner.get_adapter_source()
+    }
     ///
     /// Appends an item to `Tags`.
     ///

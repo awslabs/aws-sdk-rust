@@ -1005,6 +1005,8 @@ pub(crate) mod shape_folder_summary_list;
 
 pub(crate) mod shape_folders_for_resource_arn_list;
 
+pub(crate) mod shape_governance;
+
 pub(crate) mod shape_group;
 
 pub(crate) mod shape_group_list;
@@ -1854,6 +1856,8 @@ pub(crate) mod shape_decimal_dataset_parameter_default_values;
 pub(crate) mod shape_decimal_parameter_declaration;
 
 pub(crate) mod shape_decimal_parameter_list;
+
+pub(crate) mod shape_default_category_effects_map;
 
 pub(crate) mod shape_default_new_sheet_configuration;
 

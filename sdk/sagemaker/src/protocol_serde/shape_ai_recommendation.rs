@@ -59,6 +59,15 @@ where
                                 crate::protocol_serde::shape_expected_performance_list::de_expected_performance_list(tokens, _value, depth + 1)?,
                             );
                         }
+                        "AdapterDetails" => {
+                            builder = builder.set_adapter_details(
+                                crate::protocol_serde::shape_ai_recommendation_adapter_details::de_ai_recommendation_adapter_details(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

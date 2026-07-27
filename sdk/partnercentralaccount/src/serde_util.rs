@@ -986,6 +986,16 @@ pub(crate) fn error_detail_correct_errors(mut builder: crate::types::builders::E
     builder
 }
 
+pub(crate) fn headquarters_correct_errors(mut builder: crate::types::builders::HeadquartersBuilder) -> crate::types::builders::HeadquartersBuilder {
+    if builder.country_code.is_none() {
+        builder.country_code = Some(Default::default())
+    }
+    if builder.subdivision_code.is_none() {
+        builder.subdivision_code = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn partner_domain_correct_errors(
     mut builder: crate::types::builders::PartnerDomainBuilder,
 ) -> crate::types::builders::PartnerDomainBuilder {

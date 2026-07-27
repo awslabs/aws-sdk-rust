@@ -171,6 +171,13 @@ pub(crate) fn de_describe_ai_recommendation_job(
                         crate::protocol_serde::shape_ai_recommendation_compute_spec::de_ai_recommendation_compute_spec(tokens, _value, depth + 1)?,
                     );
                 }
+                "AdapterSource" => {
+                    builder = builder.set_adapter_source(crate::protocol_serde::shape_ai_adapter_source::de_ai_adapter_source(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "CreationTime" => {
                     builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

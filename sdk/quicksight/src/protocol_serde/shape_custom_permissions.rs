@@ -39,6 +39,9 @@ where
                             builder =
                                 builder.set_capabilities(crate::protocol_serde::shape_capabilities::de_capabilities(tokens, _value, depth + 1)?);
                         }
+                        "Governance" => {
+                            builder = builder.set_governance(crate::protocol_serde::shape_governance::de_governance(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

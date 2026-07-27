@@ -12,6 +12,7 @@
 /// ```text
 /// # let capabilitystate = unimplemented!();
 /// match capabilitystate {
+///     CapabilityState::Allow => { /* ... */ },
 ///     CapabilityState::Deny => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -35,12 +36,24 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CapabilityState {
+    #[allow(missing_docs)] // documentation missing in model
+    Allow,
     #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -50,6 +63,7 @@ pub enum CapabilityState {
 impl ::std::convert::From<&str> for CapabilityState {
     fn from(s: &str) -> Self {
         match s {
+            "ALLOW" => CapabilityState::Allow,
             "DENY" => CapabilityState::Deny,
             other => CapabilityState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +80,14 @@ impl CapabilityState {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CapabilityState::Allow => "ALLOW",
             CapabilityState::Deny => "DENY",
             CapabilityState::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DENY"]
+        &["ALLOW", "DENY"]
     }
 }
 impl ::std::convert::AsRef<str> for CapabilityState {
@@ -95,6 +110,7 @@ impl CapabilityState {
 impl ::std::fmt::Display for CapabilityState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CapabilityState::Allow => write!(f, "ALLOW"),
             CapabilityState::Deny => write!(f, "DENY"),
             CapabilityState::Unknown(value) => write!(f, "{value}"),
         }

@@ -155,6 +155,8 @@ pub use crate::types::_data_source::DataSource;
 
 pub use crate::types::_data_quality_aggregated_metrics::DataQualityAggregatedMetrics;
 
+pub use crate::types::_data_quality_rule_recommendation_run_additional_run_options::DataQualityRuleRecommendationRunAdditionalRunOptions;
+
 pub use crate::types::_data_quality_evaluation_run_additional_run_options::DataQualityEvaluationRunAdditionalRunOptions;
 
 pub use crate::types::_dev_endpoint::DevEndpoint;
@@ -282,6 +284,8 @@ pub use crate::types::_table_version_error::TableVersionError;
 pub use crate::types::_custom_entity_type::CustomEntityType;
 
 pub use crate::types::_data_quality_result::DataQualityResult;
+
+pub use crate::types::_data_quality_ruleset_evaluation_run::DataQualityRulesetEvaluationRun;
 
 pub use crate::types::_iterable_form_item::IterableFormItem;
 
@@ -466,6 +470,18 @@ pub use crate::types::_data_quality_analyzer_result::DataQualityAnalyzerResult;
 pub use crate::types::_data_quality_observation::DataQualityObservation;
 
 pub use crate::types::_dq_composite_rule_evaluation_method::DqCompositeRuleEvaluationMethod;
+
+pub use crate::types::_row_level_results_options::RowLevelResultsOptions;
+
+pub use crate::types::_profiling_results_options::ProfilingResultsOptions;
+
+pub use crate::types::_observation_configuration::ObservationConfiguration;
+
+pub use crate::types::_observation_mode::ObservationMode;
+
+pub use crate::types::_data_quality_rule_results_options::DataQualityRuleResultsOptions;
+
+pub use crate::types::_observation_results_options::ObservationResultsOptions;
 
 pub use crate::types::_job_run_state::JobRunState;
 
@@ -873,6 +889,12 @@ pub use crate::types::_data_quality_rule_result_status::DataQualityRuleResultSta
 
 pub use crate::types::_metric_based_observation::MetricBasedObservation;
 
+pub use crate::types::_result_type_enum::ResultTypeEnum;
+
+pub use crate::types::_catalog_table_config_options::CatalogTableConfigOptions;
+
+pub use crate::types::_distribution_results_options::DistributionResultsOptions;
+
 pub use crate::types::_predecessor::Predecessor;
 
 pub use crate::types::_code_gen_node_arg::CodeGenNodeArg;
@@ -910,6 +932,8 @@ pub use crate::types::_crawler_history_state::CrawlerHistoryState;
 pub use crate::types::_timestamped_inclusion_annotation::TimestampedInclusionAnnotation;
 
 pub use crate::types::_run_identifier::RunIdentifier;
+
+pub use crate::types::_distribution_data::DistributionData;
 
 pub use crate::types::_statistic_evaluation_level::StatisticEvaluationLevel;
 
@@ -1293,6 +1317,8 @@ mod _catalog_schema_change_policy;
 
 mod _catalog_source;
 
+mod _catalog_table_config_options;
+
 mod _catalog_target;
 
 mod _classifier;
@@ -1479,6 +1505,8 @@ mod _data_quality_result_description;
 
 mod _data_quality_result_filter_criteria;
 
+mod _data_quality_rule_recommendation_run_additional_run_options;
+
 mod _data_quality_rule_recommendation_run_description;
 
 mod _data_quality_rule_recommendation_run_filter;
@@ -1486,6 +1514,10 @@ mod _data_quality_rule_recommendation_run_filter;
 mod _data_quality_rule_result;
 
 mod _data_quality_rule_result_status;
+
+mod _data_quality_rule_results_options;
+
+mod _data_quality_ruleset_evaluation_run;
 
 mod _data_quality_ruleset_evaluation_run_description;
 
@@ -1540,6 +1572,10 @@ mod _direct_kafka_source;
 mod _direct_kinesis_source;
 
 mod _direct_schema_change_policy;
+
+mod _distribution_data;
+
+mod _distribution_results_options;
 
 mod _double_column_statistics_data;
 
@@ -1893,6 +1929,12 @@ mod _o_auth2_properties;
 
 mod _o_auth2_properties_input;
 
+mod _observation_configuration;
+
+mod _observation_mode;
+
+mod _observation_results_options;
+
 mod _offset_configuration;
 
 mod _open_table_format_input;
@@ -1957,6 +1999,8 @@ mod _principal_type;
 
 mod _profile_configuration;
 
+mod _profiling_results_options;
+
 mod _property;
 
 mod _property_location;
@@ -2011,11 +2055,15 @@ mod _response_extraction_mapping;
 
 mod _rest_configuration;
 
+mod _result_type_enum;
+
 mod _retention_configuration;
 
 mod _retention_metrics;
 
 mod _route;
+
+mod _row_level_results_options;
 
 mod _run_identifier;
 

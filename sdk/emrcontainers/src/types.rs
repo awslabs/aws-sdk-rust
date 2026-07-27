@@ -7,6 +7,8 @@ pub use crate::types::_container_provider::ContainerProvider;
 
 pub use crate::types::_security_configuration_data::SecurityConfigurationData;
 
+pub use crate::types::_scheduler_configuration::SchedulerConfiguration;
+
 pub use crate::types::_job_run::JobRun;
 
 pub use crate::types::_job_template::JobTemplate;
@@ -46,6 +48,8 @@ pub use crate::types::_endpoint_state::EndpointState;
 pub use crate::types::_certificate::Certificate;
 
 pub use crate::types::_virtual_cluster_state::VirtualClusterState;
+
+pub use crate::types::_scheduler_status::SchedulerStatus;
 
 pub use crate::types::_spark_submit_job_driver::SparkSubmitJobDriver;
 
@@ -166,6 +170,10 @@ mod _retry_policy_configuration;
 mod _retry_policy_execution;
 
 mod _s3_monitoring_configuration;
+
+mod _scheduler_configuration;
+
+mod _scheduler_status;
 
 mod _secure_namespace_info;
 

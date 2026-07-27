@@ -9,5 +9,11 @@ pub fn ser_update_custom_permissions_input_input(
         crate::protocol_serde::shape_capabilities::ser_capabilities(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.governance {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Governance").start_object();
+        crate::protocol_serde::shape_governance::ser_governance(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

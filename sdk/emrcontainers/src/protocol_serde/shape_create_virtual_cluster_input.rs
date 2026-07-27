@@ -15,21 +15,27 @@ pub fn ser_create_virtual_cluster_input_input(
     if let Some(var_4) = &input.name {
         object.key("name").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.security_configuration_id {
-        object.key("securityConfigurationId").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.session_enabled {
-        object.key("sessionEnabled").boolean(*var_6);
-    }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_5) = &input.scheduler_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_6 = object.key("schedulerConfiguration").start_object();
+        crate::protocol_serde::shape_scheduler_configuration::ser_scheduler_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.security_configuration_id {
+        object.key("securityConfigurationId").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.session_enabled {
+        object.key("sessionEnabled").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_8.finish();
+        object_10.finish();
     }
     Ok(())
 }

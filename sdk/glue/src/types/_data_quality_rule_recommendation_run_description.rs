@@ -12,6 +12,8 @@ pub struct DataQualityRuleRecommendationRunDescription {
     pub started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The data source (Glue table) associated with the recommendation run.</p>
     pub data_source: ::std::option::Option<crate::types::DataSource>,
+    /// <p>The name of the ruleset that was created by the recommendation run.</p>
+    pub created_ruleset_name: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityRuleRecommendationRunDescription {
     /// <p>The unique run identifier associated with this run.</p>
@@ -30,6 +32,10 @@ impl DataQualityRuleRecommendationRunDescription {
     pub fn data_source(&self) -> ::std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
+    /// <p>The name of the ruleset that was created by the recommendation run.</p>
+    pub fn created_ruleset_name(&self) -> ::std::option::Option<&str> {
+        self.created_ruleset_name.as_deref()
+    }
 }
 impl DataQualityRuleRecommendationRunDescription {
     /// Creates a new builder-style object to manufacture [`DataQualityRuleRecommendationRunDescription`](crate::types::DataQualityRuleRecommendationRunDescription).
@@ -46,6 +52,7 @@ pub struct DataQualityRuleRecommendationRunDescriptionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TaskStatusType>,
     pub(crate) started_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) data_source: ::std::option::Option<crate::types::DataSource>,
+    pub(crate) created_ruleset_name: ::std::option::Option<::std::string::String>,
 }
 impl DataQualityRuleRecommendationRunDescriptionBuilder {
     /// <p>The unique run identifier associated with this run.</p>
@@ -104,6 +111,20 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
     pub fn get_data_source(&self) -> &::std::option::Option<crate::types::DataSource> {
         &self.data_source
     }
+    /// <p>The name of the ruleset that was created by the recommendation run.</p>
+    pub fn created_ruleset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_ruleset_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the ruleset that was created by the recommendation run.</p>
+    pub fn set_created_ruleset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_ruleset_name = input;
+        self
+    }
+    /// <p>The name of the ruleset that was created by the recommendation run.</p>
+    pub fn get_created_ruleset_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_ruleset_name
+    }
     /// Consumes the builder and constructs a [`DataQualityRuleRecommendationRunDescription`](crate::types::DataQualityRuleRecommendationRunDescription).
     pub fn build(self) -> crate::types::DataQualityRuleRecommendationRunDescription {
         crate::types::DataQualityRuleRecommendationRunDescription {
@@ -111,6 +132,7 @@ impl DataQualityRuleRecommendationRunDescriptionBuilder {
             status: self.status,
             started_on: self.started_on,
             data_source: self.data_source,
+            created_ruleset_name: self.created_ruleset_name,
         }
     }
 }

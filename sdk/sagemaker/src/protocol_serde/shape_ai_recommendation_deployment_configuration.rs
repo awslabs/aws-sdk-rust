@@ -61,6 +61,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "MinCpuMemoryRequiredInMb" => {
+                            builder = builder.set_min_cpu_memory_required_in_mb(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

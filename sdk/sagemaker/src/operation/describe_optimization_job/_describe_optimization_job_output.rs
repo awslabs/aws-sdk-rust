@@ -43,6 +43,8 @@ pub struct DescribeOptimizationJobOutput {
     pub stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     /// <p>A VPC in Amazon VPC that your optimized model has access to.</p>
     pub vpc_config: ::std::option::Option<crate::types::OptimizationVpcConfig>,
+    /// <p>The Amazon Resource Name (ARN) of the training plan associated with this optimization job. This field appears only when you specified a training plan when you created the job. Optimization jobs that use on-demand capacity don't return this field.</p>
+    pub training_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeOptimizationJobOutput {
@@ -124,6 +126,12 @@ impl DescribeOptimizationJobOutput {
     pub fn vpc_config(&self) -> ::std::option::Option<&crate::types::OptimizationVpcConfig> {
         self.vpc_config.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the training plan associated with this optimization job. This field appears only when you specified a training plan when you created the job. Optimization jobs that use on-demand capacity don't return this field.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.training_plan_arns.is_none()`.
+    pub fn training_plan_arns(&self) -> &[::std::string::String] {
+        self.training_plan_arns.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeOptimizationJobOutput {
     fn request_id(&self) -> Option<&str> {
@@ -159,6 +167,7 @@ pub struct DescribeOptimizationJobOutputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stopping_condition: ::std::option::Option<crate::types::StoppingCondition>,
     pub(crate) vpc_config: ::std::option::Option<crate::types::OptimizationVpcConfig>,
+    pub(crate) training_plan_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
 impl DescribeOptimizationJobOutputBuilder {
@@ -455,6 +464,26 @@ impl DescribeOptimizationJobOutputBuilder {
     pub fn get_vpc_config(&self) -> &::std::option::Option<crate::types::OptimizationVpcConfig> {
         &self.vpc_config
     }
+    /// Appends an item to `training_plan_arns`.
+    ///
+    /// To override the contents of this collection use [`set_training_plan_arns`](Self::set_training_plan_arns).
+    ///
+    /// <p>The Amazon Resource Name (ARN) of the training plan associated with this optimization job. This field appears only when you specified a training plan when you created the job. Optimization jobs that use on-demand capacity don't return this field.</p>
+    pub fn training_plan_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.training_plan_arns.unwrap_or_default();
+        v.push(input.into());
+        self.training_plan_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the training plan associated with this optimization job. This field appears only when you specified a training plan when you created the job. Optimization jobs that use on-demand capacity don't return this field.</p>
+    pub fn set_training_plan_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.training_plan_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the training plan associated with this optimization job. This field appears only when you specified a training plan when you created the job. Optimization jobs that use on-demand capacity don't return this field.</p>
+    pub fn get_training_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.training_plan_arns
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -485,6 +514,7 @@ impl DescribeOptimizationJobOutputBuilder {
             role_arn: self.role_arn,
             stopping_condition: self.stopping_condition,
             vpc_config: self.vpc_config,
+            training_plan_arns: self.training_plan_arns,
             _request_id: self._request_id,
         }
     }

@@ -35,6 +35,8 @@ pub use crate::types::_brand_detail::BrandDetail;
 
 pub use crate::types::_capabilities::Capabilities;
 
+pub use crate::types::_governance::Governance;
+
 pub use crate::types::_dashboard_source_entity::DashboardSourceEntity;
 
 pub use crate::types::_dashboard_publish_options::DashboardPublishOptions;
@@ -718,6 +720,8 @@ pub use crate::types::_brand_element_style::BrandElementStyle;
 pub use crate::types::_logo_set_configuration::LogoSetConfiguration;
 
 pub use crate::types::_logo_set::LogoSet;
+
+pub use crate::types::_default_category_effect::DefaultCategoryEffect;
 
 pub use crate::types::_dashboard_behavior::DashboardBehavior;
 
@@ -3715,6 +3719,8 @@ mod _decimal_value_when_unset_configuration;
 
 mod _default_aggregation;
 
+mod _default_category_effect;
+
 mod _default_date_time_picker_control_options;
 
 mod _default_filter_control_configuration;
@@ -4088,6 +4094,8 @@ mod _geospatial_window_options;
 mod _global_table_border_options;
 
 mod _google_drive_parameters;
+
+mod _governance;
 
 mod _gradient_color;
 

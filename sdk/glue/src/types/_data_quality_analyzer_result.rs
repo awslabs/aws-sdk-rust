@@ -12,6 +12,8 @@ pub struct DataQualityAnalyzerResult {
     pub evaluation_message: ::std::option::Option<::std::string::String>,
     /// <p>A map of metrics associated with the evaluation of the analyzer.</p>
     pub evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    /// <p>A map of distribution metrics associated with the evaluation of the analyzer.</p>
+    pub evaluated_distributions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DistributionData>>,
 }
 impl DataQualityAnalyzerResult {
     /// <p>The name of the data quality analyzer.</p>
@@ -30,6 +32,12 @@ impl DataQualityAnalyzerResult {
     pub fn evaluated_metrics(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f64>> {
         self.evaluated_metrics.as_ref()
     }
+    /// <p>A map of distribution metrics associated with the evaluation of the analyzer.</p>
+    pub fn evaluated_distributions(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::DistributionData>> {
+        self.evaluated_distributions.as_ref()
+    }
 }
 impl ::std::fmt::Debug for DataQualityAnalyzerResult {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +46,7 @@ impl ::std::fmt::Debug for DataQualityAnalyzerResult {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluation_message", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluated_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluated_distributions", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -56,6 +65,7 @@ pub struct DataQualityAnalyzerResultBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_message: ::std::option::Option<::std::string::String>,
     pub(crate) evaluated_metrics: ::std::option::Option<::std::collections::HashMap<::std::string::String, f64>>,
+    pub(crate) evaluated_distributions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DistributionData>>,
 }
 impl DataQualityAnalyzerResultBuilder {
     /// <p>The name of the data quality analyzer.</p>
@@ -120,6 +130,31 @@ impl DataQualityAnalyzerResultBuilder {
     pub fn get_evaluated_metrics(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, f64>> {
         &self.evaluated_metrics
     }
+    /// Adds a key-value pair to `evaluated_distributions`.
+    ///
+    /// To override the contents of this collection use [`set_evaluated_distributions`](Self::set_evaluated_distributions).
+    ///
+    /// <p>A map of distribution metrics associated with the evaluation of the analyzer.</p>
+    pub fn evaluated_distributions(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::DistributionData) -> Self {
+        let mut hash_map = self.evaluated_distributions.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.evaluated_distributions = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of distribution metrics associated with the evaluation of the analyzer.</p>
+    pub fn set_evaluated_distributions(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DistributionData>>,
+    ) -> Self {
+        self.evaluated_distributions = input;
+        self
+    }
+    /// <p>A map of distribution metrics associated with the evaluation of the analyzer.</p>
+    pub fn get_evaluated_distributions(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::DistributionData>> {
+        &self.evaluated_distributions
+    }
     /// Consumes the builder and constructs a [`DataQualityAnalyzerResult`](crate::types::DataQualityAnalyzerResult).
     pub fn build(self) -> crate::types::DataQualityAnalyzerResult {
         crate::types::DataQualityAnalyzerResult {
@@ -127,6 +162,7 @@ impl DataQualityAnalyzerResultBuilder {
             description: self.description,
             evaluation_message: self.evaluation_message,
             evaluated_metrics: self.evaluated_metrics,
+            evaluated_distributions: self.evaluated_distributions,
         }
     }
 }
@@ -137,6 +173,7 @@ impl ::std::fmt::Debug for DataQualityAnalyzerResultBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluation_message", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluated_metrics", &"*** Sensitive Data Redacted ***");
+        formatter.field("evaluated_distributions", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

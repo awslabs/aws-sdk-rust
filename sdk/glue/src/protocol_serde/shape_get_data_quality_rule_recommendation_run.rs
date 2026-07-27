@@ -238,6 +238,11 @@ pub(crate) fn de_get_data_quality_rule_recommendation_run(
                             .transpose()?,
                     );
                 }
+                "AdditionalRunOptions" => {
+                    builder = builder.set_additional_run_options(
+                            crate::protocol_serde::shape_data_quality_rule_recommendation_run_additional_run_options::de_data_quality_rule_recommendation_run_additional_run_options(tokens, _value, depth + 1)?
+                        );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

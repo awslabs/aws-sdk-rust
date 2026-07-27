@@ -27,6 +27,8 @@ pub use crate::types::_connection_type_detail::ConnectionTypeDetailBuilder;
 
 pub use crate::types::_partner_summary::PartnerSummaryBuilder;
 
+pub use crate::types::_headquarters::HeadquartersBuilder;
+
 pub use crate::types::_partner_domain::PartnerDomainBuilder;
 
 pub use crate::types::_error_detail::ErrorDetailBuilder;

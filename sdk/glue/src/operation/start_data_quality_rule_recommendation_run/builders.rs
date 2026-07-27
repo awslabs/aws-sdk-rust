@@ -211,4 +211,21 @@ impl StartDataQualityRuleRecommendationRunFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn additional_run_options(mut self, input: crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions) -> Self {
+        self.inner = self.inner.additional_run_options(input);
+        self
+    }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn set_additional_run_options(
+        mut self,
+        input: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions>,
+    ) -> Self {
+        self.inner = self.inner.set_additional_run_options(input);
+        self
+    }
+    /// <p>Additional run options you can specify for a recommendation run.</p>
+    pub fn get_additional_run_options(&self) -> &::std::option::Option<crate::types::DataQualityRuleRecommendationRunAdditionalRunOptions> {
+        self.inner.get_additional_run_options()
+    }
 }

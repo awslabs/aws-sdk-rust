@@ -65,6 +65,20 @@ pub fn de_update_configured_audience_model_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::unhandled)?
+            };
+            tmp
+        }),
         "ValidationException" => crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {

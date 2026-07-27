@@ -22,7 +22,7 @@ impl crate::operation::create_virtual_cluster::builders::CreateVirtualClusterInp
 }
 /// Fluent builder constructing a request to `CreateVirtualCluster`.
 ///
-/// <p>Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
+/// <p>Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, update, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVirtualClusterFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -196,5 +196,19 @@ impl CreateVirtualClusterFluentBuilder {
     /// <p>Indicates whether the virtual cluster has session support enabled.</p>
     pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_session_enabled()
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
+        self.inner = self.inner.scheduler_configuration(input);
+        self
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
+        self.inner = self.inner.set_scheduler_configuration(input);
+        self
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
+        self.inner.get_scheduler_configuration()
     }
 }

@@ -20,8 +20,12 @@ pub struct VirtualCluster {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The ID of the security configuration.</p>
     pub security_configuration_id: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the virtual cluster has session support enabled.</p>
+    /// <p>Specifies whether the virtual cluster has session support enabled.</p>
     pub session_enabled: ::std::option::Option<bool>,
+    /// <p>The scheduler configuration (concurrency and queue limits) applied to the virtual cluster. The service does not return this field when no scheduler limits are configured.</p>
+    pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
+    /// <p>The current in-queue and concurrent job-run counts for the virtual cluster.</p>
+    pub scheduler_status: ::std::option::Option<crate::types::SchedulerStatus>,
 }
 impl VirtualCluster {
     /// <p>The ID of the virtual cluster.</p>
@@ -56,9 +60,17 @@ impl VirtualCluster {
     pub fn security_configuration_id(&self) -> ::std::option::Option<&str> {
         self.security_configuration_id.as_deref()
     }
-    /// <p>Indicates whether the virtual cluster has session support enabled.</p>
+    /// <p>Specifies whether the virtual cluster has session support enabled.</p>
     pub fn session_enabled(&self) -> ::std::option::Option<bool> {
         self.session_enabled
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) applied to the virtual cluster. The service does not return this field when no scheduler limits are configured.</p>
+    pub fn scheduler_configuration(&self) -> ::std::option::Option<&crate::types::SchedulerConfiguration> {
+        self.scheduler_configuration.as_ref()
+    }
+    /// <p>The current in-queue and concurrent job-run counts for the virtual cluster.</p>
+    pub fn scheduler_status(&self) -> ::std::option::Option<&crate::types::SchedulerStatus> {
+        self.scheduler_status.as_ref()
     }
 }
 impl VirtualCluster {
@@ -81,6 +93,8 @@ pub struct VirtualClusterBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) security_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_enabled: ::std::option::Option<bool>,
+    pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
+    pub(crate) scheduler_status: ::std::option::Option<crate::types::SchedulerStatus>,
 }
 impl VirtualClusterBuilder {
     /// <p>The ID of the virtual cluster.</p>
@@ -201,19 +215,47 @@ impl VirtualClusterBuilder {
     pub fn get_security_configuration_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.security_configuration_id
     }
-    /// <p>Indicates whether the virtual cluster has session support enabled.</p>
+    /// <p>Specifies whether the virtual cluster has session support enabled.</p>
     pub fn session_enabled(mut self, input: bool) -> Self {
         self.session_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the virtual cluster has session support enabled.</p>
+    /// <p>Specifies whether the virtual cluster has session support enabled.</p>
     pub fn set_session_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.session_enabled = input;
         self
     }
-    /// <p>Indicates whether the virtual cluster has session support enabled.</p>
+    /// <p>Specifies whether the virtual cluster has session support enabled.</p>
     pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
         &self.session_enabled
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) applied to the virtual cluster. The service does not return this field when no scheduler limits are configured.</p>
+    pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
+        self.scheduler_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) applied to the virtual cluster. The service does not return this field when no scheduler limits are configured.</p>
+    pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
+        self.scheduler_configuration = input;
+        self
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) applied to the virtual cluster. The service does not return this field when no scheduler limits are configured.</p>
+    pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
+        &self.scheduler_configuration
+    }
+    /// <p>The current in-queue and concurrent job-run counts for the virtual cluster.</p>
+    pub fn scheduler_status(mut self, input: crate::types::SchedulerStatus) -> Self {
+        self.scheduler_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current in-queue and concurrent job-run counts for the virtual cluster.</p>
+    pub fn set_scheduler_status(mut self, input: ::std::option::Option<crate::types::SchedulerStatus>) -> Self {
+        self.scheduler_status = input;
+        self
+    }
+    /// <p>The current in-queue and concurrent job-run counts for the virtual cluster.</p>
+    pub fn get_scheduler_status(&self) -> &::std::option::Option<crate::types::SchedulerStatus> {
+        &self.scheduler_status
     }
     /// Consumes the builder and constructs a [`VirtualCluster`](crate::types::VirtualCluster).
     pub fn build(self) -> crate::types::VirtualCluster {
@@ -227,6 +269,8 @@ impl VirtualClusterBuilder {
             tags: self.tags,
             security_configuration_id: self.security_configuration_id,
             session_enabled: self.session_enabled,
+            scheduler_configuration: self.scheduler_configuration,
+            scheduler_status: self.scheduler_status,
         }
     }
 }

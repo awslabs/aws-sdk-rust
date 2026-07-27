@@ -13,6 +13,7 @@
 /// # let executionstatusreason = unimplemented!();
 /// match executionstatusreason {
 ///     ExecutionStatusReason::BillOwnerChanged => { /* ... */ },
+///     ExecutionStatusReason::Deprecated => { /* ... */ },
 ///     ExecutionStatusReason::InsufficientPermission => { /* ... */ },
 ///     ExecutionStatusReason::InternalFailure => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ExecutionStatusReason {
     #[allow(missing_docs)] // documentation missing in model
     BillOwnerChanged,
     #[allow(missing_docs)] // documentation missing in model
+    Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientPermission,
     #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ExecutionStatusReason {
     fn from(s: &str) -> Self {
         match s {
             "BILL_OWNER_CHANGED" => ExecutionStatusReason::BillOwnerChanged,
+            "DEPRECATED" => ExecutionStatusReason::Deprecated,
             "INSUFFICIENT_PERMISSION" => ExecutionStatusReason::InsufficientPermission,
             "INTERNAL_FAILURE" => ExecutionStatusReason::InternalFailure,
             other => ExecutionStatusReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ExecutionStatusReason {
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionStatusReason::BillOwnerChanged => "BILL_OWNER_CHANGED",
+            ExecutionStatusReason::Deprecated => "DEPRECATED",
             ExecutionStatusReason::InsufficientPermission => "INSUFFICIENT_PERMISSION",
             ExecutionStatusReason::InternalFailure => "INTERNAL_FAILURE",
             ExecutionStatusReason::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ExecutionStatusReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BILL_OWNER_CHANGED", "INSUFFICIENT_PERMISSION", "INTERNAL_FAILURE"]
+        &["BILL_OWNER_CHANGED", "DEPRECATED", "INSUFFICIENT_PERMISSION", "INTERNAL_FAILURE"]
     }
 }
 impl ::std::convert::AsRef<str> for ExecutionStatusReason {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ExecutionStatusReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ExecutionStatusReason::BillOwnerChanged => write!(f, "BILL_OWNER_CHANGED"),
+            ExecutionStatusReason::Deprecated => write!(f, "DEPRECATED"),
             ExecutionStatusReason::InsufficientPermission => write!(f, "INSUFFICIENT_PERMISSION"),
             ExecutionStatusReason::InternalFailure => write!(f, "INTERNAL_FAILURE"),
             ExecutionStatusReason::Unknown(value) => write!(f, "{value}"),

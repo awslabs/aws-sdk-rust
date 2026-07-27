@@ -156,6 +156,8 @@ mod batch_get_custom_entity_types;
 
 mod batch_get_data_quality_result;
 
+mod batch_get_data_quality_ruleset_evaluation_run;
+
 mod batch_get_dev_endpoints;
 
 mod batch_get_iterable_forms;

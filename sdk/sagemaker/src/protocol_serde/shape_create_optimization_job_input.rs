@@ -76,5 +76,14 @@ pub fn ser_create_optimization_job_input_input(
         crate::protocol_serde::shape_optimization_vpc_config::ser_optimization_vpc_config(&mut object_24, var_23)?;
         object_24.finish();
     }
+    if let Some(var_25) = &input.training_plan_arns {
+        let mut array_26 = object.key("TrainingPlanArns").start_array();
+        for item_27 in var_25 {
+            {
+                array_26.value().string(item_27.as_str());
+            }
+        }
+        array_26.finish();
+    }
     Ok(())
 }

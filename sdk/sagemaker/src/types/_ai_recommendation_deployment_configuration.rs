@@ -16,6 +16,8 @@ pub struct AiRecommendationDeploymentConfiguration {
     pub copy_count_per_instance: ::std::option::Option<i32>,
     /// <p>The environment variables for the deployment.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    pub min_cpu_memory_required_in_mb: ::std::option::Option<i32>,
 }
 impl AiRecommendationDeploymentConfiguration {
     /// <p>The Amazon S3 data channels for the deployment.</p>
@@ -44,6 +46,10 @@ impl AiRecommendationDeploymentConfiguration {
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    pub fn min_cpu_memory_required_in_mb(&self) -> ::std::option::Option<i32> {
+        self.min_cpu_memory_required_in_mb
+    }
 }
 impl AiRecommendationDeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`AiRecommendationDeploymentConfiguration`](crate::types::AiRecommendationDeploymentConfiguration).
@@ -62,6 +68,7 @@ pub struct AiRecommendationDeploymentConfigurationBuilder {
     pub(crate) instance_count: ::std::option::Option<i32>,
     pub(crate) copy_count_per_instance: ::std::option::Option<i32>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) min_cpu_memory_required_in_mb: ::std::option::Option<i32>,
 }
 impl AiRecommendationDeploymentConfigurationBuilder {
     /// Appends an item to `s3`.
@@ -167,6 +174,20 @@ impl AiRecommendationDeploymentConfigurationBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    pub fn min_cpu_memory_required_in_mb(mut self, input: i32) -> Self {
+        self.min_cpu_memory_required_in_mb = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    pub fn set_min_cpu_memory_required_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.min_cpu_memory_required_in_mb = input;
+        self
+    }
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    pub fn get_min_cpu_memory_required_in_mb(&self) -> &::std::option::Option<i32> {
+        &self.min_cpu_memory_required_in_mb
+    }
     /// Consumes the builder and constructs a [`AiRecommendationDeploymentConfiguration`](crate::types::AiRecommendationDeploymentConfiguration).
     pub fn build(self) -> crate::types::AiRecommendationDeploymentConfiguration {
         crate::types::AiRecommendationDeploymentConfiguration {
@@ -176,6 +197,7 @@ impl AiRecommendationDeploymentConfigurationBuilder {
             instance_count: self.instance_count,
             copy_count_per_instance: self.copy_count_per_instance,
             environment_variables: self.environment_variables,
+            min_cpu_memory_required_in_mb: self.min_cpu_memory_required_in_mb,
         }
     }
 }

@@ -19,6 +19,8 @@ pub use crate::types::_brand_detail::BrandDetailBuilder;
 
 pub use crate::types::_capabilities::CapabilitiesBuilder;
 
+pub use crate::types::_governance::GovernanceBuilder;
+
 pub use crate::types::_dashboard_source_entity::DashboardSourceEntityBuilder;
 
 pub use crate::types::_dashboard_publish_options::DashboardPublishOptionsBuilder;

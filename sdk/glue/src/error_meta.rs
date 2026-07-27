@@ -555,6 +555,41 @@ impl From<crate::operation::batch_get_data_quality_result::BatchGetDataQualityRe
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError> for Error {
+    fn from(err: crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError) -> Self {
+        match err {
+            crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError::OperationTimeoutException(inner) => Error::OperationTimeoutException(inner),
+            crate::operation::batch_get_data_quality_ruleset_evaluation_run::BatchGetDataQualityRulesetEvaluationRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

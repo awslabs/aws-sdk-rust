@@ -13,7 +13,7 @@ impl super::Client {
     /// - On success, responds with [`GetManagedEndpointSessionCredentialsOutput`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput::id): <p>The identifier of the session token returned.</p>
     ///   - [`credentials(Option<Credentials>)`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput::credentials): <p>The structure containing the session credentials.</p>
-    ///   - [`endpoint_credentials(Option<Credentials>)`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput::endpoint_credentials): <p>The structure containing the session token being returned.</p>
+    ///   - [`endpoint_credentials(Option<Credentials>)`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput::endpoint_credentials): <p>The session credentials that the operation returns.</p>
     ///   - [`expires_at(Option<DateTime>)`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput::expires_at): <p>The date and time when the session token will expire.</p>
     /// - On failure, responds with [`SdkError<GetManagedEndpointSessionCredentialsError>`](crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError)
     pub fn get_managed_endpoint_session_credentials(

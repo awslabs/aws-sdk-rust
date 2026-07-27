@@ -1659,6 +1659,8 @@ pub(crate) mod shape_additional_inference_specifications;
 
 pub(crate) mod shape_agent_versions;
 
+pub(crate) mod shape_ai_adapter_source;
+
 pub(crate) mod shape_ai_benchmark_job_summary_list;
 
 pub(crate) mod shape_ai_benchmark_network_config;
@@ -2219,6 +2221,8 @@ pub(crate) mod shape_optimization_job_output_config;
 
 pub(crate) mod shape_optimization_job_summaries;
 
+pub(crate) mod shape_optimization_job_training_plan_arns;
+
 pub(crate) mod shape_optimization_output;
 
 pub(crate) mod shape_optimization_vpc_config;
@@ -2500,6 +2504,14 @@ pub(crate) mod shape_additional_model_data_sources;
 pub(crate) mod shape_additional_s3_data_source;
 
 pub(crate) mod shape_agent_version;
+
+pub(crate) mod shape_ai_adapter_model_package_entry;
+
+pub(crate) mod shape_ai_adapter_model_package_entry_list;
+
+pub(crate) mod shape_ai_adapter_s3_entry;
+
+pub(crate) mod shape_ai_adapter_s3_entry_list;
 
 pub(crate) mod shape_ai_benchmark_endpoint;
 
@@ -3260,6 +3272,8 @@ pub(crate) mod shape_ai_benchmark_inference_component_list;
 pub(crate) mod shape_ai_cloud_watch_logs;
 
 pub(crate) mod shape_ai_ml_reservation_arn_list;
+
+pub(crate) mod shape_ai_recommendation_adapter_details;
 
 pub(crate) mod shape_ai_recommendation_deployment_configuration;
 

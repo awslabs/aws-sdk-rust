@@ -168,6 +168,7 @@ impl From<crate::operation::create_audience_model::CreateAudienceModelError> for
             crate::operation::create_audience_model::CreateAudienceModelError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_audience_model::CreateAudienceModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_audience_model::CreateAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_audience_model::CreateAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -209,6 +210,9 @@ impl From<crate::operation::create_configured_audience_model::CreateConfiguredAu
             }
             crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::create_configured_audience_model::CreateConfiguredAudienceModelError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -253,6 +257,9 @@ impl From<crate::operation::create_configured_model_algorithm::CreateConfiguredM
             }
             crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::create_configured_model_algorithm::CreateConfiguredModelAlgorithmError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -389,6 +396,7 @@ impl From<crate::operation::create_training_dataset::CreateTrainingDatasetError>
                 Error::AccessDeniedException(inner)
             }
             crate::operation::create_training_dataset::CreateTrainingDatasetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_training_dataset::CreateTrainingDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_training_dataset::CreateTrainingDatasetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_training_dataset::CreateTrainingDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -427,6 +435,9 @@ impl From<crate::operation::delete_audience_generation_job::DeleteAudienceGenera
             crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::delete_audience_generation_job::DeleteAudienceGenerationJobError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -456,6 +467,7 @@ impl From<crate::operation::delete_audience_model::DeleteAudienceModelError> for
             crate::operation::delete_audience_model::DeleteAudienceModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_audience_model::DeleteAudienceModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_audience_model::DeleteAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_audience_model::DeleteAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -494,6 +506,9 @@ impl From<crate::operation::delete_configured_audience_model::DeleteConfiguredAu
             }
             crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::delete_configured_audience_model::DeleteConfiguredAudienceModelError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -535,6 +550,9 @@ impl From<crate::operation::delete_configured_audience_model_policy::DeleteConfi
             }
             crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::delete_configured_audience_model_policy::DeleteConfiguredAudienceModelPolicyError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -581,6 +599,9 @@ impl From<crate::operation::delete_configured_model_algorithm::DeleteConfiguredM
             }
             crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::delete_configured_model_algorithm::DeleteConfiguredModelAlgorithmError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -759,6 +780,7 @@ impl From<crate::operation::delete_training_dataset::DeleteTrainingDatasetError>
             crate::operation::delete_training_dataset::DeleteTrainingDatasetError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::delete_training_dataset::DeleteTrainingDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_training_dataset::DeleteTrainingDatasetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_training_dataset::DeleteTrainingDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -790,6 +812,9 @@ impl From<crate::operation::get_audience_generation_job::GetAudienceGenerationJo
             crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::get_audience_generation_job::GetAudienceGenerationJobError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -816,6 +841,7 @@ impl From<crate::operation::get_audience_model::GetAudienceModelError> for Error
         match err {
             crate::operation::get_audience_model::GetAudienceModelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_audience_model::GetAudienceModelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_audience_model::GetAudienceModelError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_audience_model::GetAudienceModelError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_audience_model::GetAudienceModelError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -971,6 +997,9 @@ impl From<crate::operation::get_configured_audience_model::GetConfiguredAudience
             crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::get_configured_audience_model::GetConfiguredAudienceModelError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1012,6 +1041,9 @@ impl From<crate::operation::get_configured_audience_model_policy::GetConfiguredA
             crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::get_configured_audience_model_policy::GetConfiguredAudienceModelPolicyError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1050,6 +1082,9 @@ impl From<crate::operation::get_configured_model_algorithm::GetConfiguredModelAl
             }
             crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::get_configured_model_algorithm::GetConfiguredModelAlgorithmError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -1244,6 +1279,7 @@ impl From<crate::operation::get_training_dataset::GetTrainingDatasetError> for E
             crate::operation::get_training_dataset::GetTrainingDatasetError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::get_training_dataset::GetTrainingDatasetError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_training_dataset::GetTrainingDatasetError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_training_dataset::GetTrainingDatasetError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1272,6 +1308,7 @@ impl From<crate::operation::list_audience_export_jobs::ListAudienceExportJobsErr
             crate::operation::list_audience_export_jobs::ListAudienceExportJobsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_audience_export_jobs::ListAudienceExportJobsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_audience_export_jobs::ListAudienceExportJobsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_audience_export_jobs::ListAudienceExportJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1300,6 +1337,9 @@ impl From<crate::operation::list_audience_generation_jobs::ListAudienceGeneratio
             crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::list_audience_generation_jobs::ListAudienceGenerationJobsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1325,6 +1365,7 @@ impl From<crate::operation::list_audience_models::ListAudienceModelsError> for E
     fn from(err: crate::operation::list_audience_models::ListAudienceModelsError) -> Self {
         match err {
             crate::operation::list_audience_models::ListAudienceModelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_audience_models::ListAudienceModelsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_audience_models::ListAudienceModelsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_audience_models::ListAudienceModelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1558,6 +1599,9 @@ impl From<crate::operation::list_configured_audience_models::ListConfiguredAudie
             crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
             crate::operation::list_configured_audience_models::ListConfiguredAudienceModelsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
@@ -1635,6 +1679,9 @@ impl From<crate::operation::list_configured_model_algorithms::ListConfiguredMode
         match err {
             crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::list_configured_model_algorithms::ListConfiguredModelAlgorithmsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -1812,6 +1859,7 @@ impl From<crate::operation::list_training_datasets::ListTrainingDatasetsError> f
     fn from(err: crate::operation::list_training_datasets::ListTrainingDatasetsError) -> Self {
         match err {
             crate::operation::list_training_datasets::ListTrainingDatasetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_training_datasets::ListTrainingDatasetsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_training_datasets::ListTrainingDatasetsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_training_datasets::ListTrainingDatasetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1850,6 +1898,9 @@ impl From<crate::operation::put_configured_audience_model_policy::PutConfiguredA
             }
             crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ValidationException(inner) => {
                 Error::ValidationException(inner)
@@ -1914,6 +1965,7 @@ impl From<crate::operation::start_audience_export_job::StartAudienceExportJobErr
             crate::operation::start_audience_export_job::StartAudienceExportJobError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::start_audience_export_job::StartAudienceExportJobError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_audience_export_job::StartAudienceExportJobError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_audience_export_job::StartAudienceExportJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -2131,6 +2183,9 @@ impl From<crate::operation::update_configured_audience_model::UpdateConfiguredAu
             }
             crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
             }
             crate::operation::update_configured_audience_model::UpdateConfiguredAudienceModelError::ValidationException(inner) => {
                 Error::ValidationException(inner)

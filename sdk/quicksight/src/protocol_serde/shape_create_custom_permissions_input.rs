@@ -12,17 +12,23 @@ pub fn ser_create_custom_permissions_input_input(
     if let Some(var_3) = &input.custom_permissions_name {
         object.key("CustomPermissionsName").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.tags {
-        let mut array_5 = object.key("Tags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.governance {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("Governance").start_object();
+        crate::protocol_serde::shape_governance::ser_governance(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.tags {
+        let mut array_7 = object.key("Tags").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
     Ok(())
 }

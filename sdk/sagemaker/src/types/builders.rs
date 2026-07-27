@@ -987,6 +987,10 @@ pub use crate::types::_update_template_provider::UpdateTemplateProviderBuilder;
 
 pub use crate::types::_ai_recommendation_constraint::AiRecommendationConstraintBuilder;
 
+pub use crate::types::_ai_adapter_model_package_entry::AiAdapterModelPackageEntryBuilder;
+
+pub use crate::types::_ai_adapter_s3_entry::AiAdapterS3EntryBuilder;
+
 pub use crate::types::_ai_workload_input_data_config::AiWorkloadInputDataConfigBuilder;
 
 pub use crate::types::_hyper_parameter_specification::HyperParameterSpecificationBuilder;
@@ -1182,6 +1186,8 @@ pub use crate::types::_ai_cloud_watch_logs::AiCloudWatchLogsBuilder;
 pub use crate::types::_ai_recommendation_model_details::AiRecommendationModelDetailsBuilder;
 
 pub use crate::types::_ai_recommendation_deployment_configuration::AiRecommendationDeploymentConfigurationBuilder;
+
+pub use crate::types::_ai_recommendation_adapter_details::AiRecommendationAdapterDetailsBuilder;
 
 pub use crate::types::_algorithm_status_item::AlgorithmStatusItemBuilder;
 

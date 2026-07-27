@@ -72,3 +72,6 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateVirtualCluster` operation.
+pub mod update_virtual_cluster;

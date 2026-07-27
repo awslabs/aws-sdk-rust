@@ -53,6 +53,22 @@ pub fn de_put_configured_audience_model_policy_http_error(
                 tmp
             })
         }
+        "ThrottlingException" => {
+            crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ThrottlingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::throttling_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::unhandled)?
+                };
+                tmp
+            })
+        }
         "ValidationException" => {
             crate::operation::put_configured_audience_model_policy::PutConfiguredAudienceModelPolicyError::ValidationException({
                 #[allow(unused_mut)]

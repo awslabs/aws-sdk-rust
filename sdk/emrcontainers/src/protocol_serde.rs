@@ -71,6 +71,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_virtual_cluster;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -101,6 +103,8 @@ pub(crate) mod shape_start_job_run_input;
 
 pub(crate) mod shape_tag_resource_input;
 
+pub(crate) mod shape_update_virtual_cluster_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_configuration_overrides;
@@ -126,6 +130,8 @@ pub(crate) mod shape_job_template_data;
 pub(crate) mod shape_job_templates;
 
 pub(crate) mod shape_retry_policy_configuration;
+
+pub(crate) mod shape_scheduler_configuration;
 
 pub(crate) mod shape_security_configuration;
 
@@ -154,6 +160,8 @@ pub(crate) mod shape_monitoring_configuration;
 pub(crate) mod shape_parametric_configuration_overrides;
 
 pub(crate) mod shape_retry_policy_execution;
+
+pub(crate) mod shape_scheduler_status;
 
 pub(crate) mod shape_spark_sql_job_driver;
 

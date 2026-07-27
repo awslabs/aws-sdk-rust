@@ -9,6 +9,8 @@ pub struct ListDataQualityRuleRecommendationRunsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>A list of key-value pair tags to filter recommendation runs.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListDataQualityRuleRecommendationRunsInput {
     /// <p>The filter criteria.</p>
@@ -22,6 +24,10 @@ impl ListDataQualityRuleRecommendationRunsInput {
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>A list of key-value pair tags to filter recommendation runs.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl ListDataQualityRuleRecommendationRunsInput {
@@ -38,6 +44,7 @@ pub struct ListDataQualityRuleRecommendationRunsInputBuilder {
     pub(crate) filter: ::std::option::Option<crate::types::DataQualityRuleRecommendationRunFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ListDataQualityRuleRecommendationRunsInputBuilder {
     /// <p>The filter criteria.</p>
@@ -82,6 +89,26 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A list of key-value pair tags to filter recommendation runs.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A list of key-value pair tags to filter recommendation runs.</p>
+    pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A list of key-value pair tags to filter recommendation runs.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`ListDataQualityRuleRecommendationRunsInput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsInput).
     pub fn build(
         self,
@@ -94,6 +121,7 @@ impl ListDataQualityRuleRecommendationRunsInputBuilder {
                 filter: self.filter,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                tags: self.tags,
             },
         )
     }

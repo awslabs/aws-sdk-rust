@@ -5960,6 +5960,42 @@ pub(crate) fn additional_model_data_source_correct_errors(
     builder
 }
 
+pub(crate) fn ai_adapter_model_package_entry_correct_errors(
+    mut builder: crate::types::builders::AiAdapterModelPackageEntryBuilder,
+) -> crate::types::builders::AiAdapterModelPackageEntryBuilder {
+    if builder.adapter_id.is_none() {
+        builder.adapter_id = Some(Default::default())
+    }
+    if builder.model_package_arn.is_none() {
+        builder.model_package_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_adapter_s3_entry_correct_errors(
+    mut builder: crate::types::builders::AiAdapterS3EntryBuilder,
+) -> crate::types::builders::AiAdapterS3EntryBuilder {
+    if builder.adapter_id.is_none() {
+        builder.adapter_id = Some(Default::default())
+    }
+    if builder.s3_uri.is_none() {
+        builder.s3_uri = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ai_recommendation_adapter_details_correct_errors(
+    mut builder: crate::types::builders::AiRecommendationAdapterDetailsBuilder,
+) -> crate::types::builders::AiRecommendationAdapterDetailsBuilder {
+    if builder.model_package_arns.is_none() {
+        builder.model_package_arns = Some(Default::default())
+    }
+    if builder.s3_uris.is_none() {
+        builder.s3_uris = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ai_recommendation_constraint_correct_errors(
     mut builder: crate::types::builders::AiRecommendationConstraintBuilder,
 ) -> crate::types::builders::AiRecommendationConstraintBuilder {

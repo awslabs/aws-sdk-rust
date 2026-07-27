@@ -43,6 +43,8 @@ pub(crate) mod shape_batch_get_custom_entity_types;
 
 pub(crate) mod shape_batch_get_data_quality_result;
 
+pub(crate) mod shape_batch_get_data_quality_ruleset_evaluation_run;
+
 pub(crate) mod shape_batch_get_dev_endpoints;
 
 pub(crate) mod shape_batch_get_iterable_forms;
@@ -646,6 +648,8 @@ pub(crate) mod shape_batch_get_crawlers_input;
 pub(crate) mod shape_batch_get_custom_entity_types_input;
 
 pub(crate) mod shape_batch_get_data_quality_result_input;
+
+pub(crate) mod shape_batch_get_data_quality_ruleset_evaluation_run_input;
 
 pub(crate) mod shape_batch_get_dev_endpoints_input;
 
@@ -1463,6 +1467,8 @@ pub(crate) mod shape_data_quality_result_ids;
 
 pub(crate) mod shape_data_quality_results_list;
 
+pub(crate) mod shape_data_quality_rule_recommendation_run_additional_run_options;
+
 pub(crate) mod shape_data_quality_rule_recommendation_run_filter;
 
 pub(crate) mod shape_data_quality_rule_recommendation_run_list;
@@ -1471,7 +1477,11 @@ pub(crate) mod shape_data_quality_rule_results;
 
 pub(crate) mod shape_data_quality_ruleset_evaluation_run_filter;
 
+pub(crate) mod shape_data_quality_ruleset_evaluation_run_id_list;
+
 pub(crate) mod shape_data_quality_ruleset_evaluation_run_list;
+
+pub(crate) mod shape_data_quality_ruleset_evaluation_runs_list;
 
 pub(crate) mod shape_data_quality_ruleset_filter_criteria;
 
@@ -1923,6 +1933,10 @@ pub(crate) mod shape_data_quality_rule_recommendation_run_description;
 
 pub(crate) mod shape_data_quality_rule_result;
 
+pub(crate) mod shape_data_quality_rule_results_options;
+
+pub(crate) mod shape_data_quality_ruleset_evaluation_run;
+
 pub(crate) mod shape_data_quality_ruleset_evaluation_run_description;
 
 pub(crate) mod shape_data_quality_ruleset_list_details;
@@ -2073,6 +2087,8 @@ pub(crate) mod shape_my_sql_catalog_source;
 
 pub(crate) mod shape_my_sql_catalog_target;
 
+pub(crate) mod shape_observation_results_options;
+
 pub(crate) mod shape_oracle_sql_catalog_source;
 
 pub(crate) mod shape_oracle_sql_catalog_target;
@@ -2103,6 +2119,8 @@ pub(crate) mod shape_principal_permissions;
 
 pub(crate) mod shape_principal_permissions_list;
 
+pub(crate) mod shape_profiling_results_options;
+
 pub(crate) mod shape_property;
 
 pub(crate) mod shape_property_map;
@@ -2128,6 +2146,8 @@ pub(crate) mod shape_resource_uri_list;
 pub(crate) mod shape_retention_configuration;
 
 pub(crate) mod shape_route;
+
+pub(crate) mod shape_row_level_results_options;
 
 pub(crate) mod shape_s3_catalog_delta_source;
 
@@ -2279,6 +2299,8 @@ pub(crate) mod shape_bounded_partition_value_list;
 
 pub(crate) mod shape_catalog_schema_change_policy;
 
+pub(crate) mod shape_catalog_table_config_options;
+
 pub(crate) mod shape_catalog_target_list;
 
 pub(crate) mod shape_client_credentials_properties;
@@ -2327,6 +2349,10 @@ pub(crate) mod shape_delta_target_list;
 
 pub(crate) mod shape_direct_schema_change_policy;
 
+pub(crate) mod shape_distribution_data;
+
+pub(crate) mod shape_distribution_results_options;
+
 pub(crate) mod shape_double_column_statistics_data;
 
 pub(crate) mod shape_dq_results_publishing_options;
@@ -2338,6 +2364,8 @@ pub(crate) mod shape_dynamo_db_target_list;
 pub(crate) mod shape_edge_list;
 
 pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_evaluated_distributions_map;
 
 pub(crate) mod shape_evaluated_metrics_map;
 
@@ -2505,6 +2533,8 @@ pub(crate) mod shape_authorization_code_properties;
 
 pub(crate) mod shape_backfill_error;
 
+pub(crate) mod shape_bin_edges;
+
 pub(crate) mod shape_column_importance;
 
 pub(crate) mod shape_column_value_string_list;
@@ -2512,6 +2542,8 @@ pub(crate) mod shape_column_value_string_list;
 pub(crate) mod shape_condition_expression;
 
 pub(crate) mod shape_connection_type_variant;
+
+pub(crate) mod shape_count;
 
 pub(crate) mod shape_cursor_configuration;
 

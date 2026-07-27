@@ -150,4 +150,18 @@ impl UpdateCustomPermissionsFluentBuilder {
     pub fn get_capabilities(&self) -> &::std::option::Option<crate::types::Capabilities> {
         self.inner.get_capabilities()
     }
+    /// <p>The governance configuration for the custom permissions profile. The <code>UpdateCustomPermissions</code> operation replaces all existing <code>Capabilities</code> and <code>Governance</code> values. If you omit this parameter, Amazon Quick removes governance from the profile and the existing custom permission behavior applies.</p>
+    pub fn governance(mut self, input: crate::types::Governance) -> Self {
+        self.inner = self.inner.governance(input);
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. The <code>UpdateCustomPermissions</code> operation replaces all existing <code>Capabilities</code> and <code>Governance</code> values. If you omit this parameter, Amazon Quick removes governance from the profile and the existing custom permission behavior applies.</p>
+    pub fn set_governance(mut self, input: ::std::option::Option<crate::types::Governance>) -> Self {
+        self.inner = self.inner.set_governance(input);
+        self
+    }
+    /// <p>The governance configuration for the custom permissions profile. The <code>UpdateCustomPermissions</code> operation replaces all existing <code>Capabilities</code> and <code>Governance</code> values. If you omit this parameter, Amazon Quick removes governance from the profile and the existing custom permission behavior applies.</p>
+    pub fn get_governance(&self) -> &::std::option::Option<crate::types::Governance> {
+        self.inner.get_governance()
+    }
 }

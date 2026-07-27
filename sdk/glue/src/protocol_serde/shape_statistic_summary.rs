@@ -54,6 +54,13 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
                         }
+                        "DistributionValue" => {
+                            builder = builder.set_distribution_value(crate::protocol_serde::shape_distribution_data::de_distribution_data(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "EvaluationLevel" => {
                             builder = builder.set_evaluation_level(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

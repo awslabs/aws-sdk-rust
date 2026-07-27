@@ -33,5 +33,11 @@ pub fn ser_start_data_quality_rule_recommendation_run_input_input(
     if let Some(var_8) = &input.client_token {
         object.key("ClientToken").string(var_8.as_str());
     }
+    if let Some(var_9) = &input.additional_run_options {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("AdditionalRunOptions").start_object();
+        crate::protocol_serde::shape_data_quality_rule_recommendation_run_additional_run_options::ser_data_quality_rule_recommendation_run_additional_run_options(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }

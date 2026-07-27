@@ -373,6 +373,49 @@ impl From<crate::operation::get_primary_email::GetPrimaryEmailError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError> for Error {
+    fn from(err: crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError) -> Self {
+        match err {
+            crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_primary_email_update_status::GetPrimaryEmailUpdateStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_region_opt_status::GetRegionOptStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

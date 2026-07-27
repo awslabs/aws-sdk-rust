@@ -74,6 +74,15 @@ pub(crate) fn get_gov_cloud_account_information_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_primary_email_update_status_output_output_correct_errors(
+    mut builder: crate::operation::get_primary_email_update_status::builders::GetPrimaryEmailUpdateStatusOutputBuilder,
+) -> crate::operation::get_primary_email_update_status::builders::GetPrimaryEmailUpdateStatusOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PrimaryEmailUpdateStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn contact_information_correct_errors(
     mut builder: crate::types::builders::ContactInformationBuilder,
 ) -> crate::types::builders::ContactInformationBuilder {

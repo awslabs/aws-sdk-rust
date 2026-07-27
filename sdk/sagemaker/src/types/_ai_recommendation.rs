@@ -16,6 +16,8 @@ pub struct AiRecommendation {
     pub ai_benchmark_job_arn: ::std::option::Option<::std::string::String>,
     /// <p>The expected performance metrics for this recommendation.</p>
     pub expected_performance: ::std::option::Option<::std::vec::Vec<crate::types::AiRecommendationPerformanceMetric>>,
+    /// <p>The LoRA adapter details for this recommendation. This field contains both the model package ARNs and Amazon S3 URIs for each adapter, regardless of which form was originally supplied. This field is absent when the job was created without LoRA adapters.</p>
+    pub adapter_details: ::std::option::Option<crate::types::AiRecommendationAdapterDetails>,
 }
 impl AiRecommendation {
     /// <p>A description of the recommendation.</p>
@@ -46,6 +48,10 @@ impl AiRecommendation {
     pub fn expected_performance(&self) -> &[crate::types::AiRecommendationPerformanceMetric] {
         self.expected_performance.as_deref().unwrap_or_default()
     }
+    /// <p>The LoRA adapter details for this recommendation. This field contains both the model package ARNs and Amazon S3 URIs for each adapter, regardless of which form was originally supplied. This field is absent when the job was created without LoRA adapters.</p>
+    pub fn adapter_details(&self) -> ::std::option::Option<&crate::types::AiRecommendationAdapterDetails> {
+        self.adapter_details.as_ref()
+    }
 }
 impl AiRecommendation {
     /// Creates a new builder-style object to manufacture [`AiRecommendation`](crate::types::AiRecommendation).
@@ -64,6 +70,7 @@ pub struct AiRecommendationBuilder {
     pub(crate) deployment_configuration: ::std::option::Option<crate::types::AiRecommendationDeploymentConfiguration>,
     pub(crate) ai_benchmark_job_arn: ::std::option::Option<::std::string::String>,
     pub(crate) expected_performance: ::std::option::Option<::std::vec::Vec<crate::types::AiRecommendationPerformanceMetric>>,
+    pub(crate) adapter_details: ::std::option::Option<crate::types::AiRecommendationAdapterDetails>,
 }
 impl AiRecommendationBuilder {
     /// <p>A description of the recommendation.</p>
@@ -168,6 +175,20 @@ impl AiRecommendationBuilder {
     pub fn get_expected_performance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AiRecommendationPerformanceMetric>> {
         &self.expected_performance
     }
+    /// <p>The LoRA adapter details for this recommendation. This field contains both the model package ARNs and Amazon S3 URIs for each adapter, regardless of which form was originally supplied. This field is absent when the job was created without LoRA adapters.</p>
+    pub fn adapter_details(mut self, input: crate::types::AiRecommendationAdapterDetails) -> Self {
+        self.adapter_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The LoRA adapter details for this recommendation. This field contains both the model package ARNs and Amazon S3 URIs for each adapter, regardless of which form was originally supplied. This field is absent when the job was created without LoRA adapters.</p>
+    pub fn set_adapter_details(mut self, input: ::std::option::Option<crate::types::AiRecommendationAdapterDetails>) -> Self {
+        self.adapter_details = input;
+        self
+    }
+    /// <p>The LoRA adapter details for this recommendation. This field contains both the model package ARNs and Amazon S3 URIs for each adapter, regardless of which form was originally supplied. This field is absent when the job was created without LoRA adapters.</p>
+    pub fn get_adapter_details(&self) -> &::std::option::Option<crate::types::AiRecommendationAdapterDetails> {
+        &self.adapter_details
+    }
     /// Consumes the builder and constructs a [`AiRecommendation`](crate::types::AiRecommendation).
     pub fn build(self) -> crate::types::AiRecommendation {
         crate::types::AiRecommendation {
@@ -177,6 +198,7 @@ impl AiRecommendationBuilder {
             deployment_configuration: self.deployment_configuration,
             ai_benchmark_job_arn: self.ai_benchmark_job_arn,
             expected_performance: self.expected_performance,
+            adapter_details: self.adapter_details,
         }
     }
 }

@@ -22,7 +22,7 @@ pub struct CreateManagedEndpointInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags of the managed endpoint.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The idle timeout in minutes for the managed endpoint session.</p>
+    /// <p>The number of idle minutes before the managed endpoint session times out.</p>
     pub session_idle_timeout_in_minutes: ::std::option::Option<i32>,
 }
 impl CreateManagedEndpointInput {
@@ -63,7 +63,7 @@ impl CreateManagedEndpointInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The idle timeout in minutes for the managed endpoint session.</p>
+    /// <p>The number of idle minutes before the managed endpoint session times out.</p>
     pub fn session_idle_timeout_in_minutes(&self) -> ::std::option::Option<i32> {
         self.session_idle_timeout_in_minutes
     }
@@ -232,17 +232,17 @@ impl CreateManagedEndpointInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The idle timeout in minutes for the managed endpoint session.</p>
+    /// <p>The number of idle minutes before the managed endpoint session times out.</p>
     pub fn session_idle_timeout_in_minutes(mut self, input: i32) -> Self {
         self.session_idle_timeout_in_minutes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The idle timeout in minutes for the managed endpoint session.</p>
+    /// <p>The number of idle minutes before the managed endpoint session times out.</p>
     pub fn set_session_idle_timeout_in_minutes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_idle_timeout_in_minutes = input;
         self
     }
-    /// <p>The idle timeout in minutes for the managed endpoint session.</p>
+    /// <p>The number of idle minutes before the managed endpoint session times out.</p>
     pub fn get_session_idle_timeout_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.session_idle_timeout_in_minutes
     }

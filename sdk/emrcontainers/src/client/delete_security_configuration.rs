@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`id(impl Into<String>)`](crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_security_configuration::builders::DeleteSecurityConfigurationFluentBuilder::set_id):<br>required: **true**<br><p>The ID of the security configuration to delete.</p><br>
     /// - On success, responds with [`DeleteSecurityConfigurationOutput`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput) with field(s):
-    ///   - [`id(Option<String>)`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput::id): <p>The ID of the security configuration that was deleted.</p>
+    ///   - [`id(Option<String>)`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput::id): <p>The ID of the deleted security configuration.</p>
     /// - On failure, responds with [`SdkError<DeleteSecurityConfigurationError>`](crate::operation::delete_security_configuration::DeleteSecurityConfigurationError)
     pub fn delete_security_configuration(
         &self,

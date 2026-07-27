@@ -211,6 +211,15 @@ pub(crate) fn de_describe_optimization_job(
                         depth + 1,
                     )?);
                 }
+                "TrainingPlanArns" => {
+                    builder = builder.set_training_plan_arns(
+                        crate::protocol_serde::shape_optimization_job_training_plan_arns::de_optimization_job_training_plan_arns(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

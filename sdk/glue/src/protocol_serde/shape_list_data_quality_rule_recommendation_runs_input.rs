@@ -21,5 +21,15 @@ pub fn ser_list_data_quality_rule_recommendation_runs_input_input(
             ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
+    if let Some(var_5) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("Tags").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).string(value_8.as_str());
+            }
+        }
+        object_6.finish();
+    }
     Ok(())
 }

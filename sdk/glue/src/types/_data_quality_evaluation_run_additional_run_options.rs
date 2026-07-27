@@ -16,6 +16,18 @@ pub struct DataQualityEvaluationRunAdditionalRunOptions {
     /// /output
     /// </customloggroupprefix></code> instead of the default <code>/aws-glue/data-quality/error</code> and <code>/aws-glue/data-quality/output</code> log groups.</p>
     pub custom_log_group_prefix: ::std::option::Option<::std::string::String>,
+    /// <p>The configuration for writing row-level evaluation results to a Glue Data Catalog table.</p>
+    pub row_level_results: ::std::option::Option<crate::types::RowLevelResultsOptions>,
+    /// <p>The configuration for writing profiling results to a Glue Data Catalog table.</p>
+    pub profiling_results: ::std::option::Option<crate::types::ProfilingResultsOptions>,
+    /// <p>The scope of the observation for the evaluation run. Specifies whether anomaly detection is enabled or disabled.</p>
+    pub observation_scope: ::std::option::Option<crate::types::ObservationConfiguration>,
+    /// <p>The observation mode for the evaluation run. Specifies how anomaly detection bounds are calculated.</p>
+    pub observation_mode: ::std::option::Option<crate::types::ObservationMode>,
+    /// <p>The configuration for writing rule results to a Glue Data Catalog table.</p>
+    pub data_quality_rule_results: ::std::option::Option<crate::types::DataQualityRuleResultsOptions>,
+    /// <p>The configuration for writing observation results to a Glue Data Catalog table.</p>
+    pub observation_results: ::std::option::Option<crate::types::ObservationResultsOptions>,
 }
 impl DataQualityEvaluationRunAdditionalRunOptions {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
@@ -38,6 +50,30 @@ impl DataQualityEvaluationRunAdditionalRunOptions {
     pub fn custom_log_group_prefix(&self) -> ::std::option::Option<&str> {
         self.custom_log_group_prefix.as_deref()
     }
+    /// <p>The configuration for writing row-level evaluation results to a Glue Data Catalog table.</p>
+    pub fn row_level_results(&self) -> ::std::option::Option<&crate::types::RowLevelResultsOptions> {
+        self.row_level_results.as_ref()
+    }
+    /// <p>The configuration for writing profiling results to a Glue Data Catalog table.</p>
+    pub fn profiling_results(&self) -> ::std::option::Option<&crate::types::ProfilingResultsOptions> {
+        self.profiling_results.as_ref()
+    }
+    /// <p>The scope of the observation for the evaluation run. Specifies whether anomaly detection is enabled or disabled.</p>
+    pub fn observation_scope(&self) -> ::std::option::Option<&crate::types::ObservationConfiguration> {
+        self.observation_scope.as_ref()
+    }
+    /// <p>The observation mode for the evaluation run. Specifies how anomaly detection bounds are calculated.</p>
+    pub fn observation_mode(&self) -> ::std::option::Option<&crate::types::ObservationMode> {
+        self.observation_mode.as_ref()
+    }
+    /// <p>The configuration for writing rule results to a Glue Data Catalog table.</p>
+    pub fn data_quality_rule_results(&self) -> ::std::option::Option<&crate::types::DataQualityRuleResultsOptions> {
+        self.data_quality_rule_results.as_ref()
+    }
+    /// <p>The configuration for writing observation results to a Glue Data Catalog table.</p>
+    pub fn observation_results(&self) -> ::std::option::Option<&crate::types::ObservationResultsOptions> {
+        self.observation_results.as_ref()
+    }
 }
 impl DataQualityEvaluationRunAdditionalRunOptions {
     /// Creates a new builder-style object to manufacture [`DataQualityEvaluationRunAdditionalRunOptions`](crate::types::DataQualityEvaluationRunAdditionalRunOptions).
@@ -54,6 +90,12 @@ pub struct DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     pub(crate) results_s3_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) composite_rule_evaluation_method: ::std::option::Option<crate::types::DqCompositeRuleEvaluationMethod>,
     pub(crate) custom_log_group_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) row_level_results: ::std::option::Option<crate::types::RowLevelResultsOptions>,
+    pub(crate) profiling_results: ::std::option::Option<crate::types::ProfilingResultsOptions>,
+    pub(crate) observation_scope: ::std::option::Option<crate::types::ObservationConfiguration>,
+    pub(crate) observation_mode: ::std::option::Option<crate::types::ObservationMode>,
+    pub(crate) data_quality_rule_results: ::std::option::Option<crate::types::DataQualityRuleResultsOptions>,
+    pub(crate) observation_results: ::std::option::Option<crate::types::ObservationResultsOptions>,
 }
 impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     /// <p>Whether or not to enable CloudWatch metrics.</p>
@@ -124,6 +166,90 @@ impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
     pub fn get_custom_log_group_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.custom_log_group_prefix
     }
+    /// <p>The configuration for writing row-level evaluation results to a Glue Data Catalog table.</p>
+    pub fn row_level_results(mut self, input: crate::types::RowLevelResultsOptions) -> Self {
+        self.row_level_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for writing row-level evaluation results to a Glue Data Catalog table.</p>
+    pub fn set_row_level_results(mut self, input: ::std::option::Option<crate::types::RowLevelResultsOptions>) -> Self {
+        self.row_level_results = input;
+        self
+    }
+    /// <p>The configuration for writing row-level evaluation results to a Glue Data Catalog table.</p>
+    pub fn get_row_level_results(&self) -> &::std::option::Option<crate::types::RowLevelResultsOptions> {
+        &self.row_level_results
+    }
+    /// <p>The configuration for writing profiling results to a Glue Data Catalog table.</p>
+    pub fn profiling_results(mut self, input: crate::types::ProfilingResultsOptions) -> Self {
+        self.profiling_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for writing profiling results to a Glue Data Catalog table.</p>
+    pub fn set_profiling_results(mut self, input: ::std::option::Option<crate::types::ProfilingResultsOptions>) -> Self {
+        self.profiling_results = input;
+        self
+    }
+    /// <p>The configuration for writing profiling results to a Glue Data Catalog table.</p>
+    pub fn get_profiling_results(&self) -> &::std::option::Option<crate::types::ProfilingResultsOptions> {
+        &self.profiling_results
+    }
+    /// <p>The scope of the observation for the evaluation run. Specifies whether anomaly detection is enabled or disabled.</p>
+    pub fn observation_scope(mut self, input: crate::types::ObservationConfiguration) -> Self {
+        self.observation_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of the observation for the evaluation run. Specifies whether anomaly detection is enabled or disabled.</p>
+    pub fn set_observation_scope(mut self, input: ::std::option::Option<crate::types::ObservationConfiguration>) -> Self {
+        self.observation_scope = input;
+        self
+    }
+    /// <p>The scope of the observation for the evaluation run. Specifies whether anomaly detection is enabled or disabled.</p>
+    pub fn get_observation_scope(&self) -> &::std::option::Option<crate::types::ObservationConfiguration> {
+        &self.observation_scope
+    }
+    /// <p>The observation mode for the evaluation run. Specifies how anomaly detection bounds are calculated.</p>
+    pub fn observation_mode(mut self, input: crate::types::ObservationMode) -> Self {
+        self.observation_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The observation mode for the evaluation run. Specifies how anomaly detection bounds are calculated.</p>
+    pub fn set_observation_mode(mut self, input: ::std::option::Option<crate::types::ObservationMode>) -> Self {
+        self.observation_mode = input;
+        self
+    }
+    /// <p>The observation mode for the evaluation run. Specifies how anomaly detection bounds are calculated.</p>
+    pub fn get_observation_mode(&self) -> &::std::option::Option<crate::types::ObservationMode> {
+        &self.observation_mode
+    }
+    /// <p>The configuration for writing rule results to a Glue Data Catalog table.</p>
+    pub fn data_quality_rule_results(mut self, input: crate::types::DataQualityRuleResultsOptions) -> Self {
+        self.data_quality_rule_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for writing rule results to a Glue Data Catalog table.</p>
+    pub fn set_data_quality_rule_results(mut self, input: ::std::option::Option<crate::types::DataQualityRuleResultsOptions>) -> Self {
+        self.data_quality_rule_results = input;
+        self
+    }
+    /// <p>The configuration for writing rule results to a Glue Data Catalog table.</p>
+    pub fn get_data_quality_rule_results(&self) -> &::std::option::Option<crate::types::DataQualityRuleResultsOptions> {
+        &self.data_quality_rule_results
+    }
+    /// <p>The configuration for writing observation results to a Glue Data Catalog table.</p>
+    pub fn observation_results(mut self, input: crate::types::ObservationResultsOptions) -> Self {
+        self.observation_results = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for writing observation results to a Glue Data Catalog table.</p>
+    pub fn set_observation_results(mut self, input: ::std::option::Option<crate::types::ObservationResultsOptions>) -> Self {
+        self.observation_results = input;
+        self
+    }
+    /// <p>The configuration for writing observation results to a Glue Data Catalog table.</p>
+    pub fn get_observation_results(&self) -> &::std::option::Option<crate::types::ObservationResultsOptions> {
+        &self.observation_results
+    }
     /// Consumes the builder and constructs a [`DataQualityEvaluationRunAdditionalRunOptions`](crate::types::DataQualityEvaluationRunAdditionalRunOptions).
     pub fn build(self) -> crate::types::DataQualityEvaluationRunAdditionalRunOptions {
         crate::types::DataQualityEvaluationRunAdditionalRunOptions {
@@ -131,6 +257,12 @@ impl DataQualityEvaluationRunAdditionalRunOptionsBuilder {
             results_s3_prefix: self.results_s3_prefix,
             composite_rule_evaluation_method: self.composite_rule_evaluation_method,
             custom_log_group_prefix: self.custom_log_group_prefix,
+            row_level_results: self.row_level_results,
+            profiling_results: self.profiling_results,
+            observation_scope: self.observation_scope,
+            observation_mode: self.observation_mode,
+            data_quality_rule_results: self.data_quality_rule_results,
+            observation_results: self.observation_results,
         }
     }
 }

@@ -88,6 +88,11 @@ where
                             builder =
                                 builder.set_logs_location(crate::protocol_serde::shape_log_location::de_log_location(tokens, _value, depth + 1)?);
                         }
+                        "taskHours" => {
+                            builder = builder.set_task_hours(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

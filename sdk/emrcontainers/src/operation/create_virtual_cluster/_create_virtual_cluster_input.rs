@@ -15,6 +15,8 @@ pub struct CreateVirtualClusterInput {
     pub security_configuration_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the virtual cluster has session support enabled.</p>
     pub session_enabled: ::std::option::Option<bool>,
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
 }
 impl CreateVirtualClusterInput {
     /// <p>The specified name of the virtual cluster.</p>
@@ -41,6 +43,10 @@ impl CreateVirtualClusterInput {
     pub fn session_enabled(&self) -> ::std::option::Option<bool> {
         self.session_enabled
     }
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    pub fn scheduler_configuration(&self) -> ::std::option::Option<&crate::types::SchedulerConfiguration> {
+        self.scheduler_configuration.as_ref()
+    }
 }
 impl CreateVirtualClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
@@ -59,6 +65,7 @@ pub struct CreateVirtualClusterInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) security_configuration_id: ::std::option::Option<::std::string::String>,
     pub(crate) session_enabled: ::std::option::Option<bool>,
+    pub(crate) scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
 }
 impl CreateVirtualClusterInputBuilder {
     /// <p>The specified name of the virtual cluster.</p>
@@ -154,6 +161,20 @@ impl CreateVirtualClusterInputBuilder {
     pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
         &self.session_enabled
     }
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
+        self.scheduler_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
+        self.scheduler_configuration = input;
+        self
+    }
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
+        &self.scheduler_configuration
+    }
     /// Consumes the builder and constructs a [`CreateVirtualClusterInput`](crate::operation::create_virtual_cluster::CreateVirtualClusterInput).
     pub fn build(
         self,
@@ -166,6 +187,7 @@ impl CreateVirtualClusterInputBuilder {
             tags: self.tags,
             security_configuration_id: self.security_configuration_id,
             session_enabled: self.session_enabled,
+            scheduler_configuration: self.scheduler_configuration,
         })
     }
 }

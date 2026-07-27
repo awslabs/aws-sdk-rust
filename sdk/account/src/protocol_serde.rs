@@ -41,6 +41,8 @@ pub(crate) mod shape_get_gov_cloud_account_information;
 
 pub(crate) mod shape_get_primary_email;
 
+pub(crate) mod shape_get_primary_email_update_status;
+
 pub(crate) mod shape_get_region_opt_status;
 
 pub(crate) mod shape_list_regions;
@@ -82,6 +84,8 @@ pub(crate) mod shape_get_contact_information_input;
 pub(crate) mod shape_get_gov_cloud_account_information_input;
 
 pub(crate) mod shape_get_primary_email_input;
+
+pub(crate) mod shape_get_primary_email_update_status_input;
 
 pub(crate) mod shape_get_region_opt_status_input;
 
