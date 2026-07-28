@@ -237,6 +237,8 @@ pub use crate::types::_on_behalf_of_token_exchange_config_type::OnBehalfOfTokenE
 
 pub use crate::types::_client_authentication_method_type::ClientAuthenticationMethodType;
 
+pub use crate::types::_private_key_jwt_config::PrivateKeyJwtConfig;
+
 pub use crate::types::_payment_connector_type::PaymentConnectorType;
 
 pub use crate::types::_payment_connector_status::PaymentConnectorStatus;
@@ -465,6 +467,10 @@ pub use crate::types::_on_behalf_of_token_exchange_grant_type_type::OnBehalfOfTo
 
 pub use crate::types::_token_exchange_grant_type_config_type::TokenExchangeGrantTypeConfigType;
 
+pub use crate::types::_private_key_source::PrivateKeySource;
+
+pub use crate::types::_signing_algorithm::SigningAlgorithm;
+
 pub use crate::types::_private_endpoint_override::PrivateEndpointOverride;
 
 pub use crate::types::_payment_connector_summary::PaymentConnectorSummary;
@@ -610,6 +616,8 @@ pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptor;
 pub use crate::types::_updated_agent_skills_descriptor::UpdatedAgentSkillsDescriptor;
 
 pub use crate::types::_actor_token_content_type::ActorTokenContentType;
+
+pub use crate::types::_kms_key_source_type::KmsKeySourceType;
 
 pub use crate::types::_payment_credential_provider_configuration::PaymentCredentialProviderConfiguration;
 
@@ -1349,6 +1357,8 @@ mod _kinesis_resource;
 
 mod _kms_configuration;
 
+mod _kms_key_source_type;
+
 mod _lambda_evaluator_config;
 
 mod _lambda_interceptor_configuration;
@@ -1539,6 +1549,10 @@ mod _private_endpoint;
 
 mod _private_endpoint_override;
 
+mod _private_key_jwt_config;
+
+mod _private_key_source;
+
 mod _protocol_configuration;
 
 mod _provider_prefix;
@@ -1646,6 +1660,8 @@ mod _session_config;
 mod _session_configuration;
 
 mod _session_storage_configuration;
+
+mod _signing_algorithm;
 
 mod _skill_definition;
 

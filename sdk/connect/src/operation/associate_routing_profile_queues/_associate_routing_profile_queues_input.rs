@@ -9,8 +9,9 @@ pub struct AssociateRoutingProfileQueuesInput {
     pub routing_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The queues to associate with this routing profile.</p>
     pub queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileQueueConfig>>,
-    /// <p>The manual assignment queues to associate with this routing profile.</p>
-    /// <p>Note: Use this config for chat, email, and task contacts. It does not support voice contacts.</p>
+    /// <p>The manual assignment queues to associate with this routing profile.</p><note>
+    /// <p>For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.</p>
+    /// </note>
     pub manual_assignment_queue_configs: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>>,
 }
 impl AssociateRoutingProfileQueuesInput {
@@ -28,8 +29,9 @@ impl AssociateRoutingProfileQueuesInput {
     pub fn queue_configs(&self) -> &[crate::types::RoutingProfileQueueConfig] {
         self.queue_configs.as_deref().unwrap_or_default()
     }
-    /// <p>The manual assignment queues to associate with this routing profile.</p>
-    /// <p>Note: Use this config for chat, email, and task contacts. It does not support voice contacts.</p>
+    /// <p>The manual assignment queues to associate with this routing profile.</p><note>
+    /// <p>For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.manual_assignment_queue_configs.is_none()`.
     pub fn manual_assignment_queue_configs(&self) -> &[crate::types::RoutingProfileManualAssignmentQueueConfig] {
@@ -107,16 +109,18 @@ impl AssociateRoutingProfileQueuesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_manual_assignment_queue_configs`](Self::set_manual_assignment_queue_configs).
     ///
-    /// <p>The manual assignment queues to associate with this routing profile.</p>
-    /// <p>Note: Use this config for chat, email, and task contacts. It does not support voice contacts.</p>
+    /// <p>The manual assignment queues to associate with this routing profile.</p><note>
+    /// <p>For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.</p>
+    /// </note>
     pub fn manual_assignment_queue_configs(mut self, input: crate::types::RoutingProfileManualAssignmentQueueConfig) -> Self {
         let mut v = self.manual_assignment_queue_configs.unwrap_or_default();
         v.push(input);
         self.manual_assignment_queue_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The manual assignment queues to associate with this routing profile.</p>
-    /// <p>Note: Use this config for chat, email, and task contacts. It does not support voice contacts.</p>
+    /// <p>The manual assignment queues to associate with this routing profile.</p><note>
+    /// <p>For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.</p>
+    /// </note>
     pub fn set_manual_assignment_queue_configs(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>>,
@@ -124,8 +128,9 @@ impl AssociateRoutingProfileQueuesInputBuilder {
         self.manual_assignment_queue_configs = input;
         self
     }
-    /// <p>The manual assignment queues to associate with this routing profile.</p>
-    /// <p>Note: Use this config for chat, email, and task contacts. It does not support voice contacts.</p>
+    /// <p>The manual assignment queues to associate with this routing profile.</p><note>
+    /// <p>For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.</p>
+    /// </note>
     pub fn get_manual_assignment_queue_configs(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>> {

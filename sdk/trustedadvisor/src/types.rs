@@ -45,6 +45,8 @@ pub use crate::types::_recommendation_resource_summary::RecommendationResourceSu
 
 pub use crate::types::_recommendation_summary::RecommendationSummary;
 
+pub use crate::types::_recommendation_for_resource_summary::RecommendationForResourceSummary;
+
 pub use crate::types::_recommendation_cost_optimizing_aggregates::RecommendationCostOptimizingAggregates;
 
 mod _account_recommendation_lifecycle_summary;
@@ -62,6 +64,8 @@ mod _organization_recommendation_summary;
 mod _recommendation;
 
 mod _recommendation_cost_optimizing_aggregates;
+
+mod _recommendation_for_resource_summary;
 
 mod _recommendation_language;
 

@@ -1157,6 +1157,8 @@ pub(crate) mod shape_private_endpoint_override;
 
 pub(crate) mod shape_private_endpoint_overrides;
 
+pub(crate) mod shape_private_key_jwt_config;
+
 pub(crate) mod shape_rating_scale;
 
 pub(crate) mod shape_registry_record_credential_provider_configuration;
@@ -1206,6 +1208,8 @@ pub(crate) mod shape_updated_mcp_descriptor;
 pub(crate) mod shape_weighted_override;
 
 pub(crate) mod shape_weighted_route;
+
+pub(crate) mod shape_additional_claims;
 
 pub(crate) mod shape_api_gateway_tool_configuration;
 
@@ -1279,6 +1283,8 @@ pub(crate) mod shape_numerical_scale_definitions;
 
 pub(crate) mod shape_oauth2_authorization_server_metadata;
 
+pub(crate) mod shape_private_key_source;
+
 pub(crate) mod shape_registry_record_credential_provider_union;
 
 pub(crate) mod shape_s3_configuration;
@@ -1348,6 +1354,8 @@ pub(crate) mod shape_inference_configuration;
 pub(crate) mod shape_interceptor_payload_exclusion_selector_list;
 
 pub(crate) mod shape_invocation_configuration_input;
+
+pub(crate) mod shape_kms_key_source_type;
 
 pub(crate) mod shape_metadata_schema_list;
 

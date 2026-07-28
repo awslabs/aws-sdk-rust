@@ -23,4 +23,6 @@ pub use crate::types::_recommendation_resource_summary::RecommendationResourceSu
 
 pub use crate::types::_recommendation_summary::RecommendationSummaryBuilder;
 
+pub use crate::types::_recommendation_for_resource_summary::RecommendationForResourceSummaryBuilder;
+
 pub use crate::types::_recommendation_cost_optimizing_aggregates::RecommendationCostOptimizingAggregatesBuilder;

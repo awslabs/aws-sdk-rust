@@ -15,6 +15,7 @@
 ///     ClientAuthenticationMethodType::AwsIamIdTokenJwt => { /* ... */ },
 ///     ClientAuthenticationMethodType::ClientSecretBasic => { /* ... */ },
 ///     ClientAuthenticationMethodType::ClientSecretPost => { /* ... */ },
+///     ClientAuthenticationMethodType::PrivateKeyJwt => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum ClientAuthenticationMethodType {
     ClientSecretBasic,
     #[allow(missing_docs)] // documentation missing in model
     ClientSecretPost,
+    #[allow(missing_docs)] // documentation missing in model
+    PrivateKeyJwt,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ClientAuthenticationMethodType {
             "AWS_IAM_ID_TOKEN_JWT" => ClientAuthenticationMethodType::AwsIamIdTokenJwt,
             "CLIENT_SECRET_BASIC" => ClientAuthenticationMethodType::ClientSecretBasic,
             "CLIENT_SECRET_POST" => ClientAuthenticationMethodType::ClientSecretPost,
+            "PRIVATE_KEY_JWT" => ClientAuthenticationMethodType::PrivateKeyJwt,
             other => ClientAuthenticationMethodType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl ClientAuthenticationMethodType {
             ClientAuthenticationMethodType::AwsIamIdTokenJwt => "AWS_IAM_ID_TOKEN_JWT",
             ClientAuthenticationMethodType::ClientSecretBasic => "CLIENT_SECRET_BASIC",
             ClientAuthenticationMethodType::ClientSecretPost => "CLIENT_SECRET_POST",
+            ClientAuthenticationMethodType::PrivateKeyJwt => "PRIVATE_KEY_JWT",
             ClientAuthenticationMethodType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_IAM_ID_TOKEN_JWT", "CLIENT_SECRET_BASIC", "CLIENT_SECRET_POST"]
+        &["AWS_IAM_ID_TOKEN_JWT", "CLIENT_SECRET_BASIC", "CLIENT_SECRET_POST", "PRIVATE_KEY_JWT"]
     }
 }
 impl ::std::convert::AsRef<str> for ClientAuthenticationMethodType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for ClientAuthenticationMethodType {
             ClientAuthenticationMethodType::AwsIamIdTokenJwt => write!(f, "AWS_IAM_ID_TOKEN_JWT"),
             ClientAuthenticationMethodType::ClientSecretBasic => write!(f, "CLIENT_SECRET_BASIC"),
             ClientAuthenticationMethodType::ClientSecretPost => write!(f, "CLIENT_SECRET_POST"),
+            ClientAuthenticationMethodType::PrivateKeyJwt => write!(f, "PRIVATE_KEY_JWT"),
             ClientAuthenticationMethodType::Unknown(value) => write!(f, "{value}"),
         }
     }

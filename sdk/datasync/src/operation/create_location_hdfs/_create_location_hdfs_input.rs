@@ -5,7 +5,14 @@
 pub struct CreateLocationHdfsInput {
     /// <p>A subdirectory in the HDFS cluster. This subdirectory is used to read data from or write data to the HDFS cluster. If the subdirectory isn't specified, it will default to <code>/</code>.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
-    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.</p>
+    /// <p>The number of NameNodes you can specify depends on the task mode:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
+    /// </ul>
     pub name_nodes: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>,
     /// <p>The size of data blocks to write into the HDFS cluster. The block size must be a multiple of 512 bytes. The default block size is 128 mebibytes (MiB).</p>
     pub block_size: ::std::option::Option<i32>,
@@ -53,7 +60,14 @@ impl CreateLocationHdfsInput {
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
         self.subdirectory.as_deref()
     }
-    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.</p>
+    /// <p>The number of NameNodes you can specify depends on the task mode:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.name_nodes.is_none()`.
     pub fn name_nodes(&self) -> &[crate::types::HdfsNameNode] {
@@ -176,19 +190,40 @@ impl CreateLocationHdfsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_name_nodes`](Self::set_name_nodes).
     ///
-    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.</p>
+    /// <p>The number of NameNodes you can specify depends on the task mode:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
+    /// </ul>
     pub fn name_nodes(mut self, input: crate::types::HdfsNameNode) -> Self {
         let mut v = self.name_nodes.unwrap_or_default();
         v.push(input);
         self.name_nodes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.</p>
+    /// <p>The number of NameNodes you can specify depends on the task mode:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
+    /// </ul>
     pub fn set_name_nodes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>>) -> Self {
         self.name_nodes = input;
         self
     }
-    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes. You can use only one NameNode.</p>
+    /// <p>The NameNode that manages the HDFS namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.</p>
+    /// <p>The number of NameNodes you can specify depends on the task mode:</p>
+    /// <ul>
+    /// <li>
+    /// <p><b>Enhanced mode</b> – You can specify multiple NameNodes for HDFS High Availability (HA) configurations.</p></li>
+    /// <li>
+    /// <p><b>Basic mode</b> – You can specify only one NameNode.</p></li>
+    /// </ul>
     pub fn get_name_nodes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HdfsNameNode>> {
         &self.name_nodes
     }

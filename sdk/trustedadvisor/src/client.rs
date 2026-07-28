@@ -181,6 +181,8 @@ mod list_recommendation_resources;
 
 mod list_recommendations;
 
+mod list_recommendations_for_resource;
+
 mod update_organization_recommendation_lifecycle;
 
 mod update_recommendation_lifecycle;

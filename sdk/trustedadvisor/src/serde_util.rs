@@ -116,6 +116,15 @@ pub(crate) fn list_recommendations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_recommendations_for_resource_output_output_correct_errors(
+    mut builder: crate::operation::list_recommendations_for_resource::builders::ListRecommendationsForResourceOutputBuilder,
+) -> crate::operation::list_recommendations_for_resource::builders::ListRecommendationsForResourceOutputBuilder {
+    if builder.recommendation_for_resource_summaries.is_none() {
+        builder.recommendation_for_resource_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn organization_recommendation_correct_errors(
     mut builder: crate::types::builders::OrganizationRecommendationBuilder,
 ) -> crate::types::builders::OrganizationRecommendationBuilder {
@@ -281,6 +290,36 @@ pub(crate) fn organization_recommendation_summary_correct_errors(
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recommendation_for_resource_summary_correct_errors(
+    mut builder: crate::types::builders::RecommendationForResourceSummaryBuilder,
+) -> crate::types::builders::RecommendationForResourceSummaryBuilder {
+    if builder.check_arn.is_none() {
+        builder.check_arn = Some(Default::default())
+    }
+    if builder.recommendation_arn.is_none() {
+        builder.recommendation_arn = Some(Default::default())
+    }
+    if builder.aws_resource_arn.is_none() {
+        builder.aws_resource_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ResourceStatus>().ok()
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.exclusion_status.is_none() {
+        builder.exclusion_status = "no value was set".parse::<crate::types::ExclusionStatus>().ok()
+    }
+    if builder.metadata.is_none() {
+        builder.metadata = Some(Default::default())
+    }
+    if builder.pillars.is_none() {
+        builder.pillars = Some(Default::default())
     }
     builder
 }

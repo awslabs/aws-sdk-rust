@@ -404,6 +404,50 @@ impl From<crate::operation::list_recommendations::ListRecommendationsError> for 
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError> for Error {
+    fn from(err: crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError) -> Self {
+        match err {
+            crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_organization_recommendation_lifecycle::UpdateOrganizationRecommendationLifecycleError,
             R,
         >,

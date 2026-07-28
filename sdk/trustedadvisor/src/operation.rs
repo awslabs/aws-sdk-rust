@@ -28,6 +28,9 @@ pub mod list_recommendation_resources;
 /// Types for the `ListRecommendations` operation.
 pub mod list_recommendations;
 
+/// Types for the `ListRecommendationsForResource` operation.
+pub mod list_recommendations_for_resource;
+
 /// Types for the `UpdateOrganizationRecommendationLifecycle` operation.
 pub mod update_organization_recommendation_lifecycle;
 

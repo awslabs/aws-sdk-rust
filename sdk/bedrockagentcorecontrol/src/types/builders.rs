@@ -107,6 +107,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_on_behalf_of_token_exchange_config_type::OnBehalfOfTokenExchangeConfigTypeBuilder;
 
+pub use crate::types::_private_key_jwt_config::PrivateKeyJwtConfigBuilder;
+
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpointBuilder;
 
 pub use crate::types::_agent_runtime::AgentRuntimeBuilder;
@@ -372,6 +374,8 @@ pub use crate::types::_updated_a2a_descriptor::UpdatedA2aDescriptorBuilder;
 pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptorBuilder;
 
 pub use crate::types::_updated_agent_skills_descriptor::UpdatedAgentSkillsDescriptorBuilder;
+
+pub use crate::types::_kms_key_source_type::KmsKeySourceTypeBuilder;
 
 pub use crate::types::_payment_credential_provider_configuration::PaymentCredentialProviderConfigurationBuilder;
 

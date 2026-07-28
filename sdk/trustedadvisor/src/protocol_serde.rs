@@ -41,6 +41,8 @@ pub(crate) mod shape_list_recommendation_resources;
 
 pub(crate) mod shape_list_recommendations;
 
+pub(crate) mod shape_list_recommendations_for_resource;
+
 pub(crate) mod shape_update_organization_recommendation_lifecycle;
 
 pub(crate) mod shape_update_recommendation_lifecycle;
@@ -83,6 +85,8 @@ pub(crate) mod shape_organization_recommendation_summary_list;
 
 pub(crate) mod shape_recommendation;
 
+pub(crate) mod shape_recommendation_for_resource_summary_list;
+
 pub(crate) mod shape_recommendation_resource_exclusion;
 
 pub(crate) mod shape_recommendation_resource_summary_list;
@@ -101,6 +105,8 @@ pub(crate) mod shape_organization_recommendation_summary;
 
 pub(crate) mod shape_recommendation_aws_service_list;
 
+pub(crate) mod shape_recommendation_for_resource_summary;
+
 pub(crate) mod shape_recommendation_pillar_list;
 
 pub(crate) mod shape_recommendation_pillar_specific_aggregates;
@@ -114,5 +120,7 @@ pub(crate) mod shape_recommendation_summary;
 pub(crate) mod shape_update_recommendation_resource_exclusion_error;
 
 pub(crate) mod shape_recommendation_cost_optimizing_aggregates;
+
+pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_string_map;

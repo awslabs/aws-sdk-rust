@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_recommendations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_recommendations_for_resource_output_output_next_token(
+    input: &crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_checks_output_output_check_summaries(
     input: crate::operation::list_checks::ListChecksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CheckSummary>> {
@@ -98,5 +108,12 @@ pub(crate) fn lens_list_recommendations_output_output_recommendation_summaries(
     input: crate::operation::list_recommendations::ListRecommendationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommendationSummary>> {
     let input = input.recommendation_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recommendations_for_resource_output_output_recommendation_for_resource_summaries(
+    input: crate::operation::list_recommendations_for_resource::ListRecommendationsForResourceOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecommendationForResourceSummary>> {
+    let input = input.recommendation_for_resource_summaries;
     ::std::option::Option::Some(input)
 }

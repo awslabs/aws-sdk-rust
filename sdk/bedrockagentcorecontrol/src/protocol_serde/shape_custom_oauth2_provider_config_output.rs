@@ -35,18 +35,6 @@ where
                                     .transpose()?,
                             );
                         }
-                        "privateEndpoint" => {
-                            builder = builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "privateEndpointOverrides" => {
-                            builder = builder.set_private_endpoint_overrides(
-                                crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value, depth + 1)?,
-                            );
-                        }
                         "onBehalfOfTokenExchangeConfig" => {
                             builder = builder.set_on_behalf_of_token_exchange_config(
                                 crate::protocol_serde::shape_on_behalf_of_token_exchange_config_type::de_on_behalf_of_token_exchange_config_type(
@@ -61,6 +49,23 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ClientAuthenticationMethodType::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "privateEndpoint" => {
+                            builder = builder.set_private_endpoint(crate::protocol_serde::shape_private_endpoint::de_private_endpoint(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "privateEndpointOverrides" => {
+                            builder = builder.set_private_endpoint_overrides(
+                                crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "privateKeyJwtConfig" => {
+                            builder = builder.set_private_key_jwt_config(
+                                crate::protocol_serde::shape_private_key_jwt_config::de_private_key_jwt_config(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

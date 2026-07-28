@@ -18,6 +18,8 @@ pub struct CustomOauth2ProviderConfigInput {
     pub on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
     /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
     pub client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
@@ -54,6 +56,10 @@ impl CustomOauth2ProviderConfigInput {
     pub fn client_authentication_method(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationMethodType> {
         self.client_authentication_method.as_ref()
     }
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub fn private_key_jwt_config(&self) -> ::std::option::Option<&crate::types::PrivateKeyJwtConfig> {
+        self.private_key_jwt_config.as_ref()
+    }
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
         self.private_endpoint.as_ref()
@@ -75,6 +81,7 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
         formatter.field("client_secret_source", &self.client_secret_source);
         formatter.field("on_behalf_of_token_exchange_config", &self.on_behalf_of_token_exchange_config);
         formatter.field("client_authentication_method", &self.client_authentication_method);
+        formatter.field("private_key_jwt_config", &self.private_key_jwt_config);
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
         formatter.finish()
@@ -98,6 +105,7 @@ pub struct CustomOauth2ProviderConfigInputBuilder {
     pub(crate) client_secret_source: ::std::option::Option<crate::types::SecretSourceType>,
     pub(crate) on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
     pub(crate) client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
+    pub(crate) private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
 }
@@ -201,6 +209,20 @@ impl CustomOauth2ProviderConfigInputBuilder {
     pub fn get_client_authentication_method(&self) -> &::std::option::Option<crate::types::ClientAuthenticationMethodType> {
         &self.client_authentication_method
     }
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub fn private_key_jwt_config(mut self, input: crate::types::PrivateKeyJwtConfig) -> Self {
+        self.private_key_jwt_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub fn set_private_key_jwt_config(mut self, input: ::std::option::Option<crate::types::PrivateKeyJwtConfig>) -> Self {
+        self.private_key_jwt_config = input;
+        self
+    }
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub fn get_private_key_jwt_config(&self) -> &::std::option::Option<crate::types::PrivateKeyJwtConfig> {
+        &self.private_key_jwt_config
+    }
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
         self.private_endpoint = ::std::option::Option::Some(input);
@@ -245,6 +267,7 @@ impl CustomOauth2ProviderConfigInputBuilder {
             client_secret_source: self.client_secret_source,
             on_behalf_of_token_exchange_config: self.on_behalf_of_token_exchange_config,
             client_authentication_method: self.client_authentication_method,
+            private_key_jwt_config: self.private_key_jwt_config,
             private_endpoint: self.private_endpoint,
             private_endpoint_overrides: self.private_endpoint_overrides,
         }
@@ -260,6 +283,7 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInputBuilder {
         formatter.field("client_secret_source", &self.client_secret_source);
         formatter.field("on_behalf_of_token_exchange_config", &self.on_behalf_of_token_exchange_config);
         formatter.field("client_authentication_method", &self.client_authentication_method);
+        formatter.field("private_key_jwt_config", &self.private_key_jwt_config);
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
         formatter.finish()

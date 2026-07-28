@@ -8,14 +8,16 @@ pub struct CustomOauth2ProviderConfigOutput {
     pub oauth_discovery: ::std::option::Option<crate::types::Oauth2Discovery>,
     /// <p>The client ID for the custom OAuth2 provider.</p>
     pub client_id: ::std::option::Option<::std::string::String>,
-    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
-    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
-    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
-    pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
     /// <p>The configuration for on-behalf-of token exchange.</p>
     pub on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
     /// <p>The client authentication method used when authenticating with the token endpoint.</p>
     pub client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
+    /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
+    pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
+    pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
 }
 impl CustomOauth2ProviderConfigOutput {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -25,6 +27,14 @@ impl CustomOauth2ProviderConfigOutput {
     /// <p>The client ID for the custom OAuth2 provider.</p>
     pub fn client_id(&self) -> ::std::option::Option<&str> {
         self.client_id.as_deref()
+    }
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub fn on_behalf_of_token_exchange_config(&self) -> ::std::option::Option<&crate::types::OnBehalfOfTokenExchangeConfigType> {
+        self.on_behalf_of_token_exchange_config.as_ref()
+    }
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub fn client_authentication_method(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationMethodType> {
+        self.client_authentication_method.as_ref()
     }
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub fn private_endpoint(&self) -> ::std::option::Option<&crate::types::PrivateEndpoint> {
@@ -36,13 +46,9 @@ impl CustomOauth2ProviderConfigOutput {
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
     }
-    /// <p>The configuration for on-behalf-of token exchange.</p>
-    pub fn on_behalf_of_token_exchange_config(&self) -> ::std::option::Option<&crate::types::OnBehalfOfTokenExchangeConfigType> {
-        self.on_behalf_of_token_exchange_config.as_ref()
-    }
-    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
-    pub fn client_authentication_method(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationMethodType> {
-        self.client_authentication_method.as_ref()
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub fn private_key_jwt_config(&self) -> ::std::option::Option<&crate::types::PrivateKeyJwtConfig> {
+        self.private_key_jwt_config.as_ref()
     }
 }
 impl CustomOauth2ProviderConfigOutput {
@@ -58,10 +64,11 @@ impl CustomOauth2ProviderConfigOutput {
 pub struct CustomOauth2ProviderConfigOutputBuilder {
     pub(crate) oauth_discovery: ::std::option::Option<crate::types::Oauth2Discovery>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
-    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
-    pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
     pub(crate) on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
     pub(crate) client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
+    pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
+    pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    pub(crate) private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
 }
 impl CustomOauth2ProviderConfigOutputBuilder {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -92,6 +99,34 @@ impl CustomOauth2ProviderConfigOutputBuilder {
     /// <p>The client ID for the custom OAuth2 provider.</p>
     pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_id
+    }
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub fn on_behalf_of_token_exchange_config(mut self, input: crate::types::OnBehalfOfTokenExchangeConfigType) -> Self {
+        self.on_behalf_of_token_exchange_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub fn set_on_behalf_of_token_exchange_config(mut self, input: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>) -> Self {
+        self.on_behalf_of_token_exchange_config = input;
+        self
+    }
+    /// <p>The configuration for on-behalf-of token exchange.</p>
+    pub fn get_on_behalf_of_token_exchange_config(&self) -> &::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType> {
+        &self.on_behalf_of_token_exchange_config
+    }
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub fn client_authentication_method(mut self, input: crate::types::ClientAuthenticationMethodType) -> Self {
+        self.client_authentication_method = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub fn set_client_authentication_method(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationMethodType>) -> Self {
+        self.client_authentication_method = input;
+        self
+    }
+    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
+    pub fn get_client_authentication_method(&self) -> &::std::option::Option<crate::types::ClientAuthenticationMethodType> {
+        &self.client_authentication_method
     }
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub fn private_endpoint(mut self, input: crate::types::PrivateEndpoint) -> Self {
@@ -127,43 +162,30 @@ impl CustomOauth2ProviderConfigOutputBuilder {
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
     }
-    /// <p>The configuration for on-behalf-of token exchange.</p>
-    pub fn on_behalf_of_token_exchange_config(mut self, input: crate::types::OnBehalfOfTokenExchangeConfigType) -> Self {
-        self.on_behalf_of_token_exchange_config = ::std::option::Option::Some(input);
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub fn private_key_jwt_config(mut self, input: crate::types::PrivateKeyJwtConfig) -> Self {
+        self.private_key_jwt_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration for on-behalf-of token exchange.</p>
-    pub fn set_on_behalf_of_token_exchange_config(mut self, input: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>) -> Self {
-        self.on_behalf_of_token_exchange_config = input;
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub fn set_private_key_jwt_config(mut self, input: ::std::option::Option<crate::types::PrivateKeyJwtConfig>) -> Self {
+        self.private_key_jwt_config = input;
         self
     }
-    /// <p>The configuration for on-behalf-of token exchange.</p>
-    pub fn get_on_behalf_of_token_exchange_config(&self) -> &::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType> {
-        &self.on_behalf_of_token_exchange_config
-    }
-    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
-    pub fn client_authentication_method(mut self, input: crate::types::ClientAuthenticationMethodType) -> Self {
-        self.client_authentication_method = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
-    pub fn set_client_authentication_method(mut self, input: ::std::option::Option<crate::types::ClientAuthenticationMethodType>) -> Self {
-        self.client_authentication_method = input;
-        self
-    }
-    /// <p>The client authentication method used when authenticating with the token endpoint.</p>
-    pub fn get_client_authentication_method(&self) -> &::std::option::Option<crate::types::ClientAuthenticationMethodType> {
-        &self.client_authentication_method
+    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    pub fn get_private_key_jwt_config(&self) -> &::std::option::Option<crate::types::PrivateKeyJwtConfig> {
+        &self.private_key_jwt_config
     }
     /// Consumes the builder and constructs a [`CustomOauth2ProviderConfigOutput`](crate::types::CustomOauth2ProviderConfigOutput).
     pub fn build(self) -> crate::types::CustomOauth2ProviderConfigOutput {
         crate::types::CustomOauth2ProviderConfigOutput {
             oauth_discovery: self.oauth_discovery,
             client_id: self.client_id,
-            private_endpoint: self.private_endpoint,
-            private_endpoint_overrides: self.private_endpoint_overrides,
             on_behalf_of_token_exchange_config: self.on_behalf_of_token_exchange_config,
             client_authentication_method: self.client_authentication_method,
+            private_endpoint: self.private_endpoint,
+            private_endpoint_overrides: self.private_endpoint_overrides,
+            private_key_jwt_config: self.private_key_jwt_config,
         }
     }
 }

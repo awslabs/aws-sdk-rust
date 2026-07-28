@@ -4673,6 +4673,15 @@ pub(crate) fn kinesis_resource_correct_errors(
     builder
 }
 
+pub(crate) fn kms_key_source_type_correct_errors(
+    mut builder: crate::types::builders::KmsKeySourceTypeBuilder,
+) -> crate::types::builders::KmsKeySourceTypeBuilder {
+    if builder.kms_key_arn.is_none() {
+        builder.kms_key_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn numerical_scale_definition_correct_errors(
     mut builder: crate::types::builders::NumericalScaleDefinitionBuilder,
 ) -> crate::types::builders::NumericalScaleDefinitionBuilder {

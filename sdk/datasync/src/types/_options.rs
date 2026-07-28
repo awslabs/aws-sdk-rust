@@ -41,8 +41,10 @@ pub struct Options {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks support configuring <code>Atime</code> independently of <code>Mtime</code>.</p>
     /// </note>
     pub atime: ::std::option::Option<crate::types::Atime>,
     /// <p>Specifies whether to preserve metadata indicating the last time that a file was written to before the <code>PREPARING</code> step of your task execution. This option is required when you need to run the a task more than once.</p>
@@ -52,8 +54,10 @@ pub struct Options {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Mtime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks don't support <code>Mtime</code> set to <code>NONE</code>.</p>
     /// </note>
     pub mtime: ::std::option::Option<crate::types::Mtime>,
     /// <p>Specifies the POSIX user ID (UID) of the file's owner.</p>
@@ -197,8 +201,10 @@ impl Options {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks support configuring <code>Atime</code> independently of <code>Mtime</code>.</p>
     /// </note>
     pub fn atime(&self) -> ::std::option::Option<&crate::types::Atime> {
         self.atime.as_ref()
@@ -210,8 +216,10 @@ impl Options {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Mtime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks don't support <code>Mtime</code> set to <code>NONE</code>.</p>
     /// </note>
     pub fn mtime(&self) -> ::std::option::Option<&crate::types::Mtime> {
         self.mtime.as_ref()
@@ -470,8 +478,10 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks support configuring <code>Atime</code> independently of <code>Mtime</code>.</p>
     /// </note>
     pub fn atime(mut self, input: crate::types::Atime) -> Self {
         self.atime = ::std::option::Option::Some(input);
@@ -486,8 +496,10 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks support configuring <code>Atime</code> independently of <code>Mtime</code>.</p>
     /// </note>
     pub fn set_atime(mut self, input: ::std::option::Option<crate::types::Atime>) -> Self {
         self.atime = input;
@@ -502,8 +514,10 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Atime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Atime</code> is set to <code>BEST_EFFORT</code>, <code>Mtime</code> must be set to <code>PRESERVE</code>.</p>
     /// <p>If <code>Atime</code> is set to <code>NONE</code>, <code>Mtime</code> must also be <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks support configuring <code>Atime</code> independently of <code>Mtime</code>.</p>
     /// </note>
     pub fn get_atime(&self) -> &::std::option::Option<crate::types::Atime> {
         &self.atime
@@ -515,8 +529,10 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Mtime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks don't support <code>Mtime</code> set to <code>NONE</code>.</p>
     /// </note>
     pub fn mtime(mut self, input: crate::types::Mtime) -> Self {
         self.mtime = ::std::option::Option::Some(input);
@@ -529,8 +545,10 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Mtime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks don't support <code>Mtime</code> set to <code>NONE</code>.</p>
     /// </note>
     pub fn set_mtime(mut self, input: ::std::option::Option<crate::types::Mtime>) -> Self {
         self.mtime = input;
@@ -543,8 +561,10 @@ impl OptionsBuilder {
     /// <li>
     /// <p><code>NONE</code> - Ignores <code>Mtime</code>.</p></li>
     /// </ul><note>
+    /// <p>The following applies only to Basic mode tasks:</p>
     /// <p>If <code>Mtime</code> is set to <code>PRESERVE</code>, <code>Atime</code> must be set to <code>BEST_EFFORT</code>.</p>
     /// <p>If <code>Mtime</code> is set to <code>NONE</code>, <code>Atime</code> must also be set to <code>NONE</code>.</p>
+    /// <p>Enhanced mode tasks don't support <code>Mtime</code> set to <code>NONE</code>.</p>
     /// </note>
     pub fn get_mtime(&self) -> &::std::option::Option<crate::types::Mtime> {
         &self.mtime

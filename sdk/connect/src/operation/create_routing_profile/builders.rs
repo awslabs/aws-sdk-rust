@@ -191,14 +191,16 @@ impl CreateRoutingProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_manual_assignment_queue_configs`](Self::set_manual_assignment_queue_configs).
     ///
-    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Connect Customer service quotas.</p>
-    /// <p>Note: Use this config for chat, email, and task contacts. It does not support voice contacts.</p>
+    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Connect Customer service quotas.</p><note>
+    /// <p>For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.</p>
+    /// </note>
     pub fn manual_assignment_queue_configs(mut self, input: crate::types::RoutingProfileManualAssignmentQueueConfig) -> Self {
         self.inner = self.inner.manual_assignment_queue_configs(input);
         self
     }
-    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Connect Customer service quotas.</p>
-    /// <p>Note: Use this config for chat, email, and task contacts. It does not support voice contacts.</p>
+    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Connect Customer service quotas.</p><note>
+    /// <p>For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.</p>
+    /// </note>
     pub fn set_manual_assignment_queue_configs(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>>,
@@ -206,8 +208,9 @@ impl CreateRoutingProfileFluentBuilder {
         self.inner = self.inner.set_manual_assignment_queue_configs(input);
         self
     }
-    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Connect Customer service quotas.</p>
-    /// <p>Note: Use this config for chat, email, and task contacts. It does not support voice contacts.</p>
+    /// <p>The manual assignment queues associated with the routing profile. If no queue is added, agents and supervisors can't pick or assign any contacts from this routing profile. The limit of 10 array members applies to the maximum number of RoutingProfileManualAssignmentQueueConfig objects that can be passed during a CreateRoutingProfile API request. It is different from the quota of 50 queues per routing profile per instance that is listed in Connect Customer service quotas.</p><note>
+    /// <p>For voice contacts, manual assignment supports only agent-first callback contacts. Chat, email, and task contacts are fully supported.</p>
+    /// </note>
     pub fn get_manual_assignment_queue_configs(
         &self,
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingProfileManualAssignmentQueueConfig>> {

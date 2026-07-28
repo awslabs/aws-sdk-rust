@@ -33,23 +33,29 @@ pub fn ser_custom_oauth2_provider_config_input(
     if let Some(var_8) = &input.client_authentication_method {
         object.key("clientAuthenticationMethod").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.private_endpoint {
+    if let Some(var_9) = &input.private_key_jwt_config {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("privateEndpoint").start_object();
-        crate::protocol_serde::shape_private_endpoint::ser_private_endpoint(&mut object_10, var_9)?;
+        let mut object_10 = object.key("privateKeyJwtConfig").start_object();
+        crate::protocol_serde::shape_private_key_jwt_config::ser_private_key_jwt_config(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.private_endpoint_overrides {
-        let mut array_12 = object.key("privateEndpointOverrides").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.private_endpoint {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("privateEndpoint").start_object();
+        crate::protocol_serde::shape_private_endpoint::ser_private_endpoint(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.private_endpoint_overrides {
+        let mut array_14 = object.key("privateEndpointOverrides").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_private_endpoint_override::ser_private_endpoint_override(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_private_endpoint_override::ser_private_endpoint_override(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
     Ok(())
 }

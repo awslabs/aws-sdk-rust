@@ -75,6 +75,27 @@ where
                         "metadata" => {
                             builder = builder.set_metadata(crate::protocol_serde::shape_string_map::de_string_map(tokens, _value, depth + 1)?);
                         }
+                        "resourceArnQueryable" => {
+                            builder = builder.set_resource_arn_queryable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "awsResourceTypes" => {
+                            builder =
+                                builder.set_aws_resource_types(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
+                        }
+                        "checkGranularity" => {
+                            builder = builder.set_check_granularity(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "recommendationId" => {
+                            builder = builder.set_recommendation_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

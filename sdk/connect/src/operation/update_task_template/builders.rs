@@ -165,16 +165,19 @@ impl UpdateTaskTemplateFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    /// <p>Although this parameter is marked as optional, the request must contain either a <code>ContactFlowId</code> or a field of type <code>QUICK_CONNECT</code>.</p>
     pub fn contact_flow_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_flow_id(input.into());
         self
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    /// <p>Although this parameter is marked as optional, the request must contain either a <code>ContactFlowId</code> or a field of type <code>QUICK_CONNECT</code>.</p>
     pub fn set_contact_flow_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_flow_id(input);
         self
     }
     /// <p>The identifier of the flow that runs by default when a task is created by referencing this template.</p>
+    /// <p>Although this parameter is marked as optional, the request must contain either a <code>ContactFlowId</code> or a field of type <code>QUICK_CONNECT</code>.</p>
     pub fn get_contact_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_flow_id()
     }
@@ -192,17 +195,17 @@ impl UpdateTaskTemplateFluentBuilder {
     pub fn get_self_assign_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_self_assign_flow_id()
     }
-    /// <p>Constraints that are applicable to the fields listed.</p>
+    /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
         self.inner = self.inner.constraints(input);
         self
     }
-    /// <p>Constraints that are applicable to the fields listed.</p>
+    /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::TaskTemplateConstraints>) -> Self {
         self.inner = self.inner.set_constraints(input);
         self
     }
-    /// <p>Constraints that are applicable to the fields listed.</p>
+    /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn get_constraints(&self) -> &::std::option::Option<crate::types::TaskTemplateConstraints> {
         self.inner.get_constraints()
     }
@@ -221,16 +224,19 @@ impl UpdateTaskTemplateFluentBuilder {
         self.inner.get_defaults()
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    /// <p>Although this parameter is marked as optional, the service requires it when calling <code>UpdateTaskTemplate</code>.</p>
     pub fn status(mut self, input: crate::types::TaskTemplateStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    /// <p>Although this parameter is marked as optional, the service requires it when calling <code>UpdateTaskTemplate</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::TaskTemplateStatus>) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
     /// <p>Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.</p>
+    /// <p>Although this parameter is marked as optional, the service requires it when calling <code>UpdateTaskTemplate</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TaskTemplateStatus> {
         self.inner.get_status()
     }
@@ -240,16 +246,19 @@ impl UpdateTaskTemplateFluentBuilder {
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>Fields that are part of the template.</p>
+    /// <p>The request must contain exactly one field of type <code>NAME</code>. This field must also be listed in the <code>RequiredFields</code> array within the <code>Constraints</code> parameter.</p>
     pub fn fields(mut self, input: crate::types::TaskTemplateField) -> Self {
         self.inner = self.inner.fields(input);
         self
     }
     /// <p>Fields that are part of the template.</p>
+    /// <p>The request must contain exactly one field of type <code>NAME</code>. This field must also be listed in the <code>RequiredFields</code> array within the <code>Constraints</code> parameter.</p>
     pub fn set_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>>) -> Self {
         self.inner = self.inner.set_fields(input);
         self
     }
     /// <p>Fields that are part of the template.</p>
+    /// <p>The request must contain exactly one field of type <code>NAME</code>. This field must also be listed in the <code>RequiredFields</code> array within the <code>Constraints</code> parameter.</p>
     pub fn get_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TaskTemplateField>> {
         self.inner.get_fields()
     }

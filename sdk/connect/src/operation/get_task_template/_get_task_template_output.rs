@@ -17,7 +17,7 @@ pub struct GetTaskTemplateOutput {
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>The ContactFlowId for the flow that will be run if this template is used to create a self-assigned task.</p>
     pub self_assign_flow_id: ::std::option::Option<::std::string::String>,
-    /// <p>Constraints that are applicable to the fields listed.</p>
+    /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub constraints: ::std::option::Option<crate::types::TaskTemplateConstraints>,
     /// <p>The default values for fields when a task is created by referencing this template.</p>
     pub defaults: ::std::option::Option<crate::types::TaskTemplateDefaults>,
@@ -65,7 +65,7 @@ impl GetTaskTemplateOutput {
     pub fn self_assign_flow_id(&self) -> ::std::option::Option<&str> {
         self.self_assign_flow_id.as_deref()
     }
-    /// <p>Constraints that are applicable to the fields listed.</p>
+    /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn constraints(&self) -> ::std::option::Option<&crate::types::TaskTemplateConstraints> {
         self.constraints.as_ref()
     }
@@ -230,17 +230,17 @@ impl GetTaskTemplateOutputBuilder {
     pub fn get_self_assign_flow_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.self_assign_flow_id
     }
-    /// <p>Constraints that are applicable to the fields listed.</p>
+    /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn constraints(mut self, input: crate::types::TaskTemplateConstraints) -> Self {
         self.constraints = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Constraints that are applicable to the fields listed.</p>
+    /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::TaskTemplateConstraints>) -> Self {
         self.constraints = input;
         self
     }
-    /// <p>Constraints that are applicable to the fields listed.</p>
+    /// <p>Constraints that are applicable to the fields listed. Although this parameter is marked as optional in the API model, the service requires it when calling <code>CreateTaskTemplate</code> or <code>UpdateTaskTemplate</code>. The <code>RequiredFields</code> array must contain at least one element, and the field of type <code>NAME</code> must be included in <code>RequiredFields</code>.</p>
     pub fn get_constraints(&self) -> &::std::option::Option<crate::types::TaskTemplateConstraints> {
         &self.constraints
     }

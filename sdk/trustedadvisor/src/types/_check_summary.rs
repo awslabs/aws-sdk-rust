@@ -20,6 +20,14 @@ pub struct CheckSummary {
     pub source: crate::types::RecommendationSource,
     /// <p>The column headings for the metadata returned in the resource</p>
     pub metadata: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    /// <p>Indicates whether this check is supported by the ListRecommendationsForResource API.</p>
+    pub resource_arn_queryable: bool,
+    /// <p>The AWS resource types that this check evaluates (for example, AWS::EC2::Instance).</p>
+    pub aws_resource_types: ::std::vec::Vec<::std::string::String>,
+    /// <p>The granularity level at which the check operates: resource, account, or account_region.</p>
+    pub check_granularity: ::std::option::Option<::std::string::String>,
+    /// <p>The recommendation identifier associated with the check.</p>
+    pub recommendation_id: ::std::option::Option<::std::string::String>,
 }
 impl CheckSummary {
     /// <p>The unique identifier of the AWS Trusted Advisor Check</p>
@@ -60,6 +68,23 @@ impl CheckSummary {
     pub fn metadata(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
         &self.metadata
     }
+    /// <p>Indicates whether this check is supported by the ListRecommendationsForResource API.</p>
+    pub fn resource_arn_queryable(&self) -> bool {
+        self.resource_arn_queryable
+    }
+    /// <p>The AWS resource types that this check evaluates (for example, AWS::EC2::Instance).</p>
+    pub fn aws_resource_types(&self) -> &[::std::string::String] {
+        use std::ops::Deref;
+        self.aws_resource_types.deref()
+    }
+    /// <p>The granularity level at which the check operates: resource, account, or account_region.</p>
+    pub fn check_granularity(&self) -> ::std::option::Option<&str> {
+        self.check_granularity.as_deref()
+    }
+    /// <p>The recommendation identifier associated with the check.</p>
+    pub fn recommendation_id(&self) -> ::std::option::Option<&str> {
+        self.recommendation_id.as_deref()
+    }
 }
 impl CheckSummary {
     /// Creates a new builder-style object to manufacture [`CheckSummary`](crate::types::CheckSummary).
@@ -80,6 +105,10 @@ pub struct CheckSummaryBuilder {
     pub(crate) aws_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) source: ::std::option::Option<crate::types::RecommendationSource>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) resource_arn_queryable: ::std::option::Option<bool>,
+    pub(crate) aws_resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) check_granularity: ::std::option::Option<::std::string::String>,
+    pub(crate) recommendation_id: ::std::option::Option<::std::string::String>,
 }
 impl CheckSummaryBuilder {
     /// <p>The unique identifier of the AWS Trusted Advisor Check</p>
@@ -217,6 +246,68 @@ impl CheckSummaryBuilder {
     pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.metadata
     }
+    /// <p>Indicates whether this check is supported by the ListRecommendationsForResource API.</p>
+    pub fn resource_arn_queryable(mut self, input: bool) -> Self {
+        self.resource_arn_queryable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this check is supported by the ListRecommendationsForResource API.</p>
+    pub fn set_resource_arn_queryable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.resource_arn_queryable = input;
+        self
+    }
+    /// <p>Indicates whether this check is supported by the ListRecommendationsForResource API.</p>
+    pub fn get_resource_arn_queryable(&self) -> &::std::option::Option<bool> {
+        &self.resource_arn_queryable
+    }
+    /// Appends an item to `aws_resource_types`.
+    ///
+    /// To override the contents of this collection use [`set_aws_resource_types`](Self::set_aws_resource_types).
+    ///
+    /// <p>The AWS resource types that this check evaluates (for example, AWS::EC2::Instance).</p>
+    pub fn aws_resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.aws_resource_types.unwrap_or_default();
+        v.push(input.into());
+        self.aws_resource_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The AWS resource types that this check evaluates (for example, AWS::EC2::Instance).</p>
+    pub fn set_aws_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.aws_resource_types = input;
+        self
+    }
+    /// <p>The AWS resource types that this check evaluates (for example, AWS::EC2::Instance).</p>
+    pub fn get_aws_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.aws_resource_types
+    }
+    /// <p>The granularity level at which the check operates: resource, account, or account_region.</p>
+    pub fn check_granularity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.check_granularity = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The granularity level at which the check operates: resource, account, or account_region.</p>
+    pub fn set_check_granularity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.check_granularity = input;
+        self
+    }
+    /// <p>The granularity level at which the check operates: resource, account, or account_region.</p>
+    pub fn get_check_granularity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.check_granularity
+    }
+    /// <p>The recommendation identifier associated with the check.</p>
+    pub fn recommendation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.recommendation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The recommendation identifier associated with the check.</p>
+    pub fn set_recommendation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.recommendation_id = input;
+        self
+    }
+    /// <p>The recommendation identifier associated with the check.</p>
+    pub fn get_recommendation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.recommendation_id
+    }
     /// Consumes the builder and constructs a [`CheckSummary`](crate::types::CheckSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CheckSummaryBuilder::id)
@@ -277,6 +368,10 @@ impl CheckSummaryBuilder {
                     "metadata was not specified but it is required when building CheckSummary",
                 )
             })?,
+            resource_arn_queryable: self.resource_arn_queryable.unwrap_or_default(),
+            aws_resource_types: self.aws_resource_types.unwrap_or_default(),
+            check_granularity: self.check_granularity,
+            recommendation_id: self.recommendation_id,
         })
     }
 }
