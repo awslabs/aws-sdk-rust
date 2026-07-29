@@ -3,7 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMetadataModelInput {
-    /// <p>The JSON string that specifies which metadata model to retrieve. Only one selection rule with "rule-action": "explicit" can be provided. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection Rules</a> in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the metadata model to retrieve. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub selection_rules: ::std::option::Option<::std::string::String>,
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
@@ -11,7 +20,16 @@ pub struct DescribeMetadataModelInput {
     pub origin: ::std::option::Option<crate::types::OriginTypeValue>,
 }
 impl DescribeMetadataModelInput {
-    /// <p>The JSON string that specifies which metadata model to retrieve. Only one selection rule with "rule-action": "explicit" can be provided. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection Rules</a> in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the metadata model to retrieve. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn selection_rules(&self) -> ::std::option::Option<&str> {
         self.selection_rules.as_deref()
     }
@@ -40,18 +58,45 @@ pub struct DescribeMetadataModelInputBuilder {
     pub(crate) origin: ::std::option::Option<crate::types::OriginTypeValue>,
 }
 impl DescribeMetadataModelInputBuilder {
-    /// <p>The JSON string that specifies which metadata model to retrieve. Only one selection rule with "rule-action": "explicit" can be provided. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection Rules</a> in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the metadata model to retrieve. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON string that specifies which metadata model to retrieve. Only one selection rule with "rule-action": "explicit" can be provided. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection Rules</a> in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the metadata model to retrieve. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_rules = input;
         self
     }
-    /// <p>The JSON string that specifies which metadata model to retrieve. Only one selection rule with "rule-action": "explicit" can be provided. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection Rules</a> in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the metadata model to retrieve. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_rules
     }

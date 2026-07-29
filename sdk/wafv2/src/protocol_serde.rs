@@ -617,6 +617,8 @@ pub(crate) mod shape_managed_rule_group_config;
 
 pub(crate) mod shape_payment_networks;
 
+pub(crate) mod shape_pre_parse_text_transformation;
+
 pub(crate) mod shape_price;
 
 pub(crate) mod shape_rate_based_statement_custom_key;
@@ -690,6 +692,8 @@ pub(crate) mod shape_header_names;
 pub(crate) mod shape_json_pointer_paths;
 
 pub(crate) mod shape_managed_rule_group_configs;
+
+pub(crate) mod shape_pre_parse_text_transformations;
 
 pub(crate) mod shape_prices;
 

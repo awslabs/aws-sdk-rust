@@ -367,6 +367,10 @@ pub use crate::types::_create_transit_gateway_peering_attachment_request_options
 
 pub use crate::types::_transit_gateway_policy_table::TransitGatewayPolicyTable;
 
+pub use crate::types::_transit_gateway_request_policy_rule::TransitGatewayRequestPolicyRule;
+
+pub use crate::types::_transit_gateway_policy_table_entry::TransitGatewayPolicyTableEntry;
+
 pub use crate::types::_transit_gateway_prefix_list_reference::TransitGatewayPrefixListReference;
 
 pub use crate::types::_transit_gateway_route::TransitGatewayRoute;
@@ -1187,6 +1191,12 @@ pub use crate::types::_dynamic_routing_value::DynamicRoutingValue;
 
 pub use crate::types::_transit_gateway_policy_table_state::TransitGatewayPolicyTableState;
 
+pub use crate::types::_transit_gateway_request_policy_rule_meta_data::TransitGatewayRequestPolicyRuleMetaData;
+
+pub use crate::types::_transit_gateway_policy_rule::TransitGatewayPolicyRule;
+
+pub use crate::types::_transit_gateway_policy_table_entry_state::TransitGatewayPolicyTableEntryState;
+
 pub use crate::types::_transit_gateway_prefix_list_reference_state::TransitGatewayPrefixListReferenceState;
 
 pub use crate::types::_transit_gateway_prefix_list_attachment::TransitGatewayPrefixListAttachment;
@@ -1617,8 +1627,6 @@ pub use crate::types::_transit_gateway_attachment_propagation::TransitGatewayAtt
 
 pub use crate::types::_transit_gateway_multicast_domain_association::TransitGatewayMulticastDomainAssociation;
 
-pub use crate::types::_transit_gateway_policy_table_entry::TransitGatewayPolicyTableEntry;
-
 pub use crate::types::_transit_gateway_route_table_association::TransitGatewayRouteTableAssociation;
 
 pub use crate::types::_transit_gateway_route_table_propagation::TransitGatewayRouteTablePropagation;
@@ -1914,6 +1922,8 @@ pub use crate::types::_secondary_network_ipv4_cidr_block_association::SecondaryN
 pub use crate::types::_secondary_subnet_ipv4_cidr_block_association::SecondarySubnetIpv4CidrBlockAssociation;
 
 pub use crate::types::_encryption_support::EncryptionSupport;
+
+pub use crate::types::_transit_gateway_policy_rule_meta_data::TransitGatewayPolicyRuleMetaData;
 
 pub use crate::types::_transit_gateway_route_attachment::TransitGatewayRouteAttachment;
 
@@ -2225,8 +2235,6 @@ pub use crate::types::_target_configuration::TargetConfiguration;
 
 pub use crate::types::_route_server_route_status::RouteServerRouteStatus;
 
-pub use crate::types::_transit_gateway_policy_rule::TransitGatewayPolicyRule;
-
 pub use crate::types::_disk_image_description::DiskImageDescription;
 
 pub use crate::types::_disk_image_volume_description::DiskImageVolumeDescription;
@@ -2526,8 +2534,6 @@ pub use crate::types::_connection_tracking_specification::ConnectionTrackingSpec
 pub use crate::types::_cpu_performance_factor::CpuPerformanceFactor;
 
 pub use crate::types::_route_server_route_installation_detail::RouteServerRouteInstallationDetail;
-
-pub use crate::types::_transit_gateway_policy_rule_meta_data::TransitGatewayPolicyRuleMetaData;
 
 pub use crate::types::_import_instance_volume_detail_item::ImportInstanceVolumeDetailItem;
 
@@ -5229,6 +5235,8 @@ mod _transit_gateway_policy_table_association;
 
 mod _transit_gateway_policy_table_entry;
 
+mod _transit_gateway_policy_table_entry_state;
+
 mod _transit_gateway_policy_table_state;
 
 mod _transit_gateway_prefix_list_attachment;
@@ -5242,6 +5250,10 @@ mod _transit_gateway_propagation;
 mod _transit_gateway_propagation_state;
 
 mod _transit_gateway_request_options;
+
+mod _transit_gateway_request_policy_rule;
+
+mod _transit_gateway_request_policy_rule_meta_data;
 
 mod _transit_gateway_route;
 

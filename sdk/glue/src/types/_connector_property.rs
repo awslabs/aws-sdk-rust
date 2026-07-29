@@ -18,6 +18,8 @@ pub struct ConnectorProperty {
     pub property_location: ::std::option::Option<crate::types::PropertyLocation>,
     /// <p>The data type of this property</p>
     pub property_type: crate::types::PropertyType,
+    /// <p>A format template for the property value that defines how the value should be formatted before sending it in API requests. Use <code>{value}</code> as a placeholder for the actual property value (for example, <code>SSWS {value}</code>).</p>
+    pub format: ::std::option::Option<::std::string::String>,
 }
 impl ConnectorProperty {
     /// <p>The name of the property.</p>
@@ -51,6 +53,10 @@ impl ConnectorProperty {
     pub fn property_type(&self) -> &crate::types::PropertyType {
         &self.property_type
     }
+    /// <p>A format template for the property value that defines how the value should be formatted before sending it in API requests. Use <code>{value}</code> as a placeholder for the actual property value (for example, <code>SSWS {value}</code>).</p>
+    pub fn format(&self) -> ::std::option::Option<&str> {
+        self.format.as_deref()
+    }
 }
 impl ConnectorProperty {
     /// Creates a new builder-style object to manufacture [`ConnectorProperty`](crate::types::ConnectorProperty).
@@ -70,6 +76,7 @@ pub struct ConnectorPropertyBuilder {
     pub(crate) allowed_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) property_location: ::std::option::Option<crate::types::PropertyLocation>,
     pub(crate) property_type: ::std::option::Option<crate::types::PropertyType>,
+    pub(crate) format: ::std::option::Option<::std::string::String>,
 }
 impl ConnectorPropertyBuilder {
     /// <p>The name of the property.</p>
@@ -179,6 +186,20 @@ impl ConnectorPropertyBuilder {
     pub fn get_property_type(&self) -> &::std::option::Option<crate::types::PropertyType> {
         &self.property_type
     }
+    /// <p>A format template for the property value that defines how the value should be formatted before sending it in API requests. Use <code>{value}</code> as a placeholder for the actual property value (for example, <code>SSWS {value}</code>).</p>
+    pub fn format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.format = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A format template for the property value that defines how the value should be formatted before sending it in API requests. Use <code>{value}</code> as a placeholder for the actual property value (for example, <code>SSWS {value}</code>).</p>
+    pub fn set_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.format = input;
+        self
+    }
+    /// <p>A format template for the property value that defines how the value should be formatted before sending it in API requests. Use <code>{value}</code> as a placeholder for the actual property value (for example, <code>SSWS {value}</code>).</p>
+    pub fn get_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.format
+    }
     /// Consumes the builder and constructs a [`ConnectorProperty`](crate::types::ConnectorProperty).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ConnectorPropertyBuilder::name)
@@ -208,6 +229,7 @@ impl ConnectorPropertyBuilder {
                     "property_type was not specified but it is required when building ConnectorProperty",
                 )
             })?,
+            format: self.format,
         })
     }
 }

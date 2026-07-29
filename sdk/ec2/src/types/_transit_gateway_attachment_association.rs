@@ -6,6 +6,8 @@
 pub struct TransitGatewayAttachmentAssociation {
     /// <p>The ID of the route table for the transit gateway.</p>
     pub transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the transit gateway policy table associated with the attachment.</p>
+    pub transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     /// <p>The state of the association.</p>
     pub state: ::std::option::Option<crate::types::TransitGatewayAssociationState>,
 }
@@ -13,6 +15,10 @@ impl TransitGatewayAttachmentAssociation {
     /// <p>The ID of the route table for the transit gateway.</p>
     pub fn transit_gateway_route_table_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_route_table_id.as_deref()
+    }
+    /// <p>The ID of the transit gateway policy table associated with the attachment.</p>
+    pub fn transit_gateway_policy_table_id(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_policy_table_id.as_deref()
     }
     /// <p>The state of the association.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayAssociationState> {
@@ -31,6 +37,7 @@ impl TransitGatewayAttachmentAssociation {
 #[non_exhaustive]
 pub struct TransitGatewayAttachmentAssociationBuilder {
     pub(crate) transit_gateway_route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::TransitGatewayAssociationState>,
 }
 impl TransitGatewayAttachmentAssociationBuilder {
@@ -47,6 +54,20 @@ impl TransitGatewayAttachmentAssociationBuilder {
     /// <p>The ID of the route table for the transit gateway.</p>
     pub fn get_transit_gateway_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.transit_gateway_route_table_id
+    }
+    /// <p>The ID of the transit gateway policy table associated with the attachment.</p>
+    pub fn transit_gateway_policy_table_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_policy_table_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the transit gateway policy table associated with the attachment.</p>
+    pub fn set_transit_gateway_policy_table_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_policy_table_id = input;
+        self
+    }
+    /// <p>The ID of the transit gateway policy table associated with the attachment.</p>
+    pub fn get_transit_gateway_policy_table_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_policy_table_id
     }
     /// <p>The state of the association.</p>
     pub fn state(mut self, input: crate::types::TransitGatewayAssociationState) -> Self {
@@ -66,6 +87,7 @@ impl TransitGatewayAttachmentAssociationBuilder {
     pub fn build(self) -> crate::types::TransitGatewayAttachmentAssociation {
         crate::types::TransitGatewayAttachmentAssociation {
             transit_gateway_route_table_id: self.transit_gateway_route_table_id,
+            transit_gateway_policy_table_id: self.transit_gateway_policy_table_id,
             state: self.state,
         }
     }

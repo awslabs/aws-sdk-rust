@@ -442,6 +442,9 @@ pub mod create_transit_gateway_peering_attachment;
 /// Types for the `CreateTransitGatewayPolicyTable` operation.
 pub mod create_transit_gateway_policy_table;
 
+/// Types for the `CreateTransitGatewayPolicyTableEntry` operation.
+pub mod create_transit_gateway_policy_table_entry;
+
 /// Types for the `CreateTransitGatewayPrefixListReference` operation.
 pub mod create_transit_gateway_prefix_list_reference;
 
@@ -720,6 +723,9 @@ pub mod delete_transit_gateway_peering_attachment;
 
 /// Types for the `DeleteTransitGatewayPolicyTable` operation.
 pub mod delete_transit_gateway_policy_table;
+
+/// Types for the `DeleteTransitGatewayPolicyTableEntry` operation.
+pub mod delete_transit_gateway_policy_table_entry;
 
 /// Types for the `DeleteTransitGatewayPrefixListReference` operation.
 pub mod delete_transit_gateway_prefix_list_reference;
@@ -1995,6 +2001,9 @@ pub mod modify_transit_gateway;
 
 /// Types for the `ModifyTransitGatewayMeteringPolicy` operation.
 pub mod modify_transit_gateway_metering_policy;
+
+/// Types for the `ModifyTransitGatewayPolicyTableEntry` operation.
+pub mod modify_transit_gateway_policy_table_entry;
 
 /// Types for the `ModifyTransitGatewayPrefixListReference` operation.
 pub mod modify_transit_gateway_prefix_list_reference;

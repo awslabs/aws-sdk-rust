@@ -5,6 +5,8 @@
 pub struct DeleteDatasetInput {
     /// <p>The ID of the dataset.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -12,6 +14,10 @@ impl DeleteDatasetInput {
     /// <p>The ID of the dataset.</p>
     pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -30,6 +36,7 @@ impl DeleteDatasetInput {
 #[non_exhaustive]
 pub struct DeleteDatasetInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDatasetInputBuilder {
@@ -47,6 +54,20 @@ impl DeleteDatasetInputBuilder {
     /// <p>The ID of the dataset.</p>
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_id
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -68,6 +89,7 @@ impl DeleteDatasetInputBuilder {
     ) -> ::std::result::Result<crate::operation::delete_dataset::DeleteDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_dataset::DeleteDatasetInput {
             dataset_id: self.dataset_id,
+            workspace_name: self.workspace_name,
             client_token: self.client_token,
         })
     }

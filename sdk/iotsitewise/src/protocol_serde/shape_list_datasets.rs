@@ -45,6 +45,20 @@ pub fn de_list_datasets_http_error(
             };
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::list_datasets::ListDatasetsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_datasets::ListDatasetsError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_datasets::ListDatasetsError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::list_datasets::ListDatasetsError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -106,6 +120,13 @@ pub(crate) fn de_list_datasets(
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "workspaceName" => {
+                    builder = builder.set_workspace_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

@@ -11,6 +11,8 @@ pub struct DeleteTimeSeriesInput {
     pub property_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
@@ -29,6 +31,10 @@ impl DeleteTimeSeriesInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
 }
 impl DeleteTimeSeriesInput {
     /// Creates a new builder-style object to manufacture [`DeleteTimeSeriesInput`](crate::operation::delete_time_series::DeleteTimeSeriesInput).
@@ -45,6 +51,7 @@ pub struct DeleteTimeSeriesInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTimeSeriesInputBuilder {
     /// <p>The alias that identifies the time series.</p>
@@ -103,6 +110,20 @@ impl DeleteTimeSeriesInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`DeleteTimeSeriesInput`](crate::operation::delete_time_series::DeleteTimeSeriesInput).
     pub fn build(
         self,
@@ -112,6 +133,7 @@ impl DeleteTimeSeriesInputBuilder {
             asset_id: self.asset_id,
             property_id: self.property_id,
             client_token: self.client_token,
+            workspace_name: self.workspace_name,
         })
     }
 }

@@ -10,6 +10,12 @@ pub struct File {
     pub key: ::std::string::String,
     /// <p>The version ID to identify a specific version of the Amazon S3 object that contains your data.</p>
     pub version_id: ::std::option::Option<::std::string::String>,
+    /// <p>The alias associated with the file's time series.</p>
+    pub alias: ::std::option::Option<::std::string::String>,
+    /// <p>The nanosecond-precision start time for the file data.</p>
+    pub start_time: ::std::option::Option<crate::types::TimeInNanos>,
+    /// <p>The file format of the data in S3.</p>
+    pub file_format: ::std::option::Option<crate::types::FileFormat>,
 }
 impl File {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
@@ -26,6 +32,18 @@ impl File {
     pub fn version_id(&self) -> ::std::option::Option<&str> {
         self.version_id.as_deref()
     }
+    /// <p>The alias associated with the file's time series.</p>
+    pub fn alias(&self) -> ::std::option::Option<&str> {
+        self.alias.as_deref()
+    }
+    /// <p>The nanosecond-precision start time for the file data.</p>
+    pub fn start_time(&self) -> ::std::option::Option<&crate::types::TimeInNanos> {
+        self.start_time.as_ref()
+    }
+    /// <p>The file format of the data in S3.</p>
+    pub fn file_format(&self) -> ::std::option::Option<&crate::types::FileFormat> {
+        self.file_format.as_ref()
+    }
 }
 impl File {
     /// Creates a new builder-style object to manufacture [`File`](crate::types::File).
@@ -41,6 +59,9 @@ pub struct FileBuilder {
     pub(crate) bucket: ::std::option::Option<::std::string::String>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
     pub(crate) version_id: ::std::option::Option<::std::string::String>,
+    pub(crate) alias: ::std::option::Option<::std::string::String>,
+    pub(crate) start_time: ::std::option::Option<crate::types::TimeInNanos>,
+    pub(crate) file_format: ::std::option::Option<crate::types::FileFormat>,
 }
 impl FileBuilder {
     /// <p>The name of the Amazon S3 bucket from which data is imported.</p>
@@ -87,6 +108,48 @@ impl FileBuilder {
     pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_id
     }
+    /// <p>The alias associated with the file's time series.</p>
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias associated with the file's time series.</p>
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias = input;
+        self
+    }
+    /// <p>The alias associated with the file's time series.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
+    /// <p>The nanosecond-precision start time for the file data.</p>
+    pub fn start_time(mut self, input: crate::types::TimeInNanos) -> Self {
+        self.start_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The nanosecond-precision start time for the file data.</p>
+    pub fn set_start_time(mut self, input: ::std::option::Option<crate::types::TimeInNanos>) -> Self {
+        self.start_time = input;
+        self
+    }
+    /// <p>The nanosecond-precision start time for the file data.</p>
+    pub fn get_start_time(&self) -> &::std::option::Option<crate::types::TimeInNanos> {
+        &self.start_time
+    }
+    /// <p>The file format of the data in S3.</p>
+    pub fn file_format(mut self, input: crate::types::FileFormat) -> Self {
+        self.file_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The file format of the data in S3.</p>
+    pub fn set_file_format(mut self, input: ::std::option::Option<crate::types::FileFormat>) -> Self {
+        self.file_format = input;
+        self
+    }
+    /// <p>The file format of the data in S3.</p>
+    pub fn get_file_format(&self) -> &::std::option::Option<crate::types::FileFormat> {
+        &self.file_format
+    }
     /// Consumes the builder and constructs a [`File`](crate::types::File).
     /// This method will fail if any of the following fields are not set:
     /// - [`bucket`](crate::types::builders::FileBuilder::bucket)
@@ -103,6 +166,9 @@ impl FileBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field("key", "key was not specified but it is required when building File")
             })?,
             version_id: self.version_id,
+            alias: self.alias,
+            start_time: self.start_time,
+            file_format: self.file_format,
         })
     }
 }

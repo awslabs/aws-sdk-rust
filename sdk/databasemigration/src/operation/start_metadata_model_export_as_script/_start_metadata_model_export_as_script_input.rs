@@ -5,11 +5,18 @@
 pub struct StartMetadataModelExportAsScriptInput {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A value that specifies the database objects to export.</p>
+    /// <p>A JSON string that identifies the metadata models to export as a SQL script. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub selection_rules: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to export the metadata model from the source or the target.</p>
+    /// <p>Specifies the metadata tree to export from.</p>
     pub origin: ::std::option::Option<crate::types::OriginTypeValue>,
-    /// <p>The name of the model file to create in the Amazon S3 bucket.</p>
+    /// <p>The name for the exported file. When you omit this parameter, the service generates a name from the data provider engine name and an export timestamp.</p>
     pub file_name: ::std::option::Option<::std::string::String>,
 }
 impl StartMetadataModelExportAsScriptInput {
@@ -17,15 +24,22 @@ impl StartMetadataModelExportAsScriptInput {
     pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
         self.migration_project_identifier.as_deref()
     }
-    /// <p>A value that specifies the database objects to export.</p>
+    /// <p>A JSON string that identifies the metadata models to export as a SQL script. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn selection_rules(&self) -> ::std::option::Option<&str> {
         self.selection_rules.as_deref()
     }
-    /// <p>Whether to export the metadata model from the source or the target.</p>
+    /// <p>Specifies the metadata tree to export from.</p>
     pub fn origin(&self) -> ::std::option::Option<&crate::types::OriginTypeValue> {
         self.origin.as_ref()
     }
-    /// <p>The name of the model file to create in the Amazon S3 bucket.</p>
+    /// <p>The name for the exported file. When you omit this parameter, the service generates a name from the data provider engine name and an export timestamp.</p>
     pub fn file_name(&self) -> ::std::option::Option<&str> {
         self.file_name.as_deref()
     }
@@ -62,47 +76,68 @@ impl StartMetadataModelExportAsScriptInputBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_project_identifier
     }
-    /// <p>A value that specifies the database objects to export.</p>
+    /// <p>A JSON string that identifies the metadata models to export as a SQL script. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that specifies the database objects to export.</p>
+    /// <p>A JSON string that identifies the metadata models to export as a SQL script. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_rules = input;
         self
     }
-    /// <p>A value that specifies the database objects to export.</p>
+    /// <p>A JSON string that identifies the metadata models to export as a SQL script. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_rules
     }
-    /// <p>Whether to export the metadata model from the source or the target.</p>
+    /// <p>Specifies the metadata tree to export from.</p>
     /// This field is required.
     pub fn origin(mut self, input: crate::types::OriginTypeValue) -> Self {
         self.origin = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to export the metadata model from the source or the target.</p>
+    /// <p>Specifies the metadata tree to export from.</p>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::OriginTypeValue>) -> Self {
         self.origin = input;
         self
     }
-    /// <p>Whether to export the metadata model from the source or the target.</p>
+    /// <p>Specifies the metadata tree to export from.</p>
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::OriginTypeValue> {
         &self.origin
     }
-    /// <p>The name of the model file to create in the Amazon S3 bucket.</p>
+    /// <p>The name for the exported file. When you omit this parameter, the service generates a name from the data provider engine name and an export timestamp.</p>
     pub fn file_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.file_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the model file to create in the Amazon S3 bucket.</p>
+    /// <p>The name for the exported file. When you omit this parameter, the service generates a name from the data provider engine name and an export timestamp.</p>
     pub fn set_file_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_name = input;
         self
     }
-    /// <p>The name of the model file to create in the Amazon S3 bucket.</p>
+    /// <p>The name for the exported file. When you omit this parameter, the service generates a name from the data provider engine name and an export timestamp.</p>
     pub fn get_file_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.file_name
     }

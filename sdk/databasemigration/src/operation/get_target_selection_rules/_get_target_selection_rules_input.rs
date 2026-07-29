@@ -5,7 +5,18 @@
 pub struct GetTargetSelectionRulesInput {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The JSON string representing the source selection rules for conversion. Selection rules must contain only supported metadata model types. For more information, see Selection Rules in the DMS User Guide.</p>
+    /// <p>A JSON string that contains the source selection rules to convert into their target counterparts. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Does not support <code>category-name</code> in the object locator.</p></li>
+    /// <li>
+    /// <p>Up to 10 rules are allowed.</p></li>
+    /// </ul>
     pub selection_rules: ::std::option::Option<::std::string::String>,
 }
 impl GetTargetSelectionRulesInput {
@@ -13,7 +24,18 @@ impl GetTargetSelectionRulesInput {
     pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
         self.migration_project_identifier.as_deref()
     }
-    /// <p>The JSON string representing the source selection rules for conversion. Selection rules must contain only supported metadata model types. For more information, see Selection Rules in the DMS User Guide.</p>
+    /// <p>A JSON string that contains the source selection rules to convert into their target counterparts. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Does not support <code>category-name</code> in the object locator.</p></li>
+    /// <li>
+    /// <p>Up to 10 rules are allowed.</p></li>
+    /// </ul>
     pub fn selection_rules(&self) -> ::std::option::Option<&str> {
         self.selection_rules.as_deref()
     }
@@ -48,18 +70,51 @@ impl GetTargetSelectionRulesInputBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_project_identifier
     }
-    /// <p>The JSON string representing the source selection rules for conversion. Selection rules must contain only supported metadata model types. For more information, see Selection Rules in the DMS User Guide.</p>
+    /// <p>A JSON string that contains the source selection rules to convert into their target counterparts. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Does not support <code>category-name</code> in the object locator.</p></li>
+    /// <li>
+    /// <p>Up to 10 rules are allowed.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON string representing the source selection rules for conversion. Selection rules must contain only supported metadata model types. For more information, see Selection Rules in the DMS User Guide.</p>
+    /// <p>A JSON string that contains the source selection rules to convert into their target counterparts. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Does not support <code>category-name</code> in the object locator.</p></li>
+    /// <li>
+    /// <p>Up to 10 rules are allowed.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_rules = input;
         self
     }
-    /// <p>The JSON string representing the source selection rules for conversion. Selection rules must contain only supported metadata model types. For more information, see Selection Rules in the DMS User Guide.</p>
+    /// <p>A JSON string that contains the source selection rules to convert into their target counterparts. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Does not support <code>category-name</code> in the object locator.</p></li>
+    /// <li>
+    /// <p>Up to 10 rules are allowed.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_rules
     }

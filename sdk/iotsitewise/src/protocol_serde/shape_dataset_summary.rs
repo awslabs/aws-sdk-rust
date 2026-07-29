@@ -49,6 +49,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "sourceType" => {
+                            builder = builder.set_source_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DatasetSourceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "datasetType" => {
+                            builder = builder.set_dataset_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DatasetTypeEnum::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "creationDate" => {
                             builder = builder.set_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -63,6 +77,13 @@ where
                         }
                         "status" => {
                             builder = builder.set_status(crate::protocol_serde::shape_dataset_status::de_dataset_status(tokens, _value, depth + 1)?);
+                        }
+                        "enrichmentStatus" => {
+                            builder = builder.set_enrichment_status(crate::protocol_serde::shape_dataset_enrichment::de_dataset_enrichment(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

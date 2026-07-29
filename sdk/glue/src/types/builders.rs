@@ -697,6 +697,8 @@ pub use crate::types::_response_configuration::ResponseConfigurationBuilder;
 
 pub use crate::types::_pagination_configuration::PaginationConfigurationBuilder;
 
+pub use crate::types::_filter_configuration::FilterConfigurationBuilder;
+
 pub use crate::types::_entity_configuration::EntityConfigurationBuilder;
 
 pub use crate::types::_data_lake_access_properties_output::DataLakeAccessPropertiesOutputBuilder;
@@ -805,6 +807,10 @@ pub use crate::types::_cursor_configuration::CursorConfigurationBuilder;
 
 pub use crate::types::_offset_configuration::OffsetConfigurationBuilder;
 
+pub use crate::types::_between_configuration::BetweenConfigurationBuilder;
+
+pub use crate::types::_filter_string_configuration::FilterStringConfigurationBuilder;
+
 pub use crate::types::_boolean_column_statistics_data::BooleanColumnStatisticsDataBuilder;
 
 pub use crate::types::_date_column_statistics_data::DateColumnStatisticsDataBuilder;
@@ -894,6 +900,8 @@ pub use crate::types::_iceberg_partition_field::IcebergPartitionFieldBuilder;
 pub use crate::types::_iceberg_sort_field::IcebergSortFieldBuilder;
 
 pub use crate::types::_response_extraction_mapping::ResponseExtractionMappingBuilder;
+
+pub use crate::types::_filter_overrides::FilterOverridesBuilder;
 
 pub use crate::types::_iceberg_encrypted_key::IcebergEncryptedKeyBuilder;
 

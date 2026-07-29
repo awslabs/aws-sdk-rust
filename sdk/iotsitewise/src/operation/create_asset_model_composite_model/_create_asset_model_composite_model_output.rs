@@ -9,6 +9,8 @@ pub struct CreateAssetModelCompositeModelOutput {
     pub asset_model_composite_model_path: ::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>,
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
+    /// <p>The ID of the asset model.</p>
+    pub asset_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAssetModelCompositeModelOutput {
@@ -25,6 +27,10 @@ impl CreateAssetModelCompositeModelOutput {
     /// <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn asset_model_status(&self) -> ::std::option::Option<&crate::types::AssetModelStatus> {
         self.asset_model_status.as_ref()
+    }
+    /// <p>The ID of the asset model.</p>
+    pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
+        self.asset_model_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAssetModelCompositeModelOutput {
@@ -46,6 +52,7 @@ pub struct CreateAssetModelCompositeModelOutputBuilder {
     pub(crate) asset_model_composite_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_composite_model_path: ::std::option::Option<::std::vec::Vec<crate::types::AssetModelCompositeModelPathSegment>>,
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
+    pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateAssetModelCompositeModelOutputBuilder {
@@ -102,6 +109,20 @@ impl CreateAssetModelCompositeModelOutputBuilder {
     pub fn get_asset_model_status(&self) -> &::std::option::Option<crate::types::AssetModelStatus> {
         &self.asset_model_status
     }
+    /// <p>The ID of the asset model.</p>
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_model_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the asset model.</p>
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_model_id = input;
+        self
+    }
+    /// <p>The ID of the asset model.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -136,6 +157,7 @@ impl CreateAssetModelCompositeModelOutputBuilder {
                     )
                 })?,
                 asset_model_status: self.asset_model_status,
+                asset_model_id: self.asset_model_id,
                 _request_id: self._request_id,
             },
         )

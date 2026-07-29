@@ -5,11 +5,23 @@
 pub struct DescribeDatasetInput {
     /// <p>The ID of the dataset.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the dataset.</p>
+    pub dataset_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetInput {
     /// <p>The ID of the dataset.</p>
     pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
+    /// <p>The version of the dataset.</p>
+    pub fn dataset_version(&self) -> ::std::option::Option<&str> {
+        self.dataset_version.as_deref()
     }
 }
 impl DescribeDatasetInput {
@@ -24,6 +36,8 @@ impl DescribeDatasetInput {
 #[non_exhaustive]
 pub struct DescribeDatasetInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_version: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDatasetInputBuilder {
     /// <p>The ID of the dataset.</p>
@@ -41,10 +55,42 @@ impl DescribeDatasetInputBuilder {
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_id
     }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
+    /// <p>The version of the dataset.</p>
+    pub fn dataset_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the dataset.</p>
+    pub fn set_dataset_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataset_version = input;
+        self
+    }
+    /// <p>The version of the dataset.</p>
+    pub fn get_dataset_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_version
+    }
     /// Consumes the builder and constructs a [`DescribeDatasetInput`](crate::operation::describe_dataset::DescribeDatasetInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_dataset::DescribeDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_dataset::DescribeDatasetInput { dataset_id: self.dataset_id })
+        ::std::result::Result::Ok(crate::operation::describe_dataset::DescribeDatasetInput {
+            dataset_id: self.dataset_id,
+            workspace_name: self.workspace_name,
+            dataset_version: self.dataset_version,
+        })
     }
 }

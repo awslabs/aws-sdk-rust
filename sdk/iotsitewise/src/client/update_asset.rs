@@ -9,6 +9,7 @@ impl super::Client {
     ///   - [`client_token(impl Into<String>)`](crate::operation::update_asset::builders::UpdateAssetFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_asset::builders::UpdateAssetFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p><br>
     ///   - [`asset_description(impl Into<String>)`](crate::operation::update_asset::builders::UpdateAssetFluentBuilder::asset_description) / [`set_asset_description(Option<String>)`](crate::operation::update_asset::builders::UpdateAssetFluentBuilder::set_asset_description):<br>required: **false**<br><p>A description for the asset.</p><br>
     /// - On success, responds with [`UpdateAssetOutput`](crate::operation::update_asset::UpdateAssetOutput) with field(s):
+    ///   - [`asset_id(Option<String>)`](crate::operation::update_asset::UpdateAssetOutput::asset_id): <p>The ID of the asset.</p>
     ///   - [`asset_status(Option<AssetStatus>)`](crate::operation::update_asset::UpdateAssetOutput::asset_status): <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// - On failure, responds with [`SdkError<UpdateAssetError>`](crate::operation::update_asset::UpdateAssetError)
     pub fn update_asset(&self) -> crate::operation::update_asset::builders::UpdateAssetFluentBuilder {

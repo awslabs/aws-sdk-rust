@@ -301,6 +301,8 @@ pub use crate::types::_filter_requirement::FilterRequirement;
 
 pub use crate::types::_text_transformation::TextTransformation;
 
+pub use crate::types::_pre_parse_text_transformation::PreParseTextTransformation;
+
 pub use crate::types::_country_code::CountryCode;
 
 pub use crate::types::_excluded_rule::ExcludedRule;
@@ -320,6 +322,8 @@ pub use crate::types::_all::All;
 pub use crate::types::_condition::Condition;
 
 pub use crate::types::_text_transformation_type::TextTransformationType;
+
+pub use crate::types::_pre_parse_text_transformation_type::PreParseTextTransformationType;
 
 pub use crate::types::_rate_limit_header::RateLimitHeader;
 
@@ -644,6 +648,10 @@ mod _phone_number_field;
 mod _platform;
 
 mod _positional_constraint;
+
+mod _pre_parse_text_transformation;
+
+mod _pre_parse_text_transformation_type;
 
 mod _price;
 

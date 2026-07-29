@@ -7,6 +7,8 @@ pub struct ListDatasetsOutput {
     pub dataset_summaries: ::std::vec::Vec<crate::types::DatasetSummary>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutput {
@@ -18,6 +20,10 @@ impl ListDatasetsOutput {
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListDatasetsOutput {
@@ -38,6 +44,7 @@ impl ListDatasetsOutput {
 pub struct ListDatasetsOutputBuilder {
     pub(crate) dataset_summaries: ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListDatasetsOutputBuilder {
@@ -75,6 +82,20 @@ impl ListDatasetsOutputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -98,6 +119,7 @@ impl ListDatasetsOutputBuilder {
                 )
             })?,
             next_token: self.next_token,
+            workspace_name: self.workspace_name,
             _request_id: self._request_id,
         })
     }

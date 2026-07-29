@@ -4,7 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SchemaConversionRequest {
-    /// <p>The schema conversion action status.</p>
+    /// <p>The schema conversion operation status. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RECEIVED</code> – The operation is received but not yet queued for processing.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The operation is queued or actively running.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – The operation completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The operation did not complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELING</code> – The operation is being canceled. The operation might still succeed or fail before cancellation takes effect.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The operation was canceled before completion.</p></li>
+    /// </ul>
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for the schema conversion action.</p>
     pub request_identifier: ::std::option::Option<::std::string::String>,
@@ -12,13 +26,29 @@ pub struct SchemaConversionRequest {
     pub migration_project_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provides error information about a project.</p>
     pub error: ::std::option::Option<crate::types::ErrorDetails>,
-    /// <p>Provides information about a metadata model assessment exported to SQL.</p>
+    /// <p>The Amazon S3 location of the ZIP archive that contains the exported data definition language (DDL) scripts.</p><note>
+    /// <p>DMS populates this field only for the <code>DescribeMetadataModelExportsAsScript</code> operation.</p>
+    /// </note>
     pub export_sql_details: ::std::option::Option<crate::types::ExportSqlDetails>,
     /// <p>Provides information about the progress of the schema conversion operation.</p>
     pub progress: ::std::option::Option<crate::types::Progress>,
 }
 impl SchemaConversionRequest {
-    /// <p>The schema conversion action status.</p>
+    /// <p>The schema conversion operation status. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RECEIVED</code> – The operation is received but not yet queued for processing.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The operation is queued or actively running.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – The operation completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The operation did not complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELING</code> – The operation is being canceled. The operation might still succeed or fail before cancellation takes effect.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The operation was canceled before completion.</p></li>
+    /// </ul>
     pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
@@ -34,7 +64,9 @@ impl SchemaConversionRequest {
     pub fn error(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
         self.error.as_ref()
     }
-    /// <p>Provides information about a metadata model assessment exported to SQL.</p>
+    /// <p>The Amazon S3 location of the ZIP archive that contains the exported data definition language (DDL) scripts.</p><note>
+    /// <p>DMS populates this field only for the <code>DescribeMetadataModelExportsAsScript</code> operation.</p>
+    /// </note>
     pub fn export_sql_details(&self) -> ::std::option::Option<&crate::types::ExportSqlDetails> {
         self.export_sql_details.as_ref()
     }
@@ -62,17 +94,59 @@ pub struct SchemaConversionRequestBuilder {
     pub(crate) progress: ::std::option::Option<crate::types::Progress>,
 }
 impl SchemaConversionRequestBuilder {
-    /// <p>The schema conversion action status.</p>
+    /// <p>The schema conversion operation status. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RECEIVED</code> – The operation is received but not yet queued for processing.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The operation is queued or actively running.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – The operation completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The operation did not complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELING</code> – The operation is being canceled. The operation might still succeed or fail before cancellation takes effect.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The operation was canceled before completion.</p></li>
+    /// </ul>
     pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The schema conversion action status.</p>
+    /// <p>The schema conversion operation status. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RECEIVED</code> – The operation is received but not yet queued for processing.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The operation is queued or actively running.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – The operation completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The operation did not complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELING</code> – The operation is being canceled. The operation might still succeed or fail before cancellation takes effect.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The operation was canceled before completion.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The schema conversion action status.</p>
+    /// <p>The schema conversion operation status. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RECEIVED</code> – The operation is received but not yet queued for processing.</p></li>
+    /// <li>
+    /// <p><code>IN_PROGRESS</code> – The operation is queued or actively running.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> – The operation completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The operation did not complete.</p></li>
+    /// <li>
+    /// <p><code>CANCELING</code> – The operation is being canceled. The operation might still succeed or fail before cancellation takes effect.</p></li>
+    /// <li>
+    /// <p><code>CANCELED</code> – The operation was canceled before completion.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
@@ -118,17 +192,23 @@ impl SchemaConversionRequestBuilder {
     pub fn get_error(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
         &self.error
     }
-    /// <p>Provides information about a metadata model assessment exported to SQL.</p>
+    /// <p>The Amazon S3 location of the ZIP archive that contains the exported data definition language (DDL) scripts.</p><note>
+    /// <p>DMS populates this field only for the <code>DescribeMetadataModelExportsAsScript</code> operation.</p>
+    /// </note>
     pub fn export_sql_details(mut self, input: crate::types::ExportSqlDetails) -> Self {
         self.export_sql_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information about a metadata model assessment exported to SQL.</p>
+    /// <p>The Amazon S3 location of the ZIP archive that contains the exported data definition language (DDL) scripts.</p><note>
+    /// <p>DMS populates this field only for the <code>DescribeMetadataModelExportsAsScript</code> operation.</p>
+    /// </note>
     pub fn set_export_sql_details(mut self, input: ::std::option::Option<crate::types::ExportSqlDetails>) -> Self {
         self.export_sql_details = input;
         self
     }
-    /// <p>Provides information about a metadata model assessment exported to SQL.</p>
+    /// <p>The Amazon S3 location of the ZIP archive that contains the exported data definition language (DDL) scripts.</p><note>
+    /// <p>DMS populates this field only for the <code>DescribeMetadataModelExportsAsScript</code> operation.</p>
+    /// </note>
     pub fn get_export_sql_details(&self) -> &::std::option::Option<crate::types::ExportSqlDetails> {
         &self.export_sql_details
     }

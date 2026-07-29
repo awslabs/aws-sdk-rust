@@ -23,6 +23,7 @@ impl crate::operation::describe_metadata_model_children::builders::DescribeMetad
 /// Fluent builder constructing a request to `DescribeMetadataModelChildren`.
 ///
 /// <p>Gets a list of child metadata models for the specified metadata model in the database hierarchy.</p>
+/// <p><b>Required permissions:</b> <code>dms:DescribeMetadataModelChildren</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMetadataModelChildrenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +115,44 @@ impl DescribeMetadataModelChildrenFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_metadata_model_children::paginator::DescribeMetadataModelChildrenPaginator {
         crate::operation::describe_metadata_model_children::paginator::DescribeMetadataModelChildrenPaginator::new(self.handle, self.inner)
     }
-    /// <p>The JSON string that specifies which metadata model's children to retrieve. Only one selection rule with "rule-action": "explicit" can be provided. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection Rules</a> in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the metadata model whose children to retrieve. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selection_rules(input.into());
         self
     }
-    /// <p>The JSON string that specifies which metadata model's children to retrieve. Only one selection rule with "rule-action": "explicit" can be provided. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection Rules</a> in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the metadata model whose children to retrieve. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_selection_rules(input);
         self
     }
-    /// <p>The JSON string that specifies which metadata model's children to retrieve. Only one selection rule with "rule-action": "explicit" can be provided. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection Rules</a> in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the metadata model whose children to retrieve. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_selection_rules()
     }

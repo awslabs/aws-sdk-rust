@@ -609,6 +609,10 @@ pub(crate) mod shape_create_transit_gateway_peering_attachment_input;
 
 pub(crate) mod shape_create_transit_gateway_policy_table;
 
+pub(crate) mod shape_create_transit_gateway_policy_table_entry;
+
+pub(crate) mod shape_create_transit_gateway_policy_table_entry_input;
+
 pub(crate) mod shape_create_transit_gateway_policy_table_input;
 
 pub(crate) mod shape_create_transit_gateway_prefix_list_reference;
@@ -980,6 +984,10 @@ pub(crate) mod shape_delete_transit_gateway_peering_attachment;
 pub(crate) mod shape_delete_transit_gateway_peering_attachment_input;
 
 pub(crate) mod shape_delete_transit_gateway_policy_table;
+
+pub(crate) mod shape_delete_transit_gateway_policy_table_entry;
+
+pub(crate) mod shape_delete_transit_gateway_policy_table_entry_input;
 
 pub(crate) mod shape_delete_transit_gateway_policy_table_input;
 
@@ -2683,6 +2691,10 @@ pub(crate) mod shape_modify_transit_gateway_metering_policy;
 
 pub(crate) mod shape_modify_transit_gateway_metering_policy_input;
 
+pub(crate) mod shape_modify_transit_gateway_policy_table_entry;
+
+pub(crate) mod shape_modify_transit_gateway_policy_table_entry_input;
+
 pub(crate) mod shape_modify_transit_gateway_prefix_list_reference;
 
 pub(crate) mod shape_modify_transit_gateway_prefix_list_reference_input;
@@ -3406,6 +3418,8 @@ pub(crate) mod shape_transit_gateway_configuration_input_structure;
 pub(crate) mod shape_transit_gateway_connect_request_bgp_options;
 
 pub(crate) mod shape_transit_gateway_request_options;
+
+pub(crate) mod shape_transit_gateway_request_policy_rule;
 
 pub(crate) mod shape_verified_access_log_options;
 
@@ -4297,6 +4311,8 @@ pub(crate) mod shape_transit_gateway_policy_table_association;
 
 pub(crate) mod shape_transit_gateway_policy_table_association_list;
 
+pub(crate) mod shape_transit_gateway_policy_table_entry;
+
 pub(crate) mod shape_transit_gateway_policy_table_entry_list;
 
 pub(crate) mod shape_transit_gateway_policy_table_list;
@@ -4306,6 +4322,8 @@ pub(crate) mod shape_transit_gateway_prefix_list_reference;
 pub(crate) mod shape_transit_gateway_prefix_list_reference_set;
 
 pub(crate) mod shape_transit_gateway_propagation;
+
+pub(crate) mod shape_transit_gateway_request_policy_rule_meta_data;
 
 pub(crate) mod shape_transit_gateway_route;
 
@@ -5021,7 +5039,7 @@ pub(crate) mod shape_transit_gateway_options;
 
 pub(crate) mod shape_transit_gateway_peering_attachment_options;
 
-pub(crate) mod shape_transit_gateway_policy_table_entry;
+pub(crate) mod shape_transit_gateway_policy_rule;
 
 pub(crate) mod shape_transit_gateway_prefix_list_attachment;
 
@@ -5491,7 +5509,7 @@ pub(crate) mod shape_transit_gateway_attachment_bgp_configuration_list;
 
 pub(crate) mod shape_transit_gateway_configuration_describe_endpoint_structure;
 
-pub(crate) mod shape_transit_gateway_policy_rule;
+pub(crate) mod shape_transit_gateway_policy_rule_meta_data;
 
 pub(crate) mod shape_transit_gateway_route_attachment;
 
@@ -5752,8 +5770,6 @@ pub(crate) mod shape_threads_per_core_list;
 pub(crate) mod shape_through_resources_statement_list;
 
 pub(crate) mod shape_transit_gateway_attachment_bgp_configuration;
-
-pub(crate) mod shape_transit_gateway_policy_rule_meta_data;
 
 pub(crate) mod shape_transit_gateway_route_table_route;
 

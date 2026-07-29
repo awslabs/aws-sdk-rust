@@ -108,4 +108,18 @@ impl DescribeLoggingOptionsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_name(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_name(input);
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_name()
+    }
 }

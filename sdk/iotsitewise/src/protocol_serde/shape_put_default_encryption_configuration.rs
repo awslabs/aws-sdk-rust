@@ -87,6 +87,23 @@ pub fn de_put_default_encryption_configuration_http_error(
                 tmp
             })
         }
+        "ResourceNotFoundException" => {
+            crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::unhandled)?
+                };
+                tmp
+            })
+        }
         "ThrottlingException" => {
             crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationError::ThrottlingException({
                 #[allow(unused_mut)]

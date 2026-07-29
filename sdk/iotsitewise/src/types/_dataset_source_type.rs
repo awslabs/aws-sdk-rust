@@ -13,6 +13,7 @@
 /// # let datasetsourcetype = unimplemented!();
 /// match datasetsourcetype {
 ///     DatasetSourceType::Kendra => { /* ... */ },
+///     DatasetSourceType::Sitewise => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum DatasetSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Kendra,
+    #[allow(missing_docs)] // documentation missing in model
+    Sitewise,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for DatasetSourceType {
     fn from(s: &str) -> Self {
         match s {
             "KENDRA" => DatasetSourceType::Kendra,
+            "SITEWISE" => DatasetSourceType::Sitewise,
             other => DatasetSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl DatasetSourceType {
     pub fn as_str(&self) -> &str {
         match self {
             DatasetSourceType::Kendra => "KENDRA",
+            DatasetSourceType::Sitewise => "SITEWISE",
             DatasetSourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KENDRA"]
+        &["KENDRA", "SITEWISE"]
     }
 }
 impl ::std::convert::AsRef<str> for DatasetSourceType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for DatasetSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DatasetSourceType::Kendra => write!(f, "KENDRA"),
+            DatasetSourceType::Sitewise => write!(f, "SITEWISE"),
             DatasetSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

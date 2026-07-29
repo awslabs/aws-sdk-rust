@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`logging_options(LoggingOptions)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::logging_options) / [`set_logging_options(Option<LoggingOptions>)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::set_logging_options):<br>required: **true**<br><p>The logging options to set.</p><br>
+    ///   - [`workspace_name(impl Into<String>)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::workspace_name) / [`set_workspace_name(Option<String>)`](crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder::set_workspace_name):<br>required: **false**<br><p>The name of the workspace.</p><br>
     /// - On success, responds with [`PutLoggingOptionsOutput`](crate::operation::put_logging_options::PutLoggingOptionsOutput)
     /// - On failure, responds with [`SdkError<PutLoggingOptionsError>`](crate::operation::put_logging_options::PutLoggingOptionsError)
     pub fn put_logging_options(&self) -> crate::operation::put_logging_options::builders::PutLoggingOptionsFluentBuilder {

@@ -1599,6 +1599,16 @@ pub(crate) fn reflens_get_transit_gateway_policy_table_associations_output_outpu
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_transit_gateway_policy_table_entries_output_output_next_token(
+    input: &crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_transit_gateway_prefix_list_references_output_output_next_token(
     input: &crate::operation::get_transit_gateway_prefix_list_references::GetTransitGatewayPrefixListReferencesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2806,6 +2816,13 @@ pub(crate) fn lens_get_transit_gateway_policy_table_associations_output_output_a
     input: crate::operation::get_transit_gateway_policy_table_associations::GetTransitGatewayPolicyTableAssociationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableAssociation>> {
     let input = input.associations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_transit_gateway_policy_table_entries_output_output_transit_gateway_policy_table_entries(
+    input: crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TransitGatewayPolicyTableEntry>> {
+    let input = input.transit_gateway_policy_table_entries?;
     ::std::option::Option::Some(input)
 }
 

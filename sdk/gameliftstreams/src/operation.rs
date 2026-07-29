@@ -19,6 +19,9 @@ pub mod create_stream_session_admin_shell;
 /// Types for the `CreateStreamSessionConnection` operation.
 pub mod create_stream_session_connection;
 
+/// Types for the `CreateStreamUrl` operation.
+pub mod create_stream_url;
+
 /// Types for the `DeleteApplication` operation.
 pub mod delete_application;
 
@@ -40,6 +43,12 @@ pub mod get_stream_group;
 /// Types for the `GetStreamSession` operation.
 pub mod get_stream_session;
 
+/// Types for the `GetStreamUrl` operation.
+pub mod get_stream_url;
+
+/// Types for the `ListApplicationShaderCaches` operation.
+pub mod list_application_shader_caches;
+
 /// Types for the `ListApplications` operation.
 pub mod list_applications;
 
@@ -52,11 +61,17 @@ pub mod list_stream_sessions;
 /// Types for the `ListStreamSessionsByAccount` operation.
 pub mod list_stream_sessions_by_account;
 
+/// Types for the `ListStreamUrls` operation.
+pub mod list_stream_urls;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
 /// Types for the `RemoveStreamGroupLocations` operation.
 pub mod remove_stream_group_locations;
+
+/// Types for the `RevokeStreamUrl` operation.
+pub mod revoke_stream_url;
 
 /// Types for the `StartStreamSession` operation.
 pub mod start_stream_session;

@@ -22,7 +22,11 @@ impl crate::operation::start_metadata_model_assessment::builders::StartMetadataM
 }
 /// Fluent builder constructing a request to `StartMetadataModelAssessment`.
 ///
-/// <p>Creates a database migration assessment report by assessing the migration complexity for your source database. A database migration assessment report summarizes all of the schema conversion tasks. It also details the action items for database objects that can't be converted to the database engine of your target database instance.</p>
+/// <p>Queues an assessment of the selected source metadata models (database objects such as tables, views, and procedures) to evaluate conversion complexity to the target database format. If other requests created by <code>Start*</code> operations are already in the migration project's queue, the assessment begins after they complete.</p>
+/// <p>The assessment request loads metadata models that are not yet in the metadata tree, but does not reload metadata models that are already present. If your source database has changed since the metadata was loaded, refresh the affected metadata models with <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html">StartMetadataModelImport</a> before calling this operation.</p>
+/// <p>To check the status of the assessment request, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelAssessments.html">DescribeMetadataModelAssessments</a> using the returned <code>RequestIdentifier</code> as a filter.</p>
+/// <p>To export the conversion assessment report after the request completes successfully, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ExportMetadataModelAssessment.html">ExportMetadataModelAssessment</a>.</p>
+/// <p><b>Required permissions:</b> <code>dms:StartMetadataModelAssessment</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMetadataModelAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +126,38 @@ impl StartMetadataModelAssessmentFluentBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_project_identifier()
     }
-    /// <p>A value that specifies the database objects to assess.</p>
+    /// <p>A JSON string that identifies the metadata models to assess. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selection_rules(input.into());
         self
     }
-    /// <p>A value that specifies the database objects to assess.</p>
+    /// <p>A JSON string that identifies the metadata models to assess. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_selection_rules(input);
         self
     }
-    /// <p>A value that specifies the database objects to assess.</p>
+    /// <p>A JSON string that identifies the metadata models to assess. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_selection_rules()
     }

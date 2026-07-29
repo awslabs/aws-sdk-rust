@@ -9,6 +9,8 @@ pub struct DescribeTimeSeriesInput {
     pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the asset property. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub property_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTimeSeriesInput {
     /// <p>The alias that identifies the time series.</p>
@@ -22,6 +24,10 @@ impl DescribeTimeSeriesInput {
     /// <p>The ID of the asset property. This can be either the actual ID in UUID format, or else <code>externalId:</code> followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn property_id(&self) -> ::std::option::Option<&str> {
         self.property_id.as_deref()
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
     }
 }
 impl DescribeTimeSeriesInput {
@@ -38,6 +44,7 @@ pub struct DescribeTimeSeriesInputBuilder {
     pub(crate) alias: ::std::option::Option<::std::string::String>,
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) property_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeTimeSeriesInputBuilder {
     /// <p>The alias that identifies the time series.</p>
@@ -82,6 +89,20 @@ impl DescribeTimeSeriesInputBuilder {
     pub fn get_property_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.property_id
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`DescribeTimeSeriesInput`](crate::operation::describe_time_series::DescribeTimeSeriesInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl DescribeTimeSeriesInputBuilder {
             alias: self.alias,
             asset_id: self.asset_id,
             property_id: self.property_id,
+            workspace_name: self.workspace_name,
         })
     }
 }

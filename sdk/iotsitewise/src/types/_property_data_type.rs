@@ -12,11 +12,14 @@
 /// ```text
 /// # let propertydatatype = unimplemented!();
 /// match propertydatatype {
+///     PropertyDataType::Annotation => { /* ... */ },
 ///     PropertyDataType::Boolean => { /* ... */ },
 ///     PropertyDataType::Double => { /* ... */ },
 ///     PropertyDataType::Integer => { /* ... */ },
+///     PropertyDataType::Json => { /* ... */ },
 ///     PropertyDataType::String => { /* ... */ },
 ///     PropertyDataType::Struct => { /* ... */ },
+///     PropertyDataType::Video => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,15 +49,21 @@
 )]
 pub enum PropertyDataType {
     #[allow(missing_docs)] // documentation missing in model
+    Annotation,
+    #[allow(missing_docs)] // documentation missing in model
     Boolean,
     #[allow(missing_docs)] // documentation missing in model
     Double,
     #[allow(missing_docs)] // documentation missing in model
     Integer,
     #[allow(missing_docs)] // documentation missing in model
+    Json,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     #[allow(missing_docs)] // documentation missing in model
     Struct,
+    #[allow(missing_docs)] // documentation missing in model
+    Video,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -62,11 +71,14 @@ pub enum PropertyDataType {
 impl ::std::convert::From<&str> for PropertyDataType {
     fn from(s: &str) -> Self {
         match s {
+            "ANNOTATION" => PropertyDataType::Annotation,
             "BOOLEAN" => PropertyDataType::Boolean,
             "DOUBLE" => PropertyDataType::Double,
             "INTEGER" => PropertyDataType::Integer,
+            "JSON" => PropertyDataType::Json,
             "STRING" => PropertyDataType::String,
             "STRUCT" => PropertyDataType::Struct,
+            "VIDEO" => PropertyDataType::Video,
             other => PropertyDataType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,17 +94,20 @@ impl PropertyDataType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PropertyDataType::Annotation => "ANNOTATION",
             PropertyDataType::Boolean => "BOOLEAN",
             PropertyDataType::Double => "DOUBLE",
             PropertyDataType::Integer => "INTEGER",
+            PropertyDataType::Json => "JSON",
             PropertyDataType::String => "STRING",
             PropertyDataType::Struct => "STRUCT",
+            PropertyDataType::Video => "VIDEO",
             PropertyDataType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BOOLEAN", "DOUBLE", "INTEGER", "STRING", "STRUCT"]
+        &["ANNOTATION", "BOOLEAN", "DOUBLE", "INTEGER", "JSON", "STRING", "STRUCT", "VIDEO"]
     }
 }
 impl ::std::convert::AsRef<str> for PropertyDataType {
@@ -115,11 +130,14 @@ impl PropertyDataType {
 impl ::std::fmt::Display for PropertyDataType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PropertyDataType::Annotation => write!(f, "ANNOTATION"),
             PropertyDataType::Boolean => write!(f, "BOOLEAN"),
             PropertyDataType::Double => write!(f, "DOUBLE"),
             PropertyDataType::Integer => write!(f, "INTEGER"),
+            PropertyDataType::Json => write!(f, "JSON"),
             PropertyDataType::String => write!(f, "STRING"),
             PropertyDataType::Struct => write!(f, "STRUCT"),
+            PropertyDataType::Video => write!(f, "VIDEO"),
             PropertyDataType::Unknown(value) => write!(f, "{value}"),
         }
     }

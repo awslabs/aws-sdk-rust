@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Regex {
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub regex_string: ::std::option::Option<::std::string::String>,
 }
 impl Regex {
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn regex_string(&self) -> ::std::option::Option<&str> {
         self.regex_string.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct RegexBuilder {
     pub(crate) regex_string: ::std::option::Option<::std::string::String>,
 }
 impl RegexBuilder {
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn regex_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_regex_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_string = input;
         self
     }
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn get_regex_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.regex_string
     }

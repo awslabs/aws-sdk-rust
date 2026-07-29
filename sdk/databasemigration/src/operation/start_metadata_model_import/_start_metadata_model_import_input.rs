@@ -5,11 +5,22 @@
 pub struct StartMetadataModelImportInput {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>A value that specifies the database objects to import.</p>
+    /// <p>A JSON string that identifies the metadata models to import from the data provider. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub selection_rules: ::std::option::Option<::std::string::String>,
-    /// <p>Whether to load metadata to the source or target database.</p>
+    /// <p>Specifies the metadata tree to import into.</p><note>
+    /// <p>You cannot import from a virtual target data provider.</p>
+    /// </note>
     pub origin: ::std::option::Option<crate::types::OriginTypeValue>,
-    /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
+    /// <p>Specifies whether to refresh the selected metadata models from the data provider.</p>
+    /// <p>When <code>true</code>, the import reloads the selected metadata models with current definitions and removes their existing subtree.</p>
+    /// <p>When <code>false</code> (default), the import loads the full subtree that has not yet been loaded into the metadata tree.</p>
     pub refresh: ::std::option::Option<bool>,
 }
 impl StartMetadataModelImportInput {
@@ -17,15 +28,26 @@ impl StartMetadataModelImportInput {
     pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
         self.migration_project_identifier.as_deref()
     }
-    /// <p>A value that specifies the database objects to import.</p>
+    /// <p>A JSON string that identifies the metadata models to import from the data provider. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn selection_rules(&self) -> ::std::option::Option<&str> {
         self.selection_rules.as_deref()
     }
-    /// <p>Whether to load metadata to the source or target database.</p>
+    /// <p>Specifies the metadata tree to import into.</p><note>
+    /// <p>You cannot import from a virtual target data provider.</p>
+    /// </note>
     pub fn origin(&self) -> ::std::option::Option<&crate::types::OriginTypeValue> {
         self.origin.as_ref()
     }
-    /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
+    /// <p>Specifies whether to refresh the selected metadata models from the data provider.</p>
+    /// <p>When <code>true</code>, the import reloads the selected metadata models with current definitions and removes their existing subtree.</p>
+    /// <p>When <code>false</code> (default), the import loads the full subtree that has not yet been loaded into the metadata tree.</p>
     pub fn refresh(&self) -> ::std::option::Option<bool> {
         self.refresh
     }
@@ -62,47 +84,80 @@ impl StartMetadataModelImportInputBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_project_identifier
     }
-    /// <p>A value that specifies the database objects to import.</p>
+    /// <p>A JSON string that identifies the metadata models to import from the data provider. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A value that specifies the database objects to import.</p>
+    /// <p>A JSON string that identifies the metadata models to import from the data provider. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_rules = input;
         self
     }
-    /// <p>A value that specifies the database objects to import.</p>
+    /// <p>A JSON string that identifies the metadata models to import from the data provider. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts source or target selection rules depending on the <code>Origin</code> parameter. The <code>server-name</code> in the object locator must match the corresponding data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_rules
     }
-    /// <p>Whether to load metadata to the source or target database.</p>
+    /// <p>Specifies the metadata tree to import into.</p><note>
+    /// <p>You cannot import from a virtual target data provider.</p>
+    /// </note>
     /// This field is required.
     pub fn origin(mut self, input: crate::types::OriginTypeValue) -> Self {
         self.origin = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether to load metadata to the source or target database.</p>
+    /// <p>Specifies the metadata tree to import into.</p><note>
+    /// <p>You cannot import from a virtual target data provider.</p>
+    /// </note>
     pub fn set_origin(mut self, input: ::std::option::Option<crate::types::OriginTypeValue>) -> Self {
         self.origin = input;
         self
     }
-    /// <p>Whether to load metadata to the source or target database.</p>
+    /// <p>Specifies the metadata tree to import into.</p><note>
+    /// <p>You cannot import from a virtual target data provider.</p>
+    /// </note>
     pub fn get_origin(&self) -> &::std::option::Option<crate::types::OriginTypeValue> {
         &self.origin
     }
-    /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
+    /// <p>Specifies whether to refresh the selected metadata models from the data provider.</p>
+    /// <p>When <code>true</code>, the import reloads the selected metadata models with current definitions and removes their existing subtree.</p>
+    /// <p>When <code>false</code> (default), the import loads the full subtree that has not yet been loaded into the metadata tree.</p>
     pub fn refresh(mut self, input: bool) -> Self {
         self.refresh = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
+    /// <p>Specifies whether to refresh the selected metadata models from the data provider.</p>
+    /// <p>When <code>true</code>, the import reloads the selected metadata models with current definitions and removes their existing subtree.</p>
+    /// <p>When <code>false</code> (default), the import loads the full subtree that has not yet been loaded into the metadata tree.</p>
     pub fn set_refresh(mut self, input: ::std::option::Option<bool>) -> Self {
         self.refresh = input;
         self
     }
-    /// <p>If <code>true</code>, DMS loads metadata for the specified objects from the source database.</p>
+    /// <p>Specifies whether to refresh the selected metadata models from the data provider.</p>
+    /// <p>When <code>true</code>, the import reloads the selected metadata models with current definitions and removes their existing subtree.</p>
+    /// <p>When <code>false</code> (default), the import loads the full subtree that has not yet been loaded into the metadata tree.</p>
     pub fn get_refresh(&self) -> &::std::option::Option<bool> {
         &self.refresh
     }

@@ -6,38 +6,44 @@ pub fn ser_create_bulk_import_job_input_input(
     if let Some(var_1) = &input.adaptive_ingestion {
         object.key("adaptiveIngestion").boolean(*var_1);
     }
-    if let Some(var_2) = &input.delete_files_after_import {
-        object.key("deleteFilesAfterImport").boolean(*var_2);
+    if let Some(var_2) = &input.dataset_id {
+        object.key("datasetId").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.error_report_location {
+    if let Some(var_3) = &input.delete_files_after_import {
+        object.key("deleteFilesAfterImport").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.error_report_location {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("errorReportLocation").start_object();
-        crate::protocol_serde::shape_error_report_location::ser_error_report_location(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("errorReportLocation").start_object();
+        crate::protocol_serde::shape_error_report_location::ser_error_report_location(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.files {
-        let mut array_6 = object.key("files").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.files {
+        let mut array_7 = object.key("files").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_file::ser_file(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_file::ser_file(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.job_configuration {
+    if let Some(var_10) = &input.job_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("jobConfiguration").start_object();
-        crate::protocol_serde::shape_job_configuration::ser_job_configuration(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("jobConfiguration").start_object();
+        crate::protocol_serde::shape_job_configuration::ser_job_configuration(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.job_name {
-        object.key("jobName").string(var_11.as_str());
+    if let Some(var_12) = &input.job_name {
+        object.key("jobName").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.job_role_arn {
-        object.key("jobRoleArn").string(var_12.as_str());
+    if let Some(var_13) = &input.job_role_arn {
+        object.key("jobRoleArn").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.workspace_name {
+        object.key("workspaceName").string(var_14.as_str());
     }
     Ok(())
 }

@@ -47,6 +47,20 @@ pub fn de_transit_gateway_policy_table_entry(
                 builder = builder.set_target_route_table_id(var_3);
             }
             ,
+            s if s.matches("state") /* State com.amazonaws.ec2#TransitGatewayPolicyTableEntry$State */ =>  {
+                let var_4 =
+                    Some(
+                        Result::<crate::types::TransitGatewayPolicyTableEntryState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayPolicyTableEntryState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_state(var_4);
+            }
+            ,
             _ => {}
         }
     }

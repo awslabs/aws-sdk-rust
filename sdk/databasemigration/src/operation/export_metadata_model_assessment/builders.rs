@@ -23,6 +23,7 @@ impl crate::operation::export_metadata_model_assessment::builders::ExportMetadat
 /// Fluent builder constructing a request to `ExportMetadataModelAssessment`.
 ///
 /// <p>Saves a copy of a database migration assessment report to your Amazon S3 bucket. DMS can save your assessment report as a comma-separated value (CSV) or a PDF file.</p>
+/// <p><b>Required permissions:</b> <code>dms:ExportMetadataModelAssessment</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ExportMetadataModelAssessmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +123,38 @@ impl ExportMetadataModelAssessmentFluentBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_project_identifier()
     }
-    /// <p>A value that specifies the database objects to assess.</p>
+    /// <p>A JSON string that identifies the metadata models to export a conversion assessment report for. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// </ul>
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selection_rules(input.into());
         self
     }
-    /// <p>A value that specifies the database objects to assess.</p>
+    /// <p>A JSON string that identifies the metadata models to export a conversion assessment report for. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_selection_rules(input);
         self
     }
-    /// <p>A value that specifies the database objects to assess.</p>
+    /// <p>A JSON string that identifies the metadata models to export a conversion assessment report for. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_selection_rules()
     }

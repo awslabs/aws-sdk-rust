@@ -120,6 +120,13 @@ pub(crate) fn de_describe_bulk_import_job(
                 "adaptiveIngestion" => {
                     builder = builder.set_adaptive_ingestion(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "datasetId" => {
+                    builder = builder.set_dataset_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "deleteFilesAfterImport" => {
                     builder = builder.set_delete_files_after_import(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
@@ -177,6 +184,13 @@ pub(crate) fn de_describe_bulk_import_job(
                     builder = builder.set_job_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| crate::types::JobStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "workspaceName" => {
+                    builder = builder.set_workspace_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }

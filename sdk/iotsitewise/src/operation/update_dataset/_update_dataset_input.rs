@@ -5,10 +5,16 @@
 pub struct UpdateDatasetInput {
     /// <p>The ID of the dataset.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the dataset.</p>
     pub dataset_name: ::std::option::Option<::std::string::String>,
     /// <p>A description about the dataset, and its functionality.</p>
     pub dataset_description: ::std::option::Option<::std::string::String>,
+    /// <p>The updated configuration for the dataset.</p>
+    pub dataset_config: ::std::option::Option<crate::types::DatasetConfig>,
+    /// <p>The updated metadata for the dataset.</p>
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The data source for the dataset.</p>
     pub dataset_source: ::std::option::Option<crate::types::DatasetSource>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -19,6 +25,10 @@ impl UpdateDatasetInput {
     pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(&self) -> ::std::option::Option<&str> {
         self.dataset_name.as_deref()
@@ -26,6 +36,14 @@ impl UpdateDatasetInput {
     /// <p>A description about the dataset, and its functionality.</p>
     pub fn dataset_description(&self) -> ::std::option::Option<&str> {
         self.dataset_description.as_deref()
+    }
+    /// <p>The updated configuration for the dataset.</p>
+    pub fn dataset_config(&self) -> ::std::option::Option<&crate::types::DatasetConfig> {
+        self.dataset_config.as_ref()
+    }
+    /// <p>The updated metadata for the dataset.</p>
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.metadata.as_ref()
     }
     /// <p>The data source for the dataset.</p>
     pub fn dataset_source(&self) -> ::std::option::Option<&crate::types::DatasetSource> {
@@ -48,8 +66,11 @@ impl UpdateDatasetInput {
 #[non_exhaustive]
 pub struct UpdateDatasetInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_name: ::std::option::Option<::std::string::String>,
     pub(crate) dataset_description: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_config: ::std::option::Option<crate::types::DatasetConfig>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) dataset_source: ::std::option::Option<crate::types::DatasetSource>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -68,6 +89,20 @@ impl UpdateDatasetInputBuilder {
     /// <p>The ID of the dataset.</p>
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_id
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
     }
     /// <p>The name of the dataset.</p>
     /// This field is required.
@@ -97,6 +132,40 @@ impl UpdateDatasetInputBuilder {
     /// <p>A description about the dataset, and its functionality.</p>
     pub fn get_dataset_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_description
+    }
+    /// <p>The updated configuration for the dataset.</p>
+    pub fn dataset_config(mut self, input: crate::types::DatasetConfig) -> Self {
+        self.dataset_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated configuration for the dataset.</p>
+    pub fn set_dataset_config(mut self, input: ::std::option::Option<crate::types::DatasetConfig>) -> Self {
+        self.dataset_config = input;
+        self
+    }
+    /// <p>The updated configuration for the dataset.</p>
+    pub fn get_dataset_config(&self) -> &::std::option::Option<crate::types::DatasetConfig> {
+        &self.dataset_config
+    }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>The updated metadata for the dataset.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The updated metadata for the dataset.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// <p>The updated metadata for the dataset.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.metadata
     }
     /// <p>The data source for the dataset.</p>
     /// This field is required.
@@ -133,8 +202,11 @@ impl UpdateDatasetInputBuilder {
     ) -> ::std::result::Result<crate::operation::update_dataset::UpdateDatasetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_dataset::UpdateDatasetInput {
             dataset_id: self.dataset_id,
+            workspace_name: self.workspace_name,
             dataset_name: self.dataset_name,
             dataset_description: self.dataset_description,
+            dataset_config: self.dataset_config,
+            metadata: self.metadata,
             dataset_source: self.dataset_source,
             client_token: self.client_token,
         })

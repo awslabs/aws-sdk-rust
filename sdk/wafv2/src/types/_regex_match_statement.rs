@@ -4,15 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegexMatchStatement {
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub regex_string: ::std::string::String,
     /// <p>The part of the web request that you want WAF to inspect.</p>
     pub field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
     pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    pub pre_parse_text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::PreParseTextTransformation>>,
 }
 impl RegexMatchStatement {
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn regex_string(&self) -> &str {
         use std::ops::Deref;
         self.regex_string.deref()
@@ -25,6 +27,12 @@ impl RegexMatchStatement {
     pub fn text_transformations(&self) -> &[crate::types::TextTransformation] {
         use std::ops::Deref;
         self.text_transformations.deref()
+    }
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pre_parse_text_transformations.is_none()`.
+    pub fn pre_parse_text_transformations(&self) -> &[crate::types::PreParseTextTransformation] {
+        self.pre_parse_text_transformations.as_deref().unwrap_or_default()
     }
 }
 impl RegexMatchStatement {
@@ -41,20 +49,21 @@ pub struct RegexMatchStatementBuilder {
     pub(crate) regex_string: ::std::option::Option<::std::string::String>,
     pub(crate) field_to_match: ::std::option::Option<crate::types::FieldToMatch>,
     pub(crate) text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) pre_parse_text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::PreParseTextTransformation>>,
 }
 impl RegexMatchStatementBuilder {
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     /// This field is required.
     pub fn regex_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.regex_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_regex_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.regex_string = input;
         self
     }
-    /// <p>The string representing the regular expression.</p>
+    /// <p>The string representing the regular expression. WAF enforces a quota on the maximum number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn get_regex_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.regex_string
     }
@@ -93,6 +102,29 @@ impl RegexMatchStatementBuilder {
     pub fn get_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextTransformation>> {
         &self.text_transformations
     }
+    /// Appends an item to `pre_parse_text_transformations`.
+    ///
+    /// To override the contents of this collection use [`set_pre_parse_text_transformations`](Self::set_pre_parse_text_transformations).
+    ///
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    pub fn pre_parse_text_transformations(mut self, input: crate::types::PreParseTextTransformation) -> Self {
+        let mut v = self.pre_parse_text_transformations.unwrap_or_default();
+        v.push(input);
+        self.pre_parse_text_transformations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    pub fn set_pre_parse_text_transformations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::PreParseTextTransformation>>,
+    ) -> Self {
+        self.pre_parse_text_transformations = input;
+        self
+    }
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    pub fn get_pre_parse_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreParseTextTransformation>> {
+        &self.pre_parse_text_transformations
+    }
     /// Consumes the builder and constructs a [`RegexMatchStatement`](crate::types::RegexMatchStatement).
     /// This method will fail if any of the following fields are not set:
     /// - [`regex_string`](crate::types::builders::RegexMatchStatementBuilder::regex_string)
@@ -112,6 +144,7 @@ impl RegexMatchStatementBuilder {
                     "text_transformations was not specified but it is required when building RegexMatchStatement",
                 )
             })?,
+            pre_parse_text_transformations: self.pre_parse_text_transformations,
         })
     }
 }

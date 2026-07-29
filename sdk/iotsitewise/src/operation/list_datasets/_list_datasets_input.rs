@@ -5,6 +5,10 @@
 pub struct ListDatasetsInput {
     /// <p>The type of data source for the dataset.</p>
     pub source_type: ::std::option::Option<crate::types::DatasetSourceType>,
+    /// <p>The name of the workspace to filter datasets by.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
+    /// <p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub dataset_type: ::std::option::Option<crate::types::DatasetTypeEnum>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return for each paginated request.</p>
@@ -14,6 +18,14 @@ impl ListDatasetsInput {
     /// <p>The type of data source for the dataset.</p>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::DatasetSourceType> {
         self.source_type.as_ref()
+    }
+    /// <p>The name of the workspace to filter datasets by.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
+    /// <p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn dataset_type(&self) -> ::std::option::Option<&crate::types::DatasetTypeEnum> {
+        self.dataset_type.as_ref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -36,6 +48,8 @@ impl ListDatasetsInput {
 #[non_exhaustive]
 pub struct ListDatasetsInputBuilder {
     pub(crate) source_type: ::std::option::Option<crate::types::DatasetSourceType>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetTypeEnum>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -54,6 +68,34 @@ impl ListDatasetsInputBuilder {
     /// <p>The type of data source for the dataset.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::DatasetSourceType> {
         &self.source_type
+    }
+    /// <p>The name of the workspace to filter datasets by.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace to filter datasets by.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace to filter datasets by.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
+    /// <p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn dataset_type(mut self, input: crate::types::DatasetTypeEnum) -> Self {
+        self.dataset_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetTypeEnum>) -> Self {
+        self.dataset_type = input;
+        self
+    }
+    /// <p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetTypeEnum> {
+        &self.dataset_type
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -89,6 +131,8 @@ impl ListDatasetsInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_datasets::ListDatasetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_datasets::ListDatasetsInput {
             source_type: self.source_type,
+            workspace_name: self.workspace_name,
+            dataset_type: self.dataset_type,
             next_token: self.next_token,
             max_results: self.max_results,
         })

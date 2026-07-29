@@ -6,11 +6,11 @@
 pub struct TransitGatewayPolicyRule {
     /// <p>The source CIDR block for the transit gateway policy rule.</p>
     pub source_cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The source port or port range for the transit gateway policy rule.</p>
     pub source_port_range: ::std::option::Option<::std::string::String>,
     /// <p>The destination CIDR block for the transit gateway policy rule.</p>
     pub destination_cidr_block: ::std::option::Option<::std::string::String>,
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The destination port or port range for the transit gateway policy rule.</p>
     pub destination_port_range: ::std::option::Option<::std::string::String>,
     /// <p>The protocol used by the transit gateway policy rule.</p>
     pub protocol: ::std::option::Option<::std::string::String>,
@@ -22,7 +22,7 @@ impl TransitGatewayPolicyRule {
     pub fn source_cidr_block(&self) -> ::std::option::Option<&str> {
         self.source_cidr_block.as_deref()
     }
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The source port or port range for the transit gateway policy rule.</p>
     pub fn source_port_range(&self) -> ::std::option::Option<&str> {
         self.source_port_range.as_deref()
     }
@@ -30,7 +30,7 @@ impl TransitGatewayPolicyRule {
     pub fn destination_cidr_block(&self) -> ::std::option::Option<&str> {
         self.destination_cidr_block.as_deref()
     }
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The destination port or port range for the transit gateway policy rule.</p>
     pub fn destination_port_range(&self) -> ::std::option::Option<&str> {
         self.destination_port_range.as_deref()
     }
@@ -76,17 +76,17 @@ impl TransitGatewayPolicyRuleBuilder {
     pub fn get_source_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_cidr_block
     }
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The source port or port range for the transit gateway policy rule.</p>
     pub fn source_port_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_port_range = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The source port or port range for the transit gateway policy rule.</p>
     pub fn set_source_port_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_port_range = input;
         self
     }
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The source port or port range for the transit gateway policy rule.</p>
     pub fn get_source_port_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_port_range
     }
@@ -104,17 +104,17 @@ impl TransitGatewayPolicyRuleBuilder {
     pub fn get_destination_cidr_block(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_cidr_block
     }
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The destination port or port range for the transit gateway policy rule.</p>
     pub fn destination_port_range(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.destination_port_range = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The destination port or port range for the transit gateway policy rule.</p>
     pub fn set_destination_port_range(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.destination_port_range = input;
         self
     }
-    /// <p>The port range for the transit gateway policy rule. Currently this is set to * (all).</p>
+    /// <p>The destination port or port range for the transit gateway policy rule.</p>
     pub fn get_destination_port_range(&self) -> &::std::option::Option<::std::string::String> {
         &self.destination_port_range
     }

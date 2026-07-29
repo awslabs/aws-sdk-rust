@@ -243,6 +243,10 @@ pub use crate::types::_create_transit_gateway_peering_attachment_request_options
 
 pub use crate::types::_transit_gateway_policy_table::TransitGatewayPolicyTableBuilder;
 
+pub use crate::types::_transit_gateway_request_policy_rule::TransitGatewayRequestPolicyRuleBuilder;
+
+pub use crate::types::_transit_gateway_policy_table_entry::TransitGatewayPolicyTableEntryBuilder;
+
 pub use crate::types::_transit_gateway_prefix_list_reference::TransitGatewayPrefixListReferenceBuilder;
 
 pub use crate::types::_transit_gateway_route::TransitGatewayRouteBuilder;
@@ -695,6 +699,10 @@ pub use crate::types::_transit_gateway_metering_policy_rule::TransitGatewayMeter
 
 pub use crate::types::_transit_gateway_multicast_domain_options::TransitGatewayMulticastDomainOptionsBuilder;
 
+pub use crate::types::_transit_gateway_request_policy_rule_meta_data::TransitGatewayRequestPolicyRuleMetaDataBuilder;
+
+pub use crate::types::_transit_gateway_policy_rule::TransitGatewayPolicyRuleBuilder;
+
 pub use crate::types::_transit_gateway_prefix_list_attachment::TransitGatewayPrefixListAttachmentBuilder;
 
 pub use crate::types::_verified_access_endpoint_load_balancer_options::VerifiedAccessEndpointLoadBalancerOptionsBuilder;
@@ -1051,8 +1059,6 @@ pub use crate::types::_transit_gateway_attachment_propagation::TransitGatewayAtt
 
 pub use crate::types::_transit_gateway_multicast_domain_association::TransitGatewayMulticastDomainAssociationBuilder;
 
-pub use crate::types::_transit_gateway_policy_table_entry::TransitGatewayPolicyTableEntryBuilder;
-
 pub use crate::types::_transit_gateway_route_table_association::TransitGatewayRouteTableAssociationBuilder;
 
 pub use crate::types::_transit_gateway_route_table_propagation::TransitGatewayRouteTablePropagationBuilder;
@@ -1265,6 +1271,8 @@ pub use crate::types::_secondary_subnet_ipv4_cidr_block_association::SecondarySu
 
 pub use crate::types::_encryption_support::EncryptionSupportBuilder;
 
+pub use crate::types::_transit_gateway_policy_rule_meta_data::TransitGatewayPolicyRuleMetaDataBuilder;
+
 pub use crate::types::_transit_gateway_route_attachment::TransitGatewayRouteAttachmentBuilder;
 
 pub use crate::types::_create_verified_access_endpoint_port_range::CreateVerifiedAccessEndpointPortRangeBuilder;
@@ -1438,8 +1446,6 @@ pub use crate::types::_baseline_performance_factors::BaselinePerformanceFactorsB
 pub use crate::types::_launch_template_instance_secondary_interface_specification::LaunchTemplateInstanceSecondaryInterfaceSpecificationBuilder;
 
 pub use crate::types::_target_configuration::TargetConfigurationBuilder;
-
-pub use crate::types::_transit_gateway_policy_rule::TransitGatewayPolicyRuleBuilder;
 
 pub use crate::types::_disk_image_description::DiskImageDescriptionBuilder;
 
@@ -1654,8 +1660,6 @@ pub use crate::types::_connection_tracking_specification::ConnectionTrackingSpec
 pub use crate::types::_cpu_performance_factor::CpuPerformanceFactorBuilder;
 
 pub use crate::types::_route_server_route_installation_detail::RouteServerRouteInstallationDetailBuilder;
-
-pub use crate::types::_transit_gateway_policy_rule_meta_data::TransitGatewayPolicyRuleMetaDataBuilder;
 
 pub use crate::types::_import_instance_volume_detail_item::ImportInstanceVolumeDetailItemBuilder;
 

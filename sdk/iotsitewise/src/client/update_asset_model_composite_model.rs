@@ -16,6 +16,7 @@ impl super::Client {
     /// - On success, responds with [`UpdateAssetModelCompositeModelOutput`](crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelOutput) with field(s):
     ///   - [`asset_model_composite_model_path(Vec::<AssetModelCompositeModelPathSegment>)`](crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelOutput::asset_model_composite_model_path): <p>The path to the composite model listing the parent composite models.</p>
     ///   - [`asset_model_status(Option<AssetModelStatus>)`](crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelOutput::asset_model_status): <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`asset_model_id(Option<String>)`](crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelOutput::asset_model_id): <p>The ID of the asset model.</p>
     /// - On failure, responds with [`SdkError<UpdateAssetModelCompositeModelError>`](crate::operation::update_asset_model_composite_model::UpdateAssetModelCompositeModelError)
     pub fn update_asset_model_composite_model(
         &self,

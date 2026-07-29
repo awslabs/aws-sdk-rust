@@ -101,6 +101,15 @@ pub(crate) fn stream_session_access_not_ready_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_stream_url_output_output_correct_errors(
+    mut builder: crate::operation::create_stream_url::builders::CreateStreamUrlOutputBuilder,
+) -> crate::operation::create_stream_url::builders::CreateStreamUrlOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_application_output_output_correct_errors(
     mut builder: crate::operation::get_application::builders::GetApplicationOutputBuilder,
 ) -> crate::operation::get_application::builders::GetApplicationOutputBuilder {
@@ -113,6 +122,15 @@ pub(crate) fn get_application_output_output_correct_errors(
 pub(crate) fn get_stream_group_output_output_correct_errors(
     mut builder: crate::operation::get_stream_group::builders::GetStreamGroupOutputBuilder,
 ) -> crate::operation::get_stream_group::builders::GetStreamGroupOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_stream_url_output_output_correct_errors(
+    mut builder: crate::operation::get_stream_url::builders::GetStreamUrlOutputBuilder,
+) -> crate::operation::get_stream_url::builders::GetStreamUrlOutputBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
@@ -168,9 +186,30 @@ pub(crate) fn resolution_correct_errors(mut builder: crate::types::builders::Res
     builder
 }
 
+pub(crate) fn shader_cache_summary_correct_errors(
+    mut builder: crate::types::builders::ShaderCacheSummaryBuilder,
+) -> crate::types::builders::ShaderCacheSummaryBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.application_arn.is_none() {
+        builder.application_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn stream_group_summary_correct_errors(
     mut builder: crate::types::builders::StreamGroupSummaryBuilder,
 ) -> crate::types::builders::StreamGroupSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn stream_url_summary_correct_errors(
+    mut builder: crate::types::builders::StreamUrlSummaryBuilder,
+) -> crate::types::builders::StreamUrlSummaryBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }

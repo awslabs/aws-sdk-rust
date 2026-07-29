@@ -776,6 +776,18 @@ pub(crate) fn label_name_condition_correct_errors(
     builder
 }
 
+pub(crate) fn pre_parse_text_transformation_correct_errors(
+    mut builder: crate::types::builders::PreParseTextTransformationBuilder,
+) -> crate::types::builders::PreParseTextTransformationBuilder {
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PreParseTextTransformationType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn price_correct_errors(mut builder: crate::types::builders::PriceBuilder) -> crate::types::builders::PriceBuilder {
     if builder.amount.is_none() {
         builder.amount = Some(Default::default())

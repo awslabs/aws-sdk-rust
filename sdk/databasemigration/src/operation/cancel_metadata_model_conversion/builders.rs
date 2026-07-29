@@ -23,6 +23,7 @@ impl crate::operation::cancel_metadata_model_conversion::builders::CancelMetadat
 /// Fluent builder constructing a request to `CancelMetadataModelConversion`.
 ///
 /// <p>Cancels a single metadata model conversion operation that was started with <code>StartMetadataModelConversion</code>.</p>
+/// <p><b>Required permissions:</b> <code>dms:CancelMetadataModelConversion</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelMetadataModelConversionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

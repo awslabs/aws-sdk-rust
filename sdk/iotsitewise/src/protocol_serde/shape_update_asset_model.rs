@@ -220,6 +220,13 @@ pub(crate) fn de_update_asset_model(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "assetModelId" => {
+                    builder = builder.set_asset_model_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "assetModelStatus" => {
                     builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(
                         tokens,

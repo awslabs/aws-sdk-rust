@@ -22,9 +22,21 @@ impl crate::operation::start_metadata_model_creation::builders::StartMetadataMod
 }
 /// Fluent builder constructing a request to `StartMetadataModelCreation`.
 ///
-/// <p>Creates source metadata model of the given type with the specified properties for schema conversion operations.</p><note>
-/// <p>This action supports only these directions: from SQL Server to Aurora PostgreSQL, or from SQL Server to RDS for PostgreSQL.</p>
+/// <p>Queues the creation of a metadata model in the source metadata tree. If other requests created by <code>Start*</code> operations are already in the migration project's queue, the creation begins after they complete.</p><note>
+/// <p>This operation supports only Microsoft SQL Server to Aurora PostgreSQL and Microsoft SQL Server to Amazon RDS for PostgreSQL conversion paths.</p>
 /// </note>
+/// <p>To check the status of the creation request, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelCreations.html">DescribeMetadataModelCreations</a> using the returned <code>RequestIdentifier</code> as a filter.</p>
+/// <p>To cancel a queued or in-progress request, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelCreation.html">CancelMetadataModelCreation</a> with the returned <code>RequestIdentifier</code>.</p><important>
+/// <p>Calling <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html">StartMetadataModelImport</a> with <code>Refresh</code> deletes metadata models created by this operation.</p>
+/// </important>
+/// <p>After the creation completes successfully:</p>
+/// <ul>
+/// <li>
+/// <p>To evaluate conversion complexity, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelAssessment.html">StartMetadataModelAssessment</a>.</p></li>
+/// <li>
+/// <p>To convert to the target database format, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelConversion.html">StartMetadataModelConversion</a>.</p></li>
+/// </ul>
+/// <p><b>Required permissions:</b> <code>dms:StartMetadataModelCreation</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMetadataModelCreationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -124,45 +136,72 @@ impl StartMetadataModelCreationFluentBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_project_identifier()
     }
-    /// <p>The JSON string that specifies the location where the metadata model will be created. Selection rules must specify a single schema. For more information, see Selection Rules in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the source schema for the metadata model. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selection_rules(input.into());
         self
     }
-    /// <p>The JSON string that specifies the location where the metadata model will be created. Selection rules must specify a single schema. For more information, see Selection Rules in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the source schema for the metadata model. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_selection_rules(input);
         self
     }
-    /// <p>The JSON string that specifies the location where the metadata model will be created. Selection rules must specify a single schema. For more information, see Selection Rules in the DMS User Guide.</p>
+    /// <p>A JSON string that identifies the source schema for the metadata model. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports only <code>explicit</code> rule actions.</p></li>
+    /// <li>
+    /// <p>Exactly one rule is allowed.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_selection_rules()
     }
-    /// <p>The name of the metadata model.</p>
+    /// <p>The name for the metadata model to use in subsequent operations.</p>
     pub fn metadata_model_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metadata_model_name(input.into());
         self
     }
-    /// <p>The name of the metadata model.</p>
+    /// <p>The name for the metadata model to use in subsequent operations.</p>
     pub fn set_metadata_model_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metadata_model_name(input);
         self
     }
-    /// <p>The name of the metadata model.</p>
+    /// <p>The name for the metadata model to use in subsequent operations.</p>
     pub fn get_metadata_model_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_metadata_model_name()
     }
-    /// <p>The properties of metadata model in JSON format. This object is a Union. Only one member of this object can be specified or returned.</p>
+    /// <p>The properties of the metadata model.</p>
     pub fn properties(mut self, input: crate::types::MetadataModelProperties) -> Self {
         self.inner = self.inner.properties(input);
         self
     }
-    /// <p>The properties of metadata model in JSON format. This object is a Union. Only one member of this object can be specified or returned.</p>
+    /// <p>The properties of the metadata model.</p>
     pub fn set_properties(mut self, input: ::std::option::Option<crate::types::MetadataModelProperties>) -> Self {
         self.inner = self.inner.set_properties(input);
         self
     }
-    /// <p>The properties of metadata model in JSON format. This object is a Union. Only one member of this object can be specified or returned.</p>
+    /// <p>The properties of the metadata model.</p>
     pub fn get_properties(&self) -> &::std::option::Option<crate::types::MetadataModelProperties> {
         self.inner.get_properties()
     }

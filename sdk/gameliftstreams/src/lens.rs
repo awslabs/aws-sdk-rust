@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_stream_sessions_by_account_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_stream_urls_output_output_next_token(
+    input: &crate::operation::list_stream_urls::ListStreamUrlsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_applications_output_output_items(
     input: crate::operation::list_applications::ListApplicationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
@@ -63,6 +73,13 @@ pub(crate) fn lens_list_stream_sessions_output_output_items(
 pub(crate) fn lens_list_stream_sessions_by_account_output_output_items(
     input: crate::operation::list_stream_sessions_by_account::ListStreamSessionsByAccountOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::StreamSessionSummary>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_stream_urls_output_output_items(
+    input: crate::operation::list_stream_urls::ListStreamUrlsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::StreamUrlSummary>> {
     let input = input.items?;
     ::std::option::Option::Some(input)
 }

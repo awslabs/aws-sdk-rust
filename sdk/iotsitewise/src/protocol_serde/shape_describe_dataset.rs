@@ -118,6 +118,9 @@ pub(crate) fn de_describe_dataset(
                             .transpose()?,
                     );
                 }
+                "datasetConfig" => {
+                    builder = builder.set_dataset_config(crate::protocol_serde::shape_dataset_config::de_dataset_config(tokens, _value, depth + 1)?);
+                }
                 "datasetCreationDate" => {
                     builder = builder.set_dataset_creation_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -157,8 +160,32 @@ pub(crate) fn de_describe_dataset(
                 "datasetStatus" => {
                     builder = builder.set_dataset_status(crate::protocol_serde::shape_dataset_status::de_dataset_status(tokens, _value, depth + 1)?);
                 }
+                "datasetType" => {
+                    builder = builder.set_dataset_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::DatasetTypeEnum::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "datasetVersion" => {
                     builder = builder.set_dataset_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "enrichmentStatus" => {
+                    builder = builder.set_enrichment_status(crate::protocol_serde::shape_dataset_enrichment::de_dataset_enrichment(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
+                "metadata" => {
+                    builder = builder.set_metadata(crate::protocol_serde::shape_metadata::de_metadata(tokens, _value, depth + 1)?);
+                }
+                "workspaceName" => {
+                    builder = builder.set_workspace_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

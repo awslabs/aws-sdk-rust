@@ -23,7 +23,8 @@ pub struct MongoDbSettings {
     /// <p>Specifies either document or table mode.</p>
     /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode. Specify <code>"one"</code> to use table mode.</p>
     pub nesting_level: ::std::option::Option<crate::types::NestingLevelValue>,
-    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Specifies whether the document ID is added to the target table. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Set <code>ExtractDocId</code> to <code>"true"</code> when using <a href="https://www.mongodb.com/docs/manual/reference/method/Session.startTransaction/#mongodb-method-Session.startTransaction">multi-document transactions</a> with CDC.</p>
     /// <p>Default value is <code>"false"</code>.</p>
     pub extract_doc_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates the number of documents to preview to determine the document organization. Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>.</p>
@@ -88,7 +89,8 @@ impl MongoDbSettings {
     pub fn nesting_level(&self) -> ::std::option::Option<&crate::types::NestingLevelValue> {
         self.nesting_level.as_ref()
     }
-    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Specifies whether the document ID is added to the target table. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Set <code>ExtractDocId</code> to <code>"true"</code> when using <a href="https://www.mongodb.com/docs/manual/reference/method/Session.startTransaction/#mongodb-method-Session.startTransaction">multi-document transactions</a> with CDC.</p>
     /// <p>Default value is <code>"false"</code>.</p>
     pub fn extract_doc_id(&self) -> ::std::option::Option<&str> {
         self.extract_doc_id.as_deref()
@@ -305,19 +307,22 @@ impl MongoDbSettingsBuilder {
     pub fn get_nesting_level(&self) -> &::std::option::Option<crate::types::NestingLevelValue> {
         &self.nesting_level
     }
-    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Specifies whether the document ID is added to the target table. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Set <code>ExtractDocId</code> to <code>"true"</code> when using <a href="https://www.mongodb.com/docs/manual/reference/method/Session.startTransaction/#mongodb-method-Session.startTransaction">multi-document transactions</a> with CDC.</p>
     /// <p>Default value is <code>"false"</code>.</p>
     pub fn extract_doc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.extract_doc_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Specifies whether the document ID is added to the target table. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Set <code>ExtractDocId</code> to <code>"true"</code> when using <a href="https://www.mongodb.com/docs/manual/reference/method/Session.startTransaction/#mongodb-method-Session.startTransaction">multi-document transactions</a> with CDC.</p>
     /// <p>Default value is <code>"false"</code>.</p>
     pub fn set_extract_doc_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.extract_doc_id = input;
         self
     }
-    /// <p>Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Specifies whether the document ID is added to the target table. Use this setting when <code>NestingLevel</code> is set to <code>"none"</code>.</p>
+    /// <p>Set <code>ExtractDocId</code> to <code>"true"</code> when using <a href="https://www.mongodb.com/docs/manual/reference/method/Session.startTransaction/#mongodb-method-Session.startTransaction">multi-document transactions</a> with CDC.</p>
     /// <p>Default value is <code>"false"</code>.</p>
     pub fn get_extract_doc_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.extract_doc_id

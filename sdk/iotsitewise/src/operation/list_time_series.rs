@@ -224,6 +224,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTimeSeri
                         query.push_kv("timeSeriesType", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
                     }
                 }
+                if let ::std::option::Option::Some(inner_6) = &_input.workspace_name {
+                    {
+                        query.push_kv("workspaceName", &::aws_smithy_http::query::fmt_string(inner_6));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

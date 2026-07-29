@@ -865,6 +865,8 @@ pub use crate::types::_response_configuration::ResponseConfiguration;
 
 pub use crate::types::_pagination_configuration::PaginationConfiguration;
 
+pub use crate::types::_filter_configuration::FilterConfiguration;
+
 pub use crate::types::_entity_configuration::EntityConfiguration;
 
 pub use crate::types::_field_data_type::FieldDataType;
@@ -1059,6 +1061,12 @@ pub use crate::types::_cursor_configuration::CursorConfiguration;
 
 pub use crate::types::_offset_configuration::OffsetConfiguration;
 
+pub use crate::types::_filter_mode::FilterMode;
+
+pub use crate::types::_between_configuration::BetweenConfiguration;
+
+pub use crate::types::_filter_string_configuration::FilterStringConfiguration;
+
 pub use crate::types::_field_filter_operator::FieldFilterOperator;
 
 pub use crate::types::_column_statistics_type::ColumnStatisticsType;
@@ -1183,6 +1191,8 @@ pub use crate::types::_iceberg_sort_field::IcebergSortField;
 
 pub use crate::types::_response_extraction_mapping::ResponseExtractionMapping;
 
+pub use crate::types::_filter_overrides::FilterOverrides;
+
 pub use crate::types::_iceberg_update_action::IcebergUpdateAction;
 
 pub use crate::types::_iceberg_encrypted_key::IcebergEncryptedKey;
@@ -1272,6 +1282,8 @@ mod _batch_table_optimizer;
 mod _batch_update_partition_failure_entry;
 
 mod _batch_update_partition_request_entry;
+
+mod _between_configuration;
 
 mod _binary_column_statistics_data;
 
@@ -1663,13 +1675,21 @@ mod _fill_missing_values;
 
 mod _filter;
 
+mod _filter_configuration;
+
 mod _filter_expression;
 
 mod _filter_logical_operator;
 
+mod _filter_mode;
+
 mod _filter_operation;
 
 mod _filter_operator;
+
+mod _filter_overrides;
+
+mod _filter_string_configuration;
 
 mod _filter_value;
 

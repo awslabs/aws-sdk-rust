@@ -23,6 +23,7 @@ impl crate::operation::describe_conversion_configuration::builders::DescribeConv
 /// Fluent builder constructing a request to `DescribeConversionConfiguration`.
 ///
 /// <p>Returns configuration parameters for a schema conversion project.</p>
+/// <p><b>Required permissions:</b> <code>dms:DescribeConversionConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeConversionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

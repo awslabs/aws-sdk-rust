@@ -22,7 +22,7 @@ impl crate::operation::delete_dataset::builders::DeleteDatasetInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteDataset`.
 ///
-/// <p>Deletes a dataset. This cannot be undone.</p>
+/// <p>Deletes a dataset. This can't be undone. Deleting a session dataset also deletes the underlying time series data in the session. You can't delete a session dataset while a curated dataset references its data segments. First delete the curated dataset or disassociate the data segments. Deleting a curated dataset doesn't delete the underlying data in the source session datasets.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,6 +121,20 @@ impl DeleteDatasetFluentBuilder {
     /// <p>The ID of the dataset.</p>
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_id()
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_name(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_name(input);
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_name()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

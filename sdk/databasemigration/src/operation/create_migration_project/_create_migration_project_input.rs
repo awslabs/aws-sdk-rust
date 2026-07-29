@@ -11,7 +11,9 @@ pub struct CreateMigrationProjectInput {
     pub target_data_provider_descriptors: ::std::option::Option<::std::vec::Vec<crate::types::DataProviderDescriptorDefinition>>,
     /// <p>The identifier of the associated instance profile. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen, or contain two consecutive hyphens.</p>
     pub instance_profile_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The settings in JSON format for migration rules. Migration rules make it possible for you to change the object names according to the rules that you specify. For example, you can change an object name to lowercase or uppercase, add or remove a prefix or suffix, or rename objects.</p>
+    /// <p>A JSON string that specifies the transformation rules for the migration project. Transformation rules let you customize how DMS Schema Conversion converts your source database objects, including renaming, adding prefixes or suffixes, and changing data types. For the transformation rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-transformation-rules.html">Transformation rules in DMS Schema Conversion</a>.</p><note>
+    /// <p>Homogeneous data migrations do not support transformation rules.</p>
+    /// </note>
     pub transformation_rules: ::std::option::Option<::std::string::String>,
     /// <p>A user-friendly description of the migration project.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -41,7 +43,9 @@ impl CreateMigrationProjectInput {
     pub fn instance_profile_identifier(&self) -> ::std::option::Option<&str> {
         self.instance_profile_identifier.as_deref()
     }
-    /// <p>The settings in JSON format for migration rules. Migration rules make it possible for you to change the object names according to the rules that you specify. For example, you can change an object name to lowercase or uppercase, add or remove a prefix or suffix, or rename objects.</p>
+    /// <p>A JSON string that specifies the transformation rules for the migration project. Transformation rules let you customize how DMS Schema Conversion converts your source database objects, including renaming, adding prefixes or suffixes, and changing data types. For the transformation rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-transformation-rules.html">Transformation rules in DMS Schema Conversion</a>.</p><note>
+    /// <p>Homogeneous data migrations do not support transformation rules.</p>
+    /// </note>
     pub fn transformation_rules(&self) -> ::std::option::Option<&str> {
         self.transformation_rules.as_deref()
     }
@@ -156,17 +160,23 @@ impl CreateMigrationProjectInputBuilder {
     pub fn get_instance_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_profile_identifier
     }
-    /// <p>The settings in JSON format for migration rules. Migration rules make it possible for you to change the object names according to the rules that you specify. For example, you can change an object name to lowercase or uppercase, add or remove a prefix or suffix, or rename objects.</p>
+    /// <p>A JSON string that specifies the transformation rules for the migration project. Transformation rules let you customize how DMS Schema Conversion converts your source database objects, including renaming, adding prefixes or suffixes, and changing data types. For the transformation rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-transformation-rules.html">Transformation rules in DMS Schema Conversion</a>.</p><note>
+    /// <p>Homogeneous data migrations do not support transformation rules.</p>
+    /// </note>
     pub fn transformation_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.transformation_rules = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The settings in JSON format for migration rules. Migration rules make it possible for you to change the object names according to the rules that you specify. For example, you can change an object name to lowercase or uppercase, add or remove a prefix or suffix, or rename objects.</p>
+    /// <p>A JSON string that specifies the transformation rules for the migration project. Transformation rules let you customize how DMS Schema Conversion converts your source database objects, including renaming, adding prefixes or suffixes, and changing data types. For the transformation rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-transformation-rules.html">Transformation rules in DMS Schema Conversion</a>.</p><note>
+    /// <p>Homogeneous data migrations do not support transformation rules.</p>
+    /// </note>
     pub fn set_transformation_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.transformation_rules = input;
         self
     }
-    /// <p>The settings in JSON format for migration rules. Migration rules make it possible for you to change the object names according to the rules that you specify. For example, you can change an object name to lowercase or uppercase, add or remove a prefix or suffix, or rename objects.</p>
+    /// <p>A JSON string that specifies the transformation rules for the migration project. Transformation rules let you customize how DMS Schema Conversion converts your source database objects, including renaming, adding prefixes or suffixes, and changing data types. For the transformation rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-transformation-rules.html">Transformation rules in DMS Schema Conversion</a>.</p><note>
+    /// <p>Homogeneous data migrations do not support transformation rules.</p>
+    /// </note>
     pub fn get_transformation_rules(&self) -> &::std::option::Option<::std::string::String> {
         &self.transformation_rules
     }

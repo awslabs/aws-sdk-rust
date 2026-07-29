@@ -15,9 +15,9 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
 
-pub use crate::types::error::_precondition_failed_exception::PreconditionFailedExceptionBuilder;
-
 pub use crate::types::error::_access_denied_exception::AccessDeniedExceptionBuilder;
+
+pub use crate::types::error::_precondition_failed_exception::PreconditionFailedExceptionBuilder;
 
 pub use crate::types::error::_query_timeout_exception::QueryTimeoutExceptionBuilder;
 

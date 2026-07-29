@@ -22,6 +22,9 @@ impl crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBu
 }
 /// Fluent builder constructing a request to `UpdateAccessPolicy`.
 ///
+/// <important>
+/// <p>The IoT SiteWise Monitor feature will no longer be open to new customers starting November 7, 2025. If you would like to use the IoT SiteWise Monitor feature, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/iotsitewise-monitor-availability-change.html">IoT SiteWise Monitor availability change</a>.</p>
+/// </important>
 /// <p>Updates an existing access policy that specifies an identity's access to an IoT SiteWise Monitor portal or project resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAccessPolicyFluentBuilder {

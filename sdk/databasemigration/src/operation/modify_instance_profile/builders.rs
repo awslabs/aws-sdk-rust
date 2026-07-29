@@ -22,7 +22,8 @@ impl crate::operation::modify_instance_profile::builders::ModifyInstanceProfileI
 }
 /// Fluent builder constructing a request to `ModifyInstanceProfile`.
 ///
-/// <p>Modifies the specified instance profile using the provided parameters.</p><note>
+/// <p>Modifies the specified instance profile using the provided parameters.</p>
+/// <p><b>Required permissions:</b> <code>dms:UpdateInstanceProfile</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p><note>
 /// <p>All migration projects associated with the instance profile must be deleted or modified before you can modify the instance profile.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

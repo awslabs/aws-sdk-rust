@@ -9,6 +9,8 @@ pub struct ListBulkImportJobsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
     pub filter: ::std::option::Option<crate::types::ListBulkImportJobsFilter>,
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl ListBulkImportJobsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -22,6 +24,10 @@ impl ListBulkImportJobsInput {
     /// <p>You can use a filter to select the bulk import jobs that you want to retrieve.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::ListBulkImportJobsFilter> {
         self.filter.as_ref()
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
     }
 }
 impl ListBulkImportJobsInput {
@@ -38,6 +44,7 @@ pub struct ListBulkImportJobsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) filter: ::std::option::Option<crate::types::ListBulkImportJobsFilter>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl ListBulkImportJobsInputBuilder {
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -82,6 +89,20 @@ impl ListBulkImportJobsInputBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListBulkImportJobsFilter> {
         &self.filter
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`ListBulkImportJobsInput`](crate::operation::list_bulk_import_jobs::ListBulkImportJobsInput).
     pub fn build(
         self,
@@ -91,6 +112,7 @@ impl ListBulkImportJobsInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             filter: self.filter,
+            workspace_name: self.workspace_name,
         })
     }
 }

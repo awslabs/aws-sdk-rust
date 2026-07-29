@@ -12,12 +12,18 @@ pub struct DatasetSummary {
     pub name: ::std::string::String,
     /// <p>A description about the dataset, and its functionality.</p>
     pub description: ::std::string::String,
+    /// <p>The data source type of the dataset.</p>
+    pub source_type: ::std::option::Option<crate::types::DatasetSourceType>,
+    /// <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub dataset_type: ::std::option::Option<crate::types::DatasetTypeEnum>,
     /// <p>The dataset creation date, in Unix epoch time.</p>
     pub creation_date: ::aws_smithy_types::DateTime,
     /// <p>The date the dataset was last updated, in Unix epoch time.</p>
     pub last_update_date: ::aws_smithy_types::DateTime,
     /// <p>The status of the dataset. This contains the state and any error messages. The state is <code>ACTIVE</code> when ready to use.</p>
     pub status: ::std::option::Option<crate::types::DatasetStatus>,
+    /// <p>The enrichment status of the dataset.</p>
+    pub enrichment_status: ::std::option::Option<crate::types::DatasetEnrichment>,
 }
 impl DatasetSummary {
     /// <p>The ID of the dataset.</p>
@@ -40,6 +46,14 @@ impl DatasetSummary {
         use std::ops::Deref;
         self.description.deref()
     }
+    /// <p>The data source type of the dataset.</p>
+    pub fn source_type(&self) -> ::std::option::Option<&crate::types::DatasetSourceType> {
+        self.source_type.as_ref()
+    }
+    /// <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn dataset_type(&self) -> ::std::option::Option<&crate::types::DatasetTypeEnum> {
+        self.dataset_type.as_ref()
+    }
     /// <p>The dataset creation date, in Unix epoch time.</p>
     pub fn creation_date(&self) -> &::aws_smithy_types::DateTime {
         &self.creation_date
@@ -51,6 +65,10 @@ impl DatasetSummary {
     /// <p>The status of the dataset. This contains the state and any error messages. The state is <code>ACTIVE</code> when ready to use.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
+    }
+    /// <p>The enrichment status of the dataset.</p>
+    pub fn enrichment_status(&self) -> ::std::option::Option<&crate::types::DatasetEnrichment> {
+        self.enrichment_status.as_ref()
     }
 }
 impl DatasetSummary {
@@ -68,9 +86,12 @@ pub struct DatasetSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) source_type: ::std::option::Option<crate::types::DatasetSourceType>,
+    pub(crate) dataset_type: ::std::option::Option<crate::types::DatasetTypeEnum>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::DatasetStatus>,
+    pub(crate) enrichment_status: ::std::option::Option<crate::types::DatasetEnrichment>,
 }
 impl DatasetSummaryBuilder {
     /// <p>The ID of the dataset.</p>
@@ -133,6 +154,34 @@ impl DatasetSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The data source type of the dataset.</p>
+    pub fn source_type(mut self, input: crate::types::DatasetSourceType) -> Self {
+        self.source_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data source type of the dataset.</p>
+    pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::DatasetSourceType>) -> Self {
+        self.source_type = input;
+        self
+    }
+    /// <p>The data source type of the dataset.</p>
+    pub fn get_source_type(&self) -> &::std::option::Option<crate::types::DatasetSourceType> {
+        &self.source_type
+    }
+    /// <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn dataset_type(mut self, input: crate::types::DatasetTypeEnum) -> Self {
+        self.dataset_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetTypeEnum>) -> Self {
+        self.dataset_type = input;
+        self
+    }
+    /// <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetTypeEnum> {
+        &self.dataset_type
+    }
     /// <p>The dataset creation date, in Unix epoch time.</p>
     /// This field is required.
     pub fn creation_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -178,6 +227,20 @@ impl DatasetSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::DatasetStatus> {
         &self.status
     }
+    /// <p>The enrichment status of the dataset.</p>
+    pub fn enrichment_status(mut self, input: crate::types::DatasetEnrichment) -> Self {
+        self.enrichment_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enrichment status of the dataset.</p>
+    pub fn set_enrichment_status(mut self, input: ::std::option::Option<crate::types::DatasetEnrichment>) -> Self {
+        self.enrichment_status = input;
+        self
+    }
+    /// <p>The enrichment status of the dataset.</p>
+    pub fn get_enrichment_status(&self) -> &::std::option::Option<crate::types::DatasetEnrichment> {
+        &self.enrichment_status
+    }
     /// Consumes the builder and constructs a [`DatasetSummary`](crate::types::DatasetSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::DatasetSummaryBuilder::id)
@@ -212,6 +275,8 @@ impl DatasetSummaryBuilder {
                     "description was not specified but it is required when building DatasetSummary",
                 )
             })?,
+            source_type: self.source_type,
+            dataset_type: self.dataset_type,
             creation_date: self.creation_date.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "creation_date",
@@ -225,6 +290,7 @@ impl DatasetSummaryBuilder {
                 )
             })?,
             status: self.status,
+            enrichment_status: self.enrichment_status,
         })
     }
 }

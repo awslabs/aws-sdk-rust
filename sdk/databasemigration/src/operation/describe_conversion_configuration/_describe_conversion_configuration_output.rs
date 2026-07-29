@@ -5,7 +5,7 @@
 pub struct DescribeConversionConfigurationOutput {
     /// <p>The name or Amazon Resource Name (ARN) for the schema conversion project.</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration parameters for the schema conversion project.</p>
+    /// <p>A JSON string that contains the schema conversion settings for the migration project. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
     pub conversion_configuration: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl DescribeConversionConfigurationOutput {
     pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
         self.migration_project_identifier.as_deref()
     }
-    /// <p>The configuration parameters for the schema conversion project.</p>
+    /// <p>A JSON string that contains the schema conversion settings for the migration project. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
     pub fn conversion_configuration(&self) -> ::std::option::Option<&str> {
         self.conversion_configuration.as_deref()
     }
@@ -54,17 +54,17 @@ impl DescribeConversionConfigurationOutputBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_project_identifier
     }
-    /// <p>The configuration parameters for the schema conversion project.</p>
+    /// <p>A JSON string that contains the schema conversion settings for the migration project. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
     pub fn conversion_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversion_configuration = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The configuration parameters for the schema conversion project.</p>
+    /// <p>A JSON string that contains the schema conversion settings for the migration project. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
     pub fn set_conversion_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversion_configuration = input;
         self
     }
-    /// <p>The configuration parameters for the schema conversion project.</p>
+    /// <p>A JSON string that contains the schema conversion settings for the migration project. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
     pub fn get_conversion_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.conversion_configuration
     }

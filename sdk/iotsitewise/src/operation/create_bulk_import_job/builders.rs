@@ -23,7 +23,7 @@ impl crate::operation::create_bulk_import_job::builders::CreateBulkImportJobInpu
 /// Fluent builder constructing a request to `CreateBulkImportJob`.
 ///
 /// <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p><important>
-/// <p>Before you create a bulk import job, you must enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>.</p>
+/// <p>Before you create a bulk import job that ingests data into time series outside of a workspace, you must enable IoT SiteWise warm tier or IoT SiteWise cold tier. For more information about how to configure storage settings, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PutStorageConfiguration.html">PutStorageConfiguration</a>. This requirement doesn't apply to bulk import jobs that ingest data into a session dataset in a workspace (jobs that specify a <code>workspaceName</code> and <code>datasetId</code>). Those jobs don't use IoT SiteWise warm or cold tier storage.</p>
 /// <p>Bulk import is designed to store historical data to IoT SiteWise.</p>
 /// <ul>
 /// <li>
@@ -152,17 +152,35 @@ impl CreateBulkImportJobFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_files`](Self::set_files).
     ///
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn files(mut self, input: crate::types::File) -> Self {
         self.inner = self.inner.files(input);
         self
     }
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
         self.inner = self.inner.set_files(input);
         self
     }
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::File>> {
         self.inner.get_files()
     }
@@ -221,5 +239,33 @@ impl CreateBulkImportJobFluentBuilder {
     /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
     pub fn get_delete_files_after_import(&self) -> &::std::option::Option<bool> {
         self.inner.get_delete_files_after_import()
+    }
+    /// <p>The ID of the session dataset to ingest data into. Specify this field, together with <code>workspaceName</code>, to ingest data into a session dataset in a workspace.</p>
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dataset_id(input.into());
+        self
+    }
+    /// <p>The ID of the session dataset to ingest data into. Specify this field, together with <code>workspaceName</code>, to ingest data into a session dataset in a workspace.</p>
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_dataset_id(input);
+        self
+    }
+    /// <p>The ID of the session dataset to ingest data into. Specify this field, together with <code>workspaceName</code>, to ingest data into a session dataset in a workspace.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_id()
+    }
+    /// <p>The name of the workspace that contains the session dataset. Specify this field together with <code>datasetId</code>.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_name(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the session dataset. Specify this field together with <code>datasetId</code>.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_name(input);
+        self
+    }
+    /// <p>The name of the workspace that contains the session dataset. Specify this field together with <code>datasetId</code>.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_name()
     }
 }

@@ -6,17 +6,36 @@ pub fn ser_update_dataset_input_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.dataset_description {
-        object.key("datasetDescription").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.dataset_name {
-        object.key("datasetName").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.dataset_source {
+    if let Some(var_2) = &input.dataset_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("datasetSource").start_object();
-        crate::protocol_serde::shape_dataset_source::ser_dataset_source(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_3 = object.key("datasetConfig").start_object();
+        crate::protocol_serde::shape_dataset_config::ser_dataset_config(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.dataset_description {
+        object.key("datasetDescription").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.dataset_name {
+        object.key("datasetName").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.dataset_source {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("datasetSource").start_object();
+        crate::protocol_serde::shape_dataset_source::ser_dataset_source(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.metadata {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("metadata").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                object_9.key(key_10.as_str()).string(value_11.as_str());
+            }
+        }
+        object_9.finish();
+    }
+    if let Some(var_12) = &input.workspace_name {
+        object.key("workspaceName").string(var_12.as_str());
     }
     Ok(())
 }

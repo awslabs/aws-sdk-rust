@@ -25,7 +25,13 @@ pub struct DescribeBulkImportJobOutput {
     pub job_status: crate::types::JobStatus,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
     pub job_role_arn: ::std::string::String,
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub files: ::std::vec::Vec<crate::types::File>,
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
     pub error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
@@ -39,6 +45,10 @@ pub struct DescribeBulkImportJobOutput {
     pub adaptive_ingestion: ::std::option::Option<bool>,
     /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
     pub delete_files_after_import: ::std::option::Option<bool>,
+    /// <p>The ID of the dataset.</p>
+    pub dataset_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBulkImportJobOutput {
@@ -75,7 +85,13 @@ impl DescribeBulkImportJobOutput {
         use std::ops::Deref;
         self.job_role_arn.deref()
     }
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn files(&self) -> &[crate::types::File] {
         use std::ops::Deref;
         self.files.deref()
@@ -103,6 +119,14 @@ impl DescribeBulkImportJobOutput {
     /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
     pub fn delete_files_after_import(&self) -> ::std::option::Option<bool> {
         self.delete_files_after_import
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+        self.dataset_id.as_deref()
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeBulkImportJobOutput {
@@ -132,6 +156,8 @@ pub struct DescribeBulkImportJobOutputBuilder {
     pub(crate) job_last_update_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) adaptive_ingestion: ::std::option::Option<bool>,
     pub(crate) delete_files_after_import: ::std::option::Option<bool>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeBulkImportJobOutputBuilder {
@@ -241,19 +267,37 @@ impl DescribeBulkImportJobOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_files`](Self::set_files).
     ///
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn files(mut self, input: crate::types::File) -> Self {
         let mut v = self.files.unwrap_or_default();
         v.push(input);
         self.files = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
         self.files = input;
         self
     }
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::File>> {
         &self.files
     }
@@ -273,7 +317,6 @@ impl DescribeBulkImportJobOutputBuilder {
         &self.error_report_location
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    /// This field is required.
     pub fn job_configuration(mut self, input: crate::types::JobConfiguration) -> Self {
         self.job_configuration = ::std::option::Option::Some(input);
         self
@@ -344,6 +387,34 @@ impl DescribeBulkImportJobOutputBuilder {
     /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
     pub fn get_delete_files_after_import(&self) -> &::std::option::Option<bool> {
         &self.delete_files_after_import
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataset_id = input;
+        self
+    }
+    /// <p>The ID of the dataset.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -416,6 +487,8 @@ impl DescribeBulkImportJobOutputBuilder {
             })?,
             adaptive_ingestion: self.adaptive_ingestion,
             delete_files_after_import: self.delete_files_after_import,
+            dataset_id: self.dataset_id,
+            workspace_name: self.workspace_name,
             _request_id: self._request_id,
         })
     }

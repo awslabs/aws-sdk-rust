@@ -3,11 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssetModelOutput {
+    /// <p>The ID of the asset model.</p>
+    pub asset_model_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
 }
 impl UpdateAssetModelOutput {
+    /// <p>The ID of the asset model.</p>
+    pub fn asset_model_id(&self) -> ::std::option::Option<&str> {
+        self.asset_model_id.as_deref()
+    }
     /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_model_status(&self) -> ::std::option::Option<&crate::types::AssetModelStatus> {
         self.asset_model_status.as_ref()
@@ -29,10 +35,25 @@ impl UpdateAssetModelOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UpdateAssetModelOutputBuilder {
+    pub(crate) asset_model_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_model_status: ::std::option::Option<crate::types::AssetModelStatus>,
     _request_id: Option<String>,
 }
 impl UpdateAssetModelOutputBuilder {
+    /// <p>The ID of the asset model.</p>
+    pub fn asset_model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_model_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the asset model.</p>
+    pub fn set_asset_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_model_id = input;
+        self
+    }
+    /// <p>The ID of the asset model.</p>
+    pub fn get_asset_model_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_model_id
+    }
     /// <p>The status of the asset model, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// This field is required.
     pub fn asset_model_status(mut self, input: crate::types::AssetModelStatus) -> Self {
@@ -60,6 +81,7 @@ impl UpdateAssetModelOutputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssetModelOutput`](crate::operation::update_asset_model::UpdateAssetModelOutput).
     pub fn build(self) -> crate::operation::update_asset_model::UpdateAssetModelOutput {
         crate::operation::update_asset_model::UpdateAssetModelOutput {
+            asset_model_id: self.asset_model_id,
             asset_model_status: self.asset_model_status,
             _request_id: self._request_id,
         }

@@ -197,6 +197,8 @@ mod create_stream_session_admin_shell;
 
 mod create_stream_session_connection;
 
+mod create_stream_url;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -238,6 +240,10 @@ mod get_stream_group;
 
 mod get_stream_session;
 
+mod get_stream_url;
+
+mod list_application_shader_caches;
+
 mod list_applications;
 
 mod list_stream_groups;
@@ -246,9 +252,13 @@ mod list_stream_sessions;
 
 mod list_stream_sessions_by_account;
 
+mod list_stream_urls;
+
 mod list_tags_for_resource;
 
 mod remove_stream_group_locations;
+
+mod revoke_stream_url;
 
 mod start_stream_session;
 

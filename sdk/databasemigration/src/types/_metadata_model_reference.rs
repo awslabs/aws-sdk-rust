@@ -6,7 +6,12 @@
 pub struct MetadataModelReference {
     /// <p>The name of the metadata model.</p>
     pub metadata_model_name: ::std::option::Option<::std::string::String>,
-    /// <p>The JSON string representing metadata model location.</p>
+    /// <p>A JSON string that identifies this metadata model in the metadata tree. For the selection rule format, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can pass this value as the <code>SelectionRules</code> parameter to any operation that accepts selection rules, such as <code>DescribeMetadataModel</code>, <code>StartMetadataModelConversion</code>, and others.</p></li>
+    /// </ul>
     pub selection_rules: ::std::option::Option<::std::string::String>,
 }
 impl MetadataModelReference {
@@ -14,7 +19,12 @@ impl MetadataModelReference {
     pub fn metadata_model_name(&self) -> ::std::option::Option<&str> {
         self.metadata_model_name.as_deref()
     }
-    /// <p>The JSON string representing metadata model location.</p>
+    /// <p>A JSON string that identifies this metadata model in the metadata tree. For the selection rule format, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can pass this value as the <code>SelectionRules</code> parameter to any operation that accepts selection rules, such as <code>DescribeMetadataModel</code>, <code>StartMetadataModelConversion</code>, and others.</p></li>
+    /// </ul>
     pub fn selection_rules(&self) -> ::std::option::Option<&str> {
         self.selection_rules.as_deref()
     }
@@ -48,17 +58,32 @@ impl MetadataModelReferenceBuilder {
     pub fn get_metadata_model_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.metadata_model_name
     }
-    /// <p>The JSON string representing metadata model location.</p>
+    /// <p>A JSON string that identifies this metadata model in the metadata tree. For the selection rule format, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can pass this value as the <code>SelectionRules</code> parameter to any operation that accepts selection rules, such as <code>DescribeMetadataModel</code>, <code>StartMetadataModelConversion</code>, and others.</p></li>
+    /// </ul>
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.selection_rules = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The JSON string representing metadata model location.</p>
+    /// <p>A JSON string that identifies this metadata model in the metadata tree. For the selection rule format, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can pass this value as the <code>SelectionRules</code> parameter to any operation that accepts selection rules, such as <code>DescribeMetadataModel</code>, <code>StartMetadataModelConversion</code>, and others.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.selection_rules = input;
         self
     }
-    /// <p>The JSON string representing metadata model location.</p>
+    /// <p>A JSON string that identifies this metadata model in the metadata tree. For the selection rule format, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>You can pass this value as the <code>SelectionRules</code> parameter to any operation that accepts selection rules, such as <code>DescribeMetadataModel</code>, <code>StartMetadataModelConversion</code>, and others.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         &self.selection_rules
     }

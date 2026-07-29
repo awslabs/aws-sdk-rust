@@ -122,4 +122,32 @@ impl DescribeDatasetFluentBuilder {
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_id()
     }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_name(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_name(input);
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_name()
+    }
+    /// <p>The version of the dataset.</p>
+    pub fn dataset_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dataset_version(input.into());
+        self
+    }
+    /// <p>The version of the dataset.</p>
+    pub fn set_dataset_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_dataset_version(input);
+        self
+    }
+    /// <p>The version of the dataset.</p>
+    pub fn get_dataset_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dataset_version()
+    }
 }

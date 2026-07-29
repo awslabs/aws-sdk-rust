@@ -3,9 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExtensionPackAssociationsInput {
-    /// <p>The name or Amazon Resource Name (ARN) for the migration project.</p>
+    /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>Filters applied to the extension pack associations described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the extension pack installation requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
@@ -14,11 +21,18 @@ pub struct DescribeExtensionPackAssociationsInput {
     pub max_records: ::std::option::Option<i32>,
 }
 impl DescribeExtensionPackAssociationsInput {
-    /// <p>The name or Amazon Resource Name (ARN) for the migration project.</p>
+    /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
         self.migration_project_identifier.as_deref()
     }
-    /// <p>Filters applied to the extension pack associations described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the extension pack installation requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -51,18 +65,18 @@ pub struct DescribeExtensionPackAssociationsInputBuilder {
     pub(crate) max_records: ::std::option::Option<i32>,
 }
 impl DescribeExtensionPackAssociationsInputBuilder {
-    /// <p>The name or Amazon Resource Name (ARN) for the migration project.</p>
+    /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     /// This field is required.
     pub fn migration_project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.migration_project_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the migration project.</p>
+    /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn set_migration_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.migration_project_identifier = input;
         self
     }
-    /// <p>The name or Amazon Resource Name (ARN) for the migration project.</p>
+    /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_project_identifier
     }
@@ -70,19 +84,40 @@ impl DescribeExtensionPackAssociationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters applied to the extension pack associations described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the extension pack installation requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters applied to the extension pack associations described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the extension pack installation requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Filters applied to the extension pack associations described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the extension pack installation requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

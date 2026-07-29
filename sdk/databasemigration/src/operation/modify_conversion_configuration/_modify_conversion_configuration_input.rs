@@ -5,7 +5,12 @@
 pub struct ModifyConversionConfigurationInput {
     /// <p>The migration project name or Amazon Resource Name (ARN).</p>
     pub migration_project_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The new conversion configuration.</p>
+    /// <p>A JSON string that contains the schema conversion settings to update. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Include only the sections and keys to change. The operation merges supplied values with the existing configuration.</p></li>
+    /// </ul>
     pub conversion_configuration: ::std::option::Option<::std::string::String>,
 }
 impl ModifyConversionConfigurationInput {
@@ -13,7 +18,12 @@ impl ModifyConversionConfigurationInput {
     pub fn migration_project_identifier(&self) -> ::std::option::Option<&str> {
         self.migration_project_identifier.as_deref()
     }
-    /// <p>The new conversion configuration.</p>
+    /// <p>A JSON string that contains the schema conversion settings to update. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Include only the sections and keys to change. The operation merges supplied values with the existing configuration.</p></li>
+    /// </ul>
     pub fn conversion_configuration(&self) -> ::std::option::Option<&str> {
         self.conversion_configuration.as_deref()
     }
@@ -48,18 +58,33 @@ impl ModifyConversionConfigurationInputBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.migration_project_identifier
     }
-    /// <p>The new conversion configuration.</p>
+    /// <p>A JSON string that contains the schema conversion settings to update. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Include only the sections and keys to change. The operation merges supplied values with the existing configuration.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn conversion_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.conversion_configuration = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The new conversion configuration.</p>
+    /// <p>A JSON string that contains the schema conversion settings to update. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Include only the sections and keys to change. The operation merges supplied values with the existing configuration.</p></li>
+    /// </ul>
     pub fn set_conversion_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.conversion_configuration = input;
         self
     }
-    /// <p>The new conversion configuration.</p>
+    /// <p>A JSON string that contains the schema conversion settings to update. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Include only the sections and keys to change. The operation merges supplied values with the existing configuration.</p></li>
+    /// </ul>
     pub fn get_conversion_configuration(&self) -> &::std::option::Option<::std::string::String> {
         &self.conversion_configuration
     }

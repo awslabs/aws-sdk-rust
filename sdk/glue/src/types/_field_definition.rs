@@ -8,6 +8,18 @@ pub struct FieldDefinition {
     pub name: ::std::string::String,
     /// <p>The data type of the field.</p>
     pub field_data_type: crate::types::FieldDataType,
+    /// <p>The format pattern for parsing date values from API responses. Required when the API uses a non-ISO-8601 format. Accepts Java <code>DateTimeFormatter</code> patterns (for example, <code>EEE, d MMM yyyy HH:mm:ss Z</code>), <code>EPOCH_SECONDS</code> for Unix epoch seconds, or <code>EPOCH_MILLIS</code> for Unix epoch milliseconds.</p>
+    pub response_date_format: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether this field can be used for partitioning queries to the data source.</p>
+    pub is_partitionable: ::std::option::Option<bool>,
+    /// <p>Indicates whether this field can contain null values.</p>
+    pub is_nullable: ::std::option::Option<bool>,
+    /// <p>Indicates whether this field can be used in filter predicates when querying data.</p>
+    pub is_queryable: ::std::option::Option<bool>,
+    /// <p>Indicates whether this field can be used for ordering results.</p>
+    pub is_orderable: ::std::option::Option<bool>,
+    /// <p>Per-field overrides for filter behavior, allowing customization of how filters are applied to this specific field.</p>
+    pub filter_overrides: ::std::option::Option<crate::types::FilterOverrides>,
 }
 impl FieldDefinition {
     /// <p>The name of the field in the entity schema.</p>
@@ -18,6 +30,30 @@ impl FieldDefinition {
     /// <p>The data type of the field.</p>
     pub fn field_data_type(&self) -> &crate::types::FieldDataType {
         &self.field_data_type
+    }
+    /// <p>The format pattern for parsing date values from API responses. Required when the API uses a non-ISO-8601 format. Accepts Java <code>DateTimeFormatter</code> patterns (for example, <code>EEE, d MMM yyyy HH:mm:ss Z</code>), <code>EPOCH_SECONDS</code> for Unix epoch seconds, or <code>EPOCH_MILLIS</code> for Unix epoch milliseconds.</p>
+    pub fn response_date_format(&self) -> ::std::option::Option<&str> {
+        self.response_date_format.as_deref()
+    }
+    /// <p>Indicates whether this field can be used for partitioning queries to the data source.</p>
+    pub fn is_partitionable(&self) -> ::std::option::Option<bool> {
+        self.is_partitionable
+    }
+    /// <p>Indicates whether this field can contain null values.</p>
+    pub fn is_nullable(&self) -> ::std::option::Option<bool> {
+        self.is_nullable
+    }
+    /// <p>Indicates whether this field can be used in filter predicates when querying data.</p>
+    pub fn is_queryable(&self) -> ::std::option::Option<bool> {
+        self.is_queryable
+    }
+    /// <p>Indicates whether this field can be used for ordering results.</p>
+    pub fn is_orderable(&self) -> ::std::option::Option<bool> {
+        self.is_orderable
+    }
+    /// <p>Per-field overrides for filter behavior, allowing customization of how filters are applied to this specific field.</p>
+    pub fn filter_overrides(&self) -> ::std::option::Option<&crate::types::FilterOverrides> {
+        self.filter_overrides.as_ref()
     }
 }
 impl FieldDefinition {
@@ -33,6 +69,12 @@ impl FieldDefinition {
 pub struct FieldDefinitionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) field_data_type: ::std::option::Option<crate::types::FieldDataType>,
+    pub(crate) response_date_format: ::std::option::Option<::std::string::String>,
+    pub(crate) is_partitionable: ::std::option::Option<bool>,
+    pub(crate) is_nullable: ::std::option::Option<bool>,
+    pub(crate) is_queryable: ::std::option::Option<bool>,
+    pub(crate) is_orderable: ::std::option::Option<bool>,
+    pub(crate) filter_overrides: ::std::option::Option<crate::types::FilterOverrides>,
 }
 impl FieldDefinitionBuilder {
     /// <p>The name of the field in the entity schema.</p>
@@ -65,6 +107,90 @@ impl FieldDefinitionBuilder {
     pub fn get_field_data_type(&self) -> &::std::option::Option<crate::types::FieldDataType> {
         &self.field_data_type
     }
+    /// <p>The format pattern for parsing date values from API responses. Required when the API uses a non-ISO-8601 format. Accepts Java <code>DateTimeFormatter</code> patterns (for example, <code>EEE, d MMM yyyy HH:mm:ss Z</code>), <code>EPOCH_SECONDS</code> for Unix epoch seconds, or <code>EPOCH_MILLIS</code> for Unix epoch milliseconds.</p>
+    pub fn response_date_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.response_date_format = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The format pattern for parsing date values from API responses. Required when the API uses a non-ISO-8601 format. Accepts Java <code>DateTimeFormatter</code> patterns (for example, <code>EEE, d MMM yyyy HH:mm:ss Z</code>), <code>EPOCH_SECONDS</code> for Unix epoch seconds, or <code>EPOCH_MILLIS</code> for Unix epoch milliseconds.</p>
+    pub fn set_response_date_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.response_date_format = input;
+        self
+    }
+    /// <p>The format pattern for parsing date values from API responses. Required when the API uses a non-ISO-8601 format. Accepts Java <code>DateTimeFormatter</code> patterns (for example, <code>EEE, d MMM yyyy HH:mm:ss Z</code>), <code>EPOCH_SECONDS</code> for Unix epoch seconds, or <code>EPOCH_MILLIS</code> for Unix epoch milliseconds.</p>
+    pub fn get_response_date_format(&self) -> &::std::option::Option<::std::string::String> {
+        &self.response_date_format
+    }
+    /// <p>Indicates whether this field can be used for partitioning queries to the data source.</p>
+    pub fn is_partitionable(mut self, input: bool) -> Self {
+        self.is_partitionable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this field can be used for partitioning queries to the data source.</p>
+    pub fn set_is_partitionable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_partitionable = input;
+        self
+    }
+    /// <p>Indicates whether this field can be used for partitioning queries to the data source.</p>
+    pub fn get_is_partitionable(&self) -> &::std::option::Option<bool> {
+        &self.is_partitionable
+    }
+    /// <p>Indicates whether this field can contain null values.</p>
+    pub fn is_nullable(mut self, input: bool) -> Self {
+        self.is_nullable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this field can contain null values.</p>
+    pub fn set_is_nullable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_nullable = input;
+        self
+    }
+    /// <p>Indicates whether this field can contain null values.</p>
+    pub fn get_is_nullable(&self) -> &::std::option::Option<bool> {
+        &self.is_nullable
+    }
+    /// <p>Indicates whether this field can be used in filter predicates when querying data.</p>
+    pub fn is_queryable(mut self, input: bool) -> Self {
+        self.is_queryable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this field can be used in filter predicates when querying data.</p>
+    pub fn set_is_queryable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_queryable = input;
+        self
+    }
+    /// <p>Indicates whether this field can be used in filter predicates when querying data.</p>
+    pub fn get_is_queryable(&self) -> &::std::option::Option<bool> {
+        &self.is_queryable
+    }
+    /// <p>Indicates whether this field can be used for ordering results.</p>
+    pub fn is_orderable(mut self, input: bool) -> Self {
+        self.is_orderable = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this field can be used for ordering results.</p>
+    pub fn set_is_orderable(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_orderable = input;
+        self
+    }
+    /// <p>Indicates whether this field can be used for ordering results.</p>
+    pub fn get_is_orderable(&self) -> &::std::option::Option<bool> {
+        &self.is_orderable
+    }
+    /// <p>Per-field overrides for filter behavior, allowing customization of how filters are applied to this specific field.</p>
+    pub fn filter_overrides(mut self, input: crate::types::FilterOverrides) -> Self {
+        self.filter_overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Per-field overrides for filter behavior, allowing customization of how filters are applied to this specific field.</p>
+    pub fn set_filter_overrides(mut self, input: ::std::option::Option<crate::types::FilterOverrides>) -> Self {
+        self.filter_overrides = input;
+        self
+    }
+    /// <p>Per-field overrides for filter behavior, allowing customization of how filters are applied to this specific field.</p>
+    pub fn get_filter_overrides(&self) -> &::std::option::Option<crate::types::FilterOverrides> {
+        &self.filter_overrides
+    }
     /// Consumes the builder and constructs a [`FieldDefinition`](crate::types::FieldDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::FieldDefinitionBuilder::name)
@@ -83,6 +209,12 @@ impl FieldDefinitionBuilder {
                     "field_data_type was not specified but it is required when building FieldDefinition",
                 )
             })?,
+            response_date_format: self.response_date_format,
+            is_partitionable: self.is_partitionable,
+            is_nullable: self.is_nullable,
+            is_queryable: self.is_queryable,
+            is_orderable: self.is_orderable,
+            filter_overrides: self.filter_overrides,
         })
     }
 }

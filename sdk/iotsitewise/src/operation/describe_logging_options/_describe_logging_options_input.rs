@@ -2,7 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct DescribeLoggingOptionsInput {}
+pub struct DescribeLoggingOptionsInput {
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
+}
+impl DescribeLoggingOptionsInput {
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
+}
 impl DescribeLoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingOptionsInput`](crate::operation::describe_logging_options::DescribeLoggingOptionsInput).
     pub fn builder() -> crate::operation::describe_logging_options::builders::DescribeLoggingOptionsInputBuilder {
@@ -13,8 +22,24 @@ impl DescribeLoggingOptionsInput {
 /// A builder for [`DescribeLoggingOptionsInput`](crate::operation::describe_logging_options::DescribeLoggingOptionsInput).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct DescribeLoggingOptionsInputBuilder {}
+pub struct DescribeLoggingOptionsInputBuilder {
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
+}
 impl DescribeLoggingOptionsInputBuilder {
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`DescribeLoggingOptionsInput`](crate::operation::describe_logging_options::DescribeLoggingOptionsInput).
     pub fn build(
         self,
@@ -22,6 +47,8 @@ impl DescribeLoggingOptionsInputBuilder {
         crate::operation::describe_logging_options::DescribeLoggingOptionsInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::describe_logging_options::DescribeLoggingOptionsInput {})
+        ::std::result::Result::Ok(crate::operation::describe_logging_options::DescribeLoggingOptionsInput {
+            workspace_name: self.workspace_name,
+        })
     }
 }

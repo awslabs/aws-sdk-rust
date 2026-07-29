@@ -22,7 +22,28 @@ impl crate::operation::start_metadata_model_conversion::builders::StartMetadataM
 }
 /// Fluent builder constructing a request to `StartMetadataModelConversion`.
 ///
-/// <p>Converts your source database objects to a format compatible with the target database.</p>
+/// <p>Queues a conversion of the selected source metadata models (database objects such as tables, views, and procedures) to the target database format. If other requests created by <code>Start*</code> operations are already in the migration project's queue, the conversion begins after they complete.</p>
+/// <p>The conversion request loads metadata models that are not yet in the metadata tree, but does not reload metadata models that are already present. If your source database has changed since the metadata was loaded, refresh the affected metadata models with <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelImport.html">StartMetadataModelImport</a> before calling this operation.</p><note>
+/// <p>If converted objects already exist in the target metadata tree, the conversion overwrites them, including any manual edits.</p>
+/// </note>
+/// <p>To check the status of the conversion request, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelConversions.html">DescribeMetadataModelConversions</a> using the returned <code>RequestIdentifier</code> as a filter.</p>
+/// <p>To cancel a queued or in-progress request, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CancelMetadataModelConversion.html">CancelMetadataModelConversion</a> with the returned <code>RequestIdentifier</code>.</p>
+/// <p>After the conversion completes successfully:</p>
+/// <ul>
+/// <li>
+/// <p>To export a post-conversion assessment report, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ExportMetadataModelAssessment.html">ExportMetadataModelAssessment</a>.</p></li>
+/// <li>
+/// <p>To retrieve converted code, use any of the following options:</p>
+/// <ul>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModel.html">DescribeMetadataModel</a> and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelChildren.html">DescribeMetadataModelChildren</a> – navigate the target metadata tree and retrieve converted definitions.</p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html">StartMetadataModelExportAsScript</a> – export as data definition language (DDL) scripts to your Amazon S3 bucket.</p></li>
+/// <li>
+/// <p><a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportToTarget.html">StartMetadataModelExportToTarget</a> – apply directly to your target database.</p></li>
+/// </ul></li>
+/// </ul>
+/// <p><b>Required permissions:</b> <code>dms:StartMetadataModelConversion</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMetadataModelConversionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +143,38 @@ impl StartMetadataModelConversionFluentBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_project_identifier()
     }
-    /// <p>A value that specifies the database objects to convert.</p>
+    /// <p>A JSON string that identifies the metadata models to convert. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selection_rules(input.into());
         self
     }
-    /// <p>A value that specifies the database objects to convert.</p>
+    /// <p>A JSON string that identifies the metadata models to convert. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_selection_rules(input);
         self
     }
-    /// <p>A value that specifies the database objects to convert.</p>
+    /// <p>A JSON string that identifies the metadata models to convert. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only source selection rules, where <code>server-name</code> in the object locator matches the source data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_selection_rules()
     }

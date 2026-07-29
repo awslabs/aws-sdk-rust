@@ -3,15 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMigrationProjectsInput {
-    /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
-    /// <p>Valid filter names and values:</p>
+    /// <p>The filters to apply to the migration projects.</p>
+    /// <p>The following filter names are supported:</p>
     /// <ul>
     /// <li>
-    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <p><code>migration-project-identifier</code> – The migration project name or ARN.</p></li>
     /// <li>
-    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <p><code>instance-profile-identifier</code> – The instance profile name or ARN.</p></li>
     /// <li>
-    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// <p><code>data-provider-identifier</code> – The source or target data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>source-data-provider-identifier</code> – The source data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>target-data-provider-identifier</code> – The target data provider name or ARN.</p></li>
     /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, DMS includes a pagination token in the response so that you can retrieve the remaining results.</p>
@@ -21,15 +25,19 @@ pub struct DescribeMigrationProjectsInput {
     pub marker: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMigrationProjectsInput {
-    /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
-    /// <p>Valid filter names and values:</p>
+    /// <p>The filters to apply to the migration projects.</p>
+    /// <p>The following filter names are supported:</p>
     /// <ul>
     /// <li>
-    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <p><code>migration-project-identifier</code> – The migration project name or ARN.</p></li>
     /// <li>
-    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <p><code>instance-profile-identifier</code> – The instance profile name or ARN.</p></li>
     /// <li>
-    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// <p><code>data-provider-identifier</code> – The source or target data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>source-data-provider-identifier</code> – The source data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>target-data-provider-identifier</code> – The target data provider name or ARN.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
@@ -66,15 +74,19 @@ impl DescribeMigrationProjectsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
-    /// <p>Valid filter names and values:</p>
+    /// <p>The filters to apply to the migration projects.</p>
+    /// <p>The following filter names are supported:</p>
     /// <ul>
     /// <li>
-    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <p><code>migration-project-identifier</code> – The migration project name or ARN.</p></li>
     /// <li>
-    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <p><code>instance-profile-identifier</code> – The instance profile name or ARN.</p></li>
     /// <li>
-    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// <p><code>data-provider-identifier</code> – The source or target data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>source-data-provider-identifier</code> – The source data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>target-data-provider-identifier</code> – The target data provider name or ARN.</p></li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
@@ -82,29 +94,37 @@ impl DescribeMigrationProjectsInputBuilder {
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
-    /// <p>Valid filter names and values:</p>
+    /// <p>The filters to apply to the migration projects.</p>
+    /// <p>The following filter names are supported:</p>
     /// <ul>
     /// <li>
-    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <p><code>migration-project-identifier</code> – The migration project name or ARN.</p></li>
     /// <li>
-    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <p><code>instance-profile-identifier</code> – The instance profile name or ARN.</p></li>
     /// <li>
-    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// <p><code>data-provider-identifier</code> – The source or target data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>source-data-provider-identifier</code> – The source data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>target-data-provider-identifier</code> – The target data provider name or ARN.</p></li>
     /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Filters applied to the migration projects described in the form of key-value pairs.</p>
-    /// <p>Valid filter names and values:</p>
+    /// <p>The filters to apply to the migration projects.</p>
+    /// <p>The following filter names are supported:</p>
     /// <ul>
     /// <li>
-    /// <p>instance-profile-identifier, instance profile arn or name</p></li>
+    /// <p><code>migration-project-identifier</code> – The migration project name or ARN.</p></li>
     /// <li>
-    /// <p>data-provider-identifier, data provider arn or name</p></li>
+    /// <p><code>instance-profile-identifier</code> – The instance profile name or ARN.</p></li>
     /// <li>
-    /// <p>migration-project-identifier, migration project arn or name</p></li>
+    /// <p><code>data-provider-identifier</code> – The source or target data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>source-data-provider-identifier</code> – The source data provider name or ARN.</p></li>
+    /// <li>
+    /// <p><code>target-data-provider-identifier</code> – The target data provider name or ARN.</p></li>
     /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters

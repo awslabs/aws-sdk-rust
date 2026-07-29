@@ -4,16 +4,23 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`dataset_id(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::dataset_id) / [`set_dataset_id(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_dataset_id):<br>required: **true**<br><p>The ID of the dataset.</p><br>
+    ///   - [`workspace_name(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::workspace_name) / [`set_workspace_name(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_workspace_name):<br>required: **false**<br><p>The name of the workspace that contains the dataset.</p><br>
+    ///   - [`dataset_version(impl Into<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::dataset_version) / [`set_dataset_version(Option<String>)`](crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::set_dataset_version):<br>required: **false**<br><p>The version of the dataset.</p><br>
     /// - On success, responds with [`DescribeDatasetOutput`](crate::operation::describe_dataset::DescribeDatasetOutput) with field(s):
     ///   - [`dataset_id(String)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_id): <p>The ID of the dataset.</p>
     ///   - [`dataset_arn(String)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_arn): <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">ARN</a> of the dataset. The format is <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dataset/${DatasetId}</code>.</p>
     ///   - [`dataset_name(String)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_name): <p>The name of the dataset.</p>
     ///   - [`dataset_description(String)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_description): <p>A description about the dataset, and its functionality.</p>
+    ///   - [`dataset_type(Option<DatasetTypeEnum>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_type): <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    ///   - [`dataset_config(Option<DatasetConfig>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_config): <p>The configuration for the dataset.</p>
+    ///   - [`workspace_name(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::workspace_name): <p>The name of the workspace that contains the dataset.</p>
+    ///   - [`metadata(Option<HashMap::<String, String>>)`](crate::operation::describe_dataset::DescribeDatasetOutput::metadata): <p>The metadata for the dataset.</p>
     ///   - [`dataset_source(Option<DatasetSource>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_source): <p>The data source for the dataset.</p>
     ///   - [`dataset_status(Option<DatasetStatus>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_status): <p>The status of the dataset. This contains the state and any error messages. State is <code>CREATING</code> after a successfull call to this API, and any associated error message. The state is <code>ACTIVE</code> when ready to use.</p>
     ///   - [`dataset_creation_date(DateTime)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_creation_date): <p>The dataset creation date, in Unix epoch time.</p>
     ///   - [`dataset_last_update_date(DateTime)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_last_update_date): <p>The date the dataset was last updated, in Unix epoch time.</p>
     ///   - [`dataset_version(Option<String>)`](crate::operation::describe_dataset::DescribeDatasetOutput::dataset_version): <p>The version of the dataset.</p>
+    ///   - [`enrichment_status(Option<DatasetEnrichment>)`](crate::operation::describe_dataset::DescribeDatasetOutput::enrichment_status): <p>The enrichment status of the dataset.</p>
     /// - On failure, responds with [`SdkError<DescribeDatasetError>`](crate::operation::describe_dataset::DescribeDatasetError)
     pub fn describe_dataset(&self) -> crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder {
         crate::operation::describe_dataset::builders::DescribeDatasetFluentBuilder::new(self.handle.clone())

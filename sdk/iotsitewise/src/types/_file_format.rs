@@ -8,6 +8,10 @@ pub struct FileFormat {
     pub csv: ::std::option::Option<crate::types::Csv>,
     /// <p>The file is in parquet format.</p>
     pub parquet: ::std::option::Option<crate::types::Parquet>,
+    /// <p>The MP4 format configuration.</p>
+    pub mp4: ::std::option::Option<crate::types::Mp4>,
+    /// <p>The annotation format configuration.</p>
+    pub annotation: ::std::option::Option<crate::types::Annotation>,
 }
 impl FileFormat {
     /// <p>The file is in .CSV format.</p>
@@ -17,6 +21,14 @@ impl FileFormat {
     /// <p>The file is in parquet format.</p>
     pub fn parquet(&self) -> ::std::option::Option<&crate::types::Parquet> {
         self.parquet.as_ref()
+    }
+    /// <p>The MP4 format configuration.</p>
+    pub fn mp4(&self) -> ::std::option::Option<&crate::types::Mp4> {
+        self.mp4.as_ref()
+    }
+    /// <p>The annotation format configuration.</p>
+    pub fn annotation(&self) -> ::std::option::Option<&crate::types::Annotation> {
+        self.annotation.as_ref()
     }
 }
 impl FileFormat {
@@ -32,6 +44,8 @@ impl FileFormat {
 pub struct FileFormatBuilder {
     pub(crate) csv: ::std::option::Option<crate::types::Csv>,
     pub(crate) parquet: ::std::option::Option<crate::types::Parquet>,
+    pub(crate) mp4: ::std::option::Option<crate::types::Mp4>,
+    pub(crate) annotation: ::std::option::Option<crate::types::Annotation>,
 }
 impl FileFormatBuilder {
     /// <p>The file is in .CSV format.</p>
@@ -62,11 +76,41 @@ impl FileFormatBuilder {
     pub fn get_parquet(&self) -> &::std::option::Option<crate::types::Parquet> {
         &self.parquet
     }
+    /// <p>The MP4 format configuration.</p>
+    pub fn mp4(mut self, input: crate::types::Mp4) -> Self {
+        self.mp4 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The MP4 format configuration.</p>
+    pub fn set_mp4(mut self, input: ::std::option::Option<crate::types::Mp4>) -> Self {
+        self.mp4 = input;
+        self
+    }
+    /// <p>The MP4 format configuration.</p>
+    pub fn get_mp4(&self) -> &::std::option::Option<crate::types::Mp4> {
+        &self.mp4
+    }
+    /// <p>The annotation format configuration.</p>
+    pub fn annotation(mut self, input: crate::types::Annotation) -> Self {
+        self.annotation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The annotation format configuration.</p>
+    pub fn set_annotation(mut self, input: ::std::option::Option<crate::types::Annotation>) -> Self {
+        self.annotation = input;
+        self
+    }
+    /// <p>The annotation format configuration.</p>
+    pub fn get_annotation(&self) -> &::std::option::Option<crate::types::Annotation> {
+        &self.annotation
+    }
     /// Consumes the builder and constructs a [`FileFormat`](crate::types::FileFormat).
     pub fn build(self) -> crate::types::FileFormat {
         crate::types::FileFormat {
             csv: self.csv,
             parquet: self.parquet,
+            mp4: self.mp4,
+            annotation: self.annotation,
         }
     }
 }

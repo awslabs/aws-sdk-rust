@@ -22,7 +22,8 @@ impl crate::operation::describe_metadata_model_exports_as_script::builders::Desc
 }
 /// Fluent builder constructing a request to `DescribeMetadataModelExportsAsScript`.
 ///
-/// <p>Returns a paginated list of metadata model exports.</p>
+/// <p>Returns a paginated list of metadata model export requests for a migration project, initiated by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartMetadataModelExportAsScript.html">StartMetadataModelExportAsScript</a>.</p>
+/// <p><b>Required permissions:</b> <code>dms:ListMetadataModelExports</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeMetadataModelExportsAsScriptFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -141,17 +142,38 @@ impl DescribeMetadataModelExportsAsScriptFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters applied to the metadata model exports described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the metadata model export requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters applied to the metadata model exports described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the metadata model export requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Filters applied to the metadata model exports described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the metadata model export requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }

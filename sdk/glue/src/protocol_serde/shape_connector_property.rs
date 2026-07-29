@@ -30,6 +30,9 @@ pub fn ser_connector_property(
     {
         object.key("PropertyType").string(input.property_type.as_str());
     }
+    if let Some(var_7) = &input.format {
+        object.key("Format").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -97,6 +100,13 @@ where
                             builder = builder.set_property_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::PropertyType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Format" => {
+                            builder = builder.set_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

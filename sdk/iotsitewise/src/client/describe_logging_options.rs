@@ -2,7 +2,8 @@
 impl super::Client {
     /// Constructs a fluent builder for the [`DescribeLoggingOptions`](crate::operation::describe_logging_options::builders::DescribeLoggingOptionsFluentBuilder) operation.
     ///
-    /// - The fluent builder takes no input, just [`send`](crate::operation::describe_logging_options::builders::DescribeLoggingOptionsFluentBuilder::send) it.
+    /// - The fluent builder is configurable:
+    ///   - [`workspace_name(impl Into<String>)`](crate::operation::describe_logging_options::builders::DescribeLoggingOptionsFluentBuilder::workspace_name) / [`set_workspace_name(Option<String>)`](crate::operation::describe_logging_options::builders::DescribeLoggingOptionsFluentBuilder::set_workspace_name):<br>required: **false**<br><p>The name of the workspace.</p><br>
     /// - On success, responds with [`DescribeLoggingOptionsOutput`](crate::operation::describe_logging_options::DescribeLoggingOptionsOutput) with field(s):
     ///   - [`logging_options(Option<LoggingOptions>)`](crate::operation::describe_logging_options::DescribeLoggingOptionsOutput::logging_options): <p>The current logging options.</p>
     /// - On failure, responds with [`SdkError<DescribeLoggingOptionsError>`](crate::operation::describe_logging_options::DescribeLoggingOptionsError)

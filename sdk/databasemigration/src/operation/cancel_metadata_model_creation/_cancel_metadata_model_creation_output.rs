@@ -3,12 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelMetadataModelCreationOutput {
-    /// <p>Provides information about a schema conversion action.</p>
+    /// <p>The metadata model creation request.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub request: ::std::option::Option<crate::types::SchemaConversionRequest>,
     _request_id: Option<String>,
 }
 impl CancelMetadataModelCreationOutput {
-    /// <p>Provides information about a schema conversion action.</p>
+    /// <p>The metadata model creation request.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub fn request(&self) -> ::std::option::Option<&crate::types::SchemaConversionRequest> {
         self.request.as_ref()
     }
@@ -33,17 +37,23 @@ pub struct CancelMetadataModelCreationOutputBuilder {
     _request_id: Option<String>,
 }
 impl CancelMetadataModelCreationOutputBuilder {
-    /// <p>Provides information about a schema conversion action.</p>
+    /// <p>The metadata model creation request.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub fn request(mut self, input: crate::types::SchemaConversionRequest) -> Self {
         self.request = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides information about a schema conversion action.</p>
+    /// <p>The metadata model creation request.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub fn set_request(mut self, input: ::std::option::Option<crate::types::SchemaConversionRequest>) -> Self {
         self.request = input;
         self
     }
-    /// <p>Provides information about a schema conversion action.</p>
+    /// <p>The metadata model creation request.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub fn get_request(&self) -> &::std::option::Option<crate::types::SchemaConversionRequest> {
         &self.request
     }

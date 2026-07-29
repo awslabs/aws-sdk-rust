@@ -128,6 +128,34 @@ impl ListDatasetsFluentBuilder {
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::DatasetSourceType> {
         self.inner.get_source_type()
     }
+    /// <p>The name of the workspace to filter datasets by.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_name(input.into());
+        self
+    }
+    /// <p>The name of the workspace to filter datasets by.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_name(input);
+        self
+    }
+    /// <p>The name of the workspace to filter datasets by.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_name()
+    }
+    /// <p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn dataset_type(mut self, input: crate::types::DatasetTypeEnum) -> Self {
+        self.inner = self.inner.dataset_type(input);
+        self
+    }
+    /// <p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetTypeEnum>) -> Self {
+        self.inner = self.inner.set_dataset_type(input);
+        self
+    }
+    /// <p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetTypeEnum> {
+        self.inner.get_dataset_type()
+    }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

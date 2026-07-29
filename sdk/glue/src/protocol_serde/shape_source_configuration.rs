@@ -20,38 +20,45 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "RequestMethod" => {
-                            builder = builder.set_request_method(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::HttpMethod::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "RequestMethod" => {
+                                builder = builder.set_request_method(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::HttpMethod::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "RequestPath" => {
+                                builder = builder.set_request_path(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "RequestParameters" => {
+                                builder = builder.set_request_parameters(
+                                    crate::protocol_serde::shape_connector_property_list::de_connector_property_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "ResponseConfiguration" => {
+                                builder = builder.set_response_configuration(
+                                    crate::protocol_serde::shape_response_configuration::de_response_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "PaginationConfiguration" => {
+                                builder = builder.set_pagination_configuration(
+                                    crate::protocol_serde::shape_pagination_configuration::de_pagination_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "FilterConfiguration" => {
+                                builder = builder.set_filter_configuration(
+                                    crate::protocol_serde::shape_filter_configuration::de_filter_configuration(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "RequestPath" => {
-                            builder = builder.set_request_path(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "RequestParameters" => {
-                            builder = builder.set_request_parameters(
-                                crate::protocol_serde::shape_connector_property_list::de_connector_property_list(tokens, _value, depth + 1)?,
-                            );
-                        }
-                        "ResponseConfiguration" => {
-                            builder = builder.set_response_configuration(
-                                crate::protocol_serde::shape_response_configuration::de_response_configuration(tokens, _value, depth + 1)?,
-                            );
-                        }
-                        "PaginationConfiguration" => {
-                            builder = builder.set_pagination_configuration(
-                                crate::protocol_serde::shape_pagination_configuration::de_pagination_configuration(tokens, _value, depth + 1)?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"
@@ -100,6 +107,12 @@ pub fn ser_source_configuration(
         let mut object_10 = object.key("PaginationConfiguration").start_object();
         crate::protocol_serde::shape_pagination_configuration::ser_pagination_configuration(&mut object_10, var_9)?;
         object_10.finish();
+    }
+    if let Some(var_11) = &input.filter_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("FilterConfiguration").start_object();
+        crate::protocol_serde::shape_filter_configuration::ser_filter_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

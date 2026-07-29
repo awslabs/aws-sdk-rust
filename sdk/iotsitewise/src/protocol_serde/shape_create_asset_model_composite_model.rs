@@ -261,6 +261,13 @@ pub(crate) fn de_create_asset_model_composite_model(
                         )?,
                     );
                 }
+                "assetModelId" => {
+                    builder = builder.set_asset_model_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "assetModelStatus" => {
                     builder = builder.set_asset_model_status(crate::protocol_serde::shape_asset_model_status::de_asset_model_status(
                         tokens,

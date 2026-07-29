@@ -10,7 +10,7 @@ pub struct CreateTransitGatewayVpcAttachmentRequestOptions {
     /// <p>This option is set to <code>enable</code> by default. However, at the transit gateway level the default is set to <code>disable</code>.</p>
     /// <p>For more information about security group referencing, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#vpc-attachment-security">Security group referencing </a> in the <i>Amazon Web Services Transit Gateways Guide</i>.</p>
     pub security_group_referencing_support: ::std::option::Option<crate::types::SecurityGroupReferencingSupportValue>,
-    /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
+    /// <p>Specifies whether IPv6 support is enabled for the attachment. When enabled, the transit gateway network interface receives an IPv6 address. When you enable route propagation, IPv6 VPC CIDRs propagate to the transit gateway route tables. When disabled, the network interface does not receive an IPv6 address, and IPv6 routes do not propagate. The setting does not filter IPv6 traffic. The default is <code>disable</code>.</p>
     pub ipv6_support: ::std::option::Option<crate::types::Ipv6SupportValue>,
     /// <p>Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is <code>disable</code>.</p>
     pub appliance_mode_support: ::std::option::Option<crate::types::ApplianceModeSupportValue>,
@@ -26,7 +26,7 @@ impl CreateTransitGatewayVpcAttachmentRequestOptions {
     pub fn security_group_referencing_support(&self) -> ::std::option::Option<&crate::types::SecurityGroupReferencingSupportValue> {
         self.security_group_referencing_support.as_ref()
     }
-    /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
+    /// <p>Specifies whether IPv6 support is enabled for the attachment. When enabled, the transit gateway network interface receives an IPv6 address. When you enable route propagation, IPv6 VPC CIDRs propagate to the transit gateway route tables. When disabled, the network interface does not receive an IPv6 address, and IPv6 routes do not propagate. The setting does not filter IPv6 traffic. The default is <code>disable</code>.</p>
     pub fn ipv6_support(&self) -> ::std::option::Option<&crate::types::Ipv6SupportValue> {
         self.ipv6_support.as_ref()
     }
@@ -89,17 +89,17 @@ impl CreateTransitGatewayVpcAttachmentRequestOptionsBuilder {
     pub fn get_security_group_referencing_support(&self) -> &::std::option::Option<crate::types::SecurityGroupReferencingSupportValue> {
         &self.security_group_referencing_support
     }
-    /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
+    /// <p>Specifies whether IPv6 support is enabled for the attachment. When enabled, the transit gateway network interface receives an IPv6 address. When you enable route propagation, IPv6 VPC CIDRs propagate to the transit gateway route tables. When disabled, the network interface does not receive an IPv6 address, and IPv6 routes do not propagate. The setting does not filter IPv6 traffic. The default is <code>disable</code>.</p>
     pub fn ipv6_support(mut self, input: crate::types::Ipv6SupportValue) -> Self {
         self.ipv6_support = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
+    /// <p>Specifies whether IPv6 support is enabled for the attachment. When enabled, the transit gateway network interface receives an IPv6 address. When you enable route propagation, IPv6 VPC CIDRs propagate to the transit gateway route tables. When disabled, the network interface does not receive an IPv6 address, and IPv6 routes do not propagate. The setting does not filter IPv6 traffic. The default is <code>disable</code>.</p>
     pub fn set_ipv6_support(mut self, input: ::std::option::Option<crate::types::Ipv6SupportValue>) -> Self {
         self.ipv6_support = input;
         self
     }
-    /// <p>Enable or disable IPv6 support. The default is <code>disable</code>.</p>
+    /// <p>Specifies whether IPv6 support is enabled for the attachment. When enabled, the transit gateway network interface receives an IPv6 address. When you enable route propagation, IPv6 VPC CIDRs propagate to the transit gateway route tables. When disabled, the network interface does not receive an IPv6 address, and IPv6 routes do not propagate. The setting does not filter IPv6 traffic. The default is <code>disable</code>.</p>
     pub fn get_ipv6_support(&self) -> &::std::option::Option<crate::types::Ipv6SupportValue> {
         &self.ipv6_support
     }

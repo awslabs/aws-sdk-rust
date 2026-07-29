@@ -13,19 +13,25 @@ pub use crate::types::_stream_group_status::StreamGroupStatus;
 
 pub use crate::types::_stream_group_status_reason::StreamGroupStatusReason;
 
+pub use crate::types::_protocol::Protocol;
+
+pub use crate::types::_display_configuration::DisplayConfiguration;
+
+pub use crate::types::_stream_url_status::StreamUrlStatus;
+
+pub use crate::types::_stream_url_status_reason::StreamUrlStatusReason;
+
 pub use crate::types::_stream_session_status::StreamSessionStatus;
 
 pub use crate::types::_stream_session_status_reason::StreamSessionStatusReason;
-
-pub use crate::types::_protocol::Protocol;
 
 pub use crate::types::_performance_stats_configuration::PerformanceStatsConfiguration;
 
 pub use crate::types::_export_files_metadata::ExportFilesMetadata;
 
-pub use crate::types::_display_configuration::DisplayConfiguration;
-
 pub use crate::types::_export_files_status::ExportFilesStatus;
+
+pub use crate::types::_revocation_mode::RevocationMode;
 
 pub use crate::types::_runtime_environment_type::RuntimeEnvironmentType;
 
@@ -39,6 +45,10 @@ pub use crate::types::_resolution::Resolution;
 
 pub use crate::types::_stream_session_summary::StreamSessionSummary;
 
+pub use crate::types::_shader_cache_summary::ShaderCacheSummary;
+
+pub use crate::types::_stream_url_summary::StreamUrlSummary;
+
 pub use crate::types::_replication_status_type::ReplicationStatusType;
 
 pub use crate::types::_stream_group_location_status::StreamGroupLocationStatus;
@@ -50,6 +60,8 @@ pub use crate::types::_application_summary::ApplicationSummary;
 pub use crate::types::_stream_group_summary::StreamGroupSummary;
 
 pub use crate::types::_vpc_transit_configuration::VpcTransitConfiguration;
+
+pub use crate::types::_shader_cache_status::ShaderCacheStatus;
 
 mod _application_status;
 
@@ -79,9 +91,15 @@ mod _replication_status_type;
 
 mod _resolution;
 
+mod _revocation_mode;
+
 mod _runtime_environment;
 
 mod _runtime_environment_type;
+
+mod _shader_cache_status;
+
+mod _shader_cache_summary;
 
 mod _stream_class;
 
@@ -98,6 +116,12 @@ mod _stream_session_status;
 mod _stream_session_status_reason;
 
 mod _stream_session_summary;
+
+mod _stream_url_status;
+
+mod _stream_url_status_reason;
+
+mod _stream_url_summary;
 
 mod _vpc_transit_configuration;
 

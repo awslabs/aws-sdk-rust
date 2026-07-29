@@ -23,6 +23,7 @@ impl crate::operation::modify_conversion_configuration::builders::ModifyConversi
 /// Fluent builder constructing a request to `ModifyConversionConfiguration`.
 ///
 /// <p>Modifies the specified schema conversion configuration using the provided parameters.</p>
+/// <p><b>Required permissions:</b> <code>dms:UpdateConversionConfiguration</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyConversionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,17 +123,32 @@ impl ModifyConversionConfigurationFluentBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_project_identifier()
     }
-    /// <p>The new conversion configuration.</p>
+    /// <p>A JSON string that contains the schema conversion settings to update. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Include only the sections and keys to change. The operation merges supplied values with the existing configuration.</p></li>
+    /// </ul>
     pub fn conversion_configuration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.conversion_configuration(input.into());
         self
     }
-    /// <p>The new conversion configuration.</p>
+    /// <p>A JSON string that contains the schema conversion settings to update. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Include only the sections and keys to change. The operation merges supplied values with the existing configuration.</p></li>
+    /// </ul>
     pub fn set_conversion_configuration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_conversion_configuration(input);
         self
     }
-    /// <p>The new conversion configuration.</p>
+    /// <p>A JSON string that contains the schema conversion settings to update. For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying schema conversion settings for migration projects</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Include only the sections and keys to change. The operation merges supplied values with the existing configuration.</p></li>
+    /// </ul>
     pub fn get_conversion_configuration(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_conversion_configuration()
     }

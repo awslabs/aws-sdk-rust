@@ -7,7 +7,13 @@ pub struct CreateBulkImportJobInput {
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IAM role that allows IoT SiteWise to read Amazon S3 data.</p>
     pub job_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::File>>,
     /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
     pub error_report_location: ::std::option::Option<crate::types::ErrorReportLocation>,
@@ -17,6 +23,10 @@ pub struct CreateBulkImportJobInput {
     pub adaptive_ingestion: ::std::option::Option<bool>,
     /// <p>If set to true, your data files is deleted from S3, after ingestion into IoT SiteWise storage.</p>
     pub delete_files_after_import: ::std::option::Option<bool>,
+    /// <p>The ID of the session dataset to ingest data into. Specify this field, together with <code>workspaceName</code>, to ingest data into a session dataset in a workspace.</p>
+    pub dataset_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace that contains the session dataset. Specify this field together with <code>datasetId</code>.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateBulkImportJobInput {
     /// <p>The unique name that helps identify the job request.</p>
@@ -27,7 +37,13 @@ impl CreateBulkImportJobInput {
     pub fn job_role_arn(&self) -> ::std::option::Option<&str> {
         self.job_role_arn.as_deref()
     }
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.files.is_none()`.
     pub fn files(&self) -> &[crate::types::File] {
@@ -49,6 +65,14 @@ impl CreateBulkImportJobInput {
     pub fn delete_files_after_import(&self) -> ::std::option::Option<bool> {
         self.delete_files_after_import
     }
+    /// <p>The ID of the session dataset to ingest data into. Specify this field, together with <code>workspaceName</code>, to ingest data into a session dataset in a workspace.</p>
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+        self.dataset_id.as_deref()
+    }
+    /// <p>The name of the workspace that contains the session dataset. Specify this field together with <code>datasetId</code>.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
 }
 impl CreateBulkImportJobInput {
     /// Creates a new builder-style object to manufacture [`CreateBulkImportJobInput`](crate::operation::create_bulk_import_job::CreateBulkImportJobInput).
@@ -68,6 +92,8 @@ pub struct CreateBulkImportJobInputBuilder {
     pub(crate) job_configuration: ::std::option::Option<crate::types::JobConfiguration>,
     pub(crate) adaptive_ingestion: ::std::option::Option<bool>,
     pub(crate) delete_files_after_import: ::std::option::Option<bool>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateBulkImportJobInputBuilder {
     /// <p>The unique name that helps identify the job request.</p>
@@ -104,19 +130,37 @@ impl CreateBulkImportJobInputBuilder {
     ///
     /// To override the contents of this collection use [`set_files`](Self::set_files).
     ///
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn files(mut self, input: crate::types::File) -> Self {
         let mut v = self.files.unwrap_or_default();
         v.push(input);
         self.files = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn set_files(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::File>>) -> Self {
         self.files = input;
         self
     }
-    /// <p>The files in the specified Amazon S3 bucket that contain your data.</p>
+    /// <p>The files in the specified Amazon S3 bucket that contain your data. You can specify up to 100 files for each bulk import job. Each file supports the following size limits:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Parquet files – Up to 256 MiB.</p></li>
+    /// <li>
+    /// <p>Other file formats – Up to 5 GiB.</p></li>
+    /// </ul>
     pub fn get_files(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::File>> {
         &self.files
     }
@@ -136,7 +180,6 @@ impl CreateBulkImportJobInputBuilder {
         &self.error_report_location
     }
     /// <p>Contains the configuration information of a job, such as the file format used to save data in Amazon S3.</p>
-    /// This field is required.
     pub fn job_configuration(mut self, input: crate::types::JobConfiguration) -> Self {
         self.job_configuration = ::std::option::Option::Some(input);
         self
@@ -178,6 +221,34 @@ impl CreateBulkImportJobInputBuilder {
     pub fn get_delete_files_after_import(&self) -> &::std::option::Option<bool> {
         &self.delete_files_after_import
     }
+    /// <p>The ID of the session dataset to ingest data into. Specify this field, together with <code>workspaceName</code>, to ingest data into a session dataset in a workspace.</p>
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the session dataset to ingest data into. Specify this field, together with <code>workspaceName</code>, to ingest data into a session dataset in a workspace.</p>
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataset_id = input;
+        self
+    }
+    /// <p>The ID of the session dataset to ingest data into. Specify this field, together with <code>workspaceName</code>, to ingest data into a session dataset in a workspace.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
+    /// <p>The name of the workspace that contains the session dataset. Specify this field together with <code>datasetId</code>.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the session dataset. Specify this field together with <code>datasetId</code>.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace that contains the session dataset. Specify this field together with <code>datasetId</code>.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`CreateBulkImportJobInput`](crate::operation::create_bulk_import_job::CreateBulkImportJobInput).
     pub fn build(
         self,
@@ -191,6 +262,8 @@ impl CreateBulkImportJobInputBuilder {
             job_configuration: self.job_configuration,
             adaptive_ingestion: self.adaptive_ingestion,
             delete_files_after_import: self.delete_files_after_import,
+            dataset_id: self.dataset_id,
+            workspace_name: self.workspace_name,
         })
     }
 }

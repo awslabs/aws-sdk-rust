@@ -194,7 +194,13 @@ mod associate_assets;
 
 mod associate_time_series_to_asset_property;
 
+mod batch_associate_data_segments_to_dataset;
+
 mod batch_associate_project_assets;
+
+mod batch_delete_dataset_data_segments;
+
+mod batch_disassociate_data_segments_from_dataset;
 
 mod batch_disassociate_project_assets;
 
@@ -206,7 +212,15 @@ mod batch_get_asset_property_value_history;
 
 mod batch_put_asset_property_value;
 
+mod cancel_enrichment_job;
+
+mod cancel_pipeline_execution;
+
+mod cancel_query;
+
 mod create_access_policy;
+
+mod create_application;
 
 mod create_asset;
 
@@ -222,11 +236,21 @@ mod create_dashboard;
 
 mod create_dataset;
 
+mod create_dataset_export_job;
+
+mod create_enrichment_job;
+
 mod create_gateway;
+
+mod create_pipeline;
 
 mod create_portal;
 
 mod create_project;
+
+mod create_task;
+
+mod create_workspace;
 
 /// Operation customization and supporting types.
 ///
@@ -257,6 +281,8 @@ pub mod customize;
 
 mod delete_access_policy;
 
+mod delete_application;
+
 mod delete_asset;
 
 mod delete_asset_model;
@@ -273,15 +299,23 @@ mod delete_dataset;
 
 mod delete_gateway;
 
+mod delete_pipeline;
+
 mod delete_portal;
 
 mod delete_project;
 
+mod delete_task;
+
 mod delete_time_series;
+
+mod delete_workspace;
 
 mod describe_access_policy;
 
 mod describe_action;
+
+mod describe_application;
 
 mod describe_asset;
 
@@ -305,7 +339,11 @@ mod describe_dashboard;
 
 mod describe_dataset;
 
+mod describe_dataset_export_job;
+
 mod describe_default_encryption_configuration;
+
+mod describe_enrichment_job;
 
 mod describe_execution;
 
@@ -315,13 +353,25 @@ mod describe_gateway_capability_configuration;
 
 mod describe_logging_options;
 
+mod describe_pipeline;
+
+mod describe_pipeline_execution;
+
 mod describe_portal;
 
 mod describe_project;
 
+mod describe_query;
+
+mod describe_search;
+
 mod describe_storage_configuration;
 
+mod describe_task;
+
 mod describe_time_series;
+
+mod describe_workspace;
 
 mod disassociate_assets;
 
@@ -337,13 +387,21 @@ mod get_asset_property_value;
 
 mod get_asset_property_value_history;
 
+mod get_capture_data;
+
 mod get_interpolated_asset_property_values;
+
+mod get_query_results;
+
+mod get_search_results;
 
 mod invoke_assistant;
 
 mod list_access_policies;
 
 mod list_actions;
+
+mod list_applications;
 
 mod list_asset_model_composite_models;
 
@@ -371,7 +429,15 @@ mod list_computation_models;
 
 mod list_dashboards;
 
+mod list_dataset_data_segment_relationships;
+
+mod list_dataset_data_segments;
+
+mod list_dataset_export_jobs;
+
 mod list_datasets;
+
+mod list_enrichment_jobs;
 
 mod list_executions;
 
@@ -379,15 +445,27 @@ mod list_gateways;
 
 mod list_interface_relationships;
 
+mod list_pipeline_executions;
+
+mod list_pipelines;
+
 mod list_portals;
 
 mod list_project_assets;
 
 mod list_projects;
 
+mod list_queries;
+
+mod list_searches;
+
 mod list_tags_for_resource;
 
+mod list_tasks;
+
 mod list_time_series;
+
+mod list_workspaces;
 
 mod put_asset_model_interface_relationship;
 
@@ -396,6 +474,12 @@ mod put_default_encryption_configuration;
 mod put_logging_options;
 
 mod put_storage_configuration;
+
+mod start_pipeline_execution;
+
+mod start_query;
+
+mod start_search;
 
 mod tag_resource;
 
@@ -421,6 +505,12 @@ mod update_gateway;
 
 mod update_gateway_capability_configuration;
 
+mod update_pipeline;
+
 mod update_portal;
 
 mod update_project;
+
+mod update_task;
+
+mod update_workspace;

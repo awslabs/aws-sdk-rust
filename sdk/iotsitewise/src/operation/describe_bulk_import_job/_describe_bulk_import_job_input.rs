@@ -5,11 +5,17 @@
 pub struct DescribeBulkImportJobInput {
     /// <p>The ID of the job.</p>
     pub job_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBulkImportJobInput {
     /// <p>The ID of the job.</p>
     pub fn job_id(&self) -> ::std::option::Option<&str> {
         self.job_id.as_deref()
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
     }
 }
 impl DescribeBulkImportJobInput {
@@ -24,6 +30,7 @@ impl DescribeBulkImportJobInput {
 #[non_exhaustive]
 pub struct DescribeBulkImportJobInputBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeBulkImportJobInputBuilder {
     /// <p>The ID of the job.</p>
@@ -41,11 +48,28 @@ impl DescribeBulkImportJobInputBuilder {
     pub fn get_job_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_id
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`DescribeBulkImportJobInput`](crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput, ::aws_smithy_types::error::operation::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput { job_id: self.job_id })
+        ::std::result::Result::Ok(crate::operation::describe_bulk_import_job::DescribeBulkImportJobInput {
+            job_id: self.job_id,
+            workspace_name: self.workspace_name,
+        })
     }
 }

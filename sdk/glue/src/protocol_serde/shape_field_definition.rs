@@ -9,6 +9,27 @@ pub fn ser_field_definition(
     {
         object.key("FieldDataType").string(input.field_data_type.as_str());
     }
+    if let Some(var_1) = &input.response_date_format {
+        object.key("ResponseDateFormat").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.is_partitionable {
+        object.key("IsPartitionable").boolean(*var_2);
+    }
+    if let Some(var_3) = &input.is_nullable {
+        object.key("IsNullable").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.is_queryable {
+        object.key("IsQueryable").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.is_orderable {
+        object.key("IsOrderable").boolean(*var_5);
+    }
+    if let Some(var_6) = &input.filter_overrides {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("FilterOverrides").start_object();
+        crate::protocol_serde::shape_filter_overrides::ser_filter_overrides(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -47,6 +68,32 @@ where
                                     .map(|s| s.to_unescaped().map(|u| crate::types::FieldDataType::from(u.as_ref())))
                                     .transpose()?,
                             );
+                        }
+                        "ResponseDateFormat" => {
+                            builder = builder.set_response_date_format(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "IsPartitionable" => {
+                            builder = builder.set_is_partitionable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IsNullable" => {
+                            builder = builder.set_is_nullable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IsQueryable" => {
+                            builder = builder.set_is_queryable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "IsOrderable" => {
+                            builder = builder.set_is_orderable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "FilterOverrides" => {
+                            builder = builder.set_filter_overrides(crate::protocol_serde::shape_filter_overrides::de_filter_overrides(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

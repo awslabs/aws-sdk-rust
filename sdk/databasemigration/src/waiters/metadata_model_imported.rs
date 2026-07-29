@@ -103,17 +103,38 @@ impl MetadataModelImportedFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters applied to the metadata model imports described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the metadata model import requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters applied to the metadata model imports described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the metadata model import requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Filters applied to the metadata model imports described in the form of key-value pairs.</p>
+    /// <p>The filters to apply to the metadata model import requests.</p>
+    /// <p>The following filter names are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>request-id</code> – The request identifier.</p></li>
+    /// <li>
+    /// <p><code>status</code> – The request status. Valid values: <code>RECEIVED</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>.</p></li>
+    /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
@@ -134,17 +155,17 @@ impl MetadataModelImportedFluentBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_marker()
     }
-    /// <p>A paginated list of metadata model imports.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, DMS includes a pagination token in the response so that you can retrieve the remaining results.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>A paginated list of metadata model imports.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, DMS includes a pagination token in the response so that you can retrieve the remaining results.</p>
     pub fn set_max_records(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
         self
     }
-    /// <p>A paginated list of metadata model imports.</p>
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, DMS includes a pagination token in the response so that you can retrieve the remaining results.</p>
     pub fn get_max_records(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_records()
     }

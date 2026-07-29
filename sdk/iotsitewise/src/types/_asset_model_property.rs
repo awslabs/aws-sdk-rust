@@ -17,6 +17,7 @@ pub struct AssetModelProperty {
     /// <p>The name of the asset model property.</p>
     pub name: ::std::string::String,
     /// <p>The data type of the asset model property.</p>
+    /// <p>The <code>VIDEO</code>, <code>ANNOTATION</code>, and <code>JSON</code> data types aren't supported for asset model properties. These types are used only by time series that store data for datasets in a workspace.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     pub data_type: crate::types::PropertyDataType,
     /// <p>The data type of the structure for this property. This parameter exists on properties that have the <code>STRUCT</code> data type.</p>
@@ -49,6 +50,7 @@ impl AssetModelProperty {
         self.name.deref()
     }
     /// <p>The data type of the asset model property.</p>
+    /// <p>The <code>VIDEO</code>, <code>ANNOTATION</code>, and <code>JSON</code> data types aren't supported for asset model properties. These types are used only by time series that store data for datasets in a workspace.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     pub fn data_type(&self) -> &crate::types::PropertyDataType {
         &self.data_type
@@ -155,6 +157,7 @@ impl AssetModelPropertyBuilder {
         &self.name
     }
     /// <p>The data type of the asset model property.</p>
+    /// <p>The <code>VIDEO</code>, <code>ANNOTATION</code>, and <code>JSON</code> data types aren't supported for asset model properties. These types are used only by time series that store data for datasets in a workspace.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     /// This field is required.
     pub fn data_type(mut self, input: crate::types::PropertyDataType) -> Self {
@@ -162,12 +165,14 @@ impl AssetModelPropertyBuilder {
         self
     }
     /// <p>The data type of the asset model property.</p>
+    /// <p>The <code>VIDEO</code>, <code>ANNOTATION</code>, and <code>JSON</code> data types aren't supported for asset model properties. These types are used only by time series that store data for datasets in a workspace.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::PropertyDataType>) -> Self {
         self.data_type = input;
         self
     }
     /// <p>The data type of the asset model property.</p>
+    /// <p>The <code>VIDEO</code>, <code>ANNOTATION</code>, and <code>JSON</code> data types aren't supported for asset model properties. These types are used only by time series that store data for datasets in a workspace.</p>
     /// <p>If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code> to identify the type of the structure for this property.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::PropertyDataType> {
         &self.data_type

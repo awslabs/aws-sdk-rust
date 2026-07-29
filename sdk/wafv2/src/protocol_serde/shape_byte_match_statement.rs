@@ -26,6 +26,18 @@ pub fn ser_byte_match_statement(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.pre_parse_text_transformations {
+        let mut array_7 = object.key("PreParseTextTransformations").start_array();
+        for item_8 in var_6 {
+            {
+                #[allow(unused_mut)]
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_pre_parse_text_transformation::ser_pre_parse_text_transformation(&mut object_9, item_8)?;
+                object_9.finish();
+            }
+        }
+        array_7.finish();
+    }
     {
         object.key("PositionalConstraint").string(input.positional_constraint.as_str());
     }
@@ -68,6 +80,15 @@ where
                             "TextTransformations" => {
                                 builder = builder.set_text_transformations(
                                     crate::protocol_serde::shape_text_transformations::de_text_transformations(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "PreParseTextTransformations" => {
+                                builder = builder.set_pre_parse_text_transformations(
+                                    crate::protocol_serde::shape_pre_parse_text_transformations::de_pre_parse_text_transformations(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             "PositionalConstraint" => {

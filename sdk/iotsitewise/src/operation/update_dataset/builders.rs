@@ -122,6 +122,20 @@ impl UpdateDatasetFluentBuilder {
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_id()
     }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_name(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_name(input);
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_name()
+    }
     /// <p>The name of the dataset.</p>
     pub fn dataset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_name(input.into());
@@ -149,6 +163,39 @@ impl UpdateDatasetFluentBuilder {
     /// <p>A description about the dataset, and its functionality.</p>
     pub fn get_dataset_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_description()
+    }
+    /// <p>The updated configuration for the dataset.</p>
+    pub fn dataset_config(mut self, input: crate::types::DatasetConfig) -> Self {
+        self.inner = self.inner.dataset_config(input);
+        self
+    }
+    /// <p>The updated configuration for the dataset.</p>
+    pub fn set_dataset_config(mut self, input: ::std::option::Option<crate::types::DatasetConfig>) -> Self {
+        self.inner = self.inner.set_dataset_config(input);
+        self
+    }
+    /// <p>The updated configuration for the dataset.</p>
+    pub fn get_dataset_config(&self) -> &::std::option::Option<crate::types::DatasetConfig> {
+        self.inner.get_dataset_config()
+    }
+    ///
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>The updated metadata for the dataset.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.metadata(k.into(), v.into());
+        self
+    }
+    /// <p>The updated metadata for the dataset.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_metadata(input);
+        self
+    }
+    /// <p>The updated metadata for the dataset.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_metadata()
     }
     /// <p>The data source for the dataset.</p>
     pub fn dataset_source(mut self, input: crate::types::DatasetSource) -> Self {

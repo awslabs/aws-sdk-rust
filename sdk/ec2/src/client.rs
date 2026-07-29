@@ -697,6 +697,8 @@ mod create_transit_gateway_peering_attachment;
 
 mod create_transit_gateway_policy_table;
 
+mod create_transit_gateway_policy_table_entry;
+
 mod create_transit_gateway_prefix_list_reference;
 
 mod create_transit_gateway_route;
@@ -909,6 +911,8 @@ mod delete_transit_gateway_multicast_domain;
 mod delete_transit_gateway_peering_attachment;
 
 mod delete_transit_gateway_policy_table;
+
+mod delete_transit_gateway_policy_table_entry;
 
 mod delete_transit_gateway_prefix_list_reference;
 
@@ -1759,6 +1763,8 @@ mod modify_traffic_mirror_session;
 mod modify_transit_gateway;
 
 mod modify_transit_gateway_metering_policy;
+
+mod modify_transit_gateway_policy_table_entry;
 
 mod modify_transit_gateway_prefix_list_reference;
 

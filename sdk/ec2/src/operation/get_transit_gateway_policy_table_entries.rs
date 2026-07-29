@@ -371,3 +371,6 @@ mod _get_transit_gateway_policy_table_entries_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

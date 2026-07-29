@@ -15,17 +15,27 @@ pub use crate::types::_computation_model_configuration::ComputationModelConfigur
 
 pub use crate::types::_computation_model_status::ComputationModelStatusBuilder;
 
+pub use crate::types::_dataset_config::DatasetConfigBuilder;
+
 pub use crate::types::_dataset_source::DatasetSourceBuilder;
 
 pub use crate::types::_dataset_status::DatasetStatusBuilder;
 
+pub use crate::types::_export_error_report_location::ExportErrorReportLocationBuilder;
+
 pub use crate::types::_gateway_platform::GatewayPlatformBuilder;
+
+pub use crate::types::_resource_status::ResourceStatusBuilder;
 
 pub use crate::types::_image_file::ImageFileBuilder;
 
 pub use crate::types::_alarms::AlarmsBuilder;
 
 pub use crate::types::_portal_status::PortalStatusBuilder;
+
+pub use crate::types::_workspace_encryption_configuration::WorkspaceEncryptionConfigurationBuilder;
+
+pub use crate::types::_workspace_status::WorkspaceStatusBuilder;
 
 pub use crate::types::_target_resource::TargetResourceBuilder;
 
@@ -39,13 +49,21 @@ pub use crate::types::_property::PropertyBuilder;
 
 pub use crate::types::_composite_model_property::CompositeModelPropertyBuilder;
 
+pub use crate::types::_dataset_enrichment::DatasetEnrichmentBuilder;
+
 pub use crate::types::_configuration_status::ConfigurationStatusBuilder;
 
 pub use crate::types::_execution_status::ExecutionStatusBuilder;
 
 pub use crate::types::_logging_options::LoggingOptionsBuilder;
 
+pub use crate::types::_pipeline_execution_status::PipelineExecutionStatusBuilder;
+
+pub use crate::types::_execution_environment_variables::ExecutionEnvironmentVariablesBuilder;
+
 pub use crate::types::_image_location::ImageLocationBuilder;
+
+pub use crate::types::_query_statistics::QueryStatisticsBuilder;
 
 pub use crate::types::_multi_layer_storage::MultiLayerStorageBuilder;
 
@@ -53,15 +71,37 @@ pub use crate::types::_retention_period::RetentionPeriodBuilder;
 
 pub use crate::types::_warm_tier_retention_period::WarmTierRetentionPeriodBuilder;
 
+pub use crate::types::_workspace_encryption_configuration_info::WorkspaceEncryptionConfigurationInfoBuilder;
+
 pub use crate::types::_asset_property_value::AssetPropertyValueBuilder;
+
+pub use crate::types::_time_in_nanos::TimeInNanosBuilder;
+
+pub use crate::types::_format_settings::FormatSettingsBuilder;
 
 pub use crate::types::_data_binding_value_filter::DataBindingValueFilterBuilder;
 
+pub use crate::types::_list_searches_filters::ListSearchesFiltersBuilder;
+
 pub use crate::types::_property_mapping_configuration::PropertyMappingConfigurationBuilder;
+
+pub use crate::types::_search_filters::SearchFiltersBuilder;
 
 pub use crate::types::_image::ImageBuilder;
 
+pub use crate::types::_associate_data_segment_entry::AssociateDataSegmentEntryBuilder;
+
+pub use crate::types::_failed_data_segment_association::FailedDataSegmentAssociationBuilder;
+
 pub use crate::types::_asset_error_details::AssetErrorDetailsBuilder;
+
+pub use crate::types::_delete_data_segment_entry::DeleteDataSegmentEntryBuilder;
+
+pub use crate::types::_failed_data_segment_deletion::FailedDataSegmentDeletionBuilder;
+
+pub use crate::types::_disassociate_data_segment_entry::DisassociateDataSegmentEntryBuilder;
+
+pub use crate::types::_failed_data_segment_disassociation::FailedDataSegmentDisassociationBuilder;
 
 pub use crate::types::_batch_get_asset_property_aggregates_entry::BatchGetAssetPropertyAggregatesEntryBuilder;
 
@@ -121,7 +161,13 @@ pub use crate::types::_computation_model_anomaly_detection_configuration::Comput
 
 pub use crate::types::_computation_model_data_binding_value::ComputationModelDataBindingValueBuilder;
 
+pub use crate::types::_session_config::SessionConfigBuilder;
+
 pub use crate::types::_source_detail::SourceDetailBuilder;
+
+pub use crate::types::_dataset_item::DatasetItemBuilder;
+
+pub use crate::types::_event_detection::EventDetectionBuilder;
 
 pub use crate::types::_greengrass::GreengrassBuilder;
 
@@ -129,9 +175,17 @@ pub use crate::types::_greengrass_v2::GreengrassV2Builder;
 
 pub use crate::types::_siemens_ie::SiemensIeBuilder;
 
+pub use crate::types::_compute_node::ComputeNodeBuilder;
+
+pub use crate::types::_resource_error::ResourceErrorBuilder;
+
 pub use crate::types::_portal_type_entry::PortalTypeEntryBuilder;
 
 pub use crate::types::_monitor_error_details::MonitorErrorDetailsBuilder;
+
+pub use crate::types::_container_task_configuration::ContainerTaskConfigurationBuilder;
+
+pub use crate::types::_workspace_error_details::WorkspaceErrorDetailsBuilder;
 
 pub use crate::types::_asset_property::AssetPropertyBuilder;
 
@@ -163,9 +217,15 @@ pub use crate::types::_property_notification::PropertyNotificationBuilder;
 
 pub use crate::types::_property_type::PropertyTypeBuilder;
 
+pub use crate::types::_dataset_enrichment_entry::DatasetEnrichmentEntryBuilder;
+
 pub use crate::types::_configuration_error_details::ConfigurationErrorDetailsBuilder;
 
 pub use crate::types::_gateway_capability_summary::GatewayCapabilitySummaryBuilder;
+
+pub use crate::types::_pipeline_execution_state_details::PipelineExecutionStateDetailsBuilder;
+
+pub use crate::types::_compute_node_execution_details::ComputeNodeExecutionDetailsBuilder;
 
 pub use crate::types::_customer_managed_s3_storage::CustomerManagedS3StorageBuilder;
 
@@ -177,9 +237,11 @@ pub use crate::types::_aggregated_value::AggregatedValueBuilder;
 
 pub use crate::types::_variant::VariantBuilder;
 
-pub use crate::types::_time_in_nanos::TimeInNanosBuilder;
-
 pub use crate::types::_interpolated_asset_property_value::InterpolatedAssetPropertyValueBuilder;
+
+pub use crate::types::_column_information::ColumnInformationBuilder;
+
+pub use crate::types::_search_result::SearchResultBuilder;
 
 pub use crate::types::_trace::TraceBuilder;
 
@@ -188,6 +250,8 @@ pub use crate::types::_invocation_output::InvocationOutputBuilder;
 pub use crate::types::_access_policy_summary::AccessPolicySummaryBuilder;
 
 pub use crate::types::_action_summary::ActionSummaryBuilder;
+
+pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
 pub use crate::types::_asset_model_property_summary::AssetModelPropertySummaryBuilder;
 
@@ -221,7 +285,15 @@ pub use crate::types::_computation_model_summary::ComputationModelSummaryBuilder
 
 pub use crate::types::_dashboard_summary::DashboardSummaryBuilder;
 
+pub use crate::types::_data_segment_relationship_summary::DataSegmentRelationshipSummaryBuilder;
+
+pub use crate::types::_data_segment_summary::DataSegmentSummaryBuilder;
+
+pub use crate::types::_export_job_summary::ExportJobSummaryBuilder;
+
 pub use crate::types::_dataset_summary::DatasetSummaryBuilder;
+
+pub use crate::types::_enrichment_job_summary::EnrichmentJobSummaryBuilder;
 
 pub use crate::types::_execution_summary::ExecutionSummaryBuilder;
 
@@ -229,11 +301,23 @@ pub use crate::types::_gateway_summary::GatewaySummaryBuilder;
 
 pub use crate::types::_interface_relationship_summary::InterfaceRelationshipSummaryBuilder;
 
+pub use crate::types::_pipeline_execution_summary::PipelineExecutionSummaryBuilder;
+
+pub use crate::types::_pipeline_summary::PipelineSummaryBuilder;
+
 pub use crate::types::_portal_summary::PortalSummaryBuilder;
 
 pub use crate::types::_project_summary::ProjectSummaryBuilder;
 
+pub use crate::types::_query_summary::QuerySummaryBuilder;
+
+pub use crate::types::_search_summary::SearchSummaryBuilder;
+
+pub use crate::types::_task_summary::TaskSummaryBuilder;
+
 pub use crate::types::_time_series_summary::TimeSeriesSummaryBuilder;
+
+pub use crate::types::_workspace_summary::WorkspaceSummaryBuilder;
 
 pub use crate::types::_batch_get_asset_property_aggregates_error_info::BatchGetAssetPropertyAggregatesErrorInfoBuilder;
 
@@ -245,11 +329,21 @@ pub use crate::types::_csv::CsvBuilder;
 
 pub use crate::types::_parquet::ParquetBuilder;
 
+pub use crate::types::_mp4::Mp4Builder;
+
+pub use crate::types::_annotation::AnnotationBuilder;
+
 pub use crate::types::_asset_model_property_binding_value::AssetModelPropertyBindingValueBuilder;
 
 pub use crate::types::_asset_property_binding_value::AssetPropertyBindingValueBuilder;
 
 pub use crate::types::_kendra_source_detail::KendraSourceDetailBuilder;
+
+pub use crate::types::_timeseries_item::TimeseriesItemBuilder;
+
+pub use crate::types::_trim_settings::TrimSettingsBuilder;
+
+pub use crate::types::_enrichment_trim_settings::EnrichmentTrimSettingsBuilder;
 
 pub use crate::types::_composition_relationship_item::CompositionRelationshipItemBuilder;
 
@@ -263,6 +357,8 @@ pub use crate::types::_metric::MetricBuilder;
 
 pub use crate::types::_asset_property_path_segment::AssetPropertyPathSegmentBuilder;
 
+pub use crate::types::_compute_node_execution_status::ComputeNodeExecutionStatusBuilder;
+
 pub use crate::types::_column_type::ColumnTypeBuilder;
 
 pub use crate::types::_aggregates::AggregatesBuilder;
@@ -272,6 +368,10 @@ pub use crate::types::_property_value_null_value::PropertyValueNullValueBuilder;
 pub use crate::types::_asset_hierarchy_info::AssetHierarchyInfoBuilder;
 
 pub use crate::types::_matched_data_binding::MatchedDataBindingBuilder;
+
+pub use crate::types::_data_segment_enrichment::DataSegmentEnrichmentBuilder;
+
+pub use crate::types::_time_interval::TimeIntervalBuilder;
 
 pub use crate::types::_batch_put_asset_property_error::BatchPutAssetPropertyErrorBuilder;
 
@@ -286,6 +386,10 @@ pub use crate::types::_transform_processing_config::TransformProcessingConfigBui
 pub use crate::types::_metric_window::MetricWindowBuilder;
 
 pub use crate::types::_metric_processing_config::MetricProcessingConfigBuilder;
+
+pub use crate::types::_detailed_pipeline_error::DetailedPipelineErrorBuilder;
+
+pub use crate::types::_compute_node_execution_state_details::ComputeNodeExecutionStateDetailsBuilder;
 
 pub use crate::types::_datum::DatumBuilder;
 

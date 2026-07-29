@@ -63,6 +63,7 @@
 ///     ParameterExceptionField::PayloadType => { /* ... */ },
 ///     ParameterExceptionField::PaymentNetwork => { /* ... */ },
 ///     ParameterExceptionField::Position => { /* ... */ },
+///     ParameterExceptionField::PreParseTextTransformation => { /* ... */ },
 ///     ParameterExceptionField::PriceAmount => { /* ... */ },
 ///     ParameterExceptionField::RateBasedStatement => { /* ... */ },
 ///     ParameterExceptionField::RegexPatternReferenceStatement => { /* ... */ },
@@ -219,6 +220,8 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     Position,
     #[allow(missing_docs)] // documentation missing in model
+    PreParseTextTransformation,
+    #[allow(missing_docs)] // documentation missing in model
     PriceAmount,
     #[allow(missing_docs)] // documentation missing in model
     RateBasedStatement,
@@ -326,6 +329,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "PAYLOAD_TYPE" => ParameterExceptionField::PayloadType,
             "PAYMENT_NETWORK" => ParameterExceptionField::PaymentNetwork,
             "POSITION" => ParameterExceptionField::Position,
+            "PRE_PARSE_TEXT_TRANSFORMATION" => ParameterExceptionField::PreParseTextTransformation,
             "PRICE_AMOUNT" => ParameterExceptionField::PriceAmount,
             "RATE_BASED_STATEMENT" => ParameterExceptionField::RateBasedStatement,
             "REGEX_PATTERN_REFERENCE_STATEMENT" => ParameterExceptionField::RegexPatternReferenceStatement,
@@ -417,6 +421,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::PayloadType => "PAYLOAD_TYPE",
             ParameterExceptionField::PaymentNetwork => "PAYMENT_NETWORK",
             ParameterExceptionField::Position => "POSITION",
+            ParameterExceptionField::PreParseTextTransformation => "PRE_PARSE_TEXT_TRANSFORMATION",
             ParameterExceptionField::PriceAmount => "PRICE_AMOUNT",
             ParameterExceptionField::RateBasedStatement => "RATE_BASED_STATEMENT",
             ParameterExceptionField::RegexPatternReferenceStatement => "REGEX_PATTERN_REFERENCE_STATEMENT",
@@ -499,6 +504,7 @@ impl ParameterExceptionField {
             "PAYLOAD_TYPE",
             "PAYMENT_NETWORK",
             "POSITION",
+            "PRE_PARSE_TEXT_TRANSFORMATION",
             "PRICE_AMOUNT",
             "RATE_BASED_STATEMENT",
             "REGEX_PATTERN_REFERENCE_STATEMENT",
@@ -598,6 +604,7 @@ impl ::std::fmt::Display for ParameterExceptionField {
             ParameterExceptionField::PayloadType => write!(f, "PAYLOAD_TYPE"),
             ParameterExceptionField::PaymentNetwork => write!(f, "PAYMENT_NETWORK"),
             ParameterExceptionField::Position => write!(f, "POSITION"),
+            ParameterExceptionField::PreParseTextTransformation => write!(f, "PRE_PARSE_TEXT_TRANSFORMATION"),
             ParameterExceptionField::PriceAmount => write!(f, "PRICE_AMOUNT"),
             ParameterExceptionField::RateBasedStatement => write!(f, "RATE_BASED_STATEMENT"),
             ParameterExceptionField::RegexPatternReferenceStatement => write!(f, "REGEX_PATTERN_REFERENCE_STATEMENT"),

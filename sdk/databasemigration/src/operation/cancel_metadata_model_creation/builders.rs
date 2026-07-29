@@ -23,6 +23,7 @@ impl crate::operation::cancel_metadata_model_creation::builders::CancelMetadataM
 /// Fluent builder constructing a request to `CancelMetadataModelCreation`.
 ///
 /// <p>Cancels a single metadata model creation operation that was started with <code>StartMetadataModelCreation</code>.</p>
+/// <p><b>Required permissions:</b> <code>dms:CancelMetadataModelCreation</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelMetadataModelCreationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

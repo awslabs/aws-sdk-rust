@@ -6,7 +6,9 @@ pub struct DescribeMetadataModelConversionsOutput {
     /// <p>Specifies the unique pagination token that makes it possible to display the next page of results. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     /// <p>If <code>Marker</code> is returned by a previous response, there are more results available. The value of <code>Marker</code> is a unique pagination token for each page. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     pub marker: ::std::option::Option<::std::string::String>,
-    /// <p>A paginated list of metadata model conversions.</p>
+    /// <p>A paginated list of metadata model conversion requests.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub requests: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>>,
     _request_id: Option<String>,
 }
@@ -16,7 +18,9 @@ impl DescribeMetadataModelConversionsOutput {
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
     }
-    /// <p>A paginated list of metadata model conversions.</p>
+    /// <p>A paginated list of metadata model conversion requests.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requests.is_none()`.
     pub fn requests(&self) -> &[crate::types::SchemaConversionRequest] {
@@ -65,19 +69,25 @@ impl DescribeMetadataModelConversionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_requests`](Self::set_requests).
     ///
-    /// <p>A paginated list of metadata model conversions.</p>
+    /// <p>A paginated list of metadata model conversion requests.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub fn requests(mut self, input: crate::types::SchemaConversionRequest) -> Self {
         let mut v = self.requests.unwrap_or_default();
         v.push(input);
         self.requests = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A paginated list of metadata model conversions.</p>
+    /// <p>A paginated list of metadata model conversion requests.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub fn set_requests(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>>) -> Self {
         self.requests = input;
         self
     }
-    /// <p>A paginated list of metadata model conversions.</p>
+    /// <p>A paginated list of metadata model conversion requests.</p><note>
+    /// <p>DMS never populates the <code>ExportSqlDetails</code> field for this operation.</p>
+    /// </note>
     pub fn get_requests(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SchemaConversionRequest>> {
         &self.requests
     }

@@ -19,6 +19,8 @@ pub struct ListTimeSeriesInput {
     /// <p><code>DISASSOCIATED</code> – The time series isn't associated with any asset property.</p></li>
     /// </ul>
     pub time_series_type: ::std::option::Option<crate::types::ListTimeSeriesType>,
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl ListTimeSeriesInput {
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -47,6 +49,10 @@ impl ListTimeSeriesInput {
     pub fn time_series_type(&self) -> ::std::option::Option<&crate::types::ListTimeSeriesType> {
         self.time_series_type.as_ref()
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
+    }
 }
 impl ListTimeSeriesInput {
     /// Creates a new builder-style object to manufacture [`ListTimeSeriesInput`](crate::operation::list_time_series::ListTimeSeriesInput).
@@ -64,6 +70,7 @@ pub struct ListTimeSeriesInputBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) alias_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) time_series_type: ::std::option::Option<crate::types::ListTimeSeriesType>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl ListTimeSeriesInputBuilder {
     /// <p>The token to be used for the next set of paginated results.</p>
@@ -154,6 +161,20 @@ impl ListTimeSeriesInputBuilder {
     pub fn get_time_series_type(&self) -> &::std::option::Option<crate::types::ListTimeSeriesType> {
         &self.time_series_type
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`ListTimeSeriesInput`](crate::operation::list_time_series::ListTimeSeriesInput).
     pub fn build(
         self,
@@ -164,6 +185,7 @@ impl ListTimeSeriesInputBuilder {
             asset_id: self.asset_id,
             alias_prefix: self.alias_prefix,
             time_series_type: self.time_series_type,
+            workspace_name: self.workspace_name,
         })
     }
 }

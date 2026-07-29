@@ -10,6 +10,8 @@ pub struct TransitGatewayPolicyTableEntry {
     pub policy_rule: ::std::option::Option<crate::types::TransitGatewayPolicyRule>,
     /// <p>The ID of the target route table.</p>
     pub target_route_table_id: ::std::option::Option<::std::string::String>,
+    /// <p>The state of the transit gateway policy table entry.</p>
+    pub state: ::std::option::Option<crate::types::TransitGatewayPolicyTableEntryState>,
 }
 impl TransitGatewayPolicyTableEntry {
     /// <p>The rule number for the transit gateway policy table entry.</p>
@@ -23,6 +25,10 @@ impl TransitGatewayPolicyTableEntry {
     /// <p>The ID of the target route table.</p>
     pub fn target_route_table_id(&self) -> ::std::option::Option<&str> {
         self.target_route_table_id.as_deref()
+    }
+    /// <p>The state of the transit gateway policy table entry.</p>
+    pub fn state(&self) -> ::std::option::Option<&crate::types::TransitGatewayPolicyTableEntryState> {
+        self.state.as_ref()
     }
 }
 impl TransitGatewayPolicyTableEntry {
@@ -39,6 +45,7 @@ pub struct TransitGatewayPolicyTableEntryBuilder {
     pub(crate) policy_rule_number: ::std::option::Option<::std::string::String>,
     pub(crate) policy_rule: ::std::option::Option<crate::types::TransitGatewayPolicyRule>,
     pub(crate) target_route_table_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::TransitGatewayPolicyTableEntryState>,
 }
 impl TransitGatewayPolicyTableEntryBuilder {
     /// <p>The rule number for the transit gateway policy table entry.</p>
@@ -83,12 +90,27 @@ impl TransitGatewayPolicyTableEntryBuilder {
     pub fn get_target_route_table_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_route_table_id
     }
+    /// <p>The state of the transit gateway policy table entry.</p>
+    pub fn state(mut self, input: crate::types::TransitGatewayPolicyTableEntryState) -> Self {
+        self.state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The state of the transit gateway policy table entry.</p>
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::TransitGatewayPolicyTableEntryState>) -> Self {
+        self.state = input;
+        self
+    }
+    /// <p>The state of the transit gateway policy table entry.</p>
+    pub fn get_state(&self) -> &::std::option::Option<crate::types::TransitGatewayPolicyTableEntryState> {
+        &self.state
+    }
     /// Consumes the builder and constructs a [`TransitGatewayPolicyTableEntry`](crate::types::TransitGatewayPolicyTableEntry).
     pub fn build(self) -> crate::types::TransitGatewayPolicyTableEntry {
         crate::types::TransitGatewayPolicyTableEntry {
             policy_rule_number: self.policy_rule_number,
             policy_rule: self.policy_rule,
             target_route_table_id: self.target_route_table_id,
+            state: self.state,
         }
     }
 }

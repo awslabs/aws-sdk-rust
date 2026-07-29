@@ -2373,6 +2373,8 @@ pub(crate) mod shape_field_definition;
 
 pub(crate) mod shape_field_filter_operators_list;
 
+pub(crate) mod shape_filter_configuration;
+
 pub(crate) mod shape_filter_expression;
 
 pub(crate) mod shape_glue_schema;
@@ -2533,6 +2535,8 @@ pub(crate) mod shape_authorization_code_properties;
 
 pub(crate) mod shape_backfill_error;
 
+pub(crate) mod shape_between_configuration;
+
 pub(crate) mod shape_bin_edges;
 
 pub(crate) mod shape_column_importance;
@@ -2540,6 +2544,8 @@ pub(crate) mod shape_column_importance;
 pub(crate) mod shape_column_value_string_list;
 
 pub(crate) mod shape_condition_expression;
+
+pub(crate) mod shape_connection_string_to_string_map;
 
 pub(crate) mod shape_connection_type_variant;
 
@@ -2556,6 +2562,10 @@ pub(crate) mod shape_decimal_number;
 pub(crate) mod shape_edge;
 
 pub(crate) mod shape_field_definition_map;
+
+pub(crate) mod shape_filter_overrides;
+
+pub(crate) mod shape_filter_string_configuration;
 
 pub(crate) mod shape_filter_value;
 

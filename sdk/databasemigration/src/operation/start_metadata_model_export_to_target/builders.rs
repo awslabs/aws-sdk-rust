@@ -22,7 +22,14 @@ impl crate::operation::start_metadata_model_export_to_target::builders::StartMet
 }
 /// Fluent builder constructing a request to `StartMetadataModelExportToTarget`.
 ///
-/// <p>Applies converted database objects to your target database.</p>
+/// <p>Queues an export of the selected converted metadata models (database objects such as tables, views, and procedures) to your target database. If other requests created by <code>Start*</code> operations are already in the migration project's queue, the export begins after they complete.</p>
+/// <p>This operation requires a non-virtual target data provider.</p>
+/// <p>The export applies only metadata models created by conversion. Metadata models imported from the database are skipped.</p><note>
+/// <p>If objects with the same name already exist on the target database, the export overwrites them.</p>
+/// </note>
+/// <p>The operation installs the extension pack on the target database. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/extension-pack.html">Using extension packs in DMS Schema Conversion</a>.</p>
+/// <p>To check the status of the export request, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelExportsToTarget.html">DescribeMetadataModelExportsToTarget</a> using the returned <code>RequestIdentifier</code> as a filter.</p>
+/// <p><b>Required permissions:</b> <code>dms:StartMetadataModelExportToTarget</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMetadataModelExportToTargetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +129,52 @@ impl StartMetadataModelExportToTargetFluentBuilder {
     pub fn get_migration_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_migration_project_identifier()
     }
-    /// <p>A value that specifies the database objects to export.</p>
+    /// <p>A JSON string that identifies the metadata models to export to the target database. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only target selection rules, where <code>server-name</code> in the object locator matches the target data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn selection_rules(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.selection_rules(input.into());
         self
     }
-    /// <p>A value that specifies the database objects to export.</p>
+    /// <p>A JSON string that identifies the metadata models to export to the target database. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only target selection rules, where <code>server-name</code> in the object locator matches the target data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn set_selection_rules(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_selection_rules(input);
         self
     }
-    /// <p>A value that specifies the database objects to export.</p>
+    /// <p>A JSON string that identifies the metadata models to export to the target database. For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection rules in DMS Schema Conversion</a>.</p>
+    /// <p>Usage:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Accepts only target selection rules, where <code>server-name</code> in the object locator matches the target data provider.</p></li>
+    /// <li>
+    /// <p>Supports <code>explicit</code>, <code>include</code>, and <code>exclude</code> rule actions.</p></li>
+    /// </ul>
     pub fn get_selection_rules(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_selection_rules()
     }
-    /// <p>Whether to overwrite the migration project extension pack. An extension pack is an add-on module that emulates functions present in a source database that are required when converting objects to the target database.</p>
+    /// <p>Specifies whether to overwrite the extension pack if one already exists on the target database. The default value is <code>true</code>.</p>
     pub fn overwrite_extension_pack(mut self, input: bool) -> Self {
         self.inner = self.inner.overwrite_extension_pack(input);
         self
     }
-    /// <p>Whether to overwrite the migration project extension pack. An extension pack is an add-on module that emulates functions present in a source database that are required when converting objects to the target database.</p>
+    /// <p>Specifies whether to overwrite the extension pack if one already exists on the target database. The default value is <code>true</code>.</p>
     pub fn set_overwrite_extension_pack(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_overwrite_extension_pack(input);
         self
     }
-    /// <p>Whether to overwrite the migration project extension pack. An extension pack is an add-on module that emulates functions present in a source database that are required when converting objects to the target database.</p>
+    /// <p>Specifies whether to overwrite the extension pack if one already exists on the target database. The default value is <code>true</code>.</p>
     pub fn get_overwrite_extension_pack(&self) -> &::std::option::Option<bool> {
         self.inner.get_overwrite_extension_pack()
     }

@@ -615,6 +615,15 @@ pub(crate) fn column_statistics_data_correct_errors(
     builder
 }
 
+pub(crate) fn filter_configuration_correct_errors(
+    mut builder: crate::types::builders::FilterConfigurationBuilder,
+) -> crate::types::builders::FilterConfigurationBuilder {
+    if builder.filter_mode.is_none() {
+        builder.filter_mode = "no value was set".parse::<crate::types::FilterMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn response_configuration_correct_errors(
     mut builder: crate::types::builders::ResponseConfigurationBuilder,
 ) -> crate::types::builders::ResponseConfigurationBuilder {
@@ -1130,6 +1139,15 @@ pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterB
     }
     if builder.filters.is_none() {
         builder.filters = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn filter_string_configuration_correct_errors(
+    mut builder: crate::types::builders::FilterStringConfigurationBuilder,
+) -> crate::types::builders::FilterStringConfigurationBuilder {
+    if builder.query_parameter_name.is_none() {
+        builder.query_parameter_name = Some(Default::default())
     }
     builder
 }

@@ -12,6 +12,21 @@ pub fn ser_file(
     if let Some(var_1) = &input.version_id {
         object.key("versionId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.alias {
+        object.key("alias").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.start_time {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("startTime").start_object();
+        crate::protocol_serde::shape_time_in_nanos::ser_time_in_nanos(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.file_format {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("fileFormat").start_object();
+        crate::protocol_serde::shape_file_format::ser_file_format(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +72,20 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "alias" => {
+                            builder = builder.set_alias(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "startTime" => {
+                            builder =
+                                builder.set_start_time(crate::protocol_serde::shape_time_in_nanos::de_time_in_nanos(tokens, _value, depth + 1)?);
+                        }
+                        "fileFormat" => {
+                            builder = builder.set_file_format(crate::protocol_serde::shape_file_format::de_file_format(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

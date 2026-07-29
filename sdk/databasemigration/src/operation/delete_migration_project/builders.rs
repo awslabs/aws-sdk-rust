@@ -22,7 +22,8 @@ impl crate::operation::delete_migration_project::builders::DeleteMigrationProjec
 }
 /// Fluent builder constructing a request to `DeleteMigrationProject`.
 ///
-/// <p>Deletes the specified migration project.</p><note>
+/// <p>Deletes the specified migration project.</p>
+/// <p><b>Required permissions:</b> <code>dms:DeleteMigrationProject</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p><note>
 /// <p>The migration project must be closed before you can delete it.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

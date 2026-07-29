@@ -14,6 +14,8 @@ pub struct SourceConfiguration {
     pub response_configuration: ::std::option::Option<crate::types::ResponseConfiguration>,
     /// <p>Configuration for handling paginated responses from the REST API, supporting both cursor-based and offset-based pagination strategies.</p>
     pub pagination_configuration: ::std::option::Option<crate::types::PaginationConfiguration>,
+    /// <p>Configuration for applying filter pushdown to REST API requests, defining how filter predicates are translated into query parameters or filter strings.</p>
+    pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
 }
 impl SourceConfiguration {
     /// <p>The HTTP method to use for requests to this endpoint, such as GET, POST.</p>
@@ -38,6 +40,10 @@ impl SourceConfiguration {
     pub fn pagination_configuration(&self) -> ::std::option::Option<&crate::types::PaginationConfiguration> {
         self.pagination_configuration.as_ref()
     }
+    /// <p>Configuration for applying filter pushdown to REST API requests, defining how filter predicates are translated into query parameters or filter strings.</p>
+    pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
+        self.filter_configuration.as_ref()
+    }
 }
 impl SourceConfiguration {
     /// Creates a new builder-style object to manufacture [`SourceConfiguration`](crate::types::SourceConfiguration).
@@ -55,6 +61,7 @@ pub struct SourceConfigurationBuilder {
     pub(crate) request_parameters: ::std::option::Option<::std::vec::Vec<crate::types::ConnectorProperty>>,
     pub(crate) response_configuration: ::std::option::Option<crate::types::ResponseConfiguration>,
     pub(crate) pagination_configuration: ::std::option::Option<crate::types::PaginationConfiguration>,
+    pub(crate) filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
 }
 impl SourceConfigurationBuilder {
     /// <p>The HTTP method to use for requests to this endpoint, such as GET, POST.</p>
@@ -133,6 +140,20 @@ impl SourceConfigurationBuilder {
     pub fn get_pagination_configuration(&self) -> &::std::option::Option<crate::types::PaginationConfiguration> {
         &self.pagination_configuration
     }
+    /// <p>Configuration for applying filter pushdown to REST API requests, defining how filter predicates are translated into query parameters or filter strings.</p>
+    pub fn filter_configuration(mut self, input: crate::types::FilterConfiguration) -> Self {
+        self.filter_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for applying filter pushdown to REST API requests, defining how filter predicates are translated into query parameters or filter strings.</p>
+    pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
+        self.filter_configuration = input;
+        self
+    }
+    /// <p>Configuration for applying filter pushdown to REST API requests, defining how filter predicates are translated into query parameters or filter strings.</p>
+    pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
+        &self.filter_configuration
+    }
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).
     pub fn build(self) -> crate::types::SourceConfiguration {
         crate::types::SourceConfiguration {
@@ -141,6 +162,7 @@ impl SourceConfigurationBuilder {
             request_parameters: self.request_parameters,
             response_configuration: self.response_configuration,
             pagination_configuration: self.pagination_configuration,
+            filter_configuration: self.filter_configuration,
         }
     }
 }

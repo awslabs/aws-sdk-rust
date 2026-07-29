@@ -22,7 +22,7 @@ impl crate::operation::create_dataset::builders::CreateDatasetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDataset`.
 ///
-/// <p>Creates a dataset to connect an external datasource.</p>
+/// <p>Creates a dataset. Session and curated datasets are created in a workspace. A session dataset contains data segments of time series data, and a curated dataset curates data segments selected from source session datasets. A dataset that connects to an external datasource is created outside of a workspace.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDatasetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,6 +149,67 @@ impl CreateDatasetFluentBuilder {
     /// <p>A description about the dataset, and its functionality.</p>
     pub fn get_dataset_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_description()
+    }
+    /// <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn dataset_type(mut self, input: crate::types::DatasetTypeEnum) -> Self {
+        self.inner = self.inner.dataset_type(input);
+        self
+    }
+    /// <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn set_dataset_type(mut self, input: ::std::option::Option<crate::types::DatasetTypeEnum>) -> Self {
+        self.inner = self.inner.set_dataset_type(input);
+        self
+    }
+    /// <p>The type of dataset: a session dataset, a curated dataset, or a connection to an external datasource.</p>
+    pub fn get_dataset_type(&self) -> &::std::option::Option<crate::types::DatasetTypeEnum> {
+        self.inner.get_dataset_type()
+    }
+    /// <p>The configuration for the dataset.</p>
+    pub fn dataset_config(mut self, input: crate::types::DatasetConfig) -> Self {
+        self.inner = self.inner.dataset_config(input);
+        self
+    }
+    /// <p>The configuration for the dataset.</p>
+    pub fn set_dataset_config(mut self, input: ::std::option::Option<crate::types::DatasetConfig>) -> Self {
+        self.inner = self.inner.set_dataset_config(input);
+        self
+    }
+    /// <p>The configuration for the dataset.</p>
+    pub fn get_dataset_config(&self) -> &::std::option::Option<crate::types::DatasetConfig> {
+        self.inner.get_dataset_config()
+    }
+    /// <p>The name of the workspace that contains the dataset. Required for session and curated datasets. Omit this field for datasets that connect to an external datasource.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.workspace_name(input.into());
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset. Required for session and curated datasets. Omit this field for datasets that connect to an external datasource.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_workspace_name(input);
+        self
+    }
+    /// <p>The name of the workspace that contains the dataset. Required for session and curated datasets. Omit this field for datasets that connect to an external datasource.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_workspace_name()
+    }
+    ///
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// <p>The metadata for the dataset, provided as key-value pairs.</p>
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.metadata(k.into(), v.into());
+        self
+    }
+    /// <p>The metadata for the dataset, provided as key-value pairs.</p>
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_metadata(input);
+        self
+    }
+    /// <p>The metadata for the dataset, provided as key-value pairs.</p>
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_metadata()
     }
     /// <p>The data source for the dataset.</p>
     pub fn dataset_source(mut self, input: crate::types::DatasetSource) -> Self {

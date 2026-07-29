@@ -27,7 +27,13 @@ pub(crate) mod shape_associate_assets;
 
 pub(crate) mod shape_associate_time_series_to_asset_property;
 
+pub(crate) mod shape_batch_associate_data_segments_to_dataset;
+
 pub(crate) mod shape_batch_associate_project_assets;
+
+pub(crate) mod shape_batch_delete_dataset_data_segments;
+
+pub(crate) mod shape_batch_disassociate_data_segments_from_dataset;
 
 pub(crate) mod shape_batch_disassociate_project_assets;
 
@@ -39,7 +45,15 @@ pub(crate) mod shape_batch_get_asset_property_value_history;
 
 pub(crate) mod shape_batch_put_asset_property_value;
 
+pub(crate) mod shape_cancel_enrichment_job;
+
+pub(crate) mod shape_cancel_pipeline_execution;
+
+pub(crate) mod shape_cancel_query;
+
 pub(crate) mod shape_create_access_policy;
+
+pub(crate) mod shape_create_application;
 
 pub(crate) mod shape_create_asset;
 
@@ -55,13 +69,25 @@ pub(crate) mod shape_create_dashboard;
 
 pub(crate) mod shape_create_dataset;
 
+pub(crate) mod shape_create_dataset_export_job;
+
+pub(crate) mod shape_create_enrichment_job;
+
 pub(crate) mod shape_create_gateway;
+
+pub(crate) mod shape_create_pipeline;
 
 pub(crate) mod shape_create_portal;
 
 pub(crate) mod shape_create_project;
 
+pub(crate) mod shape_create_task;
+
+pub(crate) mod shape_create_workspace;
+
 pub(crate) mod shape_delete_access_policy;
+
+pub(crate) mod shape_delete_application;
 
 pub(crate) mod shape_delete_asset;
 
@@ -79,15 +105,23 @@ pub(crate) mod shape_delete_dataset;
 
 pub(crate) mod shape_delete_gateway;
 
+pub(crate) mod shape_delete_pipeline;
+
 pub(crate) mod shape_delete_portal;
 
 pub(crate) mod shape_delete_project;
 
+pub(crate) mod shape_delete_task;
+
 pub(crate) mod shape_delete_time_series;
+
+pub(crate) mod shape_delete_workspace;
 
 pub(crate) mod shape_describe_access_policy;
 
 pub(crate) mod shape_describe_action;
+
+pub(crate) mod shape_describe_application;
 
 pub(crate) mod shape_describe_asset;
 
@@ -111,7 +145,11 @@ pub(crate) mod shape_describe_dashboard;
 
 pub(crate) mod shape_describe_dataset;
 
+pub(crate) mod shape_describe_dataset_export_job;
+
 pub(crate) mod shape_describe_default_encryption_configuration;
+
+pub(crate) mod shape_describe_enrichment_job;
 
 pub(crate) mod shape_describe_execution;
 
@@ -121,13 +159,25 @@ pub(crate) mod shape_describe_gateway_capability_configuration;
 
 pub(crate) mod shape_describe_logging_options;
 
+pub(crate) mod shape_describe_pipeline;
+
+pub(crate) mod shape_describe_pipeline_execution;
+
 pub(crate) mod shape_describe_portal;
 
 pub(crate) mod shape_describe_project;
 
+pub(crate) mod shape_describe_query;
+
+pub(crate) mod shape_describe_search;
+
 pub(crate) mod shape_describe_storage_configuration;
 
+pub(crate) mod shape_describe_task;
+
 pub(crate) mod shape_describe_time_series;
+
+pub(crate) mod shape_describe_workspace;
 
 pub(crate) mod shape_disassociate_assets;
 
@@ -143,13 +193,21 @@ pub(crate) mod shape_get_asset_property_value;
 
 pub(crate) mod shape_get_asset_property_value_history;
 
+pub(crate) mod shape_get_capture_data;
+
 pub(crate) mod shape_get_interpolated_asset_property_values;
+
+pub(crate) mod shape_get_query_results;
+
+pub(crate) mod shape_get_search_results;
 
 pub(crate) mod shape_invoke_assistant;
 
 pub(crate) mod shape_list_access_policies;
 
 pub(crate) mod shape_list_actions;
+
+pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_asset_model_composite_models;
 
@@ -177,7 +235,15 @@ pub(crate) mod shape_list_computation_models;
 
 pub(crate) mod shape_list_dashboards;
 
+pub(crate) mod shape_list_dataset_data_segment_relationships;
+
+pub(crate) mod shape_list_dataset_data_segments;
+
+pub(crate) mod shape_list_dataset_export_jobs;
+
 pub(crate) mod shape_list_datasets;
+
+pub(crate) mod shape_list_enrichment_jobs;
 
 pub(crate) mod shape_list_executions;
 
@@ -185,15 +251,27 @@ pub(crate) mod shape_list_gateways;
 
 pub(crate) mod shape_list_interface_relationships;
 
+pub(crate) mod shape_list_pipeline_executions;
+
+pub(crate) mod shape_list_pipelines;
+
 pub(crate) mod shape_list_portals;
 
 pub(crate) mod shape_list_project_assets;
 
 pub(crate) mod shape_list_projects;
 
+pub(crate) mod shape_list_queries;
+
+pub(crate) mod shape_list_searches;
+
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_tasks;
+
 pub(crate) mod shape_list_time_series;
+
+pub(crate) mod shape_list_workspaces;
 
 pub(crate) mod shape_put_asset_model_interface_relationship;
 
@@ -202,6 +280,12 @@ pub(crate) mod shape_put_default_encryption_configuration;
 pub(crate) mod shape_put_logging_options;
 
 pub(crate) mod shape_put_storage_configuration;
+
+pub(crate) mod shape_start_pipeline_execution;
+
+pub(crate) mod shape_start_query;
+
+pub(crate) mod shape_start_search;
 
 pub(crate) mod shape_tag_resource;
 
@@ -227,9 +311,15 @@ pub(crate) mod shape_update_gateway;
 
 pub(crate) mod shape_update_gateway_capability_configuration;
 
+pub(crate) mod shape_update_pipeline;
+
 pub(crate) mod shape_update_portal;
 
 pub(crate) mod shape_update_project;
+
+pub(crate) mod shape_update_task;
+
+pub(crate) mod shape_update_workspace;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -245,7 +335,13 @@ pub(crate) mod shape_associate_assets_input;
 
 pub(crate) mod shape_associate_time_series_to_asset_property_input;
 
+pub(crate) mod shape_batch_associate_data_segments_to_dataset_input;
+
 pub(crate) mod shape_batch_associate_project_assets_input;
+
+pub(crate) mod shape_batch_delete_dataset_data_segments_input;
+
+pub(crate) mod shape_batch_disassociate_data_segments_from_dataset_input;
 
 pub(crate) mod shape_batch_disassociate_project_assets_input;
 
@@ -257,9 +353,13 @@ pub(crate) mod shape_batch_get_asset_property_value_input;
 
 pub(crate) mod shape_batch_put_asset_property_value_input;
 
+pub(crate) mod shape_cancel_pipeline_execution_input;
+
 pub(crate) mod shape_conflicting_operation_exception;
 
 pub(crate) mod shape_create_access_policy_input;
+
+pub(crate) mod shape_create_application_input;
 
 pub(crate) mod shape_create_asset_input;
 
@@ -273,13 +373,23 @@ pub(crate) mod shape_create_computation_model_input;
 
 pub(crate) mod shape_create_dashboard_input;
 
+pub(crate) mod shape_create_dataset_export_job_input;
+
 pub(crate) mod shape_create_dataset_input;
 
+pub(crate) mod shape_create_enrichment_job_input;
+
 pub(crate) mod shape_create_gateway_input;
+
+pub(crate) mod shape_create_pipeline_input;
 
 pub(crate) mod shape_create_portal_input;
 
 pub(crate) mod shape_create_project_input;
+
+pub(crate) mod shape_create_task_input;
+
+pub(crate) mod shape_create_workspace_input;
 
 pub(crate) mod shape_delete_time_series_input;
 
@@ -293,6 +403,8 @@ pub(crate) mod shape_execute_action_input;
 
 pub(crate) mod shape_execute_query_input;
 
+pub(crate) mod shape_get_capture_data_input;
+
 pub(crate) mod shape_internal_failure_exception;
 
 pub(crate) mod shape_invalid_request_exception;
@@ -304,6 +416,8 @@ pub(crate) mod shape_invoke_assistant_output;
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_computation_model_data_binding_usages_input;
+
+pub(crate) mod shape_list_searches_input;
 
 pub(crate) mod shape_precondition_failed_exception;
 
@@ -322,6 +436,12 @@ pub(crate) mod shape_resource_already_exists_exception;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_unavailable_exception;
+
+pub(crate) mod shape_start_pipeline_execution_input;
+
+pub(crate) mod shape_start_query_input;
+
+pub(crate) mod shape_start_search_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -351,9 +471,15 @@ pub(crate) mod shape_update_gateway_capability_configuration_input;
 
 pub(crate) mod shape_update_gateway_input;
 
+pub(crate) mod shape_update_pipeline_input;
+
 pub(crate) mod shape_update_portal_input;
 
 pub(crate) mod shape_update_project_input;
+
+pub(crate) mod shape_update_task_input;
+
+pub(crate) mod shape_update_workspace_input;
 
 pub(crate) mod shape_validation_exception;
 
@@ -374,6 +500,8 @@ pub(crate) mod shape_action_summaries;
 pub(crate) mod shape_aggregated_values;
 
 pub(crate) mod shape_alarms;
+
+pub(crate) mod shape_application_list;
 
 pub(crate) mod shape_asset_composite_model_path;
 
@@ -427,6 +555,8 @@ pub(crate) mod shape_asset_status;
 
 pub(crate) mod shape_asset_summaries;
 
+pub(crate) mod shape_associate_data_segment_entry;
+
 pub(crate) mod shape_associated_assets_summaries;
 
 pub(crate) mod shape_batch_associate_project_assets_errors;
@@ -459,6 +589,8 @@ pub(crate) mod shape_batch_get_asset_property_value_success_entries;
 
 pub(crate) mod shape_batch_put_asset_property_error_entries;
 
+pub(crate) mod shape_column_information_list;
+
 pub(crate) mod shape_columns_list;
 
 pub(crate) mod shape_composite_model_property;
@@ -483,11 +615,25 @@ pub(crate) mod shape_computation_model_status;
 
 pub(crate) mod shape_computation_model_summaries;
 
+pub(crate) mod shape_compute_node;
+
+pub(crate) mod shape_compute_node_execution_details_list;
+
+pub(crate) mod shape_compute_node_list;
+
 pub(crate) mod shape_configuration_status;
 
 pub(crate) mod shape_dashboard_summaries;
 
 pub(crate) mod shape_data_binding_value_filter;
+
+pub(crate) mod shape_data_segment_relationship_summaries;
+
+pub(crate) mod shape_data_segment_summaries;
+
+pub(crate) mod shape_dataset_config;
+
+pub(crate) mod shape_dataset_enrichment;
 
 pub(crate) mod shape_dataset_source;
 
@@ -495,9 +641,21 @@ pub(crate) mod shape_dataset_status;
 
 pub(crate) mod shape_dataset_summaries;
 
+pub(crate) mod shape_delete_data_segment_entry;
+
+pub(crate) mod shape_disassociate_data_segment_entry;
+
+pub(crate) mod shape_enrichment_job_configuration;
+
+pub(crate) mod shape_enrichment_job_summaries;
+
+pub(crate) mod shape_environment_variables_map;
+
 pub(crate) mod shape_error_report_location;
 
 pub(crate) mod shape_execution_details;
+
+pub(crate) mod shape_execution_environment_variables;
 
 pub(crate) mod shape_execution_result;
 
@@ -505,9 +663,21 @@ pub(crate) mod shape_execution_status;
 
 pub(crate) mod shape_execution_summaries;
 
+pub(crate) mod shape_export_error_report_location;
+
+pub(crate) mod shape_export_job_summary_list;
+
+pub(crate) mod shape_failed_data_segment_associations;
+
+pub(crate) mod shape_failed_data_segment_deletions;
+
+pub(crate) mod shape_failed_data_segment_disassociations;
+
 pub(crate) mod shape_file;
 
 pub(crate) mod shape_files;
+
+pub(crate) mod shape_format_settings;
 
 pub(crate) mod shape_gateway_capability_summaries;
 
@@ -535,9 +705,19 @@ pub(crate) mod shape_job_configuration;
 
 pub(crate) mod shape_job_summaries;
 
+pub(crate) mod shape_list_searches_filters;
+
 pub(crate) mod shape_logging_options;
 
+pub(crate) mod shape_metadata;
+
 pub(crate) mod shape_multi_layer_storage;
+
+pub(crate) mod shape_pipeline_execution_status;
+
+pub(crate) mod shape_pipeline_execution_summary_list;
+
+pub(crate) mod shape_pipeline_summaries;
 
 pub(crate) mod shape_portal_status;
 
@@ -546,6 +726,8 @@ pub(crate) mod shape_portal_summaries;
 pub(crate) mod shape_portal_type_configuration;
 
 pub(crate) mod shape_portal_type_entry;
+
+pub(crate) mod shape_processing_input;
 
 pub(crate) mod shape_project_summaries;
 
@@ -557,21 +739,49 @@ pub(crate) mod shape_property_mappings;
 
 pub(crate) mod shape_put_asset_property_value_entry;
 
+pub(crate) mod shape_query_statistics;
+
+pub(crate) mod shape_query_summary_list;
+
 pub(crate) mod shape_resolve_to;
 
 pub(crate) mod shape_resource;
 
+pub(crate) mod shape_resource_status;
+
 pub(crate) mod shape_retention_period;
 
+pub(crate) mod shape_row_list;
+
 pub(crate) mod shape_rows;
+
+pub(crate) mod shape_search_filters;
+
+pub(crate) mod shape_search_result_list;
+
+pub(crate) mod shape_search_summaries;
 
 pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_target_resource;
 
+pub(crate) mod shape_task_configuration;
+
+pub(crate) mod shape_task_summaries;
+
+pub(crate) mod shape_time_in_nanos;
+
 pub(crate) mod shape_time_series_summaries;
 
 pub(crate) mod shape_warm_tier_retention_period;
+
+pub(crate) mod shape_workspace_encryption_configuration;
+
+pub(crate) mod shape_workspace_encryption_configuration_info;
+
+pub(crate) mod shape_workspace_status;
+
+pub(crate) mod shape_workspace_summaries;
 
 pub(crate) mod shape_access_policy_summary;
 
@@ -580,6 +790,8 @@ pub(crate) mod shape_action_definition;
 pub(crate) mod shape_action_summary;
 
 pub(crate) mod shape_aggregated_value;
+
+pub(crate) mod shape_application_summary;
 
 pub(crate) mod shape_asset_binding_value_filter;
 
@@ -647,6 +859,8 @@ pub(crate) mod shape_batch_put_asset_property_error_entry;
 
 pub(crate) mod shape_column_info;
 
+pub(crate) mod shape_column_information;
+
 pub(crate) mod shape_composition_relationship;
 
 pub(crate) mod shape_composition_relationship_summary;
@@ -659,17 +873,43 @@ pub(crate) mod shape_computation_model_resolve_to_resource_summary;
 
 pub(crate) mod shape_computation_model_summary;
 
+pub(crate) mod shape_compute_node_environment_variables_map;
+
+pub(crate) mod shape_compute_node_execution_details;
+
 pub(crate) mod shape_configuration_error_details;
+
+pub(crate) mod shape_container_task_configuration;
 
 pub(crate) mod shape_customer_managed_s3_storage;
 
 pub(crate) mod shape_dashboard_summary;
 
+pub(crate) mod shape_data_segment_relationship_summary;
+
+pub(crate) mod shape_data_segment_summary;
+
+pub(crate) mod shape_dataset_enrichment_entry;
+
+pub(crate) mod shape_dataset_item;
+
 pub(crate) mod shape_dataset_summary;
+
+pub(crate) mod shape_enrichment_job_summary;
 
 pub(crate) mod shape_error_details;
 
+pub(crate) mod shape_event_detection;
+
 pub(crate) mod shape_execution_summary;
+
+pub(crate) mod shape_export_job_summary;
+
+pub(crate) mod shape_failed_data_segment_association;
+
+pub(crate) mod shape_failed_data_segment_deletion;
+
+pub(crate) mod shape_failed_data_segment_disassociation;
 
 pub(crate) mod shape_file_format;
 
@@ -701,6 +941,12 @@ pub(crate) mod shape_job_summary;
 
 pub(crate) mod shape_monitor_error_details;
 
+pub(crate) mod shape_pipeline_execution_state_details;
+
+pub(crate) mod shape_pipeline_execution_summary;
+
+pub(crate) mod shape_pipeline_summary;
+
 pub(crate) mod shape_portal_resource;
 
 pub(crate) mod shape_portal_summary;
@@ -715,15 +961,33 @@ pub(crate) mod shape_property_notification;
 
 pub(crate) mod shape_property_type;
 
+pub(crate) mod shape_query_summary;
+
+pub(crate) mod shape_resource_error;
+
+pub(crate) mod shape_result;
+
 pub(crate) mod shape_row;
+
+pub(crate) mod shape_search_result;
+
+pub(crate) mod shape_search_summary;
+
+pub(crate) mod shape_session_config;
 
 pub(crate) mod shape_siemens_ie;
 
 pub(crate) mod shape_source_detail;
 
-pub(crate) mod shape_time_in_nanos;
+pub(crate) mod shape_task_summary;
+
+pub(crate) mod shape_time_interval;
 
 pub(crate) mod shape_time_series_summary;
+
+pub(crate) mod shape_timeseries_item;
+
+pub(crate) mod shape_timeseries_list;
 
 pub(crate) mod shape_trace;
 
@@ -731,7 +995,13 @@ pub(crate) mod shape_user_identity;
 
 pub(crate) mod shape_variant;
 
+pub(crate) mod shape_workspace_error_details;
+
+pub(crate) mod shape_workspace_summary;
+
 pub(crate) mod shape_aggregates;
+
+pub(crate) mod shape_annotation;
 
 pub(crate) mod shape_asset_hierarchy_info;
 
@@ -753,15 +1023,31 @@ pub(crate) mod shape_binding_value_list;
 
 pub(crate) mod shape_column_type;
 
+pub(crate) mod shape_command_list;
+
 pub(crate) mod shape_composition_relationship_item;
 
 pub(crate) mod shape_computation_model_id_list;
 
+pub(crate) mod shape_compute_node_execution_status;
+
+pub(crate) mod shape_compute_node_name_list;
+
 pub(crate) mod shape_csv;
+
+pub(crate) mod shape_data_segment_enrichment;
 
 pub(crate) mod shape_datum_list;
 
+pub(crate) mod shape_detailed_error_list;
+
 pub(crate) mod shape_detailed_errors;
+
+pub(crate) mod shape_enrichment_trim_settings;
+
+pub(crate) mod shape_execution_environment_variables_map;
+
+pub(crate) mod shape_export_data_type_list;
 
 pub(crate) mod shape_interface_summaries;
 
@@ -773,6 +1059,8 @@ pub(crate) mod shape_measurement;
 
 pub(crate) mod shape_metric;
 
+pub(crate) mod shape_mp4;
+
 pub(crate) mod shape_parquet;
 
 pub(crate) mod shape_portal_tools;
@@ -781,17 +1069,23 @@ pub(crate) mod shape_property_value_null_value;
 
 pub(crate) mod shape_transform;
 
+pub(crate) mod shape_trim_settings;
+
 pub(crate) mod shape_batch_put_asset_property_error;
 
 pub(crate) mod shape_citations;
 
 pub(crate) mod shape_column_names;
 
+pub(crate) mod shape_compute_node_execution_state_details;
+
 pub(crate) mod shape_data_binding_value;
 
 pub(crate) mod shape_datum;
 
 pub(crate) mod shape_detailed_error;
+
+pub(crate) mod shape_detailed_pipeline_error;
 
 pub(crate) mod shape_expression_variable;
 

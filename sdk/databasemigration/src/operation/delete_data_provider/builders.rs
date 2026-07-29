@@ -22,7 +22,8 @@ impl crate::operation::delete_data_provider::builders::DeleteDataProviderInputBu
 }
 /// Fluent builder constructing a request to `DeleteDataProvider`.
 ///
-/// <p>Deletes the specified data provider.</p><note>
+/// <p>Deletes the specified data provider.</p>
+/// <p><b>Required permissions:</b> <code>dms:DeleteDataProvider</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p><note>
 /// <p>All migration projects associated with the data provider must be deleted or modified before you can delete the data provider.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

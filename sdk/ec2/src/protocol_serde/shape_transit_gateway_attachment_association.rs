@@ -24,8 +24,21 @@ pub fn de_transit_gateway_attachment_association(
                 builder = builder.set_transit_gateway_route_table_id(var_1);
             }
             ,
-            s if s.matches("state") /* State com.amazonaws.ec2#TransitGatewayAttachmentAssociation$State */ =>  {
+            s if s.matches("transitGatewayPolicyTableId") /* TransitGatewayPolicyTableId com.amazonaws.ec2#TransitGatewayAttachmentAssociation$TransitGatewayPolicyTableId */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_gateway_policy_table_id(var_2);
+            }
+            ,
+            s if s.matches("state") /* State com.amazonaws.ec2#TransitGatewayAttachmentAssociation$State */ =>  {
+                let var_3 =
                     Some(
                         Result::<crate::types::TransitGatewayAssociationState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::TransitGatewayAssociationState::from(
@@ -35,7 +48,7 @@ pub fn de_transit_gateway_attachment_association(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_2);
+                builder = builder.set_state(var_3);
             }
             ,
             _ => {}

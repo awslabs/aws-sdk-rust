@@ -7,8 +7,17 @@ pub mod associate_assets;
 /// Types for the `AssociateTimeSeriesToAssetProperty` operation.
 pub mod associate_time_series_to_asset_property;
 
+/// Types for the `BatchAssociateDataSegmentsToDataset` operation.
+pub mod batch_associate_data_segments_to_dataset;
+
 /// Types for the `BatchAssociateProjectAssets` operation.
 pub mod batch_associate_project_assets;
+
+/// Types for the `BatchDeleteDatasetDataSegments` operation.
+pub mod batch_delete_dataset_data_segments;
+
+/// Types for the `BatchDisassociateDataSegmentsFromDataset` operation.
+pub mod batch_disassociate_data_segments_from_dataset;
 
 /// Types for the `BatchDisassociateProjectAssets` operation.
 pub mod batch_disassociate_project_assets;
@@ -25,8 +34,20 @@ pub mod batch_get_asset_property_value_history;
 /// Types for the `BatchPutAssetPropertyValue` operation.
 pub mod batch_put_asset_property_value;
 
+/// Types for the `CancelEnrichmentJob` operation.
+pub mod cancel_enrichment_job;
+
+/// Types for the `CancelPipelineExecution` operation.
+pub mod cancel_pipeline_execution;
+
+/// Types for the `CancelQuery` operation.
+pub mod cancel_query;
+
 /// Types for the `CreateAccessPolicy` operation.
 pub mod create_access_policy;
+
+/// Types for the `CreateApplication` operation.
+pub mod create_application;
 
 /// Types for the `CreateAsset` operation.
 pub mod create_asset;
@@ -49,8 +70,17 @@ pub mod create_dashboard;
 /// Types for the `CreateDataset` operation.
 pub mod create_dataset;
 
+/// Types for the `CreateDatasetExportJob` operation.
+pub mod create_dataset_export_job;
+
+/// Types for the `CreateEnrichmentJob` operation.
+pub mod create_enrichment_job;
+
 /// Types for the `CreateGateway` operation.
 pub mod create_gateway;
+
+/// Types for the `CreatePipeline` operation.
+pub mod create_pipeline;
 
 /// Types for the `CreatePortal` operation.
 pub mod create_portal;
@@ -58,8 +88,17 @@ pub mod create_portal;
 /// Types for the `CreateProject` operation.
 pub mod create_project;
 
+/// Types for the `CreateTask` operation.
+pub mod create_task;
+
+/// Types for the `CreateWorkspace` operation.
+pub mod create_workspace;
+
 /// Types for the `DeleteAccessPolicy` operation.
 pub mod delete_access_policy;
+
+/// Types for the `DeleteApplication` operation.
+pub mod delete_application;
 
 /// Types for the `DeleteAsset` operation.
 pub mod delete_asset;
@@ -85,20 +124,32 @@ pub mod delete_dataset;
 /// Types for the `DeleteGateway` operation.
 pub mod delete_gateway;
 
+/// Types for the `DeletePipeline` operation.
+pub mod delete_pipeline;
+
 /// Types for the `DeletePortal` operation.
 pub mod delete_portal;
 
 /// Types for the `DeleteProject` operation.
 pub mod delete_project;
 
+/// Types for the `DeleteTask` operation.
+pub mod delete_task;
+
 /// Types for the `DeleteTimeSeries` operation.
 pub mod delete_time_series;
+
+/// Types for the `DeleteWorkspace` operation.
+pub mod delete_workspace;
 
 /// Types for the `DescribeAccessPolicy` operation.
 pub mod describe_access_policy;
 
 /// Types for the `DescribeAction` operation.
 pub mod describe_action;
+
+/// Types for the `DescribeApplication` operation.
+pub mod describe_application;
 
 /// Types for the `DescribeAsset` operation.
 pub mod describe_asset;
@@ -133,8 +184,14 @@ pub mod describe_dashboard;
 /// Types for the `DescribeDataset` operation.
 pub mod describe_dataset;
 
+/// Types for the `DescribeDatasetExportJob` operation.
+pub mod describe_dataset_export_job;
+
 /// Types for the `DescribeDefaultEncryptionConfiguration` operation.
 pub mod describe_default_encryption_configuration;
+
+/// Types for the `DescribeEnrichmentJob` operation.
+pub mod describe_enrichment_job;
 
 /// Types for the `DescribeExecution` operation.
 pub mod describe_execution;
@@ -148,17 +205,35 @@ pub mod describe_gateway_capability_configuration;
 /// Types for the `DescribeLoggingOptions` operation.
 pub mod describe_logging_options;
 
+/// Types for the `DescribePipeline` operation.
+pub mod describe_pipeline;
+
+/// Types for the `DescribePipelineExecution` operation.
+pub mod describe_pipeline_execution;
+
 /// Types for the `DescribePortal` operation.
 pub mod describe_portal;
 
 /// Types for the `DescribeProject` operation.
 pub mod describe_project;
 
+/// Types for the `DescribeQuery` operation.
+pub mod describe_query;
+
+/// Types for the `DescribeSearch` operation.
+pub mod describe_search;
+
 /// Types for the `DescribeStorageConfiguration` operation.
 pub mod describe_storage_configuration;
 
+/// Types for the `DescribeTask` operation.
+pub mod describe_task;
+
 /// Types for the `DescribeTimeSeries` operation.
 pub mod describe_time_series;
+
+/// Types for the `DescribeWorkspace` operation.
+pub mod describe_workspace;
 
 /// Types for the `DisassociateAssets` operation.
 pub mod disassociate_assets;
@@ -181,8 +256,17 @@ pub mod get_asset_property_value;
 /// Types for the `GetAssetPropertyValueHistory` operation.
 pub mod get_asset_property_value_history;
 
+/// Types for the `GetCaptureData` operation.
+pub mod get_capture_data;
+
 /// Types for the `GetInterpolatedAssetPropertyValues` operation.
 pub mod get_interpolated_asset_property_values;
+
+/// Types for the `GetQueryResults` operation.
+pub mod get_query_results;
+
+/// Types for the `GetSearchResults` operation.
+pub mod get_search_results;
 
 /// Types for the `InvokeAssistant` operation.
 pub mod invoke_assistant;
@@ -192,6 +276,9 @@ pub mod list_access_policies;
 
 /// Types for the `ListActions` operation.
 pub mod list_actions;
+
+/// Types for the `ListApplications` operation.
+pub mod list_applications;
 
 /// Types for the `ListAssetModelCompositeModels` operation.
 pub mod list_asset_model_composite_models;
@@ -232,8 +319,20 @@ pub mod list_computation_models;
 /// Types for the `ListDashboards` operation.
 pub mod list_dashboards;
 
+/// Types for the `ListDatasetDataSegmentRelationships` operation.
+pub mod list_dataset_data_segment_relationships;
+
+/// Types for the `ListDatasetDataSegments` operation.
+pub mod list_dataset_data_segments;
+
+/// Types for the `ListDatasetExportJobs` operation.
+pub mod list_dataset_export_jobs;
+
 /// Types for the `ListDatasets` operation.
 pub mod list_datasets;
+
+/// Types for the `ListEnrichmentJobs` operation.
+pub mod list_enrichment_jobs;
 
 /// Types for the `ListExecutions` operation.
 pub mod list_executions;
@@ -244,6 +343,12 @@ pub mod list_gateways;
 /// Types for the `ListInterfaceRelationships` operation.
 pub mod list_interface_relationships;
 
+/// Types for the `ListPipelineExecutions` operation.
+pub mod list_pipeline_executions;
+
+/// Types for the `ListPipelines` operation.
+pub mod list_pipelines;
+
 /// Types for the `ListPortals` operation.
 pub mod list_portals;
 
@@ -253,11 +358,23 @@ pub mod list_project_assets;
 /// Types for the `ListProjects` operation.
 pub mod list_projects;
 
+/// Types for the `ListQueries` operation.
+pub mod list_queries;
+
+/// Types for the `ListSearches` operation.
+pub mod list_searches;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListTasks` operation.
+pub mod list_tasks;
+
 /// Types for the `ListTimeSeries` operation.
 pub mod list_time_series;
+
+/// Types for the `ListWorkspaces` operation.
+pub mod list_workspaces;
 
 /// Types for the `PutAssetModelInterfaceRelationship` operation.
 pub mod put_asset_model_interface_relationship;
@@ -270,6 +387,15 @@ pub mod put_logging_options;
 
 /// Types for the `PutStorageConfiguration` operation.
 pub mod put_storage_configuration;
+
+/// Types for the `StartPipelineExecution` operation.
+pub mod start_pipeline_execution;
+
+/// Types for the `StartQuery` operation.
+pub mod start_query;
+
+/// Types for the `StartSearch` operation.
+pub mod start_search;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -307,8 +433,17 @@ pub mod update_gateway;
 /// Types for the `UpdateGatewayCapabilityConfiguration` operation.
 pub mod update_gateway_capability_configuration;
 
+/// Types for the `UpdatePipeline` operation.
+pub mod update_pipeline;
+
 /// Types for the `UpdatePortal` operation.
 pub mod update_portal;
 
 /// Types for the `UpdateProject` operation.
 pub mod update_project;
+
+/// Types for the `UpdateTask` operation.
+pub mod update_task;
+
+/// Types for the `UpdateWorkspace` operation.
+pub mod update_workspace;

@@ -23,6 +23,7 @@ impl crate::operation::create_instance_profile::builders::CreateInstanceProfileI
 /// Fluent builder constructing a request to `CreateInstanceProfile`.
 ///
 /// <p>Creates the instance profile using the specified parameters.</p>
+/// <p><b>Required permissions:</b> <code>dms:CreateInstanceProfile</code>. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions, resources, and condition keys for Database Migration Service</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateInstanceProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

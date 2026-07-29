@@ -3,11 +3,11 @@ pub use crate::types::_runtime_environment::RuntimeEnvironmentBuilder;
 
 pub use crate::types::_default_application::DefaultApplicationBuilder;
 
+pub use crate::types::_display_configuration::DisplayConfigurationBuilder;
+
 pub use crate::types::_performance_stats_configuration::PerformanceStatsConfigurationBuilder;
 
 pub use crate::types::_export_files_metadata::ExportFilesMetadataBuilder;
-
-pub use crate::types::_display_configuration::DisplayConfigurationBuilder;
 
 pub use crate::types::_replication_status::ReplicationStatusBuilder;
 
@@ -18,6 +18,10 @@ pub use crate::types::_location_configuration::LocationConfigurationBuilder;
 pub use crate::types::_resolution::ResolutionBuilder;
 
 pub use crate::types::_stream_session_summary::StreamSessionSummaryBuilder;
+
+pub use crate::types::_shader_cache_summary::ShaderCacheSummaryBuilder;
+
+pub use crate::types::_stream_url_summary::StreamUrlSummaryBuilder;
 
 pub use crate::types::_vpc_transit_configuration_response::VpcTransitConfigurationResponseBuilder;
 

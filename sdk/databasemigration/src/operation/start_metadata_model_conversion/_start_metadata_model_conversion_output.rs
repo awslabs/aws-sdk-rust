@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartMetadataModelConversionOutput {
-    /// <p>The identifier for the conversion operation.</p>
+    /// <p>The identifier for the conversion request.</p>
     pub request_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StartMetadataModelConversionOutput {
-    /// <p>The identifier for the conversion operation.</p>
+    /// <p>The identifier for the conversion request.</p>
     pub fn request_identifier(&self) -> ::std::option::Option<&str> {
         self.request_identifier.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StartMetadataModelConversionOutputBuilder {
     _request_id: Option<String>,
 }
 impl StartMetadataModelConversionOutputBuilder {
-    /// <p>The identifier for the conversion operation.</p>
+    /// <p>The identifier for the conversion request.</p>
     pub fn request_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the conversion operation.</p>
+    /// <p>The identifier for the conversion request.</p>
     pub fn set_request_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_identifier = input;
         self
     }
-    /// <p>The identifier for the conversion operation.</p>
+    /// <p>The identifier for the conversion request.</p>
     pub fn get_request_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_identifier
     }

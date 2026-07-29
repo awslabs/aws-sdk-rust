@@ -29,6 +29,16 @@ pub(crate) fn reflens_batch_get_asset_property_value_history_output_output_next_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_pipeline_execution_output_output_next_token(
+    input: &crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_asset_property_aggregates_output_output_next_token(
     input: &crate::operation::get_asset_property_aggregates::GetAssetPropertyAggregatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -59,6 +69,26 @@ pub(crate) fn reflens_get_interpolated_asset_property_values_output_output_next_
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_query_results_output_output_next_token(
+    input: &crate::operation::get_query_results::GetQueryResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_search_results_output_output_next_token(
+    input: &crate::operation::get_search_results::GetSearchResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_access_policies_output_output_next_token(
     input: &crate::operation::list_access_policies::ListAccessPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -73,6 +103,16 @@ pub(crate) fn reflens_list_actions_output_output_next_token(
     input: &crate::operation::list_actions::ListActionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = &input.next_token;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_applications_output_output_next_token(
+    input: &crate::operation::list_applications::ListApplicationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
     ::std::option::Option::Some(input)
 }
 
@@ -206,8 +246,48 @@ pub(crate) fn reflens_list_dashboards_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_dataset_data_segment_relationships_output_output_next_token(
+    input: &crate::operation::list_dataset_data_segment_relationships::ListDatasetDataSegmentRelationshipsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_dataset_data_segments_output_output_next_token(
+    input: &crate::operation::list_dataset_data_segments::ListDatasetDataSegmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_dataset_export_jobs_output_output_next_token(
+    input: &crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_datasets_output_output_next_token(
     input: &crate::operation::list_datasets::ListDatasetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_enrichment_jobs_output_output_next_token(
+    input: &crate::operation::list_enrichment_jobs::ListEnrichmentJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -246,6 +326,26 @@ pub(crate) fn reflens_list_interface_relationships_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_pipeline_executions_output_output_next_token(
+    input: &crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_pipelines_output_output_next_token(
+    input: &crate::operation::list_pipelines::ListPipelinesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_portals_output_output_next_token(
     input: &crate::operation::list_portals::ListPortalsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -276,6 +376,36 @@ pub(crate) fn reflens_list_projects_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_queries_output_output_next_token(
+    input: &crate::operation::list_queries::ListQueriesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_searches_output_output_next_token(
+    input: &crate::operation::list_searches::ListSearchesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_tasks_output_output_next_token(
+    input: &crate::operation::list_tasks::ListTasksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_time_series_output_output_next_token(
     input: &crate::operation::list_time_series::ListTimeSeriesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -283,6 +413,23 @@ pub(crate) fn reflens_list_time_series_output_output_next_token(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_workspaces_output_output_next_token(
+    input: &crate::operation::list_workspaces::ListWorkspacesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_pipeline_execution_output_output_compute_node_execution_details(
+    input: crate::operation::describe_pipeline_execution::DescribePipelineExecutionOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ComputeNodeExecutionDetails>> {
+    let input = input.compute_node_execution_details;
     ::std::option::Option::Some(input)
 }
 
@@ -307,6 +454,20 @@ pub(crate) fn lens_get_interpolated_asset_property_values_output_output_interpol
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_get_query_results_output_output_rows(
+    input: crate::operation::get_query_results::GetQueryResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::option::Option<::std::string::String>>>> {
+    let input = input.rows?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_search_results_output_output_search_results(
+    input: crate::operation::get_search_results::GetSearchResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SearchResult>> {
+    let input = input.search_results;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_access_policies_output_output_access_policy_summaries(
     input: crate::operation::list_access_policies::ListAccessPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessPolicySummary>> {
@@ -318,6 +479,13 @@ pub(crate) fn lens_list_actions_output_output_action_summaries(
     input: crate::operation::list_actions::ListActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ActionSummary>> {
     let input = input.action_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_applications_output_output_applications(
+    input: crate::operation::list_applications::ListApplicationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ApplicationSummary>> {
+    let input = input.applications;
     ::std::option::Option::Some(input)
 }
 
@@ -412,10 +580,38 @@ pub(crate) fn lens_list_dashboards_output_output_dashboard_summaries(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_dataset_data_segment_relationships_output_output_data_segment_relationship_summaries(
+    input: crate::operation::list_dataset_data_segment_relationships::ListDatasetDataSegmentRelationshipsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSegmentRelationshipSummary>> {
+    let input = input.data_segment_relationship_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dataset_data_segments_output_output_data_segments(
+    input: crate::operation::list_dataset_data_segments::ListDatasetDataSegmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSegmentSummary>> {
+    let input = input.data_segments;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dataset_export_jobs_output_output_jobs(
+    input: crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExportJobSummary>> {
+    let input = input.jobs;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_datasets_output_output_dataset_summaries(
     input: crate::operation::list_datasets::ListDatasetsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetSummary>> {
     let input = input.dataset_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_enrichment_jobs_output_output_jobs(
+    input: crate::operation::list_enrichment_jobs::ListEnrichmentJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::EnrichmentJobSummary>> {
+    let input = input.jobs;
     ::std::option::Option::Some(input)
 }
 
@@ -440,6 +636,20 @@ pub(crate) fn lens_list_interface_relationships_output_output_interface_relation
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_pipeline_executions_output_output_pipeline_execution_summaries(
+    input: crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PipelineExecutionSummary>> {
+    let input = input.pipeline_execution_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_pipelines_output_output_pipeline_summaries(
+    input: crate::operation::list_pipelines::ListPipelinesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PipelineSummary>> {
+    let input = input.pipeline_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_portals_output_output_portal_summaries(
     input: crate::operation::list_portals::ListPortalsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PortalSummary>> {
@@ -461,9 +671,37 @@ pub(crate) fn lens_list_projects_output_output_project_summaries(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_queries_output_output_queries(
+    input: crate::operation::list_queries::ListQueriesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QuerySummary>> {
+    let input = input.queries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_searches_output_output_search_summaries(
+    input: crate::operation::list_searches::ListSearchesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SearchSummary>> {
+    let input = input.search_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tasks_output_output_task_summaries(
+    input: crate::operation::list_tasks::ListTasksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TaskSummary>> {
+    let input = input.task_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_time_series_output_output_time_series_summaries(
     input: crate::operation::list_time_series::ListTimeSeriesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesSummary>> {
     let input = input.time_series_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_workspaces_output_output_workspace_summaries(
+    input: crate::operation::list_workspaces::ListWorkspacesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::WorkspaceSummary>> {
+    let input = input.workspace_summaries;
     ::std::option::Option::Some(input)
 }

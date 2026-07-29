@@ -22,6 +22,9 @@ impl crate::operation::batch_associate_project_assets::builders::BatchAssociateP
 }
 /// Fluent builder constructing a request to `BatchAssociateProjectAssets`.
 ///
+/// <important>
+/// <p>The IoT SiteWise Monitor feature will no longer be open to new customers starting November 7, 2025. If you would like to use the IoT SiteWise Monitor feature, sign up prior to that date. Existing customers can continue to use the service as normal. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/iotsitewise-monitor-availability-change.html">IoT SiteWise Monitor availability change</a>.</p>
+/// </important>
 /// <p>Associates a group (batch) of assets with an IoT SiteWise Monitor project.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchAssociateProjectAssetsFluentBuilder {

@@ -3,11 +3,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAssetOutput {
+    /// <p>The ID of the asset.</p>
+    pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub asset_status: ::std::option::Option<crate::types::AssetStatus>,
     _request_id: Option<String>,
 }
 impl UpdateAssetOutput {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+        self.asset_id.as_deref()
+    }
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     pub fn asset_status(&self) -> ::std::option::Option<&crate::types::AssetStatus> {
         self.asset_status.as_ref()
@@ -29,10 +35,25 @@ impl UpdateAssetOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct UpdateAssetOutputBuilder {
+    pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_status: ::std::option::Option<crate::types::AssetStatus>,
     _request_id: Option<String>,
 }
 impl UpdateAssetOutputBuilder {
+    /// <p>The ID of the asset.</p>
+    pub fn asset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the asset.</p>
+    pub fn set_asset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_id = input;
+        self
+    }
+    /// <p>The ID of the asset.</p>
+    pub fn get_asset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_id
+    }
     /// <p>The status of the asset, which contains a state (<code>UPDATING</code> after successfully calling this operation) and any error message.</p>
     /// This field is required.
     pub fn asset_status(mut self, input: crate::types::AssetStatus) -> Self {
@@ -60,6 +81,7 @@ impl UpdateAssetOutputBuilder {
     /// Consumes the builder and constructs a [`UpdateAssetOutput`](crate::operation::update_asset::UpdateAssetOutput).
     pub fn build(self) -> crate::operation::update_asset::UpdateAssetOutput {
         crate::operation::update_asset::UpdateAssetOutput {
+            asset_id: self.asset_id,
             asset_status: self.asset_status,
             _request_id: self._request_id,
         }

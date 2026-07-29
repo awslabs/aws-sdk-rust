@@ -227,6 +227,8 @@ pub use crate::types::_cookie_match_pattern::CookieMatchPatternBuilder;
 
 pub use crate::types::_text_transformation::TextTransformationBuilder;
 
+pub use crate::types::_pre_parse_text_transformation::PreParseTextTransformationBuilder;
+
 pub use crate::types::_excluded_rule::ExcludedRuleBuilder;
 
 pub use crate::types::_rule_action_override::RuleActionOverrideBuilder;

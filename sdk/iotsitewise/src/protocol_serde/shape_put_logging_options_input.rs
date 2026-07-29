@@ -9,5 +9,8 @@ pub fn ser_put_logging_options_input_input(
         crate::protocol_serde::shape_logging_options::ser_logging_options(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.workspace_name {
+        object.key("workspaceName").string(var_3.as_str());
+    }
     Ok(())
 }

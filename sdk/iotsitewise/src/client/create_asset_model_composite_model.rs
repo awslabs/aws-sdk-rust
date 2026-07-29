@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`asset_model_composite_model_id(String)`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput::asset_model_composite_model_id): <p>The ID of the composed asset model. You can use this ID when you call other IoT SiteWise APIs.</p>
     ///   - [`asset_model_composite_model_path(Vec::<AssetModelCompositeModelPathSegment>)`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput::asset_model_composite_model_path): <p>The path to the composite model listing the parent composite models.</p>
     ///   - [`asset_model_status(Option<AssetModelStatus>)`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput::asset_model_status): <p>Contains current status information for an asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model states</a> in the <i>IoT SiteWise User Guide</i>.</p>
+    ///   - [`asset_model_id(Option<String>)`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelOutput::asset_model_id): <p>The ID of the asset model.</p>
     /// - On failure, responds with [`SdkError<CreateAssetModelCompositeModelError>`](crate::operation::create_asset_model_composite_model::CreateAssetModelCompositeModelError)
     pub fn create_asset_model_composite_model(
         &self,

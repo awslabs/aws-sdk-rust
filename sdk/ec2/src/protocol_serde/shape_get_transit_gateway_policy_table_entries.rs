@@ -72,6 +72,19 @@ pub fn de_get_transit_gateway_policy_table_entries(
                 builder = builder.set_transit_gateway_policy_table_entries(var_1);
             }
             ,
+            s if s.matches("nextToken") /* NextToken com.amazonaws.ec2.synthetic#GetTransitGatewayPolicyTableEntriesOutput$NextToken */ =>  {
+                let var_2 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_next_token(var_2);
+            }
+            ,
             _ => {}
         }
     }

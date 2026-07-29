@@ -74,6 +74,23 @@ pub fn de_update_dataset_http_error(
             };
             tmp
         }),
+        "ResourceAlreadyExistsException" => crate::operation::update_dataset::UpdateDatasetError::ResourceAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_dataset::UpdateDatasetError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::resource_already_exists_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_dataset::UpdateDatasetError::unhandled)?
+            };
+            tmp
+        }),
         "ResourceNotFoundException" => crate::operation::update_dataset::UpdateDatasetError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp = {

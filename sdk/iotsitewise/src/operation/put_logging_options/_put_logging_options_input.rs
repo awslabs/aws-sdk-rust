@@ -5,11 +5,17 @@
 pub struct PutLoggingOptionsInput {
     /// <p>The logging options to set.</p>
     pub logging_options: ::std::option::Option<crate::types::LoggingOptions>,
+    /// <p>The name of the workspace.</p>
+    pub workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl PutLoggingOptionsInput {
     /// <p>The logging options to set.</p>
     pub fn logging_options(&self) -> ::std::option::Option<&crate::types::LoggingOptions> {
         self.logging_options.as_ref()
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(&self) -> ::std::option::Option<&str> {
+        self.workspace_name.as_deref()
     }
 }
 impl PutLoggingOptionsInput {
@@ -24,6 +30,7 @@ impl PutLoggingOptionsInput {
 #[non_exhaustive]
 pub struct PutLoggingOptionsInputBuilder {
     pub(crate) logging_options: ::std::option::Option<crate::types::LoggingOptions>,
+    pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
 }
 impl PutLoggingOptionsInputBuilder {
     /// <p>The logging options to set.</p>
@@ -41,12 +48,27 @@ impl PutLoggingOptionsInputBuilder {
     pub fn get_logging_options(&self) -> &::std::option::Option<crate::types::LoggingOptions> {
         &self.logging_options
     }
+    /// <p>The name of the workspace.</p>
+    pub fn workspace_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.workspace_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn set_workspace_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.workspace_name = input;
+        self
+    }
+    /// <p>The name of the workspace.</p>
+    pub fn get_workspace_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.workspace_name
+    }
     /// Consumes the builder and constructs a [`PutLoggingOptionsInput`](crate::operation::put_logging_options::PutLoggingOptionsInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_logging_options::PutLoggingOptionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_logging_options::PutLoggingOptionsInput {
             logging_options: self.logging_options,
+            workspace_name: self.workspace_name,
         })
     }
 }

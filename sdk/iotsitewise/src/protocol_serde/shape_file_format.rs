@@ -15,6 +15,18 @@ pub fn ser_file_format(
         crate::protocol_serde::shape_parquet::ser_parquet(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.mp4 {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("mp4").start_object();
+        crate::protocol_serde::shape_mp4::ser_mp4(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.annotation {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("annotation").start_object();
+        crate::protocol_serde::shape_annotation::ser_annotation(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -45,6 +57,12 @@ where
                         }
                         "parquet" => {
                             builder = builder.set_parquet(crate::protocol_serde::shape_parquet::de_parquet(tokens, _value, depth + 1)?);
+                        }
+                        "mp4" => {
+                            builder = builder.set_mp4(crate::protocol_serde::shape_mp4::de_mp4(tokens, _value, depth + 1)?);
+                        }
+                        "annotation" => {
+                            builder = builder.set_annotation(crate::protocol_serde::shape_annotation::de_annotation(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

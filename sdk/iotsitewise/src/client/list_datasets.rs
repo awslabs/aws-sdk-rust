@@ -5,11 +5,14 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`source_type(DatasetSourceType)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::source_type) / [`set_source_type(Option<DatasetSourceType>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_source_type):<br>required: **true**<br><p>The type of data source for the dataset.</p><br>
+    ///   - [`workspace_name(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::workspace_name) / [`set_workspace_name(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_workspace_name):<br>required: **false**<br><p>The name of the workspace to filter datasets by.</p><br>
+    ///   - [`dataset_type(DatasetTypeEnum)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::dataset_type) / [`set_dataset_type(Option<DatasetTypeEnum>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_dataset_type):<br>required: **false**<br><p>The type of dataset to filter by: a session dataset, a curated dataset, or a connection to an external datasource.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next set of results, or null if there are no additional results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results to return for each paginated request.</p><br>
     /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):
     ///   - [`dataset_summaries(Vec::<DatasetSummary>)`](crate::operation::list_datasets::ListDatasetsOutput::dataset_summaries): <p>A list that summarizes the dataset response.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::next_token): <p>The token for the next set of results, or null if there are no additional results.</p>
+    ///   - [`workspace_name(Option<String>)`](crate::operation::list_datasets::ListDatasetsOutput::workspace_name): <p>The name of the workspace.</p>
     /// - On failure, responds with [`SdkError<ListDatasetsError>`](crate::operation::list_datasets::ListDatasetsError)
     pub fn list_datasets(&self) -> crate::operation::list_datasets::builders::ListDatasetsFluentBuilder {
         crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::new(self.handle.clone())

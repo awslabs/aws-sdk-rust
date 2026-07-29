@@ -5,7 +5,27 @@
 pub struct GetTransitGatewayPolicyTableEntriesInput {
     /// <p>The ID of the transit gateway policy table.</p>
     pub transit_gateway_policy_table_id: ::std::option::Option<::std::string::String>,
-    /// <p>The filters associated with the transit gateway policy table.</p>
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>policy-rule-number</code> - The rule number for the transit gateway policy table entry.</p></li>
+    /// <li>
+    /// <p><code>target-route-table-id</code> - The ID of the target route table.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-ip</code> - The source CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-ip</code> - The destination CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-port</code> - The source port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-port</code> - The destination port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.protocol</code> - The protocol for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.key</code> - The metadata key for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.value</code> - The metadata value for the policy rule.</p></li>
+    /// </ul>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -19,7 +39,27 @@ impl GetTransitGatewayPolicyTableEntriesInput {
     pub fn transit_gateway_policy_table_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_policy_table_id.as_deref()
     }
-    /// <p>The filters associated with the transit gateway policy table.</p>
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>policy-rule-number</code> - The rule number for the transit gateway policy table entry.</p></li>
+    /// <li>
+    /// <p><code>target-route-table-id</code> - The ID of the target route table.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-ip</code> - The source CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-ip</code> - The destination CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-port</code> - The source port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-port</code> - The destination port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.protocol</code> - The protocol for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.key</code> - The metadata key for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.value</code> - The metadata value for the policy rule.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
@@ -75,19 +115,79 @@ impl GetTransitGatewayPolicyTableEntriesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters associated with the transit gateway policy table.</p>
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>policy-rule-number</code> - The rule number for the transit gateway policy table entry.</p></li>
+    /// <li>
+    /// <p><code>target-route-table-id</code> - The ID of the target route table.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-ip</code> - The source CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-ip</code> - The destination CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-port</code> - The source port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-port</code> - The destination port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.protocol</code> - The protocol for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.key</code> - The metadata key for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.value</code> - The metadata value for the policy rule.</p></li>
+    /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The filters associated with the transit gateway policy table.</p>
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>policy-rule-number</code> - The rule number for the transit gateway policy table entry.</p></li>
+    /// <li>
+    /// <p><code>target-route-table-id</code> - The ID of the target route table.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-ip</code> - The source CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-ip</code> - The destination CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-port</code> - The source port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-port</code> - The destination port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.protocol</code> - The protocol for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.key</code> - The metadata key for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.value</code> - The metadata value for the policy rule.</p></li>
+    /// </ul>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>The filters associated with the transit gateway policy table.</p>
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>policy-rule-number</code> - The rule number for the transit gateway policy table entry.</p></li>
+    /// <li>
+    /// <p><code>target-route-table-id</code> - The ID of the target route table.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-ip</code> - The source CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-ip</code> - The destination CIDR block for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.source-port</code> - The source port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.destination-port</code> - The destination port or port range for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.protocol</code> - The protocol for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.key</code> - The metadata key for the policy rule.</p></li>
+    /// <li>
+    /// <p><code>policy-rule.meta-data.value</code> - The metadata value for the policy rule.</p></li>
+    /// </ul>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }

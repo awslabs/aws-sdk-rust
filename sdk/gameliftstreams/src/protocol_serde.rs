@@ -35,6 +35,8 @@ pub(crate) mod shape_create_stream_session_admin_shell;
 
 pub(crate) mod shape_create_stream_session_connection;
 
+pub(crate) mod shape_create_stream_url;
+
 pub(crate) mod shape_delete_application;
 
 pub(crate) mod shape_delete_stream_group;
@@ -49,6 +51,10 @@ pub(crate) mod shape_get_stream_group;
 
 pub(crate) mod shape_get_stream_session;
 
+pub(crate) mod shape_get_stream_url;
+
+pub(crate) mod shape_list_application_shader_caches;
+
 pub(crate) mod shape_list_applications;
 
 pub(crate) mod shape_list_stream_groups;
@@ -57,9 +63,13 @@ pub(crate) mod shape_list_stream_sessions;
 
 pub(crate) mod shape_list_stream_sessions_by_account;
 
+pub(crate) mod shape_list_stream_urls;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_remove_stream_group_locations;
+
+pub(crate) mod shape_revoke_stream_url;
 
 pub(crate) mod shape_start_stream_session;
 
@@ -95,6 +105,8 @@ pub(crate) mod shape_create_stream_group_input;
 
 pub(crate) mod shape_create_stream_session_connection_input;
 
+pub(crate) mod shape_create_stream_url_input;
+
 pub(crate) mod shape_disassociate_applications_input;
 
 pub(crate) mod shape_export_stream_session_files_input;
@@ -102,6 +114,8 @@ pub(crate) mod shape_export_stream_session_files_input;
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_revoke_stream_url_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
@@ -137,6 +151,8 @@ pub(crate) mod shape_game_launch_arg_list;
 
 pub(crate) mod shape_location_configuration;
 
+pub(crate) mod shape_location_list;
+
 pub(crate) mod shape_location_states;
 
 pub(crate) mod shape_performance_stats_configuration;
@@ -145,9 +161,13 @@ pub(crate) mod shape_replication_statuses;
 
 pub(crate) mod shape_runtime_environment;
 
+pub(crate) mod shape_shader_cache_summary_list;
+
 pub(crate) mod shape_stream_group_summary_list;
 
 pub(crate) mod shape_stream_session_summary_list;
+
+pub(crate) mod shape_stream_url_summary_list;
 
 pub(crate) mod shape_tags;
 
@@ -159,9 +179,13 @@ pub(crate) mod shape_replication_status;
 
 pub(crate) mod shape_resolution;
 
+pub(crate) mod shape_shader_cache_summary;
+
 pub(crate) mod shape_stream_group_summary;
 
 pub(crate) mod shape_stream_session_summary;
+
+pub(crate) mod shape_stream_url_summary;
 
 pub(crate) mod shape_vpc_transit_configuration;
 

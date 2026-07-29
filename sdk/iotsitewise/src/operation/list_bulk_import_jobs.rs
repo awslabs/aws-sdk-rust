@@ -214,6 +214,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListBulkImpo
                         query.push_kv("filter", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.workspace_name {
+                    {
+                        query.push_kv("workspaceName", &::aws_smithy_http::query::fmt_string(inner_4));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
