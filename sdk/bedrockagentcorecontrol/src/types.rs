@@ -627,6 +627,8 @@ pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
 
 pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfig;
 
+pub use crate::types::_open_responses_evaluator_model_config::OpenResponsesEvaluatorModelConfig;
+
 pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfiguration;
 
 pub use crate::types::_gateway_interception_point::GatewayInterceptionPoint;
@@ -722,6 +724,8 @@ pub use crate::types::_numerical_scale_definition::NumericalScaleDefinition;
 pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinition;
 
 pub use crate::types::_inference_configuration::InferenceConfiguration;
+
+pub use crate::types::_reasoning_configuration::ReasoningConfiguration;
 
 pub use crate::types::_match_principal_entry::MatchPrincipalEntry;
 
@@ -1485,6 +1489,8 @@ mod _online_evaluation_config_summary;
 
 mod _online_evaluation_execution_status;
 
+mod _open_responses_evaluator_model_config;
+
 mod _output_config;
 
 mod _override_type;
@@ -1558,6 +1564,8 @@ mod _protocol_configuration;
 mod _provider_prefix;
 
 mod _rating_scale;
+
+mod _reasoning_configuration;
 
 mod _recording_config;
 

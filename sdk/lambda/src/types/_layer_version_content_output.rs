@@ -14,7 +14,7 @@ pub struct LayerVersionContentOutput {
     pub signing_profile_version_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a signing job.</p>
     pub signing_job_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Details about the resolved Amazon S3 object that contains a function's deployment package.</p>
+    /// <p>The resolved Amazon S3 object that contains the layer archive.</p>
     pub resolved_s3_object: ::std::option::Option<crate::types::ResolvedS3Object>,
 }
 impl LayerVersionContentOutput {
@@ -38,7 +38,7 @@ impl LayerVersionContentOutput {
     pub fn signing_job_arn(&self) -> ::std::option::Option<&str> {
         self.signing_job_arn.as_deref()
     }
-    /// <p>Details about the resolved Amazon S3 object that contains a function's deployment package.</p>
+    /// <p>The resolved Amazon S3 object that contains the layer archive.</p>
     pub fn resolved_s3_object(&self) -> ::std::option::Option<&crate::types::ResolvedS3Object> {
         self.resolved_s3_object.as_ref()
     }
@@ -132,17 +132,17 @@ impl LayerVersionContentOutputBuilder {
     pub fn get_signing_job_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.signing_job_arn
     }
-    /// <p>Details about the resolved Amazon S3 object that contains a function's deployment package.</p>
+    /// <p>The resolved Amazon S3 object that contains the layer archive.</p>
     pub fn resolved_s3_object(mut self, input: crate::types::ResolvedS3Object) -> Self {
         self.resolved_s3_object = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Details about the resolved Amazon S3 object that contains a function's deployment package.</p>
+    /// <p>The resolved Amazon S3 object that contains the layer archive.</p>
     pub fn set_resolved_s3_object(mut self, input: ::std::option::Option<crate::types::ResolvedS3Object>) -> Self {
         self.resolved_s3_object = input;
         self
     }
-    /// <p>Details about the resolved Amazon S3 object that contains a function's deployment package.</p>
+    /// <p>The resolved Amazon S3 object that contains the layer archive.</p>
     pub fn get_resolved_s3_object(&self) -> &::std::option::Option<crate::types::ResolvedS3Object> {
         &self.resolved_s3_object
     }

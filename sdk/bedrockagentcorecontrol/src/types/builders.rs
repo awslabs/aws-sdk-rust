@@ -385,6 +385,8 @@ pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
 
 pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfigBuilder;
 
+pub use crate::types::_open_responses_evaluator_model_config::OpenResponsesEvaluatorModelConfigBuilder;
+
 pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfigurationBuilder;
 
 pub use crate::types::_interceptor_payload_filter::InterceptorPayloadFilterBuilder;
@@ -458,6 +460,8 @@ pub use crate::types::_numerical_scale_definition::NumericalScaleDefinitionBuild
 pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinitionBuilder;
 
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
+
+pub use crate::types::_reasoning_configuration::ReasoningConfigurationBuilder;
 
 pub use crate::types::_connector_configuration::ConnectorConfigurationBuilder;
 

@@ -214,17 +214,35 @@ impl UpdateFunctionCodeFluentBuilder {
     pub fn get_s3_object_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_s3_object_version()
     }
-    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    /// <p>Specifies how the deployment package is stored. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>COPY</code> (default) – Uploads a copy of your deployment package to Lambda.</p></li>
+    /// <li>
+    /// <p><code>REFERENCE</code> – Lambda references the deployment package from the specified Amazon S3 bucket.</p></li>
+    /// </ul>
     pub fn s3_object_storage_mode(mut self, input: crate::types::S3ObjectStorageMode) -> Self {
         self.inner = self.inner.s3_object_storage_mode(input);
         self
     }
-    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    /// <p>Specifies how the deployment package is stored. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>COPY</code> (default) – Uploads a copy of your deployment package to Lambda.</p></li>
+    /// <li>
+    /// <p><code>REFERENCE</code> – Lambda references the deployment package from the specified Amazon S3 bucket.</p></li>
+    /// </ul>
     pub fn set_s3_object_storage_mode(mut self, input: ::std::option::Option<crate::types::S3ObjectStorageMode>) -> Self {
         self.inner = self.inner.set_s3_object_storage_mode(input);
         self
     }
-    /// <p>Specifies how the deployment package is stored. Use <code>COPY</code> (default) to upload a copy of your deployment package to Lambda. Use <code>REFERENCE</code> to have Lambda reference the deployment package from the specified Amazon S3 bucket.</p>
+    /// <p>Specifies how the deployment package is stored. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>COPY</code> (default) – Uploads a copy of your deployment package to Lambda.</p></li>
+    /// <li>
+    /// <p><code>REFERENCE</code> – Lambda references the deployment package from the specified Amazon S3 bucket.</p></li>
+    /// </ul>
     pub fn get_s3_object_storage_mode(&self) -> &::std::option::Option<crate::types::S3ObjectStorageMode> {
         self.inner.get_s3_object_storage_mode()
     }

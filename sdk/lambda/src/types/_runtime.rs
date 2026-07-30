@@ -38,6 +38,7 @@
 ///     Runtime::Nodejs20x => { /* ... */ },
 ///     Runtime::Nodejs22x => { /* ... */ },
 ///     Runtime::Nodejs24x => { /* ... */ },
+///     Runtime::Nodejs26x => { /* ... */ },
 ///     Runtime::Nodejs43 => { /* ... */ },
 ///     Runtime::Nodejs43edge => { /* ... */ },
 ///     Runtime::Nodejs610 => { /* ... */ },
@@ -51,6 +52,7 @@
 ///     Runtime::Python312 => { /* ... */ },
 ///     Runtime::Python313 => { /* ... */ },
 ///     Runtime::Python314 => { /* ... */ },
+///     Runtime::Python315 => { /* ... */ },
 ///     Runtime::Python36 => { /* ... */ },
 ///     Runtime::Python37 => { /* ... */ },
 ///     Runtime::Python38 => { /* ... */ },
@@ -142,6 +144,8 @@ pub enum Runtime {
     #[allow(missing_docs)] // documentation missing in model
     Nodejs24x,
     #[allow(missing_docs)] // documentation missing in model
+    Nodejs26x,
+    #[allow(missing_docs)] // documentation missing in model
     Nodejs43,
     #[allow(missing_docs)] // documentation missing in model
     Nodejs43edge,
@@ -167,6 +171,8 @@ pub enum Runtime {
     Python313,
     #[allow(missing_docs)] // documentation missing in model
     Python314,
+    #[allow(missing_docs)] // documentation missing in model
+    Python315,
     #[allow(missing_docs)] // documentation missing in model
     Python36,
     #[allow(missing_docs)] // documentation missing in model
@@ -220,6 +226,7 @@ impl ::std::convert::From<&str> for Runtime {
             "nodejs20.x" => Runtime::Nodejs20x,
             "nodejs22.x" => Runtime::Nodejs22x,
             "nodejs24.x" => Runtime::Nodejs24x,
+            "nodejs26.x" => Runtime::Nodejs26x,
             "nodejs4.3" => Runtime::Nodejs43,
             "nodejs4.3-edge" => Runtime::Nodejs43edge,
             "nodejs6.10" => Runtime::Nodejs610,
@@ -233,6 +240,7 @@ impl ::std::convert::From<&str> for Runtime {
             "python3.12" => Runtime::Python312,
             "python3.13" => Runtime::Python313,
             "python3.14" => Runtime::Python314,
+            "python3.15" => Runtime::Python315,
             "python3.6" => Runtime::Python36,
             "python3.7" => Runtime::Python37,
             "python3.8" => Runtime::Python38,
@@ -284,6 +292,7 @@ impl Runtime {
             Runtime::Nodejs20x => "nodejs20.x",
             Runtime::Nodejs22x => "nodejs22.x",
             Runtime::Nodejs24x => "nodejs24.x",
+            Runtime::Nodejs26x => "nodejs26.x",
             Runtime::Nodejs43 => "nodejs4.3",
             Runtime::Nodejs43edge => "nodejs4.3-edge",
             Runtime::Nodejs610 => "nodejs6.10",
@@ -297,6 +306,7 @@ impl Runtime {
             Runtime::Python312 => "python3.12",
             Runtime::Python313 => "python3.13",
             Runtime::Python314 => "python3.14",
+            Runtime::Python315 => "python3.15",
             Runtime::Python36 => "python3.6",
             Runtime::Python37 => "python3.7",
             Runtime::Python38 => "python3.8",
@@ -339,6 +349,7 @@ impl Runtime {
             "nodejs20.x",
             "nodejs22.x",
             "nodejs24.x",
+            "nodejs26.x",
             "nodejs4.3",
             "nodejs4.3-edge",
             "nodejs6.10",
@@ -352,6 +363,7 @@ impl Runtime {
             "python3.12",
             "python3.13",
             "python3.14",
+            "python3.15",
             "python3.6",
             "python3.7",
             "python3.8",
@@ -411,6 +423,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Nodejs20x => write!(f, "nodejs20.x"),
             Runtime::Nodejs22x => write!(f, "nodejs22.x"),
             Runtime::Nodejs24x => write!(f, "nodejs24.x"),
+            Runtime::Nodejs26x => write!(f, "nodejs26.x"),
             Runtime::Nodejs43 => write!(f, "nodejs4.3"),
             Runtime::Nodejs43edge => write!(f, "nodejs4.3-edge"),
             Runtime::Nodejs610 => write!(f, "nodejs6.10"),
@@ -424,6 +437,7 @@ impl ::std::fmt::Display for Runtime {
             Runtime::Python312 => write!(f, "python3.12"),
             Runtime::Python313 => write!(f, "python3.13"),
             Runtime::Python314 => write!(f, "python3.14"),
+            Runtime::Python315 => write!(f, "python3.15"),
             Runtime::Python36 => write!(f, "python3.6"),
             Runtime::Python37 => write!(f, "python3.7"),
             Runtime::Python38 => write!(f, "python3.8"),

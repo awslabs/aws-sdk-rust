@@ -1283,6 +1283,8 @@ pub(crate) mod shape_numerical_scale_definitions;
 
 pub(crate) mod shape_oauth2_authorization_server_metadata;
 
+pub(crate) mod shape_open_responses_evaluator_model_config;
+
 pub(crate) mod shape_private_key_source;
 
 pub(crate) mod shape_registry_record_credential_provider_union;
@@ -1368,6 +1370,8 @@ pub(crate) mod shape_o_auth_custom_parameters;
 pub(crate) mod shape_o_auth_scopes;
 
 pub(crate) mod shape_provider_prefix;
+
+pub(crate) mod shape_reasoning_configuration;
 
 pub(crate) mod shape_reflection_configuration;
 

@@ -9,6 +9,9 @@ pub fn ser_integrated_repository(
     {
         object.key("providerResourceId").string(input.provider_resource_id.as_str());
     }
+    if let Some(var_1) = &input.branch {
+        object.key("branch").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                         }
                         "providerResourceId" => {
                             builder = builder.set_provider_resource_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "branch" => {
+                            builder = builder.set_branch(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

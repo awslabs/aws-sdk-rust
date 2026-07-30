@@ -779,6 +779,8 @@ pub(crate) mod shape_no_such_entity_exception;
 
 pub(crate) mod shape_open_id_idp_communication_error_exception;
 
+pub(crate) mod shape_ordered_organization_policy_type;
+
 pub(crate) mod shape_organization_not_found_exception;
 
 pub(crate) mod shape_organization_not_in_all_features_mode_exception;
@@ -786,6 +788,8 @@ pub(crate) mod shape_organization_not_in_all_features_mode_exception;
 pub(crate) mod shape_password_policy_violation_exception;
 
 pub(crate) mod shape_policy_evaluation_exception;
+
+pub(crate) mod shape_policy_identifier;
 
 pub(crate) mod shape_policy_not_attachable_exception;
 
@@ -842,6 +846,8 @@ pub(crate) mod shape_group;
 pub(crate) mod shape_group_detail_list_type;
 
 pub(crate) mod shape_group_list_type;
+
+pub(crate) mod shape_inline_policy_identifier_type;
 
 pub(crate) mod shape_instance_profile;
 

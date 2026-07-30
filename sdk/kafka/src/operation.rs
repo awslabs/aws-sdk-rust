@@ -7,6 +7,9 @@ pub mod batch_associate_scram_secret;
 /// Types for the `BatchDisassociateScramSecret` operation.
 pub mod batch_disassociate_scram_secret;
 
+/// Types for the `CreateChannel` operation.
+pub mod create_channel;
+
 /// Types for the `CreateCluster` operation.
 pub mod create_cluster;
 
@@ -25,6 +28,9 @@ pub mod create_topic;
 /// Types for the `CreateVpcConnection` operation.
 pub mod create_vpc_connection;
 
+/// Types for the `DeleteChannel` operation.
+pub mod delete_channel;
+
 /// Types for the `DeleteCluster` operation.
 pub mod delete_cluster;
 
@@ -42,6 +48,9 @@ pub mod delete_topic;
 
 /// Types for the `DeleteVpcConnection` operation.
 pub mod delete_vpc_connection;
+
+/// Types for the `DescribeChannel` operation.
+pub mod describe_channel;
 
 /// Types for the `DescribeCluster` operation.
 pub mod describe_cluster;
@@ -81,6 +90,9 @@ pub mod get_cluster_policy;
 
 /// Types for the `GetCompatibleKafkaVersions` operation.
 pub mod get_compatible_kafka_versions;
+
+/// Types for the `ListChannels` operation.
+pub mod list_channels;
 
 /// Types for the `ListClientVpcConnections` operation.
 pub mod list_client_vpc_connections;
@@ -147,6 +159,9 @@ pub mod update_broker_storage;
 
 /// Types for the `UpdateBrokerType` operation.
 pub mod update_broker_type;
+
+/// Types for the `UpdateChannel` operation.
+pub mod update_channel;
 
 /// Types for the `UpdateClusterConfiguration` operation.
 pub mod update_cluster_configuration;

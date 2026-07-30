@@ -8,6 +8,8 @@ pub struct IntegratedRepository {
     pub integration_id: ::std::string::String,
     /// <p>The provider-specific resource identifier for the repository.</p>
     pub provider_resource_id: ::std::string::String,
+    /// <p>An optional override for the repository branch.</p>
+    pub branch: ::std::option::Option<::std::string::String>,
 }
 impl IntegratedRepository {
     /// <p>The unique identifier of the integration that provides access to the repository.</p>
@@ -19,6 +21,10 @@ impl IntegratedRepository {
     pub fn provider_resource_id(&self) -> &str {
         use std::ops::Deref;
         self.provider_resource_id.deref()
+    }
+    /// <p>An optional override for the repository branch.</p>
+    pub fn branch(&self) -> ::std::option::Option<&str> {
+        self.branch.as_deref()
     }
 }
 impl IntegratedRepository {
@@ -34,6 +40,7 @@ impl IntegratedRepository {
 pub struct IntegratedRepositoryBuilder {
     pub(crate) integration_id: ::std::option::Option<::std::string::String>,
     pub(crate) provider_resource_id: ::std::option::Option<::std::string::String>,
+    pub(crate) branch: ::std::option::Option<::std::string::String>,
 }
 impl IntegratedRepositoryBuilder {
     /// <p>The unique identifier of the integration that provides access to the repository.</p>
@@ -66,6 +73,20 @@ impl IntegratedRepositoryBuilder {
     pub fn get_provider_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_resource_id
     }
+    /// <p>An optional override for the repository branch.</p>
+    pub fn branch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.branch = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional override for the repository branch.</p>
+    pub fn set_branch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.branch = input;
+        self
+    }
+    /// <p>An optional override for the repository branch.</p>
+    pub fn get_branch(&self) -> &::std::option::Option<::std::string::String> {
+        &self.branch
+    }
     /// Consumes the builder and constructs a [`IntegratedRepository`](crate::types::IntegratedRepository).
     /// This method will fail if any of the following fields are not set:
     /// - [`integration_id`](crate::types::builders::IntegratedRepositoryBuilder::integration_id)
@@ -84,6 +105,7 @@ impl IntegratedRepositoryBuilder {
                     "provider_resource_id was not specified but it is required when building IntegratedRepository",
                 )
             })?,
+            branch: self.branch,
         })
     }
 }

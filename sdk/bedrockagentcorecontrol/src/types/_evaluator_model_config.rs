@@ -6,6 +6,8 @@
 pub enum EvaluatorModelConfig {
     /// <p>The Amazon Bedrock model configuration for evaluation.</p>
     BedrockEvaluatorModelConfig(crate::types::BedrockEvaluatorModelConfig),
+    /// <p>The OpenResponses model configuration for evaluation.</p>
+    ResponsesEvaluatorModelConfig(crate::types::OpenResponsesEvaluatorModelConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum EvaluatorModelConfig {
     Unknown,
 }
 impl EvaluatorModelConfig {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`BedrockEvaluatorModelConfig`](crate::types::EvaluatorModelConfig::BedrockEvaluatorModelConfig), extracting the inner [`BedrockEvaluatorModelConfig`](crate::types::BedrockEvaluatorModelConfig).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_bedrock_evaluator_model_config(&self) -> ::std::result::Result<&crate::types::BedrockEvaluatorModelConfig, &Self> {
@@ -30,6 +31,19 @@ impl EvaluatorModelConfig {
     /// Returns true if this is a [`BedrockEvaluatorModelConfig`](crate::types::EvaluatorModelConfig::BedrockEvaluatorModelConfig).
     pub fn is_bedrock_evaluator_model_config(&self) -> bool {
         self.as_bedrock_evaluator_model_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ResponsesEvaluatorModelConfig`](crate::types::EvaluatorModelConfig::ResponsesEvaluatorModelConfig), extracting the inner [`OpenResponsesEvaluatorModelConfig`](crate::types::OpenResponsesEvaluatorModelConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_responses_evaluator_model_config(&self) -> ::std::result::Result<&crate::types::OpenResponsesEvaluatorModelConfig, &Self> {
+        if let EvaluatorModelConfig::ResponsesEvaluatorModelConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ResponsesEvaluatorModelConfig`](crate::types::EvaluatorModelConfig::ResponsesEvaluatorModelConfig).
+    pub fn is_responses_evaluator_model_config(&self) -> bool {
+        self.as_responses_evaluator_model_config().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

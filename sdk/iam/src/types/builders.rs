@@ -83,6 +83,8 @@ pub use crate::types::_service_specific_credential_metadata::ServiceSpecificCred
 
 pub use crate::types::_ssh_public_key_metadata::SshPublicKeyMetadataBuilder;
 
+pub use crate::types::_ordered_organization_policy_type::OrderedOrganizationPolicyTypeBuilder;
+
 pub use crate::types::_context_entry::ContextEntryBuilder;
 
 pub use crate::types::_evaluation_result::EvaluationResultBuilder;
@@ -96,6 +98,8 @@ pub use crate::types::_role_usage_type::RoleUsageTypeBuilder;
 pub use crate::types::_organizations_decision_detail::OrganizationsDecisionDetailBuilder;
 
 pub use crate::types::_permissions_boundary_decision_detail::PermissionsBoundaryDecisionDetailBuilder;
+
+pub use crate::types::_inline_policy_identifier_type::InlinePolicyIdentifierTypeBuilder;
 
 pub use crate::types::_policy_detail::PolicyDetailBuilder;
 

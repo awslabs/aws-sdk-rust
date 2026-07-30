@@ -4483,6 +4483,15 @@ pub(crate) fn oauth2_authorization_server_metadata_correct_errors(
     builder
 }
 
+pub(crate) fn open_responses_evaluator_model_config_correct_errors(
+    mut builder: crate::types::builders::OpenResponsesEvaluatorModelConfigBuilder,
+) -> crate::types::builders::OpenResponsesEvaluatorModelConfigBuilder {
+    if builder.model_id.is_none() {
+        builder.model_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn private_endpoint_override_correct_errors(
     mut builder: crate::types::builders::PrivateEndpointOverrideBuilder,
 ) -> crate::types::builders::PrivateEndpointOverrideBuilder {

@@ -10,6 +10,12 @@ pub fn ser_evaluator_model_config(
             crate::protocol_serde::shape_bedrock_evaluator_model_config::ser_bedrock_evaluator_model_config(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::EvaluatorModelConfig::ResponsesEvaluatorModelConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_4.key("responsesEvaluatorModelConfig").start_object();
+            crate::protocol_serde::shape_open_responses_evaluator_model_config::ser_open_responses_evaluator_model_config(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::EvaluatorModelConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EvaluatorModelConfig",
@@ -65,6 +71,18 @@ where
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom(
                                     "value for 'bedrockEvaluatorModelConfig' cannot be null",
+                                )
+                            })?,
+                        )),
+                        "responsesEvaluatorModelConfig" => Some(crate::types::EvaluatorModelConfig::ResponsesEvaluatorModelConfig(
+                            crate::protocol_serde::shape_open_responses_evaluator_model_config::de_open_responses_evaluator_model_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'responsesEvaluatorModelConfig' cannot be null",
                                 )
                             })?,
                         )),

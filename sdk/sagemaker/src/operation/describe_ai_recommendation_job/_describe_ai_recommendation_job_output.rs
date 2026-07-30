@@ -29,7 +29,7 @@ pub struct DescribeAiRecommendationJobOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The compute resource specification for the recommendation job.</p>
     pub compute_spec: ::std::option::Option<crate::types::AiRecommendationComputeSpec>,
-    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    /// <p>The LoRA adapter source that you specified when you created the recommendation job. This field is absent when you created the job without LoRA adapters.</p>
     pub adapter_source: ::std::option::Option<crate::types::AiAdapterSource>,
     /// <p>A timestamp that indicates when the recommendation job was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -96,7 +96,7 @@ impl DescribeAiRecommendationJobOutput {
     pub fn compute_spec(&self) -> ::std::option::Option<&crate::types::AiRecommendationComputeSpec> {
         self.compute_spec.as_ref()
     }
-    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    /// <p>The LoRA adapter source that you specified when you created the recommendation job. This field is absent when you created the job without LoRA adapters.</p>
     pub fn adapter_source(&self) -> ::std::option::Option<&crate::types::AiAdapterSource> {
         self.adapter_source.as_ref()
     }
@@ -351,17 +351,17 @@ impl DescribeAiRecommendationJobOutputBuilder {
     pub fn get_compute_spec(&self) -> &::std::option::Option<crate::types::AiRecommendationComputeSpec> {
         &self.compute_spec
     }
-    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    /// <p>The LoRA adapter source that you specified when you created the recommendation job. This field is absent when you created the job without LoRA adapters.</p>
     pub fn adapter_source(mut self, input: crate::types::AiAdapterSource) -> Self {
         self.adapter_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    /// <p>The LoRA adapter source that you specified when you created the recommendation job. This field is absent when you created the job without LoRA adapters.</p>
     pub fn set_adapter_source(mut self, input: ::std::option::Option<crate::types::AiAdapterSource>) -> Self {
         self.adapter_source = input;
         self
     }
-    /// <p>The LoRA adapter source that was specified when the recommendation job was created. This field is absent when the job was created without LoRA adapters.</p>
+    /// <p>The LoRA adapter source that you specified when you created the recommendation job. This field is absent when you created the job without LoRA adapters.</p>
     pub fn get_adapter_source(&self) -> &::std::option::Option<crate::types::AiAdapterSource> {
         &self.adapter_source
     }

@@ -140,6 +140,8 @@ mod batch_associate_scram_secret;
 
 mod batch_disassociate_scram_secret;
 
+mod create_channel;
+
 mod create_cluster;
 
 mod create_cluster_v2;
@@ -179,6 +181,8 @@ mod create_vpc_connection;
 /// ```
 pub mod customize;
 
+mod delete_channel;
+
 mod delete_cluster;
 
 mod delete_cluster_policy;
@@ -190,6 +194,8 @@ mod delete_replicator;
 mod delete_topic;
 
 mod delete_vpc_connection;
+
+mod describe_channel;
 
 mod describe_cluster;
 
@@ -216,6 +222,8 @@ mod get_bootstrap_brokers;
 mod get_cluster_policy;
 
 mod get_compatible_kafka_versions;
+
+mod list_channels;
 
 mod list_client_vpc_connections;
 
@@ -260,6 +268,8 @@ mod update_broker_count;
 mod update_broker_storage;
 
 mod update_broker_type;
+
+mod update_channel;
 
 mod update_cluster_configuration;
 

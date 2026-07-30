@@ -27,6 +27,8 @@ pub(crate) mod shape_batch_associate_scram_secret;
 
 pub(crate) mod shape_batch_disassociate_scram_secret;
 
+pub(crate) mod shape_create_channel;
+
 pub(crate) mod shape_create_cluster;
 
 pub(crate) mod shape_create_cluster_v2;
@@ -39,6 +41,8 @@ pub(crate) mod shape_create_topic;
 
 pub(crate) mod shape_create_vpc_connection;
 
+pub(crate) mod shape_delete_channel;
+
 pub(crate) mod shape_delete_cluster;
 
 pub(crate) mod shape_delete_cluster_policy;
@@ -50,6 +54,8 @@ pub(crate) mod shape_delete_replicator;
 pub(crate) mod shape_delete_topic;
 
 pub(crate) mod shape_delete_vpc_connection;
+
+pub(crate) mod shape_describe_channel;
 
 pub(crate) mod shape_describe_cluster;
 
@@ -76,6 +82,8 @@ pub(crate) mod shape_get_bootstrap_brokers;
 pub(crate) mod shape_get_cluster_policy;
 
 pub(crate) mod shape_get_compatible_kafka_versions;
+
+pub(crate) mod shape_list_channels;
 
 pub(crate) mod shape_list_client_vpc_connections;
 
@@ -121,6 +129,8 @@ pub(crate) mod shape_update_broker_storage;
 
 pub(crate) mod shape_update_broker_type;
 
+pub(crate) mod shape_update_channel;
+
 pub(crate) mod shape_update_cluster_configuration;
 
 pub(crate) mod shape_update_cluster_kafka_version;
@@ -160,6 +170,8 @@ pub(crate) mod shape_cluster_connectivity_exception;
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_controller_moved_exception;
+
+pub(crate) mod shape_create_channel_input;
 
 pub(crate) mod shape_create_cluster_input;
 
@@ -213,6 +225,8 @@ pub(crate) mod shape_update_broker_storage_input;
 
 pub(crate) mod shape_update_broker_type_input;
 
+pub(crate) mod shape_update_channel_input;
+
 pub(crate) mod shape_update_cluster_configuration_input;
 
 pub(crate) mod shape_update_cluster_kafka_version_input;
@@ -237,6 +251,10 @@ pub(crate) mod shape_broker_ebs_volume_info;
 
 pub(crate) mod shape_broker_node_group_info;
 
+pub(crate) mod shape_channel_logging_info;
+
+pub(crate) mod shape_channel_state_info;
+
 pub(crate) mod shape_client_authentication;
 
 pub(crate) mod shape_cluster;
@@ -255,9 +273,17 @@ pub(crate) mod shape_connectivity_info;
 
 pub(crate) mod shape_consumer_group_replication_update;
 
+pub(crate) mod shape_encryption_configuration;
+
 pub(crate) mod shape_encryption_info;
 
+pub(crate) mod shape_iceberg_destination_configuration;
+
+pub(crate) mod shape_iceberg_destination_update;
+
 pub(crate) mod shape_kafka_cluster;
+
+pub(crate) mod shape_list_of_channel_info;
 
 pub(crate) mod shape_list_of_client_vpc_connection;
 
@@ -287,6 +313,8 @@ pub(crate) mod shape_list_of_replicator_summary;
 
 pub(crate) mod shape_list_of_string;
 
+pub(crate) mod shape_list_of_topic_configuration;
+
 pub(crate) mod shape_list_of_topic_info;
 
 pub(crate) mod shape_list_of_topic_partition_info;
@@ -313,7 +341,13 @@ pub(crate) mod shape_replication_info;
 
 pub(crate) mod shape_replication_state_info;
 
+pub(crate) mod shape_s3_destination_configuration;
+
+pub(crate) mod shape_s3_destination_update;
+
 pub(crate) mod shape_serverless_request;
+
+pub(crate) mod shape_topic_configuration;
 
 pub(crate) mod shape_topic_replication_update;
 
@@ -327,7 +361,13 @@ pub(crate) mod shape_broker_logs;
 
 pub(crate) mod shape_broker_software_info;
 
+pub(crate) mod shape_catalog;
+
+pub(crate) mod shape_channel_info;
+
 pub(crate) mod shape_client_vpc_connection;
+
+pub(crate) mod shape_cloud_watch_logs;
 
 pub(crate) mod shape_cluster_operation_v2_provisioned;
 
@@ -341,11 +381,17 @@ pub(crate) mod shape_configuration;
 
 pub(crate) mod shape_consumer_group_replication;
 
+pub(crate) mod shape_dead_letter_queue_s3;
+
+pub(crate) mod shape_destination_table;
+
 pub(crate) mod shape_encryption_at_rest;
 
 pub(crate) mod shape_encryption_in_transit;
 
 pub(crate) mod shape_error_info;
+
+pub(crate) mod shape_firehose;
 
 pub(crate) mod shape_kafka_cluster_client_authentication;
 
@@ -359,6 +405,8 @@ pub(crate) mod shape_kafka_version;
 
 pub(crate) mod shape_list_of_cluster_operation_step;
 
+pub(crate) mod shape_list_of_destination_table;
+
 pub(crate) mod shape_mutable_cluster_info;
 
 pub(crate) mod shape_node_info;
@@ -371,13 +419,23 @@ pub(crate) mod shape_provisioned;
 
 pub(crate) mod shape_public_access;
 
+pub(crate) mod shape_record_converter;
+
+pub(crate) mod shape_record_schema;
+
 pub(crate) mod shape_replication_info_description;
 
 pub(crate) mod shape_replicator_log_delivery;
 
 pub(crate) mod shape_replicator_summary;
 
+pub(crate) mod shape_s3;
+
+pub(crate) mod shape_s3_storage;
+
 pub(crate) mod shape_sasl;
+
+pub(crate) mod shape_schema_evolution;
 
 pub(crate) mod shape_serverless;
 
@@ -386,6 +444,8 @@ pub(crate) mod shape_serverless_client_authentication;
 pub(crate) mod shape_state_info;
 
 pub(crate) mod shape_storage_info;
+
+pub(crate) mod shape_table_creation;
 
 pub(crate) mod shape_tls;
 
@@ -411,15 +471,11 @@ pub(crate) mod shape_broker_count_update_info;
 
 pub(crate) mod shape_broker_node_info;
 
-pub(crate) mod shape_cloud_watch_logs;
-
 pub(crate) mod shape_cluster_operation_step;
 
 pub(crate) mod shape_controller_node_info;
 
 pub(crate) mod shape_ebs_storage_info;
-
-pub(crate) mod shape_firehose;
 
 pub(crate) mod shape_iam;
 
@@ -441,6 +497,8 @@ pub(crate) mod shape_list_of_vpc_config;
 
 pub(crate) mod shape_node_exporter_info;
 
+pub(crate) mod shape_partition_spec;
+
 pub(crate) mod shape_prometheus;
 
 pub(crate) mod shape_replication_starting_position;
@@ -452,8 +510,6 @@ pub(crate) mod shape_replicator_cloud_watch_logs;
 pub(crate) mod shape_replicator_firehose;
 
 pub(crate) mod shape_replicator_s3;
-
-pub(crate) mod shape_s3;
 
 pub(crate) mod shape_scram;
 
@@ -483,11 +539,15 @@ pub(crate) mod shape_list_of_string_max256;
 
 pub(crate) mod shape_node_exporter;
 
+pub(crate) mod shape_partition_source;
+
 pub(crate) mod shape_replication_info_summary;
 
 pub(crate) mod shape_vpc_connectivity_sasl;
 
 pub(crate) mod shape_vpc_connectivity_tls;
+
+pub(crate) mod shape_list_of_partition_source;
 
 pub(crate) mod shape_vpc_connectivity_iam;
 

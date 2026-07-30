@@ -27,7 +27,7 @@ impl crate::operation::simulate_custom_policy::builders::SimulateCustomPolicyInp
 /// <p>If you want to simulate existing policies that are attached to an IAM user, group, or role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a> instead.</p>
 /// <p>Context keys are variables that are maintained by Amazon Web Services and its services and which provide details about the context of an API query request. You can use the <code>Condition</code> element of an IAM policy to evaluate context keys. To get the list of context keys that the policies require for correct simulation, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>.</p>
 /// <p>If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters to paginate the results.</p><note>
-/// <p>The IAM policy simulator evaluates statements in the identity-based policy and the inputs that you provide during simulation. The policy simulator results can differ from your live Amazon Web Services environment. We recommend that you check your policies against your live Amazon Web Services environment after testing using the policy simulator to confirm that you have the desired results. For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.</p>
+/// <p>The IAM policy simulator evaluates statements in identity-based policies, service control policies (SCPs) including their condition keys and resource scoping, and the inputs that you provide during simulation. The policy simulator results can differ from your live Amazon Web Services environment. We recommend that you check your policies against your live Amazon Web Services environment after testing using the policy simulator to confirm that you have the desired results. For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SimulateCustomPolicyFluentBuilder {
@@ -219,6 +219,34 @@ impl SimulateCustomPolicyFluentBuilder {
         self.inner.get_permissions_boundary_policy_input_list()
     }
     ///
+    /// Appends an item to `OrderedOrganizationPolicyInputList`.
+    ///
+    /// To override the contents of this collection use [`set_ordered_organization_policy_input_list`](Self::set_ordered_organization_policy_input_list).
+    ///
+    /// <p>An ordered list of service control policies (SCPs) to include in the simulation. Each element represents one level of an Organizations hierarchy, from the organization root to the account.</p>
+    /// <p>The simulator evaluates SCPs in the order that you provide, consistent with how Organizations enforces SCPs. The first element must represent the organization root, and the last element must represent the account. Any elements between them represent organizational units (OUs) in descending order.</p>
+    /// <p>Use this parameter to simulate the effect of an SCP hierarchy without calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.</p>
+    pub fn ordered_organization_policy_input_list(mut self, input: crate::types::OrderedOrganizationPolicyType) -> Self {
+        self.inner = self.inner.ordered_organization_policy_input_list(input);
+        self
+    }
+    /// <p>An ordered list of service control policies (SCPs) to include in the simulation. Each element represents one level of an Organizations hierarchy, from the organization root to the account.</p>
+    /// <p>The simulator evaluates SCPs in the order that you provide, consistent with how Organizations enforces SCPs. The first element must represent the organization root, and the last element must represent the account. Any elements between them represent organizational units (OUs) in descending order.</p>
+    /// <p>Use this parameter to simulate the effect of an SCP hierarchy without calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.</p>
+    pub fn set_ordered_organization_policy_input_list(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::OrderedOrganizationPolicyType>>,
+    ) -> Self {
+        self.inner = self.inner.set_ordered_organization_policy_input_list(input);
+        self
+    }
+    /// <p>An ordered list of service control policies (SCPs) to include in the simulation. Each element represents one level of an Organizations hierarchy, from the organization root to the account.</p>
+    /// <p>The simulator evaluates SCPs in the order that you provide, consistent with how Organizations enforces SCPs. The first element must represent the organization root, and the last element must represent the account. Any elements between them represent organizational units (OUs) in descending order.</p>
+    /// <p>Use this parameter to simulate the effect of an SCP hierarchy without calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.</p>
+    pub fn get_ordered_organization_policy_input_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrderedOrganizationPolicyType>> {
+        self.inner.get_ordered_organization_policy_input_list()
+    }
+    ///
     /// Appends an item to `ActionNames`.
     ///
     /// To override the contents of this collection use [`set_action_names`](Self::set_action_names).
@@ -338,20 +366,20 @@ impl SimulateCustomPolicyFluentBuilder {
     pub fn get_resource_owner(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_owner()
     }
-    /// <p>The ARN of the IAM user that you want to use as the simulated caller of the API operations. <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a value to use in evaluating the policy.</p>
-    /// <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a service principal.</p>
+    /// <p>The ARN of the IAM user, group, or role that you want to use as the simulated caller of the API operations. <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a value to use in evaluating the policy.</p>
+    /// <p>You cannot specify the ARN of an assumed role, federated user, or a service principal.</p>
     pub fn caller_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.caller_arn(input.into());
         self
     }
-    /// <p>The ARN of the IAM user that you want to use as the simulated caller of the API operations. <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a value to use in evaluating the policy.</p>
-    /// <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a service principal.</p>
+    /// <p>The ARN of the IAM user, group, or role that you want to use as the simulated caller of the API operations. <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a value to use in evaluating the policy.</p>
+    /// <p>You cannot specify the ARN of an assumed role, federated user, or a service principal.</p>
     pub fn set_caller_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_caller_arn(input);
         self
     }
-    /// <p>The ARN of the IAM user that you want to use as the simulated caller of the API operations. <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a value to use in evaluating the policy.</p>
-    /// <p>You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed role, federated user, or a service principal.</p>
+    /// <p>The ARN of the IAM user, group, or role that you want to use as the simulated caller of the API operations. <code>CallerArn</code> is required if you include a <code>ResourcePolicy</code> so that the policy's <code>Principal</code> element has a value to use in evaluating the policy.</p>
+    /// <p>You cannot specify the ARN of an assumed role, federated user, or a service principal.</p>
     pub fn get_caller_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_caller_arn()
     }

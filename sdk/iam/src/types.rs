@@ -123,9 +123,13 @@ pub use crate::types::_service_specific_credential_metadata::ServiceSpecificCred
 
 pub use crate::types::_ssh_public_key_metadata::SshPublicKeyMetadata;
 
+pub use crate::types::_ordered_organization_policy_type::OrderedOrganizationPolicyType;
+
 pub use crate::types::_context_entry::ContextEntry;
 
 pub use crate::types::_evaluation_result::EvaluationResult;
+
+pub use crate::types::_policy_identifier::PolicyIdentifier;
 
 pub use crate::types::_policy_parameter::PolicyParameter;
 
@@ -143,6 +147,10 @@ pub use crate::types::_organizations_decision_detail::OrganizationsDecisionDetai
 
 pub use crate::types::_permissions_boundary_decision_detail::PermissionsBoundaryDecisionDetail;
 
+pub use crate::types::_policy_identifier_policy_type::PolicyIdentifierPolicyType;
+
+pub use crate::types::_inline_policy_identifier_type::InlinePolicyIdentifierType;
+
 pub use crate::types::_policy_parameter_type_enum::PolicyParameterTypeEnum;
 
 pub use crate::types::_policy_detail::PolicyDetail;
@@ -156,6 +164,8 @@ pub use crate::types::_policy_granting_service_access::PolicyGrantingServiceAcce
 pub use crate::types::_statement::Statement;
 
 pub use crate::types::_resource_specific_result::ResourceSpecificResult;
+
+pub use crate::types::_attachment_type::AttachmentType;
 
 pub use crate::types::_policy_type::PolicyType;
 
@@ -180,6 +190,8 @@ mod _assignment_status_type;
 mod _attached_permissions_boundary;
 
 mod _attached_policy;
+
+mod _attachment_type;
 
 mod _context_entry;
 
@@ -213,6 +225,8 @@ mod _group;
 
 mod _group_detail;
 
+mod _inline_policy_identifier_type;
+
 mod _instance_profile;
 
 mod _job_status_type;
@@ -226,6 +240,8 @@ mod _managed_policy_detail;
 mod _mfa_device;
 
 mod _open_id_connect_provider_list_entry;
+
+mod _ordered_organization_policy_type;
 
 mod _organizations_decision_detail;
 
@@ -248,6 +264,10 @@ mod _policy_evaluation_decision_type;
 mod _policy_granting_service_access;
 
 mod _policy_group;
+
+mod _policy_identifier;
+
+mod _policy_identifier_policy_type;
 
 mod _policy_owner_entity_type;
 

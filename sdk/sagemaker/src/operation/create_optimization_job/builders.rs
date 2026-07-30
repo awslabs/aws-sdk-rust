@@ -339,21 +339,21 @@ impl CreateOptimizationJobFluentBuilder {
     /// To override the contents of this collection use [`set_training_plan_arns`](Self::set_training_plan_arns).
     ///
     /// <p>The Amazon Resource Name (ARN) of the training plan to use for this optimization job.</p>
-    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. Currently, you can specify at most one training plan.</p>
+    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. You can specify at most one training plan.</p>
     /// <p>For more information about how to reserve GPU capacity for your optimization jobs using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve capacity with training plans</a>.</p>
     pub fn training_plan_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.training_plan_arns(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the training plan to use for this optimization job.</p>
-    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. Currently, you can specify at most one training plan.</p>
+    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. You can specify at most one training plan.</p>
     /// <p>For more information about how to reserve GPU capacity for your optimization jobs using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve capacity with training plans</a>.</p>
     pub fn set_training_plan_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_training_plan_arns(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the training plan to use for this optimization job.</p>
-    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. Currently, you can specify at most one training plan.</p>
+    /// <p>When you use reserved capacity from a training plan, the optimization job runs on that reserved capacity instead of on-demand capacity. If you omit this field, the job uses on-demand capacity. You can specify at most one training plan.</p>
     /// <p>For more information about how to reserve GPU capacity for your optimization jobs using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve capacity with training plans</a>.</p>
     pub fn get_training_plan_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_training_plan_arns()

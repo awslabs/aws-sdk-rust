@@ -16,7 +16,7 @@ pub struct AiRecommendationDeploymentConfiguration {
     pub copy_count_per_instance: ::std::option::Option<i32>,
     /// <p>The environment variables for the deployment.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve for each model copy when deploying the recommendation as an Inference Component. This value maps to the Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> field.</p>
     pub min_cpu_memory_required_in_mb: ::std::option::Option<i32>,
 }
 impl AiRecommendationDeploymentConfiguration {
@@ -46,7 +46,7 @@ impl AiRecommendationDeploymentConfiguration {
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
-    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve for each model copy when deploying the recommendation as an Inference Component. This value maps to the Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> field.</p>
     pub fn min_cpu_memory_required_in_mb(&self) -> ::std::option::Option<i32> {
         self.min_cpu_memory_required_in_mb
     }
@@ -174,17 +174,17 @@ impl AiRecommendationDeploymentConfigurationBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
-    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve for each model copy when deploying the recommendation as an Inference Component. This value maps to the Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> field.</p>
     pub fn min_cpu_memory_required_in_mb(mut self, input: i32) -> Self {
         self.min_cpu_memory_required_in_mb = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve for each model copy when deploying the recommendation as an Inference Component. This value maps to the Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> field.</p>
     pub fn set_min_cpu_memory_required_in_mb(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min_cpu_memory_required_in_mb = input;
         self
     }
-    /// <p>The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the recommendation as an Inference Component. This value maps to the base Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> and is sized so that <code>CopyCountPerInstance</code> copies co-place within the instance's allocatable host memory.</p>
+    /// <p>The minimum host (CPU) memory, in MiB, to reserve for each model copy when deploying the recommendation as an Inference Component. This value maps to the Inference Component's <code>ComputeResourceRequirements$MinMemoryRequiredInMb</code> field.</p>
     pub fn get_min_cpu_memory_required_in_mb(&self) -> &::std::option::Option<i32> {
         &self.min_cpu_memory_required_in_mb
     }

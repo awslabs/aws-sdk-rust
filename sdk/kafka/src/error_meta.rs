@@ -202,6 +202,35 @@ impl From<crate::operation::batch_disassociate_scram_secret::BatchDisassociateSc
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel::CreateChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel::CreateChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_channel::CreateChannelError> for Error {
+    fn from(err: crate::operation::create_channel::CreateChannelError) -> Self {
+        match err {
+            crate::operation::create_channel::CreateChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_channel::CreateChannelError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_channel::CreateChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_channel::CreateChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_channel::CreateChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_channel::CreateChannelError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::create_channel::CreateChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_channel::CreateChannelError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_channel::CreateChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cluster::CreateClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -401,6 +430,34 @@ impl From<crate::operation::create_vpc_connection::CreateVpcConnectionError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_channel::DeleteChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_channel::DeleteChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_channel::DeleteChannelError> for Error {
+    fn from(err: crate::operation::delete_channel::DeleteChannelError) -> Self {
+        match err {
+            crate::operation::delete_channel::DeleteChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_channel::DeleteChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_channel::DeleteChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_channel::DeleteChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_channel::DeleteChannelError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_channel::DeleteChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_channel::DeleteChannelError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_channel::DeleteChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cluster::DeleteClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -571,6 +628,36 @@ impl From<crate::operation::delete_vpc_connection::DeleteVpcConnectionError> for
             }
             crate::operation::delete_vpc_connection::DeleteVpcConnectionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_vpc_connection::DeleteVpcConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_channel::DescribeChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_channel::DescribeChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_channel::DescribeChannelError> for Error {
+    fn from(err: crate::operation::describe_channel::DescribeChannelError) -> Self {
+        match err {
+            crate::operation::describe_channel::DescribeChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_channel::DescribeChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_channel::DescribeChannelError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_channel::DescribeChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_channel::DescribeChannelError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::describe_channel::DescribeChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_channel::DescribeChannelError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_channel::DescribeChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1016,6 +1103,34 @@ impl From<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVer
                 Error::UnauthorizedException(inner)
             }
             crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channels::ListChannelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channels::ListChannelsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_channels::ListChannelsError> for Error {
+    fn from(err: crate::operation::list_channels::ListChannelsError) -> Self {
+        match err {
+            crate::operation::list_channels::ListChannelsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_channels::ListChannelsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_channels::ListChannelsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_channels::ListChannelsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_channels::ListChannelsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_channels::ListChannelsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_channels::ListChannelsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_channels::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1680,6 +1795,34 @@ impl From<crate::operation::update_broker_type::UpdateBrokerTypeError> for Error
             crate::operation::update_broker_type::UpdateBrokerTypeError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::update_broker_type::UpdateBrokerTypeError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_broker_type::UpdateBrokerTypeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_channel::UpdateChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_channel::UpdateChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_channel::UpdateChannelError> for Error {
+    fn from(err: crate::operation::update_channel::UpdateChannelError) -> Self {
+        match err {
+            crate::operation::update_channel::UpdateChannelError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_channel::UpdateChannelError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::update_channel::UpdateChannelError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_channel::UpdateChannelError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_channel::UpdateChannelError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::update_channel::UpdateChannelError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_channel::UpdateChannelError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_channel::UpdateChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

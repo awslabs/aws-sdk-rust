@@ -412,6 +412,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |
 | Payment Cryptography Data Plane | [aws-sdk-paymentcryptographydata](https://crates.io/crates/aws-sdk-paymentcryptographydata) ([docs](https://docs.rs/aws-sdk-paymentcryptographydata)) |
 | PcaConnectorAd | [aws-sdk-pcaconnectorad](https://crates.io/crates/aws-sdk-pcaconnectorad) ([docs](https://docs.rs/aws-sdk-pcaconnectorad)) |
+| PricingPlanManager | [aws-sdk-pricingplanmanager](https://crates.io/crates/aws-sdk-pricingplanmanager) ([docs](https://docs.rs/aws-sdk-pricingplanmanager)) |
 | Private CA Connector for SCEP | [aws-sdk-pcaconnectorscep](https://crates.io/crates/aws-sdk-pcaconnectorscep) ([docs](https://docs.rs/aws-sdk-pcaconnectorscep)) |
 | QApps | [aws-sdk-qapps](https://crates.io/crates/aws-sdk-qapps) ([docs](https://docs.rs/aws-sdk-qapps)) |
 | QBusiness | [aws-sdk-qbusiness](https://crates.io/crates/aws-sdk-qbusiness) ([docs](https://docs.rs/aws-sdk-qbusiness)) |
