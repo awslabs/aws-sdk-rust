@@ -7,7 +7,7 @@ pub fn de_update_preferences_http_error(
 ) -> std::result::Result<crate::operation::update_preferences::UpdatePreferencesOutput, crate::operation::update_preferences::UpdatePreferencesError>
 {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::update_preferences::UpdatePreferencesError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -23,7 +23,7 @@ pub fn de_update_preferences_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DataUnavailableExceptionBuilder::default();
-                output = crate::protocol_serde::shape_data_unavailable_exception::de_data_unavailable_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_data_unavailable_exception::de_data_unavailable_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_preferences::UpdatePreferencesError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::data_unavailable_exception_correct_errors(output)
@@ -37,7 +37,7 @@ pub fn de_update_preferences_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_cbor_err(
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
                     _response_body,
                     output,
                 )
@@ -54,7 +54,7 @@ pub fn de_update_preferences_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_preferences::UpdatePreferencesError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
@@ -68,7 +68,7 @@ pub fn de_update_preferences_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_preferences::UpdatePreferencesError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
@@ -82,7 +82,7 @@ pub fn de_update_preferences_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_preferences::UpdatePreferencesError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
@@ -96,7 +96,7 @@ pub fn de_update_preferences_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_preferences::UpdatePreferencesError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output)
@@ -129,77 +129,63 @@ pub fn de_update_preferences_http_response(
 pub fn ser_update_preferences_input(
     input: &crate::operation::update_preferences::UpdatePreferencesInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
-    {
-        let encoder = &mut encoder;
-        crate::protocol_serde::shape_update_preferences_input::ser_update_preferences_input_input(encoder, input)?;
-    }
-    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_update_preferences_input::ser_update_preferences_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_preferences(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_preferences::builders::UpdatePreferencesOutputBuilder,
-) -> ::std::result::Result<crate::operation::update_preferences::builders::UpdatePreferencesOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
-{
-    #[allow(clippy::match_single_binding, unused_variables)]
-    fn pair(
-        mut builder: crate::operation::update_preferences::builders::UpdatePreferencesOutputBuilder,
-        decoder: &mut ::aws_smithy_cbor::Decoder,
-        depth: u32,
-    ) -> ::std::result::Result<
-        crate::operation::update_preferences::builders::UpdatePreferencesOutputBuilder,
-        ::aws_smithy_cbor::decode::DeserializeError,
-    > {
-        builder = match decoder.str()?.as_ref() {
-            "managementAccountRateTypeSelections" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder
-                    .set_management_account_rate_type_selections(Some(crate::protocol_serde::shape_rate_types::de_rate_types(decoder, depth + 1)?)))
-            })?,
-            "memberAccountRateTypeSelections" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder
-                        .set_member_account_rate_type_selections(Some(crate::protocol_serde::shape_rate_types::de_rate_types(decoder, depth + 1)?)))
-                })?
-            }
-            "standaloneAccountRateTypeSelections" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder
-                    .set_standalone_account_rate_type_selections(Some(crate::protocol_serde::shape_rate_types::de_rate_types(decoder, depth + 1)?)))
-            })?,
-            _ => {
-                decoder.skip()?;
-                builder
-            }
-        };
-        Ok(builder)
-    }
-
-    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+) -> ::std::result::Result<
+    crate::operation::update_preferences::builders::UpdatePreferencesOutputBuilder,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
+> {
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
+    let tokens = &mut tokens_owned;
     #[allow(unused_variables)]
     let depth = 0u32;
-
-    match decoder.map()? {
-        None => loop {
-            match decoder.datatype()? {
-                ::aws_smithy_cbor::data::Type::Break => {
-                    decoder.skip()?;
-                    break;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "managementAccountRateTypeSelections" => {
+                    builder = builder.set_management_account_rate_type_selections(crate::protocol_serde::shape_rate_types::de_rate_types(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
-                _ => {
-                    builder = pair(builder, decoder, depth)?;
+                "memberAccountRateTypeSelections" => {
+                    builder = builder.set_member_account_rate_type_selections(crate::protocol_serde::shape_rate_types::de_rate_types(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
-            };
-        },
-        Some(n) => {
-            for _ in 0..n {
-                builder = pair(builder, decoder, depth)?;
+                "standaloneAccountRateTypeSelections" => {
+                    builder = builder.set_standalone_account_rate_type_selections(crate::protocol_serde::shape_rate_types::de_rate_types(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
+            other => {
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {other:?}"
+                )))
             }
         }
-    };
-
-    if decoder.position() != value.len() {
-        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-
+    if tokens.next().is_some() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
     Ok(builder)
 }

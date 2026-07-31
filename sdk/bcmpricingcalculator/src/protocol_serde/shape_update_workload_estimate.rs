@@ -9,7 +9,7 @@ pub fn de_update_workload_estimate_http_error(
     crate::operation::update_workload_estimate::UpdateWorkloadEstimateError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::update_workload_estimate::UpdateWorkloadEstimateError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -29,7 +29,7 @@ pub fn de_update_workload_estimate_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workload_estimate::UpdateWorkloadEstimateError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output)
@@ -43,7 +43,7 @@ pub fn de_update_workload_estimate_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DataUnavailableExceptionBuilder::default();
-                output = crate::protocol_serde::shape_data_unavailable_exception::de_data_unavailable_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_data_unavailable_exception::de_data_unavailable_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workload_estimate::UpdateWorkloadEstimateError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::data_unavailable_exception_correct_errors(output)
@@ -57,7 +57,7 @@ pub fn de_update_workload_estimate_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workload_estimate::UpdateWorkloadEstimateError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::resource_not_found_exception_correct_errors(output)
@@ -71,7 +71,7 @@ pub fn de_update_workload_estimate_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workload_estimate::UpdateWorkloadEstimateError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
@@ -85,7 +85,7 @@ pub fn de_update_workload_estimate_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workload_estimate::UpdateWorkloadEstimateError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
@@ -99,7 +99,7 @@ pub fn de_update_workload_estimate_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workload_estimate::UpdateWorkloadEstimateError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
@@ -113,7 +113,7 @@ pub fn de_update_workload_estimate_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::update_workload_estimate::UpdateWorkloadEstimateError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output)
@@ -150,94 +150,106 @@ pub fn de_update_workload_estimate_http_response(
 pub fn ser_update_workload_estimate_input(
     input: &crate::operation::update_workload_estimate::UpdateWorkloadEstimateInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
-    {
-        let encoder = &mut encoder;
-        crate::protocol_serde::shape_update_workload_estimate_input::ser_update_workload_estimate_input_input(encoder, input)?;
-    }
-    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_update_workload_estimate_input::ser_update_workload_estimate_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
 
 pub(crate) fn de_update_workload_estimate(
-    value: &[u8],
+    _value: &[u8],
     mut builder: crate::operation::update_workload_estimate::builders::UpdateWorkloadEstimateOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::update_workload_estimate::builders::UpdateWorkloadEstimateOutputBuilder,
-    ::aws_smithy_cbor::decode::DeserializeError,
+    ::aws_smithy_json::deserialize::error::DeserializeError,
 > {
-    #[allow(clippy::match_single_binding, unused_variables)]
-    fn pair(
-        mut builder: crate::operation::update_workload_estimate::builders::UpdateWorkloadEstimateOutputBuilder,
-        decoder: &mut ::aws_smithy_cbor::Decoder,
-        depth: u32,
-    ) -> ::std::result::Result<
-        crate::operation::update_workload_estimate::builders::UpdateWorkloadEstimateOutputBuilder,
-        ::aws_smithy_cbor::decode::DeserializeError,
-    > {
-        builder =
-            match decoder.str()?.as_ref() {
-                "id" => builder.set_id(Some(decoder.string()?)),
-                "name" => {
-                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?
-                }
-                "createdAt" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_created_at(Some(decoder.timestamp()?)))
-                })?,
-                "expiresAt" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_expires_at(Some(decoder.timestamp()?)))
-                })?,
-                "rateType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_rate_type(Some(decoder.string().map(|s| crate::types::WorkloadEstimateRateType::from(s.as_ref()))?)))
-                })?,
-                "rateTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_rate_timestamp(Some(decoder.timestamp()?)))
-                })?,
-                "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::WorkloadEstimateStatus::from(s.as_ref()))?)))
-                })?,
-                "totalCost" => {
-                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_total_cost(Some(decoder.double()?))))?
-                }
-                "costCurrency" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_cost_currency(Some(decoder.string().map(|s| crate::types::CurrencyCode::from(s.as_ref()))?)))
-                })?,
-                "failureMessage" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_failure_message(Some(decoder.string()?)))
-                })?,
-                _ => {
-                    decoder.skip()?;
-                    builder
-                }
-            };
-        Ok(builder)
-    }
-
-    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
+    let tokens = &mut tokens_owned;
     #[allow(unused_variables)]
     let depth = 0u32;
-
-    match decoder.map()? {
-        None => loop {
-            match decoder.datatype()? {
-                ::aws_smithy_cbor::data::Type::Break => {
-                    decoder.skip()?;
-                    break;
+    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
+    loop {
+        match tokens.next().transpose()? {
+            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "id" => {
+                    builder = builder.set_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
-                _ => {
-                    builder = pair(builder, decoder, depth)?;
+                "name" => {
+                    builder = builder.set_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
                 }
-            };
-        },
-        Some(n) => {
-            for _ in 0..n {
-                builder = pair(builder, decoder, depth)?;
+                "createdAt" => {
+                    builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "expiresAt" => {
+                    builder = builder.set_expires_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "rateType" => {
+                    builder = builder.set_rate_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::WorkloadEstimateRateType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "rateTimestamp" => {
+                    builder = builder.set_rate_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "status" => {
+                    builder = builder.set_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::WorkloadEstimateStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "totalCost" => {
+                    builder = builder
+                        .set_total_cost(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
+                }
+                "costCurrency" => {
+                    builder = builder.set_cost_currency(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::CurrencyCode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
+                "failureMessage" => {
+                    builder = builder.set_failure_message(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+            },
+            other => {
+                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
+                    "expected object key or end object, found: {other:?}"
+                )))
             }
         }
-    };
-
-    if decoder.position() != value.len() {
-        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-
+    if tokens.next().is_some() {
+        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
+            "found more JSON tokens after completing parsing",
+        ));
+    }
     Ok(builder)
 }

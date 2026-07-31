@@ -9,7 +9,7 @@ pub fn de_delete_bill_scenario_http_error(
     crate::operation::delete_bill_scenario::DeleteBillScenarioError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::delete_bill_scenario::DeleteBillScenarioError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -25,7 +25,7 @@ pub fn de_delete_bill_scenario_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
-                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_bill_scenario::DeleteBillScenarioError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::conflict_exception_correct_errors(output)
@@ -39,7 +39,7 @@ pub fn de_delete_bill_scenario_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DataUnavailableExceptionBuilder::default();
-                output = crate::protocol_serde::shape_data_unavailable_exception::de_data_unavailable_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_data_unavailable_exception::de_data_unavailable_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_bill_scenario::DeleteBillScenarioError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::data_unavailable_exception_correct_errors(output)
@@ -53,7 +53,7 @@ pub fn de_delete_bill_scenario_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_bill_scenario::DeleteBillScenarioError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::access_denied_exception_correct_errors(output)
@@ -67,7 +67,7 @@ pub fn de_delete_bill_scenario_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_bill_scenario::DeleteBillScenarioError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::internal_server_exception_correct_errors(output)
@@ -81,7 +81,7 @@ pub fn de_delete_bill_scenario_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_bill_scenario::DeleteBillScenarioError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::throttling_exception_correct_errors(output)
@@ -95,7 +95,7 @@ pub fn de_delete_bill_scenario_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
-                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_cbor_err(_response_body, output)
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
                     .map_err(crate::operation::delete_bill_scenario::DeleteBillScenarioError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::validation_exception_correct_errors(output)
@@ -128,10 +128,9 @@ pub fn de_delete_bill_scenario_http_response(
 pub fn ser_delete_bill_scenario_input(
     input: &crate::operation::delete_bill_scenario::DeleteBillScenarioInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
-    {
-        let encoder = &mut encoder;
-        crate::protocol_serde::shape_delete_bill_scenario_input::ser_delete_bill_scenario_input_input(encoder, input)?;
-    }
-    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
+    let mut out = String::new();
+    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::protocol_serde::shape_delete_bill_scenario_input::ser_delete_bill_scenario_input_input(&mut object, input)?;
+    object.finish();
+    Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
