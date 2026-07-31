@@ -15,6 +15,9 @@ pub fn ser_topic_relative_date_filter(
         crate::protocol_serde::shape_topic_singular_filter_constant::ser_topic_singular_filter_constant(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.null_filter {
+        object.key("NullFilter").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -61,6 +64,13 @@ where
                                     _value,
                                     depth + 1,
                                 )?,
+                            );
+                        }
+                        "NullFilter" => {
+                            builder = builder.set_null_filter(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NullFilterType::from(u.as_ref())))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

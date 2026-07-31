@@ -30,6 +30,14 @@ pub struct FirewallPolicy {
     /// <p>aws:alert_strict</p></li>
     /// <li>
     /// <p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer_to_server</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer_to_server</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub stateful_default_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -86,6 +94,14 @@ impl FirewallPolicy {
     /// <p>aws:alert_strict</p></li>
     /// <li>
     /// <p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer_to_server</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer_to_server</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     ///
@@ -266,6 +282,14 @@ impl FirewallPolicyBuilder {
     /// <p>aws:alert_strict</p></li>
     /// <li>
     /// <p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer_to_server</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer_to_server</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn stateful_default_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -285,6 +309,14 @@ impl FirewallPolicyBuilder {
     /// <p>aws:alert_strict</p></li>
     /// <li>
     /// <p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer_to_server</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer_to_server</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn set_stateful_default_actions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -302,6 +334,14 @@ impl FirewallPolicyBuilder {
     /// <p>aws:alert_strict</p></li>
     /// <li>
     /// <p>aws:alert_established</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer</p></li>
+    /// <li>
+    /// <p>aws:drop_established_app_layer_to_server</p></li>
+    /// <li>
+    /// <p>aws:alert_established_app_layer_to_server</p></li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub fn get_stateful_default_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {

@@ -164,6 +164,78 @@ pub(crate) fn get_credit_allocation_history_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_enterprise_support_charge_summary_output_output_correct_errors(
+    mut builder: crate::operation::get_enterprise_support_charge_summary::builders::GetEnterpriseSupportChargeSummaryOutputBuilder,
+) -> crate::operation::get_enterprise_support_charge_summary::builders::GetEnterpriseSupportChargeSummaryOutputBuilder {
+    if builder.payer_account_id.is_none() {
+        builder.payer_account_id = Some(Default::default())
+    }
+    if builder.billing_month.is_none() {
+        builder.billing_month = Some(Default::default())
+    }
+    if builder.billing_period_start_date.is_none() {
+        builder.billing_period_start_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.billing_period_end_date.is_none() {
+        builder.billing_period_end_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.is_estimated.is_none() {
+        builder.is_estimated = Some(Default::default())
+    }
+    if builder.bill_date.is_none() {
+        builder.bill_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.support_charge.is_none() {
+        builder.support_charge = Some(Default::default())
+    }
+    if builder.total_support_charge.is_none() {
+        builder.total_support_charge = Some(Default::default())
+    }
+    if builder.support_discount.is_none() {
+        builder.support_discount = Some(Default::default())
+    }
+    if builder.total_support_eligible_spend.is_none() {
+        builder.total_support_eligible_spend = Some(Default::default())
+    }
+    if builder.total_support_eligible_usage_spend.is_none() {
+        builder.total_support_eligible_usage_spend = Some(Default::default())
+    }
+    if builder.total_support_eligible_reserved_instance_spend.is_none() {
+        builder.total_support_eligible_reserved_instance_spend = Some(Default::default())
+    }
+    if builder.total_support_eligible_savings_plan_spend.is_none() {
+        builder.total_support_eligible_savings_plan_spend = Some(Default::default())
+    }
+    if builder.support_charge_percentage.is_none() {
+        builder.support_charge_percentage = Some(Default::default())
+    }
+    if builder.support_effective_pricing_plan.is_none() {
+        builder.support_effective_pricing_plan = {
+            let builder = crate::types::builders::PricingPlanBuilder::default();
+            crate::serde_util::pricing_plan_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_enterprise_support_contract_details_output_output_correct_errors(
+    mut builder: crate::operation::get_enterprise_support_contract_details::builders::GetEnterpriseSupportContractDetailsOutputBuilder,
+) -> crate::operation::get_enterprise_support_contract_details::builders::GetEnterpriseSupportContractDetailsOutputBuilder {
+    if builder.support_allocation_method.is_none() {
+        builder.support_allocation_method = Some(Default::default())
+    }
+    if builder.contract_payer_account_ids.is_none() {
+        builder.contract_payer_account_ids = Some(Default::default())
+    }
+    if builder.charged_payer_account_ids.is_none() {
+        builder.charged_payer_account_ids = Some(Default::default())
+    }
+    if builder.pricing_plans.is_none() {
+        builder.pricing_plans = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_resource_policy_output_output_correct_errors(
     mut builder: crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder,
 ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
@@ -178,6 +250,15 @@ pub(crate) fn list_billing_views_output_output_correct_errors(
 ) -> crate::operation::list_billing_views::builders::ListBillingViewsOutputBuilder {
     if builder.billing_views.is_none() {
         builder.billing_views = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_enterprise_support_linked_account_charges_output_output_correct_errors(
+    mut builder: crate::operation::list_enterprise_support_linked_account_charges::builders::ListEnterpriseSupportLinkedAccountChargesOutputBuilder,
+) -> crate::operation::list_enterprise_support_linked_account_charges::builders::ListEnterpriseSupportLinkedAccountChargesOutputBuilder {
+    if builder.linked_account.is_none() {
+        builder.linked_account = Some(Default::default())
     }
     builder
 }
@@ -200,6 +281,22 @@ pub(crate) fn update_billing_view_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn pricing_plan_correct_errors(mut builder: crate::types::builders::PricingPlanBuilder) -> crate::types::builders::PricingPlanBuilder {
+    if builder.tiers.is_none() {
+        builder.tiers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn additional_charge_correct_errors(
+    mut builder: crate::types::builders::AdditionalChargeBuilder,
+) -> crate::types::builders::AdditionalChargeBuilder {
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn billing_preference_summary_correct_errors(
     mut builder: crate::types::builders::BillingPreferenceSummaryBuilder,
 ) -> crate::types::builders::BillingPreferenceSummaryBuilder {
@@ -211,6 +308,30 @@ pub(crate) fn billing_preference_summary_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = "no value was set".parse::<crate::types::PreferenceValue>().ok()
+    }
+    builder
+}
+
+pub(crate) fn charge_account_correct_errors(
+    mut builder: crate::types::builders::ChargeAccountBuilder,
+) -> crate::types::builders::ChargeAccountBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.charge_percentage.is_none() {
+        builder.charge_percentage = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn contract_account_correct_errors(
+    mut builder: crate::types::builders::ContractAccountBuilder,
+) -> crate::types::builders::ContractAccountBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.is_gdn.is_none() {
+        builder.is_gdn = Some(Default::default())
     }
     builder
 }
@@ -269,6 +390,30 @@ pub(crate) fn credit_data_correct_errors(mut builder: crate::types::builders::Cr
     }
     if builder.start_date.is_none() {
         builder.start_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn linked_account_charge_correct_errors(
+    mut builder: crate::types::builders::LinkedAccountChargeBuilder,
+) -> crate::types::builders::LinkedAccountChargeBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.payer_account_id.is_none() {
+        builder.payer_account_id = Some(Default::default())
+    }
+    if builder.billable_seconds.is_none() {
+        builder.billable_seconds = Some(Default::default())
+    }
+    if builder.total_seconds.is_none() {
+        builder.total_seconds = Some(Default::default())
+    }
+    if builder.total_support_eligible_spend.is_none() {
+        builder.total_support_eligible_spend = Some(Default::default())
+    }
+    if builder.prorated_total_support_eligible_spend.is_none() {
+        builder.prorated_total_support_eligible_spend = Some(Default::default())
     }
     builder
 }
@@ -338,12 +483,42 @@ pub(crate) fn dimension_values_correct_errors(
     builder
 }
 
+pub(crate) fn pricing_plan_tier_correct_errors(
+    mut builder: crate::types::builders::PricingPlanTierBuilder,
+) -> crate::types::builders::PricingPlanTierBuilder {
+    if builder.tier_minimum.is_none() {
+        builder.tier_minimum = Some(Default::default())
+    }
+    if builder.base_charge.is_none() {
+        builder.base_charge = Some(Default::default())
+    }
+    if builder.additional_percentage_of_aggregate_charges.is_none() {
+        builder.additional_percentage_of_aggregate_charges = Some(Default::default())
+    }
+    if builder.aggregate_charges_adjustment.is_none() {
+        builder.aggregate_charges_adjustment = Some(Default::default())
+    }
+    if builder.incremental.is_none() {
+        builder.incremental = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tag_values_correct_errors(mut builder: crate::types::builders::TagValuesBuilder) -> crate::types::builders::TagValuesBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
     }
     if builder.values.is_none() {
         builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn enterprise_support_time_period_correct_errors(
+    mut builder: crate::types::builders::EnterpriseSupportTimePeriodBuilder,
+) -> crate::types::builders::EnterpriseSupportTimePeriodBuilder {
+    if builder.begin_date.is_none() {
+        builder.begin_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

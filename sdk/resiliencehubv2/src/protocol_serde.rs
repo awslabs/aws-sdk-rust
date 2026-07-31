@@ -39,6 +39,8 @@ pub(crate) mod shape_create_service_function_resources;
 
 pub(crate) mod shape_create_system;
 
+pub(crate) mod shape_create_test;
+
 pub(crate) mod shape_create_user_journey;
 
 pub(crate) mod shape_delete_assertion;
@@ -55,6 +57,10 @@ pub(crate) mod shape_delete_service_function_resources;
 
 pub(crate) mod shape_delete_system;
 
+pub(crate) mod shape_delete_test;
+
+pub(crate) mod shape_delete_test_sources;
+
 pub(crate) mod shape_delete_user_journey;
 
 pub(crate) mod shape_get_failure_mode_finding;
@@ -64,6 +70,12 @@ pub(crate) mod shape_get_policy;
 pub(crate) mod shape_get_service;
 
 pub(crate) mod shape_get_system;
+
+pub(crate) mod shape_get_test;
+
+pub(crate) mod shape_get_test_run;
+
+pub(crate) mod shape_get_test_template;
 
 pub(crate) mod shape_get_user_journey;
 
@@ -85,6 +97,8 @@ pub(crate) mod shape_list_policies;
 
 pub(crate) mod shape_list_reports;
 
+pub(crate) mod shape_list_resolved_test_run_target_resources;
+
 pub(crate) mod shape_list_resources;
 
 pub(crate) mod shape_list_service_events;
@@ -101,9 +115,27 @@ pub(crate) mod shape_list_systems;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_list_test_run_events;
+
+pub(crate) mod shape_list_test_run_sources;
+
+pub(crate) mod shape_list_test_runs;
+
+pub(crate) mod shape_list_test_sources;
+
+pub(crate) mod shape_list_test_templates;
+
+pub(crate) mod shape_list_tests;
+
 pub(crate) mod shape_list_user_journeys;
 
+pub(crate) mod shape_put_test_sources;
+
 pub(crate) mod shape_start_failure_mode_assessment;
+
+pub(crate) mod shape_start_test_run;
+
+pub(crate) mod shape_stop_test_run;
 
 pub(crate) mod shape_tag_resource;
 
@@ -122,6 +154,8 @@ pub(crate) mod shape_update_service;
 pub(crate) mod shape_update_service_function;
 
 pub(crate) mod shape_update_system;
+
+pub(crate) mod shape_update_test;
 
 pub(crate) mod shape_update_user_journey;
 
@@ -153,6 +187,8 @@ pub(crate) mod shape_create_service_input;
 
 pub(crate) mod shape_create_system_input;
 
+pub(crate) mod shape_create_test_input;
+
 pub(crate) mod shape_create_user_journey_input;
 
 pub(crate) mod shape_delete_assertion_input;
@@ -169,6 +205,10 @@ pub(crate) mod shape_delete_service_input;
 
 pub(crate) mod shape_delete_system_input;
 
+pub(crate) mod shape_delete_test_input;
+
+pub(crate) mod shape_delete_test_sources_input;
+
 pub(crate) mod shape_delete_user_journey_input;
 
 pub(crate) mod shape_import_app_input;
@@ -177,11 +217,17 @@ pub(crate) mod shape_import_policy_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_put_test_sources_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_failure_mode_assessment_input;
+
+pub(crate) mod shape_start_test_run_input;
+
+pub(crate) mod shape_stop_test_run_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -201,6 +247,8 @@ pub(crate) mod shape_update_service_input;
 
 pub(crate) mod shape_update_system_input;
 
+pub(crate) mod shape_update_test_input;
+
 pub(crate) mod shape_update_user_journey_input;
 
 pub(crate) mod shape_validation_exception;
@@ -219,11 +267,15 @@ pub(crate) mod shape_data_recovery_targets;
 
 pub(crate) mod shape_dependency_summary_list;
 
+pub(crate) mod shape_experiment_arn_list;
+
 pub(crate) mod shape_finding;
 
 pub(crate) mod shape_findings_list;
 
 pub(crate) mod shape_input_source_summary_list;
+
+pub(crate) mod shape_logging_configuration;
 
 pub(crate) mod shape_multi_az_targets;
 
@@ -238,6 +290,8 @@ pub(crate) mod shape_policy_summary_list;
 pub(crate) mod shape_report_generation_result;
 
 pub(crate) mod shape_report_generation_result_list;
+
+pub(crate) mod shape_resolved_target_resource_list;
 
 pub(crate) mod shape_resource_configuration;
 
@@ -259,6 +313,8 @@ pub(crate) mod shape_service_summary_list;
 
 pub(crate) mod shape_service_topology_edge_summary_list;
 
+pub(crate) mod shape_stop_condition;
+
 pub(crate) mod shape_system;
 
 pub(crate) mod shape_system_event_list;
@@ -266,6 +322,26 @@ pub(crate) mod shape_system_event_list;
 pub(crate) mod shape_system_summary_list;
 
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_test;
+
+pub(crate) mod shape_test_run;
+
+pub(crate) mod shape_test_run_event_list;
+
+pub(crate) mod shape_test_run_source_summary_list;
+
+pub(crate) mod shape_test_run_summary_list;
+
+pub(crate) mod shape_test_source_input;
+
+pub(crate) mod shape_test_source_summary_list;
+
+pub(crate) mod shape_test_summary_list;
+
+pub(crate) mod shape_test_template;
+
+pub(crate) mod shape_test_template_summary_list;
 
 pub(crate) mod shape_user_journey;
 
@@ -291,6 +367,8 @@ pub(crate) mod shape_effective_policy_values;
 
 pub(crate) mod shape_eks_source;
 
+pub(crate) mod shape_experiment_details_list;
+
 pub(crate) mod shape_finding_summary;
 
 pub(crate) mod shape_functions_list;
@@ -298,6 +376,8 @@ pub(crate) mod shape_functions_list;
 pub(crate) mod shape_infrastructure_and_code_recommendations_list;
 
 pub(crate) mod shape_input_source_summary;
+
+pub(crate) mod shape_observability_alarm_input;
 
 pub(crate) mod shape_observability_recommendations_list;
 
@@ -308,6 +388,8 @@ pub(crate) mod shape_region_list;
 pub(crate) mod shape_report_output;
 
 pub(crate) mod shape_report_output_configuration;
+
+pub(crate) mod shape_resolved_target_resource;
 
 pub(crate) mod shape_resource_discovery_status;
 
@@ -321,9 +403,35 @@ pub(crate) mod shape_service_summary;
 
 pub(crate) mod shape_service_topology_edge_summary;
 
+pub(crate) mod shape_stop_condition_list;
+
+pub(crate) mod shape_success_criteria_alarm_input;
+
 pub(crate) mod shape_system_event;
 
 pub(crate) mod shape_system_summary;
+
+pub(crate) mod shape_test_action_list;
+
+pub(crate) mod shape_test_parameters;
+
+pub(crate) mod shape_test_run_event;
+
+pub(crate) mod shape_test_run_policy_snapshot;
+
+pub(crate) mod shape_test_run_report_configuration;
+
+pub(crate) mod shape_test_run_source_summary;
+
+pub(crate) mod shape_test_run_summary;
+
+pub(crate) mod shape_test_source_summary;
+
+pub(crate) mod shape_test_summary;
+
+pub(crate) mod shape_test_template_parameter_list;
+
+pub(crate) mod shape_test_template_summary;
 
 pub(crate) mod shape_testing_recommendations_list;
 
@@ -339,17 +447,23 @@ pub(crate) mod shape_edge_property_list;
 
 pub(crate) mod shape_event_actor;
 
+pub(crate) mod shape_experiment_details;
+
 pub(crate) mod shape_failed_report_output;
 
 pub(crate) mod shape_infrastructure_and_code_recommendation;
 
 pub(crate) mod shape_input_source;
 
+pub(crate) mod shape_observability_alarm_summary;
+
 pub(crate) mod shape_observability_recommendation;
 
 pub(crate) mod shape_query_range;
 
 pub(crate) mod shape_report_output_configuration_list;
+
+pub(crate) mod shape_resolved_target_information;
 
 pub(crate) mod shape_resource;
 
@@ -363,9 +477,23 @@ pub(crate) mod shape_service_event_details;
 
 pub(crate) mod shape_slo_source;
 
+pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_success_criteria_alarm_summary;
+
 pub(crate) mod shape_system_event_details;
 
 pub(crate) mod shape_target_source;
+
+pub(crate) mod shape_test_action;
+
+pub(crate) mod shape_test_run_event_attributes;
+
+pub(crate) mod shape_test_run_observability_alarm_summary;
+
+pub(crate) mod shape_test_run_success_criteria_alarm_summary;
+
+pub(crate) mod shape_test_template_parameter;
 
 pub(crate) mod shape_testing_recommendation;
 

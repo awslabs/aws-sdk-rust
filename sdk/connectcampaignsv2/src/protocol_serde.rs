@@ -323,10 +323,16 @@ pub(crate) mod shape_web_notification_context;
 
 pub(crate) mod shape_daily_hours;
 
+pub(crate) mod shape_pacing_strategy;
+
 pub(crate) mod shape_restricted_period_list;
 
 pub(crate) mod shape_timeout_config;
 
+pub(crate) mod shape_abandonment_rate_pacing_config;
+
 pub(crate) mod shape_agent_actions;
+
+pub(crate) mod shape_pacing_strategy_list;
 
 pub(crate) mod shape_time_range_list;

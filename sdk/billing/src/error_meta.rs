@@ -331,6 +331,104 @@ impl From<crate::operation::get_credits::GetCreditsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError> for Error {
+    fn from(err: crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError) -> Self {
+        match err {
+            crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_enterprise_support_charge_summary::GetEnterpriseSupportChargeSummaryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError> for Error {
+    fn from(err: crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError) -> Self {
+        match err {
+            crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_enterprise_support_contract_details::GetEnterpriseSupportContractDetailsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resource_policy::GetResourcePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -381,6 +479,43 @@ impl From<crate::operation::list_billing_views::ListBillingViewsError> for Error
             crate::operation::list_billing_views::ListBillingViewsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_billing_views::ListBillingViewsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_billing_views::ListBillingViewsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError> for Error {
+    fn from(err: crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError) -> Self {
+        match err {
+            crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_enterprise_support_linked_account_charges::ListEnterpriseSupportLinkedAccountChargesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

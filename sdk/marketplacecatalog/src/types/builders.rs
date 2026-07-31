@@ -99,6 +99,12 @@ pub use crate::types::_offer_last_modified_date_filter::OfferLastModifiedDateFil
 
 pub use crate::types::_offer_set_id_filter::OfferSetIdFilterBuilder;
 
+pub use crate::types::_offer_target_agreement_id_filter::OfferTargetAgreementIdFilterBuilder;
+
+pub use crate::types::_offer_target_agreement_intent_filter::OfferTargetAgreementIntentFilterBuilder;
+
+pub use crate::types::_offer_created_by_source_filter::OfferCreatedBySourceFilterBuilder;
+
 pub use crate::types::_container_product_entity_id_filter::ContainerProductEntityIdFilterBuilder;
 
 pub use crate::types::_container_product_last_modified_date_filter::ContainerProductLastModifiedDateFilterBuilder;

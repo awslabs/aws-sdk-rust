@@ -124,3 +124,9 @@ pub(crate) mod shape_cropping_config;
 pub(crate) mod shape_subtitling_config;
 
 pub(crate) mod shape_aspect_ratio;
+
+pub(crate) mod shape_template_group;
+
+pub(crate) mod shape_template_group_list;
+
+pub(crate) mod shape_template_uri_list;

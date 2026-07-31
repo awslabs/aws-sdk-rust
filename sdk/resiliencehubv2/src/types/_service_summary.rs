@@ -10,7 +10,7 @@ pub struct ServiceSummary {
     pub name: ::std::string::String,
     /// <p>The systems associated with the service.</p>
     pub associated_systems: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedSystem>>,
-    /// <p>The AWS Regions where the service operates.</p>
+    /// <p>The Regions where the service operates.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>ARN identifier.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl ServiceSummary {
     pub fn associated_systems(&self) -> &[crate::types::AssociatedSystem] {
         self.associated_systems.as_deref().unwrap_or_default()
     }
-    /// <p>The AWS Regions where the service operates.</p>
+    /// <p>The Regions where the service operates.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.regions.is_none()`.
     pub fn regions(&self) -> &[::std::string::String] {
@@ -185,19 +185,19 @@ impl ServiceSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>The AWS Regions where the service operates.</p>
+    /// <p>The Regions where the service operates.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
         v.push(input.into());
         self.regions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Regions where the service operates.</p>
+    /// <p>The Regions where the service operates.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.regions = input;
         self
     }
-    /// <p>The AWS Regions where the service operates.</p>
+    /// <p>The Regions where the service operates.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }

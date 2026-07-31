@@ -113,6 +113,12 @@ pub use crate::types::_offer_last_modified_date_filter::OfferLastModifiedDateFil
 
 pub use crate::types::_offer_set_id_filter::OfferSetIdFilter;
 
+pub use crate::types::_offer_target_agreement_id_filter::OfferTargetAgreementIdFilter;
+
+pub use crate::types::_offer_target_agreement_intent_filter::OfferTargetAgreementIntentFilter;
+
+pub use crate::types::_offer_created_by_source_filter::OfferCreatedBySourceFilter;
+
 pub use crate::types::_container_product_entity_id_filter::ContainerProductEntityIdFilter;
 
 pub use crate::types::_container_product_last_modified_date_filter::ContainerProductLastModifiedDateFilter;
@@ -241,6 +247,10 @@ pub use crate::types::_saa_s_product_visibility_string::SaaSProductVisibilityStr
 
 pub use crate::types::_offer_state_string::OfferStateString;
 
+pub use crate::types::_offer_target_agreement_intent_string::OfferTargetAgreementIntentString;
+
+pub use crate::types::_offer_created_by_source_string::OfferCreatedBySourceString;
+
 pub use crate::types::_resale_authorization_status_string::ResaleAuthorizationStatusString;
 
 pub use crate::types::_resale_authorization_reseller_role_string::ResaleAuthorizationResellerRoleString;
@@ -367,6 +377,10 @@ mod _offer_availability_end_date_filter_date_range;
 
 mod _offer_buyer_accounts_filter;
 
+mod _offer_created_by_source_filter;
+
+mod _offer_created_by_source_string;
+
 mod _offer_entity_id_filter;
 
 mod _offer_filters;
@@ -424,6 +438,12 @@ mod _offer_state_filter;
 mod _offer_state_string;
 
 mod _offer_summary;
+
+mod _offer_target_agreement_id_filter;
+
+mod _offer_target_agreement_intent_filter;
+
+mod _offer_target_agreement_intent_string;
 
 mod _offer_targeting_filter;
 

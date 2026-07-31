@@ -63,6 +63,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "TopicArns" => {
+                            builder = builder.set_topic_arns(crate::protocol_serde::shape_topic_arns_list::de_topic_arns_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "ThemeArn" => {
                             builder = builder.set_theme_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

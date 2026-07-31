@@ -6,11 +6,21 @@
 pub struct OutputConfig {
     /// <p>Structured output parameters to control the model's text response.</p>
     pub text_format: ::std::option::Option<crate::types::OutputFormat>,
+    /// <p>The effort level for the model to use when generating a response. Higher effort levels allow the model to spend more time reasoning before responding. Supported values are <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, and <code>max</code>.</p><note>
+    /// <p>When extended thinking is disabled, the effort level is capped at <code>high</code>. Use effort <code>high</code> or below, or enable thinking to use higher effort levels.</p>
+    /// </note>
+    pub effort: ::std::option::Option<::std::string::String>,
 }
 impl OutputConfig {
     /// <p>Structured output parameters to control the model's text response.</p>
     pub fn text_format(&self) -> ::std::option::Option<&crate::types::OutputFormat> {
         self.text_format.as_ref()
+    }
+    /// <p>The effort level for the model to use when generating a response. Higher effort levels allow the model to spend more time reasoning before responding. Supported values are <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, and <code>max</code>.</p><note>
+    /// <p>When extended thinking is disabled, the effort level is capped at <code>high</code>. Use effort <code>high</code> or below, or enable thinking to use higher effort levels.</p>
+    /// </note>
+    pub fn effort(&self) -> ::std::option::Option<&str> {
+        self.effort.as_deref()
     }
 }
 impl OutputConfig {
@@ -25,6 +35,7 @@ impl OutputConfig {
 #[non_exhaustive]
 pub struct OutputConfigBuilder {
     pub(crate) text_format: ::std::option::Option<crate::types::OutputFormat>,
+    pub(crate) effort: ::std::option::Option<::std::string::String>,
 }
 impl OutputConfigBuilder {
     /// <p>Structured output parameters to control the model's text response.</p>
@@ -41,10 +52,31 @@ impl OutputConfigBuilder {
     pub fn get_text_format(&self) -> &::std::option::Option<crate::types::OutputFormat> {
         &self.text_format
     }
+    /// <p>The effort level for the model to use when generating a response. Higher effort levels allow the model to spend more time reasoning before responding. Supported values are <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, and <code>max</code>.</p><note>
+    /// <p>When extended thinking is disabled, the effort level is capped at <code>high</code>. Use effort <code>high</code> or below, or enable thinking to use higher effort levels.</p>
+    /// </note>
+    pub fn effort(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.effort = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The effort level for the model to use when generating a response. Higher effort levels allow the model to spend more time reasoning before responding. Supported values are <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, and <code>max</code>.</p><note>
+    /// <p>When extended thinking is disabled, the effort level is capped at <code>high</code>. Use effort <code>high</code> or below, or enable thinking to use higher effort levels.</p>
+    /// </note>
+    pub fn set_effort(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.effort = input;
+        self
+    }
+    /// <p>The effort level for the model to use when generating a response. Higher effort levels allow the model to spend more time reasoning before responding. Supported values are <code>low</code>, <code>medium</code>, <code>high</code>, <code>xhigh</code>, and <code>max</code>.</p><note>
+    /// <p>When extended thinking is disabled, the effort level is capped at <code>high</code>. Use effort <code>high</code> or below, or enable thinking to use higher effort levels.</p>
+    /// </note>
+    pub fn get_effort(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effort
+    }
     /// Consumes the builder and constructs a [`OutputConfig`](crate::types::OutputConfig).
     pub fn build(self) -> crate::types::OutputConfig {
         crate::types::OutputConfig {
             text_format: self.text_format,
+            effort: self.effort,
         }
     }
 }

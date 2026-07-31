@@ -6,11 +6,17 @@
 pub struct DestinationConfiguration {
     /// <p>Configuration for delivering query results to Amazon S3.</p>
     pub s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
+    /// <p>Configuration for delivering query results to a lookup table. The query results automatically populate or refresh the specified lookup table on each scheduled execution.</p>
+    pub lookup_table_configuration: ::std::option::Option<crate::types::LookupTableConfiguration>,
 }
 impl DestinationConfiguration {
     /// <p>Configuration for delivering query results to Amazon S3.</p>
     pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::S3Configuration> {
         self.s3_configuration.as_ref()
+    }
+    /// <p>Configuration for delivering query results to a lookup table. The query results automatically populate or refresh the specified lookup table on each scheduled execution.</p>
+    pub fn lookup_table_configuration(&self) -> ::std::option::Option<&crate::types::LookupTableConfiguration> {
+        self.lookup_table_configuration.as_ref()
     }
 }
 impl DestinationConfiguration {
@@ -25,10 +31,10 @@ impl DestinationConfiguration {
 #[non_exhaustive]
 pub struct DestinationConfigurationBuilder {
     pub(crate) s3_configuration: ::std::option::Option<crate::types::S3Configuration>,
+    pub(crate) lookup_table_configuration: ::std::option::Option<crate::types::LookupTableConfiguration>,
 }
 impl DestinationConfigurationBuilder {
     /// <p>Configuration for delivering query results to Amazon S3.</p>
-    /// This field is required.
     pub fn s3_configuration(mut self, input: crate::types::S3Configuration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self
@@ -42,10 +48,25 @@ impl DestinationConfigurationBuilder {
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::S3Configuration> {
         &self.s3_configuration
     }
+    /// <p>Configuration for delivering query results to a lookup table. The query results automatically populate or refresh the specified lookup table on each scheduled execution.</p>
+    pub fn lookup_table_configuration(mut self, input: crate::types::LookupTableConfiguration) -> Self {
+        self.lookup_table_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for delivering query results to a lookup table. The query results automatically populate or refresh the specified lookup table on each scheduled execution.</p>
+    pub fn set_lookup_table_configuration(mut self, input: ::std::option::Option<crate::types::LookupTableConfiguration>) -> Self {
+        self.lookup_table_configuration = input;
+        self
+    }
+    /// <p>Configuration for delivering query results to a lookup table. The query results automatically populate or refresh the specified lookup table on each scheduled execution.</p>
+    pub fn get_lookup_table_configuration(&self) -> &::std::option::Option<crate::types::LookupTableConfiguration> {
+        &self.lookup_table_configuration
+    }
     /// Consumes the builder and constructs a [`DestinationConfiguration`](crate::types::DestinationConfiguration).
     pub fn build(self) -> crate::types::DestinationConfiguration {
         crate::types::DestinationConfiguration {
             s3_configuration: self.s3_configuration,
+            lookup_table_configuration: self.lookup_table_configuration,
         }
     }
 }

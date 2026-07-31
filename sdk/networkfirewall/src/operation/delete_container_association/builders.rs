@@ -22,7 +22,7 @@ impl crate::operation::delete_container_association::builders::DeleteContainerAs
 }
 /// Fluent builder constructing a request to `DeleteContainerAssociation`.
 ///
-/// <p>Deletes the specified container association. When you delete a container association, Network Firewall stops monitoring the associated container clusters and removes the resolved IP addresses from firewall rules.</p>
+/// <p>Deletes a container association. The resource transitions to a <code>DELETING</code> state. Deletion is asynchronous - Network Firewall returns immediately while cleanup proceeds in the background. You can't delete a container association while a rule group references it.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteContainerAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +108,37 @@ impl DeleteContainerAssociationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_association_name(input.into());
         self
     }
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_container_association_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_association_name(input);
         self
     }
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_container_association_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_container_association_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.container_association_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_container_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_container_association_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_container_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_container_association_arn()
     }

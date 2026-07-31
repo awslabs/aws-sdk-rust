@@ -2,7 +2,7 @@
 
 /// <p>Represents a column in a dataset.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicColumn {
     /// <p>The name of the column.</p>
     pub column_name: ::std::string::String,
@@ -118,6 +118,29 @@ impl TopicColumn {
         self.non_additive
     }
 }
+impl ::std::fmt::Debug for TopicColumn {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TopicColumn");
+        formatter.field("column_name", &self.column_name);
+        formatter.field("column_friendly_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("column_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("column_synonyms", &"*** Sensitive Data Redacted ***");
+        formatter.field("column_data_role", &self.column_data_role);
+        formatter.field("aggregation", &self.aggregation);
+        formatter.field("is_included_in_topic", &self.is_included_in_topic);
+        formatter.field("disable_indexing", &self.disable_indexing);
+        formatter.field("comparative_order", &self.comparative_order);
+        formatter.field("semantic_type", &self.semantic_type);
+        formatter.field("time_granularity", &self.time_granularity);
+        formatter.field("allowed_aggregations", &self.allowed_aggregations);
+        formatter.field("not_allowed_aggregations", &self.not_allowed_aggregations);
+        formatter.field("default_formatting", &self.default_formatting);
+        formatter.field("never_aggregate_in_filter", &self.never_aggregate_in_filter);
+        formatter.field("cell_value_synonyms", &self.cell_value_synonyms);
+        formatter.field("non_additive", &self.non_additive);
+        formatter.finish()
+    }
+}
 impl TopicColumn {
     /// Creates a new builder-style object to manufacture [`TopicColumn`](crate::types::TopicColumn).
     pub fn builder() -> crate::types::builders::TopicColumnBuilder {
@@ -126,7 +149,7 @@ impl TopicColumn {
 }
 
 /// A builder for [`TopicColumn`](crate::types::TopicColumn).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TopicColumnBuilder {
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
@@ -439,5 +462,28 @@ impl TopicColumnBuilder {
             cell_value_synonyms: self.cell_value_synonyms,
             non_additive: self.non_additive,
         })
+    }
+}
+impl ::std::fmt::Debug for TopicColumnBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TopicColumnBuilder");
+        formatter.field("column_name", &self.column_name);
+        formatter.field("column_friendly_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("column_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("column_synonyms", &"*** Sensitive Data Redacted ***");
+        formatter.field("column_data_role", &self.column_data_role);
+        formatter.field("aggregation", &self.aggregation);
+        formatter.field("is_included_in_topic", &self.is_included_in_topic);
+        formatter.field("disable_indexing", &self.disable_indexing);
+        formatter.field("comparative_order", &self.comparative_order);
+        formatter.field("semantic_type", &self.semantic_type);
+        formatter.field("time_granularity", &self.time_granularity);
+        formatter.field("allowed_aggregations", &self.allowed_aggregations);
+        formatter.field("not_allowed_aggregations", &self.not_allowed_aggregations);
+        formatter.field("default_formatting", &self.default_formatting);
+        formatter.field("never_aggregate_in_filter", &self.never_aggregate_in_filter);
+        formatter.field("cell_value_synonyms", &self.cell_value_synonyms);
+        formatter.field("non_additive", &self.non_additive);
+        formatter.finish()
     }
 }

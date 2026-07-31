@@ -35,6 +35,8 @@ pub use crate::types::_medical_content_identification_type::MedicalContentIdenti
 
 pub use crate::types::_medical_transcript_result_stream::MedicalTranscriptResultStream;
 
+pub use crate::types::_transcript_format::TranscriptFormat;
+
 pub use crate::types::_transcript_result_stream::TranscriptResultStream;
 
 pub use crate::types::_medical_scribe_vocabulary_filter_method::MedicalScribeVocabularyFilterMethod;
@@ -274,6 +276,8 @@ mod _timestamp_range;
 mod _transcript;
 
 mod _transcript_event;
+
+mod _transcript_format;
 
 mod _transcript_result_stream;
 

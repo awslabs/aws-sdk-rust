@@ -2,7 +2,7 @@
 
 /// <p>The filter that is used to search for a topic.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicSearchFilter {
     /// <p>The operator like equals or like.</p>
     pub operator: crate::types::TopicFilterOperator,
@@ -26,6 +26,15 @@ impl TopicSearchFilter {
         self.value.deref()
     }
 }
+impl ::std::fmt::Debug for TopicSearchFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TopicSearchFilter");
+        formatter.field("operator", &self.operator);
+        formatter.field("name", &self.name);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl TopicSearchFilter {
     /// Creates a new builder-style object to manufacture [`TopicSearchFilter`](crate::types::TopicSearchFilter).
     pub fn builder() -> crate::types::builders::TopicSearchFilterBuilder {
@@ -34,7 +43,7 @@ impl TopicSearchFilter {
 }
 
 /// A builder for [`TopicSearchFilter`](crate::types::TopicSearchFilter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TopicSearchFilterBuilder {
     pub(crate) operator: ::std::option::Option<crate::types::TopicFilterOperator>,
@@ -113,5 +122,14 @@ impl TopicSearchFilterBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for TopicSearchFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TopicSearchFilterBuilder");
+        formatter.field("operator", &self.operator);
+        formatter.field("name", &self.name);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -204,6 +204,13 @@ pub(crate) fn de_show_speaker_label_header(
     }
 }
 
+pub(crate) fn de_transcript_format_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<crate::types::TranscriptFormat>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all("x-amzn-transcribe-transcript-format");
+    ::aws_smithy_http::header::one_or_none(headers)
+}
+
 pub fn de_transcript_result_stream_payload(
     body: &mut ::aws_smithy_types::body::SdkBody,
 ) -> std::result::Result<

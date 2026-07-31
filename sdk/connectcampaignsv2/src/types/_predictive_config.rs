@@ -6,11 +6,19 @@
 pub struct PredictiveConfig {
     /// The bandwidth allocation of a queue resource.
     pub bandwidth_allocation: f64,
+    /// Pacing strategies the dialer enforces simultaneously.
+    pub pacing_strategies: ::std::option::Option<::std::vec::Vec<crate::types::PacingStrategy>>,
 }
 impl PredictiveConfig {
     /// The bandwidth allocation of a queue resource.
     pub fn bandwidth_allocation(&self) -> f64 {
         self.bandwidth_allocation
+    }
+    /// Pacing strategies the dialer enforces simultaneously.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pacing_strategies.is_none()`.
+    pub fn pacing_strategies(&self) -> &[crate::types::PacingStrategy] {
+        self.pacing_strategies.as_deref().unwrap_or_default()
     }
 }
 impl PredictiveConfig {
@@ -25,6 +33,7 @@ impl PredictiveConfig {
 #[non_exhaustive]
 pub struct PredictiveConfigBuilder {
     pub(crate) bandwidth_allocation: ::std::option::Option<f64>,
+    pub(crate) pacing_strategies: ::std::option::Option<::std::vec::Vec<crate::types::PacingStrategy>>,
 }
 impl PredictiveConfigBuilder {
     /// The bandwidth allocation of a queue resource.
@@ -42,6 +51,26 @@ impl PredictiveConfigBuilder {
     pub fn get_bandwidth_allocation(&self) -> &::std::option::Option<f64> {
         &self.bandwidth_allocation
     }
+    /// Appends an item to `pacing_strategies`.
+    ///
+    /// To override the contents of this collection use [`set_pacing_strategies`](Self::set_pacing_strategies).
+    ///
+    /// Pacing strategies the dialer enforces simultaneously.
+    pub fn pacing_strategies(mut self, input: crate::types::PacingStrategy) -> Self {
+        let mut v = self.pacing_strategies.unwrap_or_default();
+        v.push(input);
+        self.pacing_strategies = ::std::option::Option::Some(v);
+        self
+    }
+    /// Pacing strategies the dialer enforces simultaneously.
+    pub fn set_pacing_strategies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PacingStrategy>>) -> Self {
+        self.pacing_strategies = input;
+        self
+    }
+    /// Pacing strategies the dialer enforces simultaneously.
+    pub fn get_pacing_strategies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PacingStrategy>> {
+        &self.pacing_strategies
+    }
     /// Consumes the builder and constructs a [`PredictiveConfig`](crate::types::PredictiveConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`bandwidth_allocation`](crate::types::builders::PredictiveConfigBuilder::bandwidth_allocation)
@@ -53,6 +82,7 @@ impl PredictiveConfigBuilder {
                     "bandwidth_allocation was not specified but it is required when building PredictiveConfig",
                 )
             })?,
+            pacing_strategies: self.pacing_strategies,
         })
     }
 }

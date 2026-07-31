@@ -13,6 +13,7 @@
 /// # let driftignoredreason = unimplemented!();
 /// match driftignoredreason {
 ///     DriftIgnoredReason::ManagedByAws => { /* ... */ },
+///     DriftIgnoredReason::SensitiveProperty => { /* ... */ },
 ///     DriftIgnoredReason::WriteOnlyProperty => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum DriftIgnoredReason {
     #[allow(missing_docs)] // documentation missing in model
     ManagedByAws,
     #[allow(missing_docs)] // documentation missing in model
+    SensitiveProperty,
+    #[allow(missing_docs)] // documentation missing in model
     WriteOnlyProperty,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for DriftIgnoredReason {
     fn from(s: &str) -> Self {
         match s {
             "MANAGED_BY_AWS" => DriftIgnoredReason::ManagedByAws,
+            "SENSITIVE_PROPERTY" => DriftIgnoredReason::SensitiveProperty,
             "WRITE_ONLY_PROPERTY" => DriftIgnoredReason::WriteOnlyProperty,
             other => DriftIgnoredReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl DriftIgnoredReason {
     pub fn as_str(&self) -> &str {
         match self {
             DriftIgnoredReason::ManagedByAws => "MANAGED_BY_AWS",
+            DriftIgnoredReason::SensitiveProperty => "SENSITIVE_PROPERTY",
             DriftIgnoredReason::WriteOnlyProperty => "WRITE_ONLY_PROPERTY",
             DriftIgnoredReason::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MANAGED_BY_AWS", "WRITE_ONLY_PROPERTY"]
+        &["MANAGED_BY_AWS", "SENSITIVE_PROPERTY", "WRITE_ONLY_PROPERTY"]
     }
 }
 impl ::std::convert::AsRef<str> for DriftIgnoredReason {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for DriftIgnoredReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DriftIgnoredReason::ManagedByAws => write!(f, "MANAGED_BY_AWS"),
+            DriftIgnoredReason::SensitiveProperty => write!(f, "SENSITIVE_PROPERTY"),
             DriftIgnoredReason::WriteOnlyProperty => write!(f, "WRITE_ONLY_PROPERTY"),
             DriftIgnoredReason::Unknown(value) => write!(f, "{value}"),
         }

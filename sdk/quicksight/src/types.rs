@@ -123,6 +123,8 @@ pub use crate::types::_custom_instructions::CustomInstructions;
 
 pub use crate::types::_topic_refresh_schedule::TopicRefreshSchedule;
 
+pub use crate::types::_topic_v2_details::TopicV2Details;
+
 pub use crate::types::_vpc_connection_resource_status::VpcConnectionResourceStatus;
 
 pub use crate::types::_vpc_connection_availability_status::VpcConnectionAvailabilityStatus;
@@ -260,6 +262,8 @@ pub use crate::types::_self_upgrade_request_detail::SelfUpgradeRequestDetail;
 pub use crate::types::_self_upgrade_status::SelfUpgradeStatus;
 
 pub use crate::types::_purchase_mode::PurchaseMode;
+
+pub use crate::types::_topic_v2_publish_option::TopicV2PublishOption;
 
 pub use crate::types::_create_topic_reviewed_answer::CreateTopicReviewedAnswer;
 
@@ -603,6 +607,8 @@ pub use crate::types::_topic_reviewed_answer::TopicReviewedAnswer;
 
 pub use crate::types::_topic_summary::TopicSummary;
 
+pub use crate::types::_topic_v2_summary::TopicV2Summary;
+
 pub use crate::types::_user_index_capacity_filter::UserIndexCapacityFilter;
 
 pub use crate::types::_user_index_capacity::UserIndexCapacity;
@@ -687,6 +693,8 @@ pub use crate::types::_date_time_parameter::DateTimeParameter;
 
 pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclaration;
 
+pub use crate::types::_topic_identifier_declaration::TopicIdentifierDeclaration;
+
 pub use crate::types::_sheet_definition::SheetDefinition;
 
 pub use crate::types::_tooltip_sheet_definition::TooltipSheetDefinition;
@@ -706,6 +714,8 @@ pub use crate::types::_day_of_the_week::DayOfTheWeek;
 pub use crate::types::_q_business_insights_status::QBusinessInsightsStatus;
 
 pub use crate::types::_visual_custom_action_defaults::VisualCustomActionDefaults;
+
+pub use crate::types::_visual_messages::VisualMessages;
 
 pub use crate::types::_query_execution_mode::QueryExecutionMode;
 
@@ -795,6 +805,8 @@ pub use crate::types::_schedule_refresh_on_entity::ScheduleRefreshOnEntity;
 
 pub use crate::types::_data_set_configuration::DataSetConfiguration;
 
+pub use crate::types::_topic_configuration::TopicConfiguration;
+
 pub use crate::types::_tile_style::TileStyle;
 
 pub use crate::types::_tile_layout_style::TileLayoutStyle;
@@ -810,6 +822,10 @@ pub use crate::types::_visual_subtitle_font_configuration::VisualSubtitleFontCon
 pub use crate::types::_control_title_font_configuration::ControlTitleFontConfiguration;
 
 pub use crate::types::_dataset_metadata::DatasetMetadata;
+
+pub use crate::types::_topic_v2_data_set_reference::TopicV2DataSetReference;
+
+pub use crate::types::_topic_v2_data_set_relation::TopicV2DataSetRelation;
 
 pub use crate::types::_action_connector_error_type::ActionConnectorErrorType;
 
@@ -985,6 +1001,8 @@ pub use crate::types::_client_credentials_details::ClientCredentialsDetails;
 
 pub use crate::types::_data_set_reference::DataSetReference;
 
+pub use crate::types::_topic_reference::TopicReference;
+
 pub use crate::types::_sheet_content_type::SheetContentType;
 
 pub use crate::types::_string_parameter_declaration::StringParameterDeclaration;
@@ -1016,6 +1034,8 @@ pub use crate::types::_default_interactive_layout_configuration::DefaultInteract
 pub use crate::types::_default_paginated_layout_configuration::DefaultPaginatedLayoutConfiguration;
 
 pub use crate::types::_visual_highlight_operation::VisualHighlightOperation;
+
+pub use crate::types::_visual_message_configuration::VisualMessageConfiguration;
 
 pub use crate::types::_image_static_file::ImageStaticFile;
 
@@ -1106,6 +1126,8 @@ pub use crate::types::_horizontal_text_alignment::HorizontalTextAlignment;
 pub use crate::types::_text_transform::TextTransform;
 
 pub use crate::types::_data_aggregation::DataAggregation;
+
+pub use crate::types::_topic_v2_data_set_relation_endpoint::TopicV2DataSetRelationEndpoint;
 
 pub use crate::types::_read_authorization_code_grant_metadata::ReadAuthorizationCodeGrantMetadata;
 
@@ -1234,6 +1256,8 @@ pub use crate::types::_default_free_form_layout_configuration::DefaultFreeFormLa
 pub use crate::types::_default_section_based_layout_configuration::DefaultSectionBasedLayoutConfiguration;
 
 pub use crate::types::_visual_highlight_trigger::VisualHighlightTrigger;
+
+pub use crate::types::_visibility::Visibility;
 
 pub use crate::types::_static_file_source::StaticFileSource;
 
@@ -1665,8 +1689,6 @@ pub use crate::types::_sheet_image_scaling_type::SheetImageScalingType;
 
 pub use crate::types::_sheet_image_tooltip_text::SheetImageTooltipText;
 
-pub use crate::types::_visibility::Visibility;
-
 pub use crate::types::_image_menu_option::ImageMenuOption;
 
 pub use crate::types::_image_custom_action::ImageCustomAction;
@@ -1757,6 +1779,8 @@ pub use crate::types::_category_filter_type::CategoryFilterType;
 
 pub use crate::types::_topic_category_filter_constant::TopicCategoryFilterConstant;
 
+pub use crate::types::_null_filter_type::NullFilterType;
+
 pub use crate::types::_topic_singular_filter_constant::TopicSingularFilterConstant;
 
 pub use crate::types::_named_filter_agg_type::NamedFilterAggType;
@@ -1764,8 +1788,6 @@ pub use crate::types::_named_filter_agg_type::NamedFilterAggType;
 pub use crate::types::_topic_range_filter_constant::TopicRangeFilterConstant;
 
 pub use crate::types::_topic_relative_date_filter_function::TopicRelativeDateFilterFunction;
-
-pub use crate::types::_null_filter_type::NullFilterType;
 
 pub use crate::types::_column_ordering_type::ColumnOrderingType;
 
@@ -1776,6 +1798,8 @@ pub use crate::types::_author_specified_aggregation::AuthorSpecifiedAggregation;
 pub use crate::types::_cell_value_synonym::CellValueSynonym;
 
 pub use crate::types::_named_entity_definition::NamedEntityDefinition;
+
+pub use crate::types::_named_entity_sort::NamedEntitySort;
 
 pub use crate::types::_snapshot_file_sheet_selection::SnapshotFileSheetSelection;
 
@@ -4439,6 +4463,8 @@ mod _named_entity_definition_metric;
 
 mod _named_entity_ref;
 
+mod _named_entity_sort;
+
 mod _named_filter_agg_type;
 
 mod _named_filter_type;
@@ -5379,6 +5405,8 @@ mod _topic_column;
 
 mod _topic_config_options;
 
+mod _topic_configuration;
+
 mod _topic_constant_value;
 
 mod _topic_date_range_filter;
@@ -5390,6 +5418,8 @@ mod _topic_filter;
 mod _topic_filter_attribute;
 
 mod _topic_filter_operator;
+
+mod _topic_identifier_declaration;
 
 mod _topic_ir;
 
@@ -5418,6 +5448,8 @@ mod _topic_numeric_range_filter;
 mod _topic_numeric_separator_symbol;
 
 mod _topic_range_filter_constant;
+
+mod _topic_reference;
 
 mod _topic_refresh_details;
 
@@ -5450,6 +5482,18 @@ mod _topic_template;
 mod _topic_time_granularity;
 
 mod _topic_user_experience_version;
+
+mod _topic_v2_data_set_reference;
+
+mod _topic_v2_data_set_relation;
+
+mod _topic_v2_data_set_relation_endpoint;
+
+mod _topic_v2_details;
+
+mod _topic_v2_publish_option;
+
+mod _topic_v2_summary;
 
 mod _topic_visual;
 
@@ -5566,6 +5610,10 @@ mod _visual_highlight_trigger;
 mod _visual_interaction_options;
 
 mod _visual_menu_option;
+
+mod _visual_message_configuration;
+
+mod _visual_messages;
 
 mod _visual_options;
 

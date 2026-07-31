@@ -117,602 +117,728 @@ pub fn ser_capabilities(
     if let Some(var_38) = &input.knowledge_base {
         object.key("KnowledgeBase").string(var_38.as_str());
     }
-    if let Some(var_39) = &input.action {
-        object.key("Action").string(var_39.as_str());
+    if let Some(var_39) = &input.create_and_update_knowledge_bases {
+        object.key("CreateAndUpdateKnowledgeBases").string(var_39.as_str());
     }
-    if let Some(var_40) = &input.generic_http_action {
-        object.key("GenericHTTPAction").string(var_40.as_str());
+    if let Some(var_40) = &input.share_knowledge_bases {
+        object.key("ShareKnowledgeBases").string(var_40.as_str());
     }
-    if let Some(var_41) = &input.create_and_update_generic_http_action {
-        object.key("CreateAndUpdateGenericHTTPAction").string(var_41.as_str());
+    if let Some(var_41) = &input.share_point_knowledge_base {
+        object.key("SharePointKnowledgeBase").string(var_41.as_str());
     }
-    if let Some(var_42) = &input.share_generic_http_action {
-        object.key("ShareGenericHTTPAction").string(var_42.as_str());
+    if let Some(var_42) = &input.create_and_update_share_point_knowledge_base {
+        object.key("CreateAndUpdateSharePointKnowledgeBase").string(var_42.as_str());
     }
-    if let Some(var_43) = &input.use_generic_http_action {
-        object.key("UseGenericHTTPAction").string(var_43.as_str());
+    if let Some(var_43) = &input.share_share_point_knowledge_base {
+        object.key("ShareSharePointKnowledgeBase").string(var_43.as_str());
     }
-    if let Some(var_44) = &input.asana_action {
-        object.key("AsanaAction").string(var_44.as_str());
+    if let Some(var_44) = &input.use_share_point_knowledge_base {
+        object.key("UseSharePointKnowledgeBase").string(var_44.as_str());
     }
-    if let Some(var_45) = &input.create_and_update_asana_action {
-        object.key("CreateAndUpdateAsanaAction").string(var_45.as_str());
+    if let Some(var_45) = &input.google_drive_knowledge_base {
+        object.key("GoogleDriveKnowledgeBase").string(var_45.as_str());
     }
-    if let Some(var_46) = &input.share_asana_action {
-        object.key("ShareAsanaAction").string(var_46.as_str());
+    if let Some(var_46) = &input.create_and_update_google_drive_knowledge_base {
+        object.key("CreateAndUpdateGoogleDriveKnowledgeBase").string(var_46.as_str());
     }
-    if let Some(var_47) = &input.use_asana_action {
-        object.key("UseAsanaAction").string(var_47.as_str());
+    if let Some(var_47) = &input.share_google_drive_knowledge_base {
+        object.key("ShareGoogleDriveKnowledgeBase").string(var_47.as_str());
     }
-    if let Some(var_48) = &input.slack_action {
-        object.key("SlackAction").string(var_48.as_str());
+    if let Some(var_48) = &input.use_google_drive_knowledge_base {
+        object.key("UseGoogleDriveKnowledgeBase").string(var_48.as_str());
     }
-    if let Some(var_49) = &input.create_and_update_slack_action {
-        object.key("CreateAndUpdateSlackAction").string(var_49.as_str());
+    if let Some(var_49) = &input.web_crawler_knowledge_base {
+        object.key("WebCrawlerKnowledgeBase").string(var_49.as_str());
     }
-    if let Some(var_50) = &input.share_slack_action {
-        object.key("ShareSlackAction").string(var_50.as_str());
+    if let Some(var_50) = &input.create_and_update_web_crawler_knowledge_base {
+        object.key("CreateAndUpdateWebCrawlerKnowledgeBase").string(var_50.as_str());
     }
-    if let Some(var_51) = &input.use_slack_action {
-        object.key("UseSlackAction").string(var_51.as_str());
+    if let Some(var_51) = &input.share_web_crawler_knowledge_base {
+        object.key("ShareWebCrawlerKnowledgeBase").string(var_51.as_str());
     }
-    if let Some(var_52) = &input.service_now_action {
-        object.key("ServiceNowAction").string(var_52.as_str());
+    if let Some(var_52) = &input.use_web_crawler_knowledge_base {
+        object.key("UseWebCrawlerKnowledgeBase").string(var_52.as_str());
     }
-    if let Some(var_53) = &input.create_and_update_service_now_action {
-        object.key("CreateAndUpdateServiceNowAction").string(var_53.as_str());
+    if let Some(var_53) = &input.s3_knowledge_base {
+        object.key("S3KnowledgeBase").string(var_53.as_str());
     }
-    if let Some(var_54) = &input.share_service_now_action {
-        object.key("ShareServiceNowAction").string(var_54.as_str());
+    if let Some(var_54) = &input.create_and_update_s3_knowledge_base {
+        object.key("CreateAndUpdateS3KnowledgeBase").string(var_54.as_str());
     }
-    if let Some(var_55) = &input.use_service_now_action {
-        object.key("UseServiceNowAction").string(var_55.as_str());
+    if let Some(var_55) = &input.share_s3_knowledge_base {
+        object.key("ShareS3KnowledgeBase").string(var_55.as_str());
     }
-    if let Some(var_56) = &input.salesforce_action {
-        object.key("SalesforceAction").string(var_56.as_str());
+    if let Some(var_56) = &input.use_s3_knowledge_base {
+        object.key("UseS3KnowledgeBase").string(var_56.as_str());
     }
-    if let Some(var_57) = &input.create_and_update_salesforce_action {
-        object.key("CreateAndUpdateSalesforceAction").string(var_57.as_str());
+    if let Some(var_57) = &input.confluence_knowledge_base {
+        object.key("ConfluenceKnowledgeBase").string(var_57.as_str());
     }
-    if let Some(var_58) = &input.share_salesforce_action {
-        object.key("ShareSalesforceAction").string(var_58.as_str());
+    if let Some(var_58) = &input.create_and_update_confluence_knowledge_base {
+        object.key("CreateAndUpdateConfluenceKnowledgeBase").string(var_58.as_str());
     }
-    if let Some(var_59) = &input.use_salesforce_action {
-        object.key("UseSalesforceAction").string(var_59.as_str());
+    if let Some(var_59) = &input.share_confluence_knowledge_base {
+        object.key("ShareConfluenceKnowledgeBase").string(var_59.as_str());
     }
-    if let Some(var_60) = &input.ms_exchange_action {
-        object.key("MSExchangeAction").string(var_60.as_str());
+    if let Some(var_60) = &input.use_confluence_knowledge_base {
+        object.key("UseConfluenceKnowledgeBase").string(var_60.as_str());
     }
-    if let Some(var_61) = &input.create_and_update_ms_exchange_action {
-        object.key("CreateAndUpdateMSExchangeAction").string(var_61.as_str());
+    if let Some(var_61) = &input.one_drive_knowledge_base {
+        object.key("OneDriveKnowledgeBase").string(var_61.as_str());
     }
-    if let Some(var_62) = &input.share_ms_exchange_action {
-        object.key("ShareMSExchangeAction").string(var_62.as_str());
+    if let Some(var_62) = &input.create_and_update_one_drive_knowledge_base {
+        object.key("CreateAndUpdateOneDriveKnowledgeBase").string(var_62.as_str());
     }
-    if let Some(var_63) = &input.use_ms_exchange_action {
-        object.key("UseMSExchangeAction").string(var_63.as_str());
+    if let Some(var_63) = &input.share_one_drive_knowledge_base {
+        object.key("ShareOneDriveKnowledgeBase").string(var_63.as_str());
     }
-    if let Some(var_64) = &input.pager_duty_action {
-        object.key("PagerDutyAction").string(var_64.as_str());
+    if let Some(var_64) = &input.use_one_drive_knowledge_base {
+        object.key("UseOneDriveKnowledgeBase").string(var_64.as_str());
     }
-    if let Some(var_65) = &input.create_and_update_pager_duty_action {
-        object.key("CreateAndUpdatePagerDutyAction").string(var_65.as_str());
+    if let Some(var_65) = &input.q_business_knowledge_base {
+        object.key("QBusinessKnowledgeBase").string(var_65.as_str());
     }
-    if let Some(var_66) = &input.share_pager_duty_action {
-        object.key("SharePagerDutyAction").string(var_66.as_str());
+    if let Some(var_66) = &input.create_and_update_q_business_knowledge_base {
+        object.key("CreateAndUpdateQBusinessKnowledgeBase").string(var_66.as_str());
     }
-    if let Some(var_67) = &input.use_pager_duty_action {
-        object.key("UsePagerDutyAction").string(var_67.as_str());
+    if let Some(var_67) = &input.share_q_business_knowledge_base {
+        object.key("ShareQBusinessKnowledgeBase").string(var_67.as_str());
     }
-    if let Some(var_68) = &input.jira_action {
-        object.key("JiraAction").string(var_68.as_str());
+    if let Some(var_68) = &input.use_q_business_knowledge_base {
+        object.key("UseQBusinessKnowledgeBase").string(var_68.as_str());
     }
-    if let Some(var_69) = &input.create_and_update_jira_action {
-        object.key("CreateAndUpdateJiraAction").string(var_69.as_str());
+    if let Some(var_69) = &input.bedrock_managed_knowledge_base {
+        object.key("BedrockManagedKnowledgeBase").string(var_69.as_str());
     }
-    if let Some(var_70) = &input.share_jira_action {
-        object.key("ShareJiraAction").string(var_70.as_str());
+    if let Some(var_70) = &input.create_and_update_bedrock_managed_knowledge_base {
+        object.key("CreateAndUpdateBedrockManagedKnowledgeBase").string(var_70.as_str());
     }
-    if let Some(var_71) = &input.use_jira_action {
-        object.key("UseJiraAction").string(var_71.as_str());
+    if let Some(var_71) = &input.share_bedrock_managed_knowledge_base {
+        object.key("ShareBedrockManagedKnowledgeBase").string(var_71.as_str());
     }
-    if let Some(var_72) = &input.confluence_action {
-        object.key("ConfluenceAction").string(var_72.as_str());
+    if let Some(var_72) = &input.use_bedrock_managed_knowledge_base {
+        object.key("UseBedrockManagedKnowledgeBase").string(var_72.as_str());
     }
-    if let Some(var_73) = &input.create_and_update_confluence_action {
-        object.key("CreateAndUpdateConfluenceAction").string(var_73.as_str());
+    if let Some(var_73) = &input.box_knowledge_base {
+        object.key("BoxKnowledgeBase").string(var_73.as_str());
     }
-    if let Some(var_74) = &input.share_confluence_action {
-        object.key("ShareConfluenceAction").string(var_74.as_str());
+    if let Some(var_74) = &input.create_and_update_box_knowledge_base {
+        object.key("CreateAndUpdateBoxKnowledgeBase").string(var_74.as_str());
     }
-    if let Some(var_75) = &input.use_confluence_action {
-        object.key("UseConfluenceAction").string(var_75.as_str());
+    if let Some(var_75) = &input.share_box_knowledge_base {
+        object.key("ShareBoxKnowledgeBase").string(var_75.as_str());
     }
-    if let Some(var_76) = &input.one_drive_action {
-        object.key("OneDriveAction").string(var_76.as_str());
+    if let Some(var_76) = &input.use_box_knowledge_base {
+        object.key("UseBoxKnowledgeBase").string(var_76.as_str());
     }
-    if let Some(var_77) = &input.create_and_update_one_drive_action {
-        object.key("CreateAndUpdateOneDriveAction").string(var_77.as_str());
+    if let Some(var_77) = &input.idc_knowledge_base {
+        object.key("IDCKnowledgeBase").string(var_77.as_str());
     }
-    if let Some(var_78) = &input.share_one_drive_action {
-        object.key("ShareOneDriveAction").string(var_78.as_str());
+    if let Some(var_78) = &input.create_and_update_idc_knowledge_base {
+        object.key("CreateAndUpdateIDCKnowledgeBase").string(var_78.as_str());
     }
-    if let Some(var_79) = &input.use_one_drive_action {
-        object.key("UseOneDriveAction").string(var_79.as_str());
+    if let Some(var_79) = &input.share_idc_knowledge_base {
+        object.key("ShareIDCKnowledgeBase").string(var_79.as_str());
     }
-    if let Some(var_80) = &input.share_point_action {
-        object.key("SharePointAction").string(var_80.as_str());
+    if let Some(var_80) = &input.use_idc_knowledge_base {
+        object.key("UseIDCKnowledgeBase").string(var_80.as_str());
     }
-    if let Some(var_81) = &input.create_and_update_share_point_action {
-        object.key("CreateAndUpdateSharePointAction").string(var_81.as_str());
+    if let Some(var_81) = &input.action {
+        object.key("Action").string(var_81.as_str());
     }
-    if let Some(var_82) = &input.share_share_point_action {
-        object.key("ShareSharePointAction").string(var_82.as_str());
+    if let Some(var_82) = &input.generic_http_action {
+        object.key("GenericHTTPAction").string(var_82.as_str());
     }
-    if let Some(var_83) = &input.use_share_point_action {
-        object.key("UseSharePointAction").string(var_83.as_str());
+    if let Some(var_83) = &input.create_and_update_generic_http_action {
+        object.key("CreateAndUpdateGenericHTTPAction").string(var_83.as_str());
     }
-    if let Some(var_84) = &input.ms_teams_action {
-        object.key("MSTeamsAction").string(var_84.as_str());
+    if let Some(var_84) = &input.share_generic_http_action {
+        object.key("ShareGenericHTTPAction").string(var_84.as_str());
     }
-    if let Some(var_85) = &input.create_and_update_ms_teams_action {
-        object.key("CreateAndUpdateMSTeamsAction").string(var_85.as_str());
+    if let Some(var_85) = &input.use_generic_http_action {
+        object.key("UseGenericHTTPAction").string(var_85.as_str());
     }
-    if let Some(var_86) = &input.share_ms_teams_action {
-        object.key("ShareMSTeamsAction").string(var_86.as_str());
+    if let Some(var_86) = &input.asana_action {
+        object.key("AsanaAction").string(var_86.as_str());
     }
-    if let Some(var_87) = &input.use_ms_teams_action {
-        object.key("UseMSTeamsAction").string(var_87.as_str());
+    if let Some(var_87) = &input.create_and_update_asana_action {
+        object.key("CreateAndUpdateAsanaAction").string(var_87.as_str());
     }
-    if let Some(var_88) = &input.google_calendar_action {
-        object.key("GoogleCalendarAction").string(var_88.as_str());
+    if let Some(var_88) = &input.share_asana_action {
+        object.key("ShareAsanaAction").string(var_88.as_str());
     }
-    if let Some(var_89) = &input.create_and_update_google_calendar_action {
-        object.key("CreateAndUpdateGoogleCalendarAction").string(var_89.as_str());
+    if let Some(var_89) = &input.use_asana_action {
+        object.key("UseAsanaAction").string(var_89.as_str());
     }
-    if let Some(var_90) = &input.share_google_calendar_action {
-        object.key("ShareGoogleCalendarAction").string(var_90.as_str());
+    if let Some(var_90) = &input.slack_action {
+        object.key("SlackAction").string(var_90.as_str());
     }
-    if let Some(var_91) = &input.use_google_calendar_action {
-        object.key("UseGoogleCalendarAction").string(var_91.as_str());
+    if let Some(var_91) = &input.create_and_update_slack_action {
+        object.key("CreateAndUpdateSlackAction").string(var_91.as_str());
     }
-    if let Some(var_92) = &input.zendesk_action {
-        object.key("ZendeskAction").string(var_92.as_str());
+    if let Some(var_92) = &input.share_slack_action {
+        object.key("ShareSlackAction").string(var_92.as_str());
     }
-    if let Some(var_93) = &input.create_and_update_zendesk_action {
-        object.key("CreateAndUpdateZendeskAction").string(var_93.as_str());
+    if let Some(var_93) = &input.use_slack_action {
+        object.key("UseSlackAction").string(var_93.as_str());
     }
-    if let Some(var_94) = &input.share_zendesk_action {
-        object.key("ShareZendeskAction").string(var_94.as_str());
+    if let Some(var_94) = &input.service_now_action {
+        object.key("ServiceNowAction").string(var_94.as_str());
     }
-    if let Some(var_95) = &input.use_zendesk_action {
-        object.key("UseZendeskAction").string(var_95.as_str());
+    if let Some(var_95) = &input.create_and_update_service_now_action {
+        object.key("CreateAndUpdateServiceNowAction").string(var_95.as_str());
     }
-    if let Some(var_96) = &input.smartsheet_action {
-        object.key("SmartsheetAction").string(var_96.as_str());
+    if let Some(var_96) = &input.share_service_now_action {
+        object.key("ShareServiceNowAction").string(var_96.as_str());
     }
-    if let Some(var_97) = &input.create_and_update_smartsheet_action {
-        object.key("CreateAndUpdateSmartsheetAction").string(var_97.as_str());
+    if let Some(var_97) = &input.use_service_now_action {
+        object.key("UseServiceNowAction").string(var_97.as_str());
     }
-    if let Some(var_98) = &input.share_smartsheet_action {
-        object.key("ShareSmartsheetAction").string(var_98.as_str());
+    if let Some(var_98) = &input.salesforce_action {
+        object.key("SalesforceAction").string(var_98.as_str());
     }
-    if let Some(var_99) = &input.use_smartsheet_action {
-        object.key("UseSmartsheetAction").string(var_99.as_str());
+    if let Some(var_99) = &input.create_and_update_salesforce_action {
+        object.key("CreateAndUpdateSalesforceAction").string(var_99.as_str());
     }
-    if let Some(var_100) = &input.sap_business_partner_action {
-        object.key("SAPBusinessPartnerAction").string(var_100.as_str());
+    if let Some(var_100) = &input.share_salesforce_action {
+        object.key("ShareSalesforceAction").string(var_100.as_str());
     }
-    if let Some(var_101) = &input.create_and_update_sap_business_partner_action {
-        object.key("CreateAndUpdateSAPBusinessPartnerAction").string(var_101.as_str());
+    if let Some(var_101) = &input.use_salesforce_action {
+        object.key("UseSalesforceAction").string(var_101.as_str());
     }
-    if let Some(var_102) = &input.share_sap_business_partner_action {
-        object.key("ShareSAPBusinessPartnerAction").string(var_102.as_str());
+    if let Some(var_102) = &input.ms_exchange_action {
+        object.key("MSExchangeAction").string(var_102.as_str());
     }
-    if let Some(var_103) = &input.use_sap_business_partner_action {
-        object.key("UseSAPBusinessPartnerAction").string(var_103.as_str());
+    if let Some(var_103) = &input.create_and_update_ms_exchange_action {
+        object.key("CreateAndUpdateMSExchangeAction").string(var_103.as_str());
     }
-    if let Some(var_104) = &input.sap_product_master_data_action {
-        object.key("SAPProductMasterDataAction").string(var_104.as_str());
+    if let Some(var_104) = &input.share_ms_exchange_action {
+        object.key("ShareMSExchangeAction").string(var_104.as_str());
     }
-    if let Some(var_105) = &input.create_and_update_sap_product_master_data_action {
-        object.key("CreateAndUpdateSAPProductMasterDataAction").string(var_105.as_str());
+    if let Some(var_105) = &input.use_ms_exchange_action {
+        object.key("UseMSExchangeAction").string(var_105.as_str());
     }
-    if let Some(var_106) = &input.share_sap_product_master_data_action {
-        object.key("ShareSAPProductMasterDataAction").string(var_106.as_str());
+    if let Some(var_106) = &input.pager_duty_action {
+        object.key("PagerDutyAction").string(var_106.as_str());
     }
-    if let Some(var_107) = &input.use_sap_product_master_data_action {
-        object.key("UseSAPProductMasterDataAction").string(var_107.as_str());
+    if let Some(var_107) = &input.create_and_update_pager_duty_action {
+        object.key("CreateAndUpdatePagerDutyAction").string(var_107.as_str());
     }
-    if let Some(var_108) = &input.sap_physical_inventory_action {
-        object.key("SAPPhysicalInventoryAction").string(var_108.as_str());
+    if let Some(var_108) = &input.share_pager_duty_action {
+        object.key("SharePagerDutyAction").string(var_108.as_str());
     }
-    if let Some(var_109) = &input.create_and_update_sap_physical_inventory_action {
-        object.key("CreateAndUpdateSAPPhysicalInventoryAction").string(var_109.as_str());
+    if let Some(var_109) = &input.use_pager_duty_action {
+        object.key("UsePagerDutyAction").string(var_109.as_str());
     }
-    if let Some(var_110) = &input.share_sap_physical_inventory_action {
-        object.key("ShareSAPPhysicalInventoryAction").string(var_110.as_str());
+    if let Some(var_110) = &input.jira_action {
+        object.key("JiraAction").string(var_110.as_str());
     }
-    if let Some(var_111) = &input.use_sap_physical_inventory_action {
-        object.key("UseSAPPhysicalInventoryAction").string(var_111.as_str());
+    if let Some(var_111) = &input.create_and_update_jira_action {
+        object.key("CreateAndUpdateJiraAction").string(var_111.as_str());
     }
-    if let Some(var_112) = &input.sap_bill_of_material_action {
-        object.key("SAPBillOfMaterialAction").string(var_112.as_str());
+    if let Some(var_112) = &input.share_jira_action {
+        object.key("ShareJiraAction").string(var_112.as_str());
     }
-    if let Some(var_113) = &input.create_and_update_sap_bill_of_material_action {
-        object.key("CreateAndUpdateSAPBillOfMaterialAction").string(var_113.as_str());
+    if let Some(var_113) = &input.use_jira_action {
+        object.key("UseJiraAction").string(var_113.as_str());
     }
-    if let Some(var_114) = &input.share_sap_bill_of_material_action {
-        object.key("ShareSAPBillOfMaterialAction").string(var_114.as_str());
+    if let Some(var_114) = &input.confluence_action {
+        object.key("ConfluenceAction").string(var_114.as_str());
     }
-    if let Some(var_115) = &input.use_sap_bill_of_material_action {
-        object.key("UseSAPBillOfMaterialAction").string(var_115.as_str());
+    if let Some(var_115) = &input.create_and_update_confluence_action {
+        object.key("CreateAndUpdateConfluenceAction").string(var_115.as_str());
     }
-    if let Some(var_116) = &input.sap_material_stock_action {
-        object.key("SAPMaterialStockAction").string(var_116.as_str());
+    if let Some(var_116) = &input.share_confluence_action {
+        object.key("ShareConfluenceAction").string(var_116.as_str());
     }
-    if let Some(var_117) = &input.create_and_update_sap_material_stock_action {
-        object.key("CreateAndUpdateSAPMaterialStockAction").string(var_117.as_str());
+    if let Some(var_117) = &input.use_confluence_action {
+        object.key("UseConfluenceAction").string(var_117.as_str());
     }
-    if let Some(var_118) = &input.share_sap_material_stock_action {
-        object.key("ShareSAPMaterialStockAction").string(var_118.as_str());
+    if let Some(var_118) = &input.one_drive_action {
+        object.key("OneDriveAction").string(var_118.as_str());
     }
-    if let Some(var_119) = &input.use_sap_material_stock_action {
-        object.key("UseSAPMaterialStockAction").string(var_119.as_str());
+    if let Some(var_119) = &input.create_and_update_one_drive_action {
+        object.key("CreateAndUpdateOneDriveAction").string(var_119.as_str());
     }
-    if let Some(var_120) = &input.fact_set_action {
-        object.key("FactSetAction").string(var_120.as_str());
+    if let Some(var_120) = &input.share_one_drive_action {
+        object.key("ShareOneDriveAction").string(var_120.as_str());
     }
-    if let Some(var_121) = &input.create_and_update_fact_set_action {
-        object.key("CreateAndUpdateFactSetAction").string(var_121.as_str());
+    if let Some(var_121) = &input.use_one_drive_action {
+        object.key("UseOneDriveAction").string(var_121.as_str());
     }
-    if let Some(var_122) = &input.share_fact_set_action {
-        object.key("ShareFactSetAction").string(var_122.as_str());
+    if let Some(var_122) = &input.share_point_action {
+        object.key("SharePointAction").string(var_122.as_str());
     }
-    if let Some(var_123) = &input.use_fact_set_action {
-        object.key("UseFactSetAction").string(var_123.as_str());
+    if let Some(var_123) = &input.create_and_update_share_point_action {
+        object.key("CreateAndUpdateSharePointAction").string(var_123.as_str());
     }
-    if let Some(var_124) = &input.amazon_s_three_action {
-        object.key("AmazonSThreeAction").string(var_124.as_str());
+    if let Some(var_124) = &input.share_share_point_action {
+        object.key("ShareSharePointAction").string(var_124.as_str());
     }
-    if let Some(var_125) = &input.create_and_update_amazon_s_three_action {
-        object.key("CreateAndUpdateAmazonSThreeAction").string(var_125.as_str());
+    if let Some(var_125) = &input.use_share_point_action {
+        object.key("UseSharePointAction").string(var_125.as_str());
     }
-    if let Some(var_126) = &input.share_amazon_s_three_action {
-        object.key("ShareAmazonSThreeAction").string(var_126.as_str());
+    if let Some(var_126) = &input.ms_teams_action {
+        object.key("MSTeamsAction").string(var_126.as_str());
     }
-    if let Some(var_127) = &input.use_amazon_s_three_action {
-        object.key("UseAmazonSThreeAction").string(var_127.as_str());
+    if let Some(var_127) = &input.create_and_update_ms_teams_action {
+        object.key("CreateAndUpdateMSTeamsAction").string(var_127.as_str());
     }
-    if let Some(var_128) = &input.textract_action {
-        object.key("TextractAction").string(var_128.as_str());
+    if let Some(var_128) = &input.share_ms_teams_action {
+        object.key("ShareMSTeamsAction").string(var_128.as_str());
     }
-    if let Some(var_129) = &input.create_and_update_textract_action {
-        object.key("CreateAndUpdateTextractAction").string(var_129.as_str());
+    if let Some(var_129) = &input.use_ms_teams_action {
+        object.key("UseMSTeamsAction").string(var_129.as_str());
     }
-    if let Some(var_130) = &input.share_textract_action {
-        object.key("ShareTextractAction").string(var_130.as_str());
+    if let Some(var_130) = &input.google_calendar_action {
+        object.key("GoogleCalendarAction").string(var_130.as_str());
     }
-    if let Some(var_131) = &input.use_textract_action {
-        object.key("UseTextractAction").string(var_131.as_str());
+    if let Some(var_131) = &input.create_and_update_google_calendar_action {
+        object.key("CreateAndUpdateGoogleCalendarAction").string(var_131.as_str());
     }
-    if let Some(var_132) = &input.comprehend_action {
-        object.key("ComprehendAction").string(var_132.as_str());
+    if let Some(var_132) = &input.share_google_calendar_action {
+        object.key("ShareGoogleCalendarAction").string(var_132.as_str());
     }
-    if let Some(var_133) = &input.create_and_update_comprehend_action {
-        object.key("CreateAndUpdateComprehendAction").string(var_133.as_str());
+    if let Some(var_133) = &input.use_google_calendar_action {
+        object.key("UseGoogleCalendarAction").string(var_133.as_str());
     }
-    if let Some(var_134) = &input.share_comprehend_action {
-        object.key("ShareComprehendAction").string(var_134.as_str());
+    if let Some(var_134) = &input.zendesk_action {
+        object.key("ZendeskAction").string(var_134.as_str());
     }
-    if let Some(var_135) = &input.use_comprehend_action {
-        object.key("UseComprehendAction").string(var_135.as_str());
+    if let Some(var_135) = &input.create_and_update_zendesk_action {
+        object.key("CreateAndUpdateZendeskAction").string(var_135.as_str());
     }
-    if let Some(var_136) = &input.comprehend_medical_action {
-        object.key("ComprehendMedicalAction").string(var_136.as_str());
+    if let Some(var_136) = &input.share_zendesk_action {
+        object.key("ShareZendeskAction").string(var_136.as_str());
     }
-    if let Some(var_137) = &input.create_and_update_comprehend_medical_action {
-        object.key("CreateAndUpdateComprehendMedicalAction").string(var_137.as_str());
+    if let Some(var_137) = &input.use_zendesk_action {
+        object.key("UseZendeskAction").string(var_137.as_str());
     }
-    if let Some(var_138) = &input.share_comprehend_medical_action {
-        object.key("ShareComprehendMedicalAction").string(var_138.as_str());
+    if let Some(var_138) = &input.smartsheet_action {
+        object.key("SmartsheetAction").string(var_138.as_str());
     }
-    if let Some(var_139) = &input.use_comprehend_medical_action {
-        object.key("UseComprehendMedicalAction").string(var_139.as_str());
+    if let Some(var_139) = &input.create_and_update_smartsheet_action {
+        object.key("CreateAndUpdateSmartsheetAction").string(var_139.as_str());
     }
-    if let Some(var_140) = &input.amazon_bedrock_ars_action {
-        object.key("AmazonBedrockARSAction").string(var_140.as_str());
+    if let Some(var_140) = &input.share_smartsheet_action {
+        object.key("ShareSmartsheetAction").string(var_140.as_str());
     }
-    if let Some(var_141) = &input.create_and_update_amazon_bedrock_ars_action {
-        object.key("CreateAndUpdateAmazonBedrockARSAction").string(var_141.as_str());
+    if let Some(var_141) = &input.use_smartsheet_action {
+        object.key("UseSmartsheetAction").string(var_141.as_str());
     }
-    if let Some(var_142) = &input.share_amazon_bedrock_ars_action {
-        object.key("ShareAmazonBedrockARSAction").string(var_142.as_str());
+    if let Some(var_142) = &input.sap_business_partner_action {
+        object.key("SAPBusinessPartnerAction").string(var_142.as_str());
     }
-    if let Some(var_143) = &input.use_amazon_bedrock_ars_action {
-        object.key("UseAmazonBedrockARSAction").string(var_143.as_str());
+    if let Some(var_143) = &input.create_and_update_sap_business_partner_action {
+        object.key("CreateAndUpdateSAPBusinessPartnerAction").string(var_143.as_str());
     }
-    if let Some(var_144) = &input.amazon_bedrock_fs_action {
-        object.key("AmazonBedrockFSAction").string(var_144.as_str());
+    if let Some(var_144) = &input.share_sap_business_partner_action {
+        object.key("ShareSAPBusinessPartnerAction").string(var_144.as_str());
     }
-    if let Some(var_145) = &input.create_and_update_amazon_bedrock_fs_action {
-        object.key("CreateAndUpdateAmazonBedrockFSAction").string(var_145.as_str());
+    if let Some(var_145) = &input.use_sap_business_partner_action {
+        object.key("UseSAPBusinessPartnerAction").string(var_145.as_str());
     }
-    if let Some(var_146) = &input.share_amazon_bedrock_fs_action {
-        object.key("ShareAmazonBedrockFSAction").string(var_146.as_str());
+    if let Some(var_146) = &input.sap_product_master_data_action {
+        object.key("SAPProductMasterDataAction").string(var_146.as_str());
     }
-    if let Some(var_147) = &input.use_amazon_bedrock_fs_action {
-        object.key("UseAmazonBedrockFSAction").string(var_147.as_str());
+    if let Some(var_147) = &input.create_and_update_sap_product_master_data_action {
+        object.key("CreateAndUpdateSAPProductMasterDataAction").string(var_147.as_str());
     }
-    if let Some(var_148) = &input.amazon_bedrock_krs_action {
-        object.key("AmazonBedrockKRSAction").string(var_148.as_str());
+    if let Some(var_148) = &input.share_sap_product_master_data_action {
+        object.key("ShareSAPProductMasterDataAction").string(var_148.as_str());
     }
-    if let Some(var_149) = &input.create_and_update_amazon_bedrock_krs_action {
-        object.key("CreateAndUpdateAmazonBedrockKRSAction").string(var_149.as_str());
+    if let Some(var_149) = &input.use_sap_product_master_data_action {
+        object.key("UseSAPProductMasterDataAction").string(var_149.as_str());
     }
-    if let Some(var_150) = &input.share_amazon_bedrock_krs_action {
-        object.key("ShareAmazonBedrockKRSAction").string(var_150.as_str());
+    if let Some(var_150) = &input.sap_physical_inventory_action {
+        object.key("SAPPhysicalInventoryAction").string(var_150.as_str());
     }
-    if let Some(var_151) = &input.use_amazon_bedrock_krs_action {
-        object.key("UseAmazonBedrockKRSAction").string(var_151.as_str());
+    if let Some(var_151) = &input.create_and_update_sap_physical_inventory_action {
+        object.key("CreateAndUpdateSAPPhysicalInventoryAction").string(var_151.as_str());
     }
-    if let Some(var_152) = &input.mcp_action {
-        object.key("MCPAction").string(var_152.as_str());
+    if let Some(var_152) = &input.share_sap_physical_inventory_action {
+        object.key("ShareSAPPhysicalInventoryAction").string(var_152.as_str());
     }
-    if let Some(var_153) = &input.create_and_update_mcp_action {
-        object.key("CreateAndUpdateMCPAction").string(var_153.as_str());
+    if let Some(var_153) = &input.use_sap_physical_inventory_action {
+        object.key("UseSAPPhysicalInventoryAction").string(var_153.as_str());
     }
-    if let Some(var_154) = &input.share_mcp_action {
-        object.key("ShareMCPAction").string(var_154.as_str());
+    if let Some(var_154) = &input.sap_bill_of_material_action {
+        object.key("SAPBillOfMaterialAction").string(var_154.as_str());
     }
-    if let Some(var_155) = &input.use_mcp_action {
-        object.key("UseMCPAction").string(var_155.as_str());
+    if let Some(var_155) = &input.create_and_update_sap_bill_of_material_action {
+        object.key("CreateAndUpdateSAPBillOfMaterialAction").string(var_155.as_str());
     }
-    if let Some(var_156) = &input.open_api_action {
-        object.key("OpenAPIAction").string(var_156.as_str());
+    if let Some(var_156) = &input.share_sap_bill_of_material_action {
+        object.key("ShareSAPBillOfMaterialAction").string(var_156.as_str());
     }
-    if let Some(var_157) = &input.create_and_update_open_api_action {
-        object.key("CreateAndUpdateOpenAPIAction").string(var_157.as_str());
+    if let Some(var_157) = &input.use_sap_bill_of_material_action {
+        object.key("UseSAPBillOfMaterialAction").string(var_157.as_str());
     }
-    if let Some(var_158) = &input.share_open_api_action {
-        object.key("ShareOpenAPIAction").string(var_158.as_str());
+    if let Some(var_158) = &input.sap_material_stock_action {
+        object.key("SAPMaterialStockAction").string(var_158.as_str());
     }
-    if let Some(var_159) = &input.use_open_api_action {
-        object.key("UseOpenAPIAction").string(var_159.as_str());
+    if let Some(var_159) = &input.create_and_update_sap_material_stock_action {
+        object.key("CreateAndUpdateSAPMaterialStockAction").string(var_159.as_str());
     }
-    if let Some(var_160) = &input.sand_pgmi_action {
-        object.key("SandPGMIAction").string(var_160.as_str());
+    if let Some(var_160) = &input.share_sap_material_stock_action {
+        object.key("ShareSAPMaterialStockAction").string(var_160.as_str());
     }
-    if let Some(var_161) = &input.create_and_update_sand_pgmi_action {
-        object.key("CreateAndUpdateSandPGMIAction").string(var_161.as_str());
+    if let Some(var_161) = &input.use_sap_material_stock_action {
+        object.key("UseSAPMaterialStockAction").string(var_161.as_str());
     }
-    if let Some(var_162) = &input.share_sand_pgmi_action {
-        object.key("ShareSandPGMIAction").string(var_162.as_str());
+    if let Some(var_162) = &input.fact_set_action {
+        object.key("FactSetAction").string(var_162.as_str());
     }
-    if let Some(var_163) = &input.use_sand_pgmi_action {
-        object.key("UseSandPGMIAction").string(var_163.as_str());
+    if let Some(var_163) = &input.create_and_update_fact_set_action {
+        object.key("CreateAndUpdateFactSetAction").string(var_163.as_str());
     }
-    if let Some(var_164) = &input.sand_p_global_energy_action {
-        object.key("SandPGlobalEnergyAction").string(var_164.as_str());
+    if let Some(var_164) = &input.share_fact_set_action {
+        object.key("ShareFactSetAction").string(var_164.as_str());
     }
-    if let Some(var_165) = &input.create_and_update_sand_p_global_energy_action {
-        object.key("CreateAndUpdateSandPGlobalEnergyAction").string(var_165.as_str());
+    if let Some(var_165) = &input.use_fact_set_action {
+        object.key("UseFactSetAction").string(var_165.as_str());
     }
-    if let Some(var_166) = &input.share_sand_p_global_energy_action {
-        object.key("ShareSandPGlobalEnergyAction").string(var_166.as_str());
+    if let Some(var_166) = &input.amazon_s_three_action {
+        object.key("AmazonSThreeAction").string(var_166.as_str());
     }
-    if let Some(var_167) = &input.use_sand_p_global_energy_action {
-        object.key("UseSandPGlobalEnergyAction").string(var_167.as_str());
+    if let Some(var_167) = &input.create_and_update_amazon_s_three_action {
+        object.key("CreateAndUpdateAmazonSThreeAction").string(var_167.as_str());
     }
-    if let Some(var_168) = &input.bamboo_hr_action {
-        object.key("BambooHRAction").string(var_168.as_str());
+    if let Some(var_168) = &input.share_amazon_s_three_action {
+        object.key("ShareAmazonSThreeAction").string(var_168.as_str());
     }
-    if let Some(var_169) = &input.create_and_update_bamboo_hr_action {
-        object.key("CreateAndUpdateBambooHRAction").string(var_169.as_str());
+    if let Some(var_169) = &input.use_amazon_s_three_action {
+        object.key("UseAmazonSThreeAction").string(var_169.as_str());
     }
-    if let Some(var_170) = &input.share_bamboo_hr_action {
-        object.key("ShareBambooHRAction").string(var_170.as_str());
+    if let Some(var_170) = &input.textract_action {
+        object.key("TextractAction").string(var_170.as_str());
     }
-    if let Some(var_171) = &input.use_bamboo_hr_action {
-        object.key("UseBambooHRAction").string(var_171.as_str());
+    if let Some(var_171) = &input.create_and_update_textract_action {
+        object.key("CreateAndUpdateTextractAction").string(var_171.as_str());
     }
-    if let Some(var_172) = &input.box_agent_action {
-        object.key("BoxAgentAction").string(var_172.as_str());
+    if let Some(var_172) = &input.share_textract_action {
+        object.key("ShareTextractAction").string(var_172.as_str());
     }
-    if let Some(var_173) = &input.create_and_update_box_agent_action {
-        object.key("CreateAndUpdateBoxAgentAction").string(var_173.as_str());
+    if let Some(var_173) = &input.use_textract_action {
+        object.key("UseTextractAction").string(var_173.as_str());
     }
-    if let Some(var_174) = &input.share_box_agent_action {
-        object.key("ShareBoxAgentAction").string(var_174.as_str());
+    if let Some(var_174) = &input.comprehend_action {
+        object.key("ComprehendAction").string(var_174.as_str());
     }
-    if let Some(var_175) = &input.use_box_agent_action {
-        object.key("UseBoxAgentAction").string(var_175.as_str());
+    if let Some(var_175) = &input.create_and_update_comprehend_action {
+        object.key("CreateAndUpdateComprehendAction").string(var_175.as_str());
     }
-    if let Some(var_176) = &input.canva_agent_action {
-        object.key("CanvaAgentAction").string(var_176.as_str());
+    if let Some(var_176) = &input.share_comprehend_action {
+        object.key("ShareComprehendAction").string(var_176.as_str());
     }
-    if let Some(var_177) = &input.create_and_update_canva_agent_action {
-        object.key("CreateAndUpdateCanvaAgentAction").string(var_177.as_str());
+    if let Some(var_177) = &input.use_comprehend_action {
+        object.key("UseComprehendAction").string(var_177.as_str());
     }
-    if let Some(var_178) = &input.share_canva_agent_action {
-        object.key("ShareCanvaAgentAction").string(var_178.as_str());
+    if let Some(var_178) = &input.comprehend_medical_action {
+        object.key("ComprehendMedicalAction").string(var_178.as_str());
     }
-    if let Some(var_179) = &input.use_canva_agent_action {
-        object.key("UseCanvaAgentAction").string(var_179.as_str());
+    if let Some(var_179) = &input.create_and_update_comprehend_medical_action {
+        object.key("CreateAndUpdateComprehendMedicalAction").string(var_179.as_str());
     }
-    if let Some(var_180) = &input.github_action {
-        object.key("GithubAction").string(var_180.as_str());
+    if let Some(var_180) = &input.share_comprehend_medical_action {
+        object.key("ShareComprehendMedicalAction").string(var_180.as_str());
     }
-    if let Some(var_181) = &input.create_and_update_github_action {
-        object.key("CreateAndUpdateGithubAction").string(var_181.as_str());
+    if let Some(var_181) = &input.use_comprehend_medical_action {
+        object.key("UseComprehendMedicalAction").string(var_181.as_str());
     }
-    if let Some(var_182) = &input.share_github_action {
-        object.key("ShareGithubAction").string(var_182.as_str());
+    if let Some(var_182) = &input.amazon_bedrock_ars_action {
+        object.key("AmazonBedrockARSAction").string(var_182.as_str());
     }
-    if let Some(var_183) = &input.use_github_action {
-        object.key("UseGithubAction").string(var_183.as_str());
+    if let Some(var_183) = &input.create_and_update_amazon_bedrock_ars_action {
+        object.key("CreateAndUpdateAmazonBedrockARSAction").string(var_183.as_str());
     }
-    if let Some(var_184) = &input.notion_action {
-        object.key("NotionAction").string(var_184.as_str());
+    if let Some(var_184) = &input.share_amazon_bedrock_ars_action {
+        object.key("ShareAmazonBedrockARSAction").string(var_184.as_str());
     }
-    if let Some(var_185) = &input.create_and_update_notion_action {
-        object.key("CreateAndUpdateNotionAction").string(var_185.as_str());
+    if let Some(var_185) = &input.use_amazon_bedrock_ars_action {
+        object.key("UseAmazonBedrockARSAction").string(var_185.as_str());
     }
-    if let Some(var_186) = &input.share_notion_action {
-        object.key("ShareNotionAction").string(var_186.as_str());
+    if let Some(var_186) = &input.amazon_bedrock_fs_action {
+        object.key("AmazonBedrockFSAction").string(var_186.as_str());
     }
-    if let Some(var_187) = &input.use_notion_action {
-        object.key("UseNotionAction").string(var_187.as_str());
+    if let Some(var_187) = &input.create_and_update_amazon_bedrock_fs_action {
+        object.key("CreateAndUpdateAmazonBedrockFSAction").string(var_187.as_str());
     }
-    if let Some(var_188) = &input.linear_action {
-        object.key("LinearAction").string(var_188.as_str());
+    if let Some(var_188) = &input.share_amazon_bedrock_fs_action {
+        object.key("ShareAmazonBedrockFSAction").string(var_188.as_str());
     }
-    if let Some(var_189) = &input.create_and_update_linear_action {
-        object.key("CreateAndUpdateLinearAction").string(var_189.as_str());
+    if let Some(var_189) = &input.use_amazon_bedrock_fs_action {
+        object.key("UseAmazonBedrockFSAction").string(var_189.as_str());
     }
-    if let Some(var_190) = &input.share_linear_action {
-        object.key("ShareLinearAction").string(var_190.as_str());
+    if let Some(var_190) = &input.amazon_bedrock_krs_action {
+        object.key("AmazonBedrockKRSAction").string(var_190.as_str());
     }
-    if let Some(var_191) = &input.use_linear_action {
-        object.key("UseLinearAction").string(var_191.as_str());
+    if let Some(var_191) = &input.create_and_update_amazon_bedrock_krs_action {
+        object.key("CreateAndUpdateAmazonBedrockKRSAction").string(var_191.as_str());
     }
-    if let Some(var_192) = &input.hugging_face_action {
-        object.key("HuggingFaceAction").string(var_192.as_str());
+    if let Some(var_192) = &input.share_amazon_bedrock_krs_action {
+        object.key("ShareAmazonBedrockKRSAction").string(var_192.as_str());
     }
-    if let Some(var_193) = &input.create_and_update_hugging_face_action {
-        object.key("CreateAndUpdateHuggingFaceAction").string(var_193.as_str());
+    if let Some(var_193) = &input.use_amazon_bedrock_krs_action {
+        object.key("UseAmazonBedrockKRSAction").string(var_193.as_str());
     }
-    if let Some(var_194) = &input.share_hugging_face_action {
-        object.key("ShareHuggingFaceAction").string(var_194.as_str());
+    if let Some(var_194) = &input.mcp_action {
+        object.key("MCPAction").string(var_194.as_str());
     }
-    if let Some(var_195) = &input.use_hugging_face_action {
-        object.key("UseHuggingFaceAction").string(var_195.as_str());
+    if let Some(var_195) = &input.create_and_update_mcp_action {
+        object.key("CreateAndUpdateMCPAction").string(var_195.as_str());
     }
-    if let Some(var_196) = &input.monday_action {
-        object.key("MondayAction").string(var_196.as_str());
+    if let Some(var_196) = &input.share_mcp_action {
+        object.key("ShareMCPAction").string(var_196.as_str());
     }
-    if let Some(var_197) = &input.create_and_update_monday_action {
-        object.key("CreateAndUpdateMondayAction").string(var_197.as_str());
+    if let Some(var_197) = &input.use_mcp_action {
+        object.key("UseMCPAction").string(var_197.as_str());
     }
-    if let Some(var_198) = &input.share_monday_action {
-        object.key("ShareMondayAction").string(var_198.as_str());
+    if let Some(var_198) = &input.open_api_action {
+        object.key("OpenAPIAction").string(var_198.as_str());
     }
-    if let Some(var_199) = &input.use_monday_action {
-        object.key("UseMondayAction").string(var_199.as_str());
+    if let Some(var_199) = &input.create_and_update_open_api_action {
+        object.key("CreateAndUpdateOpenAPIAction").string(var_199.as_str());
     }
-    if let Some(var_200) = &input.hubspot_action {
-        object.key("HubspotAction").string(var_200.as_str());
+    if let Some(var_200) = &input.share_open_api_action {
+        object.key("ShareOpenAPIAction").string(var_200.as_str());
     }
-    if let Some(var_201) = &input.create_and_update_hubspot_action {
-        object.key("CreateAndUpdateHubspotAction").string(var_201.as_str());
+    if let Some(var_201) = &input.use_open_api_action {
+        object.key("UseOpenAPIAction").string(var_201.as_str());
     }
-    if let Some(var_202) = &input.share_hubspot_action {
-        object.key("ShareHubspotAction").string(var_202.as_str());
+    if let Some(var_202) = &input.sand_pgmi_action {
+        object.key("SandPGMIAction").string(var_202.as_str());
     }
-    if let Some(var_203) = &input.use_hubspot_action {
-        object.key("UseHubspotAction").string(var_203.as_str());
+    if let Some(var_203) = &input.create_and_update_sand_pgmi_action {
+        object.key("CreateAndUpdateSandPGMIAction").string(var_203.as_str());
     }
-    if let Some(var_204) = &input.intercom_action {
-        object.key("IntercomAction").string(var_204.as_str());
+    if let Some(var_204) = &input.share_sand_pgmi_action {
+        object.key("ShareSandPGMIAction").string(var_204.as_str());
     }
-    if let Some(var_205) = &input.create_and_update_intercom_action {
-        object.key("CreateAndUpdateIntercomAction").string(var_205.as_str());
+    if let Some(var_205) = &input.use_sand_pgmi_action {
+        object.key("UseSandPGMIAction").string(var_205.as_str());
     }
-    if let Some(var_206) = &input.share_intercom_action {
-        object.key("ShareIntercomAction").string(var_206.as_str());
+    if let Some(var_206) = &input.sand_p_global_energy_action {
+        object.key("SandPGlobalEnergyAction").string(var_206.as_str());
     }
-    if let Some(var_207) = &input.use_intercom_action {
-        object.key("UseIntercomAction").string(var_207.as_str());
+    if let Some(var_207) = &input.create_and_update_sand_p_global_energy_action {
+        object.key("CreateAndUpdateSandPGlobalEnergyAction").string(var_207.as_str());
     }
-    if let Some(var_208) = &input.new_relic_action {
-        object.key("NewRelicAction").string(var_208.as_str());
+    if let Some(var_208) = &input.share_sand_p_global_energy_action {
+        object.key("ShareSandPGlobalEnergyAction").string(var_208.as_str());
     }
-    if let Some(var_209) = &input.create_and_update_new_relic_action {
-        object.key("CreateAndUpdateNewRelicAction").string(var_209.as_str());
+    if let Some(var_209) = &input.use_sand_p_global_energy_action {
+        object.key("UseSandPGlobalEnergyAction").string(var_209.as_str());
     }
-    if let Some(var_210) = &input.share_new_relic_action {
-        object.key("ShareNewRelicAction").string(var_210.as_str());
+    if let Some(var_210) = &input.bamboo_hr_action {
+        object.key("BambooHRAction").string(var_210.as_str());
     }
-    if let Some(var_211) = &input.use_new_relic_action {
-        object.key("UseNewRelicAction").string(var_211.as_str());
+    if let Some(var_211) = &input.create_and_update_bamboo_hr_action {
+        object.key("CreateAndUpdateBambooHRAction").string(var_211.as_str());
     }
-    if let Some(var_212) = &input.topic {
-        object.key("Topic").string(var_212.as_str());
+    if let Some(var_212) = &input.share_bamboo_hr_action {
+        object.key("ShareBambooHRAction").string(var_212.as_str());
     }
-    if let Some(var_213) = &input.edit_visual_with_q {
-        object.key("EditVisualWithQ").string(var_213.as_str());
+    if let Some(var_213) = &input.use_bamboo_hr_action {
+        object.key("UseBambooHRAction").string(var_213.as_str());
     }
-    if let Some(var_214) = &input.build_calculated_field_with_q {
-        object.key("BuildCalculatedFieldWithQ").string(var_214.as_str());
+    if let Some(var_214) = &input.box_agent_action {
+        object.key("BoxAgentAction").string(var_214.as_str());
     }
-    if let Some(var_215) = &input.create_dashboard_executive_summary_with_q {
-        object.key("CreateDashboardExecutiveSummaryWithQ").string(var_215.as_str());
+    if let Some(var_215) = &input.create_and_update_box_agent_action {
+        object.key("CreateAndUpdateBoxAgentAction").string(var_215.as_str());
     }
-    if let Some(var_216) = &input.space {
-        object.key("Space").string(var_216.as_str());
+    if let Some(var_216) = &input.share_box_agent_action {
+        object.key("ShareBoxAgentAction").string(var_216.as_str());
     }
-    if let Some(var_217) = &input.create_spaces {
-        object.key("CreateSpaces").string(var_217.as_str());
+    if let Some(var_217) = &input.use_box_agent_action {
+        object.key("UseBoxAgentAction").string(var_217.as_str());
     }
-    if let Some(var_218) = &input.share_spaces {
-        object.key("ShareSpaces").string(var_218.as_str());
+    if let Some(var_218) = &input.canva_agent_action {
+        object.key("CanvaAgentAction").string(var_218.as_str());
     }
-    if let Some(var_219) = &input.chat_agent {
-        object.key("ChatAgent").string(var_219.as_str());
+    if let Some(var_219) = &input.create_and_update_canva_agent_action {
+        object.key("CreateAndUpdateCanvaAgentAction").string(var_219.as_str());
     }
-    if let Some(var_220) = &input.create_chat_agents {
-        object.key("CreateChatAgents").string(var_220.as_str());
+    if let Some(var_220) = &input.share_canva_agent_action {
+        object.key("ShareCanvaAgentAction").string(var_220.as_str());
     }
-    if let Some(var_221) = &input.share_chat_agents {
-        object.key("ShareChatAgents").string(var_221.as_str());
+    if let Some(var_221) = &input.use_canva_agent_action {
+        object.key("UseCanvaAgentAction").string(var_221.as_str());
     }
-    if let Some(var_222) = &input.research {
-        object.key("Research").string(var_222.as_str());
+    if let Some(var_222) = &input.github_action {
+        object.key("GithubAction").string(var_222.as_str());
     }
-    if let Some(var_223) = &input.self_upgrade_user_role {
-        object.key("SelfUpgradeUserRole").string(var_223.as_str());
+    if let Some(var_223) = &input.create_and_update_github_action {
+        object.key("CreateAndUpdateGithubAction").string(var_223.as_str());
     }
-    if let Some(var_224) = &input.extension {
-        object.key("Extension").string(var_224.as_str());
+    if let Some(var_224) = &input.share_github_action {
+        object.key("ShareGithubAction").string(var_224.as_str());
     }
-    if let Some(var_225) = &input.use_browser_extension {
-        object.key("UseBrowserExtension").string(var_225.as_str());
+    if let Some(var_225) = &input.use_github_action {
+        object.key("UseGithubAction").string(var_225.as_str());
     }
-    if let Some(var_226) = &input.use_word_add_in_extension {
-        object.key("UseWordAddInExtension").string(var_226.as_str());
+    if let Some(var_226) = &input.notion_action {
+        object.key("NotionAction").string(var_226.as_str());
     }
-    if let Some(var_227) = &input.use_outlook_add_in_extension {
-        object.key("UseOutlookAddInExtension").string(var_227.as_str());
+    if let Some(var_227) = &input.create_and_update_notion_action {
+        object.key("CreateAndUpdateNotionAction").string(var_227.as_str());
     }
-    if let Some(var_228) = &input.use_excel_add_in_extension {
-        object.key("UseExcelAddInExtension").string(var_228.as_str());
+    if let Some(var_228) = &input.share_notion_action {
+        object.key("ShareNotionAction").string(var_228.as_str());
     }
-    if let Some(var_229) = &input.use_powerpoint_add_in_extension {
-        object.key("UsePowerpointAddInExtension").string(var_229.as_str());
+    if let Some(var_229) = &input.use_notion_action {
+        object.key("UseNotionAction").string(var_229.as_str());
     }
-    if let Some(var_230) = &input.manage_shared_folders {
-        object.key("ManageSharedFolders").string(var_230.as_str());
+    if let Some(var_230) = &input.linear_action {
+        object.key("LinearAction").string(var_230.as_str());
     }
-    if let Some(var_231) = &input.generate_analyses {
-        object.key("GenerateAnalyses").string(var_231.as_str());
+    if let Some(var_231) = &input.create_and_update_linear_action {
+        object.key("CreateAndUpdateLinearAction").string(var_231.as_str());
     }
-    if let Some(var_232) = &input.story {
-        object.key("Story").string(var_232.as_str());
+    if let Some(var_232) = &input.share_linear_action {
+        object.key("ShareLinearAction").string(var_232.as_str());
     }
-    if let Some(var_233) = &input.scenario {
-        object.key("Scenario").string(var_233.as_str());
+    if let Some(var_233) = &input.use_linear_action {
+        object.key("UseLinearAction").string(var_233.as_str());
     }
-    if let Some(var_234) = &input.trigger {
-        object.key("Trigger").string(var_234.as_str());
+    if let Some(var_234) = &input.hugging_face_action {
+        object.key("HuggingFaceAction").string(var_234.as_str());
     }
-    if let Some(var_235) = &input.schedule_trigger {
-        object.key("ScheduleTrigger").string(var_235.as_str());
+    if let Some(var_235) = &input.create_and_update_hugging_face_action {
+        object.key("CreateAndUpdateHuggingFaceAction").string(var_235.as_str());
     }
-    if let Some(var_236) = &input.inbound_email_trigger {
-        object.key("InboundEmailTrigger").string(var_236.as_str());
+    if let Some(var_236) = &input.share_hugging_face_action {
+        object.key("ShareHuggingFaceAction").string(var_236.as_str());
     }
-    if let Some(var_237) = &input.quick_event_trigger {
-        object.key("QuickEventTrigger").string(var_237.as_str());
+    if let Some(var_237) = &input.use_hugging_face_action {
+        object.key("UseHuggingFaceAction").string(var_237.as_str());
+    }
+    if let Some(var_238) = &input.monday_action {
+        object.key("MondayAction").string(var_238.as_str());
+    }
+    if let Some(var_239) = &input.create_and_update_monday_action {
+        object.key("CreateAndUpdateMondayAction").string(var_239.as_str());
+    }
+    if let Some(var_240) = &input.share_monday_action {
+        object.key("ShareMondayAction").string(var_240.as_str());
+    }
+    if let Some(var_241) = &input.use_monday_action {
+        object.key("UseMondayAction").string(var_241.as_str());
+    }
+    if let Some(var_242) = &input.hubspot_action {
+        object.key("HubspotAction").string(var_242.as_str());
+    }
+    if let Some(var_243) = &input.create_and_update_hubspot_action {
+        object.key("CreateAndUpdateHubspotAction").string(var_243.as_str());
+    }
+    if let Some(var_244) = &input.share_hubspot_action {
+        object.key("ShareHubspotAction").string(var_244.as_str());
+    }
+    if let Some(var_245) = &input.use_hubspot_action {
+        object.key("UseHubspotAction").string(var_245.as_str());
+    }
+    if let Some(var_246) = &input.intercom_action {
+        object.key("IntercomAction").string(var_246.as_str());
+    }
+    if let Some(var_247) = &input.create_and_update_intercom_action {
+        object.key("CreateAndUpdateIntercomAction").string(var_247.as_str());
+    }
+    if let Some(var_248) = &input.share_intercom_action {
+        object.key("ShareIntercomAction").string(var_248.as_str());
+    }
+    if let Some(var_249) = &input.use_intercom_action {
+        object.key("UseIntercomAction").string(var_249.as_str());
+    }
+    if let Some(var_250) = &input.new_relic_action {
+        object.key("NewRelicAction").string(var_250.as_str());
+    }
+    if let Some(var_251) = &input.create_and_update_new_relic_action {
+        object.key("CreateAndUpdateNewRelicAction").string(var_251.as_str());
+    }
+    if let Some(var_252) = &input.share_new_relic_action {
+        object.key("ShareNewRelicAction").string(var_252.as_str());
+    }
+    if let Some(var_253) = &input.use_new_relic_action {
+        object.key("UseNewRelicAction").string(var_253.as_str());
+    }
+    if let Some(var_254) = &input.topic {
+        object.key("Topic").string(var_254.as_str());
+    }
+    if let Some(var_255) = &input.edit_visual_with_q {
+        object.key("EditVisualWithQ").string(var_255.as_str());
+    }
+    if let Some(var_256) = &input.build_calculated_field_with_q {
+        object.key("BuildCalculatedFieldWithQ").string(var_256.as_str());
+    }
+    if let Some(var_257) = &input.create_dashboard_executive_summary_with_q {
+        object.key("CreateDashboardExecutiveSummaryWithQ").string(var_257.as_str());
+    }
+    if let Some(var_258) = &input.space {
+        object.key("Space").string(var_258.as_str());
+    }
+    if let Some(var_259) = &input.create_spaces {
+        object.key("CreateSpaces").string(var_259.as_str());
+    }
+    if let Some(var_260) = &input.share_spaces {
+        object.key("ShareSpaces").string(var_260.as_str());
+    }
+    if let Some(var_261) = &input.chat_agent {
+        object.key("ChatAgent").string(var_261.as_str());
+    }
+    if let Some(var_262) = &input.create_chat_agents {
+        object.key("CreateChatAgents").string(var_262.as_str());
+    }
+    if let Some(var_263) = &input.share_chat_agents {
+        object.key("ShareChatAgents").string(var_263.as_str());
+    }
+    if let Some(var_264) = &input.research {
+        object.key("Research").string(var_264.as_str());
+    }
+    if let Some(var_265) = &input.self_upgrade_user_role {
+        object.key("SelfUpgradeUserRole").string(var_265.as_str());
+    }
+    if let Some(var_266) = &input.extension {
+        object.key("Extension").string(var_266.as_str());
+    }
+    if let Some(var_267) = &input.use_browser_extension {
+        object.key("UseBrowserExtension").string(var_267.as_str());
+    }
+    if let Some(var_268) = &input.use_word_add_in_extension {
+        object.key("UseWordAddInExtension").string(var_268.as_str());
+    }
+    if let Some(var_269) = &input.use_outlook_add_in_extension {
+        object.key("UseOutlookAddInExtension").string(var_269.as_str());
+    }
+    if let Some(var_270) = &input.use_excel_add_in_extension {
+        object.key("UseExcelAddInExtension").string(var_270.as_str());
+    }
+    if let Some(var_271) = &input.use_powerpoint_add_in_extension {
+        object.key("UsePowerpointAddInExtension").string(var_271.as_str());
+    }
+    if let Some(var_272) = &input.manage_shared_folders {
+        object.key("ManageSharedFolders").string(var_272.as_str());
+    }
+    if let Some(var_273) = &input.generate_analyses {
+        object.key("GenerateAnalyses").string(var_273.as_str());
+    }
+    if let Some(var_274) = &input.story {
+        object.key("Story").string(var_274.as_str());
+    }
+    if let Some(var_275) = &input.scenario {
+        object.key("Scenario").string(var_275.as_str());
+    }
+    if let Some(var_276) = &input.trigger {
+        object.key("Trigger").string(var_276.as_str());
+    }
+    if let Some(var_277) = &input.schedule_trigger {
+        object.key("ScheduleTrigger").string(var_277.as_str());
+    }
+    if let Some(var_278) = &input.inbound_email_trigger {
+        object.key("InboundEmailTrigger").string(var_278.as_str());
+    }
+    if let Some(var_279) = &input.quick_event_trigger {
+        object.key("QuickEventTrigger").string(var_279.as_str());
     }
     Ok(())
 }
@@ -1000,6 +1126,300 @@ where
                         }
                         "KnowledgeBase" => {
                             builder = builder.set_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateKnowledgeBases" => {
+                            builder = builder.set_create_and_update_knowledge_bases(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareKnowledgeBases" => {
+                            builder = builder.set_share_knowledge_bases(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "SharePointKnowledgeBase" => {
+                            builder = builder.set_share_point_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateSharePointKnowledgeBase" => {
+                            builder = builder.set_create_and_update_share_point_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareSharePointKnowledgeBase" => {
+                            builder = builder.set_share_share_point_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseSharePointKnowledgeBase" => {
+                            builder = builder.set_use_share_point_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "GoogleDriveKnowledgeBase" => {
+                            builder = builder.set_google_drive_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateGoogleDriveKnowledgeBase" => {
+                            builder = builder.set_create_and_update_google_drive_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareGoogleDriveKnowledgeBase" => {
+                            builder = builder.set_share_google_drive_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseGoogleDriveKnowledgeBase" => {
+                            builder = builder.set_use_google_drive_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "WebCrawlerKnowledgeBase" => {
+                            builder = builder.set_web_crawler_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateWebCrawlerKnowledgeBase" => {
+                            builder = builder.set_create_and_update_web_crawler_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareWebCrawlerKnowledgeBase" => {
+                            builder = builder.set_share_web_crawler_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseWebCrawlerKnowledgeBase" => {
+                            builder = builder.set_use_web_crawler_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "S3KnowledgeBase" => {
+                            builder = builder.set_s3_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateS3KnowledgeBase" => {
+                            builder = builder.set_create_and_update_s3_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareS3KnowledgeBase" => {
+                            builder = builder.set_share_s3_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseS3KnowledgeBase" => {
+                            builder = builder.set_use_s3_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ConfluenceKnowledgeBase" => {
+                            builder = builder.set_confluence_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateConfluenceKnowledgeBase" => {
+                            builder = builder.set_create_and_update_confluence_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareConfluenceKnowledgeBase" => {
+                            builder = builder.set_share_confluence_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseConfluenceKnowledgeBase" => {
+                            builder = builder.set_use_confluence_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "OneDriveKnowledgeBase" => {
+                            builder = builder.set_one_drive_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateOneDriveKnowledgeBase" => {
+                            builder = builder.set_create_and_update_one_drive_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareOneDriveKnowledgeBase" => {
+                            builder = builder.set_share_one_drive_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseOneDriveKnowledgeBase" => {
+                            builder = builder.set_use_one_drive_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "QBusinessKnowledgeBase" => {
+                            builder = builder.set_q_business_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateQBusinessKnowledgeBase" => {
+                            builder = builder.set_create_and_update_q_business_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareQBusinessKnowledgeBase" => {
+                            builder = builder.set_share_q_business_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseQBusinessKnowledgeBase" => {
+                            builder = builder.set_use_q_business_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "BedrockManagedKnowledgeBase" => {
+                            builder = builder.set_bedrock_managed_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateBedrockManagedKnowledgeBase" => {
+                            builder = builder.set_create_and_update_bedrock_managed_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareBedrockManagedKnowledgeBase" => {
+                            builder = builder.set_share_bedrock_managed_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseBedrockManagedKnowledgeBase" => {
+                            builder = builder.set_use_bedrock_managed_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "BoxKnowledgeBase" => {
+                            builder = builder.set_box_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateBoxKnowledgeBase" => {
+                            builder = builder.set_create_and_update_box_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareBoxKnowledgeBase" => {
+                            builder = builder.set_share_box_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseBoxKnowledgeBase" => {
+                            builder = builder.set_use_box_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "IDCKnowledgeBase" => {
+                            builder = builder.set_idc_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreateAndUpdateIDCKnowledgeBase" => {
+                            builder = builder.set_create_and_update_idc_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ShareIDCKnowledgeBase" => {
+                            builder = builder.set_share_idc_knowledge_base(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "UseIDCKnowledgeBase" => {
+                            builder = builder.set_use_idc_knowledge_base(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CapabilityState::from(u.as_ref())))
                                     .transpose()?,

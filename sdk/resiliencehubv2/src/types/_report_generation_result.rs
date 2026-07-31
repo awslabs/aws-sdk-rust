@@ -12,6 +12,10 @@ pub struct ReportGenerationResult {
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>Present for FAILURE_MODE reports.</p>
     pub assessment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of a test run.</p>
+    pub test_run_id: ::std::option::Option<::std::string::String>,
+    /// <p>An ARN owned by the service. Accepts either a standard 12-digit account ID or the literal "aws" for AWS-managed resources, such as AWS-managed test templates.</p>
+    pub test_template_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the report was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Present when status is SUCCEEDED or FAILED.</p>
@@ -33,6 +37,14 @@ impl ReportGenerationResult {
     /// <p>Present for FAILURE_MODE reports.</p>
     pub fn assessment_id(&self) -> ::std::option::Option<&str> {
         self.assessment_id.as_deref()
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn test_run_id(&self) -> ::std::option::Option<&str> {
+        self.test_run_id.as_deref()
+    }
+    /// <p>An ARN owned by the service. Accepts either a standard 12-digit account ID or the literal "aws" for AWS-managed resources, such as AWS-managed test templates.</p>
+    pub fn test_template_arn(&self) -> ::std::option::Option<&str> {
+        self.test_template_arn.as_deref()
     }
     /// <p>The timestamp when the report was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -58,6 +70,8 @@ pub struct ReportGenerationResultBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ReportGenerationStatus>,
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) assessment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) test_run_id: ::std::option::Option<::std::string::String>,
+    pub(crate) test_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) report_output: ::std::option::Option<crate::types::ReportOutput>,
 }
@@ -120,6 +134,34 @@ impl ReportGenerationResultBuilder {
     pub fn get_assessment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.assessment_id
     }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn test_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.test_run_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn set_test_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.test_run_id = input;
+        self
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn get_test_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_run_id
+    }
+    /// <p>An ARN owned by the service. Accepts either a standard 12-digit account ID or the literal "aws" for AWS-managed resources, such as AWS-managed test templates.</p>
+    pub fn test_template_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.test_template_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An ARN owned by the service. Accepts either a standard 12-digit account ID or the literal "aws" for AWS-managed resources, such as AWS-managed test templates.</p>
+    pub fn set_test_template_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.test_template_arn = input;
+        self
+    }
+    /// <p>An ARN owned by the service. Accepts either a standard 12-digit account ID or the literal "aws" for AWS-managed resources, such as AWS-managed test templates.</p>
+    pub fn get_test_template_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_template_arn
+    }
     /// <p>The timestamp when the report was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -168,6 +210,8 @@ impl ReportGenerationResultBuilder {
             })?,
             service_arn: self.service_arn,
             assessment_id: self.assessment_id,
+            test_run_id: self.test_run_id,
+            test_template_arn: self.test_template_arn,
             created_at: self.created_at,
             report_output: self.report_output,
         })

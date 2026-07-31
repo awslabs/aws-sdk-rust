@@ -94,6 +94,12 @@ pub fn ser_connection_properties_input(
             crate::protocol_serde::shape_vpc_properties_input::ser_vpc_properties_input(&mut object_15, inner)?;
             object_15.finish();
         }
+        crate::types::ConnectionPropertiesInput::GitProperties(inner) => {
+            #[allow(unused_mut)]
+            let mut object_16 = object_13.key("gitProperties").start_object();
+            crate::protocol_serde::shape_git_properties_input::ser_git_properties_input(&mut object_16, inner)?;
+            object_16.finish();
+        }
         crate::types::ConnectionPropertiesInput::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ConnectionPropertiesInput",

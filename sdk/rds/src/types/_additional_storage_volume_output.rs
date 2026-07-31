@@ -9,6 +9,16 @@ pub struct AdditionalStorageVolumeOutput {
     /// <p>The status of the additional storage volume.</p>
     /// <p>Valid Values: <code>ACTIVE | CREATING | DELETING | MODIFYING | NOT-IN-USE | STORAGE-OPTIMIZATION | VOLUME-FULL</code></p>
     pub storage_volume_status: ::std::option::Option<::std::string::String>,
+    /// <p>The status of an in-progress storage operation on the additional storage volume. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub storage_operation_status: ::std::option::Option<::std::string::String>,
+    /// <p>The percentage of the in-progress storage operation on the additional storage volume that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub storage_operation_percent_progress: ::std::option::Option<i32>,
     /// <p>The amount of storage allocated for the additional storage volume, in gibibytes (GiB). The minimum is 20 GiB. The maximum is 65,536 GiB (64 TiB).</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The number of I/O operations per second (IOPS) provisioned for the additional storage volume.</p>
@@ -30,6 +40,20 @@ impl AdditionalStorageVolumeOutput {
     /// <p>Valid Values: <code>ACTIVE | CREATING | DELETING | MODIFYING | NOT-IN-USE | STORAGE-OPTIMIZATION | VOLUME-FULL</code></p>
     pub fn storage_volume_status(&self) -> ::std::option::Option<&str> {
         self.storage_volume_status.as_deref()
+    }
+    /// <p>The status of an in-progress storage operation on the additional storage volume. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub fn storage_operation_status(&self) -> ::std::option::Option<&str> {
+        self.storage_operation_status.as_deref()
+    }
+    /// <p>The percentage of the in-progress storage operation on the additional storage volume that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub fn storage_operation_percent_progress(&self) -> ::std::option::Option<i32> {
+        self.storage_operation_percent_progress
     }
     /// <p>The amount of storage allocated for the additional storage volume, in gibibytes (GiB). The minimum is 20 GiB. The maximum is 65,536 GiB (64 TiB).</p>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
@@ -66,6 +90,8 @@ impl AdditionalStorageVolumeOutput {
 pub struct AdditionalStorageVolumeOutputBuilder {
     pub(crate) volume_name: ::std::option::Option<::std::string::String>,
     pub(crate) storage_volume_status: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_operation_status: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_operation_percent_progress: ::std::option::Option<i32>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) max_allocated_storage: ::std::option::Option<i32>,
@@ -103,6 +129,52 @@ impl AdditionalStorageVolumeOutputBuilder {
     /// <p>Valid Values: <code>ACTIVE | CREATING | DELETING | MODIFYING | NOT-IN-USE | STORAGE-OPTIMIZATION | VOLUME-FULL</code></p>
     pub fn get_storage_volume_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_volume_status
+    }
+    /// <p>The status of an in-progress storage operation on the additional storage volume. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub fn storage_operation_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_operation_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The status of an in-progress storage operation on the additional storage volume. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub fn set_storage_operation_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_operation_status = input;
+        self
+    }
+    /// <p>The status of an in-progress storage operation on the additional storage volume. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub fn get_storage_operation_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_operation_status
+    }
+    /// <p>The percentage of the in-progress storage operation on the additional storage volume that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub fn storage_operation_percent_progress(mut self, input: i32) -> Self {
+        self.storage_operation_percent_progress = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The percentage of the in-progress storage operation on the additional storage volume that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub fn set_storage_operation_percent_progress(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_operation_percent_progress = input;
+        self
+    }
+    /// <p>The percentage of the in-progress storage operation on the additional storage volume that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub fn get_storage_operation_percent_progress(&self) -> &::std::option::Option<i32> {
+        &self.storage_operation_percent_progress
     }
     /// <p>The amount of storage allocated for the additional storage volume, in gibibytes (GiB). The minimum is 20 GiB. The maximum is 65,536 GiB (64 TiB).</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
@@ -182,6 +254,8 @@ impl AdditionalStorageVolumeOutputBuilder {
         crate::types::AdditionalStorageVolumeOutput {
             volume_name: self.volume_name,
             storage_volume_status: self.storage_volume_status,
+            storage_operation_status: self.storage_operation_status,
+            storage_operation_percent_progress: self.storage_operation_percent_progress,
             allocated_storage: self.allocated_storage,
             iops: self.iops,
             max_allocated_storage: self.max_allocated_storage,

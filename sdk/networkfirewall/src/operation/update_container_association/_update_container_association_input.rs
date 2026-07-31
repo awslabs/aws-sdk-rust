@@ -3,51 +3,69 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContainerAssociationInput {
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub container_association_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub container_association_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A description of the container association.</p>
+    /// <p>A description of the container association. When omitted, the existing description remains unchanged. To clear the description, pass an empty string.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of container orchestration platform. This must match the type specified when the container association was created.</p>
+    /// <p>The container type. This value must match the existing type and can't be changed. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::ContainerMonitoringType>,
-    /// <p>The updated list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The updated monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters.</p>
     pub container_monitoring_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>>,
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request. To make an update to the container association, provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContainerAssociationInput {
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_name(&self) -> ::std::option::Option<&str> {
         self.container_association_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_arn(&self) -> ::std::option::Option<&str> {
         self.container_association_arn.as_deref()
     }
-    /// <p>A description of the container association.</p>
+    /// <p>A description of the container association. When omitted, the existing description remains unchanged. To clear the description, pass an empty string.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of container orchestration platform. This must match the type specified when the container association was created.</p>
+    /// <p>The container type. This value must match the existing type and can't be changed. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContainerMonitoringType> {
         self.r#type.as_ref()
     }
-    /// <p>The updated list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The updated monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_monitoring_configurations.is_none()`.
     pub fn container_monitoring_configurations(&self) -> &[crate::types::ContainerMonitoringConfiguration] {
         self.container_monitoring_configurations.as_deref().unwrap_or_default()
     }
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request. To make an update to the container association, provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn update_token(&self) -> ::std::option::Option<&str> {
         self.update_token.as_deref()
     }
@@ -72,60 +90,84 @@ pub struct UpdateContainerAssociationInputBuilder {
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateContainerAssociationInputBuilder {
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_association_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_container_association_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_association_name = input;
         self
     }
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_container_association_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_association_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_association_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_container_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_association_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_container_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_association_arn
     }
-    /// <p>A description of the container association.</p>
+    /// <p>A description of the container association. When omitted, the existing description remains unchanged. To clear the description, pass an empty string.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A description of the container association.</p>
+    /// <p>A description of the container association. When omitted, the existing description remains unchanged. To clear the description, pass an empty string.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>A description of the container association.</p>
+    /// <p>A description of the container association. When omitted, the existing description remains unchanged. To clear the description, pass an empty string.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The type of container orchestration platform. This must match the type specified when the container association was created.</p>
+    /// <p>The container type. This value must match the existing type and can't be changed. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContainerMonitoringType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of container orchestration platform. This must match the type specified when the container association was created.</p>
+    /// <p>The container type. This value must match the existing type and can't be changed. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContainerMonitoringType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of container orchestration platform. This must match the type specified when the container association was created.</p>
+    /// <p>The container type. This value must match the existing type and can't be changed. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContainerMonitoringType> {
         &self.r#type
     }
@@ -133,14 +175,14 @@ impl UpdateContainerAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_container_monitoring_configurations`](Self::set_container_monitoring_configurations).
     ///
-    /// <p>The updated list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The updated monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters.</p>
     pub fn container_monitoring_configurations(mut self, input: crate::types::ContainerMonitoringConfiguration) -> Self {
         let mut v = self.container_monitoring_configurations.unwrap_or_default();
         v.push(input);
         self.container_monitoring_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The updated list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The updated monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters.</p>
     pub fn set_container_monitoring_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>>,
@@ -148,7 +190,7 @@ impl UpdateContainerAssociationInputBuilder {
         self.container_monitoring_configurations = input;
         self
     }
-    /// <p>The updated list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The updated monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters.</p>
     pub fn get_container_monitoring_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>> {
         &self.container_monitoring_configurations
     }
@@ -156,34 +198,37 @@ impl UpdateContainerAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request. To make an update to the container association, provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     /// This field is required.
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request. To make an update to the container association, provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_token = input;
         self
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request. To make an update to the container association, provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_token
     }

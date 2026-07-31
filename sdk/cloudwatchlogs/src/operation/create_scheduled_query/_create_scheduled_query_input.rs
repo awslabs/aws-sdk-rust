@@ -21,7 +21,7 @@ pub struct CreateScheduledQueryInput {
     pub start_time_offset: ::std::option::Option<i64>,
     /// <p>The time offset in seconds that defines the end of the lookback period for the query. Together with <code>startTimeOffset</code>, this determines the time window relative to the execution time over which the query runs.</p>
     pub end_time_offset: ::std::option::Option<i64>,
-    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
+    /// <p>Configuration for where to deliver query results. Supports Amazon S3 destinations for storing query output and lookup table destinations for automatically refreshing lookup tables with query results. You can configure one or both destination types.</p>
     pub destination_configuration: ::std::option::Option<crate::types::DestinationConfiguration>,
     /// <p>The start time for the scheduled query in Unix epoch format. The query will not execute before this time.</p>
     pub schedule_start_time: ::std::option::Option<i64>,
@@ -73,7 +73,7 @@ impl CreateScheduledQueryInput {
     pub fn end_time_offset(&self) -> ::std::option::Option<i64> {
         self.end_time_offset
     }
-    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
+    /// <p>Configuration for where to deliver query results. Supports Amazon S3 destinations for storing query output and lookup table destinations for automatically refreshing lookup tables with query results. You can configure one or both destination types.</p>
     pub fn destination_configuration(&self) -> ::std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
@@ -262,17 +262,17 @@ impl CreateScheduledQueryInputBuilder {
     pub fn get_end_time_offset(&self) -> &::std::option::Option<i64> {
         &self.end_time_offset
     }
-    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
+    /// <p>Configuration for where to deliver query results. Supports Amazon S3 destinations for storing query output and lookup table destinations for automatically refreshing lookup tables with query results. You can configure one or both destination types.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.destination_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
+    /// <p>Configuration for where to deliver query results. Supports Amazon S3 destinations for storing query output and lookup table destinations for automatically refreshing lookup tables with query results. You can configure one or both destination types.</p>
     pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.destination_configuration = input;
         self
     }
-    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
+    /// <p>Configuration for where to deliver query results. Supports Amazon S3 destinations for storing query output and lookup table destinations for automatically refreshing lookup tables with query results. You can configure one or both destination types.</p>
     pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         &self.destination_configuration
     }

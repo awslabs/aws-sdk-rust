@@ -1026,3 +1026,12 @@ pub(crate) fn logging_filter_correct_errors(
     }
     builder
 }
+
+pub(crate) fn open_search_exporter_configuration_correct_errors(
+    mut builder: crate::types::builders::OpenSearchExporterConfigurationBuilder,
+) -> crate::types::builders::OpenSearchExporterConfigurationBuilder {
+    if builder.domain_arn.is_none() {
+        builder.domain_arn = Some(Default::default())
+    }
+    builder
+}

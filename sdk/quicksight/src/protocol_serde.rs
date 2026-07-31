@@ -89,6 +89,8 @@ pub(crate) mod shape_create_topic;
 
 pub(crate) mod shape_create_topic_refresh_schedule;
 
+pub(crate) mod shape_create_topic_v2;
+
 pub(crate) mod shape_create_vpc_connection;
 
 pub(crate) mod shape_delete_account_custom_permission;
@@ -158,6 +160,8 @@ pub(crate) mod shape_delete_theme_alias;
 pub(crate) mod shape_delete_topic;
 
 pub(crate) mod shape_delete_topic_refresh_schedule;
+
+pub(crate) mod shape_delete_topic_v2;
 
 pub(crate) mod shape_delete_user;
 
@@ -287,9 +291,13 @@ pub(crate) mod shape_describe_topic;
 
 pub(crate) mod shape_describe_topic_permissions;
 
+pub(crate) mod shape_describe_topic_permissions_v2;
+
 pub(crate) mod shape_describe_topic_refresh;
 
 pub(crate) mod shape_describe_topic_refresh_schedule;
+
+pub(crate) mod shape_describe_topic_v2;
 
 pub(crate) mod shape_describe_user;
 
@@ -389,6 +397,8 @@ pub(crate) mod shape_list_topic_reviewed_answers;
 
 pub(crate) mod shape_list_topics;
 
+pub(crate) mod shape_list_topics_v2;
+
 pub(crate) mod shape_list_user_groups;
 
 pub(crate) mod shape_list_users;
@@ -428,6 +438,8 @@ pub(crate) mod shape_search_knowledge_bases;
 pub(crate) mod shape_search_spaces;
 
 pub(crate) mod shape_search_topics;
+
+pub(crate) mod shape_search_topics_v2;
 
 pub(crate) mod shape_start_asset_bundle_export_job;
 
@@ -553,7 +565,11 @@ pub(crate) mod shape_update_topic;
 
 pub(crate) mod shape_update_topic_permissions;
 
+pub(crate) mod shape_update_topic_permissions_v2;
+
 pub(crate) mod shape_update_topic_refresh_schedule;
+
+pub(crate) mod shape_update_topic_v2;
 
 pub(crate) mod shape_update_user;
 
@@ -633,6 +649,8 @@ pub(crate) mod shape_create_topic_input;
 
 pub(crate) mod shape_create_topic_refresh_schedule_input;
 
+pub(crate) mod shape_create_topic_v2_input;
+
 pub(crate) mod shape_create_vpc_connection_input;
 
 pub(crate) mod shape_customer_managed_key_unavailable_exception;
@@ -706,6 +724,8 @@ pub(crate) mod shape_search_knowledge_bases_input;
 pub(crate) mod shape_search_spaces_input;
 
 pub(crate) mod shape_search_topics_input;
+
+pub(crate) mod shape_search_topics_v2_input;
 
 pub(crate) mod shape_session_lifetime_in_minutes_invalid_exception;
 
@@ -831,7 +851,11 @@ pub(crate) mod shape_update_topic_input;
 
 pub(crate) mod shape_update_topic_permissions_input;
 
+pub(crate) mod shape_update_topic_permissions_v2_input;
+
 pub(crate) mod shape_update_topic_refresh_schedule_input;
+
+pub(crate) mod shape_update_topic_v2_input;
 
 pub(crate) mod shape_update_user_custom_permission_input;
 
@@ -1180,6 +1204,10 @@ pub(crate) mod shape_topic_reviewed_answers;
 pub(crate) mod shape_topic_search_filter;
 
 pub(crate) mod shape_topic_summaries;
+
+pub(crate) mod shape_topic_v2_details;
+
+pub(crate) mod shape_topic_v2_summaries;
 
 pub(crate) mod shape_update_resource_permission_list;
 
@@ -1737,7 +1765,17 @@ pub(crate) mod shape_tooltip_sheet_definition;
 
 pub(crate) mod shape_tooltip_sheet_definition_list;
 
+pub(crate) mod shape_topic_arns_list;
+
 pub(crate) mod shape_topic_config_options;
+
+pub(crate) mod shape_topic_configuration;
+
+pub(crate) mod shape_topic_configuration_list;
+
+pub(crate) mod shape_topic_identifier_declaration;
+
+pub(crate) mod shape_topic_identifier_declaration_list;
 
 pub(crate) mod shape_topic_ir;
 
@@ -1748,6 +1786,16 @@ pub(crate) mod shape_topic_reviewed_answer;
 pub(crate) mod shape_topic_summary;
 
 pub(crate) mod shape_topic_template;
+
+pub(crate) mod shape_topic_v2_data_set_reference;
+
+pub(crate) mod shape_topic_v2_data_set_references;
+
+pub(crate) mod shape_topic_v2_data_set_relation;
+
+pub(crate) mod shape_topic_v2_data_set_relation_list;
+
+pub(crate) mod shape_topic_v2_summary;
 
 pub(crate) mod shape_topic_visual;
 
@@ -2023,7 +2071,11 @@ pub(crate) mod shape_topic_ir_metric;
 
 pub(crate) mod shape_topic_named_entity;
 
+pub(crate) mod shape_topic_reference;
+
 pub(crate) mod shape_topic_sort_clause;
+
+pub(crate) mod shape_topic_v2_data_set_relation_endpoint;
 
 pub(crate) mod shape_transform_step_map;
 
@@ -2038,6 +2090,8 @@ pub(crate) mod shape_upload_settings;
 pub(crate) mod shape_visual;
 
 pub(crate) mod shape_visual_custom_action_defaults;
+
+pub(crate) mod shape_visual_messages;
 
 pub(crate) mod shape_visual_options;
 
@@ -2245,6 +2299,8 @@ pub(crate) mod shape_named_entity_definition;
 
 pub(crate) mod shape_named_entity_ref;
 
+pub(crate) mod shape_named_entity_sort;
+
 pub(crate) mod shape_navbar_style;
 
 pub(crate) mod shape_nested_filter;
@@ -2420,6 +2476,8 @@ pub(crate) mod shape_value_column_configuration;
 pub(crate) mod shape_visual_highlight_operation;
 
 pub(crate) mod shape_visual_list;
+
+pub(crate) mod shape_visual_message_configuration;
 
 pub(crate) mod shape_waterfall_visual;
 
@@ -2653,6 +2711,8 @@ pub(crate) mod shape_topic_range_filter_constant;
 
 pub(crate) mod shape_topic_singular_filter_constant;
 
+pub(crate) mod shape_topic_v2_data_set_relation_column_names;
+
 pub(crate) mod shape_tree_map_configuration;
 
 pub(crate) mod shape_unique_key_column_name_list;
@@ -2878,6 +2938,8 @@ pub(crate) mod shape_list_control_select_all_options;
 pub(crate) mod shape_long_format_text;
 
 pub(crate) mod shape_named_entity_definitions;
+
+pub(crate) mod shape_named_entity_sort_list;
 
 pub(crate) mod shape_number_display_format_configuration;
 

@@ -116,6 +116,15 @@ pub struct StartStreamTranscriptionInput {
     /// <p>Specify the time window, in minutes, during which your transcription session can be resumed, measured from the stream start time. This optional parameter accepts integer values from 1 to 300 (5 hours).</p>
     /// <p>For example, if your stream starts at 1 PM and you specify a <code>SessionResumeWindow</code> of 30 minutes, you can reconnect to the session as many times as you want until 1:30 PM.</p>
     pub session_resume_window: ::std::option::Option<i32>,
+    /// <p>Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription results.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WRITTEN</code> renders these entities in their standard written form (for example, <code>$50</code>, <code>10:30 AM</code>, and <code>101</code>).</p></li>
+    /// <li>
+    /// <p><code>SPOKEN</code> renders these entities as words, exactly as they were spoken (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and <code>one oh one</code>).</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+    pub transcript_format: ::std::option::Option<crate::types::TranscriptFormat>,
 }
 impl StartStreamTranscriptionInput {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
@@ -281,6 +290,17 @@ impl StartStreamTranscriptionInput {
     pub fn session_resume_window(&self) -> ::std::option::Option<i32> {
         self.session_resume_window
     }
+    /// <p>Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription results.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WRITTEN</code> renders these entities in their standard written form (for example, <code>$50</code>, <code>10:30 AM</code>, and <code>101</code>).</p></li>
+    /// <li>
+    /// <p><code>SPOKEN</code> renders these entities as words, exactly as they were spoken (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and <code>one oh one</code>).</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+    pub fn transcript_format(&self) -> ::std::option::Option<&crate::types::TranscriptFormat> {
+        self.transcript_format.as_ref()
+    }
 }
 impl StartStreamTranscriptionInput {
     /// Creates a new builder-style object to manufacture [`StartStreamTranscriptionInput`](crate::operation::start_stream_transcription::StartStreamTranscriptionInput).
@@ -318,6 +338,7 @@ pub struct StartStreamTranscriptionInputBuilder {
     pub(crate) vocabulary_names: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_names: ::std::option::Option<::std::string::String>,
     pub(crate) session_resume_window: ::std::option::Option<i32>,
+    pub(crate) transcript_format: ::std::option::Option<crate::types::TranscriptFormat>,
 }
 impl StartStreamTranscriptionInputBuilder {
     /// <p>Specify the language code that represents the language spoken in your audio.</p>
@@ -865,6 +886,41 @@ impl StartStreamTranscriptionInputBuilder {
     pub fn get_session_resume_window(&self) -> &::std::option::Option<i32> {
         &self.session_resume_window
     }
+    /// <p>Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription results.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WRITTEN</code> renders these entities in their standard written form (for example, <code>$50</code>, <code>10:30 AM</code>, and <code>101</code>).</p></li>
+    /// <li>
+    /// <p><code>SPOKEN</code> renders these entities as words, exactly as they were spoken (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and <code>one oh one</code>).</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+    pub fn transcript_format(mut self, input: crate::types::TranscriptFormat) -> Self {
+        self.transcript_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription results.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WRITTEN</code> renders these entities in their standard written form (for example, <code>$50</code>, <code>10:30 AM</code>, and <code>101</code>).</p></li>
+    /// <li>
+    /// <p><code>SPOKEN</code> renders these entities as words, exactly as they were spoken (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and <code>one oh one</code>).</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+    pub fn set_transcript_format(mut self, input: ::std::option::Option<crate::types::TranscriptFormat>) -> Self {
+        self.transcript_format = input;
+        self
+    }
+    /// <p>Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription results.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WRITTEN</code> renders these entities in their standard written form (for example, <code>$50</code>, <code>10:30 AM</code>, and <code>101</code>).</p></li>
+    /// <li>
+    /// <p><code>SPOKEN</code> renders these entities as words, exactly as they were spoken (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and <code>one oh one</code>).</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+    pub fn get_transcript_format(&self) -> &::std::option::Option<crate::types::TranscriptFormat> {
+        &self.transcript_format
+    }
     /// Consumes the builder and constructs a [`StartStreamTranscriptionInput`](crate::operation::start_stream_transcription::StartStreamTranscriptionInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`audio_stream`](crate::operation::start_stream_transcription::builders::StartStreamTranscriptionInputBuilder::audio_stream)
@@ -904,6 +960,7 @@ impl StartStreamTranscriptionInputBuilder {
             vocabulary_names: self.vocabulary_names,
             vocabulary_filter_names: self.vocabulary_filter_names,
             session_resume_window: self.session_resume_window,
+            transcript_format: self.transcript_format,
         })
     }
 }

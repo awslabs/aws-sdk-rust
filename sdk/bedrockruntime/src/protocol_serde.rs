@@ -303,6 +303,10 @@ pub(crate) mod shape_specific_tool_choice;
 
 pub(crate) mod shape_system_tool;
 
+pub(crate) mod shape_tool_addition_block;
+
+pub(crate) mod shape_tool_removal_block;
+
 pub(crate) mod shape_tool_result_block;
 
 pub(crate) mod shape_tool_specification;
@@ -366,6 +370,8 @@ pub(crate) mod shape_reasoning_text_block;
 pub(crate) mod shape_search_result_content_block;
 
 pub(crate) mod shape_tool_input_schema;
+
+pub(crate) mod shape_tool_reference;
 
 pub(crate) mod shape_tool_result_content_block;
 

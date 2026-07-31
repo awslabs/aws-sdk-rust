@@ -22,9 +22,7 @@ impl crate::operation::create_container_association::builders::CreateContainerAs
 }
 /// Fluent builder constructing a request to `CreateContainerAssociation`.
 ///
-/// <p>Creates a container association for Network Firewall. A container association links container clusters (ECS or EKS) to Network Firewall, enabling dynamic IP resolution for firewall rules based on container attributes.</p>
-/// <p>To manage a container association's tags, use the standard Amazon Web Services resource tagging operations, <code>ListTagsForResource</code>, <code>TagResource</code>, and <code>UntagResource</code>.</p>
-/// <p>To retrieve information about container associations, use <code>ListContainerAssociations</code> and <code>DescribeContainerAssociation</code>.</p>
+/// <p>Creates a Network Firewall container association. The association monitors container lifecycle events in your Amazon ECS or Amazon EKS clusters and resolves running container addresses for use in firewall rules.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateContainerAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -138,17 +136,35 @@ impl CreateContainerAssociationFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The type of container orchestration platform for the clusters in this association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't change the type after creation.</p>
+    /// <p>The type of containers to monitor. You can't change the container type after creation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::ContainerMonitoringType) -> Self {
         self.inner = self.inner.r#type(input);
         self
     }
-    /// <p>The type of container orchestration platform for the clusters in this association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't change the type after creation.</p>
+    /// <p>The type of containers to monitor. You can't change the container type after creation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContainerMonitoringType>) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>The type of container orchestration platform for the clusters in this association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't change the type after creation.</p>
+    /// <p>The type of containers to monitor. You can't change the container type after creation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContainerMonitoringType> {
         self.inner.get_type()
     }
@@ -157,12 +173,12 @@ impl CreateContainerAssociationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_container_monitoring_configurations`](Self::set_container_monitoring_configurations).
     ///
-    /// <p>The list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow which containers are tracked.</p>
     pub fn container_monitoring_configurations(mut self, input: crate::types::ContainerMonitoringConfiguration) -> Self {
         self.inner = self.inner.container_monitoring_configurations(input);
         self
     }
-    /// <p>The list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow which containers are tracked.</p>
     pub fn set_container_monitoring_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>>,
@@ -170,7 +186,7 @@ impl CreateContainerAssociationFluentBuilder {
         self.inner = self.inner.set_container_monitoring_configurations(input);
         self
     }
-    /// <p>The list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow which containers are tracked.</p>
     pub fn get_container_monitoring_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>> {
         self.inner.get_container_monitoring_configurations()
     }

@@ -22,7 +22,7 @@ impl crate::operation::list_container_associations::builders::ListContainerAssoc
 }
 /// Fluent builder constructing a request to `ListContainerAssociations`.
 ///
-/// <p>Retrieves the metadata for the container associations that you have defined. You can optionally page through results.</p>
+/// <p>Lists the container associations in your account and Region. Use the <code>NextToken</code> parameter in subsequent requests to retrieve additional results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListContainerAssociationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -123,6 +123,20 @@ impl CreateFeedFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. For example, the smart crop feature uses this role to read graphics-compositing templates from your Amazon S3 bucket. You specify one access role for each feed.</p>
+    pub fn access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.access_role_arn(input.into());
+        self
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. For example, the smart crop feature uses this role to read graphics-compositing templates from your Amazon S3 bucket. You specify one access role for each feed.</p>
+    pub fn set_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_access_role_arn(input);
+        self
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. For example, the smart crop feature uses this role to read graphics-compositing templates from your Amazon S3 bucket. You specify one access role for each feed.</p>
+    pub fn get_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_access_role_arn()
+    }
     ///
     /// Appends an item to `outputs`.
     ///

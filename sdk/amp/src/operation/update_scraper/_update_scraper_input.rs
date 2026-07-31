@@ -17,6 +17,8 @@ pub struct UpdateScraperInput {
     pub role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
     /// <p>A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the existing exporter configuration remains unchanged.</p>
+    pub exporters: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>,
 }
 impl UpdateScraperInput {
     /// <p>The ID of the scraper to update.</p>
@@ -45,6 +47,12 @@ impl UpdateScraperInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the existing exporter configuration remains unchanged.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exporters.is_none()`.
+    pub fn exporters(&self) -> &[crate::types::ExporterConfiguration] {
+        self.exporters.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateScraperInput {
     /// Creates a new builder-style object to manufacture [`UpdateScraperInput`](crate::operation::update_scraper::UpdateScraperInput).
@@ -63,6 +71,7 @@ pub struct UpdateScraperInputBuilder {
     pub(crate) destination: ::std::option::Option<crate::types::Destination>,
     pub(crate) role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) exporters: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>,
 }
 impl UpdateScraperInputBuilder {
     /// <p>The ID of the scraper to update.</p>
@@ -156,6 +165,26 @@ impl UpdateScraperInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Appends an item to `exporters`.
+    ///
+    /// To override the contents of this collection use [`set_exporters`](Self::set_exporters).
+    ///
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the existing exporter configuration remains unchanged.</p>
+    pub fn exporters(mut self, input: crate::types::ExporterConfiguration) -> Self {
+        let mut v = self.exporters.unwrap_or_default();
+        v.push(input);
+        self.exporters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the existing exporter configuration remains unchanged.</p>
+    pub fn set_exporters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>) -> Self {
+        self.exporters = input;
+        self
+    }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the existing exporter configuration remains unchanged.</p>
+    pub fn get_exporters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>> {
+        &self.exporters
+    }
     /// Consumes the builder and constructs a [`UpdateScraperInput`](crate::operation::update_scraper::UpdateScraperInput).
     pub fn build(
         self,
@@ -167,6 +196,7 @@ impl UpdateScraperInputBuilder {
             destination: self.destination,
             role_configuration: self.role_configuration,
             client_token: self.client_token,
+            exporters: self.exporters,
         })
     }
 }

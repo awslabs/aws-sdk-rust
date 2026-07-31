@@ -9,6 +9,12 @@ pub fn ser_destination_configuration(
         crate::protocol_serde::shape_s3_configuration::ser_s3_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.lookup_table_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("lookupTableConfiguration").start_object();
+        crate::protocol_serde::shape_lookup_table_configuration::ser_lookup_table_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -41,6 +47,11 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "lookupTableConfiguration" => {
+                            builder = builder.set_lookup_table_configuration(
+                                crate::protocol_serde::shape_lookup_table_configuration::de_lookup_table_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -50,7 +61,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::destination_configuration_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

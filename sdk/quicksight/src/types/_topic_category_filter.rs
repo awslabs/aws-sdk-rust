@@ -12,6 +12,8 @@ pub struct TopicCategoryFilter {
     pub constant: ::std::option::Option<crate::types::TopicCategoryFilterConstant>,
     /// <p>A Boolean value that indicates if the filter is inverse.</p>
     pub inverse: bool,
+    /// <p>The <code>null</code> filter that is applied to the category filter.</p>
+    pub null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicCategoryFilter {
     /// <p>The category filter function. Valid values for this structure are <code>EXACT</code> and <code>CONTAINS</code>.</p>
@@ -30,6 +32,10 @@ impl TopicCategoryFilter {
     pub fn inverse(&self) -> bool {
         self.inverse
     }
+    /// <p>The <code>null</code> filter that is applied to the category filter.</p>
+    pub fn null_filter(&self) -> ::std::option::Option<&crate::types::NullFilterType> {
+        self.null_filter.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TopicCategoryFilter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for TopicCategoryFilter {
         formatter.field("category_filter_type", &self.category_filter_type);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
         formatter.field("inverse", &self.inverse);
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }
@@ -56,6 +63,7 @@ pub struct TopicCategoryFilterBuilder {
     pub(crate) category_filter_type: ::std::option::Option<crate::types::CategoryFilterType>,
     pub(crate) constant: ::std::option::Option<crate::types::TopicCategoryFilterConstant>,
     pub(crate) inverse: ::std::option::Option<bool>,
+    pub(crate) null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicCategoryFilterBuilder {
     /// <p>The category filter function. Valid values for this structure are <code>EXACT</code> and <code>CONTAINS</code>.</p>
@@ -114,6 +122,20 @@ impl TopicCategoryFilterBuilder {
     pub fn get_inverse(&self) -> &::std::option::Option<bool> {
         &self.inverse
     }
+    /// <p>The <code>null</code> filter that is applied to the category filter.</p>
+    pub fn null_filter(mut self, input: crate::types::NullFilterType) -> Self {
+        self.null_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the category filter.</p>
+    pub fn set_null_filter(mut self, input: ::std::option::Option<crate::types::NullFilterType>) -> Self {
+        self.null_filter = input;
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the category filter.</p>
+    pub fn get_null_filter(&self) -> &::std::option::Option<crate::types::NullFilterType> {
+        &self.null_filter
+    }
     /// Consumes the builder and constructs a [`TopicCategoryFilter`](crate::types::TopicCategoryFilter).
     pub fn build(self) -> crate::types::TopicCategoryFilter {
         crate::types::TopicCategoryFilter {
@@ -121,6 +143,7 @@ impl TopicCategoryFilterBuilder {
             category_filter_type: self.category_filter_type,
             constant: self.constant,
             inverse: self.inverse.unwrap_or_default(),
+            null_filter: self.null_filter,
         }
     }
 }
@@ -131,6 +154,7 @@ impl ::std::fmt::Debug for TopicCategoryFilterBuilder {
         formatter.field("category_filter_type", &self.category_filter_type);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
         formatter.field("inverse", &self.inverse);
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }

@@ -179,9 +179,15 @@ mod get_credit_allocation_history;
 
 mod get_credits;
 
+mod get_enterprise_support_charge_summary;
+
+mod get_enterprise_support_contract_details;
+
 mod get_resource_policy;
 
 mod list_billing_views;
+
+mod list_enterprise_support_linked_account_charges;
 
 mod list_source_views_for_billing_view;
 

@@ -346,3 +346,15 @@ pub(crate) fn aspect_ratio_correct_errors(mut builder: crate::types::builders::A
     }
     builder
 }
+
+pub(crate) fn template_group_correct_errors(
+    mut builder: crate::types::builders::TemplateGroupBuilder,
+) -> crate::types::builders::TemplateGroupBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.template_uris.is_none() {
+        builder.template_uris = Some(Default::default())
+    }
+    builder
+}

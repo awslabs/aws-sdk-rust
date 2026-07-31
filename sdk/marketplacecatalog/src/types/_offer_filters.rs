@@ -28,6 +28,12 @@ pub struct OfferFilters {
     pub last_modified_date: ::std::option::Option<crate::types::OfferLastModifiedDateFilter>,
     /// <p>Allows filtering on the <code>OfferSetId</code> of an offer.</p>
     pub offer_set_id: ::std::option::Option<crate::types::OfferSetIdFilter>,
+    /// <p>Allows filtering on the <code>TargetAgreementId</code> of an offer.</p>
+    pub target_agreement_id: ::std::option::Option<crate::types::OfferTargetAgreementIdFilter>,
+    /// <p>Allows filtering on the <code>TargetAgreementIntent</code> of an offer.</p>
+    pub target_agreement_intent: ::std::option::Option<crate::types::OfferTargetAgreementIntentFilter>,
+    /// <p>Allows filtering on the <code>CreatedBySource</code> of an offer.</p>
+    pub created_by_source: ::std::option::Option<crate::types::OfferCreatedBySourceFilter>,
 }
 impl OfferFilters {
     /// <p>Allows filtering on <code>EntityId</code> of an offer.</p>
@@ -76,6 +82,18 @@ impl OfferFilters {
     pub fn offer_set_id(&self) -> ::std::option::Option<&crate::types::OfferSetIdFilter> {
         self.offer_set_id.as_ref()
     }
+    /// <p>Allows filtering on the <code>TargetAgreementId</code> of an offer.</p>
+    pub fn target_agreement_id(&self) -> ::std::option::Option<&crate::types::OfferTargetAgreementIdFilter> {
+        self.target_agreement_id.as_ref()
+    }
+    /// <p>Allows filtering on the <code>TargetAgreementIntent</code> of an offer.</p>
+    pub fn target_agreement_intent(&self) -> ::std::option::Option<&crate::types::OfferTargetAgreementIntentFilter> {
+        self.target_agreement_intent.as_ref()
+    }
+    /// <p>Allows filtering on the <code>CreatedBySource</code> of an offer.</p>
+    pub fn created_by_source(&self) -> ::std::option::Option<&crate::types::OfferCreatedBySourceFilter> {
+        self.created_by_source.as_ref()
+    }
 }
 impl OfferFilters {
     /// Creates a new builder-style object to manufacture [`OfferFilters`](crate::types::OfferFilters).
@@ -99,6 +117,9 @@ pub struct OfferFiltersBuilder {
     pub(crate) targeting: ::std::option::Option<crate::types::OfferTargetingFilter>,
     pub(crate) last_modified_date: ::std::option::Option<crate::types::OfferLastModifiedDateFilter>,
     pub(crate) offer_set_id: ::std::option::Option<crate::types::OfferSetIdFilter>,
+    pub(crate) target_agreement_id: ::std::option::Option<crate::types::OfferTargetAgreementIdFilter>,
+    pub(crate) target_agreement_intent: ::std::option::Option<crate::types::OfferTargetAgreementIntentFilter>,
+    pub(crate) created_by_source: ::std::option::Option<crate::types::OfferCreatedBySourceFilter>,
 }
 impl OfferFiltersBuilder {
     /// <p>Allows filtering on <code>EntityId</code> of an offer.</p>
@@ -261,6 +282,48 @@ impl OfferFiltersBuilder {
     pub fn get_offer_set_id(&self) -> &::std::option::Option<crate::types::OfferSetIdFilter> {
         &self.offer_set_id
     }
+    /// <p>Allows filtering on the <code>TargetAgreementId</code> of an offer.</p>
+    pub fn target_agreement_id(mut self, input: crate::types::OfferTargetAgreementIdFilter) -> Self {
+        self.target_agreement_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows filtering on the <code>TargetAgreementId</code> of an offer.</p>
+    pub fn set_target_agreement_id(mut self, input: ::std::option::Option<crate::types::OfferTargetAgreementIdFilter>) -> Self {
+        self.target_agreement_id = input;
+        self
+    }
+    /// <p>Allows filtering on the <code>TargetAgreementId</code> of an offer.</p>
+    pub fn get_target_agreement_id(&self) -> &::std::option::Option<crate::types::OfferTargetAgreementIdFilter> {
+        &self.target_agreement_id
+    }
+    /// <p>Allows filtering on the <code>TargetAgreementIntent</code> of an offer.</p>
+    pub fn target_agreement_intent(mut self, input: crate::types::OfferTargetAgreementIntentFilter) -> Self {
+        self.target_agreement_intent = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows filtering on the <code>TargetAgreementIntent</code> of an offer.</p>
+    pub fn set_target_agreement_intent(mut self, input: ::std::option::Option<crate::types::OfferTargetAgreementIntentFilter>) -> Self {
+        self.target_agreement_intent = input;
+        self
+    }
+    /// <p>Allows filtering on the <code>TargetAgreementIntent</code> of an offer.</p>
+    pub fn get_target_agreement_intent(&self) -> &::std::option::Option<crate::types::OfferTargetAgreementIntentFilter> {
+        &self.target_agreement_intent
+    }
+    /// <p>Allows filtering on the <code>CreatedBySource</code> of an offer.</p>
+    pub fn created_by_source(mut self, input: crate::types::OfferCreatedBySourceFilter) -> Self {
+        self.created_by_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows filtering on the <code>CreatedBySource</code> of an offer.</p>
+    pub fn set_created_by_source(mut self, input: ::std::option::Option<crate::types::OfferCreatedBySourceFilter>) -> Self {
+        self.created_by_source = input;
+        self
+    }
+    /// <p>Allows filtering on the <code>CreatedBySource</code> of an offer.</p>
+    pub fn get_created_by_source(&self) -> &::std::option::Option<crate::types::OfferCreatedBySourceFilter> {
+        &self.created_by_source
+    }
     /// Consumes the builder and constructs a [`OfferFilters`](crate::types::OfferFilters).
     pub fn build(self) -> crate::types::OfferFilters {
         crate::types::OfferFilters {
@@ -275,6 +338,9 @@ impl OfferFiltersBuilder {
             targeting: self.targeting,
             last_modified_date: self.last_modified_date,
             offer_set_id: self.offer_set_id,
+            target_agreement_id: self.target_agreement_id,
+            target_agreement_intent: self.target_agreement_intent,
+            created_by_source: self.created_by_source,
         }
     }
 }

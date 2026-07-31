@@ -660,4 +660,39 @@ impl StartStreamTranscriptionFluentBuilder {
     pub fn get_session_resume_window(&self) -> &::std::option::Option<i32> {
         self.inner.get_session_resume_window()
     }
+    /// <p>Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription results.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WRITTEN</code> renders these entities in their standard written form (for example, <code>$50</code>, <code>10:30 AM</code>, and <code>101</code>).</p></li>
+    /// <li>
+    /// <p><code>SPOKEN</code> renders these entities as words, exactly as they were spoken (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and <code>one oh one</code>).</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+    pub fn transcript_format(mut self, input: crate::types::TranscriptFormat) -> Self {
+        self.inner = self.inner.transcript_format(input);
+        self
+    }
+    /// <p>Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription results.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WRITTEN</code> renders these entities in their standard written form (for example, <code>$50</code>, <code>10:30 AM</code>, and <code>101</code>).</p></li>
+    /// <li>
+    /// <p><code>SPOKEN</code> renders these entities as words, exactly as they were spoken (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and <code>one oh one</code>).</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+    pub fn set_transcript_format(mut self, input: ::std::option::Option<crate::types::TranscriptFormat>) -> Self {
+        self.inner = self.inner.set_transcript_format(input);
+        self
+    }
+    /// <p>Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription results.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>WRITTEN</code> renders these entities in their standard written form (for example, <code>$50</code>, <code>10:30 AM</code>, and <code>101</code>).</p></li>
+    /// <li>
+    /// <p><code>SPOKEN</code> renders these entities as words, exactly as they were spoken (for example, <code>fifty dollars</code>, <code>ten thirty a m</code>, and <code>one oh one</code>).</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, Amazon Transcribe uses <code>WRITTEN</code> by default.</p>
+    pub fn get_transcript_format(&self) -> &::std::option::Option<crate::types::TranscriptFormat> {
+        self.inner.get_transcript_format()
+    }
 }

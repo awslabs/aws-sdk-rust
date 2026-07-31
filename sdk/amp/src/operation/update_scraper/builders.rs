@@ -199,4 +199,23 @@ impl UpdateScraperFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    ///
+    /// Appends an item to `exporters`.
+    ///
+    /// To override the contents of this collection use [`set_exporters`](Self::set_exporters).
+    ///
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the existing exporter configuration remains unchanged.</p>
+    pub fn exporters(mut self, input: crate::types::ExporterConfiguration) -> Self {
+        self.inner = self.inner.exporters(input);
+        self
+    }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the existing exporter configuration remains unchanged.</p>
+    pub fn set_exporters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>) -> Self {
+        self.inner = self.inner.set_exporters(input);
+        self
+    }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the existing exporter configuration remains unchanged.</p>
+    pub fn get_exporters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>> {
+        self.inner.get_exporters()
+    }
 }

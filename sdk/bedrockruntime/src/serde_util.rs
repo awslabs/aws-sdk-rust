@@ -610,6 +610,30 @@ pub(crate) fn search_result_block_correct_errors(
     builder
 }
 
+pub(crate) fn tool_addition_block_correct_errors(
+    mut builder: crate::types::builders::ToolAdditionBlockBuilder,
+) -> crate::types::builders::ToolAdditionBlockBuilder {
+    if builder.tool.is_none() {
+        builder.tool = {
+            let builder = crate::types::builders::ToolReferenceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn tool_removal_block_correct_errors(
+    mut builder: crate::types::builders::ToolRemovalBlockBuilder,
+) -> crate::types::builders::ToolRemovalBlockBuilder {
+    if builder.tool.is_none() {
+        builder.tool = {
+            let builder = crate::types::builders::ToolReferenceBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn tool_result_block_correct_errors(
     mut builder: crate::types::builders::ToolResultBlockBuilder,
 ) -> crate::types::builders::ToolResultBlockBuilder {

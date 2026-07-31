@@ -309,6 +309,16 @@ pub(crate) fn reflens_list_topics_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_topics_v2_output_output_next_token(
+    input: &crate::operation::list_topics_v2::ListTopicsV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_user_groups_output_output_next_token(
     input: &crate::operation::list_user_groups::ListUserGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -431,6 +441,16 @@ pub(crate) fn reflens_search_knowledge_bases_output_output_next_token(
 
 pub(crate) fn reflens_search_topics_output_output_next_token(
     input: &crate::operation::search_topics::SearchTopicsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_search_topics_v2_output_output_next_token(
+    input: &crate::operation::search_topics_v2::SearchTopicsV2Output,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -649,6 +669,13 @@ pub(crate) fn lens_list_themes_output_output_theme_summary_list(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_topics_v2_output_output_topic_summary_list(
+    input: crate::operation::list_topics_v2::ListTopicsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TopicV2Summary>> {
+    let input = input.topic_summary_list?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_user_groups_output_output_group_list(
     input: crate::operation::list_user_groups::ListUserGroupsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::Group>> {
@@ -729,6 +756,13 @@ pub(crate) fn lens_search_knowledge_bases_output_output_knowledge_base_summaries
 pub(crate) fn lens_search_topics_output_output_topic_summary_list(
     input: crate::operation::search_topics::SearchTopicsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TopicSummary>> {
+    let input = input.topic_summary_list?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_topics_v2_output_output_topic_summary_list(
+    input: crate::operation::search_topics_v2::SearchTopicsV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TopicV2Summary>> {
     let input = input.topic_summary_list?;
     ::std::option::Option::Some(input)
 }

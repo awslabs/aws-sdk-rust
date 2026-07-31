@@ -173,9 +173,17 @@ pub use crate::types::_communication_limit_time_unit::CommunicationLimitTimeUnit
 
 pub use crate::types::_web_notification_context::WebNotificationContext;
 
+pub use crate::types::_pacing_strategy::PacingStrategy;
+
 pub use crate::types::_agent_action::AgentAction;
 
 pub use crate::types::_time_range::TimeRange;
+
+pub use crate::types::_abandonment_rate_pacing_config::AbandonmentRatePacingConfig;
+
+pub use crate::types::_connection_start_point::ConnectionStartPoint;
+
+mod _abandonment_rate_pacing_config;
 
 mod _agent_action;
 
@@ -214,6 +222,8 @@ mod _communication_limits_config_type;
 mod _communication_time_config;
 
 mod _communication_time_config_type;
+
+mod _connection_start_point;
 
 mod _customer_profiles_integration_config;
 
@@ -292,6 +302,8 @@ mod _local_time_zone_detection_type;
 mod _open_hours;
 
 mod _outbound_request;
+
+mod _pacing_strategy;
 
 mod _predictive_config;
 

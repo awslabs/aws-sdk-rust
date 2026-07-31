@@ -12,8 +12,10 @@ pub struct LayerMapVisual {
     pub subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     /// <p>The configuration settings of the visual.</p>
     pub chart_configuration: ::std::option::Option<crate::types::GeospatialLayerMapConfiguration>,
-    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset.</p>
+    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset or a topic.</p>
     pub data_set_identifier: ::std::string::String,
+    /// <p>The topic that is used in the layer map visual. You can't create a visual without a dataset or a topic.</p>
+    pub topic_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The alt text for the visual.</p>
     pub visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
@@ -35,10 +37,14 @@ impl LayerMapVisual {
     pub fn chart_configuration(&self) -> ::std::option::Option<&crate::types::GeospatialLayerMapConfiguration> {
         self.chart_configuration.as_ref()
     }
-    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset.</p>
+    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset or a topic.</p>
     pub fn data_set_identifier(&self) -> &str {
         use std::ops::Deref;
         self.data_set_identifier.deref()
+    }
+    /// <p>The topic that is used in the layer map visual. You can't create a visual without a dataset or a topic.</p>
+    pub fn topic_identifier(&self) -> ::std::option::Option<&str> {
+        self.topic_identifier.as_deref()
     }
     /// <p>The alt text for the visual.</p>
     pub fn visual_content_alt_text(&self) -> ::std::option::Option<&str> {
@@ -61,6 +67,7 @@ pub struct LayerMapVisualBuilder {
     pub(crate) subtitle: ::std::option::Option<crate::types::VisualSubtitleLabelOptions>,
     pub(crate) chart_configuration: ::std::option::Option<crate::types::GeospatialLayerMapConfiguration>,
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) visual_content_alt_text: ::std::option::Option<::std::string::String>,
 }
 impl LayerMapVisualBuilder {
@@ -121,20 +128,33 @@ impl LayerMapVisualBuilder {
     pub fn get_chart_configuration(&self) -> &::std::option::Option<crate::types::GeospatialLayerMapConfiguration> {
         &self.chart_configuration
     }
-    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset.</p>
-    /// This field is required.
+    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset or a topic.</p>
     pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset.</p>
+    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset or a topic.</p>
     pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_identifier = input;
         self
     }
-    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset.</p>
+    /// <p>The dataset that is used to create the layer map visual. You can't create a visual without a dataset or a topic.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_identifier
+    }
+    /// <p>The topic that is used in the layer map visual. You can't create a visual without a dataset or a topic.</p>
+    pub fn topic_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The topic that is used in the layer map visual. You can't create a visual without a dataset or a topic.</p>
+    pub fn set_topic_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.topic_identifier = input;
+        self
+    }
+    /// <p>The topic that is used in the layer map visual. You can't create a visual without a dataset or a topic.</p>
+    pub fn get_topic_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_identifier
     }
     /// <p>The alt text for the visual.</p>
     pub fn visual_content_alt_text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -153,7 +173,6 @@ impl LayerMapVisualBuilder {
     /// Consumes the builder and constructs a [`LayerMapVisual`](crate::types::LayerMapVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::LayerMapVisualBuilder::visual_id)
-    /// - [`data_set_identifier`](crate::types::builders::LayerMapVisualBuilder::data_set_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::LayerMapVisual, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LayerMapVisual {
             visual_id: self.visual_id.ok_or_else(|| {
@@ -165,12 +184,8 @@ impl LayerMapVisualBuilder {
             title: self.title,
             subtitle: self.subtitle,
             chart_configuration: self.chart_configuration,
-            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_identifier",
-                    "data_set_identifier was not specified but it is required when building LayerMapVisual",
-                )
-            })?,
+            data_set_identifier: self.data_set_identifier.unwrap_or_default(),
+            topic_identifier: self.topic_identifier,
             visual_content_alt_text: self.visual_content_alt_text,
         })
     }

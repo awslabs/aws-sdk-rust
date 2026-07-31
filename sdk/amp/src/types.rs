@@ -63,6 +63,8 @@ pub use crate::types::_amp_configuration::AmpConfiguration;
 
 pub use crate::types::_cloud_watch_configuration::CloudWatchConfiguration;
 
+pub use crate::types::_exporter_configuration::ExporterConfiguration;
+
 pub use crate::types::_scraper_status_code::ScraperStatusCode;
 
 pub use crate::types::_workspace_summary::WorkspaceSummary;
@@ -96,6 +98,8 @@ pub use crate::types::_rule_groups_namespace_status_code::RuleGroupsNamespaceSta
 pub use crate::types::_limits_per_label_set::LimitsPerLabelSet;
 
 pub use crate::types::_workspace_configuration_status_code::WorkspaceConfigurationStatusCode;
+
+pub use crate::types::_open_search_exporter_configuration::OpenSearchExporterConfiguration;
 
 pub use crate::types::_scraper_component_type::ScraperComponentType;
 
@@ -137,6 +141,8 @@ mod _destination;
 
 mod _eks_configuration;
 
+mod _exporter_configuration;
+
 mod _ignore_near_expected;
 
 mod _limits_per_label_set;
@@ -152,6 +158,8 @@ mod _logging_configuration_status_code;
 mod _logging_destination;
 
 mod _logging_filter;
+
+mod _open_search_exporter_configuration;
 
 mod _query_logging_configuration_metadata;
 

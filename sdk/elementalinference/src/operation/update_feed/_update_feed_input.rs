@@ -5,6 +5,8 @@
 pub struct UpdateFeedInput {
     /// <p>Required. You can specify the existing name (to leave it unchanged) or a new name.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. You can specify the existing role (to leave it unchanged) or a new role. You specify one access role for each feed.</p>
+    pub access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the feed to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>Required. You can specify the existing array of outputs (to leave outputs unchanged) or you can specify a new array.</p>
@@ -14,6 +16,10 @@ impl UpdateFeedInput {
     /// <p>Required. You can specify the existing name (to leave it unchanged) or a new name.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. You can specify the existing role (to leave it unchanged) or a new role. You specify one access role for each feed.</p>
+    pub fn access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.access_role_arn.as_deref()
     }
     /// <p>The ID of the feed to update.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
@@ -38,6 +44,7 @@ impl UpdateFeedInput {
 #[non_exhaustive]
 pub struct UpdateFeedInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::UpdateOutput>>,
 }
@@ -56,6 +63,20 @@ impl UpdateFeedInputBuilder {
     /// <p>Required. You can specify the existing name (to leave it unchanged) or a new name.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. You can specify the existing role (to leave it unchanged) or a new role. You specify one access role for each feed.</p>
+    pub fn access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. You can specify the existing role (to leave it unchanged) or a new role. You specify one access role for each feed.</p>
+    pub fn set_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_role_arn = input;
+        self
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. You can specify the existing role (to leave it unchanged) or a new role. You specify one access role for each feed.</p>
+    pub fn get_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_role_arn
     }
     /// <p>The ID of the feed to update.</p>
     /// This field is required.
@@ -96,6 +117,7 @@ impl UpdateFeedInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::update_feed::UpdateFeedInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_feed::UpdateFeedInput {
             name: self.name,
+            access_role_arn: self.access_role_arn,
             id: self.id,
             outputs: self.outputs,
         })

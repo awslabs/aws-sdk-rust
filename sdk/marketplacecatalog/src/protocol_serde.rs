@@ -205,6 +205,8 @@ pub(crate) mod shape_offer_availability_end_date_filter;
 
 pub(crate) mod shape_offer_buyer_accounts_filter;
 
+pub(crate) mod shape_offer_created_by_source_filter;
+
 pub(crate) mod shape_offer_entity_id_filter;
 
 pub(crate) mod shape_offer_last_modified_date_filter;
@@ -238,6 +240,10 @@ pub(crate) mod shape_offer_set_summary;
 pub(crate) mod shape_offer_state_filter;
 
 pub(crate) mod shape_offer_summary;
+
+pub(crate) mod shape_offer_target_agreement_id_filter;
+
+pub(crate) mod shape_offer_target_agreement_intent_filter;
 
 pub(crate) mod shape_offer_targeting_filter;
 

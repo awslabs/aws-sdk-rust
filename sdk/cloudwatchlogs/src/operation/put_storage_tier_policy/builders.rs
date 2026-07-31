@@ -22,7 +22,7 @@ impl crate::operation::put_storage_tier_policy::builders::PutStorageTierPolicyIn
 }
 /// Fluent builder constructing a request to `PutStorageTierPolicy`.
 ///
-/// <p>Sets the storage tier policy for your account. When you set the storage tier to <code>INTELLIGENT_TIERING</code>, CloudWatch Logs automatically moves your log data between storage tiers based on access patterns to optimize costs.</p>
+/// <p>Sets the storage tier policy for the account. When you set the storage tier to <code>INTELLIGENT_TIERING</code>, the service automatically moves log data to the most cost-effective storage tier based on access frequency.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutStorageTierPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl PutStorageTierPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The storage tier to set for the account. Valid values are <code>STANDARD</code> and <code>INTELLIGENT_TIERING</code>.</p>
+    /// <p>The storage tier to set for the account. Use <code>INTELLIGENT_TIERING</code> to automatically optimize storage costs by moving log data to the appropriate tier based on access frequency.</p>
     pub fn storage_tier(mut self, input: crate::types::StorageTier) -> Self {
         self.inner = self.inner.storage_tier(input);
         self
     }
-    /// <p>The storage tier to set for the account. Valid values are <code>STANDARD</code> and <code>INTELLIGENT_TIERING</code>.</p>
+    /// <p>The storage tier to set for the account. Use <code>INTELLIGENT_TIERING</code> to automatically optimize storage costs by moving log data to the appropriate tier based on access frequency.</p>
     pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::StorageTier>) -> Self {
         self.inner = self.inner.set_storage_tier(input);
         self
     }
-    /// <p>The storage tier to set for the account. Valid values are <code>STANDARD</code> and <code>INTELLIGENT_TIERING</code>.</p>
+    /// <p>The storage tier to set for the account. Use <code>INTELLIGENT_TIERING</code> to automatically optimize storage costs by moving log data to the appropriate tier based on access frequency.</p>
     pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::StorageTier> {
         self.inner.get_storage_tier()
     }

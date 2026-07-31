@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutStorageTierPolicyOutput {
-    /// <p>The storage tier that was set.</p>
+    /// <p>The storage tier for the account.</p>
     pub storage_tier: ::std::option::Option<crate::types::StorageTier>,
-    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>January 1, 1970 00:00:00 UTC</code>.</p>
     pub last_updated_time: ::std::option::Option<i64>,
     _request_id: Option<String>,
 }
 impl PutStorageTierPolicyOutput {
-    /// <p>The storage tier that was set.</p>
+    /// <p>The storage tier for the account.</p>
     pub fn storage_tier(&self) -> ::std::option::Option<&crate::types::StorageTier> {
         self.storage_tier.as_ref()
     }
-    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>January 1, 1970 00:00:00 UTC</code>.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<i64> {
         self.last_updated_time
     }
@@ -40,31 +40,31 @@ pub struct PutStorageTierPolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutStorageTierPolicyOutputBuilder {
-    /// <p>The storage tier that was set.</p>
+    /// <p>The storage tier for the account.</p>
     pub fn storage_tier(mut self, input: crate::types::StorageTier) -> Self {
         self.storage_tier = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The storage tier that was set.</p>
+    /// <p>The storage tier for the account.</p>
     pub fn set_storage_tier(mut self, input: ::std::option::Option<crate::types::StorageTier>) -> Self {
         self.storage_tier = input;
         self
     }
-    /// <p>The storage tier that was set.</p>
+    /// <p>The storage tier for the account.</p>
     pub fn get_storage_tier(&self) -> &::std::option::Option<crate::types::StorageTier> {
         &self.storage_tier
     }
-    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>January 1, 1970 00:00:00 UTC</code>.</p>
     pub fn last_updated_time(mut self, input: i64) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>January 1, 1970 00:00:00 UTC</code>.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    /// <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>January 1, 1970 00:00:00 UTC</code>.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<i64> {
         &self.last_updated_time
     }

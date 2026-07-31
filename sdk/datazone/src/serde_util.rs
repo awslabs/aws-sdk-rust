@@ -2847,6 +2847,21 @@ pub(crate) fn form_output_correct_errors(mut builder: crate::types::builders::Fo
     builder
 }
 
+pub(crate) fn git_properties_output_correct_errors(
+    mut builder: crate::types::builders::GitPropertiesOutputBuilder,
+) -> crate::types::builders::GitPropertiesOutputBuilder {
+    if builder.code_connection_arn.is_none() {
+        builder.code_connection_arn = Some(Default::default())
+    }
+    if builder.repository_id.is_none() {
+        builder.repository_id = Some(Default::default())
+    }
+    if builder.default_branch.is_none() {
+        builder.default_branch = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn glue_run_configuration_output_correct_errors(
     mut builder: crate::types::builders::GlueRunConfigurationOutputBuilder,
 ) -> crate::types::builders::GlueRunConfigurationOutputBuilder {

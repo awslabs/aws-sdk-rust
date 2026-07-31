@@ -21,6 +21,21 @@ pub fn ser_named_entity_definition(
         crate::protocol_serde::shape_named_entity_definition_metric::ser_named_entity_definition_metric(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.rank_order {
+        object.key("RankOrder").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+        );
+    }
+    if let Some(var_8) = &input.presentation_order {
+        object.key("PresentationOrder").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    if let Some(var_9) = &input.is_hidden {
+        object.key("IsHidden").boolean(*var_9);
+    }
     Ok(())
 }
 
@@ -82,6 +97,23 @@ where
                                     depth + 1,
                                 )?,
                             );
+                        }
+                        "RankOrder" => {
+                            builder = builder.set_rank_order(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "PresentationOrder" => {
+                            builder = builder.set_presentation_order(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "IsHidden" => {
+                            builder = builder.set_is_hidden(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

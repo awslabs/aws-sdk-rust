@@ -100,6 +100,9 @@ pub mod create_topic;
 /// Types for the `CreateTopicRefreshSchedule` operation.
 pub mod create_topic_refresh_schedule;
 
+/// Types for the `CreateTopicV2` operation.
+pub mod create_topic_v2;
+
 /// Types for the `CreateVPCConnection` operation.
 pub mod create_vpc_connection;
 
@@ -204,6 +207,9 @@ pub mod delete_topic;
 
 /// Types for the `DeleteTopicRefreshSchedule` operation.
 pub mod delete_topic_refresh_schedule;
+
+/// Types for the `DeleteTopicV2` operation.
+pub mod delete_topic_v2;
 
 /// Types for the `DeleteUser` operation.
 pub mod delete_user;
@@ -397,11 +403,17 @@ pub mod describe_topic;
 /// Types for the `DescribeTopicPermissions` operation.
 pub mod describe_topic_permissions;
 
+/// Types for the `DescribeTopicPermissionsV2` operation.
+pub mod describe_topic_permissions_v2;
+
 /// Types for the `DescribeTopicRefresh` operation.
 pub mod describe_topic_refresh;
 
 /// Types for the `DescribeTopicRefreshSchedule` operation.
 pub mod describe_topic_refresh_schedule;
+
+/// Types for the `DescribeTopicV2` operation.
+pub mod describe_topic_v2;
 
 /// Types for the `DescribeUser` operation.
 pub mod describe_user;
@@ -550,6 +562,9 @@ pub mod list_topic_reviewed_answers;
 /// Types for the `ListTopics` operation.
 pub mod list_topics;
 
+/// Types for the `ListTopicsV2` operation.
+pub mod list_topics_v2;
+
 /// Types for the `ListUserGroups` operation.
 pub mod list_user_groups;
 
@@ -609,6 +624,9 @@ pub mod search_spaces;
 
 /// Types for the `SearchTopics` operation.
 pub mod search_topics;
+
+/// Types for the `SearchTopicsV2` operation.
+pub mod search_topics_v2;
 
 /// Types for the `StartAssetBundleExportJob` operation.
 pub mod start_asset_bundle_export_job;
@@ -796,8 +814,14 @@ pub mod update_topic;
 /// Types for the `UpdateTopicPermissions` operation.
 pub mod update_topic_permissions;
 
+/// Types for the `UpdateTopicPermissionsV2` operation.
+pub mod update_topic_permissions_v2;
+
 /// Types for the `UpdateTopicRefreshSchedule` operation.
 pub mod update_topic_refresh_schedule;
+
+/// Types for the `UpdateTopicV2` operation.
+pub mod update_topic_v2;
 
 /// Types for the `UpdateUser` operation.
 pub mod update_user;

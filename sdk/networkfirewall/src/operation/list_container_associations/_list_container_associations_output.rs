@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListContainerAssociationsOutput {
-    /// <p>The container association metadata objects.</p>
+    /// <p>The container association metadata objects for the account and Region.</p>
     pub container_associations: ::std::option::Option<::std::vec::Vec<crate::types::ContainerAssociationSummary>>,
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListContainerAssociationsOutput {
-    /// <p>The container association metadata objects.</p>
+    /// <p>The container association metadata objects for the account and Region.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_associations.is_none()`.
     pub fn container_associations(&self) -> &[crate::types::ContainerAssociationSummary] {
@@ -46,19 +46,19 @@ impl ListContainerAssociationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_container_associations`](Self::set_container_associations).
     ///
-    /// <p>The container association metadata objects.</p>
+    /// <p>The container association metadata objects for the account and Region.</p>
     pub fn container_associations(mut self, input: crate::types::ContainerAssociationSummary) -> Self {
         let mut v = self.container_associations.unwrap_or_default();
         v.push(input);
         self.container_associations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The container association metadata objects.</p>
+    /// <p>The container association metadata objects for the account and Region.</p>
     pub fn set_container_associations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerAssociationSummary>>) -> Self {
         self.container_associations = input;
         self
     }
-    /// <p>The container association metadata objects.</p>
+    /// <p>The container association metadata objects for the account and Region.</p>
     pub fn get_container_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerAssociationSummary>> {
         &self.container_associations
     }

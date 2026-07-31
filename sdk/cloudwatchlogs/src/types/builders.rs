@@ -41,6 +41,8 @@ pub use crate::types::_suppression_period::SuppressionPeriodBuilder;
 
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
 
+pub use crate::types::_lookup_table_configuration::LookupTableConfigurationBuilder;
+
 pub use crate::types::_configuration_template::ConfigurationTemplateBuilder;
 
 pub use crate::types::_export_task::ExportTaskBuilder;

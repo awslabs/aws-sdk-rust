@@ -15,6 +15,18 @@ pub fn ser_analysis_source_template(
         }
         array_1.finish();
     }
+    if let Some(var_4) = &input.topic_references {
+        let mut array_5 = object.key("TopicReferences").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_topic_reference::ser_topic_reference(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
     {
         object.key("Arn").string(input.arn.as_str());
     }

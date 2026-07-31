@@ -27,6 +27,12 @@ pub fn ser_asset_options(
         crate::protocol_serde::shape_visual_custom_action_defaults::ser_visual_custom_action_defaults(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.visual_messages {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("VisualMessages").start_object();
+        crate::protocol_serde::shape_visual_messages::ser_visual_messages(&mut object_10, var_9)?;
+        object_10.finish();
+    }
     Ok(())
 }
 
@@ -88,6 +94,13 @@ where
                                     depth + 1,
                                 )?,
                             );
+                        }
+                        "VisualMessages" => {
+                            builder = builder.set_visual_messages(crate::protocol_serde::shape_visual_messages::de_visual_messages(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

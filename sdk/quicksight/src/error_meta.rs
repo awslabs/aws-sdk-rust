@@ -1387,6 +1387,37 @@ impl From<crate::operation::create_topic_refresh_schedule::CreateTopicRefreshSch
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_topic_v2::CreateTopicV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_topic_v2::CreateTopicV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_topic_v2::CreateTopicV2Error> for Error {
+    fn from(err: crate::operation::create_topic_v2::CreateTopicV2Error) -> Self {
+        match err {
+            crate::operation::create_topic_v2::CreateTopicV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_topic_v2::CreateTopicV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_topic_v2::CreateTopicV2Error::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::create_topic_v2::CreateTopicV2Error::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_topic_v2::CreateTopicV2Error::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_topic_v2::CreateTopicV2Error::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::create_topic_v2::CreateTopicV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_topic_v2::CreateTopicV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_topic_v2::CreateTopicV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_vpc_connection::CreateVPCConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2680,6 +2711,35 @@ impl From<crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshSch
                 Error::ThrottlingException(inner)
             }
             crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_topic_v2::DeleteTopicV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_topic_v2::DeleteTopicV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_topic_v2::DeleteTopicV2Error> for Error {
+    fn from(err: crate::operation::delete_topic_v2::DeleteTopicV2Error) -> Self {
+        match err {
+            crate::operation::delete_topic_v2::DeleteTopicV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_topic_v2::DeleteTopicV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_topic_v2::DeleteTopicV2Error::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::delete_topic_v2::DeleteTopicV2Error::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_topic_v2::DeleteTopicV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_topic_v2::DeleteTopicV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_topic_v2::DeleteTopicV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5262,6 +5322,45 @@ impl From<crate::operation::describe_topic_permissions::DescribeTopicPermissions
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error> for Error {
+    fn from(err: crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error) -> Self {
+        match err {
+            crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_topic_permissions_v2::DescribeTopicPermissionsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_topic_refresh::DescribeTopicRefreshError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5343,6 +5442,34 @@ impl From<crate::operation::describe_topic_refresh_schedule::DescribeTopicRefres
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_topic_refresh_schedule::DescribeTopicRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_topic_v2::DescribeTopicV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_topic_v2::DescribeTopicV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_topic_v2::DescribeTopicV2Error> for Error {
+    fn from(err: crate::operation::describe_topic_v2::DescribeTopicV2Error) -> Self {
+        match err {
+            crate::operation::describe_topic_v2::DescribeTopicV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_topic_v2::DescribeTopicV2Error::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::describe_topic_v2::DescribeTopicV2Error::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_topic_v2::DescribeTopicV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_topic_v2::DescribeTopicV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_topic_v2::DescribeTopicV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7075,6 +7202,34 @@ impl From<crate::operation::list_topics::ListTopicsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topics_v2::ListTopicsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topics_v2::ListTopicsV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_topics_v2::ListTopicsV2Error> for Error {
+    fn from(err: crate::operation::list_topics_v2::ListTopicsV2Error) -> Self {
+        match err {
+            crate::operation::list_topics_v2::ListTopicsV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_topics_v2::ListTopicsV2Error::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::list_topics_v2::ListTopicsV2Error::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::list_topics_v2::ListTopicsV2Error::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_topics_v2::ListTopicsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_topics_v2::ListTopicsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_groups::ListUserGroupsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7705,6 +7860,7 @@ where
 impl From<crate::operation::search_topics::SearchTopicsError> for Error {
     fn from(err: crate::operation::search_topics::SearchTopicsError) -> Self {
         match err {
+            crate::operation::search_topics::SearchTopicsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::search_topics::SearchTopicsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::search_topics::SearchTopicsError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
             crate::operation::search_topics::SearchTopicsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
@@ -7714,6 +7870,35 @@ impl From<crate::operation::search_topics::SearchTopicsError> for Error {
                 Error::UnsupportedUserEditionException(inner)
             }
             crate::operation::search_topics::SearchTopicsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_topics_v2::SearchTopicsV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_topics_v2::SearchTopicsV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_topics_v2::SearchTopicsV2Error> for Error {
+    fn from(err: crate::operation::search_topics_v2::SearchTopicsV2Error) -> Self {
+        match err {
+            crate::operation::search_topics_v2::SearchTopicsV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_topics_v2::SearchTopicsV2Error::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::search_topics_v2::SearchTopicsV2Error::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::operation::search_topics_v2::SearchTopicsV2Error::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::search_topics_v2::SearchTopicsV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_topics_v2::SearchTopicsV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_topics_v2::SearchTopicsV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -10222,6 +10407,52 @@ impl From<crate::operation::update_topic_permissions::UpdateTopicPermissionsErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error> for Error {
+    fn from(err: crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error) -> Self {
+        match err {
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::InternalFailureException(inner) => {
+                Error::InternalFailureException(inner)
+            }
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::UnsupportedUserEditionException(inner) => {
+                Error::UnsupportedUserEditionException(inner)
+            }
+            crate::operation::update_topic_permissions_v2::UpdateTopicPermissionsV2Error::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError, R>>
     for Error
 where
@@ -10267,6 +10498,37 @@ impl From<crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshSch
                 Error::ThrottlingException(inner)
             }
             crate::operation::update_topic_refresh_schedule::UpdateTopicRefreshScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_topic_v2::UpdateTopicV2Error, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_topic_v2::UpdateTopicV2Error, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_topic_v2::UpdateTopicV2Error> for Error {
+    fn from(err: crate::operation::update_topic_v2::UpdateTopicV2Error) -> Self {
+        match err {
+            crate::operation::update_topic_v2::UpdateTopicV2Error::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_topic_v2::UpdateTopicV2Error::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_topic_v2::UpdateTopicV2Error::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::update_topic_v2::UpdateTopicV2Error::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::update_topic_v2::UpdateTopicV2Error::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_topic_v2::UpdateTopicV2Error::ResourceExistsException(inner) => Error::ResourceExistsException(inner),
+            crate::operation::update_topic_v2::UpdateTopicV2Error::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_topic_v2::UpdateTopicV2Error::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_topic_v2::UpdateTopicV2Error::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

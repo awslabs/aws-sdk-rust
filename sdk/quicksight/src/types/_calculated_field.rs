@@ -6,6 +6,8 @@
 pub struct CalculatedField {
     /// <p>The data set that is used in this calculated field.</p>
     pub data_set_identifier: ::std::string::String,
+    /// <p>The topic that is used in this calculated field.</p>
+    pub topic_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the calculated field.</p>
     pub name: ::std::string::String,
     /// <p>The expression of the calculated field.</p>
@@ -16,6 +18,10 @@ impl CalculatedField {
     pub fn data_set_identifier(&self) -> &str {
         use std::ops::Deref;
         self.data_set_identifier.deref()
+    }
+    /// <p>The topic that is used in this calculated field.</p>
+    pub fn topic_identifier(&self) -> ::std::option::Option<&str> {
+        self.topic_identifier.as_deref()
     }
     /// <p>The name of the calculated field.</p>
     pub fn name(&self) -> &str {
@@ -32,6 +38,7 @@ impl ::std::fmt::Debug for CalculatedField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedField");
         formatter.field("data_set_identifier", &self.data_set_identifier);
+        formatter.field("topic_identifier", &self.topic_identifier);
         formatter.field("name", &self.name);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -49,12 +56,12 @@ impl CalculatedField {
 #[non_exhaustive]
 pub struct CalculatedFieldBuilder {
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) expression: ::std::option::Option<::std::string::String>,
 }
 impl CalculatedFieldBuilder {
     /// <p>The data set that is used in this calculated field.</p>
-    /// This field is required.
     pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
@@ -67,6 +74,20 @@ impl CalculatedFieldBuilder {
     /// <p>The data set that is used in this calculated field.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_identifier
+    }
+    /// <p>The topic that is used in this calculated field.</p>
+    pub fn topic_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The topic that is used in this calculated field.</p>
+    pub fn set_topic_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.topic_identifier = input;
+        self
+    }
+    /// <p>The topic that is used in this calculated field.</p>
+    pub fn get_topic_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_identifier
     }
     /// <p>The name of the calculated field.</p>
     /// This field is required.
@@ -100,17 +121,12 @@ impl CalculatedFieldBuilder {
     }
     /// Consumes the builder and constructs a [`CalculatedField`](crate::types::CalculatedField).
     /// This method will fail if any of the following fields are not set:
-    /// - [`data_set_identifier`](crate::types::builders::CalculatedFieldBuilder::data_set_identifier)
     /// - [`name`](crate::types::builders::CalculatedFieldBuilder::name)
     /// - [`expression`](crate::types::builders::CalculatedFieldBuilder::expression)
     pub fn build(self) -> ::std::result::Result<crate::types::CalculatedField, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CalculatedField {
-            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_identifier",
-                    "data_set_identifier was not specified but it is required when building CalculatedField",
-                )
-            })?,
+            data_set_identifier: self.data_set_identifier.unwrap_or_default(),
+            topic_identifier: self.topic_identifier,
             name: self.name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "name",
@@ -130,6 +146,7 @@ impl ::std::fmt::Debug for CalculatedFieldBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CalculatedFieldBuilder");
         formatter.field("data_set_identifier", &self.data_set_identifier);
+        formatter.field("topic_identifier", &self.topic_identifier);
         formatter.field("name", &self.name);
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
         formatter.finish()

@@ -6,6 +6,8 @@
 pub struct ColumnIdentifier {
     /// <p>The data set that the column belongs to.</p>
     pub data_set_identifier: ::std::string::String,
+    /// <p>The topic that the column belongs to.</p>
+    pub topic_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the column.</p>
     pub column_name: ::std::string::String,
 }
@@ -14,6 +16,10 @@ impl ColumnIdentifier {
     pub fn data_set_identifier(&self) -> &str {
         use std::ops::Deref;
         self.data_set_identifier.deref()
+    }
+    /// <p>The topic that the column belongs to.</p>
+    pub fn topic_identifier(&self) -> ::std::option::Option<&str> {
+        self.topic_identifier.as_deref()
     }
     /// <p>The name of the column.</p>
     pub fn column_name(&self) -> &str {
@@ -33,11 +39,11 @@ impl ColumnIdentifier {
 #[non_exhaustive]
 pub struct ColumnIdentifierBuilder {
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) column_name: ::std::option::Option<::std::string::String>,
 }
 impl ColumnIdentifierBuilder {
     /// <p>The data set that the column belongs to.</p>
-    /// This field is required.
     pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
@@ -50,6 +56,20 @@ impl ColumnIdentifierBuilder {
     /// <p>The data set that the column belongs to.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_identifier
+    }
+    /// <p>The topic that the column belongs to.</p>
+    pub fn topic_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The topic that the column belongs to.</p>
+    pub fn set_topic_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.topic_identifier = input;
+        self
+    }
+    /// <p>The topic that the column belongs to.</p>
+    pub fn get_topic_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_identifier
     }
     /// <p>The name of the column.</p>
     /// This field is required.
@@ -68,16 +88,11 @@ impl ColumnIdentifierBuilder {
     }
     /// Consumes the builder and constructs a [`ColumnIdentifier`](crate::types::ColumnIdentifier).
     /// This method will fail if any of the following fields are not set:
-    /// - [`data_set_identifier`](crate::types::builders::ColumnIdentifierBuilder::data_set_identifier)
     /// - [`column_name`](crate::types::builders::ColumnIdentifierBuilder::column_name)
     pub fn build(self) -> ::std::result::Result<crate::types::ColumnIdentifier, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ColumnIdentifier {
-            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_identifier",
-                    "data_set_identifier was not specified but it is required when building ColumnIdentifier",
-                )
-            })?,
+            data_set_identifier: self.data_set_identifier.unwrap_or_default(),
+            topic_identifier: self.topic_identifier,
             column_name: self.column_name.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "column_name",

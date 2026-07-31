@@ -12,8 +12,11 @@ pub fn ser_update_lookup_table_input_input(
     if let Some(var_3) = &input.table_body {
         object.key("tableBody").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_4.as_str());
+    if let Some(var_4) = &input.query_id {
+        object.key("queryId").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_5.as_str());
     }
     Ok(())
 }

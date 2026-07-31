@@ -7,6 +7,8 @@ pub struct ListReportsInput {
     pub service_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filter reports by type.</p>
     pub report_type: ::std::option::Option<crate::types::ReportType>,
+    /// <p>The unique identifier of a test run.</p>
+    pub test_run_id: ::std::option::Option<::std::string::String>,
     /// <p>Pagination page size.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Pagination token.</p>
@@ -20,6 +22,10 @@ impl ListReportsInput {
     /// <p>Filter reports by type.</p>
     pub fn report_type(&self) -> ::std::option::Option<&crate::types::ReportType> {
         self.report_type.as_ref()
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn test_run_id(&self) -> ::std::option::Option<&str> {
+        self.test_run_id.as_deref()
     }
     /// <p>Pagination page size.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -43,6 +49,7 @@ impl ListReportsInput {
 pub struct ListReportsInputBuilder {
     pub(crate) service_arn: ::std::option::Option<::std::string::String>,
     pub(crate) report_type: ::std::option::Option<crate::types::ReportType>,
+    pub(crate) test_run_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -74,6 +81,20 @@ impl ListReportsInputBuilder {
     /// <p>Filter reports by type.</p>
     pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
         &self.report_type
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn test_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.test_run_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn set_test_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.test_run_id = input;
+        self
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn get_test_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.test_run_id
     }
     /// <p>Pagination page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -108,6 +129,7 @@ impl ListReportsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_reports::ListReportsInput {
             service_arn: self.service_arn,
             report_type: self.report_type,
+            test_run_id: self.test_run_id,
             max_results: self.max_results,
             next_token: self.next_token,
         })

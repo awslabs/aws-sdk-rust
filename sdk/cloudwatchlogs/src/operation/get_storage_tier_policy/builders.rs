@@ -22,7 +22,7 @@ impl crate::operation::get_storage_tier_policy::builders::GetStorageTierPolicyIn
 }
 /// Fluent builder constructing a request to `GetStorageTierPolicy`.
 ///
-/// <p>Returns the storage tier policy for your account.</p>
+/// <p>Returns the storage tier policy for the account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetStorageTierPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

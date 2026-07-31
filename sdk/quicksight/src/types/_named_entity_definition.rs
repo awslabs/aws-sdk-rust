@@ -14,6 +14,12 @@ pub struct NamedEntityDefinition {
     pub property_usage: ::std::option::Option<crate::types::PropertyUsage>,
     /// <p>The definition of a metric.</p>
     pub metric: ::std::option::Option<crate::types::NamedEntityDefinitionMetric>,
+    /// <p>The rank order of the named entity definition.</p>
+    pub rank_order: ::std::option::Option<i32>,
+    /// <p>The presentation order of the named entity definition.</p>
+    pub presentation_order: ::std::option::Option<i32>,
+    /// <p>A Boolean value that indicates whether the named entity definition is hidden.</p>
+    pub is_hidden: ::std::option::Option<bool>,
 }
 impl NamedEntityDefinition {
     /// <p>The name of the entity.</p>
@@ -36,6 +42,18 @@ impl NamedEntityDefinition {
     pub fn metric(&self) -> ::std::option::Option<&crate::types::NamedEntityDefinitionMetric> {
         self.metric.as_ref()
     }
+    /// <p>The rank order of the named entity definition.</p>
+    pub fn rank_order(&self) -> ::std::option::Option<i32> {
+        self.rank_order
+    }
+    /// <p>The presentation order of the named entity definition.</p>
+    pub fn presentation_order(&self) -> ::std::option::Option<i32> {
+        self.presentation_order
+    }
+    /// <p>A Boolean value that indicates whether the named entity definition is hidden.</p>
+    pub fn is_hidden(&self) -> ::std::option::Option<bool> {
+        self.is_hidden
+    }
 }
 impl NamedEntityDefinition {
     /// Creates a new builder-style object to manufacture [`NamedEntityDefinition`](crate::types::NamedEntityDefinition).
@@ -53,6 +71,9 @@ pub struct NamedEntityDefinitionBuilder {
     pub(crate) property_role: ::std::option::Option<crate::types::PropertyRole>,
     pub(crate) property_usage: ::std::option::Option<crate::types::PropertyUsage>,
     pub(crate) metric: ::std::option::Option<crate::types::NamedEntityDefinitionMetric>,
+    pub(crate) rank_order: ::std::option::Option<i32>,
+    pub(crate) presentation_order: ::std::option::Option<i32>,
+    pub(crate) is_hidden: ::std::option::Option<bool>,
 }
 impl NamedEntityDefinitionBuilder {
     /// <p>The name of the entity.</p>
@@ -125,6 +146,48 @@ impl NamedEntityDefinitionBuilder {
     pub fn get_metric(&self) -> &::std::option::Option<crate::types::NamedEntityDefinitionMetric> {
         &self.metric
     }
+    /// <p>The rank order of the named entity definition.</p>
+    pub fn rank_order(mut self, input: i32) -> Self {
+        self.rank_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The rank order of the named entity definition.</p>
+    pub fn set_rank_order(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.rank_order = input;
+        self
+    }
+    /// <p>The rank order of the named entity definition.</p>
+    pub fn get_rank_order(&self) -> &::std::option::Option<i32> {
+        &self.rank_order
+    }
+    /// <p>The presentation order of the named entity definition.</p>
+    pub fn presentation_order(mut self, input: i32) -> Self {
+        self.presentation_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The presentation order of the named entity definition.</p>
+    pub fn set_presentation_order(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.presentation_order = input;
+        self
+    }
+    /// <p>The presentation order of the named entity definition.</p>
+    pub fn get_presentation_order(&self) -> &::std::option::Option<i32> {
+        &self.presentation_order
+    }
+    /// <p>A Boolean value that indicates whether the named entity definition is hidden.</p>
+    pub fn is_hidden(mut self, input: bool) -> Self {
+        self.is_hidden = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean value that indicates whether the named entity definition is hidden.</p>
+    pub fn set_is_hidden(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_hidden = input;
+        self
+    }
+    /// <p>A Boolean value that indicates whether the named entity definition is hidden.</p>
+    pub fn get_is_hidden(&self) -> &::std::option::Option<bool> {
+        &self.is_hidden
+    }
     /// Consumes the builder and constructs a [`NamedEntityDefinition`](crate::types::NamedEntityDefinition).
     pub fn build(self) -> crate::types::NamedEntityDefinition {
         crate::types::NamedEntityDefinition {
@@ -133,6 +196,9 @@ impl NamedEntityDefinitionBuilder {
             property_role: self.property_role,
             property_usage: self.property_usage,
             metric: self.metric,
+            rank_order: self.rank_order,
+            presentation_order: self.presentation_order,
+            is_hidden: self.is_hidden,
         }
     }
 }

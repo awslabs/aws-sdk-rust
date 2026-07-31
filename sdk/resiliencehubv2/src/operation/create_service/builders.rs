@@ -174,17 +174,17 @@ impl CreateServiceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_regions`](Self::set_regions).
     ///
-    /// <p>The AWS Regions where the service operates.</p>
+    /// <p>The Regions where the service operates.</p>
     pub fn regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.regions(input.into());
         self
     }
-    /// <p>The AWS Regions where the service operates.</p>
+    /// <p>The Regions where the service operates.</p>
     pub fn set_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_regions(input);
         self
     }
-    /// <p>The AWS Regions where the service operates.</p>
+    /// <p>The Regions where the service operates.</p>
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_regions()
     }

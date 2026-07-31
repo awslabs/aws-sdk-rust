@@ -10,6 +10,10 @@ pub struct TopicNumericRangeFilter {
     pub constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic, Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
     pub aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub inverse: bool,
+    /// <p>The <code>null</code> filter that is applied to the numeric range filter.</p>
+    pub null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicNumericRangeFilter {
     /// <p>A Boolean value that indicates whether the endpoints of the numeric range are included in the filter. If set to true, topics whose numeric field value is equal to the endpoint values will be included in the filter. If set to false, topics whose numeric field value is equal to the endpoint values will be excluded from the filter.</p>
@@ -24,6 +28,14 @@ impl TopicNumericRangeFilter {
     pub fn aggregation(&self) -> ::std::option::Option<&crate::types::NamedFilterAggType> {
         self.aggregation.as_ref()
     }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn inverse(&self) -> bool {
+        self.inverse
+    }
+    /// <p>The <code>null</code> filter that is applied to the numeric range filter.</p>
+    pub fn null_filter(&self) -> ::std::option::Option<&crate::types::NullFilterType> {
+        self.null_filter.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TopicNumericRangeFilter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +43,8 @@ impl ::std::fmt::Debug for TopicNumericRangeFilter {
         formatter.field("inclusive", &self.inclusive);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
         formatter.field("aggregation", &self.aggregation);
+        formatter.field("inverse", &self.inverse);
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }
@@ -48,6 +62,8 @@ pub struct TopicNumericRangeFilterBuilder {
     pub(crate) inclusive: ::std::option::Option<bool>,
     pub(crate) constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
     pub(crate) aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,
+    pub(crate) inverse: ::std::option::Option<bool>,
+    pub(crate) null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicNumericRangeFilterBuilder {
     /// <p>A Boolean value that indicates whether the endpoints of the numeric range are included in the filter. If set to true, topics whose numeric field value is equal to the endpoint values will be included in the filter. If set to false, topics whose numeric field value is equal to the endpoint values will be excluded from the filter.</p>
@@ -92,12 +108,42 @@ impl TopicNumericRangeFilterBuilder {
     pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::NamedFilterAggType> {
         &self.aggregation
     }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn inverse(mut self, input: bool) -> Self {
+        self.inverse = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn set_inverse(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inverse = input;
+        self
+    }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn get_inverse(&self) -> &::std::option::Option<bool> {
+        &self.inverse
+    }
+    /// <p>The <code>null</code> filter that is applied to the numeric range filter.</p>
+    pub fn null_filter(mut self, input: crate::types::NullFilterType) -> Self {
+        self.null_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the numeric range filter.</p>
+    pub fn set_null_filter(mut self, input: ::std::option::Option<crate::types::NullFilterType>) -> Self {
+        self.null_filter = input;
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the numeric range filter.</p>
+    pub fn get_null_filter(&self) -> &::std::option::Option<crate::types::NullFilterType> {
+        &self.null_filter
+    }
     /// Consumes the builder and constructs a [`TopicNumericRangeFilter`](crate::types::TopicNumericRangeFilter).
     pub fn build(self) -> crate::types::TopicNumericRangeFilter {
         crate::types::TopicNumericRangeFilter {
             inclusive: self.inclusive.unwrap_or_default(),
             constant: self.constant,
             aggregation: self.aggregation,
+            inverse: self.inverse.unwrap_or_default(),
+            null_filter: self.null_filter,
         }
     }
 }
@@ -107,6 +153,8 @@ impl ::std::fmt::Debug for TopicNumericRangeFilterBuilder {
         formatter.field("inclusive", &self.inclusive);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
         formatter.field("aggregation", &self.aggregation);
+        formatter.field("inverse", &self.inverse);
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }

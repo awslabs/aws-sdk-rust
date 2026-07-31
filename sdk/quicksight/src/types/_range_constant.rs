@@ -2,7 +2,7 @@
 
 /// <p>A structure that represents a range constant.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RangeConstant {
     /// <p>The minimum value for a range constant.</p>
     pub minimum: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl RangeConstant {
         self.maximum.as_deref()
     }
 }
+impl ::std::fmt::Debug for RangeConstant {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RangeConstant");
+        formatter.field("minimum", &"*** Sensitive Data Redacted ***");
+        formatter.field("maximum", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RangeConstant {
     /// Creates a new builder-style object to manufacture [`RangeConstant`](crate::types::RangeConstant).
     pub fn builder() -> crate::types::builders::RangeConstantBuilder {
@@ -27,7 +35,7 @@ impl RangeConstant {
 }
 
 /// A builder for [`RangeConstant`](crate::types::RangeConstant).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RangeConstantBuilder {
     pub(crate) minimum: ::std::option::Option<::std::string::String>,
@@ -68,5 +76,13 @@ impl RangeConstantBuilder {
             minimum: self.minimum,
             maximum: self.maximum,
         }
+    }
+}
+impl ::std::fmt::Debug for RangeConstantBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RangeConstantBuilder");
+        formatter.field("minimum", &"*** Sensitive Data Redacted ***");
+        formatter.field("maximum", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

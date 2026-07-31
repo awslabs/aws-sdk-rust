@@ -30,6 +30,8 @@ pub struct TemplateVersion {
     pub status: ::std::option::Option<crate::types::ResourceStatus>,
     /// <p>Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to new datasets matching the same schema described through this API operation.</p>
     pub data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
+    /// <p>Schema of the topic identified by the placeholder. Any dashboard created from this template should be bound to new topics matching the same schema described through this API operation.</p>
+    pub topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     /// <p>The description of the template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.</p>
@@ -80,6 +82,12 @@ impl TemplateVersion {
     pub fn data_set_configurations(&self) -> &[crate::types::DataSetConfiguration] {
         self.data_set_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>Schema of the topic identified by the placeholder. Any dashboard created from this template should be bound to new topics matching the same schema described through this API operation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_configurations.is_none()`.
+    pub fn topic_configurations(&self) -> &[crate::types::TopicConfiguration] {
+        self.topic_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The description of the template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
@@ -115,6 +123,7 @@ pub struct TemplateVersionBuilder {
     pub(crate) version_number: ::std::option::Option<i64>,
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
     pub(crate) data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
+    pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) source_entity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
@@ -251,6 +260,26 @@ impl TemplateVersionBuilder {
     pub fn get_data_set_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>> {
         &self.data_set_configurations
     }
+    /// Appends an item to `topic_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_topic_configurations`](Self::set_topic_configurations).
+    ///
+    /// <p>Schema of the topic identified by the placeholder. Any dashboard created from this template should be bound to new topics matching the same schema described through this API operation.</p>
+    pub fn topic_configurations(mut self, input: crate::types::TopicConfiguration) -> Self {
+        let mut v = self.topic_configurations.unwrap_or_default();
+        v.push(input);
+        self.topic_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Schema of the topic identified by the placeholder. Any dashboard created from this template should be bound to new topics matching the same schema described through this API operation.</p>
+    pub fn set_topic_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>) -> Self {
+        self.topic_configurations = input;
+        self
+    }
+    /// <p>Schema of the topic identified by the placeholder. Any dashboard created from this template should be bound to new topics matching the same schema described through this API operation.</p>
+    pub fn get_topic_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+        &self.topic_configurations
+    }
     /// <p>The description of the template.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
@@ -321,6 +350,7 @@ impl TemplateVersionBuilder {
             version_number: self.version_number,
             status: self.status,
             data_set_configurations: self.data_set_configurations,
+            topic_configurations: self.topic_configurations,
             description: self.description,
             source_entity_arn: self.source_entity_arn,
             theme_arn: self.theme_arn,

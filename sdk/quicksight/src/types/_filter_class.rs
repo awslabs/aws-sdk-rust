@@ -13,6 +13,7 @@
 /// # let filterclass = unimplemented!();
 /// match filterclass {
 ///     FilterClass::ConditionalValueFilter => { /* ... */ },
+///     FilterClass::DashboardDefaultFilter => { /* ... */ },
 ///     FilterClass::EnforcedValueFilter => { /* ... */ },
 ///     FilterClass::NamedValueFilter => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum FilterClass {
     #[allow(missing_docs)] // documentation missing in model
     ConditionalValueFilter,
     #[allow(missing_docs)] // documentation missing in model
+    DashboardDefaultFilter,
+    #[allow(missing_docs)] // documentation missing in model
     EnforcedValueFilter,
     #[allow(missing_docs)] // documentation missing in model
     NamedValueFilter,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for FilterClass {
     fn from(s: &str) -> Self {
         match s {
             "CONDITIONAL_VALUE_FILTER" => FilterClass::ConditionalValueFilter,
+            "DASHBOARD_DEFAULT_FILTER" => FilterClass::DashboardDefaultFilter,
             "ENFORCED_VALUE_FILTER" => FilterClass::EnforcedValueFilter,
             "NAMED_VALUE_FILTER" => FilterClass::NamedValueFilter,
             other => FilterClass::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl FilterClass {
     pub fn as_str(&self) -> &str {
         match self {
             FilterClass::ConditionalValueFilter => "CONDITIONAL_VALUE_FILTER",
+            FilterClass::DashboardDefaultFilter => "DASHBOARD_DEFAULT_FILTER",
             FilterClass::EnforcedValueFilter => "ENFORCED_VALUE_FILTER",
             FilterClass::NamedValueFilter => "NAMED_VALUE_FILTER",
             FilterClass::Unknown(value) => value.as_str(),
@@ -82,7 +87,12 @@ impl FilterClass {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONDITIONAL_VALUE_FILTER", "ENFORCED_VALUE_FILTER", "NAMED_VALUE_FILTER"]
+        &[
+            "CONDITIONAL_VALUE_FILTER",
+            "DASHBOARD_DEFAULT_FILTER",
+            "ENFORCED_VALUE_FILTER",
+            "NAMED_VALUE_FILTER",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FilterClass {
@@ -106,6 +116,7 @@ impl ::std::fmt::Display for FilterClass {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FilterClass::ConditionalValueFilter => write!(f, "CONDITIONAL_VALUE_FILTER"),
+            FilterClass::DashboardDefaultFilter => write!(f, "DASHBOARD_DEFAULT_FILTER"),
             FilterClass::EnforcedValueFilter => write!(f, "ENFORCED_VALUE_FILTER"),
             FilterClass::NamedValueFilter => write!(f, "NAMED_VALUE_FILTER"),
             FilterClass::Unknown(value) => write!(f, "{value}"),

@@ -95,6 +95,8 @@ pub use crate::types::_suppression_period::SuppressionPeriod;
 
 pub use crate::types::_s3_configuration::S3Configuration;
 
+pub use crate::types::_lookup_table_configuration::LookupTableConfiguration;
+
 pub use crate::types::_configuration_template::ConfigurationTemplate;
 
 pub use crate::types::_export_task::ExportTask;
@@ -470,6 +472,8 @@ mod _log_group_summary;
 mod _log_stream;
 
 mod _lookup_table;
+
+mod _lookup_table_configuration;
 
 mod _lower_case_string;
 

@@ -6,6 +6,8 @@
 pub struct AnalysisSourceTemplate {
     /// <p>The dataset references of the source template of an analysis.</p>
     pub data_set_references: ::std::vec::Vec<crate::types::DataSetReference>,
+    /// <p>The topic references of the source template of an analysis.</p>
+    pub topic_references: ::std::option::Option<::std::vec::Vec<crate::types::TopicReference>>,
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
     pub arn: ::std::string::String,
 }
@@ -14,6 +16,12 @@ impl AnalysisSourceTemplate {
     pub fn data_set_references(&self) -> &[crate::types::DataSetReference] {
         use std::ops::Deref;
         self.data_set_references.deref()
+    }
+    /// <p>The topic references of the source template of an analysis.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_references.is_none()`.
+    pub fn topic_references(&self) -> &[crate::types::TopicReference] {
+        self.topic_references.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
     pub fn arn(&self) -> &str {
@@ -33,6 +41,7 @@ impl AnalysisSourceTemplate {
 #[non_exhaustive]
 pub struct AnalysisSourceTemplateBuilder {
     pub(crate) data_set_references: ::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>>,
+    pub(crate) topic_references: ::std::option::Option<::std::vec::Vec<crate::types::TopicReference>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl AnalysisSourceTemplateBuilder {
@@ -55,6 +64,26 @@ impl AnalysisSourceTemplateBuilder {
     /// <p>The dataset references of the source template of an analysis.</p>
     pub fn get_data_set_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetReference>> {
         &self.data_set_references
+    }
+    /// Appends an item to `topic_references`.
+    ///
+    /// To override the contents of this collection use [`set_topic_references`](Self::set_topic_references).
+    ///
+    /// <p>The topic references of the source template of an analysis.</p>
+    pub fn topic_references(mut self, input: crate::types::TopicReference) -> Self {
+        let mut v = self.topic_references.unwrap_or_default();
+        v.push(input);
+        self.topic_references = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The topic references of the source template of an analysis.</p>
+    pub fn set_topic_references(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicReference>>) -> Self {
+        self.topic_references = input;
+        self
+    }
+    /// <p>The topic references of the source template of an analysis.</p>
+    pub fn get_topic_references(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicReference>> {
+        &self.topic_references
     }
     /// <p>The Amazon Resource Name (ARN) of the source template of an analysis.</p>
     /// This field is required.
@@ -83,6 +112,7 @@ impl AnalysisSourceTemplateBuilder {
                     "data_set_references was not specified but it is required when building AnalysisSourceTemplate",
                 )
             })?,
+            topic_references: self.topic_references,
             arn: self.arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",

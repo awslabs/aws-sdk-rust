@@ -14,6 +14,7 @@
 /// match offersortby {
 ///     OfferSortBy::AvailabilityEndDate => { /* ... */ },
 ///     OfferSortBy::BuyerAccounts => { /* ... */ },
+///     OfferSortBy::CreatedBySource => { /* ... */ },
 ///     OfferSortBy::EntityId => { /* ... */ },
 ///     OfferSortBy::LastModifiedDate => { /* ... */ },
 ///     OfferSortBy::Name => { /* ... */ },
@@ -22,6 +23,8 @@
 ///     OfferSortBy::ReleaseDate => { /* ... */ },
 ///     OfferSortBy::ResaleAuthorizationId => { /* ... */ },
 ///     OfferSortBy::State => { /* ... */ },
+///     OfferSortBy::TargetAgreementId => { /* ... */ },
+///     OfferSortBy::TargetAgreementIntent => { /* ... */ },
 ///     OfferSortBy::Targeting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -56,6 +59,8 @@ pub enum OfferSortBy {
     #[allow(missing_docs)] // documentation missing in model
     BuyerAccounts,
     #[allow(missing_docs)] // documentation missing in model
+    CreatedBySource,
+    #[allow(missing_docs)] // documentation missing in model
     EntityId,
     #[allow(missing_docs)] // documentation missing in model
     LastModifiedDate,
@@ -72,6 +77,10 @@ pub enum OfferSortBy {
     #[allow(missing_docs)] // documentation missing in model
     State,
     #[allow(missing_docs)] // documentation missing in model
+    TargetAgreementId,
+    #[allow(missing_docs)] // documentation missing in model
+    TargetAgreementIntent,
+    #[allow(missing_docs)] // documentation missing in model
     Targeting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -82,6 +91,7 @@ impl ::std::convert::From<&str> for OfferSortBy {
         match s {
             "AvailabilityEndDate" => OfferSortBy::AvailabilityEndDate,
             "BuyerAccounts" => OfferSortBy::BuyerAccounts,
+            "CreatedBySource" => OfferSortBy::CreatedBySource,
             "EntityId" => OfferSortBy::EntityId,
             "LastModifiedDate" => OfferSortBy::LastModifiedDate,
             "Name" => OfferSortBy::Name,
@@ -90,6 +100,8 @@ impl ::std::convert::From<&str> for OfferSortBy {
             "ReleaseDate" => OfferSortBy::ReleaseDate,
             "ResaleAuthorizationId" => OfferSortBy::ResaleAuthorizationId,
             "State" => OfferSortBy::State,
+            "TargetAgreementId" => OfferSortBy::TargetAgreementId,
+            "TargetAgreementIntent" => OfferSortBy::TargetAgreementIntent,
             "Targeting" => OfferSortBy::Targeting,
             other => OfferSortBy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -108,6 +120,7 @@ impl OfferSortBy {
         match self {
             OfferSortBy::AvailabilityEndDate => "AvailabilityEndDate",
             OfferSortBy::BuyerAccounts => "BuyerAccounts",
+            OfferSortBy::CreatedBySource => "CreatedBySource",
             OfferSortBy::EntityId => "EntityId",
             OfferSortBy::LastModifiedDate => "LastModifiedDate",
             OfferSortBy::Name => "Name",
@@ -116,6 +129,8 @@ impl OfferSortBy {
             OfferSortBy::ReleaseDate => "ReleaseDate",
             OfferSortBy::ResaleAuthorizationId => "ResaleAuthorizationId",
             OfferSortBy::State => "State",
+            OfferSortBy::TargetAgreementId => "TargetAgreementId",
+            OfferSortBy::TargetAgreementIntent => "TargetAgreementIntent",
             OfferSortBy::Targeting => "Targeting",
             OfferSortBy::Unknown(value) => value.as_str(),
         }
@@ -125,6 +140,7 @@ impl OfferSortBy {
         &[
             "AvailabilityEndDate",
             "BuyerAccounts",
+            "CreatedBySource",
             "EntityId",
             "LastModifiedDate",
             "Name",
@@ -133,6 +149,8 @@ impl OfferSortBy {
             "ReleaseDate",
             "ResaleAuthorizationId",
             "State",
+            "TargetAgreementId",
+            "TargetAgreementIntent",
             "Targeting",
         ]
     }
@@ -159,6 +177,7 @@ impl ::std::fmt::Display for OfferSortBy {
         match self {
             OfferSortBy::AvailabilityEndDate => write!(f, "AvailabilityEndDate"),
             OfferSortBy::BuyerAccounts => write!(f, "BuyerAccounts"),
+            OfferSortBy::CreatedBySource => write!(f, "CreatedBySource"),
             OfferSortBy::EntityId => write!(f, "EntityId"),
             OfferSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             OfferSortBy::Name => write!(f, "Name"),
@@ -167,6 +186,8 @@ impl ::std::fmt::Display for OfferSortBy {
             OfferSortBy::ReleaseDate => write!(f, "ReleaseDate"),
             OfferSortBy::ResaleAuthorizationId => write!(f, "ResaleAuthorizationId"),
             OfferSortBy::State => write!(f, "State"),
+            OfferSortBy::TargetAgreementId => write!(f, "TargetAgreementId"),
+            OfferSortBy::TargetAgreementIntent => write!(f, "TargetAgreementIntent"),
             OfferSortBy::Targeting => write!(f, "Targeting"),
             OfferSortBy::Unknown(value) => write!(f, "{value}"),
         }

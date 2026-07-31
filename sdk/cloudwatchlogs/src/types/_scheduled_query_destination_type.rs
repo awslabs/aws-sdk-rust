@@ -12,6 +12,7 @@
 /// ```text
 /// # let scheduledquerydestinationtype = unimplemented!();
 /// match scheduledquerydestinationtype {
+///     ScheduledQueryDestinationType::LookupTable => { /* ... */ },
 ///     ScheduledQueryDestinationType::S3 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum ScheduledQueryDestinationType {
     #[allow(missing_docs)] // documentation missing in model
+    LookupTable,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum ScheduledQueryDestinationType {
 impl ::std::convert::From<&str> for ScheduledQueryDestinationType {
     fn from(s: &str) -> Self {
         match s {
+            "LOOKUP_TABLE" => ScheduledQueryDestinationType::LookupTable,
             "S3" => ScheduledQueryDestinationType::S3,
             other => ScheduledQueryDestinationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl ScheduledQueryDestinationType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ScheduledQueryDestinationType::LookupTable => "LOOKUP_TABLE",
             ScheduledQueryDestinationType::S3 => "S3",
             ScheduledQueryDestinationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["S3"]
+        &["LOOKUP_TABLE", "S3"]
     }
 }
 impl ::std::convert::AsRef<str> for ScheduledQueryDestinationType {
@@ -95,6 +100,7 @@ impl ScheduledQueryDestinationType {
 impl ::std::fmt::Display for ScheduledQueryDestinationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ScheduledQueryDestinationType::LookupTable => write!(f, "LOOKUP_TABLE"),
             ScheduledQueryDestinationType::S3 => write!(f, "S3"),
             ScheduledQueryDestinationType::Unknown(value) => write!(f, "{value}"),
         }

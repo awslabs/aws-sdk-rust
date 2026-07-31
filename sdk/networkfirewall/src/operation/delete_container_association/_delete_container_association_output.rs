@@ -7,7 +7,7 @@ pub struct DeleteContainerAssociationOutput {
     pub container_association_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the container association.</p>
     pub container_association_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The current status of the container association.</p>
+    /// <p>The current status of the container association. After deletion is initiated, the status is <code>DELETING</code>.</p>
     pub status: ::std::option::Option<crate::types::ContainerAssociationStatus>,
     _request_id: Option<String>,
 }
@@ -20,7 +20,7 @@ impl DeleteContainerAssociationOutput {
     pub fn container_association_arn(&self) -> ::std::option::Option<&str> {
         self.container_association_arn.as_deref()
     }
-    /// <p>The current status of the container association.</p>
+    /// <p>The current status of the container association. After deletion is initiated, the status is <code>DELETING</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ContainerAssociationStatus> {
         self.status.as_ref()
     }
@@ -75,17 +75,17 @@ impl DeleteContainerAssociationOutputBuilder {
     pub fn get_container_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_association_arn
     }
-    /// <p>The current status of the container association.</p>
+    /// <p>The current status of the container association. After deletion is initiated, the status is <code>DELETING</code>.</p>
     pub fn status(mut self, input: crate::types::ContainerAssociationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the container association.</p>
+    /// <p>The current status of the container association. After deletion is initiated, the status is <code>DELETING</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ContainerAssociationStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the container association.</p>
+    /// <p>The current status of the container association. After deletion is initiated, the status is <code>DELETING</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerAssociationStatus> {
         &self.status
     }

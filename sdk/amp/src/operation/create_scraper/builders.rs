@@ -216,4 +216,23 @@ impl CreateScraperFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
+    /// Appends an item to `exporters`.
+    ///
+    /// To override the contents of this collection use [`set_exporters`](Self::set_exporters).
+    ///
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    pub fn exporters(mut self, input: crate::types::ExporterConfiguration) -> Self {
+        self.inner = self.inner.exporters(input);
+        self
+    }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    pub fn set_exporters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>) -> Self {
+        self.inner = self.inner.set_exporters(input);
+        self
+    }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    pub fn get_exporters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>> {
+        self.inner.get_exporters()
+    }
 }

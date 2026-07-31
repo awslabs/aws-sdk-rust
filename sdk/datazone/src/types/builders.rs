@@ -193,6 +193,8 @@ pub use crate::types::_lakehouse_properties_input::LakehousePropertiesInputBuild
 
 pub use crate::types::_vpc_properties_input::VpcPropertiesInputBuilder;
 
+pub use crate::types::_git_properties_input::GitPropertiesInputBuilder;
+
 pub use crate::types::_physical_endpoint::PhysicalEndpointBuilder;
 
 pub use crate::types::_athena_properties_output::AthenaPropertiesOutputBuilder;
@@ -224,6 +226,8 @@ pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerle
 pub use crate::types::_lakehouse_properties_output::LakehousePropertiesOutputBuilder;
 
 pub use crate::types::_vpc_properties_output::VpcPropertiesOutputBuilder;
+
+pub use crate::types::_git_properties_output::GitPropertiesOutputBuilder;
 
 pub use crate::types::_environment_parameter::EnvironmentParameterBuilder;
 
@@ -354,6 +358,8 @@ pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatchBuilder;
 pub use crate::types::_lakehouse_properties_patch::LakehousePropertiesPatchBuilder;
 
 pub use crate::types::_vpc_properties_patch::VpcPropertiesPatchBuilder;
+
+pub use crate::types::_git_properties_patch::GitPropertiesPatchBuilder;
 
 pub use crate::types::_domain_unit_user_properties::DomainUnitUserPropertiesBuilder;
 

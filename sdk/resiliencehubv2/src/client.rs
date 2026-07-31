@@ -204,6 +204,8 @@ mod create_service_function_resources;
 
 mod create_system;
 
+mod create_test;
+
 mod create_user_journey;
 
 /// Operation customization and supporting types.
@@ -247,6 +249,10 @@ mod delete_service_function_resources;
 
 mod delete_system;
 
+mod delete_test;
+
+mod delete_test_sources;
+
 mod delete_user_journey;
 
 mod get_failure_mode_finding;
@@ -256,6 +262,12 @@ mod get_policy;
 mod get_service;
 
 mod get_system;
+
+mod get_test;
+
+mod get_test_run;
+
+mod get_test_template;
 
 mod get_user_journey;
 
@@ -277,6 +289,8 @@ mod list_policies;
 
 mod list_reports;
 
+mod list_resolved_test_run_target_resources;
+
 mod list_resources;
 
 mod list_service_events;
@@ -293,9 +307,27 @@ mod list_systems;
 
 mod list_tags_for_resource;
 
+mod list_test_run_events;
+
+mod list_test_run_sources;
+
+mod list_test_runs;
+
+mod list_test_sources;
+
+mod list_test_templates;
+
+mod list_tests;
+
 mod list_user_journeys;
 
+mod put_test_sources;
+
 mod start_failure_mode_assessment;
+
+mod start_test_run;
+
+mod stop_test_run;
 
 mod tag_resource;
 
@@ -314,5 +346,7 @@ mod update_service;
 mod update_service_function;
 
 mod update_system;
+
+mod update_test;
 
 mod update_user_journey;

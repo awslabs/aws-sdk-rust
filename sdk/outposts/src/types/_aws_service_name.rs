@@ -14,6 +14,7 @@
 /// match awsservicename {
 ///     AwsServiceName::Aws => { /* ... */ },
 ///     AwsServiceName::Ec2 => { /* ... */ },
+///     AwsServiceName::Eks => { /* ... */ },
 ///     AwsServiceName::Elasticache => { /* ... */ },
 ///     AwsServiceName::Elb => { /* ... */ },
 ///     AwsServiceName::Rds => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum AwsServiceName {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
     #[allow(missing_docs)] // documentation missing in model
+    Eks,
+    #[allow(missing_docs)] // documentation missing in model
     Elasticache,
     #[allow(missing_docs)] // documentation missing in model
     Elb,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for AwsServiceName {
         match s {
             "AWS" => AwsServiceName::Aws,
             "EC2" => AwsServiceName::Ec2,
+            "EKS" => AwsServiceName::Eks,
             "ELASTICACHE" => AwsServiceName::Elasticache,
             "ELB" => AwsServiceName::Elb,
             "RDS" => AwsServiceName::Rds,
@@ -88,6 +92,7 @@ impl AwsServiceName {
         match self {
             AwsServiceName::Aws => "AWS",
             AwsServiceName::Ec2 => "EC2",
+            AwsServiceName::Eks => "EKS",
             AwsServiceName::Elasticache => "ELASTICACHE",
             AwsServiceName::Elb => "ELB",
             AwsServiceName::Rds => "RDS",
@@ -97,7 +102,7 @@ impl AwsServiceName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS", "EC2", "ELASTICACHE", "ELB", "RDS", "ROUTE53"]
+        &["AWS", "EC2", "EKS", "ELASTICACHE", "ELB", "RDS", "ROUTE53"]
     }
 }
 impl ::std::convert::AsRef<str> for AwsServiceName {
@@ -122,6 +127,7 @@ impl ::std::fmt::Display for AwsServiceName {
         match self {
             AwsServiceName::Aws => write!(f, "AWS"),
             AwsServiceName::Ec2 => write!(f, "EC2"),
+            AwsServiceName::Eks => write!(f, "EKS"),
             AwsServiceName::Elasticache => write!(f, "ELASTICACHE"),
             AwsServiceName::Elb => write!(f, "ELB"),
             AwsServiceName::Rds => write!(f, "RDS"),

@@ -36,6 +36,30 @@ pub fn ser_topic_named_entity(
         }
         array_8.finish();
     }
+    if let Some(var_11) = &input.sort {
+        let mut array_12 = object.key("Sort").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_named_entity_sort::ser_named_entity_sort(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_15) = &input.rank_order {
+        object.key("RankOrder").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+        );
+    }
+    if let Some(var_16) = &input.presentation_order {
+        object.key("PresentationOrder").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
+    }
     Ok(())
 }
 
@@ -90,6 +114,27 @@ where
                                     _value,
                                     depth + 1,
                                 )?);
+                            }
+                            "Sort" => {
+                                builder = builder.set_sort(crate::protocol_serde::shape_named_entity_sort_list::de_named_entity_sort_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "RankOrder" => {
+                                builder = builder.set_rank_order(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "PresentationOrder" => {
+                                builder = builder.set_presentation_order(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }

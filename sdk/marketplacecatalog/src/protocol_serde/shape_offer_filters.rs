@@ -69,5 +69,23 @@ pub fn ser_offer_filters(
         crate::protocol_serde::shape_offer_set_id_filter::ser_offer_set_id_filter(&mut object_22, var_21)?;
         object_22.finish();
     }
+    if let Some(var_23) = &input.target_agreement_id {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("TargetAgreementId").start_object();
+        crate::protocol_serde::shape_offer_target_agreement_id_filter::ser_offer_target_agreement_id_filter(&mut object_24, var_23)?;
+        object_24.finish();
+    }
+    if let Some(var_25) = &input.target_agreement_intent {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("TargetAgreementIntent").start_object();
+        crate::protocol_serde::shape_offer_target_agreement_intent_filter::ser_offer_target_agreement_intent_filter(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.created_by_source {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("CreatedBySource").start_object();
+        crate::protocol_serde::shape_offer_created_by_source_filter::ser_offer_created_by_source_filter(&mut object_28, var_27)?;
+        object_28.finish();
+    }
     Ok(())
 }

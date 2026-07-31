@@ -3,20 +3,23 @@ pub fn ser_update_feed_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_feed::UpdateFeedInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    if let Some(var_1) = &input.access_role_arn {
+        object.key("accessRoleArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.outputs {
-        let mut array_3 = object.key("outputs").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.outputs {
+        let mut array_4 = object.key("outputs").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_update_output::ser_update_output(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_update_output::ser_update_output(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
     Ok(())
 }

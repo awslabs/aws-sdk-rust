@@ -25,6 +25,10 @@ pub enum ContentBlock {
     SearchResult(crate::types::SearchResultBlock),
     /// <p>Text to include in the message.</p>
     Text(::std::string::String),
+    /// <p>A content block for adding a tool to the available tool set mid-conversation. Each block references a single tool via its <code>tool</code> field. Use within a <code>system</code> role message to make a tool available without re-sending the full tool configuration.</p>
+    ToolAddition(crate::types::ToolAdditionBlock),
+    /// <p>A content block for removing a tool from the available tool set mid-conversation. Each block references a single tool via its <code>tool</code> field. Use within a <code>system</code> role message to remove a tool without re-sending the full tool configuration.</p>
+    ToolRemoval(crate::types::ToolRemovalBlock),
     /// <p>The result for a tool request that a model makes.</p>
     ToolResult(crate::types::ToolResultBlock),
     /// <p>Information about a tool use request from a model.</p>
@@ -159,6 +163,32 @@ impl ContentBlock {
     pub fn is_text(&self) -> bool {
         self.as_text().is_ok()
     }
+    /// Tries to convert the enum instance into [`ToolAddition`](crate::types::ContentBlock::ToolAddition), extracting the inner [`ToolAdditionBlock`](crate::types::ToolAdditionBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tool_addition(&self) -> ::std::result::Result<&crate::types::ToolAdditionBlock, &Self> {
+        if let ContentBlock::ToolAddition(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ToolAddition`](crate::types::ContentBlock::ToolAddition).
+    pub fn is_tool_addition(&self) -> bool {
+        self.as_tool_addition().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ToolRemoval`](crate::types::ContentBlock::ToolRemoval), extracting the inner [`ToolRemovalBlock`](crate::types::ToolRemovalBlock).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_tool_removal(&self) -> ::std::result::Result<&crate::types::ToolRemovalBlock, &Self> {
+        if let ContentBlock::ToolRemoval(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ToolRemoval`](crate::types::ContentBlock::ToolRemoval).
+    pub fn is_tool_removal(&self) -> bool {
+        self.as_tool_removal().is_ok()
+    }
     /// Tries to convert the enum instance into [`ToolResult`](crate::types::ContentBlock::ToolResult), extracting the inner [`ToolResultBlock`](crate::types::ToolResultBlock).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_tool_result(&self) -> ::std::result::Result<&crate::types::ToolResultBlock, &Self> {
@@ -215,6 +245,8 @@ impl ::std::fmt::Debug for ContentBlock {
             ContentBlock::ReasoningContent(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             ContentBlock::SearchResult(val) => f.debug_tuple("SearchResult").field(&val).finish(),
             ContentBlock::Text(val) => f.debug_tuple("Text").field(&val).finish(),
+            ContentBlock::ToolAddition(val) => f.debug_tuple("ToolAddition").field(&val).finish(),
+            ContentBlock::ToolRemoval(val) => f.debug_tuple("ToolRemoval").field(&val).finish(),
             ContentBlock::ToolResult(val) => f.debug_tuple("ToolResult").field(&val).finish(),
             ContentBlock::ToolUse(val) => f.debug_tuple("ToolUse").field(&val).finish(),
             ContentBlock::Video(val) => f.debug_tuple("Video").field(&val).finish(),

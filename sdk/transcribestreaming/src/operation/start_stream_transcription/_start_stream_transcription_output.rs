@@ -54,6 +54,8 @@ pub struct StartStreamTranscriptionOutput {
     pub vocabulary_filter_names: ::std::option::Option<::std::string::String>,
     /// <p>Provides the session resume window, in minutes, that you specified in your request.</p>
     pub session_resume_window: ::std::option::Option<i32>,
+    /// <p>Provides the transcript format that you specified in your request.</p>
+    pub transcript_format: ::std::option::Option<crate::types::TranscriptFormat>,
     _request_id: Option<String>,
 }
 impl StartStreamTranscriptionOutput {
@@ -159,6 +161,10 @@ impl StartStreamTranscriptionOutput {
     pub fn session_resume_window(&self) -> ::std::option::Option<i32> {
         self.session_resume_window
     }
+    /// <p>Provides the transcript format that you specified in your request.</p>
+    pub fn transcript_format(&self) -> ::std::option::Option<&crate::types::TranscriptFormat> {
+        self.transcript_format.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for StartStreamTranscriptionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -203,6 +209,7 @@ pub struct StartStreamTranscriptionOutputBuilder {
     pub(crate) vocabulary_names: ::std::option::Option<::std::string::String>,
     pub(crate) vocabulary_filter_names: ::std::option::Option<::std::string::String>,
     pub(crate) session_resume_window: ::std::option::Option<i32>,
+    pub(crate) transcript_format: ::std::option::Option<crate::types::TranscriptFormat>,
     _request_id: Option<String>,
 }
 impl StartStreamTranscriptionOutputBuilder {
@@ -568,6 +575,20 @@ impl StartStreamTranscriptionOutputBuilder {
     pub fn get_session_resume_window(&self) -> &::std::option::Option<i32> {
         &self.session_resume_window
     }
+    /// <p>Provides the transcript format that you specified in your request.</p>
+    pub fn transcript_format(mut self, input: crate::types::TranscriptFormat) -> Self {
+        self.transcript_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Provides the transcript format that you specified in your request.</p>
+    pub fn set_transcript_format(mut self, input: ::std::option::Option<crate::types::TranscriptFormat>) -> Self {
+        self.transcript_format = input;
+        self
+    }
+    /// <p>Provides the transcript format that you specified in your request.</p>
+    pub fn get_transcript_format(&self) -> &::std::option::Option<crate::types::TranscriptFormat> {
+        &self.transcript_format
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -617,6 +638,7 @@ impl StartStreamTranscriptionOutputBuilder {
             vocabulary_names: self.vocabulary_names,
             vocabulary_filter_names: self.vocabulary_filter_names,
             session_resume_window: self.session_resume_window,
+            transcript_format: self.transcript_format,
             _request_id: self._request_id,
         })
     }

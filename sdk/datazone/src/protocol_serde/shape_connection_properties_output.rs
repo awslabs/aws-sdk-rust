@@ -132,6 +132,11 @@ where
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'vpcProperties' cannot be null"),
                             )?,
                         )),
+                        "gitProperties" => Some(crate::types::ConnectionPropertiesOutput::GitProperties(
+                            crate::protocol_serde::shape_git_properties_output::de_git_properties_output(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'gitProperties' cannot be null"),
+                            )?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ConnectionPropertiesOutput::Unknown)

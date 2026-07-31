@@ -14,6 +14,8 @@ pub struct AssetOptions {
     pub excluded_data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of visual custom actions for the analysis.</p>
     pub custom_action_defaults: ::std::option::Option<crate::types::VisualCustomActionDefaults>,
+    /// <p>The configuration options for the messages that are displayed on visuals in the analysis.</p>
+    pub visual_messages: ::std::option::Option<crate::types::VisualMessages>,
 }
 impl AssetOptions {
     /// <p>Determines the timezone for the analysis.</p>
@@ -38,6 +40,10 @@ impl AssetOptions {
     pub fn custom_action_defaults(&self) -> ::std::option::Option<&crate::types::VisualCustomActionDefaults> {
         self.custom_action_defaults.as_ref()
     }
+    /// <p>The configuration options for the messages that are displayed on visuals in the analysis.</p>
+    pub fn visual_messages(&self) -> ::std::option::Option<&crate::types::VisualMessages> {
+        self.visual_messages.as_ref()
+    }
 }
 impl AssetOptions {
     /// Creates a new builder-style object to manufacture [`AssetOptions`](crate::types::AssetOptions).
@@ -55,6 +61,7 @@ pub struct AssetOptionsBuilder {
     pub(crate) q_business_insights_status: ::std::option::Option<crate::types::QBusinessInsightsStatus>,
     pub(crate) excluded_data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) custom_action_defaults: ::std::option::Option<crate::types::VisualCustomActionDefaults>,
+    pub(crate) visual_messages: ::std::option::Option<crate::types::VisualMessages>,
 }
 impl AssetOptionsBuilder {
     /// <p>Determines the timezone for the analysis.</p>
@@ -133,6 +140,20 @@ impl AssetOptionsBuilder {
     pub fn get_custom_action_defaults(&self) -> &::std::option::Option<crate::types::VisualCustomActionDefaults> {
         &self.custom_action_defaults
     }
+    /// <p>The configuration options for the messages that are displayed on visuals in the analysis.</p>
+    pub fn visual_messages(mut self, input: crate::types::VisualMessages) -> Self {
+        self.visual_messages = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration options for the messages that are displayed on visuals in the analysis.</p>
+    pub fn set_visual_messages(mut self, input: ::std::option::Option<crate::types::VisualMessages>) -> Self {
+        self.visual_messages = input;
+        self
+    }
+    /// <p>The configuration options for the messages that are displayed on visuals in the analysis.</p>
+    pub fn get_visual_messages(&self) -> &::std::option::Option<crate::types::VisualMessages> {
+        &self.visual_messages
+    }
     /// Consumes the builder and constructs a [`AssetOptions`](crate::types::AssetOptions).
     pub fn build(self) -> crate::types::AssetOptions {
         crate::types::AssetOptions {
@@ -141,6 +162,7 @@ impl AssetOptionsBuilder {
             q_business_insights_status: self.q_business_insights_status,
             excluded_data_set_arns: self.excluded_data_set_arns,
             custom_action_defaults: self.custom_action_defaults,
+            visual_messages: self.visual_messages,
         }
     }
 }

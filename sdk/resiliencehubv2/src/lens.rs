@@ -69,6 +69,16 @@ pub(crate) fn reflens_list_reports_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_resolved_test_run_target_resources_output_output_next_token(
+    input: &crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_resources_output_output_next_token(
     input: &crate::operation::list_resources::ListResourcesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -139,6 +149,56 @@ pub(crate) fn reflens_list_systems_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_test_run_events_output_output_next_token(
+    input: &crate::operation::list_test_run_events::ListTestRunEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_test_run_sources_output_output_next_token(
+    input: &crate::operation::list_test_run_sources::ListTestRunSourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_test_runs_output_output_next_token(
+    input: &crate::operation::list_test_runs::ListTestRunsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_test_sources_output_output_next_token(
+    input: &crate::operation::list_test_sources::ListTestSourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_tests_output_output_next_token(
+    input: &crate::operation::list_tests::ListTestsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_user_journeys_output_output_next_token(
     input: &crate::operation::list_user_journeys::ListUserJourneysOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -198,6 +258,13 @@ pub(crate) fn lens_list_reports_output_output_report_generation_results(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_resolved_test_run_target_resources_output_output_resolved_target_resources(
+    input: crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResolvedTargetResource>> {
+    let input = input.resolved_target_resources;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_resources_output_output_service_resources(
     input: crate::operation::list_resources::ListResourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceResource>> {
@@ -244,6 +311,41 @@ pub(crate) fn lens_list_systems_output_output_system_summaries(
     input: crate::operation::list_systems::ListSystemsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SystemSummary>> {
     let input = input.system_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_test_run_events_output_output_events(
+    input: crate::operation::list_test_run_events::ListTestRunEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TestRunEvent>> {
+    let input = input.events;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_test_run_sources_output_output_test_run_sources(
+    input: crate::operation::list_test_run_sources::ListTestRunSourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TestRunSourceSummary>> {
+    let input = input.test_run_sources;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_test_runs_output_output_test_runs(
+    input: crate::operation::list_test_runs::ListTestRunsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TestRunSummary>> {
+    let input = input.test_runs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_test_sources_output_output_test_sources(
+    input: crate::operation::list_test_sources::ListTestSourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TestSourceSummary>> {
+    let input = input.test_sources;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_tests_output_output_tests(
+    input: crate::operation::list_tests::ListTestsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TestSummary>> {
+    let input = input.tests;
     ::std::option::Option::Some(input)
 }
 

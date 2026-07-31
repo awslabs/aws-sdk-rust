@@ -37,22 +37,20 @@ pub fn de_additional_storage_volume_output(
                 builder = builder.set_storage_volume_status(var_2);
             }
             ,
-            s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#AdditionalStorageVolumeOutput$AllocatedStorage */ =>  {
+            s if s.matches("StorageOperationStatus") /* StorageOperationStatus com.amazonaws.rds#AdditionalStorageVolumeOutput$StorageOperationStatus */ =>  {
                 let var_3 =
                     Some(
-                         {
-                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
-                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
-                        }
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
                         ?
                     )
                 ;
-                builder = builder.set_allocated_storage(var_3);
+                builder = builder.set_storage_operation_status(var_3);
             }
             ,
-            s if s.matches("IOPS") /* IOPS com.amazonaws.rds#AdditionalStorageVolumeOutput$IOPS */ =>  {
+            s if s.matches("StorageOperationPercentProgress") /* StorageOperationPercentProgress com.amazonaws.rds#AdditionalStorageVolumeOutput$StorageOperationPercentProgress */ =>  {
                 let var_4 =
                     Some(
                          {
@@ -64,25 +62,25 @@ pub fn de_additional_storage_volume_output(
                         ?
                     )
                 ;
-                builder = builder.set_iops(var_4);
+                builder = builder.set_storage_operation_percent_progress(var_4);
             }
             ,
-            s if s.matches("MaxAllocatedStorage") /* MaxAllocatedStorage com.amazonaws.rds#AdditionalStorageVolumeOutput$MaxAllocatedStorage */ =>  {
+            s if s.matches("AllocatedStorage") /* AllocatedStorage com.amazonaws.rds#AdditionalStorageVolumeOutput$AllocatedStorage */ =>  {
                 let var_5 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
                                 ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             )
-                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#Integer`)"))
                         }
                         ?
                     )
                 ;
-                builder = builder.set_max_allocated_storage(var_5);
+                builder = builder.set_allocated_storage(var_5);
             }
             ,
-            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#AdditionalStorageVolumeOutput$StorageThroughput */ =>  {
+            s if s.matches("IOPS") /* IOPS com.amazonaws.rds#AdditionalStorageVolumeOutput$IOPS */ =>  {
                 let var_6 =
                     Some(
                          {
@@ -94,11 +92,41 @@ pub fn de_additional_storage_volume_output(
                         ?
                     )
                 ;
-                builder = builder.set_storage_throughput(var_6);
+                builder = builder.set_iops(var_6);
+            }
+            ,
+            s if s.matches("MaxAllocatedStorage") /* MaxAllocatedStorage com.amazonaws.rds#AdditionalStorageVolumeOutput$MaxAllocatedStorage */ =>  {
+                let var_7 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_allocated_storage(var_7);
+            }
+            ,
+            s if s.matches("StorageThroughput") /* StorageThroughput com.amazonaws.rds#AdditionalStorageVolumeOutput$StorageThroughput */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_throughput(var_8);
             }
             ,
             s if s.matches("StorageType") /* StorageType com.amazonaws.rds#AdditionalStorageVolumeOutput$StorageType */ =>  {
-                let var_7 =
+                let var_9 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -107,7 +135,7 @@ pub fn de_additional_storage_volume_output(
                         ?
                     )
                 ;
-                builder = builder.set_storage_type(var_7);
+                builder = builder.set_storage_type(var_9);
             }
             ,
             _ => {}

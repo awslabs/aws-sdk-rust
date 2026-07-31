@@ -48,7 +48,11 @@ where
                             );
                         }
                         "Synonyms" => {
-                            builder = builder.set_synonyms(crate::protocol_serde::shape_string_list::de_string_list(tokens, _value, depth + 1)?);
+                            builder = builder.set_synonyms(crate::protocol_serde::shape_sensitive_string_list::de_sensitive_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

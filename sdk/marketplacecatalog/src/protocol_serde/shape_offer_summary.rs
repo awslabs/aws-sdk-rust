@@ -82,6 +82,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TargetAgreementId" => {
+                            builder = builder.set_target_agreement_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TargetAgreementIntent" => {
+                            builder = builder.set_target_agreement_intent(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::OfferTargetAgreementIntentString::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CreatedBySource" => {
+                            builder = builder.set_created_by_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::OfferCreatedBySourceString::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

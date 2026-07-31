@@ -191,6 +191,10 @@ pub use crate::types::_citations_content_block::CitationsContentBlockBuilder;
 
 pub use crate::types::_search_result_block::SearchResultBlockBuilder;
 
+pub use crate::types::_tool_addition_block::ToolAdditionBlockBuilder;
+
+pub use crate::types::_tool_removal_block::ToolRemovalBlockBuilder;
+
 pub use crate::types::_error_block::ErrorBlockBuilder;
 
 pub use crate::types::_guardrail_automated_reasoning_valid_finding::GuardrailAutomatedReasoningValidFindingBuilder;
@@ -210,6 +214,8 @@ pub use crate::types::_guardrail_automated_reasoning_no_translations_finding::Gu
 pub use crate::types::_citations_config::CitationsConfigBuilder;
 
 pub use crate::types::_reasoning_text_block::ReasoningTextBlockBuilder;
+
+pub use crate::types::_tool_reference::ToolReferenceBuilder;
 
 pub use crate::types::_citation_source_content_delta::CitationSourceContentDeltaBuilder;
 

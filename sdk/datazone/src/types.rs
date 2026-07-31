@@ -399,6 +399,8 @@ pub use crate::types::_lakehouse_properties_input::LakehousePropertiesInput;
 
 pub use crate::types::_vpc_properties_input::VpcPropertiesInput;
 
+pub use crate::types::_git_properties_input::GitPropertiesInput;
+
 pub use crate::types::_physical_endpoint::PhysicalEndpoint;
 
 pub use crate::types::_athena_properties_output::AthenaPropertiesOutput;
@@ -430,6 +432,8 @@ pub use crate::types::_workflows_serverless_properties_output::WorkflowsServerle
 pub use crate::types::_lakehouse_properties_output::LakehousePropertiesOutput;
 
 pub use crate::types::_vpc_properties_output::VpcPropertiesOutput;
+
+pub use crate::types::_git_properties_output::GitPropertiesOutput;
 
 pub use crate::types::_environment_parameter::EnvironmentParameter;
 
@@ -584,6 +588,8 @@ pub use crate::types::_mlflow_properties_patch::MlflowPropertiesPatch;
 pub use crate::types::_lakehouse_properties_patch::LakehousePropertiesPatch;
 
 pub use crate::types::_vpc_properties_patch::VpcPropertiesPatch;
+
+pub use crate::types::_git_properties_patch::GitPropertiesPatch;
 
 pub use crate::types::_data_product_item_type::DataProductItemType;
 
@@ -1216,6 +1222,12 @@ mod _form_type_data;
 mod _form_type_status;
 
 mod _git_metadata;
+
+mod _git_properties_input;
+
+mod _git_properties_output;
+
+mod _git_properties_patch;
 
 mod _glossary_item;
 

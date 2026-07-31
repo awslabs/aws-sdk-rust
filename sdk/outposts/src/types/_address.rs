@@ -2,7 +2,7 @@
 
 /// <p>Information about an address.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Address {
     /// <p>The name of the contact.</p>
     pub contact_name: ::std::string::String,
@@ -80,6 +80,23 @@ impl Address {
         self.municipality.as_deref()
     }
 }
+impl ::std::fmt::Debug for Address {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Address");
+        formatter.field("contact_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("contact_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("address_line1", &"*** Sensitive Data Redacted ***");
+        formatter.field("address_line2", &"*** Sensitive Data Redacted ***");
+        formatter.field("address_line3", &"*** Sensitive Data Redacted ***");
+        formatter.field("city", &"*** Sensitive Data Redacted ***");
+        formatter.field("state_or_region", &"*** Sensitive Data Redacted ***");
+        formatter.field("district_or_county", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("country_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("municipality", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Address {
     /// Creates a new builder-style object to manufacture [`Address`](crate::types::Address).
     pub fn builder() -> crate::types::builders::AddressBuilder {
@@ -88,7 +105,7 @@ impl Address {
 }
 
 /// A builder for [`Address`](crate::types::Address).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AddressBuilder {
     pub(crate) contact_name: ::std::option::Option<::std::string::String>,
@@ -323,5 +340,22 @@ impl AddressBuilder {
             })?,
             municipality: self.municipality,
         })
+    }
+}
+impl ::std::fmt::Debug for AddressBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AddressBuilder");
+        formatter.field("contact_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("contact_phone_number", &"*** Sensitive Data Redacted ***");
+        formatter.field("address_line1", &"*** Sensitive Data Redacted ***");
+        formatter.field("address_line2", &"*** Sensitive Data Redacted ***");
+        formatter.field("address_line3", &"*** Sensitive Data Redacted ***");
+        formatter.field("city", &"*** Sensitive Data Redacted ***");
+        formatter.field("state_or_region", &"*** Sensitive Data Redacted ***");
+        formatter.field("district_or_county", &"*** Sensitive Data Redacted ***");
+        formatter.field("postal_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("country_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("municipality", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

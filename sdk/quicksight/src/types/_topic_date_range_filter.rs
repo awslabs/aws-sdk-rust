@@ -8,6 +8,8 @@ pub struct TopicDateRangeFilter {
     pub inclusive: bool,
     /// <p>The constant used in a date range filter.</p>
     pub constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
+    /// <p>The <code>null</code> filter that is applied to the date range filter.</p>
+    pub null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicDateRangeFilter {
     /// <p>A Boolean value that indicates whether the date range filter should include the boundary values. If set to true, the filter includes the start and end dates. If set to false, the filter excludes them.</p>
@@ -18,12 +20,17 @@ impl TopicDateRangeFilter {
     pub fn constant(&self) -> ::std::option::Option<&crate::types::TopicRangeFilterConstant> {
         self.constant.as_ref()
     }
+    /// <p>The <code>null</code> filter that is applied to the date range filter.</p>
+    pub fn null_filter(&self) -> ::std::option::Option<&crate::types::NullFilterType> {
+        self.null_filter.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TopicDateRangeFilter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicDateRangeFilter");
         formatter.field("inclusive", &self.inclusive);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }
@@ -40,6 +47,7 @@ impl TopicDateRangeFilter {
 pub struct TopicDateRangeFilterBuilder {
     pub(crate) inclusive: ::std::option::Option<bool>,
     pub(crate) constant: ::std::option::Option<crate::types::TopicRangeFilterConstant>,
+    pub(crate) null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicDateRangeFilterBuilder {
     /// <p>A Boolean value that indicates whether the date range filter should include the boundary values. If set to true, the filter includes the start and end dates. If set to false, the filter excludes them.</p>
@@ -70,11 +78,26 @@ impl TopicDateRangeFilterBuilder {
     pub fn get_constant(&self) -> &::std::option::Option<crate::types::TopicRangeFilterConstant> {
         &self.constant
     }
+    /// <p>The <code>null</code> filter that is applied to the date range filter.</p>
+    pub fn null_filter(mut self, input: crate::types::NullFilterType) -> Self {
+        self.null_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the date range filter.</p>
+    pub fn set_null_filter(mut self, input: ::std::option::Option<crate::types::NullFilterType>) -> Self {
+        self.null_filter = input;
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the date range filter.</p>
+    pub fn get_null_filter(&self) -> &::std::option::Option<crate::types::NullFilterType> {
+        &self.null_filter
+    }
     /// Consumes the builder and constructs a [`TopicDateRangeFilter`](crate::types::TopicDateRangeFilter).
     pub fn build(self) -> crate::types::TopicDateRangeFilter {
         crate::types::TopicDateRangeFilter {
             inclusive: self.inclusive.unwrap_or_default(),
             constant: self.constant,
+            null_filter: self.null_filter,
         }
     }
 }
@@ -83,6 +106,7 @@ impl ::std::fmt::Debug for TopicDateRangeFilterBuilder {
         let mut formatter = f.debug_struct("TopicDateRangeFilterBuilder");
         formatter.field("inclusive", &self.inclusive);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }

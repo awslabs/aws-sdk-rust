@@ -155,6 +155,13 @@ pub fn de_start_stream_transcription_http_response(
                 )
             })?,
         );
+        output = output.set_transcript_format(
+            crate::protocol_serde::shape_start_stream_transcription_output::de_transcript_format_header(_response_headers).map_err(|_| {
+                crate::operation::start_stream_transcription::StartStreamTranscriptionError::unhandled(
+                    "Failed to parse TranscriptFormat from header `x-amzn-transcribe-transcript-format",
+                )
+            })?,
+        );
         output = output.set_transcript_result_stream(Some(
             crate::protocol_serde::shape_start_stream_transcription_output::de_transcript_result_stream_payload(_response_body)?,
         ));
@@ -569,6 +576,17 @@ pub fn ser_start_stream_transcription_headers(
             )
         })?;
         builder = builder.header("x-amzn-transcribe-session-resume-window", header_value);
+    }
+    if let ::std::option::Option::Some(inner_47) = &input.transcript_format {
+        let formatted_48 = inner_47.as_str();
+        let header_value = formatted_48;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "transcript_format",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("x-amzn-transcribe-transcript-format", header_value);
     }
     Ok(builder)
 }

@@ -3,17 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContainerAssociationInput {
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub container_association_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub container_association_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContainerAssociationInput {
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_name(&self) -> ::std::option::Option<&str> {
         self.container_association_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_arn(&self) -> ::std::option::Option<&str> {
         self.container_association_arn.as_deref()
     }
@@ -33,31 +37,37 @@ pub struct DescribeContainerAssociationInputBuilder {
     pub(crate) container_association_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContainerAssociationInputBuilder {
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_association_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_container_association_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_association_name = input;
         self
     }
-    /// <p>The descriptive name of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The descriptive name of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_container_association_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_association_name
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn container_association_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.container_association_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn set_container_association_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.container_association_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the container association. You must specify the ARN or the name, and you can specify both.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container association.</p>
+    /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_container_association_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.container_association_arn
     }

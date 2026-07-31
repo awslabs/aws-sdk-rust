@@ -747,6 +747,8 @@ pub(crate) mod shape_log_stream;
 
 pub(crate) mod shape_lookup_table;
 
+pub(crate) mod shape_lookup_table_configuration;
+
 pub(crate) mod shape_lower_case_string;
 
 pub(crate) mod shape_metric_filter;

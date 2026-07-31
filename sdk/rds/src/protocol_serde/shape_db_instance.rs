@@ -1190,6 +1190,34 @@ pub fn de_db_instance(
                 builder = builder.set_storage_volume_status(var_91);
             }
             ,
+            s if s.matches("StorageOperationStatus") /* StorageOperationStatus com.amazonaws.rds#DBInstance$StorageOperationStatus */ =>  {
+                let var_92 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_operation_status(var_92);
+            }
+            ,
+            s if s.matches("StorageOperationPercentProgress") /* StorageOperationPercentProgress com.amazonaws.rds#DBInstance$StorageOperationPercentProgress */ =>  {
+                let var_93 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.rds#IntegerOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_storage_operation_percent_progress(var_93);
+            }
+            ,
             _ => {}
         }
     }

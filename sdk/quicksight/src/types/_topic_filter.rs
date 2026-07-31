@@ -2,7 +2,7 @@
 
 /// <p>A structure that represents a filter used to select items for a topic.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicFilter {
     /// <p>A description of the filter used to select items for a topic.</p>
     pub filter_description: ::std::option::Option<::std::string::String>,
@@ -83,6 +83,24 @@ impl TopicFilter {
         self.null_filter.as_ref()
     }
 }
+impl ::std::fmt::Debug for TopicFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TopicFilter");
+        formatter.field("filter_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("filter_class", &self.filter_class);
+        formatter.field("filter_name", &self.filter_name);
+        formatter.field("filter_synonyms", &"*** Sensitive Data Redacted ***");
+        formatter.field("operand_field_name", &self.operand_field_name);
+        formatter.field("filter_type", &self.filter_type);
+        formatter.field("category_filter", &self.category_filter);
+        formatter.field("numeric_equality_filter", &self.numeric_equality_filter);
+        formatter.field("numeric_range_filter", &self.numeric_range_filter);
+        formatter.field("date_range_filter", &self.date_range_filter);
+        formatter.field("relative_date_filter", &self.relative_date_filter);
+        formatter.field("null_filter", &self.null_filter);
+        formatter.finish()
+    }
+}
 impl TopicFilter {
     /// Creates a new builder-style object to manufacture [`TopicFilter`](crate::types::TopicFilter).
     pub fn builder() -> crate::types::builders::TopicFilterBuilder {
@@ -91,7 +109,7 @@ impl TopicFilter {
 }
 
 /// A builder for [`TopicFilter`](crate::types::TopicFilter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TopicFilterBuilder {
     pub(crate) filter_description: ::std::option::Option<::std::string::String>,
@@ -313,5 +331,23 @@ impl TopicFilterBuilder {
             relative_date_filter: self.relative_date_filter,
             null_filter: self.null_filter,
         })
+    }
+}
+impl ::std::fmt::Debug for TopicFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TopicFilterBuilder");
+        formatter.field("filter_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("filter_class", &self.filter_class);
+        formatter.field("filter_name", &self.filter_name);
+        formatter.field("filter_synonyms", &"*** Sensitive Data Redacted ***");
+        formatter.field("operand_field_name", &self.operand_field_name);
+        formatter.field("filter_type", &self.filter_type);
+        formatter.field("category_filter", &self.category_filter);
+        formatter.field("numeric_equality_filter", &self.numeric_equality_filter);
+        formatter.field("numeric_range_filter", &self.numeric_range_filter);
+        formatter.field("date_range_filter", &self.date_range_filter);
+        formatter.field("relative_date_filter", &self.relative_date_filter);
+        formatter.field("null_filter", &self.null_filter);
+        formatter.finish()
     }
 }

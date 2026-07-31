@@ -422,3 +422,21 @@ pub(crate) fn time_range_correct_errors(mut builder: crate::types::builders::Tim
     }
     builder
 }
+
+pub(crate) fn abandonment_rate_pacing_config_correct_errors(
+    mut builder: crate::types::builders::AbandonmentRatePacingConfigBuilder,
+) -> crate::types::builders::AbandonmentRatePacingConfigBuilder {
+    if builder.target_rate.is_none() {
+        builder.target_rate = Some(Default::default())
+    }
+    if builder.connection_start_point.is_none() {
+        builder.connection_start_point = "no value was set".parse::<crate::types::ConnectionStartPoint>().ok()
+    }
+    if builder.connection_threshold_seconds.is_none() {
+        builder.connection_threshold_seconds = Some(Default::default())
+    }
+    if builder.evaluation_window.is_none() {
+        builder.evaluation_window = Some(Default::default())
+    }
+    builder
+}

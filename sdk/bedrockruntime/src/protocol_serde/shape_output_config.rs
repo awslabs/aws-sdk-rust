@@ -9,5 +9,8 @@ pub fn ser_output_config(
         crate::protocol_serde::shape_output_format::ser_output_format(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.effort {
+        object.key("effort").string(var_3.as_str());
+    }
     Ok(())
 }

@@ -2,7 +2,7 @@
 
 /// <p>A structure that represents the cell value synonym.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CellValueSynonym {
     /// <p>The cell value.</p>
     pub cell_value: ::std::option::Option<::std::string::String>,
@@ -21,6 +21,14 @@ impl CellValueSynonym {
         self.synonyms.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for CellValueSynonym {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CellValueSynonym");
+        formatter.field("cell_value", &"*** Sensitive Data Redacted ***");
+        formatter.field("synonyms", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CellValueSynonym {
     /// Creates a new builder-style object to manufacture [`CellValueSynonym`](crate::types::CellValueSynonym).
     pub fn builder() -> crate::types::builders::CellValueSynonymBuilder {
@@ -29,7 +37,7 @@ impl CellValueSynonym {
 }
 
 /// A builder for [`CellValueSynonym`](crate::types::CellValueSynonym).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CellValueSynonymBuilder {
     pub(crate) cell_value: ::std::option::Option<::std::string::String>,
@@ -76,5 +84,13 @@ impl CellValueSynonymBuilder {
             cell_value: self.cell_value,
             synonyms: self.synonyms,
         }
+    }
+}
+impl ::std::fmt::Debug for CellValueSynonymBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CellValueSynonymBuilder");
+        formatter.field("cell_value", &"*** Sensitive Data Redacted ***");
+        formatter.field("synonyms", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

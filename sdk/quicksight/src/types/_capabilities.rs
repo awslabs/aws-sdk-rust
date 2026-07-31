@@ -80,6 +80,342 @@ pub struct Capabilities {
     pub use_agent_web_search: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to use knowledge bases to specify content from external applications.</p>
     pub knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_knowledge_bases: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_knowledge_bases: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_point_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_share_point_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_share_point_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_share_point_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub google_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_google_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_google_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_google_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub web_crawler_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_web_crawler_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_web_crawler_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_web_crawler_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub s3_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_s3_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_s3_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_s3_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub confluence_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_confluence_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_confluence_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_confluence_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub one_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_one_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_one_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_one_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub q_business_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_q_business_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_q_business_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_q_business_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub bedrock_managed_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_bedrock_managed_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_bedrock_managed_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_bedrock_managed_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub box_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_box_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_box_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_box_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub idc_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub create_and_update_idc_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub share_idc_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub use_idc_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform actions in external services through Action connectors. Actions allow users to interact with third-party systems.</p>
     pub action: ::std::option::Option<crate::types::CapabilityState>,
     /// <p>The ability to perform actions using REST API connection connectors.</p>
@@ -632,6 +968,426 @@ impl Capabilities {
     /// <p>The ability to use knowledge bases to specify content from external applications.</p>
     pub fn knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
         self.knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_knowledge_bases(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_knowledge_bases.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_knowledge_bases(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_knowledge_bases.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_point_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_point_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_share_point_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_share_point_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_share_point_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_share_point_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_share_point_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_share_point_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn google_drive_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.google_drive_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_google_drive_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_google_drive_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_google_drive_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_google_drive_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_google_drive_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_google_drive_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn web_crawler_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.web_crawler_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_web_crawler_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_web_crawler_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_web_crawler_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_web_crawler_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_web_crawler_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_web_crawler_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn s3_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.s3_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_s3_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_s3_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_s3_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_s3_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_s3_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_s3_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn confluence_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.confluence_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_confluence_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_confluence_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_confluence_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_confluence_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_confluence_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_confluence_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn one_drive_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.one_drive_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_one_drive_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_one_drive_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_one_drive_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_one_drive_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_one_drive_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_one_drive_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn q_business_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.q_business_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_q_business_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_q_business_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_q_business_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_q_business_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_q_business_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_q_business_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn bedrock_managed_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.bedrock_managed_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_bedrock_managed_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_bedrock_managed_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_bedrock_managed_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_bedrock_managed_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_bedrock_managed_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_bedrock_managed_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn box_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.box_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_box_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_box_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_box_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_box_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_box_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_box_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn idc_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.idc_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_idc_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.create_and_update_idc_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_idc_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.share_idc_knowledge_base.as_ref()
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_idc_knowledge_base(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
+        self.use_idc_knowledge_base.as_ref()
     }
     /// <p>The ability to perform actions in external services through Action connectors. Actions allow users to interact with third-party systems.</p>
     pub fn action(&self) -> ::std::option::Option<&crate::types::CapabilityState> {
@@ -1480,6 +2236,48 @@ pub struct CapabilitiesBuilder {
     pub(crate) approve_flow_share_requests: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) use_agent_web_search: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_knowledge_bases: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_knowledge_bases: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_point_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_share_point_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_share_point_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_share_point_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) google_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_google_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_google_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_google_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) web_crawler_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_web_crawler_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_web_crawler_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_web_crawler_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) s3_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_s3_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_s3_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_s3_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) confluence_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_confluence_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_confluence_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_confluence_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) one_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_one_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_one_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_one_drive_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) q_business_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_q_business_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_q_business_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_q_business_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) bedrock_managed_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_bedrock_managed_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_bedrock_managed_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_bedrock_managed_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) box_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_box_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_box_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_box_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) idc_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) create_and_update_idc_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) share_idc_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
+    pub(crate) use_idc_knowledge_base: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
     pub(crate) create_and_update_generic_http_action: ::std::option::Option<crate::types::CapabilityState>,
@@ -2212,6 +3010,1350 @@ impl CapabilitiesBuilder {
     /// <p>The ability to use knowledge bases to specify content from external applications.</p>
     pub fn get_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
         &self.knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_knowledge_bases(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_knowledge_bases = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_knowledge_bases(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_knowledge_bases = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_knowledge_bases(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_knowledge_bases
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_knowledge_bases(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_knowledge_bases = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_knowledge_bases(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_knowledge_bases = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_knowledge_bases(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_knowledge_bases
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_point_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_point_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_point_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_point_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_point_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_point_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_share_point_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_share_point_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_share_point_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_share_point_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_share_point_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_share_point_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_share_point_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_share_point_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_share_point_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_share_point_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_share_point_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_share_point_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_share_point_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_share_point_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_share_point_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_share_point_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_share_point_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_share_point_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn google_drive_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.google_drive_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_google_drive_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.google_drive_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_google_drive_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.google_drive_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_google_drive_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_google_drive_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_google_drive_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_google_drive_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_google_drive_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_google_drive_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_google_drive_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_google_drive_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_google_drive_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_google_drive_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_google_drive_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_google_drive_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_google_drive_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_google_drive_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_google_drive_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_google_drive_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_google_drive_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_google_drive_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn web_crawler_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.web_crawler_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_web_crawler_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.web_crawler_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_web_crawler_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.web_crawler_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_web_crawler_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_web_crawler_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_web_crawler_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_web_crawler_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_web_crawler_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_web_crawler_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_web_crawler_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_web_crawler_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_web_crawler_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_web_crawler_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_web_crawler_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_web_crawler_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_web_crawler_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_web_crawler_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_web_crawler_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_web_crawler_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_web_crawler_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_web_crawler_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn s3_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.s3_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_s3_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.s3_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_s3_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.s3_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_s3_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_s3_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_s3_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_s3_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_s3_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_s3_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_s3_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_s3_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_s3_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_s3_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_s3_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_s3_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_s3_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_s3_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_s3_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_s3_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_s3_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_s3_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn confluence_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.confluence_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_confluence_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.confluence_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_confluence_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.confluence_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_confluence_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_confluence_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_confluence_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_confluence_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_confluence_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_confluence_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_confluence_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_confluence_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_confluence_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_confluence_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_confluence_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_confluence_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_confluence_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_confluence_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_confluence_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_confluence_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_confluence_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_confluence_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn one_drive_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.one_drive_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_one_drive_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.one_drive_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_one_drive_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.one_drive_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_one_drive_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_one_drive_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_one_drive_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_one_drive_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_one_drive_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_one_drive_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_one_drive_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_one_drive_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_one_drive_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_one_drive_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_one_drive_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_one_drive_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_one_drive_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_one_drive_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_one_drive_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_one_drive_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_one_drive_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_one_drive_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn q_business_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.q_business_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_q_business_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.q_business_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_q_business_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.q_business_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_q_business_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_q_business_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_q_business_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_q_business_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_q_business_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_q_business_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_q_business_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_q_business_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_q_business_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_q_business_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_q_business_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_q_business_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_q_business_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_q_business_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_q_business_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_q_business_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_q_business_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_q_business_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn bedrock_managed_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.bedrock_managed_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_bedrock_managed_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.bedrock_managed_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_bedrock_managed_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.bedrock_managed_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_bedrock_managed_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_bedrock_managed_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_bedrock_managed_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_bedrock_managed_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_bedrock_managed_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_bedrock_managed_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_bedrock_managed_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_bedrock_managed_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_bedrock_managed_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_bedrock_managed_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_bedrock_managed_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_bedrock_managed_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_bedrock_managed_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_bedrock_managed_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_bedrock_managed_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_bedrock_managed_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_bedrock_managed_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_bedrock_managed_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn box_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.box_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_box_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.box_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_box_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.box_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_box_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_box_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_box_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_box_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_box_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_box_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_box_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_box_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_box_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_box_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_box_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_box_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_box_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_box_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_box_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_box_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_box_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_box_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn idc_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.idc_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_idc_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.idc_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_idc_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.idc_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn create_and_update_idc_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.create_and_update_idc_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_create_and_update_idc_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.create_and_update_idc_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_create_and_update_idc_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.create_and_update_idc_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn share_idc_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.share_idc_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_share_idc_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.share_idc_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_share_idc_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.share_idc_knowledge_base
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn use_idc_knowledge_base(mut self, input: crate::types::CapabilityState) -> Self {
+        self.use_idc_knowledge_base = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn set_use_idc_knowledge_base(mut self, input: ::std::option::Option<crate::types::CapabilityState>) -> Self {
+        self.use_idc_knowledge_base = input;
+        self
+    }
+    /// <p>The permission state of a capability in a custom permissions profile. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DENY</code> – Amazon Quick denies this capability for users assigned to the profile.</p></li>
+    /// <li>
+    /// <p><code>ALLOW</code> – Amazon Quick grants this capability to users assigned to the profile. This value is only relevant when governance is enabled for the capability's category. Without governance, the default effect is always <code>ALLOW</code>. In a governed category, this value overrides the category-level deny-by-default behavior for that capability only.</p></li>
+    /// </ul>
+    pub fn get_use_idc_knowledge_base(&self) -> &::std::option::Option<crate::types::CapabilityState> {
+        &self.use_idc_knowledge_base
     }
     /// <p>The ability to perform actions in external services through Action connectors. Actions allow users to interact with third-party systems.</p>
     pub fn action(mut self, input: crate::types::CapabilityState) -> Self {
@@ -5043,6 +7185,48 @@ impl CapabilitiesBuilder {
             approve_flow_share_requests: self.approve_flow_share_requests,
             use_agent_web_search: self.use_agent_web_search,
             knowledge_base: self.knowledge_base,
+            create_and_update_knowledge_bases: self.create_and_update_knowledge_bases,
+            share_knowledge_bases: self.share_knowledge_bases,
+            share_point_knowledge_base: self.share_point_knowledge_base,
+            create_and_update_share_point_knowledge_base: self.create_and_update_share_point_knowledge_base,
+            share_share_point_knowledge_base: self.share_share_point_knowledge_base,
+            use_share_point_knowledge_base: self.use_share_point_knowledge_base,
+            google_drive_knowledge_base: self.google_drive_knowledge_base,
+            create_and_update_google_drive_knowledge_base: self.create_and_update_google_drive_knowledge_base,
+            share_google_drive_knowledge_base: self.share_google_drive_knowledge_base,
+            use_google_drive_knowledge_base: self.use_google_drive_knowledge_base,
+            web_crawler_knowledge_base: self.web_crawler_knowledge_base,
+            create_and_update_web_crawler_knowledge_base: self.create_and_update_web_crawler_knowledge_base,
+            share_web_crawler_knowledge_base: self.share_web_crawler_knowledge_base,
+            use_web_crawler_knowledge_base: self.use_web_crawler_knowledge_base,
+            s3_knowledge_base: self.s3_knowledge_base,
+            create_and_update_s3_knowledge_base: self.create_and_update_s3_knowledge_base,
+            share_s3_knowledge_base: self.share_s3_knowledge_base,
+            use_s3_knowledge_base: self.use_s3_knowledge_base,
+            confluence_knowledge_base: self.confluence_knowledge_base,
+            create_and_update_confluence_knowledge_base: self.create_and_update_confluence_knowledge_base,
+            share_confluence_knowledge_base: self.share_confluence_knowledge_base,
+            use_confluence_knowledge_base: self.use_confluence_knowledge_base,
+            one_drive_knowledge_base: self.one_drive_knowledge_base,
+            create_and_update_one_drive_knowledge_base: self.create_and_update_one_drive_knowledge_base,
+            share_one_drive_knowledge_base: self.share_one_drive_knowledge_base,
+            use_one_drive_knowledge_base: self.use_one_drive_knowledge_base,
+            q_business_knowledge_base: self.q_business_knowledge_base,
+            create_and_update_q_business_knowledge_base: self.create_and_update_q_business_knowledge_base,
+            share_q_business_knowledge_base: self.share_q_business_knowledge_base,
+            use_q_business_knowledge_base: self.use_q_business_knowledge_base,
+            bedrock_managed_knowledge_base: self.bedrock_managed_knowledge_base,
+            create_and_update_bedrock_managed_knowledge_base: self.create_and_update_bedrock_managed_knowledge_base,
+            share_bedrock_managed_knowledge_base: self.share_bedrock_managed_knowledge_base,
+            use_bedrock_managed_knowledge_base: self.use_bedrock_managed_knowledge_base,
+            box_knowledge_base: self.box_knowledge_base,
+            create_and_update_box_knowledge_base: self.create_and_update_box_knowledge_base,
+            share_box_knowledge_base: self.share_box_knowledge_base,
+            use_box_knowledge_base: self.use_box_knowledge_base,
+            idc_knowledge_base: self.idc_knowledge_base,
+            create_and_update_idc_knowledge_base: self.create_and_update_idc_knowledge_base,
+            share_idc_knowledge_base: self.share_idc_knowledge_base,
+            use_idc_knowledge_base: self.use_idc_knowledge_base,
             action: self.action,
             generic_http_action: self.generic_http_action,
             create_and_update_generic_http_action: self.create_and_update_generic_http_action,

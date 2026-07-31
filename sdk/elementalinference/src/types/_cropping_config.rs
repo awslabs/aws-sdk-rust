@@ -3,7 +3,18 @@
 /// <p>A type of OutputConfig, used when the output in a feed is for the crop feature.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct CroppingConfig {}
+pub struct CroppingConfig {
+    /// <p>An array of template groups for the crop output. Each template group provides the graphics-compositing templates that Elemental Inference applies to the cropped video. You can specify from 1 to 4 template groups.</p>
+    pub template_groups: ::std::option::Option<::std::vec::Vec<crate::types::TemplateGroup>>,
+}
+impl CroppingConfig {
+    /// <p>An array of template groups for the crop output. Each template group provides the graphics-compositing templates that Elemental Inference applies to the cropped video. You can specify from 1 to 4 template groups.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.template_groups.is_none()`.
+    pub fn template_groups(&self) -> &[crate::types::TemplateGroup] {
+        self.template_groups.as_deref().unwrap_or_default()
+    }
+}
 impl CroppingConfig {
     /// Creates a new builder-style object to manufacture [`CroppingConfig`](crate::types::CroppingConfig).
     pub fn builder() -> crate::types::builders::CroppingConfigBuilder {
@@ -14,10 +25,34 @@ impl CroppingConfig {
 /// A builder for [`CroppingConfig`](crate::types::CroppingConfig).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct CroppingConfigBuilder {}
+pub struct CroppingConfigBuilder {
+    pub(crate) template_groups: ::std::option::Option<::std::vec::Vec<crate::types::TemplateGroup>>,
+}
 impl CroppingConfigBuilder {
+    /// Appends an item to `template_groups`.
+    ///
+    /// To override the contents of this collection use [`set_template_groups`](Self::set_template_groups).
+    ///
+    /// <p>An array of template groups for the crop output. Each template group provides the graphics-compositing templates that Elemental Inference applies to the cropped video. You can specify from 1 to 4 template groups.</p>
+    pub fn template_groups(mut self, input: crate::types::TemplateGroup) -> Self {
+        let mut v = self.template_groups.unwrap_or_default();
+        v.push(input);
+        self.template_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of template groups for the crop output. Each template group provides the graphics-compositing templates that Elemental Inference applies to the cropped video. You can specify from 1 to 4 template groups.</p>
+    pub fn set_template_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TemplateGroup>>) -> Self {
+        self.template_groups = input;
+        self
+    }
+    /// <p>An array of template groups for the crop output. Each template group provides the graphics-compositing templates that Elemental Inference applies to the cropped video. You can specify from 1 to 4 template groups.</p>
+    pub fn get_template_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TemplateGroup>> {
+        &self.template_groups
+    }
     /// Consumes the builder and constructs a [`CroppingConfig`](crate::types::CroppingConfig).
     pub fn build(self) -> crate::types::CroppingConfig {
-        crate::types::CroppingConfig {}
+        crate::types::CroppingConfig {
+            template_groups: self.template_groups,
+        }
     }
 }

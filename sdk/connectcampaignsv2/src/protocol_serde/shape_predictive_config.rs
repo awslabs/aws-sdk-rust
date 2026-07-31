@@ -9,6 +9,18 @@ pub fn ser_predictive_config(
             ::aws_smithy_types::Number::Float((input.bandwidth_allocation).into()),
         );
     }
+    if let Some(var_1) = &input.pacing_strategies {
+        let mut array_2 = object.key("pacingStrategies").start_array();
+        for item_3 in var_1 {
+            {
+                #[allow(unused_mut)]
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_pacing_strategy::ser_pacing_strategy(&mut object_4, item_3)?;
+                object_4.finish();
+            }
+        }
+        array_2.finish();
+    }
     Ok(())
 }
 
@@ -38,6 +50,13 @@ where
                             builder = builder.set_bandwidth_allocation(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
                             );
+                        }
+                        "pacingStrategies" => {
+                            builder = builder.set_pacing_strategies(crate::protocol_serde::shape_pacing_strategy_list::de_pacing_strategy_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

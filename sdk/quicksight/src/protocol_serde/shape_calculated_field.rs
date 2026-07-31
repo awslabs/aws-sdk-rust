@@ -6,6 +6,9 @@ pub fn ser_calculated_field(
     {
         object.key("DataSetIdentifier").string(input.data_set_identifier.as_str());
     }
+    if let Some(var_1) = &input.topic_identifier {
+        object.key("TopicIdentifier").string(var_1.as_str());
+    }
     {
         object.key("Name").string(input.name.as_str());
     }
@@ -39,6 +42,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DataSetIdentifier" => {
                             builder = builder.set_data_set_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TopicIdentifier" => {
+                            builder = builder.set_topic_identifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

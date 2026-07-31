@@ -112,3 +112,5 @@ pub use crate::types::_restricted_period::RestrictedPeriodBuilder;
 pub use crate::types::_web_notification_context::WebNotificationContextBuilder;
 
 pub use crate::types::_time_range::TimeRangeBuilder;
+
+pub use crate::types::_abandonment_rate_pacing_config::AbandonmentRatePacingConfigBuilder;

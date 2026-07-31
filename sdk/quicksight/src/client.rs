@@ -202,6 +202,8 @@ mod create_topic;
 
 mod create_topic_refresh_schedule;
 
+mod create_topic_v2;
+
 mod create_vpc_connection;
 
 /// Operation customization and supporting types.
@@ -298,6 +300,8 @@ mod delete_theme_alias;
 mod delete_topic;
 
 mod delete_topic_refresh_schedule;
+
+mod delete_topic_v2;
 
 mod delete_user;
 
@@ -427,9 +431,13 @@ mod describe_topic;
 
 mod describe_topic_permissions;
 
+mod describe_topic_permissions_v2;
+
 mod describe_topic_refresh;
 
 mod describe_topic_refresh_schedule;
+
+mod describe_topic_v2;
 
 mod describe_user;
 
@@ -529,6 +537,8 @@ mod list_topic_reviewed_answers;
 
 mod list_topics;
 
+mod list_topics_v2;
+
 mod list_user_groups;
 
 mod list_users;
@@ -568,6 +578,8 @@ mod search_knowledge_bases;
 mod search_spaces;
 
 mod search_topics;
+
+mod search_topics_v2;
 
 mod start_asset_bundle_export_job;
 
@@ -693,7 +705,11 @@ mod update_topic;
 
 mod update_topic_permissions;
 
+mod update_topic_permissions_v2;
+
 mod update_topic_refresh_schedule;
+
+mod update_topic_v2;
 
 mod update_user;
 

@@ -693,6 +693,15 @@ pub(crate) fn topic_refresh_schedule_correct_errors(
     builder
 }
 
+pub(crate) fn topic_v2_details_correct_errors(
+    mut builder: crate::types::builders::TopicV2DetailsBuilder,
+) -> crate::types::builders::TopicV2DetailsBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn action_connector_summary_correct_errors(
     mut builder: crate::types::builders::ActionConnectorSummaryBuilder,
 ) -> crate::types::builders::ActionConnectorSummaryBuilder {
@@ -1477,9 +1486,6 @@ pub(crate) fn big_query_parameters_correct_errors(
 pub(crate) fn calculated_field_correct_errors(
     mut builder: crate::types::builders::CalculatedFieldBuilder,
 ) -> crate::types::builders::CalculatedFieldBuilder {
-    if builder.data_set_identifier.is_none() {
-        builder.data_set_identifier = Some(Default::default())
-    }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
@@ -1922,6 +1928,49 @@ pub(crate) fn tooltip_sheet_definition_correct_errors(
     builder
 }
 
+pub(crate) fn topic_identifier_declaration_correct_errors(
+    mut builder: crate::types::builders::TopicIdentifierDeclarationBuilder,
+) -> crate::types::builders::TopicIdentifierDeclarationBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.topic_arn.is_none() {
+        builder.topic_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn topic_v2_data_set_reference_correct_errors(
+    mut builder: crate::types::builders::TopicV2DataSetReferenceBuilder,
+) -> crate::types::builders::TopicV2DataSetReferenceBuilder {
+    if builder.data_set_arn.is_none() {
+        builder.data_set_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn topic_v2_data_set_relation_correct_errors(
+    mut builder: crate::types::builders::TopicV2DataSetRelationBuilder,
+) -> crate::types::builders::TopicV2DataSetRelationBuilder {
+    if builder.left.is_none() {
+        builder.left = {
+            let builder = crate::types::builders::TopicV2DataSetRelationEndpointBuilder::default();
+            crate::serde_util::topic_v2_data_set_relation_endpoint_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.right.is_none() {
+        builder.right = {
+            let builder = crate::types::builders::TopicV2DataSetRelationEndpointBuilder::default();
+            crate::serde_util::topic_v2_data_set_relation_endpoint_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn trino_parameters_correct_errors(
     mut builder: crate::types::builders::TrinoParametersBuilder,
 ) -> crate::types::builders::TrinoParametersBuilder {
@@ -1982,9 +2031,6 @@ pub(crate) fn asset_bundle_resource_permissions_correct_errors(
 pub(crate) fn column_identifier_correct_errors(
     mut builder: crate::types::builders::ColumnIdentifierBuilder,
 ) -> crate::types::builders::ColumnIdentifierBuilder {
-    if builder.data_set_identifier.is_none() {
-        builder.data_set_identifier = Some(Default::default())
-    }
     if builder.column_name.is_none() {
         builder.column_name = Some(Default::default())
     }
@@ -2415,6 +2461,18 @@ pub(crate) fn string_parameter_declaration_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn topic_v2_data_set_relation_endpoint_correct_errors(
+    mut builder: crate::types::builders::TopicV2DataSetRelationEndpointBuilder,
+) -> crate::types::builders::TopicV2DataSetRelationEndpointBuilder {
+    if builder.data_set_arn.is_none() {
+        builder.data_set_arn = Some(Default::default())
+    }
+    if builder.column_names.is_none() {
+        builder.column_names = Some(Default::default())
     }
     builder
 }
@@ -2917,9 +2975,6 @@ pub(crate) fn custom_content_visual_correct_errors(
     if builder.visual_id.is_none() {
         builder.visual_id = Some(Default::default())
     }
-    if builder.data_set_identifier.is_none() {
-        builder.data_set_identifier = Some(Default::default())
-    }
     builder
 }
 
@@ -2938,9 +2993,6 @@ pub(crate) fn dynamic_default_value_correct_errors(
 pub(crate) fn empty_visual_correct_errors(mut builder: crate::types::builders::EmptyVisualBuilder) -> crate::types::builders::EmptyVisualBuilder {
     if builder.visual_id.is_none() {
         builder.visual_id = Some(Default::default())
-    }
-    if builder.data_set_identifier.is_none() {
-        builder.data_set_identifier = Some(Default::default())
     }
     builder
 }
@@ -3129,9 +3181,6 @@ pub(crate) fn insight_visual_correct_errors(
     if builder.visual_id.is_none() {
         builder.visual_id = Some(Default::default())
     }
-    if builder.data_set_identifier.is_none() {
-        builder.data_set_identifier = Some(Default::default())
-    }
     builder
 }
 
@@ -3156,9 +3205,6 @@ pub(crate) fn layer_map_visual_correct_errors(
 ) -> crate::types::builders::LayerMapVisualBuilder {
     if builder.visual_id.is_none() {
         builder.visual_id = Some(Default::default())
-    }
-    if builder.data_set_identifier.is_none() {
-        builder.data_set_identifier = Some(Default::default())
     }
     builder
 }
@@ -3763,6 +3809,18 @@ pub(crate) fn inline_custom_instruction_correct_errors(
 ) -> crate::types::builders::InlineCustomInstructionBuilder {
     if builder.instruction_text.is_none() {
         builder.instruction_text = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn named_entity_sort_correct_errors(
+    mut builder: crate::types::builders::NamedEntitySortBuilder,
+) -> crate::types::builders::NamedEntitySortBuilder {
+    if builder.field_name.is_none() {
+        builder.field_name = Some(Default::default())
+    }
+    if builder.direction.is_none() {
+        builder.direction = "no value was set".parse::<crate::types::TopicSortDirection>().ok()
     }
     builder
 }

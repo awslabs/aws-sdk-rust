@@ -25,6 +25,9 @@ pub mod create_service_function_resources;
 /// Types for the `CreateSystem` operation.
 pub mod create_system;
 
+/// Types for the `CreateTest` operation.
+pub mod create_test;
+
 /// Types for the `CreateUserJourney` operation.
 pub mod create_user_journey;
 
@@ -49,6 +52,12 @@ pub mod delete_service_function_resources;
 /// Types for the `DeleteSystem` operation.
 pub mod delete_system;
 
+/// Types for the `DeleteTest` operation.
+pub mod delete_test;
+
+/// Types for the `DeleteTestSources` operation.
+pub mod delete_test_sources;
+
 /// Types for the `DeleteUserJourney` operation.
 pub mod delete_user_journey;
 
@@ -63,6 +72,15 @@ pub mod get_service;
 
 /// Types for the `GetSystem` operation.
 pub mod get_system;
+
+/// Types for the `GetTest` operation.
+pub mod get_test;
+
+/// Types for the `GetTestRun` operation.
+pub mod get_test_run;
+
+/// Types for the `GetTestTemplate` operation.
+pub mod get_test_template;
 
 /// Types for the `GetUserJourney` operation.
 pub mod get_user_journey;
@@ -94,6 +112,9 @@ pub mod list_policies;
 /// Types for the `ListReports` operation.
 pub mod list_reports;
 
+/// Types for the `ListResolvedTestRunTargetResources` operation.
+pub mod list_resolved_test_run_target_resources;
+
 /// Types for the `ListResources` operation.
 pub mod list_resources;
 
@@ -118,11 +139,38 @@ pub mod list_systems;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListTestRunEvents` operation.
+pub mod list_test_run_events;
+
+/// Types for the `ListTestRunSources` operation.
+pub mod list_test_run_sources;
+
+/// Types for the `ListTestRuns` operation.
+pub mod list_test_runs;
+
+/// Types for the `ListTestSources` operation.
+pub mod list_test_sources;
+
+/// Types for the `ListTestTemplates` operation.
+pub mod list_test_templates;
+
+/// Types for the `ListTests` operation.
+pub mod list_tests;
+
 /// Types for the `ListUserJourneys` operation.
 pub mod list_user_journeys;
 
+/// Types for the `PutTestSources` operation.
+pub mod put_test_sources;
+
 /// Types for the `StartFailureModeAssessment` operation.
 pub mod start_failure_mode_assessment;
+
+/// Types for the `StartTestRun` operation.
+pub mod start_test_run;
+
+/// Types for the `StopTestRun` operation.
+pub mod stop_test_run;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
@@ -150,6 +198,9 @@ pub mod update_service_function;
 
 /// Types for the `UpdateSystem` operation.
 pub mod update_system;
+
+/// Types for the `UpdateTest` operation.
+pub mod update_test;
 
 /// Types for the `UpdateUserJourney` operation.
 pub mod update_user_journey;

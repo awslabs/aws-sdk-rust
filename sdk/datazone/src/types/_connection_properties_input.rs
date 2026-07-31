@@ -8,6 +8,8 @@ pub enum ConnectionPropertiesInput {
     AmazonQProperties(crate::types::AmazonQPropertiesInput),
     /// <p>The Amazon Athena properties of a connection.</p>
     AthenaProperties(crate::types::AthenaPropertiesInput),
+    /// <p>The Git properties of a connection.</p>
+    GitProperties(crate::types::GitPropertiesInput),
     /// <p>The Amazon Web Services Glue properties of a connection.</p>
     GlueProperties(crate::types::GluePropertiesInput),
     /// <p>The hyper pod properties of a connection.</p>
@@ -70,6 +72,19 @@ impl ConnectionPropertiesInput {
     /// Returns true if this is a [`AthenaProperties`](crate::types::ConnectionPropertiesInput::AthenaProperties).
     pub fn is_athena_properties(&self) -> bool {
         self.as_athena_properties().is_ok()
+    }
+    /// Tries to convert the enum instance into [`GitProperties`](crate::types::ConnectionPropertiesInput::GitProperties), extracting the inner [`GitPropertiesInput`](crate::types::GitPropertiesInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_git_properties(&self) -> ::std::result::Result<&crate::types::GitPropertiesInput, &Self> {
+        if let ConnectionPropertiesInput::GitProperties(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`GitProperties`](crate::types::ConnectionPropertiesInput::GitProperties).
+    pub fn is_git_properties(&self) -> bool {
+        self.as_git_properties().is_ok()
     }
     /// Tries to convert the enum instance into [`GlueProperties`](crate::types::ConnectionPropertiesInput::GlueProperties), extracting the inner [`GluePropertiesInput`](crate::types::GluePropertiesInput).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -18,6 +18,8 @@ pub struct CreateScraperInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The list of tag keys and values to associate with the scraper.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    pub exporters: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>,
 }
 impl CreateScraperInput {
     /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
@@ -48,6 +50,12 @@ impl CreateScraperInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exporters.is_none()`.
+    pub fn exporters(&self) -> &[crate::types::ExporterConfiguration] {
+        self.exporters.as_deref().unwrap_or_default()
+    }
 }
 impl CreateScraperInput {
     /// Creates a new builder-style object to manufacture [`CreateScraperInput`](crate::operation::create_scraper::CreateScraperInput).
@@ -67,6 +75,7 @@ pub struct CreateScraperInputBuilder {
     pub(crate) role_configuration: ::std::option::Option<crate::types::RoleConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) exporters: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>,
 }
 impl CreateScraperInputBuilder {
     /// <p>(optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.</p>
@@ -176,6 +185,26 @@ impl CreateScraperInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Appends an item to `exporters`.
+    ///
+    /// To override the contents of this collection use [`set_exporters`](Self::set_exporters).
+    ///
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    pub fn exporters(mut self, input: crate::types::ExporterConfiguration) -> Self {
+        let mut v = self.exporters.unwrap_or_default();
+        v.push(input);
+        self.exporters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    pub fn set_exporters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>>) -> Self {
+        self.exporters = input;
+        self
+    }
+    /// <p>The exporter configurations for the scraper. You can configure at most one Amazon OpenSearch Service domain. If you don't specify a value, the scraper is created without an exporter configuration.</p>
+    pub fn get_exporters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExporterConfiguration>> {
+        &self.exporters
+    }
     /// Consumes the builder and constructs a [`CreateScraperInput`](crate::operation::create_scraper::CreateScraperInput).
     pub fn build(
         self,
@@ -188,6 +217,7 @@ impl CreateScraperInputBuilder {
             role_configuration: self.role_configuration,
             client_token: self.client_token,
             tags: self.tags,
+            exporters: self.exporters,
         })
     }
 }

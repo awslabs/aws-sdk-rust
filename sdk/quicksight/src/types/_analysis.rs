@@ -16,6 +16,8 @@ pub struct Analysis {
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>,
     /// <p>The ARNs of the datasets of the analysis.</p>
     pub data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The ARNs of the topics associated with the analysis.</p>
+    pub topic_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ARN of the theme of the analysis.</p>
     pub theme_arn: ::std::option::Option<::std::string::String>,
     /// <p>The time that the analysis was created.</p>
@@ -54,6 +56,12 @@ impl Analysis {
     pub fn data_set_arns(&self) -> &[::std::string::String] {
         self.data_set_arns.as_deref().unwrap_or_default()
     }
+    /// <p>The ARNs of the topics associated with the analysis.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_arns.is_none()`.
+    pub fn topic_arns(&self) -> &[::std::string::String] {
+        self.topic_arns.as_deref().unwrap_or_default()
+    }
     /// <p>The ARN of the theme of the analysis.</p>
     pub fn theme_arn(&self) -> ::std::option::Option<&str> {
         self.theme_arn.as_deref()
@@ -90,6 +98,7 @@ pub struct AnalysisBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ResourceStatus>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::AnalysisError>>,
     pub(crate) data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) topic_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -192,6 +201,26 @@ impl AnalysisBuilder {
     pub fn get_data_set_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_set_arns
     }
+    /// Appends an item to `topic_arns`.
+    ///
+    /// To override the contents of this collection use [`set_topic_arns`](Self::set_topic_arns).
+    ///
+    /// <p>The ARNs of the topics associated with the analysis.</p>
+    pub fn topic_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.topic_arns.unwrap_or_default();
+        v.push(input.into());
+        self.topic_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The ARNs of the topics associated with the analysis.</p>
+    pub fn set_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.topic_arns = input;
+        self
+    }
+    /// <p>The ARNs of the topics associated with the analysis.</p>
+    pub fn get_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.topic_arns
+    }
     /// <p>The ARN of the theme of the analysis.</p>
     pub fn theme_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.theme_arn = ::std::option::Option::Some(input.into());
@@ -263,6 +292,7 @@ impl AnalysisBuilder {
             status: self.status,
             errors: self.errors,
             data_set_arns: self.data_set_arns,
+            topic_arns: self.topic_arns,
             theme_arn: self.theme_arn,
             created_time: self.created_time,
             last_updated_time: self.last_updated_time,

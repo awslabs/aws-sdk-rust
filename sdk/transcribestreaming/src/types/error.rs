@@ -110,7 +110,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::AudioStreamErro
 pub enum CallAnalyticsTranscriptResultStreamError {
     /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
+    /// <p>Your client has exceeded one of the Amazon Transcribe limits, typically the concurrent stream service quota. This error can also occur if a stream exceeds the maximum session duration. In rare cases, this error can also occur if you increase your number of concurrent streams too quickly. Reduce your number of concurrent streams and try your request again using an exponential backoff strategy.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
@@ -346,7 +346,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::MedicalScribeIn
 pub enum MedicalScribeResultStreamError {
     /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
+    /// <p>Your client has exceeded one of the Amazon Transcribe limits, typically the concurrent stream service quota. This error can also occur if a stream exceeds the maximum session duration. In rare cases, this error can also occur if you increase your number of concurrent streams too quickly. Reduce your number of concurrent streams and try your request again using an exponential backoff strategy.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
@@ -489,7 +489,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::MedicalScribeRe
 pub enum MedicalTranscriptResultStreamError {
     /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
+    /// <p>Your client has exceeded one of the Amazon Transcribe limits, typically the concurrent stream service quota. This error can also occur if a stream exceeds the maximum session duration. In rare cases, this error can also occur if you increase your number of concurrent streams too quickly. Reduce your number of concurrent streams and try your request again using an exponential backoff strategy.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
@@ -632,7 +632,7 @@ impl ::aws_types::request_id::RequestId for crate::types::error::MedicalTranscri
 pub enum TranscriptResultStreamError {
     /// <p>One or more arguments to the <code>StartStreamTranscription</code>, <code>StartMedicalStreamTranscription</code>, or <code>StartCallAnalyticsStreamTranscription</code> operation was not valid. For example, <code>MediaEncoding</code> or <code>LanguageCode</code> used unsupported values. Check the specified parameters and try your request again.</p>
     BadRequestException(crate::types::error::BadRequestException),
-    /// <p>Your client has exceeded one of the Amazon Transcribe limits. This is typically the audio length limit. Break your audio stream into smaller chunks and try your request again.</p>
+    /// <p>Your client has exceeded one of the Amazon Transcribe limits, typically the concurrent stream service quota. This error can also occur if a stream exceeds the maximum session duration. In rare cases, this error can also occur if you increase your number of concurrent streams too quickly. Reduce your number of concurrent streams and try your request again using an exponential backoff strategy.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>A problem occurred while processing the audio. Amazon Transcribe terminated processing.</p>
     InternalFailureException(crate::types::error::InternalFailureException),

@@ -22,8 +22,8 @@ impl crate::operation::update_lookup_table::builders::UpdateLookupTableInputBuil
 }
 /// Fluent builder constructing a request to `UpdateLookupTable`.
 ///
-/// <p>Updates an existing lookup table by replacing all of its CSV content. After the update completes, queries that use this table will use the new data.</p>
-/// <p>This is a full replacement operation. All existing content is replaced with the new CSV data.</p>
+/// <p>Updates an existing lookup table by replacing all of its content with new CSV data or CloudWatch Logs query results. After the update completes, queries that use this table use the new data.</p>
+/// <p>This is a full replacement operation. All existing content is replaced. You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLookupTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -138,18 +138,38 @@ impl UpdateLookupTableFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn table_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_body(input.into());
         self
     }
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn set_table_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_body(input);
         self
     }
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn get_table_body(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_body()
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.query_id(input.into());
+        self
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_query_id(input);
+        self
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_id()
     }
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. You can use this parameter to add, update, or remove the KMS key. To remove the KMS key and use an Amazon Web Services-owned key instead, specify an empty string.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -11,7 +11,7 @@ pub struct UpdateAnalysisInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.</p>
     pub parameters: ::std::option::Option<crate::types::Parameters>,
-    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets or topics.</p>
     pub source_entity: ::std::option::Option<crate::types::AnalysisSourceEntity>,
     /// <p>The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon Quick Sight console, make sure that you have access to it.</p>
     pub theme_arn: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl UpdateAnalysisInput {
     pub fn parameters(&self) -> ::std::option::Option<&crate::types::Parameters> {
         self.parameters.as_ref()
     }
-    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets or topics.</p>
     pub fn source_entity(&self) -> ::std::option::Option<&crate::types::AnalysisSourceEntity> {
         self.source_entity.as_ref()
     }
@@ -136,17 +136,17 @@ impl UpdateAnalysisInputBuilder {
     pub fn get_parameters(&self) -> &::std::option::Option<crate::types::Parameters> {
         &self.parameters
     }
-    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets or topics.</p>
     pub fn source_entity(mut self, input: crate::types::AnalysisSourceEntity) -> Self {
         self.source_entity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets or topics.</p>
     pub fn set_source_entity(mut self, input: ::std::option::Option<crate::types::AnalysisSourceEntity>) -> Self {
         self.source_entity = input;
         self
     }
-    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.</p>
+    /// <p>A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets or topics.</p>
     pub fn get_source_entity(&self) -> &::std::option::Option<crate::types::AnalysisSourceEntity> {
         &self.source_entity
     }

@@ -18,3 +18,5 @@ pub use crate::types::_clipping_config::ClippingConfigBuilder;
 pub use crate::types::_subtitling_config::SubtitlingConfigBuilder;
 
 pub use crate::types::_aspect_ratio::AspectRatioBuilder;
+
+pub use crate::types::_template_group::TemplateGroupBuilder;

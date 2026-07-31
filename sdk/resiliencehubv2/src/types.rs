@@ -33,9 +33,17 @@ pub use crate::types::_service_function::ServiceFunction;
 
 pub use crate::types::_system::System;
 
+pub use crate::types::_logging_configuration::LoggingConfiguration;
+
+pub use crate::types::_test::Test;
+
 pub use crate::types::_user_journey::UserJourney;
 
 pub use crate::types::_finding::Finding;
+
+pub use crate::types::_test_run::TestRun;
+
+pub use crate::types::_test_template::TestTemplate;
 
 pub use crate::types::_multi_az_disaster_recovery_approach::MultiAzDisasterRecoveryApproach;
 
@@ -58,6 +66,12 @@ pub use crate::types::_finding_status::FindingStatus;
 pub use crate::types::_input_source_type::InputSourceType;
 
 pub use crate::types::_assessment_status::AssessmentStatus;
+
+pub use crate::types::_test_run_source_type::TestRunSourceType;
+
+pub use crate::types::_test_source_type::TestSourceType;
+
+pub use crate::types::_test_run_status::TestRunStatus;
 
 pub use crate::types::_dependency_criticality::DependencyCriticality;
 
@@ -83,7 +97,17 @@ pub use crate::types::_resource_discovery_status::ResourceDiscoveryStatus;
 
 pub use crate::types::_service_function_source::ServiceFunctionSource;
 
+pub use crate::types::_stop_condition::StopCondition;
+
+pub use crate::types::_test_source_input::TestSourceInput;
+
 pub use crate::types::_policy_component::PolicyComponent;
+
+pub use crate::types::_test_run_report_configuration::TestRunReportConfiguration;
+
+pub use crate::types::_test_run_policy_snapshot::TestRunPolicySnapshot;
+
+pub use crate::types::_account_targeting::AccountTargeting;
 
 pub use crate::types::_dependency_summary::DependencySummary;
 
@@ -94,6 +118,8 @@ pub use crate::types::_finding_summary::FindingSummary;
 pub use crate::types::_input_source_summary::InputSourceSummary;
 
 pub use crate::types::_policy_summary::PolicySummary;
+
+pub use crate::types::_resolved_target_resource::ResolvedTargetResource;
 
 pub use crate::types::_service_resource::ServiceResource;
 
@@ -110,6 +136,18 @@ pub use crate::types::_system_event_type::SystemEventType;
 pub use crate::types::_system_event::SystemEvent;
 
 pub use crate::types::_system_summary::SystemSummary;
+
+pub use crate::types::_test_run_event::TestRunEvent;
+
+pub use crate::types::_test_run_summary::TestRunSummary;
+
+pub use crate::types::_test_run_source_summary::TestRunSourceSummary;
+
+pub use crate::types::_test_summary::TestSummary;
+
+pub use crate::types::_test_source_summary::TestSourceSummary;
+
+pub use crate::types::_test_template_summary::TestTemplateSummary;
 
 pub use crate::types::_user_journey_summary::UserJourneySummary;
 
@@ -139,11 +177,23 @@ pub use crate::types::_resource_discovery_run_status::ResourceDiscoveryRunStatus
 
 pub use crate::types::_resource_discovery_error_code::ResourceDiscoveryErrorCode;
 
+pub use crate::types::_stop_condition_source::StopConditionSource;
+
+pub use crate::types::_test_action::TestAction;
+
+pub use crate::types::_success_criteria_alarm_input::SuccessCriteriaAlarmInput;
+
+pub use crate::types::_observability_alarm_input::ObservabilityAlarmInput;
+
 pub use crate::types::_infrastructure_and_code_recommendation::InfrastructureAndCodeRecommendation;
 
 pub use crate::types::_observability_recommendation::ObservabilityRecommendation;
 
 pub use crate::types::_testing_recommendation::TestingRecommendation;
+
+pub use crate::types::_experiment_details::ExperimentDetails;
+
+pub use crate::types::_test_template_parameter::TestTemplateParameter;
 
 pub use crate::types::_query_range::QueryRange;
 
@@ -161,11 +211,21 @@ pub use crate::types::_service_event_details::ServiceEventDetails;
 
 pub use crate::types::_system_event_details::SystemEventDetails;
 
+pub use crate::types::_test_run_success_criteria_alarm_summary::TestRunSuccessCriteriaAlarmSummary;
+
+pub use crate::types::_test_run_observability_alarm_summary::TestRunObservabilityAlarmSummary;
+
+pub use crate::types::_success_criteria_alarm_summary::SuccessCriteriaAlarmSummary;
+
+pub use crate::types::_observability_alarm_summary::ObservabilityAlarmSummary;
+
 pub use crate::types::_report_generation_error_code::ReportGenerationErrorCode;
 
 pub use crate::types::_s3_report_output_configuration::S3ReportOutputConfiguration;
 
 pub use crate::types::_policy_value_source::PolicyValueSource;
+
+pub use crate::types::_parameter_type::ParameterType;
 
 pub use crate::types::_actor_type::ActorType;
 
@@ -174,6 +234,8 @@ pub use crate::types::_service_event_metadata::ServiceEventMetadata;
 pub use crate::types::_edge_property_summary::EdgePropertySummary;
 
 pub use crate::types::_system_event_metadata::SystemEventMetadata;
+
+pub use crate::types::_test_source_outcome::TestSourceOutcome;
 
 pub use crate::types::_query_data_point::QueryDataPoint;
 
@@ -243,6 +305,8 @@ pub use crate::types::_string_change::StringChange;
 
 pub use crate::types::_service_reference_changes::ServiceReferenceChanges;
 
+mod _account_targeting;
+
 mod _achievability;
 
 mod _achievability_status;
@@ -301,6 +365,8 @@ mod _eks_source;
 
 mod _event_actor;
 
+mod _experiment_details;
+
 mod _failed_report_output;
 
 mod _failure_category;
@@ -321,6 +387,8 @@ mod _input_source_summary;
 
 mod _input_source_type;
 
+mod _logging_configuration;
+
 mod _multi_az_disaster_recovery_approach;
 
 mod _multi_az_targets;
@@ -329,7 +397,13 @@ mod _multi_region_disaster_recovery_approach;
 
 mod _multi_region_targets;
 
+mod _observability_alarm_input;
+
+mod _observability_alarm_summary;
+
 mod _observability_recommendation;
+
+mod _parameter_type;
 
 mod _permission_model;
 
@@ -358,6 +432,8 @@ mod _report_output;
 mod _report_output_configuration;
 
 mod _report_type;
+
+mod _resolved_target_resource;
 
 mod _resource;
 
@@ -439,7 +515,15 @@ mod _slo_source;
 
 mod _sort_order;
 
+mod _stop_condition;
+
+mod _stop_condition_source;
+
 mod _string_change;
+
+mod _success_criteria_alarm_input;
+
+mod _success_criteria_alarm_summary;
 
 mod _system;
 
@@ -472,6 +556,46 @@ mod _system_user_journey_deleted_metadata;
 mod _system_user_journey_updated_metadata;
 
 mod _target_source;
+
+mod _test;
+
+mod _test_action;
+
+mod _test_run;
+
+mod _test_run_event;
+
+mod _test_run_observability_alarm_summary;
+
+mod _test_run_policy_snapshot;
+
+mod _test_run_report_configuration;
+
+mod _test_run_source_summary;
+
+mod _test_run_source_type;
+
+mod _test_run_status;
+
+mod _test_run_success_criteria_alarm_summary;
+
+mod _test_run_summary;
+
+mod _test_source_input;
+
+mod _test_source_outcome;
+
+mod _test_source_summary;
+
+mod _test_source_type;
+
+mod _test_summary;
+
+mod _test_template;
+
+mod _test_template_parameter;
+
+mod _test_template_summary;
 
 mod _testing_recommendation;
 

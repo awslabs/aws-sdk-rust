@@ -13,6 +13,7 @@
 /// # let reporttype = unimplemented!();
 /// match reporttype {
 ///     ReportType::FailureMode => { /* ... */ },
+///     ReportType::Testing => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum ReportType {
     #[allow(missing_docs)] // documentation missing in model
     FailureMode,
+    #[allow(missing_docs)] // documentation missing in model
+    Testing,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for ReportType {
     fn from(s: &str) -> Self {
         match s {
             "FAILURE_MODE" => ReportType::FailureMode,
+            "TESTING" => ReportType::Testing,
             other => ReportType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl ReportType {
     pub fn as_str(&self) -> &str {
         match self {
             ReportType::FailureMode => "FAILURE_MODE",
+            ReportType::Testing => "TESTING",
             ReportType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILURE_MODE"]
+        &["FAILURE_MODE", "TESTING"]
     }
 }
 impl ::std::convert::AsRef<str> for ReportType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for ReportType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ReportType::FailureMode => write!(f, "FAILURE_MODE"),
+            ReportType::Testing => write!(f, "TESTING"),
             ReportType::Unknown(value) => write!(f, "{value}"),
         }
     }

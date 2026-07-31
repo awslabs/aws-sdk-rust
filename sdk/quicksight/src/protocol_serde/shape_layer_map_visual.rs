@@ -27,8 +27,11 @@ pub fn ser_layer_map_visual(
     {
         object.key("DataSetIdentifier").string(input.data_set_identifier.as_str());
     }
-    if let Some(var_7) = &input.visual_content_alt_text {
-        object.key("VisualContentAltText").string(var_7.as_str());
+    if let Some(var_7) = &input.topic_identifier {
+        object.key("TopicIdentifier").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.visual_content_alt_text {
+        object.key("VisualContentAltText").string(var_8.as_str());
     }
     Ok(())
 }
@@ -89,6 +92,13 @@ where
                         }
                         "DataSetIdentifier" => {
                             builder = builder.set_data_set_identifier(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "TopicIdentifier" => {
+                            builder = builder.set_topic_identifier(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

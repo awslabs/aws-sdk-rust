@@ -8,6 +8,10 @@ pub struct TopicNumericEqualityFilter {
     pub constant: ::std::option::Option<crate::types::TopicSingularFilterConstant>,
     /// <p>An aggregation function that specifies how to calculate the value of a numeric field for a topic. Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>, <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>, <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>, and <code>VARP</code>.</p>
     pub aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub inverse: bool,
+    /// <p>The <code>null</code> filter that is applied to the numeric equality filter.</p>
+    pub null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicNumericEqualityFilter {
     /// <p>The constant used in a numeric equality filter.</p>
@@ -18,12 +22,22 @@ impl TopicNumericEqualityFilter {
     pub fn aggregation(&self) -> ::std::option::Option<&crate::types::NamedFilterAggType> {
         self.aggregation.as_ref()
     }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn inverse(&self) -> bool {
+        self.inverse
+    }
+    /// <p>The <code>null</code> filter that is applied to the numeric equality filter.</p>
+    pub fn null_filter(&self) -> ::std::option::Option<&crate::types::NullFilterType> {
+        self.null_filter.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TopicNumericEqualityFilter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicNumericEqualityFilter");
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
         formatter.field("aggregation", &self.aggregation);
+        formatter.field("inverse", &self.inverse);
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }
@@ -40,6 +54,8 @@ impl TopicNumericEqualityFilter {
 pub struct TopicNumericEqualityFilterBuilder {
     pub(crate) constant: ::std::option::Option<crate::types::TopicSingularFilterConstant>,
     pub(crate) aggregation: ::std::option::Option<crate::types::NamedFilterAggType>,
+    pub(crate) inverse: ::std::option::Option<bool>,
+    pub(crate) null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicNumericEqualityFilterBuilder {
     /// <p>The constant used in a numeric equality filter.</p>
@@ -70,11 +86,41 @@ impl TopicNumericEqualityFilterBuilder {
     pub fn get_aggregation(&self) -> &::std::option::Option<crate::types::NamedFilterAggType> {
         &self.aggregation
     }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn inverse(mut self, input: bool) -> Self {
+        self.inverse = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn set_inverse(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inverse = input;
+        self
+    }
+    /// <p>A Boolean value that indicates if the filter is inverse.</p>
+    pub fn get_inverse(&self) -> &::std::option::Option<bool> {
+        &self.inverse
+    }
+    /// <p>The <code>null</code> filter that is applied to the numeric equality filter.</p>
+    pub fn null_filter(mut self, input: crate::types::NullFilterType) -> Self {
+        self.null_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the numeric equality filter.</p>
+    pub fn set_null_filter(mut self, input: ::std::option::Option<crate::types::NullFilterType>) -> Self {
+        self.null_filter = input;
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the numeric equality filter.</p>
+    pub fn get_null_filter(&self) -> &::std::option::Option<crate::types::NullFilterType> {
+        &self.null_filter
+    }
     /// Consumes the builder and constructs a [`TopicNumericEqualityFilter`](crate::types::TopicNumericEqualityFilter).
     pub fn build(self) -> crate::types::TopicNumericEqualityFilter {
         crate::types::TopicNumericEqualityFilter {
             constant: self.constant,
             aggregation: self.aggregation,
+            inverse: self.inverse.unwrap_or_default(),
+            null_filter: self.null_filter,
         }
     }
 }
@@ -83,6 +129,8 @@ impl ::std::fmt::Debug for TopicNumericEqualityFilterBuilder {
         let mut formatter = f.debug_struct("TopicNumericEqualityFilterBuilder");
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
         formatter.field("aggregation", &self.aggregation);
+        formatter.field("inverse", &self.inverse);
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }

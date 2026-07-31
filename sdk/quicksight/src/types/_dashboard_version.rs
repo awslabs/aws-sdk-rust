@@ -16,8 +16,10 @@ pub struct DashboardVersion {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Source entity ARN.</p>
     pub source_entity_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     pub data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Resource Names (ARNs) for the topics that are associated with this version of the dashboard.</p>
+    pub topic_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Description.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the theme associated with a version of the dashboard.</p>
@@ -52,11 +54,17 @@ impl DashboardVersion {
     pub fn source_entity_arn(&self) -> ::std::option::Option<&str> {
         self.source_entity_arn.as_deref()
     }
-    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.data_set_arns.is_none()`.
     pub fn data_set_arns(&self) -> &[::std::string::String] {
         self.data_set_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Resource Names (ARNs) for the topics that are associated with this version of the dashboard.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_arns.is_none()`.
+    pub fn topic_arns(&self) -> &[::std::string::String] {
+        self.topic_arns.as_deref().unwrap_or_default()
     }
     /// <p>Description.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -91,6 +99,7 @@ pub struct DashboardVersionBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_entity_arn: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) topic_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) theme_arn: ::std::option::Option<::std::string::String>,
     pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::Sheet>>,
@@ -190,21 +199,41 @@ impl DashboardVersionBuilder {
     ///
     /// To override the contents of this collection use [`set_data_set_arns`](Self::set_data_set_arns).
     ///
-    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     pub fn data_set_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.data_set_arns.unwrap_or_default();
         v.push(input.into());
         self.data_set_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     pub fn set_data_set_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.data_set_arns = input;
         self
     }
-    /// <p>The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.</p>
+    /// <p>The Amazon Resource Names (ARNs) for the datasets that are associated with this version of the dashboard.</p>
     pub fn get_data_set_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.data_set_arns
+    }
+    /// Appends an item to `topic_arns`.
+    ///
+    /// To override the contents of this collection use [`set_topic_arns`](Self::set_topic_arns).
+    ///
+    /// <p>The Amazon Resource Names (ARNs) for the topics that are associated with this version of the dashboard.</p>
+    pub fn topic_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.topic_arns.unwrap_or_default();
+        v.push(input.into());
+        self.topic_arns = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Resource Names (ARNs) for the topics that are associated with this version of the dashboard.</p>
+    pub fn set_topic_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.topic_arns = input;
+        self
+    }
+    /// <p>The Amazon Resource Names (ARNs) for the topics that are associated with this version of the dashboard.</p>
+    pub fn get_topic_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.topic_arns
     }
     /// <p>Description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -264,6 +293,7 @@ impl DashboardVersionBuilder {
             arn: self.arn,
             source_entity_arn: self.source_entity_arn,
             data_set_arns: self.data_set_arns,
+            topic_arns: self.topic_arns,
             description: self.description,
             theme_arn: self.theme_arn,
             sheets: self.sheets,

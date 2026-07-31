@@ -53,6 +53,11 @@ where
                                 crate::protocol_serde::shape_data_set_configuration_list::de_data_set_configuration_list(tokens, _value, depth + 1)?,
                             );
                         }
+                        "TopicConfigurations" => {
+                            builder = builder.set_topic_configurations(
+                                crate::protocol_serde::shape_topic_configuration_list::de_topic_configuration_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "Description" => {
                             builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

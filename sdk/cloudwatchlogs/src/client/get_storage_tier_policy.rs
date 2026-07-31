@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_storage_tier_policy::builders::GetStorageTierPolicyFluentBuilder::send) it.
     /// - On success, responds with [`GetStorageTierPolicyOutput`](crate::operation::get_storage_tier_policy::GetStorageTierPolicyOutput) with field(s):
     ///   - [`storage_tier(Option<StorageTier>)`](crate::operation::get_storage_tier_policy::GetStorageTierPolicyOutput::storage_tier): <p>The current storage tier for the account.</p>
-    ///   - [`last_updated_time(Option<i64>)`](crate::operation::get_storage_tier_policy::GetStorageTierPolicyOutput::last_updated_time): <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
+    ///   - [`last_updated_time(Option<i64>)`](crate::operation::get_storage_tier_policy::GetStorageTierPolicyOutput::last_updated_time): <p>The time when the storage tier policy was last updated, expressed as the number of milliseconds after <code>January 1, 1970 00:00:00 UTC</code>.</p>
     /// - On failure, responds with [`SdkError<GetStorageTierPolicyError>`](crate::operation::get_storage_tier_policy::GetStorageTierPolicyError)
     pub fn get_storage_tier_policy(&self) -> crate::operation::get_storage_tier_policy::builders::GetStorageTierPolicyFluentBuilder {
         crate::operation::get_storage_tier_policy::builders::GetStorageTierPolicyFluentBuilder::new(self.handle.clone())

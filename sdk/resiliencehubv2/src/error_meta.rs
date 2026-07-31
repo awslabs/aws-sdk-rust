@@ -320,6 +320,32 @@ impl From<crate::operation::create_system::CreateSystemError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_test::CreateTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_test::CreateTestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_test::CreateTestError> for Error {
+    fn from(err: crate::operation::create_test::CreateTestError) -> Self {
+        match err {
+            crate::operation::create_test::CreateTestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_test::CreateTestError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_test::CreateTestError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_test::CreateTestError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_test::CreateTestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_test::CreateTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_user_journey::CreateUserJourneyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -562,6 +588,60 @@ impl From<crate::operation::delete_system::DeleteSystemError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_test::DeleteTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_test::DeleteTestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_test::DeleteTestError> for Error {
+    fn from(err: crate::operation::delete_test::DeleteTestError) -> Self {
+        match err {
+            crate::operation::delete_test::DeleteTestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_test::DeleteTestError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_test::DeleteTestError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_test::DeleteTestError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_test::DeleteTestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_test::DeleteTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_test_sources::DeleteTestSourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_test_sources::DeleteTestSourcesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_test_sources::DeleteTestSourcesError> for Error {
+    fn from(err: crate::operation::delete_test_sources::DeleteTestSourcesError) -> Self {
+        match err {
+            crate::operation::delete_test_sources::DeleteTestSourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_test_sources::DeleteTestSourcesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_test_sources::DeleteTestSourcesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_test_sources::DeleteTestSourcesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_test_sources::DeleteTestSourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_test_sources::DeleteTestSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_user_journey::DeleteUserJourneyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -695,6 +775,81 @@ impl From<crate::operation::get_system::GetSystemError> for Error {
             crate::operation::get_system::GetSystemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_system::GetSystemError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_system::GetSystemError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_test::GetTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_test::GetTestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_test::GetTestError> for Error {
+    fn from(err: crate::operation::get_test::GetTestError) -> Self {
+        match err {
+            crate::operation::get_test::GetTestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_test::GetTestError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_test::GetTestError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_test::GetTestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_test::GetTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_test_run::GetTestRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_test_run::GetTestRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_test_run::GetTestRunError> for Error {
+    fn from(err: crate::operation::get_test_run::GetTestRunError) -> Self {
+        match err {
+            crate::operation::get_test_run::GetTestRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_test_run::GetTestRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_test_run::GetTestRunError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_test_run::GetTestRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_test_run::GetTestRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_test_template::GetTestTemplateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_test_template::GetTestTemplateError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_test_template::GetTestTemplateError> for Error {
+    fn from(err: crate::operation::get_test_template::GetTestTemplateError) -> Self {
+        match err {
+            crate::operation::get_test_template::GetTestTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_test_template::GetTestTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_test_template::GetTestTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_test_template::GetTestTemplateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_test_template::GetTestTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -972,6 +1127,52 @@ impl From<crate::operation::list_reports::ListReportsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError> for Error {
+    fn from(err: crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError) -> Self {
+        match err {
+            crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_resolved_test_run_target_resources::ListResolvedTestRunTargetResourcesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resources::ListResourcesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1189,6 +1390,159 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_run_events::ListTestRunEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_run_events::ListTestRunEventsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_test_run_events::ListTestRunEventsError> for Error {
+    fn from(err: crate::operation::list_test_run_events::ListTestRunEventsError) -> Self {
+        match err {
+            crate::operation::list_test_run_events::ListTestRunEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_test_run_events::ListTestRunEventsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_run_events::ListTestRunEventsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_test_run_events::ListTestRunEventsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_test_run_events::ListTestRunEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_runs::ListTestRunsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_runs::ListTestRunsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_test_runs::ListTestRunsError> for Error {
+    fn from(err: crate::operation::list_test_runs::ListTestRunsError) -> Self {
+        match err {
+            crate::operation::list_test_runs::ListTestRunsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_test_runs::ListTestRunsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_runs::ListTestRunsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_test_runs::ListTestRunsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_test_runs::ListTestRunsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_run_sources::ListTestRunSourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_run_sources::ListTestRunSourcesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_test_run_sources::ListTestRunSourcesError> for Error {
+    fn from(err: crate::operation::list_test_run_sources::ListTestRunSourcesError) -> Self {
+        match err {
+            crate::operation::list_test_run_sources::ListTestRunSourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_test_run_sources::ListTestRunSourcesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_run_sources::ListTestRunSourcesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_test_run_sources::ListTestRunSourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_test_run_sources::ListTestRunSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tests::ListTestsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tests::ListTestsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_tests::ListTestsError> for Error {
+    fn from(err: crate::operation::list_tests::ListTestsError) -> Self {
+        match err {
+            crate::operation::list_tests::ListTestsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tests::ListTestsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tests::ListTestsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_tests::ListTestsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_tests::ListTestsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_sources::ListTestSourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_sources::ListTestSourcesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_test_sources::ListTestSourcesError> for Error {
+    fn from(err: crate::operation::list_test_sources::ListTestSourcesError) -> Self {
+        match err {
+            crate::operation::list_test_sources::ListTestSourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_test_sources::ListTestSourcesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_sources::ListTestSourcesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_test_sources::ListTestSourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_test_sources::ListTestSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_templates::ListTestTemplatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_test_templates::ListTestTemplatesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_test_templates::ListTestTemplatesError> for Error {
+    fn from(err: crate::operation::list_test_templates::ListTestTemplatesError) -> Self {
+        match err {
+            crate::operation::list_test_templates::ListTestTemplatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_test_templates::ListTestTemplatesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_templates::ListTestTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_test_templates::ListTestTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_journeys::ListUserJourneysError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1211,6 +1565,35 @@ impl From<crate::operation::list_user_journeys::ListUserJourneysError> for Error
             crate::operation::list_user_journeys::ListUserJourneysError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_user_journeys::ListUserJourneysError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_user_journeys::ListUserJourneysError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_test_sources::PutTestSourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_test_sources::PutTestSourcesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_test_sources::PutTestSourcesError> for Error {
+    fn from(err: crate::operation::put_test_sources::PutTestSourcesError) -> Self {
+        match err {
+            crate::operation::put_test_sources::PutTestSourcesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_test_sources::PutTestSourcesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_test_sources::PutTestSourcesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_test_sources::PutTestSourcesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_test_sources::PutTestSourcesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::put_test_sources::PutTestSourcesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_test_sources::PutTestSourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1253,6 +1636,58 @@ impl From<crate::operation::start_failure_mode_assessment::StartFailureModeAsses
                 Error::ValidationException(inner)
             }
             crate::operation::start_failure_mode_assessment::StartFailureModeAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_test_run::StartTestRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_test_run::StartTestRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_test_run::StartTestRunError> for Error {
+    fn from(err: crate::operation::start_test_run::StartTestRunError) -> Self {
+        match err {
+            crate::operation::start_test_run::StartTestRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_test_run::StartTestRunError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_test_run::StartTestRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_test_run::StartTestRunError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_test_run::StartTestRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_test_run::StartTestRunError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_test_run::StopTestRunError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_test_run::StopTestRunError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_test_run::StopTestRunError> for Error {
+    fn from(err: crate::operation::stop_test_run::StopTestRunError) -> Self {
+        match err {
+            crate::operation::stop_test_run::StopTestRunError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::stop_test_run::StopTestRunError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::stop_test_run::StopTestRunError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::stop_test_run::StopTestRunError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::stop_test_run::StopTestRunError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::stop_test_run::StopTestRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1507,6 +1942,32 @@ impl From<crate::operation::update_system::UpdateSystemError> for Error {
             crate::operation::update_system::UpdateSystemError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_system::UpdateSystemError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_system::UpdateSystemError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_test::UpdateTestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_test::UpdateTestError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_test::UpdateTestError> for Error {
+    fn from(err: crate::operation::update_test::UpdateTestError) -> Self {
+        match err {
+            crate::operation::update_test::UpdateTestError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_test::UpdateTestError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_test::UpdateTestError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_test::UpdateTestError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_test::UpdateTestError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_test::UpdateTestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

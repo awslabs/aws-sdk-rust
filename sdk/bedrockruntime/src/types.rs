@@ -283,6 +283,10 @@ pub use crate::types::_citations_content_block::CitationsContentBlock;
 
 pub use crate::types::_search_result_block::SearchResultBlock;
 
+pub use crate::types::_tool_addition_block::ToolAdditionBlock;
+
+pub use crate::types::_tool_removal_block::ToolRemovalBlock;
+
 pub use crate::types::_guardrail_converse_image_format::GuardrailConverseImageFormat;
 
 pub use crate::types::_guardrail_converse_image_source::GuardrailConverseImageSource;
@@ -356,6 +360,8 @@ pub use crate::types::_audio_format::AudioFormat;
 pub use crate::types::_audio_source::AudioSource;
 
 pub use crate::types::_reasoning_text_block::ReasoningTextBlock;
+
+pub use crate::types::_tool_reference::ToolReference;
 
 pub use crate::types::_guardrail_converse_content_qualifier::GuardrailConverseContentQualifier;
 
@@ -767,11 +773,17 @@ mod _token_usage;
 
 mod _tool;
 
+mod _tool_addition_block;
+
 mod _tool_choice;
 
 mod _tool_configuration;
 
 mod _tool_input_schema;
+
+mod _tool_reference;
+
+mod _tool_removal_block;
 
 mod _tool_result_block;
 

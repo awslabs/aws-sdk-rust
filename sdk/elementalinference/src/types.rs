@@ -33,6 +33,8 @@ pub use crate::types::_aspect_ratio::AspectRatio;
 
 pub use crate::types::_profanity_filter_mode::ProfanityFilterMode;
 
+pub use crate::types::_template_group::TemplateGroup;
+
 mod _aspect_ratio;
 
 mod _clipping_config;
@@ -62,6 +64,8 @@ mod _output_status;
 mod _profanity_filter_mode;
 
 mod _subtitling_config;
+
+mod _template_group;
 
 mod _transcription_language;
 

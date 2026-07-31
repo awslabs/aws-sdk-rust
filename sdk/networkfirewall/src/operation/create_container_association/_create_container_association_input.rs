@@ -7,9 +7,15 @@ pub struct CreateContainerAssociationInput {
     pub container_association_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the container association.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of container orchestration platform for the clusters in this association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't change the type after creation.</p>
+    /// <p>The type of containers to monitor. You can't change the container type after creation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::ContainerMonitoringType>,
-    /// <p>The list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow which containers are tracked.</p>
     pub container_monitoring_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>>,
     /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -23,11 +29,17 @@ impl CreateContainerAssociationInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of container orchestration platform for the clusters in this association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't change the type after creation.</p>
+    /// <p>The type of containers to monitor. You can't change the container type after creation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContainerMonitoringType> {
         self.r#type.as_ref()
     }
-    /// <p>The list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow which containers are tracked.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_monitoring_configurations.is_none()`.
     pub fn container_monitoring_configurations(&self) -> &[crate::types::ContainerMonitoringConfiguration] {
@@ -87,18 +99,36 @@ impl CreateContainerAssociationInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The type of container orchestration platform for the clusters in this association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't change the type after creation.</p>
+    /// <p>The type of containers to monitor. You can't change the container type after creation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::ContainerMonitoringType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of container orchestration platform for the clusters in this association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't change the type after creation.</p>
+    /// <p>The type of containers to monitor. You can't change the container type after creation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContainerMonitoringType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of container orchestration platform for the clusters in this association. Valid values are <code>ECS</code> and <code>EKS</code>. You can't change the type after creation.</p>
+    /// <p>The type of containers to monitor. You can't change the container type after creation. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContainerMonitoringType> {
         &self.r#type
     }
@@ -106,14 +136,14 @@ impl CreateContainerAssociationInputBuilder {
     ///
     /// To override the contents of this collection use [`set_container_monitoring_configurations`](Self::set_container_monitoring_configurations).
     ///
-    /// <p>The list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow which containers are tracked.</p>
     pub fn container_monitoring_configurations(mut self, input: crate::types::ContainerMonitoringConfiguration) -> Self {
         let mut v = self.container_monitoring_configurations.unwrap_or_default();
         v.push(input);
         self.container_monitoring_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow which containers are tracked.</p>
     pub fn set_container_monitoring_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>>,
@@ -121,7 +151,7 @@ impl CreateContainerAssociationInputBuilder {
         self.container_monitoring_configurations = input;
         self
     }
-    /// <p>The list of container monitoring configurations that define which clusters and container attributes to monitor.</p>
+    /// <p>The monitoring configurations for the container association. Each configuration specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow which containers are tracked.</p>
     pub fn get_container_monitoring_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>> {
         &self.container_monitoring_configurations
     }

@@ -8,7 +8,11 @@ pub struct UpdateLookupTableInput {
     /// <p>An updated description of the lookup table.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub table_body: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. You can use this parameter to add, update, or remove the KMS key. To remove the KMS key and use an Amazon Web Services-owned key instead, specify an empty string.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
@@ -22,8 +26,14 @@ impl UpdateLookupTableInput {
         self.description.as_deref()
     }
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn table_body(&self) -> ::std::option::Option<&str> {
         self.table_body.as_deref()
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn query_id(&self) -> ::std::option::Option<&str> {
+        self.query_id.as_deref()
     }
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. You can use this parameter to add, update, or remove the KMS key. To remove the KMS key and use an Amazon Web Services-owned key instead, specify an empty string.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -44,6 +54,7 @@ pub struct UpdateLookupTableInputBuilder {
     pub(crate) lookup_table_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) table_body: ::std::option::Option<::std::string::String>,
+    pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLookupTableInputBuilder {
@@ -77,19 +88,38 @@ impl UpdateLookupTableInputBuilder {
         &self.description
     }
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
-    /// This field is required.
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn table_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn set_table_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_body = input;
         self
     }
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn get_table_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_body
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.query_id = input;
+        self
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. You can use this parameter to add, update, or remove the KMS key. To remove the KMS key and use an Amazon Web Services-owned key instead, specify an empty string.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -113,6 +143,7 @@ impl UpdateLookupTableInputBuilder {
             lookup_table_arn: self.lookup_table_arn,
             description: self.description,
             table_body: self.table_body,
+            query_id: self.query_id,
             kms_key_id: self.kms_key_id,
         })
     }

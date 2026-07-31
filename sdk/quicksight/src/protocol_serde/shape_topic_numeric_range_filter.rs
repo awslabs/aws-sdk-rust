@@ -15,6 +15,12 @@ pub fn ser_topic_numeric_range_filter(
     if let Some(var_3) = &input.aggregation {
         object.key("Aggregation").string(var_3.as_str());
     }
+    if input.inverse {
+        object.key("Inverse").boolean(input.inverse);
+    }
+    if let Some(var_4) = &input.null_filter {
+        object.key("NullFilter").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -54,6 +60,16 @@ where
                             builder = builder.set_aggregation(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::NamedFilterAggType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Inverse" => {
+                            builder = builder.set_inverse(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "NullFilter" => {
+                            builder = builder.set_null_filter(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::NullFilterType::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

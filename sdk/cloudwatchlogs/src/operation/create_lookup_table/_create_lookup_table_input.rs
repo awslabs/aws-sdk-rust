@@ -8,7 +8,11 @@ pub struct CreateLookupTableInput {
     /// <p>A description of the lookup table. The description can be up to 1024 characters long.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub table_body: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. If you don't specify a key, the data is encrypted with an Amazon Web Services-owned key.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to associate with the lookup table. You can associate as many as 50 tags with a lookup table. Tags can help you organize and categorize your resources.</p>
@@ -24,8 +28,14 @@ impl CreateLookupTableInput {
         self.description.as_deref()
     }
     /// <p>The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn table_body(&self) -> ::std::option::Option<&str> {
         self.table_body.as_deref()
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn query_id(&self) -> ::std::option::Option<&str> {
+        self.query_id.as_deref()
     }
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. If you don't specify a key, the data is encrypted with an Amazon Web Services-owned key.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
@@ -50,6 +60,7 @@ pub struct CreateLookupTableInputBuilder {
     pub(crate) lookup_table_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) table_body: ::std::option::Option<::std::string::String>,
+    pub(crate) query_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -84,19 +95,38 @@ impl CreateLookupTableInputBuilder {
         &self.description
     }
     /// <p>The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
-    /// This field is required.
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn table_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn set_table_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_body = input;
         self
     }
     /// <p>The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn get_table_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_body
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.query_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.query_id = input;
+        self
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.query_id
     }
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. If you don't specify a key, the data is encrypted with an Amazon Web Services-owned key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -140,6 +170,7 @@ impl CreateLookupTableInputBuilder {
             lookup_table_name: self.lookup_table_name,
             description: self.description,
             table_body: self.table_body,
+            query_id: self.query_id,
             kms_key_id: self.kms_key_id,
             tags: self.tags,
         })

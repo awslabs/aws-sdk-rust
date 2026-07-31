@@ -116,6 +116,20 @@ impl ReportSucceededFluentBuilder {
     pub fn get_report_type(&self) -> &::std::option::Option<crate::types::ReportType> {
         self.inner.get_report_type()
     }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn test_run_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.test_run_id(input.into());
+        self
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn set_test_run_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_test_run_id(input);
+        self
+    }
+    /// <p>The unique identifier of a test run.</p>
+    pub fn get_test_run_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_test_run_id()
+    }
     /// <p>Pagination page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

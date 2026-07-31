@@ -6,6 +6,8 @@
 pub struct AnalysisDefinition {
     /// <p>An array of dataset identifier declarations. This mapping allows the usage of dataset identifiers instead of dataset ARNs throughout analysis sub-structures.</p>
     pub data_set_identifier_declarations: ::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>,
+    /// <p>An array of topic identifier declarations. This mapping allows the usage of topic identifiers instead of topic ARNs throughout analysis sub-structures.</p>
+    pub topic_identifier_declarations: ::std::option::Option<::std::vec::Vec<crate::types::TopicIdentifierDeclaration>>,
     /// <p>An array of sheet definitions for an analysis. Each <code>SheetDefinition</code> provides detailed information about a sheet within this analysis.</p>
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
     /// <p>An array of tooltip sheet definitions for an analysis. Each <code>TooltipSheetDefinition</code> provides detailed information about a tooltip sheet within this analysis.</p>
@@ -35,6 +37,12 @@ impl AnalysisDefinition {
     pub fn data_set_identifier_declarations(&self) -> &[crate::types::DataSetIdentifierDeclaration] {
         use std::ops::Deref;
         self.data_set_identifier_declarations.deref()
+    }
+    /// <p>An array of topic identifier declarations. This mapping allows the usage of topic identifiers instead of topic ARNs throughout analysis sub-structures.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_identifier_declarations.is_none()`.
+    pub fn topic_identifier_declarations(&self) -> &[crate::types::TopicIdentifierDeclaration] {
+        self.topic_identifier_declarations.as_deref().unwrap_or_default()
     }
     /// <p>An array of sheet definitions for an analysis. Each <code>SheetDefinition</code> provides detailed information about a sheet within this analysis.</p>
     ///
@@ -106,6 +114,7 @@ impl AnalysisDefinition {
 #[non_exhaustive]
 pub struct AnalysisDefinitionBuilder {
     pub(crate) data_set_identifier_declarations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>>,
+    pub(crate) topic_identifier_declarations: ::std::option::Option<::std::vec::Vec<crate::types::TopicIdentifierDeclaration>>,
     pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
     pub(crate) tooltip_sheets: ::std::option::Option<::std::vec::Vec<crate::types::TooltipSheetDefinition>>,
     pub(crate) calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>>,
@@ -140,6 +149,29 @@ impl AnalysisDefinitionBuilder {
     /// <p>An array of dataset identifier declarations. This mapping allows the usage of dataset identifiers instead of dataset ARNs throughout analysis sub-structures.</p>
     pub fn get_data_set_identifier_declarations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetIdentifierDeclaration>> {
         &self.data_set_identifier_declarations
+    }
+    /// Appends an item to `topic_identifier_declarations`.
+    ///
+    /// To override the contents of this collection use [`set_topic_identifier_declarations`](Self::set_topic_identifier_declarations).
+    ///
+    /// <p>An array of topic identifier declarations. This mapping allows the usage of topic identifiers instead of topic ARNs throughout analysis sub-structures.</p>
+    pub fn topic_identifier_declarations(mut self, input: crate::types::TopicIdentifierDeclaration) -> Self {
+        let mut v = self.topic_identifier_declarations.unwrap_or_default();
+        v.push(input);
+        self.topic_identifier_declarations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of topic identifier declarations. This mapping allows the usage of topic identifiers instead of topic ARNs throughout analysis sub-structures.</p>
+    pub fn set_topic_identifier_declarations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TopicIdentifierDeclaration>>,
+    ) -> Self {
+        self.topic_identifier_declarations = input;
+        self
+    }
+    /// <p>An array of topic identifier declarations. This mapping allows the usage of topic identifiers instead of topic ARNs throughout analysis sub-structures.</p>
+    pub fn get_topic_identifier_declarations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicIdentifierDeclaration>> {
+        &self.topic_identifier_declarations
     }
     /// Appends an item to `sheets`.
     ///
@@ -343,6 +375,7 @@ impl AnalysisDefinitionBuilder {
                     "data_set_identifier_declarations was not specified but it is required when building AnalysisDefinition",
                 )
             })?,
+            topic_identifier_declarations: self.topic_identifier_declarations,
             sheets: self.sheets,
             tooltip_sheets: self.tooltip_sheets,
             calculated_fields: self.calculated_fields,

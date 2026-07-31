@@ -2,7 +2,7 @@
 
 /// <p>The definition for a <code>CreateTopicReviewedAnswer</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateTopicReviewedAnswer {
     /// <p>The answer ID for the <code>CreateTopicReviewedAnswer</code>.</p>
     pub answer_id: ::std::string::String,
@@ -46,6 +46,18 @@ impl CreateTopicReviewedAnswer {
         self.template.as_ref()
     }
 }
+impl ::std::fmt::Debug for CreateTopicReviewedAnswer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTopicReviewedAnswer");
+        formatter.field("answer_id", &self.answer_id);
+        formatter.field("dataset_arn", &self.dataset_arn);
+        formatter.field("question", &"*** Sensitive Data Redacted ***");
+        formatter.field("mir", &self.mir);
+        formatter.field("primary_visual", &self.primary_visual);
+        formatter.field("template", &self.template);
+        formatter.finish()
+    }
+}
 impl CreateTopicReviewedAnswer {
     /// Creates a new builder-style object to manufacture [`CreateTopicReviewedAnswer`](crate::types::CreateTopicReviewedAnswer).
     pub fn builder() -> crate::types::builders::CreateTopicReviewedAnswerBuilder {
@@ -54,7 +66,7 @@ impl CreateTopicReviewedAnswer {
 }
 
 /// A builder for [`CreateTopicReviewedAnswer`](crate::types::CreateTopicReviewedAnswer).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CreateTopicReviewedAnswerBuilder {
     pub(crate) answer_id: ::std::option::Option<::std::string::String>,
@@ -181,5 +193,17 @@ impl CreateTopicReviewedAnswerBuilder {
             primary_visual: self.primary_visual,
             template: self.template,
         })
+    }
+}
+impl ::std::fmt::Debug for CreateTopicReviewedAnswerBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateTopicReviewedAnswerBuilder");
+        formatter.field("answer_id", &self.answer_id);
+        formatter.field("dataset_arn", &self.dataset_arn);
+        formatter.field("question", &"*** Sensitive Data Redacted ***");
+        formatter.field("mir", &self.mir);
+        formatter.field("primary_visual", &self.primary_visual);
+        formatter.field("template", &self.template);
+        formatter.finish()
     }
 }

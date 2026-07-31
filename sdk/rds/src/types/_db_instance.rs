@@ -249,6 +249,16 @@ pub struct DbInstance {
     pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolumeOutput>>,
     /// <p>The detailed status information for storage volumes associated with the DB instance. This information helps identify which specific volume is causing the instance to be in a storage-full state.</p>
     pub storage_volume_status: ::std::option::Option<::std::string::String>,
+    /// <p>The status of an in-progress storage operation on the DB instance. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub storage_operation_status: ::std::option::Option<::std::string::String>,
+    /// <p>The percentage of the in-progress storage operation on the DB instance that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub storage_operation_percent_progress: ::std::option::Option<i32>,
 }
 impl DbInstance {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -705,6 +715,20 @@ impl DbInstance {
     pub fn storage_volume_status(&self) -> ::std::option::Option<&str> {
         self.storage_volume_status.as_deref()
     }
+    /// <p>The status of an in-progress storage operation on the DB instance. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub fn storage_operation_status(&self) -> ::std::option::Option<&str> {
+        self.storage_operation_status.as_deref()
+    }
+    /// <p>The percentage of the in-progress storage operation on the DB instance that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub fn storage_operation_percent_progress(&self) -> ::std::option::Option<i32> {
+        self.storage_operation_percent_progress
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -809,6 +833,8 @@ pub struct DbInstanceBuilder {
     pub(crate) engine_lifecycle_support: ::std::option::Option<::std::string::String>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolumeOutput>>,
     pub(crate) storage_volume_status: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_operation_status: ::std::option::Option<::std::string::String>,
+    pub(crate) storage_operation_percent_progress: ::std::option::Option<i32>,
 }
 impl DbInstanceBuilder {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -2363,6 +2389,52 @@ impl DbInstanceBuilder {
     pub fn get_storage_volume_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.storage_volume_status
     }
+    /// <p>The status of an in-progress storage operation on the DB instance. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub fn storage_operation_status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.storage_operation_status = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The status of an in-progress storage operation on the DB instance. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub fn set_storage_operation_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.storage_operation_status = input;
+        self
+    }
+    /// <p>The status of an in-progress storage operation on the DB instance. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Initializing</code> - The volume is initializing from a snapshot, such as during a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment. Performance can be lower than provisioned until initialization completes.</p></li>
+    /// <li>
+    /// <p><code>Optimizing</code> - The volume is optimizing following a storage scaling or modification operation.</p></li>
+    /// </ul>
+    pub fn get_storage_operation_status(&self) -> &::std::option::Option<::std::string::String> {
+        &self.storage_operation_status
+    }
+    /// <p>The percentage of the in-progress storage operation on the DB instance that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub fn storage_operation_percent_progress(mut self, input: i32) -> Self {
+        self.storage_operation_percent_progress = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The percentage of the in-progress storage operation on the DB instance that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub fn set_storage_operation_percent_progress(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_operation_percent_progress = input;
+        self
+    }
+    /// <p>The percentage of the in-progress storage operation on the DB instance that has completed, from <code>0</code> to <code>100</code>. This field appears only while a storage operation is in progress. It isn't present when no storage operation is active.</p>
+    pub fn get_storage_operation_percent_progress(&self) -> &::std::option::Option<i32> {
+        &self.storage_operation_percent_progress
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -2457,6 +2529,8 @@ impl DbInstanceBuilder {
             engine_lifecycle_support: self.engine_lifecycle_support,
             additional_storage_volumes: self.additional_storage_volumes,
             storage_volume_status: self.storage_volume_status,
+            storage_operation_status: self.storage_operation_status,
+            storage_operation_percent_progress: self.storage_operation_percent_progress,
         }
     }
 }

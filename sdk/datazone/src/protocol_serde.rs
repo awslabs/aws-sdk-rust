@@ -1045,6 +1045,12 @@ pub(crate) mod shape_form_entry_output;
 
 pub(crate) mod shape_form_output;
 
+pub(crate) mod shape_git_properties_input;
+
+pub(crate) mod shape_git_properties_output;
+
+pub(crate) mod shape_git_properties_patch;
+
 pub(crate) mod shape_glossary_term_enforcement_detail;
 
 pub(crate) mod shape_glue_properties_input;

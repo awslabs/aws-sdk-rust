@@ -15,107 +15,119 @@ pub fn ser_analysis_definition(
         }
         array_1.finish();
     }
-    if let Some(var_4) = &input.sheets {
-        let mut array_5 = object.key("Sheets").start_array();
+    if let Some(var_4) = &input.topic_identifier_declarations {
+        let mut array_5 = object.key("TopicIdentifierDeclarations").start_array();
         for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
                 let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_sheet_definition::ser_sheet_definition(&mut object_7, item_6)?;
+                crate::protocol_serde::shape_topic_identifier_declaration::ser_topic_identifier_declaration(&mut object_7, item_6)?;
                 object_7.finish();
             }
         }
         array_5.finish();
     }
-    if let Some(var_8) = &input.tooltip_sheets {
-        let mut array_9 = object.key("TooltipSheets").start_array();
+    if let Some(var_8) = &input.sheets {
+        let mut array_9 = object.key("Sheets").start_array();
         for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
                 let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_tooltip_sheet_definition::ser_tooltip_sheet_definition(&mut object_11, item_10)?;
+                crate::protocol_serde::shape_sheet_definition::ser_sheet_definition(&mut object_11, item_10)?;
                 object_11.finish();
             }
         }
         array_9.finish();
     }
-    if let Some(var_12) = &input.calculated_fields {
-        let mut array_13 = object.key("CalculatedFields").start_array();
+    if let Some(var_12) = &input.tooltip_sheets {
+        let mut array_13 = object.key("TooltipSheets").start_array();
         for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
                 let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_calculated_field::ser_calculated_field(&mut object_15, item_14)?;
+                crate::protocol_serde::shape_tooltip_sheet_definition::ser_tooltip_sheet_definition(&mut object_15, item_14)?;
                 object_15.finish();
             }
         }
         array_13.finish();
     }
-    if let Some(var_16) = &input.parameter_declarations {
-        let mut array_17 = object.key("ParameterDeclarations").start_array();
+    if let Some(var_16) = &input.calculated_fields {
+        let mut array_17 = object.key("CalculatedFields").start_array();
         for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
                 let mut object_19 = array_17.value().start_object();
-                crate::protocol_serde::shape_parameter_declaration::ser_parameter_declaration(&mut object_19, item_18)?;
+                crate::protocol_serde::shape_calculated_field::ser_calculated_field(&mut object_19, item_18)?;
                 object_19.finish();
             }
         }
         array_17.finish();
     }
-    if let Some(var_20) = &input.filter_groups {
-        let mut array_21 = object.key("FilterGroups").start_array();
+    if let Some(var_20) = &input.parameter_declarations {
+        let mut array_21 = object.key("ParameterDeclarations").start_array();
         for item_22 in var_20 {
             {
                 #[allow(unused_mut)]
                 let mut object_23 = array_21.value().start_object();
-                crate::protocol_serde::shape_filter_group::ser_filter_group(&mut object_23, item_22)?;
+                crate::protocol_serde::shape_parameter_declaration::ser_parameter_declaration(&mut object_23, item_22)?;
                 object_23.finish();
             }
         }
         array_21.finish();
     }
-    if let Some(var_24) = &input.column_configurations {
-        let mut array_25 = object.key("ColumnConfigurations").start_array();
+    if let Some(var_24) = &input.filter_groups {
+        let mut array_25 = object.key("FilterGroups").start_array();
         for item_26 in var_24 {
             {
                 #[allow(unused_mut)]
                 let mut object_27 = array_25.value().start_object();
-                crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_27, item_26)?;
+                crate::protocol_serde::shape_filter_group::ser_filter_group(&mut object_27, item_26)?;
                 object_27.finish();
             }
         }
         array_25.finish();
     }
-    if let Some(var_28) = &input.analysis_defaults {
-        #[allow(unused_mut)]
-        let mut object_29 = object.key("AnalysisDefaults").start_object();
-        crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(&mut object_29, var_28)?;
-        object_29.finish();
-    }
-    if let Some(var_30) = &input.options {
-        #[allow(unused_mut)]
-        let mut object_31 = object.key("Options").start_object();
-        crate::protocol_serde::shape_asset_options::ser_asset_options(&mut object_31, var_30)?;
-        object_31.finish();
-    }
-    if let Some(var_32) = &input.query_execution_options {
-        #[allow(unused_mut)]
-        let mut object_33 = object.key("QueryExecutionOptions").start_object();
-        crate::protocol_serde::shape_query_execution_options::ser_query_execution_options(&mut object_33, var_32)?;
-        object_33.finish();
-    }
-    if let Some(var_34) = &input.static_files {
-        let mut array_35 = object.key("StaticFiles").start_array();
-        for item_36 in var_34 {
+    if let Some(var_28) = &input.column_configurations {
+        let mut array_29 = object.key("ColumnConfigurations").start_array();
+        for item_30 in var_28 {
             {
                 #[allow(unused_mut)]
-                let mut object_37 = array_35.value().start_object();
-                crate::protocol_serde::shape_static_file::ser_static_file(&mut object_37, item_36)?;
-                object_37.finish();
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_column_configuration::ser_column_configuration(&mut object_31, item_30)?;
+                object_31.finish();
             }
         }
-        array_35.finish();
+        array_29.finish();
+    }
+    if let Some(var_32) = &input.analysis_defaults {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("AnalysisDefaults").start_object();
+        crate::protocol_serde::shape_analysis_defaults::ser_analysis_defaults(&mut object_33, var_32)?;
+        object_33.finish();
+    }
+    if let Some(var_34) = &input.options {
+        #[allow(unused_mut)]
+        let mut object_35 = object.key("Options").start_object();
+        crate::protocol_serde::shape_asset_options::ser_asset_options(&mut object_35, var_34)?;
+        object_35.finish();
+    }
+    if let Some(var_36) = &input.query_execution_options {
+        #[allow(unused_mut)]
+        let mut object_37 = object.key("QueryExecutionOptions").start_object();
+        crate::protocol_serde::shape_query_execution_options::ser_query_execution_options(&mut object_37, var_36)?;
+        object_37.finish();
+    }
+    if let Some(var_38) = &input.static_files {
+        let mut array_39 = object.key("StaticFiles").start_array();
+        for item_40 in var_38 {
+            {
+                #[allow(unused_mut)]
+                let mut object_41 = array_39.value().start_object();
+                crate::protocol_serde::shape_static_file::ser_static_file(&mut object_41, item_40)?;
+                object_41.finish();
+            }
+        }
+        array_39.finish();
     }
     Ok(())
 }
@@ -145,6 +157,15 @@ where
                         "DataSetIdentifierDeclarations" => {
                             builder = builder.set_data_set_identifier_declarations(
                                 crate::protocol_serde::shape_data_set_identifier_declaration_list::de_data_set_identifier_declaration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "TopicIdentifierDeclarations" => {
+                            builder = builder.set_topic_identifier_declarations(
+                                crate::protocol_serde::shape_topic_identifier_declaration_list::de_topic_identifier_declaration_list(
                                     tokens,
                                     _value,
                                     depth + 1,

@@ -22,8 +22,8 @@ impl crate::operation::create_lookup_table::builders::CreateLookupTableInputBuil
 }
 /// Fluent builder constructing a request to `CreateLookupTable`.
 ///
-/// <p>Creates a lookup table by uploading CSV data. You can use lookup tables to enrich log data in CloudWatch Logs Insights queries with reference data such as user details, application names, or error descriptions.</p>
-/// <p>The table name must be unique within your account and Region. The CSV content must include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.</p>
+/// <p>Creates a lookup table by uploading CSV data or from CloudWatch Logs query results. You can use lookup tables to enrich log data in CloudWatch Logs queries with reference data such as user details, application names, or error descriptions.</p>
+/// <p>The table name must be unique within your account and Region. You must specify either <code>tableBody</code> or <code>queryId</code>, but not both. If you use <code>tableBody</code>, the CSV content must include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateLookupTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -138,18 +138,38 @@ impl CreateLookupTableFluentBuilder {
         self.inner.get_description()
     }
     /// <p>The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn table_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_body(input.into());
         self
     }
     /// <p>The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn set_table_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_body(input);
         self
     }
     /// <p>The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn get_table_body(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_body()
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.query_id(input.into());
+        self
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_query_id(input);
+        self
+    }
+    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
+    pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_query_id()
     }
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. If you don't specify a key, the data is encrypted with an Amazon Web Services-owned key.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

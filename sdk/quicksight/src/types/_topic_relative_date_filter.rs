@@ -10,6 +10,8 @@ pub struct TopicRelativeDateFilter {
     pub relative_date_filter_function: ::std::option::Option<crate::types::TopicRelativeDateFilterFunction>,
     /// <p>The constant used in a relative date filter.</p>
     pub constant: ::std::option::Option<crate::types::TopicSingularFilterConstant>,
+    /// <p>The <code>null</code> filter that is applied to the relative date filter.</p>
+    pub null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicRelativeDateFilter {
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
@@ -24,6 +26,10 @@ impl TopicRelativeDateFilter {
     pub fn constant(&self) -> ::std::option::Option<&crate::types::TopicSingularFilterConstant> {
         self.constant.as_ref()
     }
+    /// <p>The <code>null</code> filter that is applied to the relative date filter.</p>
+    pub fn null_filter(&self) -> ::std::option::Option<&crate::types::NullFilterType> {
+        self.null_filter.as_ref()
+    }
 }
 impl ::std::fmt::Debug for TopicRelativeDateFilter {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -31,6 +37,7 @@ impl ::std::fmt::Debug for TopicRelativeDateFilter {
         formatter.field("time_granularity", &self.time_granularity);
         formatter.field("relative_date_filter_function", &self.relative_date_filter_function);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }
@@ -48,6 +55,7 @@ pub struct TopicRelativeDateFilterBuilder {
     pub(crate) time_granularity: ::std::option::Option<crate::types::TopicTimeGranularity>,
     pub(crate) relative_date_filter_function: ::std::option::Option<crate::types::TopicRelativeDateFilterFunction>,
     pub(crate) constant: ::std::option::Option<crate::types::TopicSingularFilterConstant>,
+    pub(crate) null_filter: ::std::option::Option<crate::types::NullFilterType>,
 }
 impl TopicRelativeDateFilterBuilder {
     /// <p>The level of time precision that is used to aggregate <code>DateTime</code> values.</p>
@@ -92,12 +100,27 @@ impl TopicRelativeDateFilterBuilder {
     pub fn get_constant(&self) -> &::std::option::Option<crate::types::TopicSingularFilterConstant> {
         &self.constant
     }
+    /// <p>The <code>null</code> filter that is applied to the relative date filter.</p>
+    pub fn null_filter(mut self, input: crate::types::NullFilterType) -> Self {
+        self.null_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the relative date filter.</p>
+    pub fn set_null_filter(mut self, input: ::std::option::Option<crate::types::NullFilterType>) -> Self {
+        self.null_filter = input;
+        self
+    }
+    /// <p>The <code>null</code> filter that is applied to the relative date filter.</p>
+    pub fn get_null_filter(&self) -> &::std::option::Option<crate::types::NullFilterType> {
+        &self.null_filter
+    }
     /// Consumes the builder and constructs a [`TopicRelativeDateFilter`](crate::types::TopicRelativeDateFilter).
     pub fn build(self) -> crate::types::TopicRelativeDateFilter {
         crate::types::TopicRelativeDateFilter {
             time_granularity: self.time_granularity,
             relative_date_filter_function: self.relative_date_filter_function,
             constant: self.constant,
+            null_filter: self.null_filter,
         }
     }
 }
@@ -107,6 +130,7 @@ impl ::std::fmt::Debug for TopicRelativeDateFilterBuilder {
         formatter.field("time_granularity", &self.time_granularity);
         formatter.field("relative_date_filter_function", &self.relative_date_filter_function);
         formatter.field("constant", &"*** Sensitive Data Redacted ***");
+        formatter.field("null_filter", &self.null_filter);
         formatter.finish()
     }
 }

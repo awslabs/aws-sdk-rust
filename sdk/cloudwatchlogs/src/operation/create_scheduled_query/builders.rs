@@ -239,17 +239,17 @@ impl CreateScheduledQueryFluentBuilder {
     pub fn get_end_time_offset(&self) -> &::std::option::Option<i64> {
         self.inner.get_end_time_offset()
     }
-    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
+    /// <p>Configuration for where to deliver query results. Supports Amazon S3 destinations for storing query output and lookup table destinations for automatically refreshing lookup tables with query results. You can configure one or both destination types.</p>
     pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
         self.inner = self.inner.destination_configuration(input);
         self
     }
-    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
+    /// <p>Configuration for where to deliver query results. Supports Amazon S3 destinations for storing query output and lookup table destinations for automatically refreshing lookup tables with query results. You can configure one or both destination types.</p>
     pub fn set_destination_configuration(mut self, input: ::std::option::Option<crate::types::DestinationConfiguration>) -> Self {
         self.inner = self.inner.set_destination_configuration(input);
         self
     }
-    /// <p>Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.</p>
+    /// <p>Configuration for where to deliver query results. Supports Amazon S3 destinations for storing query output and lookup table destinations for automatically refreshing lookup tables with query results. You can configure one or both destination types.</p>
     pub fn get_destination_configuration(&self) -> &::std::option::Option<crate::types::DestinationConfiguration> {
         self.inner.get_destination_configuration()
     }

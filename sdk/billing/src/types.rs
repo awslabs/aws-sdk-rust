@@ -5,6 +5,8 @@ pub use crate::types::_expression::Expression;
 
 pub use crate::types::_billing_view_element::BillingViewElement;
 
+pub use crate::types::_pricing_plan::PricingPlan;
+
 pub use crate::types::_active_time_range::ActiveTimeRange;
 
 pub use crate::types::_billing_feature::BillingFeature;
@@ -33,9 +35,17 @@ pub use crate::types::_credit_allocation_history_entry::CreditAllocationHistoryE
 
 pub use crate::types::_credit_data::CreditData;
 
+pub use crate::types::_contract_account::ContractAccount;
+
+pub use crate::types::_charge_account::ChargeAccount;
+
+pub use crate::types::_additional_charge::AdditionalCharge;
+
 pub use crate::types::_string_search::StringSearch;
 
 pub use crate::types::_billing_view_list_element::BillingViewListElement;
+
+pub use crate::types::_linked_account_charge::LinkedAccountCharge;
 
 pub use crate::types::_billing_preference_for_key::BillingPreferenceForKey;
 
@@ -57,11 +67,19 @@ pub use crate::types::_credit_sharing_type::CreditSharingType;
 
 pub use crate::types::_credit_status::CreditStatus;
 
+pub use crate::types::_pricing_plan_tier::PricingPlanTier;
+
 pub use crate::types::_search_option::SearchOption;
 
 pub use crate::types::_billing_view_status_reason::BillingViewStatusReason;
 
+pub use crate::types::_enterprise_support_time_period::EnterpriseSupportTimePeriod;
+
+pub use crate::types::_service_level_account_usage::ServiceLevelAccountUsage;
+
 mod _active_time_range;
+
+mod _additional_charge;
 
 mod _amount;
 
@@ -91,6 +109,10 @@ mod _billing_view_status_reason;
 
 mod _billing_view_type;
 
+mod _charge_account;
+
+mod _contract_account;
+
 mod _cost_category_values;
 
 mod _credit_allocation_history_entry;
@@ -105,13 +127,23 @@ mod _dimension;
 
 mod _dimension_values;
 
+mod _enterprise_support_time_period;
+
 mod _expression;
 
+mod _linked_account_charge;
+
 mod _preference_value;
+
+mod _pricing_plan;
+
+mod _pricing_plan_tier;
 
 mod _resource_tag;
 
 mod _search_option;
+
+mod _service_level_account_usage;
 
 mod _string_search;
 

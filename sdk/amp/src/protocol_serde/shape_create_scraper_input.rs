@@ -15,33 +15,45 @@ pub fn ser_create_scraper_input_input(
         crate::protocol_serde::shape_destination::ser_destination(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.role_configuration {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("roleConfiguration").start_object();
-        crate::protocol_serde::shape_role_configuration::ser_role_configuration(&mut object_6, var_5)?;
-        object_6.finish();
-    }
-    if let Some(var_7) = &input.scrape_configuration {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("scrapeConfiguration").start_object();
-        crate::protocol_serde::shape_scrape_configuration::ser_scrape_configuration(&mut object_8, var_7)?;
-        object_8.finish();
-    }
-    if let Some(var_9) = &input.source {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("source").start_object();
-        crate::protocol_serde::shape_source::ser_source(&mut object_10, var_9)?;
-        object_10.finish();
-    }
-    if let Some(var_11) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_12 = object.key("tags").start_object();
-        for (key_13, value_14) in var_11 {
+    if let Some(var_5) = &input.exporters {
+        let mut array_6 = object.key("exporters").start_array();
+        for item_7 in var_5 {
             {
-                object_12.key(key_13.as_str()).string(value_14.as_str());
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_exporter_configuration::ser_exporter_configuration(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
+        array_6.finish();
+    }
+    if let Some(var_9) = &input.role_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("roleConfiguration").start_object();
+        crate::protocol_serde::shape_role_configuration::ser_role_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.scrape_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("scrapeConfiguration").start_object();
+        crate::protocol_serde::shape_scrape_configuration::ser_scrape_configuration(&mut object_12, var_11)?;
         object_12.finish();
+    }
+    if let Some(var_13) = &input.source {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("source").start_object();
+        crate::protocol_serde::shape_source::ser_source(&mut object_14, var_13)?;
+        object_14.finish();
+    }
+    if let Some(var_15) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
+            {
+                object_16.key(key_17.as_str()).string(value_18.as_str());
+            }
+        }
+        object_16.finish();
     }
     Ok(())
 }

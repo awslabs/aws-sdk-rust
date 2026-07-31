@@ -73,6 +73,18 @@ pub fn ser_content_block(
             crate::protocol_serde::shape_search_result_block::ser_search_result_block(&mut object_11, inner)?;
             object_11.finish();
         }
+        crate::types::ContentBlock::ToolAddition(inner) => {
+            #[allow(unused_mut)]
+            let mut object_12 = object_3.key("toolAddition").start_object();
+            crate::protocol_serde::shape_tool_addition_block::ser_tool_addition_block(&mut object_12, inner)?;
+            object_12.finish();
+        }
+        crate::types::ContentBlock::ToolRemoval(inner) => {
+            #[allow(unused_mut)]
+            let mut object_13 = object_3.key("toolRemoval").start_object();
+            crate::protocol_serde::shape_tool_removal_block::ser_tool_removal_block(&mut object_13, inner)?;
+            object_13.finish();
+        }
         crate::types::ContentBlock::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("ContentBlock")),
     }
     Ok(())
@@ -177,6 +189,16 @@ where
                             crate::protocol_serde::shape_search_result_block::de_search_result_block(tokens, _value, depth + 1)?.ok_or_else(
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'searchResult' cannot be null"),
                             )?,
+                        )),
+                        "toolAddition" => Some(crate::types::ContentBlock::ToolAddition(
+                            crate::protocol_serde::shape_tool_addition_block::de_tool_addition_block(tokens, _value, depth + 1)?.ok_or_else(
+                                || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolAddition' cannot be null"),
+                            )?,
+                        )),
+                        "toolRemoval" => Some(crate::types::ContentBlock::ToolRemoval(
+                            crate::protocol_serde::shape_tool_removal_block::de_tool_removal_block(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'toolRemoval' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

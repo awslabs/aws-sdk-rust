@@ -9,19 +9,26 @@ pub struct DescribeContainerAssociationOutput {
     pub container_association_arn: ::std::option::Option<::std::string::String>,
     /// <p>A description of the container association.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of container orchestration platform. Either <code>ECS</code> or <code>EKS</code>.</p>
+    /// <p>The container type. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::ContainerMonitoringType>,
-    /// <p>The container monitoring configurations for this container association.</p>
+    /// <p>The monitoring configurations for the container association.</p>
     pub container_monitoring_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>>,
     /// <p>The current status of the container association.</p>
     pub status: ::std::option::Option<crate::types::ContainerAssociationStatus>,
-    /// <p>The number of CIDR blocks that have been resolved from the monitored containers for this container association.</p>
+    /// <p>The number of CIDR blocks resolved from the monitored containers.</p>
     pub resolved_cidr_count: ::std::option::Option<i32>,
-    /// <p>The last time that the container association was updated or resolved new container IP addresses.</p>
+    /// <p>The most recent time that Network Firewall updated the container association.</p>
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -38,11 +45,17 @@ impl DescribeContainerAssociationOutput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of container orchestration platform. Either <code>ECS</code> or <code>EKS</code>.</p>
+    /// <p>The container type. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::ContainerMonitoringType> {
         self.r#type.as_ref()
     }
-    /// <p>The container monitoring configurations for this container association.</p>
+    /// <p>The monitoring configurations for the container association.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.container_monitoring_configurations.is_none()`.
     pub fn container_monitoring_configurations(&self) -> &[crate::types::ContainerMonitoringConfiguration] {
@@ -52,21 +65,22 @@ impl DescribeContainerAssociationOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ContainerAssociationStatus> {
         self.status.as_ref()
     }
-    /// <p>The number of CIDR blocks that have been resolved from the monitored containers for this container association.</p>
+    /// <p>The number of CIDR blocks resolved from the monitored containers.</p>
     pub fn resolved_cidr_count(&self) -> ::std::option::Option<i32> {
         self.resolved_cidr_count
     }
-    /// <p>The last time that the container association was updated or resolved new container IP addresses.</p>
+    /// <p>The most recent time that Network Firewall updated the container association.</p>
     pub fn last_updated_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn update_token(&self) -> ::std::option::Option<&str> {
         self.update_token.as_deref()
     }
@@ -142,17 +156,35 @@ impl DescribeContainerAssociationOutputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The type of container orchestration platform. Either <code>ECS</code> or <code>EKS</code>.</p>
+    /// <p>The container type. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::ContainerMonitoringType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of container orchestration platform. Either <code>ECS</code> or <code>EKS</code>.</p>
+    /// <p>The container type. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::ContainerMonitoringType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of container orchestration platform. Either <code>ECS</code> or <code>EKS</code>.</p>
+    /// <p>The container type. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ECS</code> - Amazon Elastic Container Service</p></li>
+    /// <li>
+    /// <p><code>EKS</code> - Amazon Elastic Kubernetes Service</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::ContainerMonitoringType> {
         &self.r#type
     }
@@ -160,14 +192,14 @@ impl DescribeContainerAssociationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_container_monitoring_configurations`](Self::set_container_monitoring_configurations).
     ///
-    /// <p>The container monitoring configurations for this container association.</p>
+    /// <p>The monitoring configurations for the container association.</p>
     pub fn container_monitoring_configurations(mut self, input: crate::types::ContainerMonitoringConfiguration) -> Self {
         let mut v = self.container_monitoring_configurations.unwrap_or_default();
         v.push(input);
         self.container_monitoring_configurations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The container monitoring configurations for this container association.</p>
+    /// <p>The monitoring configurations for the container association.</p>
     pub fn set_container_monitoring_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>>,
@@ -175,7 +207,7 @@ impl DescribeContainerAssociationOutputBuilder {
         self.container_monitoring_configurations = input;
         self
     }
-    /// <p>The container monitoring configurations for this container association.</p>
+    /// <p>The monitoring configurations for the container association.</p>
     pub fn get_container_monitoring_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContainerMonitoringConfiguration>> {
         &self.container_monitoring_configurations
     }
@@ -193,31 +225,31 @@ impl DescribeContainerAssociationOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ContainerAssociationStatus> {
         &self.status
     }
-    /// <p>The number of CIDR blocks that have been resolved from the monitored containers for this container association.</p>
+    /// <p>The number of CIDR blocks resolved from the monitored containers.</p>
     pub fn resolved_cidr_count(mut self, input: i32) -> Self {
         self.resolved_cidr_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of CIDR blocks that have been resolved from the monitored containers for this container association.</p>
+    /// <p>The number of CIDR blocks resolved from the monitored containers.</p>
     pub fn set_resolved_cidr_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.resolved_cidr_count = input;
         self
     }
-    /// <p>The number of CIDR blocks that have been resolved from the monitored containers for this container association.</p>
+    /// <p>The number of CIDR blocks resolved from the monitored containers.</p>
     pub fn get_resolved_cidr_count(&self) -> &::std::option::Option<i32> {
         &self.resolved_cidr_count
     }
-    /// <p>The last time that the container association was updated or resolved new container IP addresses.</p>
+    /// <p>The most recent time that Network Firewall updated the container association.</p>
     pub fn last_updated_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_updated_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The last time that the container association was updated or resolved new container IP addresses.</p>
+    /// <p>The most recent time that Network Firewall updated the container association.</p>
     pub fn set_last_updated_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_updated_time = input;
         self
     }
-    /// <p>The last time that the container association was updated or resolved new container IP addresses.</p>
+    /// <p>The most recent time that Network Firewall updated the container association.</p>
     pub fn get_last_updated_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_time
     }
@@ -225,33 +257,36 @@ impl DescribeContainerAssociationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
         self.tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>The key:value pairs associated with the resource.</p>
+    /// <p>The key:value pairs to associate with the resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn update_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.update_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn set_update_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.update_token = input;
         self
     }
     /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the container association. The token marks the state of the container association resource at the time of the request.</p>
+    /// <p>To make changes to the container association, you provide the token in your request. Network Firewall uses the token to ensure that the container association hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the container association again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_token
     }

@@ -23,9 +23,17 @@ pub use crate::types::_service_function::ServiceFunctionBuilder;
 
 pub use crate::types::_system::SystemBuilder;
 
+pub use crate::types::_logging_configuration::LoggingConfigurationBuilder;
+
+pub use crate::types::_test::TestBuilder;
+
 pub use crate::types::_user_journey::UserJourneyBuilder;
 
 pub use crate::types::_finding::FindingBuilder;
+
+pub use crate::types::_test_run::TestRunBuilder;
+
+pub use crate::types::_test_template::TestTemplateBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
@@ -43,6 +51,12 @@ pub use crate::types::_assessment_cost::AssessmentCostBuilder;
 
 pub use crate::types::_resource_discovery_status::ResourceDiscoveryStatusBuilder;
 
+pub use crate::types::_stop_condition::StopConditionBuilder;
+
+pub use crate::types::_test_run_report_configuration::TestRunReportConfigurationBuilder;
+
+pub use crate::types::_test_run_policy_snapshot::TestRunPolicySnapshotBuilder;
+
 pub use crate::types::_dependency_summary::DependencySummaryBuilder;
 
 pub use crate::types::_assessment_summary::AssessmentSummaryBuilder;
@@ -52,6 +66,8 @@ pub use crate::types::_finding_summary::FindingSummaryBuilder;
 pub use crate::types::_input_source_summary::InputSourceSummaryBuilder;
 
 pub use crate::types::_policy_summary::PolicySummaryBuilder;
+
+pub use crate::types::_resolved_target_resource::ResolvedTargetResourceBuilder;
 
 pub use crate::types::_service_resource::ServiceResourceBuilder;
 
@@ -64,6 +80,14 @@ pub use crate::types::_service_topology_edge_summary::ServiceTopologyEdgeSummary
 pub use crate::types::_system_event::SystemEventBuilder;
 
 pub use crate::types::_system_summary::SystemSummaryBuilder;
+
+pub use crate::types::_test_run_event::TestRunEventBuilder;
+
+pub use crate::types::_test_run_summary::TestRunSummaryBuilder;
+
+pub use crate::types::_test_summary::TestSummaryBuilder;
+
+pub use crate::types::_test_template_summary::TestTemplateSummaryBuilder;
 
 pub use crate::types::_user_journey_summary::UserJourneySummaryBuilder;
 
@@ -81,11 +105,21 @@ pub use crate::types::_target_source::TargetSourceBuilder;
 
 pub use crate::types::_disaster_recovery_source::DisasterRecoverySourceBuilder;
 
+pub use crate::types::_test_action::TestActionBuilder;
+
+pub use crate::types::_success_criteria_alarm_input::SuccessCriteriaAlarmInputBuilder;
+
+pub use crate::types::_observability_alarm_input::ObservabilityAlarmInputBuilder;
+
 pub use crate::types::_infrastructure_and_code_recommendation::InfrastructureAndCodeRecommendationBuilder;
 
 pub use crate::types::_observability_recommendation::ObservabilityRecommendationBuilder;
 
 pub use crate::types::_testing_recommendation::TestingRecommendationBuilder;
+
+pub use crate::types::_experiment_details::ExperimentDetailsBuilder;
+
+pub use crate::types::_test_template_parameter::TestTemplateParameterBuilder;
 
 pub use crate::types::_query_range::QueryRangeBuilder;
 
@@ -98,6 +132,14 @@ pub use crate::types::_event_actor::EventActorBuilder;
 pub use crate::types::_service_event_details::ServiceEventDetailsBuilder;
 
 pub use crate::types::_system_event_details::SystemEventDetailsBuilder;
+
+pub use crate::types::_test_run_success_criteria_alarm_summary::TestRunSuccessCriteriaAlarmSummaryBuilder;
+
+pub use crate::types::_test_run_observability_alarm_summary::TestRunObservabilityAlarmSummaryBuilder;
+
+pub use crate::types::_success_criteria_alarm_summary::SuccessCriteriaAlarmSummaryBuilder;
+
+pub use crate::types::_observability_alarm_summary::ObservabilityAlarmSummaryBuilder;
 
 pub use crate::types::_s3_report_output_configuration::S3ReportOutputConfigurationBuilder;
 

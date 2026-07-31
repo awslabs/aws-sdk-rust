@@ -13,6 +13,9 @@
 /// # let mediaencoding = unimplemented!();
 /// match mediaencoding {
 ///     MediaEncoding::Flac => { /* ... */ },
+///     MediaEncoding::G711Alaw => { /* ... */ },
+///     MediaEncoding::G711Ulaw => { /* ... */ },
+///     MediaEncoding::G729 => { /* ... */ },
 ///     MediaEncoding::OggOpus => { /* ... */ },
 ///     MediaEncoding::Pcm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +49,12 @@ pub enum MediaEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Flac,
     #[allow(missing_docs)] // documentation missing in model
+    G711Alaw,
+    #[allow(missing_docs)] // documentation missing in model
+    G711Ulaw,
+    #[allow(missing_docs)] // documentation missing in model
+    G729,
+    #[allow(missing_docs)] // documentation missing in model
     OggOpus,
     #[allow(missing_docs)] // documentation missing in model
     Pcm,
@@ -57,6 +66,9 @@ impl ::std::convert::From<&str> for MediaEncoding {
     fn from(s: &str) -> Self {
         match s {
             "flac" => MediaEncoding::Flac,
+            "g711-alaw" => MediaEncoding::G711Alaw,
+            "g711-ulaw" => MediaEncoding::G711Ulaw,
+            "g729" => MediaEncoding::G729,
             "ogg-opus" => MediaEncoding::OggOpus,
             "pcm" => MediaEncoding::Pcm,
             other => MediaEncoding::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +87,9 @@ impl MediaEncoding {
     pub fn as_str(&self) -> &str {
         match self {
             MediaEncoding::Flac => "flac",
+            MediaEncoding::G711Alaw => "g711-alaw",
+            MediaEncoding::G711Ulaw => "g711-ulaw",
+            MediaEncoding::G729 => "g729",
             MediaEncoding::OggOpus => "ogg-opus",
             MediaEncoding::Pcm => "pcm",
             MediaEncoding::Unknown(value) => value.as_str(),
@@ -82,7 +97,7 @@ impl MediaEncoding {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["flac", "ogg-opus", "pcm"]
+        &["flac", "g711-alaw", "g711-ulaw", "g729", "ogg-opus", "pcm"]
     }
 }
 impl ::std::convert::AsRef<str> for MediaEncoding {
@@ -106,6 +121,9 @@ impl ::std::fmt::Display for MediaEncoding {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MediaEncoding::Flac => write!(f, "flac"),
+            MediaEncoding::G711Alaw => write!(f, "g711-alaw"),
+            MediaEncoding::G711Ulaw => write!(f, "g711-ulaw"),
+            MediaEncoding::G729 => write!(f, "g729"),
             MediaEncoding::OggOpus => write!(f, "ogg-opus"),
             MediaEncoding::Pcm => write!(f, "pcm"),
             MediaEncoding::Unknown(value) => write!(f, "{value}"),

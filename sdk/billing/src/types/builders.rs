@@ -3,6 +3,8 @@ pub use crate::types::_expression::ExpressionBuilder;
 
 pub use crate::types::_billing_view_element::BillingViewElementBuilder;
 
+pub use crate::types::_pricing_plan::PricingPlanBuilder;
+
 pub use crate::types::_active_time_range::ActiveTimeRangeBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
@@ -27,12 +29,26 @@ pub use crate::types::_credit_allocation_history_entry::CreditAllocationHistoryE
 
 pub use crate::types::_credit_data::CreditDataBuilder;
 
+pub use crate::types::_contract_account::ContractAccountBuilder;
+
+pub use crate::types::_charge_account::ChargeAccountBuilder;
+
+pub use crate::types::_additional_charge::AdditionalChargeBuilder;
+
 pub use crate::types::_string_search::StringSearchBuilder;
 
 pub use crate::types::_billing_view_list_element::BillingViewListElementBuilder;
+
+pub use crate::types::_linked_account_charge::LinkedAccountChargeBuilder;
 
 pub use crate::types::_billing_preference_for_key::BillingPreferenceForKeyBuilder;
 
 pub use crate::types::_billing_period::BillingPeriodBuilder;
 
 pub use crate::types::_amount::AmountBuilder;
+
+pub use crate::types::_pricing_plan_tier::PricingPlanTierBuilder;
+
+pub use crate::types::_enterprise_support_time_period::EnterpriseSupportTimePeriodBuilder;
+
+pub use crate::types::_service_level_account_usage::ServiceLevelAccountUsageBuilder;

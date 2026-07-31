@@ -3,30 +3,33 @@ pub fn ser_create_feed_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_feed::CreateFeedInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.name {
-        object.key("name").string(var_1.as_str());
+    if let Some(var_1) = &input.access_role_arn {
+        object.key("accessRoleArn").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.outputs {
-        let mut array_3 = object.key("outputs").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.outputs {
+        let mut array_4 = object.key("outputs").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_create_output::ser_create_output(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_create_output::ser_create_output(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_7) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
     Ok(())
 }

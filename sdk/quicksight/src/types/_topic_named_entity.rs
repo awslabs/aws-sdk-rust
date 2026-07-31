@@ -2,7 +2,7 @@
 
 /// <p>A structure that represents a named entity.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TopicNamedEntity {
     /// <p>The name of the named entity.</p>
     pub entity_name: ::std::string::String,
@@ -14,6 +14,12 @@ pub struct TopicNamedEntity {
     pub semantic_entity_type: ::std::option::Option<crate::types::SemanticEntityType>,
     /// <p>The definition of a named entity.</p>
     pub definition: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>>,
+    /// <p>The sort configuration of the named entity.</p>
+    pub sort: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntitySort>>,
+    /// <p>The rank order of the named entity.</p>
+    pub rank_order: ::std::option::Option<i32>,
+    /// <p>The presentation order of the named entity.</p>
+    pub presentation_order: ::std::option::Option<i32>,
 }
 impl TopicNamedEntity {
     /// <p>The name of the named entity.</p>
@@ -41,6 +47,34 @@ impl TopicNamedEntity {
     pub fn definition(&self) -> &[crate::types::NamedEntityDefinition] {
         self.definition.as_deref().unwrap_or_default()
     }
+    /// <p>The sort configuration of the named entity.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sort.is_none()`.
+    pub fn sort(&self) -> &[crate::types::NamedEntitySort] {
+        self.sort.as_deref().unwrap_or_default()
+    }
+    /// <p>The rank order of the named entity.</p>
+    pub fn rank_order(&self) -> ::std::option::Option<i32> {
+        self.rank_order
+    }
+    /// <p>The presentation order of the named entity.</p>
+    pub fn presentation_order(&self) -> ::std::option::Option<i32> {
+        self.presentation_order
+    }
+}
+impl ::std::fmt::Debug for TopicNamedEntity {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TopicNamedEntity");
+        formatter.field("entity_name", &self.entity_name);
+        formatter.field("entity_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("entity_synonyms", &"*** Sensitive Data Redacted ***");
+        formatter.field("semantic_entity_type", &self.semantic_entity_type);
+        formatter.field("definition", &self.definition);
+        formatter.field("sort", &self.sort);
+        formatter.field("rank_order", &self.rank_order);
+        formatter.field("presentation_order", &self.presentation_order);
+        formatter.finish()
+    }
 }
 impl TopicNamedEntity {
     /// Creates a new builder-style object to manufacture [`TopicNamedEntity`](crate::types::TopicNamedEntity).
@@ -50,7 +84,7 @@ impl TopicNamedEntity {
 }
 
 /// A builder for [`TopicNamedEntity`](crate::types::TopicNamedEntity).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TopicNamedEntityBuilder {
     pub(crate) entity_name: ::std::option::Option<::std::string::String>,
@@ -58,6 +92,9 @@ pub struct TopicNamedEntityBuilder {
     pub(crate) entity_synonyms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) semantic_entity_type: ::std::option::Option<crate::types::SemanticEntityType>,
     pub(crate) definition: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>>,
+    pub(crate) sort: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntitySort>>,
+    pub(crate) rank_order: ::std::option::Option<i32>,
+    pub(crate) presentation_order: ::std::option::Option<i32>,
 }
 impl TopicNamedEntityBuilder {
     /// <p>The name of the named entity.</p>
@@ -143,6 +180,54 @@ impl TopicNamedEntityBuilder {
     pub fn get_definition(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamedEntityDefinition>> {
         &self.definition
     }
+    /// Appends an item to `sort`.
+    ///
+    /// To override the contents of this collection use [`set_sort`](Self::set_sort).
+    ///
+    /// <p>The sort configuration of the named entity.</p>
+    pub fn sort(mut self, input: crate::types::NamedEntitySort) -> Self {
+        let mut v = self.sort.unwrap_or_default();
+        v.push(input);
+        self.sort = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The sort configuration of the named entity.</p>
+    pub fn set_sort(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamedEntitySort>>) -> Self {
+        self.sort = input;
+        self
+    }
+    /// <p>The sort configuration of the named entity.</p>
+    pub fn get_sort(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamedEntitySort>> {
+        &self.sort
+    }
+    /// <p>The rank order of the named entity.</p>
+    pub fn rank_order(mut self, input: i32) -> Self {
+        self.rank_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The rank order of the named entity.</p>
+    pub fn set_rank_order(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.rank_order = input;
+        self
+    }
+    /// <p>The rank order of the named entity.</p>
+    pub fn get_rank_order(&self) -> &::std::option::Option<i32> {
+        &self.rank_order
+    }
+    /// <p>The presentation order of the named entity.</p>
+    pub fn presentation_order(mut self, input: i32) -> Self {
+        self.presentation_order = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The presentation order of the named entity.</p>
+    pub fn set_presentation_order(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.presentation_order = input;
+        self
+    }
+    /// <p>The presentation order of the named entity.</p>
+    pub fn get_presentation_order(&self) -> &::std::option::Option<i32> {
+        &self.presentation_order
+    }
     /// Consumes the builder and constructs a [`TopicNamedEntity`](crate::types::TopicNamedEntity).
     /// This method will fail if any of the following fields are not set:
     /// - [`entity_name`](crate::types::builders::TopicNamedEntityBuilder::entity_name)
@@ -158,6 +243,23 @@ impl TopicNamedEntityBuilder {
             entity_synonyms: self.entity_synonyms,
             semantic_entity_type: self.semantic_entity_type,
             definition: self.definition,
+            sort: self.sort,
+            rank_order: self.rank_order,
+            presentation_order: self.presentation_order,
         })
+    }
+}
+impl ::std::fmt::Debug for TopicNamedEntityBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TopicNamedEntityBuilder");
+        formatter.field("entity_name", &self.entity_name);
+        formatter.field("entity_description", &"*** Sensitive Data Redacted ***");
+        formatter.field("entity_synonyms", &"*** Sensitive Data Redacted ***");
+        formatter.field("semantic_entity_type", &self.semantic_entity_type);
+        formatter.field("definition", &self.definition);
+        formatter.field("sort", &self.sort);
+        formatter.field("rank_order", &self.rank_order);
+        formatter.field("presentation_order", &self.presentation_order);
+        formatter.finish()
     }
 }

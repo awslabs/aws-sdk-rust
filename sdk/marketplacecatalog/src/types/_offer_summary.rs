@@ -22,6 +22,12 @@ pub struct OfferSummary {
     pub targeting: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
     /// <p>The offer set ID of the offer.</p>
     pub offer_set_id: ::std::option::Option<::std::string::String>,
+    /// <p>The target agreement ID of the offer.</p>
+    pub target_agreement_id: ::std::option::Option<::std::string::String>,
+    /// <p>The target agreement intent of the offer.</p>
+    pub target_agreement_intent: ::std::option::Option<crate::types::OfferTargetAgreementIntentString>,
+    /// <p>The creation source of the offer.</p>
+    pub created_by_source: ::std::option::Option<crate::types::OfferCreatedBySourceString>,
 }
 impl OfferSummary {
     /// <p>The name of the offer.</p>
@@ -64,6 +70,18 @@ impl OfferSummary {
     pub fn offer_set_id(&self) -> ::std::option::Option<&str> {
         self.offer_set_id.as_deref()
     }
+    /// <p>The target agreement ID of the offer.</p>
+    pub fn target_agreement_id(&self) -> ::std::option::Option<&str> {
+        self.target_agreement_id.as_deref()
+    }
+    /// <p>The target agreement intent of the offer.</p>
+    pub fn target_agreement_intent(&self) -> ::std::option::Option<&crate::types::OfferTargetAgreementIntentString> {
+        self.target_agreement_intent.as_ref()
+    }
+    /// <p>The creation source of the offer.</p>
+    pub fn created_by_source(&self) -> ::std::option::Option<&crate::types::OfferCreatedBySourceString> {
+        self.created_by_source.as_ref()
+    }
 }
 impl OfferSummary {
     /// Creates a new builder-style object to manufacture [`OfferSummary`](crate::types::OfferSummary).
@@ -85,6 +103,9 @@ pub struct OfferSummaryBuilder {
     pub(crate) state: ::std::option::Option<crate::types::OfferStateString>,
     pub(crate) targeting: ::std::option::Option<::std::vec::Vec<crate::types::OfferTargetingString>>,
     pub(crate) offer_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_agreement_id: ::std::option::Option<::std::string::String>,
+    pub(crate) target_agreement_intent: ::std::option::Option<crate::types::OfferTargetAgreementIntentString>,
+    pub(crate) created_by_source: ::std::option::Option<crate::types::OfferCreatedBySourceString>,
 }
 impl OfferSummaryBuilder {
     /// <p>The name of the offer.</p>
@@ -225,6 +246,48 @@ impl OfferSummaryBuilder {
     pub fn get_offer_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.offer_set_id
     }
+    /// <p>The target agreement ID of the offer.</p>
+    pub fn target_agreement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target_agreement_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The target agreement ID of the offer.</p>
+    pub fn set_target_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.target_agreement_id = input;
+        self
+    }
+    /// <p>The target agreement ID of the offer.</p>
+    pub fn get_target_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.target_agreement_id
+    }
+    /// <p>The target agreement intent of the offer.</p>
+    pub fn target_agreement_intent(mut self, input: crate::types::OfferTargetAgreementIntentString) -> Self {
+        self.target_agreement_intent = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The target agreement intent of the offer.</p>
+    pub fn set_target_agreement_intent(mut self, input: ::std::option::Option<crate::types::OfferTargetAgreementIntentString>) -> Self {
+        self.target_agreement_intent = input;
+        self
+    }
+    /// <p>The target agreement intent of the offer.</p>
+    pub fn get_target_agreement_intent(&self) -> &::std::option::Option<crate::types::OfferTargetAgreementIntentString> {
+        &self.target_agreement_intent
+    }
+    /// <p>The creation source of the offer.</p>
+    pub fn created_by_source(mut self, input: crate::types::OfferCreatedBySourceString) -> Self {
+        self.created_by_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The creation source of the offer.</p>
+    pub fn set_created_by_source(mut self, input: ::std::option::Option<crate::types::OfferCreatedBySourceString>) -> Self {
+        self.created_by_source = input;
+        self
+    }
+    /// <p>The creation source of the offer.</p>
+    pub fn get_created_by_source(&self) -> &::std::option::Option<crate::types::OfferCreatedBySourceString> {
+        &self.created_by_source
+    }
     /// Consumes the builder and constructs a [`OfferSummary`](crate::types::OfferSummary).
     pub fn build(self) -> crate::types::OfferSummary {
         crate::types::OfferSummary {
@@ -237,6 +300,9 @@ impl OfferSummaryBuilder {
             state: self.state,
             targeting: self.targeting,
             offer_set_id: self.offer_set_id,
+            target_agreement_id: self.target_agreement_id,
+            target_agreement_intent: self.target_agreement_intent,
+            created_by_source: self.created_by_source,
         }
     }
 }

@@ -77,6 +77,8 @@ pub use crate::types::_custom_instructions::CustomInstructionsBuilder;
 
 pub use crate::types::_topic_refresh_schedule::TopicRefreshScheduleBuilder;
 
+pub use crate::types::_topic_v2_details::TopicV2DetailsBuilder;
+
 pub use crate::types::_account_settings::AccountSettingsBuilder;
 
 pub use crate::types::_account_info::AccountInfoBuilder;
@@ -471,6 +473,8 @@ pub use crate::types::_topic_reviewed_answer::TopicReviewedAnswerBuilder;
 
 pub use crate::types::_topic_summary::TopicSummaryBuilder;
 
+pub use crate::types::_topic_v2_summary::TopicV2SummaryBuilder;
+
 pub use crate::types::_user_index_capacity::UserIndexCapacityBuilder;
 
 pub use crate::types::_vpc_connection_summary::VpcConnectionSummaryBuilder;
@@ -543,6 +547,8 @@ pub use crate::types::_date_time_parameter::DateTimeParameterBuilder;
 
 pub use crate::types::_data_set_identifier_declaration::DataSetIdentifierDeclarationBuilder;
 
+pub use crate::types::_topic_identifier_declaration::TopicIdentifierDeclarationBuilder;
+
 pub use crate::types::_sheet_definition::SheetDefinitionBuilder;
 
 pub use crate::types::_tooltip_sheet_definition::TooltipSheetDefinitionBuilder;
@@ -558,6 +564,8 @@ pub use crate::types::_column_configuration::ColumnConfigurationBuilder;
 pub use crate::types::_default_new_sheet_configuration::DefaultNewSheetConfigurationBuilder;
 
 pub use crate::types::_visual_custom_action_defaults::VisualCustomActionDefaultsBuilder;
+
+pub use crate::types::_visual_messages::VisualMessagesBuilder;
 
 pub use crate::types::_static_file::StaticFileBuilder;
 
@@ -621,6 +629,8 @@ pub use crate::types::_schedule_refresh_on_entity::ScheduleRefreshOnEntityBuilde
 
 pub use crate::types::_data_set_configuration::DataSetConfigurationBuilder;
 
+pub use crate::types::_topic_configuration::TopicConfigurationBuilder;
+
 pub use crate::types::_tile_style::TileStyleBuilder;
 
 pub use crate::types::_tile_layout_style::TileLayoutStyleBuilder;
@@ -636,6 +646,10 @@ pub use crate::types::_visual_subtitle_font_configuration::VisualSubtitleFontCon
 pub use crate::types::_control_title_font_configuration::ControlTitleFontConfigurationBuilder;
 
 pub use crate::types::_dataset_metadata::DatasetMetadataBuilder;
+
+pub use crate::types::_topic_v2_data_set_reference::TopicV2DataSetReferenceBuilder;
+
+pub use crate::types::_topic_v2_data_set_relation::TopicV2DataSetRelationBuilder;
 
 pub use crate::types::_sheet::SheetBuilder;
 
@@ -739,6 +753,8 @@ pub use crate::types::_visual_options::VisualOptionsBuilder;
 
 pub use crate::types::_data_set_reference::DataSetReferenceBuilder;
 
+pub use crate::types::_topic_reference::TopicReferenceBuilder;
+
 pub use crate::types::_string_parameter_declaration::StringParameterDeclarationBuilder;
 
 pub use crate::types::_decimal_parameter_declaration::DecimalParameterDeclarationBuilder;
@@ -762,6 +778,8 @@ pub use crate::types::_default_interactive_layout_configuration::DefaultInteract
 pub use crate::types::_default_paginated_layout_configuration::DefaultPaginatedLayoutConfigurationBuilder;
 
 pub use crate::types::_visual_highlight_operation::VisualHighlightOperationBuilder;
+
+pub use crate::types::_visual_message_configuration::VisualMessageConfigurationBuilder;
 
 pub use crate::types::_image_static_file::ImageStaticFileBuilder;
 
@@ -834,6 +852,8 @@ pub use crate::types::_font_size::FontSizeBuilder;
 pub use crate::types::_font_weight::FontWeightBuilder;
 
 pub use crate::types::_data_aggregation::DataAggregationBuilder;
+
+pub use crate::types::_topic_v2_data_set_relation_endpoint::TopicV2DataSetRelationEndpointBuilder;
 
 pub use crate::types::_read_authorization_code_grant_metadata::ReadAuthorizationCodeGrantMetadataBuilder;
 
@@ -1368,6 +1388,8 @@ pub use crate::types::_topic_range_filter_constant::TopicRangeFilterConstantBuil
 pub use crate::types::_cell_value_synonym::CellValueSynonymBuilder;
 
 pub use crate::types::_named_entity_definition::NamedEntityDefinitionBuilder;
+
+pub use crate::types::_named_entity_sort::NamedEntitySortBuilder;
 
 pub use crate::types::_snapshot_file_sheet_selection::SnapshotFileSheetSelectionBuilder;
 

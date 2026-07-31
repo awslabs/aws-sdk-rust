@@ -122,10 +122,10 @@ impl TopicCalculatedField {
 impl ::std::fmt::Debug for TopicCalculatedField {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicCalculatedField");
-        formatter.field("calculated_field_name", &self.calculated_field_name);
-        formatter.field("calculated_field_description", &self.calculated_field_description);
+        formatter.field("calculated_field_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("calculated_field_description", &"*** Sensitive Data Redacted ***");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
-        formatter.field("calculated_field_synonyms", &self.calculated_field_synonyms);
+        formatter.field("calculated_field_synonyms", &"*** Sensitive Data Redacted ***");
         formatter.field("is_included_in_topic", &self.is_included_in_topic);
         formatter.field("disable_indexing", &self.disable_indexing);
         formatter.field("column_data_role", &self.column_data_role);
@@ -475,10 +475,10 @@ impl TopicCalculatedFieldBuilder {
 impl ::std::fmt::Debug for TopicCalculatedFieldBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("TopicCalculatedFieldBuilder");
-        formatter.field("calculated_field_name", &self.calculated_field_name);
-        formatter.field("calculated_field_description", &self.calculated_field_description);
+        formatter.field("calculated_field_name", &"*** Sensitive Data Redacted ***");
+        formatter.field("calculated_field_description", &"*** Sensitive Data Redacted ***");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
-        formatter.field("calculated_field_synonyms", &self.calculated_field_synonyms);
+        formatter.field("calculated_field_synonyms", &"*** Sensitive Data Redacted ***");
         formatter.field("is_included_in_topic", &self.is_included_in_topic);
         formatter.field("disable_indexing", &self.disable_indexing);
         formatter.field("column_data_role", &self.column_data_role);

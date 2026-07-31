@@ -6,6 +6,8 @@
 pub struct TemplateVersionDefinition {
     /// <p>An array of dataset configurations. These configurations define the required columns for each dataset used within a template.</p>
     pub data_set_configurations: ::std::vec::Vec<crate::types::DataSetConfiguration>,
+    /// <p>An array of topic configurations. These configurations define the required columns for each topic used within a template.</p>
+    pub topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     /// <p>An array of sheet definitions for a template.</p>
     pub sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
     /// <p>An array of tooltip sheet definitions for a template.</p>
@@ -35,6 +37,12 @@ impl TemplateVersionDefinition {
     pub fn data_set_configurations(&self) -> &[crate::types::DataSetConfiguration] {
         use std::ops::Deref;
         self.data_set_configurations.deref()
+    }
+    /// <p>An array of topic configurations. These configurations define the required columns for each topic used within a template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topic_configurations.is_none()`.
+    pub fn topic_configurations(&self) -> &[crate::types::TopicConfiguration] {
+        self.topic_configurations.as_deref().unwrap_or_default()
     }
     /// <p>An array of sheet definitions for a template.</p>
     ///
@@ -106,6 +114,7 @@ impl TemplateVersionDefinition {
 #[non_exhaustive]
 pub struct TemplateVersionDefinitionBuilder {
     pub(crate) data_set_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>>,
+    pub(crate) topic_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>,
     pub(crate) sheets: ::std::option::Option<::std::vec::Vec<crate::types::SheetDefinition>>,
     pub(crate) tooltip_sheets: ::std::option::Option<::std::vec::Vec<crate::types::TooltipSheetDefinition>>,
     pub(crate) calculated_fields: ::std::option::Option<::std::vec::Vec<crate::types::CalculatedField>>,
@@ -137,6 +146,26 @@ impl TemplateVersionDefinitionBuilder {
     /// <p>An array of dataset configurations. These configurations define the required columns for each dataset used within a template.</p>
     pub fn get_data_set_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DataSetConfiguration>> {
         &self.data_set_configurations
+    }
+    /// Appends an item to `topic_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_topic_configurations`](Self::set_topic_configurations).
+    ///
+    /// <p>An array of topic configurations. These configurations define the required columns for each topic used within a template.</p>
+    pub fn topic_configurations(mut self, input: crate::types::TopicConfiguration) -> Self {
+        let mut v = self.topic_configurations.unwrap_or_default();
+        v.push(input);
+        self.topic_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An array of topic configurations. These configurations define the required columns for each topic used within a template.</p>
+    pub fn set_topic_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>>) -> Self {
+        self.topic_configurations = input;
+        self
+    }
+    /// <p>An array of topic configurations. These configurations define the required columns for each topic used within a template.</p>
+    pub fn get_topic_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TopicConfiguration>> {
+        &self.topic_configurations
     }
     /// Appends an item to `sheets`.
     ///
@@ -340,6 +369,7 @@ impl TemplateVersionDefinitionBuilder {
                     "data_set_configurations was not specified but it is required when building TemplateVersionDefinition",
                 )
             })?,
+            topic_configurations: self.topic_configurations,
             sheets: self.sheets,
             tooltip_sheets: self.tooltip_sheets,
             calculated_fields: self.calculated_fields,

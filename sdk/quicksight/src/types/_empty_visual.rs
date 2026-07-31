@@ -7,8 +7,10 @@
 pub struct EmptyVisual {
     /// <p>The unique identifier of a visual. This identifier must be unique within the context of a dashboard, template, or analysis. Two dashboards, analyses, or templates can have visuals with the same identifiers.</p>
     pub visual_id: ::std::string::String,
-    /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
+    /// <p>The data set that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
     pub data_set_identifier: ::std::string::String,
+    /// <p>The topic that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
+    pub topic_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of custom actions that are configured for a visual.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
@@ -18,10 +20,14 @@ impl EmptyVisual {
         use std::ops::Deref;
         self.visual_id.deref()
     }
-    /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
+    /// <p>The data set that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
     pub fn data_set_identifier(&self) -> &str {
         use std::ops::Deref;
         self.data_set_identifier.deref()
+    }
+    /// <p>The topic that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
+    pub fn topic_identifier(&self) -> ::std::option::Option<&str> {
+        self.topic_identifier.as_deref()
     }
     /// <p>The list of custom actions that are configured for a visual.</p>
     ///
@@ -43,6 +49,7 @@ impl EmptyVisual {
 pub struct EmptyVisualBuilder {
     pub(crate) visual_id: ::std::option::Option<::std::string::String>,
     pub(crate) data_set_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::VisualCustomAction>>,
 }
 impl EmptyVisualBuilder {
@@ -61,20 +68,33 @@ impl EmptyVisualBuilder {
     pub fn get_visual_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.visual_id
     }
-    /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
-    /// This field is required.
+    /// <p>The data set that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
     pub fn data_set_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_set_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
+    /// <p>The data set that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
     pub fn set_data_set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_set_identifier = input;
         self
     }
-    /// <p>The data set that is used in the empty visual. Every visual requires a dataset to render.</p>
+    /// <p>The data set that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
     pub fn get_data_set_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_set_identifier
+    }
+    /// <p>The topic that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
+    pub fn topic_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The topic that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
+    pub fn set_topic_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.topic_identifier = input;
+        self
+    }
+    /// <p>The topic that is used in the empty visual. Every visual requires a dataset or a topic to render.</p>
+    pub fn get_topic_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.topic_identifier
     }
     /// Appends an item to `actions`.
     ///
@@ -99,7 +119,6 @@ impl EmptyVisualBuilder {
     /// Consumes the builder and constructs a [`EmptyVisual`](crate::types::EmptyVisual).
     /// This method will fail if any of the following fields are not set:
     /// - [`visual_id`](crate::types::builders::EmptyVisualBuilder::visual_id)
-    /// - [`data_set_identifier`](crate::types::builders::EmptyVisualBuilder::data_set_identifier)
     pub fn build(self) -> ::std::result::Result<crate::types::EmptyVisual, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::EmptyVisual {
             visual_id: self.visual_id.ok_or_else(|| {
@@ -108,12 +127,8 @@ impl EmptyVisualBuilder {
                     "visual_id was not specified but it is required when building EmptyVisual",
                 )
             })?,
-            data_set_identifier: self.data_set_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "data_set_identifier",
-                    "data_set_identifier was not specified but it is required when building EmptyVisual",
-                )
-            })?,
+            data_set_identifier: self.data_set_identifier.unwrap_or_default(),
+            topic_identifier: self.topic_identifier,
             actions: self.actions,
         })
     }

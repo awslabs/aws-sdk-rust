@@ -25,11 +25,20 @@ pub mod get_credit_allocation_history;
 /// Types for the `GetCredits` operation.
 pub mod get_credits;
 
+/// Types for the `GetEnterpriseSupportChargeSummary` operation.
+pub mod get_enterprise_support_charge_summary;
+
+/// Types for the `GetEnterpriseSupportContractDetails` operation.
+pub mod get_enterprise_support_contract_details;
+
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
 
 /// Types for the `ListBillingViews` operation.
 pub mod list_billing_views;
+
+/// Types for the `ListEnterpriseSupportLinkedAccountCharges` operation.
+pub mod list_enterprise_support_linked_account_charges;
 
 /// Types for the `ListSourceViewsForBillingView` operation.
 pub mod list_source_views_for_billing_view;

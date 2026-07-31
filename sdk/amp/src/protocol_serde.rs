@@ -185,6 +185,8 @@ pub(crate) mod shape_anomaly_detector_summary_list;
 
 pub(crate) mod shape_destination;
 
+pub(crate) mod shape_exporter_configuration;
+
 pub(crate) mod shape_limits_per_label_set;
 
 pub(crate) mod shape_logging_configuration_metadata;
@@ -249,6 +251,8 @@ pub(crate) mod shape_component_config;
 
 pub(crate) mod shape_eks_configuration;
 
+pub(crate) mod shape_exporter_list;
+
 pub(crate) mod shape_limits_per_label_set_entry;
 
 pub(crate) mod shape_limits_per_label_set_list;
@@ -256,6 +260,8 @@ pub(crate) mod shape_limits_per_label_set_list;
 pub(crate) mod shape_logging_destinations;
 
 pub(crate) mod shape_logging_filter;
+
+pub(crate) mod shape_open_search_exporter_configuration;
 
 pub(crate) mod shape_prometheus_metric_label_map;
 

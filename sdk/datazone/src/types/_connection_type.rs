@@ -18,6 +18,7 @@
 ///     ConnectionType::Databricks => { /* ... */ },
 ///     ConnectionType::Documentdb => { /* ... */ },
 ///     ConnectionType::Dynamodb => { /* ... */ },
+///     ConnectionType::Git => { /* ... */ },
 ///     ConnectionType::Hyperpod => { /* ... */ },
 ///     ConnectionType::Iam => { /* ... */ },
 ///     ConnectionType::Mlflow => { /* ... */ },
@@ -75,6 +76,8 @@ pub enum ConnectionType {
     Documentdb,
     #[allow(missing_docs)] // documentation missing in model
     Dynamodb,
+    /// <p>A Git connection type.</p>
+    Git,
     #[allow(missing_docs)] // documentation missing in model
     Hyperpod,
     #[allow(missing_docs)] // documentation missing in model
@@ -122,6 +125,7 @@ impl ::std::convert::From<&str> for ConnectionType {
             "DATABRICKS" => ConnectionType::Databricks,
             "DOCUMENTDB" => ConnectionType::Documentdb,
             "DYNAMODB" => ConnectionType::Dynamodb,
+            "GIT" => ConnectionType::Git,
             "HYPERPOD" => ConnectionType::Hyperpod,
             "IAM" => ConnectionType::Iam,
             "MLFLOW" => ConnectionType::Mlflow,
@@ -160,6 +164,7 @@ impl ConnectionType {
             ConnectionType::Databricks => "DATABRICKS",
             ConnectionType::Documentdb => "DOCUMENTDB",
             ConnectionType::Dynamodb => "DYNAMODB",
+            ConnectionType::Git => "GIT",
             ConnectionType::Hyperpod => "HYPERPOD",
             ConnectionType::Iam => "IAM",
             ConnectionType::Mlflow => "MLFLOW",
@@ -189,6 +194,7 @@ impl ConnectionType {
             "DATABRICKS",
             "DOCUMENTDB",
             "DYNAMODB",
+            "GIT",
             "HYPERPOD",
             "IAM",
             "MLFLOW",
@@ -235,6 +241,7 @@ impl ::std::fmt::Display for ConnectionType {
             ConnectionType::Databricks => write!(f, "DATABRICKS"),
             ConnectionType::Documentdb => write!(f, "DOCUMENTDB"),
             ConnectionType::Dynamodb => write!(f, "DYNAMODB"),
+            ConnectionType::Git => write!(f, "GIT"),
             ConnectionType::Hyperpod => write!(f, "HYPERPOD"),
             ConnectionType::Iam => write!(f, "IAM"),
             ConnectionType::Mlflow => write!(f, "MLFLOW"),

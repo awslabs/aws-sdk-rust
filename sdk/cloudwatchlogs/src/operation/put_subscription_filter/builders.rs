@@ -275,17 +275,17 @@ impl PutSubscriptionFilterFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_emit_system_fields`](Self::set_emit_system_fields).
     ///
-    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code>, <code>@aws.region</code>, and <code>@source.log</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
     pub fn emit_system_fields(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.emit_system_fields(input.into());
         self
     }
-    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code>, <code>@aws.region</code>, and <code>@source.log</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
     pub fn set_emit_system_fields(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_emit_system_fields(input);
         self
     }
-    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code> and <code>@aws.region</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
+    /// <p>A list of system fields to include in the log events sent to the subscription destination. Valid values are <code>@aws.account</code>, <code>@aws.region</code>, and <code>@source.log</code>. These fields provide source information for centralized log data in the forwarded payload.</p>
     pub fn get_emit_system_fields(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_emit_system_fields()
     }

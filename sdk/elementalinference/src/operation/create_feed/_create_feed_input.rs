@@ -5,6 +5,8 @@
 pub struct CreateFeedInput {
     /// <p>A user-friendly name for this feed.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. For example, the smart crop feature uses this role to read graphics-compositing templates from your Amazon S3 bucket. You specify one access role for each feed.</p>
+    pub access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     pub outputs: ::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>>,
     /// <p>Optional tags. You can also add tags later, using TagResource.</p>
@@ -14,6 +16,10 @@ impl CreateFeedInput {
     /// <p>A user-friendly name for this feed.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. For example, the smart crop feature uses this role to read graphics-compositing templates from your Amazon S3 bucket. You specify one access role for each feed.</p>
+    pub fn access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.access_role_arn.as_deref()
     }
     /// <p>An array of outputs for this feed. Each output represents a specific Elemental Inference feature. For example, there is one output type for the smart crop feature. You must specify at least one output, but you can later add outputs using AssociateFeed, or add, modify, and delete outputs using UpdateFeed.</p>
     ///
@@ -38,6 +44,7 @@ impl CreateFeedInput {
 #[non_exhaustive]
 pub struct CreateFeedInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::CreateOutput>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -56,6 +63,20 @@ impl CreateFeedInputBuilder {
     /// <p>A user-friendly name for this feed.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. For example, the smart crop feature uses this role to read graphics-compositing templates from your Amazon S3 bucket. You specify one access role for each feed.</p>
+    pub fn access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. For example, the smart crop feature uses this role to read graphics-compositing templates from your Amazon S3 bucket. You specify one access role for each feed.</p>
+    pub fn set_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_role_arn = input;
+        self
+    }
+    /// <p>The ARN of an IAM role that Elemental Inference assumes to access resources in your account on your behalf. For example, the smart crop feature uses this role to read graphics-compositing templates from your Amazon S3 bucket. You specify one access role for each feed.</p>
+    pub fn get_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_role_arn
     }
     /// Appends an item to `outputs`.
     ///
@@ -101,6 +122,7 @@ impl CreateFeedInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::create_feed::CreateFeedInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_feed::CreateFeedInput {
             name: self.name,
+            access_role_arn: self.access_role_arn,
             outputs: self.outputs,
             tags: self.tags,
         })
