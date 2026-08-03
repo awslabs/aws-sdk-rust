@@ -411,4 +411,37 @@ impl CreateDbInstanceFluentBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         self.inner.get_network_type()
     }
+    ///
+    /// Appends an item to `dbBackupConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_db_backup_configurations`](Self::set_db_backup_configurations).
+    ///
+    /// <p>A list of backup configurations to enable automated backups for the DB instance.</p>
+    pub fn db_backup_configurations(mut self, input: crate::types::DbBackupConfiguration) -> Self {
+        self.inner = self.inner.db_backup_configurations(input);
+        self
+    }
+    /// <p>A list of backup configurations to enable automated backups for the DB instance.</p>
+    pub fn set_db_backup_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>) -> Self {
+        self.inner = self.inner.set_db_backup_configurations(input);
+        self
+    }
+    /// <p>A list of backup configurations to enable automated backups for the DB instance.</p>
+    pub fn get_db_backup_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>> {
+        self.inner.get_db_backup_configurations()
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.kms_key_id(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_kms_key_id(input);
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_id()
+    }
 }

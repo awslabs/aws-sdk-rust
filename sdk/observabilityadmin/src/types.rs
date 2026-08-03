@@ -109,6 +109,8 @@ pub use crate::types::_encryption_strategy::EncryptionStrategy;
 
 pub use crate::types::_encryption_conflict_resolution_strategy::EncryptionConflictResolutionStrategy;
 
+pub use crate::types::_encryption_scope::EncryptionScope;
+
 pub use crate::types::_advanced_event_selector::AdvancedEventSelector;
 
 pub use crate::types::_field_to_match::FieldToMatch;
@@ -176,6 +178,8 @@ mod _encrypted_log_group_strategy;
 mod _encryption;
 
 mod _encryption_conflict_resolution_strategy;
+
+mod _encryption_scope;
 
 mod _encryption_strategy;
 

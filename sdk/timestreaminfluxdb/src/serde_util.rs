@@ -77,6 +77,18 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_db_backup_output_output_correct_errors(
+    mut builder: crate::operation::create_db_backup::builders::CreateDbBackupOutputBuilder,
+) -> crate::operation::create_db_backup::builders::CreateDbBackupOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_db_instance_output_output_correct_errors(
     mut builder: crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder,
 ) -> crate::operation::create_db_instance::builders::CreateDbInstanceOutputBuilder {
@@ -110,6 +122,18 @@ pub(crate) fn create_db_parameter_group_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_db_backup_output_output_correct_errors(
+    mut builder: crate::operation::delete_db_backup::builders::DeleteDbBackupOutputBuilder,
+) -> crate::operation::delete_db_backup::builders::DeleteDbBackupOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_db_instance_output_output_correct_errors(
     mut builder: crate::operation::delete_db_instance::builders::DeleteDbInstanceOutputBuilder,
 ) -> crate::operation::delete_db_instance::builders::DeleteDbInstanceOutputBuilder {
@@ -124,6 +148,18 @@ pub(crate) fn delete_db_instance_output_output_correct_errors(
     }
     if builder.vpc_subnet_ids.is_none() {
         builder.vpc_subnet_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_db_backup_output_output_correct_errors(
+    mut builder: crate::operation::get_db_backup::builders::GetDbBackupOutputBuilder,
+) -> crate::operation::get_db_backup::builders::GetDbBackupOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }
@@ -172,6 +208,15 @@ pub(crate) fn get_db_parameter_group_output_output_correct_errors(
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_db_backups_output_output_correct_errors(
+    mut builder: crate::operation::list_db_backups::builders::ListDbBackupsOutputBuilder,
+) -> crate::operation::list_db_backups::builders::ListDbBackupsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -268,6 +313,33 @@ pub(crate) fn maintenance_schedule_correct_errors(
     }
     if builder.preferred_maintenance_window.is_none() {
         builder.preferred_maintenance_window = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn db_backup_configuration_output_correct_errors(
+    mut builder: crate::types::builders::DbBackupConfigurationOutputBuilder,
+) -> crate::types::builders::DbBackupConfigurationOutputBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AutomatedDbBackupType>().ok()
+    }
+    if builder.retention_days.is_none() {
+        builder.retention_days = Some(Default::default())
+    }
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn db_backup_summary_correct_errors(
+    mut builder: crate::types::builders::DbBackupSummaryBuilder,
+) -> crate::types::builders::DbBackupSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }

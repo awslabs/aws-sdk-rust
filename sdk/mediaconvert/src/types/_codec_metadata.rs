@@ -14,6 +14,8 @@ pub struct CodecMetadata {
     pub color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
     /// Content light level information (CTA-861.3). Describes the light level characteristics of the content.
     pub content_light_level: ::std::option::Option<crate::types::ContentLightLevel>,
+    /// The field order of interlaced video, which indicates whether the top or bottom field is displayed first. Use this to select the correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for interlaced video; it is omitted for progressive video and when the field order is not indicated by the source.
+    pub field_order: ::std::option::Option<::std::string::String>,
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub height: ::std::option::Option<i32>,
     /// The codec level or tier that specifies the maximum processing requirements and capabilities. Levels define constraints such as maximum bit rate, frame rate, and resolution.
@@ -51,6 +53,10 @@ impl CodecMetadata {
     /// Content light level information (CTA-861.3). Describes the light level characteristics of the content.
     pub fn content_light_level(&self) -> ::std::option::Option<&crate::types::ContentLightLevel> {
         self.content_light_level.as_ref()
+    }
+    /// The field order of interlaced video, which indicates whether the top or bottom field is displayed first. Use this to select the correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for interlaced video; it is omitted for progressive video and when the field order is not indicated by the source.
+    pub fn field_order(&self) -> ::std::option::Option<&str> {
+        self.field_order.as_deref()
     }
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub fn height(&self) -> ::std::option::Option<i32> {
@@ -101,6 +107,7 @@ pub struct CodecMetadataBuilder {
     pub(crate) coded_frame_rate: ::std::option::Option<crate::types::FrameRate>,
     pub(crate) color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
     pub(crate) content_light_level: ::std::option::Option<crate::types::ContentLightLevel>,
+    pub(crate) field_order: ::std::option::Option<::std::string::String>,
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) level: ::std::option::Option<::std::string::String>,
     pub(crate) matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
@@ -180,6 +187,20 @@ impl CodecMetadataBuilder {
     /// Content light level information (CTA-861.3). Describes the light level characteristics of the content.
     pub fn get_content_light_level(&self) -> &::std::option::Option<crate::types::ContentLightLevel> {
         &self.content_light_level
+    }
+    /// The field order of interlaced video, which indicates whether the top or bottom field is displayed first. Use this to select the correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for interlaced video; it is omitted for progressive video and when the field order is not indicated by the source.
+    pub fn field_order(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_order = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The field order of interlaced video, which indicates whether the top or bottom field is displayed first. Use this to select the correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for interlaced video; it is omitted for progressive video and when the field order is not indicated by the source.
+    pub fn set_field_order(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.field_order = input;
+        self
+    }
+    /// The field order of interlaced video, which indicates whether the top or bottom field is displayed first. Use this to select the correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for interlaced video; it is omitted for progressive video and when the field order is not indicated by the source.
+    pub fn get_field_order(&self) -> &::std::option::Option<::std::string::String> {
+        &self.field_order
     }
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub fn height(mut self, input: i32) -> Self {
@@ -301,6 +322,7 @@ impl CodecMetadataBuilder {
             coded_frame_rate: self.coded_frame_rate,
             color_primaries: self.color_primaries,
             content_light_level: self.content_light_level,
+            field_order: self.field_order,
             height: self.height,
             level: self.level,
             matrix_coefficients: self.matrix_coefficients,

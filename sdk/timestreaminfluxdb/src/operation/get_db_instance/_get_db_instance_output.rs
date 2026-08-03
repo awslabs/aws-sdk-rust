@@ -53,6 +53,10 @@ pub struct GetDbInstanceOutput {
     pub last_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
     pub next_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The backup configurations for the DB instance.</p>
+    pub db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>>,
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB instance.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDbInstanceOutput {
@@ -164,6 +168,16 @@ impl GetDbInstanceOutput {
     pub fn next_maintenance_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.next_maintenance_time.as_ref()
     }
+    /// <p>The backup configurations for the DB instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_backup_configurations.is_none()`.
+    pub fn db_backup_configurations(&self) -> &[crate::types::DbBackupConfigurationOutput] {
+        self.db_backup_configurations.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB instance.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDbInstanceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -206,6 +220,8 @@ pub struct GetDbInstanceOutputBuilder {
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     pub(crate) last_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) next_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDbInstanceOutputBuilder {
@@ -580,6 +596,40 @@ impl GetDbInstanceOutputBuilder {
     pub fn get_next_maintenance_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.next_maintenance_time
     }
+    /// Appends an item to `db_backup_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_db_backup_configurations`](Self::set_db_backup_configurations).
+    ///
+    /// <p>The backup configurations for the DB instance.</p>
+    pub fn db_backup_configurations(mut self, input: crate::types::DbBackupConfigurationOutput) -> Self {
+        let mut v = self.db_backup_configurations.unwrap_or_default();
+        v.push(input);
+        self.db_backup_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The backup configurations for the DB instance.</p>
+    pub fn set_db_backup_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>>) -> Self {
+        self.db_backup_configurations = input;
+        self
+    }
+    /// <p>The backup configurations for the DB instance.</p>
+    pub fn get_db_backup_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>> {
+        &self.db_backup_configurations
+    }
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB instance.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB instance.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB instance.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -644,6 +694,8 @@ impl GetDbInstanceOutputBuilder {
             maintenance_schedule: self.maintenance_schedule,
             last_maintenance_time: self.last_maintenance_time,
             next_maintenance_time: self.next_maintenance_time,
+            db_backup_configurations: self.db_backup_configurations,
+            kms_key_id: self.kms_key_id,
             _request_id: self._request_id,
         })
     }

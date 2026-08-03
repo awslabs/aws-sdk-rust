@@ -53,6 +53,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "fieldOrder" => {
+                            builder = builder.set_field_order(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "height" => {
                             builder = builder.set_height(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

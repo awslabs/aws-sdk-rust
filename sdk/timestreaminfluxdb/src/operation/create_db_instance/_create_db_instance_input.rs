@@ -51,6 +51,10 @@ pub struct CreateDbInstanceInput {
     pub port: ::std::option::Option<i32>,
     /// <p>Specifies whether the networkType of the Timestream for InfluxDB instance is IPV4, which can communicate over IPv4 protocol only, or DUAL, which can communicate over both IPv4 and IPv6 protocols.</p>
     pub network_type: ::std::option::Option<crate::types::NetworkType>,
+    /// <p>A list of backup configurations to enable automated backups for the DB instance.</p>
+    pub db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>,
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInput {
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
@@ -141,6 +145,16 @@ impl CreateDbInstanceInput {
     pub fn network_type(&self) -> ::std::option::Option<&crate::types::NetworkType> {
         self.network_type.as_ref()
     }
+    /// <p>A list of backup configurations to enable automated backups for the DB instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_backup_configurations.is_none()`.
+    pub fn db_backup_configurations(&self) -> &[crate::types::DbBackupConfiguration] {
+        self.db_backup_configurations.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateDbInstanceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -163,6 +177,8 @@ impl ::std::fmt::Debug for CreateDbInstanceInput {
         formatter.field("tags", &self.tags);
         formatter.field("port", &self.port);
         formatter.field("network_type", &self.network_type);
+        formatter.field("db_backup_configurations", &self.db_backup_configurations);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }
@@ -195,6 +211,8 @@ pub struct CreateDbInstanceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) port: ::std::option::Option<i32>,
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
+    pub(crate) db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateDbInstanceInputBuilder {
     /// <p>The name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands. This name will also be a prefix included in the endpoint. DB instance names must be unique per customer and per region.</p>
@@ -507,6 +525,40 @@ impl CreateDbInstanceInputBuilder {
     pub fn get_network_type(&self) -> &::std::option::Option<crate::types::NetworkType> {
         &self.network_type
     }
+    /// Appends an item to `db_backup_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_db_backup_configurations`](Self::set_db_backup_configurations).
+    ///
+    /// <p>A list of backup configurations to enable automated backups for the DB instance.</p>
+    pub fn db_backup_configurations(mut self, input: crate::types::DbBackupConfiguration) -> Self {
+        let mut v = self.db_backup_configurations.unwrap_or_default();
+        v.push(input);
+        self.db_backup_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of backup configurations to enable automated backups for the DB instance.</p>
+    pub fn set_db_backup_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>) -> Self {
+        self.db_backup_configurations = input;
+        self
+    }
+    /// <p>A list of backup configurations to enable automated backups for the DB instance.</p>
+    pub fn get_db_backup_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>> {
+        &self.db_backup_configurations
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB instance. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Consumes the builder and constructs a [`CreateDbInstanceInput`](crate::operation::create_db_instance::CreateDbInstanceInput).
     pub fn build(
         self,
@@ -530,6 +582,8 @@ impl CreateDbInstanceInputBuilder {
             tags: self.tags,
             port: self.port,
             network_type: self.network_type,
+            db_backup_configurations: self.db_backup_configurations,
+            kms_key_id: self.kms_key_id,
         })
     }
 }
@@ -554,6 +608,8 @@ impl ::std::fmt::Debug for CreateDbInstanceInputBuilder {
         formatter.field("tags", &self.tags);
         formatter.field("port", &self.port);
         formatter.field("network_type", &self.network_type);
+        formatter.field("db_backup_configurations", &self.db_backup_configurations);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.finish()
     }
 }

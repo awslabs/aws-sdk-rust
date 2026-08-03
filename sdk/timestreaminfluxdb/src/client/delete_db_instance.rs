@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`identifier(impl Into<String>)`](crate::operation::delete_db_instance::builders::DeleteDbInstanceFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_db_instance::builders::DeleteDbInstanceFluentBuilder::set_identifier):<br>required: **true**<br><p>The id of the DB instance.</p><br>
+    ///   - [`retain_automated_backups(bool)`](crate::operation::delete_db_instance::builders::DeleteDbInstanceFluentBuilder::retain_automated_backups) / [`set_retain_automated_backups(Option<bool>)`](crate::operation::delete_db_instance::builders::DeleteDbInstanceFluentBuilder::set_retain_automated_backups):<br>required: **false**<br><p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p><br>
     /// - On success, responds with [`DeleteDbInstanceOutput`](crate::operation::delete_db_instance::DeleteDbInstanceOutput) with field(s):
     ///   - [`id(String)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::id): <p>A service-generated unique identifier.</p>
     ///   - [`name(String)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::name): <p>The customer-supplied name that uniquely identifies the DB instance when interacting with the Amazon Timestream for InfluxDB API and CLI commands.</p>
@@ -30,6 +31,8 @@ impl super::Client {
     ///   - [`maintenance_schedule(Option<MaintenanceSchedule>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::maintenance_schedule): <p>The maintenance schedule for the DB instance.</p>
     ///   - [`last_maintenance_time(Option<DateTime>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::last_maintenance_time): <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
     ///   - [`next_maintenance_time(Option<DateTime>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::next_maintenance_time): <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
+    ///   - [`db_backup_configurations(Option<Vec::<DbBackupConfigurationOutput>>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::db_backup_configurations): <p>The backup configurations that were associated with the deleted DB instance.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::operation::delete_db_instance::DeleteDbInstanceOutput::kms_key_id): <p>The Amazon Web Services KMS key ARN that was used for encryption of the deleted DB instance.</p>
     /// - On failure, responds with [`SdkError<DeleteDbInstanceError>`](crate::operation::delete_db_instance::DeleteDbInstanceError)
     pub fn delete_db_instance(&self) -> crate::operation::delete_db_instance::builders::DeleteDbInstanceFluentBuilder {
         crate::operation::delete_db_instance::builders::DeleteDbInstanceFluentBuilder::new(self.handle.clone())

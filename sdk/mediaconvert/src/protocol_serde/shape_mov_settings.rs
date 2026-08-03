@@ -3,20 +3,23 @@ pub fn ser_mov_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::MovSettings,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.clap_atom {
-        object.key("clapAtom").string(var_1.as_str());
+    if let Some(var_1) = &input.audio_duration {
+        object.key("audioDuration").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.cslg_atom {
-        object.key("cslgAtom").string(var_2.as_str());
+    if let Some(var_2) = &input.clap_atom {
+        object.key("clapAtom").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.mpeg2_four_cc_control {
-        object.key("mpeg2FourCCControl").string(var_3.as_str());
+    if let Some(var_3) = &input.cslg_atom {
+        object.key("cslgAtom").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.padding_control {
-        object.key("paddingControl").string(var_4.as_str());
+    if let Some(var_4) = &input.mpeg2_four_cc_control {
+        object.key("mpeg2FourCCControl").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.reference {
-        object.key("reference").string(var_5.as_str());
+    if let Some(var_5) = &input.padding_control {
+        object.key("paddingControl").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.reference {
+        object.key("reference").string(var_6.as_str());
     }
     Ok(())
 }
@@ -43,6 +46,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "audioDuration" => {
+                            builder = builder.set_audio_duration(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CmfcAudioDuration::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "clapAtom" => {
                             builder = builder.set_clap_atom(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -29,6 +29,8 @@ impl super::Client {
     ///   - [`vpc_security_group_ids(Option<Vec::<String>>)`](crate::operation::get_db_cluster::GetDbClusterOutput::vpc_security_group_ids): <p>A list of VPC security group IDs associated with the DB cluster.</p>
     ///   - [`failover_mode(Option<FailoverMode>)`](crate::operation::get_db_cluster::GetDbClusterOutput::failover_mode): <p>The configured failover mode for the DB cluster.</p>
     ///   - [`cluster_configuration(Option<ClusterConfiguration>)`](crate::operation::get_db_cluster::GetDbClusterOutput::cluster_configuration): <p>Configuration for node modes in the DbCluster.</p>
+    ///   - [`db_backup_configurations(Option<Vec::<DbBackupConfigurationOutput>>)`](crate::operation::get_db_cluster::GetDbClusterOutput::db_backup_configurations): <p>The backup configurations for the DB cluster.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::operation::get_db_cluster::GetDbClusterOutput::kms_key_id): <p>The Amazon Web Services KMS key ARN used for encryption of the DB cluster.</p>
     /// - On failure, responds with [`SdkError<GetDbClusterError>`](crate::operation::get_db_cluster::GetDbClusterError)
     pub fn get_db_cluster(&self) -> crate::operation::get_db_cluster::builders::GetDbClusterFluentBuilder {
         crate::operation::get_db_cluster::builders::GetDbClusterFluentBuilder::new(self.handle.clone())

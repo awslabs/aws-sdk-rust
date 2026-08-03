@@ -14,7 +14,7 @@ pub struct SizeConstraintStatement {
     pub size: i64,
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. Text transformations are used in rule match statements, to transform the <code>FieldToMatch</code> request component before inspecting it, and they're used in rate-based rule statements, to transform request components before using them as custom aggregation keys. If you specify one or more transformations to apply, WAF performs all transformations on the specified content, starting from the lowest priority setting, and then uses the transformed component contents.</p>
     pub text_transformations: ::std::vec::Vec<crate::types::TextTransformation>,
-    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 10 pre-parse text transformations per rule statement.</p>
     pub pre_parse_text_transformations: ::std::option::Option<::std::vec::Vec<crate::types::PreParseTextTransformation>>,
 }
 impl SizeConstraintStatement {
@@ -35,7 +35,7 @@ impl SizeConstraintStatement {
         use std::ops::Deref;
         self.text_transformations.deref()
     }
-    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 10 pre-parse text transformations per rule statement.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pre_parse_text_transformations.is_none()`.
     pub fn pre_parse_text_transformations(&self) -> &[crate::types::PreParseTextTransformation] {
@@ -129,14 +129,14 @@ impl SizeConstraintStatementBuilder {
     ///
     /// To override the contents of this collection use [`set_pre_parse_text_transformations`](Self::set_pre_parse_text_transformations).
     ///
-    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 10 pre-parse text transformations per rule statement.</p>
     pub fn pre_parse_text_transformations(mut self, input: crate::types::PreParseTextTransformation) -> Self {
         let mut v = self.pre_parse_text_transformations.unwrap_or_default();
         v.push(input);
         self.pre_parse_text_transformations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 10 pre-parse text transformations per rule statement.</p>
     pub fn set_pre_parse_text_transformations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::PreParseTextTransformation>>,
@@ -144,7 +144,7 @@ impl SizeConstraintStatementBuilder {
         self.pre_parse_text_transformations = input;
         self
     }
-    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 3 pre-parse text transformations per rule statement.</p>
+    /// <p>Pre-parse text transformations normalize the raw query string before WAF parses it into individual query arguments. They are applied before the standard text transformations. Pre-parse text transformations are only supported when <code>FieldToMatch</code> is <code>SingleQueryArgument</code> or <code>AllQueryArguments</code>. You can specify up to 10 pre-parse text transformations per rule statement.</p>
     pub fn get_pre_parse_text_transformations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PreParseTextTransformation>> {
         &self.pre_parse_text_transformations
     }

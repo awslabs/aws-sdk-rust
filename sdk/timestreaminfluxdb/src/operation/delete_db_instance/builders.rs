@@ -122,4 +122,18 @@ impl DeleteDbInstanceFluentBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
+    /// <p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn retain_automated_backups(mut self, input: bool) -> Self {
+        self.inner = self.inner.retain_automated_backups(input);
+        self
+    }
+    /// <p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn set_retain_automated_backups(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_retain_automated_backups(input);
+        self
+    }
+    /// <p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn get_retain_automated_backups(&self) -> &::std::option::Option<bool> {
+        self.inner.get_retain_automated_backups()
+    }
 }

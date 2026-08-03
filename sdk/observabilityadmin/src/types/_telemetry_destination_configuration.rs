@@ -18,10 +18,12 @@ pub struct TelemetryDestinationConfiguration {
     pub elb_load_balancer_logging_parameters: ::std::option::Option<crate::types::ElbLoadBalancerLoggingParameters>,
     /// <p>Configuration parameters specific to WAF logging when WAF is the resource type.</p>
     pub waf_logging_parameters: ::std::option::Option<crate::types::WafLoggingParameters>,
-    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
     pub log_delivery_parameters: ::std::option::Option<crate::types::LogDeliveryParameters>,
     /// <p>Configuration parameters specific to MSK monitoring when MSK is the resource type.</p>
     pub msk_monitoring_parameters: ::std::option::Option<crate::types::MskMonitoringParameters>,
+    /// <p>The Amazon Resource Name (ARN) of the customer-managed Amazon Web Services KMS key used to encrypt the log groups created during telemetry rule remediation.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl TelemetryDestinationConfiguration {
     /// <p>The type of destination for the telemetry data (e.g., "Amazon CloudWatch Logs", "S3").</p>
@@ -52,13 +54,17 @@ impl TelemetryDestinationConfiguration {
     pub fn waf_logging_parameters(&self) -> ::std::option::Option<&crate::types::WafLoggingParameters> {
         self.waf_logging_parameters.as_ref()
     }
-    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
     pub fn log_delivery_parameters(&self) -> ::std::option::Option<&crate::types::LogDeliveryParameters> {
         self.log_delivery_parameters.as_ref()
     }
     /// <p>Configuration parameters specific to MSK monitoring when MSK is the resource type.</p>
     pub fn msk_monitoring_parameters(&self) -> ::std::option::Option<&crate::types::MskMonitoringParameters> {
         self.msk_monitoring_parameters.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer-managed Amazon Web Services KMS key used to encrypt the log groups created during telemetry rule remediation.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
     }
 }
 impl TelemetryDestinationConfiguration {
@@ -81,6 +87,7 @@ pub struct TelemetryDestinationConfigurationBuilder {
     pub(crate) waf_logging_parameters: ::std::option::Option<crate::types::WafLoggingParameters>,
     pub(crate) log_delivery_parameters: ::std::option::Option<crate::types::LogDeliveryParameters>,
     pub(crate) msk_monitoring_parameters: ::std::option::Option<crate::types::MskMonitoringParameters>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl TelemetryDestinationConfigurationBuilder {
     /// <p>The type of destination for the telemetry data (e.g., "Amazon CloudWatch Logs", "S3").</p>
@@ -181,17 +188,17 @@ impl TelemetryDestinationConfigurationBuilder {
     pub fn get_waf_logging_parameters(&self) -> &::std::option::Option<crate::types::WafLoggingParameters> {
         &self.waf_logging_parameters
     }
-    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
     pub fn log_delivery_parameters(mut self, input: crate::types::LogDeliveryParameters) -> Self {
         self.log_delivery_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
     pub fn set_log_delivery_parameters(mut self, input: ::std::option::Option<crate::types::LogDeliveryParameters>) -> Self {
         self.log_delivery_parameters = input;
         self
     }
-    /// <p>Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon Bedrock AgentCore is the resource type.</p>
+    /// <p>The configuration parameters for log delivery when the resource type supports configurable log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application Load Balancers.</p>
     pub fn get_log_delivery_parameters(&self) -> &::std::option::Option<crate::types::LogDeliveryParameters> {
         &self.log_delivery_parameters
     }
@@ -209,6 +216,20 @@ impl TelemetryDestinationConfigurationBuilder {
     pub fn get_msk_monitoring_parameters(&self) -> &::std::option::Option<crate::types::MskMonitoringParameters> {
         &self.msk_monitoring_parameters
     }
+    /// <p>The Amazon Resource Name (ARN) of the customer-managed Amazon Web Services KMS key used to encrypt the log groups created during telemetry rule remediation.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer-managed Amazon Web Services KMS key used to encrypt the log groups created during telemetry rule remediation.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer-managed Amazon Web Services KMS key used to encrypt the log groups created during telemetry rule remediation.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`TelemetryDestinationConfiguration`](crate::types::TelemetryDestinationConfiguration).
     pub fn build(self) -> crate::types::TelemetryDestinationConfiguration {
         crate::types::TelemetryDestinationConfiguration {
@@ -221,6 +242,7 @@ impl TelemetryDestinationConfigurationBuilder {
             waf_logging_parameters: self.waf_logging_parameters,
             log_delivery_parameters: self.log_delivery_parameters,
             msk_monitoring_parameters: self.msk_monitoring_parameters,
+            kms_key_arn: self.kms_key_arn,
         }
     }
 }

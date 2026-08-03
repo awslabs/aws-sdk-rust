@@ -51,6 +51,10 @@ pub struct GetDbClusterOutput {
     pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     /// <p>Configuration for node modes in the DbCluster.</p>
     pub cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
+    /// <p>The backup configurations for the DB cluster.</p>
+    pub db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>>,
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB cluster.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDbClusterOutput {
@@ -157,6 +161,16 @@ impl GetDbClusterOutput {
     pub fn cluster_configuration(&self) -> ::std::option::Option<&crate::types::ClusterConfiguration> {
         self.cluster_configuration.as_ref()
     }
+    /// <p>The backup configurations for the DB cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_backup_configurations.is_none()`.
+    pub fn db_backup_configurations(&self) -> &[crate::types::DbBackupConfigurationOutput] {
+        self.db_backup_configurations.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB cluster.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDbClusterOutput {
     fn request_id(&self) -> Option<&str> {
@@ -198,6 +212,8 @@ pub struct GetDbClusterOutputBuilder {
     pub(crate) vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     pub(crate) cluster_configuration: ::std::option::Option<crate::types::ClusterConfiguration>,
+    pub(crate) db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetDbClusterOutputBuilder {
@@ -552,6 +568,40 @@ impl GetDbClusterOutputBuilder {
     pub fn get_cluster_configuration(&self) -> &::std::option::Option<crate::types::ClusterConfiguration> {
         &self.cluster_configuration
     }
+    /// Appends an item to `db_backup_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_db_backup_configurations`](Self::set_db_backup_configurations).
+    ///
+    /// <p>The backup configurations for the DB cluster.</p>
+    pub fn db_backup_configurations(mut self, input: crate::types::DbBackupConfigurationOutput) -> Self {
+        let mut v = self.db_backup_configurations.unwrap_or_default();
+        v.push(input);
+        self.db_backup_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The backup configurations for the DB cluster.</p>
+    pub fn set_db_backup_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>>) -> Self {
+        self.db_backup_configurations = input;
+        self
+    }
+    /// <p>The backup configurations for the DB cluster.</p>
+    pub fn get_db_backup_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfigurationOutput>> {
+        &self.db_backup_configurations
+    }
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB cluster.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB cluster.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services KMS key ARN used for encryption of the DB cluster.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -609,6 +659,8 @@ impl GetDbClusterOutputBuilder {
             vpc_security_group_ids: self.vpc_security_group_ids,
             failover_mode: self.failover_mode,
             cluster_configuration: self.cluster_configuration,
+            db_backup_configurations: self.db_backup_configurations,
+            kms_key_id: self.kms_key_id,
             _request_id: self._request_id,
         })
     }

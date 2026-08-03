@@ -185,6 +185,8 @@ pub(crate) mod shape_update_proxy_rule_group_priorities;
 
 pub(crate) mod shape_update_proxy_rule_priorities;
 
+pub(crate) mod shape_update_proxy_settings;
+
 pub(crate) mod shape_update_rule_group;
 
 pub(crate) mod shape_update_subnet_change_protection;
@@ -385,6 +387,8 @@ pub(crate) mod shape_update_proxy_rule_input;
 
 pub(crate) mod shape_update_proxy_rule_priorities_input;
 
+pub(crate) mod shape_update_proxy_settings_input;
+
 pub(crate) mod shape_update_rule_group_input;
 
 pub(crate) mod shape_update_subnet_change_protection_input;
@@ -437,6 +441,8 @@ pub(crate) mod shape_listener_property_request;
 
 pub(crate) mod shape_logging_configuration;
 
+pub(crate) mod shape_nat_gateway_mapping;
+
 pub(crate) mod shape_proxies;
 
 pub(crate) mod shape_proxy;
@@ -469,6 +475,8 @@ pub(crate) mod shape_proxy_rule_priority_list;
 
 pub(crate) mod shape_proxy_rules_by_request_phase;
 
+pub(crate) mod shape_proxy_settings;
+
 pub(crate) mod shape_rule_group;
 
 pub(crate) mod shape_rule_group_response;
@@ -500,6 +508,8 @@ pub(crate) mod shape_tls_inspection_configuration_response;
 pub(crate) mod shape_tls_inspection_configurations;
 
 pub(crate) mod shape_tls_intercept_properties_request;
+
+pub(crate) mod shape_vpc_endpoint;
 
 pub(crate) mod shape_vpc_endpoint_association;
 
@@ -545,9 +555,13 @@ pub(crate) mod shape_flow_operation_metadata;
 
 pub(crate) mod shape_listener_properties;
 
+pub(crate) mod shape_listener_property;
+
 pub(crate) mod shape_log_destination_config;
 
 pub(crate) mod shape_log_destination_configs;
+
+pub(crate) mod shape_nat_gateway_mappings_list;
 
 pub(crate) mod shape_policy_variables;
 
@@ -625,8 +639,6 @@ pub(crate) mod shape_ip_set_reference_map;
 
 pub(crate) mod shape_ip_sets;
 
-pub(crate) mod shape_listener_property;
-
 pub(crate) mod shape_port_set;
 
 pub(crate) mod shape_port_sets;
@@ -667,6 +679,8 @@ pub(crate) mod shape_ip_set_metadata_map;
 
 pub(crate) mod shape_log_destination_map;
 
+pub(crate) mod shape_nat_gateway_attachments_list;
+
 pub(crate) mod shape_port_range;
 
 pub(crate) mod shape_protocol_strings;
@@ -694,6 +708,8 @@ pub(crate) mod shape_target_types;
 pub(crate) mod shape_dimension;
 
 pub(crate) mod shape_ip_set_metadata;
+
+pub(crate) mod shape_nat_gateway_attachment;
 
 pub(crate) mod shape_per_object_status;
 

@@ -23,21 +23,29 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_db_backup;
+
 pub(crate) mod shape_create_db_cluster;
 
 pub(crate) mod shape_create_db_instance;
 
 pub(crate) mod shape_create_db_parameter_group;
 
+pub(crate) mod shape_delete_db_backup;
+
 pub(crate) mod shape_delete_db_cluster;
 
 pub(crate) mod shape_delete_db_instance;
+
+pub(crate) mod shape_get_db_backup;
 
 pub(crate) mod shape_get_db_cluster;
 
 pub(crate) mod shape_get_db_instance;
 
 pub(crate) mod shape_get_db_parameter_group;
+
+pub(crate) mod shape_list_db_backups;
 
 pub(crate) mod shape_list_db_clusters;
 
@@ -52,6 +60,8 @@ pub(crate) mod shape_list_tags_for_resource;
 pub(crate) mod shape_reboot_db_cluster;
 
 pub(crate) mod shape_reboot_db_instance;
+
+pub(crate) mod shape_restore_from_db_backup;
 
 pub(crate) mod shape_tag_resource;
 
@@ -73,15 +83,21 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_db_backup_input;
+
 pub(crate) mod shape_create_db_cluster_input;
 
 pub(crate) mod shape_create_db_instance_input;
 
 pub(crate) mod shape_create_db_parameter_group_input;
 
+pub(crate) mod shape_delete_db_backup_input;
+
 pub(crate) mod shape_delete_db_cluster_input;
 
 pub(crate) mod shape_delete_db_instance_input;
+
+pub(crate) mod shape_get_db_backup_input;
 
 pub(crate) mod shape_get_db_cluster_input;
 
@@ -90,6 +106,8 @@ pub(crate) mod shape_get_db_instance_input;
 pub(crate) mod shape_get_db_parameter_group_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_db_backups_input;
 
 pub(crate) mod shape_list_db_clusters_input;
 
@@ -107,6 +125,8 @@ pub(crate) mod shape_reboot_db_instance_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_restore_from_db_backup_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -122,6 +142,12 @@ pub(crate) mod shape_update_db_instance_input;
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_cluster_configuration;
+
+pub(crate) mod shape_db_backup_configuration;
+
+pub(crate) mod shape_db_backup_configuration_output_list;
+
+pub(crate) mod shape_db_backup_summary_list;
 
 pub(crate) mod shape_db_cluster_summary_list;
 
@@ -144,6 +170,10 @@ pub(crate) mod shape_response_tag_map;
 pub(crate) mod shape_vpc_security_group_id_list;
 
 pub(crate) mod shape_vpc_subnet_id_list;
+
+pub(crate) mod shape_db_backup_configuration_output;
+
+pub(crate) mod shape_db_backup_summary;
 
 pub(crate) mod shape_db_cluster_summary;
 

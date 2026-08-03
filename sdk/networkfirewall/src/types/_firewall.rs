@@ -45,6 +45,14 @@ pub struct Firewall {
     pub availability_zone_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>,
     /// <p>A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you must first disable this protection before adding or removing Availability Zones.</p>
     pub availability_zone_change_protection: bool,
+    /// <p>The NAT gateways that the firewall uses to proxy traffic. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub nat_gateway_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayMapping>>,
+    /// <p>The listener configuration for the firewall's proxy. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub proxy_settings: ::std::option::Option<crate::types::ProxySettings>,
+    /// <p>Indicates whether the firewall operates in proxy mode, in which the source IP address of the traffic is not preserved. When this value is <code>TRUE</code>, the firewall proxies traffic through a NAT gateway and uses the NAT gateway's IP address as the source for traffic reaching the destination.</p>
+    pub no_source_preservation: bool,
+    /// <p>The VPC and subnets for the firewall endpoint. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
 }
 impl Firewall {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -132,6 +140,24 @@ impl Firewall {
     pub fn availability_zone_change_protection(&self) -> bool {
         self.availability_zone_change_protection
     }
+    /// <p>The NAT gateways that the firewall uses to proxy traffic. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_mappings.is_none()`.
+    pub fn nat_gateway_mappings(&self) -> &[crate::types::NatGatewayMapping] {
+        self.nat_gateway_mappings.as_deref().unwrap_or_default()
+    }
+    /// <p>The listener configuration for the firewall's proxy. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn proxy_settings(&self) -> ::std::option::Option<&crate::types::ProxySettings> {
+        self.proxy_settings.as_ref()
+    }
+    /// <p>Indicates whether the firewall operates in proxy mode, in which the source IP address of the traffic is not preserved. When this value is <code>TRUE</code>, the firewall proxies traffic through a NAT gateway and uses the NAT gateway's IP address as the source for traffic reaching the destination.</p>
+    pub fn no_source_preservation(&self) -> bool {
+        self.no_source_preservation
+    }
+    /// <p>The VPC and subnets for the firewall endpoint. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn vpc_endpoint(&self) -> ::std::option::Option<&crate::types::VpcEndpoint> {
+        self.vpc_endpoint.as_ref()
+    }
 }
 impl Firewall {
     /// Creates a new builder-style object to manufacture [`Firewall`](crate::types::Firewall).
@@ -162,6 +188,10 @@ pub struct FirewallBuilder {
     pub(crate) transit_gateway_owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>,
     pub(crate) availability_zone_change_protection: ::std::option::Option<bool>,
+    pub(crate) nat_gateway_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayMapping>>,
+    pub(crate) proxy_settings: ::std::option::Option<crate::types::ProxySettings>,
+    pub(crate) no_source_preservation: ::std::option::Option<bool>,
+    pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
 }
 impl FirewallBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -452,6 +482,68 @@ impl FirewallBuilder {
     pub fn get_availability_zone_change_protection(&self) -> &::std::option::Option<bool> {
         &self.availability_zone_change_protection
     }
+    /// Appends an item to `nat_gateway_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_nat_gateway_mappings`](Self::set_nat_gateway_mappings).
+    ///
+    /// <p>The NAT gateways that the firewall uses to proxy traffic. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn nat_gateway_mappings(mut self, input: crate::types::NatGatewayMapping) -> Self {
+        let mut v = self.nat_gateway_mappings.unwrap_or_default();
+        v.push(input);
+        self.nat_gateway_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The NAT gateways that the firewall uses to proxy traffic. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn set_nat_gateway_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayMapping>>) -> Self {
+        self.nat_gateway_mappings = input;
+        self
+    }
+    /// <p>The NAT gateways that the firewall uses to proxy traffic. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn get_nat_gateway_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayMapping>> {
+        &self.nat_gateway_mappings
+    }
+    /// <p>The listener configuration for the firewall's proxy. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn proxy_settings(mut self, input: crate::types::ProxySettings) -> Self {
+        self.proxy_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The listener configuration for the firewall's proxy. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn set_proxy_settings(mut self, input: ::std::option::Option<crate::types::ProxySettings>) -> Self {
+        self.proxy_settings = input;
+        self
+    }
+    /// <p>The listener configuration for the firewall's proxy. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn get_proxy_settings(&self) -> &::std::option::Option<crate::types::ProxySettings> {
+        &self.proxy_settings
+    }
+    /// <p>Indicates whether the firewall operates in proxy mode, in which the source IP address of the traffic is not preserved. When this value is <code>TRUE</code>, the firewall proxies traffic through a NAT gateway and uses the NAT gateway's IP address as the source for traffic reaching the destination.</p>
+    pub fn no_source_preservation(mut self, input: bool) -> Self {
+        self.no_source_preservation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the firewall operates in proxy mode, in which the source IP address of the traffic is not preserved. When this value is <code>TRUE</code>, the firewall proxies traffic through a NAT gateway and uses the NAT gateway's IP address as the source for traffic reaching the destination.</p>
+    pub fn set_no_source_preservation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.no_source_preservation = input;
+        self
+    }
+    /// <p>Indicates whether the firewall operates in proxy mode, in which the source IP address of the traffic is not preserved. When this value is <code>TRUE</code>, the firewall proxies traffic through a NAT gateway and uses the NAT gateway's IP address as the source for traffic reaching the destination.</p>
+    pub fn get_no_source_preservation(&self) -> &::std::option::Option<bool> {
+        &self.no_source_preservation
+    }
+    /// <p>The VPC and subnets for the firewall endpoint. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn vpc_endpoint(mut self, input: crate::types::VpcEndpoint) -> Self {
+        self.vpc_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VPC and subnets for the firewall endpoint. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn set_vpc_endpoint(mut self, input: ::std::option::Option<crate::types::VpcEndpoint>) -> Self {
+        self.vpc_endpoint = input;
+        self
+    }
+    /// <p>The VPC and subnets for the firewall endpoint. This is set for proxy mode firewalls, where <code>NoSourcePreservation</code> is <code>TRUE</code>.</p>
+    pub fn get_vpc_endpoint(&self) -> &::std::option::Option<crate::types::VpcEndpoint> {
+        &self.vpc_endpoint
+    }
     /// Consumes the builder and constructs a [`Firewall`](crate::types::Firewall).
     /// This method will fail if any of the following fields are not set:
     /// - [`firewall_policy_arn`](crate::types::builders::FirewallBuilder::firewall_policy_arn)
@@ -498,6 +590,10 @@ impl FirewallBuilder {
             transit_gateway_owner_account_id: self.transit_gateway_owner_account_id,
             availability_zone_mappings: self.availability_zone_mappings,
             availability_zone_change_protection: self.availability_zone_change_protection.unwrap_or_default(),
+            nat_gateway_mappings: self.nat_gateway_mappings,
+            proxy_settings: self.proxy_settings,
+            no_source_preservation: self.no_source_preservation.unwrap_or_default(),
+            vpc_endpoint: self.vpc_endpoint,
         })
     }
 }

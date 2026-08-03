@@ -68,6 +68,36 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_backup::CreateDbBackupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_backup::CreateDbBackupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_db_backup::CreateDbBackupError> for Error {
+    fn from(err: crate::operation::create_db_backup::CreateDbBackupError) -> Self {
+        match err {
+            crate::operation::create_db_backup::CreateDbBackupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_db_backup::CreateDbBackupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_db_backup::CreateDbBackupError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_db_backup::CreateDbBackupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_db_backup::CreateDbBackupError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_db_backup::CreateDbBackupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_db_backup::CreateDbBackupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_db_backup::CreateDbBackupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_db_cluster::CreateDbClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -167,6 +197,33 @@ impl From<crate::operation::create_db_parameter_group::CreateDbParameterGroupErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_db_backup::DeleteDbBackupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_db_backup::DeleteDbBackupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_db_backup::DeleteDbBackupError> for Error {
+    fn from(err: crate::operation::delete_db_backup::DeleteDbBackupError) -> Self {
+        match err {
+            crate::operation::delete_db_backup::DeleteDbBackupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_db_backup::DeleteDbBackupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_db_backup::DeleteDbBackupError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_db_backup::DeleteDbBackupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_db_backup::DeleteDbBackupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_db_backup::DeleteDbBackupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_db_backup::DeleteDbBackupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_db_cluster::DeleteDbClusterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -218,6 +275,32 @@ impl From<crate::operation::delete_db_instance::DeleteDbInstanceError> for Error
             crate::operation::delete_db_instance::DeleteDbInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_db_instance::DeleteDbInstanceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_db_instance::DeleteDbInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_db_backup::GetDbBackupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_db_backup::GetDbBackupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_db_backup::GetDbBackupError> for Error {
+    fn from(err: crate::operation::get_db_backup::GetDbBackupError) -> Self {
+        match err {
+            crate::operation::get_db_backup::GetDbBackupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_db_backup::GetDbBackupError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_db_backup::GetDbBackupError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_db_backup::GetDbBackupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_db_backup::GetDbBackupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_db_backup::GetDbBackupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -300,6 +383,32 @@ impl From<crate::operation::get_db_parameter_group::GetDbParameterGroupError> fo
             crate::operation::get_db_parameter_group::GetDbParameterGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_db_parameter_group::GetDbParameterGroupError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_db_parameter_group::GetDbParameterGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_db_backups::ListDbBackupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_db_backups::ListDbBackupsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_db_backups::ListDbBackupsError> for Error {
+    fn from(err: crate::operation::list_db_backups::ListDbBackupsError) -> Self {
+        match err {
+            crate::operation::list_db_backups::ListDbBackupsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_db_backups::ListDbBackupsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_db_backups::ListDbBackupsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_db_backups::ListDbBackupsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_db_backups::ListDbBackupsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_db_backups::ListDbBackupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -503,6 +612,40 @@ impl From<crate::operation::reboot_db_instance::RebootDbInstanceError> for Error
             crate::operation::reboot_db_instance::RebootDbInstanceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::reboot_db_instance::RebootDbInstanceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::reboot_db_instance::RebootDbInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_from_db_backup::RestoreFromDbBackupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_from_db_backup::RestoreFromDbBackupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restore_from_db_backup::RestoreFromDbBackupError> for Error {
+    fn from(err: crate::operation::restore_from_db_backup::RestoreFromDbBackupError) -> Self {
+        match err {
+            crate::operation::restore_from_db_backup::RestoreFromDbBackupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::restore_from_db_backup::RestoreFromDbBackupError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::restore_from_db_backup::RestoreFromDbBackupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::restore_from_db_backup::RestoreFromDbBackupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::restore_from_db_backup::RestoreFromDbBackupError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::restore_from_db_backup::RestoreFromDbBackupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::restore_from_db_backup::RestoreFromDbBackupError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::restore_from_db_backup::RestoreFromDbBackupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

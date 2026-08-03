@@ -81,15 +81,30 @@ pub fn ser_create_db_cluster_input_input(
         crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_26 = object.key("tags").start_object();
-        for (key_27, value_28) in var_25 {
+    if let Some(var_25) = &input.db_backup_configurations {
+        let mut array_26 = object.key("dbBackupConfigurations").start_array();
+        for item_27 in var_25 {
             {
-                object_26.key(key_27.as_str()).string(value_28.as_str());
+                #[allow(unused_mut)]
+                let mut object_28 = array_26.value().start_object();
+                crate::protocol_serde::shape_db_backup_configuration::ser_db_backup_configuration(&mut object_28, item_27)?;
+                object_28.finish();
             }
         }
-        object_26.finish();
+        array_26.finish();
+    }
+    if let Some(var_29) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_31 = object.key("tags").start_object();
+        for (key_32, value_33) in var_30 {
+            {
+                object_31.key(key_32.as_str()).string(value_33.as_str());
+            }
+        }
+        object_31.finish();
     }
     Ok(())
 }

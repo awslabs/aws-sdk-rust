@@ -21,6 +21,8 @@
 ///     ClusterStatus::PartiallyAvailable => { /* ... */ },
 ///     ClusterStatus::Rebooting => { /* ... */ },
 ///     ClusterStatus::RebootFailed => { /* ... */ },
+///     ClusterStatus::RestoreFailed => { /* ... */ },
+///     ClusterStatus::Restoring => { /* ... */ },
 ///     ClusterStatus::Updating => { /* ... */ },
 ///     ClusterStatus::UpdatingInstanceType => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -70,6 +72,10 @@ pub enum ClusterStatus {
     #[allow(missing_docs)] // documentation missing in model
     RebootFailed,
     #[allow(missing_docs)] // documentation missing in model
+    RestoreFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Restoring,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     #[allow(missing_docs)] // documentation missing in model
     UpdatingInstanceType,
@@ -89,6 +95,8 @@ impl ::std::convert::From<&str> for ClusterStatus {
             "PARTIALLY_AVAILABLE" => ClusterStatus::PartiallyAvailable,
             "REBOOTING" => ClusterStatus::Rebooting,
             "REBOOT_FAILED" => ClusterStatus::RebootFailed,
+            "RESTORE_FAILED" => ClusterStatus::RestoreFailed,
+            "RESTORING" => ClusterStatus::Restoring,
             "UPDATING" => ClusterStatus::Updating,
             "UPDATING_INSTANCE_TYPE" => ClusterStatus::UpdatingInstanceType,
             other => ClusterStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -115,6 +123,8 @@ impl ClusterStatus {
             ClusterStatus::PartiallyAvailable => "PARTIALLY_AVAILABLE",
             ClusterStatus::Rebooting => "REBOOTING",
             ClusterStatus::RebootFailed => "REBOOT_FAILED",
+            ClusterStatus::RestoreFailed => "RESTORE_FAILED",
+            ClusterStatus::Restoring => "RESTORING",
             ClusterStatus::Updating => "UPDATING",
             ClusterStatus::UpdatingInstanceType => "UPDATING_INSTANCE_TYPE",
             ClusterStatus::Unknown(value) => value.as_str(),
@@ -132,6 +142,8 @@ impl ClusterStatus {
             "PARTIALLY_AVAILABLE",
             "REBOOTING",
             "REBOOT_FAILED",
+            "RESTORE_FAILED",
+            "RESTORING",
             "UPDATING",
             "UPDATING_INSTANCE_TYPE",
         ]
@@ -166,6 +178,8 @@ impl ::std::fmt::Display for ClusterStatus {
             ClusterStatus::PartiallyAvailable => write!(f, "PARTIALLY_AVAILABLE"),
             ClusterStatus::Rebooting => write!(f, "REBOOTING"),
             ClusterStatus::RebootFailed => write!(f, "REBOOT_FAILED"),
+            ClusterStatus::RestoreFailed => write!(f, "RESTORE_FAILED"),
+            ClusterStatus::Restoring => write!(f, "RESTORING"),
             ClusterStatus::Updating => write!(f, "UPDATING"),
             ClusterStatus::UpdatingInstanceType => write!(f, "UPDATING_INSTANCE_TYPE"),
             ClusterStatus::Unknown(value) => write!(f, "{value}"),

@@ -25,6 +25,8 @@ pub struct UpdateDbInstanceInput {
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>Specifies the maintenance schedule for the DB instance, including the preferred maintenance window and timezone.</p>
     pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    /// <p>A list of backup configurations to update for the DB instance.</p>
+    pub db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>,
 }
 impl UpdateDbInstanceInput {
     /// <p>The id of the DB instance.</p>
@@ -67,6 +69,12 @@ impl UpdateDbInstanceInput {
     pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
         self.maintenance_schedule.as_ref()
     }
+    /// <p>A list of backup configurations to update for the DB instance.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_backup_configurations.is_none()`.
+    pub fn db_backup_configurations(&self) -> &[crate::types::DbBackupConfiguration] {
+        self.db_backup_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateDbInstanceInput {
     /// Creates a new builder-style object to manufacture [`UpdateDbInstanceInput`](crate::operation::update_db_instance::UpdateDbInstanceInput).
@@ -88,6 +96,7 @@ pub struct UpdateDbInstanceInputBuilder {
     pub(crate) db_storage_type: ::std::option::Option<crate::types::DbStorageType>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    pub(crate) db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>,
 }
 impl UpdateDbInstanceInputBuilder {
     /// <p>The id of the DB instance.</p>
@@ -229,6 +238,26 @@ impl UpdateDbInstanceInputBuilder {
     pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
         &self.maintenance_schedule
     }
+    /// Appends an item to `db_backup_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_db_backup_configurations`](Self::set_db_backup_configurations).
+    ///
+    /// <p>A list of backup configurations to update for the DB instance.</p>
+    pub fn db_backup_configurations(mut self, input: crate::types::DbBackupConfiguration) -> Self {
+        let mut v = self.db_backup_configurations.unwrap_or_default();
+        v.push(input);
+        self.db_backup_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of backup configurations to update for the DB instance.</p>
+    pub fn set_db_backup_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>) -> Self {
+        self.db_backup_configurations = input;
+        self
+    }
+    /// <p>A list of backup configurations to update for the DB instance.</p>
+    pub fn get_db_backup_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>> {
+        &self.db_backup_configurations
+    }
     /// Consumes the builder and constructs a [`UpdateDbInstanceInput`](crate::operation::update_db_instance::UpdateDbInstanceInput).
     pub fn build(
         self,
@@ -243,6 +272,7 @@ impl UpdateDbInstanceInputBuilder {
             db_storage_type: self.db_storage_type,
             allocated_storage: self.allocated_storage,
             maintenance_schedule: self.maintenance_schedule,
+            db_backup_configurations: self.db_backup_configurations,
         })
     }
 }

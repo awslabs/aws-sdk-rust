@@ -21,6 +21,8 @@
 ///     Status::Modifying => { /* ... */ },
 ///     Status::Rebooting => { /* ... */ },
 ///     Status::RebootFailed => { /* ... */ },
+///     Status::RestoreFailed => { /* ... */ },
+///     Status::Restoring => { /* ... */ },
 ///     Status::Updating => { /* ... */ },
 ///     Status::UpdatingDeploymentType => { /* ... */ },
 ///     Status::UpdatingInstanceType => { /* ... */ },
@@ -71,6 +73,10 @@ pub enum Status {
     #[allow(missing_docs)] // documentation missing in model
     RebootFailed,
     #[allow(missing_docs)] // documentation missing in model
+    RestoreFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    Restoring,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     #[allow(missing_docs)] // documentation missing in model
     UpdatingDeploymentType,
@@ -92,6 +98,8 @@ impl ::std::convert::From<&str> for Status {
             "MODIFYING" => Status::Modifying,
             "REBOOTING" => Status::Rebooting,
             "REBOOT_FAILED" => Status::RebootFailed,
+            "RESTORE_FAILED" => Status::RestoreFailed,
+            "RESTORING" => Status::Restoring,
             "UPDATING" => Status::Updating,
             "UPDATING_DEPLOYMENT_TYPE" => Status::UpdatingDeploymentType,
             "UPDATING_INSTANCE_TYPE" => Status::UpdatingInstanceType,
@@ -119,6 +127,8 @@ impl Status {
             Status::Modifying => "MODIFYING",
             Status::Rebooting => "REBOOTING",
             Status::RebootFailed => "REBOOT_FAILED",
+            Status::RestoreFailed => "RESTORE_FAILED",
+            Status::Restoring => "RESTORING",
             Status::Updating => "UPDATING",
             Status::UpdatingDeploymentType => "UPDATING_DEPLOYMENT_TYPE",
             Status::UpdatingInstanceType => "UPDATING_INSTANCE_TYPE",
@@ -137,6 +147,8 @@ impl Status {
             "MODIFYING",
             "REBOOTING",
             "REBOOT_FAILED",
+            "RESTORE_FAILED",
+            "RESTORING",
             "UPDATING",
             "UPDATING_DEPLOYMENT_TYPE",
             "UPDATING_INSTANCE_TYPE",
@@ -172,6 +184,8 @@ impl ::std::fmt::Display for Status {
             Status::Modifying => write!(f, "MODIFYING"),
             Status::Rebooting => write!(f, "REBOOTING"),
             Status::RebootFailed => write!(f, "REBOOT_FAILED"),
+            Status::RestoreFailed => write!(f, "RESTORE_FAILED"),
+            Status::Restoring => write!(f, "RESTORING"),
             Status::Updating => write!(f, "UPDATING"),
             Status::UpdatingDeploymentType => write!(f, "UPDATING_DEPLOYMENT_TYPE"),
             Status::UpdatingInstanceType => write!(f, "UPDATING_INSTANCE_TYPE"),

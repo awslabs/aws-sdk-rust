@@ -124,6 +124,25 @@ where
                             builder = builder
                                 .set_availability_zone_change_protection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "NatGatewayMappings" => {
+                            builder = builder.set_nat_gateway_mappings(
+                                crate::protocol_serde::shape_nat_gateway_mappings_list::de_nat_gateway_mappings_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "ProxySettings" => {
+                            builder = builder.set_proxy_settings(crate::protocol_serde::shape_proxy_settings::de_proxy_settings(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "NoSourcePreservation" => {
+                            builder = builder.set_no_source_preservation(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "VpcEndpoint" => {
+                            builder =
+                                builder.set_vpc_endpoint(crate::protocol_serde::shape_vpc_endpoint::de_vpc_endpoint(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

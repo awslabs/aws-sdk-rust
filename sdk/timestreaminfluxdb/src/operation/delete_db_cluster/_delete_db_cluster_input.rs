@@ -5,11 +5,17 @@
 pub struct DeleteDbClusterInput {
     /// <p>Service-generated unique identifier of the DB cluster.</p>
     pub db_cluster_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to retain automated backups after the DB cluster is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub retain_automated_backups: ::std::option::Option<bool>,
 }
 impl DeleteDbClusterInput {
     /// <p>Service-generated unique identifier of the DB cluster.</p>
     pub fn db_cluster_id(&self) -> ::std::option::Option<&str> {
         self.db_cluster_id.as_deref()
+    }
+    /// <p>Specifies whether to retain automated backups after the DB cluster is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn retain_automated_backups(&self) -> ::std::option::Option<bool> {
+        self.retain_automated_backups
     }
 }
 impl DeleteDbClusterInput {
@@ -24,6 +30,7 @@ impl DeleteDbClusterInput {
 #[non_exhaustive]
 pub struct DeleteDbClusterInputBuilder {
     pub(crate) db_cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) retain_automated_backups: ::std::option::Option<bool>,
 }
 impl DeleteDbClusterInputBuilder {
     /// <p>Service-generated unique identifier of the DB cluster.</p>
@@ -41,12 +48,27 @@ impl DeleteDbClusterInputBuilder {
     pub fn get_db_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_cluster_id
     }
+    /// <p>Specifies whether to retain automated backups after the DB cluster is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn retain_automated_backups(mut self, input: bool) -> Self {
+        self.retain_automated_backups = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to retain automated backups after the DB cluster is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn set_retain_automated_backups(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retain_automated_backups = input;
+        self
+    }
+    /// <p>Specifies whether to retain automated backups after the DB cluster is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn get_retain_automated_backups(&self) -> &::std::option::Option<bool> {
+        &self.retain_automated_backups
+    }
     /// Consumes the builder and constructs a [`DeleteDbClusterInput`](crate::operation::delete_db_cluster::DeleteDbClusterInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_db_cluster::DeleteDbClusterInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_db_cluster::DeleteDbClusterInput {
             db_cluster_id: self.db_cluster_id,
+            retain_automated_backups: self.retain_automated_backups,
         })
     }
 }

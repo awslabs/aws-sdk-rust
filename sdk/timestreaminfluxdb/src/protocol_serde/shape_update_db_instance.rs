@@ -314,6 +314,22 @@ pub(crate) fn de_update_db_instance(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "dbBackupConfigurations" => {
+                    builder = builder.set_db_backup_configurations(
+                        crate::protocol_serde::shape_db_backup_configuration_output_list::de_db_backup_configuration_output_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
+                    );
+                }
+                "kmsKeyId" => {
+                    builder = builder.set_kms_key_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

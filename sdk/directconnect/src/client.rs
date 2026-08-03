@@ -269,6 +269,8 @@ mod disassociate_connection_from_lag;
 
 mod disassociate_mac_sec_key;
 
+mod list_virtual_interface_routes;
+
 mod list_virtual_interface_test_history;
 
 mod start_bgp_failover_test;

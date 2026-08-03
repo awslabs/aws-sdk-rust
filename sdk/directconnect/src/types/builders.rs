@@ -27,6 +27,8 @@ pub use crate::types::_loa::LoaBuilder;
 
 pub use crate::types::_router_type::RouterTypeBuilder;
 
+pub use crate::types::_route_filters::RouteFiltersBuilder;
+
 pub use crate::types::_virtual_interface_test_history::VirtualInterfaceTestHistoryBuilder;
 
 pub use crate::types::_route_filter_prefix::RouteFilterPrefixBuilder;
@@ -56,3 +58,7 @@ pub use crate::types::_location::LocationBuilder;
 pub use crate::types::_resource_tag::ResourceTagBuilder;
 
 pub use crate::types::_virtual_gateway::VirtualGatewayBuilder;
+
+pub use crate::types::_route::RouteBuilder;
+
+pub use crate::types::_as_path_segment::AsPathSegmentBuilder;

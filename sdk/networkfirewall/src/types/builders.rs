@@ -3,6 +3,10 @@ pub use crate::types::_proxy_configuration::ProxyConfigurationBuilder;
 
 pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
 
+pub use crate::types::_proxy_settings::ProxySettingsBuilder;
+
+pub use crate::types::_vpc_endpoint::VpcEndpointBuilder;
+
 pub use crate::types::_firewall::FirewallBuilder;
 
 pub use crate::types::_firewall_status::FirewallStatusBuilder;
@@ -60,6 +64,8 @@ pub use crate::types::_proxy_rule_group_attachment::ProxyRuleGroupAttachmentBuil
 pub use crate::types::_container_monitoring_configuration::ContainerMonitoringConfigurationBuilder;
 
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_nat_gateway_mapping::NatGatewayMappingBuilder;
 
 pub use crate::types::_capacity_usage_summary::CapacityUsageSummaryBuilder;
 
@@ -121,6 +127,8 @@ pub use crate::types::_proxy_rule_priority::ProxyRulePriorityBuilder;
 
 pub use crate::types::_proxy_config_rule_group::ProxyConfigRuleGroupBuilder;
 
+pub use crate::types::_listener_property::ListenerPropertyBuilder;
+
 pub use crate::types::_sync_state::SyncStateBuilder;
 
 pub use crate::types::_cidr_summary::CidrSummaryBuilder;
@@ -132,8 +140,6 @@ pub use crate::types::_custom_action::CustomActionBuilder;
 pub use crate::types::_stateful_rule_group_reference::StatefulRuleGroupReferenceBuilder;
 
 pub use crate::types::_flow_timeouts::FlowTimeoutsBuilder;
-
-pub use crate::types::_listener_property::ListenerPropertyBuilder;
 
 pub use crate::types::_create_proxy_rule::CreateProxyRuleBuilder;
 
@@ -176,6 +182,8 @@ pub use crate::types::_stateful_rule::StatefulRuleBuilder;
 pub use crate::types::_check_certificate_revocation_status_actions::CheckCertificateRevocationStatusActionsBuilder;
 
 pub use crate::types::_per_object_status::PerObjectStatusBuilder;
+
+pub use crate::types::_nat_gateway_attachment::NatGatewayAttachmentBuilder;
 
 pub use crate::types::_ip_set_metadata::IpSetMetadataBuilder;
 

@@ -6,5 +6,8 @@ pub fn ser_delete_db_cluster_input_input(
     if let Some(var_1) = &input.db_cluster_id {
         object.key("dbClusterId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.retain_automated_backups {
+        object.key("retainAutomatedBackups").boolean(*var_2);
+    }
     Ok(())
 }

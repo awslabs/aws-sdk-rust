@@ -9,6 +9,10 @@ pub use crate::types::_container_association_status::ContainerAssociationStatus;
 
 pub use crate::types::_encryption_configuration::EncryptionConfiguration;
 
+pub use crate::types::_proxy_settings::ProxySettings;
+
+pub use crate::types::_vpc_endpoint::VpcEndpoint;
+
 pub use crate::types::_firewall::Firewall;
 
 pub use crate::types::_firewall_status::FirewallStatus;
@@ -89,6 +93,8 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_encryption_type::EncryptionType;
 
+pub use crate::types::_nat_gateway_mapping::NatGatewayMapping;
+
 pub use crate::types::_configuration_sync_state::ConfigurationSyncState;
 
 pub use crate::types::_capacity_usage_summary::CapacityUsageSummary;
@@ -163,6 +169,8 @@ pub use crate::types::_proxy_rule_priority::ProxyRulePriority;
 
 pub use crate::types::_proxy_config_rule_group::ProxyConfigRuleGroup;
 
+pub use crate::types::_listener_property::ListenerProperty;
+
 pub use crate::types::_sync_state::SyncState;
 
 pub use crate::types::_cidr_summary::CidrSummary;
@@ -178,8 +186,6 @@ pub use crate::types::_stream_exception_policy::StreamExceptionPolicy;
 pub use crate::types::_flow_timeouts::FlowTimeouts;
 
 pub use crate::types::_listener_property_type::ListenerPropertyType;
-
-pub use crate::types::_listener_property::ListenerProperty;
 
 pub use crate::types::_create_proxy_rule::CreateProxyRule;
 
@@ -235,6 +241,8 @@ pub use crate::types::_attachment_status::AttachmentStatus;
 
 pub use crate::types::_per_object_status::PerObjectStatus;
 
+pub use crate::types::_nat_gateway_attachment::NatGatewayAttachment;
+
 pub use crate::types::_ip_set_metadata::IpSetMetadata;
 
 pub use crate::types::_publish_metric_action::PublishMetricAction;
@@ -256,6 +264,8 @@ pub use crate::types::_server_certificate_scope::ServerCertificateScope;
 pub use crate::types::_revocation_check_action::RevocationCheckAction;
 
 pub use crate::types::_per_object_sync_status::PerObjectSyncStatus;
+
+pub use crate::types::_nat_gateway_attachment_status::NatGatewayAttachmentStatus;
 
 pub use crate::types::_stateful_rule_protocol::StatefulRuleProtocol;
 
@@ -389,6 +399,12 @@ mod _logging_configuration;
 
 mod _match_attributes;
 
+mod _nat_gateway_attachment;
+
+mod _nat_gateway_attachment_status;
+
+mod _nat_gateway_mapping;
+
 mod _override_action;
 
 mod _per_object_status;
@@ -434,6 +450,8 @@ mod _proxy_rule_phase_action;
 mod _proxy_rule_priority;
 
 mod _proxy_rules_by_request_phase;
+
+mod _proxy_settings;
 
 mod _proxy_state;
 
@@ -544,6 +562,8 @@ mod _transit_gateway_attachment_status;
 mod _transit_gateway_attachment_sync_state;
 
 mod _unique_sources;
+
+mod _vpc_endpoint;
 
 mod _vpc_endpoint_association;
 

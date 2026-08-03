@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MovSettings {
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub audio_duration: ::std::option::Option<crate::types::CmfcAudioDuration>,
     /// When enabled, include 'clap' atom if appropriate for the video output settings.
     pub clap_atom: ::std::option::Option<crate::types::MovClapAtom>,
     /// When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools.
@@ -16,6 +18,10 @@ pub struct MovSettings {
     pub reference: ::std::option::Option<crate::types::MovReference>,
 }
 impl MovSettings {
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn audio_duration(&self) -> ::std::option::Option<&crate::types::CmfcAudioDuration> {
+        self.audio_duration.as_ref()
+    }
     /// When enabled, include 'clap' atom if appropriate for the video output settings.
     pub fn clap_atom(&self) -> ::std::option::Option<&crate::types::MovClapAtom> {
         self.clap_atom.as_ref()
@@ -48,6 +54,7 @@ impl MovSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct MovSettingsBuilder {
+    pub(crate) audio_duration: ::std::option::Option<crate::types::CmfcAudioDuration>,
     pub(crate) clap_atom: ::std::option::Option<crate::types::MovClapAtom>,
     pub(crate) cslg_atom: ::std::option::Option<crate::types::MovCslgAtom>,
     pub(crate) mpeg2_four_cc_control: ::std::option::Option<crate::types::MovMpeg2FourCcControl>,
@@ -55,6 +62,20 @@ pub struct MovSettingsBuilder {
     pub(crate) reference: ::std::option::Option<crate::types::MovReference>,
 }
 impl MovSettingsBuilder {
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn audio_duration(mut self, input: crate::types::CmfcAudioDuration) -> Self {
+        self.audio_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn set_audio_duration(mut self, input: ::std::option::Option<crate::types::CmfcAudioDuration>) -> Self {
+        self.audio_duration = input;
+        self
+    }
+    /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration. In all other cases, keep the default value, Default codec duration. When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
+    pub fn get_audio_duration(&self) -> &::std::option::Option<crate::types::CmfcAudioDuration> {
+        &self.audio_duration
+    }
     /// When enabled, include 'clap' atom if appropriate for the video output settings.
     pub fn clap_atom(mut self, input: crate::types::MovClapAtom) -> Self {
         self.clap_atom = ::std::option::Option::Some(input);
@@ -128,6 +149,7 @@ impl MovSettingsBuilder {
     /// Consumes the builder and constructs a [`MovSettings`](crate::types::MovSettings).
     pub fn build(self) -> crate::types::MovSettings {
         crate::types::MovSettings {
+            audio_duration: self.audio_duration,
             clap_atom: self.clap_atom,
             cslg_atom: self.cslg_atom,
             mpeg2_four_cc_control: self.mpeg2_four_cc_control,

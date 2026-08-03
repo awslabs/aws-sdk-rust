@@ -42,5 +42,17 @@ pub fn ser_update_db_instance_input_input(
         crate::protocol_serde::shape_maintenance_schedule::ser_maintenance_schedule(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.db_backup_configurations {
+        let mut array_13 = object.key("dbBackupConfigurations").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_db_backup_configuration::ser_db_backup_configuration(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
     Ok(())
 }

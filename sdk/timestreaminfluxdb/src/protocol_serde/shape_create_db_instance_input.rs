@@ -88,5 +88,20 @@ pub fn ser_create_db_instance_input_input(
     if let Some(var_27) = &input.network_type {
         object.key("networkType").string(var_27.as_str());
     }
+    if let Some(var_28) = &input.db_backup_configurations {
+        let mut array_29 = object.key("dbBackupConfigurations").start_array();
+        for item_30 in var_28 {
+            {
+                #[allow(unused_mut)]
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_db_backup_configuration::ser_db_backup_configuration(&mut object_31, item_30)?;
+                object_31.finish();
+            }
+        }
+        array_29.finish();
+    }
+    if let Some(var_32) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_32.as_str());
+    }
     Ok(())
 }

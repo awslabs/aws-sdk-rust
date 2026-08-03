@@ -325,6 +325,8 @@ mod update_proxy_rule_group_priorities;
 
 mod update_proxy_rule_priorities;
 
+mod update_proxy_settings;
+
 mod update_rule_group;
 
 mod update_subnet_change_protection;

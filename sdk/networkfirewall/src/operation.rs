@@ -244,6 +244,9 @@ pub mod update_proxy_rule_group_priorities;
 /// Types for the `UpdateProxyRulePriorities` operation.
 pub mod update_proxy_rule_priorities;
 
+/// Types for the `UpdateProxySettings` operation.
+pub mod update_proxy_settings;
+
 /// Types for the `UpdateRuleGroup` operation.
 pub mod update_rule_group;
 

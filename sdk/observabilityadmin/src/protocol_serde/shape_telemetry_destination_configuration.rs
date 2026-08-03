@@ -51,6 +51,9 @@ pub fn ser_telemetry_destination_configuration(
         crate::protocol_serde::shape_msk_monitoring_parameters::ser_msk_monitoring_parameters(&mut object_15, var_14)?;
         object_15.finish();
     }
+    if let Some(var_16) = &input.kms_key_arn {
+        object.key("KmsKeyArn").string(var_16.as_str());
+    }
     Ok(())
 }
 
@@ -129,6 +132,13 @@ where
                         "MskMonitoringParameters" => {
                             builder = builder.set_msk_monitoring_parameters(
                                 crate::protocol_serde::shape_msk_monitoring_parameters::de_msk_monitoring_parameters(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "KmsKeyArn" => {
+                            builder = builder.set_kms_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

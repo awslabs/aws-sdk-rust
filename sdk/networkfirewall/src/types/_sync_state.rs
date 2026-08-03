@@ -16,6 +16,8 @@ pub struct SyncState {
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic.</p>
     pub config: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>>,
+    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    pub nat_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>>,
 }
 impl SyncState {
     /// <p>The configuration and status for a single firewall subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic.</p>
@@ -25,6 +27,12 @@ impl SyncState {
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic.</p>
     pub fn config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>> {
         self.config.as_ref()
+    }
+    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_attachments.is_none()`.
+    pub fn nat_gateway_attachments(&self) -> &[crate::types::NatGatewayAttachment] {
+        self.nat_gateway_attachments.as_deref().unwrap_or_default()
     }
 }
 impl SyncState {
@@ -40,6 +48,7 @@ impl SyncState {
 pub struct SyncStateBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) config: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>>,
+    pub(crate) nat_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>>,
 }
 impl SyncStateBuilder {
     /// <p>The configuration and status for a single firewall subnet. For each configured subnet, Network Firewall creates the attachment by instantiating the firewall endpoint in the subnet so that it's ready to take traffic.</p>
@@ -79,11 +88,32 @@ impl SyncStateBuilder {
     pub fn get_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>> {
         &self.config
     }
+    /// Appends an item to `nat_gateway_attachments`.
+    ///
+    /// To override the contents of this collection use [`set_nat_gateway_attachments`](Self::set_nat_gateway_attachments).
+    ///
+    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    pub fn nat_gateway_attachments(mut self, input: crate::types::NatGatewayAttachment) -> Self {
+        let mut v = self.nat_gateway_attachments.unwrap_or_default();
+        v.push(input);
+        self.nat_gateway_attachments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    pub fn set_nat_gateway_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>>) -> Self {
+        self.nat_gateway_attachments = input;
+        self
+    }
+    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    pub fn get_nat_gateway_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>> {
+        &self.nat_gateway_attachments
+    }
     /// Consumes the builder and constructs a [`SyncState`](crate::types::SyncState).
     pub fn build(self) -> crate::types::SyncState {
         crate::types::SyncState {
             attachment: self.attachment,
             config: self.config,
+            nat_gateway_attachments: self.nat_gateway_attachments,
         }
     }
 }

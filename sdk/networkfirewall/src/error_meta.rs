@@ -2896,6 +2896,42 @@ impl From<crate::operation::update_proxy_rule_priorities::UpdateProxyRulePriorit
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy_settings::UpdateProxySettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_proxy_settings::UpdateProxySettingsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_proxy_settings::UpdateProxySettingsError> for Error {
+    fn from(err: crate::operation::update_proxy_settings::UpdateProxySettingsError) -> Self {
+        match err {
+            crate::operation::update_proxy_settings::UpdateProxySettingsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_proxy_settings::UpdateProxySettingsError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::operation::update_proxy_settings::UpdateProxySettingsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_proxy_settings::UpdateProxySettingsError::InvalidTokenException(inner) => Error::InvalidTokenException(inner),
+            crate::operation::update_proxy_settings::UpdateProxySettingsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_proxy_settings::UpdateProxySettingsError::ResourceOwnerCheckException(inner) => {
+                Error::ResourceOwnerCheckException(inner)
+            }
+            crate::operation::update_proxy_settings::UpdateProxySettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_proxy_settings::UpdateProxySettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_rule_group::UpdateRuleGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

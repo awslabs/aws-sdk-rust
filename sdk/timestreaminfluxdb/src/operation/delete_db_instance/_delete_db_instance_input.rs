@@ -5,11 +5,17 @@
 pub struct DeleteDbInstanceInput {
     /// <p>The id of the DB instance.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub retain_automated_backups: ::std::option::Option<bool>,
 }
 impl DeleteDbInstanceInput {
     /// <p>The id of the DB instance.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
         self.identifier.as_deref()
+    }
+    /// <p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn retain_automated_backups(&self) -> ::std::option::Option<bool> {
+        self.retain_automated_backups
     }
 }
 impl DeleteDbInstanceInput {
@@ -24,6 +30,7 @@ impl DeleteDbInstanceInput {
 #[non_exhaustive]
 pub struct DeleteDbInstanceInputBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) retain_automated_backups: ::std::option::Option<bool>,
 }
 impl DeleteDbInstanceInputBuilder {
     /// <p>The id of the DB instance.</p>
@@ -41,10 +48,27 @@ impl DeleteDbInstanceInputBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.identifier
     }
+    /// <p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn retain_automated_backups(mut self, input: bool) -> Self {
+        self.retain_automated_backups = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn set_retain_automated_backups(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retain_automated_backups = input;
+        self
+    }
+    /// <p>Specifies whether to retain automated backups after the DB instance is deleted. If set to true, automated backups are not deleted and can be restored later.</p>
+    pub fn get_retain_automated_backups(&self) -> &::std::option::Option<bool> {
+        &self.retain_automated_backups
+    }
     /// Consumes the builder and constructs a [`DeleteDbInstanceInput`](crate::operation::delete_db_instance::DeleteDbInstanceInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_db_instance::DeleteDbInstanceInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput { identifier: self.identifier })
+        ::std::result::Result::Ok(crate::operation::delete_db_instance::DeleteDbInstanceInput {
+            identifier: self.identifier,
+            retain_automated_backups: self.retain_automated_backups,
+        })
     }
 }

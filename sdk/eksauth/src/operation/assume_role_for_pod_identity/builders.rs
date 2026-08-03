@@ -137,4 +137,46 @@ impl AssumeRoleForPodIdentityFluentBuilder {
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_token()
     }
+    /// <p>The Kubernetes node name of the worker node where the pod is running.</p>
+    pub fn eks_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.eks_node_name(input.into());
+        self
+    }
+    /// <p>The Kubernetes node name of the worker node where the pod is running.</p>
+    pub fn set_eks_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_eks_node_name(input);
+        self
+    }
+    /// <p>The Kubernetes node name of the worker node where the pod is running.</p>
+    pub fn get_eks_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_eks_node_name()
+    }
+    /// <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.instance_id(input.into());
+        self
+    }
+    /// <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_instance_id(input);
+        self
+    }
+    /// <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_instance_id()
+    }
+    /// <p>The Availability Zone ID of the worker node where the pod is running.</p>
+    pub fn zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.zone(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID of the worker node where the pod is running.</p>
+    pub fn set_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_zone(input);
+        self
+    }
+    /// <p>The Availability Zone ID of the worker node where the pod is running.</p>
+    pub fn get_zone(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_zone()
+    }
 }

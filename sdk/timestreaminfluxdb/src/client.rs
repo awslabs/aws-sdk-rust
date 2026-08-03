@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateDbCluster`](crate::operation::create_db_cluster) operation has
-/// a [`Client::create_db_cluster`], function which returns a builder for that operation.
+/// For example, the [`CreateDbBackup`](crate::operation::create_db_backup) operation has
+/// a [`Client::create_db_backup`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_db_cluster()
+/// let result = client.create_db_backup()
 ///     .name("example")
 ///     .send()
 ///     .await;
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod create_db_backup;
+
 mod create_db_cluster;
 
 mod create_db_instance;
@@ -153,7 +155,7 @@ mod create_db_parameter_group;
 /// # let client: aws_sdk_timestreaminfluxdb::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_db_cluster()
+/// let result = client.create_db_backup()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -169,15 +171,21 @@ mod create_db_parameter_group;
 /// ```
 pub mod customize;
 
+mod delete_db_backup;
+
 mod delete_db_cluster;
 
 mod delete_db_instance;
+
+mod get_db_backup;
 
 mod get_db_cluster;
 
 mod get_db_instance;
 
 mod get_db_parameter_group;
+
+mod list_db_backups;
 
 mod list_db_clusters;
 
@@ -192,6 +200,8 @@ mod list_tags_for_resource;
 mod reboot_db_cluster;
 
 mod reboot_db_instance;
+
+mod restore_from_db_backup;
 
 mod tag_resource;
 

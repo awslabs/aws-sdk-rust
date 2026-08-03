@@ -160,6 +160,9 @@ pub mod disassociate_connection_from_lag;
 /// Types for the `DisassociateMacSecKey` operation.
 pub mod disassociate_mac_sec_key;
 
+/// Types for the `ListVirtualInterfaceRoutes` operation.
+pub mod list_virtual_interface_routes;
+
 /// Types for the `ListVirtualInterfaceTestHistory` operation.
 pub mod list_virtual_interface_test_history;
 

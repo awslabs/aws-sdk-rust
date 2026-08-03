@@ -31,6 +31,15 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "NatGatewayAttachments" => {
+                            builder = builder.set_nat_gateway_attachments(
+                                crate::protocol_serde::shape_nat_gateway_attachments_list::de_nat_gateway_attachments_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

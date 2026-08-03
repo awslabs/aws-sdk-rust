@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-timestreaminfluxdb = "1.96.0"
+//! aws-sdk-timestreaminfluxdb = "1.97.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,13 +152,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateDbCluster`](crate::operation::create_db_cluster) operation has
-/// a [`Client::create_db_cluster`], function which returns a builder for that operation.
+/// For example, the [`CreateDbBackup`](crate::operation::create_db_backup) operation has
+/// a [`Client::create_db_backup`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_db_cluster()
+/// let result = client.create_db_backup()
 ///     .name("example")
 ///     .send()
 ///     .await;

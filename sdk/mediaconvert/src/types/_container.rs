@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Container {
+    /// The overall bit rate of your media file, in bits per second. This is derived from the file size and duration as (file size in bytes * 8) / duration in seconds.
+    pub bit_rate: ::std::option::Option<i64>,
     /// The total duration of your media file, in seconds.
     pub duration: ::std::option::Option<f64>,
     /// The format of your media file. For example: MP4, QuickTime (MOV), Matroska (MKV), WebM, MXF, Wave, AVI, MPEG-TS, MPEG-PS, or MP3. Note that this will be blank if your media file has a format that the MediaConvert Probe operation does not recognize.
@@ -14,6 +16,10 @@ pub struct Container {
     pub tracks: ::std::option::Option<::std::vec::Vec<crate::types::Track>>,
 }
 impl Container {
+    /// The overall bit rate of your media file, in bits per second. This is derived from the file size and duration as (file size in bytes * 8) / duration in seconds.
+    pub fn bit_rate(&self) -> ::std::option::Option<i64> {
+        self.bit_rate
+    }
     /// The total duration of your media file, in seconds.
     pub fn duration(&self) -> ::std::option::Option<f64> {
         self.duration
@@ -44,12 +50,27 @@ impl Container {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ContainerBuilder {
+    pub(crate) bit_rate: ::std::option::Option<i64>,
     pub(crate) duration: ::std::option::Option<f64>,
     pub(crate) format: ::std::option::Option<crate::types::Format>,
     pub(crate) start_timecode: ::std::option::Option<::std::string::String>,
     pub(crate) tracks: ::std::option::Option<::std::vec::Vec<crate::types::Track>>,
 }
 impl ContainerBuilder {
+    /// The overall bit rate of your media file, in bits per second. This is derived from the file size and duration as (file size in bytes * 8) / duration in seconds.
+    pub fn bit_rate(mut self, input: i64) -> Self {
+        self.bit_rate = ::std::option::Option::Some(input);
+        self
+    }
+    /// The overall bit rate of your media file, in bits per second. This is derived from the file size and duration as (file size in bytes * 8) / duration in seconds.
+    pub fn set_bit_rate(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.bit_rate = input;
+        self
+    }
+    /// The overall bit rate of your media file, in bits per second. This is derived from the file size and duration as (file size in bytes * 8) / duration in seconds.
+    pub fn get_bit_rate(&self) -> &::std::option::Option<i64> {
+        &self.bit_rate
+    }
     /// The total duration of your media file, in seconds.
     pub fn duration(mut self, input: f64) -> Self {
         self.duration = ::std::option::Option::Some(input);
@@ -115,6 +136,7 @@ impl ContainerBuilder {
     /// Consumes the builder and constructs a [`Container`](crate::types::Container).
     pub fn build(self) -> crate::types::Container {
         crate::types::Container {
+            bit_rate: self.bit_rate,
             duration: self.duration,
             format: self.format,
             start_timecode: self.start_timecode,

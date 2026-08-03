@@ -347,6 +347,15 @@ pub(crate) fn logging_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn proxy_settings_correct_errors(
+    mut builder: crate::types::builders::ProxySettingsBuilder,
+) -> crate::types::builders::ProxySettingsBuilder {
+    if builder.listener_properties.is_none() {
+        builder.listener_properties = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn rule_group_correct_errors(mut builder: crate::types::builders::RuleGroupBuilder) -> crate::types::builders::RuleGroupBuilder {
     if builder.rules_source.is_none() {
         builder.rules_source = {
@@ -424,6 +433,16 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn vpc_endpoint_correct_errors(mut builder: crate::types::builders::VpcEndpointBuilder) -> crate::types::builders::VpcEndpointBuilder {
+    if builder.vpc_id.is_none() {
+        builder.vpc_id = Some(Default::default())
+    }
+    if builder.subnet_mappings.is_none() {
+        builder.subnet_mappings = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn address_correct_errors(mut builder: crate::types::builders::AddressBuilder) -> crate::types::builders::AddressBuilder {
     if builder.address_definition.is_none() {
         builder.address_definition = Some(Default::default())
@@ -455,6 +474,15 @@ pub(crate) fn log_destination_config_correct_errors(
     }
     if builder.log_destination.is_none() {
         builder.log_destination = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn nat_gateway_mapping_correct_errors(
+    mut builder: crate::types::builders::NatGatewayMappingBuilder,
+) -> crate::types::builders::NatGatewayMappingBuilder {
+    if builder.nat_gateway_id.is_none() {
+        builder.nat_gateway_id = Some(Default::default())
     }
     builder
 }
@@ -557,6 +585,18 @@ pub(crate) fn header_correct_errors(mut builder: crate::types::builders::HeaderB
     }
     if builder.destination_port.is_none() {
         builder.destination_port = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn nat_gateway_attachment_correct_errors(
+    mut builder: crate::types::builders::NatGatewayAttachmentBuilder,
+) -> crate::types::builders::NatGatewayAttachmentBuilder {
+    if builder.nat_gateway_id.is_none() {
+        builder.nat_gateway_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::NatGatewayAttachmentStatus>().ok()
     }
     builder
 }

@@ -348,4 +348,77 @@ impl CreateFirewallFluentBuilder {
     pub fn get_availability_zone_change_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_availability_zone_change_protection()
     }
+    ///
+    /// Appends an item to `NatGatewayMappings`.
+    ///
+    /// To override the contents of this collection use [`set_nat_gateway_mappings`](Self::set_nat_gateway_mappings).
+    ///
+    /// <p>The NAT gateways that the firewall uses to proxy traffic when <code>NoSourcePreservation</code> is <code>TRUE</code>. Network Firewall attaches the firewall to each NAT gateway that you specify, so that egress traffic is proxied through the NAT gateway.</p>
+    pub fn nat_gateway_mappings(mut self, input: crate::types::NatGatewayMapping) -> Self {
+        self.inner = self.inner.nat_gateway_mappings(input);
+        self
+    }
+    /// <p>The NAT gateways that the firewall uses to proxy traffic when <code>NoSourcePreservation</code> is <code>TRUE</code>. Network Firewall attaches the firewall to each NAT gateway that you specify, so that egress traffic is proxied through the NAT gateway.</p>
+    pub fn set_nat_gateway_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayMapping>>) -> Self {
+        self.inner = self.inner.set_nat_gateway_mappings(input);
+        self
+    }
+    /// <p>The NAT gateways that the firewall uses to proxy traffic when <code>NoSourcePreservation</code> is <code>TRUE</code>. Network Firewall attaches the firewall to each NAT gateway that you specify, so that egress traffic is proxied through the NAT gateway.</p>
+    pub fn get_nat_gateway_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayMapping>> {
+        self.inner.get_nat_gateway_mappings()
+    }
+    /// <p>The listener configuration for a proxy mode firewall, used when <code>NoSourcePreservation</code> is <code>TRUE</code>. This specifies the ports and protocols on which the firewall's proxy listens for traffic.</p>
+    pub fn proxy_settings(mut self, input: crate::types::ProxySettings) -> Self {
+        self.inner = self.inner.proxy_settings(input);
+        self
+    }
+    /// <p>The listener configuration for a proxy mode firewall, used when <code>NoSourcePreservation</code> is <code>TRUE</code>. This specifies the ports and protocols on which the firewall's proxy listens for traffic.</p>
+    pub fn set_proxy_settings(mut self, input: ::std::option::Option<crate::types::ProxySettings>) -> Self {
+        self.inner = self.inner.set_proxy_settings(input);
+        self
+    }
+    /// <p>The listener configuration for a proxy mode firewall, used when <code>NoSourcePreservation</code> is <code>TRUE</code>. This specifies the ports and protocols on which the firewall's proxy listens for traffic.</p>
+    pub fn get_proxy_settings(&self) -> &::std::option::Option<crate::types::ProxySettings> {
+        self.inner.get_proxy_settings()
+    }
+    /// <p>Optional. Indicates whether the firewall operates in proxy mode, in which the source IP address of the traffic is not preserved. When set to <code>TRUE</code>, the firewall proxies traffic through a NAT gateway and the traffic reaching the destination uses the NAT gateway's IP address as the source.</p>
+    /// <p>When you set this to <code>TRUE</code>, you must specify <code>NatGatewayMappings</code> and <code>VpcEndpoint</code> instead of a top-level <code>VpcId</code> and <code>SubnetMappings</code>.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
+    /// <p>Default value: <code>FALSE</code></p>
+    pub fn no_source_preservation(mut self, input: bool) -> Self {
+        self.inner = self.inner.no_source_preservation(input);
+        self
+    }
+    /// <p>Optional. Indicates whether the firewall operates in proxy mode, in which the source IP address of the traffic is not preserved. When set to <code>TRUE</code>, the firewall proxies traffic through a NAT gateway and the traffic reaching the destination uses the NAT gateway's IP address as the source.</p>
+    /// <p>When you set this to <code>TRUE</code>, you must specify <code>NatGatewayMappings</code> and <code>VpcEndpoint</code> instead of a top-level <code>VpcId</code> and <code>SubnetMappings</code>.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
+    /// <p>Default value: <code>FALSE</code></p>
+    pub fn set_no_source_preservation(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_no_source_preservation(input);
+        self
+    }
+    /// <p>Optional. Indicates whether the firewall operates in proxy mode, in which the source IP address of the traffic is not preserved. When set to <code>TRUE</code>, the firewall proxies traffic through a NAT gateway and the traffic reaching the destination uses the NAT gateway's IP address as the source.</p>
+    /// <p>When you set this to <code>TRUE</code>, you must specify <code>NatGatewayMappings</code> and <code>VpcEndpoint</code> instead of a top-level <code>VpcId</code> and <code>SubnetMappings</code>.</p>
+    /// <p>You can't change this setting after you create the firewall.</p>
+    /// <p>Default value: <code>FALSE</code></p>
+    pub fn get_no_source_preservation(&self) -> &::std::option::Option<bool> {
+        self.inner.get_no_source_preservation()
+    }
+    /// <p>The VPC and subnets for the firewall endpoint, used when <code>NoSourcePreservation</code> is <code>TRUE</code>. Network Firewall creates the firewall endpoint in the subnets that you specify here.</p>
+    /// <p>For proxy mode firewalls, provide the firewall's VPC and endpoint subnets through this parameter instead of the top-level <code>VpcId</code> and <code>SubnetMappings</code>.</p>
+    pub fn vpc_endpoint(mut self, input: crate::types::VpcEndpoint) -> Self {
+        self.inner = self.inner.vpc_endpoint(input);
+        self
+    }
+    /// <p>The VPC and subnets for the firewall endpoint, used when <code>NoSourcePreservation</code> is <code>TRUE</code>. Network Firewall creates the firewall endpoint in the subnets that you specify here.</p>
+    /// <p>For proxy mode firewalls, provide the firewall's VPC and endpoint subnets through this parameter instead of the top-level <code>VpcId</code> and <code>SubnetMappings</code>.</p>
+    pub fn set_vpc_endpoint(mut self, input: ::std::option::Option<crate::types::VpcEndpoint>) -> Self {
+        self.inner = self.inner.set_vpc_endpoint(input);
+        self
+    }
+    /// <p>The VPC and subnets for the firewall endpoint, used when <code>NoSourcePreservation</code> is <code>TRUE</code>. Network Firewall creates the firewall endpoint in the subnets that you specify here.</p>
+    /// <p>For proxy mode firewalls, provide the firewall's VPC and endpoint subnets through this parameter instead of the top-level <code>VpcId</code> and <code>SubnetMappings</code>.</p>
+    pub fn get_vpc_endpoint(&self) -> &::std::option::Option<crate::types::VpcEndpoint> {
+        self.inner.get_vpc_endpoint()
+    }
 }

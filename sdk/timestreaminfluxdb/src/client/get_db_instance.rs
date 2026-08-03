@@ -30,6 +30,8 @@ impl super::Client {
     ///   - [`maintenance_schedule(Option<MaintenanceSchedule>)`](crate::operation::get_db_instance::GetDbInstanceOutput::maintenance_schedule): <p>The maintenance schedule for the DB instance.</p>
     ///   - [`last_maintenance_time(Option<DateTime>)`](crate::operation::get_db_instance::GetDbInstanceOutput::last_maintenance_time): <p>The timestamp of the last completed maintenance operation on the DB instance.</p>
     ///   - [`next_maintenance_time(Option<DateTime>)`](crate::operation::get_db_instance::GetDbInstanceOutput::next_maintenance_time): <p>The timestamp of the next scheduled maintenance operation on the DB instance.</p>
+    ///   - [`db_backup_configurations(Option<Vec::<DbBackupConfigurationOutput>>)`](crate::operation::get_db_instance::GetDbInstanceOutput::db_backup_configurations): <p>The backup configurations for the DB instance.</p>
+    ///   - [`kms_key_id(Option<String>)`](crate::operation::get_db_instance::GetDbInstanceOutput::kms_key_id): <p>The Amazon Web Services KMS key ARN used for encryption of the DB instance.</p>
     /// - On failure, responds with [`SdkError<GetDbInstanceError>`](crate::operation::get_db_instance::GetDbInstanceError)
     pub fn get_db_instance(&self) -> crate::operation::get_db_instance::builders::GetDbInstanceFluentBuilder {
         crate::operation::get_db_instance::builders::GetDbInstanceFluentBuilder::new(self.handle.clone())

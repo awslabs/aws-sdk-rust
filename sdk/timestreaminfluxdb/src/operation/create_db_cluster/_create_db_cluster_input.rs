@@ -51,6 +51,10 @@ pub struct CreateDbClusterInput {
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
     pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    /// <p>A list of backup configurations to enable automated backups for the DB cluster.</p>
+    pub db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>,
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB cluster. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -143,6 +147,16 @@ impl CreateDbClusterInput {
     pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
         self.maintenance_schedule.as_ref()
     }
+    /// <p>A list of backup configurations to enable automated backups for the DB cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_backup_configurations.is_none()`.
+    pub fn db_backup_configurations(&self) -> &[crate::types::DbBackupConfiguration] {
+        self.db_backup_configurations.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB cluster. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
+    }
     /// <p>A list of key-value pairs to associate with the DB instance.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -169,6 +183,8 @@ impl ::std::fmt::Debug for CreateDbClusterInput {
         formatter.field("failover_mode", &self.failover_mode);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
         formatter.field("maintenance_schedule", &self.maintenance_schedule);
+        formatter.field("db_backup_configurations", &self.db_backup_configurations);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -202,6 +218,8 @@ pub struct CreateDbClusterInputBuilder {
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    pub(crate) db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateDbClusterInputBuilder {
@@ -507,6 +525,40 @@ impl CreateDbClusterInputBuilder {
     pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
         &self.maintenance_schedule
     }
+    /// Appends an item to `db_backup_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_db_backup_configurations`](Self::set_db_backup_configurations).
+    ///
+    /// <p>A list of backup configurations to enable automated backups for the DB cluster.</p>
+    pub fn db_backup_configurations(mut self, input: crate::types::DbBackupConfiguration) -> Self {
+        let mut v = self.db_backup_configurations.unwrap_or_default();
+        v.push(input);
+        self.db_backup_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of backup configurations to enable automated backups for the DB cluster.</p>
+    pub fn set_db_backup_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>) -> Self {
+        self.db_backup_configurations = input;
+        self
+    }
+    /// <p>A list of backup configurations to enable automated backups for the DB cluster.</p>
+    pub fn get_db_backup_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>> {
+        &self.db_backup_configurations
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB cluster. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB cluster. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services KMS key identifier to use for encryption of the DB cluster. Can be a key ID, key ARN, alias name, or alias ARN.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -550,6 +602,8 @@ impl CreateDbClusterInputBuilder {
             failover_mode: self.failover_mode,
             log_delivery_configuration: self.log_delivery_configuration,
             maintenance_schedule: self.maintenance_schedule,
+            db_backup_configurations: self.db_backup_configurations,
+            kms_key_id: self.kms_key_id,
             tags: self.tags,
         })
     }
@@ -575,6 +629,8 @@ impl ::std::fmt::Debug for CreateDbClusterInputBuilder {
         formatter.field("failover_mode", &self.failover_mode);
         formatter.field("log_delivery_configuration", &self.log_delivery_configuration);
         formatter.field("maintenance_schedule", &self.maintenance_schedule);
+        formatter.field("db_backup_configurations", &self.db_backup_configurations);
+        formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

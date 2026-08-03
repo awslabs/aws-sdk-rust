@@ -246,4 +246,23 @@ impl UpdateDbInstanceFluentBuilder {
     pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
         self.inner.get_maintenance_schedule()
     }
+    ///
+    /// Appends an item to `dbBackupConfigurations`.
+    ///
+    /// To override the contents of this collection use [`set_db_backup_configurations`](Self::set_db_backup_configurations).
+    ///
+    /// <p>A list of backup configurations to update for the DB instance.</p>
+    pub fn db_backup_configurations(mut self, input: crate::types::DbBackupConfiguration) -> Self {
+        self.inner = self.inner.db_backup_configurations(input);
+        self
+    }
+    /// <p>A list of backup configurations to update for the DB instance.</p>
+    pub fn set_db_backup_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>) -> Self {
+        self.inner = self.inner.set_db_backup_configurations(input);
+        self
+    }
+    /// <p>A list of backup configurations to update for the DB instance.</p>
+    pub fn get_db_backup_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>> {
+        self.inner.get_db_backup_configurations()
+    }
 }

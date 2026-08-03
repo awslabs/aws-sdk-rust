@@ -43,7 +43,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The following log types are supported for log delivery configuration:</p> <ul> <li> <p>APPLICATION_LOGS – Application-level logs.</p> </li> <li> <p>USAGE_LOGS – Resource usage logs.</p> </li> <li> <p>SECURITY_FINDING_LOGS – Security finding logs.</p> </li> <li> <p>ACCESS_LOGS – Access logs (such as Elastic Load Balancing access logs).</p> </li> <li> <p>CONNECTION_LOGS – Connection logs.</p> </li> <li> <p>S3_SERVER_ACCESS_LOGS – Amazon S3 server access logs.</p> </li> </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

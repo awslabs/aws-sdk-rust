@@ -51,7 +51,7 @@ pub struct InfluxDBv2Parameters {
     /// <p>Initial bytes of memory allocated for a query.</p>
     /// <p>Default: 0</p>
     pub query_initial_memory_bytes: ::std::option::Option<i64>,
-    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Maximum total bytes of memory allowed for all running queries. When this limit is reached, new queries are rejected. Setting to 0 allows unlimited memory usage.</p>
     /// <p>Default: 0</p>
     pub query_max_memory_bytes: ::std::option::Option<i64>,
     /// <p>Maximum bytes of memory allowed for a single query. Must be greater or equal to queryInitialMemoryBytes.</p>
@@ -186,7 +186,7 @@ impl InfluxDBv2Parameters {
     pub fn query_initial_memory_bytes(&self) -> ::std::option::Option<i64> {
         self.query_initial_memory_bytes
     }
-    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Maximum total bytes of memory allowed for all running queries. When this limit is reached, new queries are rejected. Setting to 0 allows unlimited memory usage.</p>
     /// <p>Default: 0</p>
     pub fn query_max_memory_bytes(&self) -> ::std::option::Option<i64> {
         self.query_max_memory_bytes
@@ -593,19 +593,19 @@ impl InfluxDBv2ParametersBuilder {
     pub fn get_query_initial_memory_bytes(&self) -> &::std::option::Option<i64> {
         &self.query_initial_memory_bytes
     }
-    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Maximum total bytes of memory allowed for all running queries. When this limit is reached, new queries are rejected. Setting to 0 allows unlimited memory usage.</p>
     /// <p>Default: 0</p>
     pub fn query_max_memory_bytes(mut self, input: i64) -> Self {
         self.query_max_memory_bytes = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Maximum total bytes of memory allowed for all running queries. When this limit is reached, new queries are rejected. Setting to 0 allows unlimited memory usage.</p>
     /// <p>Default: 0</p>
     pub fn set_query_max_memory_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
         self.query_max_memory_bytes = input;
         self
     }
-    /// <p>Maximum number of queries allowed in execution queue. When queue limit is reached, new queries are rejected. Setting to 0 allows an unlimited number of queries in the queue.</p>
+    /// <p>Maximum total bytes of memory allowed for all running queries. When this limit is reached, new queries are rejected. Setting to 0 allows unlimited memory usage.</p>
     /// <p>Default: 0</p>
     pub fn get_query_max_memory_bytes(&self) -> &::std::option::Option<i64> {
         &self.query_max_memory_bytes

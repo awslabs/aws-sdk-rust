@@ -43,6 +43,8 @@ pub use crate::types::_nni_partner_type::NniPartnerType;
 
 pub use crate::types::_router_type::RouterType;
 
+pub use crate::types::_route_filters::RouteFilters;
+
 pub use crate::types::_virtual_interface_test_history::VirtualInterfaceTestHistory;
 
 pub use crate::types::_route_filter_prefix::RouteFilterPrefix;
@@ -79,6 +81,10 @@ pub use crate::types::_resource_tag::ResourceTag;
 
 pub use crate::types::_virtual_gateway::VirtualGateway;
 
+pub use crate::types::_route_direction::RouteDirection;
+
+pub use crate::types::_route::Route;
+
 pub use crate::types::_gateway_type::GatewayType;
 
 pub use crate::types::_bgp_peer_state::BgpPeerState;
@@ -89,7 +95,15 @@ pub use crate::types::_direct_connect_gateway_attachment_state::DirectConnectGat
 
 pub use crate::types::_direct_connect_gateway_attachment_type::DirectConnectGatewayAttachmentType;
 
+pub use crate::types::_as_path_segment::AsPathSegment;
+
+pub use crate::types::_as_path_type::AsPathType;
+
 mod _address_family;
+
+mod _as_path_segment;
+
+mod _as_path_type;
 
 mod _associated_core_network;
 
@@ -165,7 +179,13 @@ mod _rate_limiter_status;
 
 mod _resource_tag;
 
+mod _route;
+
+mod _route_direction;
+
 mod _route_filter_prefix;
+
+mod _route_filters;
 
 mod _router_type;
 

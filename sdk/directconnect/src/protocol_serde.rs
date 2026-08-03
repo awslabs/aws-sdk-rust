@@ -129,6 +129,8 @@ pub(crate) mod shape_disassociate_connection_from_lag;
 
 pub(crate) mod shape_disassociate_mac_sec_key;
 
+pub(crate) mod shape_list_virtual_interface_routes;
+
 pub(crate) mod shape_list_virtual_interface_test_history;
 
 pub(crate) mod shape_start_bgp_failover_test;
@@ -265,6 +267,8 @@ pub(crate) mod shape_duplicate_tag_keys_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
 
+pub(crate) mod shape_list_virtual_interface_routes_input;
+
 pub(crate) mod shape_list_virtual_interface_test_history_input;
 
 pub(crate) mod shape_start_bgp_failover_test_input;
@@ -339,6 +343,10 @@ pub(crate) mod shape_route_filter_prefix;
 
 pub(crate) mod shape_route_filter_prefix_list;
 
+pub(crate) mod shape_route_filters;
+
+pub(crate) mod shape_route_list;
+
 pub(crate) mod shape_router_type;
 
 pub(crate) mod shape_tag;
@@ -379,10 +387,20 @@ pub(crate) mod shape_mac_sec_key;
 
 pub(crate) mod shape_resource_tag;
 
+pub(crate) mod shape_route;
+
 pub(crate) mod shape_virtual_gateway;
+
+pub(crate) mod shape_as_path_segment_list;
 
 pub(crate) mod shape_available_mac_sec_port_speeds;
 
 pub(crate) mod shape_available_port_speeds;
 
+pub(crate) mod shape_community_list;
+
 pub(crate) mod shape_provider_list;
+
+pub(crate) mod shape_as_path_segment;
+
+pub(crate) mod shape_as_path_list;

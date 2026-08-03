@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`db_cluster_id(impl Into<String>)`](crate::operation::delete_db_cluster::builders::DeleteDbClusterFluentBuilder::db_cluster_id) / [`set_db_cluster_id(Option<String>)`](crate::operation::delete_db_cluster::builders::DeleteDbClusterFluentBuilder::set_db_cluster_id):<br>required: **true**<br><p>Service-generated unique identifier of the DB cluster.</p><br>
+    ///   - [`retain_automated_backups(bool)`](crate::operation::delete_db_cluster::builders::DeleteDbClusterFluentBuilder::retain_automated_backups) / [`set_retain_automated_backups(Option<bool>)`](crate::operation::delete_db_cluster::builders::DeleteDbClusterFluentBuilder::set_retain_automated_backups):<br>required: **false**<br><p>Specifies whether to retain automated backups after the DB cluster is deleted. If set to true, automated backups are not deleted and can be restored later.</p><br>
     /// - On success, responds with [`DeleteDbClusterOutput`](crate::operation::delete_db_cluster::DeleteDbClusterOutput) with field(s):
     ///   - [`db_cluster_status(Option<ClusterStatus>)`](crate::operation::delete_db_cluster::DeleteDbClusterOutput::db_cluster_status): <p>The status of the DB cluster.</p>
     /// - On failure, responds with [`SdkError<DeleteDbClusterError>`](crate::operation::delete_db_cluster::DeleteDbClusterError)

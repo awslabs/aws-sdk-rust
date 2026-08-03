@@ -14,6 +14,7 @@
 /// match s3storageclass {
 ///     S3StorageClass::DeepArchive => { /* ... */ },
 ///     S3StorageClass::Glacier => { /* ... */ },
+///     S3StorageClass::GlacierIr => { /* ... */ },
 ///     S3StorageClass::IntelligentTiering => { /* ... */ },
 ///     S3StorageClass::OnezoneIa => { /* ... */ },
 ///     S3StorageClass::ReducedRedundancy => { /* ... */ },
@@ -52,6 +53,8 @@ pub enum S3StorageClass {
     #[allow(missing_docs)] // documentation missing in model
     Glacier,
     #[allow(missing_docs)] // documentation missing in model
+    GlacierIr,
+    #[allow(missing_docs)] // documentation missing in model
     IntelligentTiering,
     #[allow(missing_docs)] // documentation missing in model
     OnezoneIa,
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for S3StorageClass {
         match s {
             "DEEP_ARCHIVE" => S3StorageClass::DeepArchive,
             "GLACIER" => S3StorageClass::Glacier,
+            "GLACIER_IR" => S3StorageClass::GlacierIr,
             "INTELLIGENT_TIERING" => S3StorageClass::IntelligentTiering,
             "ONEZONE_IA" => S3StorageClass::OnezoneIa,
             "REDUCED_REDUNDANCY" => S3StorageClass::ReducedRedundancy,
@@ -92,6 +96,7 @@ impl S3StorageClass {
         match self {
             S3StorageClass::DeepArchive => "DEEP_ARCHIVE",
             S3StorageClass::Glacier => "GLACIER",
+            S3StorageClass::GlacierIr => "GLACIER_IR",
             S3StorageClass::IntelligentTiering => "INTELLIGENT_TIERING",
             S3StorageClass::OnezoneIa => "ONEZONE_IA",
             S3StorageClass::ReducedRedundancy => "REDUCED_REDUNDANCY",
@@ -105,6 +110,7 @@ impl S3StorageClass {
         &[
             "DEEP_ARCHIVE",
             "GLACIER",
+            "GLACIER_IR",
             "INTELLIGENT_TIERING",
             "ONEZONE_IA",
             "REDUCED_REDUNDANCY",
@@ -135,6 +141,7 @@ impl ::std::fmt::Display for S3StorageClass {
         match self {
             S3StorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
             S3StorageClass::Glacier => write!(f, "GLACIER"),
+            S3StorageClass::GlacierIr => write!(f, "GLACIER_IR"),
             S3StorageClass::IntelligentTiering => write!(f, "INTELLIGENT_TIERING"),
             S3StorageClass::OnezoneIa => write!(f, "ONEZONE_IA"),
             S3StorageClass::ReducedRedundancy => write!(f, "REDUCED_REDUNDANCY"),

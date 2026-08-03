@@ -20,6 +20,8 @@ pub struct Attachment {
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the reason for the error or failure and how to resolve it. A <code>FAILED</code> status indicates a non-recoverable state, and a <code>ERROR</code> status indicates an issue that you can fix. Depending on the error, it can take as many as 15 minutes to populate this field. For more information about the causes for failiure or errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    pub dns_name: ::std::option::Option<::std::string::String>,
 }
 impl Attachment {
     /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint.</p>
@@ -39,6 +41,10 @@ impl Attachment {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    pub fn dns_name(&self) -> ::std::option::Option<&str> {
+        self.dns_name.as_deref()
+    }
 }
 impl Attachment {
     /// Creates a new builder-style object to manufacture [`Attachment`](crate::types::Attachment).
@@ -55,6 +61,7 @@ pub struct AttachmentBuilder {
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::AttachmentStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_name: ::std::option::Option<::std::string::String>,
 }
 impl AttachmentBuilder {
     /// <p>The unique identifier of the subnet that you've specified to be used for a firewall endpoint.</p>
@@ -116,6 +123,20 @@ impl AttachmentBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dns_name = input;
+        self
+    }
+    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_name
+    }
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {
         crate::types::Attachment {
@@ -123,6 +144,7 @@ impl AttachmentBuilder {
             endpoint_id: self.endpoint_id,
             status: self.status,
             status_message: self.status_message,
+            dns_name: self.dns_name,
         }
     }
 }

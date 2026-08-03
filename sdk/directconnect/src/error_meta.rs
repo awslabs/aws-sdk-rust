@@ -1777,6 +1777,36 @@ impl From<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_virtual_interface_routes::ListVirtualInterfaceRoutesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_virtual_interface_routes::ListVirtualInterfaceRoutesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_virtual_interface_routes::ListVirtualInterfaceRoutesError> for Error {
+    fn from(err: crate::operation::list_virtual_interface_routes::ListVirtualInterfaceRoutesError) -> Self {
+        match err {
+            crate::operation::list_virtual_interface_routes::ListVirtualInterfaceRoutesError::DirectConnectClientException(inner) => {
+                Error::DirectConnectClientException(inner)
+            }
+            crate::operation::list_virtual_interface_routes::ListVirtualInterfaceRoutesError::DirectConnectServerException(inner) => {
+                Error::DirectConnectServerException(inner)
+            }
+            crate::operation::list_virtual_interface_routes::ListVirtualInterfaceRoutesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<

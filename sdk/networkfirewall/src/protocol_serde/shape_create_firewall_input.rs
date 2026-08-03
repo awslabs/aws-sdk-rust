@@ -81,5 +81,32 @@ pub fn ser_create_firewall_input_input(
     if let Some(var_26) = &input.availability_zone_change_protection {
         object.key("AvailabilityZoneChangeProtection").boolean(*var_26);
     }
+    if let Some(var_27) = &input.nat_gateway_mappings {
+        let mut array_28 = object.key("NatGatewayMappings").start_array();
+        for item_29 in var_27 {
+            {
+                #[allow(unused_mut)]
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_nat_gateway_mapping::ser_nat_gateway_mapping(&mut object_30, item_29)?;
+                object_30.finish();
+            }
+        }
+        array_28.finish();
+    }
+    if let Some(var_31) = &input.proxy_settings {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("ProxySettings").start_object();
+        crate::protocol_serde::shape_proxy_settings::ser_proxy_settings(&mut object_32, var_31)?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.no_source_preservation {
+        object.key("NoSourcePreservation").boolean(*var_33);
+    }
+    if let Some(var_34) = &input.vpc_endpoint {
+        #[allow(unused_mut)]
+        let mut object_35 = object.key("VpcEndpoint").start_object();
+        crate::protocol_serde::shape_vpc_endpoint::ser_vpc_endpoint(&mut object_35, var_34)?;
+        object_35.finish();
+    }
     Ok(())
 }

@@ -17,6 +17,8 @@ pub struct UpdateDbClusterInput {
     pub failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     /// <p>Specifies the maintenance schedule for the DB cluster, including the preferred maintenance window and timezone.</p>
     pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    /// <p>A list of backup configurations to update for the DB cluster.</p>
+    pub db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>,
 }
 impl UpdateDbClusterInput {
     /// <p>Service-generated unique identifier of the DB cluster to update.</p>
@@ -47,6 +49,12 @@ impl UpdateDbClusterInput {
     pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
         self.maintenance_schedule.as_ref()
     }
+    /// <p>A list of backup configurations to update for the DB cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.db_backup_configurations.is_none()`.
+    pub fn db_backup_configurations(&self) -> &[crate::types::DbBackupConfiguration] {
+        self.db_backup_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateDbClusterInput {
     /// Creates a new builder-style object to manufacture [`UpdateDbClusterInput`](crate::operation::update_db_cluster::UpdateDbClusterInput).
@@ -66,6 +74,7 @@ pub struct UpdateDbClusterInputBuilder {
     pub(crate) db_instance_type: ::std::option::Option<crate::types::DbInstanceType>,
     pub(crate) failover_mode: ::std::option::Option<crate::types::FailoverMode>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    pub(crate) db_backup_configurations: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>,
 }
 impl UpdateDbClusterInputBuilder {
     /// <p>Service-generated unique identifier of the DB cluster to update.</p>
@@ -167,6 +176,26 @@ impl UpdateDbClusterInputBuilder {
     pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
         &self.maintenance_schedule
     }
+    /// Appends an item to `db_backup_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_db_backup_configurations`](Self::set_db_backup_configurations).
+    ///
+    /// <p>A list of backup configurations to update for the DB cluster.</p>
+    pub fn db_backup_configurations(mut self, input: crate::types::DbBackupConfiguration) -> Self {
+        let mut v = self.db_backup_configurations.unwrap_or_default();
+        v.push(input);
+        self.db_backup_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of backup configurations to update for the DB cluster.</p>
+    pub fn set_db_backup_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>>) -> Self {
+        self.db_backup_configurations = input;
+        self
+    }
+    /// <p>A list of backup configurations to update for the DB cluster.</p>
+    pub fn get_db_backup_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DbBackupConfiguration>> {
+        &self.db_backup_configurations
+    }
     /// Consumes the builder and constructs a [`UpdateDbClusterInput`](crate::operation::update_db_cluster::UpdateDbClusterInput).
     pub fn build(
         self,
@@ -179,6 +208,7 @@ impl UpdateDbClusterInputBuilder {
             db_instance_type: self.db_instance_type,
             failover_mode: self.failover_mode,
             maintenance_schedule: self.maintenance_schedule,
+            db_backup_configurations: self.db_backup_configurations,
         })
     }
 }

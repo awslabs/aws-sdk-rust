@@ -12,6 +12,9 @@ pub fn ser_logs_encryption_configuration(
     if let Some(var_2) = &input.encryption_conflict_resolution_strategy {
         object.key("EncryptionConflictResolutionStrategy").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.encryption_scope {
+        object.key("EncryptionScope").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -58,6 +61,13 @@ where
                                         s.to_unescaped()
                                             .map(|u| crate::types::EncryptionConflictResolutionStrategy::from(u.as_ref()))
                                     })
+                                    .transpose()?,
+                            );
+                        }
+                        "EncryptionScope" => {
+                            builder = builder.set_encryption_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EncryptionScope::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

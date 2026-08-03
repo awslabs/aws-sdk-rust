@@ -7,6 +7,12 @@ pub struct AssumeRoleForPodIdentityInput {
     pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The token of the Kubernetes service account for the pod.</p>
     pub token: ::std::option::Option<::std::string::String>,
+    /// <p>The Kubernetes node name of the worker node where the pod is running.</p>
+    pub eks_node_name: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+    pub instance_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Availability Zone ID of the worker node where the pod is running.</p>
+    pub zone: ::std::option::Option<::std::string::String>,
 }
 impl AssumeRoleForPodIdentityInput {
     /// <p>The name of the cluster for the request.</p>
@@ -17,12 +23,27 @@ impl AssumeRoleForPodIdentityInput {
     pub fn token(&self) -> ::std::option::Option<&str> {
         self.token.as_deref()
     }
+    /// <p>The Kubernetes node name of the worker node where the pod is running.</p>
+    pub fn eks_node_name(&self) -> ::std::option::Option<&str> {
+        self.eks_node_name.as_deref()
+    }
+    /// <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+    pub fn instance_id(&self) -> ::std::option::Option<&str> {
+        self.instance_id.as_deref()
+    }
+    /// <p>The Availability Zone ID of the worker node where the pod is running.</p>
+    pub fn zone(&self) -> ::std::option::Option<&str> {
+        self.zone.as_deref()
+    }
 }
 impl ::std::fmt::Debug for AssumeRoleForPodIdentityInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssumeRoleForPodIdentityInput");
         formatter.field("cluster_name", &self.cluster_name);
         formatter.field("token", &"*** Sensitive Data Redacted ***");
+        formatter.field("eks_node_name", &self.eks_node_name);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("zone", &self.zone);
         formatter.finish()
     }
 }
@@ -39,6 +60,9 @@ impl AssumeRoleForPodIdentityInput {
 pub struct AssumeRoleForPodIdentityInputBuilder {
     pub(crate) cluster_name: ::std::option::Option<::std::string::String>,
     pub(crate) token: ::std::option::Option<::std::string::String>,
+    pub(crate) eks_node_name: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_id: ::std::option::Option<::std::string::String>,
+    pub(crate) zone: ::std::option::Option<::std::string::String>,
 }
 impl AssumeRoleForPodIdentityInputBuilder {
     /// <p>The name of the cluster for the request.</p>
@@ -71,6 +95,48 @@ impl AssumeRoleForPodIdentityInputBuilder {
     pub fn get_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.token
     }
+    /// <p>The Kubernetes node name of the worker node where the pod is running.</p>
+    pub fn eks_node_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.eks_node_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Kubernetes node name of the worker node where the pod is running.</p>
+    pub fn set_eks_node_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.eks_node_name = input;
+        self
+    }
+    /// <p>The Kubernetes node name of the worker node where the pod is running.</p>
+    pub fn get_eks_node_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.eks_node_name
+    }
+    /// <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+    pub fn instance_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+    pub fn set_instance_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_id = input;
+        self
+    }
+    /// <p>The Amazon EC2 instance ID of the worker node where the pod is running.</p>
+    pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_id
+    }
+    /// <p>The Availability Zone ID of the worker node where the pod is running.</p>
+    pub fn zone(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.zone = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Availability Zone ID of the worker node where the pod is running.</p>
+    pub fn set_zone(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.zone = input;
+        self
+    }
+    /// <p>The Availability Zone ID of the worker node where the pod is running.</p>
+    pub fn get_zone(&self) -> &::std::option::Option<::std::string::String> {
+        &self.zone
+    }
     /// Consumes the builder and constructs a [`AssumeRoleForPodIdentityInput`](crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput).
     pub fn build(
         self,
@@ -81,6 +147,9 @@ impl AssumeRoleForPodIdentityInputBuilder {
         ::std::result::Result::Ok(crate::operation::assume_role_for_pod_identity::AssumeRoleForPodIdentityInput {
             cluster_name: self.cluster_name,
             token: self.token,
+            eks_node_name: self.eks_node_name,
+            instance_id: self.instance_id,
+            zone: self.zone,
         })
     }
 }
@@ -89,6 +158,9 @@ impl ::std::fmt::Debug for AssumeRoleForPodIdentityInputBuilder {
         let mut formatter = f.debug_struct("AssumeRoleForPodIdentityInputBuilder");
         formatter.field("cluster_name", &self.cluster_name);
         formatter.field("token", &"*** Sensitive Data Redacted ***");
+        formatter.field("eks_node_name", &self.eks_node_name);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("zone", &self.zone);
         formatter.finish()
     }
 }
