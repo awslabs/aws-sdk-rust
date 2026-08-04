@@ -43,6 +43,8 @@ pub struct GetEngagementInvitationOutput {
     /// <p>WebsiteUrl: The website URL of the member's company.</p></li>
     /// </ul>
     pub existing_members: ::std::option::Option<::std::vec::Vec<crate::types::EngagementMemberSummary>>,
+    /// <p>The enrichment data for the engagement associated with this invitation. You can view propensity scores, program eligibility, and lead readiness assessments before taking action on the invitation.</p>
+    pub enrichment_context: ::std::option::Option<crate::types::EnrichmentContext>,
     _request_id: Option<String>,
 }
 impl GetEngagementInvitationOutput {
@@ -124,6 +126,10 @@ impl GetEngagementInvitationOutput {
     pub fn existing_members(&self) -> &[crate::types::EngagementMemberSummary] {
         self.existing_members.as_deref().unwrap_or_default()
     }
+    /// <p>The enrichment data for the engagement associated with this invitation. You can view propensity scores, program eligibility, and lead readiness assessments before taking action on the invitation.</p>
+    pub fn enrichment_context(&self) -> ::std::option::Option<&crate::types::EnrichmentContext> {
+        self.enrichment_context.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetEngagementInvitationOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -145,6 +151,7 @@ impl ::std::fmt::Debug for GetEngagementInvitationOutput {
         formatter.field("invitation_message", &"*** Sensitive Data Redacted ***");
         formatter.field("engagement_description", &self.engagement_description);
         formatter.field("existing_members", &self.existing_members);
+        formatter.field("enrichment_context", &self.enrichment_context);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -182,6 +189,7 @@ pub struct GetEngagementInvitationOutputBuilder {
     pub(crate) invitation_message: ::std::option::Option<::std::string::String>,
     pub(crate) engagement_description: ::std::option::Option<::std::string::String>,
     pub(crate) existing_members: ::std::option::Option<::std::vec::Vec<crate::types::EngagementMemberSummary>>,
+    pub(crate) enrichment_context: ::std::option::Option<crate::types::EnrichmentContext>,
     _request_id: Option<String>,
 }
 impl GetEngagementInvitationOutputBuilder {
@@ -449,6 +457,20 @@ impl GetEngagementInvitationOutputBuilder {
     pub fn get_existing_members(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementMemberSummary>> {
         &self.existing_members
     }
+    /// <p>The enrichment data for the engagement associated with this invitation. You can view propensity scores, program eligibility, and lead readiness assessments before taking action on the invitation.</p>
+    pub fn enrichment_context(mut self, input: crate::types::EnrichmentContext) -> Self {
+        self.enrichment_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The enrichment data for the engagement associated with this invitation. You can view propensity scores, program eligibility, and lead readiness assessments before taking action on the invitation.</p>
+    pub fn set_enrichment_context(mut self, input: ::std::option::Option<crate::types::EnrichmentContext>) -> Self {
+        self.enrichment_context = input;
+        self
+    }
+    /// <p>The enrichment data for the engagement associated with this invitation. You can view propensity scores, program eligibility, and lead readiness assessments before taking action on the invitation.</p>
+    pub fn get_enrichment_context(&self) -> &::std::option::Option<crate::types::EnrichmentContext> {
+        &self.enrichment_context
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -496,6 +518,7 @@ impl GetEngagementInvitationOutputBuilder {
             invitation_message: self.invitation_message,
             engagement_description: self.engagement_description,
             existing_members: self.existing_members,
+            enrichment_context: self.enrichment_context,
             _request_id: self._request_id,
         })
     }
@@ -520,6 +543,7 @@ impl ::std::fmt::Debug for GetEngagementInvitationOutputBuilder {
         formatter.field("invitation_message", &"*** Sensitive Data Redacted ***");
         formatter.field("engagement_description", &self.engagement_description);
         formatter.field("existing_members", &self.existing_members);
+        formatter.field("enrichment_context", &self.enrichment_context);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -22,7 +22,9 @@ impl crate::operation::cancel_bundle_task::builders::CancelBundleTaskInputBuilde
 }
 /// Fluent builder constructing a request to `CancelBundleTask`.
 ///
-/// <p>Cancels a bundling operation for an instance store-backed Windows instance.</p>
+/// <p>Cancels a bundling operation for an instance store-backed Windows instance.</p><note>
+/// <p>CancelBundleTask is no longer supported because <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html">BundleInstance</a>, the operation it cancels, is no longer supported.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CancelBundleTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -79,6 +79,8 @@ pub use crate::types::_backup_type_filter::BackupTypeFilter;
 
 pub use crate::types::_select::Select;
 
+pub use crate::types::_vector_capacity::VectorCapacity;
+
 pub use crate::types::_point_in_time_recovery_specification::PointInTimeRecoverySpecification;
 
 pub use crate::types::_contributor_insights_action::ContributorInsightsAction;
@@ -120,6 +122,8 @@ pub use crate::types::_stream_view_type::StreamViewType;
 pub use crate::types::_sse_type::SseType;
 
 pub use crate::types::_tag::Tag;
+
+pub use crate::types::_vector_index::VectorIndex;
 
 pub use crate::types::_table_status::TableStatus;
 
@@ -187,6 +191,8 @@ pub use crate::types::_import_summary::ImportSummary;
 
 pub use crate::types::_condition::Condition;
 
+pub use crate::types::_search_result_item::SearchResultItem;
+
 pub use crate::types::_transact_get_item::TransactGetItem;
 
 pub use crate::types::_transact_write_item::TransactWriteItem;
@@ -207,6 +213,8 @@ pub use crate::types::_replication_group_update::ReplicationGroupUpdate;
 
 pub use crate::types::_global_table_witness_group_update::GlobalTableWitnessGroupUpdate;
 
+pub use crate::types::_vector_index_update::VectorIndexUpdate;
+
 pub use crate::types::_global_secondary_index_auto_scaling_update::GlobalSecondaryIndexAutoScalingUpdate;
 
 pub use crate::types::_replica_auto_scaling_update::ReplicaAutoScalingUpdate;
@@ -223,6 +231,10 @@ pub use crate::types::_key_type::KeyType;
 
 pub use crate::types::_projection::Projection;
 
+pub use crate::types::_vector_attribute_definition::VectorAttributeDefinition;
+
+pub use crate::types::_vector_distance_function::VectorDistanceFunction;
+
 pub use crate::types::_local_secondary_index_description::LocalSecondaryIndexDescription;
 
 pub use crate::types::_global_secondary_index_description::GlobalSecondaryIndexDescription;
@@ -230,6 +242,8 @@ pub use crate::types::_global_secondary_index_description::GlobalSecondaryIndexD
 pub use crate::types::_global_table_witness_description::GlobalTableWitnessDescription;
 
 pub use crate::types::_sse_status::SseStatus;
+
+pub use crate::types::_vector_index_description::VectorIndexDescription;
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
 
@@ -275,6 +289,10 @@ pub use crate::types::_create_global_table_witness_group_member_action::CreateGl
 
 pub use crate::types::_delete_global_table_witness_group_member_action::DeleteGlobalTableWitnessGroupMemberAction;
 
+pub use crate::types::_create_vector_index_action::CreateVectorIndexAction;
+
+pub use crate::types::_delete_vector_index_action::DeleteVectorIndexAction;
+
 pub use crate::types::_batch_statement_error_code_enum::BatchStatementErrorCodeEnum;
 
 pub use crate::types::_put_request::PutRequest;
@@ -287,6 +305,8 @@ pub use crate::types::_on_demand_throughput_override::OnDemandThroughputOverride
 
 pub use crate::types::_projection_type::ProjectionType;
 
+pub use crate::types::_search_schema_element::SearchSchemaElement;
+
 pub use crate::types::_index_status::IndexStatus;
 
 pub use crate::types::_global_secondary_index_warm_throughput_description::GlobalSecondaryIndexWarmThroughputDescription;
@@ -297,6 +317,8 @@ pub use crate::types::_local_secondary_index_info::LocalSecondaryIndexInfo;
 
 pub use crate::types::_global_secondary_index_info::GlobalSecondaryIndexInfo;
 
+pub use crate::types::_vector_index_info::VectorIndexInfo;
+
 pub use crate::types::_replica_global_secondary_index_settings_description::ReplicaGlobalSecondaryIndexSettingsDescription;
 
 pub use crate::types::_replica_global_secondary_index_settings_update::ReplicaGlobalSecondaryIndexSettingsUpdate;
@@ -304,6 +326,8 @@ pub use crate::types::_replica_global_secondary_index_settings_update::ReplicaGl
 pub use crate::types::_replica_global_secondary_index_auto_scaling_update::ReplicaGlobalSecondaryIndexAutoScalingUpdate;
 
 pub use crate::types::_replica_global_secondary_index_description::ReplicaGlobalSecondaryIndexDescription;
+
+pub use crate::types::_search_schema_element_type::SearchSchemaElementType;
 
 pub use crate::types::_auto_scaling_policy_description::AutoScalingPolicyDescription;
 
@@ -395,6 +419,8 @@ mod _create_replica_action;
 
 mod _create_replication_group_member_action;
 
+mod _create_vector_index_action;
+
 mod _csv_options;
 
 mod _delete;
@@ -408,6 +434,8 @@ mod _delete_replica_action;
 mod _delete_replication_group_member_action;
 
 mod _delete_request;
+
+mod _delete_vector_index_action;
 
 mod _destination_status;
 
@@ -567,6 +595,12 @@ mod _s3_sse_algorithm;
 
 mod _scalar_attribute_type;
 
+mod _search_result_item;
+
+mod _search_schema_element;
+
+mod _search_schema_element_type;
+
 mod _select;
 
 mod _source_table_details;
@@ -620,6 +654,20 @@ mod _update_global_secondary_index_action;
 mod _update_kinesis_streaming_configuration;
 
 mod _update_replication_group_member_action;
+
+mod _vector_attribute_definition;
+
+mod _vector_capacity;
+
+mod _vector_distance_function;
+
+mod _vector_index;
+
+mod _vector_index_description;
+
+mod _vector_index_info;
+
+mod _vector_index_update;
 
 mod _warm_throughput;
 

@@ -9,6 +9,10 @@ pub struct UpdateInstanceInput {
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>Enables permission sets for this Identity Center instance. The only accepted value is <code>true </code>. After permission sets are enabled, they cannot be disabled.</p><note>
+    /// <p>You can't set <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> in the same request. To configure both, make two separate <code>UpdateInstance</code> calls. These calls can be made in parallel.</p>
+    /// </note>
+    pub permission_sets_enabled: ::std::option::Option<bool>,
 }
 impl UpdateInstanceInput {
     /// <p>Updates the instance name.</p>
@@ -22,6 +26,12 @@ impl UpdateInstanceInput {
     /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
+    }
+    /// <p>Enables permission sets for this Identity Center instance. The only accepted value is <code>true </code>. After permission sets are enabled, they cannot be disabled.</p><note>
+    /// <p>You can't set <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> in the same request. To configure both, make two separate <code>UpdateInstance</code> calls. These calls can be made in parallel.</p>
+    /// </note>
+    pub fn permission_sets_enabled(&self) -> ::std::option::Option<bool> {
+        self.permission_sets_enabled
     }
 }
 impl UpdateInstanceInput {
@@ -38,6 +48,7 @@ pub struct UpdateInstanceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) permission_sets_enabled: ::std::option::Option<bool>,
 }
 impl UpdateInstanceInputBuilder {
     /// <p>Updates the instance name.</p>
@@ -83,6 +94,26 @@ impl UpdateInstanceInputBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// <p>Enables permission sets for this Identity Center instance. The only accepted value is <code>true </code>. After permission sets are enabled, they cannot be disabled.</p><note>
+    /// <p>You can't set <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> in the same request. To configure both, make two separate <code>UpdateInstance</code> calls. These calls can be made in parallel.</p>
+    /// </note>
+    pub fn permission_sets_enabled(mut self, input: bool) -> Self {
+        self.permission_sets_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Enables permission sets for this Identity Center instance. The only accepted value is <code>true </code>. After permission sets are enabled, they cannot be disabled.</p><note>
+    /// <p>You can't set <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> in the same request. To configure both, make two separate <code>UpdateInstance</code> calls. These calls can be made in parallel.</p>
+    /// </note>
+    pub fn set_permission_sets_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.permission_sets_enabled = input;
+        self
+    }
+    /// <p>Enables permission sets for this Identity Center instance. The only accepted value is <code>true </code>. After permission sets are enabled, they cannot be disabled.</p><note>
+    /// <p>You can't set <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> in the same request. To configure both, make two separate <code>UpdateInstance</code> calls. These calls can be made in parallel.</p>
+    /// </note>
+    pub fn get_permission_sets_enabled(&self) -> &::std::option::Option<bool> {
+        &self.permission_sets_enabled
+    }
     /// Consumes the builder and constructs a [`UpdateInstanceInput`](crate::operation::update_instance::UpdateInstanceInput).
     pub fn build(
         self,
@@ -91,6 +122,7 @@ impl UpdateInstanceInputBuilder {
             name: self.name,
             instance_arn: self.instance_arn,
             encryption_configuration: self.encryption_configuration,
+            permission_sets_enabled: self.permission_sets_enabled,
         })
     }
 }

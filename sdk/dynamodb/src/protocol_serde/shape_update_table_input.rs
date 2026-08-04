@@ -99,5 +99,17 @@ pub fn ser_update_table_input_input(
     if let Some(var_32) = &input.global_table_settings_replication_mode {
         object.key("GlobalTableSettingsReplicationMode").string(var_32.as_str());
     }
+    if let Some(var_33) = &input.vector_index_updates {
+        let mut array_34 = object.key("VectorIndexUpdates").start_array();
+        for item_35 in var_33 {
+            {
+                #[allow(unused_mut)]
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_vector_index_update::ser_vector_index_update(&mut object_36, item_35)?;
+                object_36.finish();
+            }
+        }
+        array_34.finish();
+    }
     Ok(())
 }

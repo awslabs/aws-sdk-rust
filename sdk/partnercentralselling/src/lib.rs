@@ -21,8 +21,6 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! __AWS Partner Central API for Selling Reference Guide__
-//!
 //! This Amazon Web Services (AWS) Partner Central API reference is designed to help [AWS Partners](http://aws.amazon.com/partners/programs/) integrate Customer Relationship Management (CRM) systems with AWS Partner Central. Partners can automate interactions with AWS Partner Central, which helps to ensure effective engagements in joint business activities.
 //!
 //! The API provides standard AWS API functionality. Access it by either using API [Actions](https://docs.aws.amazon.com/partner-central/latest/selling-api/API_Operations.html) or by using an AWS SDK that's tailored to your programming language or platform. For more information, see [Getting Started with AWS](http://aws.amazon.com/getting-started) and [Tools to Build on AWS](http://aws.amazon.com/developer/tools/).
@@ -47,7 +45,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-partnercentralselling = "1.68.0"
+//! aws-sdk-partnercentralselling = "1.69.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

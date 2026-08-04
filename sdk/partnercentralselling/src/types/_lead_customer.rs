@@ -5,22 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LeadCustomer {
     /// <p>Specifies the industry sector to which the lead customer's company belongs. This categorization helps in understanding the customer's business context and tailoring appropriate solutions.</p>
-    pub industry: ::std::option::Option<crate::types::Industry>,
+    pub industry: ::std::option::Option<::std::string::String>,
     /// <p>The name of the lead customer's company. This field is essential for identifying and tracking the customer organization associated with the lead.</p>
     pub company_name: ::std::string::String,
     /// <p>The website URL of the lead customer's company. This provides additional context about the customer organization and helps verify company legitimacy and size.</p>
     pub website_url: ::std::option::Option<::std::string::String>,
-    /// <p>An object that contains an <code>Address</code> object's subset of fields.</p>
-    pub address: ::std::option::Option<crate::types::AddressSummary>,
+    /// <p>The address information for the lead customer.</p>
+    pub address: ::std::option::Option<crate::types::LeadAddress>,
     /// <p>Indicates the customer's level of experience and adoption with AWS services. This assessment helps determine the appropriate engagement approach and solution complexity.</p>
     pub aws_maturity: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the market segment classification of the lead customer, such as enterprise, mid-market, or small business. This segmentation helps in targeting appropriate solutions and engagement strategies.</p>
-    pub market_segment: ::std::option::Option<crate::types::MarketSegment>,
+    pub market_segment: ::std::option::Option<::std::string::String>,
 }
 impl LeadCustomer {
     /// <p>Specifies the industry sector to which the lead customer's company belongs. This categorization helps in understanding the customer's business context and tailoring appropriate solutions.</p>
-    pub fn industry(&self) -> ::std::option::Option<&crate::types::Industry> {
-        self.industry.as_ref()
+    pub fn industry(&self) -> ::std::option::Option<&str> {
+        self.industry.as_deref()
     }
     /// <p>The name of the lead customer's company. This field is essential for identifying and tracking the customer organization associated with the lead.</p>
     pub fn company_name(&self) -> &str {
@@ -31,8 +31,8 @@ impl LeadCustomer {
     pub fn website_url(&self) -> ::std::option::Option<&str> {
         self.website_url.as_deref()
     }
-    /// <p>An object that contains an <code>Address</code> object's subset of fields.</p>
-    pub fn address(&self) -> ::std::option::Option<&crate::types::AddressSummary> {
+    /// <p>The address information for the lead customer.</p>
+    pub fn address(&self) -> ::std::option::Option<&crate::types::LeadAddress> {
         self.address.as_ref()
     }
     /// <p>Indicates the customer's level of experience and adoption with AWS services. This assessment helps determine the appropriate engagement approach and solution complexity.</p>
@@ -40,8 +40,8 @@ impl LeadCustomer {
         self.aws_maturity.as_deref()
     }
     /// <p>Specifies the market segment classification of the lead customer, such as enterprise, mid-market, or small business. This segmentation helps in targeting appropriate solutions and engagement strategies.</p>
-    pub fn market_segment(&self) -> ::std::option::Option<&crate::types::MarketSegment> {
-        self.market_segment.as_ref()
+    pub fn market_segment(&self) -> ::std::option::Option<&str> {
+        self.market_segment.as_deref()
     }
 }
 impl ::std::fmt::Debug for LeadCustomer {
@@ -67,26 +67,26 @@ impl LeadCustomer {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct LeadCustomerBuilder {
-    pub(crate) industry: ::std::option::Option<crate::types::Industry>,
+    pub(crate) industry: ::std::option::Option<::std::string::String>,
     pub(crate) company_name: ::std::option::Option<::std::string::String>,
     pub(crate) website_url: ::std::option::Option<::std::string::String>,
-    pub(crate) address: ::std::option::Option<crate::types::AddressSummary>,
+    pub(crate) address: ::std::option::Option<crate::types::LeadAddress>,
     pub(crate) aws_maturity: ::std::option::Option<::std::string::String>,
-    pub(crate) market_segment: ::std::option::Option<crate::types::MarketSegment>,
+    pub(crate) market_segment: ::std::option::Option<::std::string::String>,
 }
 impl LeadCustomerBuilder {
     /// <p>Specifies the industry sector to which the lead customer's company belongs. This categorization helps in understanding the customer's business context and tailoring appropriate solutions.</p>
-    pub fn industry(mut self, input: crate::types::Industry) -> Self {
-        self.industry = ::std::option::Option::Some(input);
+    pub fn industry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.industry = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the industry sector to which the lead customer's company belongs. This categorization helps in understanding the customer's business context and tailoring appropriate solutions.</p>
-    pub fn set_industry(mut self, input: ::std::option::Option<crate::types::Industry>) -> Self {
+    pub fn set_industry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.industry = input;
         self
     }
     /// <p>Specifies the industry sector to which the lead customer's company belongs. This categorization helps in understanding the customer's business context and tailoring appropriate solutions.</p>
-    pub fn get_industry(&self) -> &::std::option::Option<crate::types::Industry> {
+    pub fn get_industry(&self) -> &::std::option::Option<::std::string::String> {
         &self.industry
     }
     /// <p>The name of the lead customer's company. This field is essential for identifying and tracking the customer organization associated with the lead.</p>
@@ -118,19 +118,18 @@ impl LeadCustomerBuilder {
     pub fn get_website_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.website_url
     }
-    /// <p>An object that contains an <code>Address</code> object's subset of fields.</p>
-    /// This field is required.
-    pub fn address(mut self, input: crate::types::AddressSummary) -> Self {
+    /// <p>The address information for the lead customer.</p>
+    pub fn address(mut self, input: crate::types::LeadAddress) -> Self {
         self.address = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains an <code>Address</code> object's subset of fields.</p>
-    pub fn set_address(mut self, input: ::std::option::Option<crate::types::AddressSummary>) -> Self {
+    /// <p>The address information for the lead customer.</p>
+    pub fn set_address(mut self, input: ::std::option::Option<crate::types::LeadAddress>) -> Self {
         self.address = input;
         self
     }
-    /// <p>An object that contains an <code>Address</code> object's subset of fields.</p>
-    pub fn get_address(&self) -> &::std::option::Option<crate::types::AddressSummary> {
+    /// <p>The address information for the lead customer.</p>
+    pub fn get_address(&self) -> &::std::option::Option<crate::types::LeadAddress> {
         &self.address
     }
     /// <p>Indicates the customer's level of experience and adoption with AWS services. This assessment helps determine the appropriate engagement approach and solution complexity.</p>
@@ -148,17 +147,17 @@ impl LeadCustomerBuilder {
         &self.aws_maturity
     }
     /// <p>Specifies the market segment classification of the lead customer, such as enterprise, mid-market, or small business. This segmentation helps in targeting appropriate solutions and engagement strategies.</p>
-    pub fn market_segment(mut self, input: crate::types::MarketSegment) -> Self {
-        self.market_segment = ::std::option::Option::Some(input);
+    pub fn market_segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.market_segment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the market segment classification of the lead customer, such as enterprise, mid-market, or small business. This segmentation helps in targeting appropriate solutions and engagement strategies.</p>
-    pub fn set_market_segment(mut self, input: ::std::option::Option<crate::types::MarketSegment>) -> Self {
+    pub fn set_market_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.market_segment = input;
         self
     }
     /// <p>Specifies the market segment classification of the lead customer, such as enterprise, mid-market, or small business. This segmentation helps in targeting appropriate solutions and engagement strategies.</p>
-    pub fn get_market_segment(&self) -> &::std::option::Option<crate::types::MarketSegment> {
+    pub fn get_market_segment(&self) -> &::std::option::Option<::std::string::String> {
         &self.market_segment
     }
     /// Consumes the builder and constructs a [`LeadCustomer`](crate::types::LeadCustomer).

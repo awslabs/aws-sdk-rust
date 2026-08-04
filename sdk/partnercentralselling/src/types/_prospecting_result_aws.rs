@@ -4,6 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProspectingResultAws {
+    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
+    pub customer: ::std::option::Option<crate::types::ProspectingResultCustomer>,
+    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
+    pub insights: ::std::option::Option<crate::types::ProspectingInsights>,
     /// <p>The timestamp when the prospecting result context was created. The format is ISO 8601 (UTC).</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the prospecting task completed processing. The format is ISO 8601 (UTC).</p>
@@ -14,12 +18,16 @@ pub struct ProspectingResultAws {
     pub task_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name that the user provides for the prospecting task that generates this result.</p>
     pub task_name: ::std::option::Option<::std::string::String>,
-    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
-    pub customer: ::std::option::Option<crate::types::ProspectingResultCustomer>,
-    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
-    pub insights: ::std::option::Option<crate::types::ProspectingInsights>,
 }
 impl ProspectingResultAws {
+    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
+    pub fn customer(&self) -> ::std::option::Option<&crate::types::ProspectingResultCustomer> {
+        self.customer.as_ref()
+    }
+    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
+    pub fn insights(&self) -> ::std::option::Option<&crate::types::ProspectingInsights> {
+        self.insights.as_ref()
+    }
     /// <p>The timestamp when the prospecting result context was created. The format is ISO 8601 (UTC).</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
@@ -40,14 +48,6 @@ impl ProspectingResultAws {
     pub fn task_name(&self) -> ::std::option::Option<&str> {
         self.task_name.as_deref()
     }
-    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
-    pub fn customer(&self) -> ::std::option::Option<&crate::types::ProspectingResultCustomer> {
-        self.customer.as_ref()
-    }
-    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
-    pub fn insights(&self) -> ::std::option::Option<&crate::types::ProspectingInsights> {
-        self.insights.as_ref()
-    }
 }
 impl ProspectingResultAws {
     /// Creates a new builder-style object to manufacture [`ProspectingResultAws`](crate::types::ProspectingResultAws).
@@ -60,15 +60,43 @@ impl ProspectingResultAws {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ProspectingResultAwsBuilder {
+    pub(crate) customer: ::std::option::Option<crate::types::ProspectingResultCustomer>,
+    pub(crate) insights: ::std::option::Option<crate::types::ProspectingInsights>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) task_id: ::std::option::Option<::std::string::String>,
     pub(crate) task_arn: ::std::option::Option<::std::string::String>,
     pub(crate) task_name: ::std::option::Option<::std::string::String>,
-    pub(crate) customer: ::std::option::Option<crate::types::ProspectingResultCustomer>,
-    pub(crate) insights: ::std::option::Option<crate::types::ProspectingInsights>,
 }
 impl ProspectingResultAwsBuilder {
+    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
+    pub fn customer(mut self, input: crate::types::ProspectingResultCustomer) -> Self {
+        self.customer = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
+    pub fn set_customer(mut self, input: ::std::option::Option<crate::types::ProspectingResultCustomer>) -> Self {
+        self.customer = input;
+        self
+    }
+    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
+    pub fn get_customer(&self) -> &::std::option::Option<crate::types::ProspectingResultCustomer> {
+        &self.customer
+    }
+    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
+    pub fn insights(mut self, input: crate::types::ProspectingInsights) -> Self {
+        self.insights = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<crate::types::ProspectingInsights>) -> Self {
+        self.insights = input;
+        self
+    }
+    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<crate::types::ProspectingInsights> {
+        &self.insights
+    }
     /// <p>The timestamp when the prospecting result context was created. The format is ISO 8601 (UTC).</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
@@ -139,44 +167,16 @@ impl ProspectingResultAwsBuilder {
     pub fn get_task_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.task_name
     }
-    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
-    pub fn customer(mut self, input: crate::types::ProspectingResultCustomer) -> Self {
-        self.customer = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
-    pub fn set_customer(mut self, input: ::std::option::Option<crate::types::ProspectingResultCustomer>) -> Self {
-        self.customer = input;
-        self
-    }
-    /// <p>Contains details about the prospected customer account, including geographic, industry, and segment classifications.</p>
-    pub fn get_customer(&self) -> &::std::option::Option<crate::types::ProspectingResultCustomer> {
-        &self.customer
-    }
-    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
-    pub fn insights(mut self, input: crate::types::ProspectingInsights) -> Self {
-        self.insights = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
-    pub fn set_insights(mut self, input: ::std::option::Option<crate::types::ProspectingInsights>) -> Self {
-        self.insights = input;
-        self
-    }
-    /// <p>Insights that AI generates from the prospecting analysis. These insights include engagement scores and solution fit assessments for the prospected customer.</p>
-    pub fn get_insights(&self) -> &::std::option::Option<crate::types::ProspectingInsights> {
-        &self.insights
-    }
     /// Consumes the builder and constructs a [`ProspectingResultAws`](crate::types::ProspectingResultAws).
     pub fn build(self) -> crate::types::ProspectingResultAws {
         crate::types::ProspectingResultAws {
+            customer: self.customer,
+            insights: self.insights,
             start_time: self.start_time,
             end_time: self.end_time,
             task_id: self.task_id,
             task_arn: self.task_arn,
             task_name: self.task_name,
-            customer: self.customer,
-            insights: self.insights,
         }
     }
 }

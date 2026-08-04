@@ -13,7 +13,7 @@ pub struct DescribeCapacityReservationTopologyInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The Capacity Reservation IDs.</p>
     /// <p>Default: Describes all your Capacity Reservations.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.</p>
+    /// <p>Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.</p>
     pub capacity_reservation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The filters.</p>
     /// <ul>
@@ -41,7 +41,7 @@ impl DescribeCapacityReservationTopologyInput {
     }
     /// <p>The Capacity Reservation IDs.</p>
     /// <p>Default: Describes all your Capacity Reservations.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.</p>
+    /// <p>Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_reservation_ids.is_none()`.
     pub fn capacity_reservation_ids(&self) -> &[::std::string::String] {
@@ -132,7 +132,7 @@ impl DescribeCapacityReservationTopologyInputBuilder {
     ///
     /// <p>The Capacity Reservation IDs.</p>
     /// <p>Default: Describes all your Capacity Reservations.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.</p>
+    /// <p>Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.</p>
     pub fn capacity_reservation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.capacity_reservation_ids.unwrap_or_default();
         v.push(input.into());
@@ -141,14 +141,14 @@ impl DescribeCapacityReservationTopologyInputBuilder {
     }
     /// <p>The Capacity Reservation IDs.</p>
     /// <p>Default: Describes all your Capacity Reservations.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.</p>
+    /// <p>Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.</p>
     pub fn set_capacity_reservation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.capacity_reservation_ids = input;
         self
     }
     /// <p>The Capacity Reservation IDs.</p>
     /// <p>Default: Describes all your Capacity Reservations.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.</p>
+    /// <p>Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.</p>
     pub fn get_capacity_reservation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.capacity_reservation_ids
     }

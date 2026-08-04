@@ -43,6 +43,8 @@ pub use crate::types::_input_format_options::InputFormatOptionsBuilder;
 
 pub use crate::types::_table_creation_parameters::TableCreationParametersBuilder;
 
+pub use crate::types::_vector_capacity::VectorCapacityBuilder;
+
 pub use crate::types::_point_in_time_recovery_specification::PointInTimeRecoverySpecificationBuilder;
 
 pub use crate::types::_auto_scaling_settings_update::AutoScalingSettingsUpdateBuilder;
@@ -70,6 +72,8 @@ pub use crate::types::_local_secondary_index::LocalSecondaryIndexBuilder;
 pub use crate::types::_global_secondary_index::GlobalSecondaryIndexBuilder;
 
 pub use crate::types::_tag::TagBuilder;
+
+pub use crate::types::_vector_index::VectorIndexBuilder;
 
 pub use crate::types::_provisioned_throughput_description::ProvisionedThroughputDescriptionBuilder;
 
@@ -121,6 +125,8 @@ pub use crate::types::_import_summary::ImportSummaryBuilder;
 
 pub use crate::types::_condition::ConditionBuilder;
 
+pub use crate::types::_search_result_item::SearchResultItemBuilder;
+
 pub use crate::types::_transact_get_item::TransactGetItemBuilder;
 
 pub use crate::types::_transact_write_item::TransactWriteItemBuilder;
@@ -141,6 +147,8 @@ pub use crate::types::_replication_group_update::ReplicationGroupUpdateBuilder;
 
 pub use crate::types::_global_table_witness_group_update::GlobalTableWitnessGroupUpdateBuilder;
 
+pub use crate::types::_vector_index_update::VectorIndexUpdateBuilder;
+
 pub use crate::types::_global_secondary_index_auto_scaling_update::GlobalSecondaryIndexAutoScalingUpdateBuilder;
 
 pub use crate::types::_replica_auto_scaling_update::ReplicaAutoScalingUpdateBuilder;
@@ -153,11 +161,15 @@ pub use crate::types::_replica_description::ReplicaDescriptionBuilder;
 
 pub use crate::types::_projection::ProjectionBuilder;
 
+pub use crate::types::_vector_attribute_definition::VectorAttributeDefinitionBuilder;
+
 pub use crate::types::_local_secondary_index_description::LocalSecondaryIndexDescriptionBuilder;
 
 pub use crate::types::_global_secondary_index_description::GlobalSecondaryIndexDescriptionBuilder;
 
 pub use crate::types::_global_table_witness_description::GlobalTableWitnessDescriptionBuilder;
+
+pub use crate::types::_vector_index_description::VectorIndexDescriptionBuilder;
 
 pub use crate::types::_auto_scaling_settings_description::AutoScalingSettingsDescriptionBuilder;
 
@@ -195,6 +207,10 @@ pub use crate::types::_create_global_table_witness_group_member_action::CreateGl
 
 pub use crate::types::_delete_global_table_witness_group_member_action::DeleteGlobalTableWitnessGroupMemberActionBuilder;
 
+pub use crate::types::_create_vector_index_action::CreateVectorIndexActionBuilder;
+
+pub use crate::types::_delete_vector_index_action::DeleteVectorIndexActionBuilder;
+
 pub use crate::types::_put_request::PutRequestBuilder;
 
 pub use crate::types::_delete_request::DeleteRequestBuilder;
@@ -203,11 +219,15 @@ pub use crate::types::_provisioned_throughput_override::ProvisionedThroughputOve
 
 pub use crate::types::_on_demand_throughput_override::OnDemandThroughputOverrideBuilder;
 
+pub use crate::types::_search_schema_element::SearchSchemaElementBuilder;
+
 pub use crate::types::_global_secondary_index_warm_throughput_description::GlobalSecondaryIndexWarmThroughputDescriptionBuilder;
 
 pub use crate::types::_local_secondary_index_info::LocalSecondaryIndexInfoBuilder;
 
 pub use crate::types::_global_secondary_index_info::GlobalSecondaryIndexInfoBuilder;
+
+pub use crate::types::_vector_index_info::VectorIndexInfoBuilder;
 
 pub use crate::types::_replica_global_secondary_index_settings_description::ReplicaGlobalSecondaryIndexSettingsDescriptionBuilder;
 

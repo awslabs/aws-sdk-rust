@@ -99,6 +99,138 @@ pub fn ser_resource_filter_criteria(
         }
         array_30.finish();
     }
+    if let Some(var_33) = &input.cloud_provider {
+        let mut array_34 = object.key("cloudProvider").start_array();
+        for item_35 in var_33 {
+            {
+                #[allow(unused_mut)]
+                let mut object_36 = array_34.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_36, item_35)?;
+                object_36.finish();
+            }
+        }
+        array_34.finish();
+    }
+    if let Some(var_37) = &input.cloud_provider_account_id {
+        let mut array_38 = object.key("cloudProviderAccountId").start_array();
+        for item_39 in var_37 {
+            {
+                #[allow(unused_mut)]
+                let mut object_40 = array_38.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_40, item_39)?;
+                object_40.finish();
+            }
+        }
+        array_38.finish();
+    }
+    if let Some(var_41) = &input.cloud_provider_org_id {
+        let mut array_42 = object.key("cloudProviderOrgId").start_array();
+        for item_43 in var_41 {
+            {
+                #[allow(unused_mut)]
+                let mut object_44 = array_42.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_44, item_43)?;
+                object_44.finish();
+            }
+        }
+        array_42.finish();
+    }
+    if let Some(var_45) = &input.cloud_provider_region {
+        let mut array_46 = object.key("cloudProviderRegion").start_array();
+        for item_47 in var_45 {
+            {
+                #[allow(unused_mut)]
+                let mut object_48 = array_46.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_48, item_47)?;
+                object_48.finish();
+            }
+        }
+        array_46.finish();
+    }
+    if let Some(var_49) = &input.cloud_vm_instance_tags {
+        let mut array_50 = object.key("cloudVmInstanceTags").start_array();
+        for item_51 in var_49 {
+            {
+                #[allow(unused_mut)]
+                let mut object_52 = array_50.value().start_object();
+                crate::protocol_serde::shape_resource_map_filter::ser_resource_map_filter(&mut object_52, item_51)?;
+                object_52.finish();
+            }
+        }
+        array_50.finish();
+    }
+    if let Some(var_53) = &input.cloud_container_image_tags {
+        let mut array_54 = object.key("cloudContainerImageTags").start_array();
+        for item_55 in var_53 {
+            {
+                #[allow(unused_mut)]
+                let mut object_56 = array_54.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_56, item_55)?;
+                object_56.finish();
+            }
+        }
+        array_54.finish();
+    }
+    if let Some(var_57) = &input.cloud_container_repository_name {
+        let mut array_58 = object.key("cloudContainerRepositoryName").start_array();
+        for item_59 in var_57 {
+            {
+                #[allow(unused_mut)]
+                let mut object_60 = array_58.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_60, item_59)?;
+                object_60.finish();
+            }
+        }
+        array_58.finish();
+    }
+    if let Some(var_61) = &input.cloud_container_registry_name {
+        let mut array_62 = object.key("cloudContainerRegistryName").start_array();
+        for item_63 in var_61 {
+            {
+                #[allow(unused_mut)]
+                let mut object_64 = array_62.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_64, item_63)?;
+                object_64.finish();
+            }
+        }
+        array_62.finish();
+    }
+    if let Some(var_65) = &input.cloud_serverless_function_name {
+        let mut array_66 = object.key("cloudServerlessFunctionName").start_array();
+        for item_67 in var_65 {
+            {
+                #[allow(unused_mut)]
+                let mut object_68 = array_66.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_68, item_67)?;
+                object_68.finish();
+            }
+        }
+        array_66.finish();
+    }
+    if let Some(var_69) = &input.cloud_serverless_function_runtime {
+        let mut array_70 = object.key("cloudServerlessFunctionRuntime").start_array();
+        for item_71 in var_69 {
+            {
+                #[allow(unused_mut)]
+                let mut object_72 = array_70.value().start_object();
+                crate::protocol_serde::shape_resource_string_filter::ser_resource_string_filter(&mut object_72, item_71)?;
+                object_72.finish();
+            }
+        }
+        array_70.finish();
+    }
+    if let Some(var_73) = &input.cloud_serverless_function_tags {
+        let mut array_74 = object.key("cloudServerlessFunctionTags").start_array();
+        for item_75 in var_73 {
+            {
+                #[allow(unused_mut)]
+                let mut object_76 = array_74.value().start_object();
+                crate::protocol_serde::shape_resource_map_filter::ser_resource_map_filter(&mut object_76, item_75)?;
+                object_76.finish();
+            }
+        }
+        array_74.finish();
+    }
     Ok(())
 }
 
@@ -161,6 +293,61 @@ where
                         }
                         "lambdaFunctionTags" => {
                             builder = builder.set_lambda_function_tags(
+                                crate::protocol_serde::shape_resource_map_filter_list::de_resource_map_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudProvider" => {
+                            builder = builder.set_cloud_provider(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudProviderAccountId" => {
+                            builder = builder.set_cloud_provider_account_id(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudProviderOrgId" => {
+                            builder = builder.set_cloud_provider_org_id(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudProviderRegion" => {
+                            builder = builder.set_cloud_provider_region(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudVmInstanceTags" => {
+                            builder = builder.set_cloud_vm_instance_tags(
+                                crate::protocol_serde::shape_resource_map_filter_list::de_resource_map_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudContainerImageTags" => {
+                            builder = builder.set_cloud_container_image_tags(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudContainerRepositoryName" => {
+                            builder = builder.set_cloud_container_repository_name(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudContainerRegistryName" => {
+                            builder = builder.set_cloud_container_registry_name(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudServerlessFunctionName" => {
+                            builder = builder.set_cloud_serverless_function_name(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudServerlessFunctionRuntime" => {
+                            builder = builder.set_cloud_serverless_function_runtime(
+                                crate::protocol_serde::shape_resource_string_filter_list::de_resource_string_filter_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "cloudServerlessFunctionTags" => {
+                            builder = builder.set_cloud_serverless_function_tags(
                                 crate::protocol_serde::shape_resource_map_filter_list::de_resource_map_filter_list(tokens, _value, depth + 1)?,
                             );
                         }

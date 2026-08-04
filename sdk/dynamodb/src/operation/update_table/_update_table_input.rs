@@ -74,6 +74,9 @@ pub struct UpdateTableInput {
     /// <p><code>DISABLED</code>: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.</p></li>
     /// </ul>
     pub global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+    /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
+    pub vector_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexUpdate>>,
 }
 impl UpdateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, <code>AttributeDefinitions</code> must include the key element(s) of the new index.</p>
@@ -184,6 +187,13 @@ impl UpdateTableInput {
     pub fn global_table_settings_replication_mode(&self) -> ::std::option::Option<&crate::types::GlobalTableSettingsReplicationMode> {
         self.global_table_settings_replication_mode.as_ref()
     }
+    /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+    /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vector_index_updates.is_none()`.
+    pub fn vector_index_updates(&self) -> &[crate::types::VectorIndexUpdate] {
+        self.vector_index_updates.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateTableInput {
     /// Creates a new builder-style object to manufacture [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
@@ -211,6 +221,7 @@ pub struct UpdateTableInputBuilder {
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughput>,
     pub(crate) global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    pub(crate) vector_index_updates: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexUpdate>>,
 }
 impl UpdateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -577,6 +588,29 @@ impl UpdateTableInputBuilder {
     pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
         &self.global_table_settings_replication_mode
     }
+    /// Appends an item to `vector_index_updates`.
+    ///
+    /// To override the contents of this collection use [`set_vector_index_updates`](Self::set_vector_index_updates).
+    ///
+    /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+    /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
+    pub fn vector_index_updates(mut self, input: crate::types::VectorIndexUpdate) -> Self {
+        let mut v = self.vector_index_updates.unwrap_or_default();
+        v.push(input);
+        self.vector_index_updates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+    /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
+    pub fn set_vector_index_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexUpdate>>) -> Self {
+        self.vector_index_updates = input;
+        self
+    }
+    /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+    /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
+    pub fn get_vector_index_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VectorIndexUpdate>> {
+        &self.vector_index_updates
+    }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
@@ -595,6 +629,7 @@ impl UpdateTableInputBuilder {
             on_demand_throughput: self.on_demand_throughput,
             warm_throughput: self.warm_throughput,
             global_table_settings_replication_mode: self.global_table_settings_replication_mode,
+            vector_index_updates: self.vector_index_updates,
         })
     }
 }

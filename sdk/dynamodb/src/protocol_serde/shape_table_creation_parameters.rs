@@ -63,6 +63,18 @@ pub fn ser_table_creation_parameters(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.vector_indexes {
+        let mut array_19 = object.key("VectorIndexes").start_array();
+        for item_20 in var_18 {
+            {
+                #[allow(unused_mut)]
+                let mut object_21 = array_19.value().start_object();
+                crate::protocol_serde::shape_vector_index::ser_vector_index(&mut object_21, item_20)?;
+                object_21.finish();
+            }
+        }
+        array_19.finish();
+    }
     Ok(())
 }
 
@@ -133,6 +145,13 @@ where
                             builder = builder.set_global_secondary_indexes(
                                 crate::protocol_serde::shape_global_secondary_index_list::de_global_secondary_index_list(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "VectorIndexes" => {
+                            builder = builder.set_vector_indexes(crate::protocol_serde::shape_vector_index_list::de_vector_index_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

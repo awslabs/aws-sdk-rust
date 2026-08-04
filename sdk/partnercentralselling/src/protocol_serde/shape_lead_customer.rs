@@ -15,7 +15,7 @@ pub fn ser_lead_customer(
     if let Some(var_3) = &input.address {
         #[allow(unused_mut)]
         let mut object_4 = object.key("Address").start_object();
-        crate::protocol_serde::shape_address_summary::ser_address_summary(&mut object_4, var_3)?;
+        crate::protocol_serde::shape_lead_address::ser_lead_address(&mut object_4, var_3)?;
         object_4.finish();
     }
     if let Some(var_5) = &input.aws_maturity {
@@ -52,7 +52,7 @@ where
                         "Industry" => {
                             builder = builder.set_industry(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Industry::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
@@ -71,11 +71,7 @@ where
                             );
                         }
                         "Address" => {
-                            builder = builder.set_address(crate::protocol_serde::shape_address_summary::de_address_summary(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
+                            builder = builder.set_address(crate::protocol_serde::shape_lead_address::de_lead_address(tokens, _value, depth + 1)?);
                         }
                         "AwsMaturity" => {
                             builder = builder.set_aws_maturity(
@@ -87,7 +83,7 @@ where
                         "MarketSegment" => {
                             builder = builder.set_market_segment(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::MarketSegment::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

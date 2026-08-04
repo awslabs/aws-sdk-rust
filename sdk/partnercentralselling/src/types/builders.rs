@@ -9,6 +9,8 @@ pub use crate::types::_opportunity_engagement_invitation_sort::OpportunityEngage
 
 pub use crate::types::_invitation::InvitationBuilder;
 
+pub use crate::types::_enrichment_context::EnrichmentContextBuilder;
+
 pub use crate::types::_opportunity_sort::OpportunitySortBuilder;
 
 pub use crate::types::_last_modified_date::LastModifiedDateBuilder;
@@ -79,6 +81,10 @@ pub use crate::types::_lead_invitation_payload::LeadInvitationPayloadBuilder;
 
 pub use crate::types::_engagement_member_summary::EngagementMemberSummaryBuilder;
 
+pub use crate::types::_invitation_prospecting_result_aws::InvitationProspectingResultAwsBuilder;
+
+pub use crate::types::_lead_insights::LeadInsightsBuilder;
+
 pub use crate::types::_opportunity_summary::OpportunitySummaryBuilder;
 
 pub use crate::types::_account::AccountBuilder;
@@ -117,8 +123,6 @@ pub use crate::types::_engagement_customer::EngagementCustomerBuilder;
 
 pub use crate::types::_engagement_customer_project_details::EngagementCustomerProjectDetailsBuilder;
 
-pub use crate::types::_lead_insights::LeadInsightsBuilder;
-
 pub use crate::types::_lead_customer::LeadCustomerBuilder;
 
 pub use crate::types::_prospecting_result_aws::ProspectingResultAwsBuilder;
@@ -130,6 +134,10 @@ pub use crate::types::_project_details::ProjectDetailsBuilder;
 pub use crate::types::_lead_invitation_customer::LeadInvitationCustomerBuilder;
 
 pub use crate::types::_lead_invitation_interaction::LeadInvitationInteractionBuilder;
+
+pub use crate::types::_prospecting_result_customer::ProspectingResultCustomerBuilder;
+
+pub use crate::types::_prospecting_insights::ProspectingInsightsBuilder;
 
 pub use crate::types::_life_cycle_summary::LifeCycleSummaryBuilder;
 
@@ -153,17 +161,15 @@ pub use crate::types::_life_cycle_for_view::LifeCycleForViewBuilder;
 
 pub use crate::types::_project_view::ProjectViewBuilder;
 
-pub use crate::types::_address_summary::AddressSummaryBuilder;
-
-pub use crate::types::_prospecting_result_customer::ProspectingResultCustomerBuilder;
-
-pub use crate::types::_prospecting_insights::ProspectingInsightsBuilder;
+pub use crate::types::_lead_address::LeadAddressBuilder;
 
 pub use crate::types::_lead_contact::LeadContactBuilder;
 
 pub use crate::types::_sender_contact::SenderContactBuilder;
 
 pub use crate::types::_account_summary::AccountSummaryBuilder;
+
+pub use crate::types::_address_summary::AddressSummaryBuilder;
 
 pub use crate::types::_aws_product_details::AwsProductDetailsBuilder;
 

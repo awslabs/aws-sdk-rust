@@ -61,6 +61,8 @@ pub use crate::types::_storage::StorageBuilder;
 
 pub use crate::types::_bundle_task::BundleTaskBuilder;
 
+pub use crate::types::_application_status_check_response_object::ApplicationStatusCheckResponseObjectBuilder;
+
 pub use crate::types::_capacity_reservation::CapacityReservationBuilder;
 
 pub use crate::types::_capacity_reservation_cancellation_quote::CapacityReservationCancellationQuoteBuilder;
@@ -317,6 +319,8 @@ pub use crate::types::_transit_gateway_multicast_deregistered_group_sources::Tra
 
 pub use crate::types::_account_vpc_encryption_control::AccountVpcEncryptionControlBuilder;
 
+pub use crate::types::_application_statuses_response_type::ApplicationStatusesResponseTypeBuilder;
+
 pub use crate::types::_fpga_image_attribute::FpgaImageAttributeBuilder;
 
 pub use crate::types::_attribute_value::AttributeValueBuilder;
@@ -527,6 +531,12 @@ pub use crate::types::_ipv4_prefix_specification::Ipv4PrefixSpecificationBuilder
 
 pub use crate::types::_nat_gateway_address::NatGatewayAddressBuilder;
 
+pub use crate::types::_custom_tag_key_value_request_pair::CustomTagKeyValueRequestPairBuilder;
+
+pub use crate::types::_successful_association_response_object::SuccessfulAssociationResponseObjectBuilder;
+
+pub use crate::types::_unsuccessful_association_response_object::UnsuccessfulAssociationResponseObjectBuilder;
+
 pub use crate::types::_iam_instance_profile::IamInstanceProfileBuilder;
 
 pub use crate::types::_instance_event_window_association_target::InstanceEventWindowAssociationTargetBuilder;
@@ -568,6 +578,8 @@ pub use crate::types::_cancelled_spot_instance_request::CancelledSpotInstanceReq
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_volume::VolumeBuilder;
+
+pub use crate::types::_health_check_path_request_object::HealthCheckPathRequestObjectBuilder;
 
 pub use crate::types::_capacity_reservation_commitment_info::CapacityReservationCommitmentInfoBuilder;
 
@@ -755,6 +767,8 @@ pub use crate::types::_address::AddressBuilder;
 
 pub use crate::types::_id_format::IdFormatBuilder;
 
+pub use crate::types::_application_status_check_association_object::ApplicationStatusCheckAssociationObjectBuilder;
+
 pub use crate::types::_availability_zone::AvailabilityZoneBuilder;
 
 pub use crate::types::_subscription::SubscriptionBuilder;
@@ -932,6 +946,10 @@ pub use crate::types::_vpc_endpoint_connection::VpcEndpointConnectionBuilder;
 pub use crate::types::_allowed_principal::AllowedPrincipalBuilder;
 
 pub use crate::types::_service_detail::ServiceDetailBuilder;
+
+pub use crate::types::_successful_suppression_response_object::SuccessfulSuppressionResponseObjectBuilder;
+
+pub use crate::types::_unsuccessful_suppression_response_object::UnsuccessfulSuppressionResponseObjectBuilder;
 
 pub use crate::types::_disable_fast_snapshot_restore_success_item::DisableFastSnapshotRestoreSuccessItemBuilder;
 
@@ -1195,6 +1213,12 @@ pub use crate::types::_cancel_capacity_reservation_fleet_error::CancelCapacityRe
 
 pub use crate::types::_cancel_spot_fleet_requests_error::CancelSpotFleetRequestsErrorBuilder;
 
+pub use crate::types::_health_check_path_source_request_object::HealthCheckPathSourceRequestObjectBuilder;
+
+pub use crate::types::_health_check_path_response_object::HealthCheckPathResponseObjectBuilder;
+
+pub use crate::types::_custom_tag_key_value_response_pair::CustomTagKeyValueResponsePairBuilder;
+
 pub use crate::types::_capacity_allocation::CapacityAllocationBuilder;
 
 pub use crate::types::_cancellation_terms::CancellationTermsBuilder;
@@ -1301,6 +1325,8 @@ pub use crate::types::_response_error::ResponseErrorBuilder;
 
 pub use crate::types::_delete_queued_reserved_instances_error::DeleteQueuedReservedInstancesErrorBuilder;
 
+pub use crate::types::_instance_application_status::InstanceApplicationStatusBuilder;
+
 pub use crate::types::_capacity_reservation_info::CapacityReservationInfoBuilder;
 
 pub use crate::types::_client_vpn_connection_status::ClientVpnConnectionStatusBuilder;
@@ -1350,6 +1376,8 @@ pub use crate::types::_image_metadata::ImageMetadataBuilder;
 pub use crate::types::_instance_status_summary::InstanceStatusSummaryBuilder;
 
 pub use crate::types::_ebs_status_summary::EbsStatusSummaryBuilder;
+
+pub use crate::types::_application_status_summary::ApplicationStatusSummaryBuilder;
 
 pub use crate::types::_processor_info::ProcessorInfoBuilder;
 
@@ -1541,6 +1569,10 @@ pub use crate::types::_instance_count::InstanceCountBuilder;
 
 pub use crate::types::_price_schedule::PriceScheduleBuilder;
 
+pub use crate::types::_health_check_path_destination_request_object::HealthCheckPathDestinationRequestObjectBuilder;
+
+pub use crate::types::_health_check_path_source_response_object::HealthCheckPathSourceResponseObjectBuilder;
+
 pub use crate::types::_fleet_launch_template_overrides_request::FleetLaunchTemplateOverridesRequestBuilder;
 
 pub use crate::types::_fleet_launch_template_overrides::FleetLaunchTemplateOverridesBuilder;
@@ -1566,6 +1598,8 @@ pub use crate::types::_verified_access_endpoint_port_range::VerifiedAccessEndpoi
 pub use crate::types::_tunnel_option::TunnelOptionBuilder;
 
 pub use crate::types::_account_attribute_value::AccountAttributeValueBuilder;
+
+pub use crate::types::_application_status::ApplicationStatusBuilder;
 
 pub use crate::types::_availability_zone_message::AvailabilityZoneMessageBuilder;
 
@@ -1707,6 +1741,8 @@ pub use crate::types::_analysis_load_balancer_listener::AnalysisLoadBalancerList
 
 pub use crate::types::_analysis_load_balancer_target::AnalysisLoadBalancerTargetBuilder;
 
+pub use crate::types::_health_check_path_destination_response_object::HealthCheckPathDestinationResponseObjectBuilder;
+
 pub use crate::types::_capacity_allocation_metadata_entry::CapacityAllocationMetadataEntryBuilder;
 
 pub use crate::types::_fleet_iam_instance_profile_specification_request::FleetIamInstanceProfileSpecificationRequestBuilder;
@@ -1815,6 +1851,8 @@ pub use crate::types::_ike_versions_list_value::IkeVersionsListValueBuilder;
 
 pub use crate::types::_cloud_watch_log_options::CloudWatchLogOptionsBuilder;
 
+pub use crate::types::_application_status_detail::ApplicationStatusDetailBuilder;
+
 pub use crate::types::_image_usage_resource_type_option::ImageUsageResourceTypeOptionBuilder;
 
 pub use crate::types::_gpu_device_memory_info::GpuDeviceMemoryInfoBuilder;
@@ -1844,6 +1882,8 @@ pub use crate::types::_instance_secondary_interface_private_ip_address::Instance
 pub use crate::types::_fleet_ebs_block_device_request::FleetEbsBlockDeviceRequestBuilder;
 
 pub use crate::types::_ebs_block_device_response::EbsBlockDeviceResponseBuilder;
+
+pub use crate::types::_application_status_reason::ApplicationStatusReasonBuilder;
 
 pub use crate::types::_instance_attachment_ena_srd_udp_specification::InstanceAttachmentEnaSrdUdpSpecificationBuilder;
 

@@ -19,8 +19,12 @@ pub(crate) mod arn;
 
 pub(crate) mod bdd_interpreter;
 
+pub(crate) mod coalesce;
+
 pub(crate) mod diagnostic;
 
 pub(crate) mod host;
+
+pub(crate) mod parse_url;
 
 pub(crate) mod partition;

@@ -23,6 +23,14 @@ impl crate::operation::update_instance::builders::UpdateInstanceInputBuilder {
 /// Fluent builder constructing a request to `UpdateInstance`.
 ///
 /// <p>Update the details for the instance of IAM Identity Center that is owned by the Amazon Web Services account.</p>
+/// <p>In a single <code>UpdateInstance</code> request, you can perform only one of the following operations:</p>
+/// <ul>
+/// <li>
+/// <p>Update the encryption configuration of the instance by specifying <code>EncryptionConfiguration</code>.</p></li>
+/// <li>
+/// <p>Enable permission sets for the instance by specifying <code>PermissionSetsEnabled</code>.</p></li>
+/// </ul>
+/// <p>A request that specifies both <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> returns a <code>ValidationException</code>. To perform both operations, call <code>UpdateInstance</code> separately for each. The two calls can be made in parallel.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInstanceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -149,5 +157,25 @@ impl UpdateInstanceFluentBuilder {
     /// <p>Specifies the encryption configuration for your IAM Identity Center instance. You can use this to configure customer managed KMS keys or Amazon Web Services owned KMS keys for encrypting your instance data.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
+    }
+    /// <p>Enables permission sets for this Identity Center instance. The only accepted value is <code>true </code>. After permission sets are enabled, they cannot be disabled.</p><note>
+    /// <p>You can't set <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> in the same request. To configure both, make two separate <code>UpdateInstance</code> calls. These calls can be made in parallel.</p>
+    /// </note>
+    pub fn permission_sets_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.permission_sets_enabled(input);
+        self
+    }
+    /// <p>Enables permission sets for this Identity Center instance. The only accepted value is <code>true </code>. After permission sets are enabled, they cannot be disabled.</p><note>
+    /// <p>You can't set <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> in the same request. To configure both, make two separate <code>UpdateInstance</code> calls. These calls can be made in parallel.</p>
+    /// </note>
+    pub fn set_permission_sets_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_permission_sets_enabled(input);
+        self
+    }
+    /// <p>Enables permission sets for this Identity Center instance. The only accepted value is <code>true </code>. After permission sets are enabled, they cannot be disabled.</p><note>
+    /// <p>You can't set <code>EncryptionConfiguration</code> and <code>PermissionSetsEnabled</code> in the same request. To configure both, make two separate <code>UpdateInstance</code> calls. These calls can be made in parallel.</p>
+    /// </note>
+    pub fn get_permission_sets_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_permission_sets_enabled()
     }
 }

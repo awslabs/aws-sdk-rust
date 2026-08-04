@@ -65,5 +65,17 @@ pub fn ser_restore_table_to_point_in_time_input_input(
         crate::protocol_serde::shape_sse_specification::ser_sse_specification(&mut object_20, var_19)?;
         object_20.finish();
     }
+    if let Some(var_21) = &input.vector_index_override {
+        let mut array_22 = object.key("VectorIndexOverride").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_vector_index::ser_vector_index(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
+    }
     Ok(())
 }

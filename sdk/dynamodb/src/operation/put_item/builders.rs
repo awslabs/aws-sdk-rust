@@ -129,6 +129,15 @@ impl PutItemFluentBuilder {
     /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
     /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
     /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+    /// <p>If the table has vector indexes, the following validations apply to write operations. A violation of any of these constraints results in a <code>ValidationException</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The vector attribute must be a list of numbers with dimensions matching the index configuration.</p></li>
+    /// <li>
+    /// <p>Vector values must fit in 32-bit IEEE-754 floating point format (f32).</p></li>
+    /// <li>
+    /// <p>Partition key and inline filter attributes defined in the search schema must have data types matching the index schema definition.</p></li>
+    /// </ul>
     /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -139,6 +148,15 @@ impl PutItemFluentBuilder {
     /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
     /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
     /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+    /// <p>If the table has vector indexes, the following validations apply to write operations. A violation of any of these constraints results in a <code>ValidationException</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The vector attribute must be a list of numbers with dimensions matching the index configuration.</p></li>
+    /// <li>
+    /// <p>Vector values must fit in 32-bit IEEE-754 floating point format (f32).</p></li>
+    /// <li>
+    /// <p>Partition key and inline filter attributes defined in the search schema must have data types matching the index schema definition.</p></li>
+    /// </ul>
     /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>
@@ -152,6 +170,15 @@ impl PutItemFluentBuilder {
     /// <p>A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.</p>
     /// <p>You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.</p>
     /// <p>If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.</p>
+    /// <p>If the table has vector indexes, the following validations apply to write operations. A violation of any of these constraints results in a <code>ValidationException</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The vector attribute must be a list of numbers with dimensions matching the index configuration.</p></li>
+    /// <li>
+    /// <p>Vector values must fit in 32-bit IEEE-754 floating point format (f32).</p></li>
+    /// <li>
+    /// <p>Partition key and inline filter attributes defined in the search schema must have data types matching the index schema definition.</p></li>
+    /// </ul>
     /// <p>Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index.</p>
     /// <p>For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     /// <p>Each element in the <code>Item</code> map is an <code>AttributeValue</code> object.</p>

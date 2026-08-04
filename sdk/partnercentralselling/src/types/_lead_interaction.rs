@@ -95,7 +95,6 @@ pub struct LeadInteractionBuilder {
 }
 impl LeadInteractionBuilder {
     /// <p>Specifies the type of source that generated the lead interaction, such as "Event", "Website", "Referral", or "Campaign". This categorization helps track lead generation effectiveness across different channels.</p>
-    /// This field is required.
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
@@ -110,7 +109,6 @@ impl LeadInteractionBuilder {
         &self.source_type
     }
     /// <p>The unique identifier of the specific source that generated the lead interaction. This ID provides traceability back to the original lead generation activity.</p>
-    /// This field is required.
     pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_id = ::std::option::Option::Some(input.into());
         self
@@ -125,7 +123,6 @@ impl LeadInteractionBuilder {
         &self.source_id
     }
     /// <p>The descriptive name of the source that generated the lead interaction, providing a human-readable identifier for the lead generation channel or activity.</p>
-    /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self
@@ -168,7 +165,6 @@ impl LeadInteractionBuilder {
         &self.interaction_date
     }
     /// <p>Describes the action taken by the customer during or as a result of the interaction, such as requesting information, scheduling a meeting, or expressing interest in a solution.</p>
-    /// This field is required.
     pub fn customer_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_action = ::std::option::Option::Some(input.into());
         self
@@ -212,42 +208,17 @@ impl LeadInteractionBuilder {
         &self.contact
     }
     /// Consumes the builder and constructs a [`LeadInteraction`](crate::types::LeadInteraction).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_type`](crate::types::builders::LeadInteractionBuilder::source_type)
-    /// - [`source_id`](crate::types::builders::LeadInteractionBuilder::source_id)
-    /// - [`source_name`](crate::types::builders::LeadInteractionBuilder::source_name)
-    /// - [`customer_action`](crate::types::builders::LeadInteractionBuilder::customer_action)
-    pub fn build(self) -> ::std::result::Result<crate::types::LeadInteraction, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::LeadInteraction {
-            source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_type",
-                    "source_type was not specified but it is required when building LeadInteraction",
-                )
-            })?,
-            source_id: self.source_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_id",
-                    "source_id was not specified but it is required when building LeadInteraction",
-                )
-            })?,
-            source_name: self.source_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_name",
-                    "source_name was not specified but it is required when building LeadInteraction",
-                )
-            })?,
+    pub fn build(self) -> crate::types::LeadInteraction {
+        crate::types::LeadInteraction {
+            source_type: self.source_type.unwrap_or_default(),
+            source_id: self.source_id.unwrap_or_default(),
+            source_name: self.source_name.unwrap_or_default(),
             usecase: self.usecase,
             interaction_date: self.interaction_date,
-            customer_action: self.customer_action.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "customer_action",
-                    "customer_action was not specified but it is required when building LeadInteraction",
-                )
-            })?,
+            customer_action: self.customer_action.unwrap_or_default(),
             business_problem: self.business_problem,
             contact: self.contact,
-        })
+        }
     }
 }
 impl ::std::fmt::Debug for LeadInteractionBuilder {

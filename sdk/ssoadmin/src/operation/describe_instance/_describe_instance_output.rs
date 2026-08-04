@@ -19,6 +19,8 @@ pub struct DescribeInstanceOutput {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
     pub encryption_configuration_details: ::std::option::Option<crate::types::EncryptionConfigurationDetails>,
+    /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
+    pub permission_sets_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceOutput {
@@ -54,6 +56,10 @@ impl DescribeInstanceOutput {
     pub fn encryption_configuration_details(&self) -> ::std::option::Option<&crate::types::EncryptionConfigurationDetails> {
         self.encryption_configuration_details.as_ref()
     }
+    /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
+    pub fn permission_sets_enabled(&self) -> ::std::option::Option<bool> {
+        self.permission_sets_enabled
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeInstanceOutput {
     fn request_id(&self) -> Option<&str> {
@@ -79,6 +85,7 @@ pub struct DescribeInstanceOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::InstanceStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration_details: ::std::option::Option<crate::types::EncryptionConfigurationDetails>,
+    pub(crate) permission_sets_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
 impl DescribeInstanceOutputBuilder {
@@ -194,6 +201,20 @@ impl DescribeInstanceOutputBuilder {
     pub fn get_encryption_configuration_details(&self) -> &::std::option::Option<crate::types::EncryptionConfigurationDetails> {
         &self.encryption_configuration_details
     }
+    /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
+    pub fn permission_sets_enabled(mut self, input: bool) -> Self {
+        self.permission_sets_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
+    pub fn set_permission_sets_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.permission_sets_enabled = input;
+        self
+    }
+    /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
+    pub fn get_permission_sets_enabled(&self) -> &::std::option::Option<bool> {
+        &self.permission_sets_enabled
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -214,6 +235,7 @@ impl DescribeInstanceOutputBuilder {
             status: self.status,
             status_reason: self.status_reason,
             encryption_configuration_details: self.encryption_configuration_details,
+            permission_sets_enabled: self.permission_sets_enabled,
             _request_id: self._request_id,
         }
     }

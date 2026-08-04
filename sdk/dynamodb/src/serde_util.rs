@@ -260,6 +260,52 @@ pub(crate) fn replica_global_secondary_index_settings_description_correct_errors
     builder
 }
 
+pub(crate) fn vector_attribute_definition_correct_errors(
+    mut builder: crate::types::builders::VectorAttributeDefinitionBuilder,
+) -> crate::types::builders::VectorAttributeDefinitionBuilder {
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn vector_index_correct_errors(mut builder: crate::types::builders::VectorIndexBuilder) -> crate::types::builders::VectorIndexBuilder {
+    if builder.index_name.is_none() {
+        builder.index_name = Some(Default::default())
+    }
+    if builder.vector_attribute.is_none() {
+        builder.vector_attribute = {
+            let builder = crate::types::builders::VectorAttributeDefinitionBuilder::default();
+            crate::serde_util::vector_attribute_definition_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.projection.is_none() {
+        builder.projection = {
+            let builder = crate::types::builders::ProjectionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.dimensions.is_none() {
+        builder.dimensions = Some(Default::default())
+    }
+    if builder.distance_function.is_none() {
+        builder.distance_function = "no value was set".parse::<crate::types::VectorDistanceFunction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn search_schema_element_correct_errors(
+    mut builder: crate::types::builders::SearchSchemaElementBuilder,
+) -> crate::types::builders::SearchSchemaElementBuilder {
+    if builder.attribute_name.is_none() {
+        builder.attribute_name = Some(Default::default())
+    }
+    if builder.search_schema_element_type.is_none() {
+        builder.search_schema_element_type = "no value was set".parse::<crate::types::SearchSchemaElementType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn auto_scaling_target_tracking_scaling_policy_configuration_description_correct_errors(
     mut builder: crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionBuilder,
 ) -> crate::types::builders::AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionBuilder {

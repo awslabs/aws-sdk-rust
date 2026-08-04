@@ -16,7 +16,7 @@ pub struct CreateFlowLogsInput {
     /// <p>This parameter is valid only if the destination type is <code>cloud-watch-logs</code>.</p>
     pub log_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
-    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
+    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for the other resource types.</p>
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of resource to monitor.</p>
     pub resource_type: ::std::option::Option<crate::types::FlowLogsResourceType>,
@@ -78,7 +78,7 @@ impl CreateFlowLogsInput {
         self.log_group_name.as_deref()
     }
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
-    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
+    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for the other resource types.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_ids.is_none()`.
     pub fn resource_ids(&self) -> &[::std::string::String] {
@@ -251,7 +251,7 @@ impl CreateFlowLogsInputBuilder {
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
-    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
+    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for the other resource types.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
         v.push(input.into());
@@ -259,13 +259,13 @@ impl CreateFlowLogsInputBuilder {
         self
     }
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
-    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
+    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for the other resource types.</p>
     pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_ids = input;
         self
     }
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
-    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
+    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for the other resource types.</p>
     pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_ids
     }

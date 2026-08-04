@@ -540,6 +540,38 @@ impl From<crate::operation::associate_address::AssociateAddressError> for Error 
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_application_status_check::AssociateApplicationStatusCheckError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_application_status_check::AssociateApplicationStatusCheckError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_application_status_check::AssociateApplicationStatusCheckError> for Error {
+    fn from(err: crate::operation::associate_application_status_check::AssociateApplicationStatusCheckError) -> Self {
+        match err {
+            crate::operation::associate_application_status_check::AssociateApplicationStatusCheckError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_capacity_reservation_billing_owner::AssociateCapacityReservationBillingOwnerError,
             R,
         >,
@@ -1682,6 +1714,34 @@ impl From<crate::operation::copy_volumes::CopyVolumesError> for Error {
     fn from(err: crate::operation::copy_volumes::CopyVolumesError) -> Self {
         match err {
             crate::operation::copy_volumes::CopyVolumesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_application_status_check::CreateApplicationStatusCheckError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_application_status_check::CreateApplicationStatusCheckError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_application_status_check::CreateApplicationStatusCheckError> for Error {
+    fn from(err: crate::operation::create_application_status_check::CreateApplicationStatusCheckError) -> Self {
+        match err {
+            crate::operation::create_application_status_check::CreateApplicationStatusCheckError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4465,6 +4525,34 @@ impl From<crate::operation::create_vpn_gateway::CreateVpnGatewayError> for Error
     fn from(err: crate::operation::create_vpn_gateway::CreateVpnGatewayError) -> Self {
         match err {
             crate::operation::create_vpn_gateway::CreateVpnGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_application_status_check::DeleteApplicationStatusCheckError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_application_status_check::DeleteApplicationStatusCheckError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_application_status_check::DeleteApplicationStatusCheckError> for Error {
+    fn from(err: crate::operation::delete_application_status_check::DeleteApplicationStatusCheckError) -> Self {
+        match err {
+            crate::operation::delete_application_status_check::DeleteApplicationStatusCheckError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7305,6 +7393,96 @@ impl From<crate::operation::describe_aggregate_id_format::DescribeAggregateIdFor
     fn from(err: crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatError) -> Self {
         match err {
             crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_application_status::DescribeApplicationStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_application_status::DescribeApplicationStatusError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_application_status::DescribeApplicationStatusError> for Error {
+    fn from(err: crate::operation::describe_application_status::DescribeApplicationStatusError) -> Self {
+        match err {
+            crate::operation::describe_application_status::DescribeApplicationStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_application_status_check_associations::DescribeApplicationStatusCheckAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_application_status_check_associations::DescribeApplicationStatusCheckAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_application_status_check_associations::DescribeApplicationStatusCheckAssociationsError> for Error {
+    fn from(err: crate::operation::describe_application_status_check_associations::DescribeApplicationStatusCheckAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_application_status_check_associations::DescribeApplicationStatusCheckAssociationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_application_status_checks::DescribeApplicationStatusChecksError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_application_status_checks::DescribeApplicationStatusChecksError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_application_status_checks::DescribeApplicationStatusChecksError> for Error {
+    fn from(err: crate::operation::describe_application_status_checks::DescribeApplicationStatusChecksError) -> Self {
+        match err {
+            crate::operation::describe_application_status_checks::DescribeApplicationStatusChecksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -12525,6 +12703,40 @@ impl From<crate::operation::disable_allowed_images_settings::DisableAllowedImage
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_application_status_check_suppression::DisableApplicationStatusCheckSuppressionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disable_application_status_check_suppression::DisableApplicationStatusCheckSuppressionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disable_application_status_check_suppression::DisableApplicationStatusCheckSuppressionError> for Error {
+    fn from(err: crate::operation::disable_application_status_check_suppression::DisableApplicationStatusCheckSuppressionError) -> Self {
+        match err {
+            crate::operation::disable_application_status_check_suppression::DisableApplicationStatusCheckSuppressionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_aws_network_performance_metric_subscription::DisableAwsNetworkPerformanceMetricSubscriptionError,
             R,
         >,
@@ -13084,6 +13296,40 @@ impl From<crate::operation::disassociate_address::DisassociateAddressError> for 
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_application_status_check::DisassociateApplicationStatusCheckError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_application_status_check::DisassociateApplicationStatusCheckError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_application_status_check::DisassociateApplicationStatusCheckError> for Error {
+    fn from(err: crate::operation::disassociate_application_status_check::DisassociateApplicationStatusCheckError) -> Self {
+        match err {
+            crate::operation::disassociate_application_status_check::DisassociateApplicationStatusCheckError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_capacity_reservation_billing_owner::DisassociateCapacityReservationBillingOwnerError,
             R,
         >,
@@ -13634,6 +13880,40 @@ impl From<crate::operation::enable_allowed_images_settings::EnableAllowedImagesS
     fn from(err: crate::operation::enable_allowed_images_settings::EnableAllowedImagesSettingsError) -> Self {
         match err {
             crate::operation::enable_allowed_images_settings::EnableAllowedImagesSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_application_status_check_suppression::EnableApplicationStatusCheckSuppressionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_application_status_check_suppression::EnableApplicationStatusCheckSuppressionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_application_status_check_suppression::EnableApplicationStatusCheckSuppressionError> for Error {
+    fn from(err: crate::operation::enable_application_status_check_suppression::EnableApplicationStatusCheckSuppressionError) -> Self {
+        match err {
+            crate::operation::enable_application_status_check_suppression::EnableApplicationStatusCheckSuppressionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -16672,6 +16952,34 @@ impl From<crate::operation::modify_address_attribute::ModifyAddressAttributeErro
     fn from(err: crate::operation::modify_address_attribute::ModifyAddressAttributeError) -> Self {
         match err {
             crate::operation::modify_address_attribute::ModifyAddressAttributeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_application_status_check::ModifyApplicationStatusCheckError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_application_status_check::ModifyApplicationStatusCheckError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_application_status_check::ModifyApplicationStatusCheckError> for Error {
+    fn from(err: crate::operation::modify_application_status_check::ModifyApplicationStatusCheckError) -> Self {
+        match err {
+            crate::operation::modify_application_status_check::ModifyApplicationStatusCheckError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

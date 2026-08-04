@@ -24,7 +24,7 @@ where
                         "Industry" => {
                             builder = builder.set_industry(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::Industry::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
@@ -45,7 +45,7 @@ where
                         "CountryCode" => {
                             builder = builder.set_country_code(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::CountryCode::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
@@ -59,7 +59,7 @@ where
                         "MarketSegment" => {
                             builder = builder.set_market_segment(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::MarketSegment::from(u.as_ref())))
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

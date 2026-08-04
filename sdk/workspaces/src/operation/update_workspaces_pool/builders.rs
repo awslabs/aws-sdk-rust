@@ -22,6 +22,9 @@ impl crate::operation::update_workspaces_pool::builders::UpdateWorkspacesPoolInp
 }
 /// Fluent builder constructing a request to `UpdateWorkspacesPool`.
 ///
+/// <note>
+/// <p>End of support notice: On December 31, 2027, Amazon Web Services will end support for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon WorkSpaces Pools end of support</a>.</p>
+/// </note>
 /// <p>Updates the specified pool.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateWorkspacesPoolFluentBuilder {

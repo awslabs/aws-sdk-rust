@@ -18,7 +18,7 @@ pub struct ImportSummary {
     pub input_format: ::std::option::Option<crate::types::InputFormat>,
     /// <p>The time at which this import task began.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
+    /// <p>The time at which this import task ended.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ImportSummary {
@@ -50,7 +50,7 @@ impl ImportSummary {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
+    /// <p>The time at which this import task ended.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -174,17 +174,17 @@ impl ImportSummaryBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
+    /// <p>The time at which this import task ended.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
+    /// <p>The time at which this import task ended.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The time at which this import task ended. (Does this include the successful complete creation of the table it was imported to?)</p>
+    /// <p>The time at which this import task ended.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

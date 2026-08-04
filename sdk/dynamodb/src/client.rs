@@ -309,6 +309,8 @@ mod restore_table_to_point_in_time;
 
 mod scan;
 
+mod search_vectors;
+
 mod tag_resource;
 
 mod transact_get_items;

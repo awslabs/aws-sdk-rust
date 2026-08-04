@@ -3,34 +3,34 @@ pub fn ser_prospecting_result_aws(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ProspectingResultAws,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.start_time {
+    if let Some(var_1) = &input.customer {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("Customer").start_object();
+        crate::protocol_serde::shape_prospecting_result_customer::ser_prospecting_result_customer(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.insights {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("Insights").start_object();
+        crate::protocol_serde::shape_prospecting_insights::ser_prospecting_insights(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.start_time {
         object
             .key("StartTime")
-            .date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_2) = &input.end_time {
-        object.key("EndTime").date_time(var_2, ::aws_smithy_types::date_time::Format::DateTime)?;
+    if let Some(var_6) = &input.end_time {
+        object.key("EndTime").date_time(var_6, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_3) = &input.task_id {
-        object.key("TaskId").string(var_3.as_str());
+    if let Some(var_7) = &input.task_id {
+        object.key("TaskId").string(var_7.as_str());
     }
-    if let Some(var_4) = &input.task_arn {
-        object.key("TaskArn").string(var_4.as_str());
+    if let Some(var_8) = &input.task_arn {
+        object.key("TaskArn").string(var_8.as_str());
     }
-    if let Some(var_5) = &input.task_name {
-        object.key("TaskName").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.customer {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("Customer").start_object();
-        crate::protocol_serde::shape_prospecting_result_customer::ser_prospecting_result_customer(&mut object_7, var_6)?;
-        object_7.finish();
-    }
-    if let Some(var_8) = &input.insights {
-        #[allow(unused_mut)]
-        let mut object_9 = object.key("Insights").start_object();
-        crate::protocol_serde::shape_prospecting_insights::ser_prospecting_insights(&mut object_9, var_8)?;
-        object_9.finish();
+    if let Some(var_9) = &input.task_name {
+        object.key("TaskName").string(var_9.as_str());
     }
     Ok(())
 }
@@ -57,6 +57,20 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Customer" => {
+                            builder = builder.set_customer(crate::protocol_serde::shape_prospecting_result_customer::de_prospecting_result_customer(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "Insights" => {
+                            builder = builder.set_insights(crate::protocol_serde::shape_prospecting_insights::de_prospecting_insights(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "StartTime" => {
                             builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -89,20 +103,6 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
-                        }
-                        "Customer" => {
-                            builder = builder.set_customer(crate::protocol_serde::shape_prospecting_result_customer::de_prospecting_result_customer(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "Insights" => {
-                            builder = builder.set_insights(crate::protocol_serde::shape_prospecting_insights::de_prospecting_insights(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

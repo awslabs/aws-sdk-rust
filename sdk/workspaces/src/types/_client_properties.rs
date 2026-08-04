@@ -8,6 +8,8 @@ pub struct ClientProperties {
     pub reconnect_enabled: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
     pub log_upload_enabled: ::std::option::Option<crate::types::LogUploadEnum>,
+    /// <p>The client experience policy that determines which client experience the user sees. Administrators can set this policy to control the client experience for users in a directory. Valid values include <code>FORCE_CLASSIC</code>, <code>FORCE_UI_2026</code>, and <code>USER_CHOICE</code>.</p>
+    pub client_experience_policy: ::std::option::Option<::std::string::String>,
 }
 impl ClientProperties {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
@@ -17,6 +19,10 @@ impl ClientProperties {
     /// <p>Specifies whether users can upload diagnostic log files of Amazon WorkSpaces client directly to WorkSpaces to troubleshoot issues when using the WorkSpaces client. When enabled, the log files will be sent to WorkSpaces automatically and will be applied to all users in the specified directory.</p>
     pub fn log_upload_enabled(&self) -> ::std::option::Option<&crate::types::LogUploadEnum> {
         self.log_upload_enabled.as_ref()
+    }
+    /// <p>The client experience policy that determines which client experience the user sees. Administrators can set this policy to control the client experience for users in a directory. Valid values include <code>FORCE_CLASSIC</code>, <code>FORCE_UI_2026</code>, and <code>USER_CHOICE</code>.</p>
+    pub fn client_experience_policy(&self) -> ::std::option::Option<&str> {
+        self.client_experience_policy.as_deref()
     }
 }
 impl ClientProperties {
@@ -32,6 +38,7 @@ impl ClientProperties {
 pub struct ClientPropertiesBuilder {
     pub(crate) reconnect_enabled: ::std::option::Option<crate::types::ReconnectEnum>,
     pub(crate) log_upload_enabled: ::std::option::Option<crate::types::LogUploadEnum>,
+    pub(crate) client_experience_policy: ::std::option::Option<::std::string::String>,
 }
 impl ClientPropertiesBuilder {
     /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials.</p>
@@ -62,11 +69,26 @@ impl ClientPropertiesBuilder {
     pub fn get_log_upload_enabled(&self) -> &::std::option::Option<crate::types::LogUploadEnum> {
         &self.log_upload_enabled
     }
+    /// <p>The client experience policy that determines which client experience the user sees. Administrators can set this policy to control the client experience for users in a directory. Valid values include <code>FORCE_CLASSIC</code>, <code>FORCE_UI_2026</code>, and <code>USER_CHOICE</code>.</p>
+    pub fn client_experience_policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_experience_policy = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The client experience policy that determines which client experience the user sees. Administrators can set this policy to control the client experience for users in a directory. Valid values include <code>FORCE_CLASSIC</code>, <code>FORCE_UI_2026</code>, and <code>USER_CHOICE</code>.</p>
+    pub fn set_client_experience_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_experience_policy = input;
+        self
+    }
+    /// <p>The client experience policy that determines which client experience the user sees. Administrators can set this policy to control the client experience for users in a directory. Valid values include <code>FORCE_CLASSIC</code>, <code>FORCE_UI_2026</code>, and <code>USER_CHOICE</code>.</p>
+    pub fn get_client_experience_policy(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_experience_policy
+    }
     /// Consumes the builder and constructs a [`ClientProperties`](crate::types::ClientProperties).
     pub fn build(self) -> crate::types::ClientProperties {
         crate::types::ClientProperties {
             reconnect_enabled: self.reconnect_enabled,
             log_upload_enabled: self.log_upload_enabled,
+            client_experience_policy: self.client_experience_policy,
         }
     }
 }

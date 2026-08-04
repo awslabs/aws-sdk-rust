@@ -134,6 +134,22 @@ pub struct CreateTableInput {
     pub global_table_source_arn: ::std::option::Option<::std::string::String>,
     /// <p>Controls the settings synchronization mode for the global table. For multi-account global tables, this parameter is required and the only supported value is ENABLED. For same-account global tables, this parameter is set to ENABLED_WITH_OVERRIDES.</p>
     pub global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    /// <p>One or more vector indexes to be created on the table. Each vector index enables similarity search on a vector attribute. Each element in the list consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the vector index. Must be unique within the table.</p></li>
+    /// <li>
+    /// <p><code>VectorAttribute</code> - The attribute that contains vector embeddings. If multiple vector indexes reference the same attribute, they must all use the same number of dimensions.</p></li>
+    /// <li>
+    /// <p><code>Dimensions</code> - The number of dimensions in each vector.</p></li>
+    /// <li>
+    /// <p><code>DistanceFunction</code> - The distance function used to calculate similarity. Valid values: <code>COSINE</code>, <code>EUCLIDEAN</code>, <code>DOT_PRODUCT</code>.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the vector index. The total number of projected non-key attributes is shared across the vector attribute (counts as 1) and <code>INLINE_FILTER</code> search schema elements (each counts as 1). <code>HASH</code> search schema elements do not count toward this limit.</p></li>
+    /// <li>
+    /// <p><code>SearchSchema</code> - (Optional) Defines the partition key (<code>HASH</code>) and inline filter (<code>INLINE_FILTER</code>) attributes for the vector index.</p></li>
+    /// </ul>
+    pub vector_indexes: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>,
 }
 impl CreateTableInput {
     /// <p>An array of attributes that describe the key schema for the table and indexes.</p>
@@ -310,6 +326,26 @@ impl CreateTableInput {
     pub fn global_table_settings_replication_mode(&self) -> ::std::option::Option<&crate::types::GlobalTableSettingsReplicationMode> {
         self.global_table_settings_replication_mode.as_ref()
     }
+    /// <p>One or more vector indexes to be created on the table. Each vector index enables similarity search on a vector attribute. Each element in the list consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the vector index. Must be unique within the table.</p></li>
+    /// <li>
+    /// <p><code>VectorAttribute</code> - The attribute that contains vector embeddings. If multiple vector indexes reference the same attribute, they must all use the same number of dimensions.</p></li>
+    /// <li>
+    /// <p><code>Dimensions</code> - The number of dimensions in each vector.</p></li>
+    /// <li>
+    /// <p><code>DistanceFunction</code> - The distance function used to calculate similarity. Valid values: <code>COSINE</code>, <code>EUCLIDEAN</code>, <code>DOT_PRODUCT</code>.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the vector index. The total number of projected non-key attributes is shared across the vector attribute (counts as 1) and <code>INLINE_FILTER</code> search schema elements (each counts as 1). <code>HASH</code> search schema elements do not count toward this limit.</p></li>
+    /// <li>
+    /// <p><code>SearchSchema</code> - (Optional) Defines the partition key (<code>HASH</code>) and inline filter (<code>INLINE_FILTER</code>) attributes for the vector index.</p></li>
+    /// </ul>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vector_indexes.is_none()`.
+    pub fn vector_indexes(&self) -> &[crate::types::VectorIndex] {
+        self.vector_indexes.as_deref().unwrap_or_default()
+    }
 }
 impl CreateTableInput {
     /// Creates a new builder-style object to manufacture [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
@@ -339,6 +375,7 @@ pub struct CreateTableInputBuilder {
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) global_table_source_arn: ::std::option::Option<::std::string::String>,
     pub(crate) global_table_settings_replication_mode: ::std::option::Option<crate::types::GlobalTableSettingsReplicationMode>,
+    pub(crate) vector_indexes: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>,
 }
 impl CreateTableInputBuilder {
     /// Appends an item to `attribute_definitions`.
@@ -901,6 +938,68 @@ impl CreateTableInputBuilder {
     pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
         &self.global_table_settings_replication_mode
     }
+    /// Appends an item to `vector_indexes`.
+    ///
+    /// To override the contents of this collection use [`set_vector_indexes`](Self::set_vector_indexes).
+    ///
+    /// <p>One or more vector indexes to be created on the table. Each vector index enables similarity search on a vector attribute. Each element in the list consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the vector index. Must be unique within the table.</p></li>
+    /// <li>
+    /// <p><code>VectorAttribute</code> - The attribute that contains vector embeddings. If multiple vector indexes reference the same attribute, they must all use the same number of dimensions.</p></li>
+    /// <li>
+    /// <p><code>Dimensions</code> - The number of dimensions in each vector.</p></li>
+    /// <li>
+    /// <p><code>DistanceFunction</code> - The distance function used to calculate similarity. Valid values: <code>COSINE</code>, <code>EUCLIDEAN</code>, <code>DOT_PRODUCT</code>.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the vector index. The total number of projected non-key attributes is shared across the vector attribute (counts as 1) and <code>INLINE_FILTER</code> search schema elements (each counts as 1). <code>HASH</code> search schema elements do not count toward this limit.</p></li>
+    /// <li>
+    /// <p><code>SearchSchema</code> - (Optional) Defines the partition key (<code>HASH</code>) and inline filter (<code>INLINE_FILTER</code>) attributes for the vector index.</p></li>
+    /// </ul>
+    pub fn vector_indexes(mut self, input: crate::types::VectorIndex) -> Self {
+        let mut v = self.vector_indexes.unwrap_or_default();
+        v.push(input);
+        self.vector_indexes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>One or more vector indexes to be created on the table. Each vector index enables similarity search on a vector attribute. Each element in the list consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the vector index. Must be unique within the table.</p></li>
+    /// <li>
+    /// <p><code>VectorAttribute</code> - The attribute that contains vector embeddings. If multiple vector indexes reference the same attribute, they must all use the same number of dimensions.</p></li>
+    /// <li>
+    /// <p><code>Dimensions</code> - The number of dimensions in each vector.</p></li>
+    /// <li>
+    /// <p><code>DistanceFunction</code> - The distance function used to calculate similarity. Valid values: <code>COSINE</code>, <code>EUCLIDEAN</code>, <code>DOT_PRODUCT</code>.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the vector index. The total number of projected non-key attributes is shared across the vector attribute (counts as 1) and <code>INLINE_FILTER</code> search schema elements (each counts as 1). <code>HASH</code> search schema elements do not count toward this limit.</p></li>
+    /// <li>
+    /// <p><code>SearchSchema</code> - (Optional) Defines the partition key (<code>HASH</code>) and inline filter (<code>INLINE_FILTER</code>) attributes for the vector index.</p></li>
+    /// </ul>
+    pub fn set_vector_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>) -> Self {
+        self.vector_indexes = input;
+        self
+    }
+    /// <p>One or more vector indexes to be created on the table. Each vector index enables similarity search on a vector attribute. Each element in the list consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the vector index. Must be unique within the table.</p></li>
+    /// <li>
+    /// <p><code>VectorAttribute</code> - The attribute that contains vector embeddings. If multiple vector indexes reference the same attribute, they must all use the same number of dimensions.</p></li>
+    /// <li>
+    /// <p><code>Dimensions</code> - The number of dimensions in each vector.</p></li>
+    /// <li>
+    /// <p><code>DistanceFunction</code> - The distance function used to calculate similarity. Valid values: <code>COSINE</code>, <code>EUCLIDEAN</code>, <code>DOT_PRODUCT</code>.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the vector index. The total number of projected non-key attributes is shared across the vector attribute (counts as 1) and <code>INLINE_FILTER</code> search schema elements (each counts as 1). <code>HASH</code> search schema elements do not count toward this limit.</p></li>
+    /// <li>
+    /// <p><code>SearchSchema</code> - (Optional) Defines the partition key (<code>HASH</code>) and inline filter (<code>INLINE_FILTER</code>) attributes for the vector index.</p></li>
+    /// </ul>
+    pub fn get_vector_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>> {
+        &self.vector_indexes
+    }
     /// Consumes the builder and constructs a [`CreateTableInput`](crate::operation::create_table::CreateTableInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_table::CreateTableInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_table::CreateTableInput {
@@ -921,6 +1020,7 @@ impl CreateTableInputBuilder {
             on_demand_throughput: self.on_demand_throughput,
             global_table_source_arn: self.global_table_source_arn,
             global_table_settings_replication_mode: self.global_table_settings_replication_mode,
+            vector_indexes: self.vector_indexes,
         })
     }
 }

@@ -133,6 +133,9 @@ pub mod restore_table_to_point_in_time;
 /// Types for the `Scan` operation.
 pub mod scan;
 
+/// Types for the `SearchVectors` operation.
+pub mod search_vectors;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

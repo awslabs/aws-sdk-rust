@@ -193,19 +193,19 @@ impl CreateFlowLogsFluentBuilder {
     /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
     ///
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
-    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
+    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for the other resource types.</p>
     pub fn resource_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_ids(input.into());
         self
     }
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
-    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
+    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for the other resource types.</p>
     pub fn set_resource_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_ids(input);
         self
     }
     /// <p>The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the IDs of the VPCs.</p>
-    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.</p>
+    /// <p>Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for the other resource types.</p>
     pub fn get_resource_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_ids()
     }

@@ -169,21 +169,21 @@ impl DescribeCapacityReservationTopologyFluentBuilder {
     ///
     /// <p>The Capacity Reservation IDs.</p>
     /// <p>Default: Describes all your Capacity Reservations.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.</p>
+    /// <p>Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.</p>
     pub fn capacity_reservation_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.capacity_reservation_ids(input.into());
         self
     }
     /// <p>The Capacity Reservation IDs.</p>
     /// <p>Default: Describes all your Capacity Reservations.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.</p>
+    /// <p>Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.</p>
     pub fn set_capacity_reservation_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_capacity_reservation_ids(input);
         self
     }
     /// <p>The Capacity Reservation IDs.</p>
     /// <p>Default: Describes all your Capacity Reservations.</p>
-    /// <p>Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.</p>
+    /// <p>Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.</p>
     pub fn get_capacity_reservation_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_capacity_reservation_ids()
     }

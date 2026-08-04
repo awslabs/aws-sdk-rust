@@ -229,16 +229,19 @@ impl RestoreTableToPointInTimeFluentBuilder {
     /// To override the contents of this collection use [`set_global_secondary_index_override`](Self::set_global_secondary_index_override).
     ///
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    /// <p>The <code>WarmThroughput</code> setting is not supported on global secondary indexes when you use <code>RestoreTableToPointInTime</code>. Although <code>WarmThroughput</code> appears in the shared index definition, including it in a <code>GlobalSecondaryIndexOverride</code> entry causes the request to fail with a validation error.</p>
     pub fn global_secondary_index_override(mut self, input: crate::types::GlobalSecondaryIndex) -> Self {
         self.inner = self.inner.global_secondary_index_override(input);
         self
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    /// <p>The <code>WarmThroughput</code> setting is not supported on global secondary indexes when you use <code>RestoreTableToPointInTime</code>. Although <code>WarmThroughput</code> appears in the shared index definition, including it in a <code>GlobalSecondaryIndexOverride</code> entry causes the request to fail with a validation error.</p>
     pub fn set_global_secondary_index_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>) -> Self {
         self.inner = self.inner.set_global_secondary_index_override(input);
         self
     }
     /// <p>List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.</p>
+    /// <p>The <code>WarmThroughput</code> setting is not supported on global secondary indexes when you use <code>RestoreTableToPointInTime</code>. Although <code>WarmThroughput</code> appears in the shared index definition, including it in a <code>GlobalSecondaryIndexOverride</code> entry causes the request to fail with a validation error.</p>
     pub fn get_global_secondary_index_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
         self.inner.get_global_secondary_index_override()
     }
@@ -302,5 +305,24 @@ impl RestoreTableToPointInTimeFluentBuilder {
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub fn get_sse_specification_override(&self) -> &::std::option::Option<crate::types::SseSpecification> {
         self.inner.get_sse_specification_override()
+    }
+    ///
+    /// Appends an item to `VectorIndexOverride`.
+    ///
+    /// To override the contents of this collection use [`set_vector_index_override`](Self::set_vector_index_override).
+    ///
+    /// <p>The vector indexes for the restored table. If not specified, all vector indexes from the source table are restored. The indexes provided must match existing vector indexes from the source table. You can choose to exclude some or all of the vector indexes at the time of restore.</p>
+    pub fn vector_index_override(mut self, input: crate::types::VectorIndex) -> Self {
+        self.inner = self.inner.vector_index_override(input);
+        self
+    }
+    /// <p>The vector indexes for the restored table. If not specified, all vector indexes from the source table are restored. The indexes provided must match existing vector indexes from the source table. You can choose to exclude some or all of the vector indexes at the time of restore.</p>
+    pub fn set_vector_index_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>) -> Self {
+        self.inner = self.inner.set_vector_index_override(input);
+        self
+    }
+    /// <p>The vector indexes for the restored table. If not specified, all vector indexes from the source table are restored. The indexes provided must match existing vector indexes from the source table. You can choose to exclude some or all of the vector indexes at the time of restore.</p>
+    pub fn get_vector_index_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>> {
+        self.inner.get_vector_index_override()
     }
 }

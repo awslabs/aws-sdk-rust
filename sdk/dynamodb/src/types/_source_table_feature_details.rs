@@ -14,6 +14,8 @@ pub struct SourceTableFeatureDetails {
     pub time_to_live_description: ::std::option::Option<crate::types::TimeToLiveDescription>,
     /// <p>The description of the server-side encryption status on the table when the backup was created.</p>
     pub sse_description: ::std::option::Option<crate::types::SseDescription>,
+    /// <p>The vector index properties for the table at the time the backup was created, including the index name, vector attribute, dimensions, distance function, search schema, and projection.</p>
+    pub vector_indexes: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexInfo>>,
 }
 impl SourceTableFeatureDetails {
     /// <p>Represents the LSI properties for the table when the backup was created. It includes the IndexName, KeySchema and Projection for the LSIs on the table at the time of backup.</p>
@@ -40,6 +42,12 @@ impl SourceTableFeatureDetails {
     pub fn sse_description(&self) -> ::std::option::Option<&crate::types::SseDescription> {
         self.sse_description.as_ref()
     }
+    /// <p>The vector index properties for the table at the time the backup was created, including the index name, vector attribute, dimensions, distance function, search schema, and projection.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vector_indexes.is_none()`.
+    pub fn vector_indexes(&self) -> &[crate::types::VectorIndexInfo] {
+        self.vector_indexes.as_deref().unwrap_or_default()
+    }
 }
 impl SourceTableFeatureDetails {
     /// Creates a new builder-style object to manufacture [`SourceTableFeatureDetails`](crate::types::SourceTableFeatureDetails).
@@ -57,6 +65,7 @@ pub struct SourceTableFeatureDetailsBuilder {
     pub(crate) stream_description: ::std::option::Option<crate::types::StreamSpecification>,
     pub(crate) time_to_live_description: ::std::option::Option<crate::types::TimeToLiveDescription>,
     pub(crate) sse_description: ::std::option::Option<crate::types::SseDescription>,
+    pub(crate) vector_indexes: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexInfo>>,
 }
 impl SourceTableFeatureDetailsBuilder {
     /// Appends an item to `local_secondary_indexes`.
@@ -141,6 +150,26 @@ impl SourceTableFeatureDetailsBuilder {
     pub fn get_sse_description(&self) -> &::std::option::Option<crate::types::SseDescription> {
         &self.sse_description
     }
+    /// Appends an item to `vector_indexes`.
+    ///
+    /// To override the contents of this collection use [`set_vector_indexes`](Self::set_vector_indexes).
+    ///
+    /// <p>The vector index properties for the table at the time the backup was created, including the index name, vector attribute, dimensions, distance function, search schema, and projection.</p>
+    pub fn vector_indexes(mut self, input: crate::types::VectorIndexInfo) -> Self {
+        let mut v = self.vector_indexes.unwrap_or_default();
+        v.push(input);
+        self.vector_indexes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The vector index properties for the table at the time the backup was created, including the index name, vector attribute, dimensions, distance function, search schema, and projection.</p>
+    pub fn set_vector_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexInfo>>) -> Self {
+        self.vector_indexes = input;
+        self
+    }
+    /// <p>The vector index properties for the table at the time the backup was created, including the index name, vector attribute, dimensions, distance function, search schema, and projection.</p>
+    pub fn get_vector_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VectorIndexInfo>> {
+        &self.vector_indexes
+    }
     /// Consumes the builder and constructs a [`SourceTableFeatureDetails`](crate::types::SourceTableFeatureDetails).
     pub fn build(self) -> crate::types::SourceTableFeatureDetails {
         crate::types::SourceTableFeatureDetails {
@@ -149,6 +178,7 @@ impl SourceTableFeatureDetailsBuilder {
             stream_description: self.stream_description,
             time_to_live_description: self.time_to_live_description,
             sse_description: self.sse_description,
+            vector_indexes: self.vector_indexes,
         }
     }
 }

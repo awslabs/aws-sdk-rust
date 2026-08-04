@@ -123,6 +123,16 @@ pub fn de_instance_status(
                 builder = builder.set_attached_ebs_status(var_10);
             }
             ,
+            s if s.matches("applicationStatus") /* ApplicationStatus com.amazonaws.ec2#InstanceStatus$ApplicationStatus */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_application_status_summary::de_application_status_summary(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_application_status(var_11);
+            }
+            ,
             _ => {}
         }
     }

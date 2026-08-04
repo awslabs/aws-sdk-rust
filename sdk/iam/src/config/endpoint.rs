@@ -188,7 +188,7 @@ mod test {
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://iam-fips.api.amazonwebservices.com.cn")
                 .auth_scheme(
-                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 1).put("signingRegion", "cn-northwest-1".to_string())
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 1).put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -211,7 +211,7 @@ mod test {
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://iam-fips.amazonaws.com.cn")
                 .auth_scheme(
-                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 1).put("signingRegion", "cn-northwest-1".to_string())
+                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4", 1).put("signingRegion", "cn-north-1".to_string())
                 )
                 .build()
         );
@@ -699,7 +699,7 @@ impl DefaultResolver {
                         }
                         4 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
-                                .url("https://iam.global.api.aws".to_string())
+                                .url("https://iam.amazonaws.com".to_string())
                                 .auth_scheme(
                                     ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
                                         .put("signingRegion", "us-east-1"),
@@ -708,7 +708,7 @@ impl DefaultResolver {
                         ),
                         5 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
-                                .url("https://iam-fips.global.api.aws".to_string())
+                                .url("https://iam-fips.amazonaws.com".to_string())
                                 .auth_scheme(
                                     ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
                                         .put("signingRegion", "us-east-1"),
@@ -717,6 +717,24 @@ impl DefaultResolver {
                         ),
                         6 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam.global.api.aws".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-east-1"),
+                                )
+                                .build(),
+                        ),
+                        7 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.global.api.aws".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-east-1"),
+                                )
+                                .build(),
+                        ),
+                        8 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.global.api.amazonwebservices.com.cn".to_string())
                                 .auth_scheme(
                                     ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
@@ -724,7 +742,16 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        7 => ::std::result::Result::Ok(
+                        9 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.api.amazonwebservices.com.cn".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "cn-north-1"),
+                                )
+                                .build(),
+                        ),
+                        10 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.cn-north-1.amazonaws.com.cn".to_string())
                                 .auth_scheme(
@@ -733,7 +760,16 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        8 => ::std::result::Result::Ok(
+                        11 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.amazonaws.com.cn".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "cn-north-1"),
+                                )
+                                .build(),
+                        ),
+                        12 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.us-gov.api.aws".to_string())
                                 .auth_scheme(
@@ -742,7 +778,7 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        9 => ::std::result::Result::Ok(
+                        13 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.us-gov.amazonaws.com".to_string())
                                 .auth_scheme(
@@ -751,7 +787,7 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        10 => ::std::result::Result::Ok(
+                        14 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.us-iso-east-1.c2s.ic.gov".to_string())
                                 .auth_scheme(
@@ -760,7 +796,7 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        11 => ::std::result::Result::Ok(
+                        15 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam-fips.us-iso-east-1.c2s.ic.gov".to_string())
                                 .auth_scheme(
@@ -769,7 +805,25 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        12 => ::std::result::Result::Ok(
+                        16 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam.api.aws.ic.gov".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-iso-east-1"),
+                                )
+                                .build(),
+                        ),
+                        17 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.api.aws.ic.gov".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-iso-east-1"),
+                                )
+                                .build(),
+                        ),
+                        18 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.us-isob-east-1.sc2s.sgov.gov".to_string())
                                 .auth_scheme(
@@ -778,7 +832,7 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        13 => ::std::result::Result::Ok(
+                        19 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam-fips.us-isob-east-1.sc2s.sgov.gov".to_string())
                                 .auth_scheme(
@@ -787,7 +841,25 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        14 => ::std::result::Result::Ok(
+                        20 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam.api.aws.scloud".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-isob-east-1"),
+                                )
+                                .build(),
+                        ),
+                        21 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.api.aws.scloud".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-isob-east-1"),
+                                )
+                                .build(),
+                        ),
+                        22 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.eu-isoe-west-1.cloud.adc-e.uk".to_string())
                                 .auth_scheme(
@@ -796,7 +868,34 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        15 => ::std::result::Result::Ok(
+                        23 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.cloud.adc-e.uk".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "eu-isoe-west-1"),
+                                )
+                                .build(),
+                        ),
+                        24 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam.api.cloud-aws.adc-e.uk".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "eu-isoe-west-1"),
+                                )
+                                .build(),
+                        ),
+                        25 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.api.cloud-aws.adc-e.uk".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "eu-isoe-west-1"),
+                                )
+                                .build(),
+                        ),
+                        26 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.us-isof-south-1.csp.hci.ic.gov".to_string())
                                 .auth_scheme(
@@ -805,7 +904,34 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        16 => ::std::result::Result::Ok(
+                        27 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.csp.hci.ic.gov".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-isof-south-1"),
+                                )
+                                .build(),
+                        ),
+                        28 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam.api.aws.hci.ic.gov".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-isof-south-1"),
+                                )
+                                .build(),
+                        ),
+                        29 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.api.aws.hci.ic.gov".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "us-isof-south-1"),
+                                )
+                                .build(),
+                        ),
+                        30 => ::std::result::Result::Ok(
                             ::aws_smithy_types::endpoint::Endpoint::builder()
                                 .url("https://iam.eusc-de-east-1.amazonaws.eu".to_string())
                                 .auth_scheme(
@@ -814,13 +940,43 @@ impl DefaultResolver {
                                 )
                                 .build(),
                         ),
-                        17 => {
+                        31 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.amazonaws.eu".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "eusc-de-east-1"),
+                                )
+                                .build(),
+                        ),
+                        32 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam.global.api.amazonwebservices.eu".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "eusc-de-east-1"),
+                                )
+                                .build(),
+                        ),
+                        33 => ::std::result::Result::Ok(
+                            ::aws_smithy_types::endpoint::Endpoint::builder()
+                                .url("https://iam-fips.api.amazonwebservices.eu".to_string())
+                                .auth_scheme(
+                                    ::aws_smithy_types::endpoint::EndpointAuthScheme::with_capacity("sigv4".to_string(), 1)
+                                        .put("signingRegion", "eusc-de-east-1"),
+                                )
+                                .build(),
+                        ),
+                        34 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://iam-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.implicit_global_region());
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -832,16 +988,19 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        18 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        35 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "FIPS and DualStack are enabled, but this partition does not support one or both".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        19 => {
+                        36 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://iam-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.implicit_global_region());
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -853,16 +1012,19 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        20 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        37 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "FIPS is enabled but this partition does not support FIPS".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        21 => {
+                        38 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://iam.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.implicit_global_region());
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dual_stack_dns_suffix());
                                         out
@@ -874,16 +1036,19 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        22 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        39 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "DualStack is enabled but this partition does not support DualStack".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        23 => {
+                        40 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://iam.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.implicit_global_region());
+                                        out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&partition_result.dns_suffix());
                                         out
@@ -895,7 +1060,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        24 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        41 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid Configuration: Missing Region".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
                         _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -925,9 +1090,7 @@ impl DefaultResolver {
                                 partition_result.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        3 => (use_fips) == (&true),
-                        4 => (use_dual_stack) == (&true),
-                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        3 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -936,7 +1099,7 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws")
                         })(&mut _diagnostic_collector),
-                        6 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        4 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -945,7 +1108,7 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws-cn")
                         })(&mut _diagnostic_collector),
-                        7 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        5 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -954,16 +1117,7 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws-us-gov")
                         })(&mut _diagnostic_collector),
-                        8 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_result = &context.partition_result;
-                            let partition_resolver = &self.partition_resolver;
-                            (if let Some(inner) = partition_result {
-                                inner.supports_dual_stack()
-                            } else {
-                                return false;
-                            }) == (true)
-                        })(&mut _diagnostic_collector),
-                        9 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        6 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -972,7 +1126,9 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws-iso")
                         })(&mut _diagnostic_collector),
-                        10 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        7 => (use_fips) == (&true),
+                        8 => (use_dual_stack) == (&true),
+                        9 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -981,16 +1137,7 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws-iso-b")
                         })(&mut _diagnostic_collector),
-                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_result = &context.partition_result;
-                            let partition_resolver = &self.partition_resolver;
-                            (if let Some(inner) = partition_result {
-                                inner.supports_fips()
-                            } else {
-                                return false;
-                            }) == (true)
-                        })(&mut _diagnostic_collector),
-                        12 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        10 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -999,7 +1146,7 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws-iso-e")
                         })(&mut _diagnostic_collector),
-                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        11 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -1008,7 +1155,7 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws-iso-f")
                         })(&mut _diagnostic_collector),
-                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        12 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -1016,6 +1163,24 @@ impl DefaultResolver {
                             } else {
                                 return false;
                             }) == ("aws-eusc")
+                        })(&mut _diagnostic_collector),
+                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_dual_stack()
+                            } else {
+                                return false;
+                            }) == (true)
+                        })(&mut _diagnostic_collector),
+                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.supports_fips()
+                            } else {
+                                return false;
+                            }) == (true)
                         })(&mut _diagnostic_collector),
                         _ => unreachable!("Invalid condition index"),
                     };
@@ -1043,7 +1208,7 @@ impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
         ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
 }
-const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 28] = [
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 43] = [
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: -1,
         high_ref: 1,
@@ -1051,136 +1216,211 @@ const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 28] = [
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 0,
-        high_ref: 27,
+        high_ref: 42,
         low_ref: 3,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 1,
         high_ref: 4,
-        low_ref: 100000024,
+        low_ref: 100000041,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 2,
         high_ref: 5,
-        low_ref: 100000024,
+        low_ref: 100000041,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 3,
-        high_ref: 18,
+        high_ref: 39,
         low_ref: 6,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 4,
-        high_ref: 14,
+        high_ref: 36,
         low_ref: 7,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 6,
-        high_ref: 100000007,
+        condition_index: 5,
+        high_ref: 35,
         low_ref: 8,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 7,
-        high_ref: 100000009,
+        condition_index: 6,
+        high_ref: 32,
         low_ref: 9,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 9,
-        high_ref: 100000010,
+        condition_index: 7,
+        high_ref: 20,
         low_ref: 10,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 10,
-        high_ref: 100000012,
+        condition_index: 8,
+        high_ref: 15,
         low_ref: 11,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 12,
-        high_ref: 100000014,
+        condition_index: 9,
+        high_ref: 100000018,
         low_ref: 12,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 13,
-        high_ref: 100000015,
+        condition_index: 10,
+        high_ref: 100000022,
         low_ref: 13,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 14,
-        high_ref: 100000016,
-        low_ref: 100000023,
+        condition_index: 11,
+        high_ref: 100000026,
+        low_ref: 14,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 5,
-        high_ref: 100000004,
-        low_ref: 15,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 6,
-        high_ref: 100000006,
-        low_ref: 16,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 7,
-        high_ref: 100000008,
-        low_ref: 17,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 8,
-        high_ref: 100000021,
-        low_ref: 100000022,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 4,
-        high_ref: 23,
-        low_ref: 19,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 7,
-        high_ref: 100000009,
-        low_ref: 20,
+        condition_index: 12,
+        high_ref: 100000030,
+        low_ref: 100000040,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 9,
-        high_ref: 100000011,
-        low_ref: 21,
+        high_ref: 100000020,
+        low_ref: 16,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 10,
-        high_ref: 100000013,
-        low_ref: 22,
+        high_ref: 100000024,
+        low_ref: 17,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 11,
-        high_ref: 100000019,
-        low_ref: 100000020,
+        high_ref: 100000028,
+        low_ref: 18,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 5,
-        high_ref: 100000005,
-        low_ref: 24,
+        condition_index: 12,
+        high_ref: 100000032,
+        low_ref: 19,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 7,
-        high_ref: 100000008,
-        low_ref: 25,
+        condition_index: 13,
+        high_ref: 100000038,
+        low_ref: 100000039,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 8,
         high_ref: 26,
-        low_ref: 100000018,
+        low_ref: 21,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 100000019,
+        low_ref: 22,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 100000023,
+        low_ref: 23,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 11,
-        high_ref: 100000017,
-        low_ref: 100000018,
+        high_ref: 100000027,
+        low_ref: 24,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 3,
-        high_ref: 100000001,
+        condition_index: 12,
+        high_ref: 100000031,
+        low_ref: 25,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 100000036,
+        low_ref: 100000037,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 100000021,
+        low_ref: 27,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 100000025,
         low_ref: 28,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 4,
+        condition_index: 11,
+        high_ref: 100000029,
+        low_ref: 29,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 100000033,
+        low_ref: 30,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 31,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 14,
+        high_ref: 100000034,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 34,
+        low_ref: 33,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000016,
+        low_ref: 100000014,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000017,
+        low_ref: 100000015,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000012,
+        low_ref: 100000013,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 38,
+        low_ref: 37,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000008,
+        low_ref: 100000010,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000009,
+        low_ref: 100000011,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 41,
+        low_ref: 40,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000006,
+        low_ref: 100000004,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 100000007,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 100000001,
+        low_ref: 43,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
         high_ref: 100000002,
         low_ref: 100000003,
     },

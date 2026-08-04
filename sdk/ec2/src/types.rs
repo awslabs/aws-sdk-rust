@@ -77,6 +77,16 @@ pub use crate::types::_apply_cancellation_charges::ApplyCancellationCharges;
 
 pub use crate::types::_volume_type::VolumeType;
 
+pub use crate::types::_aggregation_status_enum::AggregationStatusEnum;
+
+pub use crate::types::_network_protocol_enum::NetworkProtocolEnum;
+
+pub use crate::types::_ip_version_enum::IpVersionEnum;
+
+pub use crate::types::_ip_scope_enum::IpScopeEnum;
+
+pub use crate::types::_application_status_check_response_object::ApplicationStatusCheckResponseObject;
+
 pub use crate::types::_schedule::Schedule;
 
 pub use crate::types::_output_format::OutputFormat;
@@ -462,6 +472,8 @@ pub use crate::types::_transit_gateway_multicast_deregistered_group_sources::Tra
 pub use crate::types::_account_vpc_encryption_control::AccountVpcEncryptionControl;
 
 pub use crate::types::_address_attribute_name::AddressAttributeName;
+
+pub use crate::types::_application_statuses_response_type::ApplicationStatusesResponseType;
 
 pub use crate::types::_caller_role::CallerRole;
 
@@ -851,6 +863,12 @@ pub use crate::types::_ipv4_prefix_specification::Ipv4PrefixSpecification;
 
 pub use crate::types::_nat_gateway_address::NatGatewayAddress;
 
+pub use crate::types::_custom_tag_key_value_request_pair::CustomTagKeyValueRequestPair;
+
+pub use crate::types::_successful_association_response_object::SuccessfulAssociationResponseObject;
+
+pub use crate::types::_unsuccessful_association_response_object::UnsuccessfulAssociationResponseObject;
+
 pub use crate::types::_association_status_code::AssociationStatusCode;
 
 pub use crate::types::_iam_instance_profile::IamInstanceProfile;
@@ -922,6 +940,8 @@ pub use crate::types::_cancelled_spot_instance_request::CancelledSpotInstanceReq
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_volume::Volume;
+
+pub use crate::types::_health_check_path_request_object::HealthCheckPathRequestObject;
 
 pub use crate::types::_capacity_reservation_type::CapacityReservationType;
 
@@ -1295,6 +1315,8 @@ pub use crate::types::_address::Address;
 
 pub use crate::types::_id_format::IdFormat;
 
+pub use crate::types::_application_status_check_association_object::ApplicationStatusCheckAssociationObject;
+
 pub use crate::types::_availability_zone::AvailabilityZone;
 
 pub use crate::types::_subscription::Subscription;
@@ -1476,6 +1498,10 @@ pub use crate::types::_vpc_endpoint_connection::VpcEndpointConnection;
 pub use crate::types::_allowed_principal::AllowedPrincipal;
 
 pub use crate::types::_service_detail::ServiceDetail;
+
+pub use crate::types::_successful_suppression_response_object::SuccessfulSuppressionResponseObject;
+
+pub use crate::types::_unsuccessful_suppression_response_object::UnsuccessfulSuppressionResponseObject;
 
 pub use crate::types::_disable_fast_snapshot_restore_success_item::DisableFastSnapshotRestoreSuccessItem;
 
@@ -1815,6 +1841,12 @@ pub use crate::types::_cancel_spot_fleet_requests_error::CancelSpotFleetRequests
 
 pub use crate::types::_cancel_spot_instance_request_state::CancelSpotInstanceRequestState;
 
+pub use crate::types::_health_check_path_source_request_object::HealthCheckPathSourceRequestObject;
+
+pub use crate::types::_health_check_path_response_object::HealthCheckPathResponseObject;
+
+pub use crate::types::_custom_tag_key_value_response_pair::CustomTagKeyValueResponsePair;
+
 pub use crate::types::_capacity_allocation::CapacityAllocation;
 
 pub use crate::types::_cancellation_terms::CancellationTerms;
@@ -1969,6 +2001,10 @@ pub use crate::types::_vpc_encryption_control_exclusion_state::VpcEncryptionCont
 
 pub use crate::types::_service_managed::ServiceManaged;
 
+pub use crate::types::_instance_application_status::InstanceApplicationStatus;
+
+pub use crate::types::_association_type_enum::AssociationTypeEnum;
+
 pub use crate::types::_availability_zone_opt_in_status::AvailabilityZoneOptInStatus;
 
 pub use crate::types::_availability_zone_state::AvailabilityZoneState;
@@ -2072,6 +2108,8 @@ pub use crate::types::_ha_status::HaStatus;
 pub use crate::types::_instance_status_summary::InstanceStatusSummary;
 
 pub use crate::types::_ebs_status_summary::EbsStatusSummary;
+
+pub use crate::types::_application_status_summary::ApplicationStatusSummary;
 
 pub use crate::types::_instance_type_hypervisor::InstanceTypeHypervisor;
 
@@ -2339,6 +2377,10 @@ pub use crate::types::_price_schedule::PriceSchedule;
 
 pub use crate::types::_cancel_batch_error_code::CancelBatchErrorCode;
 
+pub use crate::types::_health_check_path_destination_request_object::HealthCheckPathDestinationRequestObject;
+
+pub use crate::types::_health_check_path_source_response_object::HealthCheckPathSourceResponseObject;
+
 pub use crate::types::_allocation_type::AllocationType;
 
 pub use crate::types::_fleet_replacement_strategy::FleetReplacementStrategy;
@@ -2396,6 +2438,8 @@ pub use crate::types::_launch_template_error_code::LaunchTemplateErrorCode;
 pub use crate::types::_delete_queued_reserved_instances_error_code::DeleteQueuedReservedInstancesErrorCode;
 
 pub use crate::types::_account_attribute_value::AccountAttributeValue;
+
+pub use crate::types::_application_status::ApplicationStatus;
 
 pub use crate::types::_availability_zone_message::AvailabilityZoneMessage;
 
@@ -2589,6 +2633,8 @@ pub use crate::types::_analysis_load_balancer_target::AnalysisLoadBalancerTarget
 
 pub use crate::types::_listing_state::ListingState;
 
+pub use crate::types::_health_check_path_destination_response_object::HealthCheckPathDestinationResponseObject;
+
 pub use crate::types::_capacity_allocation_metadata_entry::CapacityAllocationMetadataEntry;
 
 pub use crate::types::_fleet_iam_instance_profile_specification_request::FleetIamInstanceProfileSpecificationRequest;
@@ -2612,6 +2658,8 @@ pub use crate::types::_through_resources_statement::ThroughResourcesStatement;
 pub use crate::types::_bgp_status::BgpStatus;
 
 pub use crate::types::_vpn_tunnel_log_options::VpnTunnelLogOptions;
+
+pub use crate::types::_application_status_enum::ApplicationStatusEnum;
 
 pub use crate::types::_associated_network_type::AssociatedNetworkType;
 
@@ -2723,6 +2771,8 @@ pub use crate::types::_ike_versions_list_value::IkeVersionsListValue;
 
 pub use crate::types::_cloud_watch_log_options::CloudWatchLogOptions;
 
+pub use crate::types::_application_status_detail::ApplicationStatusDetail;
+
 pub use crate::types::_image_usage_resource_type_option::ImageUsageResourceTypeOption;
 
 pub use crate::types::_status_name::StatusName;
@@ -2760,6 +2810,10 @@ pub use crate::types::_instance_secondary_interface_private_ip_address::Instance
 pub use crate::types::_fleet_ebs_block_device_request::FleetEbsBlockDeviceRequest;
 
 pub use crate::types::_ebs_block_device_response::EbsBlockDeviceResponse;
+
+pub use crate::types::_application_status_check_enum::ApplicationStatusCheckEnum;
+
+pub use crate::types::_application_status_reason::ApplicationStatusReason;
 
 pub use crate::types::_instance_attachment_ena_srd_udp_specification::InstanceAttachmentEnaSrdUdpSpecification;
 
@@ -2833,6 +2887,8 @@ mod _address_transfer_status;
 
 mod _affinity;
 
+mod _aggregation_status_enum;
+
 mod _allocation_state;
 
 mod _allocation_strategy;
@@ -2871,6 +2927,24 @@ mod _analysis_status;
 
 mod _appliance_mode_support_value;
 
+mod _application_status;
+
+mod _application_status_check_association_object;
+
+mod _application_status_check_enum;
+
+mod _application_status_check_response_object;
+
+mod _application_status_detail;
+
+mod _application_status_enum;
+
+mod _application_status_reason;
+
+mod _application_status_summary;
+
+mod _application_statuses_response_type;
+
 mod _apply_cancellation_charges;
 
 mod _architecture_type;
@@ -2896,6 +2970,8 @@ mod _associated_target_network;
 mod _association_status;
 
 mod _association_status_code;
+
+mod _association_type_enum;
 
 mod _athena_integration;
 
@@ -3256,6 +3332,10 @@ mod _credit_specification;
 mod _credit_specification_request;
 
 mod _currency_code_values;
+
+mod _custom_tag_key_value_request_pair;
+
+mod _custom_tag_key_value_response_pair;
 
 mod _customer_gateway;
 
@@ -3621,6 +3701,18 @@ mod _group_identifier;
 
 mod _ha_status;
 
+mod _health_check_path_destination_request_object;
+
+mod _health_check_path_destination_response_object;
+
+mod _health_check_path_request_object;
+
+mod _health_check_path_response_object;
+
+mod _health_check_path_source_request_object;
+
+mod _health_check_path_source_response_object;
+
 mod _hibernation_options;
 
 mod _hibernation_options_request;
@@ -3754,6 +3846,8 @@ mod _initialization_status_details;
 mod _initialization_type;
 
 mod _instance;
+
+mod _instance_application_status;
 
 mod _instance_attachment_ena_srd_specification;
 
@@ -3943,7 +4037,11 @@ mod _ip_permission;
 
 mod _ip_range;
 
+mod _ip_scope_enum;
+
 mod _ip_source;
+
+mod _ip_version_enum;
 
 mod _ipam;
 
@@ -4458,6 +4556,8 @@ mod _network_interface_private_ip_address;
 mod _network_interface_status;
 
 mod _network_interface_type;
+
+mod _network_protocol_enum;
 
 mod _neuron_device_core_info;
 
@@ -5055,9 +5155,13 @@ mod _subnet_state;
 
 mod _subscription;
 
+mod _successful_association_response_object;
+
 mod _successful_instance_credit_specification_item;
 
 mod _successful_queued_purchase_deletion;
+
+mod _successful_suppression_response_object;
 
 mod _summary_status;
 
@@ -5297,6 +5401,8 @@ mod _tunnel_option;
 
 mod _unlimited_supported_instance_family;
 
+mod _unsuccessful_association_response_object;
+
 mod _unsuccessful_instance_credit_specification_error_code;
 
 mod _unsuccessful_instance_credit_specification_item;
@@ -5306,6 +5412,8 @@ mod _unsuccessful_instance_credit_specification_item_error;
 mod _unsuccessful_item;
 
 mod _unsuccessful_item_error;
+
+mod _unsuccessful_suppression_response_object;
 
 mod _usage_class_type;
 

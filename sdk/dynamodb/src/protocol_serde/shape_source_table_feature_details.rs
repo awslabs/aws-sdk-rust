@@ -50,6 +50,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "VectorIndexes" => {
+                            builder = builder.set_vector_indexes(crate::protocol_serde::shape_vector_indexes::de_vector_indexes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

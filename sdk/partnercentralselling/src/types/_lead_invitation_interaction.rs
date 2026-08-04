@@ -71,7 +71,6 @@ pub struct LeadInvitationInteractionBuilder {
 }
 impl LeadInvitationInteractionBuilder {
     /// <p>Specifies the type of source that generated the lead interaction, such as "Event", "Website", or "Campaign". This helps partners understand the lead generation channel and assess lead quality based on the source type.</p>
-    /// This field is required.
     pub fn source_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_type = ::std::option::Option::Some(input.into());
         self
@@ -86,7 +85,6 @@ impl LeadInvitationInteractionBuilder {
         &self.source_type
     }
     /// <p>The unique identifier of the specific source that generated the lead interaction. This provides traceability to the original lead generation activity for reference and follow-up purposes.</p>
-    /// This field is required.
     pub fn source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_id = ::std::option::Option::Some(input.into());
         self
@@ -101,7 +99,6 @@ impl LeadInvitationInteractionBuilder {
         &self.source_id
     }
     /// <p>The descriptive name of the source that generated the lead interaction. This human-readable identifier helps partners understand the specific lead generation channel or campaign that created the opportunity.</p>
-    /// This field is required.
     pub fn source_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_name = ::std::option::Option::Some(input.into());
         self
@@ -146,30 +143,12 @@ impl LeadInvitationInteractionBuilder {
     }
     /// Consumes the builder and constructs a [`LeadInvitationInteraction`](crate::types::LeadInvitationInteraction).
     /// This method will fail if any of the following fields are not set:
-    /// - [`source_type`](crate::types::builders::LeadInvitationInteractionBuilder::source_type)
-    /// - [`source_id`](crate::types::builders::LeadInvitationInteractionBuilder::source_id)
-    /// - [`source_name`](crate::types::builders::LeadInvitationInteractionBuilder::source_name)
     /// - [`contact_business_title`](crate::types::builders::LeadInvitationInteractionBuilder::contact_business_title)
     pub fn build(self) -> ::std::result::Result<crate::types::LeadInvitationInteraction, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LeadInvitationInteraction {
-            source_type: self.source_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_type",
-                    "source_type was not specified but it is required when building LeadInvitationInteraction",
-                )
-            })?,
-            source_id: self.source_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_id",
-                    "source_id was not specified but it is required when building LeadInvitationInteraction",
-                )
-            })?,
-            source_name: self.source_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "source_name",
-                    "source_name was not specified but it is required when building LeadInvitationInteraction",
-                )
-            })?,
+            source_type: self.source_type.unwrap_or_default(),
+            source_id: self.source_id.unwrap_or_default(),
+            source_name: self.source_name.unwrap_or_default(),
             usecase: self.usecase,
             contact_business_title: self.contact_business_title.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

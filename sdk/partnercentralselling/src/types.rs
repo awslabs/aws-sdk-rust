@@ -33,6 +33,8 @@ pub use crate::types::_receiver::Receiver;
 
 pub use crate::types::_payload::Payload;
 
+pub use crate::types::_enrichment_context::EnrichmentContext;
+
 pub use crate::types::_opportunity_sort::OpportunitySort;
 
 pub use crate::types::_last_modified_date::LastModifiedDate;
@@ -133,6 +135,10 @@ pub use crate::types::_lead_invitation_payload::LeadInvitationPayload;
 
 pub use crate::types::_engagement_member_summary::EngagementMemberSummary;
 
+pub use crate::types::_invitation_prospecting_result_aws::InvitationProspectingResultAws;
+
+pub use crate::types::_lead_insights::LeadInsights;
+
 pub use crate::types::_opportunity_sort_name::OpportunitySortName;
 
 pub use crate::types::_stage::Stage;
@@ -205,8 +211,6 @@ pub use crate::types::_engagement_customer::EngagementCustomer;
 
 pub use crate::types::_engagement_customer_project_details::EngagementCustomerProjectDetails;
 
-pub use crate::types::_lead_insights::LeadInsights;
-
 pub use crate::types::_lead_customer::LeadCustomer;
 
 pub use crate::types::_prospecting_result_aws::ProspectingResultAws;
@@ -220,6 +224,10 @@ pub use crate::types::_project_details::ProjectDetails;
 pub use crate::types::_lead_invitation_customer::LeadInvitationCustomer;
 
 pub use crate::types::_lead_invitation_interaction::LeadInvitationInteraction;
+
+pub use crate::types::_prospecting_result_customer::ProspectingResultCustomer;
+
+pub use crate::types::_prospecting_insights::ProspectingInsights;
 
 pub use crate::types::_life_cycle_summary::LifeCycleSummary;
 
@@ -259,13 +267,7 @@ pub use crate::types::_project_view::ProjectView;
 
 pub use crate::types::_country_code::CountryCode;
 
-pub use crate::types::_address_summary::AddressSummary;
-
-pub use crate::types::_market_segment::MarketSegment;
-
-pub use crate::types::_prospecting_result_customer::ProspectingResultCustomer;
-
-pub use crate::types::_prospecting_insights::ProspectingInsights;
+pub use crate::types::_lead_address::LeadAddress;
 
 pub use crate::types::_lead_contact::LeadContact;
 
@@ -276,6 +278,8 @@ pub use crate::types::_receiver_responsibility::ReceiverResponsibility;
 pub use crate::types::_account_summary::AccountSummary;
 
 pub use crate::types::_payment_frequency::PaymentFrequency;
+
+pub use crate::types::_address_summary::AddressSummary;
 
 pub use crate::types::_aws_product_details::AwsProductDetails;
 
@@ -381,6 +385,8 @@ mod _engagement_sort_name;
 
 mod _engagement_summary;
 
+mod _enrichment_context;
+
 mod _expected_contract_duration;
 
 mod _expected_contract_duration_term;
@@ -391,11 +397,15 @@ mod _industry;
 
 mod _invitation;
 
+mod _invitation_prospecting_result_aws;
+
 mod _invitation_status;
 
 mod _involvement_type_change_reason;
 
 mod _last_modified_date;
+
+mod _lead_address;
 
 mod _lead_contact;
 
@@ -428,8 +438,6 @@ mod _list_opportunity_from_engagement_task_summary;
 mod _list_tasks_sort_base;
 
 mod _list_tasks_sort_name;
-
-mod _market_segment;
 
 mod _marketing;
 

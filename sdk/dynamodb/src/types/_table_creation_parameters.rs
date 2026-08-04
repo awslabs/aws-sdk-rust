@@ -21,6 +21,8 @@ pub struct TableCreationParameters {
     pub sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     /// <p>The Global Secondary Indexes (GSI) of the table to be created as part of the import operation.</p>
     pub global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
+    /// <p>The vector indexes of the table to be created as part of the import operation.</p>
+    pub vector_indexes: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>,
 }
 impl TableCreationParameters {
     /// <p>The name of the table created as part of the import operation.</p>
@@ -61,6 +63,12 @@ impl TableCreationParameters {
     pub fn global_secondary_indexes(&self) -> &[crate::types::GlobalSecondaryIndex] {
         self.global_secondary_indexes.as_deref().unwrap_or_default()
     }
+    /// <p>The vector indexes of the table to be created as part of the import operation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vector_indexes.is_none()`.
+    pub fn vector_indexes(&self) -> &[crate::types::VectorIndex] {
+        self.vector_indexes.as_deref().unwrap_or_default()
+    }
 }
 impl TableCreationParameters {
     /// Creates a new builder-style object to manufacture [`TableCreationParameters`](crate::types::TableCreationParameters).
@@ -81,6 +89,7 @@ pub struct TableCreationParametersBuilder {
     pub(crate) on_demand_throughput: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) sse_specification: ::std::option::Option<crate::types::SseSpecification>,
     pub(crate) global_secondary_indexes: ::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>>,
+    pub(crate) vector_indexes: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>,
 }
 impl TableCreationParametersBuilder {
     /// <p>The name of the table created as part of the import operation.</p>
@@ -217,6 +226,26 @@ impl TableCreationParametersBuilder {
     pub fn get_global_secondary_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GlobalSecondaryIndex>> {
         &self.global_secondary_indexes
     }
+    /// Appends an item to `vector_indexes`.
+    ///
+    /// To override the contents of this collection use [`set_vector_indexes`](Self::set_vector_indexes).
+    ///
+    /// <p>The vector indexes of the table to be created as part of the import operation.</p>
+    pub fn vector_indexes(mut self, input: crate::types::VectorIndex) -> Self {
+        let mut v = self.vector_indexes.unwrap_or_default();
+        v.push(input);
+        self.vector_indexes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The vector indexes of the table to be created as part of the import operation.</p>
+    pub fn set_vector_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>) -> Self {
+        self.vector_indexes = input;
+        self
+    }
+    /// <p>The vector indexes of the table to be created as part of the import operation.</p>
+    pub fn get_vector_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>> {
+        &self.vector_indexes
+    }
     /// Consumes the builder and constructs a [`TableCreationParameters`](crate::types::TableCreationParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`table_name`](crate::types::builders::TableCreationParametersBuilder::table_name)
@@ -247,6 +276,7 @@ impl TableCreationParametersBuilder {
             on_demand_throughput: self.on_demand_throughput,
             sse_specification: self.sse_specification,
             global_secondary_indexes: self.global_secondary_indexes,
+            vector_indexes: self.vector_indexes,
         })
     }
 }

@@ -114,5 +114,17 @@ pub fn ser_create_table_input_input(
     if let Some(var_37) = &input.global_table_settings_replication_mode {
         object.key("GlobalTableSettingsReplicationMode").string(var_37.as_str());
     }
+    if let Some(var_38) = &input.vector_indexes {
+        let mut array_39 = object.key("VectorIndexes").start_array();
+        for item_40 in var_38 {
+            {
+                #[allow(unused_mut)]
+                let mut object_41 = array_39.value().start_object();
+                crate::protocol_serde::shape_vector_index::ser_vector_index(&mut object_41, item_40)?;
+                object_41.finish();
+            }
+        }
+        array_39.finish();
+    }
     Ok(())
 }

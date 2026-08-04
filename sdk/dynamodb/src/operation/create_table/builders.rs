@@ -665,4 +665,65 @@ impl CreateTableFluentBuilder {
     pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
         self.inner.get_global_table_settings_replication_mode()
     }
+    ///
+    /// Appends an item to `VectorIndexes`.
+    ///
+    /// To override the contents of this collection use [`set_vector_indexes`](Self::set_vector_indexes).
+    ///
+    /// <p>One or more vector indexes to be created on the table. Each vector index enables similarity search on a vector attribute. Each element in the list consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the vector index. Must be unique within the table.</p></li>
+    /// <li>
+    /// <p><code>VectorAttribute</code> - The attribute that contains vector embeddings. If multiple vector indexes reference the same attribute, they must all use the same number of dimensions.</p></li>
+    /// <li>
+    /// <p><code>Dimensions</code> - The number of dimensions in each vector.</p></li>
+    /// <li>
+    /// <p><code>DistanceFunction</code> - The distance function used to calculate similarity. Valid values: <code>COSINE</code>, <code>EUCLIDEAN</code>, <code>DOT_PRODUCT</code>.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the vector index. The total number of projected non-key attributes is shared across the vector attribute (counts as 1) and <code>INLINE_FILTER</code> search schema elements (each counts as 1). <code>HASH</code> search schema elements do not count toward this limit.</p></li>
+    /// <li>
+    /// <p><code>SearchSchema</code> - (Optional) Defines the partition key (<code>HASH</code>) and inline filter (<code>INLINE_FILTER</code>) attributes for the vector index.</p></li>
+    /// </ul>
+    pub fn vector_indexes(mut self, input: crate::types::VectorIndex) -> Self {
+        self.inner = self.inner.vector_indexes(input);
+        self
+    }
+    /// <p>One or more vector indexes to be created on the table. Each vector index enables similarity search on a vector attribute. Each element in the list consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the vector index. Must be unique within the table.</p></li>
+    /// <li>
+    /// <p><code>VectorAttribute</code> - The attribute that contains vector embeddings. If multiple vector indexes reference the same attribute, they must all use the same number of dimensions.</p></li>
+    /// <li>
+    /// <p><code>Dimensions</code> - The number of dimensions in each vector.</p></li>
+    /// <li>
+    /// <p><code>DistanceFunction</code> - The distance function used to calculate similarity. Valid values: <code>COSINE</code>, <code>EUCLIDEAN</code>, <code>DOT_PRODUCT</code>.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the vector index. The total number of projected non-key attributes is shared across the vector attribute (counts as 1) and <code>INLINE_FILTER</code> search schema elements (each counts as 1). <code>HASH</code> search schema elements do not count toward this limit.</p></li>
+    /// <li>
+    /// <p><code>SearchSchema</code> - (Optional) Defines the partition key (<code>HASH</code>) and inline filter (<code>INLINE_FILTER</code>) attributes for the vector index.</p></li>
+    /// </ul>
+    pub fn set_vector_indexes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>) -> Self {
+        self.inner = self.inner.set_vector_indexes(input);
+        self
+    }
+    /// <p>One or more vector indexes to be created on the table. Each vector index enables similarity search on a vector attribute. Each element in the list consists of:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IndexName</code> - The name of the vector index. Must be unique within the table.</p></li>
+    /// <li>
+    /// <p><code>VectorAttribute</code> - The attribute that contains vector embeddings. If multiple vector indexes reference the same attribute, they must all use the same number of dimensions.</p></li>
+    /// <li>
+    /// <p><code>Dimensions</code> - The number of dimensions in each vector.</p></li>
+    /// <li>
+    /// <p><code>DistanceFunction</code> - The distance function used to calculate similarity. Valid values: <code>COSINE</code>, <code>EUCLIDEAN</code>, <code>DOT_PRODUCT</code>.</p></li>
+    /// <li>
+    /// <p><code>Projection</code> - Specifies attributes that are copied (projected) from the table into the vector index. The total number of projected non-key attributes is shared across the vector attribute (counts as 1) and <code>INLINE_FILTER</code> search schema elements (each counts as 1). <code>HASH</code> search schema elements do not count toward this limit.</p></li>
+    /// <li>
+    /// <p><code>SearchSchema</code> - (Optional) Defines the partition key (<code>HASH</code>) and inline filter (<code>INLINE_FILTER</code>) attributes for the vector index.</p></li>
+    /// </ul>
+    pub fn get_vector_indexes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>> {
+        self.inner.get_vector_indexes()
+    }
 }

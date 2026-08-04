@@ -12,6 +12,7 @@
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
+///     ResourceType::ApplicationStatusCheck => { /* ... */ },
 ///     ResourceType::CapacityBlock => { /* ... */ },
 ///     ResourceType::CapacityManagerDataExport => { /* ... */ },
 ///     ResourceType::CapacityReservation => { /* ... */ },
@@ -149,6 +150,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
+    ApplicationStatusCheck,
     #[allow(missing_docs)] // documentation missing in model
     CapacityBlock,
     #[allow(missing_docs)] // documentation missing in model
@@ -374,6 +377,7 @@ pub enum ResourceType {
 impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "application-status-check" => ResourceType::ApplicationStatusCheck,
             "capacity-block" => ResourceType::CapacityBlock,
             "capacity-manager-data-export" => ResourceType::CapacityManagerDataExport,
             "capacity-reservation" => ResourceType::CapacityReservation,
@@ -498,6 +502,7 @@ impl ResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ResourceType::ApplicationStatusCheck => "application-status-check",
             ResourceType::CapacityBlock => "capacity-block",
             ResourceType::CapacityManagerDataExport => "capacity-manager-data-export",
             ResourceType::CapacityReservation => "capacity-reservation",
@@ -613,6 +618,7 @@ impl ResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "application-status-check",
             "capacity-block",
             "capacity-manager-data-export",
             "capacity-reservation",
@@ -745,6 +751,7 @@ impl ResourceType {
 impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ResourceType::ApplicationStatusCheck => write!(f, "application-status-check"),
             ResourceType::CapacityBlock => write!(f, "capacity-block"),
             ResourceType::CapacityManagerDataExport => write!(f, "capacity-manager-data-export"),
             ResourceType::CapacityReservation => write!(f, "capacity-reservation"),

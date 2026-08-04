@@ -477,4 +477,26 @@ impl UpdateTableFluentBuilder {
     pub fn get_global_table_settings_replication_mode(&self) -> &::std::option::Option<crate::types::GlobalTableSettingsReplicationMode> {
         self.inner.get_global_table_settings_replication_mode()
     }
+    ///
+    /// Appends an item to `VectorIndexUpdates`.
+    ///
+    /// To override the contents of this collection use [`set_vector_index_updates`](Self::set_vector_index_updates).
+    ///
+    /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+    /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
+    pub fn vector_index_updates(mut self, input: crate::types::VectorIndexUpdate) -> Self {
+        self.inner = self.inner.vector_index_updates(input);
+        self
+    }
+    /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+    /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
+    pub fn set_vector_index_updates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndexUpdate>>) -> Self {
+        self.inner = self.inner.set_vector_index_updates(input);
+        self
+    }
+    /// <p>A list of vector indexes to be added to or removed from the table. You can add or remove one vector index for each <code>UpdateTable</code> operation.</p>
+    /// <p>To add a vector index, specify <code>IndexName</code>, <code>VectorAttribute</code>, <code>Dimensions</code>, <code>DistanceFunction</code>, and <code>Projection</code>. To remove a vector index, specify only the <code>IndexName</code>.</p>
+    pub fn get_vector_index_updates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VectorIndexUpdate>> {
+        self.inner.get_vector_index_updates()
+    }
 }

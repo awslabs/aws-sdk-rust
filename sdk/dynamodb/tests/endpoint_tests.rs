@@ -6431,3 +6431,5913 @@ async fn operation_input_test_batch_get_item_145() {
         uri
     );
 }
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_146() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_147() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_148() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_149() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_150() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_151() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_152() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_153() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_154() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_155() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_156() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_157() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_158() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_159() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_160() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_161() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_162() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_163() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_164() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_165() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_166() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_167() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_168() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_169() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_170() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_171() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_172() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [{UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_173() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_174() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_175() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_176() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: FIPS and custom endpoint are not supported [{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: FIPS and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: FIPS and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_177() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: Dualstack and custom endpoint are not supported [{UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Invalid Configuration: Dualstack and custom endpoint are not supported"),
+        "expected error to contain `Invalid Configuration: Dualstack and custom endpoint are not supported` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_178() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_179() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_180() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_181() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1, Endpoint=https://example.com, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://example.com",
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://example.com");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://example.com"),
+        "expected URI to start with `https://example.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_182() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_183() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_184() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_185() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_186() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_187() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_188() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_189() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_190() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_191() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_192() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_193() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_194() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_195() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_196() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_197() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_198() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_199() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=local, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "local",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("local"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("http://localhost:8000"),
+        "expected URI to start with `http://localhost:8000` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_200() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb-fips.us-east-1.api.aws"),
+        "expected URI to start with `https://search-dynamodb-fips.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_201() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_202() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://111111111111.search-ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://111111111111.search-ddb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_203() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://111111111111.search-ddb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://111111111111.search-ddb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_204() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Credentials-sourced account ID parameter is invalid [{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Credentials-sourced account ID parameter is invalid"),
+        "expected error to contain `Credentials-sourced account ID parameter is invalid` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_205() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb-fips.us-east-1.api.aws"),
+        "expected URI to start with `https://search-dynamodb-fips.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_206() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_207() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://222222222222.search-ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://222222222222.search-ddb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_208() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://222222222222.search-ddb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://222222222222.search-ddb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_209() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_210() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_211() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_212() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported [{UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_213() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported [{UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_214() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://111111111111.search-ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://111111111111.search-ddb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_215() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://111111111111.search-ddb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://111111111111.search-ddb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_216() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Credentials-sourced account ID parameter is invalid [{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("Credentials-sourced account ID parameter is invalid"),
+        "expected error to contain `Credentials-sourced account ID parameter is invalid` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_217() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported [{UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_218() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported [{UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required and FIPS is enabled, but FIPS account endpoints are not supported` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_219() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://222222222222.search-ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://222222222222.search-ddb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_220() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://222222222222.search-ddb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://222222222222.search-ddb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_221() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: AccountIdEndpointMode is required but no AccountID was provided or able to be loaded [{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"),
+        "expected error to contain `AccountIdEndpointMode is required but no AccountID was provided or able to be loaded` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_222() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: AccountIdEndpointMode is required but no AccountID was provided or able to be loaded [{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"),
+        "expected error to contain `AccountIdEndpointMode is required but no AccountID was provided or able to be loaded` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_223() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: AccountIdEndpointMode is required but no AccountID was provided or able to be loaded [{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+        format!("{:?}", error).contains("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"),
+        "expected error to contain `AccountIdEndpointMode is required but no AccountID was provided or able to be loaded` but it was {:?}",
+        error
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_224() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_225() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_226() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_227() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_228() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_229() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "required"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("required").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition [{UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=required, Region=cn-north-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"),
+                                            "expected error to contain `Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_230() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb-fips.us-east-1.api.aws"),
+        "expected URI to start with `https://search-dynamodb-fips.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_231() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_232() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.api.aws"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_233() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_234() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_235() {
+    /* documentation: {UseFIPS=true, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb-fips.us-east-1.api.aws"),
+        "expected URI to start with `https://search-dynamodb-fips.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_236() {
+    /* documentation: {UseFIPS=true, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_237() {
+    /* documentation: {UseFIPS=false, UseDualStack=true, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": true,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(true);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.api.aws"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_238() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_239() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_240() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_241() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=disabled, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_242() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://search-dynamodb.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_243() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://search-dynamodb.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_244() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://search-dynamodb.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_245() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://search-dynamodb.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_246() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://search-dynamodb.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_247() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "cn-north-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.cn-north-1.amazonaws.com.cn"),
+        "expected URI to start with `https://search-dynamodb.cn-north-1.amazonaws.com.cn` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_248() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-iso-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-iso-east-1.c2s.ic.gov"),
+        "expected URI to start with `https://search-dynamodb.us-iso-east-1.c2s.ic.gov` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_249() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-iso-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-iso-east-1.c2s.ic.gov"),
+        "expected URI to start with `https://search-dynamodb.us-iso-east-1.c2s.ic.gov` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_250() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-iso-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-iso-east-1.c2s.ic.gov"),
+        "expected URI to start with `https://search-dynamodb.us-iso-east-1.c2s.ic.gov` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_251() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-iso-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-iso-east-1.c2s.ic.gov"),
+        "expected URI to start with `https://search-dynamodb.us-iso-east-1.c2s.ic.gov` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_252() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-iso-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-iso-east-1.c2s.ic.gov"),
+        "expected URI to start with `https://search-dynamodb.us-iso-east-1.c2s.ic.gov` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_253() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-iso-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-iso-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-iso-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-iso-east-1.c2s.ic.gov"),
+        "expected URI to start with `https://search-dynamodb.us-iso-east-1.c2s.ic.gov` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_254() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=111111111111, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-gov-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "111111111111",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("111111111111").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_255() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountId=, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-gov-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountId": "",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_256() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-east-1:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-gov-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-east-1:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_257() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:dynamodb:us-west-2:222222222222:table/table_name, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-gov-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:dynamodb:us-west-2:222222222222:table/table_name".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_258() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, ResourceArn=arn:aws:s3:us-west-2:222222222222:stream/testStream, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-gov-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some(
+                "arn:aws:s3:us-west-2:222222222222:stream/testStream".to_owned()
+            ))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_259() {
+    /* documentation: {UseFIPS=false, UseDualStack=false, AccountIdEndpointMode=preferred, Region=us-gov-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "AWS::Region": "us-gov-east-1",
+        "AWS::UseFIPS": false,
+        "AWS::UseDualStack": false,
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
+        let builder = builder.use_fips(false);
+        let builder = builder.use_dual_stack(false);
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://search-dynamodb.us-gov-east-1.amazonaws.com"),
+        "expected URI to start with `https://search-dynamodb.us-gov-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_260() {
+    /* documentation: {Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://dynamodb.cn-north-1.api.amazonwebservices.com.cn",
+        "AWS::Region": "cn-north-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://dynamodb.cn-north-1.api.amazonwebservices.com.cn");
+        let builder = builder.region(::aws_types::region::Region::new("cn-north-1"));
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.cn-north-1.api.amazonwebservices.com.cn, Region=cn-north-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"),
+                                            "expected error to contain `Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_261() {
+    /* documentation: {Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://dynamodb.us-gov-east-1.api.aws",
+        "AWS::Region": "us-gov-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://dynamodb.us-gov-east-1.api.aws");
+        let builder = builder.region(::aws_types::region::Region::new("us-gov-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.us-gov-east-1.api.aws, Region=us-gov-east-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"),
+                                            "expected error to contain `Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_262() {
+    /* documentation: {Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://dynamodb.us-east-1.api.aws",
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://dynamodb.us-east-1.api.aws");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.us-east-1.api.aws, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"),
+                                            "expected error to contain `Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_263() {
+    /* documentation: {Endpoint=https://111111111111.ddb.us-east-1.api.aws, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://111111111111.ddb.us-east-1.api.aws",
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://111111111111.ddb.us-east-1.api.aws");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://111111111111.ddb.us-east-1.api.aws"),
+        "expected URI to start with `https://111111111111.ddb.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_264() {
+    /* documentation: {Endpoint=https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws",
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws"),
+        "expected URI to start with `https://vpce-1a2b3c4d-5e6f.dynamodb.us-east-1.vpce.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_265() {
+    /* documentation: {Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://dynamodb.eu-west-1.api.aws",
+        "AWS::Region": "eu-west-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://dynamodb.eu-west-1.api.aws");
+        let builder = builder.region(::aws_types::region::Region::new("eu-west-1"));
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.eu-west-1.api.aws, Region=eu-west-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"),
+                                            "expected error to contain `Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_266() {
+    /* documentation: {Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://dynamodb.us-west-2.api.aws",
+        "AWS::Region": "us-west-2"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://dynamodb.us-west-2.api.aws");
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.us-west-2.api.aws, Region=us-west-2, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"),
+                                            "expected error to contain `Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html` but it was {:?}", error
+                                        );
+}
+
+#[::tokio::test]
+async fn operation_input_test_search_vectors_267() {
+    /* documentation: {Endpoint=https://dynamodb.us-east-1.api.aws/, Region=us-east-1, IsSearchOperation=true} */
+    /* builtIns: {
+        "SDK::Endpoint": "https://dynamodb.us-east-1.api.aws/",
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_dynamodb::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.endpoint_url("https://dynamodb.us-east-1.api.aws/");
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .search_vectors()
+            .set_table_name(::std::option::Option::Some("test-table".to_owned()))
+            .set_index_name(::std::option::Option::Some("test-index".to_owned()))
+            .set_search_vector(::std::option::Option::Some(vec![
+                aws_sdk_dynamodb::types::AttributeValue::N("1.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("2.0".to_owned()),
+                aws_sdk_dynamodb::types::AttributeValue::N("3.0".to_owned()),
+            ]))
+            .set_top_k(::std::option::Option::Some(10))
+            .send()
+            .await
+    );
+    rcvr.expect_no_request();
+    let error = _result.expect_err("expected error: Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html [{Endpoint=https://dynamodb.us-east-1.api.aws/, Region=us-east-1, IsSearchOperation=true}]");
+    assert!(
+                                            format!("{:?}", error).contains("Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html"),
+                                            "expected error to contain `Endpoint override is not supported for dual-stack endpoints. Please enable dual-stack functionality by enabling the configuration. For more details, see: https://docs.aws.amazon.com/sdkref/latest/guide/feature-endpoints.html` but it was {:?}", error
+                                        );
+}

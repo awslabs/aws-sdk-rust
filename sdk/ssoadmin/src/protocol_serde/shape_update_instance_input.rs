@@ -15,5 +15,8 @@ pub fn ser_update_instance_input_input(
         crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.permission_sets_enabled {
+        object.key("PermissionSetsEnabled").boolean(*var_5);
+    }
     Ok(())
 }

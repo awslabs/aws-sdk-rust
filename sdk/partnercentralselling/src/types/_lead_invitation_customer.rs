@@ -5,22 +5,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LeadInvitationCustomer {
     /// <p>Specifies the industry sector of the customer company associated with the lead invitation. This categorization helps partners understand the customer's business context and assess solution fit.</p>
-    pub industry: ::std::option::Option<crate::types::Industry>,
+    pub industry: ::std::option::Option<::std::string::String>,
     /// <p>The name of the customer company associated with the lead invitation. This field identifies the target organization for the lead engagement opportunity.</p>
     pub company_name: ::std::string::String,
     /// <p>The website URL of the customer company. This provides additional context about the customer organization and helps partners verify company details and assess business size and legitimacy.</p>
     pub website_url: ::std::option::Option<::std::string::String>,
     /// <p>The country code indicating the geographic location of the customer company. This information helps partners understand regional requirements and assess their ability to serve the customer effectively.</p>
-    pub country_code: crate::types::CountryCode,
+    pub country_code: ::std::string::String,
     /// <p>Indicates the customer's level of experience and adoption with AWS services. This assessment helps partners understand the customer's cloud maturity and tailor their engagement approach accordingly.</p>
     pub aws_maturity: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the market segment classification of the customer, such as enterprise, mid-market, or small business. This segmentation helps partners determine the appropriate solution complexity and engagement strategy.</p>
-    pub market_segment: ::std::option::Option<crate::types::MarketSegment>,
+    pub market_segment: ::std::option::Option<::std::string::String>,
 }
 impl LeadInvitationCustomer {
     /// <p>Specifies the industry sector of the customer company associated with the lead invitation. This categorization helps partners understand the customer's business context and assess solution fit.</p>
-    pub fn industry(&self) -> ::std::option::Option<&crate::types::Industry> {
-        self.industry.as_ref()
+    pub fn industry(&self) -> ::std::option::Option<&str> {
+        self.industry.as_deref()
     }
     /// <p>The name of the customer company associated with the lead invitation. This field identifies the target organization for the lead engagement opportunity.</p>
     pub fn company_name(&self) -> &str {
@@ -32,16 +32,17 @@ impl LeadInvitationCustomer {
         self.website_url.as_deref()
     }
     /// <p>The country code indicating the geographic location of the customer company. This information helps partners understand regional requirements and assess their ability to serve the customer effectively.</p>
-    pub fn country_code(&self) -> &crate::types::CountryCode {
-        &self.country_code
+    pub fn country_code(&self) -> &str {
+        use std::ops::Deref;
+        self.country_code.deref()
     }
     /// <p>Indicates the customer's level of experience and adoption with AWS services. This assessment helps partners understand the customer's cloud maturity and tailor their engagement approach accordingly.</p>
     pub fn aws_maturity(&self) -> ::std::option::Option<&str> {
         self.aws_maturity.as_deref()
     }
     /// <p>Specifies the market segment classification of the customer, such as enterprise, mid-market, or small business. This segmentation helps partners determine the appropriate solution complexity and engagement strategy.</p>
-    pub fn market_segment(&self) -> ::std::option::Option<&crate::types::MarketSegment> {
-        self.market_segment.as_ref()
+    pub fn market_segment(&self) -> ::std::option::Option<&str> {
+        self.market_segment.as_deref()
     }
 }
 impl ::std::fmt::Debug for LeadInvitationCustomer {
@@ -67,26 +68,26 @@ impl LeadInvitationCustomer {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct LeadInvitationCustomerBuilder {
-    pub(crate) industry: ::std::option::Option<crate::types::Industry>,
+    pub(crate) industry: ::std::option::Option<::std::string::String>,
     pub(crate) company_name: ::std::option::Option<::std::string::String>,
     pub(crate) website_url: ::std::option::Option<::std::string::String>,
-    pub(crate) country_code: ::std::option::Option<crate::types::CountryCode>,
+    pub(crate) country_code: ::std::option::Option<::std::string::String>,
     pub(crate) aws_maturity: ::std::option::Option<::std::string::String>,
-    pub(crate) market_segment: ::std::option::Option<crate::types::MarketSegment>,
+    pub(crate) market_segment: ::std::option::Option<::std::string::String>,
 }
 impl LeadInvitationCustomerBuilder {
     /// <p>Specifies the industry sector of the customer company associated with the lead invitation. This categorization helps partners understand the customer's business context and assess solution fit.</p>
-    pub fn industry(mut self, input: crate::types::Industry) -> Self {
-        self.industry = ::std::option::Option::Some(input);
+    pub fn industry(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.industry = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the industry sector of the customer company associated with the lead invitation. This categorization helps partners understand the customer's business context and assess solution fit.</p>
-    pub fn set_industry(mut self, input: ::std::option::Option<crate::types::Industry>) -> Self {
+    pub fn set_industry(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.industry = input;
         self
     }
     /// <p>Specifies the industry sector of the customer company associated with the lead invitation. This categorization helps partners understand the customer's business context and assess solution fit.</p>
-    pub fn get_industry(&self) -> &::std::option::Option<crate::types::Industry> {
+    pub fn get_industry(&self) -> &::std::option::Option<::std::string::String> {
         &self.industry
     }
     /// <p>The name of the customer company associated with the lead invitation. This field identifies the target organization for the lead engagement opportunity.</p>
@@ -119,18 +120,17 @@ impl LeadInvitationCustomerBuilder {
         &self.website_url
     }
     /// <p>The country code indicating the geographic location of the customer company. This information helps partners understand regional requirements and assess their ability to serve the customer effectively.</p>
-    /// This field is required.
-    pub fn country_code(mut self, input: crate::types::CountryCode) -> Self {
-        self.country_code = ::std::option::Option::Some(input);
+    pub fn country_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The country code indicating the geographic location of the customer company. This information helps partners understand regional requirements and assess their ability to serve the customer effectively.</p>
-    pub fn set_country_code(mut self, input: ::std::option::Option<crate::types::CountryCode>) -> Self {
+    pub fn set_country_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.country_code = input;
         self
     }
     /// <p>The country code indicating the geographic location of the customer company. This information helps partners understand regional requirements and assess their ability to serve the customer effectively.</p>
-    pub fn get_country_code(&self) -> &::std::option::Option<crate::types::CountryCode> {
+    pub fn get_country_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.country_code
     }
     /// <p>Indicates the customer's level of experience and adoption with AWS services. This assessment helps partners understand the customer's cloud maturity and tailor their engagement approach accordingly.</p>
@@ -148,23 +148,22 @@ impl LeadInvitationCustomerBuilder {
         &self.aws_maturity
     }
     /// <p>Specifies the market segment classification of the customer, such as enterprise, mid-market, or small business. This segmentation helps partners determine the appropriate solution complexity and engagement strategy.</p>
-    pub fn market_segment(mut self, input: crate::types::MarketSegment) -> Self {
-        self.market_segment = ::std::option::Option::Some(input);
+    pub fn market_segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.market_segment = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the market segment classification of the customer, such as enterprise, mid-market, or small business. This segmentation helps partners determine the appropriate solution complexity and engagement strategy.</p>
-    pub fn set_market_segment(mut self, input: ::std::option::Option<crate::types::MarketSegment>) -> Self {
+    pub fn set_market_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.market_segment = input;
         self
     }
     /// <p>Specifies the market segment classification of the customer, such as enterprise, mid-market, or small business. This segmentation helps partners determine the appropriate solution complexity and engagement strategy.</p>
-    pub fn get_market_segment(&self) -> &::std::option::Option<crate::types::MarketSegment> {
+    pub fn get_market_segment(&self) -> &::std::option::Option<::std::string::String> {
         &self.market_segment
     }
     /// Consumes the builder and constructs a [`LeadInvitationCustomer`](crate::types::LeadInvitationCustomer).
     /// This method will fail if any of the following fields are not set:
     /// - [`company_name`](crate::types::builders::LeadInvitationCustomerBuilder::company_name)
-    /// - [`country_code`](crate::types::builders::LeadInvitationCustomerBuilder::country_code)
     pub fn build(self) -> ::std::result::Result<crate::types::LeadInvitationCustomer, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::LeadInvitationCustomer {
             industry: self.industry,
@@ -175,12 +174,7 @@ impl LeadInvitationCustomerBuilder {
                 )
             })?,
             website_url: self.website_url,
-            country_code: self.country_code.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "country_code",
-                    "country_code was not specified but it is required when building LeadInvitationCustomer",
-                )
-            })?,
+            country_code: self.country_code.unwrap_or_default(),
             aws_maturity: self.aws_maturity,
             market_segment: self.market_segment,
         })

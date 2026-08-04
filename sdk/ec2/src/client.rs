@@ -439,6 +439,8 @@ mod assign_private_nat_gateway_address;
 
 mod associate_address;
 
+mod associate_application_status_check;
+
 mod associate_capacity_reservation_billing_owner;
 
 mod associate_client_vpn_target_network;
@@ -528,6 +530,8 @@ mod copy_image;
 mod copy_snapshot;
 
 mod copy_volumes;
+
+mod create_application_status_check;
 
 mod create_capacity_manager_data_export;
 
@@ -768,6 +772,8 @@ mod create_vpn_gateway;
 /// ```
 pub mod customize;
 
+mod delete_application_status_check;
+
 mod delete_capacity_manager_data_export;
 
 mod delete_carrier_gateway;
@@ -983,6 +989,12 @@ mod describe_addresses;
 mod describe_addresses_attribute;
 
 mod describe_aggregate_id_format;
+
+mod describe_application_status;
+
+mod describe_application_status_check_associations;
+
+mod describe_application_status_checks;
 
 mod describe_availability_zones;
 
@@ -1366,6 +1378,8 @@ mod disable_address_transfer;
 
 mod disable_allowed_images_settings;
 
+mod disable_application_status_check_suppression;
+
 mod disable_aws_network_performance_metric_subscription;
 
 mod disable_capacity_manager;
@@ -1406,6 +1420,8 @@ mod disable_vpc_classic_link_dns_support;
 
 mod disassociate_address;
 
+mod disassociate_application_status_check;
+
 mod disassociate_capacity_reservation_billing_owner;
 
 mod disassociate_client_vpn_target_network;
@@ -1443,6 +1459,8 @@ mod disassociate_vpc_cidr_block;
 mod enable_address_transfer;
 
 mod enable_allowed_images_settings;
+
+mod enable_application_status_check_suppression;
 
 mod enable_aws_network_performance_metric_subscription;
 
@@ -1659,6 +1677,8 @@ mod lock_snapshot;
 mod modify_account_vpc_encryption_control;
 
 mod modify_address_attribute;
+
+mod modify_application_status_check;
 
 mod modify_availability_zone_group;
 

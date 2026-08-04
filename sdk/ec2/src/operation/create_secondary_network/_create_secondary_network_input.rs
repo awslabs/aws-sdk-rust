@@ -85,7 +85,6 @@ impl CreateSecondaryNetworkInputBuilder {
         &self.dry_run
     }
     /// <p>The IPv4 CIDR block for the secondary network. The CIDR block size must be between /12 and /28.</p>
-    /// This field is required.
     pub fn ipv4_cidr_block(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipv4_cidr_block = ::std::option::Option::Some(input.into());
         self

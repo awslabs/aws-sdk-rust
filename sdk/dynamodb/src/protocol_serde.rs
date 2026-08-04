@@ -111,6 +111,8 @@ pub(crate) mod shape_restore_table_to_point_in_time;
 
 pub(crate) mod shape_scan;
 
+pub(crate) mod shape_search_vectors;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_transact_get_items;
@@ -285,6 +287,8 @@ pub(crate) mod shape_restore_table_to_point_in_time_input;
 
 pub(crate) mod shape_scan_input;
 
+pub(crate) mod shape_search_vectors_input;
+
 pub(crate) mod shape_table_already_exists_exception;
 
 pub(crate) mod shape_table_in_use_exception;
@@ -439,6 +443,8 @@ pub(crate) mod shape_replication_group_update;
 
 pub(crate) mod shape_s3_bucket_source;
 
+pub(crate) mod shape_search_result_list;
+
 pub(crate) mod shape_sse_specification;
 
 pub(crate) mod shape_stream_specification;
@@ -466,6 +472,12 @@ pub(crate) mod shape_transact_get_item;
 pub(crate) mod shape_transact_write_item;
 
 pub(crate) mod shape_update_kinesis_streaming_configuration;
+
+pub(crate) mod shape_vector_capacity;
+
+pub(crate) mod shape_vector_index;
+
+pub(crate) mod shape_vector_index_update;
 
 pub(crate) mod shape_warm_throughput;
 
@@ -499,6 +511,8 @@ pub(crate) mod shape_create_replica_action;
 
 pub(crate) mod shape_create_replication_group_member_action;
 
+pub(crate) mod shape_create_vector_index_action;
+
 pub(crate) mod shape_csv_options;
 
 pub(crate) mod shape_delete;
@@ -512,6 +526,8 @@ pub(crate) mod shape_delete_replica_action;
 pub(crate) mod shape_delete_replication_group_member_action;
 
 pub(crate) mod shape_delete_request;
+
+pub(crate) mod shape_delete_vector_index_action;
 
 pub(crate) mod shape_endpoint;
 
@@ -563,6 +579,10 @@ pub(crate) mod shape_replica_settings_description;
 
 pub(crate) mod shape_restore_summary;
 
+pub(crate) mod shape_search_result_item;
+
+pub(crate) mod shape_search_schema_element;
+
 pub(crate) mod shape_secondary_indexes_capacity_map;
 
 pub(crate) mod shape_source_table_details;
@@ -582,6 +602,12 @@ pub(crate) mod shape_update;
 pub(crate) mod shape_update_global_secondary_index_action;
 
 pub(crate) mod shape_update_replication_group_member_action;
+
+pub(crate) mod shape_vector_attribute_definition;
+
+pub(crate) mod shape_vector_index_description_list;
+
+pub(crate) mod shape_vector_indexes_capacity_map;
 
 pub(crate) mod shape_write_requests;
 
@@ -633,6 +659,12 @@ pub(crate) mod shape_replica_list;
 
 pub(crate) mod shape_string_set_attribute_value;
 
+pub(crate) mod shape_vector_index_description;
+
+pub(crate) mod shape_vector_index_list;
+
+pub(crate) mod shape_vector_indexes;
+
 pub(crate) mod shape_auto_scaling_policy_description_list;
 
 pub(crate) mod shape_csv_header_list;
@@ -648,6 +680,10 @@ pub(crate) mod shape_replica_global_secondary_index_auto_scaling_description_lis
 pub(crate) mod shape_replica_global_secondary_index_description_list;
 
 pub(crate) mod shape_replica_global_secondary_index_settings_description;
+
+pub(crate) mod shape_search_schema;
+
+pub(crate) mod shape_vector_index_info;
 
 pub(crate) mod shape_auto_scaling_policy_description;
 

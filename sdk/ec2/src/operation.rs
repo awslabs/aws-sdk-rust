@@ -55,6 +55,9 @@ pub mod assign_private_nat_gateway_address;
 /// Types for the `AssociateAddress` operation.
 pub mod associate_address;
 
+/// Types for the `AssociateApplicationStatusCheck` operation.
+pub mod associate_application_status_check;
+
 /// Types for the `AssociateCapacityReservationBillingOwner` operation.
 pub mod associate_capacity_reservation_billing_owner;
 
@@ -189,6 +192,9 @@ pub mod copy_snapshot;
 
 /// Types for the `CopyVolumes` operation.
 pub mod copy_volumes;
+
+/// Types for the `CreateApplicationStatusCheck` operation.
+pub mod create_application_status_check;
 
 /// Types for the `CreateCapacityManagerDataExport` operation.
 pub mod create_capacity_manager_data_export;
@@ -507,6 +513,9 @@ pub mod create_vpn_connection_route;
 
 /// Types for the `CreateVpnGateway` operation.
 pub mod create_vpn_gateway;
+
+/// Types for the `DeleteApplicationStatusCheck` operation.
+pub mod delete_application_status_check;
 
 /// Types for the `DeleteCapacityManagerDataExport` operation.
 pub mod delete_capacity_manager_data_export;
@@ -831,6 +840,15 @@ pub mod describe_addresses_attribute;
 
 /// Types for the `DescribeAggregateIdFormat` operation.
 pub mod describe_aggregate_id_format;
+
+/// Types for the `DescribeApplicationStatus` operation.
+pub mod describe_application_status;
+
+/// Types for the `DescribeApplicationStatusCheckAssociations` operation.
+pub mod describe_application_status_check_associations;
+
+/// Types for the `DescribeApplicationStatusChecks` operation.
+pub mod describe_application_status_checks;
 
 /// Types for the `DescribeAvailabilityZones` operation.
 pub mod describe_availability_zones;
@@ -1405,6 +1423,9 @@ pub mod disable_address_transfer;
 /// Types for the `DisableAllowedImagesSettings` operation.
 pub mod disable_allowed_images_settings;
 
+/// Types for the `DisableApplicationStatusCheckSuppression` operation.
+pub mod disable_application_status_check_suppression;
+
 /// Types for the `DisableAwsNetworkPerformanceMetricSubscription` operation.
 pub mod disable_aws_network_performance_metric_subscription;
 
@@ -1465,6 +1486,9 @@ pub mod disable_vpc_classic_link_dns_support;
 /// Types for the `DisassociateAddress` operation.
 pub mod disassociate_address;
 
+/// Types for the `DisassociateApplicationStatusCheck` operation.
+pub mod disassociate_application_status_check;
+
 /// Types for the `DisassociateCapacityReservationBillingOwner` operation.
 pub mod disassociate_capacity_reservation_billing_owner;
 
@@ -1521,6 +1545,9 @@ pub mod enable_address_transfer;
 
 /// Types for the `EnableAllowedImagesSettings` operation.
 pub mod enable_allowed_images_settings;
+
+/// Types for the `EnableApplicationStatusCheckSuppression` operation.
+pub mod enable_application_status_check_suppression;
 
 /// Types for the `EnableAwsNetworkPerformanceMetricSubscription` operation.
 pub mod enable_aws_network_performance_metric_subscription;
@@ -1845,6 +1872,9 @@ pub mod modify_account_vpc_encryption_control;
 
 /// Types for the `ModifyAddressAttribute` operation.
 pub mod modify_address_attribute;
+
+/// Types for the `ModifyApplicationStatusCheck` operation.
+pub mod modify_application_status_check;
 
 /// Types for the `ModifyAvailabilityZoneGroup` operation.
 pub mod modify_availability_zone_group;

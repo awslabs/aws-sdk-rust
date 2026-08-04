@@ -180,6 +180,9 @@ pub(crate) fn de_describe_instance(
                         )?,
                     );
                 }
+                "PermissionSetsEnabled" => {
+                    builder = builder.set_permission_sets_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

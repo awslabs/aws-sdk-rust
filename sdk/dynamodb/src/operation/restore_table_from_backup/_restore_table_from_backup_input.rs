@@ -19,6 +19,8 @@ pub struct RestoreTableFromBackupInput {
     pub on_demand_throughput_override: ::std::option::Option<crate::types::OnDemandThroughput>,
     /// <p>The new server-side encryption settings for the restored table.</p>
     pub sse_specification_override: ::std::option::Option<crate::types::SseSpecification>,
+    /// <p>The vector indexes for the restored table. If not specified, all vector indexes from the backup are restored. The indexes provided must match existing vector indexes from the backup. You can choose to exclude some or all of the vector indexes at the time of restore.</p>
+    pub vector_index_override: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>,
 }
 impl RestoreTableFromBackupInput {
     /// <p>The name of the new table to which the backup must be restored.</p>
@@ -57,6 +59,12 @@ impl RestoreTableFromBackupInput {
     pub fn sse_specification_override(&self) -> ::std::option::Option<&crate::types::SseSpecification> {
         self.sse_specification_override.as_ref()
     }
+    /// <p>The vector indexes for the restored table. If not specified, all vector indexes from the backup are restored. The indexes provided must match existing vector indexes from the backup. You can choose to exclude some or all of the vector indexes at the time of restore.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vector_index_override.is_none()`.
+    pub fn vector_index_override(&self) -> &[crate::types::VectorIndex] {
+        self.vector_index_override.as_deref().unwrap_or_default()
+    }
 }
 impl RestoreTableFromBackupInput {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromBackupInput`](crate::operation::restore_table_from_backup::RestoreTableFromBackupInput).
@@ -77,6 +85,7 @@ pub struct RestoreTableFromBackupInputBuilder {
     pub(crate) provisioned_throughput_override: ::std::option::Option<crate::types::ProvisionedThroughput>,
     pub(crate) on_demand_throughput_override: ::std::option::Option<crate::types::OnDemandThroughput>,
     pub(crate) sse_specification_override: ::std::option::Option<crate::types::SseSpecification>,
+    pub(crate) vector_index_override: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>,
 }
 impl RestoreTableFromBackupInputBuilder {
     /// <p>The name of the new table to which the backup must be restored.</p>
@@ -205,6 +214,26 @@ impl RestoreTableFromBackupInputBuilder {
     pub fn get_sse_specification_override(&self) -> &::std::option::Option<crate::types::SseSpecification> {
         &self.sse_specification_override
     }
+    /// Appends an item to `vector_index_override`.
+    ///
+    /// To override the contents of this collection use [`set_vector_index_override`](Self::set_vector_index_override).
+    ///
+    /// <p>The vector indexes for the restored table. If not specified, all vector indexes from the backup are restored. The indexes provided must match existing vector indexes from the backup. You can choose to exclude some or all of the vector indexes at the time of restore.</p>
+    pub fn vector_index_override(mut self, input: crate::types::VectorIndex) -> Self {
+        let mut v = self.vector_index_override.unwrap_or_default();
+        v.push(input);
+        self.vector_index_override = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The vector indexes for the restored table. If not specified, all vector indexes from the backup are restored. The indexes provided must match existing vector indexes from the backup. You can choose to exclude some or all of the vector indexes at the time of restore.</p>
+    pub fn set_vector_index_override(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>>) -> Self {
+        self.vector_index_override = input;
+        self
+    }
+    /// <p>The vector indexes for the restored table. If not specified, all vector indexes from the backup are restored. The indexes provided must match existing vector indexes from the backup. You can choose to exclude some or all of the vector indexes at the time of restore.</p>
+    pub fn get_vector_index_override(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VectorIndex>> {
+        &self.vector_index_override
+    }
     /// Consumes the builder and constructs a [`RestoreTableFromBackupInput`](crate::operation::restore_table_from_backup::RestoreTableFromBackupInput).
     pub fn build(
         self,
@@ -221,6 +250,7 @@ impl RestoreTableFromBackupInputBuilder {
             provisioned_throughput_override: self.provisioned_throughput_override,
             on_demand_throughput_override: self.on_demand_throughput_override,
             sse_specification_override: self.sse_specification_override,
+            vector_index_override: self.vector_index_override,
         })
     }
 }

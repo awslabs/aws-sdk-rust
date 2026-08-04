@@ -521,24 +521,12 @@ pub(crate) fn lead_invitation_customer_correct_errors(
     if builder.company_name.is_none() {
         builder.company_name = Some(Default::default())
     }
-    if builder.country_code.is_none() {
-        builder.country_code = "no value was set".parse::<crate::types::CountryCode>().ok()
-    }
     builder
 }
 
 pub(crate) fn lead_invitation_interaction_correct_errors(
     mut builder: crate::types::builders::LeadInvitationInteractionBuilder,
 ) -> crate::types::builders::LeadInvitationInteractionBuilder {
-    if builder.source_type.is_none() {
-        builder.source_type = Some(Default::default())
-    }
-    if builder.source_id.is_none() {
-        builder.source_id = Some(Default::default())
-    }
-    if builder.source_name.is_none() {
-        builder.source_name = Some(Default::default())
-    }
     if builder.contact_business_title.is_none() {
         builder.contact_business_title = Some(Default::default())
     }
@@ -664,30 +652,12 @@ pub(crate) fn lead_customer_correct_errors(mut builder: crate::types::builders::
     if builder.company_name.is_none() {
         builder.company_name = Some(Default::default())
     }
-    if builder.address.is_none() {
-        builder.address = {
-            let builder = crate::types::builders::AddressSummaryBuilder::default();
-            Some(builder.build())
-        }
-    }
     builder
 }
 
 pub(crate) fn lead_interaction_correct_errors(
     mut builder: crate::types::builders::LeadInteractionBuilder,
 ) -> crate::types::builders::LeadInteractionBuilder {
-    if builder.source_type.is_none() {
-        builder.source_type = Some(Default::default())
-    }
-    if builder.source_id.is_none() {
-        builder.source_id = Some(Default::default())
-    }
-    if builder.source_name.is_none() {
-        builder.source_name = Some(Default::default())
-    }
-    if builder.customer_action.is_none() {
-        builder.customer_action = Some(Default::default())
-    }
     if builder.contact.is_none() {
         builder.contact = {
             let builder = crate::types::builders::LeadContactBuilder::default();

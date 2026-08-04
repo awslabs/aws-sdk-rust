@@ -69,8 +69,12 @@ impl crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
 /// dsql:RemovePeerCluster
 /// </dt>
 /// <dd>
-/// <p>Permission to remove peer clusters. The <i>dsql:RemovePeerCluster</i> permission uses a wildcard ARN pattern to simplify permission management during updates.</p>
-/// <p>Resources: <code>arn:aws:dsql:*:<i>account-id</i>:cluster/*</code></p>
+/// <p>Permission to remove peer clusters. When you list peer clusters in <code>multiRegionProperties.clusters</code>, you need this permission for each current peer cluster that your list omits.</p>
+/// <p>Resources:</p>
+/// <ul>
+/// <li>
+/// <p>Each removed peer cluster: exact ARN of each removed peer cluster, in its own Region</p></li>
+/// </ul>
 /// </dd>
 /// </dl>
 /// <dl>
@@ -86,11 +90,9 @@ impl crate::operation::update_cluster::builders::UpdateClusterInputBuilder {
 /// </dl><important>
 /// <ul>
 /// <li>
-/// <p>The witness region specified in <code>multiRegionProperties.witnessRegion</code> cannot be the same as the cluster's Region.</p></li>
+/// <p>The witness Region specified in <code>multiRegionProperties.witnessRegion</code> cannot be the same as the cluster's Region.</p></li>
 /// <li>
-/// <p>When updating clusters with peer relationships, permissions are checked for both adding and removing peers.</p></li>
-/// <li>
-/// <p>The <code>dsql:RemovePeerCluster</code> permission uses a wildcard ARN pattern to simplify permission management during updates.</p></li>
+/// <p>When you list peer clusters in <code>multiRegionProperties.clusters</code>, you need <code>dsql:AddPeerCluster</code> for every peer cluster in your request. You need <code>dsql:RemovePeerCluster</code> only for the peer clusters that the update removes.</p></li>
 /// </ul>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -207,16 +209,19 @@ impl UpdateClusterFluentBuilder {
         self.inner.get_deletion_protection_enabled()
     }
     /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    /// <p>To switch to the key owned by Amazon Web Services, specify the reserved value <code>AWS_OWNED_KMS_KEY</code>.</p>
     pub fn kms_encryption_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_encryption_key(input.into());
         self
     }
     /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    /// <p>To switch to the key owned by Amazon Web Services, specify the reserved value <code>AWS_OWNED_KMS_KEY</code>.</p>
     pub fn set_kms_encryption_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_encryption_key(input);
         self
     }
     /// <p>The KMS key that encrypts and protects the data on your cluster. You can specify the ARN, ID, or alias of an existing key or have Amazon Web Services create a default key for you.</p>
+    /// <p>To switch to the key owned by Amazon Web Services, specify the reserved value <code>AWS_OWNED_KMS_KEY</code>.</p>
     pub fn get_kms_encryption_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_encryption_key()
     }

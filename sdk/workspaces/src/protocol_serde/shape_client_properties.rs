@@ -9,6 +9,9 @@ pub fn ser_client_properties(
     if let Some(var_2) = &input.log_upload_enabled {
         object.key("LogUploadEnabled").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.client_experience_policy {
+        object.key("ClientExperiencePolicy").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -45,6 +48,13 @@ where
                             builder = builder.set_log_upload_enabled(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::LogUploadEnum::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ClientExperiencePolicy" => {
+                            builder = builder.set_client_experience_policy(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

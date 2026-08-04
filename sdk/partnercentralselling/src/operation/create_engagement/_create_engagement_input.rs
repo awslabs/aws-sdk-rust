@@ -87,7 +87,6 @@ impl CreateEngagementInputBuilder {
         &self.client_token
     }
     /// <p>Specifies the title of the <code>Engagement</code>.</p>
-    /// This field is required.
     pub fn title(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.title = ::std::option::Option::Some(input.into());
         self
@@ -102,7 +101,6 @@ impl CreateEngagementInputBuilder {
         &self.title
     }
     /// <p>Provides a description of the <code>Engagement</code>.</p>
-    /// This field is required.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self

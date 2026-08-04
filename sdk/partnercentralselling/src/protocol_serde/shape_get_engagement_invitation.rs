@@ -257,6 +257,13 @@ pub(crate) fn de_get_engagement_invitation(
                             crate::protocol_serde::shape_engagement_member_summaries::de_engagement_member_summaries(tokens, _value, depth + 1)?,
                         );
                     }
+                    "EnrichmentContext" => {
+                        builder = builder.set_enrichment_context(crate::protocol_serde::shape_enrichment_context::de_enrichment_context(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
                     _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
             }
