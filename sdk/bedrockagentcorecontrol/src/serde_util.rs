@@ -4157,6 +4157,18 @@ pub(crate) fn harness_tool_correct_errors(mut builder: crate::types::builders::H
     builder
 }
 
+pub(crate) fn http_connector_target_configuration_correct_errors(
+    mut builder: crate::types::builders::HttpConnectorTargetConfigurationBuilder,
+) -> crate::types::builders::HttpConnectorTargetConfigurationBuilder {
+    if builder.source.is_none() {
+        builder.source = {
+            let builder = crate::types::builders::HttpConnectorSourceBuilder::default();
+            crate::serde_util::http_connector_source_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn indexed_key_correct_errors(mut builder: crate::types::builders::IndexedKeyBuilder) -> crate::types::builders::IndexedKeyBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -4416,6 +4428,15 @@ pub(crate) fn http_api_schema_configuration_correct_errors(
 ) -> crate::types::builders::HttpApiSchemaConfigurationBuilder {
     if builder.source.is_none() {
         builder.source = Some(crate::types::ApiSchemaConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn http_connector_source_correct_errors(
+    mut builder: crate::types::builders::HttpConnectorSourceBuilder,
+) -> crate::types::builders::HttpConnectorSourceBuilder {
+    if builder.connector_id.is_none() {
+        builder.connector_id = Some(Default::default())
     }
     builder
 }

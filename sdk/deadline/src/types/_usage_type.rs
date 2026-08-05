@@ -14,6 +14,7 @@
 /// match usagetype {
 ///     UsageType::Compute => { /* ... */ },
 ///     UsageType::License => { /* ... */ },
+///     UsageType::PersistentVolume => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum UsageType {
     Compute,
     #[allow(missing_docs)] // documentation missing in model
     License,
+    #[allow(missing_docs)] // documentation missing in model
+    PersistentVolume,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for UsageType {
         match s {
             "COMPUTE" => UsageType::Compute,
             "LICENSE" => UsageType::License,
+            "PERSISTENT_VOLUME" => UsageType::PersistentVolume,
             other => UsageType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl UsageType {
         match self {
             UsageType::Compute => "COMPUTE",
             UsageType::License => "LICENSE",
+            UsageType::PersistentVolume => "PERSISTENT_VOLUME",
             UsageType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPUTE", "LICENSE"]
+        &["COMPUTE", "LICENSE", "PERSISTENT_VOLUME"]
     }
 }
 impl ::std::convert::AsRef<str> for UsageType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for UsageType {
         match self {
             UsageType::Compute => write!(f, "COMPUTE"),
             UsageType::License => write!(f, "LICENSE"),
+            UsageType::PersistentVolume => write!(f, "PERSISTENT_VOLUME"),
             UsageType::Unknown(value) => write!(f, "{value}"),
         }
     }

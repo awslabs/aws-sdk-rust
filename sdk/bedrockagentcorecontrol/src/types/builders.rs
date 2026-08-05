@@ -323,6 +323,8 @@ pub use crate::types::_runtime_target_configuration::RuntimeTargetConfigurationB
 
 pub use crate::types::_passthrough_target_configuration::PassthroughTargetConfigurationBuilder;
 
+pub use crate::types::_http_connector_target_configuration::HttpConnectorTargetConfigurationBuilder;
+
 pub use crate::types::_inference_connector_target_configuration::InferenceConnectorTargetConfigurationBuilder;
 
 pub use crate::types::_inference_provider_target_configuration::InferenceProviderTargetConfigurationBuilder;
@@ -408,6 +410,8 @@ pub use crate::types::_connector_source::ConnectorSourceBuilder;
 pub use crate::types::_http_api_schema_configuration::HttpApiSchemaConfigurationBuilder;
 
 pub use crate::types::_stickiness_configuration::StickinessConfigurationBuilder;
+
+pub use crate::types::_http_connector_source::HttpConnectorSourceBuilder;
 
 pub use crate::types::_inference_connector_source::InferenceConnectorSourceBuilder;
 

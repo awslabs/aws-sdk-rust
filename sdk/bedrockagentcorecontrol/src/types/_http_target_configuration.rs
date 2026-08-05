@@ -6,6 +6,8 @@
 pub enum HttpTargetConfiguration {
     /// <p>The AgentCore Runtime target configuration for HTTP-based communication with an agent runtime.</p>
     AgentcoreRuntime(crate::types::RuntimeTargetConfiguration),
+    /// <p>The connector-based configuration for the HTTP target. Use this configuration when you want to route HTTP requests through a managed connector.</p>
+    Connector(crate::types::HttpConnectorTargetConfiguration),
     /// <p>The passthrough configuration for the HTTP target. A passthrough target forwards requests directly to an external HTTP endpoint.</p>
     Passthrough(crate::types::PassthroughTargetConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl HttpTargetConfiguration {
     /// Returns true if this is a [`AgentcoreRuntime`](crate::types::HttpTargetConfiguration::AgentcoreRuntime).
     pub fn is_agentcore_runtime(&self) -> bool {
         self.as_agentcore_runtime().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Connector`](crate::types::HttpTargetConfiguration::Connector), extracting the inner [`HttpConnectorTargetConfiguration`](crate::types::HttpConnectorTargetConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_connector(&self) -> ::std::result::Result<&crate::types::HttpConnectorTargetConfiguration, &Self> {
+        if let HttpTargetConfiguration::Connector(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Connector`](crate::types::HttpTargetConfiguration::Connector).
+    pub fn is_connector(&self) -> bool {
+        self.as_connector().is_ok()
     }
     /// Tries to convert the enum instance into [`Passthrough`](crate::types::HttpTargetConfiguration::Passthrough), extracting the inner [`PassthroughTargetConfiguration`](crate::types::PassthroughTargetConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

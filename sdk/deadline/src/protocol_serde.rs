@@ -865,6 +865,8 @@ pub(crate) mod shape_environment_exit_session_action_definition_summary;
 
 pub(crate) mod shape_instance_types;
 
+pub(crate) mod shape_job_details_job_attachment_settings;
+
 pub(crate) mod shape_list_attribute_capability_value;
 
 pub(crate) mod shape_memory_mib_range;

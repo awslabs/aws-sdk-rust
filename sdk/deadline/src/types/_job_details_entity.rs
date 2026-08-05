@@ -7,7 +7,7 @@ pub struct JobDetailsEntity {
     /// <p>The job ID.</p>
     pub job_id: ::std::string::String,
     /// <p>The job attachment settings.</p>
-    pub job_attachment_settings: ::std::option::Option<crate::types::JobAttachmentSettings>,
+    pub job_attachment_settings: ::std::option::Option<crate::types::JobDetailsJobAttachmentSettings>,
     /// <p>The user name and group that the job uses when run.</p>
     pub job_run_as_user: ::std::option::Option<crate::types::JobRunAsUser>,
     /// <p>The log group name.</p>
@@ -28,7 +28,7 @@ impl JobDetailsEntity {
         self.job_id.deref()
     }
     /// <p>The job attachment settings.</p>
-    pub fn job_attachment_settings(&self) -> ::std::option::Option<&crate::types::JobAttachmentSettings> {
+    pub fn job_attachment_settings(&self) -> ::std::option::Option<&crate::types::JobDetailsJobAttachmentSettings> {
         self.job_attachment_settings.as_ref()
     }
     /// <p>The user name and group that the job uses when run.</p>
@@ -86,7 +86,7 @@ impl JobDetailsEntity {
 #[non_exhaustive]
 pub struct JobDetailsEntityBuilder {
     pub(crate) job_id: ::std::option::Option<::std::string::String>,
-    pub(crate) job_attachment_settings: ::std::option::Option<crate::types::JobAttachmentSettings>,
+    pub(crate) job_attachment_settings: ::std::option::Option<crate::types::JobDetailsJobAttachmentSettings>,
     pub(crate) job_run_as_user: ::std::option::Option<crate::types::JobRunAsUser>,
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) queue_role_arn: ::std::option::Option<::std::string::String>,
@@ -111,17 +111,17 @@ impl JobDetailsEntityBuilder {
         &self.job_id
     }
     /// <p>The job attachment settings.</p>
-    pub fn job_attachment_settings(mut self, input: crate::types::JobAttachmentSettings) -> Self {
+    pub fn job_attachment_settings(mut self, input: crate::types::JobDetailsJobAttachmentSettings) -> Self {
         self.job_attachment_settings = ::std::option::Option::Some(input);
         self
     }
     /// <p>The job attachment settings.</p>
-    pub fn set_job_attachment_settings(mut self, input: ::std::option::Option<crate::types::JobAttachmentSettings>) -> Self {
+    pub fn set_job_attachment_settings(mut self, input: ::std::option::Option<crate::types::JobDetailsJobAttachmentSettings>) -> Self {
         self.job_attachment_settings = input;
         self
     }
     /// <p>The job attachment settings.</p>
-    pub fn get_job_attachment_settings(&self) -> &::std::option::Option<crate::types::JobAttachmentSettings> {
+    pub fn get_job_attachment_settings(&self) -> &::std::option::Option<crate::types::JobDetailsJobAttachmentSettings> {
         &self.job_attachment_settings
     }
     /// <p>The user name and group that the job uses when run.</p>

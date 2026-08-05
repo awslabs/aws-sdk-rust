@@ -429,6 +429,8 @@ pub use crate::types::_scheduling_max_priority_override_always_schedule_first::S
 
 pub use crate::types::_scheduling_min_priority_override_always_schedule_last::SchedulingMinPriorityOverrideAlwaysScheduleLast;
 
+pub use crate::types::_job_details_job_attachment_settings::JobDetailsJobAttachmentSettings;
+
 pub use crate::types::_job_entity_error_code::JobEntityErrorCode;
 
 pub use crate::types::_task_run_manifest_properties_request::TaskRunManifestPropertiesRequest;
@@ -682,6 +684,8 @@ mod _job_details_entity;
 mod _job_details_error;
 
 mod _job_details_identifiers;
+
+mod _job_details_job_attachment_settings;
 
 mod _job_entity;
 

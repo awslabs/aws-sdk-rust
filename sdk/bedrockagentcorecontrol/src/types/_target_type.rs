@@ -15,6 +15,7 @@
 ///     TargetType::AgentcoreRuntime => { /* ... */ },
 ///     TargetType::ApiGateway => { /* ... */ },
 ///     TargetType::Connector => { /* ... */ },
+///     TargetType::HttpConnector => { /* ... */ },
 ///     TargetType::Lambda => { /* ... */ },
 ///     TargetType::McpServer => { /* ... */ },
 ///     TargetType::OpenApiSchema => { /* ... */ },
@@ -56,6 +57,8 @@ pub enum TargetType {
     #[allow(missing_docs)] // documentation missing in model
     Connector,
     #[allow(missing_docs)] // documentation missing in model
+    HttpConnector,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
     #[allow(missing_docs)] // documentation missing in model
     McpServer,
@@ -77,6 +80,7 @@ impl ::std::convert::From<&str> for TargetType {
             "AGENTCORE_RUNTIME" => TargetType::AgentcoreRuntime,
             "API_GATEWAY" => TargetType::ApiGateway,
             "CONNECTOR" => TargetType::Connector,
+            "HTTP_CONNECTOR" => TargetType::HttpConnector,
             "LAMBDA" => TargetType::Lambda,
             "MCP_SERVER" => TargetType::McpServer,
             "OPEN_API_SCHEMA" => TargetType::OpenApiSchema,
@@ -101,6 +105,7 @@ impl TargetType {
             TargetType::AgentcoreRuntime => "AGENTCORE_RUNTIME",
             TargetType::ApiGateway => "API_GATEWAY",
             TargetType::Connector => "CONNECTOR",
+            TargetType::HttpConnector => "HTTP_CONNECTOR",
             TargetType::Lambda => "LAMBDA",
             TargetType::McpServer => "MCP_SERVER",
             TargetType::OpenApiSchema => "OPEN_API_SCHEMA",
@@ -116,6 +121,7 @@ impl TargetType {
             "AGENTCORE_RUNTIME",
             "API_GATEWAY",
             "CONNECTOR",
+            "HTTP_CONNECTOR",
             "LAMBDA",
             "MCP_SERVER",
             "OPEN_API_SCHEMA",
@@ -148,6 +154,7 @@ impl ::std::fmt::Display for TargetType {
             TargetType::AgentcoreRuntime => write!(f, "AGENTCORE_RUNTIME"),
             TargetType::ApiGateway => write!(f, "API_GATEWAY"),
             TargetType::Connector => write!(f, "CONNECTOR"),
+            TargetType::HttpConnector => write!(f, "HTTP_CONNECTOR"),
             TargetType::Lambda => write!(f, "LAMBDA"),
             TargetType::McpServer => write!(f, "MCP_SERVER"),
             TargetType::OpenApiSchema => write!(f, "OPEN_API_SCHEMA"),

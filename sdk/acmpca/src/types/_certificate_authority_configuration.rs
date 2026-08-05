@@ -7,7 +7,7 @@ pub struct CertificateAuthorityConfiguration {
     /// <p>Type of the public key algorithm and size, in bits, of the key pair that your CA creates when it issues a certificate. When you create a subordinate CA, you must use a key algorithm supported by the parent CA.</p>
     pub key_algorithm: crate::types::KeyAlgorithm,
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter of the <code>IssueCertificate</code> API action, which is used to sign certificates when they are issued.</p>
     pub signing_algorithm: crate::types::SigningAlgorithm,
     /// <p>Structure that contains X.500 distinguished name information for your private CA.</p>
     pub subject: ::std::option::Option<crate::types::Asn1Subject>,
@@ -20,7 +20,7 @@ impl CertificateAuthorityConfiguration {
         &self.key_algorithm
     }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter of the <code>IssueCertificate</code> API action, which is used to sign certificates when they are issued.</p>
     pub fn signing_algorithm(&self) -> &crate::types::SigningAlgorithm {
         &self.signing_algorithm
     }
@@ -66,20 +66,20 @@ impl CertificateAuthorityConfigurationBuilder {
         &self.key_algorithm
     }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter of the <code>IssueCertificate</code> API action, which is used to sign certificates when they are issued.</p>
     /// This field is required.
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithm) -> Self {
         self.signing_algorithm = ::std::option::Option::Some(input);
         self
     }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter of the <code>IssueCertificate</code> API action, which is used to sign certificates when they are issued.</p>
     pub fn set_signing_algorithm(mut self, input: ::std::option::Option<crate::types::SigningAlgorithm>) -> Self {
         self.signing_algorithm = input;
         self
     }
     /// <p>Name of the algorithm your private CA uses to sign certificate requests.</p>
-    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates when they are issued.</p>
+    /// <p>This parameter should not be confused with the <code>SigningAlgorithm</code> parameter of the <code>IssueCertificate</code> API action, which is used to sign certificates when they are issued.</p>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<crate::types::SigningAlgorithm> {
         &self.signing_algorithm
     }

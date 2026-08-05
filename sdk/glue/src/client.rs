@@ -413,6 +413,8 @@ mod get_dashboard_url;
 
 mod get_data_catalog_encryption_settings;
 
+mod get_data_catalog_export_configuration;
+
 mod get_data_quality_model;
 
 mod get_data_quality_model_result;
@@ -614,6 +616,8 @@ mod put_asset_type;
 mod put_attachment;
 
 mod put_data_catalog_encryption_settings;
+
+mod put_data_catalog_export_configuration;
 
 mod put_data_quality_profile_annotation;
 

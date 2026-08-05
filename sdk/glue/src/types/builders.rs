@@ -111,6 +111,8 @@ pub use crate::types::_database::DatabaseBuilder;
 
 pub use crate::types::_data_catalog_encryption_settings::DataCatalogEncryptionSettingsBuilder;
 
+pub use crate::types::_export_encryption_configuration::ExportEncryptionConfigurationBuilder;
+
 pub use crate::types::_data_source::DataSourceBuilder;
 
 pub use crate::types::_data_quality_aggregated_metrics::DataQualityAggregatedMetricsBuilder;

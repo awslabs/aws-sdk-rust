@@ -273,6 +273,8 @@ pub(crate) mod shape_get_dashboard_url;
 
 pub(crate) mod shape_get_data_catalog_encryption_settings;
 
+pub(crate) mod shape_get_data_catalog_export_configuration;
+
 pub(crate) mod shape_get_data_quality_model;
 
 pub(crate) mod shape_get_data_quality_model_result;
@@ -474,6 +476,8 @@ pub(crate) mod shape_put_asset_type;
 pub(crate) mod shape_put_attachment;
 
 pub(crate) mod shape_put_data_catalog_encryption_settings;
+
+pub(crate) mod shape_put_data_catalog_export_configuration;
 
 pub(crate) mod shape_put_data_quality_profile_annotation;
 
@@ -1149,6 +1153,8 @@ pub(crate) mod shape_put_attachment_input;
 
 pub(crate) mod shape_put_data_catalog_encryption_settings_input;
 
+pub(crate) mod shape_put_data_catalog_export_configuration_input;
+
 pub(crate) mod shape_put_data_quality_profile_annotation_input;
 
 pub(crate) mod shape_put_form_type_input;
@@ -1522,6 +1528,8 @@ pub(crate) mod shape_evaluation_metrics;
 pub(crate) mod shape_event_batching_condition;
 
 pub(crate) mod shape_execution_property;
+
+pub(crate) mod shape_export_encryption_configuration;
 
 pub(crate) mod shape_fields_list;
 

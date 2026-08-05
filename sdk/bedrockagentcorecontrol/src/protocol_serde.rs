@@ -1115,6 +1115,8 @@ pub(crate) mod shape_harness_sliding_window_configuration;
 
 pub(crate) mod shape_harness_summarization_configuration;
 
+pub(crate) mod shape_http_connector_target_configuration;
+
 pub(crate) mod shape_iam_credential_provider;
 
 pub(crate) mod shape_inference_connector_target_configuration;
@@ -1246,6 +1248,10 @@ pub(crate) mod shape_hosting_environment;
 pub(crate) mod shape_hosting_environment_list_type;
 
 pub(crate) mod shape_http_api_schema_configuration;
+
+pub(crate) mod shape_http_connector_parameters;
+
+pub(crate) mod shape_http_connector_source;
 
 pub(crate) mod shape_iam_principal;
 

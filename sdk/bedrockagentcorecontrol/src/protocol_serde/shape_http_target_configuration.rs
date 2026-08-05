@@ -52,6 +52,14 @@ where
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'passthrough' cannot be null")
                             })?,
                         )),
+                        "connector" => Some(crate::types::HttpTargetConfiguration::Connector(
+                            crate::protocol_serde::shape_http_connector_target_configuration::de_http_connector_target_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'connector' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::HttpTargetConfiguration::Unknown)
@@ -95,6 +103,12 @@ pub fn ser_http_target_configuration(
             let mut object_2 = object_2.key("passthrough").start_object();
             crate::protocol_serde::shape_passthrough_target_configuration::ser_passthrough_target_configuration(&mut object_2, inner)?;
             object_2.finish();
+        }
+        crate::types::HttpTargetConfiguration::Connector(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_2.key("connector").start_object();
+            crate::protocol_serde::shape_http_connector_target_configuration::ser_http_connector_target_configuration(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::HttpTargetConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

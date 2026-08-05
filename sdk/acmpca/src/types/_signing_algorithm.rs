@@ -17,10 +17,13 @@
 ///     SigningAlgorithm::MlDsa87 => { /* ... */ },
 ///     SigningAlgorithm::Sha256Withecdsa => { /* ... */ },
 ///     SigningAlgorithm::Sha256Withrsa => { /* ... */ },
+///     SigningAlgorithm::Sha256WithrsaPss => { /* ... */ },
 ///     SigningAlgorithm::Sha384Withecdsa => { /* ... */ },
 ///     SigningAlgorithm::Sha384Withrsa => { /* ... */ },
+///     SigningAlgorithm::Sha384WithrsaPss => { /* ... */ },
 ///     SigningAlgorithm::Sha512Withecdsa => { /* ... */ },
 ///     SigningAlgorithm::Sha512Withrsa => { /* ... */ },
+///     SigningAlgorithm::Sha512WithrsaPss => { /* ... */ },
 ///     SigningAlgorithm::Sm3Withsm2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -61,13 +64,19 @@ pub enum SigningAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Sha256Withrsa,
     #[allow(missing_docs)] // documentation missing in model
+    Sha256WithrsaPss,
+    #[allow(missing_docs)] // documentation missing in model
     Sha384Withecdsa,
     #[allow(missing_docs)] // documentation missing in model
     Sha384Withrsa,
     #[allow(missing_docs)] // documentation missing in model
+    Sha384WithrsaPss,
+    #[allow(missing_docs)] // documentation missing in model
     Sha512Withecdsa,
     #[allow(missing_docs)] // documentation missing in model
     Sha512Withrsa,
+    #[allow(missing_docs)] // documentation missing in model
+    Sha512WithrsaPss,
     #[allow(missing_docs)] // documentation missing in model
     Sm3Withsm2,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -82,10 +91,13 @@ impl ::std::convert::From<&str> for SigningAlgorithm {
             "ML_DSA_87" => SigningAlgorithm::MlDsa87,
             "SHA256WITHECDSA" => SigningAlgorithm::Sha256Withecdsa,
             "SHA256WITHRSA" => SigningAlgorithm::Sha256Withrsa,
+            "SHA256WITHRSA_PSS" => SigningAlgorithm::Sha256WithrsaPss,
             "SHA384WITHECDSA" => SigningAlgorithm::Sha384Withecdsa,
             "SHA384WITHRSA" => SigningAlgorithm::Sha384Withrsa,
+            "SHA384WITHRSA_PSS" => SigningAlgorithm::Sha384WithrsaPss,
             "SHA512WITHECDSA" => SigningAlgorithm::Sha512Withecdsa,
             "SHA512WITHRSA" => SigningAlgorithm::Sha512Withrsa,
+            "SHA512WITHRSA_PSS" => SigningAlgorithm::Sha512WithrsaPss,
             "SM3WITHSM2" => SigningAlgorithm::Sm3Withsm2,
             other => SigningAlgorithm::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -107,10 +119,13 @@ impl SigningAlgorithm {
             SigningAlgorithm::MlDsa87 => "ML_DSA_87",
             SigningAlgorithm::Sha256Withecdsa => "SHA256WITHECDSA",
             SigningAlgorithm::Sha256Withrsa => "SHA256WITHRSA",
+            SigningAlgorithm::Sha256WithrsaPss => "SHA256WITHRSA_PSS",
             SigningAlgorithm::Sha384Withecdsa => "SHA384WITHECDSA",
             SigningAlgorithm::Sha384Withrsa => "SHA384WITHRSA",
+            SigningAlgorithm::Sha384WithrsaPss => "SHA384WITHRSA_PSS",
             SigningAlgorithm::Sha512Withecdsa => "SHA512WITHECDSA",
             SigningAlgorithm::Sha512Withrsa => "SHA512WITHRSA",
+            SigningAlgorithm::Sha512WithrsaPss => "SHA512WITHRSA_PSS",
             SigningAlgorithm::Sm3Withsm2 => "SM3WITHSM2",
             SigningAlgorithm::Unknown(value) => value.as_str(),
         }
@@ -123,10 +138,13 @@ impl SigningAlgorithm {
             "ML_DSA_87",
             "SHA256WITHECDSA",
             "SHA256WITHRSA",
+            "SHA256WITHRSA_PSS",
             "SHA384WITHECDSA",
             "SHA384WITHRSA",
+            "SHA384WITHRSA_PSS",
             "SHA512WITHECDSA",
             "SHA512WITHRSA",
+            "SHA512WITHRSA_PSS",
             "SM3WITHSM2",
         ]
     }
@@ -156,10 +174,13 @@ impl ::std::fmt::Display for SigningAlgorithm {
             SigningAlgorithm::MlDsa87 => write!(f, "ML_DSA_87"),
             SigningAlgorithm::Sha256Withecdsa => write!(f, "SHA256WITHECDSA"),
             SigningAlgorithm::Sha256Withrsa => write!(f, "SHA256WITHRSA"),
+            SigningAlgorithm::Sha256WithrsaPss => write!(f, "SHA256WITHRSA_PSS"),
             SigningAlgorithm::Sha384Withecdsa => write!(f, "SHA384WITHECDSA"),
             SigningAlgorithm::Sha384Withrsa => write!(f, "SHA384WITHRSA"),
+            SigningAlgorithm::Sha384WithrsaPss => write!(f, "SHA384WITHRSA_PSS"),
             SigningAlgorithm::Sha512Withecdsa => write!(f, "SHA512WITHECDSA"),
             SigningAlgorithm::Sha512Withrsa => write!(f, "SHA512WITHRSA"),
+            SigningAlgorithm::Sha512WithrsaPss => write!(f, "SHA512WITHRSA_PSS"),
             SigningAlgorithm::Sm3Withsm2 => write!(f, "SM3WITHSM2"),
             SigningAlgorithm::Unknown(value) => write!(f, "{value}"),
         }

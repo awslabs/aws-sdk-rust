@@ -30,7 +30,11 @@ where
                         }
                         "jobAttachmentSettings" => {
                             builder = builder.set_job_attachment_settings(
-                                crate::protocol_serde::shape_job_attachment_settings::de_job_attachment_settings(tokens, _value, depth + 1)?,
+                                crate::protocol_serde::shape_job_details_job_attachment_settings::de_job_details_job_attachment_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "jobRunAsUser" => {

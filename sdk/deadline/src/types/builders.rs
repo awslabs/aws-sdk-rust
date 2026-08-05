@@ -269,6 +269,8 @@ pub use crate::types::_scheduling_max_priority_override_always_schedule_first::S
 
 pub use crate::types::_scheduling_min_priority_override_always_schedule_last::SchedulingMinPriorityOverrideAlwaysScheduleLastBuilder;
 
+pub use crate::types::_job_details_job_attachment_settings::JobDetailsJobAttachmentSettingsBuilder;
+
 pub use crate::types::_task_run_manifest_properties_request::TaskRunManifestPropertiesRequestBuilder;
 
 pub use crate::types::_assigned_session_action::AssignedSessionActionBuilder;

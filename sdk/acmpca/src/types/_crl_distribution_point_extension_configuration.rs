@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrlDistributionPointExtensionConfiguration {
     /// <p>Configures whether the CRL Distribution Point extension should be populated with the default URL to the CRL. If set to <code>true</code>, then the CDP extension will not be present in any certificates issued by that CA unless otherwise specified through CSR or API passthrough.</p><note>
-    /// <p>Only set this if you have another way to distribute the CRL Distribution Points ffor certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
+    /// <p>Only set this if you have another way to distribute the CRL Distribution Points for certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
     /// <p>This configuration cannot be enabled with a custom CNAME set.</p>
     /// </note>
     pub omit_extension: bool,
 }
 impl CrlDistributionPointExtensionConfiguration {
     /// <p>Configures whether the CRL Distribution Point extension should be populated with the default URL to the CRL. If set to <code>true</code>, then the CDP extension will not be present in any certificates issued by that CA unless otherwise specified through CSR or API passthrough.</p><note>
-    /// <p>Only set this if you have another way to distribute the CRL Distribution Points ffor certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
+    /// <p>Only set this if you have another way to distribute the CRL Distribution Points for certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
     /// <p>This configuration cannot be enabled with a custom CNAME set.</p>
     /// </note>
     pub fn omit_extension(&self) -> bool {
@@ -34,7 +34,7 @@ pub struct CrlDistributionPointExtensionConfigurationBuilder {
 }
 impl CrlDistributionPointExtensionConfigurationBuilder {
     /// <p>Configures whether the CRL Distribution Point extension should be populated with the default URL to the CRL. If set to <code>true</code>, then the CDP extension will not be present in any certificates issued by that CA unless otherwise specified through CSR or API passthrough.</p><note>
-    /// <p>Only set this if you have another way to distribute the CRL Distribution Points ffor certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
+    /// <p>Only set this if you have another way to distribute the CRL Distribution Points for certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
     /// <p>This configuration cannot be enabled with a custom CNAME set.</p>
     /// </note>
     /// This field is required.
@@ -43,7 +43,7 @@ impl CrlDistributionPointExtensionConfigurationBuilder {
         self
     }
     /// <p>Configures whether the CRL Distribution Point extension should be populated with the default URL to the CRL. If set to <code>true</code>, then the CDP extension will not be present in any certificates issued by that CA unless otherwise specified through CSR or API passthrough.</p><note>
-    /// <p>Only set this if you have another way to distribute the CRL Distribution Points ffor certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
+    /// <p>Only set this if you have another way to distribute the CRL Distribution Points for certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
     /// <p>This configuration cannot be enabled with a custom CNAME set.</p>
     /// </note>
     pub fn set_omit_extension(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -51,7 +51,7 @@ impl CrlDistributionPointExtensionConfigurationBuilder {
         self
     }
     /// <p>Configures whether the CRL Distribution Point extension should be populated with the default URL to the CRL. If set to <code>true</code>, then the CDP extension will not be present in any certificates issued by that CA unless otherwise specified through CSR or API passthrough.</p><note>
-    /// <p>Only set this if you have another way to distribute the CRL Distribution Points ffor certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
+    /// <p>Only set this if you have another way to distribute the CRL Distribution Points for certificates issued by your CA, such as the Matter Distributed Compliance Ledger</p>
     /// <p>This configuration cannot be enabled with a custom CNAME set.</p>
     /// </note>
     pub fn get_omit_extension(&self) -> &::std::option::Option<bool> {

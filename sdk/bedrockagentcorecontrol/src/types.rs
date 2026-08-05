@@ -539,6 +539,8 @@ pub use crate::types::_runtime_target_configuration::RuntimeTargetConfiguration;
 
 pub use crate::types::_passthrough_target_configuration::PassthroughTargetConfiguration;
 
+pub use crate::types::_http_connector_target_configuration::HttpConnectorTargetConfiguration;
+
 pub use crate::types::_inference_connector_target_configuration::InferenceConnectorTargetConfiguration;
 
 pub use crate::types::_inference_provider_target_configuration::InferenceProviderTargetConfiguration;
@@ -658,6 +660,8 @@ pub use crate::types::_http_api_schema_configuration::HttpApiSchemaConfiguration
 pub use crate::types::_passthrough_protocol_type::PassthroughProtocolType;
 
 pub use crate::types::_stickiness_configuration::StickinessConfiguration;
+
+pub use crate::types::_http_connector_source::HttpConnectorSource;
 
 pub use crate::types::_inference_connector_source::InferenceConnectorSource;
 
@@ -1308,6 +1312,10 @@ mod _harness_version_summary;
 mod _hosting_environment;
 
 mod _http_api_schema_configuration;
+
+mod _http_connector_source;
+
+mod _http_connector_target_configuration;
 
 mod _http_target_configuration;
 

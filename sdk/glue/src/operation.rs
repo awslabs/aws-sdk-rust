@@ -376,6 +376,9 @@ pub mod get_dashboard_url;
 /// Types for the `GetDataCatalogEncryptionSettings` operation.
 pub mod get_data_catalog_encryption_settings;
 
+/// Types for the `GetDataCatalogExportConfiguration` operation.
+pub mod get_data_catalog_export_configuration;
+
 /// Types for the `GetDataQualityModel` operation.
 pub mod get_data_quality_model;
 
@@ -678,6 +681,9 @@ pub mod put_attachment;
 
 /// Types for the `PutDataCatalogEncryptionSettings` operation.
 pub mod put_data_catalog_encryption_settings;
+
+/// Types for the `PutDataCatalogExportConfiguration` operation.
+pub mod put_data_catalog_export_configuration;
 
 /// Types for the `PutDataQualityProfileAnnotation` operation.
 pub mod put_data_quality_profile_annotation;

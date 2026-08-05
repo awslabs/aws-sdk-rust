@@ -2727,6 +2727,18 @@ pub(crate) fn environment_exit_session_action_definition_summary_correct_errors(
     builder
 }
 
+pub(crate) fn job_details_job_attachment_settings_correct_errors(
+    mut builder: crate::types::builders::JobDetailsJobAttachmentSettingsBuilder,
+) -> crate::types::builders::JobDetailsJobAttachmentSettingsBuilder {
+    if builder.s3_bucket_name.is_none() {
+        builder.s3_bucket_name = Some(Default::default())
+    }
+    if builder.root_prefix.is_none() {
+        builder.root_prefix = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn memory_mib_range_correct_errors(
     mut builder: crate::types::builders::MemoryMiBRangeBuilder,
 ) -> crate::types::builders::MemoryMiBRangeBuilder {

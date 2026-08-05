@@ -149,6 +149,12 @@ pub use crate::types::_resource_share_type::ResourceShareType;
 
 pub use crate::types::_data_catalog_encryption_settings::DataCatalogEncryptionSettings;
 
+pub use crate::types::_export_setting::ExportSetting;
+
+pub use crate::types::_export_status::ExportStatus;
+
+pub use crate::types::_export_encryption_configuration::ExportEncryptionConfiguration;
+
 pub use crate::types::_data_quality_model_status::DataQualityModelStatus;
 
 pub use crate::types::_data_source::DataSource;
@@ -1649,7 +1655,13 @@ mod _execution_status;
 
 mod _exist_condition;
 
+mod _export_encryption_configuration;
+
 mod _export_labels_task_run_properties;
+
+mod _export_setting;
+
+mod _export_status;
 
 mod _extracted_parameter;
 

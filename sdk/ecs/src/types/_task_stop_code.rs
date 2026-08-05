@@ -13,6 +13,7 @@
 /// # let taskstopcode = unimplemented!();
 /// match taskstopcode {
 ///     TaskStopCode::EssentialContainerExited => { /* ... */ },
+///     TaskStopCode::InfrastructureHealth => { /* ... */ },
 ///     TaskStopCode::ServiceSchedulerInitiated => { /* ... */ },
 ///     TaskStopCode::SpotInterruption => { /* ... */ },
 ///     TaskStopCode::TaskFailedToStart => { /* ... */ },
@@ -49,6 +50,8 @@ pub enum TaskStopCode {
     #[allow(missing_docs)] // documentation missing in model
     EssentialContainerExited,
     #[allow(missing_docs)] // documentation missing in model
+    InfrastructureHealth,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceSchedulerInitiated,
     #[allow(missing_docs)] // documentation missing in model
     SpotInterruption,
@@ -66,6 +69,7 @@ impl ::std::convert::From<&str> for TaskStopCode {
     fn from(s: &str) -> Self {
         match s {
             "EssentialContainerExited" => TaskStopCode::EssentialContainerExited,
+            "InfrastructureHealth" => TaskStopCode::InfrastructureHealth,
             "ServiceSchedulerInitiated" => TaskStopCode::ServiceSchedulerInitiated,
             "SpotInterruption" => TaskStopCode::SpotInterruption,
             "TaskFailedToStart" => TaskStopCode::TaskFailedToStart,
@@ -87,6 +91,7 @@ impl TaskStopCode {
     pub fn as_str(&self) -> &str {
         match self {
             TaskStopCode::EssentialContainerExited => "EssentialContainerExited",
+            TaskStopCode::InfrastructureHealth => "InfrastructureHealth",
             TaskStopCode::ServiceSchedulerInitiated => "ServiceSchedulerInitiated",
             TaskStopCode::SpotInterruption => "SpotInterruption",
             TaskStopCode::TaskFailedToStart => "TaskFailedToStart",
@@ -99,6 +104,7 @@ impl TaskStopCode {
     pub const fn values() -> &'static [&'static str] {
         &[
             "EssentialContainerExited",
+            "InfrastructureHealth",
             "ServiceSchedulerInitiated",
             "SpotInterruption",
             "TaskFailedToStart",
@@ -128,6 +134,7 @@ impl ::std::fmt::Display for TaskStopCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TaskStopCode::EssentialContainerExited => write!(f, "EssentialContainerExited"),
+            TaskStopCode::InfrastructureHealth => write!(f, "InfrastructureHealth"),
             TaskStopCode::ServiceSchedulerInitiated => write!(f, "ServiceSchedulerInitiated"),
             TaskStopCode::SpotInterruption => write!(f, "SpotInterruption"),
             TaskStopCode::TaskFailedToStart => write!(f, "TaskFailedToStart"),

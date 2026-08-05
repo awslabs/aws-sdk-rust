@@ -13,6 +13,7 @@
 /// # let instancehealthchecktype = unimplemented!();
 /// match instancehealthchecktype {
 ///     InstanceHealthCheckType::AcceleratedCompute => { /* ... */ },
+///     InstanceHealthCheckType::AgentConnectivity => { /* ... */ },
 ///     InstanceHealthCheckType::ContainerRuntime => { /* ... */ },
 ///     InstanceHealthCheckType::Daemon => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum InstanceHealthCheckType {
     #[allow(missing_docs)] // documentation missing in model
     AcceleratedCompute,
     #[allow(missing_docs)] // documentation missing in model
+    AgentConnectivity,
+    #[allow(missing_docs)] // documentation missing in model
     ContainerRuntime,
     #[allow(missing_docs)] // documentation missing in model
     Daemon,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for InstanceHealthCheckType {
     fn from(s: &str) -> Self {
         match s {
             "ACCELERATED_COMPUTE" => InstanceHealthCheckType::AcceleratedCompute,
+            "AGENT_CONNECTIVITY" => InstanceHealthCheckType::AgentConnectivity,
             "CONTAINER_RUNTIME" => InstanceHealthCheckType::ContainerRuntime,
             "DAEMON" => InstanceHealthCheckType::Daemon,
             other => InstanceHealthCheckType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl InstanceHealthCheckType {
     pub fn as_str(&self) -> &str {
         match self {
             InstanceHealthCheckType::AcceleratedCompute => "ACCELERATED_COMPUTE",
+            InstanceHealthCheckType::AgentConnectivity => "AGENT_CONNECTIVITY",
             InstanceHealthCheckType::ContainerRuntime => "CONTAINER_RUNTIME",
             InstanceHealthCheckType::Daemon => "DAEMON",
             InstanceHealthCheckType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl InstanceHealthCheckType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACCELERATED_COMPUTE", "CONTAINER_RUNTIME", "DAEMON"]
+        &["ACCELERATED_COMPUTE", "AGENT_CONNECTIVITY", "CONTAINER_RUNTIME", "DAEMON"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceHealthCheckType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for InstanceHealthCheckType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             InstanceHealthCheckType::AcceleratedCompute => write!(f, "ACCELERATED_COMPUTE"),
+            InstanceHealthCheckType::AgentConnectivity => write!(f, "AGENT_CONNECTIVITY"),
             InstanceHealthCheckType::ContainerRuntime => write!(f, "CONTAINER_RUNTIME"),
             InstanceHealthCheckType::Daemon => write!(f, "DAEMON"),
             InstanceHealthCheckType::Unknown(value) => write!(f, "{value}"),
