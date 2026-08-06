@@ -9,14 +9,14 @@ pub struct GetProductOutput {
     pub catalog: ::std::string::String,
     /// <p>The human-readable display name of the product.</p>
     pub product_name: ::std::string::String,
+    /// <p>The entity who manufactured the product.</p>
+    pub manufacturer: ::std::option::Option<crate::types::SellerInformation>,
     /// <p>Indicates whether the product is deployed on AWS infrastructure.</p>
     pub deployed_on_aws: crate::types::DeployedOnAwsStatus,
     /// <p>A 1–3 sentence summary describing the key aspects of the product.</p>
     pub short_description: ::std::string::String,
     /// <p>A detailed description of what the product does, in paragraph format.</p>
     pub long_description: ::std::string::String,
-    /// <p>The entity who manufactured the product.</p>
-    pub manufacturer: ::std::option::Option<crate::types::SellerInformation>,
     /// <p>The URL of the logo thumbnail image for the product.</p>
     pub logo_thumbnail_url: ::std::string::String,
     /// <p>A summary of fulfillment options available for deploying or accessing the product, such as AMI, SaaS, or Container.</p>
@@ -49,6 +49,10 @@ impl GetProductOutput {
         use std::ops::Deref;
         self.product_name.deref()
     }
+    /// <p>The entity who manufactured the product.</p>
+    pub fn manufacturer(&self) -> ::std::option::Option<&crate::types::SellerInformation> {
+        self.manufacturer.as_ref()
+    }
     /// <p>Indicates whether the product is deployed on AWS infrastructure.</p>
     pub fn deployed_on_aws(&self) -> &crate::types::DeployedOnAwsStatus {
         &self.deployed_on_aws
@@ -62,10 +66,6 @@ impl GetProductOutput {
     pub fn long_description(&self) -> &str {
         use std::ops::Deref;
         self.long_description.deref()
-    }
-    /// <p>The entity who manufactured the product.</p>
-    pub fn manufacturer(&self) -> ::std::option::Option<&crate::types::SellerInformation> {
-        self.manufacturer.as_ref()
     }
     /// <p>The URL of the logo thumbnail image for the product.</p>
     pub fn logo_thumbnail_url(&self) -> &str {
@@ -122,10 +122,10 @@ pub struct GetProductOutputBuilder {
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) product_name: ::std::option::Option<::std::string::String>,
+    pub(crate) manufacturer: ::std::option::Option<crate::types::SellerInformation>,
     pub(crate) deployed_on_aws: ::std::option::Option<crate::types::DeployedOnAwsStatus>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,
     pub(crate) long_description: ::std::option::Option<::std::string::String>,
-    pub(crate) manufacturer: ::std::option::Option<crate::types::SellerInformation>,
     pub(crate) logo_thumbnail_url: ::std::option::Option<::std::string::String>,
     pub(crate) fulfillment_option_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>>,
     pub(crate) categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
@@ -181,6 +181,21 @@ impl GetProductOutputBuilder {
     pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.product_name
     }
+    /// <p>The entity who manufactured the product.</p>
+    /// This field is required.
+    pub fn manufacturer(mut self, input: crate::types::SellerInformation) -> Self {
+        self.manufacturer = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity who manufactured the product.</p>
+    pub fn set_manufacturer(mut self, input: ::std::option::Option<crate::types::SellerInformation>) -> Self {
+        self.manufacturer = input;
+        self
+    }
+    /// <p>The entity who manufactured the product.</p>
+    pub fn get_manufacturer(&self) -> &::std::option::Option<crate::types::SellerInformation> {
+        &self.manufacturer
+    }
     /// <p>Indicates whether the product is deployed on AWS infrastructure.</p>
     /// This field is required.
     pub fn deployed_on_aws(mut self, input: crate::types::DeployedOnAwsStatus) -> Self {
@@ -225,21 +240,6 @@ impl GetProductOutputBuilder {
     /// <p>A detailed description of what the product does, in paragraph format.</p>
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.long_description
-    }
-    /// <p>The entity who manufactured the product.</p>
-    /// This field is required.
-    pub fn manufacturer(mut self, input: crate::types::SellerInformation) -> Self {
-        self.manufacturer = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The entity who manufactured the product.</p>
-    pub fn set_manufacturer(mut self, input: ::std::option::Option<crate::types::SellerInformation>) -> Self {
-        self.manufacturer = input;
-        self
-    }
-    /// <p>The entity who manufactured the product.</p>
-    pub fn get_manufacturer(&self) -> &::std::option::Option<crate::types::SellerInformation> {
-        &self.manufacturer
     }
     /// <p>The URL of the logo thumbnail image for the product.</p>
     /// This field is required.
@@ -420,6 +420,7 @@ impl GetProductOutputBuilder {
                     "product_name was not specified but it is required when building GetProductOutput",
                 )
             })?,
+            manufacturer: self.manufacturer,
             deployed_on_aws: self.deployed_on_aws.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "deployed_on_aws",
@@ -438,7 +439,6 @@ impl GetProductOutputBuilder {
                     "long_description was not specified but it is required when building GetProductOutput",
                 )
             })?,
-            manufacturer: self.manufacturer,
             logo_thumbnail_url: self.logo_thumbnail_url.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "logo_thumbnail_url",

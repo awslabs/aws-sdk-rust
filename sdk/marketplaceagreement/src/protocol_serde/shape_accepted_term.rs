@@ -109,6 +109,11 @@ where
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'variablePaymentTerm' cannot be null"),
                             )?,
                         )),
+                        "netPaymentTerm" => Some(crate::types::AcceptedTerm::NetPaymentTerm(
+                            crate::protocol_serde::shape_net_payment_term::de_net_payment_term(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'netPaymentTerm' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::AcceptedTerm::Unknown)

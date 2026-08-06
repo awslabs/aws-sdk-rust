@@ -107,11 +107,15 @@ pub use crate::types::_device_pool_compatibility_result::DevicePoolCompatibility
 
 pub use crate::types::_counters::Counters;
 
+pub use crate::types::_job_insights::JobInsights;
+
 pub use crate::types::_offering_status::OfferingStatus;
 
 pub use crate::types::_execution_result_code::ExecutionResultCode;
 
 pub use crate::types::_device_selection_result::DeviceSelectionResult;
+
+pub use crate::types::_run_insights::RunInsights;
 
 pub use crate::types::_artifact::Artifact;
 
@@ -135,7 +139,15 @@ pub use crate::types::_device_attribute::DeviceAttribute;
 
 pub use crate::types::_rule_operator::RuleOperator;
 
+pub use crate::types::_insights_type::InsightsType;
+
+pub use crate::types::_report_status::ReportStatus;
+
+pub use crate::types::_test_report::TestReport;
+
 pub use crate::types::_offering_transaction_type::OfferingTransactionType;
+
+pub use crate::types::_job_report::JobReport;
 
 pub use crate::types::_artifact_type::ArtifactType;
 
@@ -152,6 +164,10 @@ pub use crate::types::_unique_problem::UniqueProblem;
 pub use crate::types::_currency_code::CurrencyCode;
 
 pub use crate::types::_incompatibility_message::IncompatibilityMessage;
+
+pub use crate::types::_test_report_metrics::TestReportMetrics;
+
+pub use crate::types::_job_report_metrics::JobReportMetrics;
 
 pub use crate::types::_recurring_charge::RecurringCharge;
 
@@ -223,6 +239,8 @@ mod _execution_status;
 
 mod _incompatibility_message;
 
+mod _insights_type;
+
 mod _instance_profile;
 
 mod _instance_status;
@@ -230,6 +248,12 @@ mod _instance_status;
 mod _interaction_mode;
 
 mod _job;
+
+mod _job_insights;
+
+mod _job_report;
+
+mod _job_report_metrics;
 
 mod _location;
 
@@ -267,6 +291,8 @@ mod _remote_access_endpoints;
 
 mod _remote_access_session;
 
+mod _report_status;
+
 mod _resolution;
 
 mod _rule;
@@ -274,6 +300,8 @@ mod _rule;
 mod _rule_operator;
 
 mod _run;
+
+mod _run_insights;
 
 mod _sample;
 
@@ -304,6 +332,10 @@ mod _test_grid_session_artifact_type;
 mod _test_grid_session_status;
 
 mod _test_grid_vpc_config;
+
+mod _test_report;
+
+mod _test_report_metrics;
 
 mod _test_type;
 

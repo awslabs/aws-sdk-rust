@@ -67,6 +67,8 @@ pub use crate::types::_report_destination::ReportDestinationBuilder;
 
 pub use crate::types::_scheduled_plan_execution_member::ScheduledPlanExecutionMemberBuilder;
 
+pub use crate::types::_list_access_points_member::ListAccessPointsMemberBuilder;
+
 pub use crate::types::_backup_job::BackupJobBuilder;
 
 pub use crate::types::_backup_job_summary::BackupJobSummaryBuilder;

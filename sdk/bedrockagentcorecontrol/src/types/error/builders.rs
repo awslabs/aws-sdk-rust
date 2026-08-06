@@ -23,6 +23,8 @@ pub use crate::types::error::_encryption_failure::EncryptionFailureBuilder;
 
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededExceptionBuilder;
 
+pub use crate::types::error::_retryable_conflict_exception::RetryableConflictExceptionBuilder;
+
 pub use crate::types::error::_service_exception::ServiceExceptionBuilder;
 
 pub use crate::types::error::_throttled_exception::ThrottledExceptionBuilder;

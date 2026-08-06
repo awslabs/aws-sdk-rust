@@ -31,11 +31,11 @@ pub use crate::types::_seller_engagement::SellerEngagement;
 
 pub use crate::types::_use_case_entry::UseCaseEntry;
 
+pub use crate::types::_offer_associated_entity::OfferAssociatedEntity;
+
 pub use crate::types::_pricing_model_type::PricingModelType;
 
 pub use crate::types::_purchase_option_badge::PurchaseOptionBadge;
-
-pub use crate::types::_offer_associated_entity::OfferAssociatedEntity;
 
 pub use crate::types::_offer_set_associated_entity::OfferSetAssociatedEntity;
 
@@ -79,9 +79,9 @@ pub use crate::types::_seller_engagement_content_type::SellerEngagementContentTy
 
 pub use crate::types::_use_case::UseCase;
 
-pub use crate::types::_purchase_option_badge_type::PurchaseOptionBadgeType;
-
 pub use crate::types::_offer_set_information::OfferSetInformation;
+
+pub use crate::types::_purchase_option_badge_type::PurchaseOptionBadgeType;
 
 pub use crate::types::_byol_pricing_term::ByolPricingTerm;
 
@@ -106,6 +106,8 @@ pub use crate::types::_usage_based_pricing_term::UsageBasedPricingTerm;
 pub use crate::types::_validity_term::ValidityTerm;
 
 pub use crate::types::_variable_payment_term::VariablePaymentTerm;
+
+pub use crate::types::_net_payment_term::NetPaymentTerm;
 
 pub use crate::types::_amazon_machine_image_fulfillment_option::AmazonMachineImageFulfillmentOption;
 
@@ -270,6 +272,8 @@ mod _listing_facet;
 mod _listing_summary;
 
 mod _listing_summary_associated_entity;
+
+mod _net_payment_term;
 
 mod _offer_associated_entity;
 

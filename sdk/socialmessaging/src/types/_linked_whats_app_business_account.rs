@@ -20,6 +20,8 @@ pub struct LinkedWhatsAppBusinessAccount {
     pub event_destinations: ::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>,
     /// <p>The onboarding status for the Marketing Messages API. This value is fetched from Meta and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing Messages API.</p>
     pub marketing_messages_onboarding_status: ::std::option::Option<::std::string::String>,
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub dataset_id: ::std::option::Option<::std::string::String>,
     /// <p>The phone numbers associated with the Linked WhatsApp Business Account.</p>
     pub phone_numbers: ::std::vec::Vec<crate::types::WhatsAppPhoneNumberSummary>,
 }
@@ -61,6 +63,10 @@ impl LinkedWhatsAppBusinessAccount {
     pub fn marketing_messages_onboarding_status(&self) -> ::std::option::Option<&str> {
         self.marketing_messages_onboarding_status.as_deref()
     }
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+        self.dataset_id.as_deref()
+    }
     /// <p>The phone numbers associated with the Linked WhatsApp Business Account.</p>
     pub fn phone_numbers(&self) -> &[crate::types::WhatsAppPhoneNumberSummary] {
         use std::ops::Deref;
@@ -86,6 +92,7 @@ pub struct LinkedWhatsAppBusinessAccountBuilder {
     pub(crate) waba_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>>,
     pub(crate) marketing_messages_onboarding_status: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
     pub(crate) phone_numbers: ::std::option::Option<::std::vec::Vec<crate::types::WhatsAppPhoneNumberSummary>>,
 }
 impl LinkedWhatsAppBusinessAccountBuilder {
@@ -216,6 +223,20 @@ impl LinkedWhatsAppBusinessAccountBuilder {
     pub fn get_marketing_messages_onboarding_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.marketing_messages_onboarding_status
     }
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataset_id = input;
+        self
+    }
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// Appends an item to `phone_numbers`.
     ///
     /// To override the contents of this collection use [`set_phone_numbers`](Self::set_phone_numbers).
@@ -291,6 +312,7 @@ impl LinkedWhatsAppBusinessAccountBuilder {
                 )
             })?,
             marketing_messages_onboarding_status: self.marketing_messages_onboarding_status,
+            dataset_id: self.dataset_id,
             phone_numbers: self.phone_numbers.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "phone_numbers",

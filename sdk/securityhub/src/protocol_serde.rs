@@ -207,6 +207,8 @@ pub(crate) mod shape_list_enabled_products_for_import;
 
 pub(crate) mod shape_list_finding_aggregators;
 
+pub(crate) mod shape_list_free_trial_statuses_v2;
+
 pub(crate) mod shape_list_invitations;
 
 pub(crate) mod shape_list_members;
@@ -375,6 +377,8 @@ pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_configuration_policy_associations_input;
 
+pub(crate) mod shape_list_free_trial_statuses_v2_input;
+
 pub(crate) mod shape_organization_not_found_exception;
 
 pub(crate) mod shape_organizational_unit_not_found_exception;
@@ -426,6 +430,8 @@ pub(crate) mod shape_update_standards_control_input;
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_account_details;
+
+pub(crate) mod shape_account_free_trial_status_list;
 
 pub(crate) mod shape_action_target_list;
 
@@ -610,6 +616,8 @@ pub(crate) mod shape_unprocessed_standards_control_associations;
 pub(crate) mod shape_update_automation_rules_request_item;
 
 pub(crate) mod shape_workflow_update;
+
+pub(crate) mod shape_account_free_trial_status;
 
 pub(crate) mod shape_action;
 
@@ -822,6 +830,8 @@ pub(crate) mod shape_finding_history_updates_list;
 pub(crate) mod shape_finding_provider_severity;
 
 pub(crate) mod shape_findings_trends_string_filter;
+
+pub(crate) mod shape_free_trial_status_list;
 
 pub(crate) mod shape_group_by_values;
 
@@ -1158,6 +1168,8 @@ pub(crate) mod shape_disabled_security_control_identifier_list;
 pub(crate) mod shape_enabled_security_control_identifier_list;
 
 pub(crate) mod shape_finding_history_update;
+
+pub(crate) mod shape_free_trial_status;
 
 pub(crate) mod shape_group_by_value;
 

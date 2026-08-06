@@ -8,14 +8,14 @@ impl super::Client {
     ///   - [`offer_id(String)`](crate::operation::get_offer::GetOfferOutput::offer_id): <p>The unique identifier of the offer.</p>
     ///   - [`catalog(String)`](crate::operation::get_offer::GetOfferOutput::catalog): <p>The name of the catalog that the offer belongs to.</p>
     ///   - [`offer_name(Option<String>)`](crate::operation::get_offer::GetOfferOutput::offer_name): <p>The display name of the offer. This is free-form text provided by the seller.</p>
-    ///   - [`agreement_proposal_id(String)`](crate::operation::get_offer::GetOfferOutput::agreement_proposal_id): <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
     ///   - [`expiration_time(Option<DateTime>)`](crate::operation::get_offer::GetOfferOutput::expiration_time): <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
     ///   - [`available_from_time(Option<DateTime>)`](crate::operation::get_offer::GetOfferOutput::available_from_time): <p>The date and time when the offer became available to the buyer.</p>
     ///   - [`seller_of_record(Option<SellerInformation>)`](crate::operation::get_offer::GetOfferOutput::seller_of_record): <p>The entity responsible for selling the product under this offer.</p>
+    ///   - [`associated_entities(Vec::<OfferAssociatedEntity>)`](crate::operation::get_offer::GetOfferOutput::associated_entities): <p>The products and offer sets associated with this offer.</p>
+    ///   - [`agreement_proposal_id(String)`](crate::operation::get_offer::GetOfferOutput::agreement_proposal_id): <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
     ///   - [`replacement_agreement_id(Option<String>)`](crate::operation::get_offer::GetOfferOutput::replacement_agreement_id): <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
     ///   - [`pricing_model(Option<PricingModel>)`](crate::operation::get_offer::GetOfferOutput::pricing_model): <p>The pricing model that determines how buyers are charged, such as usage-based, contract, BYOL, or free.</p>
     ///   - [`badges(Vec::<PurchaseOptionBadge>)`](crate::operation::get_offer::GetOfferOutput::badges): <p>Badges indicating special attributes of the offer, such as private pricing, future dated, or replacement offer.</p>
-    ///   - [`associated_entities(Vec::<OfferAssociatedEntity>)`](crate::operation::get_offer::GetOfferOutput::associated_entities): <p>The products and offer sets associated with this offer.</p>
     /// - On failure, responds with [`SdkError<GetOfferError>`](crate::operation::get_offer::GetOfferError)
     pub fn get_offer(&self) -> crate::operation::get_offer::builders::GetOfferFluentBuilder {
         crate::operation::get_offer::builders::GetOfferFluentBuilder::new(self.handle.clone())

@@ -13,6 +13,8 @@ pub use crate::types::_http_request_configuration::HttpRequestConfigurationBuild
 
 pub use crate::types::_custom_output_configuration::CustomOutputConfigurationBuilder;
 
+pub use crate::types::_concurrent_executor_configuration::ConcurrentExecutorConfigurationBuilder;
+
 pub use crate::types::_sequential_executor_configuration::SequentialExecutorConfigurationBuilder;
 
 pub use crate::types::_avail_suppression::AvailSuppressionBuilder;

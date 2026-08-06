@@ -143,6 +143,13 @@ pub(crate) fn de_delete_agent_runtime(
                             .transpose()?,
                     );
                 }
+                "agentRuntimeVersion" => {
+                    builder = builder.set_agent_runtime_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

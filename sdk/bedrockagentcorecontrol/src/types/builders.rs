@@ -33,6 +33,8 @@ pub use crate::types::_protocol_configuration::ProtocolConfigurationBuilder;
 
 pub use crate::types::_lifecycle_configuration::LifecycleConfigurationBuilder;
 
+pub use crate::types::_capacity_provider_configuration::CapacityProviderConfigurationBuilder;
+
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetailsBuilder;
 
 pub use crate::types::_runtime_metadata_configuration::RuntimeMetadataConfigurationBuilder;
@@ -44,6 +46,10 @@ pub use crate::types::_recording_config::RecordingConfigBuilder;
 pub use crate::types::_browser_signing_config_input::BrowserSigningConfigInputBuilder;
 
 pub use crate::types::_browser_signing_config_output::BrowserSigningConfigOutputBuilder;
+
+pub use crate::types::_permissions_configuration::PermissionsConfigurationBuilder;
+
+pub use crate::types::_updated_description::UpdatedDescriptionBuilder;
 
 pub use crate::types::_code_interpreter_network_configuration::CodeInterpreterNetworkConfigurationBuilder;
 
@@ -86,8 +92,6 @@ pub use crate::types::_rule::RuleBuilder;
 pub use crate::types::_clustering_config::ClusteringConfigBuilder;
 
 pub use crate::types::_output_config::OutputConfigBuilder;
-
-pub use crate::types::_updated_description::UpdatedDescriptionBuilder;
 
 pub use crate::types::_descriptors::DescriptorsBuilder;
 
@@ -133,6 +137,12 @@ pub use crate::types::_browser_enterprise_policy::BrowserEnterprisePolicyBuilder
 
 pub use crate::types::_certificate::CertificateBuilder;
 
+pub use crate::types::_capacity_provider_summary::CapacityProviderSummaryBuilder;
+
+pub use crate::types::_ec2_configuration::Ec2ConfigurationBuilder;
+
+pub use crate::types::_agent_runtime_version_summary::AgentRuntimeVersionSummaryBuilder;
+
 pub use crate::types::_code_interpreter_summary::CodeInterpreterSummaryBuilder;
 
 pub use crate::types::_configuration_bundle_summary::ConfigurationBundleSummaryBuilder;
@@ -152,6 +162,12 @@ pub use crate::types::_dataset_version_summary::DatasetVersionSummaryBuilder;
 pub use crate::types::_evaluator_summary::EvaluatorSummaryBuilder;
 
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfigBuilder;
+
+pub use crate::types::_batch_put_limit_entry::BatchPutLimitEntryBuilder;
+
+pub use crate::types::_gateway_rate_limit_detail::GatewayRateLimitDetailBuilder;
+
+pub use crate::types::_limit_entry::LimitEntryBuilder;
 
 pub use crate::types::_mcp_gateway_configuration::McpGatewayConfigurationBuilder;
 
@@ -295,9 +311,17 @@ pub use crate::types::_s3_files_access_point_configuration::S3FilesAccessPointCo
 
 pub use crate::types::_efs_access_point_configuration::EfsAccessPointConfigurationBuilder;
 
+pub use crate::types::_capacity_provider_volume_configuration::CapacityProviderVolumeConfigurationBuilder;
+
 pub use crate::types::_s3_files_configuration::S3FilesConfigurationBuilder;
 
 pub use crate::types::_efs_configuration::EfsConfigurationBuilder;
+
+pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
+
+pub use crate::types::_instance_lifecycle_configuration::InstanceLifecycleConfigurationBuilder;
+
+pub use crate::types::_root_volume_configuration::RootVolumeConfigurationBuilder;
 
 pub use crate::types::_lambda_evaluator_config::LambdaEvaluatorConfigBuilder;
 
@@ -385,9 +409,13 @@ pub use crate::types::_custom_claim_validation_type::CustomClaimValidationTypeBu
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
 
+pub use crate::types::_launch_parameters::LaunchParametersBuilder;
+
 pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfigBuilder;
 
 pub use crate::types::_open_responses_evaluator_model_config::OpenResponsesEvaluatorModelConfigBuilder;
+
+pub use crate::types::_rate_config::RateConfigBuilder;
 
 pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfigurationBuilder;
 
@@ -459,6 +487,12 @@ pub use crate::types::_authorizing_claim_match_value_type::AuthorizingClaimMatch
 
 pub use crate::types::_hosting_environment::HostingEnvironmentBuilder;
 
+pub use crate::types::_instance_requirements::InstanceRequirementsBuilder;
+
+pub use crate::types::_capacity_reservation_specification::CapacityReservationSpecificationBuilder;
+
+pub use crate::types::_ebs_volume_configuration::EbsVolumeConfigurationBuilder;
+
 pub use crate::types::_numerical_scale_definition::NumericalScaleDefinitionBuilder;
 
 pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinitionBuilder;
@@ -494,6 +528,12 @@ pub use crate::types::_updated_tools_definition::UpdatedToolsDefinitionBuilder;
 pub use crate::types::_updated_skill_md_definition::UpdatedSkillMdDefinitionBuilder;
 
 pub use crate::types::_updated_skill_definition::UpdatedSkillDefinitionBuilder;
+
+pub use crate::types::_ephemeral_block_device_mapping::EphemeralBlockDeviceMappingBuilder;
+
+pub use crate::types::_license_specification::LicenseSpecificationBuilder;
+
+pub use crate::types::_capacity_reservation_target::CapacityReservationTargetBuilder;
 
 pub use crate::types::_iam_principal::IamPrincipalBuilder;
 
@@ -540,6 +580,8 @@ pub use crate::types::_modify_invocation_configuration_input::ModifyInvocationCo
 pub use crate::types::_registry_record_o_auth_credential_provider::RegistryRecordOAuthCredentialProviderBuilder;
 
 pub use crate::types::_registry_record_iam_credential_provider::RegistryRecordIamCredentialProviderBuilder;
+
+pub use crate::types::_ephemeral_ebs_volume_configuration::EphemeralEbsVolumeConfigurationBuilder;
 
 pub use crate::types::_configuration_bundle_reference::ConfigurationBundleReferenceBuilder;
 

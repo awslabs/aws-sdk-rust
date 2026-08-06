@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateWhatsAppFlow`](crate::operation::create_whats_app_flow) operation has
-/// a [`Client::create_whats_app_flow`], function which returns a builder for that operation.
+/// For example, the [`CreateWhatsAppDataset`](crate::operation::create_whats_app_dataset) operation has
+/// a [`Client::create_whats_app_dataset`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_whats_app_flow()
+/// let result = client.create_whats_app_dataset()
 ///     .id("example")
 ///     .send()
 ///     .await;
@@ -137,6 +137,8 @@ impl Client {
 }
 
 mod associate_whats_app_business_account;
+
+mod create_whats_app_dataset;
 
 mod create_whats_app_flow;
 
@@ -212,6 +214,8 @@ mod post_whats_app_message_media;
 mod publish_whats_app_flow;
 
 mod put_whats_app_business_account_event_destinations;
+
+mod send_whats_app_conversion_event;
 
 mod send_whats_app_message;
 

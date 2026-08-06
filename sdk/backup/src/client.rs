@@ -140,6 +140,8 @@ mod associate_backup_vault_mpa_approval_team;
 
 mod cancel_legal_hold;
 
+mod create_backup_access_point;
+
 mod create_backup_plan;
 
 mod create_backup_selection;
@@ -189,6 +191,8 @@ mod create_tiering_configuration;
 /// ```
 pub mod customize;
 
+mod delete_backup_access_point;
+
 mod delete_backup_plan;
 
 mod delete_backup_selection;
@@ -212,6 +216,8 @@ mod delete_restore_testing_plan;
 mod delete_restore_testing_selection;
 
 mod delete_tiering_configuration;
+
+mod describe_backup_access_point;
 
 mod describe_backup_job;
 
@@ -276,6 +282,12 @@ mod get_restore_testing_selection;
 mod get_supported_resource_types;
 
 mod get_tiering_configuration;
+
+mod list_backup_access_points;
+
+mod list_backup_access_points_by_recovery_point;
+
+mod list_backup_access_points_by_resource;
 
 mod list_backup_job_summaries;
 

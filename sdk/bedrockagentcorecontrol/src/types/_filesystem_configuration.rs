@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum FilesystemConfiguration {
+    /// <p>Configuration for a capacity provider volume to mount into the AgentCore Runtime. This mounts a persistent volume that is defined on the capacity provider, referenced by its logical name.</p>
+    CapacityProviderVolume(crate::types::CapacityProviderVolumeConfiguration),
     /// <p>Configuration for an Amazon EFS access point to mount into the AgentCore Runtime.</p>
     EfsAccessPoint(crate::types::EfsAccessPointConfiguration),
     /// <p>Configuration for an Amazon S3 Files access point to mount into the AgentCore Runtime.</p>
@@ -21,6 +23,19 @@ pub enum FilesystemConfiguration {
     Unknown,
 }
 impl FilesystemConfiguration {
+    /// Tries to convert the enum instance into [`CapacityProviderVolume`](crate::types::FilesystemConfiguration::CapacityProviderVolume), extracting the inner [`CapacityProviderVolumeConfiguration`](crate::types::CapacityProviderVolumeConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_capacity_provider_volume(&self) -> ::std::result::Result<&crate::types::CapacityProviderVolumeConfiguration, &Self> {
+        if let FilesystemConfiguration::CapacityProviderVolume(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CapacityProviderVolume`](crate::types::FilesystemConfiguration::CapacityProviderVolume).
+    pub fn is_capacity_provider_volume(&self) -> bool {
+        self.as_capacity_provider_volume().is_ok()
+    }
     /// Tries to convert the enum instance into [`EfsAccessPoint`](crate::types::FilesystemConfiguration::EfsAccessPoint), extracting the inner [`EfsAccessPointConfiguration`](crate::types::EfsAccessPointConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_efs_access_point(&self) -> ::std::result::Result<&crate::types::EfsAccessPointConfiguration, &Self> {

@@ -305,6 +305,15 @@ pub(crate) fn list_connectors_v2_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_free_trial_statuses_v2_output_output_correct_errors(
+    mut builder: crate::operation::list_free_trial_statuses_v2::builders::ListFreeTrialStatusesV2OutputBuilder,
+) -> crate::operation::list_free_trial_statuses_v2::builders::ListFreeTrialStatusesV2OutputBuilder {
+    if builder.account_free_trial_statuses.is_none() {
+        builder.account_free_trial_statuses = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_security_control_definitions_output_output_correct_errors(
     mut builder: crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsOutputBuilder,
 ) -> crate::operation::list_security_control_definitions::builders::ListSecurityControlDefinitionsOutputBuilder {
@@ -389,6 +398,21 @@ pub(crate) fn security_control_definition_correct_errors(
     }
     if builder.current_region_availability.is_none() {
         builder.current_region_availability = "no value was set".parse::<crate::types::RegionAvailabilityStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn account_free_trial_status_correct_errors(
+    mut builder: crate::types::builders::AccountFreeTrialStatusBuilder,
+) -> crate::types::builders::AccountFreeTrialStatusBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.evaluated_at.is_none() {
+        builder.evaluated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.free_trial_statuses.is_none() {
+        builder.free_trial_statuses = Some(Default::default())
     }
     builder
 }
@@ -880,6 +904,24 @@ pub(crate) fn trends_values_correct_errors(mut builder: crate::types::builders::
             let builder = crate::types::builders::SeverityTrendsCountBuilder::default();
             Some(crate::serde_util::severity_trends_count_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn free_trial_status_correct_errors(
+    mut builder: crate::types::builders::FreeTrialStatusBuilder,
+) -> crate::types::builders::FreeTrialStatusBuilder {
+    if builder.feature_type.is_none() {
+        builder.feature_type = "no value was set".parse::<crate::types::FreeTrialType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FreeTrialStatusValue>().ok()
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.expires_at.is_none() {
+        builder.expires_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

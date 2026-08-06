@@ -243,6 +243,8 @@ pub(crate) mod shape_itemized_charge;
 
 pub(crate) mod shape_legal_term;
 
+pub(crate) mod shape_net_payment_term;
+
 pub(crate) mod shape_payment_schedule_term;
 
 pub(crate) mod shape_pricing_currency_amount;

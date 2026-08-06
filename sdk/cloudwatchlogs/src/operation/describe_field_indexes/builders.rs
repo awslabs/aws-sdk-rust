@@ -22,7 +22,8 @@ impl crate::operation::describe_field_indexes::builders::DescribeFieldIndexesInp
 }
 /// Fluent builder constructing a request to `DescribeFieldIndexes`.
 ///
-/// <p>Returns a list of custom and default field indexes which are discovered in log data. For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
+/// <p>Returns a list of field indexes discovered in log data. By default, the response includes the <code>DEFAULT</code>, <code>CUSTOM</code>, and <code>INACTIVE</code> index categories. To return indexes from other categories, use the <code>indexCategories</code> parameter.</p>
+/// <p>For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeFieldIndexesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,6 +127,61 @@ impl DescribeFieldIndexesFluentBuilder {
     /// <p>An array containing the names or ARNs of the log groups that you want to retrieve field indexes for.</p>
     pub fn get_log_group_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_log_group_identifiers()
+    }
+    ///
+    /// Appends an item to `indexCategories`.
+    ///
+    /// To override the contents of this collection use [`set_index_categories`](Self::set_index_categories).
+    ///
+    /// <p>The index categories to return. The following values are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default. Examples include <code>@logStream</code> and <code>@data_format</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code>: Fields that you added manually to the field index policy. CloudWatch Logs always indexes these fields. These fields count toward the quota of 20 fields for each log group.</p></li>
+    /// <li>
+    /// <p><code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on your query patterns and usage. These fields do not count toward the field index quota. CloudWatch Logs might update these fields based on changes in your query patterns. To keep a field indexed permanently, add it to an account-level or log-group level field index policy.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code>: Fields that CloudWatch Logs indexed before but does not index now. This happens if you remove a field from the field index policy or if CloudWatch Logs automatically selects a different field based on your queries.</p></li>
+    /// </ul>
+    /// <p>If you omit this parameter, the response includes the <code>DEFAULT</code>, <code>CUSTOM</code>, and <code>INACTIVE</code> categories.</p>
+    /// <p>For more information about automatically indexed fields and using the <code>AUTO</code> category, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically indexed fields</a>.</p>
+    pub fn index_categories(mut self, input: crate::types::IndexCategory) -> Self {
+        self.inner = self.inner.index_categories(input);
+        self
+    }
+    /// <p>The index categories to return. The following values are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default. Examples include <code>@logStream</code> and <code>@data_format</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code>: Fields that you added manually to the field index policy. CloudWatch Logs always indexes these fields. These fields count toward the quota of 20 fields for each log group.</p></li>
+    /// <li>
+    /// <p><code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on your query patterns and usage. These fields do not count toward the field index quota. CloudWatch Logs might update these fields based on changes in your query patterns. To keep a field indexed permanently, add it to an account-level or log-group level field index policy.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code>: Fields that CloudWatch Logs indexed before but does not index now. This happens if you remove a field from the field index policy or if CloudWatch Logs automatically selects a different field based on your queries.</p></li>
+    /// </ul>
+    /// <p>If you omit this parameter, the response includes the <code>DEFAULT</code>, <code>CUSTOM</code>, and <code>INACTIVE</code> categories.</p>
+    /// <p>For more information about automatically indexed fields and using the <code>AUTO</code> category, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically indexed fields</a>.</p>
+    pub fn set_index_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IndexCategory>>) -> Self {
+        self.inner = self.inner.set_index_categories(input);
+        self
+    }
+    /// <p>The index categories to return. The following values are supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default. Examples include <code>@logStream</code> and <code>@data_format</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code>: Fields that you added manually to the field index policy. CloudWatch Logs always indexes these fields. These fields count toward the quota of 20 fields for each log group.</p></li>
+    /// <li>
+    /// <p><code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on your query patterns and usage. These fields do not count toward the field index quota. CloudWatch Logs might update these fields based on changes in your query patterns. To keep a field indexed permanently, add it to an account-level or log-group level field index policy.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code>: Fields that CloudWatch Logs indexed before but does not index now. This happens if you remove a field from the field index policy or if CloudWatch Logs automatically selects a different field based on your queries.</p></li>
+    /// </ul>
+    /// <p>If you omit this parameter, the response includes the <code>DEFAULT</code>, <code>CUSTOM</code>, and <code>INACTIVE</code> categories.</p>
+    /// <p>For more information about automatically indexed fields and using the <code>AUTO</code> category, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically indexed fields</a>.</p>
+    pub fn get_index_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexCategory>> {
+        self.inner.get_index_categories()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

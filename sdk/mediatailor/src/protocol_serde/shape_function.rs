@@ -52,6 +52,15 @@ where
                                 crate::protocol_serde::shape_custom_output_configuration::de_custom_output_configuration(tokens, _value, depth + 1)?,
                             );
                         }
+                        "ConcurrentExecutorConfiguration" => {
+                            builder = builder.set_concurrent_executor_configuration(
+                                crate::protocol_serde::shape_concurrent_executor_configuration::de_concurrent_executor_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "SequentialExecutorConfiguration" => {
                             builder = builder.set_sequential_executor_configuration(
                                 crate::protocol_serde::shape_sequential_executor_configuration::de_sequential_executor_configuration(

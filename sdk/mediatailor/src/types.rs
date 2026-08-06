@@ -21,6 +21,8 @@ pub use crate::types::_http_request_configuration::HttpRequestConfiguration;
 
 pub use crate::types::_custom_output_configuration::CustomOutputConfiguration;
 
+pub use crate::types::_concurrent_executor_configuration::ConcurrentExecutorConfiguration;
+
 pub use crate::types::_sequential_executor_configuration::SequentialExecutorConfiguration;
 
 pub use crate::types::_avail_suppression::AvailSuppression;
@@ -240,6 +242,8 @@ mod _channel_state;
 mod _clip_range;
 
 mod _compression_method;
+
+mod _concurrent_executor_configuration;
 
 mod _custom_output_configuration;
 

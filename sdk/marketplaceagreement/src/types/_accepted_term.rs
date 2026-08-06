@@ -14,6 +14,8 @@ pub enum AcceptedTerm {
     FreeTrialPricingTerm(crate::types::FreeTrialPricingTerm),
     /// <p>Defines the list of text agreements proposed to the acceptors. An example is the end user license agreement (EULA).</p>
     LegalTerm(crate::types::LegalTerm),
+    /// <p>Defines the net payment due period for the agreement, specifying when payment is due after an invoice is issued.</p>
+    NetPaymentTerm(crate::types::NetPaymentTerm),
     /// <p>Defines an installment-based pricing model where customers are charged a fixed price on different dates during the agreement validity period. This is used most commonly for flexible payment schedule pricing.</p>
     PaymentScheduleTerm(crate::types::PaymentScheduleTerm),
     /// <p>Defines a pricing model where customers are charged a fixed recurring price at the end of each billing period.</p>
@@ -103,6 +105,19 @@ impl AcceptedTerm {
     /// Returns true if this is a [`LegalTerm`](crate::types::AcceptedTerm::LegalTerm).
     pub fn is_legal_term(&self) -> bool {
         self.as_legal_term().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NetPaymentTerm`](crate::types::AcceptedTerm::NetPaymentTerm), extracting the inner [`NetPaymentTerm`](crate::types::NetPaymentTerm).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_net_payment_term(&self) -> ::std::result::Result<&crate::types::NetPaymentTerm, &Self> {
+        if let AcceptedTerm::NetPaymentTerm(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NetPaymentTerm`](crate::types::AcceptedTerm::NetPaymentTerm).
+    pub fn is_net_payment_term(&self) -> bool {
+        self.as_net_payment_term().is_ok()
     }
     /// Tries to convert the enum instance into [`PaymentScheduleTerm`](crate::types::AcceptedTerm::PaymentScheduleTerm), extracting the inner [`PaymentScheduleTerm`](crate::types::PaymentScheduleTerm).
     /// Returns `Err(&Self)` if it can't be converted.

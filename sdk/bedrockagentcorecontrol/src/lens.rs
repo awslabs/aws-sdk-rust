@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_agent_runtime_versions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_agent_runtime_versions_by_capacity_provider_output_output_next_token(
+    input: &crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_agent_runtimes_output_output_next_token(
     input: &crate::operation::list_agent_runtimes::ListAgentRuntimesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -51,6 +61,16 @@ pub(crate) fn reflens_list_browser_profiles_output_output_next_token(
 
 pub(crate) fn reflens_list_browsers_output_output_next_token(
     input: &crate::operation::list_browsers::ListBrowsersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_capacity_providers_output_output_next_token(
+    input: &crate::operation::list_capacity_providers::ListCapacityProvidersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -121,6 +141,16 @@ pub(crate) fn reflens_list_datasets_output_output_next_token(
 
 pub(crate) fn reflens_list_evaluators_output_output_next_token(
     input: &crate::operation::list_evaluators::ListEvaluatorsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_gateway_rate_limits_output_output_next_token(
+    input: &crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -363,6 +393,13 @@ pub(crate) fn lens_list_agent_runtime_versions_output_output_agent_runtimes(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_agent_runtime_versions_by_capacity_provider_output_output_agent_runtimes(
+    input: crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntimeVersionSummary>> {
+    let input = input.agent_runtimes;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_agent_runtimes_output_output_agent_runtimes(
     input: crate::operation::list_agent_runtimes::ListAgentRuntimesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentRuntime>> {
@@ -388,6 +425,13 @@ pub(crate) fn lens_list_browsers_output_output_browser_summaries(
     input: crate::operation::list_browsers::ListBrowsersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BrowserSummary>> {
     let input = input.browser_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_capacity_providers_output_output_capacity_providers(
+    input: crate::operation::list_capacity_providers::ListCapacityProvidersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CapacityProviderSummary>> {
+    let input = input.capacity_providers;
     ::std::option::Option::Some(input)
 }
 
@@ -437,6 +481,13 @@ pub(crate) fn lens_list_evaluators_output_output_evaluators(
     input: crate::operation::list_evaluators::ListEvaluatorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorSummary>> {
     let input = input.evaluators;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_gateway_rate_limits_output_output_rate_limits(
+    input: crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GatewayRateLimitDetail>> {
+    let input = input.rate_limits;
     ::std::option::Option::Some(input)
 }
 

@@ -53,6 +53,27 @@ pub(crate) fn ad_conditioning_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn concurrent_executor_configuration_correct_errors(
+    mut builder: crate::types::builders::ConcurrentExecutorConfigurationBuilder,
+) -> crate::types::builders::ConcurrentExecutorConfigurationBuilder {
+    if builder.runtime.is_none() {
+        builder.runtime = "no value was set".parse::<crate::types::RuntimeType>().ok()
+    }
+    if builder.output.is_none() {
+        builder.output = Some(Default::default())
+    }
+    if builder.function_list.is_none() {
+        builder.function_list = Some(Default::default())
+    }
+    if builder.timeout_milliseconds.is_none() {
+        builder.timeout_milliseconds = Some(Default::default())
+    }
+    if builder.max_concurrency.is_none() {
+        builder.max_concurrency = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_output_configuration_correct_errors(
     mut builder: crate::types::builders::CustomOutputConfigurationBuilder,
 ) -> crate::types::builders::CustomOutputConfigurationBuilder {

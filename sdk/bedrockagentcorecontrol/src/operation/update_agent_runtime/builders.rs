@@ -293,6 +293,20 @@ impl UpdateAgentRuntimeFluentBuilder {
     pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
         self.inner.get_filesystem_configurations()
     }
+    /// <p>The updated capacity provider configuration for the AgentCore Runtime.</p>
+    pub fn capacity_provider_configuration(mut self, input: crate::types::CapacityProviderConfiguration) -> Self {
+        self.inner = self.inner.capacity_provider_configuration(input);
+        self
+    }
+    /// <p>The updated capacity provider configuration for the AgentCore Runtime.</p>
+    pub fn set_capacity_provider_configuration(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfiguration>) -> Self {
+        self.inner = self.inner.set_capacity_provider_configuration(input);
+        self
+    }
+    /// <p>The updated capacity provider configuration for the AgentCore Runtime.</p>
+    pub fn get_capacity_provider_configuration(&self) -> &::std::option::Option<crate::types::CapacityProviderConfiguration> {
+        self.inner.get_capacity_provider_configuration()
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

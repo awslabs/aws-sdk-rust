@@ -166,7 +166,7 @@ impl ListRecoveryPointsByResourceFluentBuilder {
     }
     /// <p>This attribute filters recovery points based on ownership.</p>
     /// <p>If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected resources that are managed by Backup.</p>
-    /// <p>If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected resource.</p>
+    /// <p>If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected resource, except for EBS snapshots copied within the same Region and account.</p>
     /// <p>Type: Boolean</p>
     pub fn managed_by_aws_backup_only(mut self, input: bool) -> Self {
         self.inner = self.inner.managed_by_aws_backup_only(input);
@@ -174,7 +174,7 @@ impl ListRecoveryPointsByResourceFluentBuilder {
     }
     /// <p>This attribute filters recovery points based on ownership.</p>
     /// <p>If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected resources that are managed by Backup.</p>
-    /// <p>If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected resource.</p>
+    /// <p>If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected resource, except for EBS snapshots copied within the same Region and account.</p>
     /// <p>Type: Boolean</p>
     pub fn set_managed_by_aws_backup_only(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_managed_by_aws_backup_only(input);
@@ -182,7 +182,7 @@ impl ListRecoveryPointsByResourceFluentBuilder {
     }
     /// <p>This attribute filters recovery points based on ownership.</p>
     /// <p>If this is set to <code>TRUE</code>, the response will contain recovery points associated with the selected resources that are managed by Backup.</p>
-    /// <p>If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected resource.</p>
+    /// <p>If this is set to <code>FALSE</code>, the response will contain all recovery points associated with the selected resource, except for EBS snapshots copied within the same Region and account.</p>
     /// <p>Type: Boolean</p>
     pub fn get_managed_by_aws_backup_only(&self) -> &::std::option::Option<bool> {
         self.inner.get_managed_by_aws_backup_only()

@@ -103,6 +103,8 @@ pub struct Job {
     pub video_endpoint: ::std::option::Option<::std::string::String>,
     /// <p>This value is set to true if video capture is enabled. Otherwise, it is set to false.</p>
     pub video_capture: ::std::option::Option<bool>,
+    /// <p>The insights for the job, including the report status and test-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub insights: ::std::option::Option<crate::types::JobInsights>,
 }
 impl Job {
     /// <p>The job's ARN.</p>
@@ -234,6 +236,10 @@ impl Job {
     pub fn video_capture(&self) -> ::std::option::Option<bool> {
         self.video_capture
     }
+    /// <p>The insights for the job, including the report status and test-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub fn insights(&self) -> ::std::option::Option<&crate::types::JobInsights> {
+        self.insights.as_ref()
+    }
 }
 impl Job {
     /// Creates a new builder-style object to manufacture [`Job`](crate::types::Job).
@@ -261,6 +267,7 @@ pub struct JobBuilder {
     pub(crate) device_minutes: ::std::option::Option<crate::types::DeviceMinutes>,
     pub(crate) video_endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) video_capture: ::std::option::Option<bool>,
+    pub(crate) insights: ::std::option::Option<crate::types::JobInsights>,
 }
 impl JobBuilder {
     /// <p>The job's ARN.</p>
@@ -680,6 +687,20 @@ impl JobBuilder {
     pub fn get_video_capture(&self) -> &::std::option::Option<bool> {
         &self.video_capture
     }
+    /// <p>The insights for the job, including the report status and test-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub fn insights(mut self, input: crate::types::JobInsights) -> Self {
+        self.insights = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The insights for the job, including the report status and test-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<crate::types::JobInsights>) -> Self {
+        self.insights = input;
+        self
+    }
+    /// <p>The insights for the job, including the report status and test-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<crate::types::JobInsights> {
+        &self.insights
+    }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
@@ -698,6 +719,7 @@ impl JobBuilder {
             device_minutes: self.device_minutes,
             video_endpoint: self.video_endpoint,
             video_capture: self.video_capture,
+            insights: self.insights,
         }
     }
 }

@@ -151,6 +151,8 @@ pub use crate::types::_connector_summary::ConnectorSummaryBuilder;
 
 pub use crate::types::_finding_aggregator::FindingAggregatorBuilder;
 
+pub use crate::types::_account_free_trial_status::AccountFreeTrialStatusBuilder;
+
 pub use crate::types::_admin_account::AdminAccountBuilder;
 
 pub use crate::types::_standards_control_association_summary::StandardsControlAssociationSummaryBuilder;
@@ -290,6 +292,8 @@ pub use crate::types::_resource_tag::ResourceTagBuilder;
 pub use crate::types::_ai_details::AiDetailsBuilder;
 
 pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2Builder;
+
+pub use crate::types::_free_trial_status::FreeTrialStatusBuilder;
 
 pub use crate::types::_network_header::NetworkHeaderBuilder;
 

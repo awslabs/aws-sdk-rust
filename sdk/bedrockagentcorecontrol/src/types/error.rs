@@ -23,6 +23,8 @@ pub use crate::types::error::_encryption_failure::EncryptionFailure;
 
 pub use crate::types::error::_resource_limit_exceeded_exception::ResourceLimitExceededException;
 
+pub use crate::types::error::_retryable_conflict_exception::RetryableConflictException;
+
 pub use crate::types::error::_service_exception::ServiceException;
 
 pub use crate::types::error::_throttled_exception::ThrottledException;
@@ -42,6 +44,8 @@ mod _internal_server_exception;
 mod _resource_limit_exceeded_exception;
 
 mod _resource_not_found_exception;
+
+mod _retryable_conflict_exception;
 
 mod _service_exception;
 

@@ -156,6 +156,8 @@ impl PutDeliverySourceFluentBuilder {
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Application Load Balancer, the valid values are <code>ALB_ACCESS_LOGS</code>, <code>ALB_CONNECTION_LOGS</code>, and <code>ALB_HEALTH_CHECK_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
@@ -221,6 +223,8 @@ impl PutDeliverySourceFluentBuilder {
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
     /// <li>
+    /// <p>For Application Load Balancer, the valid values are <code>ALB_ACCESS_LOGS</code>, <code>ALB_CONNECTION_LOGS</code>, and <code>ALB_HEALTH_CHECK_LOGS</code>.</p></li>
+    /// <li>
     /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock Knowledge Bases, the valid values are <code>APPLICATION_LOGS</code> and <code>TRACES</code>.</p></li>
@@ -285,6 +289,8 @@ impl PutDeliverySourceFluentBuilder {
     }
     /// <p>Defines the type of log that the source is sending.</p>
     /// <ul>
+    /// <li>
+    /// <p>For Application Load Balancer, the valid values are <code>ALB_ACCESS_LOGS</code>, <code>ALB_CONNECTION_LOGS</code>, and <code>ALB_HEALTH_CHECK_LOGS</code>.</p></li>
     /// <li>
     /// <p>For Amazon Bedrock Agents, the valid values are <code>APPLICATION_LOGS</code> and <code>EVENT_LOGS</code>.</p></li>
     /// <li>

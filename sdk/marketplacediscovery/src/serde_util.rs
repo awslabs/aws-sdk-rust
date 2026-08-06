@@ -71,14 +71,17 @@ pub(crate) fn get_offer_output_output_correct_errors(
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
     }
-    if builder.agreement_proposal_id.is_none() {
-        builder.agreement_proposal_id = Some(Default::default())
-    }
     if builder.seller_of_record.is_none() {
         builder.seller_of_record = {
             let builder = crate::types::builders::SellerInformationBuilder::default();
             crate::serde_util::seller_information_correct_errors(builder).build().ok()
         }
+    }
+    if builder.associated_entities.is_none() {
+        builder.associated_entities = Some(Default::default())
+    }
+    if builder.agreement_proposal_id.is_none() {
+        builder.agreement_proposal_id = Some(Default::default())
     }
     if builder.pricing_model.is_none() {
         builder.pricing_model = {
@@ -88,9 +91,6 @@ pub(crate) fn get_offer_output_output_correct_errors(
     }
     if builder.badges.is_none() {
         builder.badges = Some(Default::default())
-    }
-    if builder.associated_entities.is_none() {
-        builder.associated_entities = Some(Default::default())
     }
     builder
 }
@@ -140,6 +140,12 @@ pub(crate) fn get_product_output_output_correct_errors(
     if builder.product_name.is_none() {
         builder.product_name = Some(Default::default())
     }
+    if builder.manufacturer.is_none() {
+        builder.manufacturer = {
+            let builder = crate::types::builders::SellerInformationBuilder::default();
+            crate::serde_util::seller_information_correct_errors(builder).build().ok()
+        }
+    }
     if builder.deployed_on_aws.is_none() {
         builder.deployed_on_aws = "no value was set".parse::<crate::types::DeployedOnAwsStatus>().ok()
     }
@@ -148,12 +154,6 @@ pub(crate) fn get_product_output_output_correct_errors(
     }
     if builder.long_description.is_none() {
         builder.long_description = Some(Default::default())
-    }
-    if builder.manufacturer.is_none() {
-        builder.manufacturer = {
-            let builder = crate::types::builders::SellerInformationBuilder::default();
-            crate::serde_util::seller_information_correct_errors(builder).build().ok()
-        }
     }
     if builder.logo_thumbnail_url.is_none() {
         builder.logo_thumbnail_url = Some(Default::default())
@@ -290,6 +290,9 @@ pub(crate) fn listing_summary_correct_errors(
             crate::serde_util::seller_information_correct_errors(builder).build().ok()
         }
     }
+    if builder.fulfillment_option_summaries.is_none() {
+        builder.fulfillment_option_summaries = Some(Default::default())
+    }
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
     }
@@ -301,9 +304,6 @@ pub(crate) fn listing_summary_correct_errors(
     }
     if builder.categories.is_none() {
         builder.categories = Some(Default::default())
-    }
-    if builder.fulfillment_option_summaries.is_none() {
-        builder.fulfillment_option_summaries = Some(Default::default())
     }
     if builder.badges.is_none() {
         builder.badges = Some(Default::default())
@@ -669,6 +669,21 @@ pub(crate) fn listing_facet_correct_errors(mut builder: crate::types::builders::
     }
     if builder.count.is_none() {
         builder.count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn net_payment_term_correct_errors(
+    mut builder: crate::types::builders::NetPaymentTermBuilder,
+) -> crate::types::builders::NetPaymentTermBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::TermType>().ok()
+    }
+    if builder.payment_due_period.is_none() {
+        builder.payment_due_period = Some(Default::default())
     }
     builder
 }

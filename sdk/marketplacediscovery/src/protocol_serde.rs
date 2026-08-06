@@ -191,6 +191,8 @@ pub(crate) mod shape_listing_facet;
 
 pub(crate) mod shape_listing_summary_associated_entity_list;
 
+pub(crate) mod shape_net_payment_term;
+
 pub(crate) mod shape_offer_information;
 
 pub(crate) mod shape_offer_set_information;

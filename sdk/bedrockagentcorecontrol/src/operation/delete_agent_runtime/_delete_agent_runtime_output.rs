@@ -7,6 +7,8 @@ pub struct DeleteAgentRuntimeOutput {
     pub status: crate::types::AgentRuntimeStatus,
     /// <p>The unique identifier of the AgentCore Runtime.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the AgentCore Runtime that was deleted. This value is present only when you delete a single version.</p>
+    pub agent_runtime_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteAgentRuntimeOutput {
@@ -17,6 +19,10 @@ impl DeleteAgentRuntimeOutput {
     /// <p>The unique identifier of the AgentCore Runtime.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
+    }
+    /// <p>The version of the AgentCore Runtime that was deleted. This value is present only when you delete a single version.</p>
+    pub fn agent_runtime_version(&self) -> ::std::option::Option<&str> {
+        self.agent_runtime_version.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAgentRuntimeOutput {
@@ -37,6 +43,7 @@ impl DeleteAgentRuntimeOutput {
 pub struct DeleteAgentRuntimeOutputBuilder {
     pub(crate) status: ::std::option::Option<crate::types::AgentRuntimeStatus>,
     pub(crate) agent_runtime_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_runtime_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteAgentRuntimeOutputBuilder {
@@ -69,6 +76,20 @@ impl DeleteAgentRuntimeOutputBuilder {
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }
+    /// <p>The version of the AgentCore Runtime that was deleted. This value is present only when you delete a single version.</p>
+    pub fn agent_runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_runtime_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the AgentCore Runtime that was deleted. This value is present only when you delete a single version.</p>
+    pub fn set_agent_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_runtime_version = input;
+        self
+    }
+    /// <p>The version of the AgentCore Runtime that was deleted. This value is present only when you delete a single version.</p>
+    pub fn get_agent_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_runtime_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -93,6 +114,7 @@ impl DeleteAgentRuntimeOutputBuilder {
                 )
             })?,
             agent_runtime_id: self.agent_runtime_id,
+            agent_runtime_version: self.agent_runtime_version,
             _request_id: self._request_id,
         })
     }

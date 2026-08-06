@@ -27,6 +27,8 @@ pub struct CreateAgentRuntimeInput {
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The filesystem configurations to mount into the AgentCore Runtime. Use filesystem configurations to provide persistent storage to your AgentCore Runtime sessions.</p>
     pub filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
+    /// <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity provider to run the AgentCore Runtime on the Instances compute type, which provisions Amazon Web Services managed compute in your account.</p>
+    pub capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     /// <p>A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -81,6 +83,10 @@ impl CreateAgentRuntimeInput {
     pub fn filesystem_configurations(&self) -> &[crate::types::FilesystemConfiguration] {
         self.filesystem_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity provider to run the AgentCore Runtime on the Instances compute type, which provisions Amazon Web Services managed compute in your account.</p>
+    pub fn capacity_provider_configuration(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfiguration> {
+        self.capacity_provider_configuration.as_ref()
+    }
     /// <p>A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -101,6 +107,7 @@ impl ::std::fmt::Debug for CreateAgentRuntimeInput {
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
+        formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -128,6 +135,7 @@ pub struct CreateAgentRuntimeInputBuilder {
     pub(crate) lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
+    pub(crate) capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAgentRuntimeInputBuilder {
@@ -177,7 +185,6 @@ impl CreateAgentRuntimeInputBuilder {
         &self.role_arn
     }
     /// <p>The network configuration for the AgentCore Runtime.</p>
-    /// This field is required.
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
         self
@@ -322,6 +329,20 @@ impl CreateAgentRuntimeInputBuilder {
     pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
         &self.filesystem_configurations
     }
+    /// <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity provider to run the AgentCore Runtime on the Instances compute type, which provisions Amazon Web Services managed compute in your account.</p>
+    pub fn capacity_provider_configuration(mut self, input: crate::types::CapacityProviderConfiguration) -> Self {
+        self.capacity_provider_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity provider to run the AgentCore Runtime on the Instances compute type, which provisions Amazon Web Services managed compute in your account.</p>
+    pub fn set_capacity_provider_configuration(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfiguration>) -> Self {
+        self.capacity_provider_configuration = input;
+        self
+    }
+    /// <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity provider to run the AgentCore Runtime on the Instances compute type, which provisions Amazon Web Services managed compute in your account.</p>
+    pub fn get_capacity_provider_configuration(&self) -> &::std::option::Option<crate::types::CapacityProviderConfiguration> {
+        &self.capacity_provider_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -360,6 +381,7 @@ impl CreateAgentRuntimeInputBuilder {
             lifecycle_configuration: self.lifecycle_configuration,
             environment_variables: self.environment_variables,
             filesystem_configurations: self.filesystem_configurations,
+            capacity_provider_configuration: self.capacity_provider_configuration,
             tags: self.tags,
         })
     }
@@ -379,6 +401,7 @@ impl ::std::fmt::Debug for CreateAgentRuntimeInputBuilder {
         formatter.field("lifecycle_configuration", &self.lifecycle_configuration);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
+        formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

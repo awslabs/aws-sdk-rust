@@ -22,7 +22,7 @@ impl crate::operation::delete_agent_runtime::builders::DeleteAgentRuntimeInputBu
 }
 /// Fluent builder constructing a request to `DeleteAgentRuntime`.
 ///
-/// <p>Deletes an Amazon Bedrock AgentCore Runtime.</p>
+/// <p>Deletes an Amazon Bedrock AgentCore Runtime, or a single version of an AgentCore Runtime when you provide the version qualifier.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAgentRuntimeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,6 +121,20 @@ impl DeleteAgentRuntimeFluentBuilder {
     /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_runtime_id()
+    }
+    /// <p>The version of the AgentCore Runtime to delete. When you provide this value, only that version is deleted. When you omit it, the entire AgentCore Runtime and all of its versions are deleted.</p>
+    pub fn agent_runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.agent_runtime_version(input.into());
+        self
+    }
+    /// <p>The version of the AgentCore Runtime to delete. When you provide this value, only that version is deleted. When you omit it, the entire AgentCore Runtime and all of its versions are deleted.</p>
+    pub fn set_agent_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_agent_runtime_version(input);
+        self
+    }
+    /// <p>The version of the AgentCore Runtime to delete. When you provide this value, only that version is deleted. When you omit it, the entire AgentCore Runtime and all of its versions are deleted.</p>
+    pub fn get_agent_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_agent_runtime_version()
     }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

@@ -12,6 +12,7 @@
 /// ```text
 /// # let functiontype = unimplemented!();
 /// match functiontype {
+///     FunctionType::ConcurrentExecutor => { /* ... */ },
 ///     FunctionType::CustomOutput => { /* ... */ },
 ///     FunctionType::HttpRequest => { /* ... */ },
 ///     FunctionType::SequentialExecutor => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum FunctionType {
     #[allow(missing_docs)] // documentation missing in model
+    ConcurrentExecutor,
+    #[allow(missing_docs)] // documentation missing in model
     CustomOutput,
     #[allow(missing_docs)] // documentation missing in model
     HttpRequest,
@@ -56,6 +59,7 @@ pub enum FunctionType {
 impl ::std::convert::From<&str> for FunctionType {
     fn from(s: &str) -> Self {
         match s {
+            "CONCURRENT_EXECUTOR" => FunctionType::ConcurrentExecutor,
             "CUSTOM_OUTPUT" => FunctionType::CustomOutput,
             "HTTP_REQUEST" => FunctionType::HttpRequest,
             "SEQUENTIAL_EXECUTOR" => FunctionType::SequentialExecutor,
@@ -74,6 +78,7 @@ impl FunctionType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FunctionType::ConcurrentExecutor => "CONCURRENT_EXECUTOR",
             FunctionType::CustomOutput => "CUSTOM_OUTPUT",
             FunctionType::HttpRequest => "HTTP_REQUEST",
             FunctionType::SequentialExecutor => "SEQUENTIAL_EXECUTOR",
@@ -82,7 +87,7 @@ impl FunctionType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CUSTOM_OUTPUT", "HTTP_REQUEST", "SEQUENTIAL_EXECUTOR"]
+        &["CONCURRENT_EXECUTOR", "CUSTOM_OUTPUT", "HTTP_REQUEST", "SEQUENTIAL_EXECUTOR"]
     }
 }
 impl ::std::convert::AsRef<str> for FunctionType {
@@ -105,6 +110,7 @@ impl FunctionType {
 impl ::std::fmt::Display for FunctionType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FunctionType::ConcurrentExecutor => write!(f, "CONCURRENT_EXECUTOR"),
             FunctionType::CustomOutput => write!(f, "CUSTOM_OUTPUT"),
             FunctionType::HttpRequest => write!(f, "HTTP_REQUEST"),
             FunctionType::SequentialExecutor => write!(f, "SEQUENTIAL_EXECUTOR"),

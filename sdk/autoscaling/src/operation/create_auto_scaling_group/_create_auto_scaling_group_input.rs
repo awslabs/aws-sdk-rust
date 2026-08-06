@@ -102,6 +102,8 @@ pub struct CreateAutoScalingGroupInput {
     /// <p>Instances in a Retained state will continue to incur standard EC2 charges until terminated.</p>
     /// </note>
     pub instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
+    /// <p>The entity that manages the Auto Scaling group. If you specify this parameter, Amazon EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only allows the designated operator to make changes to the Auto Scaling group. All mutating API calls from non-operator callers are rejected with an <code>AccessDenied</code> exception.</p>
+    pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl CreateAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -289,6 +291,10 @@ impl CreateAutoScalingGroupInput {
     pub fn instance_lifecycle_policy(&self) -> ::std::option::Option<&crate::types::InstanceLifecyclePolicy> {
         self.instance_lifecycle_policy.as_ref()
     }
+    /// <p>The entity that manages the Auto Scaling group. If you specify this parameter, Amazon EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only allows the designated operator to make changes to the Auto Scaling group. All mutating API calls from non-operator callers are rejected with an <code>AccessDenied</code> exception.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
+        self.operator.as_ref()
+    }
 }
 impl CreateAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
@@ -336,6 +342,7 @@ pub struct CreateAutoScalingGroupInputBuilder {
     pub(crate) skip_zonal_shift_validation: ::std::option::Option<bool>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
     pub(crate) instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
+    pub(crate) operator: ::std::option::Option<crate::types::Operator>,
 }
 impl CreateAutoScalingGroupInputBuilder {
     /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
@@ -969,6 +976,20 @@ impl CreateAutoScalingGroupInputBuilder {
     pub fn get_instance_lifecycle_policy(&self) -> &::std::option::Option<crate::types::InstanceLifecyclePolicy> {
         &self.instance_lifecycle_policy
     }
+    /// <p>The entity that manages the Auto Scaling group. If you specify this parameter, Amazon EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only allows the designated operator to make changes to the Auto Scaling group. All mutating API calls from non-operator callers are rejected with an <code>AccessDenied</code> exception.</p>
+    pub fn operator(mut self, input: crate::types::Operator) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the Auto Scaling group. If you specify this parameter, Amazon EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only allows the designated operator to make changes to the Auto Scaling group. All mutating API calls from non-operator callers are rejected with an <code>AccessDenied</code> exception.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the Auto Scaling group. If you specify this parameter, Amazon EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only allows the designated operator to make changes to the Auto Scaling group. All mutating API calls from non-operator callers are rejected with an <code>AccessDenied</code> exception.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`CreateAutoScalingGroupInput`](crate::operation::create_auto_scaling_group::CreateAutoScalingGroupInput).
     pub fn build(
         self,
@@ -1012,6 +1033,7 @@ impl CreateAutoScalingGroupInputBuilder {
             skip_zonal_shift_validation: self.skip_zonal_shift_validation,
             capacity_reservation_specification: self.capacity_reservation_specification,
             instance_lifecycle_policy: self.instance_lifecycle_policy,
+            operator: self.operator,
         })
     }
 }

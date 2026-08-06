@@ -30,6 +30,9 @@ pub struct ScheduleRunConfiguration {
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     /// <p>An IAM role to be assumed by the test host for the run.</p>
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
+    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    pub insights_types: ::std::option::Option<::std::vec::Vec<crate::types::InsightsType>>,
 }
 impl ScheduleRunConfiguration {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
@@ -88,6 +91,13 @@ impl ScheduleRunConfiguration {
     pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
+    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
+    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights_types.is_none()`.
+    pub fn insights_types(&self) -> &[crate::types::InsightsType] {
+        self.insights_types.as_deref().unwrap_or_default()
+    }
 }
 impl ScheduleRunConfiguration {
     /// Creates a new builder-style object to manufacture [`ScheduleRunConfiguration`](crate::types::ScheduleRunConfiguration).
@@ -112,6 +122,7 @@ pub struct ScheduleRunConfigurationBuilder {
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
     pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) insights_types: ::std::option::Option<::std::vec::Vec<crate::types::InsightsType>>,
 }
 impl ScheduleRunConfigurationBuilder {
     /// <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS Device Farm extracts to external data for Android or the app's sandbox for iOS.</p>
@@ -306,6 +317,29 @@ impl ScheduleRunConfigurationBuilder {
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
+    /// Appends an item to `insights_types`.
+    ///
+    /// To override the contents of this collection use [`set_insights_types`](Self::set_insights_types).
+    ///
+    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
+    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    pub fn insights_types(mut self, input: crate::types::InsightsType) -> Self {
+        let mut v = self.insights_types.unwrap_or_default();
+        v.push(input);
+        self.insights_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
+    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    pub fn set_insights_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightsType>>) -> Self {
+        self.insights_types = input;
+        self
+    }
+    /// <p>The types of insights to generate for a run. Specify one or more values to opt in to insights generation when scheduling a run.</p>
+    /// <p>Insights are currently supported for custom mode runs with Instrumentation, Appium Java TestNG, and XCTest UI test types.</p>
+    pub fn get_insights_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightsType>> {
+        &self.insights_types
+    }
     /// Consumes the builder and constructs a [`ScheduleRunConfiguration`](crate::types::ScheduleRunConfiguration).
     pub fn build(self) -> crate::types::ScheduleRunConfiguration {
         crate::types::ScheduleRunConfiguration {
@@ -321,6 +355,7 @@ impl ScheduleRunConfigurationBuilder {
             billing_method: self.billing_method,
             environment_variables: self.environment_variables,
             execution_role_arn: self.execution_role_arn,
+            insights_types: self.insights_types,
         }
     }
 }

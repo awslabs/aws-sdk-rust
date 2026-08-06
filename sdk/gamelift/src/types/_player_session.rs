@@ -175,7 +175,7 @@ impl ::std::fmt::Debug for PlayerSession {
         formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("dns_name", &self.dns_name);
         formatter.field("port", &"*** Sensitive Data Redacted ***");
-        formatter.field("player_data", &self.player_data);
+        formatter.field("player_data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -524,7 +524,7 @@ impl ::std::fmt::Debug for PlayerSessionBuilder {
         formatter.field("ip_address", &"*** Sensitive Data Redacted ***");
         formatter.field("dns_name", &self.dns_name);
         formatter.field("port", &"*** Sensitive Data Redacted ***");
-        formatter.field("player_data", &self.player_data);
+        formatter.field("player_data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

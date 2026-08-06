@@ -10,6 +10,8 @@ pub struct ListingSummary {
     pub listing_name: ::std::string::String,
     /// <p>The entity who created and published the listing.</p>
     pub publisher: ::std::option::Option<crate::types::SellerInformation>,
+    /// <p>A summary of fulfillment options available for the listing.</p>
+    pub fulfillment_option_summaries: ::std::vec::Vec<crate::types::FulfillmentOptionSummary>,
     /// <p>The name of the catalog that the listing belongs to.</p>
     pub catalog: ::std::string::String,
     /// <p>A 1–3 sentence summary describing the key aspects of the listing.</p>
@@ -18,8 +20,6 @@ pub struct ListingSummary {
     pub logo_thumbnail_url: ::std::string::String,
     /// <p>The categories used to classify this listing into logical groups.</p>
     pub categories: ::std::vec::Vec<crate::types::Category>,
-    /// <p>A summary of fulfillment options available for the listing.</p>
-    pub fulfillment_option_summaries: ::std::vec::Vec<crate::types::FulfillmentOptionSummary>,
     /// <p>Badges indicating special attributes of the listing.</p>
     pub badges: ::std::vec::Vec<crate::types::ListingBadge>,
     /// <p>A summary of customer reviews for the listing.</p>
@@ -46,6 +46,11 @@ impl ListingSummary {
     pub fn publisher(&self) -> ::std::option::Option<&crate::types::SellerInformation> {
         self.publisher.as_ref()
     }
+    /// <p>A summary of fulfillment options available for the listing.</p>
+    pub fn fulfillment_option_summaries(&self) -> &[crate::types::FulfillmentOptionSummary] {
+        use std::ops::Deref;
+        self.fulfillment_option_summaries.deref()
+    }
     /// <p>The name of the catalog that the listing belongs to.</p>
     pub fn catalog(&self) -> &str {
         use std::ops::Deref;
@@ -65,11 +70,6 @@ impl ListingSummary {
     pub fn categories(&self) -> &[crate::types::Category] {
         use std::ops::Deref;
         self.categories.deref()
-    }
-    /// <p>A summary of fulfillment options available for the listing.</p>
-    pub fn fulfillment_option_summaries(&self) -> &[crate::types::FulfillmentOptionSummary] {
-        use std::ops::Deref;
-        self.fulfillment_option_summaries.deref()
     }
     /// <p>Badges indicating special attributes of the listing.</p>
     pub fn badges(&self) -> &[crate::types::ListingBadge] {
@@ -110,11 +110,11 @@ pub struct ListingSummaryBuilder {
     pub(crate) listing_id: ::std::option::Option<::std::string::String>,
     pub(crate) listing_name: ::std::option::Option<::std::string::String>,
     pub(crate) publisher: ::std::option::Option<crate::types::SellerInformation>,
+    pub(crate) fulfillment_option_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,
     pub(crate) logo_thumbnail_url: ::std::option::Option<::std::string::String>,
     pub(crate) categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
-    pub(crate) fulfillment_option_summaries: ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>>,
     pub(crate) badges: ::std::option::Option<::std::vec::Vec<crate::types::ListingBadge>>,
     pub(crate) review_summary: ::std::option::Option<crate::types::ReviewSummary>,
     pub(crate) pricing_models: ::std::option::Option<::std::vec::Vec<crate::types::PricingModel>>,
@@ -166,6 +166,26 @@ impl ListingSummaryBuilder {
     /// <p>The entity who created and published the listing.</p>
     pub fn get_publisher(&self) -> &::std::option::Option<crate::types::SellerInformation> {
         &self.publisher
+    }
+    /// Appends an item to `fulfillment_option_summaries`.
+    ///
+    /// To override the contents of this collection use [`set_fulfillment_option_summaries`](Self::set_fulfillment_option_summaries).
+    ///
+    /// <p>A summary of fulfillment options available for the listing.</p>
+    pub fn fulfillment_option_summaries(mut self, input: crate::types::FulfillmentOptionSummary) -> Self {
+        let mut v = self.fulfillment_option_summaries.unwrap_or_default();
+        v.push(input);
+        self.fulfillment_option_summaries = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A summary of fulfillment options available for the listing.</p>
+    pub fn set_fulfillment_option_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>>) -> Self {
+        self.fulfillment_option_summaries = input;
+        self
+    }
+    /// <p>A summary of fulfillment options available for the listing.</p>
+    pub fn get_fulfillment_option_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>> {
+        &self.fulfillment_option_summaries
     }
     /// <p>The name of the catalog that the listing belongs to.</p>
     /// This field is required.
@@ -231,26 +251,6 @@ impl ListingSummaryBuilder {
     /// <p>The categories used to classify this listing into logical groups.</p>
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
         &self.categories
-    }
-    /// Appends an item to `fulfillment_option_summaries`.
-    ///
-    /// To override the contents of this collection use [`set_fulfillment_option_summaries`](Self::set_fulfillment_option_summaries).
-    ///
-    /// <p>A summary of fulfillment options available for the listing.</p>
-    pub fn fulfillment_option_summaries(mut self, input: crate::types::FulfillmentOptionSummary) -> Self {
-        let mut v = self.fulfillment_option_summaries.unwrap_or_default();
-        v.push(input);
-        self.fulfillment_option_summaries = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>A summary of fulfillment options available for the listing.</p>
-    pub fn set_fulfillment_option_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>>) -> Self {
-        self.fulfillment_option_summaries = input;
-        self
-    }
-    /// <p>A summary of fulfillment options available for the listing.</p>
-    pub fn get_fulfillment_option_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>> {
-        &self.fulfillment_option_summaries
     }
     /// Appends an item to `badges`.
     ///
@@ -351,11 +351,11 @@ impl ListingSummaryBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`listing_id`](crate::types::builders::ListingSummaryBuilder::listing_id)
     /// - [`listing_name`](crate::types::builders::ListingSummaryBuilder::listing_name)
+    /// - [`fulfillment_option_summaries`](crate::types::builders::ListingSummaryBuilder::fulfillment_option_summaries)
     /// - [`catalog`](crate::types::builders::ListingSummaryBuilder::catalog)
     /// - [`short_description`](crate::types::builders::ListingSummaryBuilder::short_description)
     /// - [`logo_thumbnail_url`](crate::types::builders::ListingSummaryBuilder::logo_thumbnail_url)
     /// - [`categories`](crate::types::builders::ListingSummaryBuilder::categories)
-    /// - [`fulfillment_option_summaries`](crate::types::builders::ListingSummaryBuilder::fulfillment_option_summaries)
     /// - [`badges`](crate::types::builders::ListingSummaryBuilder::badges)
     /// - [`pricing_models`](crate::types::builders::ListingSummaryBuilder::pricing_models)
     /// - [`pricing_units`](crate::types::builders::ListingSummaryBuilder::pricing_units)
@@ -375,6 +375,12 @@ impl ListingSummaryBuilder {
                 )
             })?,
             publisher: self.publisher,
+            fulfillment_option_summaries: self.fulfillment_option_summaries.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "fulfillment_option_summaries",
+                    "fulfillment_option_summaries was not specified but it is required when building ListingSummary",
+                )
+            })?,
             catalog: self.catalog.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "catalog",
@@ -397,12 +403,6 @@ impl ListingSummaryBuilder {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "categories",
                     "categories was not specified but it is required when building ListingSummary",
-                )
-            })?,
-            fulfillment_option_summaries: self.fulfillment_option_summaries.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "fulfillment_option_summaries",
-                    "fulfillment_option_summaries was not specified but it is required when building ListingSummary",
                 )
             })?,
             badges: self.badges.ok_or_else(|| {

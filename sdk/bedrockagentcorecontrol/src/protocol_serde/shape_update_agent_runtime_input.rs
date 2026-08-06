@@ -15,66 +15,72 @@ pub fn ser_update_agent_runtime_input_input(
         crate::protocol_serde::shape_authorizer_configuration::ser_authorizer_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.client_token {
-        object.key("clientToken").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.environment_variables {
+    if let Some(var_5) = &input.capacity_provider_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("environmentVariables").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_6 = object.key("capacityProviderConfiguration").start_object();
+        crate::protocol_serde::shape_capacity_provider_configuration::ser_capacity_provider_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.description {
+        object.key("description").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.environment_variables {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("environmentVariables").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_8.finish();
+        object_10.finish();
     }
-    if let Some(var_11) = &input.filesystem_configurations {
-        let mut array_12 = object.key("filesystemConfigurations").start_array();
-        for item_13 in var_11 {
+    if let Some(var_13) = &input.filesystem_configurations {
+        let mut array_14 = object.key("filesystemConfigurations").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_filesystem_configuration::ser_filesystem_configuration(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_filesystem_configuration::ser_filesystem_configuration(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.lifecycle_configuration {
+    if let Some(var_17) = &input.lifecycle_configuration {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("lifecycleConfiguration").start_object();
-        crate::protocol_serde::shape_lifecycle_configuration::ser_lifecycle_configuration(&mut object_16, var_15)?;
-        object_16.finish();
-    }
-    if let Some(var_17) = &input.metadata_configuration {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("metadataConfiguration").start_object();
-        crate::protocol_serde::shape_runtime_metadata_configuration::ser_runtime_metadata_configuration(&mut object_18, var_17)?;
+        let mut object_18 = object.key("lifecycleConfiguration").start_object();
+        crate::protocol_serde::shape_lifecycle_configuration::ser_lifecycle_configuration(&mut object_18, var_17)?;
         object_18.finish();
     }
-    if let Some(var_19) = &input.network_configuration {
+    if let Some(var_19) = &input.metadata_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("networkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_20, var_19)?;
+        let mut object_20 = object.key("metadataConfiguration").start_object();
+        crate::protocol_serde::shape_runtime_metadata_configuration::ser_runtime_metadata_configuration(&mut object_20, var_19)?;
         object_20.finish();
     }
-    if let Some(var_21) = &input.protocol_configuration {
+    if let Some(var_21) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_22, var_21)?;
+        let mut object_22 = object.key("networkConfiguration").start_object();
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.request_header_configuration {
+    if let Some(var_23) = &input.protocol_configuration {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("requestHeaderConfiguration").start_object();
-        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_24, var_23)?;
+        let mut object_24 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_24, var_23)?;
         object_24.finish();
     }
-    if let Some(var_25) = &input.role_arn {
-        object.key("roleArn").string(var_25.as_str());
+    if let Some(var_25) = &input.request_header_configuration {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("requestHeaderConfiguration").start_object();
+        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.role_arn {
+        object.key("roleArn").string(var_27.as_str());
     }
     Ok(())
 }

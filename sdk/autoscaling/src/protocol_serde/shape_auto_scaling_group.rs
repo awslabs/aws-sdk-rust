@@ -514,6 +514,16 @@ pub fn de_auto_scaling_group(
                 builder = builder.set_instance_lifecycle_policy(var_41);
             }
             ,
+            s if s.matches("Operator") /* Operator com.amazonaws.autoscaling#AutoScalingGroup$Operator */ =>  {
+                let var_42 =
+                    Some(
+                        crate::protocol_serde::shape_operator::de_operator(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_operator(var_42);
+            }
+            ,
             _ => {}
         }
     }

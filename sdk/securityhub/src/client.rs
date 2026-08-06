@@ -347,6 +347,8 @@ mod list_enabled_products_for_import;
 
 mod list_finding_aggregators;
 
+mod list_free_trial_statuses_v2;
+
 mod list_invitations;
 
 mod list_members;

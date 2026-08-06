@@ -101,6 +101,8 @@ pub use crate::types::_configuration_template::ConfigurationTemplate;
 
 pub use crate::types::_export_task::ExportTask;
 
+pub use crate::types::_index_category::IndexCategory;
+
 pub use crate::types::_field_index::FieldIndex;
 
 pub use crate::types::_import_batch::ImportBatch;
@@ -424,6 +426,8 @@ mod _import_filter;
 mod _import_statistics;
 
 mod _import_status;
+
+mod _index_category;
 
 mod _index_policy;
 

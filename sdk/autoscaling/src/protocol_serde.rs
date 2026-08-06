@@ -329,6 +329,8 @@ pub(crate) mod shape_limit_exceeded_fault;
 
 pub(crate) mod shape_mixed_instances_policy;
 
+pub(crate) mod shape_operator;
+
 pub(crate) mod shape_predictive_scaling_configuration;
 
 pub(crate) mod shape_refresh_preferences;

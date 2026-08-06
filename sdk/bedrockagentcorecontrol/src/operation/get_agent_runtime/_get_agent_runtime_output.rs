@@ -43,6 +43,8 @@ pub struct GetAgentRuntimeOutput {
     pub metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     /// <p>The filesystem configurations mounted into the AgentCore Runtime.</p>
     pub filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
+    /// <p>The capacity provider configuration for the AgentCore Runtime.</p>
+    pub capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutput {
@@ -133,6 +135,10 @@ impl GetAgentRuntimeOutput {
     pub fn filesystem_configurations(&self) -> &[crate::types::FilesystemConfiguration] {
         self.filesystem_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The capacity provider configuration for the AgentCore Runtime.</p>
+    pub fn capacity_provider_configuration(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfiguration> {
+        self.capacity_provider_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetAgentRuntimeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -157,6 +163,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutput {
         formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
+        formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -197,6 +204,7 @@ pub struct GetAgentRuntimeOutputBuilder {
     pub(crate) request_header_configuration: ::std::option::Option<crate::types::RequestHeaderConfiguration>,
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
+    pub(crate) capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutputBuilder {
@@ -509,6 +517,20 @@ impl GetAgentRuntimeOutputBuilder {
     pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
         &self.filesystem_configurations
     }
+    /// <p>The capacity provider configuration for the AgentCore Runtime.</p>
+    pub fn capacity_provider_configuration(mut self, input: crate::types::CapacityProviderConfiguration) -> Self {
+        self.capacity_provider_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The capacity provider configuration for the AgentCore Runtime.</p>
+    pub fn set_capacity_provider_configuration(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfiguration>) -> Self {
+        self.capacity_provider_configuration = input;
+        self
+    }
+    /// <p>The capacity provider configuration for the AgentCore Runtime.</p>
+    pub fn get_capacity_provider_configuration(&self) -> &::std::option::Option<crate::types::CapacityProviderConfiguration> {
+        &self.capacity_provider_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -592,6 +614,7 @@ impl GetAgentRuntimeOutputBuilder {
             request_header_configuration: self.request_header_configuration,
             metadata_configuration: self.metadata_configuration,
             filesystem_configurations: self.filesystem_configurations,
+            capacity_provider_configuration: self.capacity_provider_configuration,
             _request_id: self._request_id,
         })
     }
@@ -619,6 +642,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutputBuilder {
         formatter.field("request_header_configuration", &self.request_header_configuration);
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
+        formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

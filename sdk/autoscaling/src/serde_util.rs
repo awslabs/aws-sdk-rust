@@ -207,6 +207,13 @@ pub(crate) fn process_type_correct_errors(mut builder: crate::types::builders::P
     builder
 }
 
+pub(crate) fn operator_correct_errors(mut builder: crate::types::builders::OperatorBuilder) -> crate::types::builders::OperatorBuilder {
+    if builder.principal.is_none() {
+        builder.principal = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn predictive_scaling_configuration_correct_errors(
     mut builder: crate::types::builders::PredictiveScalingConfigurationBuilder,
 ) -> crate::types::builders::PredictiveScalingConfigurationBuilder {

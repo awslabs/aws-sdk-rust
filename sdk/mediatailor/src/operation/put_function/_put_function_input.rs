@@ -14,6 +14,8 @@ pub struct PutFunctionInput {
     pub http_request_configuration: ::std::option::Option<crate::types::HttpRequestConfiguration>,
     /// <p>The configuration for a <code>CUSTOM_OUTPUT</code> function. Specifies the runtime and output expressions. Required when <code>FunctionType</code> is <code>CUSTOM_OUTPUT</code>.</p>
     pub custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
+    /// <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function. Specifies the list of child functions to run in parallel, the maximum concurrency, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>CONCURRENT_EXECUTOR</code>.</p>
+    pub concurrent_executor_configuration: ::std::option::Option<crate::types::ConcurrentExecutorConfiguration>,
     /// <p>The configuration for a <code>SEQUENTIAL_EXECUTOR</code> function. Specifies the ordered list of child functions to execute, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>SEQUENTIAL_EXECUTOR</code>.</p>
     pub sequential_executor_configuration: ::std::option::Option<crate::types::SequentialExecutorConfiguration>,
     /// <p>The tags to assign to the function. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
@@ -40,6 +42,10 @@ impl PutFunctionInput {
     pub fn custom_output_configuration(&self) -> ::std::option::Option<&crate::types::CustomOutputConfiguration> {
         self.custom_output_configuration.as_ref()
     }
+    /// <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function. Specifies the list of child functions to run in parallel, the maximum concurrency, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>CONCURRENT_EXECUTOR</code>.</p>
+    pub fn concurrent_executor_configuration(&self) -> ::std::option::Option<&crate::types::ConcurrentExecutorConfiguration> {
+        self.concurrent_executor_configuration.as_ref()
+    }
     /// <p>The configuration for a <code>SEQUENTIAL_EXECUTOR</code> function. Specifies the ordered list of child functions to execute, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>SEQUENTIAL_EXECUTOR</code>.</p>
     pub fn sequential_executor_configuration(&self) -> ::std::option::Option<&crate::types::SequentialExecutorConfiguration> {
         self.sequential_executor_configuration.as_ref()
@@ -65,6 +71,7 @@ pub struct PutFunctionInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) http_request_configuration: ::std::option::Option<crate::types::HttpRequestConfiguration>,
     pub(crate) custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
+    pub(crate) concurrent_executor_configuration: ::std::option::Option<crate::types::ConcurrentExecutorConfiguration>,
     pub(crate) sequential_executor_configuration: ::std::option::Option<crate::types::SequentialExecutorConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -141,6 +148,20 @@ impl PutFunctionInputBuilder {
     pub fn get_custom_output_configuration(&self) -> &::std::option::Option<crate::types::CustomOutputConfiguration> {
         &self.custom_output_configuration
     }
+    /// <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function. Specifies the list of child functions to run in parallel, the maximum concurrency, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>CONCURRENT_EXECUTOR</code>.</p>
+    pub fn concurrent_executor_configuration(mut self, input: crate::types::ConcurrentExecutorConfiguration) -> Self {
+        self.concurrent_executor_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function. Specifies the list of child functions to run in parallel, the maximum concurrency, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>CONCURRENT_EXECUTOR</code>.</p>
+    pub fn set_concurrent_executor_configuration(mut self, input: ::std::option::Option<crate::types::ConcurrentExecutorConfiguration>) -> Self {
+        self.concurrent_executor_configuration = input;
+        self
+    }
+    /// <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function. Specifies the list of child functions to run in parallel, the maximum concurrency, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>CONCURRENT_EXECUTOR</code>.</p>
+    pub fn get_concurrent_executor_configuration(&self) -> &::std::option::Option<crate::types::ConcurrentExecutorConfiguration> {
+        &self.concurrent_executor_configuration
+    }
     /// <p>The configuration for a <code>SEQUENTIAL_EXECUTOR</code> function. Specifies the ordered list of child functions to execute, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>SEQUENTIAL_EXECUTOR</code>.</p>
     pub fn sequential_executor_configuration(mut self, input: crate::types::SequentialExecutorConfiguration) -> Self {
         self.sequential_executor_configuration = ::std::option::Option::Some(input);
@@ -183,6 +204,7 @@ impl PutFunctionInputBuilder {
             description: self.description,
             http_request_configuration: self.http_request_configuration,
             custom_output_configuration: self.custom_output_configuration,
+            concurrent_executor_configuration: self.concurrent_executor_configuration,
             sequential_executor_configuration: self.sequential_executor_configuration,
             tags: self.tags,
         })

@@ -20,7 +20,7 @@ pub struct BackupVaultListMember {
     /// <p>A unique string that identifies the request and allows failed requests to be retried without the risk of running the operation twice. This parameter is optional.</p>
     /// <p>If used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
     pub creator_request_id: ::std::option::Option<::std::string::String>,
-    /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>The number of recovery points that are stored in a backup vault. Recovery point count value displayed in the console can be an approximation.</p>
     pub number_of_recovery_points: i64,
     /// <p>A Boolean value that indicates whether Backup Vault Lock applies to the selected backup vault. If <code>true</code>, Vault Lock prevents delete and update operations on the recovery points in the selected vault.</p>
     pub locked: ::std::option::Option<bool>,
@@ -68,7 +68,7 @@ impl BackupVaultListMember {
     pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
-    /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>The number of recovery points that are stored in a backup vault. Recovery point count value displayed in the console can be an approximation.</p>
     pub fn number_of_recovery_points(&self) -> i64 {
         self.number_of_recovery_points
     }
@@ -227,17 +227,17 @@ impl BackupVaultListMemberBuilder {
     pub fn get_creator_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.creator_request_id
     }
-    /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>The number of recovery points that are stored in a backup vault. Recovery point count value displayed in the console can be an approximation.</p>
     pub fn number_of_recovery_points(mut self, input: i64) -> Self {
         self.number_of_recovery_points = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>The number of recovery points that are stored in a backup vault. Recovery point count value displayed in the console can be an approximation.</p>
     pub fn set_number_of_recovery_points(mut self, input: ::std::option::Option<i64>) -> Self {
         self.number_of_recovery_points = input;
         self
     }
-    /// <p>The number of recovery points that are stored in a backup vault.</p>
+    /// <p>The number of recovery points that are stored in a backup vault. Recovery point count value displayed in the console can be an approximation.</p>
     pub fn get_number_of_recovery_points(&self) -> &::std::option::Option<i64> {
         &self.number_of_recovery_points
     }

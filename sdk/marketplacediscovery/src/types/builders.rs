@@ -21,9 +21,9 @@ pub use crate::types::_seller_engagement::SellerEngagementBuilder;
 
 pub use crate::types::_use_case_entry::UseCaseEntryBuilder;
 
-pub use crate::types::_purchase_option_badge::PurchaseOptionBadgeBuilder;
-
 pub use crate::types::_offer_associated_entity::OfferAssociatedEntityBuilder;
+
+pub use crate::types::_purchase_option_badge::PurchaseOptionBadgeBuilder;
 
 pub use crate::types::_offer_set_associated_entity::OfferSetAssociatedEntityBuilder;
 
@@ -72,6 +72,8 @@ pub use crate::types::_usage_based_pricing_term::UsageBasedPricingTermBuilder;
 pub use crate::types::_validity_term::ValidityTermBuilder;
 
 pub use crate::types::_variable_payment_term::VariablePaymentTermBuilder;
+
+pub use crate::types::_net_payment_term::NetPaymentTermBuilder;
 
 pub use crate::types::_amazon_machine_image_fulfillment_option::AmazonMachineImageFulfillmentOptionBuilder;
 

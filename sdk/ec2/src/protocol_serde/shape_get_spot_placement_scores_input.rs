@@ -72,6 +72,11 @@ pub fn ser_get_spot_placement_scores_input_input_input(
     if let Some(var_24) = &input.next_token {
         scope_23.string(var_24);
     }
+    #[allow(unused_mut)]
+    let mut scope_25 = writer.prefix("IncludeLocalZones");
+    if let Some(var_26) = &input.include_local_zones {
+        scope_25.boolean(*var_26);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

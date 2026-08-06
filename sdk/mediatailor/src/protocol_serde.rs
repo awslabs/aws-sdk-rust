@@ -193,6 +193,8 @@ pub(crate) mod shape_cdn_configuration;
 
 pub(crate) mod shape_clip_range;
 
+pub(crate) mod shape_concurrent_executor_configuration;
+
 pub(crate) mod shape_configuration_aliases_response;
 
 pub(crate) mod shape_custom_output_configuration;

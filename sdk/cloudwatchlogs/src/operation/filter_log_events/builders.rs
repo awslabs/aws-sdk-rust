@@ -210,17 +210,23 @@ impl FilterLogEventsFluentBuilder {
     pub fn get_log_stream_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_log_stream_name_prefix()
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn start_time(mut self, input: i64) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         self.inner.get_start_time()
     }

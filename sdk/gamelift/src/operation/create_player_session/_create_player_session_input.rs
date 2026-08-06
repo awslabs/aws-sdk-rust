@@ -59,7 +59,7 @@ impl ::std::fmt::Debug for CreatePlayerSessionInput {
         let mut formatter = f.debug_struct("CreatePlayerSessionInput");
         formatter.field("game_session_id", &self.game_session_id);
         formatter.field("player_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("player_data", &self.player_data);
+        formatter.field("player_data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -185,7 +185,7 @@ impl ::std::fmt::Debug for CreatePlayerSessionInputBuilder {
         let mut formatter = f.debug_struct("CreatePlayerSessionInputBuilder");
         formatter.field("game_session_id", &self.game_session_id);
         formatter.field("player_id", &"*** Sensitive Data Redacted ***");
-        formatter.field("player_data", &self.player_data);
+        formatter.field("player_data", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

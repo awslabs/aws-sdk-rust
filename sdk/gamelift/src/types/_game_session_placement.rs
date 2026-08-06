@@ -294,8 +294,8 @@ impl ::std::fmt::Debug for GameSessionPlacement {
         formatter.field("dns_name", &self.dns_name);
         formatter.field("port", &"*** Sensitive Data Redacted ***");
         formatter.field("placed_player_sessions", &self.placed_player_sessions);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("matchmaker_data", &self.matchmaker_data);
+        formatter.field("game_session_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("matchmaker_data", &"*** Sensitive Data Redacted ***");
         formatter.field("priority_configuration_override", &self.priority_configuration_override);
         formatter.field("player_gateway_status", &self.player_gateway_status);
         formatter.finish()
@@ -887,8 +887,8 @@ impl ::std::fmt::Debug for GameSessionPlacementBuilder {
         formatter.field("dns_name", &self.dns_name);
         formatter.field("port", &"*** Sensitive Data Redacted ***");
         formatter.field("placed_player_sessions", &self.placed_player_sessions);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("matchmaker_data", &self.matchmaker_data);
+        formatter.field("game_session_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("matchmaker_data", &"*** Sensitive Data Redacted ***");
         formatter.field("priority_configuration_override", &self.priority_configuration_override);
         formatter.field("player_gateway_status", &self.player_gateway_status);
         formatter.finish()

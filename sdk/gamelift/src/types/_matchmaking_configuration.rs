@@ -2,7 +2,7 @@
 
 /// <p>Guidelines for use with FlexMatch to match players into games. All matchmaking requests must specify a matchmaking configuration.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MatchmakingConfiguration {
     /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -151,6 +151,29 @@ impl MatchmakingConfiguration {
         self.flex_match_mode.as_ref()
     }
 }
+impl ::std::fmt::Debug for MatchmakingConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MatchmakingConfiguration");
+        formatter.field("name", &self.name);
+        formatter.field("configuration_arn", &self.configuration_arn);
+        formatter.field("description", &self.description);
+        formatter.field("game_session_queue_arns", &self.game_session_queue_arns);
+        formatter.field("request_timeout_seconds", &self.request_timeout_seconds);
+        formatter.field("acceptance_timeout_seconds", &self.acceptance_timeout_seconds);
+        formatter.field("acceptance_required", &self.acceptance_required);
+        formatter.field("rule_set_name", &self.rule_set_name);
+        formatter.field("rule_set_arn", &self.rule_set_arn);
+        formatter.field("notification_target", &self.notification_target);
+        formatter.field("additional_player_count", &self.additional_player_count);
+        formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("game_properties", &self.game_properties);
+        formatter.field("game_session_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("backfill_mode", &self.backfill_mode);
+        formatter.field("flex_match_mode", &self.flex_match_mode);
+        formatter.finish()
+    }
+}
 impl MatchmakingConfiguration {
     /// Creates a new builder-style object to manufacture [`MatchmakingConfiguration`](crate::types::MatchmakingConfiguration).
     pub fn builder() -> crate::types::builders::MatchmakingConfigurationBuilder {
@@ -159,7 +182,7 @@ impl MatchmakingConfiguration {
 }
 
 /// A builder for [`MatchmakingConfiguration`](crate::types::MatchmakingConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MatchmakingConfigurationBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -509,5 +532,28 @@ impl MatchmakingConfigurationBuilder {
             backfill_mode: self.backfill_mode,
             flex_match_mode: self.flex_match_mode,
         }
+    }
+}
+impl ::std::fmt::Debug for MatchmakingConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MatchmakingConfigurationBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("configuration_arn", &self.configuration_arn);
+        formatter.field("description", &self.description);
+        formatter.field("game_session_queue_arns", &self.game_session_queue_arns);
+        formatter.field("request_timeout_seconds", &self.request_timeout_seconds);
+        formatter.field("acceptance_timeout_seconds", &self.acceptance_timeout_seconds);
+        formatter.field("acceptance_required", &self.acceptance_required);
+        formatter.field("rule_set_name", &self.rule_set_name);
+        formatter.field("rule_set_arn", &self.rule_set_arn);
+        formatter.field("notification_target", &self.notification_target);
+        formatter.field("additional_player_count", &self.additional_player_count);
+        formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("game_properties", &self.game_properties);
+        formatter.field("game_session_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("backfill_mode", &self.backfill_mode);
+        formatter.field("flex_match_mode", &self.flex_match_mode);
+        formatter.finish()
     }
 }

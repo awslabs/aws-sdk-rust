@@ -178,6 +178,20 @@ impl PutFunctionFluentBuilder {
     pub fn get_custom_output_configuration(&self) -> &::std::option::Option<crate::types::CustomOutputConfiguration> {
         self.inner.get_custom_output_configuration()
     }
+    /// <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function. Specifies the list of child functions to run in parallel, the maximum concurrency, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>CONCURRENT_EXECUTOR</code>.</p>
+    pub fn concurrent_executor_configuration(mut self, input: crate::types::ConcurrentExecutorConfiguration) -> Self {
+        self.inner = self.inner.concurrent_executor_configuration(input);
+        self
+    }
+    /// <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function. Specifies the list of child functions to run in parallel, the maximum concurrency, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>CONCURRENT_EXECUTOR</code>.</p>
+    pub fn set_concurrent_executor_configuration(mut self, input: ::std::option::Option<crate::types::ConcurrentExecutorConfiguration>) -> Self {
+        self.inner = self.inner.set_concurrent_executor_configuration(input);
+        self
+    }
+    /// <p>The configuration for a <code>CONCURRENT_EXECUTOR</code> function. Specifies the list of child functions to run in parallel, the maximum concurrency, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>CONCURRENT_EXECUTOR</code>.</p>
+    pub fn get_concurrent_executor_configuration(&self) -> &::std::option::Option<crate::types::ConcurrentExecutorConfiguration> {
+        self.inner.get_concurrent_executor_configuration()
+    }
     /// <p>The configuration for a <code>SEQUENTIAL_EXECUTOR</code> function. Specifies the ordered list of child functions to execute, an optional output block, and a timeout. Required when <code>FunctionType</code> is <code>SEQUENTIAL_EXECUTOR</code>.</p>
     pub fn sequential_executor_configuration(mut self, input: crate::types::SequentialExecutorConfiguration) -> Self {
         self.inner = self.inner.sequential_executor_configuration(input);

@@ -163,6 +163,52 @@ impl From<crate::operation::cancel_legal_hold::CancelLegalHoldError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_backup_access_point::CreateBackupAccessPointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_backup_access_point::CreateBackupAccessPointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_backup_access_point::CreateBackupAccessPointError> for Error {
+    fn from(err: crate::operation::create_backup_access_point::CreateBackupAccessPointError) -> Self {
+        match err {
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_backup_access_point::CreateBackupAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_backup_plan::CreateBackupPlanError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -589,6 +635,45 @@ impl From<crate::operation::create_tiering_configuration::CreateTieringConfigura
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::create_tiering_configuration::CreateTieringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_backup_access_point::DeleteBackupAccessPointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_backup_access_point::DeleteBackupAccessPointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_backup_access_point::DeleteBackupAccessPointError> for Error {
+    fn from(err: crate::operation::delete_backup_access_point::DeleteBackupAccessPointError) -> Self {
+        match err {
+            crate::operation::delete_backup_access_point::DeleteBackupAccessPointError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_backup_access_point::DeleteBackupAccessPointError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_backup_access_point::DeleteBackupAccessPointError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::delete_backup_access_point::DeleteBackupAccessPointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_backup_access_point::DeleteBackupAccessPointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_backup_access_point::DeleteBackupAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1029,6 +1114,45 @@ impl From<crate::operation::delete_tiering_configuration::DeleteTieringConfigura
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::delete_tiering_configuration::DeleteTieringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_backup_access_point::DescribeBackupAccessPointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_backup_access_point::DescribeBackupAccessPointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_backup_access_point::DescribeBackupAccessPointError> for Error {
+    fn from(err: crate::operation::describe_backup_access_point::DescribeBackupAccessPointError) -> Self {
+        match err {
+            crate::operation::describe_backup_access_point::DescribeBackupAccessPointError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::describe_backup_access_point::DescribeBackupAccessPointError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_backup_access_point::DescribeBackupAccessPointError::MissingParameterValueException(inner) => {
+                Error::MissingParameterValueException(inner)
+            }
+            crate::operation::describe_backup_access_point::DescribeBackupAccessPointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_backup_access_point::DescribeBackupAccessPointError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_backup_access_point::DescribeBackupAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2144,6 +2268,110 @@ impl From<crate::operation::get_tiering_configuration::GetTieringConfigurationEr
                 Error::ServiceUnavailableException(inner)
             }
             crate::operation::get_tiering_configuration::GetTieringConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_backup_access_points::ListBackupAccessPointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_backup_access_points::ListBackupAccessPointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_backup_access_points::ListBackupAccessPointsError> for Error {
+    fn from(err: crate::operation::list_backup_access_points::ListBackupAccessPointsError) -> Self {
+        match err {
+            crate::operation::list_backup_access_points::ListBackupAccessPointsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_backup_access_points::ListBackupAccessPointsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_backup_access_points::ListBackupAccessPointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_backup_access_points_by_recovery_point::ListBackupAccessPointsByRecoveryPointError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_backup_access_points_by_recovery_point::ListBackupAccessPointsByRecoveryPointError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_backup_access_points_by_recovery_point::ListBackupAccessPointsByRecoveryPointError> for Error {
+    fn from(err: crate::operation::list_backup_access_points_by_recovery_point::ListBackupAccessPointsByRecoveryPointError) -> Self {
+        match err {
+            crate::operation::list_backup_access_points_by_recovery_point::ListBackupAccessPointsByRecoveryPointError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_backup_access_points_by_recovery_point::ListBackupAccessPointsByRecoveryPointError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_backup_access_points_by_recovery_point::ListBackupAccessPointsByRecoveryPointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_backup_access_points_by_resource::ListBackupAccessPointsByResourceError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_backup_access_points_by_resource::ListBackupAccessPointsByResourceError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_backup_access_points_by_resource::ListBackupAccessPointsByResourceError> for Error {
+    fn from(err: crate::operation::list_backup_access_points_by_resource::ListBackupAccessPointsByResourceError) -> Self {
+        match err {
+            crate::operation::list_backup_access_points_by_resource::ListBackupAccessPointsByResourceError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_backup_access_points_by_resource::ListBackupAccessPointsByResourceError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_backup_access_points_by_resource::ListBackupAccessPointsByResourceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

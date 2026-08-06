@@ -8,10 +8,10 @@ impl super::Client {
     ///   - [`product_id(String)`](crate::operation::get_product::GetProductOutput::product_id): <p>The unique identifier of the product.</p>
     ///   - [`catalog(String)`](crate::operation::get_product::GetProductOutput::catalog): <p>The name of the catalog that the product belongs to.</p>
     ///   - [`product_name(String)`](crate::operation::get_product::GetProductOutput::product_name): <p>The human-readable display name of the product.</p>
+    ///   - [`manufacturer(Option<SellerInformation>)`](crate::operation::get_product::GetProductOutput::manufacturer): <p>The entity who manufactured the product.</p>
     ///   - [`deployed_on_aws(DeployedOnAwsStatus)`](crate::operation::get_product::GetProductOutput::deployed_on_aws): <p>Indicates whether the product is deployed on AWS infrastructure.</p>
     ///   - [`short_description(String)`](crate::operation::get_product::GetProductOutput::short_description): <p>A 1–3 sentence summary describing the key aspects of the product.</p>
     ///   - [`long_description(String)`](crate::operation::get_product::GetProductOutput::long_description): <p>A detailed description of what the product does, in paragraph format.</p>
-    ///   - [`manufacturer(Option<SellerInformation>)`](crate::operation::get_product::GetProductOutput::manufacturer): <p>The entity who manufactured the product.</p>
     ///   - [`logo_thumbnail_url(String)`](crate::operation::get_product::GetProductOutput::logo_thumbnail_url): <p>The URL of the logo thumbnail image for the product.</p>
     ///   - [`fulfillment_option_summaries(Vec::<FulfillmentOptionSummary>)`](crate::operation::get_product::GetProductOutput::fulfillment_option_summaries): <p>A summary of fulfillment options available for deploying or accessing the product, such as AMI, SaaS, or Container.</p>
     ///   - [`categories(Vec::<Category>)`](crate::operation::get_product::GetProductOutput::categories): <p>The categories used to classify this product into logical groups.</p>

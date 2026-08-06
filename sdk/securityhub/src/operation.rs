@@ -277,6 +277,9 @@ pub mod list_enabled_products_for_import;
 /// Types for the `ListFindingAggregators` operation.
 pub mod list_finding_aggregators;
 
+/// Types for the `ListFreeTrialStatusesV2` operation.
+pub mod list_free_trial_statuses_v2;
+
 /// Types for the `ListInvitations` operation.
 pub mod list_invitations;
 

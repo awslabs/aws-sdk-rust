@@ -192,6 +192,8 @@ impl Client {
 
 mod add_dataset_examples;
 
+mod batch_put_gateway_rate_limits;
+
 mod create_agent_runtime;
 
 mod create_agent_runtime_endpoint;
@@ -201,6 +203,8 @@ mod create_api_key_credential_provider;
 mod create_browser;
 
 mod create_browser_profile;
+
+mod create_capacity_provider;
 
 mod create_code_interpreter;
 
@@ -213,6 +217,8 @@ mod create_dataset_version;
 mod create_evaluator;
 
 mod create_gateway;
+
+mod create_gateway_rate_limit;
 
 mod create_gateway_rule;
 
@@ -281,6 +287,8 @@ mod delete_browser;
 
 mod delete_browser_profile;
 
+mod delete_capacity_provider;
+
 mod delete_code_interpreter;
 
 mod delete_configuration_bundle;
@@ -292,6 +300,8 @@ mod delete_dataset_examples;
 mod delete_evaluator;
 
 mod delete_gateway;
+
+mod delete_gateway_rate_limit;
 
 mod delete_gateway_rule;
 
@@ -335,6 +345,8 @@ mod get_browser;
 
 mod get_browser_profile;
 
+mod get_capacity_provider;
+
 mod get_code_interpreter;
 
 mod get_configuration_bundle;
@@ -346,6 +358,8 @@ mod get_dataset;
 mod get_evaluator;
 
 mod get_gateway;
+
+mod get_gateway_rate_limit;
 
 mod get_gateway_rule;
 
@@ -393,6 +407,8 @@ mod list_agent_runtime_endpoints;
 
 mod list_agent_runtime_versions;
 
+mod list_agent_runtime_versions_by_capacity_provider;
+
 mod list_agent_runtimes;
 
 mod list_api_key_credential_providers;
@@ -400,6 +416,8 @@ mod list_api_key_credential_providers;
 mod list_browser_profiles;
 
 mod list_browsers;
+
+mod list_capacity_providers;
 
 mod list_code_interpreters;
 
@@ -414,6 +432,8 @@ mod list_dataset_versions;
 mod list_datasets;
 
 mod list_evaluators;
+
+mod list_gateway_rate_limits;
 
 mod list_gateway_rules;
 
@@ -481,6 +501,8 @@ mod update_agent_runtime_endpoint;
 
 mod update_api_key_credential_provider;
 
+mod update_capacity_provider;
+
 mod update_configuration_bundle;
 
 mod update_dataset;
@@ -490,6 +512,8 @@ mod update_dataset_examples;
 mod update_evaluator;
 
 mod update_gateway;
+
+mod update_gateway_rate_limit;
 
 mod update_gateway_rule;
 

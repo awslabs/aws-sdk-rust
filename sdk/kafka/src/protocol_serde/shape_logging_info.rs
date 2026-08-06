@@ -3,11 +3,17 @@ pub fn ser_logging_info(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::LoggingInfo,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.broker_logs {
+    if let Some(var_1) = &input.authorizer_logs {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("brokerLogs").start_object();
-        crate::protocol_serde::shape_broker_logs::ser_broker_logs(&mut object_2, var_1)?;
+        let mut object_2 = object.key("authorizerLogs").start_object();
+        crate::protocol_serde::shape_authorizer_logs::ser_authorizer_logs(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.broker_logs {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("brokerLogs").start_object();
+        crate::protocol_serde::shape_broker_logs::ser_broker_logs(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }
@@ -34,6 +40,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "authorizerLogs" => {
+                            builder = builder.set_authorizer_logs(crate::protocol_serde::shape_authorizer_logs::de_authorizer_logs(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "brokerLogs" => {
                             builder = builder.set_broker_logs(crate::protocol_serde::shape_broker_logs::de_broker_logs(tokens, _value, depth + 1)?);
                         }

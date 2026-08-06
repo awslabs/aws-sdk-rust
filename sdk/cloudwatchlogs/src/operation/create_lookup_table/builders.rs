@@ -154,19 +154,19 @@ impl CreateLookupTableFluentBuilder {
     pub fn get_table_body(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_body()
     }
-    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>The ID of a completed or cancelled CloudWatch Logs query whose results populate the lookup table. A cancelled query populates the table with the partial results that were available when the query was stopped.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.query_id(input.into());
         self
     }
-    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>The ID of a completed or cancelled CloudWatch Logs query whose results populate the lookup table. A cancelled query populates the table with the partial results that were available when the query was stopped.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_query_id(input);
         self
     }
-    /// <p>The ID of a completed CloudWatch Logs query whose results populate the lookup table.</p>
+    /// <p>The ID of a completed or cancelled CloudWatch Logs query whose results populate the lookup table. A cancelled query populates the table with the partial results that were available when the query was stopped.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_query_id()

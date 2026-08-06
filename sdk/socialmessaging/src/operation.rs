@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateWhatsAppBusinessAccount` operation.
 pub mod associate_whats_app_business_account;
 
+/// Types for the `CreateWhatsAppDataset` operation.
+pub mod create_whats_app_dataset;
+
 /// Types for the `CreateWhatsAppFlow` operation.
 pub mod create_whats_app_flow;
 
@@ -75,6 +78,9 @@ pub mod publish_whats_app_flow;
 
 /// Types for the `PutWhatsAppBusinessAccountEventDestinations` operation.
 pub mod put_whats_app_business_account_event_destinations;
+
+/// Types for the `SendWhatsAppConversionEvent` operation.
+pub mod send_whats_app_conversion_event;
 
 /// Types for the `SendWhatsAppMessage` operation.
 pub mod send_whats_app_message;

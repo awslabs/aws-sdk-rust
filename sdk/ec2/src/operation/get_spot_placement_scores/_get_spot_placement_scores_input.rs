@@ -24,6 +24,9 @@ pub struct GetSpotPlacementScoresInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Specify <code>true</code> so that the response returns scores that include Local Zones. Otherwise, the response ignores Local Zones.</p>
+    /// <p>When you request regional scores, Local Zone capacity counts toward its parent Region.</p>
+    pub include_local_zones: ::std::option::Option<bool>,
 }
 impl GetSpotPlacementScoresInput {
     /// <p>The instance types. We recommend that you specify at least three instance types. If you specify one or two instance types, or specify variations of a single instance type (for example, an <code>m3.xlarge</code> with and without instance storage), the returned placement score will always be low.</p>
@@ -69,6 +72,11 @@ impl GetSpotPlacementScoresInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Specify <code>true</code> so that the response returns scores that include Local Zones. Otherwise, the response ignores Local Zones.</p>
+    /// <p>When you request regional scores, Local Zone capacity counts toward its parent Region.</p>
+    pub fn include_local_zones(&self) -> ::std::option::Option<bool> {
+        self.include_local_zones
+    }
 }
 impl GetSpotPlacementScoresInput {
     /// Creates a new builder-style object to manufacture [`GetSpotPlacementScoresInput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput).
@@ -90,6 +98,7 @@ pub struct GetSpotPlacementScoresInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_local_zones: ::std::option::Option<bool>,
 }
 impl GetSpotPlacementScoresInputBuilder {
     /// Appends an item to `instance_types`.
@@ -243,6 +252,23 @@ impl GetSpotPlacementScoresInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Specify <code>true</code> so that the response returns scores that include Local Zones. Otherwise, the response ignores Local Zones.</p>
+    /// <p>When you request regional scores, Local Zone capacity counts toward its parent Region.</p>
+    pub fn include_local_zones(mut self, input: bool) -> Self {
+        self.include_local_zones = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specify <code>true</code> so that the response returns scores that include Local Zones. Otherwise, the response ignores Local Zones.</p>
+    /// <p>When you request regional scores, Local Zone capacity counts toward its parent Region.</p>
+    pub fn set_include_local_zones(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_local_zones = input;
+        self
+    }
+    /// <p>Specify <code>true</code> so that the response returns scores that include Local Zones. Otherwise, the response ignores Local Zones.</p>
+    /// <p>When you request regional scores, Local Zone capacity counts toward its parent Region.</p>
+    pub fn get_include_local_zones(&self) -> &::std::option::Option<bool> {
+        &self.include_local_zones
+    }
     /// Consumes the builder and constructs a [`GetSpotPlacementScoresInput`](crate::operation::get_spot_placement_scores::GetSpotPlacementScoresInput).
     pub fn build(
         self,
@@ -260,6 +286,7 @@ impl GetSpotPlacementScoresInputBuilder {
             dry_run: self.dry_run,
             max_results: self.max_results,
             next_token: self.next_token,
+            include_local_zones: self.include_local_zones,
         })
     }
 }

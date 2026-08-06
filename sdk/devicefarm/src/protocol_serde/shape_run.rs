@@ -234,6 +234,16 @@ where
                                 crate::protocol_serde::shape_environment_variables::de_environment_variables(tokens, _value, depth + 1)?,
                             );
                         }
+                        "insightsTypes" => {
+                            builder = builder.set_insights_types(crate::protocol_serde::shape_insights_types::de_insights_types(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "insights" => {
+                            builder = builder.set_insights(crate::protocol_serde::shape_run_insights::de_run_insights(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -10,7 +10,7 @@ pub struct UpdateLookupTableInput {
     /// <p>The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub table_body: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>The ID of a completed or cancelled CloudWatch Logs query whose results replace the lookup table content. A cancelled query replaces the content with the partial results that were available when the query was stopped.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub query_id: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the KMS key to use to encrypt the lookup table data. You can use this parameter to add, update, or remove the KMS key. To remove the KMS key and use an Amazon Web Services-owned key instead, specify an empty string.</p>
@@ -30,7 +30,7 @@ impl UpdateLookupTableInput {
     pub fn table_body(&self) -> ::std::option::Option<&str> {
         self.table_body.as_deref()
     }
-    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>The ID of a completed or cancelled CloudWatch Logs query whose results replace the lookup table content. A cancelled query replaces the content with the partial results that were available when the query was stopped.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn query_id(&self) -> ::std::option::Option<&str> {
         self.query_id.as_deref()
@@ -104,19 +104,19 @@ impl UpdateLookupTableInputBuilder {
     pub fn get_table_body(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_body
     }
-    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>The ID of a completed or cancelled CloudWatch Logs query whose results replace the lookup table content. A cancelled query replaces the content with the partial results that were available when the query was stopped.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn query_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>The ID of a completed or cancelled CloudWatch Logs query whose results replace the lookup table content. A cancelled query replaces the content with the partial results that were available when the query was stopped.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn set_query_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_id = input;
         self
     }
-    /// <p>The ID of a completed CloudWatch Logs query whose results replace the lookup table content.</p>
+    /// <p>The ID of a completed or cancelled CloudWatch Logs query whose results replace the lookup table content. A cancelled query replaces the content with the partial results that were available when the query was stopped.</p>
     /// <p>You must specify either <code>tableBody</code> or <code>queryId</code>, but not both.</p>
     pub fn get_query_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_id

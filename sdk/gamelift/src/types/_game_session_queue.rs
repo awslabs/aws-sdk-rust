@@ -2,7 +2,7 @@
 
 /// <p>Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be used on its own or as part of a matchmaking solution.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GameSessionQueue {
     /// <p>A descriptive label that is associated with game session queue. Queue names must be unique within each Region.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -75,6 +75,21 @@ impl GameSessionQueue {
         self.notification_target.as_deref()
     }
 }
+impl ::std::fmt::Debug for GameSessionQueue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameSessionQueue");
+        formatter.field("name", &self.name);
+        formatter.field("game_session_queue_arn", &self.game_session_queue_arn);
+        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
+        formatter.field("player_latency_policies", &self.player_latency_policies);
+        formatter.field("destinations", &self.destinations);
+        formatter.field("filter_configuration", &self.filter_configuration);
+        formatter.field("priority_configuration", &self.priority_configuration);
+        formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("notification_target", &self.notification_target);
+        formatter.finish()
+    }
+}
 impl GameSessionQueue {
     /// Creates a new builder-style object to manufacture [`GameSessionQueue`](crate::types::GameSessionQueue).
     pub fn builder() -> crate::types::builders::GameSessionQueueBuilder {
@@ -83,7 +98,7 @@ impl GameSessionQueue {
 }
 
 /// A builder for [`GameSessionQueue`](crate::types::GameSessionQueue).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GameSessionQueueBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -263,5 +278,20 @@ impl GameSessionQueueBuilder {
             custom_event_data: self.custom_event_data,
             notification_target: self.notification_target,
         }
+    }
+}
+impl ::std::fmt::Debug for GameSessionQueueBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameSessionQueueBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("game_session_queue_arn", &self.game_session_queue_arn);
+        formatter.field("timeout_in_seconds", &self.timeout_in_seconds);
+        formatter.field("player_latency_policies", &self.player_latency_policies);
+        formatter.field("destinations", &self.destinations);
+        formatter.field("filter_configuration", &self.filter_configuration);
+        formatter.field("priority_configuration", &self.priority_configuration);
+        formatter.field("custom_event_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("notification_target", &self.notification_target);
+        formatter.finish()
     }
 }

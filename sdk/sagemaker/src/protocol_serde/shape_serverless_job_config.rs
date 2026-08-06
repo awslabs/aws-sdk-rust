@@ -24,6 +24,9 @@ pub fn ser_serverless_job_config(
     if let Some(var_5) = &input.evaluator_arn {
         object.key("EvaluatorArn").string(var_5.as_str());
     }
+    if let Some(var_6) = &input.sequence_length {
+        object.key("SequenceLength").string(var_6.as_str());
+    }
     Ok(())
 }
 
@@ -89,6 +92,13 @@ where
                         }
                         "EvaluatorArn" => {
                             builder = builder.set_evaluator_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SequenceLength" => {
+                            builder = builder.set_sequence_length(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

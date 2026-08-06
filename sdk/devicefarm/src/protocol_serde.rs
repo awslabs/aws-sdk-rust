@@ -487,7 +487,11 @@ pub(crate) mod shape_device_selection_result;
 
 pub(crate) mod shape_environment_variables;
 
+pub(crate) mod shape_insights_types;
+
 pub(crate) mod shape_instance_labels;
+
+pub(crate) mod shape_job_insights;
 
 pub(crate) mod shape_location;
 
@@ -513,6 +517,8 @@ pub(crate) mod shape_resolution;
 
 pub(crate) mod shape_rules;
 
+pub(crate) mod shape_run_insights;
+
 pub(crate) mod shape_sample;
 
 pub(crate) mod shape_test_grid_session_action;
@@ -533,11 +539,15 @@ pub(crate) mod shape_incompatibility_messages;
 
 pub(crate) mod shape_ios_paths;
 
+pub(crate) mod shape_job_report;
+
 pub(crate) mod shape_recurring_charges;
 
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_subnet_ids;
+
+pub(crate) mod shape_test_report;
 
 pub(crate) mod shape_unique_problem;
 
@@ -547,9 +557,13 @@ pub(crate) mod shape_vpc_subnet_ids;
 
 pub(crate) mod shape_incompatibility_message;
 
+pub(crate) mod shape_job_report_metrics;
+
 pub(crate) mod shape_problems;
 
 pub(crate) mod shape_recurring_charge;
+
+pub(crate) mod shape_test_report_metrics;
 
 pub(crate) mod shape_device_filter_values;
 

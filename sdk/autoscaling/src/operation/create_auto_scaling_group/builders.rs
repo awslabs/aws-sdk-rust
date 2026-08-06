@@ -732,4 +732,18 @@ impl CreateAutoScalingGroupFluentBuilder {
     pub fn get_instance_lifecycle_policy(&self) -> &::std::option::Option<crate::types::InstanceLifecyclePolicy> {
         self.inner.get_instance_lifecycle_policy()
     }
+    /// <p>The entity that manages the Auto Scaling group. If you specify this parameter, Amazon EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only allows the designated operator to make changes to the Auto Scaling group. All mutating API calls from non-operator callers are rejected with an <code>AccessDenied</code> exception.</p>
+    pub fn operator(mut self, input: crate::types::Operator) -> Self {
+        self.inner = self.inner.operator(input);
+        self
+    }
+    /// <p>The entity that manages the Auto Scaling group. If you specify this parameter, Amazon EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only allows the designated operator to make changes to the Auto Scaling group. All mutating API calls from non-operator callers are rejected with an <code>AccessDenied</code> exception.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
+        self.inner = self.inner.set_operator(input);
+        self
+    }
+    /// <p>The entity that manages the Auto Scaling group. If you specify this parameter, Amazon EC2 Auto Scaling passes the operator identity to EC2 for instance launches and only allows the designated operator to make changes to the Auto Scaling group. All mutating API calls from non-operator callers are rejected with an <code>AccessDenied</code> exception.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        self.inner.get_operator()
+    }
 }

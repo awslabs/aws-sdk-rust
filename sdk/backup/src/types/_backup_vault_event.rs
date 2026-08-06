@@ -12,6 +12,12 @@
 /// ```text
 /// # let backupvaultevent = unimplemented!();
 /// match backupvaultevent {
+///     BackupVaultEvent::AccessPointAvailable => { /* ... */ },
+///     BackupVaultEvent::AccessPointCreationFailed => { /* ... */ },
+///     BackupVaultEvent::AccessPointDeleted => { /* ... */ },
+///     BackupVaultEvent::AccessPointDeletionFailed => { /* ... */ },
+///     BackupVaultEvent::AccessPointDisassociated => { /* ... */ },
+///     BackupVaultEvent::AccessPointExpired => { /* ... */ },
 ///     BackupVaultEvent::BackupJobCompleted => { /* ... */ },
 ///     BackupVaultEvent::BackupJobExpired => { /* ... */ },
 ///     BackupVaultEvent::BackupJobFailed => { /* ... */ },
@@ -64,6 +70,18 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum BackupVaultEvent {
+    #[allow(missing_docs)] // documentation missing in model
+    AccessPointAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessPointCreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessPointDeleted,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessPointDeletionFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessPointDisassociated,
+    #[allow(missing_docs)] // documentation missing in model
+    AccessPointExpired,
     #[allow(missing_docs)] // documentation missing in model
     BackupJobCompleted,
     #[allow(missing_docs)] // documentation missing in model
@@ -119,6 +137,12 @@ pub enum BackupVaultEvent {
 impl ::std::convert::From<&str> for BackupVaultEvent {
     fn from(s: &str) -> Self {
         match s {
+            "ACCESS_POINT_AVAILABLE" => BackupVaultEvent::AccessPointAvailable,
+            "ACCESS_POINT_CREATION_FAILED" => BackupVaultEvent::AccessPointCreationFailed,
+            "ACCESS_POINT_DELETED" => BackupVaultEvent::AccessPointDeleted,
+            "ACCESS_POINT_DELETION_FAILED" => BackupVaultEvent::AccessPointDeletionFailed,
+            "ACCESS_POINT_DISASSOCIATED" => BackupVaultEvent::AccessPointDisassociated,
+            "ACCESS_POINT_EXPIRED" => BackupVaultEvent::AccessPointExpired,
             "BACKUP_JOB_COMPLETED" => BackupVaultEvent::BackupJobCompleted,
             "BACKUP_JOB_EXPIRED" => BackupVaultEvent::BackupJobExpired,
             "BACKUP_JOB_FAILED" => BackupVaultEvent::BackupJobFailed,
@@ -158,6 +182,12 @@ impl BackupVaultEvent {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            BackupVaultEvent::AccessPointAvailable => "ACCESS_POINT_AVAILABLE",
+            BackupVaultEvent::AccessPointCreationFailed => "ACCESS_POINT_CREATION_FAILED",
+            BackupVaultEvent::AccessPointDeleted => "ACCESS_POINT_DELETED",
+            BackupVaultEvent::AccessPointDeletionFailed => "ACCESS_POINT_DELETION_FAILED",
+            BackupVaultEvent::AccessPointDisassociated => "ACCESS_POINT_DISASSOCIATED",
+            BackupVaultEvent::AccessPointExpired => "ACCESS_POINT_EXPIRED",
             BackupVaultEvent::BackupJobCompleted => "BACKUP_JOB_COMPLETED",
             BackupVaultEvent::BackupJobExpired => "BACKUP_JOB_EXPIRED",
             BackupVaultEvent::BackupJobFailed => "BACKUP_JOB_FAILED",
@@ -188,6 +218,12 @@ impl BackupVaultEvent {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ACCESS_POINT_AVAILABLE",
+            "ACCESS_POINT_CREATION_FAILED",
+            "ACCESS_POINT_DELETED",
+            "ACCESS_POINT_DELETION_FAILED",
+            "ACCESS_POINT_DISASSOCIATED",
+            "ACCESS_POINT_EXPIRED",
             "BACKUP_JOB_COMPLETED",
             "BACKUP_JOB_EXPIRED",
             "BACKUP_JOB_FAILED",
@@ -235,6 +271,12 @@ impl BackupVaultEvent {
 impl ::std::fmt::Display for BackupVaultEvent {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            BackupVaultEvent::AccessPointAvailable => write!(f, "ACCESS_POINT_AVAILABLE"),
+            BackupVaultEvent::AccessPointCreationFailed => write!(f, "ACCESS_POINT_CREATION_FAILED"),
+            BackupVaultEvent::AccessPointDeleted => write!(f, "ACCESS_POINT_DELETED"),
+            BackupVaultEvent::AccessPointDeletionFailed => write!(f, "ACCESS_POINT_DELETION_FAILED"),
+            BackupVaultEvent::AccessPointDisassociated => write!(f, "ACCESS_POINT_DISASSOCIATED"),
+            BackupVaultEvent::AccessPointExpired => write!(f, "ACCESS_POINT_EXPIRED"),
             BackupVaultEvent::BackupJobCompleted => write!(f, "BACKUP_JOB_COMPLETED"),
             BackupVaultEvent::BackupJobExpired => write!(f, "BACKUP_JOB_EXPIRED"),
             BackupVaultEvent::BackupJobFailed => write!(f, "BACKUP_JOB_FAILED"),

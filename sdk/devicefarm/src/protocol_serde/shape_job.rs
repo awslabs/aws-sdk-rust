@@ -111,6 +111,9 @@ where
                         "videoCapture" => {
                             builder = builder.set_video_capture(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "insights" => {
+                            builder = builder.set_insights(crate::protocol_serde::shape_job_insights::de_job_insights(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

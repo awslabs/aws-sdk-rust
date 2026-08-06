@@ -16,6 +16,19 @@ pub struct FieldIndex {
     pub last_event_time: ::std::option::Option<i64>,
     /// <p>The type of index. Specify <code>FACET</code> for facet-based indexing or <code>FIELD_INDEX</code> for field-based indexing. This determines how the field is indexed and can be queried.</p>
     pub r#type: ::std::option::Option<crate::types::IndexType>,
+    /// <p>The category of the field index:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default. Examples include <code>@logStream</code> and <code>@data_format</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code>: Fields that you added manually to the field index policy. CloudWatch Logs always indexes these fields. These fields count toward the quota of 20 fields for each log group.</p></li>
+    /// <li>
+    /// <p><code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on your query patterns and usage. These fields do not count toward the field index quota. CloudWatch Logs might update these fields based on changes in your query patterns. To keep a field indexed permanently, add it to an account-level or log-group level field index policy.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code>: Fields that CloudWatch Logs indexed before but does not index now. This happens if you remove a field from the field index policy or if CloudWatch Logs automatically selects a different field based on your queries.</p></li>
+    /// </ul>
+    /// <p>For more information about automatically indexed fields, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically indexed fields</a>.</p>
+    pub index_category: ::std::option::Option<crate::types::IndexCategory>,
 }
 impl FieldIndex {
     /// <p>If this field index appears in an index policy that applies only to a single log group, the ARN of that log group is displayed here.</p>
@@ -42,6 +55,21 @@ impl FieldIndex {
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
         self.r#type.as_ref()
     }
+    /// <p>The category of the field index:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default. Examples include <code>@logStream</code> and <code>@data_format</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code>: Fields that you added manually to the field index policy. CloudWatch Logs always indexes these fields. These fields count toward the quota of 20 fields for each log group.</p></li>
+    /// <li>
+    /// <p><code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on your query patterns and usage. These fields do not count toward the field index quota. CloudWatch Logs might update these fields based on changes in your query patterns. To keep a field indexed permanently, add it to an account-level or log-group level field index policy.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code>: Fields that CloudWatch Logs indexed before but does not index now. This happens if you remove a field from the field index policy or if CloudWatch Logs automatically selects a different field based on your queries.</p></li>
+    /// </ul>
+    /// <p>For more information about automatically indexed fields, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically indexed fields</a>.</p>
+    pub fn index_category(&self) -> ::std::option::Option<&crate::types::IndexCategory> {
+        self.index_category.as_ref()
+    }
 }
 impl FieldIndex {
     /// Creates a new builder-style object to manufacture [`FieldIndex`](crate::types::FieldIndex).
@@ -60,6 +88,7 @@ pub struct FieldIndexBuilder {
     pub(crate) first_event_time: ::std::option::Option<i64>,
     pub(crate) last_event_time: ::std::option::Option<i64>,
     pub(crate) r#type: ::std::option::Option<crate::types::IndexType>,
+    pub(crate) index_category: ::std::option::Option<crate::types::IndexCategory>,
 }
 impl FieldIndexBuilder {
     /// <p>If this field index appears in an index policy that applies only to a single log group, the ARN of that log group is displayed here.</p>
@@ -146,6 +175,53 @@ impl FieldIndexBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::IndexType> {
         &self.r#type
     }
+    /// <p>The category of the field index:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default. Examples include <code>@logStream</code> and <code>@data_format</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code>: Fields that you added manually to the field index policy. CloudWatch Logs always indexes these fields. These fields count toward the quota of 20 fields for each log group.</p></li>
+    /// <li>
+    /// <p><code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on your query patterns and usage. These fields do not count toward the field index quota. CloudWatch Logs might update these fields based on changes in your query patterns. To keep a field indexed permanently, add it to an account-level or log-group level field index policy.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code>: Fields that CloudWatch Logs indexed before but does not index now. This happens if you remove a field from the field index policy or if CloudWatch Logs automatically selects a different field based on your queries.</p></li>
+    /// </ul>
+    /// <p>For more information about automatically indexed fields, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically indexed fields</a>.</p>
+    pub fn index_category(mut self, input: crate::types::IndexCategory) -> Self {
+        self.index_category = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The category of the field index:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default. Examples include <code>@logStream</code> and <code>@data_format</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code>: Fields that you added manually to the field index policy. CloudWatch Logs always indexes these fields. These fields count toward the quota of 20 fields for each log group.</p></li>
+    /// <li>
+    /// <p><code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on your query patterns and usage. These fields do not count toward the field index quota. CloudWatch Logs might update these fields based on changes in your query patterns. To keep a field indexed permanently, add it to an account-level or log-group level field index policy.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code>: Fields that CloudWatch Logs indexed before but does not index now. This happens if you remove a field from the field index policy or if CloudWatch Logs automatically selects a different field based on your queries.</p></li>
+    /// </ul>
+    /// <p>For more information about automatically indexed fields, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically indexed fields</a>.</p>
+    pub fn set_index_category(mut self, input: ::std::option::Option<crate::types::IndexCategory>) -> Self {
+        self.index_category = input;
+        self
+    }
+    /// <p>The category of the field index:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEFAULT</code>: Fields that CloudWatch Logs indexes by default. Examples include <code>@logStream</code> and <code>@data_format</code>.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code>: Fields that you added manually to the field index policy. CloudWatch Logs always indexes these fields. These fields count toward the quota of 20 fields for each log group.</p></li>
+    /// <li>
+    /// <p><code>AUTO</code>: Fields that CloudWatch Logs indexes automatically based on your query patterns and usage. These fields do not count toward the field index quota. CloudWatch Logs might update these fields based on changes in your query patterns. To keep a field indexed permanently, add it to an account-level or log-group level field index policy.</p></li>
+    /// <li>
+    /// <p><code>INACTIVE</code>: Fields that CloudWatch Logs indexed before but does not index now. This happens if you remove a field from the field index policy or if CloudWatch Logs automatically selects a different field based on your queries.</p></li>
+    /// </ul>
+    /// <p>For more information about automatically indexed fields, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically indexed fields</a>.</p>
+    pub fn get_index_category(&self) -> &::std::option::Option<crate::types::IndexCategory> {
+        &self.index_category
+    }
     /// Consumes the builder and constructs a [`FieldIndex`](crate::types::FieldIndex).
     pub fn build(self) -> crate::types::FieldIndex {
         crate::types::FieldIndex {
@@ -155,6 +231,7 @@ impl FieldIndexBuilder {
             first_event_time: self.first_event_time,
             last_event_time: self.last_event_time,
             r#type: self.r#type,
+            index_category: self.index_category,
         }
     }
 }

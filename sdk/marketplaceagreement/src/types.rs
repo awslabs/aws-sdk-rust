@@ -115,6 +115,8 @@ pub use crate::types::_fixed_upfront_pricing_term::FixedUpfrontPricingTerm;
 
 pub use crate::types::_variable_payment_term::VariablePaymentTerm;
 
+pub use crate::types::_net_payment_term::NetPaymentTerm;
+
 pub use crate::types::_pricing_currency_amount::PricingCurrencyAmount;
 
 pub use crate::types::_configurable_upfront_pricing_term_configuration::ConfigurableUpfrontPricingTermConfiguration;
@@ -234,6 +236,8 @@ mod _itemized_charge;
 mod _legal_term;
 
 mod _line_item_group_by;
+
+mod _net_payment_term;
 
 mod _payment_request_approval_strategy;
 

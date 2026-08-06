@@ -55,6 +55,8 @@ pub use crate::types::_protocol_configuration::ProtocolConfiguration;
 
 pub use crate::types::_lifecycle_configuration::LifecycleConfiguration;
 
+pub use crate::types::_capacity_provider_configuration::CapacityProviderConfiguration;
+
 pub use crate::types::_workload_identity_details::WorkloadIdentityDetails;
 
 pub use crate::types::_agent_runtime_status::AgentRuntimeStatus;
@@ -74,6 +76,16 @@ pub use crate::types::_browser_signing_config_input::BrowserSigningConfigInput;
 pub use crate::types::_browser_status::BrowserStatus;
 
 pub use crate::types::_browser_signing_config_output::BrowserSigningConfigOutput;
+
+pub use crate::types::_permissions_configuration::PermissionsConfiguration;
+
+pub use crate::types::_compute_configuration::ComputeConfiguration;
+
+pub use crate::types::_capacity_provider_status::CapacityProviderStatus;
+
+pub use crate::types::_capacity_provider_status_code::CapacityProviderStatusCode;
+
+pub use crate::types::_updated_description::UpdatedDescription;
 
 pub use crate::types::_code_interpreter_network_configuration::CodeInterpreterNetworkConfiguration;
 
@@ -102,6 +114,8 @@ pub use crate::types::_evaluator_level::EvaluatorLevel;
 pub use crate::types::_evaluator_status::EvaluatorStatus;
 
 pub use crate::types::_included_data::IncludedData;
+
+pub use crate::types::_gateway_rate_limit_status::GatewayRateLimitStatus;
 
 pub use crate::types::_gateway_protocol_type::GatewayProtocolType;
 
@@ -186,8 +200,6 @@ pub use crate::types::_payments_authorizer_type::PaymentsAuthorizerType;
 pub use crate::types::_payment_manager_status::PaymentManagerStatus;
 
 pub use crate::types::_policy_engine_status::PolicyEngineStatus;
-
-pub use crate::types::_updated_description::UpdatedDescription;
 
 pub use crate::types::_resource::Resource;
 
@@ -277,6 +289,12 @@ pub use crate::types::_certificate::Certificate;
 
 pub use crate::types::_tools_file_system_configuration::ToolsFileSystemConfiguration;
 
+pub use crate::types::_capacity_provider_summary::CapacityProviderSummary;
+
+pub use crate::types::_ec2_configuration::Ec2Configuration;
+
+pub use crate::types::_agent_runtime_version_summary::AgentRuntimeVersionSummary;
+
 pub use crate::types::_code_interpreter_summary::CodeInterpreterSummary;
 
 pub use crate::types::_code_interpreter_network_mode::CodeInterpreterNetworkMode;
@@ -300,6 +318,12 @@ pub use crate::types::_evaluator_summary::EvaluatorSummary;
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfig;
 
 pub use crate::types::_code_based_evaluator_config::CodeBasedEvaluatorConfig;
+
+pub use crate::types::_batch_put_limit_entry::BatchPutLimitEntry;
+
+pub use crate::types::_gateway_rate_limit_detail::GatewayRateLimitDetail;
+
+pub use crate::types::_limit_entry::LimitEntry;
 
 pub use crate::types::_mcp_gateway_configuration::McpGatewayConfiguration;
 
@@ -489,6 +513,8 @@ pub use crate::types::_s3_files_access_point_configuration::S3FilesAccessPointCo
 
 pub use crate::types::_efs_access_point_configuration::EfsAccessPointConfiguration;
 
+pub use crate::types::_capacity_provider_volume_configuration::CapacityProviderVolumeConfiguration;
+
 pub use crate::types::_resource_location::ResourceLocation;
 
 pub use crate::types::_browser_enterprise_policy_type::BrowserEnterprisePolicyType;
@@ -498,6 +524,14 @@ pub use crate::types::_certificate_location::CertificateLocation;
 pub use crate::types::_s3_files_configuration::S3FilesConfiguration;
 
 pub use crate::types::_efs_configuration::EfsConfiguration;
+
+pub use crate::types::_launch_template_source::LaunchTemplateSource;
+
+pub use crate::types::_vpc_configuration::VpcConfiguration;
+
+pub use crate::types::_instance_lifecycle_configuration::InstanceLifecycleConfiguration;
+
+pub use crate::types::_root_volume_configuration::RootVolumeConfiguration;
 
 pub use crate::types::_evaluator_type::EvaluatorType;
 
@@ -627,9 +661,17 @@ pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
 
+pub use crate::types::_launch_parameters::LaunchParameters;
+
+pub use crate::types::_volume_configuration::VolumeConfiguration;
+
+pub use crate::types::_ebs_volume_type::EbsVolumeType;
+
 pub use crate::types::_bedrock_evaluator_model_config::BedrockEvaluatorModelConfig;
 
 pub use crate::types::_open_responses_evaluator_model_config::OpenResponsesEvaluatorModelConfig;
+
+pub use crate::types::_rate_config::RateConfig;
 
 pub use crate::types::_lambda_interceptor_configuration::LambdaInterceptorConfiguration;
 
@@ -723,6 +765,16 @@ pub use crate::types::_authorizing_claim_match_value_type::AuthorizingClaimMatch
 
 pub use crate::types::_hosting_environment::HostingEnvironment;
 
+pub use crate::types::_operating_system::OperatingSystem;
+
+pub use crate::types::_instance_requirements::InstanceRequirements;
+
+pub use crate::types::_monitoring::Monitoring;
+
+pub use crate::types::_capacity_reservation_specification::CapacityReservationSpecification;
+
+pub use crate::types::_ebs_volume_configuration::EbsVolumeConfiguration;
+
 pub use crate::types::_numerical_scale_definition::NumericalScaleDefinition;
 
 pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinition;
@@ -730,6 +782,8 @@ pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinition;
 pub use crate::types::_inference_configuration::InferenceConfiguration;
 
 pub use crate::types::_reasoning_configuration::ReasoningConfiguration;
+
+pub use crate::types::_period::Period;
 
 pub use crate::types::_match_principal_entry::MatchPrincipalEntry;
 
@@ -791,6 +845,14 @@ pub use crate::types::_claim_match_value_type::ClaimMatchValueType;
 
 pub use crate::types::_claim_match_operator_type::ClaimMatchOperatorType;
 
+pub use crate::types::_ephemeral_block_device_mapping::EphemeralBlockDeviceMapping;
+
+pub use crate::types::_license_specification::LicenseSpecification;
+
+pub use crate::types::_capacity_reservation_preference::CapacityReservationPreference;
+
+pub use crate::types::_capacity_reservation_target::CapacityReservationTarget;
+
 pub use crate::types::_interceptor_payload_exclusion_selector::InterceptorPayloadExclusionSelector;
 
 pub use crate::types::_iam_principal::IamPrincipal;
@@ -850,6 +912,8 @@ pub use crate::types::_modify_invocation_configuration_input::ModifyInvocationCo
 pub use crate::types::_registry_record_o_auth_credential_provider::RegistryRecordOAuthCredentialProvider;
 
 pub use crate::types::_registry_record_iam_credential_provider::RegistryRecordIamCredentialProvider;
+
+pub use crate::types::_ephemeral_ebs_volume_configuration::EphemeralEbsVolumeConfiguration;
 
 pub use crate::types::_interceptor_payload_exclusion::InterceptorPayloadExclusion;
 
@@ -939,6 +1003,8 @@ mod _agent_runtime_endpoint_status;
 
 mod _agent_runtime_status;
 
+mod _agent_runtime_version_summary;
+
 mod _agent_skills_descriptor;
 
 mod _allowed_workload_configuration;
@@ -971,6 +1037,8 @@ mod _authorizer_type;
 
 mod _authorizing_claim_match_value_type;
 
+mod _batch_put_limit_entry;
+
 mod _bedrock_evaluator_model_config;
 
 mod _browser_enterprise_policy;
@@ -992,6 +1060,22 @@ mod _browser_signing_config_output;
 mod _browser_status;
 
 mod _browser_summary;
+
+mod _capacity_provider_configuration;
+
+mod _capacity_provider_status;
+
+mod _capacity_provider_status_code;
+
+mod _capacity_provider_summary;
+
+mod _capacity_provider_volume_configuration;
+
+mod _capacity_reservation_preference;
+
+mod _capacity_reservation_specification;
+
+mod _capacity_reservation_target;
 
 mod _categorical_scale_definition;
 
@@ -1034,6 +1118,8 @@ mod _coinbase_cdp_configuration_input;
 mod _coinbase_cdp_configuration_output;
 
 mod _component_configuration;
+
+mod _compute_configuration;
 
 mod _condition;
 
@@ -1125,6 +1211,12 @@ mod _descriptors;
 
 mod _draft_status;
 
+mod _ebs_volume_configuration;
+
+mod _ebs_volume_type;
+
+mod _ec2_configuration;
+
 mod _efs_access_point_configuration;
 
 mod _efs_configuration;
@@ -1132,6 +1224,10 @@ mod _efs_configuration;
 mod _endpoint_ip_address_type;
 
 mod _enforcement_mode;
+
+mod _ephemeral_block_device_mapping;
+
+mod _ephemeral_ebs_volume_configuration;
 
 mod _episodic_consolidation_override;
 
@@ -1202,6 +1298,10 @@ mod _gateway_policy_engine_mode;
 mod _gateway_protocol_configuration;
 
 mod _gateway_protocol_type;
+
+mod _gateway_rate_limit_detail;
+
+mod _gateway_rate_limit_status;
 
 mod _gateway_rule_detail;
 
@@ -1349,6 +1449,10 @@ mod _inline_examples_source;
 
 mod _insight;
 
+mod _instance_lifecycle_configuration;
+
+mod _instance_requirements;
+
 mod _interceptor_configuration;
 
 mod _interceptor_input_configuration;
@@ -1377,7 +1481,15 @@ mod _lambda_interceptor_configuration;
 
 mod _lambda_transform_configuration;
 
+mod _launch_parameters;
+
+mod _launch_template_source;
+
+mod _license_specification;
+
 mod _lifecycle_configuration;
+
+mod _limit_entry;
 
 mod _linkedin_oauth2_provider_config_input;
 
@@ -1463,6 +1575,8 @@ mod _modify_self_managed_configuration;
 
 mod _modify_strategy_configuration;
 
+mod _monitoring;
+
 mod _network_configuration;
 
 mod _network_mode;
@@ -1499,6 +1613,8 @@ mod _online_evaluation_execution_status;
 
 mod _open_responses_evaluator_model_config;
 
+mod _operating_system;
+
 mod _output_config;
 
 mod _override_type;
@@ -1528,6 +1644,10 @@ mod _payment_provider_configuration_input;
 mod _payment_provider_configuration_output;
 
 mod _payments_authorizer_type;
+
+mod _period;
+
+mod _permissions_configuration;
 
 mod _policy;
 
@@ -1571,6 +1691,8 @@ mod _protocol_configuration;
 
 mod _provider_prefix;
 
+mod _rate_config;
+
 mod _rating_scale;
 
 mod _reasoning_configuration;
@@ -1610,6 +1732,8 @@ mod _resource_location;
 mod _resource_type;
 
 mod _rest_api_method;
+
+mod _root_volume_configuration;
 
 mod _route_to_target_action;
 
@@ -1825,7 +1949,11 @@ mod _version_filter;
 
 mod _version_lineage_metadata;
 
+mod _volume_configuration;
+
 mod _vpc_config;
+
+mod _vpc_configuration;
 
 mod _waf_configuration;
 

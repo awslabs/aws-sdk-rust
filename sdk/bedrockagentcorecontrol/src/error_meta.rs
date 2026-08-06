@@ -19,6 +19,8 @@ pub enum Error {
     ResourceLimitExceededException(crate::types::error::ResourceLimitExceededException),
     /// <p>This exception is thrown when a resource referenced by the operation does not exist</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The operation failed because of a conflicting request. Retry the request.</p>
+    RetryableConflictException(crate::types::error::RetryableConflictException),
     /// <p>An internal error occurred.</p>
     ServiceException(crate::types::error::ServiceException),
     /// <p>This exception is thrown when a request is made beyond the service quota</p>
@@ -51,6 +53,7 @@ impl ::std::fmt::Display for Error {
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceLimitExceededException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
+            Error::RetryableConflictException(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
             Error::ThrottledException(inner) => inner.fmt(f),
@@ -86,6 +89,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceLimitExceededException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
+            Self::RetryableConflictException(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottledException(inner) => inner.meta(),
@@ -125,6 +129,51 @@ impl From<crate::operation::add_dataset_examples::AddDatasetExamplesError> for E
             crate::operation::add_dataset_examples::AddDatasetExamplesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::add_dataset_examples::AddDatasetExamplesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::add_dataset_examples::AddDatasetExamplesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError> for Error {
+    fn from(err: crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError) -> Self {
+        match err {
+            crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::batch_put_gateway_rate_limits::BatchPutGatewayRateLimitsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -325,6 +374,47 @@ impl From<crate::operation::create_browser_profile::CreateBrowserProfileError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_capacity_provider::CreateCapacityProviderError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_capacity_provider::CreateCapacityProviderError> for Error {
+    fn from(err: crate::operation::create_capacity_provider::CreateCapacityProviderError) -> Self {
+        match err {
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::RetryableConflictException(inner) => {
+                Error::RetryableConflictException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_capacity_provider::CreateCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_code_interpreter::CreateCodeInterpreterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -516,6 +606,45 @@ impl From<crate::operation::create_gateway::CreateGatewayError> for Error {
             crate::operation::create_gateway::CreateGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_gateway::CreateGatewayError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_gateway::CreateGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError> for Error {
+    fn from(err: crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError) -> Self {
+        match err {
+            crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_gateway_rate_limit::CreateGatewayRateLimitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1256,6 +1385,44 @@ impl From<crate::operation::delete_browser_profile::DeleteBrowserProfileError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_capacity_provider::DeleteCapacityProviderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_capacity_provider::DeleteCapacityProviderError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_capacity_provider::DeleteCapacityProviderError> for Error {
+    fn from(err: crate::operation::delete_capacity_provider::DeleteCapacityProviderError) -> Self {
+        match err {
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::RetryableConflictException(inner) => {
+                Error::RetryableConflictException(inner)
+            }
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_code_interpreter::DeleteCodeInterpreterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1449,6 +1616,42 @@ impl From<crate::operation::delete_gateway::DeleteGatewayError> for Error {
             crate::operation::delete_gateway::DeleteGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_gateway::DeleteGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError> for Error {
+    fn from(err: crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError) -> Self {
+        match err {
+            crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2163,6 +2366,36 @@ impl From<crate::operation::get_browser_profile::GetBrowserProfileError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_provider::GetCapacityProviderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_capacity_provider::GetCapacityProviderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_capacity_provider::GetCapacityProviderError> for Error {
+    fn from(err: crate::operation::get_capacity_provider::GetCapacityProviderError) -> Self {
+        match err {
+            crate::operation::get_capacity_provider::GetCapacityProviderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_capacity_provider::GetCapacityProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_capacity_provider::GetCapacityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_capacity_provider::GetCapacityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_capacity_provider::GetCapacityProviderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_capacity_provider::GetCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_code_interpreter::GetCodeInterpreterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2347,6 +2580,36 @@ impl From<crate::operation::get_gateway::GetGatewayError> for Error {
             crate::operation::get_gateway::GetGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_gateway::GetGatewayError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_gateway::GetGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError> for Error {
+    fn from(err: crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError) -> Self {
+        match err {
+            crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3103,6 +3366,42 @@ impl From<crate::operation::list_agent_runtime_versions::ListAgentRuntimeVersion
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError> for Error {
+    fn from(err: crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError) -> Self {
+        match err {
+            crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_agent_runtime_versions_by_capacity_provider::ListAgentRuntimeVersionsByCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_api_key_credential_providers::ListApiKeyCredentialProvidersError,
             R,
         >,
@@ -3199,6 +3498,37 @@ impl From<crate::operation::list_browsers::ListBrowsersError> for Error {
             crate::operation::list_browsers::ListBrowsersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_browsers::ListBrowsersError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_browsers::ListBrowsersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capacity_providers::ListCapacityProvidersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_capacity_providers::ListCapacityProvidersError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_capacity_providers::ListCapacityProvidersError> for Error {
+    fn from(err: crate::operation::list_capacity_providers::ListCapacityProvidersError) -> Self {
+        match err {
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_capacity_providers::ListCapacityProvidersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3420,6 +3750,40 @@ impl From<crate::operation::list_evaluators::ListEvaluatorsError> for Error {
             crate::operation::list_evaluators::ListEvaluatorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_evaluators::ListEvaluatorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_evaluators::ListEvaluatorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError> for Error {
+    fn from(err: crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError) -> Self {
+        match err {
+            crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_gateway_rate_limits::ListGatewayRateLimitsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4548,6 +4912,44 @@ impl From<crate::operation::update_api_key_credential_provider::UpdateApiKeyCred
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_capacity_provider::UpdateCapacityProviderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_capacity_provider::UpdateCapacityProviderError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_capacity_provider::UpdateCapacityProviderError> for Error {
+    fn from(err: crate::operation::update_capacity_provider::UpdateCapacityProviderError) -> Self {
+        match err {
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::RetryableConflictException(inner) => {
+                Error::RetryableConflictException(inner)
+            }
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_capacity_provider::UpdateCapacityProviderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_configuration_bundle::UpdateConfigurationBundleError, R>>
     for Error
 where
@@ -4710,6 +5112,42 @@ impl From<crate::operation::update_gateway::UpdateGatewayError> for Error {
             crate::operation::update_gateway::UpdateGatewayError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_gateway::UpdateGatewayError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_gateway::UpdateGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError> for Error {
+    fn from(err: crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError) -> Self {
+        match err {
+            crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5334,6 +5772,7 @@ impl ::std::error::Error for Error {
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceLimitExceededException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
+            Error::RetryableConflictException(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
             Error::ThrottledException(inner) => inner.source(),
@@ -5355,6 +5794,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceLimitExceededException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::RetryableConflictException(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
             Self::ThrottledException(e) => e.request_id(),

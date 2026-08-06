@@ -189,6 +189,16 @@ pub(crate) fn reflens_list_finding_aggregators_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_free_trial_statuses_v2_output_output_next_token(
+    input: &crate::operation::list_free_trial_statuses_v2::ListFreeTrialStatusesV2Output,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_invitations_output_output_next_token(
     input: &crate::operation::list_invitations::ListInvitationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -369,6 +379,13 @@ pub(crate) fn lens_list_finding_aggregators_output_output_finding_aggregators(
     input: crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FindingAggregator>> {
     let input = input.finding_aggregators?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_free_trial_statuses_v2_output_output_account_free_trial_statuses(
+    input: crate::operation::list_free_trial_statuses_v2::ListFreeTrialStatusesV2Output,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountFreeTrialStatus>> {
+    let input = input.account_free_trial_statuses?;
     ::std::option::Option::Some(input)
 }
 

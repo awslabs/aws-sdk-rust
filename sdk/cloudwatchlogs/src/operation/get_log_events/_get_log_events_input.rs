@@ -13,7 +13,9 @@ pub struct GetLogEventsInput {
     pub log_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the log stream.</p>
     pub log_stream_name: ::std::option::Option<::std::string::String>,
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub start_time: ::std::option::Option<i64>,
     /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time are not included.</p>
     pub end_time: ::std::option::Option<i64>,
@@ -45,7 +47,9 @@ impl GetLogEventsInput {
     pub fn log_stream_name(&self) -> ::std::option::Option<&str> {
         self.log_stream_name.as_deref()
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn start_time(&self) -> ::std::option::Option<i64> {
         self.start_time
     }
@@ -149,17 +153,23 @@ impl GetLogEventsInputBuilder {
     pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_stream_name
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn start_time(mut self, input: i64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         &self.start_time
     }

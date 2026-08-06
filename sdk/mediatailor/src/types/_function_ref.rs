@@ -8,6 +8,8 @@ pub struct FunctionRef {
     pub run_condition: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the child function to execute in this step.</p>
     pub function_id: ::std::option::Option<::std::string::String>,
+    /// <p>An optional alternate name for the function within the executor. If omitted, MediaTailor uses the function identifier.</p>
+    pub alias: ::std::option::Option<::std::string::String>,
 }
 impl FunctionRef {
     /// <p>An optional expression that evaluates to a boolean. MediaTailor evaluates this expression immediately before running the step, using the accumulated state at that point in the sequence. If the expression evaluates to <code>false</code>, MediaTailor skips the step and moves to the next one. If omitted, the step always runs.</p>
@@ -17,6 +19,10 @@ impl FunctionRef {
     /// <p>The identifier of the child function to execute in this step.</p>
     pub fn function_id(&self) -> ::std::option::Option<&str> {
         self.function_id.as_deref()
+    }
+    /// <p>An optional alternate name for the function within the executor. If omitted, MediaTailor uses the function identifier.</p>
+    pub fn alias(&self) -> ::std::option::Option<&str> {
+        self.alias.as_deref()
     }
 }
 impl FunctionRef {
@@ -32,6 +38,7 @@ impl FunctionRef {
 pub struct FunctionRefBuilder {
     pub(crate) run_condition: ::std::option::Option<::std::string::String>,
     pub(crate) function_id: ::std::option::Option<::std::string::String>,
+    pub(crate) alias: ::std::option::Option<::std::string::String>,
 }
 impl FunctionRefBuilder {
     /// <p>An optional expression that evaluates to a boolean. MediaTailor evaluates this expression immediately before running the step, using the accumulated state at that point in the sequence. If the expression evaluates to <code>false</code>, MediaTailor skips the step and moves to the next one. If omitted, the step always runs.</p>
@@ -62,11 +69,26 @@ impl FunctionRefBuilder {
     pub fn get_function_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.function_id
     }
+    /// <p>An optional alternate name for the function within the executor. If omitted, MediaTailor uses the function identifier.</p>
+    pub fn alias(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional alternate name for the function within the executor. If omitted, MediaTailor uses the function identifier.</p>
+    pub fn set_alias(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias = input;
+        self
+    }
+    /// <p>An optional alternate name for the function within the executor. If omitted, MediaTailor uses the function identifier.</p>
+    pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias
+    }
     /// Consumes the builder and constructs a [`FunctionRef`](crate::types::FunctionRef).
     pub fn build(self) -> crate::types::FunctionRef {
         crate::types::FunctionRef {
             run_condition: self.run_condition,
             function_id: self.function_id,
+            alias: self.alias,
         }
     }
 }

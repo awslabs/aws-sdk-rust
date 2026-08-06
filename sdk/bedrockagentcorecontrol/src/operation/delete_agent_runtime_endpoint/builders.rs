@@ -22,7 +22,7 @@ impl crate::operation::delete_agent_runtime_endpoint::builders::DeleteAgentRunti
 }
 /// Fluent builder constructing a request to `DeleteAgentRuntimeEndpoint`.
 ///
-/// <p>Deletes an AAgentCore Runtime endpoint.</p>
+/// <p>Deletes an AgentCore Runtime endpoint.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteAgentRuntimeEndpointFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

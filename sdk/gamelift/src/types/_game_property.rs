@@ -4,7 +4,7 @@
 /// <p>You can set game properties when creating a game session. You can also modify game properties of an active game session. When searching for game sessions, you can filter on game property keys and values. You can't delete game properties from a game session.</p>
 /// <p>For examples of working with game properties, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties">Create a game session with properties</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GameProperty {
     /// <p>The game property identifier.</p><note>
     /// <ul>
@@ -35,6 +35,14 @@ impl GameProperty {
         self.value.as_deref()
     }
 }
+impl ::std::fmt::Debug for GameProperty {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameProperty");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl GameProperty {
     /// Creates a new builder-style object to manufacture [`GameProperty`](crate::types::GameProperty).
     pub fn builder() -> crate::types::builders::GamePropertyBuilder {
@@ -43,7 +51,7 @@ impl GameProperty {
 }
 
 /// A builder for [`GameProperty`](crate::types::GameProperty).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GamePropertyBuilder {
     pub(crate) key: ::std::option::Option<::std::string::String>,
@@ -107,5 +115,13 @@ impl GamePropertyBuilder {
             key: self.key,
             value: self.value,
         }
+    }
+}
+impl ::std::fmt::Debug for GamePropertyBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GamePropertyBuilder");
+        formatter.field("key", &self.key);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -42,6 +42,15 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "fulfillmentOptionSummaries" => {
+                            builder = builder.set_fulfillment_option_summaries(
+                                crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "catalog" => {
                             builder = builder.set_catalog(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -66,15 +75,6 @@ where
                         "categories" => {
                             builder =
                                 builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value, depth + 1)?);
-                        }
-                        "fulfillmentOptionSummaries" => {
-                            builder = builder.set_fulfillment_option_summaries(
-                                crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(
-                                    tokens,
-                                    _value,
-                                    depth + 1,
-                                )?,
-                            );
                         }
                         "badges" => {
                             builder = builder.set_badges(crate::protocol_serde::shape_listing_badge_list::de_listing_badge_list(

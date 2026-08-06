@@ -128,6 +128,49 @@ impl From<crate::operation::associate_whats_app_business_account::AssociateWhats
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError> for Error {
+    fn from(err: crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError) -> Self {
+        match err {
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::AccessDeniedByMetaException(inner) => {
+                Error::AccessDeniedByMetaException(inner)
+            }
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_whats_app_dataset::CreateWhatsAppDatasetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_whats_app_flow::CreateWhatsAppFlowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1222,6 +1265,58 @@ impl From<crate::operation::put_whats_app_business_account_event_destinations::P
             crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError> for Error {
+    fn from(err: crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError) -> Self {
+        match err {
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::AccessDeniedByMetaException(inner) => {
+                Error::AccessDeniedByMetaException(inner)
+            }
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::send_whats_app_conversion_event::SendWhatsAppConversionEventError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -45,7 +45,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-socialmessaging = "1.63.0"
+//! aws-sdk-socialmessaging = "1.64.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -162,13 +162,13 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateWhatsAppFlow`](crate::operation::create_whats_app_flow) operation has
-/// a [`Client::create_whats_app_flow`], function which returns a builder for that operation.
+/// For example, the [`CreateWhatsAppDataset`](crate::operation::create_whats_app_dataset) operation has
+/// a [`Client::create_whats_app_dataset`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_whats_app_flow()
+/// let result = client.create_whats_app_dataset()
 ///     .id("example")
 ///     .send()
 ///     .await;

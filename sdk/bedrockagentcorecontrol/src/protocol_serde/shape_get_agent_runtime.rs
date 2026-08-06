@@ -169,6 +169,11 @@ pub(crate) fn de_get_agent_runtime(
                         crate::protocol_serde::shape_authorizer_configuration::de_authorizer_configuration(tokens, _value, depth + 1)?,
                     );
                 }
+                "capacityProviderConfiguration" => {
+                    builder = builder.set_capacity_provider_configuration(
+                        crate::protocol_serde::shape_capacity_provider_configuration::de_capacity_provider_configuration(tokens, _value, depth + 1)?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

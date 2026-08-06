@@ -14,6 +14,8 @@ pub enum OfferTerm {
     FreeTrialPricingTerm(crate::types::FreeTrialPricingTerm),
     /// <p>Defines a legal term containing documents proposed to buyers, such as EULAs and data subscription agreements.</p>
     LegalTerm(crate::types::LegalTerm),
+    /// <p>A net payment term.</p>
+    NetPaymentTerm(crate::types::NetPaymentTerm),
     /// <p>Defines a payment schedule term with installment payments at specified dates.</p>
     PaymentScheduleTerm(crate::types::PaymentScheduleTerm),
     /// <p>Defines a recurring payment term with fixed charges at regular billing intervals.</p>
@@ -103,6 +105,19 @@ impl OfferTerm {
     /// Returns true if this is a [`LegalTerm`](crate::types::OfferTerm::LegalTerm).
     pub fn is_legal_term(&self) -> bool {
         self.as_legal_term().is_ok()
+    }
+    /// Tries to convert the enum instance into [`NetPaymentTerm`](crate::types::OfferTerm::NetPaymentTerm), extracting the inner [`NetPaymentTerm`](crate::types::NetPaymentTerm).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_net_payment_term(&self) -> ::std::result::Result<&crate::types::NetPaymentTerm, &Self> {
+        if let OfferTerm::NetPaymentTerm(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`NetPaymentTerm`](crate::types::OfferTerm::NetPaymentTerm).
+    pub fn is_net_payment_term(&self) -> bool {
+        self.as_net_payment_term().is_ok()
     }
     /// Tries to convert the enum instance into [`PaymentScheduleTerm`](crate::types::OfferTerm::PaymentScheduleTerm), extracting the inner [`PaymentScheduleTerm`](crate::types::PaymentScheduleTerm).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -115,6 +115,8 @@ pub use crate::types::_encryption_in_transit::EncryptionInTransit;
 
 pub use crate::types::_prometheus_info::PrometheusInfo;
 
+pub use crate::types::_authorizer_logs::AuthorizerLogs;
+
 pub use crate::types::_broker_logs::BrokerLogs;
 
 pub use crate::types::_serverless_client_authentication::ServerlessClientAuthentication;
@@ -302,6 +304,8 @@ pub use crate::types::_partition_source::PartitionSource;
 mod _amazon_msk_cluster;
 
 mod _apache_kafka_cluster;
+
+mod _authorizer_logs;
 
 mod _broker_az_distribution;
 

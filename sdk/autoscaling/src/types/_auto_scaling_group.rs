@@ -87,6 +87,8 @@ pub struct AutoScalingGroup {
     pub capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
     /// <p>The instance lifecycle policy for the Auto Scaling group.</p>
     pub instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
+    /// <p>The entity that manages the Auto Scaling group, if applicable. When set, only the designated operator can make changes to the group configuration.</p>
+    pub operator: ::std::option::Option<crate::types::Operator>,
 }
 impl AutoScalingGroup {
     /// <p>The name of the Auto Scaling group.</p>
@@ -274,6 +276,10 @@ impl AutoScalingGroup {
     pub fn instance_lifecycle_policy(&self) -> ::std::option::Option<&crate::types::InstanceLifecyclePolicy> {
         self.instance_lifecycle_policy.as_ref()
     }
+    /// <p>The entity that manages the Auto Scaling group, if applicable. When set, only the designated operator can make changes to the group configuration.</p>
+    pub fn operator(&self) -> ::std::option::Option<&crate::types::Operator> {
+        self.operator.as_ref()
+    }
 }
 impl AutoScalingGroup {
     /// Creates a new builder-style object to manufacture [`AutoScalingGroup`](crate::types::AutoScalingGroup).
@@ -327,6 +333,7 @@ pub struct AutoScalingGroupBuilder {
     pub(crate) availability_zone_impairment_policy: ::std::option::Option<crate::types::AvailabilityZoneImpairmentPolicy>,
     pub(crate) capacity_reservation_specification: ::std::option::Option<crate::types::CapacityReservationSpecification>,
     pub(crate) instance_lifecycle_policy: ::std::option::Option<crate::types::InstanceLifecyclePolicy>,
+    pub(crate) operator: ::std::option::Option<crate::types::Operator>,
 }
 impl AutoScalingGroupBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -973,6 +980,20 @@ impl AutoScalingGroupBuilder {
     pub fn get_instance_lifecycle_policy(&self) -> &::std::option::Option<crate::types::InstanceLifecyclePolicy> {
         &self.instance_lifecycle_policy
     }
+    /// <p>The entity that manages the Auto Scaling group, if applicable. When set, only the designated operator can make changes to the group configuration.</p>
+    pub fn operator(mut self, input: crate::types::Operator) -> Self {
+        self.operator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The entity that manages the Auto Scaling group, if applicable. When set, only the designated operator can make changes to the group configuration.</p>
+    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::Operator>) -> Self {
+        self.operator = input;
+        self
+    }
+    /// <p>The entity that manages the Auto Scaling group, if applicable. When set, only the designated operator can make changes to the group configuration.</p>
+    pub fn get_operator(&self) -> &::std::option::Option<crate::types::Operator> {
+        &self.operator
+    }
     /// Consumes the builder and constructs a [`AutoScalingGroup`](crate::types::AutoScalingGroup).
     pub fn build(self) -> crate::types::AutoScalingGroup {
         crate::types::AutoScalingGroup {
@@ -1017,6 +1038,7 @@ impl AutoScalingGroupBuilder {
             availability_zone_impairment_policy: self.availability_zone_impairment_policy,
             capacity_reservation_specification: self.capacity_reservation_specification,
             instance_lifecycle_policy: self.instance_lifecycle_policy,
+            operator: self.operator,
         }
     }
 }

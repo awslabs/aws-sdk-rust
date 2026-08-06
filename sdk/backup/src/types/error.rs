@@ -13,9 +13,9 @@ pub use crate::types::error::_invalid_resource_state_exception::InvalidResourceS
 
 pub use crate::types::error::_already_exists_exception::AlreadyExistsException;
 
-pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
-
 pub use crate::types::error::_conflict_exception::ConflictException;
+
+pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
 pub use crate::types::error::_dependency_failure_exception::DependencyFailureException;
 

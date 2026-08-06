@@ -264,4 +264,21 @@ impl GetSpotPlacementScoresFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Specify <code>true</code> so that the response returns scores that include Local Zones. Otherwise, the response ignores Local Zones.</p>
+    /// <p>When you request regional scores, Local Zone capacity counts toward its parent Region.</p>
+    pub fn include_local_zones(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_local_zones(input);
+        self
+    }
+    /// <p>Specify <code>true</code> so that the response returns scores that include Local Zones. Otherwise, the response ignores Local Zones.</p>
+    /// <p>When you request regional scores, Local Zone capacity counts toward its parent Region.</p>
+    pub fn set_include_local_zones(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_local_zones(input);
+        self
+    }
+    /// <p>Specify <code>true</code> so that the response returns scores that include Local Zones. Otherwise, the response ignores Local Zones.</p>
+    /// <p>When you request regional scores, Local Zone capacity counts toward its parent Region.</p>
+    pub fn get_include_local_zones(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_local_zones()
+    }
 }

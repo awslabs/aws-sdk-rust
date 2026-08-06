@@ -17,6 +17,7 @@
 ///     TermType::FixedUpfrontPricingTerm => { /* ... */ },
 ///     TermType::FreeTrialPricingTerm => { /* ... */ },
 ///     TermType::LegalTerm => { /* ... */ },
+///     TermType::NetPaymentTerm => { /* ... */ },
 ///     TermType::PaymentScheduleTerm => { /* ... */ },
 ///     TermType::RecurringPaymentTerm => { /* ... */ },
 ///     TermType::RenewalTerm => { /* ... */ },
@@ -63,6 +64,8 @@ pub enum TermType {
     #[allow(missing_docs)] // documentation missing in model
     LegalTerm,
     #[allow(missing_docs)] // documentation missing in model
+    NetPaymentTerm,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentScheduleTerm,
     #[allow(missing_docs)] // documentation missing in model
     RecurringPaymentTerm,
@@ -88,6 +91,7 @@ impl ::std::convert::From<&str> for TermType {
             "FixedUpfrontPricingTerm" => TermType::FixedUpfrontPricingTerm,
             "FreeTrialPricingTerm" => TermType::FreeTrialPricingTerm,
             "LegalTerm" => TermType::LegalTerm,
+            "NetPaymentTerm" => TermType::NetPaymentTerm,
             "PaymentScheduleTerm" => TermType::PaymentScheduleTerm,
             "RecurringPaymentTerm" => TermType::RecurringPaymentTerm,
             "RenewalTerm" => TermType::RenewalTerm,
@@ -115,6 +119,7 @@ impl TermType {
             TermType::FixedUpfrontPricingTerm => "FixedUpfrontPricingTerm",
             TermType::FreeTrialPricingTerm => "FreeTrialPricingTerm",
             TermType::LegalTerm => "LegalTerm",
+            TermType::NetPaymentTerm => "NetPaymentTerm",
             TermType::PaymentScheduleTerm => "PaymentScheduleTerm",
             TermType::RecurringPaymentTerm => "RecurringPaymentTerm",
             TermType::RenewalTerm => "RenewalTerm",
@@ -133,6 +138,7 @@ impl TermType {
             "FixedUpfrontPricingTerm",
             "FreeTrialPricingTerm",
             "LegalTerm",
+            "NetPaymentTerm",
             "PaymentScheduleTerm",
             "RecurringPaymentTerm",
             "RenewalTerm",
@@ -168,6 +174,7 @@ impl ::std::fmt::Display for TermType {
             TermType::FixedUpfrontPricingTerm => write!(f, "FixedUpfrontPricingTerm"),
             TermType::FreeTrialPricingTerm => write!(f, "FreeTrialPricingTerm"),
             TermType::LegalTerm => write!(f, "LegalTerm"),
+            TermType::NetPaymentTerm => write!(f, "NetPaymentTerm"),
             TermType::PaymentScheduleTerm => write!(f, "PaymentScheduleTerm"),
             TermType::RecurringPaymentTerm => write!(f, "RecurringPaymentTerm"),
             TermType::RenewalTerm => write!(f, "RenewalTerm"),

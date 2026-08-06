@@ -43,6 +43,8 @@ pub(crate) mod shape_delete_ab_test;
 
 pub(crate) mod shape_delete_batch_evaluation;
 
+pub(crate) mod shape_delete_capacity_provider_session;
+
 pub(crate) mod shape_delete_event;
 
 pub(crate) mod shape_delete_memory_record;

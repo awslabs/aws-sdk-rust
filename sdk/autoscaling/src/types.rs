@@ -15,6 +15,8 @@ pub use crate::types::_capacity_reservation_specification::CapacityReservationSp
 
 pub use crate::types::_instance_lifecycle_policy::InstanceLifecyclePolicy;
 
+pub use crate::types::_operator::Operator;
+
 pub use crate::types::_instance_monitoring::InstanceMonitoring;
 
 pub use crate::types::_instance_metadata_options::InstanceMetadataOptions;
@@ -390,6 +392,8 @@ mod _network_bandwidth_gbps_request;
 mod _network_interface_count_request;
 
 mod _notification_configuration;
+
+mod _operator;
 
 mod _performance_factor_reference_request;
 

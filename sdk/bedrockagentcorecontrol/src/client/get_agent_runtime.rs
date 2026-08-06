@@ -26,6 +26,7 @@ impl super::Client {
     ///   - [`request_header_configuration(Option<RequestHeaderConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::request_header_configuration): <p>Configuration for HTTP request headers that will be passed through to the runtime.</p>
     ///   - [`metadata_configuration(Option<RuntimeMetadataConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::metadata_configuration): <p>Configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.</p>
     ///   - [`filesystem_configurations(Option<Vec::<FilesystemConfiguration>>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::filesystem_configurations): <p>The filesystem configurations mounted into the AgentCore Runtime.</p>
+    ///   - [`capacity_provider_configuration(Option<CapacityProviderConfiguration>)`](crate::operation::get_agent_runtime::GetAgentRuntimeOutput::capacity_provider_configuration): <p>The capacity provider configuration for the AgentCore Runtime.</p>
     /// - On failure, responds with [`SdkError<GetAgentRuntimeError>`](crate::operation::get_agent_runtime::GetAgentRuntimeError)
     pub fn get_agent_runtime(&self) -> crate::operation::get_agent_runtime::builders::GetAgentRuntimeFluentBuilder {
         crate::operation::get_agent_runtime::builders::GetAgentRuntimeFluentBuilder::new(self.handle.clone())

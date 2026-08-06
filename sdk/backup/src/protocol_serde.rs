@@ -27,6 +27,8 @@ pub(crate) mod shape_associate_backup_vault_mpa_approval_team;
 
 pub(crate) mod shape_cancel_legal_hold;
 
+pub(crate) mod shape_create_backup_access_point;
+
 pub(crate) mod shape_create_backup_plan;
 
 pub(crate) mod shape_create_backup_selection;
@@ -48,6 +50,8 @@ pub(crate) mod shape_create_restore_testing_plan;
 pub(crate) mod shape_create_restore_testing_selection;
 
 pub(crate) mod shape_create_tiering_configuration;
+
+pub(crate) mod shape_delete_backup_access_point;
 
 pub(crate) mod shape_delete_backup_plan;
 
@@ -72,6 +76,8 @@ pub(crate) mod shape_delete_restore_testing_plan;
 pub(crate) mod shape_delete_restore_testing_selection;
 
 pub(crate) mod shape_delete_tiering_configuration;
+
+pub(crate) mod shape_describe_backup_access_point;
 
 pub(crate) mod shape_describe_backup_job;
 
@@ -136,6 +142,12 @@ pub(crate) mod shape_get_restore_testing_selection;
 pub(crate) mod shape_get_supported_resource_types;
 
 pub(crate) mod shape_get_tiering_configuration;
+
+pub(crate) mod shape_list_backup_access_points;
+
+pub(crate) mod shape_list_backup_access_points_by_recovery_point;
+
+pub(crate) mod shape_list_backup_access_points_by_resource;
 
 pub(crate) mod shape_list_backup_job_summaries;
 
@@ -255,6 +267,8 @@ pub(crate) mod shape_associate_backup_vault_mpa_approval_team_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_backup_access_point_input;
+
 pub(crate) mod shape_create_backup_plan_input;
 
 pub(crate) mod shape_create_backup_selection_input;
@@ -339,7 +353,11 @@ pub(crate) mod shape_update_restore_testing_selection_input;
 
 pub(crate) mod shape_update_tiering_configuration_input;
 
+pub(crate) mod shape_access_point_metadata_map;
+
 pub(crate) mod shape_advanced_backup_settings;
+
+pub(crate) mod shape_backup_access_points;
 
 pub(crate) mod shape_backup_job_child_jobs_in_state;
 
@@ -510,6 +528,8 @@ pub(crate) mod shape_framework;
 pub(crate) mod shape_indexed_recovery_point;
 
 pub(crate) mod shape_legal_hold;
+
+pub(crate) mod shape_list_access_points_member;
 
 pub(crate) mod shape_list_of_tags;
 

@@ -77,6 +77,8 @@ pub use crate::types::_fixed_upfront_pricing_term::FixedUpfrontPricingTermBuilde
 
 pub use crate::types::_variable_payment_term::VariablePaymentTermBuilder;
 
+pub use crate::types::_net_payment_term::NetPaymentTermBuilder;
+
 pub use crate::types::_pricing_currency_amount::PricingCurrencyAmountBuilder;
 
 pub use crate::types::_configurable_upfront_pricing_term_configuration::ConfigurableUpfrontPricingTermConfigurationBuilder;

@@ -12,8 +12,17 @@ pub fn ser_describe_field_indexes_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_4) = &input.index_categories {
+        let mut array_5 = object.key("indexCategories").start_array();
+        for item_6 in var_4 {
+            {
+                array_5.value().string(item_6.as_str());
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_7) = &input.next_token {
+        object.key("nextToken").string(var_7.as_str());
     }
     Ok(())
 }

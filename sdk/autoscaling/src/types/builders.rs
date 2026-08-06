@@ -13,6 +13,8 @@ pub use crate::types::_capacity_reservation_specification::CapacityReservationSp
 
 pub use crate::types::_instance_lifecycle_policy::InstanceLifecyclePolicyBuilder;
 
+pub use crate::types::_operator::OperatorBuilder;
+
 pub use crate::types::_instance_monitoring::InstanceMonitoringBuilder;
 
 pub use crate::types::_instance_metadata_options::InstanceMetadataOptionsBuilder;

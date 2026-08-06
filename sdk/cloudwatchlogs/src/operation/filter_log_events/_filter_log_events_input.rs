@@ -17,7 +17,9 @@ pub struct FilterLogEventsInput {
     /// <p>Filters the results to include only events from log streams that have names starting with this prefix.</p>
     /// <p>If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code> error.</p>
     pub log_stream_name_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub start_time: ::std::option::Option<i64>,
     /// <p>The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.</p>
     pub end_time: ::std::option::Option<i64>,
@@ -68,7 +70,9 @@ impl FilterLogEventsInput {
     pub fn log_stream_name_prefix(&self) -> ::std::option::Option<&str> {
         self.log_stream_name_prefix.as_deref()
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn start_time(&self) -> ::std::option::Option<i64> {
         self.start_time
     }
@@ -215,17 +219,23 @@ impl FilterLogEventsInputBuilder {
     pub fn get_log_stream_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_stream_name_prefix
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn start_time(mut self, input: i64) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn set_start_time(mut self, input: ::std::option::Option<i64>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p>
+    /// <p>The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.</p><note>
+    /// <p>Set <code>startTime</code> explicitly to reduce the chances of empty pages in the response.</p>
+    /// </note>
     pub fn get_start_time(&self) -> &::std::option::Option<i64> {
         &self.start_time
     }

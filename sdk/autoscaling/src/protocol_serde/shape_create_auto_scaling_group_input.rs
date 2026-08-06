@@ -249,6 +249,11 @@ pub fn ser_create_auto_scaling_group_input_input_input(
     if let Some(var_94) = &input.instance_lifecycle_policy {
         crate::protocol_serde::shape_instance_lifecycle_policy::ser_instance_lifecycle_policy(scope_93, var_94)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_95 = writer.prefix("Operator");
+    if let Some(var_96) = &input.operator {
+        crate::protocol_serde::shape_operator::ser_operator(scope_95, var_96)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

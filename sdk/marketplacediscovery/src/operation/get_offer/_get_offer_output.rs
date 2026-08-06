@@ -9,22 +9,22 @@ pub struct GetOfferOutput {
     pub catalog: ::std::string::String,
     /// <p>The display name of the offer. This is free-form text provided by the seller.</p>
     pub offer_name: ::std::option::Option<::std::string::String>,
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
-    pub agreement_proposal_id: ::std::string::String,
     /// <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the offer became available to the buyer.</p>
     pub available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The entity responsible for selling the product under this offer.</p>
     pub seller_of_record: ::std::option::Option<crate::types::SellerInformation>,
+    /// <p>The products and offer sets associated with this offer.</p>
+    pub associated_entities: ::std::vec::Vec<crate::types::OfferAssociatedEntity>,
+    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    pub agreement_proposal_id: ::std::string::String,
     /// <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
     pub replacement_agreement_id: ::std::option::Option<::std::string::String>,
     /// <p>The pricing model that determines how buyers are charged, such as usage-based, contract, BYOL, or free.</p>
     pub pricing_model: ::std::option::Option<crate::types::PricingModel>,
     /// <p>Badges indicating special attributes of the offer, such as private pricing, future dated, or replacement offer.</p>
     pub badges: ::std::vec::Vec<crate::types::PurchaseOptionBadge>,
-    /// <p>The products and offer sets associated with this offer.</p>
-    pub associated_entities: ::std::vec::Vec<crate::types::OfferAssociatedEntity>,
     _request_id: Option<String>,
 }
 impl GetOfferOutput {
@@ -42,11 +42,6 @@ impl GetOfferOutput {
     pub fn offer_name(&self) -> ::std::option::Option<&str> {
         self.offer_name.as_deref()
     }
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
-    pub fn agreement_proposal_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agreement_proposal_id.deref()
-    }
     /// <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
     pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
@@ -58,6 +53,16 @@ impl GetOfferOutput {
     /// <p>The entity responsible for selling the product under this offer.</p>
     pub fn seller_of_record(&self) -> ::std::option::Option<&crate::types::SellerInformation> {
         self.seller_of_record.as_ref()
+    }
+    /// <p>The products and offer sets associated with this offer.</p>
+    pub fn associated_entities(&self) -> &[crate::types::OfferAssociatedEntity] {
+        use std::ops::Deref;
+        self.associated_entities.deref()
+    }
+    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    pub fn agreement_proposal_id(&self) -> &str {
+        use std::ops::Deref;
+        self.agreement_proposal_id.deref()
     }
     /// <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
     pub fn replacement_agreement_id(&self) -> ::std::option::Option<&str> {
@@ -71,11 +76,6 @@ impl GetOfferOutput {
     pub fn badges(&self) -> &[crate::types::PurchaseOptionBadge] {
         use std::ops::Deref;
         self.badges.deref()
-    }
-    /// <p>The products and offer sets associated with this offer.</p>
-    pub fn associated_entities(&self) -> &[crate::types::OfferAssociatedEntity] {
-        use std::ops::Deref;
-        self.associated_entities.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetOfferOutput {
@@ -97,14 +97,14 @@ pub struct GetOfferOutputBuilder {
     pub(crate) offer_id: ::std::option::Option<::std::string::String>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     pub(crate) offer_name: ::std::option::Option<::std::string::String>,
-    pub(crate) agreement_proposal_id: ::std::option::Option<::std::string::String>,
     pub(crate) expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) seller_of_record: ::std::option::Option<crate::types::SellerInformation>,
+    pub(crate) associated_entities: ::std::option::Option<::std::vec::Vec<crate::types::OfferAssociatedEntity>>,
+    pub(crate) agreement_proposal_id: ::std::option::Option<::std::string::String>,
     pub(crate) replacement_agreement_id: ::std::option::Option<::std::string::String>,
     pub(crate) pricing_model: ::std::option::Option<crate::types::PricingModel>,
     pub(crate) badges: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionBadge>>,
-    pub(crate) associated_entities: ::std::option::Option<::std::vec::Vec<crate::types::OfferAssociatedEntity>>,
     _request_id: Option<String>,
 }
 impl GetOfferOutputBuilder {
@@ -152,21 +152,6 @@ impl GetOfferOutputBuilder {
     pub fn get_offer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.offer_name
     }
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
-    /// This field is required.
-    pub fn agreement_proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.agreement_proposal_id = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
-    pub fn set_agreement_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.agreement_proposal_id = input;
-        self
-    }
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
-    pub fn get_agreement_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.agreement_proposal_id
-    }
     /// <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_time = ::std::option::Option::Some(input);
@@ -209,6 +194,41 @@ impl GetOfferOutputBuilder {
     /// <p>The entity responsible for selling the product under this offer.</p>
     pub fn get_seller_of_record(&self) -> &::std::option::Option<crate::types::SellerInformation> {
         &self.seller_of_record
+    }
+    /// Appends an item to `associated_entities`.
+    ///
+    /// To override the contents of this collection use [`set_associated_entities`](Self::set_associated_entities).
+    ///
+    /// <p>The products and offer sets associated with this offer.</p>
+    pub fn associated_entities(mut self, input: crate::types::OfferAssociatedEntity) -> Self {
+        let mut v = self.associated_entities.unwrap_or_default();
+        v.push(input);
+        self.associated_entities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The products and offer sets associated with this offer.</p>
+    pub fn set_associated_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfferAssociatedEntity>>) -> Self {
+        self.associated_entities = input;
+        self
+    }
+    /// <p>The products and offer sets associated with this offer.</p>
+    pub fn get_associated_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferAssociatedEntity>> {
+        &self.associated_entities
+    }
+    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    /// This field is required.
+    pub fn agreement_proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agreement_proposal_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    pub fn set_agreement_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agreement_proposal_id = input;
+        self
+    }
+    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    pub fn get_agreement_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_proposal_id
     }
     /// <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
     pub fn replacement_agreement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -259,26 +279,6 @@ impl GetOfferOutputBuilder {
     pub fn get_badges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionBadge>> {
         &self.badges
     }
-    /// Appends an item to `associated_entities`.
-    ///
-    /// To override the contents of this collection use [`set_associated_entities`](Self::set_associated_entities).
-    ///
-    /// <p>The products and offer sets associated with this offer.</p>
-    pub fn associated_entities(mut self, input: crate::types::OfferAssociatedEntity) -> Self {
-        let mut v = self.associated_entities.unwrap_or_default();
-        v.push(input);
-        self.associated_entities = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The products and offer sets associated with this offer.</p>
-    pub fn set_associated_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OfferAssociatedEntity>>) -> Self {
-        self.associated_entities = input;
-        self
-    }
-    /// <p>The products and offer sets associated with this offer.</p>
-    pub fn get_associated_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferAssociatedEntity>> {
-        &self.associated_entities
-    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -292,9 +292,9 @@ impl GetOfferOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`offer_id`](crate::operation::get_offer::builders::GetOfferOutputBuilder::offer_id)
     /// - [`catalog`](crate::operation::get_offer::builders::GetOfferOutputBuilder::catalog)
+    /// - [`associated_entities`](crate::operation::get_offer::builders::GetOfferOutputBuilder::associated_entities)
     /// - [`agreement_proposal_id`](crate::operation::get_offer::builders::GetOfferOutputBuilder::agreement_proposal_id)
     /// - [`badges`](crate::operation::get_offer::builders::GetOfferOutputBuilder::badges)
-    /// - [`associated_entities`](crate::operation::get_offer::builders::GetOfferOutputBuilder::associated_entities)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_offer::GetOfferOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_offer::GetOfferOutput {
             offer_id: self.offer_id.ok_or_else(|| {
@@ -310,27 +310,27 @@ impl GetOfferOutputBuilder {
                 )
             })?,
             offer_name: self.offer_name,
+            expiration_time: self.expiration_time,
+            available_from_time: self.available_from_time,
+            seller_of_record: self.seller_of_record,
+            associated_entities: self.associated_entities.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "associated_entities",
+                    "associated_entities was not specified but it is required when building GetOfferOutput",
+                )
+            })?,
             agreement_proposal_id: self.agreement_proposal_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "agreement_proposal_id",
                     "agreement_proposal_id was not specified but it is required when building GetOfferOutput",
                 )
             })?,
-            expiration_time: self.expiration_time,
-            available_from_time: self.available_from_time,
-            seller_of_record: self.seller_of_record,
             replacement_agreement_id: self.replacement_agreement_id,
             pricing_model: self.pricing_model,
             badges: self.badges.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "badges",
                     "badges was not specified but it is required when building GetOfferOutput",
-                )
-            })?,
-            associated_entities: self.associated_entities.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "associated_entities",
-                    "associated_entities was not specified but it is required when building GetOfferOutput",
                 )
             })?,
             _request_id: self._request_id,

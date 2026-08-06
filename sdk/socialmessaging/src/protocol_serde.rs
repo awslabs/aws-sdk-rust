@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_whats_app_business_account;
 
+pub(crate) mod shape_create_whats_app_dataset;
+
 pub(crate) mod shape_create_whats_app_flow;
 
 pub(crate) mod shape_create_whats_app_message_template;
@@ -73,6 +75,8 @@ pub(crate) mod shape_publish_whats_app_flow;
 
 pub(crate) mod shape_put_whats_app_business_account_event_destinations;
 
+pub(crate) mod shape_send_whats_app_conversion_event;
+
 pub(crate) mod shape_send_whats_app_message;
 
 pub(crate) mod shape_tag_resource;
@@ -98,6 +102,8 @@ pub(crate) mod shape_access_denied_by_meta_exception;
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_whats_app_business_account_input;
+
+pub(crate) mod shape_create_whats_app_dataset_input;
 
 pub(crate) mod shape_create_whats_app_flow_input;
 
@@ -128,6 +134,8 @@ pub(crate) mod shape_publish_whats_app_flow_input;
 pub(crate) mod shape_put_whats_app_business_account_event_destinations_input;
 
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_send_whats_app_conversion_event_input;
 
 pub(crate) mod shape_send_whats_app_message_input;
 

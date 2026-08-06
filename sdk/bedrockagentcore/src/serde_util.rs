@@ -170,6 +170,21 @@ pub(crate) fn delete_batch_evaluation_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_capacity_provider_session_output_output_correct_errors(
+    mut builder: crate::operation::delete_capacity_provider_session::builders::DeleteCapacityProviderSessionOutputBuilder,
+) -> crate::operation::delete_capacity_provider_session::builders::DeleteCapacityProviderSessionOutputBuilder {
+    if builder.capacity_provider_arn.is_none() {
+        builder.capacity_provider_arn = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CapacityProviderSessionStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_event_output_output_correct_errors(
     mut builder: crate::operation::delete_event::builders::DeleteEventOutputBuilder,
 ) -> crate::operation::delete_event::builders::DeleteEventOutputBuilder {

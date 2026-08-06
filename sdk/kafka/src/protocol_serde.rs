@@ -357,6 +357,8 @@ pub(crate) mod shape_amazon_msk_cluster;
 
 pub(crate) mod shape_apache_kafka_cluster;
 
+pub(crate) mod shape_authorizer_logs;
+
 pub(crate) mod shape_broker_logs;
 
 pub(crate) mod shape_broker_software_info;

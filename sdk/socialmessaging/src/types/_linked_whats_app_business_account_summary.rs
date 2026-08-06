@@ -20,6 +20,8 @@ pub struct LinkedWhatsAppBusinessAccountSummary {
     pub event_destinations: ::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>,
     /// <p>The onboarding status for the Marketing Messages API. This value is fetched from Meta and indicates whether the WhatsApp Business Account is onboarded for Meta's Marketing Messages API.</p>
     pub marketing_messages_onboarding_status: ::std::option::Option<::std::string::String>,
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub dataset_id: ::std::option::Option<::std::string::String>,
 }
 impl LinkedWhatsAppBusinessAccountSummary {
     /// <p>The ARN of the linked WhatsApp Business Account.</p>
@@ -59,6 +61,10 @@ impl LinkedWhatsAppBusinessAccountSummary {
     pub fn marketing_messages_onboarding_status(&self) -> ::std::option::Option<&str> {
         self.marketing_messages_onboarding_status.as_deref()
     }
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
+        self.dataset_id.as_deref()
+    }
 }
 impl LinkedWhatsAppBusinessAccountSummary {
     /// Creates a new builder-style object to manufacture [`LinkedWhatsAppBusinessAccountSummary`](crate::types::LinkedWhatsAppBusinessAccountSummary).
@@ -79,6 +85,7 @@ pub struct LinkedWhatsAppBusinessAccountSummaryBuilder {
     pub(crate) waba_name: ::std::option::Option<::std::string::String>,
     pub(crate) event_destinations: ::std::option::Option<::std::vec::Vec<crate::types::WhatsAppBusinessAccountEventDestination>>,
     pub(crate) marketing_messages_onboarding_status: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
 }
 impl LinkedWhatsAppBusinessAccountSummaryBuilder {
     /// <p>The ARN of the linked WhatsApp Business Account.</p>
@@ -208,6 +215,20 @@ impl LinkedWhatsAppBusinessAccountSummaryBuilder {
     pub fn get_marketing_messages_onboarding_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.marketing_messages_onboarding_status
     }
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dataset_id = input;
+        self
+    }
+    /// <p>The Meta Conversions API dataset ID associated with this WhatsApp Business Account. This value is a numeric string of 10 to 20 digits. This field is not present when no dataset has been created for this account.</p>
+    pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dataset_id
+    }
     /// Consumes the builder and constructs a [`LinkedWhatsAppBusinessAccountSummary`](crate::types::LinkedWhatsAppBusinessAccountSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::LinkedWhatsAppBusinessAccountSummaryBuilder::arn)
@@ -264,6 +285,7 @@ impl LinkedWhatsAppBusinessAccountSummaryBuilder {
                 )
             })?,
             marketing_messages_onboarding_status: self.marketing_messages_onboarding_status,
+            dataset_id: self.dataset_id,
         })
     }
 }

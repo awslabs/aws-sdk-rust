@@ -7,6 +7,9 @@ pub mod associate_backup_vault_mpa_approval_team;
 /// Types for the `CancelLegalHold` operation.
 pub mod cancel_legal_hold;
 
+/// Types for the `CreateBackupAccessPoint` operation.
+pub mod create_backup_access_point;
+
 /// Types for the `CreateBackupPlan` operation.
 pub mod create_backup_plan;
 
@@ -39,6 +42,9 @@ pub mod create_restore_testing_selection;
 
 /// Types for the `CreateTieringConfiguration` operation.
 pub mod create_tiering_configuration;
+
+/// Types for the `DeleteBackupAccessPoint` operation.
+pub mod delete_backup_access_point;
 
 /// Types for the `DeleteBackupPlan` operation.
 pub mod delete_backup_plan;
@@ -75,6 +81,9 @@ pub mod delete_restore_testing_selection;
 
 /// Types for the `DeleteTieringConfiguration` operation.
 pub mod delete_tiering_configuration;
+
+/// Types for the `DescribeBackupAccessPoint` operation.
+pub mod describe_backup_access_point;
 
 /// Types for the `DescribeBackupJob` operation.
 pub mod describe_backup_job;
@@ -171,6 +180,15 @@ pub mod get_supported_resource_types;
 
 /// Types for the `GetTieringConfiguration` operation.
 pub mod get_tiering_configuration;
+
+/// Types for the `ListBackupAccessPoints` operation.
+pub mod list_backup_access_points;
+
+/// Types for the `ListBackupAccessPointsByRecoveryPoint` operation.
+pub mod list_backup_access_points_by_recovery_point;
+
+/// Types for the `ListBackupAccessPointsByResource` operation.
+pub mod list_backup_access_points_by_resource;
 
 /// Types for the `ListBackupJobSummaries` operation.
 pub mod list_backup_job_summaries;

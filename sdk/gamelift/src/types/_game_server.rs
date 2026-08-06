@@ -3,7 +3,7 @@
 /// <p>Properties describing a game server that is running on an instance in a game server group.</p>
 /// <p>A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling <code>ClaimGameServer</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GameServer {
     /// <p>A unique identifier for the game server group where the game server is running.</p>
     pub game_server_group_name: ::std::option::Option<::std::string::String>,
@@ -86,6 +86,23 @@ impl GameServer {
         self.last_health_check_time.as_ref()
     }
 }
+impl ::std::fmt::Debug for GameServer {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameServer");
+        formatter.field("game_server_group_name", &self.game_server_group_name);
+        formatter.field("game_server_group_arn", &self.game_server_group_arn);
+        formatter.field("game_server_id", &self.game_server_id);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("connection_info", &self.connection_info);
+        formatter.field("game_server_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("claim_status", &self.claim_status);
+        formatter.field("utilization_status", &self.utilization_status);
+        formatter.field("registration_time", &self.registration_time);
+        formatter.field("last_claim_time", &self.last_claim_time);
+        formatter.field("last_health_check_time", &self.last_health_check_time);
+        formatter.finish()
+    }
+}
 impl GameServer {
     /// Creates a new builder-style object to manufacture [`GameServer`](crate::types::GameServer).
     pub fn builder() -> crate::types::builders::GameServerBuilder {
@@ -94,7 +111,7 @@ impl GameServer {
 }
 
 /// A builder for [`GameServer`](crate::types::GameServer).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GameServerBuilder {
     pub(crate) game_server_group_name: ::std::option::Option<::std::string::String>,
@@ -297,5 +314,22 @@ impl GameServerBuilder {
             last_claim_time: self.last_claim_time,
             last_health_check_time: self.last_health_check_time,
         }
+    }
+}
+impl ::std::fmt::Debug for GameServerBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GameServerBuilder");
+        formatter.field("game_server_group_name", &self.game_server_group_name);
+        formatter.field("game_server_group_arn", &self.game_server_group_arn);
+        formatter.field("game_server_id", &self.game_server_id);
+        formatter.field("instance_id", &self.instance_id);
+        formatter.field("connection_info", &self.connection_info);
+        formatter.field("game_server_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("claim_status", &self.claim_status);
+        formatter.field("utilization_status", &self.utilization_status);
+        formatter.field("registration_time", &self.registration_time);
+        formatter.field("last_claim_time", &self.last_claim_time);
+        formatter.field("last_health_check_time", &self.last_health_check_time);
+        formatter.finish()
     }
 }

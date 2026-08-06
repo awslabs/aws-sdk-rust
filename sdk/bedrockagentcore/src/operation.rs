@@ -31,6 +31,9 @@ pub mod delete_ab_test;
 /// Types for the `DeleteBatchEvaluation` operation.
 pub mod delete_batch_evaluation;
 
+/// Types for the `DeleteCapacityProviderSession` operation.
+pub mod delete_capacity_provider_session;
+
 /// Types for the `DeleteEvent` operation.
 pub mod delete_event;
 

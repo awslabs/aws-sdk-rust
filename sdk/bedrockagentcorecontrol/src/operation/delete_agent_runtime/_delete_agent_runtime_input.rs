@@ -5,6 +5,8 @@
 pub struct DeleteAgentRuntimeInput {
     /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub agent_runtime_id: ::std::option::Option<::std::string::String>,
+    /// <p>The version of the AgentCore Runtime to delete. When you provide this value, only that version is deleted. When you omit it, the entire AgentCore Runtime and all of its versions are deleted.</p>
+    pub agent_runtime_version: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -12,6 +14,10 @@ impl DeleteAgentRuntimeInput {
     /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub fn agent_runtime_id(&self) -> ::std::option::Option<&str> {
         self.agent_runtime_id.as_deref()
+    }
+    /// <p>The version of the AgentCore Runtime to delete. When you provide this value, only that version is deleted. When you omit it, the entire AgentCore Runtime and all of its versions are deleted.</p>
+    pub fn agent_runtime_version(&self) -> ::std::option::Option<&str> {
+        self.agent_runtime_version.as_deref()
     }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -30,6 +36,7 @@ impl DeleteAgentRuntimeInput {
 #[non_exhaustive]
 pub struct DeleteAgentRuntimeInputBuilder {
     pub(crate) agent_runtime_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_runtime_version: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAgentRuntimeInputBuilder {
@@ -47,6 +54,20 @@ impl DeleteAgentRuntimeInputBuilder {
     /// <p>The unique identifier of the AgentCore Runtime to delete.</p>
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
+    }
+    /// <p>The version of the AgentCore Runtime to delete. When you provide this value, only that version is deleted. When you omit it, the entire AgentCore Runtime and all of its versions are deleted.</p>
+    pub fn agent_runtime_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_runtime_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the AgentCore Runtime to delete. When you provide this value, only that version is deleted. When you omit it, the entire AgentCore Runtime and all of its versions are deleted.</p>
+    pub fn set_agent_runtime_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_runtime_version = input;
+        self
+    }
+    /// <p>The version of the AgentCore Runtime to delete. When you provide this value, only that version is deleted. When you omit it, the entire AgentCore Runtime and all of its versions are deleted.</p>
+    pub fn get_agent_runtime_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_runtime_version
     }
     /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request but does not return an error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -69,6 +90,7 @@ impl DeleteAgentRuntimeInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::delete_agent_runtime::DeleteAgentRuntimeInput {
             agent_runtime_id: self.agent_runtime_id,
+            agent_runtime_version: self.agent_runtime_version,
             client_token: self.client_token,
         })
     }

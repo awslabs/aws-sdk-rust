@@ -89,6 +89,8 @@ pub use crate::types::_encryption_in_transit::EncryptionInTransitBuilder;
 
 pub use crate::types::_prometheus_info::PrometheusInfoBuilder;
 
+pub use crate::types::_authorizer_logs::AuthorizerLogsBuilder;
+
 pub use crate::types::_broker_logs::BrokerLogsBuilder;
 
 pub use crate::types::_serverless_client_authentication::ServerlessClientAuthenticationBuilder;

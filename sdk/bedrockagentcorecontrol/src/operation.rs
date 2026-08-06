@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddDatasetExamples` operation.
 pub mod add_dataset_examples;
 
+/// Types for the `BatchPutGatewayRateLimits` operation.
+pub mod batch_put_gateway_rate_limits;
+
 /// Types for the `CreateAgentRuntime` operation.
 pub mod create_agent_runtime;
 
@@ -18,6 +21,9 @@ pub mod create_browser;
 
 /// Types for the `CreateBrowserProfile` operation.
 pub mod create_browser_profile;
+
+/// Types for the `CreateCapacityProvider` operation.
+pub mod create_capacity_provider;
 
 /// Types for the `CreateCodeInterpreter` operation.
 pub mod create_code_interpreter;
@@ -36,6 +42,9 @@ pub mod create_evaluator;
 
 /// Types for the `CreateGateway` operation.
 pub mod create_gateway;
+
+/// Types for the `CreateGatewayRateLimit` operation.
+pub mod create_gateway_rate_limit;
 
 /// Types for the `CreateGatewayRule` operation.
 pub mod create_gateway_rule;
@@ -97,6 +106,9 @@ pub mod delete_browser;
 /// Types for the `DeleteBrowserProfile` operation.
 pub mod delete_browser_profile;
 
+/// Types for the `DeleteCapacityProvider` operation.
+pub mod delete_capacity_provider;
+
 /// Types for the `DeleteCodeInterpreter` operation.
 pub mod delete_code_interpreter;
 
@@ -114,6 +126,9 @@ pub mod delete_evaluator;
 
 /// Types for the `DeleteGateway` operation.
 pub mod delete_gateway;
+
+/// Types for the `DeleteGatewayRateLimit` operation.
+pub mod delete_gateway_rate_limit;
 
 /// Types for the `DeleteGatewayRule` operation.
 pub mod delete_gateway_rule;
@@ -178,6 +193,9 @@ pub mod get_browser;
 /// Types for the `GetBrowserProfile` operation.
 pub mod get_browser_profile;
 
+/// Types for the `GetCapacityProvider` operation.
+pub mod get_capacity_provider;
+
 /// Types for the `GetCodeInterpreter` operation.
 pub mod get_code_interpreter;
 
@@ -195,6 +213,9 @@ pub mod get_evaluator;
 
 /// Types for the `GetGateway` operation.
 pub mod get_gateway;
+
+/// Types for the `GetGatewayRateLimit` operation.
+pub mod get_gateway_rate_limit;
 
 /// Types for the `GetGatewayRule` operation.
 pub mod get_gateway_rule;
@@ -265,6 +286,9 @@ pub mod list_agent_runtime_endpoints;
 /// Types for the `ListAgentRuntimeVersions` operation.
 pub mod list_agent_runtime_versions;
 
+/// Types for the `ListAgentRuntimeVersionsByCapacityProvider` operation.
+pub mod list_agent_runtime_versions_by_capacity_provider;
+
 /// Types for the `ListAgentRuntimes` operation.
 pub mod list_agent_runtimes;
 
@@ -276,6 +300,9 @@ pub mod list_browser_profiles;
 
 /// Types for the `ListBrowsers` operation.
 pub mod list_browsers;
+
+/// Types for the `ListCapacityProviders` operation.
+pub mod list_capacity_providers;
 
 /// Types for the `ListCodeInterpreters` operation.
 pub mod list_code_interpreters;
@@ -297,6 +324,9 @@ pub mod list_datasets;
 
 /// Types for the `ListEvaluators` operation.
 pub mod list_evaluators;
+
+/// Types for the `ListGatewayRateLimits` operation.
+pub mod list_gateway_rate_limits;
 
 /// Types for the `ListGatewayRules` operation.
 pub mod list_gateway_rules;
@@ -397,6 +427,9 @@ pub mod update_agent_runtime_endpoint;
 /// Types for the `UpdateApiKeyCredentialProvider` operation.
 pub mod update_api_key_credential_provider;
 
+/// Types for the `UpdateCapacityProvider` operation.
+pub mod update_capacity_provider;
+
 /// Types for the `UpdateConfigurationBundle` operation.
 pub mod update_configuration_bundle;
 
@@ -411,6 +444,9 @@ pub mod update_evaluator;
 
 /// Types for the `UpdateGateway` operation.
 pub mod update_gateway;
+
+/// Types for the `UpdateGatewayRateLimit` operation.
+pub mod update_gateway_rate_limit;
 
 /// Types for the `UpdateGatewayRule` operation.
 pub mod update_gateway_rule;

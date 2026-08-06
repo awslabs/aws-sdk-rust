@@ -73,9 +73,13 @@ pub use crate::types::_device_pool_compatibility_result::DevicePoolCompatibility
 
 pub use crate::types::_counters::CountersBuilder;
 
+pub use crate::types::_job_insights::JobInsightsBuilder;
+
 pub use crate::types::_offering_status::OfferingStatusBuilder;
 
 pub use crate::types::_device_selection_result::DeviceSelectionResultBuilder;
+
+pub use crate::types::_run_insights::RunInsightsBuilder;
 
 pub use crate::types::_artifact::ArtifactBuilder;
 
@@ -95,9 +99,17 @@ pub use crate::types::_test_grid_session_artifact::TestGridSessionArtifactBuilde
 
 pub use crate::types::_monetary_amount::MonetaryAmountBuilder;
 
+pub use crate::types::_test_report::TestReportBuilder;
+
+pub use crate::types::_job_report::JobReportBuilder;
+
 pub use crate::types::_unique_problem::UniqueProblemBuilder;
 
 pub use crate::types::_incompatibility_message::IncompatibilityMessageBuilder;
+
+pub use crate::types::_test_report_metrics::TestReportMetricsBuilder;
+
+pub use crate::types::_job_report_metrics::JobReportMetricsBuilder;
 
 pub use crate::types::_recurring_charge::RecurringChargeBuilder;
 

@@ -261,8 +261,8 @@ impl ::std::fmt::Debug for GameSession {
         formatter.field("port", &"*** Sensitive Data Redacted ***");
         formatter.field("player_session_creation_policy", &self.player_session_creation_policy);
         formatter.field("creator_id", &self.creator_id);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("matchmaker_data", &self.matchmaker_data);
+        formatter.field("game_session_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("matchmaker_data", &"*** Sensitive Data Redacted ***");
         formatter.field("location", &self.location);
         formatter.field("compute_name", &self.compute_name);
         formatter.field("player_gateway_status", &self.player_gateway_status);
@@ -805,8 +805,8 @@ impl ::std::fmt::Debug for GameSessionBuilder {
         formatter.field("port", &"*** Sensitive Data Redacted ***");
         formatter.field("player_session_creation_policy", &self.player_session_creation_policy);
         formatter.field("creator_id", &self.creator_id);
-        formatter.field("game_session_data", &self.game_session_data);
-        formatter.field("matchmaker_data", &self.matchmaker_data);
+        formatter.field("game_session_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("matchmaker_data", &"*** Sensitive Data Redacted ***");
         formatter.field("location", &self.location);
         formatter.field("compute_name", &self.compute_name);
         formatter.field("player_gateway_status", &self.player_gateway_status);

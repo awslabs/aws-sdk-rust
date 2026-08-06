@@ -293,6 +293,20 @@ impl CreateAgentRuntimeFluentBuilder {
     pub fn get_filesystem_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>> {
         self.inner.get_filesystem_configurations()
     }
+    /// <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity provider to run the AgentCore Runtime on the Instances compute type, which provisions Amazon Web Services managed compute in your account.</p>
+    pub fn capacity_provider_configuration(mut self, input: crate::types::CapacityProviderConfiguration) -> Self {
+        self.inner = self.inner.capacity_provider_configuration(input);
+        self
+    }
+    /// <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity provider to run the AgentCore Runtime on the Instances compute type, which provisions Amazon Web Services managed compute in your account.</p>
+    pub fn set_capacity_provider_configuration(mut self, input: ::std::option::Option<crate::types::CapacityProviderConfiguration>) -> Self {
+        self.inner = self.inner.set_capacity_provider_configuration(input);
+        self
+    }
+    /// <p>The capacity provider configuration for the AgentCore Runtime. Use a capacity provider to run the AgentCore Runtime on the Instances compute type, which provisions Amazon Web Services managed compute in your account.</p>
+    pub fn get_capacity_provider_configuration(&self) -> &::std::option::Option<crate::types::CapacityProviderConfiguration> {
+        self.inner.get_capacity_provider_configuration()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

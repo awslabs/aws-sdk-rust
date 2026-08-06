@@ -183,6 +183,8 @@ mod delete_ab_test;
 
 mod delete_batch_evaluation;
 
+mod delete_capacity_provider_session;
+
 mod delete_event;
 
 mod delete_memory_record;

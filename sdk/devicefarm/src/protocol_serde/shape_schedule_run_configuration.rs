@@ -72,5 +72,14 @@ pub fn ser_schedule_run_configuration(
     if let Some(var_23) = &input.execution_role_arn {
         object.key("executionRoleArn").string(var_23.as_str());
     }
+    if let Some(var_24) = &input.insights_types {
+        let mut array_25 = object.key("insightsTypes").start_array();
+        for item_26 in var_24 {
+            {
+                array_25.value().string(item_26.as_str());
+            }
+        }
+        array_25.finish();
+    }
     Ok(())
 }

@@ -12,6 +12,8 @@
 /// ```text
 /// # let objectstorageclass = unimplemented!();
 /// match objectstorageclass {
+///     ObjectStorageClass::AwsBackupLowCostWarm => { /* ... */ },
+///     ObjectStorageClass::AwsBackupWarm => { /* ... */ },
 ///     ObjectStorageClass::DeepArchive => { /* ... */ },
 ///     ObjectStorageClass::ExpressOnezone => { /* ... */ },
 ///     ObjectStorageClass::FsxOntap => { /* ... */ },
@@ -54,6 +56,10 @@
 )]
 pub enum ObjectStorageClass {
     #[allow(missing_docs)] // documentation missing in model
+    AwsBackupLowCostWarm,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsBackupWarm,
+    #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
     #[allow(missing_docs)] // documentation missing in model
     ExpressOnezone,
@@ -86,6 +92,8 @@ pub enum ObjectStorageClass {
 impl ::std::convert::From<&str> for ObjectStorageClass {
     fn from(s: &str) -> Self {
         match s {
+            "AWS_BACKUP_LOW_COST_WARM" => ObjectStorageClass::AwsBackupLowCostWarm,
+            "AWS_BACKUP_WARM" => ObjectStorageClass::AwsBackupWarm,
             "DEEP_ARCHIVE" => ObjectStorageClass::DeepArchive,
             "EXPRESS_ONEZONE" => ObjectStorageClass::ExpressOnezone,
             "FSX_ONTAP" => ObjectStorageClass::FsxOntap,
@@ -114,6 +122,8 @@ impl ObjectStorageClass {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ObjectStorageClass::AwsBackupLowCostWarm => "AWS_BACKUP_LOW_COST_WARM",
+            ObjectStorageClass::AwsBackupWarm => "AWS_BACKUP_WARM",
             ObjectStorageClass::DeepArchive => "DEEP_ARCHIVE",
             ObjectStorageClass::ExpressOnezone => "EXPRESS_ONEZONE",
             ObjectStorageClass::FsxOntap => "FSX_ONTAP",
@@ -133,6 +143,8 @@ impl ObjectStorageClass {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AWS_BACKUP_LOW_COST_WARM",
+            "AWS_BACKUP_WARM",
             "DEEP_ARCHIVE",
             "EXPRESS_ONEZONE",
             "FSX_ONTAP",
@@ -169,6 +181,8 @@ impl ObjectStorageClass {
 impl ::std::fmt::Display for ObjectStorageClass {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ObjectStorageClass::AwsBackupLowCostWarm => write!(f, "AWS_BACKUP_LOW_COST_WARM"),
+            ObjectStorageClass::AwsBackupWarm => write!(f, "AWS_BACKUP_WARM"),
             ObjectStorageClass::DeepArchive => write!(f, "DEEP_ARCHIVE"),
             ObjectStorageClass::ExpressOnezone => write!(f, "EXPRESS_ONEZONE"),
             ObjectStorageClass::FsxOntap => write!(f, "FSX_ONTAP"),

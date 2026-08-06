@@ -3,10 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingInfo {
+    /// <p>You can configure your MSK cluster to send authorizer logs to different destination types.</p>
+    pub authorizer_logs: ::std::option::Option<crate::types::AuthorizerLogs>,
     #[allow(missing_docs)] // documentation missing in model
     pub broker_logs: ::std::option::Option<crate::types::BrokerLogs>,
 }
 impl LoggingInfo {
+    /// <p>You can configure your MSK cluster to send authorizer logs to different destination types.</p>
+    pub fn authorizer_logs(&self) -> ::std::option::Option<&crate::types::AuthorizerLogs> {
+        self.authorizer_logs.as_ref()
+    }
     #[allow(missing_docs)] // documentation missing in model
     pub fn broker_logs(&self) -> ::std::option::Option<&crate::types::BrokerLogs> {
         self.broker_logs.as_ref()
@@ -23,9 +29,24 @@ impl LoggingInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct LoggingInfoBuilder {
+    pub(crate) authorizer_logs: ::std::option::Option<crate::types::AuthorizerLogs>,
     pub(crate) broker_logs: ::std::option::Option<crate::types::BrokerLogs>,
 }
 impl LoggingInfoBuilder {
+    /// <p>You can configure your MSK cluster to send authorizer logs to different destination types.</p>
+    pub fn authorizer_logs(mut self, input: crate::types::AuthorizerLogs) -> Self {
+        self.authorizer_logs = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>You can configure your MSK cluster to send authorizer logs to different destination types.</p>
+    pub fn set_authorizer_logs(mut self, input: ::std::option::Option<crate::types::AuthorizerLogs>) -> Self {
+        self.authorizer_logs = input;
+        self
+    }
+    /// <p>You can configure your MSK cluster to send authorizer logs to different destination types.</p>
+    pub fn get_authorizer_logs(&self) -> &::std::option::Option<crate::types::AuthorizerLogs> {
+        &self.authorizer_logs
+    }
     #[allow(missing_docs)] // documentation missing in model
     /// This field is required.
     pub fn broker_logs(mut self, input: crate::types::BrokerLogs) -> Self {
@@ -44,6 +65,7 @@ impl LoggingInfoBuilder {
     /// Consumes the builder and constructs a [`LoggingInfo`](crate::types::LoggingInfo).
     pub fn build(self) -> crate::types::LoggingInfo {
         crate::types::LoggingInfo {
+            authorizer_logs: self.authorizer_logs,
             broker_logs: self.broker_logs,
         }
     }

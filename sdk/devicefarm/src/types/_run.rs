@@ -153,6 +153,10 @@ pub struct Run {
     pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Environment variables associated with the run.</p>
     pub environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    /// <p>The types of insights requested for the run.</p>
+    pub insights_types: ::std::option::Option<::std::vec::Vec<crate::types::InsightsType>>,
+    /// <p>The insights for the run, including the report status and job-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub insights: ::std::option::Option<crate::types::RunInsights>,
 }
 impl Run {
     /// <p>The run's ARN.</p>
@@ -376,6 +380,16 @@ impl Run {
     pub fn environment_variables(&self) -> &[crate::types::EnvironmentVariable] {
         self.environment_variables.as_deref().unwrap_or_default()
     }
+    /// <p>The types of insights requested for the run.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.insights_types.is_none()`.
+    pub fn insights_types(&self) -> &[crate::types::InsightsType] {
+        self.insights_types.as_deref().unwrap_or_default()
+    }
+    /// <p>The insights for the run, including the report status and job-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub fn insights(&self) -> ::std::option::Option<&crate::types::RunInsights> {
+        self.insights.as_ref()
+    }
 }
 impl Run {
     /// Creates a new builder-style object to manufacture [`Run`](crate::types::Run).
@@ -423,6 +437,8 @@ pub struct RunBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) environment_variables: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>>,
+    pub(crate) insights_types: ::std::option::Option<::std::vec::Vec<crate::types::InsightsType>>,
+    pub(crate) insights: ::std::option::Option<crate::types::RunInsights>,
 }
 impl RunBuilder {
     /// <p>The run's ARN.</p>
@@ -1158,6 +1174,40 @@ impl RunBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnvironmentVariable>> {
         &self.environment_variables
     }
+    /// Appends an item to `insights_types`.
+    ///
+    /// To override the contents of this collection use [`set_insights_types`](Self::set_insights_types).
+    ///
+    /// <p>The types of insights requested for the run.</p>
+    pub fn insights_types(mut self, input: crate::types::InsightsType) -> Self {
+        let mut v = self.insights_types.unwrap_or_default();
+        v.push(input);
+        self.insights_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of insights requested for the run.</p>
+    pub fn set_insights_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::InsightsType>>) -> Self {
+        self.insights_types = input;
+        self
+    }
+    /// <p>The types of insights requested for the run.</p>
+    pub fn get_insights_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::InsightsType>> {
+        &self.insights_types
+    }
+    /// <p>The insights for the run, including the report status and job-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub fn insights(mut self, input: crate::types::RunInsights) -> Self {
+        self.insights = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The insights for the run, including the report status and job-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub fn set_insights(mut self, input: ::std::option::Option<crate::types::RunInsights>) -> Self {
+        self.insights = input;
+        self
+    }
+    /// <p>The insights for the run, including the report status and job-level metrics. This field contains data only if you specified <code>insightsTypes</code> when you scheduled the run.</p>
+    pub fn get_insights(&self) -> &::std::option::Option<crate::types::RunInsights> {
+        &self.insights
+    }
     /// Consumes the builder and constructs a [`Run`](crate::types::Run).
     pub fn build(self) -> crate::types::Run {
         crate::types::Run {
@@ -1196,6 +1246,8 @@ impl RunBuilder {
             vpc_config: self.vpc_config,
             execution_role_arn: self.execution_role_arn,
             environment_variables: self.environment_variables,
+            insights_types: self.insights_types,
+            insights: self.insights,
         }
     }
 }

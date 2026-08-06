@@ -9,6 +9,9 @@ pub fn ser_function_ref(
     if let Some(var_2) = &input.function_id {
         object.key("FunctionId").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.alias {
+        object.key("Alias").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                         }
                         "FunctionId" => {
                             builder = builder.set_function_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "Alias" => {
+                            builder = builder.set_alias(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

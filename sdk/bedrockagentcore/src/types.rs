@@ -41,6 +41,8 @@ pub use crate::types::_browser_action_result::BrowserActionResult;
 
 pub use crate::types::_stream_update::StreamUpdate;
 
+pub use crate::types::_capacity_provider_session_status::CapacityProviderSessionStatus;
+
 pub use crate::types::_code_interpreter_session_status::CodeInterpreterSessionStatus;
 
 pub use crate::types::_gateway_filter::GatewayFilter;
@@ -666,6 +668,8 @@ mod _browser_session_status;
 mod _browser_session_stream;
 
 mod _browser_session_summary;
+
+mod _capacity_provider_session_status;
 
 mod _certificate;
 

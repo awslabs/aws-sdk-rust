@@ -35,6 +35,15 @@ pub(crate) fn add_dataset_examples_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_put_gateway_rate_limits_output_output_correct_errors(
+    mut builder: crate::operation::batch_put_gateway_rate_limits::builders::BatchPutGatewayRateLimitsOutputBuilder,
+) -> crate::operation::batch_put_gateway_rate_limits::builders::BatchPutGatewayRateLimitsOutputBuilder {
+    if builder.rate_limits.is_none() {
+        builder.rate_limits = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_agent_runtime_output_output_correct_errors(
     mut builder: crate::operation::create_agent_runtime::builders::CreateAgentRuntimeOutputBuilder,
 ) -> crate::operation::create_agent_runtime::builders::CreateAgentRuntimeOutputBuilder {
@@ -145,6 +154,33 @@ pub(crate) fn create_browser_profile_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::BrowserProfileStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn retryable_conflict_exception_correct_errors(
+    mut builder: crate::types::error::builders::RetryableConflictExceptionBuilder,
+) -> crate::types::error::builders::RetryableConflictExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_capacity_provider_output_output_correct_errors(
+    mut builder: crate::operation::create_capacity_provider::builders::CreateCapacityProviderOutputBuilder,
+) -> crate::operation::create_capacity_provider::builders::CreateCapacityProviderOutputBuilder {
+    if builder.capacity_provider_id.is_none() {
+        builder.capacity_provider_id = Some(Default::default())
+    }
+    if builder.capacity_provider_arn.is_none() {
+        builder.capacity_provider_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CapacityProviderStatus>().ok()
     }
     builder
 }
@@ -265,6 +301,33 @@ pub(crate) fn create_gateway_output_output_correct_errors(
     }
     if builder.authorizer_type.is_none() {
         builder.authorizer_type = "no value was set".parse::<crate::types::AuthorizerType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_gateway_rate_limit_output_output_correct_errors(
+    mut builder: crate::operation::create_gateway_rate_limit::builders::CreateGatewayRateLimitOutputBuilder,
+) -> crate::operation::create_gateway_rate_limit::builders::CreateGatewayRateLimitOutputBuilder {
+    if builder.rate_limit_id.is_none() {
+        builder.rate_limit_id = Some(Default::default())
+    }
+    if builder.gateway_identifier.is_none() {
+        builder.gateway_identifier = Some(Default::default())
+    }
+    if builder.dimension_keys.is_none() {
+        builder.dimension_keys = Some(Default::default())
+    }
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRateLimitStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -602,6 +665,18 @@ pub(crate) fn delete_browser_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_capacity_provider_output_output_correct_errors(
+    mut builder: crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderOutputBuilder,
+) -> crate::operation::delete_capacity_provider::builders::DeleteCapacityProviderOutputBuilder {
+    if builder.capacity_provider_id.is_none() {
+        builder.capacity_provider_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CapacityProviderStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_code_interpreter_output_output_correct_errors(
     mut builder: crate::operation::delete_code_interpreter::builders::DeleteCodeInterpreterOutputBuilder,
 ) -> crate::operation::delete_code_interpreter::builders::DeleteCodeInterpreterOutputBuilder {
@@ -694,6 +769,18 @@ pub(crate) fn delete_gateway_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::GatewayStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_gateway_rate_limit_output_output_correct_errors(
+    mut builder: crate::operation::delete_gateway_rate_limit::builders::DeleteGatewayRateLimitOutputBuilder,
+) -> crate::operation::delete_gateway_rate_limit::builders::DeleteGatewayRateLimitOutputBuilder {
+    if builder.rate_limit_id.is_none() {
+        builder.rate_limit_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRateLimitStatus>().ok()
     }
     builder
 }
@@ -995,6 +1082,39 @@ pub(crate) fn get_browser_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_capacity_provider_output_output_correct_errors(
+    mut builder: crate::operation::get_capacity_provider::builders::GetCapacityProviderOutputBuilder,
+) -> crate::operation::get_capacity_provider::builders::GetCapacityProviderOutputBuilder {
+    if builder.capacity_provider_id.is_none() {
+        builder.capacity_provider_id = Some(Default::default())
+    }
+    if builder.capacity_provider_arn.is_none() {
+        builder.capacity_provider_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CapacityProviderStatus>().ok()
+    }
+    if builder.permissions_configuration.is_none() {
+        builder.permissions_configuration = {
+            let builder = crate::types::builders::PermissionsConfigurationBuilder::default();
+            crate::serde_util::permissions_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.compute_configuration.is_none() {
+        builder.compute_configuration = Some(crate::types::ComputeConfiguration::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_code_interpreter_output_output_correct_errors(
     mut builder: crate::operation::get_code_interpreter::builders::GetCodeInterpreterOutputBuilder,
 ) -> crate::operation::get_code_interpreter::builders::GetCodeInterpreterOutputBuilder {
@@ -1165,6 +1285,33 @@ pub(crate) fn get_gateway_output_output_correct_errors(
     }
     if builder.authorizer_type.is_none() {
         builder.authorizer_type = "no value was set".parse::<crate::types::AuthorizerType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_gateway_rate_limit_output_output_correct_errors(
+    mut builder: crate::operation::get_gateway_rate_limit::builders::GetGatewayRateLimitOutputBuilder,
+) -> crate::operation::get_gateway_rate_limit::builders::GetGatewayRateLimitOutputBuilder {
+    if builder.rate_limit_id.is_none() {
+        builder.rate_limit_id = Some(Default::default())
+    }
+    if builder.gateway_identifier.is_none() {
+        builder.gateway_identifier = Some(Default::default())
+    }
+    if builder.dimension_keys.is_none() {
+        builder.dimension_keys = Some(Default::default())
+    }
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRateLimitStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1694,6 +1841,15 @@ pub(crate) fn list_agent_runtime_versions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_agent_runtime_versions_by_capacity_provider_output_output_correct_errors(
+    mut builder: crate::operation::list_agent_runtime_versions_by_capacity_provider::builders::ListAgentRuntimeVersionsByCapacityProviderOutputBuilder,
+) -> crate::operation::list_agent_runtime_versions_by_capacity_provider::builders::ListAgentRuntimeVersionsByCapacityProviderOutputBuilder {
+    if builder.agent_runtimes.is_none() {
+        builder.agent_runtimes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_agent_runtimes_output_output_correct_errors(
     mut builder: crate::operation::list_agent_runtimes::builders::ListAgentRuntimesOutputBuilder,
 ) -> crate::operation::list_agent_runtimes::builders::ListAgentRuntimesOutputBuilder {
@@ -1726,6 +1882,15 @@ pub(crate) fn list_browsers_output_output_correct_errors(
 ) -> crate::operation::list_browsers::builders::ListBrowsersOutputBuilder {
     if builder.browser_summaries.is_none() {
         builder.browser_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_capacity_providers_output_output_correct_errors(
+    mut builder: crate::operation::list_capacity_providers::builders::ListCapacityProvidersOutputBuilder,
+) -> crate::operation::list_capacity_providers::builders::ListCapacityProvidersOutputBuilder {
+    if builder.capacity_providers.is_none() {
+        builder.capacity_providers = Some(Default::default())
     }
     builder
 }
@@ -1798,6 +1963,15 @@ pub(crate) fn list_evaluators_output_output_correct_errors(
 ) -> crate::operation::list_evaluators::builders::ListEvaluatorsOutputBuilder {
     if builder.evaluators.is_none() {
         builder.evaluators = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_gateway_rate_limits_output_output_correct_errors(
+    mut builder: crate::operation::list_gateway_rate_limits::builders::ListGatewayRateLimitsOutputBuilder,
+) -> crate::operation::list_gateway_rate_limits::builders::ListGatewayRateLimitsOutputBuilder {
+    if builder.rate_limits.is_none() {
+        builder.rate_limits = Some(Default::default())
     }
     builder
 }
@@ -2150,6 +2324,30 @@ pub(crate) fn update_api_key_credential_provider_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_capacity_provider_output_output_correct_errors(
+    mut builder: crate::operation::update_capacity_provider::builders::UpdateCapacityProviderOutputBuilder,
+) -> crate::operation::update_capacity_provider::builders::UpdateCapacityProviderOutputBuilder {
+    if builder.capacity_provider_id.is_none() {
+        builder.capacity_provider_id = Some(Default::default())
+    }
+    if builder.capacity_provider_arn.is_none() {
+        builder.capacity_provider_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CapacityProviderStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn update_configuration_bundle_output_output_correct_errors(
     mut builder: crate::operation::update_configuration_bundle::builders::UpdateConfigurationBundleOutputBuilder,
 ) -> crate::operation::update_configuration_bundle::builders::UpdateConfigurationBundleOutputBuilder {
@@ -2245,6 +2443,33 @@ pub(crate) fn update_gateway_output_output_correct_errors(
     }
     if builder.authorizer_type.is_none() {
         builder.authorizer_type = "no value was set".parse::<crate::types::AuthorizerType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_gateway_rate_limit_output_output_correct_errors(
+    mut builder: crate::operation::update_gateway_rate_limit::builders::UpdateGatewayRateLimitOutputBuilder,
+) -> crate::operation::update_gateway_rate_limit::builders::UpdateGatewayRateLimitOutputBuilder {
+    if builder.rate_limit_id.is_none() {
+        builder.rate_limit_id = Some(Default::default())
+    }
+    if builder.gateway_identifier.is_none() {
+        builder.gateway_identifier = Some(Default::default())
+    }
+    if builder.dimension_keys.is_none() {
+        builder.dimension_keys = Some(Default::default())
+    }
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRateLimitStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -2719,6 +2944,15 @@ pub(crate) fn browser_network_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn permissions_configuration_correct_errors(
+    mut builder: crate::types::builders::PermissionsConfigurationBuilder,
+) -> crate::types::builders::PermissionsConfigurationBuilder {
+    if builder.capacity_provider_operator_role_arn.is_none() {
+        builder.capacity_provider_operator_role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn code_interpreter_network_configuration_correct_errors(
     mut builder: crate::types::builders::CodeInterpreterNetworkConfigurationBuilder,
 ) -> crate::types::builders::CodeInterpreterNetworkConfigurationBuilder {
@@ -2918,6 +3152,21 @@ pub(crate) fn agent_runtime_endpoint_correct_errors(
     builder
 }
 
+pub(crate) fn agent_runtime_version_summary_correct_errors(
+    mut builder: crate::types::builders::AgentRuntimeVersionSummaryBuilder,
+) -> crate::types::builders::AgentRuntimeVersionSummaryBuilder {
+    if builder.agent_runtime_arn.is_none() {
+        builder.agent_runtime_arn = Some(Default::default())
+    }
+    if builder.agent_runtime_version.is_none() {
+        builder.agent_runtime_version = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AgentRuntimeStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn api_key_credential_provider_item_correct_errors(
     mut builder: crate::types::builders::ApiKeyCredentialProviderItemBuilder,
 ) -> crate::types::builders::ApiKeyCredentialProviderItemBuilder {
@@ -2992,6 +3241,27 @@ pub(crate) fn browser_summary_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn capacity_provider_summary_correct_errors(
+    mut builder: crate::types::builders::CapacityProviderSummaryBuilder,
+) -> crate::types::builders::CapacityProviderSummaryBuilder {
+    if builder.capacity_provider_id.is_none() {
+        builder.capacity_provider_id = Some(Default::default())
+    }
+    if builder.capacity_provider_arn.is_none() {
+        builder.capacity_provider_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CapacityProviderStatus>().ok()
+    }
+    if builder.last_updated_at.is_none() {
+        builder.last_updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -3208,6 +3478,21 @@ pub(crate) fn dataset_version_summary_correct_errors(
     builder
 }
 
+pub(crate) fn ec2_configuration_correct_errors(
+    mut builder: crate::types::builders::Ec2ConfigurationBuilder,
+) -> crate::types::builders::Ec2ConfigurationBuilder {
+    if builder.launch_template_source.is_none() {
+        builder.launch_template_source = Some(crate::types::LaunchTemplateSource::Unknown)
+    }
+    if builder.vpc_configuration.is_none() {
+        builder.vpc_configuration = {
+            let builder = crate::types::builders::VpcConfigurationBuilder::default();
+            crate::serde_util::vpc_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn evaluator_summary_correct_errors(
     mut builder: crate::types::builders::EvaluatorSummaryBuilder,
 ) -> crate::types::builders::EvaluatorSummaryBuilder {
@@ -3252,6 +3537,33 @@ pub(crate) fn gateway_interceptor_configuration_correct_errors(
     }
     if builder.interception_points.is_none() {
         builder.interception_points = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn gateway_rate_limit_detail_correct_errors(
+    mut builder: crate::types::builders::GatewayRateLimitDetailBuilder,
+) -> crate::types::builders::GatewayRateLimitDetailBuilder {
+    if builder.rate_limit_id.is_none() {
+        builder.rate_limit_id = Some(Default::default())
+    }
+    if builder.gateway_identifier.is_none() {
+        builder.gateway_identifier = Some(Default::default())
+    }
+    if builder.dimension_keys.is_none() {
+        builder.dimension_keys = Some(Default::default())
+    }
+    if builder.entries.is_none() {
+        builder.entries = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::GatewayRateLimitStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -3415,6 +3727,13 @@ pub(crate) fn included_oauth2_provider_config_output_correct_errors(
 pub(crate) fn insight_correct_errors(mut builder: crate::types::builders::InsightBuilder) -> crate::types::builders::InsightBuilder {
     if builder.insight_id.is_none() {
         builder.insight_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn limit_entry_correct_errors(mut builder: crate::types::builders::LimitEntryBuilder) -> crate::types::builders::LimitEntryBuilder {
+    if builder.dimensions.is_none() {
+        builder.dimensions = Some(Default::default())
     }
     builder
 }
@@ -4020,6 +4339,18 @@ pub(crate) fn api_gateway_target_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn capacity_provider_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::CapacityProviderVolumeConfigurationBuilder,
+) -> crate::types::builders::CapacityProviderVolumeConfigurationBuilder {
+    if builder.volume_name.is_none() {
+        builder.volume_name = Some(Default::default())
+    }
+    if builder.mount_path.is_none() {
+        builder.mount_path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn connector_target_configuration_correct_errors(
     mut builder: crate::types::builders::ConnectorTargetConfigurationBuilder,
 ) -> crate::types::builders::ConnectorTargetConfigurationBuilder {
@@ -4351,6 +4682,18 @@ pub(crate) fn session_storage_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn vpc_configuration_correct_errors(
+    mut builder: crate::types::builders::VpcConfigurationBuilder,
+) -> crate::types::builders::VpcConfigurationBuilder {
+    if builder.subnets.is_none() {
+        builder.subnets = Some(Default::default())
+    }
+    if builder.security_groups.is_none() {
+        builder.security_groups = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn api_gateway_tool_configuration_correct_errors(
     mut builder: crate::types::builders::ApiGatewayToolConfigurationBuilder,
 ) -> crate::types::builders::ApiGatewayToolConfigurationBuilder {
@@ -4477,6 +4820,21 @@ pub(crate) fn lambda_interceptor_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn launch_parameters_correct_errors(
+    mut builder: crate::types::builders::LaunchParametersBuilder,
+) -> crate::types::builders::LaunchParametersBuilder {
+    if builder.operating_system.is_none() {
+        builder.operating_system = "no value was set".parse::<crate::types::OperatingSystem>().ok()
+    }
+    if builder.instance_requirements.is_none() {
+        builder.instance_requirements = {
+            let builder = crate::types::builders::InstanceRequirementsBuilder::default();
+            crate::serde_util::instance_requirements_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn o_auth_credential_provider_correct_errors(
     mut builder: crate::types::builders::OAuthCredentialProviderBuilder,
 ) -> crate::types::builders::OAuthCredentialProviderBuilder {
@@ -4521,6 +4879,16 @@ pub(crate) fn private_endpoint_override_correct_errors(
     }
     if builder.private_endpoint.is_none() {
         builder.private_endpoint = Some(crate::types::PrivateEndpoint::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn rate_config_correct_errors(mut builder: crate::types::builders::RateConfigBuilder) -> crate::types::builders::RateConfigBuilder {
+    if builder.rate.is_none() {
+        builder.rate = Some(Default::default())
+    }
+    if builder.period.is_none() {
+        builder.period = "no value was set".parse::<crate::types::Period>().ok()
     }
     builder
 }
@@ -4634,6 +5002,18 @@ pub(crate) fn connector_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn ebs_volume_configuration_correct_errors(
+    mut builder: crate::types::builders::EbsVolumeConfigurationBuilder,
+) -> crate::types::builders::EbsVolumeConfigurationBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.size_gib.is_none() {
+        builder.size_gib = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn harness_agent_core_gateway_config_correct_errors(
     mut builder: crate::types::builders::HarnessAgentCoreGatewayConfigBuilder,
 ) -> crate::types::builders::HarnessAgentCoreGatewayConfigBuilder {
@@ -4687,6 +5067,15 @@ pub(crate) fn inference_operation_configuration_correct_errors(
 ) -> crate::types::builders::InferenceOperationConfigurationBuilder {
     if builder.path.is_none() {
         builder.path = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn instance_requirements_correct_errors(
+    mut builder: crate::types::builders::InstanceRequirementsBuilder,
+) -> crate::types::builders::InstanceRequirementsBuilder {
+    if builder.allowed_instance_types.is_none() {
+        builder.allowed_instance_types = Some(Default::default())
     }
     builder
 }
@@ -4787,6 +5176,15 @@ pub(crate) fn invocation_configuration_correct_errors(
     }
     if builder.payload_delivery_bucket_name.is_none() {
         builder.payload_delivery_bucket_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn license_specification_correct_errors(
+    mut builder: crate::types::builders::LicenseSpecificationBuilder,
+) -> crate::types::builders::LicenseSpecificationBuilder {
+    if builder.license_configuration_arn.is_none() {
+        builder.license_configuration_arn = Some(Default::default())
     }
     builder
 }

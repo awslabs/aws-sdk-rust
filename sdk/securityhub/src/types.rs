@@ -235,6 +235,10 @@ pub use crate::types::_connector_summary::ConnectorSummary;
 
 pub use crate::types::_finding_aggregator::FindingAggregator;
 
+pub use crate::types::_free_trial_status_value::FreeTrialStatusValue;
+
+pub use crate::types::_account_free_trial_status::AccountFreeTrialStatus;
+
 pub use crate::types::_admin_account::AdminAccount;
 
 pub use crate::types::_standards_control_association_summary::StandardsControlAssociationSummary;
@@ -437,6 +441,8 @@ pub use crate::types::_configuration_options::ConfigurationOptions;
 
 pub use crate::types::_automation_rules_action_type_object_v2::AutomationRulesActionTypeObjectV2;
 
+pub use crate::types::_free_trial_status::FreeTrialStatus;
+
 pub use crate::types::_malware_type::MalwareType;
 
 pub use crate::types::_malware_state::MalwareState;
@@ -524,6 +530,8 @@ pub use crate::types::_boolean_configuration_options::BooleanConfigurationOption
 pub use crate::types::_enum_configuration_options::EnumConfigurationOptions;
 
 pub use crate::types::_enum_list_configuration_options::EnumListConfigurationOptions;
+
+pub use crate::types::_free_trial_type::FreeTrialType;
 
 pub use crate::types::_network_path_component_details::NetworkPathComponentDetails;
 
@@ -1704,6 +1712,8 @@ pub use crate::types::_rule_group_source_stateless_rule_match_attributes_sources
 pub use crate::types::_rule_group_source_stateless_rule_match_attributes_tcp_flags::RuleGroupSourceStatelessRuleMatchAttributesTcpFlags;
 
 mod _account_details;
+
+mod _account_free_trial_status;
 
 mod _action;
 
@@ -2936,6 +2946,12 @@ mod _firewall_policy_stateful_rule_group_references_details;
 mod _firewall_policy_stateless_custom_actions_details;
 
 mod _firewall_policy_stateless_rule_group_references_details;
+
+mod _free_trial_status;
+
+mod _free_trial_status_value;
+
+mod _free_trial_type;
 
 mod _generator_details;
 
