@@ -107,11 +107,15 @@ pub use crate::types::_fill_policy::FillPolicy;
 
 pub use crate::types::_origin_manifest_type::OriginManifestType;
 
+pub use crate::types::_pre_roll_ad_decision_server_configuration::PreRollAdDecisionServerConfiguration;
+
 pub use crate::types::_ad_marker_passthrough::AdMarkerPassthrough;
 
 pub use crate::types::_streaming_media_file_conditioning::StreamingMediaFileConditioning;
 
 pub use crate::types::_http_request::HttpRequest;
+
+pub use crate::types::_vast_response::VastResponse;
 
 pub use crate::types::_event_name::EventName;
 
@@ -167,9 +171,13 @@ pub use crate::types::_function_ref::FunctionRef;
 
 pub use crate::types::_type_::Type;
 
+pub use crate::types::_pre_roll_vast_response::PreRollVastResponse;
+
 pub use crate::types::_method::Method;
 
 pub use crate::types::_compression_method::CompressionMethod;
+
+pub use crate::types::_ad_sequencing_mode::AdSequencingMode;
 
 pub use crate::types::_avail_matching_criteria::AvailMatchingCriteria;
 
@@ -182,6 +190,8 @@ pub use crate::types::_time_signal_message::TimeSignalMessage;
 pub use crate::types::_relative_position::RelativePosition;
 
 pub use crate::types::_schedule_ad_break::ScheduleAdBreak;
+
+pub use crate::types::_pre_roll_ad_sequencing_mode::PreRollAdSequencingMode;
 
 pub use crate::types::_operator::Operator;
 
@@ -208,6 +218,8 @@ mod _ad_decision_server_configuration;
 mod _ad_marker_passthrough;
 
 mod _ad_markup_type;
+
+mod _ad_sequencing_mode;
 
 mod _ads_interaction_exclude_event_type;
 
@@ -319,6 +331,12 @@ mod _playback_configuration;
 
 mod _playback_mode;
 
+mod _pre_roll_ad_decision_server_configuration;
+
+mod _pre_roll_ad_sequencing_mode;
+
+mod _pre_roll_vast_response;
+
 mod _prefetch_consumption;
 
 mod _prefetch_retrieval;
@@ -384,6 +402,8 @@ mod _type_;
 mod _update_program_schedule_configuration;
 
 mod _update_program_transition;
+
+mod _vast_response;
 
 mod _vod_source;
 

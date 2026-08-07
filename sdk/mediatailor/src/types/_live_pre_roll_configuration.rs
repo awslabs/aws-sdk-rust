@@ -8,6 +8,8 @@ pub struct LivePreRollConfiguration {
     pub ad_decision_server_url: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.</p>
     pub max_duration_seconds: ::std::option::Option<i32>,
+    /// <p>The configuration for the ad decision server (ADS) for live pre-roll ads. The configuration contains settings that control how MediaTailor processes VAST responses for pre-roll ad breaks.</p>
+    pub ad_decision_server_configuration: ::std::option::Option<crate::types::PreRollAdDecisionServerConfiguration>,
 }
 impl LivePreRollConfiguration {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -17,6 +19,10 @@ impl LivePreRollConfiguration {
     /// <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.</p>
     pub fn max_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.max_duration_seconds
+    }
+    /// <p>The configuration for the ad decision server (ADS) for live pre-roll ads. The configuration contains settings that control how MediaTailor processes VAST responses for pre-roll ad breaks.</p>
+    pub fn ad_decision_server_configuration(&self) -> ::std::option::Option<&crate::types::PreRollAdDecisionServerConfiguration> {
+        self.ad_decision_server_configuration.as_ref()
     }
 }
 impl LivePreRollConfiguration {
@@ -32,6 +38,7 @@ impl LivePreRollConfiguration {
 pub struct LivePreRollConfigurationBuilder {
     pub(crate) ad_decision_server_url: ::std::option::Option<::std::string::String>,
     pub(crate) max_duration_seconds: ::std::option::Option<i32>,
+    pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::PreRollAdDecisionServerConfiguration>,
 }
 impl LivePreRollConfigurationBuilder {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -62,11 +69,26 @@ impl LivePreRollConfigurationBuilder {
     pub fn get_max_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.max_duration_seconds
     }
+    /// <p>The configuration for the ad decision server (ADS) for live pre-roll ads. The configuration contains settings that control how MediaTailor processes VAST responses for pre-roll ad breaks.</p>
+    pub fn ad_decision_server_configuration(mut self, input: crate::types::PreRollAdDecisionServerConfiguration) -> Self {
+        self.ad_decision_server_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the ad decision server (ADS) for live pre-roll ads. The configuration contains settings that control how MediaTailor processes VAST responses for pre-roll ad breaks.</p>
+    pub fn set_ad_decision_server_configuration(mut self, input: ::std::option::Option<crate::types::PreRollAdDecisionServerConfiguration>) -> Self {
+        self.ad_decision_server_configuration = input;
+        self
+    }
+    /// <p>The configuration for the ad decision server (ADS) for live pre-roll ads. The configuration contains settings that control how MediaTailor processes VAST responses for pre-roll ad breaks.</p>
+    pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::PreRollAdDecisionServerConfiguration> {
+        &self.ad_decision_server_configuration
+    }
     /// Consumes the builder and constructs a [`LivePreRollConfiguration`](crate::types::LivePreRollConfiguration).
     pub fn build(self) -> crate::types::LivePreRollConfiguration {
         crate::types::LivePreRollConfiguration {
             ad_decision_server_url: self.ad_decision_server_url,
             max_duration_seconds: self.max_duration_seconds,
+            ad_decision_server_configuration: self.ad_decision_server_configuration,
         }
     }
 }

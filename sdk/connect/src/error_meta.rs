@@ -13,7 +13,7 @@ pub enum Error {
     ContactFlowNotPublishedException(crate::types::error::ContactFlowNotPublishedException),
     /// <p>The contact with the specified ID does not exist.</p>
     ContactNotFoundException(crate::types::error::ContactNotFoundException),
-    /// <p>The contact has not been disconnected and is not in a terminated state. PII can be deleted only from a contact that has been disconnected. This error is returned with an HTTP 409 status code.</p>
+    /// <p>The contact has not been disconnected and is not in a terminated state. To delete PII, disconnect the contact first. Wait for it to reach the terminated state, then retry the request.</p>
     ContactNotTerminatedException(crate::types::error::ContactNotTerminatedException),
     /// <p>Outbound calls to the destination number are not allowed.</p>
     DestinationNotAllowedException(crate::types::error::DestinationNotAllowedException),
@@ -12257,6 +12257,51 @@ impl From<crate::operation::update_contact_schedule::UpdateContactScheduleError>
             }
             crate::operation::update_contact_schedule::UpdateContactScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_contact_schedule::UpdateContactScheduleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_contact_task_template::UpdateContactTaskTemplateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_contact_task_template::UpdateContactTaskTemplateError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_contact_task_template::UpdateContactTaskTemplateError> for Error {
+    fn from(err: crate::operation::update_contact_task_template::UpdateContactTaskTemplateError) -> Self {
+        match err {
+            crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::PropertyValidationException(inner) => {
+                Error::PropertyValidationException(inner)
+            }
+            crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -6,11 +6,17 @@
 pub struct AdDecisionServerConfiguration {
     /// <p>The HTTP request configuration parameters for the ad decision server.</p>
     pub http_request: ::std::option::Option<crate::types::HttpRequest>,
+    /// <p>The settings that control how MediaTailor processes VAST responses from the ad decision server.</p>
+    pub vast_response: ::std::option::Option<crate::types::VastResponse>,
 }
 impl AdDecisionServerConfiguration {
     /// <p>The HTTP request configuration parameters for the ad decision server.</p>
     pub fn http_request(&self) -> ::std::option::Option<&crate::types::HttpRequest> {
         self.http_request.as_ref()
+    }
+    /// <p>The settings that control how MediaTailor processes VAST responses from the ad decision server.</p>
+    pub fn vast_response(&self) -> ::std::option::Option<&crate::types::VastResponse> {
+        self.vast_response.as_ref()
     }
 }
 impl AdDecisionServerConfiguration {
@@ -25,6 +31,7 @@ impl AdDecisionServerConfiguration {
 #[non_exhaustive]
 pub struct AdDecisionServerConfigurationBuilder {
     pub(crate) http_request: ::std::option::Option<crate::types::HttpRequest>,
+    pub(crate) vast_response: ::std::option::Option<crate::types::VastResponse>,
 }
 impl AdDecisionServerConfigurationBuilder {
     /// <p>The HTTP request configuration parameters for the ad decision server.</p>
@@ -41,10 +48,25 @@ impl AdDecisionServerConfigurationBuilder {
     pub fn get_http_request(&self) -> &::std::option::Option<crate::types::HttpRequest> {
         &self.http_request
     }
+    /// <p>The settings that control how MediaTailor processes VAST responses from the ad decision server.</p>
+    pub fn vast_response(mut self, input: crate::types::VastResponse) -> Self {
+        self.vast_response = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings that control how MediaTailor processes VAST responses from the ad decision server.</p>
+    pub fn set_vast_response(mut self, input: ::std::option::Option<crate::types::VastResponse>) -> Self {
+        self.vast_response = input;
+        self
+    }
+    /// <p>The settings that control how MediaTailor processes VAST responses from the ad decision server.</p>
+    pub fn get_vast_response(&self) -> &::std::option::Option<crate::types::VastResponse> {
+        &self.vast_response
+    }
     /// Consumes the builder and constructs a [`AdDecisionServerConfiguration`](crate::types::AdDecisionServerConfiguration).
     pub fn build(self) -> crate::types::AdDecisionServerConfiguration {
         crate::types::AdDecisionServerConfiguration {
             http_request: self.http_request,
+            vast_response: self.vast_response,
         }
     }
 }

@@ -32,6 +32,8 @@ pub struct OriginEndpointListConfiguration {
     pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     /// <p>The separator character used in generated URIs for this origin endpoint.</p>
     pub uri_separator: ::std::option::Option<crate::types::UriSeparator>,
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub stream_name_output_mode: ::std::option::Option<crate::types::StreamNameOutputMode>,
 }
 impl OriginEndpointListConfiguration {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -102,6 +104,10 @@ impl OriginEndpointListConfiguration {
     pub fn uri_separator(&self) -> ::std::option::Option<&crate::types::UriSeparator> {
         self.uri_separator.as_ref()
     }
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub fn stream_name_output_mode(&self) -> ::std::option::Option<&crate::types::StreamNameOutputMode> {
+        self.stream_name_output_mode.as_ref()
+    }
 }
 impl OriginEndpointListConfiguration {
     /// Creates a new builder-style object to manufacture [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
@@ -128,6 +134,7 @@ pub struct OriginEndpointListConfigurationBuilder {
     pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::ListMssManifestConfiguration>>,
     pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     pub(crate) uri_separator: ::std::option::Option<crate::types::UriSeparator>,
+    pub(crate) stream_name_output_mode: ::std::option::Option<crate::types::StreamNameOutputMode>,
 }
 impl OriginEndpointListConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with the resource.</p>
@@ -358,6 +365,20 @@ impl OriginEndpointListConfigurationBuilder {
     pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
         &self.uri_separator
     }
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub fn stream_name_output_mode(mut self, input: crate::types::StreamNameOutputMode) -> Self {
+        self.stream_name_output_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub fn set_stream_name_output_mode(mut self, input: ::std::option::Option<crate::types::StreamNameOutputMode>) -> Self {
+        self.stream_name_output_mode = input;
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub fn get_stream_name_output_mode(&self) -> &::std::option::Option<crate::types::StreamNameOutputMode> {
+        &self.stream_name_output_mode
+    }
     /// Consumes the builder and constructs a [`OriginEndpointListConfiguration`](crate::types::OriginEndpointListConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::types::builders::OriginEndpointListConfigurationBuilder::arn)
@@ -406,6 +427,7 @@ impl OriginEndpointListConfigurationBuilder {
             mss_manifests: self.mss_manifests,
             force_endpoint_error_configuration: self.force_endpoint_error_configuration,
             uri_separator: self.uri_separator,
+            stream_name_output_mode: self.stream_name_output_mode,
         })
     }
 }

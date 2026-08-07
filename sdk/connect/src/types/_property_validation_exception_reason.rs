@@ -17,6 +17,7 @@
 ///     PropertyValidationExceptionReason::ReferencedResourceNotFound => { /* ... */ },
 ///     PropertyValidationExceptionReason::RequiredPropertyMissing => { /* ... */ },
 ///     PropertyValidationExceptionReason::ResourceNameAlreadyExists => { /* ... */ },
+///     PropertyValidationExceptionReason::TypeMismatch => { /* ... */ },
 ///     PropertyValidationExceptionReason::UniqueConstraintViolated => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum PropertyValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     ResourceNameAlreadyExists,
     #[allow(missing_docs)] // documentation missing in model
+    TypeMismatch,
+    #[allow(missing_docs)] // documentation missing in model
     UniqueConstraintViolated,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for PropertyValidationExceptionReason {
             "REFERENCED_RESOURCE_NOT_FOUND" => PropertyValidationExceptionReason::ReferencedResourceNotFound,
             "REQUIRED_PROPERTY_MISSING" => PropertyValidationExceptionReason::RequiredPropertyMissing,
             "RESOURCE_NAME_ALREADY_EXISTS" => PropertyValidationExceptionReason::ResourceNameAlreadyExists,
+            "TYPE_MISMATCH" => PropertyValidationExceptionReason::TypeMismatch,
             "UNIQUE_CONSTRAINT_VIOLATED" => PropertyValidationExceptionReason::UniqueConstraintViolated,
             other => PropertyValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -91,6 +95,7 @@ impl PropertyValidationExceptionReason {
             PropertyValidationExceptionReason::ReferencedResourceNotFound => "REFERENCED_RESOURCE_NOT_FOUND",
             PropertyValidationExceptionReason::RequiredPropertyMissing => "REQUIRED_PROPERTY_MISSING",
             PropertyValidationExceptionReason::ResourceNameAlreadyExists => "RESOURCE_NAME_ALREADY_EXISTS",
+            PropertyValidationExceptionReason::TypeMismatch => "TYPE_MISMATCH",
             PropertyValidationExceptionReason::UniqueConstraintViolated => "UNIQUE_CONSTRAINT_VIOLATED",
             PropertyValidationExceptionReason::Unknown(value) => value.as_str(),
         }
@@ -103,6 +108,7 @@ impl PropertyValidationExceptionReason {
             "REFERENCED_RESOURCE_NOT_FOUND",
             "REQUIRED_PROPERTY_MISSING",
             "RESOURCE_NAME_ALREADY_EXISTS",
+            "TYPE_MISMATCH",
             "UNIQUE_CONSTRAINT_VIOLATED",
         ]
     }
@@ -132,6 +138,7 @@ impl ::std::fmt::Display for PropertyValidationExceptionReason {
             PropertyValidationExceptionReason::ReferencedResourceNotFound => write!(f, "REFERENCED_RESOURCE_NOT_FOUND"),
             PropertyValidationExceptionReason::RequiredPropertyMissing => write!(f, "REQUIRED_PROPERTY_MISSING"),
             PropertyValidationExceptionReason::ResourceNameAlreadyExists => write!(f, "RESOURCE_NAME_ALREADY_EXISTS"),
+            PropertyValidationExceptionReason::TypeMismatch => write!(f, "TYPE_MISMATCH"),
             PropertyValidationExceptionReason::UniqueConstraintViolated => write!(f, "UNIQUE_CONSTRAINT_VIOLATED"),
             PropertyValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }

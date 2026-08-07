@@ -39,5 +39,8 @@ pub fn ser_start_fhir_import_job_input_input(
     if let Some(var_12) = &input.drift_detection_enabled {
         object.key("DriftDetectionEnabled").boolean(*var_12);
     }
+    if let Some(var_13) = &input.provenance_enabled {
+        object.key("ProvenanceEnabled").boolean(*var_13);
+    }
     Ok(())
 }

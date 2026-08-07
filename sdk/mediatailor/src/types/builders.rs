@@ -79,9 +79,13 @@ pub use crate::types::_http_package_configuration::HttpPackageConfigurationBuild
 
 pub use crate::types::_playback_configuration::PlaybackConfigurationBuilder;
 
+pub use crate::types::_pre_roll_ad_decision_server_configuration::PreRollAdDecisionServerConfigurationBuilder;
+
 pub use crate::types::_ad_marker_passthrough::AdMarkerPassthroughBuilder;
 
 pub use crate::types::_http_request::HttpRequestBuilder;
+
+pub use crate::types::_vast_response::VastResponseBuilder;
 
 pub use crate::types::_prefetch_schedule::PrefetchScheduleBuilder;
 
@@ -116,6 +120,8 @@ pub use crate::types::_dash_playlist_settings::DashPlaylistSettingsBuilder;
 pub use crate::types::_hls_playlist_settings::HlsPlaylistSettingsBuilder;
 
 pub use crate::types::_function_ref::FunctionRefBuilder;
+
+pub use crate::types::_pre_roll_vast_response::PreRollVastResponseBuilder;
 
 pub use crate::types::_avail_matching_criteria::AvailMatchingCriteriaBuilder;
 

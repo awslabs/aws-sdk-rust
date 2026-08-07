@@ -69,6 +69,8 @@ pub use crate::types::_vpc_attachment::VpcAttachment;
 
 pub use crate::types::_client_vpn_authorization_rule_status::ClientVpnAuthorizationRuleStatus;
 
+pub use crate::types::_ipam_routing_policy_registration_delta::IpamRoutingPolicyRegistrationDelta;
+
 pub use crate::types::_storage::Storage;
 
 pub use crate::types::_bundle_task::BundleTask;
@@ -200,6 +202,10 @@ pub use crate::types::_ipam_metered_account::IpamMeteredAccount;
 pub use crate::types::_ipam::Ipam;
 
 pub use crate::types::_ipam_external_resource_verification_token::IpamExternalResourceVerificationToken;
+
+pub use crate::types::_rir::Rir;
+
+pub use crate::types::_ipam_internet_registry_association::IpamInternetRegistryAssociation;
 
 pub use crate::types::_ipam_policy::IpamPolicy;
 
@@ -603,6 +609,8 @@ pub use crate::types::_ipam_resource_type::IpamResourceType;
 
 pub use crate::types::_request_ipam_resource_tag::RequestIpamResourceTag;
 
+pub use crate::types::_chronological_order::ChronologicalOrder;
+
 pub use crate::types::_response_launch_template_data::ResponseLaunchTemplateData;
 
 pub use crate::types::_managed_resource_visibility_settings::ManagedResourceVisibilitySettings;
@@ -919,6 +927,8 @@ pub use crate::types::_ip_permission::IpPermission;
 
 pub use crate::types::_security_group_rule::SecurityGroupRule;
 
+pub use crate::types::_ipam_routing_policy_registration_delta_state::IpamRoutingPolicyRegistrationDeltaState;
+
 pub use crate::types::_s3_storage::S3Storage;
 
 pub use crate::types::_bundle_task_state::BundleTaskState;
@@ -1026,6 +1036,8 @@ pub use crate::types::_ipam_state::IpamState;
 pub use crate::types::_token_state::TokenState;
 
 pub use crate::types::_ipam_external_resource_verification_token_state::IpamExternalResourceVerificationTokenState;
+
+pub use crate::types::_ipam_internet_registry_association_state::IpamInternetRegistryAssociationState;
 
 pub use crate::types::_ipam_policy_state::IpamPolicyState;
 
@@ -1597,6 +1609,12 @@ pub use crate::types::_ipam_discovered_public_address::IpamDiscoveredPublicAddre
 
 pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidr;
 
+pub use crate::types::_ipam_discovered_route::IpamDiscoveredRoute;
+
+pub use crate::types::_ipam_internet_registry_association_asn::IpamInternetRegistryAssociationAsn;
+
+pub use crate::types::_ipam_internet_registry_association_cidr::IpamInternetRegistryAssociationCidr;
+
 pub use crate::types::_ipam_policy_organization_target::IpamPolicyOrganizationTarget;
 
 pub use crate::types::_ipam_prefix_list_resolver_rule::IpamPrefixListResolverRule;
@@ -1604,6 +1622,12 @@ pub use crate::types::_ipam_prefix_list_resolver_rule::IpamPrefixListResolverRul
 pub use crate::types::_ipam_prefix_list_resolver_version_entry::IpamPrefixListResolverVersionEntry;
 
 pub use crate::types::_ipam_prefix_list_resolver_version::IpamPrefixListResolverVersion;
+
+pub use crate::types::_ipam_route_origin_authorization_info::IpamRouteOriginAuthorizationInfo;
+
+pub use crate::types::_ipam_route_protection_finding::IpamRouteProtectionFinding;
+
+pub use crate::types::_ipam_routing_policy_registration::IpamRoutingPolicyRegistration;
 
 pub use crate::types::_launch_template_iam_instance_profile_specification::LaunchTemplateIamInstanceProfileSpecification;
 
@@ -2229,6 +2253,16 @@ pub use crate::types::_ipam_resource_cidr_ip_source::IpamResourceCidrIpSource;
 
 pub use crate::types::_ipam_network_interface_attachment_status::IpamNetworkInterfaceAttachmentStatus;
 
+pub use crate::types::_ipam_byoip_cidr_state::IpamByoipCidrState;
+
+pub use crate::types::_ipam_byoip_advertisement_type::IpamByoipAdvertisementType;
+
+pub use crate::types::_ipam_rpki_status::IpamRpkiStatus;
+
+pub use crate::types::_ipam_rpki_strength::IpamRpkiStrength;
+
+pub use crate::types::_ipam_routing_policy_registration_state::IpamRoutingPolicyRegistrationState;
+
 pub use crate::types::_launch_template_block_device_mapping::LaunchTemplateBlockDeviceMapping;
 
 pub use crate::types::_launch_template_instance_network_interface_specification::LaunchTemplateInstanceNetworkInterfaceSpecification;
@@ -2568,6 +2602,10 @@ pub use crate::types::_ipam_discovery_failure_code::IpamDiscoveryFailureCode;
 pub use crate::types::_ipam_public_address_security_group::IpamPublicAddressSecurityGroup;
 
 pub use crate::types::_ipam_prefix_list_resolver_rule_condition::IpamPrefixListResolverRuleCondition;
+
+pub use crate::types::_ipam_route_origin_authorization::IpamRouteOriginAuthorization;
+
+pub use crate::types::_ipam_route_overlap::IpamRouteOverlap;
 
 pub use crate::types::_launch_template_ebs_block_device::LaunchTemplateEbsBlockDevice;
 
@@ -3178,6 +3216,8 @@ mod _carrier_gateway_state;
 mod _certificate_authentication;
 
 mod _certificate_authentication_request;
+
+mod _chronological_order;
 
 mod _cidr_authorization_context;
 
@@ -4051,6 +4091,10 @@ mod _ipam_address_history_resource_type;
 
 mod _ipam_associated_resource_discovery_status;
 
+mod _ipam_byoip_advertisement_type;
+
+mod _ipam_byoip_cidr_state;
+
 mod _ipam_cidr_authorization_context;
 
 mod _ipam_compliance_status;
@@ -4061,6 +4105,8 @@ mod _ipam_discovered_public_address;
 
 mod _ipam_discovered_resource_cidr;
 
+mod _ipam_discovered_route;
+
 mod _ipam_discovery_failure_code;
 
 mod _ipam_discovery_failure_reason;
@@ -4068,6 +4114,14 @@ mod _ipam_discovery_failure_reason;
 mod _ipam_external_resource_verification_token;
 
 mod _ipam_external_resource_verification_token_state;
+
+mod _ipam_internet_registry_association;
+
+mod _ipam_internet_registry_association_asn;
+
+mod _ipam_internet_registry_association_cidr;
+
+mod _ipam_internet_registry_association_state;
 
 mod _ipam_management_state;
 
@@ -4176,6 +4230,26 @@ mod _ipam_resource_discovery_state;
 mod _ipam_resource_tag;
 
 mod _ipam_resource_type;
+
+mod _ipam_route_origin_authorization;
+
+mod _ipam_route_origin_authorization_info;
+
+mod _ipam_route_overlap;
+
+mod _ipam_route_protection_finding;
+
+mod _ipam_routing_policy_registration;
+
+mod _ipam_routing_policy_registration_delta;
+
+mod _ipam_routing_policy_registration_delta_state;
+
+mod _ipam_routing_policy_registration_state;
+
+mod _ipam_rpki_status;
+
+mod _ipam_rpki_strength;
 
 mod _ipam_scope;
 
@@ -4848,6 +4922,8 @@ mod _response_launch_template_data;
 mod _revoked_security_group_rule;
 
 mod _ri_product_description;
+
+mod _rir;
 
 mod _root_device_type;
 

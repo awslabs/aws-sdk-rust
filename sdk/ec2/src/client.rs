@@ -497,6 +497,8 @@ mod authorize_security_group_egress;
 
 mod authorize_security_group_ingress;
 
+mod batch_modify_ipam_routing_policy_registrations;
+
 mod bundle_instance;
 
 mod cancel_bundle_task;
@@ -589,6 +591,8 @@ mod create_ipam;
 
 mod create_ipam_external_resource_verification_token;
 
+mod create_ipam_internet_registry_association;
+
 mod create_ipam_policy;
 
 mod create_ipam_pool;
@@ -598,6 +602,8 @@ mod create_ipam_prefix_list_resolver;
 mod create_ipam_prefix_list_resolver_target;
 
 mod create_ipam_resource_discovery;
+
+mod create_ipam_routing_policy_registration;
 
 mod create_ipam_scope;
 
@@ -810,6 +816,8 @@ mod delete_ipam;
 
 mod delete_ipam_external_resource_verification_token;
 
+mod delete_ipam_internet_registry_association;
+
 mod delete_ipam_policy;
 
 mod delete_ipam_pool;
@@ -819,6 +827,8 @@ mod delete_ipam_prefix_list_resolver;
 mod delete_ipam_prefix_list_resolver_target;
 
 mod delete_ipam_resource_discovery;
+
+mod delete_ipam_routing_policy_registration;
 
 mod delete_ipam_scope;
 
@@ -1131,6 +1141,8 @@ mod describe_internet_gateways;
 mod describe_ipam_byoasn;
 
 mod describe_ipam_external_resource_verification_tokens;
+
+mod describe_ipam_internet_registry_associations;
 
 mod describe_ipam_policies;
 
@@ -1482,6 +1494,8 @@ mod enable_image_deregistration_protection;
 
 mod enable_instance_sql_ha_standby_detections;
 
+mod enable_ipam_internet_registry_association;
+
 mod enable_ipam_organization_admin_account;
 
 mod enable_ipam_policy;
@@ -1576,6 +1590,12 @@ mod get_ipam_discovered_public_addresses;
 
 mod get_ipam_discovered_resource_cidrs;
 
+mod get_ipam_discovered_routes;
+
+mod get_ipam_internet_registry_association_asns;
+
+mod get_ipam_internet_registry_association_cidrs;
+
 mod get_ipam_policy_allocation_rules;
 
 mod get_ipam_policy_organization_targets;
@@ -1591,6 +1611,14 @@ mod get_ipam_prefix_list_resolver_version_entries;
 mod get_ipam_prefix_list_resolver_versions;
 
 mod get_ipam_resource_cidrs;
+
+mod get_ipam_route_origin_authorizations;
+
+mod get_ipam_route_protection_findings;
+
+mod get_ipam_routing_policy_registration_deltas;
+
+mod get_ipam_routing_policy_registrations;
 
 mod get_launch_template_data;
 
@@ -1743,6 +1771,8 @@ mod modify_ipam_prefix_list_resolver_target;
 mod modify_ipam_resource_cidr;
 
 mod modify_ipam_resource_discovery;
+
+mod modify_ipam_routing_policy_registration;
 
 mod modify_ipam_scope;
 

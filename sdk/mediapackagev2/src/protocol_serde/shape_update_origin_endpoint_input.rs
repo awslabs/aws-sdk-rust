@@ -78,8 +78,11 @@ pub fn ser_update_origin_endpoint_input_input(
             ::aws_smithy_types::Number::NegInt((*var_23).into()),
         );
     }
-    if let Some(var_24) = &input.uri_separator {
-        object.key("UriSeparator").string(var_24.as_str());
+    if let Some(var_24) = &input.stream_name_output_mode {
+        object.key("StreamNameOutputMode").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.uri_separator {
+        object.key("UriSeparator").string(var_25.as_str());
     }
     Ok(())
 }

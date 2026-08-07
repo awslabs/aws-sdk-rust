@@ -248,4 +248,18 @@ impl StartFHIRImportJobFluentBuilder {
     pub fn get_drift_detection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_drift_detection_enabled()
     }
+    /// <p>Specifies whether to enable provenance for the import job.</p>
+    pub fn provenance_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.provenance_enabled(input);
+        self
+    }
+    /// <p>Specifies whether to enable provenance for the import job.</p>
+    pub fn set_provenance_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_provenance_enabled(input);
+        self
+    }
+    /// <p>Specifies whether to enable provenance for the import job.</p>
+    pub fn get_provenance_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_provenance_enabled()
+    }
 }

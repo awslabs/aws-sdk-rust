@@ -23,7 +23,7 @@ impl crate::operation::start_attached_file_upload::builders::StartAttachedFileUp
 /// Fluent builder constructing a request to `StartAttachedFileUpload`.
 ///
 /// <p>Provides a pre-signed Amazon S3 URL in response for uploading your content.</p><important>
-/// <p>You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect Customer Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect Customer Email</a>.</p>
+/// <p>You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect Customer Case</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect Customer Email</a>, or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Connect Customer Task</a>.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAttachedFileUploadFluentBuilder {
@@ -200,21 +200,21 @@ impl StartAttachedFileUploadFluentBuilder {
     pub fn get_file_use_case_type(&self) -> &::std::option::Option<crate::types::FileUseCaseType> {
         self.inner.get_file_use_case_type()
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>, and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn associated_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.associated_resource_arn(input.into());
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>, and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn set_associated_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_associated_resource_arn(input);
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.</p><note>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>, and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.</p><note>
     /// <p>This value must be a valid ARN.</p>
     /// </note>
     pub fn get_associated_resource_arn(&self) -> &::std::option::Option<::std::string::String> {

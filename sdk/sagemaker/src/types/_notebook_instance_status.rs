@@ -14,8 +14,10 @@
 /// match notebookinstancestatus {
 ///     NotebookInstanceStatus::Deleting => { /* ... */ },
 ///     NotebookInstanceStatus::Failed => { /* ... */ },
+///     NotebookInstanceStatus::InMaintenance => { /* ... */ },
 ///     NotebookInstanceStatus::InService => { /* ... */ },
 ///     NotebookInstanceStatus::Pending => { /* ... */ },
+///     NotebookInstanceStatus::PendingMaintenance => { /* ... */ },
 ///     NotebookInstanceStatus::Stopped => { /* ... */ },
 ///     NotebookInstanceStatus::Stopping => { /* ... */ },
 ///     NotebookInstanceStatus::Updating => { /* ... */ },
@@ -52,9 +54,13 @@ pub enum NotebookInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    InMaintenance,
+    #[allow(missing_docs)] // documentation missing in model
     InService,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingMaintenance,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
     #[allow(missing_docs)] // documentation missing in model
@@ -70,8 +76,10 @@ impl ::std::convert::From<&str> for NotebookInstanceStatus {
         match s {
             "Deleting" => NotebookInstanceStatus::Deleting,
             "Failed" => NotebookInstanceStatus::Failed,
+            "InMaintenance" => NotebookInstanceStatus::InMaintenance,
             "InService" => NotebookInstanceStatus::InService,
             "Pending" => NotebookInstanceStatus::Pending,
+            "PendingMaintenance" => NotebookInstanceStatus::PendingMaintenance,
             "Stopped" => NotebookInstanceStatus::Stopped,
             "Stopping" => NotebookInstanceStatus::Stopping,
             "Updating" => NotebookInstanceStatus::Updating,
@@ -92,8 +100,10 @@ impl NotebookInstanceStatus {
         match self {
             NotebookInstanceStatus::Deleting => "Deleting",
             NotebookInstanceStatus::Failed => "Failed",
+            NotebookInstanceStatus::InMaintenance => "InMaintenance",
             NotebookInstanceStatus::InService => "InService",
             NotebookInstanceStatus::Pending => "Pending",
+            NotebookInstanceStatus::PendingMaintenance => "PendingMaintenance",
             NotebookInstanceStatus::Stopped => "Stopped",
             NotebookInstanceStatus::Stopping => "Stopping",
             NotebookInstanceStatus::Updating => "Updating",
@@ -102,7 +112,17 @@ impl NotebookInstanceStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Deleting", "Failed", "InService", "Pending", "Stopped", "Stopping", "Updating"]
+        &[
+            "Deleting",
+            "Failed",
+            "InMaintenance",
+            "InService",
+            "Pending",
+            "PendingMaintenance",
+            "Stopped",
+            "Stopping",
+            "Updating",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for NotebookInstanceStatus {
@@ -127,8 +147,10 @@ impl ::std::fmt::Display for NotebookInstanceStatus {
         match self {
             NotebookInstanceStatus::Deleting => write!(f, "Deleting"),
             NotebookInstanceStatus::Failed => write!(f, "Failed"),
+            NotebookInstanceStatus::InMaintenance => write!(f, "InMaintenance"),
             NotebookInstanceStatus::InService => write!(f, "InService"),
             NotebookInstanceStatus::Pending => write!(f, "Pending"),
+            NotebookInstanceStatus::PendingMaintenance => write!(f, "PendingMaintenance"),
             NotebookInstanceStatus::Stopped => write!(f, "Stopped"),
             NotebookInstanceStatus::Stopping => write!(f, "Stopping"),
             NotebookInstanceStatus::Updating => write!(f, "Updating"),

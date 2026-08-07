@@ -57,6 +57,8 @@ pub use crate::types::_vpc_attachment::VpcAttachmentBuilder;
 
 pub use crate::types::_client_vpn_authorization_rule_status::ClientVpnAuthorizationRuleStatusBuilder;
 
+pub use crate::types::_ipam_routing_policy_registration_delta::IpamRoutingPolicyRegistrationDeltaBuilder;
+
 pub use crate::types::_storage::StorageBuilder;
 
 pub use crate::types::_bundle_task::BundleTaskBuilder;
@@ -122,6 +124,8 @@ pub use crate::types::_internet_gateway::InternetGatewayBuilder;
 pub use crate::types::_ipam::IpamBuilder;
 
 pub use crate::types::_ipam_external_resource_verification_token::IpamExternalResourceVerificationTokenBuilder;
+
+pub use crate::types::_ipam_internet_registry_association::IpamInternetRegistryAssociationBuilder;
 
 pub use crate::types::_ipam_policy::IpamPolicyBuilder;
 
@@ -1021,6 +1025,12 @@ pub use crate::types::_ipam_discovered_public_address::IpamDiscoveredPublicAddre
 
 pub use crate::types::_ipam_discovered_resource_cidr::IpamDiscoveredResourceCidrBuilder;
 
+pub use crate::types::_ipam_discovered_route::IpamDiscoveredRouteBuilder;
+
+pub use crate::types::_ipam_internet_registry_association_asn::IpamInternetRegistryAssociationAsnBuilder;
+
+pub use crate::types::_ipam_internet_registry_association_cidr::IpamInternetRegistryAssociationCidrBuilder;
+
 pub use crate::types::_ipam_policy_organization_target::IpamPolicyOrganizationTargetBuilder;
 
 pub use crate::types::_ipam_prefix_list_resolver_rule::IpamPrefixListResolverRuleBuilder;
@@ -1028,6 +1038,12 @@ pub use crate::types::_ipam_prefix_list_resolver_rule::IpamPrefixListResolverRul
 pub use crate::types::_ipam_prefix_list_resolver_version_entry::IpamPrefixListResolverVersionEntryBuilder;
 
 pub use crate::types::_ipam_prefix_list_resolver_version::IpamPrefixListResolverVersionBuilder;
+
+pub use crate::types::_ipam_route_origin_authorization_info::IpamRouteOriginAuthorizationInfoBuilder;
+
+pub use crate::types::_ipam_route_protection_finding::IpamRouteProtectionFindingBuilder;
+
+pub use crate::types::_ipam_routing_policy_registration::IpamRoutingPolicyRegistrationBuilder;
 
 pub use crate::types::_launch_template_iam_instance_profile_specification::LaunchTemplateIamInstanceProfileSpecificationBuilder;
 
@@ -1684,6 +1700,10 @@ pub use crate::types::_regional_summary::RegionalSummaryBuilder;
 pub use crate::types::_ipam_public_address_security_group::IpamPublicAddressSecurityGroupBuilder;
 
 pub use crate::types::_ipam_prefix_list_resolver_rule_condition::IpamPrefixListResolverRuleConditionBuilder;
+
+pub use crate::types::_ipam_route_origin_authorization::IpamRouteOriginAuthorizationBuilder;
+
+pub use crate::types::_ipam_route_overlap::IpamRouteOverlapBuilder;
 
 pub use crate::types::_launch_template_ebs_block_device::LaunchTemplateEbsBlockDeviceBuilder;
 

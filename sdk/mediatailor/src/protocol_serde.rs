@@ -319,6 +319,8 @@ pub(crate) mod shape_manifest_service_publish_opt_in_event_types_list;
 
 pub(crate) mod shape_playback_configuration;
 
+pub(crate) mod shape_pre_roll_ad_decision_server_configuration;
+
 pub(crate) mod shape_prefetch_schedule;
 
 pub(crate) mod shape_recurring_consumption;
@@ -345,6 +347,8 @@ pub(crate) mod shape_transition;
 
 pub(crate) mod shape_update_program_transition;
 
+pub(crate) mod shape_vast_response;
+
 pub(crate) mod shape_vod_source;
 
 pub(crate) mod shape_ad_break_metadata_list;
@@ -354,6 +358,8 @@ pub(crate) mod shape_list_of_alternate_media;
 pub(crate) mod shape_list_of_schedule_ad_break;
 
 pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_pre_roll_vast_response;
 
 pub(crate) mod shape_segmentation_descriptor;
 

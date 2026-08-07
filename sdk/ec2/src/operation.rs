@@ -142,6 +142,9 @@ pub mod authorize_security_group_egress;
 /// Types for the `AuthorizeSecurityGroupIngress` operation.
 pub mod authorize_security_group_ingress;
 
+/// Types for the `BatchModifyIpamRoutingPolicyRegistrations` operation.
+pub mod batch_modify_ipam_routing_policy_registrations;
+
 /// Types for the `BundleInstance` operation.
 pub mod bundle_instance;
 
@@ -280,6 +283,9 @@ pub mod create_ipam;
 /// Types for the `CreateIpamExternalResourceVerificationToken` operation.
 pub mod create_ipam_external_resource_verification_token;
 
+/// Types for the `CreateIpamInternetRegistryAssociation` operation.
+pub mod create_ipam_internet_registry_association;
+
 /// Types for the `CreateIpamPolicy` operation.
 pub mod create_ipam_policy;
 
@@ -294,6 +300,9 @@ pub mod create_ipam_prefix_list_resolver_target;
 
 /// Types for the `CreateIpamResourceDiscovery` operation.
 pub mod create_ipam_resource_discovery;
+
+/// Types for the `CreateIpamRoutingPolicyRegistration` operation.
+pub mod create_ipam_routing_policy_registration;
 
 /// Types for the `CreateIpamScope` operation.
 pub mod create_ipam_scope;
@@ -571,6 +580,9 @@ pub mod delete_ipam;
 /// Types for the `DeleteIpamExternalResourceVerificationToken` operation.
 pub mod delete_ipam_external_resource_verification_token;
 
+/// Types for the `DeleteIpamInternetRegistryAssociation` operation.
+pub mod delete_ipam_internet_registry_association;
+
 /// Types for the `DeleteIpamPolicy` operation.
 pub mod delete_ipam_policy;
 
@@ -585,6 +597,9 @@ pub mod delete_ipam_prefix_list_resolver_target;
 
 /// Types for the `DeleteIpamResourceDiscovery` operation.
 pub mod delete_ipam_resource_discovery;
+
+/// Types for the `DeleteIpamRoutingPolicyRegistration` operation.
+pub mod delete_ipam_routing_policy_registration;
 
 /// Types for the `DeleteIpamScope` operation.
 pub mod delete_ipam_scope;
@@ -1053,6 +1068,9 @@ pub mod describe_ipam_byoasn;
 
 /// Types for the `DescribeIpamExternalResourceVerificationTokens` operation.
 pub mod describe_ipam_external_resource_verification_tokens;
+
+/// Types for the `DescribeIpamInternetRegistryAssociations` operation.
+pub mod describe_ipam_internet_registry_associations;
 
 /// Types for the `DescribeIpamPolicies` operation.
 pub mod describe_ipam_policies;
@@ -1579,6 +1597,9 @@ pub mod enable_image_deregistration_protection;
 /// Types for the `EnableInstanceSqlHaStandbyDetections` operation.
 pub mod enable_instance_sql_ha_standby_detections;
 
+/// Types for the `EnableIpamInternetRegistryAssociation` operation.
+pub mod enable_ipam_internet_registry_association;
+
 /// Types for the `EnableIpamOrganizationAdminAccount` operation.
 pub mod enable_ipam_organization_admin_account;
 
@@ -1720,6 +1741,15 @@ pub mod get_ipam_discovered_public_addresses;
 /// Types for the `GetIpamDiscoveredResourceCidrs` operation.
 pub mod get_ipam_discovered_resource_cidrs;
 
+/// Types for the `GetIpamDiscoveredRoutes` operation.
+pub mod get_ipam_discovered_routes;
+
+/// Types for the `GetIpamInternetRegistryAssociationAsns` operation.
+pub mod get_ipam_internet_registry_association_asns;
+
+/// Types for the `GetIpamInternetRegistryAssociationCidrs` operation.
+pub mod get_ipam_internet_registry_association_cidrs;
+
 /// Types for the `GetIpamPolicyAllocationRules` operation.
 pub mod get_ipam_policy_allocation_rules;
 
@@ -1743,6 +1773,18 @@ pub mod get_ipam_prefix_list_resolver_versions;
 
 /// Types for the `GetIpamResourceCidrs` operation.
 pub mod get_ipam_resource_cidrs;
+
+/// Types for the `GetIpamRouteOriginAuthorizations` operation.
+pub mod get_ipam_route_origin_authorizations;
+
+/// Types for the `GetIpamRouteProtectionFindings` operation.
+pub mod get_ipam_route_protection_findings;
+
+/// Types for the `GetIpamRoutingPolicyRegistrationDeltas` operation.
+pub mod get_ipam_routing_policy_registration_deltas;
+
+/// Types for the `GetIpamRoutingPolicyRegistrations` operation.
+pub mod get_ipam_routing_policy_registrations;
 
 /// Types for the `GetLaunchTemplateData` operation.
 pub mod get_launch_template_data;
@@ -1971,6 +2013,9 @@ pub mod modify_ipam_resource_cidr;
 
 /// Types for the `ModifyIpamResourceDiscovery` operation.
 pub mod modify_ipam_resource_discovery;
+
+/// Types for the `ModifyIpamRoutingPolicyRegistration` operation.
+pub mod modify_ipam_routing_policy_registration;
 
 /// Types for the `ModifyIpamScope` operation.
 pub mod modify_ipam_scope;

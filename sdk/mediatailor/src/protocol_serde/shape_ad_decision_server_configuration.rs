@@ -25,6 +25,10 @@ where
                             builder =
                                 builder.set_http_request(crate::protocol_serde::shape_http_request::de_http_request(tokens, _value, depth + 1)?);
                         }
+                        "VastResponse" => {
+                            builder =
+                                builder.set_vast_response(crate::protocol_serde::shape_vast_response::de_vast_response(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -51,6 +55,12 @@ pub fn ser_ad_decision_server_configuration(
         let mut object_2 = object.key("HttpRequest").start_object();
         crate::protocol_serde::shape_http_request::ser_http_request(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.vast_response {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("VastResponse").start_object();
+        crate::protocol_serde::shape_vast_response::ser_vast_response(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

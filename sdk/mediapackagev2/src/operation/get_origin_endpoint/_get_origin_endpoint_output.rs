@@ -37,6 +37,8 @@ pub struct GetOriginEndpointOutput {
     pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     /// <p>The separator character used in generated URIs for this origin endpoint.</p>
     pub uri_separator: ::std::option::Option<crate::types::UriSeparator>,
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub stream_name_output_mode: ::std::option::Option<crate::types::StreamNameOutputMode>,
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
     /// <p>The comma-separated list of tag key:value pairs assigned to the origin endpoint.</p>
@@ -124,6 +126,10 @@ impl GetOriginEndpointOutput {
     pub fn uri_separator(&self) -> ::std::option::Option<&crate::types::UriSeparator> {
         self.uri_separator.as_ref()
     }
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub fn stream_name_output_mode(&self) -> ::std::option::Option<&crate::types::StreamNameOutputMode> {
+        self.stream_name_output_mode.as_ref()
+    }
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
@@ -166,6 +172,7 @@ pub struct GetOriginEndpointOutputBuilder {
     pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::GetMssManifestConfiguration>>,
     pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     pub(crate) uri_separator: ::std::option::Option<crate::types::UriSeparator>,
+    pub(crate) stream_name_output_mode: ::std::option::Option<crate::types::StreamNameOutputMode>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -444,6 +451,20 @@ impl GetOriginEndpointOutputBuilder {
     pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
         &self.uri_separator
     }
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub fn stream_name_output_mode(mut self, input: crate::types::StreamNameOutputMode) -> Self {
+        self.stream_name_output_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub fn set_stream_name_output_mode(mut self, input: ::std::option::Option<crate::types::StreamNameOutputMode>) -> Self {
+        self.stream_name_output_mode = input;
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests for this origin endpoint.</p>
+    pub fn get_stream_name_output_mode(&self) -> &::std::option::Option<crate::types::StreamNameOutputMode> {
+        &self.stream_name_output_mode
+    }
     /// <p>The current Entity Tag (ETag) associated with this resource. The entity tag can be used to safely make concurrent updates to the resource.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -552,6 +573,7 @@ impl GetOriginEndpointOutputBuilder {
             mss_manifests: self.mss_manifests,
             force_endpoint_error_configuration: self.force_endpoint_error_configuration,
             uri_separator: self.uri_separator,
+            stream_name_output_mode: self.stream_name_output_mode,
             e_tag: self.e_tag,
             tags: self.tags,
             _request_id: self._request_id,

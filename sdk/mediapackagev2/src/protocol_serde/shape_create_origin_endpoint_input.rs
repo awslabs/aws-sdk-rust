@@ -81,18 +81,21 @@ pub fn ser_create_origin_endpoint_input_input(
             ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
-    if let Some(var_25) = &input.tags {
+    if let Some(var_25) = &input.stream_name_output_mode {
+        object.key("StreamNameOutputMode").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("Tags").start_object();
-        for (key_27, value_28) in var_25 {
+        let mut object_27 = object.key("Tags").start_object();
+        for (key_28, value_29) in var_26 {
             {
-                object_26.key(key_27.as_str()).string(value_28.as_str());
+                object_27.key(key_28.as_str()).string(value_29.as_str());
             }
         }
-        object_26.finish();
+        object_27.finish();
     }
-    if let Some(var_29) = &input.uri_separator {
-        object.key("UriSeparator").string(var_29.as_str());
+    if let Some(var_30) = &input.uri_separator {
+        object.key("UriSeparator").string(var_30.as_str());
     }
     Ok(())
 }

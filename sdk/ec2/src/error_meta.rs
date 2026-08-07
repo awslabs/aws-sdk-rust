@@ -1309,6 +1309,40 @@ impl From<crate::operation::authorize_security_group_ingress::AuthorizeSecurityG
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_modify_ipam_routing_policy_registrations::BatchModifyIpamRoutingPolicyRegistrationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::batch_modify_ipam_routing_policy_registrations::BatchModifyIpamRoutingPolicyRegistrationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_modify_ipam_routing_policy_registrations::BatchModifyIpamRoutingPolicyRegistrationsError> for Error {
+    fn from(err: crate::operation::batch_modify_ipam_routing_policy_registrations::BatchModifyIpamRoutingPolicyRegistrationsError) -> Self {
+        match err {
+            crate::operation::batch_modify_ipam_routing_policy_registrations::BatchModifyIpamRoutingPolicyRegistrationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::bundle_instance::BundleInstanceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2460,6 +2494,40 @@ impl From<crate::operation::create_ipam_external_resource_verification_token::Cr
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_internet_registry_association::CreateIpamInternetRegistryAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_internet_registry_association::CreateIpamInternetRegistryAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ipam_internet_registry_association::CreateIpamInternetRegistryAssociationError> for Error {
+    fn from(err: crate::operation::create_ipam_internet_registry_association::CreateIpamInternetRegistryAssociationError) -> Self {
+        match err {
+            crate::operation::create_ipam_internet_registry_association::CreateIpamInternetRegistryAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_ipam_policy::CreateIpamPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2589,6 +2657,40 @@ impl From<crate::operation::create_ipam_resource_discovery::CreateIpamResourceDi
     fn from(err: crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError) -> Self {
         match err {
             crate::operation::create_ipam_resource_discovery::CreateIpamResourceDiscoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_routing_policy_registration::CreateIpamRoutingPolicyRegistrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_ipam_routing_policy_registration::CreateIpamRoutingPolicyRegistrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_ipam_routing_policy_registration::CreateIpamRoutingPolicyRegistrationError> for Error {
+    fn from(err: crate::operation::create_ipam_routing_policy_registration::CreateIpamRoutingPolicyRegistrationError) -> Self {
+        match err {
+            crate::operation::create_ipam_routing_policy_registration::CreateIpamRoutingPolicyRegistrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -4992,6 +5094,40 @@ impl From<crate::operation::delete_ipam_external_resource_verification_token::De
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_internet_registry_association::DeleteIpamInternetRegistryAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_internet_registry_association::DeleteIpamInternetRegistryAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ipam_internet_registry_association::DeleteIpamInternetRegistryAssociationError> for Error {
+    fn from(err: crate::operation::delete_ipam_internet_registry_association::DeleteIpamInternetRegistryAssociationError) -> Self {
+        match err {
+            crate::operation::delete_ipam_internet_registry_association::DeleteIpamInternetRegistryAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_ipam_policy::DeleteIpamPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5121,6 +5257,40 @@ impl From<crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDi
     fn from(err: crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError) -> Self {
         match err {
             crate::operation::delete_ipam_resource_discovery::DeleteIpamResourceDiscoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_routing_policy_registration::DeleteIpamRoutingPolicyRegistrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_ipam_routing_policy_registration::DeleteIpamRoutingPolicyRegistrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_ipam_routing_policy_registration::DeleteIpamRoutingPolicyRegistrationError> for Error {
+    fn from(err: crate::operation::delete_ipam_routing_policy_registration::DeleteIpamRoutingPolicyRegistrationError) -> Self {
+        match err {
+            crate::operation::delete_ipam_routing_policy_registration::DeleteIpamRoutingPolicyRegistrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -9307,6 +9477,40 @@ impl From<crate::operation::describe_ipam_external_resource_verification_tokens:
             crate::operation::describe_ipam_external_resource_verification_tokens::DescribeIpamExternalResourceVerificationTokensError::Unhandled(
                 inner,
             ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_internet_registry_associations::DescribeIpamInternetRegistryAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_ipam_internet_registry_associations::DescribeIpamInternetRegistryAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_ipam_internet_registry_associations::DescribeIpamInternetRegistryAssociationsError> for Error {
+    fn from(err: crate::operation::describe_ipam_internet_registry_associations::DescribeIpamInternetRegistryAssociationsError) -> Self {
+        match err {
+            crate::operation::describe_ipam_internet_registry_associations::DescribeIpamInternetRegistryAssociationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -14190,6 +14394,40 @@ impl From<crate::operation::enable_instance_sql_ha_standby_detections::EnableIns
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_ipam_internet_registry_association::EnableIpamInternetRegistryAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable_ipam_internet_registry_association::EnableIpamInternetRegistryAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::enable_ipam_internet_registry_association::EnableIpamInternetRegistryAssociationError> for Error {
+    fn from(err: crate::operation::enable_ipam_internet_registry_association::EnableIpamInternetRegistryAssociationError) -> Self {
+        match err {
+            crate::operation::enable_ipam_internet_registry_association::EnableIpamInternetRegistryAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountError,
             R,
         >,
@@ -15492,6 +15730,98 @@ impl From<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscovere
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ipam_discovered_routes::GetIpamDiscoveredRoutesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ipam_discovered_routes::GetIpamDiscoveredRoutesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_discovered_routes::GetIpamDiscoveredRoutesError> for Error {
+    fn from(err: crate::operation::get_ipam_discovered_routes::GetIpamDiscoveredRoutesError) -> Self {
+        match err {
+            crate::operation::get_ipam_discovered_routes::GetIpamDiscoveredRoutesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_internet_registry_association_asns::GetIpamInternetRegistryAssociationAsnsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_internet_registry_association_asns::GetIpamInternetRegistryAssociationAsnsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_internet_registry_association_asns::GetIpamInternetRegistryAssociationAsnsError> for Error {
+    fn from(err: crate::operation::get_ipam_internet_registry_association_asns::GetIpamInternetRegistryAssociationAsnsError) -> Self {
+        match err {
+            crate::operation::get_ipam_internet_registry_association_asns::GetIpamInternetRegistryAssociationAsnsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_internet_registry_association_cidrs::GetIpamInternetRegistryAssociationCidrsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_internet_registry_association_cidrs::GetIpamInternetRegistryAssociationCidrsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_internet_registry_association_cidrs::GetIpamInternetRegistryAssociationCidrsError> for Error {
+    fn from(err: crate::operation::get_ipam_internet_registry_association_cidrs::GetIpamInternetRegistryAssociationCidrsError) -> Self {
+        match err {
+            crate::operation::get_ipam_internet_registry_association_cidrs::GetIpamInternetRegistryAssociationCidrsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ipam_policy_allocation_rules::GetIpamPolicyAllocationRulesError, R>>
     for Error
@@ -15719,6 +16049,140 @@ impl From<crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError> 
     fn from(err: crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError) -> Self {
         match err {
             crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_route_origin_authorizations::GetIpamRouteOriginAuthorizationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_route_origin_authorizations::GetIpamRouteOriginAuthorizationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_route_origin_authorizations::GetIpamRouteOriginAuthorizationsError> for Error {
+    fn from(err: crate::operation::get_ipam_route_origin_authorizations::GetIpamRouteOriginAuthorizationsError) -> Self {
+        match err {
+            crate::operation::get_ipam_route_origin_authorizations::GetIpamRouteOriginAuthorizationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_route_protection_findings::GetIpamRouteProtectionFindingsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_route_protection_findings::GetIpamRouteProtectionFindingsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_route_protection_findings::GetIpamRouteProtectionFindingsError> for Error {
+    fn from(err: crate::operation::get_ipam_route_protection_findings::GetIpamRouteProtectionFindingsError) -> Self {
+        match err {
+            crate::operation::get_ipam_route_protection_findings::GetIpamRouteProtectionFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_routing_policy_registration_deltas::GetIpamRoutingPolicyRegistrationDeltasError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_routing_policy_registration_deltas::GetIpamRoutingPolicyRegistrationDeltasError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_routing_policy_registration_deltas::GetIpamRoutingPolicyRegistrationDeltasError> for Error {
+    fn from(err: crate::operation::get_ipam_routing_policy_registration_deltas::GetIpamRoutingPolicyRegistrationDeltasError) -> Self {
+        match err {
+            crate::operation::get_ipam_routing_policy_registration_deltas::GetIpamRoutingPolicyRegistrationDeltasError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_routing_policy_registrations::GetIpamRoutingPolicyRegistrationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_ipam_routing_policy_registrations::GetIpamRoutingPolicyRegistrationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ipam_routing_policy_registrations::GetIpamRoutingPolicyRegistrationsError> for Error {
+    fn from(err: crate::operation::get_ipam_routing_policy_registrations::GetIpamRoutingPolicyRegistrationsError) -> Self {
+        match err {
+            crate::operation::get_ipam_routing_policy_registrations::GetIpamRoutingPolicyRegistrationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -17836,6 +18300,40 @@ impl From<crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDi
     fn from(err: crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError) -> Self {
         match err {
             crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_ipam_routing_policy_registration::ModifyIpamRoutingPolicyRegistrationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_ipam_routing_policy_registration::ModifyIpamRoutingPolicyRegistrationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_ipam_routing_policy_registration::ModifyIpamRoutingPolicyRegistrationError> for Error {
+    fn from(err: crate::operation::modify_ipam_routing_policy_registration::ModifyIpamRoutingPolicyRegistrationError) -> Self {
+        match err {
+            crate::operation::modify_ipam_routing_policy_registration::ModifyIpamRoutingPolicyRegistrationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

@@ -43,6 +43,7 @@
 ///     ResourceType::InternetGateway => { /* ... */ },
 ///     ResourceType::Ipam => { /* ... */ },
 ///     ResourceType::IpamExternalResourceVerificationToken => { /* ... */ },
+///     ResourceType::IpamInternetRegistryAssociation => { /* ... */ },
 ///     ResourceType::IpamPolicy => { /* ... */ },
 ///     ResourceType::IpamPool => { /* ... */ },
 ///     ResourceType::IpamPoolAllocation => { /* ... */ },
@@ -212,6 +213,8 @@ pub enum ResourceType {
     Ipam,
     #[allow(missing_docs)] // documentation missing in model
     IpamExternalResourceVerificationToken,
+    #[allow(missing_docs)] // documentation missing in model
+    IpamInternetRegistryAssociation,
     #[allow(missing_docs)] // documentation missing in model
     IpamPolicy,
     #[allow(missing_docs)] // documentation missing in model
@@ -408,6 +411,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "internet-gateway" => ResourceType::InternetGateway,
             "ipam" => ResourceType::Ipam,
             "ipam-external-resource-verification-token" => ResourceType::IpamExternalResourceVerificationToken,
+            "ipam-internet-registry-association" => ResourceType::IpamInternetRegistryAssociation,
             "ipam-policy" => ResourceType::IpamPolicy,
             "ipam-pool" => ResourceType::IpamPool,
             "ipam-pool-allocation" => ResourceType::IpamPoolAllocation,
@@ -533,6 +537,7 @@ impl ResourceType {
             ResourceType::InternetGateway => "internet-gateway",
             ResourceType::Ipam => "ipam",
             ResourceType::IpamExternalResourceVerificationToken => "ipam-external-resource-verification-token",
+            ResourceType::IpamInternetRegistryAssociation => "ipam-internet-registry-association",
             ResourceType::IpamPolicy => "ipam-policy",
             ResourceType::IpamPool => "ipam-pool",
             ResourceType::IpamPoolAllocation => "ipam-pool-allocation",
@@ -649,6 +654,7 @@ impl ResourceType {
             "internet-gateway",
             "ipam",
             "ipam-external-resource-verification-token",
+            "ipam-internet-registry-association",
             "ipam-policy",
             "ipam-pool",
             "ipam-pool-allocation",
@@ -782,6 +788,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::InternetGateway => write!(f, "internet-gateway"),
             ResourceType::Ipam => write!(f, "ipam"),
             ResourceType::IpamExternalResourceVerificationToken => write!(f, "ipam-external-resource-verification-token"),
+            ResourceType::IpamInternetRegistryAssociation => write!(f, "ipam-internet-registry-association"),
             ResourceType::IpamPolicy => write!(f, "ipam-policy"),
             ResourceType::IpamPool => write!(f, "ipam-pool"),
             ResourceType::IpamPoolAllocation => write!(f, "ipam-pool-allocation"),

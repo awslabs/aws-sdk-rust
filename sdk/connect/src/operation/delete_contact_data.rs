@@ -289,7 +289,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteContact
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteContactDataError {
-    /// <p>The contact has not been disconnected and is not in a terminated state. PII can be deleted only from a contact that has been disconnected. This error is returned with an HTTP 409 status code.</p>
+    /// <p>The contact has not been disconnected and is not in a terminated state. To delete PII, disconnect the contact first. Wait for it to reach the terminated state, then retry the request.</p>
     ContactNotTerminatedException(crate::types::error::ContactNotTerminatedException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),

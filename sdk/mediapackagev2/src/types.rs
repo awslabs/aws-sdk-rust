@@ -29,6 +29,8 @@ pub use crate::types::_force_endpoint_error_configuration::ForceEndpointErrorCon
 
 pub use crate::types::_uri_separator::UriSeparator;
 
+pub use crate::types::_stream_name_output_mode::StreamNameOutputMode;
+
 pub use crate::types::_channel_group_list_configuration::ChannelGroupListConfiguration;
 
 pub use crate::types::_cdn_auth_configuration::CdnAuthConfiguration;
@@ -306,6 +308,8 @@ mod _segment;
 mod _speke_key_provider;
 
 mod _start_tag;
+
+mod _stream_name_output_mode;
 
 mod _ts_encryption_method;
 

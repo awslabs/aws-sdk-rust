@@ -20,23 +20,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "AdDecisionServerUrl" => {
-                            builder = builder.set_ad_decision_server_url(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "AdDecisionServerUrl" => {
+                                builder = builder.set_ad_decision_server_url(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "MaxDurationSeconds" => {
+                                builder = builder.set_max_duration_seconds(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "AdDecisionServerConfiguration" => {
+                                builder = builder.set_ad_decision_server_configuration(
+                                    crate::protocol_serde::shape_pre_roll_ad_decision_server_configuration::de_pre_roll_ad_decision_server_configuration(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "MaxDurationSeconds" => {
-                            builder = builder.set_max_duration_seconds(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"
@@ -64,6 +71,12 @@ pub fn ser_live_pre_roll_configuration(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
+    }
+    if let Some(var_3) = &input.ad_decision_server_configuration {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("AdDecisionServerConfiguration").start_object();
+        crate::protocol_serde::shape_pre_roll_ad_decision_server_configuration::ser_pre_roll_ad_decision_server_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

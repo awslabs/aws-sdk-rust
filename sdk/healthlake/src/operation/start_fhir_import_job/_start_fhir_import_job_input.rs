@@ -23,6 +23,8 @@ pub struct StartFhirImportJobInput {
     pub input_format: ::std::option::Option<::std::string::String>,
     /// A boolean value.
     pub drift_detection_enabled: ::std::option::Option<bool>,
+    /// <p>Specifies whether to enable provenance for the import job.</p>
+    pub provenance_enabled: ::std::option::Option<bool>,
 }
 impl StartFhirImportJobInput {
     /// <p>The import job name.</p>
@@ -65,6 +67,10 @@ impl StartFhirImportJobInput {
     pub fn drift_detection_enabled(&self) -> ::std::option::Option<bool> {
         self.drift_detection_enabled
     }
+    /// <p>Specifies whether to enable provenance for the import job.</p>
+    pub fn provenance_enabled(&self) -> ::std::option::Option<bool> {
+        self.provenance_enabled
+    }
 }
 impl StartFhirImportJobInput {
     /// Creates a new builder-style object to manufacture [`StartFhirImportJobInput`](crate::operation::start_fhir_import_job::StartFhirImportJobInput).
@@ -87,6 +93,7 @@ pub struct StartFhirImportJobInputBuilder {
     pub(crate) profile_id: ::std::option::Option<::std::string::String>,
     pub(crate) input_format: ::std::option::Option<::std::string::String>,
     pub(crate) drift_detection_enabled: ::std::option::Option<bool>,
+    pub(crate) provenance_enabled: ::std::option::Option<bool>,
 }
 impl StartFhirImportJobInputBuilder {
     /// <p>The import job name.</p>
@@ -233,6 +240,20 @@ impl StartFhirImportJobInputBuilder {
     pub fn get_drift_detection_enabled(&self) -> &::std::option::Option<bool> {
         &self.drift_detection_enabled
     }
+    /// <p>Specifies whether to enable provenance for the import job.</p>
+    pub fn provenance_enabled(mut self, input: bool) -> Self {
+        self.provenance_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable provenance for the import job.</p>
+    pub fn set_provenance_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.provenance_enabled = input;
+        self
+    }
+    /// <p>Specifies whether to enable provenance for the import job.</p>
+    pub fn get_provenance_enabled(&self) -> &::std::option::Option<bool> {
+        &self.provenance_enabled
+    }
     /// Consumes the builder and constructs a [`StartFhirImportJobInput`](crate::operation::start_fhir_import_job::StartFhirImportJobInput).
     pub fn build(
         self,
@@ -249,6 +270,7 @@ impl StartFhirImportJobInputBuilder {
             profile_id: self.profile_id,
             input_format: self.input_format,
             drift_detection_enabled: self.drift_detection_enabled,
+            provenance_enabled: self.provenance_enabled,
         })
     }
 }

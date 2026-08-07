@@ -2,7 +2,7 @@
 
 /// <p>Represents an actor used during penetration testing. An actor defines a user or entity that interacts with the target application, including authentication credentials and target URIs.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Actor {
     /// <p>The unique identifier for the actor.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
@@ -12,6 +12,10 @@ pub struct Actor {
     pub authentication: ::std::option::Option<crate::types::Authentication>,
     /// <p>A description of the actor.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Whether email-based MFA is enabled for this actor.</p>
+    pub enable_email_mfa: ::std::option::Option<bool>,
+    /// <p>Server-generated email forwarding address for receiving MFA codes.</p>
+    pub mfa_forwarding_address: ::std::option::Option<::std::string::String>,
 }
 impl Actor {
     /// <p>The unique identifier for the actor.</p>
@@ -32,6 +36,26 @@ impl Actor {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Whether email-based MFA is enabled for this actor.</p>
+    pub fn enable_email_mfa(&self) -> ::std::option::Option<bool> {
+        self.enable_email_mfa
+    }
+    /// <p>Server-generated email forwarding address for receiving MFA codes.</p>
+    pub fn mfa_forwarding_address(&self) -> ::std::option::Option<&str> {
+        self.mfa_forwarding_address.as_deref()
+    }
+}
+impl ::std::fmt::Debug for Actor {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Actor");
+        formatter.field("identifier", &self.identifier);
+        formatter.field("uris", &self.uris);
+        formatter.field("authentication", &self.authentication);
+        formatter.field("description", &self.description);
+        formatter.field("enable_email_mfa", &self.enable_email_mfa);
+        formatter.field("mfa_forwarding_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
 }
 impl Actor {
     /// Creates a new builder-style object to manufacture [`Actor`](crate::types::Actor).
@@ -41,13 +65,15 @@ impl Actor {
 }
 
 /// A builder for [`Actor`](crate::types::Actor).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ActorBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) uris: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) authentication: ::std::option::Option<crate::types::Authentication>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_email_mfa: ::std::option::Option<bool>,
+    pub(crate) mfa_forwarding_address: ::std::option::Option<::std::string::String>,
 }
 impl ActorBuilder {
     /// <p>The unique identifier for the actor.</p>
@@ -112,6 +138,34 @@ impl ActorBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Whether email-based MFA is enabled for this actor.</p>
+    pub fn enable_email_mfa(mut self, input: bool) -> Self {
+        self.enable_email_mfa = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether email-based MFA is enabled for this actor.</p>
+    pub fn set_enable_email_mfa(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_email_mfa = input;
+        self
+    }
+    /// <p>Whether email-based MFA is enabled for this actor.</p>
+    pub fn get_enable_email_mfa(&self) -> &::std::option::Option<bool> {
+        &self.enable_email_mfa
+    }
+    /// <p>Server-generated email forwarding address for receiving MFA codes.</p>
+    pub fn mfa_forwarding_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.mfa_forwarding_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Server-generated email forwarding address for receiving MFA codes.</p>
+    pub fn set_mfa_forwarding_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.mfa_forwarding_address = input;
+        self
+    }
+    /// <p>Server-generated email forwarding address for receiving MFA codes.</p>
+    pub fn get_mfa_forwarding_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.mfa_forwarding_address
+    }
     /// Consumes the builder and constructs a [`Actor`](crate::types::Actor).
     pub fn build(self) -> crate::types::Actor {
         crate::types::Actor {
@@ -119,6 +173,20 @@ impl ActorBuilder {
             uris: self.uris,
             authentication: self.authentication,
             description: self.description,
+            enable_email_mfa: self.enable_email_mfa,
+            mfa_forwarding_address: self.mfa_forwarding_address,
         }
+    }
+}
+impl ::std::fmt::Debug for ActorBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ActorBuilder");
+        formatter.field("identifier", &self.identifier);
+        formatter.field("uris", &self.uris);
+        formatter.field("authentication", &self.authentication);
+        formatter.field("description", &self.description);
+        formatter.field("enable_email_mfa", &self.enable_email_mfa);
+        formatter.field("mfa_forwarding_address", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

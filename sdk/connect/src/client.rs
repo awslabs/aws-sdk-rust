@@ -821,6 +821,8 @@ mod update_contact_routing_data;
 
 mod update_contact_schedule;
 
+mod update_contact_task_template;
+
 mod update_data_table_attribute;
 
 mod update_data_table_metadata;

@@ -211,6 +211,10 @@ pub(crate) mod shape_authorize_security_group_ingress;
 
 pub(crate) mod shape_authorize_security_group_ingress_input;
 
+pub(crate) mod shape_batch_modify_ipam_routing_policy_registrations;
+
+pub(crate) mod shape_batch_modify_ipam_routing_policy_registrations_input;
+
 pub(crate) mod shape_bundle_instance;
 
 pub(crate) mod shape_bundle_instance_input;
@@ -395,6 +399,10 @@ pub(crate) mod shape_create_ipam_external_resource_verification_token_input;
 
 pub(crate) mod shape_create_ipam_input;
 
+pub(crate) mod shape_create_ipam_internet_registry_association;
+
+pub(crate) mod shape_create_ipam_internet_registry_association_input;
+
 pub(crate) mod shape_create_ipam_policy;
 
 pub(crate) mod shape_create_ipam_policy_input;
@@ -414,6 +422,10 @@ pub(crate) mod shape_create_ipam_prefix_list_resolver_target_input;
 pub(crate) mod shape_create_ipam_resource_discovery;
 
 pub(crate) mod shape_create_ipam_resource_discovery_input;
+
+pub(crate) mod shape_create_ipam_routing_policy_registration;
+
+pub(crate) mod shape_create_ipam_routing_policy_registration_input;
 
 pub(crate) mod shape_create_ipam_scope;
 
@@ -783,6 +795,10 @@ pub(crate) mod shape_delete_ipam_external_resource_verification_token_input;
 
 pub(crate) mod shape_delete_ipam_input;
 
+pub(crate) mod shape_delete_ipam_internet_registry_association;
+
+pub(crate) mod shape_delete_ipam_internet_registry_association_input;
+
 pub(crate) mod shape_delete_ipam_policy;
 
 pub(crate) mod shape_delete_ipam_policy_input;
@@ -802,6 +818,10 @@ pub(crate) mod shape_delete_ipam_prefix_list_resolver_target_input;
 pub(crate) mod shape_delete_ipam_resource_discovery;
 
 pub(crate) mod shape_delete_ipam_resource_discovery_input;
+
+pub(crate) mod shape_delete_ipam_routing_policy_registration;
+
+pub(crate) mod shape_delete_ipam_routing_policy_registration_input;
 
 pub(crate) mod shape_delete_ipam_scope;
 
@@ -1426,6 +1446,10 @@ pub(crate) mod shape_describe_ipam_byoasn_input;
 pub(crate) mod shape_describe_ipam_external_resource_verification_tokens;
 
 pub(crate) mod shape_describe_ipam_external_resource_verification_tokens_input;
+
+pub(crate) mod shape_describe_ipam_internet_registry_associations;
+
+pub(crate) mod shape_describe_ipam_internet_registry_associations_input;
 
 pub(crate) mod shape_describe_ipam_policies;
 
@@ -2127,6 +2151,10 @@ pub(crate) mod shape_enable_instance_sql_ha_standby_detections;
 
 pub(crate) mod shape_enable_instance_sql_ha_standby_detections_input;
 
+pub(crate) mod shape_enable_ipam_internet_registry_association;
+
+pub(crate) mod shape_enable_ipam_internet_registry_association_input;
+
 pub(crate) mod shape_enable_ipam_organization_admin_account;
 
 pub(crate) mod shape_enable_ipam_organization_admin_account_input;
@@ -2315,6 +2343,18 @@ pub(crate) mod shape_get_ipam_discovered_resource_cidrs;
 
 pub(crate) mod shape_get_ipam_discovered_resource_cidrs_input;
 
+pub(crate) mod shape_get_ipam_discovered_routes;
+
+pub(crate) mod shape_get_ipam_discovered_routes_input;
+
+pub(crate) mod shape_get_ipam_internet_registry_association_asns;
+
+pub(crate) mod shape_get_ipam_internet_registry_association_asns_input;
+
+pub(crate) mod shape_get_ipam_internet_registry_association_cidrs;
+
+pub(crate) mod shape_get_ipam_internet_registry_association_cidrs_input;
+
 pub(crate) mod shape_get_ipam_policy_allocation_rules;
 
 pub(crate) mod shape_get_ipam_policy_allocation_rules_input;
@@ -2346,6 +2386,22 @@ pub(crate) mod shape_get_ipam_prefix_list_resolver_versions_input;
 pub(crate) mod shape_get_ipam_resource_cidrs;
 
 pub(crate) mod shape_get_ipam_resource_cidrs_input;
+
+pub(crate) mod shape_get_ipam_route_origin_authorizations;
+
+pub(crate) mod shape_get_ipam_route_origin_authorizations_input;
+
+pub(crate) mod shape_get_ipam_route_protection_findings;
+
+pub(crate) mod shape_get_ipam_route_protection_findings_input;
+
+pub(crate) mod shape_get_ipam_routing_policy_registration_deltas;
+
+pub(crate) mod shape_get_ipam_routing_policy_registration_deltas_input;
+
+pub(crate) mod shape_get_ipam_routing_policy_registrations;
+
+pub(crate) mod shape_get_ipam_routing_policy_registrations_input;
 
 pub(crate) mod shape_get_launch_template_data;
 
@@ -2650,6 +2706,10 @@ pub(crate) mod shape_modify_ipam_resource_cidr_input;
 pub(crate) mod shape_modify_ipam_resource_discovery;
 
 pub(crate) mod shape_modify_ipam_resource_discovery_input;
+
+pub(crate) mod shape_modify_ipam_routing_policy_registration;
+
+pub(crate) mod shape_modify_ipam_routing_policy_registration_input;
 
 pub(crate) mod shape_modify_ipam_scope;
 
@@ -3857,9 +3917,19 @@ pub(crate) mod shape_ipam_discovered_public_address_set;
 
 pub(crate) mod shape_ipam_discovered_resource_cidr_set;
 
+pub(crate) mod shape_ipam_discovered_route_set;
+
 pub(crate) mod shape_ipam_external_resource_verification_token;
 
 pub(crate) mod shape_ipam_external_resource_verification_token_set;
+
+pub(crate) mod shape_ipam_internet_registry_association;
+
+pub(crate) mod shape_ipam_internet_registry_association_asn_set;
+
+pub(crate) mod shape_ipam_internet_registry_association_cidr_set;
+
+pub(crate) mod shape_ipam_internet_registry_association_set;
 
 pub(crate) mod shape_ipam_policy;
 
@@ -3910,6 +3980,16 @@ pub(crate) mod shape_ipam_resource_discovery_association;
 pub(crate) mod shape_ipam_resource_discovery_association_set;
 
 pub(crate) mod shape_ipam_resource_discovery_set;
+
+pub(crate) mod shape_ipam_route_origin_authorization_info_set;
+
+pub(crate) mod shape_ipam_route_protection_finding_set;
+
+pub(crate) mod shape_ipam_routing_policy_registration_delta;
+
+pub(crate) mod shape_ipam_routing_policy_registration_delta_set;
+
+pub(crate) mod shape_ipam_routing_policy_registration_set;
 
 pub(crate) mod shape_ipam_scope;
 
@@ -4803,6 +4883,12 @@ pub(crate) mod shape_ipam_discovered_public_address;
 
 pub(crate) mod shape_ipam_discovered_resource_cidr;
 
+pub(crate) mod shape_ipam_discovered_route;
+
+pub(crate) mod shape_ipam_internet_registry_association_asn;
+
+pub(crate) mod shape_ipam_internet_registry_association_cidr;
+
 pub(crate) mod shape_ipam_operating_region_set;
 
 pub(crate) mod shape_ipam_organizational_unit_exclusion_set;
@@ -4822,6 +4908,12 @@ pub(crate) mod shape_ipam_prefix_list_resolver_version;
 pub(crate) mod shape_ipam_prefix_list_resolver_version_entry;
 
 pub(crate) mod shape_ipam_resource_tag_list;
+
+pub(crate) mod shape_ipam_route_origin_authorization_info;
+
+pub(crate) mod shape_ipam_route_protection_finding;
+
+pub(crate) mod shape_ipam_routing_policy_registration;
 
 pub(crate) mod shape_ipam_scope_external_authority_configuration;
 
@@ -5217,6 +5309,8 @@ pub(crate) mod shape_application_status_summary;
 
 pub(crate) mod shape_as_path;
 
+pub(crate) mod shape_asn_list;
+
 pub(crate) mod shape_associated_target_network_set;
 
 pub(crate) mod shape_attachment_ena_srd_udp_specification;
@@ -5424,6 +5518,10 @@ pub(crate) mod shape_ipam_public_address_security_group_list;
 pub(crate) mod shape_ipam_public_address_tags;
 
 pub(crate) mod shape_ipam_resource_tag;
+
+pub(crate) mod shape_ipam_route_origin_authorization_set;
+
+pub(crate) mod shape_ipam_route_overlap_set;
 
 pub(crate) mod shape_ipv6_cidr_block_set;
 
@@ -5784,6 +5882,10 @@ pub(crate) mod shape_ipam_prefix_list_resolver_rule_condition;
 pub(crate) mod shape_ipam_public_address_security_group;
 
 pub(crate) mod shape_ipam_public_address_tag_list;
+
+pub(crate) mod shape_ipam_route_origin_authorization;
+
+pub(crate) mod shape_ipam_route_overlap;
 
 pub(crate) mod shape_ipv4_prefix_list_response;
 

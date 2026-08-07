@@ -31,6 +31,9 @@ pub struct CreateOriginEndpointInput {
     pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value, the default is <code>UNDERSCORE</code>.</p>
     pub uri_separator: ::std::option::Option<crate::types::UriSeparator>,
+    /// <p>The output mode for stream names in egress manifests. This setting is valid only when the associated channel's <code>InputType</code> is <code>HLS</code>. You can't change the stream name output mode after you create the endpoint.</p>
+    /// <p><code>INDEX</code> uses numeric indices for stream names (for example, 1, 2, 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest. If you don't specify a value, the default is <code>INDEX</code>.</p>
+    pub stream_name_output_mode: ::std::option::Option<crate::types::StreamNameOutputMode>,
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -101,6 +104,11 @@ impl CreateOriginEndpointInput {
     pub fn uri_separator(&self) -> ::std::option::Option<&crate::types::UriSeparator> {
         self.uri_separator.as_ref()
     }
+    /// <p>The output mode for stream names in egress manifests. This setting is valid only when the associated channel's <code>InputType</code> is <code>HLS</code>. You can't change the stream name output mode after you create the endpoint.</p>
+    /// <p><code>INDEX</code> uses numeric indices for stream names (for example, 1, 2, 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest. If you don't specify a value, the default is <code>INDEX</code>.</p>
+    pub fn stream_name_output_mode(&self) -> ::std::option::Option<&crate::types::StreamNameOutputMode> {
+        self.stream_name_output_mode.as_ref()
+    }
     /// <p>A comma-separated list of tag key:value pairs that you define. For example:</p>
     /// <p><code>"Key1": "Value1",</code></p>
     /// <p><code>"Key2": "Value2"</code></p>
@@ -133,6 +141,7 @@ pub struct CreateOriginEndpointInputBuilder {
     pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>,
     pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     pub(crate) uri_separator: ::std::option::Option<crate::types::UriSeparator>,
+    pub(crate) stream_name_output_mode: ::std::option::Option<crate::types::StreamNameOutputMode>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateOriginEndpointInputBuilder {
@@ -363,6 +372,23 @@ impl CreateOriginEndpointInputBuilder {
     pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
         &self.uri_separator
     }
+    /// <p>The output mode for stream names in egress manifests. This setting is valid only when the associated channel's <code>InputType</code> is <code>HLS</code>. You can't change the stream name output mode after you create the endpoint.</p>
+    /// <p><code>INDEX</code> uses numeric indices for stream names (for example, 1, 2, 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest. If you don't specify a value, the default is <code>INDEX</code>.</p>
+    pub fn stream_name_output_mode(mut self, input: crate::types::StreamNameOutputMode) -> Self {
+        self.stream_name_output_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests. This setting is valid only when the associated channel's <code>InputType</code> is <code>HLS</code>. You can't change the stream name output mode after you create the endpoint.</p>
+    /// <p><code>INDEX</code> uses numeric indices for stream names (for example, 1, 2, 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest. If you don't specify a value, the default is <code>INDEX</code>.</p>
+    pub fn set_stream_name_output_mode(mut self, input: ::std::option::Option<crate::types::StreamNameOutputMode>) -> Self {
+        self.stream_name_output_mode = input;
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests. This setting is valid only when the associated channel's <code>InputType</code> is <code>HLS</code>. You can't change the stream name output mode after you create the endpoint.</p>
+    /// <p><code>INDEX</code> uses numeric indices for stream names (for example, 1, 2, 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest. If you don't specify a value, the default is <code>INDEX</code>.</p>
+    pub fn get_stream_name_output_mode(&self) -> &::std::option::Option<crate::types::StreamNameOutputMode> {
+        &self.stream_name_output_mode
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -409,6 +435,7 @@ impl CreateOriginEndpointInputBuilder {
             mss_manifests: self.mss_manifests,
             force_endpoint_error_configuration: self.force_endpoint_error_configuration,
             uri_separator: self.uri_separator,
+            stream_name_output_mode: self.stream_name_output_mode,
             tags: self.tags,
         })
     }

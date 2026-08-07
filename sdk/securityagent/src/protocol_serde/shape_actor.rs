@@ -24,6 +24,12 @@ pub fn ser_actor(
     if let Some(var_7) = &input.description {
         object.key("description").string(var_7.as_str());
     }
+    if let Some(var_8) = &input.enable_email_mfa {
+        object.key("enableEmailMfa").boolean(*var_8);
+    }
+    if let Some(var_9) = &input.mfa_forwarding_address {
+        object.key("mfaForwardingAddress").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -68,6 +74,16 @@ where
                         }
                         "description" => {
                             builder = builder.set_description(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "enableEmailMfa" => {
+                            builder = builder.set_enable_email_mfa(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "mfaForwardingAddress" => {
+                            builder = builder.set_mfa_forwarding_address(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

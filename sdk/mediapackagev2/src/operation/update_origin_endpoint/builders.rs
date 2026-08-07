@@ -314,6 +314,20 @@ impl UpdateOriginEndpointFluentBuilder {
     pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
         self.inner.get_uri_separator()
     }
+    /// <p>The output mode for stream names in egress manifests. If you provide a value, it must match the current value. You can't change the stream name output mode after you create the endpoint.</p>
+    pub fn stream_name_output_mode(mut self, input: crate::types::StreamNameOutputMode) -> Self {
+        self.inner = self.inner.stream_name_output_mode(input);
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests. If you provide a value, it must match the current value. You can't change the stream name output mode after you create the endpoint.</p>
+    pub fn set_stream_name_output_mode(mut self, input: ::std::option::Option<crate::types::StreamNameOutputMode>) -> Self {
+        self.inner = self.inner.set_stream_name_output_mode(input);
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests. If you provide a value, it must match the current value. You can't change the stream name output mode after you create the endpoint.</p>
+    pub fn get_stream_name_output_mode(&self) -> &::std::option::Option<crate::types::StreamNameOutputMode> {
+        self.inner.get_stream_name_output_mode()
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.e_tag(input.into());

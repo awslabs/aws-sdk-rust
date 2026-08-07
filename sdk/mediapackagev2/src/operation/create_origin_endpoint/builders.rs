@@ -327,6 +327,23 @@ impl CreateOriginEndpointFluentBuilder {
     pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
         self.inner.get_uri_separator()
     }
+    /// <p>The output mode for stream names in egress manifests. This setting is valid only when the associated channel's <code>InputType</code> is <code>HLS</code>. You can't change the stream name output mode after you create the endpoint.</p>
+    /// <p><code>INDEX</code> uses numeric indices for stream names (for example, 1, 2, 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest. If you don't specify a value, the default is <code>INDEX</code>.</p>
+    pub fn stream_name_output_mode(mut self, input: crate::types::StreamNameOutputMode) -> Self {
+        self.inner = self.inner.stream_name_output_mode(input);
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests. This setting is valid only when the associated channel's <code>InputType</code> is <code>HLS</code>. You can't change the stream name output mode after you create the endpoint.</p>
+    /// <p><code>INDEX</code> uses numeric indices for stream names (for example, 1, 2, 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest. If you don't specify a value, the default is <code>INDEX</code>.</p>
+    pub fn set_stream_name_output_mode(mut self, input: ::std::option::Option<crate::types::StreamNameOutputMode>) -> Self {
+        self.inner = self.inner.set_stream_name_output_mode(input);
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests. This setting is valid only when the associated channel's <code>InputType</code> is <code>HLS</code>. You can't change the stream name output mode after you create the endpoint.</p>
+    /// <p><code>INDEX</code> uses numeric indices for stream names (for example, 1, 2, 3). <code>PASSTHROUGH_NAME</code> uses the stream names from the input manifest. If you don't specify a value, the default is <code>INDEX</code>.</p>
+    pub fn get_stream_name_output_mode(&self) -> &::std::option::Option<crate::types::StreamNameOutputMode> {
+        self.inner.get_stream_name_output_mode()
+    }
     ///
     /// Adds a key-value pair to `Tags`.
     ///

@@ -681,6 +681,8 @@ pub(crate) mod shape_update_contact_routing_data;
 
 pub(crate) mod shape_update_contact_schedule;
 
+pub(crate) mod shape_update_contact_task_template;
+
 pub(crate) mod shape_update_data_table_attribute;
 
 pub(crate) mod shape_update_data_table_metadata;
@@ -1192,6 +1194,8 @@ pub(crate) mod shape_update_contact_input;
 pub(crate) mod shape_update_contact_routing_data_input;
 
 pub(crate) mod shape_update_contact_schedule_input;
+
+pub(crate) mod shape_update_contact_task_template_input;
 
 pub(crate) mod shape_update_data_table_attribute_input;
 

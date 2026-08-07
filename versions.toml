@@ -72,9 +72,9 @@ model_hash = '6a5b902914ce10e84d5c3b30babf26fa9587a5f34a64f72184ece4b892ab500e'
 
 [crates.aws-sdk-amplify]
 category = 'AwsSdk'
-version = '1.115.0'
-source_hash = '4a8658af7322d40f52766a2da6462e79f8f18ec0cedd9cf0e1aa61eb6fff9119'
-model_hash = '8b0ac703f93a74362f0e006a47d132275a9ab9a53e364956218fe1f7cb1f38a7'
+version = '1.116.0'
+source_hash = '8567526562ca438ce41dbf88877b0a6a7c6d68d7630e7baf1249eee3a4f7f5b4'
+model_hash = 'df93c2be225989dee2daeb54d95a5efa6f2e438b17d41ee5c88da66f9bb3b231'
 
 [crates.aws-sdk-amplifybackend]
 category = 'AwsSdk'
@@ -624,9 +624,9 @@ model_hash = 'e07f6be278f415bed35f9353b187e619148ef9df9e826e8fb52d3b43151309da'
 
 [crates.aws-sdk-connect]
 category = 'AwsSdk'
-version = '1.188.0'
-source_hash = '795ea51dcf8b1886f0df680169cc6a63cc583f0c18b49ce9cad5444675a4aad7'
-model_hash = 'cecd8100fe3c8b133c857dccc13d1bb78c2a34382bc5a6f32ce6d2d6c054b158'
+version = '1.189.0'
+source_hash = 'e4375064362362838d362b0f7b7c0416f16a28ac3ac5202de0bf7e4ae4e010c1'
+model_hash = 'c65598dea6850948b081e7a82a57545d227fa75fb84c22e025fedabb0444af13'
 
 [crates.aws-sdk-connectcampaigns]
 category = 'AwsSdk'
@@ -840,9 +840,9 @@ model_hash = 'd44ce53355a168ad2195ba521251e1fc7fdebaca2442b5fa2daf8061fd39756f'
 
 [crates.aws-sdk-ec2]
 category = 'AwsSdk'
-version = '1.245.0'
-source_hash = '011c55d7187bbaef178cd6d55ce3621854aeb1fda2a2720592896878a87917a7'
-model_hash = 'c036da0a0d121ebda7bb2adf620c7a6740b09043e31b446e2625753e57b723b7'
+version = '1.246.0'
+source_hash = '0888fa372048a01fa7297e865bd44d6cb62a0fc5038189f7ba92adda3266a2f5'
+model_hash = '914a2765578d788a96dd213484e69f014a767f3190df8dc9300675b5a6970725'
 
 [crates.aws-sdk-ec2instanceconnect]
 category = 'AwsSdk'
@@ -1110,9 +1110,9 @@ model_hash = '8a29658709e8f5487a31245e93a7f975e65eaa2ddeb0935eb73f12fe2bf9a998'
 
 [crates.aws-sdk-healthlake]
 category = 'AwsSdk'
-version = '1.111.0'
-source_hash = '41c1f1190faf5829c1e8e5ac686d226e083f1921f1dc64e1f399418f69a05421'
-model_hash = '5b727373d9566077919f982006ced6edf5c49bec2327223415c2d6538e01ed07'
+version = '1.112.0'
+source_hash = 'b920bb01ca737e3a87280cbc918c7631c4ab972d4e153d11996b9ffd0cfc0318'
+model_hash = '3563623aef33a3c1e472a2b27619de15cd29f83907d16e5deba3a36cfa949695'
 
 [crates.aws-sdk-iam]
 category = 'AwsSdk'
@@ -1542,9 +1542,9 @@ model_hash = 'fd0b84eea7864965ab0a19b4a60dc316d6c2c5b0f39fd045b9e22e32f42399a3'
 
 [crates.aws-sdk-mediapackagev2]
 category = 'AwsSdk'
-version = '1.122.0'
-source_hash = 'a2b0fb07957b703f7078d217f6e3c43e47ac0a3e21adc760ebcd9c01e969ee24'
-model_hash = '9c272f6f57809efe10fa0d6965b9df46cfe9855a9aa60fa8b82f7c097c915eb1'
+version = '1.123.0'
+source_hash = 'a42a73d3c19ae0248711b32e48d53fd6386e0b1afe4ea573c4d738d497d3a7d1'
+model_hash = 'a2e942fba6e8d013ac11e647240c521cd57bbbc0c5f25b4cdb955b5538d55cdf'
 
 [crates.aws-sdk-mediapackagevod]
 category = 'AwsSdk'
@@ -1566,9 +1566,9 @@ model_hash = '6a8b2472f62d59c043a88f0a300f266829ea6916ac7dcc1041d94076e3ed5006'
 
 [crates.aws-sdk-mediatailor]
 category = 'AwsSdk'
-version = '1.120.0'
-source_hash = '4d0d900f4f40913202193d573c80917389ceac89a6d38e3ae7affaa822fb5d85'
-model_hash = '5ba70c821682ac2b540e65956f589625f2f9d59cdaa63f6f387309eb7b11da4e'
+version = '1.121.0'
+source_hash = '5faa0981483d23a4d65afe6ba20c74a5edc490a97991426ad9cb4b58ef6d58d8'
+model_hash = 'a6370b8df668e9b58cbe540a70af067a7cacc8f8c4de39532a4004cf3e885260'
 
 [crates.aws-sdk-medicalimaging]
 category = 'AwsSdk'
@@ -2112,9 +2112,9 @@ model_hash = '6cdf5a99400b62c17464d536479f3d1c9ed09450004c529802dbbf45ec1343b6'
 
 [crates.aws-sdk-sagemaker]
 category = 'AwsSdk'
-version = '1.219.0'
-source_hash = 'f7bb9e9da9bda26cbc256d9be24e89203f7deaedee999d902a5b0037f4df31a4'
-model_hash = 'cb947fdec438631eaf809e7c7241bf5a6d7b436191d55a329467671590e55869'
+version = '1.220.0'
+source_hash = '4f8005c9d711020a0a53e919fd41a2d984882025d5a31d1d55bec480344f2c1b'
+model_hash = '59a58b1f98b3678bd2ae2f8686a2cf550fab6505efb8e47544ee12455ab0350c'
 
 [crates.aws-sdk-sagemakera2iruntime]
 category = 'AwsSdk'
@@ -2190,9 +2190,9 @@ model_hash = '93f9eeba740eafe66241b6c29d0cd27c064160c76023a2456988c9794c41a92d'
 
 [crates.aws-sdk-securityagent]
 category = 'AwsSdk'
-version = '1.13.0'
-source_hash = 'a5fea41e169c19dac7606df9765db39e122601668ba1eb9bb547cff7fd16f3bd'
-model_hash = '11a1d1e624dcfad5ad97b9f544e145ca2c204fd56da79075e8c3db136334f88d'
+version = '1.14.0'
+source_hash = '88c8f5614e5e45209fcaf3c169525001424c99778b9a4d3398af24b966a24048'
+model_hash = 'bf47ca63af1b0db4b890565eb3a5eff56ebbf17e325174289aeaec4159529ba0'
 
 [crates.aws-sdk-securityhub]
 category = 'AwsSdk'
@@ -2665,7 +2665,7 @@ source_hash = '4b036923391ca61394dbe340d942d5687ef92fb93a630fce769e0019009e7767'
 [crates.aws-smithy-http-fuzz]
 category = 'SmithyRuntime'
 version = '0.0.0'
-source_hash = 'bf6fb9cae7e504b91d17007d4991f757e490cf055755853f1511d2be76679e45'
+source_hash = 'ca262a364754a8f33f8050043a83b6885eda82de9e22d9e87c405e4fd13c8bf5'
 
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
@@ -2771,26 +2771,12 @@ source_hash = '14cf16336b3ef11c0896ca0dfc56b3d1e376254f4e43e814f65fa2e8c6352a3b'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'ee058eab92da43f683c1f77e4341b076ef115225f2d49cbd57943bacf825d9e9'
-
-[release]
-tag = 'release-2026-08-06'
-
 [release.crates]
-aws-sdk-agentregistry = '1.0.0'
-aws-sdk-agentregistrycontrol = '1.0.0'
-aws-sdk-autoscaling = '1.125.0'
-aws-sdk-backup = '1.118.0'
-aws-sdk-bedrockagentcore = '1.57.0'
-aws-sdk-bedrockagentcorecontrol = '1.71.0'
-aws-sdk-cloudwatchlogs = '1.145.0'
-aws-sdk-devicefarm = '1.112.0'
-aws-sdk-ec2 = '1.245.0'
-aws-sdk-gamelift = '1.121.0'
-aws-sdk-kafka = '1.119.0'
-aws-sdk-marketplaceagreement = '1.108.0'
-aws-sdk-marketplacediscovery = '1.9.0'
-aws-sdk-mediatailor = '1.120.0'
-aws-sdk-s3 = '1.141.0'
-aws-sdk-sagemaker = '1.219.0'
-aws-sdk-securityhub = '1.121.0'
-aws-sdk-socialmessaging = '1.64.0'
+aws-sdk-amplify = '1.116.0'
+aws-sdk-connect = '1.189.0'
+aws-sdk-ec2 = '1.246.0'
+aws-sdk-healthlake = '1.112.0'
+aws-sdk-mediapackagev2 = '1.123.0'
+aws-sdk-mediatailor = '1.121.0'
+aws-sdk-sagemaker = '1.220.0'
+aws-sdk-securityagent = '1.14.0'

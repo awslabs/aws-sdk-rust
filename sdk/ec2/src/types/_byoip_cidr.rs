@@ -54,6 +54,10 @@ pub struct ByoipCidr {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/tutorials-byoip-cloudfront.html">Bring your own IP to CloudFront using IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
     pub advertisement_type: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the address pool associated with the CIDR.</p>
+    pub pool_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the IPAM pool associated with the CIDR.</p>
+    pub ipam_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl ByoipCidr {
     /// <p>The address range, in CIDR notation.</p>
@@ -122,6 +126,14 @@ impl ByoipCidr {
     pub fn advertisement_type(&self) -> ::std::option::Option<&str> {
         self.advertisement_type.as_deref()
     }
+    /// <p>The ID of the address pool associated with the CIDR.</p>
+    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+        self.pool_id.as_deref()
+    }
+    /// <p>The ID of the IPAM pool associated with the CIDR.</p>
+    pub fn ipam_pool_id(&self) -> ::std::option::Option<&str> {
+        self.ipam_pool_id.as_deref()
+    }
 }
 impl ByoipCidr {
     /// Creates a new builder-style object to manufacture [`ByoipCidr`](crate::types::ByoipCidr).
@@ -141,6 +153,8 @@ pub struct ByoipCidrBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ByoipCidrState>,
     pub(crate) network_border_group: ::std::option::Option<::std::string::String>,
     pub(crate) advertisement_type: ::std::option::Option<::std::string::String>,
+    pub(crate) pool_id: ::std::option::Option<::std::string::String>,
+    pub(crate) ipam_pool_id: ::std::option::Option<::std::string::String>,
 }
 impl ByoipCidrBuilder {
     /// <p>The address range, in CIDR notation.</p>
@@ -355,6 +369,34 @@ impl ByoipCidrBuilder {
     pub fn get_advertisement_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.advertisement_type
     }
+    /// <p>The ID of the address pool associated with the CIDR.</p>
+    pub fn pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.pool_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the address pool associated with the CIDR.</p>
+    pub fn set_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.pool_id = input;
+        self
+    }
+    /// <p>The ID of the address pool associated with the CIDR.</p>
+    pub fn get_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.pool_id
+    }
+    /// <p>The ID of the IPAM pool associated with the CIDR.</p>
+    pub fn ipam_pool_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.ipam_pool_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the IPAM pool associated with the CIDR.</p>
+    pub fn set_ipam_pool_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.ipam_pool_id = input;
+        self
+    }
+    /// <p>The ID of the IPAM pool associated with the CIDR.</p>
+    pub fn get_ipam_pool_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.ipam_pool_id
+    }
     /// Consumes the builder and constructs a [`ByoipCidr`](crate::types::ByoipCidr).
     pub fn build(self) -> crate::types::ByoipCidr {
         crate::types::ByoipCidr {
@@ -365,6 +407,8 @@ impl ByoipCidrBuilder {
             state: self.state,
             network_border_group: self.network_border_group,
             advertisement_type: self.advertisement_type,
+            pool_id: self.pool_id,
+            ipam_pool_id: self.ipam_pool_id,
         }
     }
 }

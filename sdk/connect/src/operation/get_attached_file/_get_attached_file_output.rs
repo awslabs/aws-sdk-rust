@@ -16,7 +16,7 @@ pub struct GetAttachedFileOutput {
     pub file_name: ::std::option::Option<::std::string::String>,
     /// <p>The size of the attached file in bytes.</p>
     pub file_size_in_bytes: i64,
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>, and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.</p>
     pub associated_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The use case for the file.</p>
     pub file_use_case_type: ::std::option::Option<crate::types::FileUseCaseType>,
@@ -53,7 +53,7 @@ impl GetAttachedFileOutput {
     pub fn file_size_in_bytes(&self) -> i64 {
         self.file_size_in_bytes
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>, and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.</p>
     pub fn associated_resource_arn(&self) -> ::std::option::Option<&str> {
         self.associated_resource_arn.as_deref()
     }
@@ -189,17 +189,17 @@ impl GetAttachedFileOutputBuilder {
     pub fn get_file_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.file_size_in_bytes
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>, and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.</p>
     pub fn associated_resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>, and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.</p>
     pub fn set_associated_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.associated_resource_arn = input;
         self
     }
-    /// <p>The resource to which the attached file is (being) uploaded to. <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Cases</a> are the only current supported resource.</p>
+    /// <p>The resource to which the attached file is (being) uploaded to. The supported resources are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>, and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.</p>
     pub fn get_associated_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.associated_resource_arn
     }

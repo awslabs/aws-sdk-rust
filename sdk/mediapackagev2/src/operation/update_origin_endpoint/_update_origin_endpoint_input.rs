@@ -29,6 +29,8 @@ pub struct UpdateOriginEndpointInput {
     pub force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     /// <p>The separator character to use in generated URIs for this origin endpoint. This setting applies to all manifest types on the endpoint. If you don't specify a value in the update request, the current value is preserved.</p>
     pub uri_separator: ::std::option::Option<crate::types::UriSeparator>,
+    /// <p>The output mode for stream names in egress manifests. If you provide a value, it must match the current value. You can't change the stream name output mode after you create the endpoint.</p>
+    pub stream_name_output_mode: ::std::option::Option<crate::types::StreamNameOutputMode>,
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub e_tag: ::std::option::Option<::std::string::String>,
 }
@@ -93,6 +95,10 @@ impl UpdateOriginEndpointInput {
     pub fn uri_separator(&self) -> ::std::option::Option<&crate::types::UriSeparator> {
         self.uri_separator.as_ref()
     }
+    /// <p>The output mode for stream names in egress manifests. If you provide a value, it must match the current value. You can't change the stream name output mode after you create the endpoint.</p>
+    pub fn stream_name_output_mode(&self) -> ::std::option::Option<&crate::types::StreamNameOutputMode> {
+        self.stream_name_output_mode.as_ref()
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(&self) -> ::std::option::Option<&str> {
         self.e_tag.as_deref()
@@ -122,6 +128,7 @@ pub struct UpdateOriginEndpointInputBuilder {
     pub(crate) mss_manifests: ::std::option::Option<::std::vec::Vec<crate::types::CreateMssManifestConfiguration>>,
     pub(crate) force_endpoint_error_configuration: ::std::option::Option<crate::types::ForceEndpointErrorConfiguration>,
     pub(crate) uri_separator: ::std::option::Option<crate::types::UriSeparator>,
+    pub(crate) stream_name_output_mode: ::std::option::Option<crate::types::StreamNameOutputMode>,
     pub(crate) e_tag: ::std::option::Option<::std::string::String>,
 }
 impl UpdateOriginEndpointInputBuilder {
@@ -338,6 +345,20 @@ impl UpdateOriginEndpointInputBuilder {
     pub fn get_uri_separator(&self) -> &::std::option::Option<crate::types::UriSeparator> {
         &self.uri_separator
     }
+    /// <p>The output mode for stream names in egress manifests. If you provide a value, it must match the current value. You can't change the stream name output mode after you create the endpoint.</p>
+    pub fn stream_name_output_mode(mut self, input: crate::types::StreamNameOutputMode) -> Self {
+        self.stream_name_output_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests. If you provide a value, it must match the current value. You can't change the stream name output mode after you create the endpoint.</p>
+    pub fn set_stream_name_output_mode(mut self, input: ::std::option::Option<crate::types::StreamNameOutputMode>) -> Self {
+        self.stream_name_output_mode = input;
+        self
+    }
+    /// <p>The output mode for stream names in egress manifests. If you provide a value, it must match the current value. You can't change the stream name output mode after you create the endpoint.</p>
+    pub fn get_stream_name_output_mode(&self) -> &::std::option::Option<crate::types::StreamNameOutputMode> {
+        &self.stream_name_output_mode
+    }
     /// <p>The expected current Entity Tag (ETag) for the resource. If the specified ETag does not match the resource's current entity tag, the update request will be rejected.</p>
     pub fn e_tag(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.e_tag = ::std::option::Option::Some(input.into());
@@ -371,6 +392,7 @@ impl UpdateOriginEndpointInputBuilder {
             mss_manifests: self.mss_manifests,
             force_endpoint_error_configuration: self.force_endpoint_error_configuration,
             uri_separator: self.uri_separator,
+            stream_name_output_mode: self.stream_name_output_mode,
             e_tag: self.e_tag,
         })
     }

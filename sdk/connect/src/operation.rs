@@ -988,6 +988,9 @@ pub mod update_contact_routing_data;
 /// Types for the `UpdateContactSchedule` operation.
 pub mod update_contact_schedule;
 
+/// Types for the `UpdateContactTaskTemplate` operation.
+pub mod update_contact_task_template;
+
 /// Types for the `UpdateDataTableAttribute` operation.
 pub mod update_data_table_attribute;
 

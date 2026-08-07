@@ -87,6 +87,7 @@
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => { /* ... */ },
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowOutputLockingMode => { /* ... */ },
 ///     ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration => { /* ... */ },
+///     ValidationExceptionType::OnlyHlsInputTypeAllowStreamNameOutputMode => { /* ... */ },
 ///     ValidationExceptionType::OnlyNonEpochLockedAllowOutputTimestampMode => { /* ... */ },
 ///     ValidationExceptionType::OutputTimestampModeImmutable => { /* ... */ },
 ///     ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => { /* ... */ },
@@ -101,6 +102,7 @@
 ///     ValidationExceptionType::SecretIsNotOneKeyValuePair => { /* ... */ },
 ///     ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => { /* ... */ },
 ///     ValidationExceptionType::StartTagTimeOffsetInvalid => { /* ... */ },
+///     ValidationExceptionType::StreamNameOutputModeImmutable => { /* ... */ },
 ///     ValidationExceptionType::TimingSourceMissing => { /* ... */ },
 ///     ValidationExceptionType::TooManyInProgressHarvestJobs => { /* ... */ },
 ///     ValidationExceptionType::TooManySecrets => { /* ... */ },
@@ -295,6 +297,8 @@ pub enum ValidationExceptionType {
     #[allow(missing_docs)] // documentation missing in model
     OnlyCmafInputTypeAllowPreferredInputConfiguration,
     #[allow(missing_docs)] // documentation missing in model
+    OnlyHlsInputTypeAllowStreamNameOutputMode,
+    #[allow(missing_docs)] // documentation missing in model
     OnlyNonEpochLockedAllowOutputTimestampMode,
     #[allow(missing_docs)] // documentation missing in model
     OutputTimestampModeImmutable,
@@ -322,6 +326,8 @@ pub enum ValidationExceptionType {
     SourceDisruptionsEnabledIncorrectly,
     #[allow(missing_docs)] // documentation missing in model
     StartTagTimeOffsetInvalid,
+    #[allow(missing_docs)] // documentation missing in model
+    StreamNameOutputModeImmutable,
     #[allow(missing_docs)] // documentation missing in model
     TimingSourceMissing,
     #[allow(missing_docs)] // documentation missing in model
@@ -440,6 +446,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION" => ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration,
             "ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE" => ValidationExceptionType::OnlyCmafInputTypeAllowOutputLockingMode,
             "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION" => ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration,
+            "ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE" => ValidationExceptionType::OnlyHlsInputTypeAllowStreamNameOutputMode,
             "ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE" => ValidationExceptionType::OnlyNonEpochLockedAllowOutputTimestampMode,
             "OUTPUT_TIMESTAMP_MODE_IMMUTABLE" => ValidationExceptionType::OutputTimestampModeImmutable,
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES" => ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues,
@@ -454,6 +461,7 @@ impl ::std::convert::From<&str> for ValidationExceptionType {
             "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR" => ValidationExceptionType::SecretIsNotOneKeyValuePair,
             "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY" => ValidationExceptionType::SourceDisruptionsEnabledIncorrectly,
             "START_TAG_TIME_OFFSET_INVALID" => ValidationExceptionType::StartTagTimeOffsetInvalid,
+            "STREAM_NAME_OUTPUT_MODE_IMMUTABLE" => ValidationExceptionType::StreamNameOutputModeImmutable,
             "TIMING_SOURCE_MISSING" => ValidationExceptionType::TimingSourceMissing,
             "TOO_MANY_IN_PROGRESS_HARVEST_JOBS" => ValidationExceptionType::TooManyInProgressHarvestJobs,
             "TOO_MANY_SECRETS" => ValidationExceptionType::TooManySecrets,
@@ -565,6 +573,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::OnlyCmafInputTypeAllowMqcsOutputConfiguration => "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION",
             ValidationExceptionType::OnlyCmafInputTypeAllowOutputLockingMode => "ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE",
             ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration => "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION",
+            ValidationExceptionType::OnlyHlsInputTypeAllowStreamNameOutputMode => "ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE",
             ValidationExceptionType::OnlyNonEpochLockedAllowOutputTimestampMode => "ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE",
             ValidationExceptionType::OutputTimestampModeImmutable => "OUTPUT_TIMESTAMP_MODE_IMMUTABLE",
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
@@ -579,6 +588,7 @@ impl ValidationExceptionType {
             ValidationExceptionType::SecretIsNotOneKeyValuePair => "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR",
             ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
             ValidationExceptionType::StartTagTimeOffsetInvalid => "START_TAG_TIME_OFFSET_INVALID",
+            ValidationExceptionType::StreamNameOutputModeImmutable => "STREAM_NAME_OUTPUT_MODE_IMMUTABLE",
             ValidationExceptionType::TimingSourceMissing => "TIMING_SOURCE_MISSING",
             ValidationExceptionType::TooManyInProgressHarvestJobs => "TOO_MANY_IN_PROGRESS_HARVEST_JOBS",
             ValidationExceptionType::TooManySecrets => "TOO_MANY_SECRETS",
@@ -675,6 +685,7 @@ impl ValidationExceptionType {
             "ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION",
             "ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE",
             "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION",
+            "ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE",
             "ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE",
             "OUTPUT_TIMESTAMP_MODE_IMMUTABLE",
             "PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES",
@@ -689,6 +700,7 @@ impl ValidationExceptionType {
             "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR",
             "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY",
             "START_TAG_TIME_OFFSET_INVALID",
+            "STREAM_NAME_OUTPUT_MODE_IMMUTABLE",
             "TIMING_SOURCE_MISSING",
             "TOO_MANY_IN_PROGRESS_HARVEST_JOBS",
             "TOO_MANY_SECRETS",
@@ -818,6 +830,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::OnlyCmafInputTypeAllowPreferredInputConfiguration => {
                 write!(f, "ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION")
             }
+            ValidationExceptionType::OnlyHlsInputTypeAllowStreamNameOutputMode => write!(f, "ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE"),
             ValidationExceptionType::OnlyNonEpochLockedAllowOutputTimestampMode => write!(f, "ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE"),
             ValidationExceptionType::OutputTimestampModeImmutable => write!(f, "OUTPUT_TIMESTAMP_MODE_IMMUTABLE"),
             ValidationExceptionType::PeriodTriggersNoneSpecifiedWithAdditionalValues => {
@@ -834,6 +847,7 @@ impl ::std::fmt::Display for ValidationExceptionType {
             ValidationExceptionType::SecretIsNotOneKeyValuePair => write!(f, "SECRET_IS_NOT_ONE_KEY_VALUE_PAIR"),
             ValidationExceptionType::SourceDisruptionsEnabledIncorrectly => write!(f, "SOURCE_DISRUPTIONS_ENABLED_INCORRECTLY"),
             ValidationExceptionType::StartTagTimeOffsetInvalid => write!(f, "START_TAG_TIME_OFFSET_INVALID"),
+            ValidationExceptionType::StreamNameOutputModeImmutable => write!(f, "STREAM_NAME_OUTPUT_MODE_IMMUTABLE"),
             ValidationExceptionType::TimingSourceMissing => write!(f, "TIMING_SOURCE_MISSING"),
             ValidationExceptionType::TooManyInProgressHarvestJobs => write!(f, "TOO_MANY_IN_PROGRESS_HARVEST_JOBS"),
             ValidationExceptionType::TooManySecrets => write!(f, "TOO_MANY_SECRETS"),

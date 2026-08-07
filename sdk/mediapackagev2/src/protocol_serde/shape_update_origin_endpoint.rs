@@ -303,6 +303,13 @@ pub(crate) fn de_update_origin_endpoint(
                             .transpose()?,
                     );
                 }
+                "StreamNameOutputMode" => {
+                    builder = builder.set_stream_name_output_mode(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::StreamNameOutputMode::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                 }

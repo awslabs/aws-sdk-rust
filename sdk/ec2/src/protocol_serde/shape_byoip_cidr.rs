@@ -100,6 +100,32 @@ pub fn de_byoip_cidr(
                 builder = builder.set_advertisement_type(var_7);
             }
             ,
+            s if s.matches("poolId") /* PoolId com.amazonaws.ec2#ByoipCidr$PoolId */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_pool_id(var_8);
+            }
+            ,
+            s if s.matches("ipamPoolId") /* IpamPoolId com.amazonaws.ec2#ByoipCidr$IpamPoolId */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_ipam_pool_id(var_9);
+            }
+            ,
             _ => {}
         }
     }

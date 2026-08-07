@@ -22,8 +22,8 @@ impl crate::operation::delete_contact_data::builders::DeleteContactDataInputBuil
 }
 /// Fluent builder constructing a request to `DeleteContactData`.
 ///
-/// <p>Deletes the specified fields containing personally identifiable information (PII) from a contact in the specified Connect Customer instance. This operation redacts PII (such as customer endpoints, additional email recipients, and the email subject) from the contact and its associated contact trace record (CTR). The contact must be in a terminated state.</p><important>
-/// <p>This operation performs a hard deletion of the specified PII and cannot be undone. There is no retention period; after the data is deleted, it cannot be recovered. Only fields that Connect Customer identifies and stores as PII are removed. Any PII that you place in fields outside the scope of this operation remains your responsibility to remove.</p>
+/// <p>Deletes the specified fields containing personally identifiable information (PII) from a contact in the specified Connect Customer instance. We redact PII (such as customer endpoints, additional email recipients, and the email subject) from the contact and its associated contact trace record (CTR). The contact must be in a terminated state.</p><important>
+/// <p><b>This deletion is permanent and cannot be undone.</b> Performing this operation permanently deletes the specified PII. There is no retention period; you cannot recover the data after deletion. We remove only the fields that Connect Customer identifies and stores as PII. Any PII that you place in fields outside the scope of this operation remains your responsibility to remove.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteContactDataFluentBuilder {
@@ -124,17 +124,17 @@ impl DeleteContactDataFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The identifier of the contact. PII can be deleted only from a contact that has been disconnected (is in a terminated state).</p>
+    /// <p>The identifier of the contact. You can delete PII only from a contact that has been disconnected (is in a terminated state).</p>
     pub fn contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.contact_id(input.into());
         self
     }
-    /// <p>The identifier of the contact. PII can be deleted only from a contact that has been disconnected (is in a terminated state).</p>
+    /// <p>The identifier of the contact. You can delete PII only from a contact that has been disconnected (is in a terminated state).</p>
     pub fn set_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_contact_id(input);
         self
     }
-    /// <p>The identifier of the contact. PII can be deleted only from a contact that has been disconnected (is in a terminated state).</p>
+    /// <p>The identifier of the contact. You can delete PII only from a contact that has been disconnected (is in a terminated state).</p>
     pub fn get_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_contact_id()
     }
@@ -143,17 +143,41 @@ impl DeleteContactDataFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_contact_fields`](Self::set_contact_fields).
     ///
-    /// <p>The categories of PII to redact from the contact. Valid values are <code>CUSTOMER_ENDPOINT</code>, <code>ADDITIONAL_EMAIL_RECIPIENTS</code>, and <code>EMAIL_SUBJECT</code>. <code>ADDITIONAL_EMAIL_RECIPIENTS</code> and <code>EMAIL_SUBJECT</code> are supported only for contacts in the email channel.</p>
+    /// <p>The categories of PII to redact from the contact. Specify one or more of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER_ENDPOINT</code> – The customer's contact endpoint.</p></li>
+    /// <li>
+    /// <p><code>ADDITIONAL_EMAIL_RECIPIENTS</code> – Additional recipients on an email contact (email channel only).</p></li>
+    /// <li>
+    /// <p><code>EMAIL_SUBJECT</code> – The subject line of an email contact (email channel only).</p></li>
+    /// </ul>
     pub fn contact_fields(mut self, input: crate::types::ContactField) -> Self {
         self.inner = self.inner.contact_fields(input);
         self
     }
-    /// <p>The categories of PII to redact from the contact. Valid values are <code>CUSTOMER_ENDPOINT</code>, <code>ADDITIONAL_EMAIL_RECIPIENTS</code>, and <code>EMAIL_SUBJECT</code>. <code>ADDITIONAL_EMAIL_RECIPIENTS</code> and <code>EMAIL_SUBJECT</code> are supported only for contacts in the email channel.</p>
+    /// <p>The categories of PII to redact from the contact. Specify one or more of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER_ENDPOINT</code> – The customer's contact endpoint.</p></li>
+    /// <li>
+    /// <p><code>ADDITIONAL_EMAIL_RECIPIENTS</code> – Additional recipients on an email contact (email channel only).</p></li>
+    /// <li>
+    /// <p><code>EMAIL_SUBJECT</code> – The subject line of an email contact (email channel only).</p></li>
+    /// </ul>
     pub fn set_contact_fields(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactField>>) -> Self {
         self.inner = self.inner.set_contact_fields(input);
         self
     }
-    /// <p>The categories of PII to redact from the contact. Valid values are <code>CUSTOMER_ENDPOINT</code>, <code>ADDITIONAL_EMAIL_RECIPIENTS</code>, and <code>EMAIL_SUBJECT</code>. <code>ADDITIONAL_EMAIL_RECIPIENTS</code> and <code>EMAIL_SUBJECT</code> are supported only for contacts in the email channel.</p>
+    /// <p>The categories of PII to redact from the contact. Specify one or more of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER_ENDPOINT</code> – The customer's contact endpoint.</p></li>
+    /// <li>
+    /// <p><code>ADDITIONAL_EMAIL_RECIPIENTS</code> – Additional recipients on an email contact (email channel only).</p></li>
+    /// <li>
+    /// <p><code>EMAIL_SUBJECT</code> – The subject line of an email contact (email channel only).</p></li>
+    /// </ul>
     pub fn get_contact_fields(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactField>> {
         self.inner.get_contact_fields()
     }
