@@ -216,6 +216,8 @@ mod list_feeds;
 
 mod list_tags_for_resource;
 
+mod search_fixtures;
+
 mod tag_resource;
 
 mod untag_resource;

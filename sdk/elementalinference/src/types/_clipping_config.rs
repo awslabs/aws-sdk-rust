@@ -6,11 +6,19 @@
 pub struct ClippingConfig {
     /// <p>A string that you want Elemental Inference to always include in the event clipping metadata for this output. The string might identify the sports event in the source media, for example.</p>
     pub callback_metadata: ::std::option::Option<::std::string::String>,
+    /// <p>The data source to map onto this clipping output. This parameter is optional. When you include this parameter, Elemental Inference reads the event data for the fixture that you specify, and includes that data in the event clipping metadata for this output.</p>
+    /// <p>If you omit this parameter, Elemental Inference doesn't map a data source onto this output.</p>
+    pub data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
 }
 impl ClippingConfig {
     /// <p>A string that you want Elemental Inference to always include in the event clipping metadata for this output. The string might identify the sports event in the source media, for example.</p>
     pub fn callback_metadata(&self) -> ::std::option::Option<&str> {
         self.callback_metadata.as_deref()
+    }
+    /// <p>The data source to map onto this clipping output. This parameter is optional. When you include this parameter, Elemental Inference reads the event data for the fixture that you specify, and includes that data in the event clipping metadata for this output.</p>
+    /// <p>If you omit this parameter, Elemental Inference doesn't map a data source onto this output.</p>
+    pub fn data_source_configuration(&self) -> ::std::option::Option<&crate::types::DataSourceConfiguration> {
+        self.data_source_configuration.as_ref()
     }
 }
 impl ClippingConfig {
@@ -25,6 +33,7 @@ impl ClippingConfig {
 #[non_exhaustive]
 pub struct ClippingConfigBuilder {
     pub(crate) callback_metadata: ::std::option::Option<::std::string::String>,
+    pub(crate) data_source_configuration: ::std::option::Option<crate::types::DataSourceConfiguration>,
 }
 impl ClippingConfigBuilder {
     /// <p>A string that you want Elemental Inference to always include in the event clipping metadata for this output. The string might identify the sports event in the source media, for example.</p>
@@ -41,10 +50,28 @@ impl ClippingConfigBuilder {
     pub fn get_callback_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.callback_metadata
     }
+    /// <p>The data source to map onto this clipping output. This parameter is optional. When you include this parameter, Elemental Inference reads the event data for the fixture that you specify, and includes that data in the event clipping metadata for this output.</p>
+    /// <p>If you omit this parameter, Elemental Inference doesn't map a data source onto this output.</p>
+    pub fn data_source_configuration(mut self, input: crate::types::DataSourceConfiguration) -> Self {
+        self.data_source_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The data source to map onto this clipping output. This parameter is optional. When you include this parameter, Elemental Inference reads the event data for the fixture that you specify, and includes that data in the event clipping metadata for this output.</p>
+    /// <p>If you omit this parameter, Elemental Inference doesn't map a data source onto this output.</p>
+    pub fn set_data_source_configuration(mut self, input: ::std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
+        self.data_source_configuration = input;
+        self
+    }
+    /// <p>The data source to map onto this clipping output. This parameter is optional. When you include this parameter, Elemental Inference reads the event data for the fixture that you specify, and includes that data in the event clipping metadata for this output.</p>
+    /// <p>If you omit this parameter, Elemental Inference doesn't map a data source onto this output.</p>
+    pub fn get_data_source_configuration(&self) -> &::std::option::Option<crate::types::DataSourceConfiguration> {
+        &self.data_source_configuration
+    }
     /// Consumes the builder and constructs a [`ClippingConfig`](crate::types::ClippingConfig).
     pub fn build(self) -> crate::types::ClippingConfig {
         crate::types::ClippingConfig {
             callback_metadata: self.callback_metadata,
+            data_source_configuration: self.data_source_configuration,
         }
     }
 }

@@ -9,6 +9,10 @@ pub use crate::types::error::_too_many_request_exception::TooManyRequestExceptio
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_gateway_timed_out_exception::GatewayTimedOutException;
+
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
+
 pub use crate::types::error::_conflict_exception::ConflictException;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
@@ -17,11 +21,15 @@ mod _access_denied_exception;
 
 mod _conflict_exception;
 
+mod _gateway_timed_out_exception;
+
 mod _internal_server_error_exception;
 
 mod _resource_not_found_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _service_unavailable_exception;
 
 mod _too_many_request_exception;
 

@@ -2015,6 +2015,8 @@ pub use crate::types::_production_variant_managed_instance_scaling_scale_in_poli
 
 pub use crate::types::_routing_strategy::RoutingStrategy;
 
+pub use crate::types::_prefix_aware_routing_config::PrefixAwareRoutingConfig;
+
 pub use crate::types::_capacity_reservation_preference::CapacityReservationPreference;
 
 pub use crate::types::_capture_mode::CaptureMode;
@@ -4002,6 +4004,8 @@ mod _placement_specification;
 mod _predefined_metric_specification;
 
 mod _preempt_team_tasks;
+
+mod _prefix_aware_routing_config;
 
 mod _presigned_url_access_config;
 

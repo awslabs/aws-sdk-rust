@@ -6,6 +6,12 @@ pub fn ser_production_variant_routing_config(
     if let Some(var_1) = &input.routing_strategy {
         object.key("RoutingStrategy").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.prefix_aware_routing_config {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("PrefixAwareRoutingConfig").start_object();
+        crate::protocol_serde::shape_prefix_aware_routing_config::ser_prefix_aware_routing_config(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -36,6 +42,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::RoutingStrategy::from(u.as_ref())))
                                     .transpose()?,
+                            );
+                        }
+                        "PrefixAwareRoutingConfig" => {
+                            builder = builder.set_prefix_aware_routing_config(
+                                crate::protocol_serde::shape_prefix_aware_routing_config::de_prefix_aware_routing_config(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

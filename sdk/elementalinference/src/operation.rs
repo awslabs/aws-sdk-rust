@@ -37,6 +37,9 @@ pub mod list_feeds;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `SearchFixtures` operation.
+pub mod search_fixtures;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

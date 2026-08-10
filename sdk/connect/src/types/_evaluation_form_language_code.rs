@@ -19,6 +19,7 @@
 ///     EvaluationFormLanguageCode::ItIt => { /* ... */ },
 ///     EvaluationFormLanguageCode::JaJp => { /* ... */ },
 ///     EvaluationFormLanguageCode::KoKr => { /* ... */ },
+///     EvaluationFormLanguageCode::MsMy => { /* ... */ },
 ///     EvaluationFormLanguageCode::PtBr => { /* ... */ },
 ///     EvaluationFormLanguageCode::ZhCn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -64,6 +65,8 @@ pub enum EvaluationFormLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     KoKr,
     #[allow(missing_docs)] // documentation missing in model
+    MsMy,
+    #[allow(missing_docs)] // documentation missing in model
     PtBr,
     #[allow(missing_docs)] // documentation missing in model
     ZhCn,
@@ -81,6 +84,7 @@ impl ::std::convert::From<&str> for EvaluationFormLanguageCode {
             "it-IT" => EvaluationFormLanguageCode::ItIt,
             "ja-JP" => EvaluationFormLanguageCode::JaJp,
             "ko-KR" => EvaluationFormLanguageCode::KoKr,
+            "ms-MY" => EvaluationFormLanguageCode::MsMy,
             "pt-BR" => EvaluationFormLanguageCode::PtBr,
             "zh-CN" => EvaluationFormLanguageCode::ZhCn,
             other => EvaluationFormLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -105,6 +109,7 @@ impl EvaluationFormLanguageCode {
             EvaluationFormLanguageCode::ItIt => "it-IT",
             EvaluationFormLanguageCode::JaJp => "ja-JP",
             EvaluationFormLanguageCode::KoKr => "ko-KR",
+            EvaluationFormLanguageCode::MsMy => "ms-MY",
             EvaluationFormLanguageCode::PtBr => "pt-BR",
             EvaluationFormLanguageCode::ZhCn => "zh-CN",
             EvaluationFormLanguageCode::Unknown(value) => value.as_str(),
@@ -112,7 +117,7 @@ impl EvaluationFormLanguageCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["de-DE", "en-US", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "pt-BR", "zh-CN"]
+        &["de-DE", "en-US", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "ms-MY", "pt-BR", "zh-CN"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormLanguageCode {
@@ -142,6 +147,7 @@ impl ::std::fmt::Display for EvaluationFormLanguageCode {
             EvaluationFormLanguageCode::ItIt => write!(f, "it-IT"),
             EvaluationFormLanguageCode::JaJp => write!(f, "ja-JP"),
             EvaluationFormLanguageCode::KoKr => write!(f, "ko-KR"),
+            EvaluationFormLanguageCode::MsMy => write!(f, "ms-MY"),
             EvaluationFormLanguageCode::PtBr => write!(f, "pt-BR"),
             EvaluationFormLanguageCode::ZhCn => write!(f, "zh-CN"),
             EvaluationFormLanguageCode::Unknown(value) => write!(f, "{value}"),

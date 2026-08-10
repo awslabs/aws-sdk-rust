@@ -258,5 +258,16 @@ pub fn ser_invoke_endpoint_with_response_stream_headers(
         })?;
         builder = builder.header("X-Amzn-SageMaker-Session-Id", header_value);
     }
+    if let ::std::option::Option::Some(inner_17) = &input.prefix_aware_id {
+        let formatted_18 = inner_17.as_str();
+        let header_value = formatted_18;
+        let header_value: ::http_1x::HeaderValue = header_value.parse().map_err(|err| {
+            ::aws_smithy_types::error::operation::BuildError::invalid_field(
+                "prefix_aware_id",
+                format!("`{}` cannot be used as a header value: {}", &header_value, err),
+            )
+        })?;
+        builder = builder.header("X-Amzn-SageMaker-Prefix-Aware-Id", header_value);
+    }
     Ok(builder)
 }

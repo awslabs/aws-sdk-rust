@@ -3581,6 +3581,8 @@ pub(crate) mod shape_placement_specification;
 
 pub(crate) mod shape_placement_specifications;
 
+pub(crate) mod shape_prefix_aware_routing_config;
+
 pub(crate) mod shape_processing_feature_store_output;
 
 pub(crate) mod shape_processing_s3_output;

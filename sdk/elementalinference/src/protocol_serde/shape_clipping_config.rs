@@ -6,6 +6,12 @@ pub fn ser_clipping_config(
     if let Some(var_1) = &input.callback_metadata {
         object.key("callbackMetadata").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.data_source_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("dataSourceConfiguration").start_object();
+        crate::protocol_serde::shape_data_source_configuration::ser_data_source_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -36,6 +42,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "dataSourceConfiguration" => {
+                            builder = builder.set_data_source_configuration(
+                                crate::protocol_serde::shape_data_source_configuration::de_data_source_configuration(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

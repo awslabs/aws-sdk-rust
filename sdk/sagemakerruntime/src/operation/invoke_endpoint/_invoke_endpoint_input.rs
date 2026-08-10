@@ -38,6 +38,9 @@ pub struct InvokeEndpointInput {
     /// </ul>
     /// <p>With a stateful session, you can send multiple requests to a stateful model. When you create a session with a stateful model, the model must create the session ID and set the expiration time. The model must also provide that information in the response to your request. You can get the ID and timestamp from the <code>NewSessionId</code> response parameter. For any subsequent request where you specify that session ID, SageMaker AI routes the request to the same instance that supports the session.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub prefix_aware_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeEndpointInput {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -99,6 +102,11 @@ impl InvokeEndpointInput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub fn prefix_aware_id(&self) -> ::std::option::Option<&str> {
+        self.prefix_aware_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeEndpointInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -115,6 +123,7 @@ impl ::std::fmt::Debug for InvokeEndpointInput {
         formatter.field("enable_explanations", &self.enable_explanations);
         formatter.field("inference_component_name", &self.inference_component_name);
         formatter.field("session_id", &self.session_id);
+        formatter.field("prefix_aware_id", &self.prefix_aware_id);
         formatter.finish()
     }
 }
@@ -141,6 +150,7 @@ pub struct InvokeEndpointInputBuilder {
     pub(crate) enable_explanations: ::std::option::Option<::std::string::String>,
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) prefix_aware_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeEndpointInputBuilder {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -346,6 +356,23 @@ impl InvokeEndpointInputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub fn prefix_aware_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix_aware_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub fn set_prefix_aware_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prefix_aware_id = input;
+        self
+    }
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub fn get_prefix_aware_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_aware_id
+    }
     /// Consumes the builder and constructs a [`InvokeEndpointInput`](crate::operation::invoke_endpoint::InvokeEndpointInput).
     pub fn build(
         self,
@@ -363,6 +390,7 @@ impl InvokeEndpointInputBuilder {
             enable_explanations: self.enable_explanations,
             inference_component_name: self.inference_component_name,
             session_id: self.session_id,
+            prefix_aware_id: self.prefix_aware_id,
         })
     }
 }
@@ -381,6 +409,7 @@ impl ::std::fmt::Debug for InvokeEndpointInputBuilder {
         formatter.field("enable_explanations", &self.enable_explanations);
         formatter.field("inference_component_name", &self.inference_component_name);
         formatter.field("session_id", &self.session_id);
+        formatter.field("prefix_aware_id", &self.prefix_aware_id);
         formatter.finish()
     }
 }

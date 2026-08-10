@@ -10,8 +10,12 @@ pub struct ProductionVariantRoutingConfig {
     /// <p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
     /// <li>
     /// <p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
+    /// <li>
+    /// <p><code>PREFIX_AWARE</code>: The endpoint routes requests that share the same prompt prefix to the same instance. When the number of in-flight requests on the selected instance reaches the configured threshold, the endpoint routes the request to an instance with more available capacity.</p></li>
     /// </ul>
     pub routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
+    /// <p>The configuration for prefix-aware routing. Specify this parameter only when you set <code>RoutingStrategy</code> to <code>PREFIX_AWARE</code>.</p>
+    pub prefix_aware_routing_config: ::std::option::Option<crate::types::PrefixAwareRoutingConfig>,
 }
 impl ProductionVariantRoutingConfig {
     /// <p>Sets how the endpoint routes incoming traffic:</p>
@@ -20,9 +24,15 @@ impl ProductionVariantRoutingConfig {
     /// <p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
     /// <li>
     /// <p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
+    /// <li>
+    /// <p><code>PREFIX_AWARE</code>: The endpoint routes requests that share the same prompt prefix to the same instance. When the number of in-flight requests on the selected instance reaches the configured threshold, the endpoint routes the request to an instance with more available capacity.</p></li>
     /// </ul>
     pub fn routing_strategy(&self) -> ::std::option::Option<&crate::types::RoutingStrategy> {
         self.routing_strategy.as_ref()
+    }
+    /// <p>The configuration for prefix-aware routing. Specify this parameter only when you set <code>RoutingStrategy</code> to <code>PREFIX_AWARE</code>.</p>
+    pub fn prefix_aware_routing_config(&self) -> ::std::option::Option<&crate::types::PrefixAwareRoutingConfig> {
+        self.prefix_aware_routing_config.as_ref()
     }
 }
 impl ProductionVariantRoutingConfig {
@@ -37,6 +47,7 @@ impl ProductionVariantRoutingConfig {
 #[non_exhaustive]
 pub struct ProductionVariantRoutingConfigBuilder {
     pub(crate) routing_strategy: ::std::option::Option<crate::types::RoutingStrategy>,
+    pub(crate) prefix_aware_routing_config: ::std::option::Option<crate::types::PrefixAwareRoutingConfig>,
 }
 impl ProductionVariantRoutingConfigBuilder {
     /// <p>Sets how the endpoint routes incoming traffic:</p>
@@ -45,6 +56,8 @@ impl ProductionVariantRoutingConfigBuilder {
     /// <p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
     /// <li>
     /// <p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
+    /// <li>
+    /// <p><code>PREFIX_AWARE</code>: The endpoint routes requests that share the same prompt prefix to the same instance. When the number of in-flight requests on the selected instance reaches the configured threshold, the endpoint routes the request to an instance with more available capacity.</p></li>
     /// </ul>
     /// This field is required.
     pub fn routing_strategy(mut self, input: crate::types::RoutingStrategy) -> Self {
@@ -57,6 +70,8 @@ impl ProductionVariantRoutingConfigBuilder {
     /// <p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
     /// <li>
     /// <p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
+    /// <li>
+    /// <p><code>PREFIX_AWARE</code>: The endpoint routes requests that share the same prompt prefix to the same instance. When the number of in-flight requests on the selected instance reaches the configured threshold, the endpoint routes the request to an instance with more available capacity.</p></li>
     /// </ul>
     pub fn set_routing_strategy(mut self, input: ::std::option::Option<crate::types::RoutingStrategy>) -> Self {
         self.routing_strategy = input;
@@ -68,14 +83,31 @@ impl ProductionVariantRoutingConfigBuilder {
     /// <p><code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific instances that have more capacity to process them.</p></li>
     /// <li>
     /// <p><code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.</p></li>
+    /// <li>
+    /// <p><code>PREFIX_AWARE</code>: The endpoint routes requests that share the same prompt prefix to the same instance. When the number of in-flight requests on the selected instance reaches the configured threshold, the endpoint routes the request to an instance with more available capacity.</p></li>
     /// </ul>
     pub fn get_routing_strategy(&self) -> &::std::option::Option<crate::types::RoutingStrategy> {
         &self.routing_strategy
+    }
+    /// <p>The configuration for prefix-aware routing. Specify this parameter only when you set <code>RoutingStrategy</code> to <code>PREFIX_AWARE</code>.</p>
+    pub fn prefix_aware_routing_config(mut self, input: crate::types::PrefixAwareRoutingConfig) -> Self {
+        self.prefix_aware_routing_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for prefix-aware routing. Specify this parameter only when you set <code>RoutingStrategy</code> to <code>PREFIX_AWARE</code>.</p>
+    pub fn set_prefix_aware_routing_config(mut self, input: ::std::option::Option<crate::types::PrefixAwareRoutingConfig>) -> Self {
+        self.prefix_aware_routing_config = input;
+        self
+    }
+    /// <p>The configuration for prefix-aware routing. Specify this parameter only when you set <code>RoutingStrategy</code> to <code>PREFIX_AWARE</code>.</p>
+    pub fn get_prefix_aware_routing_config(&self) -> &::std::option::Option<crate::types::PrefixAwareRoutingConfig> {
+        &self.prefix_aware_routing_config
     }
     /// Consumes the builder and constructs a [`ProductionVariantRoutingConfig`](crate::types::ProductionVariantRoutingConfig).
     pub fn build(self) -> crate::types::ProductionVariantRoutingConfig {
         crate::types::ProductionVariantRoutingConfig {
             routing_strategy: self.routing_strategy,
+            prefix_aware_routing_config: self.prefix_aware_routing_config,
         }
     }
 }

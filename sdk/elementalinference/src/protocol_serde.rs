@@ -47,6 +47,8 @@ pub(crate) mod shape_list_feeds;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_search_fixtures;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -75,11 +77,17 @@ pub(crate) mod shape_create_feed_input;
 
 pub(crate) mod shape_disassociate_feed_input;
 
+pub(crate) mod shape_gateway_timed_out_exception;
+
 pub(crate) mod shape_internal_server_error_exception;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_search_fixtures_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -101,7 +109,11 @@ pub(crate) mod shape_feed_references;
 
 pub(crate) mod shape_feed_summary_list;
 
+pub(crate) mod shape_fixture_summary_list;
+
 pub(crate) mod shape_get_output_list;
+
+pub(crate) mod shape_search_filter;
 
 pub(crate) mod shape_string_list;
 
@@ -113,17 +125,25 @@ pub(crate) mod shape_dictionary_summary;
 
 pub(crate) mod shape_feed_summary;
 
+pub(crate) mod shape_fixture_summary;
+
 pub(crate) mod shape_get_output;
 
 pub(crate) mod shape_output_config;
 
 pub(crate) mod shape_clipping_config;
 
+pub(crate) mod shape_competitor_list;
+
 pub(crate) mod shape_cropping_config;
 
 pub(crate) mod shape_subtitling_config;
 
 pub(crate) mod shape_aspect_ratio;
+
+pub(crate) mod shape_competitor;
+
+pub(crate) mod shape_data_source_configuration;
 
 pub(crate) mod shape_template_group;
 

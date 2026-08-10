@@ -12,6 +12,8 @@ pub struct OutputDestinationSettings {
     pub url: ::std::option::Option<::std::string::String>,
     /// username for destination
     pub username: ::std::option::Option<::std::string::String>,
+    /// Specifies the source IP address for outbound multicast packets.
+    pub virtual_source_address: ::std::option::Option<::std::string::String>,
 }
 impl OutputDestinationSettings {
     /// key used to extract the password from EC2 Parameter store
@@ -30,6 +32,10 @@ impl OutputDestinationSettings {
     pub fn username(&self) -> ::std::option::Option<&str> {
         self.username.as_deref()
     }
+    /// Specifies the source IP address for outbound multicast packets.
+    pub fn virtual_source_address(&self) -> ::std::option::Option<&str> {
+        self.virtual_source_address.as_deref()
+    }
 }
 impl OutputDestinationSettings {
     /// Creates a new builder-style object to manufacture [`OutputDestinationSettings`](crate::types::OutputDestinationSettings).
@@ -46,6 +52,7 @@ pub struct OutputDestinationSettingsBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) username: ::std::option::Option<::std::string::String>,
+    pub(crate) virtual_source_address: ::std::option::Option<::std::string::String>,
 }
 impl OutputDestinationSettingsBuilder {
     /// key used to extract the password from EC2 Parameter store
@@ -104,6 +111,20 @@ impl OutputDestinationSettingsBuilder {
     pub fn get_username(&self) -> &::std::option::Option<::std::string::String> {
         &self.username
     }
+    /// Specifies the source IP address for outbound multicast packets.
+    pub fn virtual_source_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.virtual_source_address = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// Specifies the source IP address for outbound multicast packets.
+    pub fn set_virtual_source_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.virtual_source_address = input;
+        self
+    }
+    /// Specifies the source IP address for outbound multicast packets.
+    pub fn get_virtual_source_address(&self) -> &::std::option::Option<::std::string::String> {
+        &self.virtual_source_address
+    }
     /// Consumes the builder and constructs a [`OutputDestinationSettings`](crate::types::OutputDestinationSettings).
     pub fn build(self) -> crate::types::OutputDestinationSettings {
         crate::types::OutputDestinationSettings {
@@ -111,6 +132,7 @@ impl OutputDestinationSettingsBuilder {
             stream_name: self.stream_name,
             url: self.url,
             username: self.username,
+            virtual_source_address: self.virtual_source_address,
         }
     }
 }

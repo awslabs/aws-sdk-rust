@@ -13,6 +13,7 @@
 /// # let routingstrategy = unimplemented!();
 /// match routingstrategy {
 ///     RoutingStrategy::LeastOutstandingRequests => { /* ... */ },
+///     RoutingStrategy::PrefixAware => { /* ... */ },
 ///     RoutingStrategy::Random => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum RoutingStrategy {
     #[allow(missing_docs)] // documentation missing in model
     LeastOutstandingRequests,
     #[allow(missing_docs)] // documentation missing in model
+    PrefixAware,
+    #[allow(missing_docs)] // documentation missing in model
     Random,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for RoutingStrategy {
     fn from(s: &str) -> Self {
         match s {
             "LEAST_OUTSTANDING_REQUESTS" => RoutingStrategy::LeastOutstandingRequests,
+            "PREFIX_AWARE" => RoutingStrategy::PrefixAware,
             "RANDOM" => RoutingStrategy::Random,
             other => RoutingStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl RoutingStrategy {
     pub fn as_str(&self) -> &str {
         match self {
             RoutingStrategy::LeastOutstandingRequests => "LEAST_OUTSTANDING_REQUESTS",
+            RoutingStrategy::PrefixAware => "PREFIX_AWARE",
             RoutingStrategy::Random => "RANDOM",
             RoutingStrategy::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LEAST_OUTSTANDING_REQUESTS", "RANDOM"]
+        &["LEAST_OUTSTANDING_REQUESTS", "PREFIX_AWARE", "RANDOM"]
     }
 }
 impl ::std::convert::AsRef<str> for RoutingStrategy {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for RoutingStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RoutingStrategy::LeastOutstandingRequests => write!(f, "LEAST_OUTSTANDING_REQUESTS"),
+            RoutingStrategy::PrefixAware => write!(f, "PREFIX_AWARE"),
             RoutingStrategy::Random => write!(f, "RANDOM"),
             RoutingStrategy::Unknown(value) => write!(f, "{value}"),
         }

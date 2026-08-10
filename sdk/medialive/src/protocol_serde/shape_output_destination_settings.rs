@@ -15,6 +15,9 @@ pub fn ser_output_destination_settings(
     if let Some(var_4) = &input.username {
         object.key("username").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.virtual_source_address {
+        object.key("virtualSourceAddress").string(var_5.as_str());
+    }
     Ok(())
 }
 
@@ -63,6 +66,13 @@ where
                         }
                         "username" => {
                             builder = builder.set_username(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "virtualSourceAddress" => {
+                            builder = builder.set_virtual_source_address(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

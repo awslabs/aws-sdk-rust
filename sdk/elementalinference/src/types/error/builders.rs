@@ -9,6 +9,10 @@ pub use crate::types::error::_too_many_request_exception::TooManyRequestExceptio
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
+pub use crate::types::error::_gateway_timed_out_exception::GatewayTimedOutExceptionBuilder;
+
+pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableExceptionBuilder;
+
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;

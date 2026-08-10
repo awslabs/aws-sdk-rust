@@ -28,6 +28,9 @@ pub struct InvokeEndpointWithResponseStreamInput {
     /// <p>The ID of a stateful session to handle your request.</p>
     /// <p>You can't create a stateful session by using the <code>InvokeEndpointWithResponseStream</code> action. Instead, you can create one by using the <code> <code>InvokeEndpoint</code> </code> action. In your request, you specify <code>NEW_SESSION</code> for the <code>SessionId</code> request parameter. The response to that request provides the session ID for the <code>NewSessionId</code> response parameter.</p>
     pub session_id: ::std::option::Option<::std::string::String>,
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub prefix_aware_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeEndpointWithResponseStreamInput {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -75,6 +78,11 @@ impl InvokeEndpointWithResponseStreamInput {
     pub fn session_id(&self) -> ::std::option::Option<&str> {
         self.session_id.as_deref()
     }
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub fn prefix_aware_id(&self) -> ::std::option::Option<&str> {
+        self.prefix_aware_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeEndpointWithResponseStreamInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -89,6 +97,7 @@ impl ::std::fmt::Debug for InvokeEndpointWithResponseStreamInput {
         formatter.field("inference_id", &self.inference_id);
         formatter.field("inference_component_name", &self.inference_component_name);
         formatter.field("session_id", &self.session_id);
+        formatter.field("prefix_aware_id", &self.prefix_aware_id);
         formatter.finish()
     }
 }
@@ -113,6 +122,7 @@ pub struct InvokeEndpointWithResponseStreamInputBuilder {
     pub(crate) inference_id: ::std::option::Option<::std::string::String>,
     pub(crate) inference_component_name: ::std::option::Option<::std::string::String>,
     pub(crate) session_id: ::std::option::Option<::std::string::String>,
+    pub(crate) prefix_aware_id: ::std::option::Option<::std::string::String>,
 }
 impl InvokeEndpointWithResponseStreamInputBuilder {
     /// <p>The name of the endpoint that you specified when you created the endpoint using the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API.</p>
@@ -272,6 +282,23 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
     pub fn get_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_id
     }
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub fn prefix_aware_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.prefix_aware_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub fn set_prefix_aware_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.prefix_aware_id = input;
+        self
+    }
+    /// <p>An optional, stable identifier that serves as a routing hint for prefix-aware routing. The service routes requests with the same prefix and the same identifier to the same instance. If requests from different applications might have the same prompt prefix, set a different identifier for each application to differentiate their routing decisions.</p>
+    /// <p>Applies only to endpoints configured with a <code>RoutingStrategy</code> of <code>PREFIX_AWARE</code>.</p>
+    pub fn get_prefix_aware_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.prefix_aware_id
+    }
     /// Consumes the builder and constructs a [`InvokeEndpointWithResponseStreamInput`](crate::operation::invoke_endpoint_with_response_stream::InvokeEndpointWithResponseStreamInput).
     pub fn build(
         self,
@@ -291,6 +318,7 @@ impl InvokeEndpointWithResponseStreamInputBuilder {
                 inference_id: self.inference_id,
                 inference_component_name: self.inference_component_name,
                 session_id: self.session_id,
+                prefix_aware_id: self.prefix_aware_id,
             },
         )
     }
@@ -308,6 +336,7 @@ impl ::std::fmt::Debug for InvokeEndpointWithResponseStreamInputBuilder {
         formatter.field("inference_id", &self.inference_id);
         formatter.field("inference_component_name", &self.inference_component_name);
         formatter.field("session_id", &self.session_id);
+        formatter.field("prefix_aware_id", &self.prefix_aware_id);
         formatter.finish()
     }
 }
