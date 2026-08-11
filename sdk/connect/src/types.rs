@@ -75,6 +75,14 @@ pub use crate::types::_integration_type::IntegrationType;
 
 pub use crate::types::_source_type::SourceType;
 
+pub use crate::types::_metric_calculation::MetricCalculation;
+
+pub use crate::types::_metric_unit::MetricUnit;
+
+pub use crate::types::_metric_status::MetricStatus;
+
+pub use crate::types::_trend_indicator::TrendIndicator;
+
 pub use crate::types::_configurable_notification_priority::ConfigurableNotificationPriority;
 
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAdd;
@@ -173,6 +181,8 @@ pub use crate::types::_instance_attribute_type::InstanceAttributeType;
 
 pub use crate::types::_attribute::Attribute;
 
+pub use crate::types::_metric_definition::MetricDefinition;
+
 pub use crate::types::_notification::Notification;
 
 pub use crate::types::_claimed_phone_number_summary::ClaimedPhoneNumberSummary;
@@ -233,6 +243,8 @@ pub use crate::types::_lex_version::LexVersion;
 
 pub use crate::types::_contact_flow_module_state::ContactFlowModuleState;
 
+pub use crate::types::_metric_type::MetricType;
+
 pub use crate::types::_real_time_contact_analysis_output_type::RealTimeContactAnalysisOutputType;
 
 pub use crate::types::_real_time_contact_analysis_supported_channel::RealTimeContactAnalysisSupportedChannel;
@@ -288,6 +300,10 @@ pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchF
 pub use crate::types::_hours_of_operation_override_search_criteria::HoursOfOperationOverrideSearchCriteria;
 
 pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteria;
+
+pub use crate::types::_metric_search_filter::MetricSearchFilter;
+
+pub use crate::types::_metric_search_criteria::MetricSearchCriteria;
 
 pub use crate::types::_notification_search_filter::NotificationSearchFilter;
 
@@ -617,6 +633,8 @@ pub use crate::types::_instance_status::InstanceStatus;
 
 pub use crate::types::_instance_status_reason::InstanceStatusReason;
 
+pub use crate::types::_metric_creation_method::MetricCreationMethod;
+
 pub use crate::types::_notification_priority::NotificationPriority;
 
 pub use crate::types::_phone_number_status::PhoneNumberStatus;
@@ -720,6 +738,8 @@ pub use crate::types::_hours_of_operation_summary::HoursOfOperationSummary;
 pub use crate::types::_instance_summary::InstanceSummary;
 
 pub use crate::types::_integration_association_summary::IntegrationAssociationSummary;
+
+pub use crate::types::_metric_summary::MetricSummary;
 
 pub use crate::types::_phone_number_summary::PhoneNumberSummary;
 
@@ -949,6 +969,8 @@ pub use crate::types::_override_time_slice::OverrideTimeSlice;
 
 pub use crate::types::_recurrence_frequency::RecurrenceFrequency;
 
+pub use crate::types::_calculation_component::CalculationComponent;
+
 pub use crate::types::_video_capability::VideoCapability;
 
 pub use crate::types::_screen_share_capability::ScreenShareCapability;
@@ -1036,6 +1058,8 @@ pub use crate::types::_evaluation_contact_participant::EvaluationContactParticip
 pub use crate::types::_evaluation_answer_output::EvaluationAnswerOutput;
 
 pub use crate::types::_replication_status_summary::ReplicationStatusSummary;
+
+pub use crate::types::_available_filter::AvailableFilter;
 
 pub use crate::types::_phone_number_workflow_status::PhoneNumberWorkflowStatus;
 
@@ -1243,6 +1267,8 @@ pub use crate::types::_contact_participant_role::ContactParticipantRole;
 
 pub use crate::types::_instance_replication_status::InstanceReplicationStatus;
 
+pub use crate::types::_available_filter_type::AvailableFilterType;
+
 pub use crate::types::_queue_reference::QueueReference;
 
 pub use crate::types::_agent_status_identifier::AgentStatusIdentifier;
@@ -1335,6 +1361,8 @@ pub use crate::types::_evaluation_form_item_enablement_action::EvaluationFormIte
 
 pub use crate::types::_question_points_configuration::QuestionPointsConfiguration;
 
+pub use crate::types::_metric_filter::MetricFilter;
+
 pub use crate::types::_field_value::FieldValue;
 
 pub use crate::types::_sla_type::SlaType;
@@ -1397,6 +1425,12 @@ pub use crate::types::_evaluation_form_multi_select_question_automation::Evaluat
 
 pub use crate::types::_evaluation_form_item_enablement_operator::EvaluationFormItemEnablementOperator;
 
+pub use crate::types::_metric_filter_number_condition::MetricFilterNumberCondition;
+
+pub use crate::types::_metric_filter_string_condition::MetricFilterStringCondition;
+
+pub use crate::types::_metric_filter_boolean_condition::MetricFilterBooleanCondition;
+
 pub use crate::types::_field_value_union::FieldValueUnion;
 
 pub use crate::types::_access_type::AccessType;
@@ -1434,6 +1468,12 @@ pub use crate::types::_evaluation_form_single_select_question_option::Evaluation
 pub use crate::types::_evaluation_form_multi_select_question_option::EvaluationFormMultiSelectQuestionOption;
 
 pub use crate::types::_evaluation_form_item_enablement_condition_operand::EvaluationFormItemEnablementConditionOperand;
+
+pub use crate::types::_metric_filter_number_condition_comparison::MetricFilterNumberConditionComparison;
+
+pub use crate::types::_metric_filter_string_condition_comparison::MetricFilterStringConditionComparison;
+
+pub use crate::types::_metric_filter_boolean_condition_comparison::MetricFilterBooleanConditionComparison;
 
 pub use crate::types::_empty_field_value::EmptyFieldValue;
 
@@ -1623,6 +1663,10 @@ mod _auto_evaluation_status;
 
 mod _automatic_fail_configuration;
 
+mod _available_filter;
+
+mod _available_filter_type;
+
 mod _available_number_summary;
 
 mod _batch_create_data_table_value_failure_result;
@@ -1648,6 +1692,8 @@ mod _behavior_type;
 mod _boolean_comparison_type;
 
 mod _boolean_condition;
+
+mod _calculation_component;
 
 mod _campaign;
 
@@ -2299,13 +2345,45 @@ mod _meeting_feature_status;
 
 mod _meeting_features_configuration;
 
+mod _metric_calculation;
+
+mod _metric_creation_method;
+
 mod _metric_data_v2;
+
+mod _metric_definition;
+
+mod _metric_filter;
+
+mod _metric_filter_boolean_condition;
+
+mod _metric_filter_boolean_condition_comparison;
+
+mod _metric_filter_number_condition;
+
+mod _metric_filter_number_condition_comparison;
+
+mod _metric_filter_string_condition;
+
+mod _metric_filter_string_condition_comparison;
 
 mod _metric_filter_v2;
 
 mod _metric_interval;
 
 mod _metric_result_v2;
+
+mod _metric_search_criteria;
+
+mod _metric_search_filter;
+
+mod _metric_status;
+
+mod _metric_summary;
+
+mod _metric_type;
+
+mod _metric_unit;
 
 mod _metric_v2;
 
@@ -2850,6 +2928,8 @@ mod _traffic_type;
 mod _transcript;
 
 mod _transcript_criteria;
+
+mod _trend_indicator;
 
 mod _unit;
 

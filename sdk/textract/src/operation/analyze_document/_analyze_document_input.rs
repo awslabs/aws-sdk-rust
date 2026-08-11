@@ -8,7 +8,9 @@ pub struct AnalyzeDocumentInput {
     pub document: ::std::option::Option<crate::types::Document>,
     /// <p>A list of the types of analysis to perform. Add TABLES to the list to return information about the tables that are detected in the input document. Add FORMS to return detected form data. Add SIGNATURES to return the locations of detected signatures. Add LAYOUT to the list to return information about the layout of the document. All lines and words detected in the document are included in the response (including text that isn't related to the value of <code>FeatureTypes</code>).</p>
     pub feature_types: ::std::option::Option<::std::vec::Vec<crate::types::FeatureType>>,
-    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p><note>
+    /// <p>Amazon Textract uses Amazon Augmented AI (A2I) to run the human review workflows that you specify in <code>HumanLoopConfig</code>. A2I entered maintenance mode in July 2026 and no longer accepts new customers. If your account is not an existing A2I customer, requests fail with an <code>InvalidParameterException</code>. For more information, see <a href="https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/">AWS service availability</a>. If you're an existing A2I customer but receive this error, contact AWS Support and request assistance from the A2I team.</p>
+    /// </note>
     pub human_loop_config: ::std::option::Option<crate::types::HumanLoopConfig>,
     /// <p>Contains Queries and the alias for those Queries, as determined by the input.</p>
     pub queries_config: ::std::option::Option<crate::types::QueriesConfig>,
@@ -27,7 +29,9 @@ impl AnalyzeDocumentInput {
     pub fn feature_types(&self) -> &[crate::types::FeatureType] {
         self.feature_types.as_deref().unwrap_or_default()
     }
-    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p><note>
+    /// <p>Amazon Textract uses Amazon Augmented AI (A2I) to run the human review workflows that you specify in <code>HumanLoopConfig</code>. A2I entered maintenance mode in July 2026 and no longer accepts new customers. If your account is not an existing A2I customer, requests fail with an <code>InvalidParameterException</code>. For more information, see <a href="https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/">AWS service availability</a>. If you're an existing A2I customer but receive this error, contact AWS Support and request assistance from the A2I team.</p>
+    /// </note>
     pub fn human_loop_config(&self) -> ::std::option::Option<&crate::types::HumanLoopConfig> {
         self.human_loop_config.as_ref()
     }
@@ -96,17 +100,23 @@ impl AnalyzeDocumentInputBuilder {
     pub fn get_feature_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FeatureType>> {
         &self.feature_types
     }
-    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p><note>
+    /// <p>Amazon Textract uses Amazon Augmented AI (A2I) to run the human review workflows that you specify in <code>HumanLoopConfig</code>. A2I entered maintenance mode in July 2026 and no longer accepts new customers. If your account is not an existing A2I customer, requests fail with an <code>InvalidParameterException</code>. For more information, see <a href="https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/">AWS service availability</a>. If you're an existing A2I customer but receive this error, contact AWS Support and request assistance from the A2I team.</p>
+    /// </note>
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
         self.human_loop_config = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p><note>
+    /// <p>Amazon Textract uses Amazon Augmented AI (A2I) to run the human review workflows that you specify in <code>HumanLoopConfig</code>. A2I entered maintenance mode in July 2026 and no longer accepts new customers. If your account is not an existing A2I customer, requests fail with an <code>InvalidParameterException</code>. For more information, see <a href="https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/">AWS service availability</a>. If you're an existing A2I customer but receive this error, contact AWS Support and request assistance from the A2I team.</p>
+    /// </note>
     pub fn set_human_loop_config(mut self, input: ::std::option::Option<crate::types::HumanLoopConfig>) -> Self {
         self.human_loop_config = input;
         self
     }
-    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p>
+    /// <p>Sets the configuration for the human in the loop workflow for analyzing documents.</p><note>
+    /// <p>Amazon Textract uses Amazon Augmented AI (A2I) to run the human review workflows that you specify in <code>HumanLoopConfig</code>. A2I entered maintenance mode in July 2026 and no longer accepts new customers. If your account is not an existing A2I customer, requests fail with an <code>InvalidParameterException</code>. For more information, see <a href="https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/">AWS service availability</a>. If you're an existing A2I customer but receive this error, contact AWS Support and request assistance from the A2I team.</p>
+    /// </note>
     pub fn get_human_loop_config(&self) -> &::std::option::Option<crate::types::HumanLoopConfig> {
         &self.human_loop_config
     }

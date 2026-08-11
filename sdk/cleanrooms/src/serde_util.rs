@@ -237,6 +237,18 @@ pub(crate) fn create_privacy_budget_template_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_analysis_log_export_output_output_correct_errors(
+    mut builder: crate::operation::get_analysis_log_export::builders::GetAnalysisLogExportOutputBuilder,
+) -> crate::operation::get_analysis_log_export::builders::GetAnalysisLogExportOutputBuilder {
+    if builder.analysis_log_export.is_none() {
+        builder.analysis_log_export = {
+            let builder = crate::types::builders::AnalysisLogExportBuilder::default();
+            crate::serde_util::analysis_log_export_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_analysis_template_output_output_correct_errors(
     mut builder: crate::operation::get_analysis_template::builders::GetAnalysisTemplateOutputBuilder,
 ) -> crate::operation::get_analysis_template::builders::GetAnalysisTemplateOutputBuilder {
@@ -509,6 +521,15 @@ pub(crate) fn get_schema_analysis_rule_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_analysis_log_exports_output_output_correct_errors(
+    mut builder: crate::operation::list_analysis_log_exports::builders::ListAnalysisLogExportsOutputBuilder,
+) -> crate::operation::list_analysis_log_exports::builders::ListAnalysisLogExportsOutputBuilder {
+    if builder.analysis_log_exports.is_none() {
+        builder.analysis_log_exports = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_analysis_templates_output_output_correct_errors(
     mut builder: crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder,
 ) -> crate::operation::list_analysis_templates::builders::ListAnalysisTemplatesOutputBuilder {
@@ -743,6 +764,18 @@ pub(crate) fn preview_privacy_impact_output_output_correct_errors(
 ) -> crate::operation::preview_privacy_impact::builders::PreviewPrivacyImpactOutputBuilder {
     if builder.privacy_impact.is_none() {
         builder.privacy_impact = Some(crate::types::PrivacyImpact::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn start_analysis_log_export_output_output_correct_errors(
+    mut builder: crate::operation::start_analysis_log_export::builders::StartAnalysisLogExportOutputBuilder,
+) -> crate::operation::start_analysis_log_export::builders::StartAnalysisLogExportOutputBuilder {
+    if builder.analysis_log_export.is_none() {
+        builder.analysis_log_export = {
+            let builder = crate::types::builders::AnalysisLogExportBuilder::default();
+            crate::serde_util::analysis_log_export_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -1479,6 +1512,39 @@ pub(crate) fn privacy_budget_template_correct_errors(
     builder
 }
 
+pub(crate) fn analysis_log_export_correct_errors(
+    mut builder: crate::types::builders::AnalysisLogExportBuilder,
+) -> crate::types::builders::AnalysisLogExportBuilder {
+    if builder.analysis_log_export_id.is_none() {
+        builder.analysis_log_export_id = Some(Default::default())
+    }
+    if builder.analysis_id.is_none() {
+        builder.analysis_id = Some(Default::default())
+    }
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::LogExportAnalysisType>().ok()
+    }
+    if builder.membership_id.is_none() {
+        builder.membership_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AnalysisLogExportStatus>().ok()
+    }
+    if builder.result_configuration.is_none() {
+        builder.result_configuration = {
+            let builder = crate::types::builders::AnalysisLogExportResultConfigurationBuilder::default();
+            Some(crate::serde_util::analysis_log_export_result_configuration_correct_errors(builder).build())
+        }
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_time.is_none() {
+        builder.update_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn collaboration_analysis_template_correct_errors(
     mut builder: crate::types::builders::CollaborationAnalysisTemplateBuilder,
 ) -> crate::types::builders::CollaborationAnalysisTemplateBuilder {
@@ -1790,6 +1856,51 @@ pub(crate) fn membership_payment_configuration_correct_errors(
                 .build()
                 .ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn analysis_log_export_result_configuration_correct_errors(
+    mut builder: crate::types::builders::AnalysisLogExportResultConfigurationBuilder,
+) -> crate::types::builders::AnalysisLogExportResultConfigurationBuilder {
+    if builder.output_configuration.is_none() {
+        builder.output_configuration = {
+            let builder = crate::types::builders::AnalysisLogExportOutputConfigurationBuilder::default();
+            Some(crate::serde_util::analysis_log_export_output_configuration_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn analysis_log_export_error_correct_errors(
+    mut builder: crate::types::builders::AnalysisLogExportErrorBuilder,
+) -> crate::types::builders::AnalysisLogExportErrorBuilder {
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn analysis_log_export_summary_correct_errors(
+    mut builder: crate::types::builders::AnalysisLogExportSummaryBuilder,
+) -> crate::types::builders::AnalysisLogExportSummaryBuilder {
+    if builder.analysis_log_export_id.is_none() {
+        builder.analysis_log_export_id = Some(Default::default())
+    }
+    if builder.analysis_id.is_none() {
+        builder.analysis_id = Some(Default::default())
+    }
+    if builder.analysis_type.is_none() {
+        builder.analysis_type = "no value was set".parse::<crate::types::LogExportAnalysisType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AnalysisLogExportStatus>().ok()
+    }
+    if builder.create_time.is_none() {
+        builder.create_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -2776,6 +2887,20 @@ pub(crate) fn membership_query_compute_payment_config_correct_errors(
     builder
 }
 
+pub(crate) fn analysis_log_export_output_configuration_correct_errors(
+    mut builder: crate::types::builders::AnalysisLogExportOutputConfigurationBuilder,
+) -> crate::types::builders::AnalysisLogExportOutputConfigurationBuilder {
+    if builder.s3.is_none() {
+        builder.s3 = {
+            let builder = crate::types::builders::AnalysisLogExportS3OutputConfigurationBuilder::default();
+            crate::serde_util::analysis_log_export_s3_output_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn access_budgets_privacy_template_parameters_output_correct_errors(
     mut builder: crate::types::builders::AccessBudgetsPrivacyTemplateParametersOutputBuilder,
 ) -> crate::types::builders::AccessBudgetsPrivacyTemplateParametersOutputBuilder {
@@ -3098,6 +3223,15 @@ pub(crate) fn snowflake_table_reference_correct_errors(
     }
     if builder.table_schema.is_none() {
         builder.table_schema = Some(crate::types::SnowflakeTableSchema::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn analysis_log_export_s3_output_configuration_correct_errors(
+    mut builder: crate::types::builders::AnalysisLogExportS3OutputConfigurationBuilder,
+) -> crate::types::builders::AnalysisLogExportS3OutputConfigurationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
     }
     builder
 }

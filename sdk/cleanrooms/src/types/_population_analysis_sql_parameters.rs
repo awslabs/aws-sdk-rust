@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PopulationAnalysisSqlParameters {
-    /// <p>The SQL query string used to populate the intermediate table. Maximum length of 500,000 characters.</p>
+    /// <p>The SQL query string used to populate the intermediate table.</p>
     pub query_string: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the analysis template to use for populating the intermediate table.</p>
     pub analysis_template_arn: ::std::option::Option<::std::string::String>,
 }
 impl PopulationAnalysisSqlParameters {
-    /// <p>The SQL query string used to populate the intermediate table. Maximum length of 500,000 characters.</p>
+    /// <p>The SQL query string used to populate the intermediate table.</p>
     pub fn query_string(&self) -> ::std::option::Option<&str> {
         self.query_string.as_deref()
     }
@@ -42,17 +42,17 @@ pub struct PopulationAnalysisSqlParametersBuilder {
     pub(crate) analysis_template_arn: ::std::option::Option<::std::string::String>,
 }
 impl PopulationAnalysisSqlParametersBuilder {
-    /// <p>The SQL query string used to populate the intermediate table. Maximum length of 500,000 characters.</p>
+    /// <p>The SQL query string used to populate the intermediate table.</p>
     pub fn query_string(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.query_string = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The SQL query string used to populate the intermediate table. Maximum length of 500,000 characters.</p>
+    /// <p>The SQL query string used to populate the intermediate table.</p>
     pub fn set_query_string(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.query_string = input;
         self
     }
-    /// <p>The SQL query string used to populate the intermediate table. Maximum length of 500,000 characters.</p>
+    /// <p>The SQL query string used to populate the intermediate table.</p>
     pub fn get_query_string(&self) -> &::std::option::Option<::std::string::String> {
         &self.query_string
     }

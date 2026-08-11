@@ -123,9 +123,13 @@ pub use crate::types::_membership::Membership;
 
 pub use crate::types::_update_membership_payment_configuration::UpdateMembershipPaymentConfiguration;
 
+pub use crate::types::_analysis_log_export::AnalysisLogExport;
+
 pub use crate::types::_protected_job::ProtectedJob;
 
 pub use crate::types::_protected_query::ProtectedQuery;
+
+pub use crate::types::_analysis_log_export_status::AnalysisLogExportStatus;
 
 pub use crate::types::_protected_job_status::ProtectedJobStatus;
 
@@ -134,6 +138,10 @@ pub use crate::types::_protected_query_status::ProtectedQueryStatus;
 pub use crate::types::_preview_privacy_impact_parameters_input::PreviewPrivacyImpactParametersInput;
 
 pub use crate::types::_privacy_impact::PrivacyImpact;
+
+pub use crate::types::_log_export_analysis_type::LogExportAnalysisType;
+
+pub use crate::types::_analysis_log_export_result_configuration::AnalysisLogExportResultConfiguration;
 
 pub use crate::types::_protected_job_type::ProtectedJobType;
 
@@ -285,6 +293,8 @@ pub use crate::types::_membership_ml_payment_config::MembershipMlPaymentConfig;
 
 pub use crate::types::_membership_job_compute_payment_config::MembershipJobComputePaymentConfig;
 
+pub use crate::types::_analysis_log_export_error::AnalysisLogExportError;
+
 pub use crate::types::_protected_job_result_configuration_output::ProtectedJobResultConfigurationOutput;
 
 pub use crate::types::_protected_job_statistics::ProtectedJobStatistics;
@@ -301,6 +311,8 @@ pub use crate::types::_protected_query_error::ProtectedQueryError;
 
 pub use crate::types::_differential_privacy_parameters::DifferentialPrivacyParameters;
 
+pub use crate::types::_analysis_log_export_summary::AnalysisLogExportSummary;
+
 pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummary;
 
 pub use crate::types::_protected_job_summary::ProtectedJobSummary;
@@ -310,6 +322,8 @@ pub use crate::types::_protected_query_summary::ProtectedQuerySummary;
 pub use crate::types::_differential_privacy_preview_parameters_input::DifferentialPrivacyPreviewParametersInput;
 
 pub use crate::types::_differential_privacy_privacy_impact::DifferentialPrivacyPrivacyImpact;
+
+pub use crate::types::_analysis_log_export_output_configuration::AnalysisLogExportOutputConfiguration;
 
 pub use crate::types::_protected_job_output_configuration_input::ProtectedJobOutputConfigurationInput;
 
@@ -428,6 +442,8 @@ pub use crate::types::_billed_resource_utilization::BilledResourceUtilization;
 pub use crate::types::_protected_query_output::ProtectedQueryOutput;
 
 pub use crate::types::_intermediate_table_output_configuration::IntermediateTableOutputConfiguration;
+
+pub use crate::types::_analysis_log_export_s3_output_configuration::AnalysisLogExportS3OutputConfiguration;
 
 pub use crate::types::_protected_job_member_output_configuration_input::ProtectedJobMemberOutputConfigurationInput;
 
@@ -606,6 +622,20 @@ mod _aggregation_constraint;
 mod _aggregation_type;
 
 mod _analysis_format;
+
+mod _analysis_log_export;
+
+mod _analysis_log_export_error;
+
+mod _analysis_log_export_output_configuration;
+
+mod _analysis_log_export_result_configuration;
+
+mod _analysis_log_export_s3_output_configuration;
+
+mod _analysis_log_export_status;
+
+mod _analysis_log_export_summary;
 
 mod _analysis_method;
 
@@ -916,6 +946,8 @@ mod _job_type;
 mod _join_operator;
 
 mod _join_required_option;
+
+mod _log_export_analysis_type;
 
 mod _member_ability;
 

@@ -27,6 +27,10 @@ pub struct ClusterVersionInformation {
     pub version_status: ::std::option::Option<crate::types::VersionStatus>,
     /// <p>The patch version of Kubernetes for this cluster version.</p>
     pub kubernetes_patch_version: ::std::option::Option<::std::string::String>,
+    /// <p>The available provisioned control plane scaling tiers and their capabilities for this Kubernetes version.</p>
+    pub control_plane_scaling_tiers: ::std::option::Option<::std::vec::Vec<crate::types::ControlPlaneScalingTierInfo>>,
+    /// <p>The default control plane component configuration and constraints for this Kubernetes version.</p>
+    pub control_plane_component_config: ::std::option::Option<crate::types::ControlPlaneConfigInfo>,
 }
 impl ClusterVersionInformation {
     /// <p>The Kubernetes version for the cluster.</p>
@@ -72,6 +76,16 @@ impl ClusterVersionInformation {
     pub fn kubernetes_patch_version(&self) -> ::std::option::Option<&str> {
         self.kubernetes_patch_version.as_deref()
     }
+    /// <p>The available provisioned control plane scaling tiers and their capabilities for this Kubernetes version.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.control_plane_scaling_tiers.is_none()`.
+    pub fn control_plane_scaling_tiers(&self) -> &[crate::types::ControlPlaneScalingTierInfo] {
+        self.control_plane_scaling_tiers.as_deref().unwrap_or_default()
+    }
+    /// <p>The default control plane component configuration and constraints for this Kubernetes version.</p>
+    pub fn control_plane_component_config(&self) -> ::std::option::Option<&crate::types::ControlPlaneConfigInfo> {
+        self.control_plane_component_config.as_ref()
+    }
 }
 impl ClusterVersionInformation {
     /// Creates a new builder-style object to manufacture [`ClusterVersionInformation`](crate::types::ClusterVersionInformation).
@@ -94,6 +108,8 @@ pub struct ClusterVersionInformationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ClusterVersionStatus>,
     pub(crate) version_status: ::std::option::Option<crate::types::VersionStatus>,
     pub(crate) kubernetes_patch_version: ::std::option::Option<::std::string::String>,
+    pub(crate) control_plane_scaling_tiers: ::std::option::Option<::std::vec::Vec<crate::types::ControlPlaneScalingTierInfo>>,
+    pub(crate) control_plane_component_config: ::std::option::Option<crate::types::ControlPlaneConfigInfo>,
 }
 impl ClusterVersionInformationBuilder {
     /// <p>The Kubernetes version for the cluster.</p>
@@ -245,6 +261,43 @@ impl ClusterVersionInformationBuilder {
     pub fn get_kubernetes_patch_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.kubernetes_patch_version
     }
+    /// Appends an item to `control_plane_scaling_tiers`.
+    ///
+    /// To override the contents of this collection use [`set_control_plane_scaling_tiers`](Self::set_control_plane_scaling_tiers).
+    ///
+    /// <p>The available provisioned control plane scaling tiers and their capabilities for this Kubernetes version.</p>
+    pub fn control_plane_scaling_tiers(mut self, input: crate::types::ControlPlaneScalingTierInfo) -> Self {
+        let mut v = self.control_plane_scaling_tiers.unwrap_or_default();
+        v.push(input);
+        self.control_plane_scaling_tiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The available provisioned control plane scaling tiers and their capabilities for this Kubernetes version.</p>
+    pub fn set_control_plane_scaling_tiers(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ControlPlaneScalingTierInfo>>,
+    ) -> Self {
+        self.control_plane_scaling_tiers = input;
+        self
+    }
+    /// <p>The available provisioned control plane scaling tiers and their capabilities for this Kubernetes version.</p>
+    pub fn get_control_plane_scaling_tiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlPlaneScalingTierInfo>> {
+        &self.control_plane_scaling_tiers
+    }
+    /// <p>The default control plane component configuration and constraints for this Kubernetes version.</p>
+    pub fn control_plane_component_config(mut self, input: crate::types::ControlPlaneConfigInfo) -> Self {
+        self.control_plane_component_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The default control plane component configuration and constraints for this Kubernetes version.</p>
+    pub fn set_control_plane_component_config(mut self, input: ::std::option::Option<crate::types::ControlPlaneConfigInfo>) -> Self {
+        self.control_plane_component_config = input;
+        self
+    }
+    /// <p>The default control plane component configuration and constraints for this Kubernetes version.</p>
+    pub fn get_control_plane_component_config(&self) -> &::std::option::Option<crate::types::ControlPlaneConfigInfo> {
+        &self.control_plane_component_config
+    }
     /// Consumes the builder and constructs a [`ClusterVersionInformation`](crate::types::ClusterVersionInformation).
     pub fn build(self) -> crate::types::ClusterVersionInformation {
         crate::types::ClusterVersionInformation {
@@ -258,6 +311,8 @@ impl ClusterVersionInformationBuilder {
             status: self.status,
             version_status: self.version_status,
             kubernetes_patch_version: self.kubernetes_patch_version,
+            control_plane_scaling_tiers: self.control_plane_scaling_tiers,
+            control_plane_component_config: self.control_plane_component_config,
         }
     }
 }

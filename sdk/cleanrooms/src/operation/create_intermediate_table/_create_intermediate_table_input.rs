@@ -9,11 +9,11 @@ pub struct CreateIntermediateTableInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the intermediate table.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration that defines the analysis used to populate the intermediate table. This configuration contains the SQL query or analysis template reference.</p>
+    /// <p>The configuration that defines the analysis used to populate the intermediate table.</p>
     pub population_analysis_configuration: ::std::option::Option<crate::types::PopulationAnalysisConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the customer-managed KMS key used to encrypt the intermediate table data.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The number of days to retain populated data versions. Minimum value of 1, maximum value of 365.</p>
+    /// <p>The number of days to retain populated data versions.</p>
     pub retention_in_days: ::std::option::Option<i32>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -31,7 +31,7 @@ impl CreateIntermediateTableInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The configuration that defines the analysis used to populate the intermediate table. This configuration contains the SQL query or analysis template reference.</p>
+    /// <p>The configuration that defines the analysis used to populate the intermediate table.</p>
     pub fn population_analysis_configuration(&self) -> ::std::option::Option<&crate::types::PopulationAnalysisConfiguration> {
         self.population_analysis_configuration.as_ref()
     }
@@ -39,7 +39,7 @@ impl CreateIntermediateTableInput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
-    /// <p>The number of days to retain populated data versions. Minimum value of 1, maximum value of 365.</p>
+    /// <p>The number of days to retain populated data versions.</p>
     pub fn retention_in_days(&self) -> ::std::option::Option<i32> {
         self.retention_in_days
     }
@@ -112,18 +112,18 @@ impl CreateIntermediateTableInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The configuration that defines the analysis used to populate the intermediate table. This configuration contains the SQL query or analysis template reference.</p>
+    /// <p>The configuration that defines the analysis used to populate the intermediate table.</p>
     /// This field is required.
     pub fn population_analysis_configuration(mut self, input: crate::types::PopulationAnalysisConfiguration) -> Self {
         self.population_analysis_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The configuration that defines the analysis used to populate the intermediate table. This configuration contains the SQL query or analysis template reference.</p>
+    /// <p>The configuration that defines the analysis used to populate the intermediate table.</p>
     pub fn set_population_analysis_configuration(mut self, input: ::std::option::Option<crate::types::PopulationAnalysisConfiguration>) -> Self {
         self.population_analysis_configuration = input;
         self
     }
-    /// <p>The configuration that defines the analysis used to populate the intermediate table. This configuration contains the SQL query or analysis template reference.</p>
+    /// <p>The configuration that defines the analysis used to populate the intermediate table.</p>
     pub fn get_population_analysis_configuration(&self) -> &::std::option::Option<crate::types::PopulationAnalysisConfiguration> {
         &self.population_analysis_configuration
     }
@@ -141,17 +141,17 @@ impl CreateIntermediateTableInputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
-    /// <p>The number of days to retain populated data versions. Minimum value of 1, maximum value of 365.</p>
+    /// <p>The number of days to retain populated data versions.</p>
     pub fn retention_in_days(mut self, input: i32) -> Self {
         self.retention_in_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days to retain populated data versions. Minimum value of 1, maximum value of 365.</p>
+    /// <p>The number of days to retain populated data versions.</p>
     pub fn set_retention_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.retention_in_days = input;
         self
     }
-    /// <p>The number of days to retain populated data versions. Minimum value of 1, maximum value of 365.</p>
+    /// <p>The number of days to retain populated data versions.</p>
     pub fn get_retention_in_days(&self) -> &::std::option::Option<i32> {
         &self.retention_in_days
     }

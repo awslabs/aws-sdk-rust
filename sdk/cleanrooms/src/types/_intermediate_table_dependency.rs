@@ -10,7 +10,7 @@ pub struct IntermediateTableDependency {
     pub name: ::std::string::String,
     /// <p>The type of the dependency table.</p>
     pub r#type: crate::types::BaseTableDependencyType,
-    /// <p>Whether the dependency is direct or indirect. A direct dependency is a table explicitly referenced in the stored query, while an indirect dependency is referenced through another intermediate table.</p>
+    /// <p>The type of dependency, either direct or indirect. A direct dependency is a table explicitly referenced in the stored query. An indirect dependency is a table referenced through another intermediate table.</p>
     pub parent_type: crate::types::BaseTableParentType,
     /// <p>The Amazon Web Services account ID of the member who owns the dependency table.</p>
     pub creator_account_id: ::std::string::String,
@@ -30,7 +30,7 @@ impl IntermediateTableDependency {
     pub fn r#type(&self) -> &crate::types::BaseTableDependencyType {
         &self.r#type
     }
-    /// <p>Whether the dependency is direct or indirect. A direct dependency is a table explicitly referenced in the stored query, while an indirect dependency is referenced through another intermediate table.</p>
+    /// <p>The type of dependency, either direct or indirect. A direct dependency is a table explicitly referenced in the stored query. An indirect dependency is a table referenced through another intermediate table.</p>
     pub fn parent_type(&self) -> &crate::types::BaseTableParentType {
         &self.parent_type
     }
@@ -103,18 +103,18 @@ impl IntermediateTableDependencyBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::BaseTableDependencyType> {
         &self.r#type
     }
-    /// <p>Whether the dependency is direct or indirect. A direct dependency is a table explicitly referenced in the stored query, while an indirect dependency is referenced through another intermediate table.</p>
+    /// <p>The type of dependency, either direct or indirect. A direct dependency is a table explicitly referenced in the stored query. An indirect dependency is a table referenced through another intermediate table.</p>
     /// This field is required.
     pub fn parent_type(mut self, input: crate::types::BaseTableParentType) -> Self {
         self.parent_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Whether the dependency is direct or indirect. A direct dependency is a table explicitly referenced in the stored query, while an indirect dependency is referenced through another intermediate table.</p>
+    /// <p>The type of dependency, either direct or indirect. A direct dependency is a table explicitly referenced in the stored query. An indirect dependency is a table referenced through another intermediate table.</p>
     pub fn set_parent_type(mut self, input: ::std::option::Option<crate::types::BaseTableParentType>) -> Self {
         self.parent_type = input;
         self
     }
-    /// <p>Whether the dependency is direct or indirect. A direct dependency is a table explicitly referenced in the stored query, while an indirect dependency is referenced through another intermediate table.</p>
+    /// <p>The type of dependency, either direct or indirect. A direct dependency is a table explicitly referenced in the stored query. An indirect dependency is a table referenced through another intermediate table.</p>
     pub fn get_parent_type(&self) -> &::std::option::Option<crate::types::BaseTableParentType> {
         &self.parent_type
     }

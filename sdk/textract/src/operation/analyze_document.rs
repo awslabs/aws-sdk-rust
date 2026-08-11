@@ -268,7 +268,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AnalyzeDocume
 pub enum AnalyzeDocumentError {
     /// <p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <code>limits</code>.</p>
+    /// <p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard limits</a>.</p>
     BadDocumentException(crate::types::error::BadDocumentException),
     /// <p>The document can't be processed because it's too large. The maximum document size for synchronous operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.</p>
     DocumentTooLargeException(crate::types::error::DocumentTooLargeException),

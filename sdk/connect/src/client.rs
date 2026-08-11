@@ -234,6 +234,8 @@ mod create_instance;
 
 mod create_integration_association;
 
+mod create_metric;
+
 mod create_notification;
 
 mod create_participant;
@@ -339,6 +341,8 @@ mod delete_instance;
 
 mod delete_integration_association;
 
+mod delete_metric;
+
 mod delete_notification;
 
 mod delete_predefined_attribute;
@@ -416,6 +420,8 @@ mod describe_instance;
 mod describe_instance_attribute;
 
 mod describe_instance_storage_config;
+
+mod describe_metric;
 
 mod describe_notification;
 
@@ -591,6 +597,8 @@ mod list_lambda_functions;
 
 mod list_lex_bots;
 
+mod list_metrics;
+
 mod list_notifications;
 
 mod list_phone_numbers;
@@ -698,6 +706,8 @@ mod search_evaluation_forms;
 mod search_hours_of_operation_overrides;
 
 mod search_hours_of_operations;
+
+mod search_metrics;
 
 mod search_notifications;
 
@@ -840,6 +850,10 @@ mod update_hours_of_operation_override;
 mod update_instance_attribute;
 
 mod update_instance_storage_config;
+
+mod update_metric_content;
+
+mod update_metric_metadata;
 
 mod update_notification_content;
 

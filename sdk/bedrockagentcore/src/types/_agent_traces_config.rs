@@ -8,6 +8,8 @@ pub enum AgentTracesConfig {
     BatchEvaluation(crate::types::BatchEvaluationTraceConfig),
     /// <p>Agent traces read from CloudWatch Logs.</p>
     CloudwatchLogs(crate::types::CloudWatchLogsTraceConfig),
+    /// <p>Agent traces from an online evaluation configuration over a specified time range.</p>
+    OnlineEvaluation(crate::types::OnlineEvaluationTraceConfig),
     /// <p>Agent traces provided as inline session spans in OpenTelemetry format.</p>
     SessionSpans(::std::vec::Vec<::aws_smithy_types::Document>),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -47,6 +49,19 @@ impl AgentTracesConfig {
     pub fn is_cloudwatch_logs(&self) -> bool {
         self.as_cloudwatch_logs().is_ok()
     }
+    /// Tries to convert the enum instance into [`OnlineEvaluation`](crate::types::AgentTracesConfig::OnlineEvaluation), extracting the inner [`OnlineEvaluationTraceConfig`](crate::types::OnlineEvaluationTraceConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_online_evaluation(&self) -> ::std::result::Result<&crate::types::OnlineEvaluationTraceConfig, &Self> {
+        if let AgentTracesConfig::OnlineEvaluation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`OnlineEvaluation`](crate::types::AgentTracesConfig::OnlineEvaluation).
+    pub fn is_online_evaluation(&self) -> bool {
+        self.as_online_evaluation().is_ok()
+    }
     /// Tries to convert the enum instance into [`SessionSpans`](crate::types::AgentTracesConfig::SessionSpans), extracting the inner [`Vec`](::std::vec::Vec).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_session_spans(&self) -> ::std::result::Result<&::std::vec::Vec<::aws_smithy_types::Document>, &Self> {
@@ -70,6 +85,7 @@ impl ::std::fmt::Debug for AgentTracesConfig {
         match self {
             AgentTracesConfig::BatchEvaluation(val) => f.debug_tuple("BatchEvaluation").field(&val).finish(),
             AgentTracesConfig::CloudwatchLogs(val) => f.debug_tuple("CloudwatchLogs").field(&val).finish(),
+            AgentTracesConfig::OnlineEvaluation(val) => f.debug_tuple("OnlineEvaluation").field(&val).finish(),
             AgentTracesConfig::SessionSpans(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             AgentTracesConfig::Unknown => f.debug_tuple("Unknown").finish(),
         }

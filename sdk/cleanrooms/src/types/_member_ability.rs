@@ -12,6 +12,7 @@
 /// ```text
 /// # let memberability = unimplemented!();
 /// match memberability {
+///     MemberAbility::CanExportQueryAnalysisLog => { /* ... */ },
 ///     MemberAbility::CanQuery => { /* ... */ },
 ///     MemberAbility::CanReceiveResults => { /* ... */ },
 ///     MemberAbility::CanRunJob => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum MemberAbility {
     #[allow(missing_docs)] // documentation missing in model
+    CanExportQueryAnalysisLog,
+    #[allow(missing_docs)] // documentation missing in model
     CanQuery,
     #[allow(missing_docs)] // documentation missing in model
     CanReceiveResults,
@@ -56,6 +59,7 @@ pub enum MemberAbility {
 impl ::std::convert::From<&str> for MemberAbility {
     fn from(s: &str) -> Self {
         match s {
+            "CAN_EXPORT_QUERY_ANALYSIS_LOG" => MemberAbility::CanExportQueryAnalysisLog,
             "CAN_QUERY" => MemberAbility::CanQuery,
             "CAN_RECEIVE_RESULTS" => MemberAbility::CanReceiveResults,
             "CAN_RUN_JOB" => MemberAbility::CanRunJob,
@@ -74,6 +78,7 @@ impl MemberAbility {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            MemberAbility::CanExportQueryAnalysisLog => "CAN_EXPORT_QUERY_ANALYSIS_LOG",
             MemberAbility::CanQuery => "CAN_QUERY",
             MemberAbility::CanReceiveResults => "CAN_RECEIVE_RESULTS",
             MemberAbility::CanRunJob => "CAN_RUN_JOB",
@@ -82,7 +87,7 @@ impl MemberAbility {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CAN_QUERY", "CAN_RECEIVE_RESULTS", "CAN_RUN_JOB"]
+        &["CAN_EXPORT_QUERY_ANALYSIS_LOG", "CAN_QUERY", "CAN_RECEIVE_RESULTS", "CAN_RUN_JOB"]
     }
 }
 impl ::std::convert::AsRef<str> for MemberAbility {
@@ -105,6 +110,7 @@ impl MemberAbility {
 impl ::std::fmt::Display for MemberAbility {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            MemberAbility::CanExportQueryAnalysisLog => write!(f, "CAN_EXPORT_QUERY_ANALYSIS_LOG"),
             MemberAbility::CanQuery => write!(f, "CAN_QUERY"),
             MemberAbility::CanReceiveResults => write!(f, "CAN_RECEIVE_RESULTS"),
             MemberAbility::CanRunJob => write!(f, "CAN_RUN_JOB"),

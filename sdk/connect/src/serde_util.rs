@@ -107,6 +107,18 @@ pub(crate) fn create_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_metric_output_output_correct_errors(
+    mut builder: crate::operation::create_metric::builders::CreateMetricOutputBuilder,
+) -> crate::operation::create_metric::builders::CreateMetricOutputBuilder {
+    if builder.metric_arn.is_none() {
+        builder.metric_arn = Some(Default::default())
+    }
+    if builder.metric_id.is_none() {
+        builder.metric_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_notification_output_output_correct_errors(
     mut builder: crate::operation::create_notification::builders::CreateNotificationOutputBuilder,
 ) -> crate::operation::create_notification::builders::CreateNotificationOutputBuilder {
@@ -296,6 +308,18 @@ pub(crate) fn describe_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_metric_output_output_correct_errors(
+    mut builder: crate::operation::describe_metric::builders::DescribeMetricOutputBuilder,
+) -> crate::operation::describe_metric::builders::DescribeMetricOutputBuilder {
+    if builder.metric.is_none() {
+        builder.metric = {
+            let builder = crate::types::builders::MetricDefinitionBuilder::default();
+            crate::serde_util::metric_definition_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_notification_output_output_correct_errors(
     mut builder: crate::operation::describe_notification::builders::DescribeNotificationOutputBuilder,
 ) -> crate::operation::describe_notification::builders::DescribeNotificationOutputBuilder {
@@ -463,6 +487,15 @@ pub(crate) fn list_evaluation_forms_output_output_correct_errors(
 ) -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder {
     if builder.evaluation_form_summary_list.is_none() {
         builder.evaluation_form_summary_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_metrics_output_output_correct_errors(
+    mut builder: crate::operation::list_metrics::builders::ListMetricsOutputBuilder,
+) -> crate::operation::list_metrics::builders::ListMetricsOutputBuilder {
+    if builder.metric_summary_list.is_none() {
+        builder.metric_summary_list = Some(Default::default())
     }
     builder
 }
@@ -792,6 +825,42 @@ pub(crate) fn evaluation_form_correct_errors(
     }
     if builder.last_modified_by.is_none() {
         builder.last_modified_by = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metric_definition_correct_errors(
+    mut builder: crate::types::builders::MetricDefinitionBuilder,
+) -> crate::types::builders::MetricDefinitionBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MetricType>().ok()
+    }
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::MetricUnit>().ok()
+    }
+    if builder.groupings.is_none() {
+        builder.groupings = Some(Default::default())
+    }
+    if builder.filters.is_none() {
+        builder.filters = Some(Default::default())
+    }
+    if builder.category.is_none() {
+        builder.category = Some(Default::default())
+    }
+    if builder.supports_preaggregate_calculation.is_none() {
+        builder.supports_preaggregate_calculation = Some(Default::default())
+    }
+    if builder.supports_custom_calculation.is_none() {
+        builder.supports_custom_calculation = Some(Default::default())
     }
     builder
 }
@@ -1473,6 +1542,39 @@ pub(crate) fn lex_bot_correct_errors(mut builder: crate::types::builders::LexBot
     builder
 }
 
+pub(crate) fn metric_calculation_correct_errors(
+    mut builder: crate::types::builders::MetricCalculationBuilder,
+) -> crate::types::builders::MetricCalculationBuilder {
+    if builder.calculation_components.is_none() {
+        builder.calculation_components = Some(Default::default())
+    }
+    if builder.calculation.is_none() {
+        builder.calculation = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metric_summary_correct_errors(
+    mut builder: crate::types::builders::MetricSummaryBuilder,
+) -> crate::types::builders::MetricSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MetricStatus>().ok()
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::MetricType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn outbound_strategy_correct_errors(
     mut builder: crate::types::builders::OutboundStrategyBuilder,
 ) -> crate::types::builders::OutboundStrategyBuilder {
@@ -2031,6 +2133,15 @@ pub(crate) fn assign_sla_action_definition_correct_errors(
     builder
 }
 
+pub(crate) fn calculation_component_correct_errors(
+    mut builder: crate::types::builders::CalculationComponentBuilder,
+) -> crate::types::builders::CalculationComponentBuilder {
+    if builder.alias.is_none() {
+        builder.alias = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_case_action_definition_correct_errors(
     mut builder: crate::types::builders::CreateCaseActionDefinitionBuilder,
 ) -> crate::types::builders::CreateCaseActionDefinitionBuilder {
@@ -2339,6 +2450,13 @@ pub(crate) fn field_value_correct_errors(mut builder: crate::types::builders::Fi
     builder
 }
 
+pub(crate) fn metric_filter_correct_errors(mut builder: crate::types::builders::MetricFilterBuilder) -> crate::types::builders::MetricFilterBuilder {
+    if builder.metric_filter_key.is_none() {
+        builder.metric_filter_key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn post_accept_timeout_config_correct_errors(
     mut builder: crate::types::builders::PostAcceptTimeoutConfigBuilder,
 ) -> crate::types::builders::PostAcceptTimeoutConfigBuilder {
@@ -2363,6 +2481,39 @@ pub(crate) fn real_time_contact_analysis_character_interval_correct_errors(
 pub(crate) fn reference_correct_errors(mut builder: crate::types::builders::ReferenceBuilder) -> crate::types::builders::ReferenceBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ReferenceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn metric_filter_boolean_condition_correct_errors(
+    mut builder: crate::types::builders::MetricFilterBooleanConditionBuilder,
+) -> crate::types::builders::MetricFilterBooleanConditionBuilder {
+    if builder.comparison.is_none() {
+        builder.comparison = "no value was set".parse::<crate::types::MetricFilterBooleanConditionComparison>().ok()
+    }
+    builder
+}
+
+pub(crate) fn metric_filter_number_condition_correct_errors(
+    mut builder: crate::types::builders::MetricFilterNumberConditionBuilder,
+) -> crate::types::builders::MetricFilterNumberConditionBuilder {
+    if builder.comparison.is_none() {
+        builder.comparison = "no value was set".parse::<crate::types::MetricFilterNumberConditionComparison>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn metric_filter_string_condition_correct_errors(
+    mut builder: crate::types::builders::MetricFilterStringConditionBuilder,
+) -> crate::types::builders::MetricFilterStringConditionBuilder {
+    if builder.comparison.is_none() {
+        builder.comparison = "no value was set".parse::<crate::types::MetricFilterStringConditionComparison>().ok()
+    }
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
     }
     builder
 }

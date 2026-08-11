@@ -39,6 +39,12 @@ pub use crate::types::_storage_config_request::StorageConfigRequestBuilder;
 
 pub use crate::types::_control_plane_scaling_config::ControlPlaneScalingConfigBuilder;
 
+pub use crate::types::_kube_api_server_config_request::KubeApiServerConfigRequestBuilder;
+
+pub use crate::types::_kube_scheduler_config_request::KubeSchedulerConfigRequestBuilder;
+
+pub use crate::types::_kube_controller_manager_config_request::KubeControllerManagerConfigRequestBuilder;
+
 pub use crate::types::_cluster::ClusterBuilder;
 
 pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTermBuilder;
@@ -109,6 +115,12 @@ pub use crate::types::_etcd_placement_request::EtcdPlacementRequestBuilder;
 
 pub use crate::types::_block_storage::BlockStorageBuilder;
 
+pub use crate::types::_service_node_port_range::ServiceNodePortRangeBuilder;
+
+pub use crate::types::_node_resources_fit_config::NodeResourcesFitConfigBuilder;
+
+pub use crate::types::_horizontal_pod_autoscaler_controller_config_request::HorizontalPodAutoscalerControllerConfigRequestBuilder;
+
 pub use crate::types::_vpc_config_response::VpcConfigResponseBuilder;
 
 pub use crate::types::_kubernetes_network_config_response::KubernetesNetworkConfigResponseBuilder;
@@ -134,6 +146,12 @@ pub use crate::types::_remote_network_config_response::RemoteNetworkConfigRespon
 pub use crate::types::_compute_config_response::ComputeConfigResponseBuilder;
 
 pub use crate::types::_storage_config_response::StorageConfigResponseBuilder;
+
+pub use crate::types::_kube_api_server_config_response::KubeApiServerConfigResponseBuilder;
+
+pub use crate::types::_kube_scheduler_config_response::KubeSchedulerConfigResponseBuilder;
+
+pub use crate::types::_kube_controller_manager_config_response::KubeControllerManagerConfigResponseBuilder;
 
 pub use crate::types::_fargate_profile_selector::FargateProfileSelectorBuilder;
 
@@ -185,15 +203,21 @@ pub use crate::types::_remote_node_network::RemoteNodeNetworkBuilder;
 
 pub use crate::types::_remote_pod_network::RemotePodNetworkBuilder;
 
+pub use crate::types::_scoring_strategy::ScoringStrategyBuilder;
+
 pub use crate::types::_oidc::OidcBuilder;
 
 pub use crate::types::_control_plane_placement_response::ControlPlanePlacementResponseBuilder;
 
 pub use crate::types::_etcd_placement_response::EtcdPlacementResponseBuilder;
 
+pub use crate::types::_horizontal_pod_autoscaler_controller_config_response::HorizontalPodAutoscalerControllerConfigResponseBuilder;
+
 pub use crate::types::_license::LicenseBuilder;
 
 pub use crate::types::_node_repair_config_overrides::NodeRepairConfigOverridesBuilder;
+
+pub use crate::types::_control_plane_config_info::ControlPlaneConfigInfoBuilder;
 
 pub use crate::types::_insight_resource_detail::InsightResourceDetailBuilder;
 
@@ -219,12 +243,44 @@ pub use crate::types::_issue::IssueBuilder;
 
 pub use crate::types::_addon_version_info::AddonVersionInfoBuilder;
 
+pub use crate::types::_control_plane_scaling_tier_info::ControlPlaneScalingTierInfoBuilder;
+
+pub use crate::types::_kube_api_server_version_config::KubeApiServerVersionConfigBuilder;
+
+pub use crate::types::_kube_scheduler_version_config::KubeSchedulerVersionConfigBuilder;
+
+pub use crate::types::_kube_controller_manager_version_config::KubeControllerManagerVersionConfigBuilder;
+
 pub use crate::types::_deprecation_detail::DeprecationDetailBuilder;
 
 pub use crate::types::_addon_compatibility_detail::AddonCompatibilityDetailBuilder;
+
+pub use crate::types::_resource_weight::ResourceWeightBuilder;
+
+pub use crate::types::_duration_parameter_config::DurationParameterConfigBuilder;
+
+pub use crate::types::_port_range_parameter_config::PortRangeParameterConfigBuilder;
+
+pub use crate::types::_node_resources_fit_version_config::NodeResourcesFitVersionConfigBuilder;
+
+pub use crate::types::_horizontal_pod_autoscaler_controller_version_config::HorizontalPodAutoscalerControllerVersionConfigBuilder;
 
 pub use crate::types::_sso_identity::SsoIdentityBuilder;
 
 pub use crate::types::_compatibility::CompatibilityBuilder;
 
+pub use crate::types::_duration_constraints::DurationConstraintsBuilder;
+
+pub use crate::types::_port_range_constraints::PortRangeConstraintsBuilder;
+
+pub use crate::types::_scoring_strategy_config::ScoringStrategyConfigBuilder;
+
 pub use crate::types::_client_stat::ClientStatBuilder;
+
+pub use crate::types::_integer_range_constraint::IntegerRangeConstraintBuilder;
+
+pub use crate::types::_scoring_strategy_constraints::ScoringStrategyConstraintsBuilder;
+
+pub use crate::types::_allowed_values_constraint::AllowedValuesConstraintBuilder;
+
+pub use crate::types::_resource_constraints::ResourceConstraintsBuilder;

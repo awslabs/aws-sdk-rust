@@ -1363,6 +1363,38 @@ impl From<crate::operation::disallow_intermediate_table::DisallowIntermediateTab
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_analysis_log_export::GetAnalysisLogExportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_analysis_log_export::GetAnalysisLogExportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_analysis_log_export::GetAnalysisLogExportError> for Error {
+    fn from(err: crate::operation::get_analysis_log_export::GetAnalysisLogExportError) -> Self {
+        match err {
+            crate::operation::get_analysis_log_export::GetAnalysisLogExportError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_analysis_log_export::GetAnalysisLogExportError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_analysis_log_export::GetAnalysisLogExportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_analysis_log_export::GetAnalysisLogExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_analysis_log_export::GetAnalysisLogExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_analysis_log_export::GetAnalysisLogExportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_analysis_template::GetAnalysisTemplateError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2175,6 +2207,41 @@ impl From<crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_schema_analysis_rule::GetSchemaAnalysisRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError> for Error {
+    fn from(err: crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError) -> Self {
+        match err {
+            crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_analysis_log_exports::ListAnalysisLogExportsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3098,6 +3165,44 @@ impl From<crate::operation::preview_privacy_impact::PreviewPrivacyImpactError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_analysis_log_export::StartAnalysisLogExportError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_analysis_log_export::StartAnalysisLogExportError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_analysis_log_export::StartAnalysisLogExportError> for Error {
+    fn from(err: crate::operation::start_analysis_log_export::StartAnalysisLogExportError) -> Self {
+        match err {
+            crate::operation::start_analysis_log_export::StartAnalysisLogExportError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_analysis_log_export::StartAnalysisLogExportError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_analysis_log_export::StartAnalysisLogExportError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_analysis_log_export::StartAnalysisLogExportError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_analysis_log_export::StartAnalysisLogExportError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_analysis_log_export::StartAnalysisLogExportError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_analysis_log_export::StartAnalysisLogExportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_protected_job::StartProtectedJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3431,6 +3536,9 @@ impl From<crate::operation::update_configured_table_analysis_rule::UpdateConfigu
             }
             crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_configured_table_analysis_rule::UpdateConfiguredTableAnalysisRuleError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)

@@ -303,6 +303,8 @@ pub use crate::types::_cloud_watch_logs_trace_config::CloudWatchLogsTraceConfigB
 
 pub use crate::types::_batch_evaluation_trace_config::BatchEvaluationTraceConfigBuilder;
 
+pub use crate::types::_online_evaluation_trace_config::OnlineEvaluationTraceConfigBuilder;
+
 pub use crate::types::_tool_description_text_input::ToolDescriptionTextInputBuilder;
 
 pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionConfigurationBundleBuilder;

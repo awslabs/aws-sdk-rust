@@ -227,6 +227,8 @@ mod delete_privacy_budget_template;
 
 mod disallow_intermediate_table;
 
+mod get_analysis_log_export;
+
 mod get_analysis_template;
 
 mod get_collaboration;
@@ -270,6 +272,8 @@ mod get_protected_query;
 mod get_schema;
 
 mod get_schema_analysis_rule;
+
+mod list_analysis_log_exports;
 
 mod list_analysis_templates;
 
@@ -322,6 +326,8 @@ mod populate_id_mapping_table;
 mod populate_intermediate_table;
 
 mod preview_privacy_impact;
+
+mod start_analysis_log_export;
 
 mod start_protected_job;
 

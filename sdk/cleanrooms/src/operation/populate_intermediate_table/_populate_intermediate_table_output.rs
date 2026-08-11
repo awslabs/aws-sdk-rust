@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PopulateIntermediateTableOutput {
-    /// <p>The identifier for the protected query execution. Use this value with <code>GetProtectedQuery</code> to track the population progress.</p>
+    /// <p>The identifier for the protected query execution that populated the intermediate table.</p>
     pub analysis_id: ::std::string::String,
     /// <p>The type of analysis performed to populate the intermediate table.</p>
     pub analysis_type: crate::types::PopulateIntermediateTableAnalysisType,
@@ -12,7 +12,7 @@ pub struct PopulateIntermediateTableOutput {
     _request_id: Option<String>,
 }
 impl PopulateIntermediateTableOutput {
-    /// <p>The identifier for the protected query execution. Use this value with <code>GetProtectedQuery</code> to track the population progress.</p>
+    /// <p>The identifier for the protected query execution that populated the intermediate table.</p>
     pub fn analysis_id(&self) -> &str {
         use std::ops::Deref;
         self.analysis_id.deref()
@@ -49,18 +49,18 @@ pub struct PopulateIntermediateTableOutputBuilder {
     _request_id: Option<String>,
 }
 impl PopulateIntermediateTableOutputBuilder {
-    /// <p>The identifier for the protected query execution. Use this value with <code>GetProtectedQuery</code> to track the population progress.</p>
+    /// <p>The identifier for the protected query execution that populated the intermediate table.</p>
     /// This field is required.
     pub fn analysis_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.analysis_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier for the protected query execution. Use this value with <code>GetProtectedQuery</code> to track the population progress.</p>
+    /// <p>The identifier for the protected query execution that populated the intermediate table.</p>
     pub fn set_analysis_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.analysis_id = input;
         self
     }
-    /// <p>The identifier for the protected query execution. Use this value with <code>GetProtectedQuery</code> to track the population progress.</p>
+    /// <p>The identifier for the protected query execution that populated the intermediate table.</p>
     pub fn get_analysis_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.analysis_id
     }

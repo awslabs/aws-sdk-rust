@@ -87,6 +87,8 @@ pub(crate) mod shape_delete_privacy_budget_template;
 
 pub(crate) mod shape_disallow_intermediate_table;
 
+pub(crate) mod shape_get_analysis_log_export;
+
 pub(crate) mod shape_get_analysis_template;
 
 pub(crate) mod shape_get_collaboration;
@@ -130,6 +132,8 @@ pub(crate) mod shape_get_protected_query;
 pub(crate) mod shape_get_schema;
 
 pub(crate) mod shape_get_schema_analysis_rule;
+
+pub(crate) mod shape_list_analysis_log_exports;
 
 pub(crate) mod shape_list_analysis_templates;
 
@@ -182,6 +186,8 @@ pub(crate) mod shape_populate_id_mapping_table;
 pub(crate) mod shape_populate_intermediate_table;
 
 pub(crate) mod shape_preview_privacy_impact;
+
+pub(crate) mod shape_start_analysis_log_export;
 
 pub(crate) mod shape_start_protected_job;
 
@@ -283,6 +289,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_analysis_log_export_input;
+
 pub(crate) mod shape_start_protected_job_input;
 
 pub(crate) mod shape_start_protected_query_input;
@@ -324,6 +332,12 @@ pub(crate) mod shape_update_protected_job_input;
 pub(crate) mod shape_update_protected_query_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_analysis_log_export;
+
+pub(crate) mod shape_analysis_log_export_result_configuration;
+
+pub(crate) mod shape_analysis_log_export_summary_list;
 
 pub(crate) mod shape_analysis_parameter;
 
@@ -507,6 +521,12 @@ pub(crate) mod shape_allowed_column_list;
 
 pub(crate) mod shape_allowed_result_regions;
 
+pub(crate) mod shape_analysis_log_export_error;
+
+pub(crate) mod shape_analysis_log_export_output_configuration;
+
+pub(crate) mod shape_analysis_log_export_summary;
+
 pub(crate) mod shape_analysis_parameter_list;
 
 pub(crate) mod shape_analysis_rule_policy;
@@ -676,6 +696,8 @@ pub(crate) mod shape_validation_exception_field;
 pub(crate) mod shape_worker_compute_configuration;
 
 pub(crate) mod shape_access_budgets_privacy_template_parameters_output;
+
+pub(crate) mod shape_analysis_log_export_s3_output_configuration;
 
 pub(crate) mod shape_analysis_rule_aggregation;
 

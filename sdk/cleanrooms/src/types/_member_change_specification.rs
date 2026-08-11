@@ -10,6 +10,7 @@ pub struct MemberChangeSpecification {
     /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_EXPORT_QUERY_ANALYSIS_LOG\]</code> so that the member can export the analysis logs for a protected query. Having this ability isn't sufficient on its own: You can export logs only for queries that you ran or paid for.</p>
     /// </note>
     pub member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
     /// <p>The ML member abilities for a collaboration member.</p>
@@ -29,6 +30,7 @@ impl MemberChangeSpecification {
     /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_EXPORT_QUERY_ANALYSIS_LOG\]</code> so that the member can export the analysis logs for a protected query. Having this ability isn't sufficient on its own: You can export logs only for queries that you ran or paid for.</p>
     /// </note>
     pub fn member_abilities(&self) -> &[crate::types::MemberAbility] {
         use std::ops::Deref;
@@ -88,6 +90,7 @@ impl MemberChangeSpecificationBuilder {
     /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_EXPORT_QUERY_ANALYSIS_LOG\]</code> so that the member can export the analysis logs for a protected query. Having this ability isn't sufficient on its own: You can export logs only for queries that you ran or paid for.</p>
     /// </note>
     pub fn member_abilities(mut self, input: crate::types::MemberAbility) -> Self {
         let mut v = self.member_abilities.unwrap_or_default();
@@ -99,6 +102,7 @@ impl MemberChangeSpecificationBuilder {
     /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_EXPORT_QUERY_ANALYSIS_LOG\]</code> so that the member can export the analysis logs for a protected query. Having this ability isn't sufficient on its own: You can export logs only for queries that you ran or paid for.</p>
     /// </note>
     pub fn set_member_abilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>) -> Self {
         self.member_abilities = input;
@@ -108,6 +112,7 @@ impl MemberChangeSpecificationBuilder {
     /// <p>The following values are currently not supported: <code>CAN_QUERY</code> and <code>CAN_RUN_JOB</code>.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[\]</code> to allow a member to contribute data.</p>
     /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_RECEIVE_RESULTS\]</code> to allow a member to contribute data and receive results.</p>
+    /// <p>Set the value of <code>memberAbilities</code> to <code>\[CAN_EXPORT_QUERY_ANALYSIS_LOG\]</code> so that the member can export the analysis logs for a protected query. Having this ability isn't sufficient on its own: You can export logs only for queries that you ran or paid for.</p>
     /// </note>
     pub fn get_member_abilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>> {
         &self.member_abilities

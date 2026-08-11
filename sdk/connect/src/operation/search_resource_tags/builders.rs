@@ -156,6 +156,8 @@ impl SearchResourceTagsFluentBuilder {
     /// <p>flow- module</p></li>
     /// <li>
     /// <p>transfer-destination (also known as quick connect)</p></li>
+    /// <li>
+    /// <p>metric</p></li>
     /// </ul>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_types(input.into());
@@ -184,6 +186,8 @@ impl SearchResourceTagsFluentBuilder {
     /// <p>flow- module</p></li>
     /// <li>
     /// <p>transfer-destination (also known as quick connect)</p></li>
+    /// <li>
+    /// <p>metric</p></li>
     /// </ul>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_types(input);
@@ -212,6 +216,8 @@ impl SearchResourceTagsFluentBuilder {
     /// <p>flow- module</p></li>
     /// <li>
     /// <p>transfer-destination (also known as quick connect)</p></li>
+    /// <li>
+    /// <p>metric</p></li>
     /// </ul>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_types()

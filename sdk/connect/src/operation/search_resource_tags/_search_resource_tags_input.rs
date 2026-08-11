@@ -28,6 +28,8 @@ pub struct SearchResourceTagsInput {
     /// <p>flow- module</p></li>
     /// <li>
     /// <p>transfer-destination (also known as quick connect)</p></li>
+    /// <li>
+    /// <p>metric</p></li>
     /// </ul>
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -65,6 +67,8 @@ impl SearchResourceTagsInput {
     /// <p>flow- module</p></li>
     /// <li>
     /// <p>transfer-destination (also known as quick connect)</p></li>
+    /// <li>
+    /// <p>metric</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
@@ -144,6 +148,8 @@ impl SearchResourceTagsInputBuilder {
     /// <p>flow- module</p></li>
     /// <li>
     /// <p>transfer-destination (also known as quick connect)</p></li>
+    /// <li>
+    /// <p>metric</p></li>
     /// </ul>
     pub fn resource_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
@@ -174,6 +180,8 @@ impl SearchResourceTagsInputBuilder {
     /// <p>flow- module</p></li>
     /// <li>
     /// <p>transfer-destination (also known as quick connect)</p></li>
+    /// <li>
+    /// <p>metric</p></li>
     /// </ul>
     pub fn set_resource_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_types = input;
@@ -202,6 +210,8 @@ impl SearchResourceTagsInputBuilder {
     /// <p>flow- module</p></li>
     /// <li>
     /// <p>transfer-destination (also known as quick connect)</p></li>
+    /// <li>
+    /// <p>metric</p></li>
     /// </ul>
     pub fn get_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_types

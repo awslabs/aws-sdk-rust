@@ -19,6 +19,7 @@
 ///     UpdateType::AutoModeUpdate => { /* ... */ },
 ///     UpdateType::CapabilityUpdate => { /* ... */ },
 ///     UpdateType::ConfigUpdate => { /* ... */ },
+///     UpdateType::ControlPlaneComponentConfigUpdate => { /* ... */ },
 ///     UpdateType::ControlPlaneEgressUpdate => { /* ... */ },
 ///     UpdateType::ControlPlaneScalingConfigUpdate => { /* ... */ },
 ///     UpdateType::DeletionProtectionUpdate => { /* ... */ },
@@ -75,6 +76,8 @@ pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     ConfigUpdate,
     #[allow(missing_docs)] // documentation missing in model
+    ControlPlaneComponentConfigUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     ControlPlaneEgressUpdate,
     #[allow(missing_docs)] // documentation missing in model
     ControlPlaneScalingConfigUpdate,
@@ -114,6 +117,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "AutoModeUpdate" => UpdateType::AutoModeUpdate,
             "CapabilityUpdate" => UpdateType::CapabilityUpdate,
             "ConfigUpdate" => UpdateType::ConfigUpdate,
+            "ControlPlaneComponentConfigUpdate" => UpdateType::ControlPlaneComponentConfigUpdate,
             "ControlPlaneEgressUpdate" => UpdateType::ControlPlaneEgressUpdate,
             "ControlPlaneScalingConfigUpdate" => UpdateType::ControlPlaneScalingConfigUpdate,
             "DeletionProtectionUpdate" => UpdateType::DeletionProtectionUpdate,
@@ -149,6 +153,7 @@ impl UpdateType {
             UpdateType::AutoModeUpdate => "AutoModeUpdate",
             UpdateType::CapabilityUpdate => "CapabilityUpdate",
             UpdateType::ConfigUpdate => "ConfigUpdate",
+            UpdateType::ControlPlaneComponentConfigUpdate => "ControlPlaneComponentConfigUpdate",
             UpdateType::ControlPlaneEgressUpdate => "ControlPlaneEgressUpdate",
             UpdateType::ControlPlaneScalingConfigUpdate => "ControlPlaneScalingConfigUpdate",
             UpdateType::DeletionProtectionUpdate => "DeletionProtectionUpdate",
@@ -175,6 +180,7 @@ impl UpdateType {
             "AutoModeUpdate",
             "CapabilityUpdate",
             "ConfigUpdate",
+            "ControlPlaneComponentConfigUpdate",
             "ControlPlaneEgressUpdate",
             "ControlPlaneScalingConfigUpdate",
             "DeletionProtectionUpdate",
@@ -218,6 +224,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::AutoModeUpdate => write!(f, "AutoModeUpdate"),
             UpdateType::CapabilityUpdate => write!(f, "CapabilityUpdate"),
             UpdateType::ConfigUpdate => write!(f, "ConfigUpdate"),
+            UpdateType::ControlPlaneComponentConfigUpdate => write!(f, "ControlPlaneComponentConfigUpdate"),
             UpdateType::ControlPlaneEgressUpdate => write!(f, "ControlPlaneEgressUpdate"),
             UpdateType::ControlPlaneScalingConfigUpdate => write!(f, "ControlPlaneScalingConfigUpdate"),
             UpdateType::DeletionProtectionUpdate => write!(f, "DeletionProtectionUpdate"),

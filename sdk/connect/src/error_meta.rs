@@ -2183,6 +2183,35 @@ impl From<crate::operation::create_integration_association::CreateIntegrationAss
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_metric::CreateMetricError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_metric::CreateMetricError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_metric::CreateMetricError> for Error {
+    fn from(err: crate::operation::create_metric::CreateMetricError) -> Self {
+        match err {
+            crate::operation::create_metric::CreateMetricError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_metric::CreateMetricError::DuplicateResourceException(inner) => Error::DuplicateResourceException(inner),
+            crate::operation::create_metric::CreateMetricError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::create_metric::CreateMetricError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_metric::CreateMetricError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::create_metric::CreateMetricError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_metric::CreateMetricError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_metric::CreateMetricError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_metric::CreateMetricError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_notification::CreateNotificationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3635,6 +3664,34 @@ impl From<crate::operation::delete_integration_association::DeleteIntegrationAss
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_metric::DeleteMetricError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_metric::DeleteMetricError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_metric::DeleteMetricError> for Error {
+    fn from(err: crate::operation::delete_metric::DeleteMetricError) -> Self {
+        match err {
+            crate::operation::delete_metric::DeleteMetricError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_metric::DeleteMetricError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::delete_metric::DeleteMetricError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_metric::DeleteMetricError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::delete_metric::DeleteMetricError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_metric::DeleteMetricError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_metric::DeleteMetricError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_metric::DeleteMetricError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_notification::DeleteNotificationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5009,6 +5066,33 @@ impl From<crate::operation::describe_instance_storage_config::DescribeInstanceSt
                 Error::ThrottlingException(inner)
             }
             crate::operation::describe_instance_storage_config::DescribeInstanceStorageConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metric::DescribeMetricError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metric::DescribeMetricError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_metric::DescribeMetricError> for Error {
+    fn from(err: crate::operation::describe_metric::DescribeMetricError) -> Self {
+        match err {
+            crate::operation::describe_metric::DescribeMetricError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_metric::DescribeMetricError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_metric::DescribeMetricError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::describe_metric::DescribeMetricError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::describe_metric::DescribeMetricError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_metric::DescribeMetricError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_metric::DescribeMetricError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8174,6 +8258,33 @@ impl From<crate::operation::list_lex_bots::ListLexBotsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metrics::ListMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_metrics::ListMetricsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_metrics::ListMetricsError> for Error {
+    fn from(err: crate::operation::list_metrics::ListMetricsError) -> Self {
+        match err {
+            crate::operation::list_metrics::ListMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_metrics::ListMetricsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_metrics::ListMetricsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_metrics::ListMetricsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_metrics::ListMetricsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_metrics::ListMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_metrics::ListMetricsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_notifications::ListNotificationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -10031,6 +10142,33 @@ impl From<crate::operation::search_hours_of_operations::SearchHoursOfOperationsE
                 Error::ThrottlingException(inner)
             }
             crate::operation::search_hours_of_operations::SearchHoursOfOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_metrics::SearchMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_metrics::SearchMetricsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_metrics::SearchMetricsError> for Error {
+    fn from(err: crate::operation::search_metrics::SearchMetricsError) -> Self {
+        match err {
+            crate::operation::search_metrics::SearchMetricsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_metrics::SearchMetricsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::search_metrics::SearchMetricsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::search_metrics::SearchMetricsError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::search_metrics::SearchMetricsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::search_metrics::SearchMetricsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_metrics::SearchMetricsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -12703,6 +12841,79 @@ impl From<crate::operation::update_instance_storage_config::UpdateInstanceStorag
                 Error::ThrottlingException(inner)
             }
             crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_metric_content::UpdateMetricContentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_metric_content::UpdateMetricContentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_metric_content::UpdateMetricContentError> for Error {
+    fn from(err: crate::operation::update_metric_content::UpdateMetricContentError) -> Self {
+        match err {
+            crate::operation::update_metric_content::UpdateMetricContentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_metric_content::UpdateMetricContentError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_metric_content::UpdateMetricContentError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_metric_content::UpdateMetricContentError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_metric_content::UpdateMetricContentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_metric_content::UpdateMetricContentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_metric_content::UpdateMetricContentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_metric_metadata::UpdateMetricMetadataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_metric_metadata::UpdateMetricMetadataError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_metric_metadata::UpdateMetricMetadataError> for Error {
+    fn from(err: crate::operation::update_metric_metadata::UpdateMetricMetadataError) -> Self {
+        match err {
+            crate::operation::update_metric_metadata::UpdateMetricMetadataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_metric_metadata::UpdateMetricMetadataError::DuplicateResourceException(inner) => {
+                Error::DuplicateResourceException(inner)
+            }
+            crate::operation::update_metric_metadata::UpdateMetricMetadataError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_metric_metadata::UpdateMetricMetadataError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_metric_metadata::UpdateMetricMetadataError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_metric_metadata::UpdateMetricMetadataError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_metric_metadata::UpdateMetricMetadataError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_metric_metadata::UpdateMetricMetadataError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -61,9 +61,13 @@ pub use crate::types::_membership::MembershipBuilder;
 
 pub use crate::types::_update_membership_payment_configuration::UpdateMembershipPaymentConfigurationBuilder;
 
+pub use crate::types::_analysis_log_export::AnalysisLogExportBuilder;
+
 pub use crate::types::_protected_job::ProtectedJobBuilder;
 
 pub use crate::types::_protected_query::ProtectedQueryBuilder;
+
+pub use crate::types::_analysis_log_export_result_configuration::AnalysisLogExportResultConfigurationBuilder;
 
 pub use crate::types::_protected_job_parameters::ProtectedJobParametersBuilder;
 
@@ -163,6 +167,8 @@ pub use crate::types::_membership_ml_payment_config::MembershipMlPaymentConfigBu
 
 pub use crate::types::_membership_job_compute_payment_config::MembershipJobComputePaymentConfigBuilder;
 
+pub use crate::types::_analysis_log_export_error::AnalysisLogExportErrorBuilder;
+
 pub use crate::types::_protected_job_result_configuration_output::ProtectedJobResultConfigurationOutputBuilder;
 
 pub use crate::types::_protected_job_statistics::ProtectedJobStatisticsBuilder;
@@ -179,6 +185,8 @@ pub use crate::types::_protected_query_error::ProtectedQueryErrorBuilder;
 
 pub use crate::types::_differential_privacy_parameters::DifferentialPrivacyParametersBuilder;
 
+pub use crate::types::_analysis_log_export_summary::AnalysisLogExportSummaryBuilder;
+
 pub use crate::types::_privacy_budget_summary::PrivacyBudgetSummaryBuilder;
 
 pub use crate::types::_protected_job_summary::ProtectedJobSummaryBuilder;
@@ -188,6 +196,8 @@ pub use crate::types::_protected_query_summary::ProtectedQuerySummaryBuilder;
 pub use crate::types::_differential_privacy_preview_parameters_input::DifferentialPrivacyPreviewParametersInputBuilder;
 
 pub use crate::types::_differential_privacy_privacy_impact::DifferentialPrivacyPrivacyImpactBuilder;
+
+pub use crate::types::_analysis_log_export_output_configuration::AnalysisLogExportOutputConfigurationBuilder;
 
 pub use crate::types::_protected_job_worker_compute_configuration::ProtectedJobWorkerComputeConfigurationBuilder;
 
@@ -270,6 +280,8 @@ pub use crate::types::_billed_job_resource_utilization::BilledJobResourceUtiliza
 pub use crate::types::_billed_resource_utilization::BilledResourceUtilizationBuilder;
 
 pub use crate::types::_intermediate_table_output_configuration::IntermediateTableOutputConfigurationBuilder;
+
+pub use crate::types::_analysis_log_export_s3_output_configuration::AnalysisLogExportS3OutputConfigurationBuilder;
 
 pub use crate::types::_protected_job_member_output_configuration_input::ProtectedJobMemberOutputConfigurationInputBuilder;
 

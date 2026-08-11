@@ -22,7 +22,7 @@ impl crate::operation::disallow_intermediate_table::builders::DisallowIntermedia
 }
 /// Fluent builder constructing a request to `DisallowIntermediateTable`.
 ///
-/// <p>Invalidates a specific intermediate table that references the caller's base table. The data provider (base table owner) calls this operation, not the intermediate table owner. By default, invalidation cascades to descendant intermediate tables.</p>
+/// <p>Marks an intermediate table as invalid when it references the caller's base table. The data provider (base table owner) calls this operation, not the intermediate table owner. By default, the operation also marks all descendant intermediate tables as invalid.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisallowIntermediateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

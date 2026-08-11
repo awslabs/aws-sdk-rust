@@ -194,6 +194,33 @@ where
                                     )?,
                                 );
                             }
+                            "kubeApiServerConfig" => {
+                                builder = builder.set_kube_api_server_config(
+                                    crate::protocol_serde::shape_kube_api_server_config_response::de_kube_api_server_config_response(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "kubeSchedulerConfig" => {
+                                builder = builder.set_kube_scheduler_config(
+                                    crate::protocol_serde::shape_kube_scheduler_config_response::de_kube_scheduler_config_response(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "kubeControllerManagerConfig" => {
+                                builder = builder.set_kube_controller_manager_config(
+                                    crate::protocol_serde::shape_kube_controller_manager_config_response::de_kube_controller_manager_config_response(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

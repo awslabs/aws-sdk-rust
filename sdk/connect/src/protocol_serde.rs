@@ -121,6 +121,8 @@ pub(crate) mod shape_create_instance;
 
 pub(crate) mod shape_create_integration_association;
 
+pub(crate) mod shape_create_metric;
+
 pub(crate) mod shape_create_notification;
 
 pub(crate) mod shape_create_participant;
@@ -199,6 +201,8 @@ pub(crate) mod shape_delete_instance;
 
 pub(crate) mod shape_delete_integration_association;
 
+pub(crate) mod shape_delete_metric;
+
 pub(crate) mod shape_delete_notification;
 
 pub(crate) mod shape_delete_predefined_attribute;
@@ -276,6 +280,8 @@ pub(crate) mod shape_describe_instance;
 pub(crate) mod shape_describe_instance_attribute;
 
 pub(crate) mod shape_describe_instance_storage_config;
+
+pub(crate) mod shape_describe_metric;
 
 pub(crate) mod shape_describe_notification;
 
@@ -451,6 +457,8 @@ pub(crate) mod shape_list_lambda_functions;
 
 pub(crate) mod shape_list_lex_bots;
 
+pub(crate) mod shape_list_metrics;
+
 pub(crate) mod shape_list_notifications;
 
 pub(crate) mod shape_list_phone_numbers;
@@ -558,6 +566,8 @@ pub(crate) mod shape_search_evaluation_forms;
 pub(crate) mod shape_search_hours_of_operation_overrides;
 
 pub(crate) mod shape_search_hours_of_operations;
+
+pub(crate) mod shape_search_metrics;
 
 pub(crate) mod shape_search_notifications;
 
@@ -700,6 +710,10 @@ pub(crate) mod shape_update_hours_of_operation_override;
 pub(crate) mod shape_update_instance_attribute;
 
 pub(crate) mod shape_update_instance_storage_config;
+
+pub(crate) mod shape_update_metric_content;
+
+pub(crate) mod shape_update_metric_metadata;
 
 pub(crate) mod shape_update_notification_content;
 
@@ -899,6 +913,8 @@ pub(crate) mod shape_create_instance_input;
 
 pub(crate) mod shape_create_integration_association_input;
 
+pub(crate) mod shape_create_metric_input;
+
 pub(crate) mod shape_create_notification_input;
 
 pub(crate) mod shape_create_participant_input;
@@ -1071,6 +1087,8 @@ pub(crate) mod shape_search_hours_of_operation_overrides_input;
 
 pub(crate) mod shape_search_hours_of_operations_input;
 
+pub(crate) mod shape_search_metrics_input;
+
 pub(crate) mod shape_search_notifications_input;
 
 pub(crate) mod shape_search_predefined_attributes_input;
@@ -1214,6 +1232,10 @@ pub(crate) mod shape_update_hours_of_operation_override_input;
 pub(crate) mod shape_update_instance_attribute_input;
 
 pub(crate) mod shape_update_instance_storage_config_input;
+
+pub(crate) mod shape_update_metric_content_input;
+
+pub(crate) mod shape_update_metric_metadata_input;
 
 pub(crate) mod shape_update_notification_content_input;
 
@@ -1629,7 +1651,19 @@ pub(crate) mod shape_media_concurrency;
 
 pub(crate) mod shape_media_list;
 
+pub(crate) mod shape_metric_calculation;
+
+pub(crate) mod shape_metric_definition;
+
 pub(crate) mod shape_metric_results_v2;
+
+pub(crate) mod shape_metric_search_criteria;
+
+pub(crate) mod shape_metric_search_filter;
+
+pub(crate) mod shape_metric_search_summary_list;
+
+pub(crate) mod shape_metric_summary_list;
 
 pub(crate) mod shape_metric_v2;
 
@@ -1989,6 +2023,8 @@ pub(crate) mod shape_authentication_profile_summary;
 
 pub(crate) mod shape_auto_accept_configs;
 
+pub(crate) mod shape_available_filter_list;
+
 pub(crate) mod shape_available_number_summary;
 
 pub(crate) mod shape_batch_create_data_table_value_failure_result;
@@ -2008,6 +2044,8 @@ pub(crate) mod shape_batch_update_data_table_value_failure_result;
 pub(crate) mod shape_batch_update_data_table_value_success_result;
 
 pub(crate) mod shape_boolean_condition;
+
+pub(crate) mod shape_calculation_component;
 
 pub(crate) mod shape_campaign;
 
@@ -2207,7 +2245,11 @@ pub(crate) mod shape_meeting;
 
 pub(crate) mod shape_metric_filter_v2;
 
+pub(crate) mod shape_metric_grouping_list;
+
 pub(crate) mod shape_metric_result_v2;
+
+pub(crate) mod shape_metric_summary;
 
 pub(crate) mod shape_name_criteria;
 
@@ -2345,6 +2387,8 @@ pub(crate) mod shape_successful_request;
 
 pub(crate) mod shape_summary_configuration;
 
+pub(crate) mod shape_supported_stats_list;
+
 pub(crate) mod shape_tag_restricted_resource_list;
 
 pub(crate) mod shape_tag_search_condition;
@@ -2441,6 +2485,10 @@ pub(crate) mod shape_attribute_and_condition;
 
 pub(crate) mod shape_auto_evaluation_details;
 
+pub(crate) mod shape_available_filter;
+
+pub(crate) mod shape_calculation_component_list;
+
 pub(crate) mod shape_case_sla_configuration;
 
 pub(crate) mod shape_channel_to_count_map;
@@ -2534,6 +2582,8 @@ pub(crate) mod shape_media_placement;
 pub(crate) mod shape_meeting_features_configuration;
 
 pub(crate) mod shape_metric_data_collections_v2;
+
+pub(crate) mod shape_metric_filter;
 
 pub(crate) mod shape_metric_interval;
 
@@ -2671,6 +2721,12 @@ pub(crate) mod shape_images_logo;
 
 pub(crate) mod shape_metric_data_v2;
 
+pub(crate) mod shape_metric_filter_boolean_condition;
+
+pub(crate) mod shape_metric_filter_number_condition;
+
+pub(crate) mod shape_metric_filter_string_condition;
+
 pub(crate) mod shape_month_day_list;
 
 pub(crate) mod shape_month_list;
@@ -2760,6 +2816,8 @@ pub(crate) mod shape_expiry;
 pub(crate) mod shape_field_values;
 
 pub(crate) mod shape_match_criteria;
+
+pub(crate) mod shape_metric_filter_list;
 
 pub(crate) mod shape_post_accept_timeout_config;
 
@@ -2855,9 +2913,13 @@ pub(crate) mod shape_evaluation_transcript_points_of_interest;
 
 pub(crate) mod shape_metric_filter_value_list;
 
+pub(crate) mod shape_number_value_list;
+
 pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_character_offsets;
 
 pub(crate) mod shape_reference_id_list;
+
+pub(crate) mod shape_string_value_list;
 
 pub(crate) mod shape_agent_ids;
 

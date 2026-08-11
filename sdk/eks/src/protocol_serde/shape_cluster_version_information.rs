@@ -84,6 +84,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "controlPlaneScalingTiers" => {
+                            builder = builder.set_control_plane_scaling_tiers(
+                                crate::protocol_serde::shape_control_plane_scaling_tier_list::de_control_plane_scaling_tier_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "controlPlaneComponentConfig" => {
+                            builder = builder.set_control_plane_component_config(
+                                crate::protocol_serde::shape_control_plane_config_info::de_control_plane_config_info(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

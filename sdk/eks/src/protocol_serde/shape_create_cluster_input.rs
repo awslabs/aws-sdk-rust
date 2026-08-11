@@ -42,72 +42,90 @@ pub fn ser_create_cluster_input_input(
         }
         array_11.finish();
     }
-    if let Some(var_14) = &input.kubernetes_network_config {
+    if let Some(var_14) = &input.kube_api_server_config {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("kubernetesNetworkConfig").start_object();
-        crate::protocol_serde::shape_kubernetes_network_config_request::ser_kubernetes_network_config_request(&mut object_15, var_14)?;
+        let mut object_15 = object.key("kubeApiServerConfig").start_object();
+        crate::protocol_serde::shape_kube_api_server_config_request::ser_kube_api_server_config_request(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_16) = &input.logging {
+    if let Some(var_16) = &input.kube_controller_manager_config {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("logging").start_object();
-        crate::protocol_serde::shape_logging::ser_logging(&mut object_17, var_16)?;
+        let mut object_17 = object.key("kubeControllerManagerConfig").start_object();
+        crate::protocol_serde::shape_kube_controller_manager_config_request::ser_kube_controller_manager_config_request(&mut object_17, var_16)?;
         object_17.finish();
     }
-    if let Some(var_18) = &input.name {
-        object.key("name").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.outpost_config {
+    if let Some(var_18) = &input.kube_scheduler_config {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("outpostConfig").start_object();
-        crate::protocol_serde::shape_outpost_config_request::ser_outpost_config_request(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_19 = object.key("kubeSchedulerConfig").start_object();
+        crate::protocol_serde::shape_kube_scheduler_config_request::ser_kube_scheduler_config_request(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_21) = &input.remote_network_config {
+    if let Some(var_20) = &input.kubernetes_network_config {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("remoteNetworkConfig").start_object();
-        crate::protocol_serde::shape_remote_network_config_request::ser_remote_network_config_request(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_21 = object.key("kubernetesNetworkConfig").start_object();
+        crate::protocol_serde::shape_kubernetes_network_config_request::ser_kubernetes_network_config_request(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_23) = &input.resources_vpc_config {
+    if let Some(var_22) = &input.logging {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("resourcesVpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_23 = object.key("logging").start_object();
+        crate::protocol_serde::shape_logging::ser_logging(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_25) = &input.role_arn {
-        object.key("roleArn").string(var_25.as_str());
+    if let Some(var_24) = &input.name {
+        object.key("name").string(var_24.as_str());
     }
-    if let Some(var_26) = &input.storage_config {
+    if let Some(var_25) = &input.outpost_config {
         #[allow(unused_mut)]
-        let mut object_27 = object.key("storageConfig").start_object();
-        crate::protocol_serde::shape_storage_config_request::ser_storage_config_request(&mut object_27, var_26)?;
-        object_27.finish();
+        let mut object_26 = object.key("outpostConfig").start_object();
+        crate::protocol_serde::shape_outpost_config_request::ser_outpost_config_request(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_28) = &input.tags {
+    if let Some(var_27) = &input.remote_network_config {
         #[allow(unused_mut)]
-        let mut object_29 = object.key("tags").start_object();
-        for (key_30, value_31) in var_28 {
-            {
-                object_29.key(key_30.as_str()).string(value_31.as_str());
-            }
-        }
-        object_29.finish();
+        let mut object_28 = object.key("remoteNetworkConfig").start_object();
+        crate::protocol_serde::shape_remote_network_config_request::ser_remote_network_config_request(&mut object_28, var_27)?;
+        object_28.finish();
     }
-    if let Some(var_32) = &input.upgrade_policy {
+    if let Some(var_29) = &input.resources_vpc_config {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("upgradePolicy").start_object();
-        crate::protocol_serde::shape_upgrade_policy_request::ser_upgrade_policy_request(&mut object_33, var_32)?;
+        let mut object_30 = object.key("resourcesVpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config_request::ser_vpc_config_request(&mut object_30, var_29)?;
+        object_30.finish();
+    }
+    if let Some(var_31) = &input.role_arn {
+        object.key("roleArn").string(var_31.as_str());
+    }
+    if let Some(var_32) = &input.storage_config {
+        #[allow(unused_mut)]
+        let mut object_33 = object.key("storageConfig").start_object();
+        crate::protocol_serde::shape_storage_config_request::ser_storage_config_request(&mut object_33, var_32)?;
         object_33.finish();
     }
-    if let Some(var_34) = &input.version {
-        object.key("version").string(var_34.as_str());
-    }
-    if let Some(var_35) = &input.zonal_shift_config {
+    if let Some(var_34) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_36 = object.key("zonalShiftConfig").start_object();
-        crate::protocol_serde::shape_zonal_shift_config_request::ser_zonal_shift_config_request(&mut object_36, var_35)?;
-        object_36.finish();
+        let mut object_35 = object.key("tags").start_object();
+        for (key_36, value_37) in var_34 {
+            {
+                object_35.key(key_36.as_str()).string(value_37.as_str());
+            }
+        }
+        object_35.finish();
+    }
+    if let Some(var_38) = &input.upgrade_policy {
+        #[allow(unused_mut)]
+        let mut object_39 = object.key("upgradePolicy").start_object();
+        crate::protocol_serde::shape_upgrade_policy_request::ser_upgrade_policy_request(&mut object_39, var_38)?;
+        object_39.finish();
+    }
+    if let Some(var_40) = &input.version {
+        object.key("version").string(var_40.as_str());
+    }
+    if let Some(var_41) = &input.zonal_shift_config {
+        #[allow(unused_mut)]
+        let mut object_42 = object.key("zonalShiftConfig").start_object();
+        crate::protocol_serde::shape_zonal_shift_config_request::ser_zonal_shift_config_request(&mut object_42, var_41)?;
+        object_42.finish();
     }
     Ok(())
 }

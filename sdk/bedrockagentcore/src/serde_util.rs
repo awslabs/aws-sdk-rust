@@ -2000,6 +2000,21 @@ pub(crate) fn mcp_descriptor_correct_errors(
     builder
 }
 
+pub(crate) fn online_evaluation_trace_config_correct_errors(
+    mut builder: crate::types::builders::OnlineEvaluationTraceConfigBuilder,
+) -> crate::types::builders::OnlineEvaluationTraceConfigBuilder {
+    if builder.online_evaluation_config_arn.is_none() {
+        builder.online_evaluation_config_arn = Some(Default::default())
+    }
+    if builder.start_time.is_none() {
+        builder.start_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.end_time.is_none() {
+        builder.end_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
     if builder.bucket.is_none() {
         builder.bucket = Some(Default::default())

@@ -815,6 +815,8 @@ pub(crate) mod shape_mcp_descriptor;
 
 pub(crate) mod shape_messages_list;
 
+pub(crate) mod shape_online_evaluation_trace_config;
+
 pub(crate) mod shape_proxy_credentials;
 
 pub(crate) mod shape_recommendation_evaluator_list;

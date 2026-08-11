@@ -477,6 +477,8 @@ pub use crate::types::_cloud_watch_logs_trace_config::CloudWatchLogsTraceConfig;
 
 pub use crate::types::_batch_evaluation_trace_config::BatchEvaluationTraceConfig;
 
+pub use crate::types::_online_evaluation_trace_config::OnlineEvaluationTraceConfig;
+
 pub use crate::types::_tool_description_text_input::ToolDescriptionTextInput;
 
 pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionConfigurationBundle;
@@ -1020,6 +1022,8 @@ mod _o_auth_grant_type;
 mod _oauth2_flow_type;
 
 mod _online_evaluation_config_source;
+
+mod _online_evaluation_trace_config;
 
 mod _operator_type;
 

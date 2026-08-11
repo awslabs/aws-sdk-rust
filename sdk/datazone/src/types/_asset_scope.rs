@@ -10,6 +10,8 @@ pub struct AssetScope {
     pub filter_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>The status of the asset scope.</p>
     pub status: ::std::string::String,
+    /// <p>The name of the materialized asset scope.</p>
+    pub scope_name: ::std::option::Option<::std::string::String>,
     /// <p>The error message of the asset scope.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
@@ -28,6 +30,10 @@ impl AssetScope {
     pub fn status(&self) -> &str {
         use std::ops::Deref;
         self.status.deref()
+    }
+    /// <p>The name of the materialized asset scope.</p>
+    pub fn scope_name(&self) -> ::std::option::Option<&str> {
+        self.scope_name.as_deref()
     }
     /// <p>The error message of the asset scope.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
@@ -48,6 +54,7 @@ pub struct AssetScopeBuilder {
     pub(crate) asset_id: ::std::option::Option<::std::string::String>,
     pub(crate) filter_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) scope_name: ::std::option::Option<::std::string::String>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl AssetScopeBuilder {
@@ -101,6 +108,20 @@ impl AssetScopeBuilder {
     pub fn get_status(&self) -> &::std::option::Option<::std::string::String> {
         &self.status
     }
+    /// <p>The name of the materialized asset scope.</p>
+    pub fn scope_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.scope_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the materialized asset scope.</p>
+    pub fn set_scope_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.scope_name = input;
+        self
+    }
+    /// <p>The name of the materialized asset scope.</p>
+    pub fn get_scope_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.scope_name
+    }
     /// <p>The error message of the asset scope.</p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
@@ -140,6 +161,7 @@ impl AssetScopeBuilder {
                     "status was not specified but it is required when building AssetScope",
                 )
             })?,
+            scope_name: self.scope_name,
             error_message: self.error_message,
         })
     }

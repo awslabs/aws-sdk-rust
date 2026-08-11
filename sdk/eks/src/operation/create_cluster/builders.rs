@@ -416,4 +416,46 @@ impl CreateClusterFluentBuilder {
     pub fn get_control_plane_scaling_config(&self) -> &::std::option::Option<crate::types::ControlPlaneScalingConfig> {
         self.inner.get_control_plane_scaling_config()
     }
+    /// <p>The Kubernetes API server configuration for the new cluster.</p>
+    pub fn kube_api_server_config(mut self, input: crate::types::KubeApiServerConfigRequest) -> Self {
+        self.inner = self.inner.kube_api_server_config(input);
+        self
+    }
+    /// <p>The Kubernetes API server configuration for the new cluster.</p>
+    pub fn set_kube_api_server_config(mut self, input: ::std::option::Option<crate::types::KubeApiServerConfigRequest>) -> Self {
+        self.inner = self.inner.set_kube_api_server_config(input);
+        self
+    }
+    /// <p>The Kubernetes API server configuration for the new cluster.</p>
+    pub fn get_kube_api_server_config(&self) -> &::std::option::Option<crate::types::KubeApiServerConfigRequest> {
+        self.inner.get_kube_api_server_config()
+    }
+    /// <p>The Kubernetes scheduler configuration for the new cluster.</p>
+    pub fn kube_scheduler_config(mut self, input: crate::types::KubeSchedulerConfigRequest) -> Self {
+        self.inner = self.inner.kube_scheduler_config(input);
+        self
+    }
+    /// <p>The Kubernetes scheduler configuration for the new cluster.</p>
+    pub fn set_kube_scheduler_config(mut self, input: ::std::option::Option<crate::types::KubeSchedulerConfigRequest>) -> Self {
+        self.inner = self.inner.set_kube_scheduler_config(input);
+        self
+    }
+    /// <p>The Kubernetes scheduler configuration for the new cluster.</p>
+    pub fn get_kube_scheduler_config(&self) -> &::std::option::Option<crate::types::KubeSchedulerConfigRequest> {
+        self.inner.get_kube_scheduler_config()
+    }
+    /// <p>The Kubernetes controller manager configuration for the new cluster.</p>
+    pub fn kube_controller_manager_config(mut self, input: crate::types::KubeControllerManagerConfigRequest) -> Self {
+        self.inner = self.inner.kube_controller_manager_config(input);
+        self
+    }
+    /// <p>The Kubernetes controller manager configuration for the new cluster.</p>
+    pub fn set_kube_controller_manager_config(mut self, input: ::std::option::Option<crate::types::KubeControllerManagerConfigRequest>) -> Self {
+        self.inner = self.inner.set_kube_controller_manager_config(input);
+        self
+    }
+    /// <p>The Kubernetes controller manager configuration for the new cluster.</p>
+    pub fn get_kube_controller_manager_config(&self) -> &::std::option::Option<crate::types::KubeControllerManagerConfigRequest> {
+        self.inner.get_kube_controller_manager_config()
+    }
 }

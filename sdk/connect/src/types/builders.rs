@@ -29,6 +29,8 @@ pub use crate::types::_evaluation_form_language_configuration::EvaluationFormLan
 
 pub use crate::types::_recurrence_config::RecurrenceConfigBuilder;
 
+pub use crate::types::_metric_calculation::MetricCalculationBuilder;
+
 pub use crate::types::_participant_details_to_add::ParticipantDetailsToAddBuilder;
 
 pub use crate::types::_participant_token_credentials::ParticipantTokenCredentialsBuilder;
@@ -96,6 +98,8 @@ pub use crate::types::_instance::InstanceBuilder;
 pub use crate::types::_replication_configuration::ReplicationConfigurationBuilder;
 
 pub use crate::types::_attribute::AttributeBuilder;
+
+pub use crate::types::_metric_definition::MetricDefinitionBuilder;
 
 pub use crate::types::_notification::NotificationBuilder;
 
@@ -186,6 +190,10 @@ pub use crate::types::_hours_of_operation_search_filter::HoursOfOperationSearchF
 pub use crate::types::_hours_of_operation_override_search_criteria::HoursOfOperationOverrideSearchCriteriaBuilder;
 
 pub use crate::types::_hours_of_operation_search_criteria::HoursOfOperationSearchCriteriaBuilder;
+
+pub use crate::types::_metric_search_filter::MetricSearchFilterBuilder;
+
+pub use crate::types::_metric_search_criteria::MetricSearchCriteriaBuilder;
 
 pub use crate::types::_notification_search_filter::NotificationSearchFilterBuilder;
 
@@ -549,6 +557,8 @@ pub use crate::types::_instance_summary::InstanceSummaryBuilder;
 
 pub use crate::types::_integration_association_summary::IntegrationAssociationSummaryBuilder;
 
+pub use crate::types::_metric_summary::MetricSummaryBuilder;
+
 pub use crate::types::_phone_number_summary::PhoneNumberSummaryBuilder;
 
 pub use crate::types::_list_phone_numbers_summary::ListPhoneNumbersSummaryBuilder;
@@ -729,6 +739,8 @@ pub use crate::types::_hours_of_operation_time_slice::HoursOfOperationTimeSliceB
 
 pub use crate::types::_override_time_slice::OverrideTimeSliceBuilder;
 
+pub use crate::types::_calculation_component::CalculationComponentBuilder;
+
 pub use crate::types::_cross_channel_behavior::CrossChannelBehaviorBuilder;
 
 pub use crate::types::_task_action_definition::TaskActionDefinitionBuilder;
@@ -800,6 +812,8 @@ pub use crate::types::_evaluation_contact_participant::EvaluationContactParticip
 pub use crate::types::_evaluation_answer_output::EvaluationAnswerOutputBuilder;
 
 pub use crate::types::_replication_status_summary::ReplicationStatusSummaryBuilder;
+
+pub use crate::types::_available_filter::AvailableFilterBuilder;
 
 pub use crate::types::_dimensions::DimensionsBuilder;
 
@@ -991,6 +1005,8 @@ pub use crate::types::_evaluation_form_item_enablement_condition::EvaluationForm
 
 pub use crate::types::_question_points_configuration::QuestionPointsConfigurationBuilder;
 
+pub use crate::types::_metric_filter::MetricFilterBuilder;
+
 pub use crate::types::_field_value::FieldValueBuilder;
 
 pub use crate::types::_primary_attribute_value::PrimaryAttributeValueBuilder;
@@ -1024,6 +1040,12 @@ pub use crate::types::_evaluation_form_single_select_question_automation::Evalua
 pub use crate::types::_evaluation_form_text_question_automation::EvaluationFormTextQuestionAutomationBuilder;
 
 pub use crate::types::_evaluation_form_multi_select_question_automation::EvaluationFormMultiSelectQuestionAutomationBuilder;
+
+pub use crate::types::_metric_filter_number_condition::MetricFilterNumberConditionBuilder;
+
+pub use crate::types::_metric_filter_string_condition::MetricFilterStringConditionBuilder;
+
+pub use crate::types::_metric_filter_boolean_condition::MetricFilterBooleanConditionBuilder;
 
 pub use crate::types::_field_value_union::FieldValueUnionBuilder;
 

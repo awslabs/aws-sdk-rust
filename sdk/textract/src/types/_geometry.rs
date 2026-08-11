@@ -8,7 +8,7 @@ pub struct Geometry {
     pub bounding_box: ::std::option::Option<crate::types::BoundingBox>,
     /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
     pub polygon: ::std::option::Option<::std::vec::Vec<crate::types::Point>>,
-    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    /// <p>Provides a numerical value corresponding to the rotation of the WORD block. Possible values are 0, 90, 180, and 270.</p>
     pub rotation_angle: ::std::option::Option<f32>,
 }
 impl Geometry {
@@ -22,7 +22,7 @@ impl Geometry {
     pub fn polygon(&self) -> &[crate::types::Point] {
         self.polygon.as_deref().unwrap_or_default()
     }
-    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    /// <p>Provides a numerical value corresponding to the rotation of the WORD block. Possible values are 0, 90, 180, and 270.</p>
     pub fn rotation_angle(&self) -> ::std::option::Option<f32> {
         self.rotation_angle
     }
@@ -77,17 +77,17 @@ impl GeometryBuilder {
     pub fn get_polygon(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Point>> {
         &self.polygon
     }
-    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    /// <p>Provides a numerical value corresponding to the rotation of the WORD block. Possible values are 0, 90, 180, and 270.</p>
     pub fn rotation_angle(mut self, input: f32) -> Self {
         self.rotation_angle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    /// <p>Provides a numerical value corresponding to the rotation of the WORD block. Possible values are 0, 90, 180, and 270.</p>
     pub fn set_rotation_angle(mut self, input: ::std::option::Option<f32>) -> Self {
         self.rotation_angle = input;
         self
     }
-    /// <p>Provides a numerical value corresponding to the rotation of the text.</p>
+    /// <p>Provides a numerical value corresponding to the rotation of the WORD block. Possible values are 0, 90, 180, and 270.</p>
     pub fn get_rotation_angle(&self) -> &::std::option::Option<f32> {
         &self.rotation_angle
     }

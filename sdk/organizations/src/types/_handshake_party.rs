@@ -7,7 +7,9 @@ pub struct HandshakeParty {
     /// <p>ID for the participant: Acccount ID, organization ID, or email address.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub id: ::std::string::String,
-    /// <p>The type of ID for the participant.</p>
+    /// <p>The type of ID for the participant.</p><note>
+    /// <p>ORGANIZATION is valid only in the response context (identifying the inviting organization). Valid input values for the Target parameter are ACCOUNT and EMAIL only.</p>
+    /// </note>
     pub r#type: crate::types::HandshakePartyType,
 }
 impl HandshakeParty {
@@ -17,7 +19,9 @@ impl HandshakeParty {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The type of ID for the participant.</p>
+    /// <p>The type of ID for the participant.</p><note>
+    /// <p>ORGANIZATION is valid only in the response context (identifying the inviting organization). Valid input values for the Target parameter are ACCOUNT and EMAIL only.</p>
+    /// </note>
     pub fn r#type(&self) -> &crate::types::HandshakePartyType {
         &self.r#type
     }
@@ -63,18 +67,24 @@ impl HandshakePartyBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The type of ID for the participant.</p>
+    /// <p>The type of ID for the participant.</p><note>
+    /// <p>ORGANIZATION is valid only in the response context (identifying the inviting organization). Valid input values for the Target parameter are ACCOUNT and EMAIL only.</p>
+    /// </note>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::HandshakePartyType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of ID for the participant.</p>
+    /// <p>The type of ID for the participant.</p><note>
+    /// <p>ORGANIZATION is valid only in the response context (identifying the inviting organization). Valid input values for the Target parameter are ACCOUNT and EMAIL only.</p>
+    /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::HandshakePartyType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of ID for the participant.</p>
+    /// <p>The type of ID for the participant.</p><note>
+    /// <p>ORGANIZATION is valid only in the response context (identifying the inviting organization). Valid input values for the Target parameter are ACCOUNT and EMAIL only.</p>
+    /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::HandshakePartyType> {
         &self.r#type
     }

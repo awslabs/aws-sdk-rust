@@ -97,6 +97,9 @@ pub mod delete_privacy_budget_template;
 /// Types for the `DisallowIntermediateTable` operation.
 pub mod disallow_intermediate_table;
 
+/// Types for the `GetAnalysisLogExport` operation.
+pub mod get_analysis_log_export;
+
 /// Types for the `GetAnalysisTemplate` operation.
 pub mod get_analysis_template;
 
@@ -162,6 +165,9 @@ pub mod get_schema;
 
 /// Types for the `GetSchemaAnalysisRule` operation.
 pub mod get_schema_analysis_rule;
+
+/// Types for the `ListAnalysisLogExports` operation.
+pub mod list_analysis_log_exports;
 
 /// Types for the `ListAnalysisTemplates` operation.
 pub mod list_analysis_templates;
@@ -240,6 +246,9 @@ pub mod populate_intermediate_table;
 
 /// Types for the `PreviewPrivacyImpact` operation.
 pub mod preview_privacy_impact;
+
+/// Types for the `StartAnalysisLogExport` operation.
+pub mod start_analysis_log_export;
 
 /// Types for the `StartProtectedJob` operation.
 pub mod start_protected_job;

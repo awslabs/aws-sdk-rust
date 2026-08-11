@@ -17,10 +17,12 @@
 ///     ChangeType::EditAutoApprovedChangeTypes => { /* ... */ },
 ///     ChangeType::GrantCanReceiveInferenceOutput => { /* ... */ },
 ///     ChangeType::GrantCanReceiveModelOutput => { /* ... */ },
+///     ChangeType::GrantExportQueryAnalysisLogAbility => { /* ... */ },
 ///     ChangeType::GrantReceiveResultsAbility => { /* ... */ },
 ///     ChangeType::RemovePayerCandidate => { /* ... */ },
 ///     ChangeType::RevokeCanReceiveInferenceOutput => { /* ... */ },
 ///     ChangeType::RevokeCanReceiveModelOutput => { /* ... */ },
+///     ChangeType::RevokeExportQueryAnalysisLogAbility => { /* ... */ },
 ///     ChangeType::RevokeReceiveResultsAbility => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -61,6 +63,8 @@ pub enum ChangeType {
     #[allow(missing_docs)] // documentation missing in model
     GrantCanReceiveModelOutput,
     #[allow(missing_docs)] // documentation missing in model
+    GrantExportQueryAnalysisLogAbility,
+    #[allow(missing_docs)] // documentation missing in model
     GrantReceiveResultsAbility,
     #[allow(missing_docs)] // documentation missing in model
     RemovePayerCandidate,
@@ -68,6 +72,8 @@ pub enum ChangeType {
     RevokeCanReceiveInferenceOutput,
     #[allow(missing_docs)] // documentation missing in model
     RevokeCanReceiveModelOutput,
+    #[allow(missing_docs)] // documentation missing in model
+    RevokeExportQueryAnalysisLogAbility,
     #[allow(missing_docs)] // documentation missing in model
     RevokeReceiveResultsAbility,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -82,10 +88,12 @@ impl ::std::convert::From<&str> for ChangeType {
             "EDIT_AUTO_APPROVED_CHANGE_TYPES" => ChangeType::EditAutoApprovedChangeTypes,
             "GRANT_CAN_RECEIVE_INFERENCE_OUTPUT" => ChangeType::GrantCanReceiveInferenceOutput,
             "GRANT_CAN_RECEIVE_MODEL_OUTPUT" => ChangeType::GrantCanReceiveModelOutput,
+            "GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY" => ChangeType::GrantExportQueryAnalysisLogAbility,
             "GRANT_RECEIVE_RESULTS_ABILITY" => ChangeType::GrantReceiveResultsAbility,
             "REMOVE_PAYER_CANDIDATE" => ChangeType::RemovePayerCandidate,
             "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT" => ChangeType::RevokeCanReceiveInferenceOutput,
             "REVOKE_CAN_RECEIVE_MODEL_OUTPUT" => ChangeType::RevokeCanReceiveModelOutput,
+            "REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY" => ChangeType::RevokeExportQueryAnalysisLogAbility,
             "REVOKE_RECEIVE_RESULTS_ABILITY" => ChangeType::RevokeReceiveResultsAbility,
             other => ChangeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -107,10 +115,12 @@ impl ChangeType {
             ChangeType::EditAutoApprovedChangeTypes => "EDIT_AUTO_APPROVED_CHANGE_TYPES",
             ChangeType::GrantCanReceiveInferenceOutput => "GRANT_CAN_RECEIVE_INFERENCE_OUTPUT",
             ChangeType::GrantCanReceiveModelOutput => "GRANT_CAN_RECEIVE_MODEL_OUTPUT",
+            ChangeType::GrantExportQueryAnalysisLogAbility => "GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY",
             ChangeType::GrantReceiveResultsAbility => "GRANT_RECEIVE_RESULTS_ABILITY",
             ChangeType::RemovePayerCandidate => "REMOVE_PAYER_CANDIDATE",
             ChangeType::RevokeCanReceiveInferenceOutput => "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT",
             ChangeType::RevokeCanReceiveModelOutput => "REVOKE_CAN_RECEIVE_MODEL_OUTPUT",
+            ChangeType::RevokeExportQueryAnalysisLogAbility => "REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY",
             ChangeType::RevokeReceiveResultsAbility => "REVOKE_RECEIVE_RESULTS_ABILITY",
             ChangeType::Unknown(value) => value.as_str(),
         }
@@ -123,10 +133,12 @@ impl ChangeType {
             "EDIT_AUTO_APPROVED_CHANGE_TYPES",
             "GRANT_CAN_RECEIVE_INFERENCE_OUTPUT",
             "GRANT_CAN_RECEIVE_MODEL_OUTPUT",
+            "GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY",
             "GRANT_RECEIVE_RESULTS_ABILITY",
             "REMOVE_PAYER_CANDIDATE",
             "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT",
             "REVOKE_CAN_RECEIVE_MODEL_OUTPUT",
+            "REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY",
             "REVOKE_RECEIVE_RESULTS_ABILITY",
         ]
     }
@@ -156,10 +168,12 @@ impl ::std::fmt::Display for ChangeType {
             ChangeType::EditAutoApprovedChangeTypes => write!(f, "EDIT_AUTO_APPROVED_CHANGE_TYPES"),
             ChangeType::GrantCanReceiveInferenceOutput => write!(f, "GRANT_CAN_RECEIVE_INFERENCE_OUTPUT"),
             ChangeType::GrantCanReceiveModelOutput => write!(f, "GRANT_CAN_RECEIVE_MODEL_OUTPUT"),
+            ChangeType::GrantExportQueryAnalysisLogAbility => write!(f, "GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY"),
             ChangeType::GrantReceiveResultsAbility => write!(f, "GRANT_RECEIVE_RESULTS_ABILITY"),
             ChangeType::RemovePayerCandidate => write!(f, "REMOVE_PAYER_CANDIDATE"),
             ChangeType::RevokeCanReceiveInferenceOutput => write!(f, "REVOKE_CAN_RECEIVE_INFERENCE_OUTPUT"),
             ChangeType::RevokeCanReceiveModelOutput => write!(f, "REVOKE_CAN_RECEIVE_MODEL_OUTPUT"),
+            ChangeType::RevokeExportQueryAnalysisLogAbility => write!(f, "REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY"),
             ChangeType::RevokeReceiveResultsAbility => write!(f, "REVOKE_RECEIVE_RESULTS_ABILITY"),
             ChangeType::Unknown(value) => write!(f, "{value}"),
         }

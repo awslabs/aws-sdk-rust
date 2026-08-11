@@ -148,6 +148,9 @@ pub mod create_instance;
 /// Types for the `CreateIntegrationAssociation` operation.
 pub mod create_integration_association;
 
+/// Types for the `CreateMetric` operation.
+pub mod create_metric;
+
 /// Types for the `CreateNotification` operation.
 pub mod create_notification;
 
@@ -265,6 +268,9 @@ pub mod delete_instance;
 /// Types for the `DeleteIntegrationAssociation` operation.
 pub mod delete_integration_association;
 
+/// Types for the `DeleteMetric` operation.
+pub mod delete_metric;
+
 /// Types for the `DeleteNotification` operation.
 pub mod delete_notification;
 
@@ -381,6 +387,9 @@ pub mod describe_instance_attribute;
 
 /// Types for the `DescribeInstanceStorageConfig` operation.
 pub mod describe_instance_storage_config;
+
+/// Types for the `DescribeMetric` operation.
+pub mod describe_metric;
 
 /// Types for the `DescribeNotification` operation.
 pub mod describe_notification;
@@ -643,6 +652,9 @@ pub mod list_lambda_functions;
 /// Types for the `ListLexBots` operation.
 pub mod list_lex_bots;
 
+/// Types for the `ListMetrics` operation.
+pub mod list_metrics;
+
 /// Types for the `ListNotifications` operation.
 pub mod list_notifications;
 
@@ -804,6 +816,9 @@ pub mod search_hours_of_operation_overrides;
 
 /// Types for the `SearchHoursOfOperations` operation.
 pub mod search_hours_of_operations;
+
+/// Types for the `SearchMetrics` operation.
+pub mod search_metrics;
 
 /// Types for the `SearchNotifications` operation.
 pub mod search_notifications;
@@ -1017,6 +1032,12 @@ pub mod update_instance_attribute;
 
 /// Types for the `UpdateInstanceStorageConfig` operation.
 pub mod update_instance_storage_config;
+
+/// Types for the `UpdateMetricContent` operation.
+pub mod update_metric_content;
+
+/// Types for the `UpdateMetricMetadata` operation.
+pub mod update_metric_metadata;
 
 /// Types for the `UpdateNotificationContent` operation.
 pub mod update_notification_content;

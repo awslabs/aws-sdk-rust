@@ -22,7 +22,7 @@ impl crate::operation::populate_intermediate_table::builders::PopulateIntermedia
 }
 /// Fluent builder constructing a request to `PopulateIntermediateTable`.
 ///
-/// <p>Executes the stored query of an intermediate table to materialize data into managed storage. With this operation, you can perform initial population and subsequent refreshes. Each call creates a new version. The returned analysis ID can be tracked using <code>GetProtectedQuery</code>. Only the intermediate table owner can call this operation.</p>
+/// <p>Runs the stored query of an intermediate table and makes the results available for querying. Each call creates a new version. Use <code>GetProtectedQuery</code> with the returned analysis ID to track progress. Only the intermediate table owner can call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PopulateIntermediateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

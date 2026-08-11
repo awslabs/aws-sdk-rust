@@ -305,6 +305,12 @@ pub(crate) mod shape_insight_summaries;
 
 pub(crate) mod shape_insights_filter;
 
+pub(crate) mod shape_kube_api_server_config_request;
+
+pub(crate) mod shape_kube_controller_manager_config_request;
+
+pub(crate) mod shape_kube_scheduler_config_request;
+
 pub(crate) mod shape_kubernetes_network_config_request;
 
 pub(crate) mod shape_launch_template_specification;
@@ -409,6 +415,8 @@ pub(crate) mod shape_fargate_profile_health;
 
 pub(crate) mod shape_fargate_profile_selectors;
 
+pub(crate) mod shape_horizontal_pod_autoscaler_controller_config_request;
+
 pub(crate) mod shape_identity;
 
 pub(crate) mod shape_insight_category_specific_summary;
@@ -418,6 +426,12 @@ pub(crate) mod shape_insight_resource_details;
 pub(crate) mod shape_insight_status;
 
 pub(crate) mod shape_insight_summary;
+
+pub(crate) mod shape_kube_api_server_config_response;
+
+pub(crate) mod shape_kube_controller_manager_config_response;
+
+pub(crate) mod shape_kube_scheduler_config_response;
 
 pub(crate) mod shape_kubernetes_network_config_response;
 
@@ -430,6 +444,8 @@ pub(crate) mod shape_log_setup;
 pub(crate) mod shape_marketplace_information;
 
 pub(crate) mod shape_node_repair_config_overrides;
+
+pub(crate) mod shape_node_resources_fit_config;
 
 pub(crate) mod shape_nodegroup_health;
 
@@ -448,6 +464,8 @@ pub(crate) mod shape_remote_network_config_response;
 pub(crate) mod shape_remote_node_network;
 
 pub(crate) mod shape_remote_pod_network;
+
+pub(crate) mod shape_service_node_port_range;
 
 pub(crate) mod shape_storage_config_response;
 
@@ -483,7 +501,11 @@ pub(crate) mod shape_capability_issue_list;
 
 pub(crate) mod shape_cluster_issue_list;
 
+pub(crate) mod shape_control_plane_config_info;
+
 pub(crate) mod shape_control_plane_placement_response;
+
+pub(crate) mod shape_control_plane_scaling_tier_list;
 
 pub(crate) mod shape_deprecation_details;
 
@@ -492,6 +514,8 @@ pub(crate) mod shape_error_detail;
 pub(crate) mod shape_etcd_placement_response;
 
 pub(crate) mod shape_fargate_profile_issue_list;
+
+pub(crate) mod shape_horizontal_pod_autoscaler_controller_config_response;
 
 pub(crate) mod shape_insight_resource_detail;
 
@@ -510,6 +534,8 @@ pub(crate) mod shape_remote_node_network_list;
 pub(crate) mod shape_remote_pod_network_list;
 
 pub(crate) mod shape_required_claims_map;
+
+pub(crate) mod shape_scoring_strategy;
 
 pub(crate) mod shape_update_param;
 
@@ -533,6 +559,8 @@ pub(crate) mod shape_capability_issue;
 
 pub(crate) mod shape_cluster_issue;
 
+pub(crate) mod shape_control_plane_scaling_tier_info;
+
 pub(crate) mod shape_deprecation_detail;
 
 pub(crate) mod shape_fargate_profile_issue;
@@ -541,16 +569,50 @@ pub(crate) mod shape_fargate_profile_label;
 
 pub(crate) mod shape_issue;
 
+pub(crate) mod shape_kube_api_server_version_config;
+
+pub(crate) mod shape_kube_controller_manager_version_config;
+
+pub(crate) mod shape_kube_scheduler_version_config;
+
+pub(crate) mod shape_resource_weight;
+
 pub(crate) mod shape_sso_identity;
 
 pub(crate) mod shape_client_stats;
 
 pub(crate) mod shape_compatibilities;
 
+pub(crate) mod shape_duration_parameter_config;
+
+pub(crate) mod shape_horizontal_pod_autoscaler_controller_version_config;
+
 pub(crate) mod shape_log_types;
+
+pub(crate) mod shape_node_resources_fit_version_config;
+
+pub(crate) mod shape_port_range_parameter_config;
+
+pub(crate) mod shape_resource_weight_list;
 
 pub(crate) mod shape_client_stat;
 
 pub(crate) mod shape_compatibility;
 
+pub(crate) mod shape_duration_constraints;
+
+pub(crate) mod shape_port_range_constraints;
+
+pub(crate) mod shape_scoring_strategy_config;
+
 pub(crate) mod shape_sso_identity_list;
+
+pub(crate) mod shape_integer_range_constraint;
+
+pub(crate) mod shape_scoring_strategy_constraints;
+
+pub(crate) mod shape_allowed_values_constraint;
+
+pub(crate) mod shape_resource_constraints;
+
+pub(crate) mod shape_allowed_values_list;

@@ -24,6 +24,9 @@
 ///     UpdateParamType::EndpointPrivateAccess => { /* ... */ },
 ///     UpdateParamType::EndpointPublicAccess => { /* ... */ },
 ///     UpdateParamType::IdentityProviderConfig => { /* ... */ },
+///     UpdateParamType::KubeApiServerConfig => { /* ... */ },
+///     UpdateParamType::KubeControllerManagerConfig => { /* ... */ },
+///     UpdateParamType::KubeSchedulerConfig => { /* ... */ },
 ///     UpdateParamType::KubernetesNetworkConfig => { /* ... */ },
 ///     UpdateParamType::LabelsToAdd => { /* ... */ },
 ///     UpdateParamType::LabelsToRemove => { /* ... */ },
@@ -115,6 +118,12 @@ pub enum UpdateParamType {
     EndpointPublicAccess,
     #[allow(missing_docs)] // documentation missing in model
     IdentityProviderConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    KubeApiServerConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    KubeControllerManagerConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    KubeSchedulerConfig,
     #[allow(missing_docs)] // documentation missing in model
     KubernetesNetworkConfig,
     #[allow(missing_docs)] // documentation missing in model
@@ -212,6 +221,9 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "EndpointPrivateAccess" => UpdateParamType::EndpointPrivateAccess,
             "EndpointPublicAccess" => UpdateParamType::EndpointPublicAccess,
             "IdentityProviderConfig" => UpdateParamType::IdentityProviderConfig,
+            "KubeApiServerConfig" => UpdateParamType::KubeApiServerConfig,
+            "KubeControllerManagerConfig" => UpdateParamType::KubeControllerManagerConfig,
+            "KubeSchedulerConfig" => UpdateParamType::KubeSchedulerConfig,
             "KubernetesNetworkConfig" => UpdateParamType::KubernetesNetworkConfig,
             "LabelsToAdd" => UpdateParamType::LabelsToAdd,
             "LabelsToRemove" => UpdateParamType::LabelsToRemove,
@@ -278,6 +290,9 @@ impl UpdateParamType {
             UpdateParamType::EndpointPrivateAccess => "EndpointPrivateAccess",
             UpdateParamType::EndpointPublicAccess => "EndpointPublicAccess",
             UpdateParamType::IdentityProviderConfig => "IdentityProviderConfig",
+            UpdateParamType::KubeApiServerConfig => "KubeApiServerConfig",
+            UpdateParamType::KubeControllerManagerConfig => "KubeControllerManagerConfig",
+            UpdateParamType::KubeSchedulerConfig => "KubeSchedulerConfig",
             UpdateParamType::KubernetesNetworkConfig => "KubernetesNetworkConfig",
             UpdateParamType::LabelsToAdd => "LabelsToAdd",
             UpdateParamType::LabelsToRemove => "LabelsToRemove",
@@ -335,6 +350,9 @@ impl UpdateParamType {
             "EndpointPrivateAccess",
             "EndpointPublicAccess",
             "IdentityProviderConfig",
+            "KubeApiServerConfig",
+            "KubeControllerManagerConfig",
+            "KubeSchedulerConfig",
             "KubernetesNetworkConfig",
             "LabelsToAdd",
             "LabelsToRemove",
@@ -409,6 +427,9 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::EndpointPrivateAccess => write!(f, "EndpointPrivateAccess"),
             UpdateParamType::EndpointPublicAccess => write!(f, "EndpointPublicAccess"),
             UpdateParamType::IdentityProviderConfig => write!(f, "IdentityProviderConfig"),
+            UpdateParamType::KubeApiServerConfig => write!(f, "KubeApiServerConfig"),
+            UpdateParamType::KubeControllerManagerConfig => write!(f, "KubeControllerManagerConfig"),
+            UpdateParamType::KubeSchedulerConfig => write!(f, "KubeSchedulerConfig"),
             UpdateParamType::KubernetesNetworkConfig => write!(f, "KubernetesNetworkConfig"),
             UpdateParamType::LabelsToAdd => write!(f, "LabelsToAdd"),
             UpdateParamType::LabelsToRemove => write!(f, "LabelsToRemove"),

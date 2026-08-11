@@ -22,7 +22,7 @@ impl crate::operation::create_intermediate_table::builders::CreateIntermediateTa
 }
 /// Fluent builder constructing a request to `CreateIntermediateTable`.
 ///
-/// <p>Creates an intermediate table in a membership. An intermediate table stores a query definition that you can execute later using <code>PopulateIntermediateTable</code> to materialize cached results. The intermediate table is owned by the member with the CAN_QUERY ability. This operation does not execute the stored query.</p>
+/// <p>Creates an intermediate table in a membership. The intermediate table is owned by the member with the CAN_QUERY ability. To populate the table with results, use <code>PopulateIntermediateTable</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateIntermediateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -150,17 +150,17 @@ impl CreateIntermediateTableFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The configuration that defines the analysis used to populate the intermediate table. This configuration contains the SQL query or analysis template reference.</p>
+    /// <p>The configuration that defines the analysis used to populate the intermediate table.</p>
     pub fn population_analysis_configuration(mut self, input: crate::types::PopulationAnalysisConfiguration) -> Self {
         self.inner = self.inner.population_analysis_configuration(input);
         self
     }
-    /// <p>The configuration that defines the analysis used to populate the intermediate table. This configuration contains the SQL query or analysis template reference.</p>
+    /// <p>The configuration that defines the analysis used to populate the intermediate table.</p>
     pub fn set_population_analysis_configuration(mut self, input: ::std::option::Option<crate::types::PopulationAnalysisConfiguration>) -> Self {
         self.inner = self.inner.set_population_analysis_configuration(input);
         self
     }
-    /// <p>The configuration that defines the analysis used to populate the intermediate table. This configuration contains the SQL query or analysis template reference.</p>
+    /// <p>The configuration that defines the analysis used to populate the intermediate table.</p>
     pub fn get_population_analysis_configuration(&self) -> &::std::option::Option<crate::types::PopulationAnalysisConfiguration> {
         self.inner.get_population_analysis_configuration()
     }
@@ -178,17 +178,17 @@ impl CreateIntermediateTableFluentBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_arn()
     }
-    /// <p>The number of days to retain populated data versions. Minimum value of 1, maximum value of 365.</p>
+    /// <p>The number of days to retain populated data versions.</p>
     pub fn retention_in_days(mut self, input: i32) -> Self {
         self.inner = self.inner.retention_in_days(input);
         self
     }
-    /// <p>The number of days to retain populated data versions. Minimum value of 1, maximum value of 365.</p>
+    /// <p>The number of days to retain populated data versions.</p>
     pub fn set_retention_in_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_retention_in_days(input);
         self
     }
-    /// <p>The number of days to retain populated data versions. Minimum value of 1, maximum value of 365.</p>
+    /// <p>The number of days to retain populated data versions.</p>
     pub fn get_retention_in_days(&self) -> &::std::option::Option<i32> {
         self.inner.get_retention_in_days()
     }

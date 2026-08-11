@@ -349,6 +349,16 @@ pub(crate) fn reflens_list_lex_bots_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_metrics_output_output_next_token(
+    input: &crate::operation::list_metrics::ListMetricsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_phone_numbers_output_output_next_token(
     input: &crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -719,6 +729,16 @@ pub(crate) fn reflens_search_hours_of_operations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_metrics_output_output_next_token(
+    input: &crate::operation::search_metrics::SearchMetricsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_predefined_attributes_output_output_next_token(
     input: &crate::operation::search_predefined_attributes::SearchPredefinedAttributesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1079,6 +1099,13 @@ pub(crate) fn lens_list_lex_bots_output_output_lex_bots(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_metrics_output_output_metric_summary_list(
+    input: crate::operation::list_metrics::ListMetricsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetricSummary>> {
+    let input = input.metric_summary_list;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_phone_numbers_output_output_phone_number_summary_list(
     input: crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberSummary>> {
@@ -1328,6 +1355,13 @@ pub(crate) fn lens_search_hours_of_operations_output_output_hours_of_operations(
     input: crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HoursOfOperation>> {
     let input = input.hours_of_operations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_metrics_output_output_metrics(
+    input: crate::operation::search_metrics::SearchMetricsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinition>> {
+    let input = input.metrics?;
     ::std::option::Option::Some(input)
 }
 

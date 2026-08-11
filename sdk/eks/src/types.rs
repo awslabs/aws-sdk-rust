@@ -45,6 +45,12 @@ pub use crate::types::_storage_config_request::StorageConfigRequest;
 
 pub use crate::types::_control_plane_scaling_config::ControlPlaneScalingConfig;
 
+pub use crate::types::_kube_api_server_config_request::KubeApiServerConfigRequest;
+
+pub use crate::types::_kube_scheduler_config_request::KubeSchedulerConfigRequest;
+
+pub use crate::types::_kube_controller_manager_config_request::KubeControllerManagerConfigRequest;
+
 pub use crate::types::_cluster::Cluster;
 
 pub use crate::types::_eks_anywhere_subscription_term::EksAnywhereSubscriptionTerm;
@@ -147,6 +153,12 @@ pub use crate::types::_block_storage::BlockStorage;
 
 pub use crate::types::_provisioned_control_plane_tier::ProvisionedControlPlaneTier;
 
+pub use crate::types::_service_node_port_range::ServiceNodePortRange;
+
+pub use crate::types::_node_resources_fit_config::NodeResourcesFitConfig;
+
+pub use crate::types::_horizontal_pod_autoscaler_controller_config_request::HorizontalPodAutoscalerControllerConfigRequest;
+
 pub use crate::types::_vpc_config_response::VpcConfigResponse;
 
 pub use crate::types::_kubernetes_network_config_response::KubernetesNetworkConfigResponse;
@@ -174,6 +186,12 @@ pub use crate::types::_remote_network_config_response::RemoteNetworkConfigRespon
 pub use crate::types::_compute_config_response::ComputeConfigResponse;
 
 pub use crate::types::_storage_config_response::StorageConfigResponse;
+
+pub use crate::types::_kube_api_server_config_response::KubeApiServerConfigResponse;
+
+pub use crate::types::_kube_scheduler_config_response::KubeSchedulerConfigResponse;
+
+pub use crate::types::_kube_controller_manager_config_response::KubeControllerManagerConfigResponse;
 
 pub use crate::types::_eks_anywhere_subscription_term_unit::EksAnywhereSubscriptionTermUnit;
 
@@ -245,17 +263,23 @@ pub use crate::types::_remote_node_network::RemoteNodeNetwork;
 
 pub use crate::types::_remote_pod_network::RemotePodNetwork;
 
+pub use crate::types::_scoring_strategy::ScoringStrategy;
+
 pub use crate::types::_oidc::Oidc;
 
 pub use crate::types::_control_plane_placement_response::ControlPlanePlacementResponse;
 
 pub use crate::types::_etcd_placement_response::EtcdPlacementResponse;
 
+pub use crate::types::_horizontal_pod_autoscaler_controller_config_response::HorizontalPodAutoscalerControllerConfigResponse;
+
 pub use crate::types::_license::License;
 
 pub use crate::types::_taint_effect::TaintEffect;
 
 pub use crate::types::_node_repair_config_overrides::NodeRepairConfigOverrides;
+
+pub use crate::types::_control_plane_config_info::ControlPlaneConfigInfo;
 
 pub use crate::types::_config_status::ConfigStatus;
 
@@ -279,6 +303,8 @@ pub use crate::types::_argo_cd_network_access_config_response::ArgoCdNetworkAcce
 
 pub use crate::types::_capability_issue::CapabilityIssue;
 
+pub use crate::types::_scoring_strategy_type::ScoringStrategyType;
+
 pub use crate::types::_cluster_issue::ClusterIssue;
 
 pub use crate::types::_fargate_profile_issue::FargateProfileIssue;
@@ -290,6 +316,14 @@ pub use crate::types::_auto_scaling_group::AutoScalingGroup;
 pub use crate::types::_issue::Issue;
 
 pub use crate::types::_addon_version_info::AddonVersionInfo;
+
+pub use crate::types::_control_plane_scaling_tier_info::ControlPlaneScalingTierInfo;
+
+pub use crate::types::_kube_api_server_version_config::KubeApiServerVersionConfig;
+
+pub use crate::types::_kube_scheduler_version_config::KubeSchedulerVersionConfig;
+
+pub use crate::types::_kube_controller_manager_version_config::KubeControllerManagerVersionConfig;
 
 pub use crate::types::_deprecation_detail::DeprecationDetail;
 
@@ -303,19 +337,43 @@ pub use crate::types::_capability_issue_code::CapabilityIssueCode;
 
 pub use crate::types::_log_type::LogType;
 
+pub use crate::types::_resource_weight::ResourceWeight;
+
 pub use crate::types::_cluster_issue_code::ClusterIssueCode;
 
 pub use crate::types::_fargate_profile_issue_code::FargateProfileIssueCode;
 
 pub use crate::types::_nodegroup_issue_code::NodegroupIssueCode;
 
+pub use crate::types::_duration_parameter_config::DurationParameterConfig;
+
+pub use crate::types::_port_range_parameter_config::PortRangeParameterConfig;
+
+pub use crate::types::_node_resources_fit_version_config::NodeResourcesFitVersionConfig;
+
+pub use crate::types::_horizontal_pod_autoscaler_controller_version_config::HorizontalPodAutoscalerControllerVersionConfig;
+
 pub use crate::types::_sso_identity::SsoIdentity;
 
 pub use crate::types::_compatibility::Compatibility;
 
+pub use crate::types::_duration_constraints::DurationConstraints;
+
+pub use crate::types::_port_range_constraints::PortRangeConstraints;
+
+pub use crate::types::_scoring_strategy_config::ScoringStrategyConfig;
+
 pub use crate::types::_client_stat::ClientStat;
 
 pub use crate::types::_sso_identity_type::SsoIdentityType;
+
+pub use crate::types::_integer_range_constraint::IntegerRangeConstraint;
+
+pub use crate::types::_scoring_strategy_constraints::ScoringStrategyConstraints;
+
+pub use crate::types::_allowed_values_constraint::AllowedValuesConstraint;
+
+pub use crate::types::_resource_constraints::ResourceConstraints;
 
 mod _access_config_response;
 
@@ -350,6 +408,8 @@ mod _addon_pod_identity_configuration;
 mod _addon_status;
 
 mod _addon_version_info;
+
+mod _allowed_values_constraint;
 
 mod _ami_types;
 
@@ -437,6 +497,8 @@ mod _connector_config_request;
 
 mod _connector_config_response;
 
+mod _control_plane_config_info;
+
 mod _control_plane_egress_mode_type;
 
 mod _control_plane_placement_request;
@@ -445,9 +507,15 @@ mod _control_plane_placement_response;
 
 mod _control_plane_scaling_config;
 
+mod _control_plane_scaling_tier_info;
+
 mod _create_access_config_request;
 
 mod _deprecation_detail;
+
+mod _duration_constraints;
+
+mod _duration_parameter_config;
 
 mod _eks_anywhere_subscription;
 
@@ -483,6 +551,12 @@ mod _fargate_profile_selector;
 
 mod _fargate_profile_status;
 
+mod _horizontal_pod_autoscaler_controller_config_request;
+
+mod _horizontal_pod_autoscaler_controller_config_response;
+
+mod _horizontal_pod_autoscaler_controller_version_config;
+
 mod _identity;
 
 mod _identity_provider_config;
@@ -505,9 +579,29 @@ mod _insights_filter;
 
 mod _insights_refresh_status;
 
+mod _integer_range_constraint;
+
 mod _ip_family;
 
 mod _issue;
+
+mod _kube_api_server_config_request;
+
+mod _kube_api_server_config_response;
+
+mod _kube_api_server_version_config;
+
+mod _kube_controller_manager_config_request;
+
+mod _kube_controller_manager_config_response;
+
+mod _kube_controller_manager_version_config;
+
+mod _kube_scheduler_config_request;
+
+mod _kube_scheduler_config_response;
+
+mod _kube_scheduler_version_config;
 
 mod _kubernetes_network_config_request;
 
@@ -528,6 +622,10 @@ mod _marketplace_information;
 mod _node_repair_config;
 
 mod _node_repair_config_overrides;
+
+mod _node_resources_fit_config;
+
+mod _node_resources_fit_version_config;
 
 mod _nodegroup;
 
@@ -559,6 +657,10 @@ mod _pod_identity_association;
 
 mod _pod_identity_association_summary;
 
+mod _port_range_constraints;
+
+mod _port_range_parameter_config;
+
 mod _provider;
 
 mod _provisioned_control_plane_tier;
@@ -577,7 +679,21 @@ mod _repair_action;
 
 mod _resolve_conflicts;
 
+mod _resource_constraints;
+
+mod _resource_weight;
+
 mod _rollback_config;
+
+mod _scoring_strategy;
+
+mod _scoring_strategy_config;
+
+mod _scoring_strategy_constraints;
+
+mod _scoring_strategy_type;
+
+mod _service_node_port_range;
 
 mod _spread_level;
 

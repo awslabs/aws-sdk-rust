@@ -22,7 +22,7 @@ impl crate::operation::delete_intermediate_table::builders::DeleteIntermediateTa
 }
 /// Fluent builder constructing a request to `DeleteIntermediateTable`.
 ///
-/// <p>Deletes an intermediate table. When you delete the table, the service marks it as DELETED, removes its analysis rule and schema, and triggers storage cleanup. This operation is idempotent. Only the intermediate table owner can call this operation.</p>
+/// <p>Deletes an intermediate table. The delete is idempotent. Only the intermediate table owner can call this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIntermediateTableFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

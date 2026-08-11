@@ -49,6 +49,12 @@ pub struct CreateClusterInput {
     pub deletion_protection: ::std::option::Option<bool>,
     /// <p>The control plane scaling tier configuration. For more information, see EKS Provisioned Control Plane in the Amazon EKS User Guide.</p>
     pub control_plane_scaling_config: ::std::option::Option<crate::types::ControlPlaneScalingConfig>,
+    /// <p>The Kubernetes API server configuration for the new cluster.</p>
+    pub kube_api_server_config: ::std::option::Option<crate::types::KubeApiServerConfigRequest>,
+    /// <p>The Kubernetes scheduler configuration for the new cluster.</p>
+    pub kube_scheduler_config: ::std::option::Option<crate::types::KubeSchedulerConfigRequest>,
+    /// <p>The Kubernetes controller manager configuration for the new cluster.</p>
+    pub kube_controller_manager_config: ::std::option::Option<crate::types::KubeControllerManagerConfigRequest>,
 }
 impl CreateClusterInput {
     /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
@@ -137,6 +143,18 @@ impl CreateClusterInput {
     pub fn control_plane_scaling_config(&self) -> ::std::option::Option<&crate::types::ControlPlaneScalingConfig> {
         self.control_plane_scaling_config.as_ref()
     }
+    /// <p>The Kubernetes API server configuration for the new cluster.</p>
+    pub fn kube_api_server_config(&self) -> ::std::option::Option<&crate::types::KubeApiServerConfigRequest> {
+        self.kube_api_server_config.as_ref()
+    }
+    /// <p>The Kubernetes scheduler configuration for the new cluster.</p>
+    pub fn kube_scheduler_config(&self) -> ::std::option::Option<&crate::types::KubeSchedulerConfigRequest> {
+        self.kube_scheduler_config.as_ref()
+    }
+    /// <p>The Kubernetes controller manager configuration for the new cluster.</p>
+    pub fn kube_controller_manager_config(&self) -> ::std::option::Option<&crate::types::KubeControllerManagerConfigRequest> {
+        self.kube_controller_manager_config.as_ref()
+    }
 }
 impl CreateClusterInput {
     /// Creates a new builder-style object to manufacture [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
@@ -168,6 +186,9 @@ pub struct CreateClusterInputBuilder {
     pub(crate) storage_config: ::std::option::Option<crate::types::StorageConfigRequest>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
     pub(crate) control_plane_scaling_config: ::std::option::Option<crate::types::ControlPlaneScalingConfig>,
+    pub(crate) kube_api_server_config: ::std::option::Option<crate::types::KubeApiServerConfigRequest>,
+    pub(crate) kube_scheduler_config: ::std::option::Option<crate::types::KubeSchedulerConfigRequest>,
+    pub(crate) kube_controller_manager_config: ::std::option::Option<crate::types::KubeControllerManagerConfigRequest>,
 }
 impl CreateClusterInputBuilder {
     /// <p>The unique name to give to your cluster. The name can contain only alphanumeric characters (case-sensitive), hyphens, and underscores. It must start with an alphanumeric character and can't be longer than 100 characters. The name must be unique within the Amazon Web Services Region and Amazon Web Services account that you're creating the cluster in.</p>
@@ -475,6 +496,48 @@ impl CreateClusterInputBuilder {
     pub fn get_control_plane_scaling_config(&self) -> &::std::option::Option<crate::types::ControlPlaneScalingConfig> {
         &self.control_plane_scaling_config
     }
+    /// <p>The Kubernetes API server configuration for the new cluster.</p>
+    pub fn kube_api_server_config(mut self, input: crate::types::KubeApiServerConfigRequest) -> Self {
+        self.kube_api_server_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Kubernetes API server configuration for the new cluster.</p>
+    pub fn set_kube_api_server_config(mut self, input: ::std::option::Option<crate::types::KubeApiServerConfigRequest>) -> Self {
+        self.kube_api_server_config = input;
+        self
+    }
+    /// <p>The Kubernetes API server configuration for the new cluster.</p>
+    pub fn get_kube_api_server_config(&self) -> &::std::option::Option<crate::types::KubeApiServerConfigRequest> {
+        &self.kube_api_server_config
+    }
+    /// <p>The Kubernetes scheduler configuration for the new cluster.</p>
+    pub fn kube_scheduler_config(mut self, input: crate::types::KubeSchedulerConfigRequest) -> Self {
+        self.kube_scheduler_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Kubernetes scheduler configuration for the new cluster.</p>
+    pub fn set_kube_scheduler_config(mut self, input: ::std::option::Option<crate::types::KubeSchedulerConfigRequest>) -> Self {
+        self.kube_scheduler_config = input;
+        self
+    }
+    /// <p>The Kubernetes scheduler configuration for the new cluster.</p>
+    pub fn get_kube_scheduler_config(&self) -> &::std::option::Option<crate::types::KubeSchedulerConfigRequest> {
+        &self.kube_scheduler_config
+    }
+    /// <p>The Kubernetes controller manager configuration for the new cluster.</p>
+    pub fn kube_controller_manager_config(mut self, input: crate::types::KubeControllerManagerConfigRequest) -> Self {
+        self.kube_controller_manager_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Kubernetes controller manager configuration for the new cluster.</p>
+    pub fn set_kube_controller_manager_config(mut self, input: ::std::option::Option<crate::types::KubeControllerManagerConfigRequest>) -> Self {
+        self.kube_controller_manager_config = input;
+        self
+    }
+    /// <p>The Kubernetes controller manager configuration for the new cluster.</p>
+    pub fn get_kube_controller_manager_config(&self) -> &::std::option::Option<crate::types::KubeControllerManagerConfigRequest> {
+        &self.kube_controller_manager_config
+    }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
     pub fn build(
         self,
@@ -499,6 +562,9 @@ impl CreateClusterInputBuilder {
             storage_config: self.storage_config,
             deletion_protection: self.deletion_protection,
             control_plane_scaling_config: self.control_plane_scaling_config,
+            kube_api_server_config: self.kube_api_server_config,
+            kube_scheduler_config: self.kube_scheduler_config,
+            kube_controller_manager_config: self.kube_controller_manager_config,
         })
     }
 }

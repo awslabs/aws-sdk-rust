@@ -38,6 +38,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "scopeName" => {
+                            builder = builder.set_scope_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "errorMessage" => {
                             builder = builder.set_error_message(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
