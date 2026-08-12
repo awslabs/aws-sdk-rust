@@ -29,6 +29,10 @@ pub use crate::types::_cloud_vm_cluster::CloudVmClusterBuilder;
 
 pub use crate::types::_db_node::DbNodeBuilder;
 
+pub use crate::types::_exadb_vm_cluster::ExadbVmClusterBuilder;
+
+pub use crate::types::_exascale_db_storage_vault::ExascaleDbStorageVaultBuilder;
+
 pub use crate::types::_odb_network::OdbNetworkBuilder;
 
 pub use crate::types::_odb_peering_connection::OdbPeeringConnectionBuilder;
@@ -44,6 +48,8 @@ pub use crate::types::_autonomous_database_character_set_summary::AutonomousData
 pub use crate::types::_autonomous_database_version_summary::AutonomousDatabaseVersionSummaryBuilder;
 
 pub use crate::types::_db_system_shape_summary::DbSystemShapeSummaryBuilder;
+
+pub use crate::types::_gi_minor_version_summary::GiMinorVersionSummaryBuilder;
 
 pub use crate::types::_gi_version_summary::GiVersionSummaryBuilder;
 
@@ -108,6 +114,14 @@ pub use crate::types::_cloud_vm_cluster_summary::CloudVmClusterSummaryBuilder;
 pub use crate::types::_exadata_iorm_config::ExadataIormConfigBuilder;
 
 pub use crate::types::_db_node_summary::DbNodeSummaryBuilder;
+
+pub use crate::types::_exadb_vm_cluster_summary::ExadbVmClusterSummaryBuilder;
+
+pub use crate::types::_exadb_vm_cluster_storage_details::ExadbVmClusterStorageDetailsBuilder;
+
+pub use crate::types::_exascale_db_storage_vault_summary::ExascaleDbStorageVaultSummaryBuilder;
+
+pub use crate::types::_exascale_db_storage_details::ExascaleDbStorageDetailsBuilder;
 
 pub use crate::types::_odb_network_summary::OdbNetworkSummaryBuilder;
 

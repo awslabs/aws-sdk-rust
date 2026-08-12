@@ -182,6 +182,8 @@ impl Client {
 
 mod accept_delegation_request;
 
+mod acquire_role;
+
 mod add_client_id_to_open_id_connect_provider;
 
 mod add_role_to_instance_profile;
@@ -335,6 +337,8 @@ mod get_account_authorization_details;
 
 mod get_account_password_policy;
 
+mod get_account_properties;
+
 mod get_account_summary;
 
 mod get_context_keys_for_custom_policy;
@@ -370,6 +374,8 @@ mod get_policy_version;
 mod get_role;
 
 mod get_role_policy;
+
+mod get_role_template_version;
 
 mod get_saml_provider;
 
@@ -458,6 +464,8 @@ mod list_user_tags;
 mod list_users;
 
 mod list_virtual_mfa_devices;
+
+mod put_account_properties;
 
 mod put_group_policy;
 

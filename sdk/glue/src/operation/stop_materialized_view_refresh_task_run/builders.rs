@@ -22,7 +22,7 @@ impl crate::operation::stop_materialized_view_refresh_task_run::builders::StopMa
 }
 /// Fluent builder constructing a request to `StopMaterializedViewRefreshTaskRun`.
 ///
-/// <p>Stops a materialized view refresh task run, for a specified table and columns.</p>
+/// <p>Stops a materialized view refresh task run for a specified materialized view.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopMaterializedViewRefreshTaskRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,17 +137,17 @@ impl StopMaterializedViewRefreshTaskRunFluentBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
-    /// <p>The name of the table to generate statistics.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
-    /// <p>The name of the table to generate statistics.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
-    /// <p>The name of the table to generate statistics.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }

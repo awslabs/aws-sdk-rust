@@ -21,6 +21,8 @@ pub struct CreateRouterOutputInput {
     pub maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
     /// <p>Key-value pairs that can be used to tag this router output.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
     /// <p>A unique identifier for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -61,6 +63,10 @@ impl CreateRouterOutputInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn fabric_configuration(&self) -> ::std::option::Option<&crate::types::FabricConfiguration> {
+        self.fabric_configuration.as_ref()
+    }
     /// <p>A unique identifier for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -86,6 +92,7 @@ pub struct CreateRouterOutputInputBuilder {
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateRouterOutputInputBuilder {
@@ -226,6 +233,20 @@ impl CreateRouterOutputInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn fabric_configuration(mut self, input: crate::types::FabricConfiguration) -> Self {
+        self.fabric_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn set_fabric_configuration(mut self, input: ::std::option::Option<crate::types::FabricConfiguration>) -> Self {
+        self.fabric_configuration = input;
+        self
+    }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
+        &self.fabric_configuration
+    }
     /// <p>A unique identifier for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -255,6 +276,7 @@ impl CreateRouterOutputInputBuilder {
             availability_zone: self.availability_zone,
             maintenance_configuration: self.maintenance_configuration,
             tags: self.tags,
+            fabric_configuration: self.fabric_configuration,
             client_token: self.client_token,
         })
     }

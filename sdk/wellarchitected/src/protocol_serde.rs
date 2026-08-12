@@ -27,6 +27,12 @@ pub(crate) mod shape_associate_lenses;
 
 pub(crate) mod shape_associate_profiles;
 
+pub(crate) mod shape_create_agent_context;
+
+pub(crate) mod shape_create_agent_goal;
+
+pub(crate) mod shape_create_agent_profile;
+
 pub(crate) mod shape_create_lens_share;
 
 pub(crate) mod shape_create_lens_version;
@@ -44,6 +50,12 @@ pub(crate) mod shape_create_template_share;
 pub(crate) mod shape_create_workload;
 
 pub(crate) mod shape_create_workload_share;
+
+pub(crate) mod shape_delete_agent_context;
+
+pub(crate) mod shape_delete_agent_goal;
+
+pub(crate) mod shape_delete_agent_profile;
 
 pub(crate) mod shape_delete_lens;
 
@@ -66,6 +78,16 @@ pub(crate) mod shape_disassociate_lenses;
 pub(crate) mod shape_disassociate_profiles;
 
 pub(crate) mod shape_export_lens;
+
+pub(crate) mod shape_get_agent_context;
+
+pub(crate) mod shape_get_agent_goal;
+
+pub(crate) mod shape_get_agent_profile;
+
+pub(crate) mod shape_get_agent_recommendation;
+
+pub(crate) mod shape_get_agent_recommendation_generation;
 
 pub(crate) mod shape_get_answer;
 
@@ -96,6 +118,18 @@ pub(crate) mod shape_get_review_template_lens_review;
 pub(crate) mod shape_get_workload;
 
 pub(crate) mod shape_import_lens;
+
+pub(crate) mod shape_list_agent_contexts;
+
+pub(crate) mod shape_list_agent_goals;
+
+pub(crate) mod shape_list_agent_profiles;
+
+pub(crate) mod shape_list_agent_recommendation_generations;
+
+pub(crate) mod shape_list_agent_recommendation_items;
+
+pub(crate) mod shape_list_agent_recommendations;
 
 pub(crate) mod shape_list_answers;
 
@@ -135,9 +169,21 @@ pub(crate) mod shape_list_workload_shares;
 
 pub(crate) mod shape_list_workloads;
 
+pub(crate) mod shape_put_agent_recommendation_feedback;
+
+pub(crate) mod shape_start_agent_recommendation_generation;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_agent_context;
+
+pub(crate) mod shape_update_agent_goal;
+
+pub(crate) mod shape_update_agent_profile;
+
+pub(crate) mod shape_update_agent_recommendation_status;
 
 pub(crate) mod shape_update_answer;
 
@@ -183,6 +229,12 @@ pub(crate) mod shape_associate_profiles_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_agent_context_input;
+
+pub(crate) mod shape_create_agent_goal_input;
+
+pub(crate) mod shape_create_agent_profile_input;
+
 pub(crate) mod shape_create_lens_share_input;
 
 pub(crate) mod shape_create_lens_version_input;
@@ -219,13 +271,25 @@ pub(crate) mod shape_list_notifications_input;
 
 pub(crate) mod shape_list_workloads_input;
 
+pub(crate) mod shape_put_agent_recommendation_feedback_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_agent_recommendation_generation_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_agent_context_input;
+
+pub(crate) mod shape_update_agent_goal_input;
+
+pub(crate) mod shape_update_agent_profile_input;
+
+pub(crate) mod shape_update_agent_recommendation_status_input;
 
 pub(crate) mod shape_update_answer_input;
 
@@ -261,6 +325,20 @@ pub(crate) mod shape_account_jira_configuration_input;
 
 pub(crate) mod shape_account_jira_configuration_output;
 
+pub(crate) mod shape_agent_profile_summaries;
+
+pub(crate) mod shape_agent_recommendation_generation_summaries;
+
+pub(crate) mod shape_agent_recommendation_item_summaries;
+
+pub(crate) mod shape_agent_recommendation_remediations;
+
+pub(crate) mod shape_agent_recommendation_summaries;
+
+pub(crate) mod shape_aggregation_configuration;
+
+pub(crate) mod shape_aggregation_configurations;
+
 pub(crate) mod shape_answer;
 
 pub(crate) mod shape_answer_summaries;
@@ -273,7 +351,29 @@ pub(crate) mod shape_choice_update;
 
 pub(crate) mod shape_consolidated_report_metrics;
 
+pub(crate) mod shape_context_content;
+
+pub(crate) mod shape_context_summaries;
+
+pub(crate) mod shape_context_summary;
+
+pub(crate) mod shape_cross_pillar_benefits;
+
+pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_field_errors;
+
+pub(crate) mod shape_goal_summaries;
+
+pub(crate) mod shape_goal_summary;
+
+pub(crate) mod shape_highlights;
+
+pub(crate) mod shape_impact_details;
+
 pub(crate) mod shape_improvement_summaries;
+
+pub(crate) mod shape_insight_list;
 
 pub(crate) mod shape_jira_selected_question_configuration;
 
@@ -295,6 +395,8 @@ pub(crate) mod shape_milestone_summaries;
 
 pub(crate) mod shape_notification_summaries;
 
+pub(crate) mod shape_pillars;
+
 pub(crate) mod shape_profile;
 
 pub(crate) mod shape_profile_notification_summaries;
@@ -307,6 +409,14 @@ pub(crate) mod shape_profile_summaries;
 
 pub(crate) mod shape_profile_template;
 
+pub(crate) mod shape_progress;
+
+pub(crate) mod shape_recommendation_goals;
+
+pub(crate) mod shape_recommendation_source_list;
+
+pub(crate) mod shape_remediation_summary;
+
 pub(crate) mod shape_review_template;
 
 pub(crate) mod shape_review_template_answer;
@@ -317,13 +427,25 @@ pub(crate) mod shape_review_template_lens_review;
 
 pub(crate) mod shape_review_templates;
 
+pub(crate) mod shape_roi;
+
+pub(crate) mod shape_scope;
+
 pub(crate) mod shape_share_invitation;
 
 pub(crate) mod shape_share_invitation_summaries;
 
+pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_tag;
+
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_tags;
+
 pub(crate) mod shape_template_share_summaries;
+
+pub(crate) mod shape_trade_offs;
 
 pub(crate) mod shape_validation_exception_field_list;
 
@@ -341,6 +463,16 @@ pub(crate) mod shape_workload_share_summaries;
 
 pub(crate) mod shape_workload_summaries;
 
+pub(crate) mod shape_agent_profile_summary;
+
+pub(crate) mod shape_agent_recommendation_generation_summary;
+
+pub(crate) mod shape_agent_recommendation_item_summary;
+
+pub(crate) mod shape_agent_recommendation_remediation;
+
+pub(crate) mod shape_agent_recommendation_summary;
+
 pub(crate) mod shape_answer_summary;
 
 pub(crate) mod shape_check_detail;
@@ -353,7 +485,15 @@ pub(crate) mod shape_choices;
 
 pub(crate) mod shape_consolidated_report_metric;
 
+pub(crate) mod shape_context_resource_tag;
+
+pub(crate) mod shape_cross_pillar_benefit;
+
+pub(crate) mod shape_goal_id_list;
+
 pub(crate) mod shape_improvement_summary;
+
+pub(crate) mod shape_insight;
 
 pub(crate) mod shape_jira_configuration;
 
@@ -369,6 +509,10 @@ pub(crate) mod shape_notification_summary;
 
 pub(crate) mod shape_pillar_differences;
 
+pub(crate) mod shape_pillar_item;
+
+pub(crate) mod shape_pillar_items;
+
 pub(crate) mod shape_pillar_review_summaries;
 
 pub(crate) mod shape_profile_notification_summary;
@@ -380,6 +524,10 @@ pub(crate) mod shape_profile_share_summary;
 pub(crate) mod shape_profile_summary;
 
 pub(crate) mod shape_question_counts;
+
+pub(crate) mod shape_recommendation_goal;
+
+pub(crate) mod shape_recommended_fix_steps;
 
 pub(crate) mod shape_review_template_answer_summary;
 
@@ -400,6 +548,8 @@ pub(crate) mod shape_share_invitation_summary;
 pub(crate) mod shape_template_questions;
 
 pub(crate) mod shape_template_share_summary;
+
+pub(crate) mod shape_trade_off;
 
 pub(crate) mod shape_validation_exception_field;
 
@@ -433,6 +583,16 @@ pub(crate) mod shape_choice_answer_summaries;
 
 pub(crate) mod shape_choice_improvement_plans;
 
+pub(crate) mod shape_context_account_id_list;
+
+pub(crate) mod shape_context_aws_service_list;
+
+pub(crate) mod shape_context_region_list;
+
+pub(crate) mod shape_context_resource_tag_list;
+
+pub(crate) mod shape_context_resource_type_list;
+
 pub(crate) mod shape_lens_metrics;
 
 pub(crate) mod shape_lens_upgrade_summary;
@@ -444,6 +604,12 @@ pub(crate) mod shape_pillar_review_summary;
 pub(crate) mod shape_profile_question;
 
 pub(crate) mod shape_profile_template_question;
+
+pub(crate) mod shape_regions;
+
+pub(crate) mod shape_remediation_steps;
+
+pub(crate) mod shape_resource_links;
 
 pub(crate) mod shape_review_template_pillar_review_summary;
 
@@ -461,6 +627,8 @@ pub(crate) mod shape_choice_content;
 
 pub(crate) mod shape_choice_improvement_plan;
 
+pub(crate) mod shape_item_ids;
+
 pub(crate) mod shape_lens_metric;
 
 pub(crate) mod shape_profile_question_choices;
@@ -468,6 +636,10 @@ pub(crate) mod shape_profile_question_choices;
 pub(crate) mod shape_profile_template_question_choices;
 
 pub(crate) mod shape_question_differences;
+
+pub(crate) mod shape_remediation_step;
+
+pub(crate) mod shape_resource_link;
 
 pub(crate) mod shape_selected_choice_ids;
 

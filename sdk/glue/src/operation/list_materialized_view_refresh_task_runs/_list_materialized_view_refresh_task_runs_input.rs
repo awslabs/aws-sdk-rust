@@ -7,7 +7,7 @@ pub struct ListMaterializedViewRefreshTaskRunsInput {
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The database where the table resides.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the table for which statistics is generated.</p>
+    /// <p>The name of the materialized view.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -23,7 +23,7 @@ impl ListMaterializedViewRefreshTaskRunsInput {
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The name of the table for which statistics is generated.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -83,17 +83,17 @@ impl ListMaterializedViewRefreshTaskRunsInputBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>The name of the table for which statistics is generated.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the table for which statistics is generated.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The name of the table for which statistics is generated.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

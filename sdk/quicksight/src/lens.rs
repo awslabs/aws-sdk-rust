@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_analyses_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_approval_policies_output_output_next_token(
+    input: &crate::operation::list_approval_policies::ListApprovalPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_asset_bundle_export_jobs_output_output_next_token(
     input: &crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -111,6 +121,16 @@ pub(crate) fn reflens_list_data_sets_output_output_next_token(
 
 pub(crate) fn reflens_list_data_sources_output_output_next_token(
     input: &crate::operation::list_data_sources::ListDataSourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_dlp_settings_output_output_next_token(
+    input: &crate::operation::list_dlp_settings::ListDlpSettingsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -211,6 +231,16 @@ pub(crate) fn reflens_list_ingestions_output_output_next_token(
 
 pub(crate) fn reflens_list_knowledge_bases_output_output_next_token(
     input: &crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_limits_profiles_output_output_next_token(
+    input: &crate::operation::list_limits_profiles::ListLimitsProfilesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -487,6 +517,13 @@ pub(crate) fn lens_list_analyses_output_output_analysis_summary_list(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_approval_policies_output_output_policies(
+    input: crate::operation::list_approval_policies::ListApprovalPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ApprovalPolicy>> {
+    let input = input.policies;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_asset_bundle_export_jobs_output_output_asset_bundle_export_job_summary_list(
     input: crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobSummary>> {
@@ -540,6 +577,13 @@ pub(crate) fn lens_list_data_sources_output_output_data_sources(
     input: crate::operation::list_data_sources::ListDataSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DataSource>> {
     let input = input.data_sources?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dlp_settings_output_output_dlp_setting_summaries(
+    input: crate::operation::list_dlp_settings::ListDlpSettingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DlpSettingSummary>> {
+    let input = input.dlp_setting_summaries;
     ::std::option::Option::Some(input)
 }
 
@@ -610,6 +654,13 @@ pub(crate) fn lens_list_knowledge_bases_output_output_knowledge_base_summaries(
     input: crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::KnowledgeBaseSummary>> {
     let input = input.knowledge_base_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_limits_profiles_output_output_profiles(
+    input: crate::operation::list_limits_profiles::ListLimitsProfilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::LimitsProfile>> {
+    let input = input.profiles;
     ::std::option::Option::Some(input)
 }
 

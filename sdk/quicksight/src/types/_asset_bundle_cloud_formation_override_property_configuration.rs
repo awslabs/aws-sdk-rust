@@ -22,6 +22,8 @@ pub struct AssetBundleCloudFormationOverridePropertyConfiguration {
     pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardOverrideProperties>>,
     /// <p>An optional list of structures that controls how <code>Folder</code> resources are parameterized in the returned CloudFormation template.</p>
     pub folders: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobFolderOverrideProperties>>,
+    /// <p>An optional list of structures that controls how <code>Topic</code> resources are parameterized in the returned CloudFormation template.</p>
+    pub topics_v2: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobTopicV2OverrideProperties>>,
 }
 impl AssetBundleCloudFormationOverridePropertyConfiguration {
     /// <p>An optional list of structures that control how resource IDs are parameterized in the returned CloudFormation template.</p>
@@ -76,6 +78,12 @@ impl AssetBundleCloudFormationOverridePropertyConfiguration {
     pub fn folders(&self) -> &[crate::types::AssetBundleExportJobFolderOverrideProperties] {
         self.folders.as_deref().unwrap_or_default()
     }
+    /// <p>An optional list of structures that controls how <code>Topic</code> resources are parameterized in the returned CloudFormation template.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_v2.is_none()`.
+    pub fn topics_v2(&self) -> &[crate::types::AssetBundleExportJobTopicV2OverrideProperties] {
+        self.topics_v2.as_deref().unwrap_or_default()
+    }
 }
 impl AssetBundleCloudFormationOverridePropertyConfiguration {
     /// Creates a new builder-style object to manufacture [`AssetBundleCloudFormationOverridePropertyConfiguration`](crate::types::AssetBundleCloudFormationOverridePropertyConfiguration).
@@ -97,6 +105,7 @@ pub struct AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     pub(crate) analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobAnalysisOverrideProperties>>,
     pub(crate) dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobDashboardOverrideProperties>>,
     pub(crate) folders: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobFolderOverrideProperties>>,
+    pub(crate) topics_v2: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobTopicV2OverrideProperties>>,
 }
 impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     /// <p>An optional list of structures that control how resource IDs are parameterized in the returned CloudFormation template.</p>
@@ -298,6 +307,29 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
     pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobFolderOverrideProperties>> {
         &self.folders
     }
+    /// Appends an item to `topics_v2`.
+    ///
+    /// To override the contents of this collection use [`set_topics_v2`](Self::set_topics_v2).
+    ///
+    /// <p>An optional list of structures that controls how <code>Topic</code> resources are parameterized in the returned CloudFormation template.</p>
+    pub fn topics_v2(mut self, input: crate::types::AssetBundleExportJobTopicV2OverrideProperties) -> Self {
+        let mut v = self.topics_v2.unwrap_or_default();
+        v.push(input);
+        self.topics_v2 = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An optional list of structures that controls how <code>Topic</code> resources are parameterized in the returned CloudFormation template.</p>
+    pub fn set_topics_v2(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobTopicV2OverrideProperties>>,
+    ) -> Self {
+        self.topics_v2 = input;
+        self
+    }
+    /// <p>An optional list of structures that controls how <code>Topic</code> resources are parameterized in the returned CloudFormation template.</p>
+    pub fn get_topics_v2(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleExportJobTopicV2OverrideProperties>> {
+        &self.topics_v2
+    }
     /// Consumes the builder and constructs a [`AssetBundleCloudFormationOverridePropertyConfiguration`](crate::types::AssetBundleCloudFormationOverridePropertyConfiguration).
     pub fn build(self) -> crate::types::AssetBundleCloudFormationOverridePropertyConfiguration {
         crate::types::AssetBundleCloudFormationOverridePropertyConfiguration {
@@ -310,6 +342,7 @@ impl AssetBundleCloudFormationOverridePropertyConfigurationBuilder {
             analyses: self.analyses,
             dashboards: self.dashboards,
             folders: self.folders,
+            topics_v2: self.topics_v2,
         }
     }
 }

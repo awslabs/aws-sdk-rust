@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KnowledgeBaseConfiguration {
-    /// <p>The template configuration for the knowledge base.</p>
+    /// <p>The template configuration that defines how the data source connector crawls and indexes data for the knowledge base. The template structure varies by connector type. See <code>KbTemplateConfiguration</code> for connector-specific details.</p>
     pub template_configuration: ::std::option::Option<crate::types::KbTemplateConfiguration>,
 }
 impl KnowledgeBaseConfiguration {
-    /// <p>The template configuration for the knowledge base.</p>
+    /// <p>The template configuration that defines how the data source connector crawls and indexes data for the knowledge base. The template structure varies by connector type. See <code>KbTemplateConfiguration</code> for connector-specific details.</p>
     pub fn template_configuration(&self) -> ::std::option::Option<&crate::types::KbTemplateConfiguration> {
         self.template_configuration.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct KnowledgeBaseConfigurationBuilder {
     pub(crate) template_configuration: ::std::option::Option<crate::types::KbTemplateConfiguration>,
 }
 impl KnowledgeBaseConfigurationBuilder {
-    /// <p>The template configuration for the knowledge base.</p>
+    /// <p>The template configuration that defines how the data source connector crawls and indexes data for the knowledge base. The template structure varies by connector type. See <code>KbTemplateConfiguration</code> for connector-specific details.</p>
     pub fn template_configuration(mut self, input: crate::types::KbTemplateConfiguration) -> Self {
         self.template_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The template configuration for the knowledge base.</p>
+    /// <p>The template configuration that defines how the data source connector crawls and indexes data for the knowledge base. The template structure varies by connector type. See <code>KbTemplateConfiguration</code> for connector-specific details.</p>
     pub fn set_template_configuration(mut self, input: ::std::option::Option<crate::types::KbTemplateConfiguration>) -> Self {
         self.template_configuration = input;
         self
     }
-    /// <p>The template configuration for the knowledge base.</p>
+    /// <p>The template configuration that defines how the data source connector crawls and indexes data for the knowledge base. The template structure varies by connector type. See <code>KbTemplateConfiguration</code> for connector-specific details.</p>
     pub fn get_template_configuration(&self) -> &::std::option::Option<crate::types::KbTemplateConfiguration> {
         &self.template_configuration
     }

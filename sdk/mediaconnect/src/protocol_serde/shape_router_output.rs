@@ -174,6 +174,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "fabricConfiguration" => {
+                            builder = builder.set_fabric_configuration(crate::protocol_serde::shape_fabric_configuration::de_fabric_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

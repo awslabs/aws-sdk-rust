@@ -18,6 +18,8 @@ pub struct AssetBundleImportJobOverrideTags {
     pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideTags>>,
     /// <p>A list of tag overrides for any <code>Folder</code> resources that are present in the asset bundle that is imported.</p>
     pub folders: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverrideTags>>,
+    /// <p>A list of tag overrides for any <code>Topic</code> resources that are present in the asset bundle that is imported.</p>
+    pub topics_v2: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobTopicV2OverrideTags>>,
 }
 impl AssetBundleImportJobOverrideTags {
     /// <p>A list of tag overrides for any <code>VPCConnection</code> resources that are present in the asset bundle that is imported.</p>
@@ -62,6 +64,12 @@ impl AssetBundleImportJobOverrideTags {
     pub fn folders(&self) -> &[crate::types::AssetBundleImportJobFolderOverrideTags] {
         self.folders.as_deref().unwrap_or_default()
     }
+    /// <p>A list of tag overrides for any <code>Topic</code> resources that are present in the asset bundle that is imported.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_v2.is_none()`.
+    pub fn topics_v2(&self) -> &[crate::types::AssetBundleImportJobTopicV2OverrideTags] {
+        self.topics_v2.as_deref().unwrap_or_default()
+    }
 }
 impl AssetBundleImportJobOverrideTags {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobOverrideTags`](crate::types::AssetBundleImportJobOverrideTags).
@@ -81,6 +89,7 @@ pub struct AssetBundleImportJobOverrideTagsBuilder {
     pub(crate) analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverrideTags>>,
     pub(crate) dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverrideTags>>,
     pub(crate) folders: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverrideTags>>,
+    pub(crate) topics_v2: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobTopicV2OverrideTags>>,
 }
 impl AssetBundleImportJobOverrideTagsBuilder {
     /// Appends an item to `vpc_connections`.
@@ -229,6 +238,26 @@ impl AssetBundleImportJobOverrideTagsBuilder {
     pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverrideTags>> {
         &self.folders
     }
+    /// Appends an item to `topics_v2`.
+    ///
+    /// To override the contents of this collection use [`set_topics_v2`](Self::set_topics_v2).
+    ///
+    /// <p>A list of tag overrides for any <code>Topic</code> resources that are present in the asset bundle that is imported.</p>
+    pub fn topics_v2(mut self, input: crate::types::AssetBundleImportJobTopicV2OverrideTags) -> Self {
+        let mut v = self.topics_v2.unwrap_or_default();
+        v.push(input);
+        self.topics_v2 = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of tag overrides for any <code>Topic</code> resources that are present in the asset bundle that is imported.</p>
+    pub fn set_topics_v2(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobTopicV2OverrideTags>>) -> Self {
+        self.topics_v2 = input;
+        self
+    }
+    /// <p>A list of tag overrides for any <code>Topic</code> resources that are present in the asset bundle that is imported.</p>
+    pub fn get_topics_v2(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobTopicV2OverrideTags>> {
+        &self.topics_v2
+    }
     /// Consumes the builder and constructs a [`AssetBundleImportJobOverrideTags`](crate::types::AssetBundleImportJobOverrideTags).
     pub fn build(self) -> crate::types::AssetBundleImportJobOverrideTags {
         crate::types::AssetBundleImportJobOverrideTags {
@@ -239,6 +268,7 @@ impl AssetBundleImportJobOverrideTagsBuilder {
             analyses: self.analyses,
             dashboards: self.dashboards,
             folders: self.folders,
+            topics_v2: self.topics_v2,
         }
     }
 }

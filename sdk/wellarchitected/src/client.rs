@@ -140,6 +140,12 @@ mod associate_lenses;
 
 mod associate_profiles;
 
+mod create_agent_context;
+
+mod create_agent_goal;
+
+mod create_agent_profile;
+
 mod create_lens_share;
 
 mod create_lens_version;
@@ -185,6 +191,12 @@ mod create_workload_share;
 /// ```
 pub mod customize;
 
+mod delete_agent_context;
+
+mod delete_agent_goal;
+
+mod delete_agent_profile;
+
 mod delete_lens;
 
 mod delete_lens_share;
@@ -206,6 +218,16 @@ mod disassociate_lenses;
 mod disassociate_profiles;
 
 mod export_lens;
+
+mod get_agent_context;
+
+mod get_agent_goal;
+
+mod get_agent_profile;
+
+mod get_agent_recommendation;
+
+mod get_agent_recommendation_generation;
 
 mod get_answer;
 
@@ -236,6 +258,18 @@ mod get_review_template_lens_review;
 mod get_workload;
 
 mod import_lens;
+
+mod list_agent_contexts;
+
+mod list_agent_goals;
+
+mod list_agent_profiles;
+
+mod list_agent_recommendation_generations;
+
+mod list_agent_recommendation_items;
+
+mod list_agent_recommendations;
 
 mod list_answers;
 
@@ -275,9 +309,21 @@ mod list_workload_shares;
 
 mod list_workloads;
 
+mod put_agent_recommendation_feedback;
+
+mod start_agent_recommendation_generation;
+
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_agent_context;
+
+mod update_agent_goal;
+
+mod update_agent_profile;
+
+mod update_agent_recommendation_status;
 
 mod update_answer;
 

@@ -19,7 +19,7 @@ pub struct ReviewTemplateLensReview {
     pub lens_status: ::std::option::Option<crate::types::LensStatus>,
     /// <p>Pillar review summaries of a lens review.</p>
     pub pillar_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplatePillarReviewSummary>>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template lens review was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
@@ -59,7 +59,7 @@ impl ReviewTemplateLensReview {
     pub fn pillar_review_summaries(&self) -> &[crate::types::ReviewTemplatePillarReviewSummary] {
         self.pillar_review_summaries.as_deref().unwrap_or_default()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template lens review was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -202,17 +202,17 @@ impl ReviewTemplateLensReviewBuilder {
     pub fn get_pillar_review_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReviewTemplatePillarReviewSummary>> {
         &self.pillar_review_summaries
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template lens review was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template lens review was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template lens review was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

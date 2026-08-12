@@ -206,4 +206,18 @@ impl UpdateRouterOutputFluentBuilder {
     pub fn get_maintenance_configuration(&self) -> &::std::option::Option<crate::types::MaintenanceConfiguration> {
         self.inner.get_maintenance_configuration()
     }
+    /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
+    pub fn fabric_configuration(mut self, input: crate::types::FabricConfiguration) -> Self {
+        self.inner = self.inner.fabric_configuration(input);
+        self
+    }
+    /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
+    pub fn set_fabric_configuration(mut self, input: ::std::option::Option<crate::types::FabricConfiguration>) -> Self {
+        self.inner = self.inner.set_fabric_configuration(input);
+        self
+    }
+    /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
+    pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
+        self.inner.get_fabric_configuration()
+    }
 }

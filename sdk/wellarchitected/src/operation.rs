@@ -7,6 +7,15 @@ pub mod associate_lenses;
 /// Types for the `AssociateProfiles` operation.
 pub mod associate_profiles;
 
+/// Types for the `CreateAgentContext` operation.
+pub mod create_agent_context;
+
+/// Types for the `CreateAgentGoal` operation.
+pub mod create_agent_goal;
+
+/// Types for the `CreateAgentProfile` operation.
+pub mod create_agent_profile;
+
 /// Types for the `CreateLensShare` operation.
 pub mod create_lens_share;
 
@@ -33,6 +42,15 @@ pub mod create_workload;
 
 /// Types for the `CreateWorkloadShare` operation.
 pub mod create_workload_share;
+
+/// Types for the `DeleteAgentContext` operation.
+pub mod delete_agent_context;
+
+/// Types for the `DeleteAgentGoal` operation.
+pub mod delete_agent_goal;
+
+/// Types for the `DeleteAgentProfile` operation.
+pub mod delete_agent_profile;
 
 /// Types for the `DeleteLens` operation.
 pub mod delete_lens;
@@ -66,6 +84,21 @@ pub mod disassociate_profiles;
 
 /// Types for the `ExportLens` operation.
 pub mod export_lens;
+
+/// Types for the `GetAgentContext` operation.
+pub mod get_agent_context;
+
+/// Types for the `GetAgentGoal` operation.
+pub mod get_agent_goal;
+
+/// Types for the `GetAgentProfile` operation.
+pub mod get_agent_profile;
+
+/// Types for the `GetAgentRecommendation` operation.
+pub mod get_agent_recommendation;
+
+/// Types for the `GetAgentRecommendationGeneration` operation.
+pub mod get_agent_recommendation_generation;
 
 /// Types for the `GetAnswer` operation.
 pub mod get_answer;
@@ -111,6 +144,24 @@ pub mod get_workload;
 
 /// Types for the `ImportLens` operation.
 pub mod import_lens;
+
+/// Types for the `ListAgentContexts` operation.
+pub mod list_agent_contexts;
+
+/// Types for the `ListAgentGoals` operation.
+pub mod list_agent_goals;
+
+/// Types for the `ListAgentProfiles` operation.
+pub mod list_agent_profiles;
+
+/// Types for the `ListAgentRecommendationGenerations` operation.
+pub mod list_agent_recommendation_generations;
+
+/// Types for the `ListAgentRecommendationItems` operation.
+pub mod list_agent_recommendation_items;
+
+/// Types for the `ListAgentRecommendations` operation.
+pub mod list_agent_recommendations;
 
 /// Types for the `ListAnswers` operation.
 pub mod list_answers;
@@ -169,11 +220,29 @@ pub mod list_workload_shares;
 /// Types for the `ListWorkloads` operation.
 pub mod list_workloads;
 
+/// Types for the `PutAgentRecommendationFeedback` operation.
+pub mod put_agent_recommendation_feedback;
+
+/// Types for the `StartAgentRecommendationGeneration` operation.
+pub mod start_agent_recommendation_generation;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAgentContext` operation.
+pub mod update_agent_context;
+
+/// Types for the `UpdateAgentGoal` operation.
+pub mod update_agent_goal;
+
+/// Types for the `UpdateAgentProfile` operation.
+pub mod update_agent_profile;
+
+/// Types for the `UpdateAgentRecommendationStatus` operation.
+pub mod update_agent_recommendation_status;
 
 /// Types for the `UpdateAnswer` operation.
 pub mod update_answer;

@@ -10,6 +10,9 @@ pub mod batch_delete_knowledge_base;
 /// Types for the `BatchDeleteTopicReviewedAnswer` operation.
 pub mod batch_delete_topic_reviewed_answer;
 
+/// Types for the `BatchDescribeUserLimits` operation.
+pub mod batch_describe_user_limits;
+
 /// Types for the `CancelIngestion` operation.
 pub mod cancel_ingestion;
 
@@ -28,6 +31,9 @@ pub mod create_agent;
 /// Types for the `CreateAnalysis` operation.
 pub mod create_analysis;
 
+/// Types for the `CreateApprovalPolicy` operation.
+pub mod create_approval_policy;
+
 /// Types for the `CreateBrand` operation.
 pub mod create_brand;
 
@@ -42,6 +48,9 @@ pub mod create_data_set;
 
 /// Types for the `CreateDataSource` operation.
 pub mod create_data_source;
+
+/// Types for the `CreateDlpSetting` operation.
+pub mod create_dlp_setting;
 
 /// Types for the `CreateFlow` operation.
 pub mod create_flow;
@@ -66,6 +75,9 @@ pub mod create_ingestion;
 
 /// Types for the `CreateKnowledgeBase` operation.
 pub mod create_knowledge_base;
+
+/// Types for the `CreateLimitsProfile` operation.
+pub mod create_limits_profile;
 
 /// Types for the `CreateNamespace` operation.
 pub mod create_namespace;
@@ -124,6 +136,9 @@ pub mod delete_agent;
 /// Types for the `DeleteAnalysis` operation.
 pub mod delete_analysis;
 
+/// Types for the `DeleteApprovalPolicy` operation.
+pub mod delete_approval_policy;
+
 /// Types for the `DeleteBrand` operation.
 pub mod delete_brand;
 
@@ -148,6 +163,9 @@ pub mod delete_data_source;
 /// Types for the `DeleteDefaultQBusinessApplication` operation.
 pub mod delete_default_q_business_application;
 
+/// Types for the `DeleteDlpSetting` operation.
+pub mod delete_dlp_setting;
+
 /// Types for the `DeleteFlow` operation.
 pub mod delete_flow;
 
@@ -171,6 +189,9 @@ pub mod delete_identity_propagation_config;
 
 /// Types for the `DeleteKnowledgeBase` operation.
 pub mod delete_knowledge_base;
+
+/// Types for the `DeleteLimitsProfile` operation.
+pub mod delete_limits_profile;
 
 /// Types for the `DeleteNamespace` operation.
 pub mod delete_namespace;
@@ -256,6 +277,9 @@ pub mod describe_analysis_definition;
 /// Types for the `DescribeAnalysisPermissions` operation.
 pub mod describe_analysis_permissions;
 
+/// Types for the `DescribeApprovalPolicy` operation.
+pub mod describe_approval_policy;
+
 /// Types for the `DescribeAssetBundleExportJob` operation.
 pub mod describe_asset_bundle_export_job;
 
@@ -313,6 +337,9 @@ pub mod describe_data_source_permissions;
 /// Types for the `DescribeDefaultQBusinessApplication` operation.
 pub mod describe_default_q_business_application;
 
+/// Types for the `DescribeDlpSetting` operation.
+pub mod describe_dlp_setting;
+
 /// Types for the `DescribeFlow` operation.
 pub mod describe_flow;
 
@@ -348,6 +375,9 @@ pub mod describe_knowledge_base;
 
 /// Types for the `DescribeKnowledgeBasePermissions` operation.
 pub mod describe_knowledge_base_permissions;
+
+/// Types for the `DescribeLimitsProfile` operation.
+pub mod describe_limits_profile;
 
 /// Types for the `DescribeNamespace` operation.
 pub mod describe_namespace;
@@ -454,6 +484,9 @@ pub mod list_agents;
 /// Types for the `ListAnalyses` operation.
 pub mod list_analyses;
 
+/// Types for the `ListApprovalPolicies` operation.
+pub mod list_approval_policies;
+
 /// Types for the `ListAssetBundleExportJobs` operation.
 pub mod list_asset_bundle_export_jobs;
 
@@ -477,6 +510,9 @@ pub mod list_data_sets;
 
 /// Types for the `ListDataSources` operation.
 pub mod list_data_sources;
+
+/// Types for the `ListDlpSettings` operation.
+pub mod list_dlp_settings;
 
 /// Types for the `ListFlows` operation.
 pub mod list_flows;
@@ -510,6 +546,9 @@ pub mod list_ingestions;
 
 /// Types for the `ListKnowledgeBases` operation.
 pub mod list_knowledge_bases;
+
+/// Types for the `ListLimitsProfiles` operation.
+pub mod list_limits_profiles;
 
 /// Types for the `ListNamespaces` operation.
 pub mod list_namespaces;
@@ -679,6 +718,9 @@ pub mod update_analysis_permissions;
 /// Types for the `UpdateApplicationWithTokenExchangeGrant` operation.
 pub mod update_application_with_token_exchange_grant;
 
+/// Types for the `UpdateApprovalPolicy` operation.
+pub mod update_approval_policy;
+
 /// Types for the `UpdateBrand` operation.
 pub mod update_brand;
 
@@ -721,6 +763,9 @@ pub mod update_data_source_permissions;
 /// Types for the `UpdateDefaultQBusinessApplication` operation.
 pub mod update_default_q_business_application;
 
+/// Types for the `UpdateDlpSetting` operation.
+pub mod update_dlp_setting;
+
 /// Types for the `UpdateFlow` operation.
 pub mod update_flow;
 
@@ -753,6 +798,9 @@ pub mod update_knowledge_base;
 
 /// Types for the `UpdateKnowledgeBasePermissions` operation.
 pub mod update_knowledge_base_permissions;
+
+/// Types for the `UpdateLimitsProfile` operation.
+pub mod update_limits_profile;
 
 /// Types for the `UpdateOAuthClientApplication` operation.
 pub mod update_o_auth_client_application;

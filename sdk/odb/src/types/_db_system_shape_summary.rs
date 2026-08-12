@@ -46,6 +46,8 @@ pub struct DbSystemShapeSummary {
     pub shape_family: ::std::option::Option<::std::string::String>,
     /// <p>The shape type. This property is determined by the CPU hardware.</p>
     pub shape_type: ::std::option::Option<crate::types::ShapeType>,
+    /// <p>If provided and applicable, return DB System shape parameters based on the shape attribute provided.</p>
+    pub shape_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ShapeAttribute>>,
     /// <p>The name of the shape.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The OCI model compute model used when you create or clone an instance: ECPU or OCPU. An ECPU is an abstracted measure of compute resources. ECPUs are based on the number of cores elastically allocated from a pool of compute and storage servers. An OCPU is a legacy physical measure of compute resources. OCPUs are based on the physical core of a processor with hyper-threading enabled.</p>
@@ -138,6 +140,12 @@ impl DbSystemShapeSummary {
     pub fn shape_type(&self) -> ::std::option::Option<&crate::types::ShapeType> {
         self.shape_type.as_ref()
     }
+    /// <p>If provided and applicable, return DB System shape parameters based on the shape attribute provided.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.shape_attributes.is_none()`.
+    pub fn shape_attributes(&self) -> &[crate::types::ShapeAttribute] {
+        self.shape_attributes.as_deref().unwrap_or_default()
+    }
     /// <p>The name of the shape.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -183,6 +191,7 @@ pub struct DbSystemShapeSummaryBuilder {
     pub(crate) runtime_minimum_core_count: ::std::option::Option<i32>,
     pub(crate) shape_family: ::std::option::Option<::std::string::String>,
     pub(crate) shape_type: ::std::option::Option<crate::types::ShapeType>,
+    pub(crate) shape_attributes: ::std::option::Option<::std::vec::Vec<crate::types::ShapeAttribute>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) compute_model: ::std::option::Option<crate::types::ComputeModel>,
     pub(crate) are_server_types_supported: ::std::option::Option<bool>,
@@ -482,6 +491,26 @@ impl DbSystemShapeSummaryBuilder {
     pub fn get_shape_type(&self) -> &::std::option::Option<crate::types::ShapeType> {
         &self.shape_type
     }
+    /// Appends an item to `shape_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_shape_attributes`](Self::set_shape_attributes).
+    ///
+    /// <p>If provided and applicable, return DB System shape parameters based on the shape attribute provided.</p>
+    pub fn shape_attributes(mut self, input: crate::types::ShapeAttribute) -> Self {
+        let mut v = self.shape_attributes.unwrap_or_default();
+        v.push(input);
+        self.shape_attributes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>If provided and applicable, return DB System shape parameters based on the shape attribute provided.</p>
+    pub fn set_shape_attributes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ShapeAttribute>>) -> Self {
+        self.shape_attributes = input;
+        self
+    }
+    /// <p>If provided and applicable, return DB System shape parameters based on the shape attribute provided.</p>
+    pub fn get_shape_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ShapeAttribute>> {
+        &self.shape_attributes
+    }
     /// <p>The name of the shape.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -548,6 +577,7 @@ impl DbSystemShapeSummaryBuilder {
             runtime_minimum_core_count: self.runtime_minimum_core_count,
             shape_family: self.shape_family,
             shape_type: self.shape_type,
+            shape_attributes: self.shape_attributes,
             name: self.name,
             compute_model: self.compute_model,
             are_server_types_supported: self.are_server_types_supported,

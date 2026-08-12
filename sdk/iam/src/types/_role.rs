@@ -27,6 +27,8 @@ pub struct Role {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Contains information about the last time that an IAM role was used. This includes the date and time and the Region in which the role was last used. Activity is only reported for the trailing 400 days. This period can be shorter if your Region began supporting these features within the last year. The role might have been used more than 400 days ago. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM user Guide</i>.</p>
     pub role_last_used: ::std::option::Option<crate::types::RoleLastUsed>,
+    /// <p>Contains information about the role template that this role was created from. This member is present only for roles created with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.</p>
+    pub source_role_template: ::std::option::Option<crate::types::SourceRoleTemplate>,
 }
 impl Role {
     /// <p>The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
@@ -80,6 +82,10 @@ impl Role {
     pub fn role_last_used(&self) -> ::std::option::Option<&crate::types::RoleLastUsed> {
         self.role_last_used.as_ref()
     }
+    /// <p>Contains information about the role template that this role was created from. This member is present only for roles created with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.</p>
+    pub fn source_role_template(&self) -> ::std::option::Option<&crate::types::SourceRoleTemplate> {
+        self.source_role_template.as_ref()
+    }
 }
 impl Role {
     /// Creates a new builder-style object to manufacture [`Role`](crate::types::Role).
@@ -103,6 +109,7 @@ pub struct RoleBuilder {
     pub(crate) permissions_boundary: ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) role_last_used: ::std::option::Option<crate::types::RoleLastUsed>,
+    pub(crate) source_role_template: ::std::option::Option<crate::types::SourceRoleTemplate>,
 }
 impl RoleBuilder {
     /// <p>The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>.</p>
@@ -273,6 +280,20 @@ impl RoleBuilder {
     pub fn get_role_last_used(&self) -> &::std::option::Option<crate::types::RoleLastUsed> {
         &self.role_last_used
     }
+    /// <p>Contains information about the role template that this role was created from. This member is present only for roles created with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.</p>
+    pub fn source_role_template(mut self, input: crate::types::SourceRoleTemplate) -> Self {
+        self.source_role_template = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the role template that this role was created from. This member is present only for roles created with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.</p>
+    pub fn set_source_role_template(mut self, input: ::std::option::Option<crate::types::SourceRoleTemplate>) -> Self {
+        self.source_role_template = input;
+        self
+    }
+    /// <p>Contains information about the role template that this role was created from. This member is present only for roles created with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.</p>
+    pub fn get_source_role_template(&self) -> &::std::option::Option<crate::types::SourceRoleTemplate> {
+        &self.source_role_template
+    }
     /// Consumes the builder and constructs a [`Role`](crate::types::Role).
     /// This method will fail if any of the following fields are not set:
     /// - [`path`](crate::types::builders::RoleBuilder::path)
@@ -315,6 +336,7 @@ impl RoleBuilder {
             permissions_boundary: self.permissions_boundary,
             tags: self.tags,
             role_last_used: self.role_last_used,
+            source_role_template: self.source_role_template,
         })
     }
 }

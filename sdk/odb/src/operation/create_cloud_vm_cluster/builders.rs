@@ -289,17 +289,17 @@ impl CreateCloudVmClusterFluentBuilder {
     pub fn get_data_storage_size_in_tbs(&self) -> &::std::option::Option<f64> {
         self.inner.get_data_storage_size_in_tbs()
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn db_node_storage_size_in_gbs(mut self, input: i32) -> Self {
         self.inner = self.inner.db_node_storage_size_in_gbs(input);
         self
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn set_db_node_storage_size_in_gbs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_db_node_storage_size_in_gbs(input);
         self
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn get_db_node_storage_size_in_gbs(&self) -> &::std::option::Option<i32> {
         self.inner.get_db_node_storage_size_in_gbs()
     }
@@ -386,17 +386,17 @@ impl CreateCloudVmClusterFluentBuilder {
     pub fn get_license_model(&self) -> &::std::option::Option<crate::types::LicenseModel> {
         self.inner.get_license_model()
     }
-    /// <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn memory_size_in_gbs(mut self, input: i32) -> Self {
         self.inner = self.inner.memory_size_in_gbs(input);
         self
     }
-    /// <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn set_memory_size_in_gbs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_memory_size_in_gbs(input);
         self
     }
-    /// <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn get_memory_size_in_gbs(&self) -> &::std::option::Option<i32> {
         self.inner.get_memory_size_in_gbs()
     }

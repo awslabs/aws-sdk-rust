@@ -678,6 +678,12 @@ pub(crate) fn router_output_correct_errors(mut builder: crate::types::builders::
     if builder.maintenance_configuration.is_none() {
         builder.maintenance_configuration = Some(crate::types::MaintenanceConfiguration::Unknown)
     }
+    if builder.fabric_configuration.is_none() {
+        builder.fabric_configuration = {
+            let builder = crate::types::builders::FabricConfigurationBuilder::default();
+            crate::serde_util::fabric_configuration_correct_errors(builder).build().ok()
+        }
+    }
     builder
 }
 
@@ -966,6 +972,15 @@ pub(crate) fn router_input_transit_encryption_correct_errors(
 ) -> crate::types::builders::RouterInputTransitEncryptionBuilder {
     if builder.encryption_key_configuration.is_none() {
         builder.encryption_key_configuration = Some(crate::types::RouterInputTransitEncryptionKeyConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn fabric_configuration_correct_errors(
+    mut builder: crate::types::builders::FabricConfigurationBuilder,
+) -> crate::types::builders::FabricConfigurationBuilder {
+    if builder.recovery_latency_mode.is_none() {
+        builder.recovery_latency_mode = "no value was set".parse::<crate::types::FabricLatencyMode>().ok()
     }
     builder
 }

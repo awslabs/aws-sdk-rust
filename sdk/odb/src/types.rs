@@ -83,6 +83,14 @@ pub use crate::types::_db_node::DbNode;
 
 pub use crate::types::_db_node_resource_status::DbNodeResourceStatus;
 
+pub use crate::types::_shape_attribute::ShapeAttribute;
+
+pub use crate::types::_exadb_vm_cluster::ExadbVmCluster;
+
+pub use crate::types::_update_action::UpdateAction;
+
+pub use crate::types::_exascale_db_storage_vault::ExascaleDbStorageVault;
+
 pub use crate::types::_odb_network::OdbNetwork;
 
 pub use crate::types::_odb_peering_connection::OdbPeeringConnection;
@@ -98,6 +106,8 @@ pub use crate::types::_autonomous_database_character_set_summary::AutonomousData
 pub use crate::types::_autonomous_database_version_summary::AutonomousDatabaseVersionSummary;
 
 pub use crate::types::_db_system_shape_summary::DbSystemShapeSummary;
+
+pub use crate::types::_gi_minor_version_summary::GiMinorVersionSummary;
 
 pub use crate::types::_gi_version_summary::GiVersionSummary;
 
@@ -192,6 +202,16 @@ pub use crate::types::_exadata_iorm_config::ExadataIormConfig;
 pub use crate::types::_db_node_summary::DbNodeSummary;
 
 pub use crate::types::_db_node_maintenance_type::DbNodeMaintenanceType;
+
+pub use crate::types::_exadb_vm_cluster_summary::ExadbVmClusterSummary;
+
+pub use crate::types::_grid_image_type::GridImageType;
+
+pub use crate::types::_exadb_vm_cluster_storage_details::ExadbVmClusterStorageDetails;
+
+pub use crate::types::_exascale_db_storage_vault_summary::ExascaleDbStorageVaultSummary;
+
+pub use crate::types::_exascale_db_storage_details::ExascaleDbStorageDetails;
 
 pub use crate::types::_odb_network_summary::OdbNetworkSummary;
 
@@ -417,9 +437,25 @@ mod _encryption_summary;
 
 mod _exadata_iorm_config;
 
+mod _exadb_vm_cluster;
+
+mod _exadb_vm_cluster_storage_details;
+
+mod _exadb_vm_cluster_summary;
+
+mod _exascale_db_storage_details;
+
+mod _exascale_db_storage_vault;
+
+mod _exascale_db_storage_vault_summary;
+
 mod _external_id_type;
 
+mod _gi_minor_version_summary;
+
 mod _gi_version_summary;
+
+mod _grid_image_type;
 
 mod _iam_role;
 
@@ -503,6 +539,8 @@ mod _scheduled_operation_details;
 
 mod _service_network_endpoint;
 
+mod _shape_attribute;
+
 mod _shape_type;
 
 mod _source_configuration;
@@ -520,6 +558,8 @@ mod _supported_aws_integration;
 mod _system_version_summary;
 
 mod _transportable_tablespace;
+
+mod _update_action;
 
 mod _validation_exception_field;
 
