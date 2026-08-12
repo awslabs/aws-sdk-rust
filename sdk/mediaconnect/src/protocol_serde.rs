@@ -321,6 +321,8 @@ pub(crate) mod shape_encoding_config;
 
 pub(crate) mod shape_entitlement;
 
+pub(crate) mod shape_fabric_configuration;
+
 pub(crate) mod shape_failover_config;
 
 pub(crate) mod shape_flow;

@@ -3,15 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RebootDbNodeInput {
-    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot.</p>
+    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>exadbVmClusterId</code>.</p>
     pub cloud_vm_cluster_id: ::std::option::Option<::std::string::String>,
+    /// <p>The unique identifier of the Exascale VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>cloudVmClusterId</code>.</p>
+    pub exadb_vm_cluster_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the DB node to reboot.</p>
     pub db_node_id: ::std::option::Option<::std::string::String>,
 }
 impl RebootDbNodeInput {
-    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot.</p>
+    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>exadbVmClusterId</code>.</p>
     pub fn cloud_vm_cluster_id(&self) -> ::std::option::Option<&str> {
         self.cloud_vm_cluster_id.as_deref()
+    }
+    /// <p>The unique identifier of the Exascale VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>cloudVmClusterId</code>.</p>
+    pub fn exadb_vm_cluster_id(&self) -> ::std::option::Option<&str> {
+        self.exadb_vm_cluster_id.as_deref()
     }
     /// <p>The unique identifier of the DB node to reboot.</p>
     pub fn db_node_id(&self) -> ::std::option::Option<&str> {
@@ -30,23 +36,37 @@ impl RebootDbNodeInput {
 #[non_exhaustive]
 pub struct RebootDbNodeInputBuilder {
     pub(crate) cloud_vm_cluster_id: ::std::option::Option<::std::string::String>,
+    pub(crate) exadb_vm_cluster_id: ::std::option::Option<::std::string::String>,
     pub(crate) db_node_id: ::std::option::Option<::std::string::String>,
 }
 impl RebootDbNodeInputBuilder {
-    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot.</p>
-    /// This field is required.
+    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>exadbVmClusterId</code>.</p>
     pub fn cloud_vm_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_vm_cluster_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot.</p>
+    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>exadbVmClusterId</code>.</p>
     pub fn set_cloud_vm_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_vm_cluster_id = input;
         self
     }
-    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot.</p>
+    /// <p>The unique identifier of the VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>exadbVmClusterId</code>.</p>
     pub fn get_cloud_vm_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_vm_cluster_id
+    }
+    /// <p>The unique identifier of the Exascale VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>cloudVmClusterId</code>.</p>
+    pub fn exadb_vm_cluster_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.exadb_vm_cluster_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the Exascale VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>cloudVmClusterId</code>.</p>
+    pub fn set_exadb_vm_cluster_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.exadb_vm_cluster_id = input;
+        self
+    }
+    /// <p>The unique identifier of the Exascale VM cluster that contains the DB node to reboot. You must specify either this parameter or <code>cloudVmClusterId</code>.</p>
+    pub fn get_exadb_vm_cluster_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.exadb_vm_cluster_id
     }
     /// <p>The unique identifier of the DB node to reboot.</p>
     /// This field is required.
@@ -69,6 +89,7 @@ impl RebootDbNodeInputBuilder {
     ) -> ::std::result::Result<crate::operation::reboot_db_node::RebootDbNodeInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::reboot_db_node::RebootDbNodeInput {
             cloud_vm_cluster_id: self.cloud_vm_cluster_id,
+            exadb_vm_cluster_id: self.exadb_vm_cluster_id,
             db_node_id: self.db_node_id,
         })
     }

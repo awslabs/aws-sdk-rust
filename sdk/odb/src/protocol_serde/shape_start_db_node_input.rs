@@ -6,8 +6,11 @@ pub fn ser_start_db_node_input_input(
     if let Some(var_1) = &input.cloud_vm_cluster_id {
         object.key("cloudVmClusterId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.db_node_id {
-        object.key("dbNodeId").string(var_2.as_str());
+    if let Some(var_2) = &input.exadb_vm_cluster_id {
+        object.key("exadbVmClusterId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.db_node_id {
+        object.key("dbNodeId").string(var_3.as_str());
     }
     Ok(())
 }

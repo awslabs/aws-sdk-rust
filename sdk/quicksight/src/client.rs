@@ -142,6 +142,8 @@ mod batch_delete_knowledge_base;
 
 mod batch_delete_topic_reviewed_answer;
 
+mod batch_describe_user_limits;
+
 mod cancel_ingestion;
 
 mod create_account_customization;
@@ -154,6 +156,8 @@ mod create_agent;
 
 mod create_analysis;
 
+mod create_approval_policy;
+
 mod create_brand;
 
 mod create_custom_permissions;
@@ -163,6 +167,8 @@ mod create_dashboard;
 mod create_data_set;
 
 mod create_data_source;
+
+mod create_dlp_setting;
 
 mod create_flow;
 
@@ -179,6 +185,8 @@ mod create_iam_policy_assignment;
 mod create_ingestion;
 
 mod create_knowledge_base;
+
+mod create_limits_profile;
 
 mod create_namespace;
 
@@ -245,6 +253,8 @@ mod delete_agent;
 
 mod delete_analysis;
 
+mod delete_approval_policy;
+
 mod delete_brand;
 
 mod delete_brand_assignment;
@@ -261,6 +271,8 @@ mod delete_data_source;
 
 mod delete_default_q_business_application;
 
+mod delete_dlp_setting;
+
 mod delete_flow;
 
 mod delete_folder;
@@ -276,6 +288,8 @@ mod delete_iam_policy_assignment;
 mod delete_identity_propagation_config;
 
 mod delete_knowledge_base;
+
+mod delete_limits_profile;
 
 mod delete_namespace;
 
@@ -333,6 +347,8 @@ mod describe_analysis_definition;
 
 mod describe_analysis_permissions;
 
+mod describe_approval_policy;
+
 mod describe_asset_bundle_export_job;
 
 mod describe_asset_bundle_import_job;
@@ -371,6 +387,8 @@ mod describe_data_source_permissions;
 
 mod describe_default_q_business_application;
 
+mod describe_dlp_setting;
+
 mod describe_flow;
 
 mod describe_folder;
@@ -394,6 +412,8 @@ mod describe_key_registration;
 mod describe_knowledge_base;
 
 mod describe_knowledge_base_permissions;
+
+mod describe_limits_profile;
 
 mod describe_namespace;
 
@@ -465,6 +485,8 @@ mod list_agents;
 
 mod list_analyses;
 
+mod list_approval_policies;
+
 mod list_asset_bundle_export_jobs;
 
 mod list_asset_bundle_import_jobs;
@@ -480,6 +502,8 @@ mod list_dashboards;
 mod list_data_sets;
 
 mod list_data_sources;
+
+mod list_dlp_settings;
 
 mod list_flows;
 
@@ -502,6 +526,8 @@ mod list_identity_propagation_configs;
 mod list_ingestions;
 
 mod list_knowledge_bases;
+
+mod list_limits_profiles;
 
 mod list_namespaces;
 
@@ -615,6 +641,8 @@ mod update_analysis_permissions;
 
 mod update_application_with_token_exchange_grant;
 
+mod update_approval_policy;
+
 mod update_brand;
 
 mod update_brand_assignment;
@@ -643,6 +671,8 @@ mod update_data_source_permissions;
 
 mod update_default_q_business_application;
 
+mod update_dlp_setting;
+
 mod update_flow;
 
 mod update_flow_permissions;
@@ -664,6 +694,8 @@ mod update_key_registration;
 mod update_knowledge_base;
 
 mod update_knowledge_base_permissions;
+
+mod update_limits_profile;
 
 mod update_o_auth_client_application;
 

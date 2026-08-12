@@ -16,6 +16,8 @@ pub struct AssetBundleImportJobOverridePermissions {
     pub dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
     /// <p>A list of permissions for the folders that you want to apply overrides to.</p>
     pub folders: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverridePermissions>>,
+    /// <p>A list of permissions for the topics that you want to apply overrides to.</p>
+    pub topics_v2: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobTopicV2OverridePermissions>>,
 }
 impl AssetBundleImportJobOverridePermissions {
     /// <p>A list of permissions overrides for any <code>DataSource</code> resources that are present in the asset bundle that is imported.</p>
@@ -54,6 +56,12 @@ impl AssetBundleImportJobOverridePermissions {
     pub fn folders(&self) -> &[crate::types::AssetBundleImportJobFolderOverridePermissions] {
         self.folders.as_deref().unwrap_or_default()
     }
+    /// <p>A list of permissions for the topics that you want to apply overrides to.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.topics_v2.is_none()`.
+    pub fn topics_v2(&self) -> &[crate::types::AssetBundleImportJobTopicV2OverridePermissions] {
+        self.topics_v2.as_deref().unwrap_or_default()
+    }
 }
 impl AssetBundleImportJobOverridePermissions {
     /// Creates a new builder-style object to manufacture [`AssetBundleImportJobOverridePermissions`](crate::types::AssetBundleImportJobOverridePermissions).
@@ -72,6 +80,7 @@ pub struct AssetBundleImportJobOverridePermissionsBuilder {
     pub(crate) analyses: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobAnalysisOverridePermissions>>,
     pub(crate) dashboards: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobDashboardOverridePermissions>>,
     pub(crate) folders: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverridePermissions>>,
+    pub(crate) topics_v2: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobTopicV2OverridePermissions>>,
 }
 impl AssetBundleImportJobOverridePermissionsBuilder {
     /// Appends an item to `data_sources`.
@@ -206,6 +215,29 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
     pub fn get_folders(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobFolderOverridePermissions>> {
         &self.folders
     }
+    /// Appends an item to `topics_v2`.
+    ///
+    /// To override the contents of this collection use [`set_topics_v2`](Self::set_topics_v2).
+    ///
+    /// <p>A list of permissions for the topics that you want to apply overrides to.</p>
+    pub fn topics_v2(mut self, input: crate::types::AssetBundleImportJobTopicV2OverridePermissions) -> Self {
+        let mut v = self.topics_v2.unwrap_or_default();
+        v.push(input);
+        self.topics_v2 = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of permissions for the topics that you want to apply overrides to.</p>
+    pub fn set_topics_v2(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobTopicV2OverridePermissions>>,
+    ) -> Self {
+        self.topics_v2 = input;
+        self
+    }
+    /// <p>A list of permissions for the topics that you want to apply overrides to.</p>
+    pub fn get_topics_v2(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssetBundleImportJobTopicV2OverridePermissions>> {
+        &self.topics_v2
+    }
     /// Consumes the builder and constructs a [`AssetBundleImportJobOverridePermissions`](crate::types::AssetBundleImportJobOverridePermissions).
     pub fn build(self) -> crate::types::AssetBundleImportJobOverridePermissions {
         crate::types::AssetBundleImportJobOverridePermissions {
@@ -215,6 +247,7 @@ impl AssetBundleImportJobOverridePermissionsBuilder {
             analyses: self.analyses,
             dashboards: self.dashboards,
             folders: self.folders,
+            topics_v2: self.topics_v2,
         }
     }
 }

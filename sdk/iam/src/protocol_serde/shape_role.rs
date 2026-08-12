@@ -148,6 +148,16 @@ pub fn de_role(
                 builder = builder.set_role_last_used(var_11);
             }
             ,
+            s if s.matches("SourceRoleTemplate") /* SourceRoleTemplate com.amazonaws.iam#Role$SourceRoleTemplate */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_source_role_template::de_source_role_template(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_source_role_template(var_12);
+            }
+            ,
             _ => {}
         }
     }

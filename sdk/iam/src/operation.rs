@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AcceptDelegationRequest` operation.
 pub mod accept_delegation_request;
 
+/// Types for the `AcquireRole` operation.
+pub mod acquire_role;
+
 /// Types for the `AddClientIDToOpenIDConnectProvider` operation.
 pub mod add_client_id_to_open_id_connect_provider;
 
@@ -193,6 +196,9 @@ pub mod get_account_authorization_details;
 /// Types for the `GetAccountPasswordPolicy` operation.
 pub mod get_account_password_policy;
 
+/// Types for the `GetAccountProperties` operation.
+pub mod get_account_properties;
+
 /// Types for the `GetAccountSummary` operation.
 pub mod get_account_summary;
 
@@ -246,6 +252,9 @@ pub mod get_role;
 
 /// Types for the `GetRolePolicy` operation.
 pub mod get_role_policy;
+
+/// Types for the `GetRoleTemplateVersion` operation.
+pub mod get_role_template_version;
 
 /// Types for the `GetSAMLProvider` operation.
 pub mod get_saml_provider;
@@ -378,6 +387,9 @@ pub mod list_users;
 
 /// Types for the `ListVirtualMFADevices` operation.
 pub mod list_virtual_mfa_devices;
+
+/// Types for the `PutAccountProperties` operation.
+pub mod put_account_properties;
 
 /// Types for the `PutGroupPolicy` operation.
 pub mod put_group_policy;

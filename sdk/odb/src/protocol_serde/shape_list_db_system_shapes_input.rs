@@ -18,5 +18,8 @@ pub fn ser_list_db_system_shapes_input_input(
     if let Some(var_4) = &input.availability_zone_id {
         object.key("availabilityZoneId").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.shape_family {
+        object.key("shapeFamily").string(var_5.as_str());
+    }
     Ok(())
 }

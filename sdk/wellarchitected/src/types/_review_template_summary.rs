@@ -10,7 +10,7 @@ pub struct ReviewTemplateSummary {
     pub lenses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An Amazon Web Services account ID.</p>
     pub owner: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The review template ARN.</p>
     pub template_arn: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl ReviewTemplateSummary {
     pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -119,17 +119,17 @@ impl ReviewTemplateSummaryBuilder {
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the review template was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

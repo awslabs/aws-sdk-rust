@@ -17,9 +17,9 @@ pub struct LensSummary {
     pub lens_type: ::std::option::Option<crate::types::LensType>,
     /// <p>The description of the lens.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The version of the lens.</p>
     pub lens_version: ::std::option::Option<::std::string::String>,
@@ -52,11 +52,11 @@ impl LensSummary {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -175,31 +175,31 @@ impl LensSummaryBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

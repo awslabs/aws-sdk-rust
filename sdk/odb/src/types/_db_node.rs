@@ -22,7 +22,7 @@ pub struct DbNode {
     pub backup_vnic_id: ::std::option::Option<::std::string::String>,
     /// <p>Number of CPU cores enabled on the DB node.</p>
     pub cpu_core_count: ::std::option::Option<i32>,
-    /// <p>The amount of local node storage, in gigabytes (GBs), that's allocated on the DB node.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), that's allocated on the DB node.</p>
     pub db_node_storage_size_in_gbs: ::std::option::Option<i32>,
     /// <p>The unique identifier of the Db server that is associated with the DB node.</p>
     pub db_server_id: ::std::option::Option<::std::string::String>,
@@ -98,7 +98,7 @@ impl DbNode {
     pub fn cpu_core_count(&self) -> ::std::option::Option<i32> {
         self.cpu_core_count
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), that's allocated on the DB node.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), that's allocated on the DB node.</p>
     pub fn db_node_storage_size_in_gbs(&self) -> ::std::option::Option<i32> {
         self.db_node_storage_size_in_gbs
     }
@@ -342,17 +342,17 @@ impl DbNodeBuilder {
     pub fn get_cpu_core_count(&self) -> &::std::option::Option<i32> {
         &self.cpu_core_count
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), that's allocated on the DB node.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), that's allocated on the DB node.</p>
     pub fn db_node_storage_size_in_gbs(mut self, input: i32) -> Self {
         self.db_node_storage_size_in_gbs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), that's allocated on the DB node.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), that's allocated on the DB node.</p>
     pub fn set_db_node_storage_size_in_gbs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.db_node_storage_size_in_gbs = input;
         self
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), that's allocated on the DB node.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), that's allocated on the DB node.</p>
     pub fn get_db_node_storage_size_in_gbs(&self) -> &::std::option::Option<i32> {
         &self.db_node_storage_size_in_gbs
     }

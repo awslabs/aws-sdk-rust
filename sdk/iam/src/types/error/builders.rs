@@ -5,11 +5,19 @@ pub use crate::types::error::_no_such_entity_exception::NoSuchEntityExceptionBui
 
 pub use crate::types::error::_service_failure_exception::ServiceFailureExceptionBuilder;
 
+pub use crate::types::error::_entity_already_exists_exception::EntityAlreadyExistsExceptionBuilder;
+
 pub use crate::types::error::_invalid_input_exception::InvalidInputExceptionBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
 
-pub use crate::types::error::_entity_already_exists_exception::EntityAlreadyExistsExceptionBuilder;
+pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentExceptionBuilder;
+
+pub use crate::types::error::_name_conflict_exception::NameConflictExceptionBuilder;
+
+pub use crate::types::error::_role_modified_exception::RoleModifiedExceptionBuilder;
+
+pub use crate::types::error::_role_template_disabled_exception::RoleTemplateDisabledExceptionBuilder;
 
 pub use crate::types::error::_unmodifiable_entity_exception::UnmodifiableEntityExceptionBuilder;
 
@@ -22,8 +30,6 @@ pub use crate::types::error::_invalid_user_type_exception::InvalidUserTypeExcept
 pub use crate::types::error::_password_policy_violation_exception::PasswordPolicyViolationExceptionBuilder;
 
 pub use crate::types::error::_open_id_idp_communication_error_exception::OpenIdIdpCommunicationErrorExceptionBuilder;
-
-pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentExceptionBuilder;
 
 pub use crate::types::error::_service_not_supported_exception::ServiceNotSupportedExceptionBuilder;
 

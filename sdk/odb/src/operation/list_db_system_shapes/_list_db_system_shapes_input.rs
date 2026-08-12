@@ -12,6 +12,8 @@ pub struct ListDbSystemShapesInput {
     pub availability_zone: ::std::option::Option<::std::string::String>,
     /// <p>The physical ID of the AZ, for example, use1-az4. This ID persists across accounts.</p>
     pub availability_zone_id: ::std::option::Option<::std::string::String>,
+    /// <p>The shape family to filter results by.</p>
+    pub shape_family: ::std::option::Option<::std::string::String>,
 }
 impl ListDbSystemShapesInput {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output.</p>
@@ -31,6 +33,10 @@ impl ListDbSystemShapesInput {
     pub fn availability_zone_id(&self) -> ::std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
+    /// <p>The shape family to filter results by.</p>
+    pub fn shape_family(&self) -> ::std::option::Option<&str> {
+        self.shape_family.as_deref()
+    }
 }
 impl ListDbSystemShapesInput {
     /// Creates a new builder-style object to manufacture [`ListDbSystemShapesInput`](crate::operation::list_db_system_shapes::ListDbSystemShapesInput).
@@ -47,6 +53,7 @@ pub struct ListDbSystemShapesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_id: ::std::option::Option<::std::string::String>,
+    pub(crate) shape_family: ::std::option::Option<::std::string::String>,
 }
 impl ListDbSystemShapesInputBuilder {
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output.</p>
@@ -108,6 +115,20 @@ impl ListDbSystemShapesInputBuilder {
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.availability_zone_id
     }
+    /// <p>The shape family to filter results by.</p>
+    pub fn shape_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.shape_family = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The shape family to filter results by.</p>
+    pub fn set_shape_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.shape_family = input;
+        self
+    }
+    /// <p>The shape family to filter results by.</p>
+    pub fn get_shape_family(&self) -> &::std::option::Option<::std::string::String> {
+        &self.shape_family
+    }
     /// Consumes the builder and constructs a [`ListDbSystemShapesInput`](crate::operation::list_db_system_shapes::ListDbSystemShapesInput).
     pub fn build(
         self,
@@ -118,6 +139,7 @@ impl ListDbSystemShapesInputBuilder {
             next_token: self.next_token,
             availability_zone: self.availability_zone,
             availability_zone_id: self.availability_zone_id,
+            shape_family: self.shape_family,
         })
     }
 }

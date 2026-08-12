@@ -153,6 +153,45 @@ impl From<crate::operation::associate_iam_role_to_resource::AssociateIamRoleToRe
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError> for Error {
+    fn from(err: crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError) -> Self {
+        match err {
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_autonomous_database::CreateAutonomousDatabaseError, R>>
     for Error
 where
@@ -432,6 +471,88 @@ impl From<crate::operation::create_cloud_vm_cluster::CreateCloudVmClusterError> 
             crate::operation::create_cloud_vm_cluster::CreateCloudVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_cloud_vm_cluster::CreateCloudVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_cloud_vm_cluster::CreateCloudVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError> for Error {
+    fn from(err: crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError) -> Self {
+        match err {
+            crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_exadb_vm_cluster::CreateExadbVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError> for Error {
+    fn from(err: crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError) -> Self {
+        match err {
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_exascale_db_storage_vault::CreateExascaleDbStorageVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -725,6 +846,85 @@ impl From<crate::operation::delete_cloud_vm_cluster::DeleteCloudVmClusterError> 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError> for Error {
+    fn from(err: crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError) -> Self {
+        match err {
+            crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_exadb_vm_cluster::DeleteExadbVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError> for Error {
+    fn from(err: crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError) -> Self {
+        match err {
+            crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_exascale_db_storage_vault::DeleteExascaleDbStorageVaultError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_odb_network::DeleteOdbNetworkError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -837,6 +1037,44 @@ impl From<crate::operation::disassociate_iam_role_from_resource::DisassociateIam
                 Error::ValidationException(inner)
             }
             crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError> for Error {
+    fn from(err: crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError) -> Self {
+        match err {
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::DisassociateVirtualMachinesFromExadbVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1213,6 +1451,73 @@ impl From<crate::operation::get_db_server::GetDbServerError> for Error {
             crate::operation::get_db_server::GetDbServerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_db_server::GetDbServerError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_db_server::GetDbServerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError> for Error {
+    fn from(err: crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError) -> Self {
+        match err {
+            crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_exadb_vm_cluster::GetExadbVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError> for Error {
+    fn from(err: crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError) -> Self {
+        match err {
+            crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_exascale_db_storage_vault::GetExascaleDbStorageVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1833,6 +2138,103 @@ impl From<crate::operation::list_db_system_shapes::ListDbSystemShapesError> for 
             crate::operation::list_db_system_shapes::ListDbSystemShapesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_db_system_shapes::ListDbSystemShapesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_db_system_shapes::ListDbSystemShapesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError> for Error {
+    fn from(err: crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError) -> Self {
+        match err {
+            crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_exadb_vm_clusters::ListExadbVmClustersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError> for Error {
+    fn from(err: crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError) -> Self {
+        match err {
+            crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gi_minor_versions::ListGiMinorVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_gi_minor_versions::ListGiMinorVersionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_gi_minor_versions::ListGiMinorVersionsError> for Error {
+    fn from(err: crate::operation::list_gi_minor_versions::ListGiMinorVersionsError) -> Self {
+        match err {
+            crate::operation::list_gi_minor_versions::ListGiMinorVersionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_gi_minor_versions::ListGiMinorVersionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_gi_minor_versions::ListGiMinorVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_gi_minor_versions::ListGiMinorVersionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_gi_minor_versions::ListGiMinorVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2480,6 +2882,85 @@ impl From<crate::operation::update_cloud_exadata_infrastructure::UpdateCloudExad
                 Error::ValidationException(inner)
             }
             crate::operation::update_cloud_exadata_infrastructure::UpdateCloudExadataInfrastructureError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError> for Error {
+    fn from(err: crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError) -> Self {
+        match err {
+            crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_exadb_vm_cluster::UpdateExadbVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError> for Error {
+    fn from(err: crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError) -> Self {
+        match err {
+            crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

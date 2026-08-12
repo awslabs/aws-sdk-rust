@@ -35,7 +35,7 @@ pub struct CreateCloudVmClusterInput {
     pub data_collection_options: ::std::option::Option<crate::types::DataCollectionOptions>,
     /// <p>The size of the data disk group, in terabytes (TBs), to allocate for the VM cluster.</p>
     pub data_storage_size_in_tbs: ::std::option::Option<f64>,
-    /// <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub db_node_storage_size_in_gbs: ::std::option::Option<i32>,
     /// <p>The list of database servers for the VM cluster.</p>
     pub db_servers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -48,7 +48,7 @@ pub struct CreateCloudVmClusterInput {
     /// <p>The Oracle license model to apply to the VM cluster.</p>
     /// <p>Default: <code>LICENSE_INCLUDED</code></p>
     pub license_model: ::std::option::Option<crate::types::LicenseModel>,
-    /// <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub memory_size_in_gbs: ::std::option::Option<i32>,
     /// <p>The version of the operating system of the image for the VM cluster.</p>
     pub system_version: ::std::option::Option<::std::string::String>,
@@ -117,7 +117,7 @@ impl CreateCloudVmClusterInput {
     pub fn data_storage_size_in_tbs(&self) -> ::std::option::Option<f64> {
         self.data_storage_size_in_tbs
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn db_node_storage_size_in_gbs(&self) -> ::std::option::Option<i32> {
         self.db_node_storage_size_in_gbs
     }
@@ -144,7 +144,7 @@ impl CreateCloudVmClusterInput {
     pub fn license_model(&self) -> ::std::option::Option<&crate::types::LicenseModel> {
         self.license_model.as_ref()
     }
-    /// <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn memory_size_in_gbs(&self) -> ::std::option::Option<i32> {
         self.memory_size_in_gbs
     }
@@ -390,17 +390,17 @@ impl CreateCloudVmClusterInputBuilder {
     pub fn get_data_storage_size_in_tbs(&self) -> &::std::option::Option<f64> {
         &self.data_storage_size_in_tbs
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn db_node_storage_size_in_gbs(mut self, input: i32) -> Self {
         self.db_node_storage_size_in_gbs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn set_db_node_storage_size_in_gbs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.db_node_storage_size_in_gbs = input;
         self
     }
-    /// <p>The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn get_db_node_storage_size_in_gbs(&self) -> &::std::option::Option<i32> {
         &self.db_node_storage_size_in_gbs
     }
@@ -489,17 +489,17 @@ impl CreateCloudVmClusterInputBuilder {
     pub fn get_license_model(&self) -> &::std::option::Option<crate::types::LicenseModel> {
         &self.license_model
     }
-    /// <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn memory_size_in_gbs(mut self, input: i32) -> Self {
         self.memory_size_in_gbs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn set_memory_size_in_gbs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.memory_size_in_gbs = input;
         self
     }
-    /// <p>The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.</p>
+    /// <p>The amount of memory, in gigabytes (GB), to allocate for the VM cluster.</p>
     pub fn get_memory_size_in_gbs(&self) -> &::std::option::Option<i32> {
         &self.memory_size_in_gbs
     }

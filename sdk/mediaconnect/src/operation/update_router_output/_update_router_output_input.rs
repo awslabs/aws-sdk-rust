@@ -17,6 +17,8 @@ pub struct UpdateRouterOutputInput {
     pub tier: ::std::option::Option<crate::types::RouterOutputTier>,
     /// <p>The updated maintenance configuration settings for the router output, including any changes to preferred maintenance windows and schedules.</p>
     pub maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
+    /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
+    pub fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
 }
 impl UpdateRouterOutputInput {
     /// <p>The Amazon Resource Name (ARN) of the router output that you want to update.</p>
@@ -47,6 +49,10 @@ impl UpdateRouterOutputInput {
     pub fn maintenance_configuration(&self) -> ::std::option::Option<&crate::types::MaintenanceConfiguration> {
         self.maintenance_configuration.as_ref()
     }
+    /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
+    pub fn fabric_configuration(&self) -> ::std::option::Option<&crate::types::FabricConfiguration> {
+        self.fabric_configuration.as_ref()
+    }
 }
 impl UpdateRouterOutputInput {
     /// Creates a new builder-style object to manufacture [`UpdateRouterOutputInput`](crate::operation::update_router_output::UpdateRouterOutputInput).
@@ -66,6 +72,7 @@ pub struct UpdateRouterOutputInputBuilder {
     pub(crate) routing_scope: ::std::option::Option<crate::types::RoutingScope>,
     pub(crate) tier: ::std::option::Option<crate::types::RouterOutputTier>,
     pub(crate) maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
+    pub(crate) fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
 }
 impl UpdateRouterOutputInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the router output that you want to update.</p>
@@ -167,6 +174,20 @@ impl UpdateRouterOutputInputBuilder {
     pub fn get_maintenance_configuration(&self) -> &::std::option::Option<crate::types::MaintenanceConfiguration> {
         &self.maintenance_configuration
     }
+    /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
+    pub fn fabric_configuration(mut self, input: crate::types::FabricConfiguration) -> Self {
+        self.fabric_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
+    pub fn set_fabric_configuration(mut self, input: ::std::option::Option<crate::types::FabricConfiguration>) -> Self {
+        self.fabric_configuration = input;
+        self
+    }
+    /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
+    pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
+        &self.fabric_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateRouterOutputInput`](crate::operation::update_router_output::UpdateRouterOutputInput).
     pub fn build(
         self,
@@ -180,6 +201,7 @@ impl UpdateRouterOutputInputBuilder {
             routing_scope: self.routing_scope,
             tier: self.tier,
             maintenance_configuration: self.maintenance_configuration,
+            fabric_configuration: self.fabric_configuration,
         })
     }
 }

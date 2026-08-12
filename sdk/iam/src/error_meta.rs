@@ -47,6 +47,8 @@ pub enum Error {
     MalformedCertificateException(crate::types::error::MalformedCertificateException),
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
+    /// <p>The request was rejected because the resulting role name conflicts with an existing role in the account.</p>
+    NameConflictException(crate::types::error::NameConflictException),
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::types::error::NoSuchEntityException),
     /// <p>The request failed because IAM cannot connect to the OpenID Connect identity provider URL.</p>
@@ -63,6 +65,10 @@ pub enum Error {
     PolicyNotAttachableException(crate::types::error::PolicyNotAttachableException),
     /// <p>The request failed because the maximum number of concurrent requests for this account are already running.</p>
     ReportGenerationLimitExceededException(crate::types::error::ReportGenerationLimitExceededException),
+    /// <p>The request was rejected because someone modified the role template while the service was creating the role. Wait a few minutes and try the request again.</p>
+    RoleModifiedException(crate::types::error::RoleModifiedException),
+    /// <p>The request was rejected because the specified role template is disabled. A disabled role template cannot be used to create new roles. Contact your administrator to enable the role template, or use a different role template.</p>
+    RoleTemplateDisabledException(crate::types::error::RoleTemplateDisabledException),
     /// <p>The request was rejected because trusted access is not enabled for IAM in Organizations. For details, see IAM and Organizations in the <i>Organizations User Guide</i>.</p>
     ServiceAccessNotEnabledException(crate::types::error::ServiceAccessNotEnabledException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
@@ -107,6 +113,7 @@ impl ::std::fmt::Display for Error {
             Error::LimitExceededException(inner) => inner.fmt(f),
             Error::MalformedCertificateException(inner) => inner.fmt(f),
             Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
+            Error::NameConflictException(inner) => inner.fmt(f),
             Error::NoSuchEntityException(inner) => inner.fmt(f),
             Error::OpenIdIdpCommunicationErrorException(inner) => inner.fmt(f),
             Error::OrganizationNotFoundException(inner) => inner.fmt(f),
@@ -115,6 +122,8 @@ impl ::std::fmt::Display for Error {
             Error::PolicyEvaluationException(inner) => inner.fmt(f),
             Error::PolicyNotAttachableException(inner) => inner.fmt(f),
             Error::ReportGenerationLimitExceededException(inner) => inner.fmt(f),
+            Error::RoleModifiedException(inner) => inner.fmt(f),
+            Error::RoleTemplateDisabledException(inner) => inner.fmt(f),
             Error::ServiceAccessNotEnabledException(inner) => inner.fmt(f),
             Error::ServiceFailureException(inner) => inner.fmt(f),
             Error::ServiceNotSupportedException(inner) => inner.fmt(f),
@@ -163,6 +172,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::LimitExceededException(inner) => inner.meta(),
             Self::MalformedCertificateException(inner) => inner.meta(),
             Self::MalformedPolicyDocumentException(inner) => inner.meta(),
+            Self::NameConflictException(inner) => inner.meta(),
             Self::NoSuchEntityException(inner) => inner.meta(),
             Self::OpenIdIdpCommunicationErrorException(inner) => inner.meta(),
             Self::OrganizationNotFoundException(inner) => inner.meta(),
@@ -171,6 +181,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::PolicyEvaluationException(inner) => inner.meta(),
             Self::PolicyNotAttachableException(inner) => inner.meta(),
             Self::ReportGenerationLimitExceededException(inner) => inner.meta(),
+            Self::RoleModifiedException(inner) => inner.meta(),
+            Self::RoleTemplateDisabledException(inner) => inner.meta(),
             Self::ServiceAccessNotEnabledException(inner) => inner.meta(),
             Self::ServiceFailureException(inner) => inner.meta(),
             Self::ServiceNotSupportedException(inner) => inner.meta(),
@@ -210,6 +222,39 @@ impl From<crate::operation::accept_delegation_request::AcceptDelegationRequestEr
                 Error::ServiceFailureException(inner)
             }
             crate::operation::accept_delegation_request::AcceptDelegationRequestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::acquire_role::AcquireRoleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::acquire_role::AcquireRoleError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::acquire_role::AcquireRoleError> for Error {
+    fn from(err: crate::operation::acquire_role::AcquireRoleError) -> Self {
+        match err {
+            crate::operation::acquire_role::AcquireRoleError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::acquire_role::AcquireRoleError::EntityAlreadyExistsException(inner) => Error::EntityAlreadyExistsException(inner),
+            crate::operation::acquire_role::AcquireRoleError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::acquire_role::AcquireRoleError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::acquire_role::AcquireRoleError::MalformedPolicyDocumentException(inner) => {
+                Error::MalformedPolicyDocumentException(inner)
+            }
+            crate::operation::acquire_role::AcquireRoleError::NameConflictException(inner) => Error::NameConflictException(inner),
+            crate::operation::acquire_role::AcquireRoleError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
+            crate::operation::acquire_role::AcquireRoleError::RoleModifiedException(inner) => Error::RoleModifiedException(inner),
+            crate::operation::acquire_role::AcquireRoleError::RoleTemplateDisabledException(inner) => Error::RoleTemplateDisabledException(inner),
+            crate::operation::acquire_role::AcquireRoleError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::acquire_role::AcquireRoleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2223,6 +2268,31 @@ impl From<crate::operation::get_account_password_policy::GetAccountPasswordPolic
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_properties::GetAccountPropertiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_properties::GetAccountPropertiesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_account_properties::GetAccountPropertiesError> for Error {
+    fn from(err: crate::operation::get_account_properties::GetAccountPropertiesError) -> Self {
+        match err {
+            crate::operation::get_account_properties::GetAccountPropertiesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_account_properties::GetAccountPropertiesError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::get_account_properties::GetAccountPropertiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_summary::GetAccountSummaryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2718,6 +2788,39 @@ impl From<crate::operation::get_role_policy::GetRolePolicyError> for Error {
             crate::operation::get_role_policy::GetRolePolicyError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::get_role_policy::GetRolePolicyError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::get_role_policy::GetRolePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_role_template_version::GetRoleTemplateVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_role_template_version::GetRoleTemplateVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_role_template_version::GetRoleTemplateVersionError> for Error {
+    fn from(err: crate::operation::get_role_template_version::GetRoleTemplateVersionError) -> Self {
+        match err {
+            crate::operation::get_role_template_version::GetRoleTemplateVersionError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::get_role_template_version::GetRoleTemplateVersionError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::get_role_template_version::GetRoleTemplateVersionError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::get_role_template_version::GetRoleTemplateVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3933,6 +4036,34 @@ impl From<crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError
     fn from(err: crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError) -> Self {
         match err {
             crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_properties::PutAccountPropertiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_properties::PutAccountPropertiesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_account_properties::PutAccountPropertiesError> for Error {
+    fn from(err: crate::operation::put_account_properties::PutAccountPropertiesError) -> Self {
+        match err {
+            crate::operation::put_account_properties::PutAccountPropertiesError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::put_account_properties::PutAccountPropertiesError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::put_account_properties::PutAccountPropertiesError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::put_account_properties::PutAccountPropertiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5556,6 +5687,7 @@ impl ::std::error::Error for Error {
             Error::LimitExceededException(inner) => inner.source(),
             Error::MalformedCertificateException(inner) => inner.source(),
             Error::MalformedPolicyDocumentException(inner) => inner.source(),
+            Error::NameConflictException(inner) => inner.source(),
             Error::NoSuchEntityException(inner) => inner.source(),
             Error::OpenIdIdpCommunicationErrorException(inner) => inner.source(),
             Error::OrganizationNotFoundException(inner) => inner.source(),
@@ -5564,6 +5696,8 @@ impl ::std::error::Error for Error {
             Error::PolicyEvaluationException(inner) => inner.source(),
             Error::PolicyNotAttachableException(inner) => inner.source(),
             Error::ReportGenerationLimitExceededException(inner) => inner.source(),
+            Error::RoleModifiedException(inner) => inner.source(),
+            Error::RoleTemplateDisabledException(inner) => inner.source(),
             Error::ServiceAccessNotEnabledException(inner) => inner.source(),
             Error::ServiceFailureException(inner) => inner.source(),
             Error::ServiceNotSupportedException(inner) => inner.source(),
@@ -5598,6 +5732,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::LimitExceededException(e) => e.request_id(),
             Self::MalformedCertificateException(e) => e.request_id(),
             Self::MalformedPolicyDocumentException(e) => e.request_id(),
+            Self::NameConflictException(e) => e.request_id(),
             Self::NoSuchEntityException(e) => e.request_id(),
             Self::OpenIdIdpCommunicationErrorException(e) => e.request_id(),
             Self::OrganizationNotFoundException(e) => e.request_id(),
@@ -5606,6 +5741,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::PolicyEvaluationException(e) => e.request_id(),
             Self::PolicyNotAttachableException(e) => e.request_id(),
             Self::ReportGenerationLimitExceededException(e) => e.request_id(),
+            Self::RoleModifiedException(e) => e.request_id(),
+            Self::RoleTemplateDisabledException(e) => e.request_id(),
             Self::ServiceAccessNotEnabledException(e) => e.request_id(),
             Self::ServiceFailureException(e) => e.request_id(),
             Self::ServiceNotSupportedException(e) => e.request_id(),

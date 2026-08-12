@@ -15,7 +15,7 @@ pub struct Workload {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The environment for the workload.</p>
     pub environment: ::std::option::Option<crate::types::WorkloadEnvironment>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -27,7 +27,7 @@ pub struct Workload {
     pub architectural_design: ::std::option::Option<::std::string::String>,
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub review_owner: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The review restriction date for the workload.</p>
     pub review_restriction_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
@@ -144,7 +144,7 @@ impl Workload {
     pub fn environment(&self) -> ::std::option::Option<&crate::types::WorkloadEnvironment> {
         self.environment.as_ref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -174,7 +174,7 @@ impl Workload {
     pub fn review_owner(&self) -> ::std::option::Option<&str> {
         self.review_owner.as_deref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The review restriction date for the workload.</p>
     pub fn review_restriction_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.review_restriction_date.as_ref()
     }
@@ -425,17 +425,17 @@ impl WorkloadBuilder {
     pub fn get_environment(&self) -> &::std::option::Option<crate::types::WorkloadEnvironment> {
         &self.environment
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
@@ -527,17 +527,17 @@ impl WorkloadBuilder {
     pub fn get_review_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.review_owner
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The review restriction date for the workload.</p>
     pub fn review_restriction_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.review_restriction_date = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The review restriction date for the workload.</p>
     pub fn set_review_restriction_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.review_restriction_date = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The review restriction date for the workload.</p>
     pub fn get_review_restriction_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.review_restriction_date
     }

@@ -9,6 +9,66 @@ pub(crate) fn reflens_get_consolidated_report_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_agent_contexts_output_output_next_token(
+    input: &crate::operation::list_agent_contexts::ListAgentContextsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_agent_goals_output_output_next_token(
+    input: &crate::operation::list_agent_goals::ListAgentGoalsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_agent_profiles_output_output_next_token(
+    input: &crate::operation::list_agent_profiles::ListAgentProfilesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_agent_recommendation_generations_output_output_next_token(
+    input: &crate::operation::list_agent_recommendation_generations::ListAgentRecommendationGenerationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_agent_recommendation_items_output_output_next_token(
+    input: &crate::operation::list_agent_recommendation_items::ListAgentRecommendationItemsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_agent_recommendations_output_output_next_token(
+    input: &crate::operation::list_agent_recommendations::ListAgentRecommendationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_answers_output_output_next_token(
     input: &crate::operation::list_answers::ListAnswersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -186,5 +246,47 @@ pub(crate) fn reflens_list_workloads_output_output_next_token(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agent_contexts_output_output_items(
+    input: crate::operation::list_agent_contexts::ListAgentContextsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agent_goals_output_output_items(
+    input: crate::operation::list_agent_goals::ListAgentGoalsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GoalSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agent_profiles_output_output_items(
+    input: crate::operation::list_agent_profiles::ListAgentProfilesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentProfileSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agent_recommendation_generations_output_output_items(
+    input: crate::operation::list_agent_recommendation_generations::ListAgentRecommendationGenerationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentRecommendationGenerationSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agent_recommendation_items_output_output_items(
+    input: crate::operation::list_agent_recommendation_items::ListAgentRecommendationItemsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentRecommendationItemSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agent_recommendations_output_output_items(
+    input: crate::operation::list_agent_recommendations::ListAgentRecommendationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentRecommendationSummary>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }

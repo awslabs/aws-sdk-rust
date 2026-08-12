@@ -66,6 +66,11 @@ where
                                     crate::protocol_serde::shape_asset_bundle_import_job_folder_override_parameters_list::de_asset_bundle_import_job_folder_override_parameters_list(tokens, _value, depth + 1)?
                                 );
                         }
+                        "TopicsV2" => {
+                            builder = builder.set_topics_v2(
+                                    crate::protocol_serde::shape_asset_bundle_import_job_topic_v2_override_parameters_list::de_asset_bundle_import_job_topic_v2_override_parameters_list(tokens, _value, depth + 1)?
+                                );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -188,6 +193,18 @@ pub fn ser_asset_bundle_import_job_override_parameters(
             }
         }
         array_32.finish();
+    }
+    if let Some(var_35) = &input.topics_v2 {
+        let mut array_36 = object.key("TopicsV2").start_array();
+        for item_37 in var_35 {
+            {
+                #[allow(unused_mut)]
+                let mut object_38 = array_36.value().start_object();
+                crate::protocol_serde::shape_asset_bundle_import_job_topic_v2_override_parameters::ser_asset_bundle_import_job_topic_v2_override_parameters(&mut object_38, item_37)?;
+                object_38.finish();
+            }
+        }
+        array_36.finish();
     }
     Ok(())
 }

@@ -15,7 +15,7 @@ pub struct ConsolidatedReportMetric {
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for the workload.</p>
     pub workload_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the consolidated report metric was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The metrics for the lenses in the workload.</p>
     pub lenses: ::std::option::Option<::std::vec::Vec<crate::types::LensMetric>>,
@@ -44,7 +44,7 @@ impl ConsolidatedReportMetric {
     pub fn workload_arn(&self) -> ::std::option::Option<&str> {
         self.workload_arn.as_deref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the consolidated report metric was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -159,17 +159,17 @@ impl ConsolidatedReportMetricBuilder {
     pub fn get_workload_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.workload_arn
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the consolidated report metric was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the consolidated report metric was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the consolidated report metric was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

@@ -22,7 +22,7 @@ impl crate::operation::start_materialized_view_refresh_task_run::builders::Start
 }
 /// Fluent builder constructing a request to `StartMaterializedViewRefreshTaskRun`.
 ///
-/// <p>Starts a materialized view refresh task run, for a specified table and columns.</p>
+/// <p>Starts a materialized view refresh task run for a specified materialized view.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartMaterializedViewRefreshTaskRunFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -137,17 +137,17 @@ impl StartMaterializedViewRefreshTaskRunFluentBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
-    /// <p>The name of the table to generate run the materialized view refresh task.</p>
+    /// <p>The name of the materialized view to run the refresh task for.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
-    /// <p>The name of the table to generate run the materialized view refresh task.</p>
+    /// <p>The name of the materialized view to run the refresh task for.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
-    /// <p>The name of the table to generate run the materialized view refresh task.</p>
+    /// <p>The name of the materialized view to run the refresh task for.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }

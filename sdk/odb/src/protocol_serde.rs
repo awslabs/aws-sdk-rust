@@ -27,6 +27,8 @@ pub(crate) mod shape_accept_marketplace_registration;
 
 pub(crate) mod shape_associate_iam_role_to_resource;
 
+pub(crate) mod shape_associate_virtual_machines_to_exadb_vm_cluster;
+
 pub(crate) mod shape_create_autonomous_database;
 
 pub(crate) mod shape_create_autonomous_database_backup;
@@ -38,6 +40,10 @@ pub(crate) mod shape_create_cloud_autonomous_vm_cluster;
 pub(crate) mod shape_create_cloud_exadata_infrastructure;
 
 pub(crate) mod shape_create_cloud_vm_cluster;
+
+pub(crate) mod shape_create_exadb_vm_cluster;
+
+pub(crate) mod shape_create_exascale_db_storage_vault;
 
 pub(crate) mod shape_create_odb_network;
 
@@ -53,11 +59,17 @@ pub(crate) mod shape_delete_cloud_exadata_infrastructure;
 
 pub(crate) mod shape_delete_cloud_vm_cluster;
 
+pub(crate) mod shape_delete_exadb_vm_cluster;
+
+pub(crate) mod shape_delete_exascale_db_storage_vault;
+
 pub(crate) mod shape_delete_odb_network;
 
 pub(crate) mod shape_delete_odb_peering_connection;
 
 pub(crate) mod shape_disassociate_iam_role_from_resource;
+
+pub(crate) mod shape_disassociate_virtual_machines_from_exadb_vm_cluster;
 
 pub(crate) mod shape_failover_autonomous_database;
 
@@ -78,6 +90,10 @@ pub(crate) mod shape_get_cloud_vm_cluster;
 pub(crate) mod shape_get_db_node;
 
 pub(crate) mod shape_get_db_server;
+
+pub(crate) mod shape_get_exadb_vm_cluster;
+
+pub(crate) mod shape_get_exascale_db_storage_vault;
 
 pub(crate) mod shape_get_oci_onboarding_status;
 
@@ -112,6 +128,12 @@ pub(crate) mod shape_list_db_nodes;
 pub(crate) mod shape_list_db_servers;
 
 pub(crate) mod shape_list_db_system_shapes;
+
+pub(crate) mod shape_list_exadb_vm_clusters;
+
+pub(crate) mod shape_list_exascale_db_storage_vaults;
+
+pub(crate) mod shape_list_gi_minor_versions;
 
 pub(crate) mod shape_list_gi_versions;
 
@@ -151,6 +173,10 @@ pub(crate) mod shape_update_autonomous_database_backup;
 
 pub(crate) mod shape_update_cloud_exadata_infrastructure;
 
+pub(crate) mod shape_update_exadb_vm_cluster;
+
+pub(crate) mod shape_update_exascale_db_storage_vault;
+
 pub(crate) mod shape_update_odb_network;
 
 pub(crate) mod shape_update_odb_peering_connection;
@@ -169,6 +195,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_iam_role_to_resource_input;
 
+pub(crate) mod shape_associate_virtual_machines_to_exadb_vm_cluster_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_autonomous_database_backup_input;
@@ -182,6 +210,10 @@ pub(crate) mod shape_create_cloud_autonomous_vm_cluster_input;
 pub(crate) mod shape_create_cloud_exadata_infrastructure_input;
 
 pub(crate) mod shape_create_cloud_vm_cluster_input;
+
+pub(crate) mod shape_create_exadb_vm_cluster_input;
+
+pub(crate) mod shape_create_exascale_db_storage_vault_input;
 
 pub(crate) mod shape_create_odb_network_input;
 
@@ -197,11 +229,17 @@ pub(crate) mod shape_delete_cloud_exadata_infrastructure_input;
 
 pub(crate) mod shape_delete_cloud_vm_cluster_input;
 
+pub(crate) mod shape_delete_exadb_vm_cluster_input;
+
+pub(crate) mod shape_delete_exascale_db_storage_vault_input;
+
 pub(crate) mod shape_delete_odb_network_input;
 
 pub(crate) mod shape_delete_odb_peering_connection_input;
 
 pub(crate) mod shape_disassociate_iam_role_from_resource_input;
+
+pub(crate) mod shape_disassociate_virtual_machines_from_exadb_vm_cluster_input;
 
 pub(crate) mod shape_failover_autonomous_database_input;
 
@@ -222,6 +260,10 @@ pub(crate) mod shape_get_cloud_vm_cluster_input;
 pub(crate) mod shape_get_db_node_input;
 
 pub(crate) mod shape_get_db_server_input;
+
+pub(crate) mod shape_get_exadb_vm_cluster_input;
+
+pub(crate) mod shape_get_exascale_db_storage_vault_input;
 
 pub(crate) mod shape_get_odb_network_input;
 
@@ -256,6 +298,12 @@ pub(crate) mod shape_list_db_nodes_input;
 pub(crate) mod shape_list_db_servers_input;
 
 pub(crate) mod shape_list_db_system_shapes_input;
+
+pub(crate) mod shape_list_exadb_vm_clusters_input;
+
+pub(crate) mod shape_list_exascale_db_storage_vaults_input;
+
+pub(crate) mod shape_list_gi_minor_versions_input;
 
 pub(crate) mod shape_list_gi_versions_input;
 
@@ -300,6 +348,10 @@ pub(crate) mod shape_update_autonomous_database_backup_input;
 pub(crate) mod shape_update_autonomous_database_input;
 
 pub(crate) mod shape_update_cloud_exadata_infrastructure_input;
+
+pub(crate) mod shape_update_exadb_vm_cluster_input;
+
+pub(crate) mod shape_update_exascale_db_storage_vault_input;
 
 pub(crate) mod shape_update_odb_network_input;
 
@@ -358,6 +410,16 @@ pub(crate) mod shape_db_server_list;
 pub(crate) mod shape_db_system_shape_list;
 
 pub(crate) mod shape_encryption_key_configuration_input;
+
+pub(crate) mod shape_exadb_vm_cluster;
+
+pub(crate) mod shape_exadb_vm_cluster_list;
+
+pub(crate) mod shape_exascale_db_storage_vault;
+
+pub(crate) mod shape_exascale_db_storage_vault_list;
+
+pub(crate) mod shape_gi_minor_version_list;
 
 pub(crate) mod shape_gi_version_list;
 
@@ -457,6 +519,16 @@ pub(crate) mod shape_encryption_summary;
 
 pub(crate) mod shape_exadata_iorm_config;
 
+pub(crate) mod shape_exadb_vm_cluster_storage_details;
+
+pub(crate) mod shape_exadb_vm_cluster_summary;
+
+pub(crate) mod shape_exascale_db_storage_details;
+
+pub(crate) mod shape_exascale_db_storage_vault_summary;
+
+pub(crate) mod shape_gi_minor_version_summary;
+
 pub(crate) mod shape_gi_version_summary;
 
 pub(crate) mod shape_iam_role_list;
@@ -479,6 +551,8 @@ pub(crate) mod shape_peered_cidr_list;
 
 pub(crate) mod shape_point_in_time_restore_configuration;
 
+pub(crate) mod shape_resource_arn_list;
+
 pub(crate) mod shape_resource_id_list;
 
 pub(crate) mod shape_restore_from_backup_configuration;
@@ -486,6 +560,8 @@ pub(crate) mod shape_restore_from_backup_configuration;
 pub(crate) mod shape_scheduled_operation_details_list;
 
 pub(crate) mod shape_sensitive_string_list;
+
+pub(crate) mod shape_shape_attribute_list;
 
 pub(crate) mod shape_string_list;
 

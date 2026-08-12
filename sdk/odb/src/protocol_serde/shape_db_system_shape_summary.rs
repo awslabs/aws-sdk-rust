@@ -168,6 +168,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "shapeAttributes" => {
+                            builder = builder.set_shape_attributes(crate::protocol_serde::shape_shape_attribute_list::de_shape_attribute_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "name" => {
                             builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

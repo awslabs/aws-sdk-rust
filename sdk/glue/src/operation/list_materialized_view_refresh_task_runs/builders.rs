@@ -148,17 +148,17 @@ impl ListMaterializedViewRefreshTaskRunsFluentBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_database_name()
     }
-    /// <p>The name of the table for which statistics is generated.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.table_name(input.into());
         self
     }
-    /// <p>The name of the table for which statistics is generated.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_table_name(input);
         self
     }
-    /// <p>The name of the table for which statistics is generated.</p>
+    /// <p>The name of the materialized view.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_table_name()
     }

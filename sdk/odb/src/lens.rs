@@ -129,6 +129,36 @@ pub(crate) fn reflens_list_db_system_shapes_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_exadb_vm_clusters_output_output_next_token(
+    input: &crate::operation::list_exadb_vm_clusters::ListExadbVmClustersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_exascale_db_storage_vaults_output_output_next_token(
+    input: &crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_gi_minor_versions_output_output_next_token(
+    input: &crate::operation::list_gi_minor_versions::ListGiMinorVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_gi_versions_output_output_next_token(
     input: &crate::operation::list_gi_versions::ListGiVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -257,6 +287,27 @@ pub(crate) fn lens_list_db_system_shapes_output_output_db_system_shapes(
     input: crate::operation::list_db_system_shapes::ListDbSystemShapesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DbSystemShapeSummary>> {
     let input = input.db_system_shapes;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_exadb_vm_clusters_output_output_exadb_vm_clusters(
+    input: crate::operation::list_exadb_vm_clusters::ListExadbVmClustersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExadbVmClusterSummary>> {
+    let input = input.exadb_vm_clusters;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_exascale_db_storage_vaults_output_output_exascale_db_storage_vaults(
+    input: crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExascaleDbStorageVaultSummary>> {
+    let input = input.exascale_db_storage_vaults;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_gi_minor_versions_output_output_gi_minor_versions(
+    input: crate::operation::list_gi_minor_versions::ListGiMinorVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GiMinorVersionSummary>> {
+    let input = input.gi_minor_versions;
     ::std::option::Option::Some(input)
 }
 

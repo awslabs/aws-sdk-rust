@@ -21,7 +21,7 @@ pub struct LensReview {
     pub pillar_review_summaries: ::std::option::Option<::std::vec::Vec<crate::types::PillarReviewSummary>>,
     /// <p>Jira configuration status of the Lens review.</p>
     pub jira_configuration: ::std::option::Option<crate::types::JiraSelectedQuestionConfiguration>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The notes associated with the workload.</p>
     /// <p>For a review template, these are the notes that will be associated with the workload when the template is applied.</p>
@@ -69,7 +69,7 @@ impl LensReview {
     pub fn jira_configuration(&self) -> ::std::option::Option<&crate::types::JiraSelectedQuestionConfiguration> {
         self.jira_configuration.as_ref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -236,17 +236,17 @@ impl LensReviewBuilder {
     pub fn get_jira_configuration(&self) -> &::std::option::Option<crate::types::JiraSelectedQuestionConfiguration> {
         &self.jira_configuration
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
