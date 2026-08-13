@@ -124,6 +124,16 @@ pub fn de_terminate_instance_in_auto_scaling_group(
                 builder = builder.set_activity(var_1);
             }
             ,
+            s if s.matches("Activities") /* Activities com.amazonaws.autoscaling.synthetic#TerminateInstanceInAutoScalingGroupOutput$Activities */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_activities::de_activities(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_activities(var_2);
+            }
+            ,
             _ => {}
         }
         }

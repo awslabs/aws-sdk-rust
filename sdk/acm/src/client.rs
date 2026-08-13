@@ -260,6 +260,8 @@ mod list_acme_endpoints;
 
 mod list_acme_external_account_bindings;
 
+mod list_certificate_domain_validations;
+
 mod list_certificates;
 
 mod list_tags_for_certificate;

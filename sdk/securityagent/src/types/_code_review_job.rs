@@ -32,6 +32,8 @@ pub struct CodeReviewJob {
     pub integrated_repositories: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedRepository>>,
     /// <p>The code remediation strategy for the code review job.</p>
     pub code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
+    /// <p>The maximum number of billable task hours allowed for this code review job. If the cumulative task hours reach this limit, the job is gracefully stopped.</p>
+    pub max_task_hours: ::std::option::Option<f64>,
     /// <p>The date and time the code review job was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the code review job was last updated, in UTC format.</p>
@@ -104,6 +106,10 @@ impl CodeReviewJob {
     pub fn code_remediation_strategy(&self) -> ::std::option::Option<&crate::types::CodeRemediationStrategy> {
         self.code_remediation_strategy.as_ref()
     }
+    /// <p>The maximum number of billable task hours allowed for this code review job. If the cumulative task hours reach this limit, the job is gracefully stopped.</p>
+    pub fn max_task_hours(&self) -> ::std::option::Option<f64> {
+        self.max_task_hours
+    }
     /// <p>The date and time the code review job was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -138,6 +144,7 @@ pub struct CodeReviewJobBuilder {
     pub(crate) error_information: ::std::option::Option<crate::types::ErrorInformation>,
     pub(crate) integrated_repositories: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedRepository>>,
     pub(crate) code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
+    pub(crate) max_task_hours: ::std::option::Option<f64>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -368,6 +375,20 @@ impl CodeReviewJobBuilder {
     pub fn get_code_remediation_strategy(&self) -> &::std::option::Option<crate::types::CodeRemediationStrategy> {
         &self.code_remediation_strategy
     }
+    /// <p>The maximum number of billable task hours allowed for this code review job. If the cumulative task hours reach this limit, the job is gracefully stopped.</p>
+    pub fn max_task_hours(mut self, input: f64) -> Self {
+        self.max_task_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of billable task hours allowed for this code review job. If the cumulative task hours reach this limit, the job is gracefully stopped.</p>
+    pub fn set_max_task_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.max_task_hours = input;
+        self
+    }
+    /// <p>The maximum number of billable task hours allowed for this code review job. If the cumulative task hours reach this limit, the job is gracefully stopped.</p>
+    pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
+        &self.max_task_hours
+    }
     /// <p>The date and time the code review job was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -413,6 +434,7 @@ impl CodeReviewJobBuilder {
             error_information: self.error_information,
             integrated_repositories: self.integrated_repositories,
             code_remediation_strategy: self.code_remediation_strategy,
+            max_task_hours: self.max_task_hours,
             created_at: self.created_at,
             updated_at: self.updated_at,
         }

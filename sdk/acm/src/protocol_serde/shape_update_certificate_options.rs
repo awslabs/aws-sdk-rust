@@ -24,6 +24,21 @@ pub fn de_update_certificate_options_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictException" => crate::operation::update_certificate_options::UpdateCertificateOptionsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_certificate_options::UpdateCertificateOptionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidArnException" => crate::operation::update_certificate_options::UpdateCertificateOptionsError::InvalidArnException({
             #[allow(unused_mut)]
             let mut tmp = {

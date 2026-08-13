@@ -39,23 +39,41 @@ pub fn ser_analysis_rule_custom(
         crate::protocol_serde::shape_differential_privacy_configuration::ser_differential_privacy_configuration(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.allowed_result_receivers {
-        let mut array_13 = object.key("allowedResultReceivers").start_array();
+    if let Some(var_12) = &input.aggregation_thresholds {
+        let mut array_13 = object.key("aggregationThresholds").start_array();
         for item_14 in var_12 {
             {
-                array_13.value().string(item_14.as_str());
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_aggregation_threshold::ser_aggregation_threshold(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
         array_13.finish();
     }
-    if let Some(var_15) = &input.allowed_additional_analyses {
-        let mut array_16 = object.key("allowedAdditionalAnalyses").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.comparison_controls {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("comparisonControls").start_object();
+        crate::protocol_serde::shape_comparison_controls::ser_comparison_controls(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.allowed_result_receivers {
+        let mut array_19 = object.key("allowedResultReceivers").start_array();
+        for item_20 in var_18 {
             {
-                array_16.value().string(item_17.as_str());
+                array_19.value().string(item_20.as_str());
             }
         }
-        array_16.finish();
+        array_19.finish();
+    }
+    if let Some(var_21) = &input.allowed_additional_analyses {
+        let mut array_22 = object.key("allowedAdditionalAnalyses").start_array();
+        for item_23 in var_21 {
+            {
+                array_22.value().string(item_23.as_str());
+            }
+        }
+        array_22.finish();
     }
     Ok(())
 }
@@ -118,6 +136,18 @@ where
                                     depth + 1,
                                 )?,
                             );
+                        }
+                        "aggregationThresholds" => {
+                            builder = builder.set_aggregation_thresholds(
+                                crate::protocol_serde::shape_aggregation_threshold_list::de_aggregation_threshold_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "comparisonControls" => {
+                            builder = builder.set_comparison_controls(crate::protocol_serde::shape_comparison_controls::de_comparison_controls(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "allowedResultReceivers" => {
                             builder = builder.set_allowed_result_receivers(

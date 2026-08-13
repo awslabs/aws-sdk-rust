@@ -303,6 +303,8 @@ pub(crate) mod shape_desired_configuration;
 
 pub(crate) mod shape_filter;
 
+pub(crate) mod shape_idempotent_call_in_progress_fault;
+
 pub(crate) mod shape_idempotent_parameter_mismatch_error;
 
 pub(crate) mod shape_instance_lifecycle_policy;

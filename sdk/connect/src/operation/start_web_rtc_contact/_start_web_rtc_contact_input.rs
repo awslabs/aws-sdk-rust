@@ -16,7 +16,7 @@ pub struct StartWebRtcContactInput {
     pub instance_id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the video sharing capabilities of the participants (customer, agent).</p>
     pub allowed_capabilities: ::std::option::Option<crate::types::AllowedCapabilities>,
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
     /// <p>The unique identifier for an Connect Customer contact. This identifier is related to the contact starting.</p>
     pub related_contact_id: ::std::option::Option<::std::string::String>,
@@ -24,6 +24,9 @@ pub struct StartWebRtcContactInput {
     pub references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
     /// <p>A description of the task that is shown to an agent in the Contact Control Panel (CCP).</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Use this map to specify system-defined attributes for the WebRTC contact segment. Use the <code>connect:Subtype</code> attribute to specify the channel subtype, such as <code>connect:WebRTC</code>.</p>
+    /// <p>Attribute keys can contain only alphanumeric characters, hyphens, and underscores.</p>
+    pub segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl StartWebRtcContactInput {
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes, and can be accessed in flows just like any other contact attributes.</p>
@@ -49,7 +52,7 @@ impl StartWebRtcContactInput {
     pub fn allowed_capabilities(&self) -> ::std::option::Option<&crate::types::AllowedCapabilities> {
         self.allowed_capabilities.as_ref()
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetails> {
         self.participant_details.as_ref()
     }
@@ -65,6 +68,13 @@ impl StartWebRtcContactInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Use this map to specify system-defined attributes for the WebRTC contact segment. Use the <code>connect:Subtype</code> attribute to specify the channel subtype, such as <code>connect:WebRTC</code>.</p>
+    /// <p>Attribute keys can contain only alphanumeric characters, hyphens, and underscores.</p>
+    pub fn segment_attributes(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        self.segment_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for StartWebRtcContactInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -78,6 +88,7 @@ impl ::std::fmt::Debug for StartWebRtcContactInput {
         formatter.field("related_contact_id", &self.related_contact_id);
         formatter.field("references", &self.references);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_attributes", &self.segment_attributes);
         formatter.finish()
     }
 }
@@ -101,6 +112,7 @@ pub struct StartWebRtcContactInputBuilder {
     pub(crate) related_contact_id: ::std::option::Option<::std::string::String>,
     pub(crate) references: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Reference>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
 }
 impl StartWebRtcContactInputBuilder {
     /// Adds a key-value pair to `attributes`.
@@ -190,18 +202,18 @@ impl StartWebRtcContactInputBuilder {
     pub fn get_allowed_capabilities(&self) -> &::std::option::Option<crate::types::AllowedCapabilities> {
         &self.allowed_capabilities
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     /// This field is required.
     pub fn participant_details(mut self, input: crate::types::ParticipantDetails) -> Self {
         self.participant_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetails>) -> Self {
         self.participant_details = input;
         self
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         &self.participant_details
     }
@@ -256,6 +268,34 @@ impl StartWebRtcContactInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// Adds a key-value pair to `segment_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_segment_attributes`](Self::set_segment_attributes).
+    ///
+    /// <p>Use this map to specify system-defined attributes for the WebRTC contact segment. Use the <code>connect:Subtype</code> attribute to specify the channel subtype, such as <code>connect:WebRTC</code>.</p>
+    /// <p>Attribute keys can contain only alphanumeric characters, hyphens, and underscores.</p>
+    pub fn segment_attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::SegmentAttributeValue) -> Self {
+        let mut hash_map = self.segment_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.segment_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Use this map to specify system-defined attributes for the WebRTC contact segment. Use the <code>connect:Subtype</code> attribute to specify the channel subtype, such as <code>connect:WebRTC</code>.</p>
+    /// <p>Attribute keys can contain only alphanumeric characters, hyphens, and underscores.</p>
+    pub fn set_segment_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>>,
+    ) -> Self {
+        self.segment_attributes = input;
+        self
+    }
+    /// <p>Use this map to specify system-defined attributes for the WebRTC contact segment. Use the <code>connect:Subtype</code> attribute to specify the channel subtype, such as <code>connect:WebRTC</code>.</p>
+    /// <p>Attribute keys can contain only alphanumeric characters, hyphens, and underscores.</p>
+    pub fn get_segment_attributes(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SegmentAttributeValue>> {
+        &self.segment_attributes
+    }
     /// Consumes the builder and constructs a [`StartWebRtcContactInput`](crate::operation::start_web_rtc_contact::StartWebRtcContactInput).
     pub fn build(
         self,
@@ -271,6 +311,7 @@ impl StartWebRtcContactInputBuilder {
             related_contact_id: self.related_contact_id,
             references: self.references,
             description: self.description,
+            segment_attributes: self.segment_attributes,
         })
     }
 }
@@ -286,6 +327,7 @@ impl ::std::fmt::Debug for StartWebRtcContactInputBuilder {
         formatter.field("related_contact_id", &self.related_contact_id);
         formatter.field("references", &self.references);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("segment_attributes", &self.segment_attributes);
         formatter.finish()
     }
 }

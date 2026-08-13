@@ -877,6 +877,9 @@ pub mod send_outbound_email;
 /// Types for the `SendOutboundWebNotification` operation.
 pub mod send_outbound_web_notification;
 
+/// Types for the `StartAssistantContact` operation.
+pub mod start_assistant_contact;
+
 /// Types for the `StartAttachedFileUpload` operation.
 pub mod start_attached_file_upload;
 

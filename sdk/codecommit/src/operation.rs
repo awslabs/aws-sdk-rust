@@ -76,6 +76,9 @@ pub mod get_approval_rule_template;
 /// Types for the `GetBlob` operation.
 pub mod get_blob;
 
+/// Types for the `GetBlobDifferences` operation.
+pub mod get_blob_differences;
+
 /// Types for the `GetBranch` operation.
 pub mod get_branch;
 

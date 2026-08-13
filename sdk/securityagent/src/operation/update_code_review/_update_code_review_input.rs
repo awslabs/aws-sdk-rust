@@ -20,6 +20,8 @@ pub struct UpdateCodeReviewInput {
     pub code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     /// <p>The updated validation mode for the code review. Valid values are SIMULATED and DISABLED.</p>
     pub validation_mode: ::std::option::Option<crate::types::ValidationMode>,
+    /// <p>The updated maximum number of billable task hours allowed for jobs started from this code review.</p>
+    pub max_task_hours: ::std::option::Option<f64>,
 }
 impl UpdateCodeReviewInput {
     /// <p>The unique identifier of the code review to update.</p>
@@ -54,6 +56,10 @@ impl UpdateCodeReviewInput {
     pub fn validation_mode(&self) -> ::std::option::Option<&crate::types::ValidationMode> {
         self.validation_mode.as_ref()
     }
+    /// <p>The updated maximum number of billable task hours allowed for jobs started from this code review.</p>
+    pub fn max_task_hours(&self) -> ::std::option::Option<f64> {
+        self.max_task_hours
+    }
 }
 impl UpdateCodeReviewInput {
     /// Creates a new builder-style object to manufacture [`UpdateCodeReviewInput`](crate::operation::update_code_review::UpdateCodeReviewInput).
@@ -74,6 +80,7 @@ pub struct UpdateCodeReviewInputBuilder {
     pub(crate) log_config: ::std::option::Option<crate::types::CloudWatchLog>,
     pub(crate) code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::ValidationMode>,
+    pub(crate) max_task_hours: ::std::option::Option<f64>,
 }
 impl UpdateCodeReviewInputBuilder {
     /// <p>The unique identifier of the code review to update.</p>
@@ -190,6 +197,20 @@ impl UpdateCodeReviewInputBuilder {
     pub fn get_validation_mode(&self) -> &::std::option::Option<crate::types::ValidationMode> {
         &self.validation_mode
     }
+    /// <p>The updated maximum number of billable task hours allowed for jobs started from this code review.</p>
+    pub fn max_task_hours(mut self, input: f64) -> Self {
+        self.max_task_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated maximum number of billable task hours allowed for jobs started from this code review.</p>
+    pub fn set_max_task_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.max_task_hours = input;
+        self
+    }
+    /// <p>The updated maximum number of billable task hours allowed for jobs started from this code review.</p>
+    pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
+        &self.max_task_hours
+    }
     /// Consumes the builder and constructs a [`UpdateCodeReviewInput`](crate::operation::update_code_review::UpdateCodeReviewInput).
     pub fn build(
         self,
@@ -203,6 +224,7 @@ impl UpdateCodeReviewInputBuilder {
             log_config: self.log_config,
             code_remediation_strategy: self.code_remediation_strategy,
             validation_mode: self.validation_mode,
+            max_task_hours: self.max_task_hours,
         })
     }
 }

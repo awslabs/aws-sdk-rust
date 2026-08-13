@@ -10791,6 +10791,47 @@ impl From<crate::operation::send_outbound_web_notification::SendOutboundWebNotif
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_assistant_contact::StartAssistantContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_assistant_contact::StartAssistantContactError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_assistant_contact::StartAssistantContactError> for Error {
+    fn from(err: crate::operation::start_assistant_contact::StartAssistantContactError) -> Self {
+        match err {
+            crate::operation::start_assistant_contact::StartAssistantContactError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_attached_file_upload::StartAttachedFileUploadError, R>>
     for Error
 where
@@ -11409,6 +11450,7 @@ where
 impl From<crate::operation::start_web_rtc_contact::StartWebRTCContactError> for Error {
     fn from(err: crate::operation::start_web_rtc_contact::StartWebRTCContactError) -> Self {
         match err {
+            crate::operation::start_web_rtc_contact::StartWebRTCContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_web_rtc_contact::StartWebRTCContactError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }

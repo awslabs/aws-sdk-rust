@@ -206,4 +206,18 @@ impl CreateCodeReviewFluentBuilder {
     pub fn get_validation_mode(&self) -> &::std::option::Option<crate::types::ValidationMode> {
         self.inner.get_validation_mode()
     }
+    /// <p>The maximum number of billable task hours allowed for jobs started from this code review. Must be a positive number. If not set, jobs run to completion with no budget cap.</p>
+    pub fn max_task_hours(mut self, input: f64) -> Self {
+        self.inner = self.inner.max_task_hours(input);
+        self
+    }
+    /// <p>The maximum number of billable task hours allowed for jobs started from this code review. Must be a positive number. If not set, jobs run to completion with no budget cap.</p>
+    pub fn set_max_task_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.inner = self.inner.set_max_task_hours(input);
+        self
+    }
+    /// <p>The maximum number of billable task hours allowed for jobs started from this code review. Must be a positive number. If not set, jobs run to completion with no budget cap.</p>
+    pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
+        self.inner.get_max_task_hours()
+    }
 }

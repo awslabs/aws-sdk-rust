@@ -493,6 +493,8 @@ pub use crate::types::_join_required_option::JoinRequiredOption;
 
 pub use crate::types::_differential_privacy_configuration::DifferentialPrivacyConfiguration;
 
+pub use crate::types::_comparison_controls::ComparisonControls;
+
 pub use crate::types::_id_mapping_table_input_source::IdMappingTableInputSource;
 
 pub use crate::types::_base_table_dependency_type::BaseTableDependencyType;
@@ -549,6 +551,8 @@ pub use crate::types::_scalar_functions::ScalarFunctions;
 
 pub use crate::types::_aggregation_constraint::AggregationConstraint;
 
+pub use crate::types::_aggregation_threshold::AggregationThreshold;
+
 pub use crate::types::_protected_job_single_member_output::ProtectedJobSingleMemberOutput;
 
 pub use crate::types::_protected_query_single_member_output::ProtectedQuerySingleMemberOutput;
@@ -583,6 +587,10 @@ pub use crate::types::_aggregation_type::AggregationType;
 
 pub use crate::types::_differential_privacy_column::DifferentialPrivacyColumn;
 
+pub use crate::types::_aggregation_threshold_type::AggregationThresholdType;
+
+pub use crate::types::_allowed_aggregate_expression_type::AllowedAggregateExpressionType;
+
 pub use crate::types::_inherited_additional_analyses_source::InheritedAdditionalAnalysesSource;
 
 pub use crate::types::_inherited_allowed_additional_analyses_source::InheritedAllowedAdditionalAnalysesSource;
@@ -596,6 +604,8 @@ pub use crate::types::_protected_job_direct_analysis_configuration_details::Prot
 pub use crate::types::_direct_analysis_configuration_details::DirectAnalysisConfigurationDetails;
 
 pub use crate::types::_query_constraint_require_overlap::QueryConstraintRequireOverlap;
+
+pub use crate::types::_output_column_threshold::OutputColumnThreshold;
 
 mod _access_budget;
 
@@ -619,7 +629,13 @@ mod _aggregate_function_name;
 
 mod _aggregation_constraint;
 
+mod _aggregation_threshold;
+
+mod _aggregation_threshold_type;
+
 mod _aggregation_type;
+
+mod _allowed_aggregate_expression_type;
 
 mod _analysis_format;
 
@@ -768,6 +784,8 @@ mod _column_classification_details;
 mod _column_lineage_entry;
 
 mod _commercial_region;
+
+mod _comparison_controls;
 
 mod _compute_configuration;
 
@@ -1000,6 +1018,8 @@ mod _ml_synthetic_data_parameters;
 mod _model_inference_payment_config;
 
 mod _model_training_payment_config;
+
+mod _output_column_threshold;
 
 mod _parameter_type;
 

@@ -180,6 +180,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "revalidationJobIds" => {
+                            builder = builder.set_revalidation_job_ids(crate::protocol_serde::shape_string_list::de_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "originalFindingId" => {
+                            builder = builder.set_original_finding_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

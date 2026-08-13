@@ -27,7 +27,7 @@ pub struct StartOutboundChatContactInput {
     pub contact_flow_id: ::std::option::Option<::std::string::String>,
     /// <p>The total duration of the newly started chat session. If not specified, the chat session duration defaults to 25 hour. The minimum configurable time is 60 minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
     pub chat_duration_in_minutes: ::std::option::Option<i32>,
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
     /// <p>A chat message.</p>
     pub initial_system_message: ::std::option::Option<crate::types::ChatMessage>,
@@ -100,7 +100,7 @@ impl StartOutboundChatContactInput {
     pub fn chat_duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.chat_duration_in_minutes
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetails> {
         self.participant_details.as_ref()
     }
@@ -321,17 +321,17 @@ impl StartOutboundChatContactInputBuilder {
     pub fn get_chat_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         &self.chat_duration_in_minutes
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn participant_details(mut self, input: crate::types::ParticipantDetails) -> Self {
         self.participant_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetails>) -> Self {
         self.participant_details = input;
         self
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         &self.participant_details
     }

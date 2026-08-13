@@ -23,6 +23,7 @@ impl crate::operation::get_differences::builders::GetDifferencesInputBuilder {
 /// Fluent builder constructing a request to `GetDifferences`.
 ///
 /// <p>Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference). Results can be limited to a specified path.</p>
+/// <p>For line-level diff details, pass the <code>beforeBlob.blobId</code> and <code>afterBlob.blobId</code> values from a <code>Difference</code> object to <code>GetBlobDifferences</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDifferencesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -821,6 +821,8 @@ pub(crate) mod shape_aggregate_column;
 
 pub(crate) mod shape_aggregation_constraint;
 
+pub(crate) mod shape_aggregation_threshold;
+
 pub(crate) mod shape_analysis_rule_id_mapping_table;
 
 pub(crate) mod shape_analysis_template_artifact_list;
@@ -830,6 +832,8 @@ pub(crate) mod shape_analysis_template_validation_status_reason_list;
 pub(crate) mod shape_budget_parameters;
 
 pub(crate) mod shape_change_type_list;
+
+pub(crate) mod shape_comparison_controls;
 
 pub(crate) mod shape_consolidated_policy_aggregation;
 
@@ -897,6 +901,8 @@ pub(crate) mod shape_aggregate_column_list;
 
 pub(crate) mod shape_aggregation_constraints;
 
+pub(crate) mod shape_aggregation_threshold_list;
+
 pub(crate) mod shape_allowed_additional_analyses;
 
 pub(crate) mod shape_allowed_analyses_list;
@@ -928,6 +934,8 @@ pub(crate) mod shape_inherited_allowed_additional_analyses_source_list;
 pub(crate) mod shape_inherited_allowed_result_receivers_source_list;
 
 pub(crate) mod shape_join_operators_list;
+
+pub(crate) mod shape_output_column_threshold;
 
 pub(crate) mod shape_protected_job_configuration_details;
 
@@ -966,6 +974,8 @@ pub(crate) mod shape_inherited_allowed_result_receivers_source;
 pub(crate) mod shape_protected_job_direct_analysis_configuration_details;
 
 pub(crate) mod shape_query_constraint;
+
+pub(crate) mod shape_output_column_threshold_list;
 
 pub(crate) mod shape_protected_job_receiver_account_ids;
 

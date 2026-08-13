@@ -60,6 +60,8 @@ pub struct CertificateDetail {
     pub renewal_eligibility: ::std::option::Option<crate::types::RenewalEligibility>,
     /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log.</p>
     pub options: ::std::option::Option<crate::types::CertificateOptions>,
+    /// <p>Contains information about the most recent update to the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and a certificate update has been requested.</p>
+    pub update_summary: ::std::option::Option<crate::types::UpdateSummary>,
     /// <p>The origin of the certificate's key pair.</p>
     pub certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
     /// <p>The ARN of the ACME endpoint used to issue the certificate.</p>
@@ -188,6 +190,10 @@ impl CertificateDetail {
     pub fn options(&self) -> ::std::option::Option<&crate::types::CertificateOptions> {
         self.options.as_ref()
     }
+    /// <p>Contains information about the most recent update to the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and a certificate update has been requested.</p>
+    pub fn update_summary(&self) -> ::std::option::Option<&crate::types::UpdateSummary> {
+        self.update_summary.as_ref()
+    }
     /// <p>The origin of the certificate's key pair.</p>
     pub fn certificate_key_pair_origin(&self) -> ::std::option::Option<&crate::types::CertificateKeyPairOrigin> {
         self.certificate_key_pair_origin.as_ref()
@@ -239,6 +245,7 @@ pub struct CertificateDetailBuilder {
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) renewal_eligibility: ::std::option::Option<crate::types::RenewalEligibility>,
     pub(crate) options: ::std::option::Option<crate::types::CertificateOptions>,
+    pub(crate) update_summary: ::std::option::Option<crate::types::UpdateSummary>,
     pub(crate) certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
     pub(crate) acme_endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) acme_account_id: ::std::option::Option<::std::string::String>,
@@ -658,6 +665,20 @@ impl CertificateDetailBuilder {
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CertificateOptions> {
         &self.options
     }
+    /// <p>Contains information about the most recent update to the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and a certificate update has been requested.</p>
+    pub fn update_summary(mut self, input: crate::types::UpdateSummary) -> Self {
+        self.update_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains information about the most recent update to the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and a certificate update has been requested.</p>
+    pub fn set_update_summary(mut self, input: ::std::option::Option<crate::types::UpdateSummary>) -> Self {
+        self.update_summary = input;
+        self
+    }
+    /// <p>Contains information about the most recent update to the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and a certificate update has been requested.</p>
+    pub fn get_update_summary(&self) -> &::std::option::Option<crate::types::UpdateSummary> {
+        &self.update_summary
+    }
     /// <p>The origin of the certificate's key pair.</p>
     pub fn certificate_key_pair_origin(mut self, input: crate::types::CertificateKeyPairOrigin) -> Self {
         self.certificate_key_pair_origin = ::std::option::Option::Some(input);
@@ -730,6 +751,7 @@ impl CertificateDetailBuilder {
             certificate_authority_arn: self.certificate_authority_arn,
             renewal_eligibility: self.renewal_eligibility,
             options: self.options,
+            update_summary: self.update_summary,
             certificate_key_pair_origin: self.certificate_key_pair_origin,
             acme_endpoint_arn: self.acme_endpoint_arn,
             acme_account_id: self.acme_account_id,

@@ -381,15 +381,17 @@ pub use crate::types::_widget_destination::WidgetDestination;
 
 pub use crate::types::_web_notification_content::WebNotificationContent;
 
-pub use crate::types::_upload_url_metadata::UploadUrlMetadata;
+pub use crate::types::_ai_agent_input::AiAgentInput;
 
 pub use crate::types::_participant_details::ParticipantDetails;
-
-pub use crate::types::_participant_configuration::ParticipantConfiguration;
 
 pub use crate::types::_chat_message::ChatMessage;
 
 pub use crate::types::_persistent_chat::PersistentChat;
+
+pub use crate::types::_upload_url_metadata::UploadUrlMetadata;
+
+pub use crate::types::_participant_configuration::ParticipantConfiguration;
 
 pub use crate::types::_analytics_configuration::AnalyticsConfiguration;
 
@@ -1578,6 +1580,8 @@ mod _agent_status_type;
 mod _agents_criteria;
 
 mod _ai_agent_info;
+
+mod _ai_agent_input;
 
 mod _ai_agent_search_criteria;
 

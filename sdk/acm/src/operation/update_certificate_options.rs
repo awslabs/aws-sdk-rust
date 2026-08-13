@@ -270,6 +270,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCertifi
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateCertificateOptionsError {
+    /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>Processing has reached an invalid state.</p>
@@ -313,6 +315,7 @@ impl UpdateCertificateOptionsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -320,6 +323,10 @@ impl UpdateCertificateOptionsError {
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateCertificateOptionsError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateCertificateOptionsError::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -345,6 +352,7 @@ impl UpdateCertificateOptionsError {
 impl ::std::error::Error for UpdateCertificateOptionsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -357,6 +365,7 @@ impl ::std::error::Error for UpdateCertificateOptionsError {
 impl ::std::fmt::Display for UpdateCertificateOptionsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidArnException(_inner) => _inner.fmt(f),
             Self::InvalidStateException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
@@ -383,6 +392,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateCertificateOptionsErr
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateCertificateOptionsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
