@@ -261,6 +261,8 @@ pub use crate::types::error::_file_too_large_exception::FileTooLargeException;
 
 pub use crate::types::error::_invalid_blob_id_exception::InvalidBlobIdException;
 
+pub use crate::types::error::_validation_exception::ValidationException;
+
 pub use crate::types::error::_invalid_reaction_user_arn_exception::InvalidReactionUserArnException;
 
 pub use crate::types::error::_repository_not_associated_with_pull_request_exception::RepositoryNotAssociatedWithPullRequestException;
@@ -754,6 +756,8 @@ mod _tips_divergence_exceeded_exception;
 mod _title_required_exception;
 
 mod _too_many_tags_exception;
+
+mod _validation_exception;
 
 /// Builders
 pub mod builders;

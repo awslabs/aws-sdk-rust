@@ -67,6 +67,8 @@ pub(crate) mod shape_list_acme_endpoints;
 
 pub(crate) mod shape_list_acme_external_account_bindings;
 
+pub(crate) mod shape_list_certificate_domain_validations;
+
 pub(crate) mod shape_list_certificates;
 
 pub(crate) mod shape_list_tags_for_certificate;
@@ -171,6 +173,8 @@ pub(crate) mod shape_list_acme_endpoints_input;
 
 pub(crate) mod shape_list_acme_external_account_bindings_input;
 
+pub(crate) mod shape_list_certificate_domain_validations_input;
+
 pub(crate) mod shape_list_certificates_input;
 
 pub(crate) mod shape_list_tags_for_certificate_input;
@@ -251,6 +255,8 @@ pub(crate) mod shape_certificate_summary_list;
 
 pub(crate) mod shape_domain_validation_option;
 
+pub(crate) mod shape_domain_validation_summary_list;
+
 pub(crate) mod shape_expiration;
 
 pub(crate) mod shape_expiry_events_configuration;
@@ -287,6 +293,8 @@ pub(crate) mod shape_domain_list;
 
 pub(crate) mod shape_domain_validation_list;
 
+pub(crate) mod shape_domain_validation_summary;
+
 pub(crate) mod shape_extended_key_usage_list;
 
 pub(crate) mod shape_failure_details;
@@ -303,6 +311,8 @@ pub(crate) mod shape_renewal_summary;
 
 pub(crate) mod shape_throttling_reason;
 
+pub(crate) mod shape_update_summary;
+
 pub(crate) mod shape_acm_certificate_metadata_filter;
 
 pub(crate) mod shape_certificate_metadata;
@@ -313,6 +323,8 @@ pub(crate) mod shape_domain_scope;
 
 pub(crate) mod shape_domain_validation;
 
+pub(crate) mod shape_domain_validation_method_update_summary;
+
 pub(crate) mod shape_extended_key_usage;
 
 pub(crate) mod shape_extended_key_usage_names;
@@ -320,6 +332,8 @@ pub(crate) mod shape_extended_key_usage_names;
 pub(crate) mod shape_key_usage;
 
 pub(crate) mod shape_key_usage_names;
+
+pub(crate) mod shape_validation_configuration;
 
 pub(crate) mod shape_x509_attribute_filter;
 
@@ -343,6 +357,8 @@ pub(crate) mod shape_subject_filter;
 
 pub(crate) mod shape_timestamp_range;
 
+pub(crate) mod shape_validation_challenge;
+
 pub(crate) mod shape_validation_email_list;
 
 pub(crate) mod shape_common_name_filter;
@@ -351,7 +367,11 @@ pub(crate) mod shape_custom_attribute_list;
 
 pub(crate) mod shape_dns_name_filter;
 
+pub(crate) mod shape_dns_validation_challenge;
+
 pub(crate) mod shape_domain_component_list;
+
+pub(crate) mod shape_email_validation_challenge;
 
 pub(crate) mod shape_general_name;
 

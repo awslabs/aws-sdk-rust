@@ -73,6 +73,8 @@ pub(crate) mod shape_get_approval_rule_template;
 
 pub(crate) mod shape_get_blob;
 
+pub(crate) mod shape_get_blob_differences;
+
 pub(crate) mod shape_get_branch;
 
 pub(crate) mod shape_get_comment;
@@ -350,6 +352,8 @@ pub(crate) mod shape_folder_content_size_limit_exceeded_exception;
 pub(crate) mod shape_folder_does_not_exist_exception;
 
 pub(crate) mod shape_get_approval_rule_template_input;
+
+pub(crate) mod shape_get_blob_differences_input;
 
 pub(crate) mod shape_get_blob_input;
 
@@ -725,6 +729,8 @@ pub(crate) mod shape_update_repository_encryption_key_input;
 
 pub(crate) mod shape_update_repository_name_input;
 
+pub(crate) mod shape_validation_exception;
+
 pub(crate) mod shape_approval_list;
 
 pub(crate) mod shape_approval_rule;
@@ -766,6 +772,8 @@ pub(crate) mod shape_conflict_resolution;
 pub(crate) mod shape_conflicts;
 
 pub(crate) mod shape_delete_file_entry;
+
+pub(crate) mod shape_diff_hunk_list;
 
 pub(crate) mod shape_difference_list;
 
@@ -849,6 +857,8 @@ pub(crate) mod shape_comments_for_pull_request;
 
 pub(crate) mod shape_conflict;
 
+pub(crate) mod shape_diff_hunk;
+
 pub(crate) mod shape_difference;
 
 pub(crate) mod shape_file;
@@ -907,6 +917,8 @@ pub(crate) mod shape_blob_metadata;
 
 pub(crate) mod shape_comments;
 
+pub(crate) mod shape_diff_change_list;
+
 pub(crate) mod shape_merge_hunk_detail;
 
 pub(crate) mod shape_pull_request_created_event_metadata;
@@ -926,5 +938,7 @@ pub(crate) mod shape_reaction_value_formats;
 pub(crate) mod shape_repository_trigger_event_list;
 
 pub(crate) mod shape_revision_children;
+
+pub(crate) mod shape_diff_change;
 
 pub(crate) mod shape_merge_metadata;

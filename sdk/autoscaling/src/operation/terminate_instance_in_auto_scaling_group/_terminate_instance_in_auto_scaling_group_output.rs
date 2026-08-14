@@ -5,12 +5,20 @@
 pub struct TerminateInstanceInAutoScalingGroupOutput {
     /// <p>A scaling activity.</p>
     pub activity: ::std::option::Option<crate::types::Activity>,
+    /// <p>The scaling activities related to terminating the instances from the Auto Scaling group.</p>
+    pub activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     _request_id: Option<String>,
 }
 impl TerminateInstanceInAutoScalingGroupOutput {
     /// <p>A scaling activity.</p>
     pub fn activity(&self) -> ::std::option::Option<&crate::types::Activity> {
         self.activity.as_ref()
+    }
+    /// <p>The scaling activities related to terminating the instances from the Auto Scaling group.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activities.is_none()`.
+    pub fn activities(&self) -> &[crate::types::Activity] {
+        self.activities.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for TerminateInstanceInAutoScalingGroupOutput {
@@ -30,6 +38,7 @@ impl TerminateInstanceInAutoScalingGroupOutput {
 #[non_exhaustive]
 pub struct TerminateInstanceInAutoScalingGroupOutputBuilder {
     pub(crate) activity: ::std::option::Option<crate::types::Activity>,
+    pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
     _request_id: Option<String>,
 }
 impl TerminateInstanceInAutoScalingGroupOutputBuilder {
@@ -47,6 +56,26 @@ impl TerminateInstanceInAutoScalingGroupOutputBuilder {
     pub fn get_activity(&self) -> &::std::option::Option<crate::types::Activity> {
         &self.activity
     }
+    /// Appends an item to `activities`.
+    ///
+    /// To override the contents of this collection use [`set_activities`](Self::set_activities).
+    ///
+    /// <p>The scaling activities related to terminating the instances from the Auto Scaling group.</p>
+    pub fn activities(mut self, input: crate::types::Activity) -> Self {
+        let mut v = self.activities.unwrap_or_default();
+        v.push(input);
+        self.activities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The scaling activities related to terminating the instances from the Auto Scaling group.</p>
+    pub fn set_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>) -> Self {
+        self.activities = input;
+        self
+    }
+    /// <p>The scaling activities related to terminating the instances from the Auto Scaling group.</p>
+    pub fn get_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+        &self.activities
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +89,7 @@ impl TerminateInstanceInAutoScalingGroupOutputBuilder {
     pub fn build(self) -> crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput {
         crate::operation::terminate_instance_in_auto_scaling_group::TerminateInstanceInAutoScalingGroupOutput {
             activity: self.activity,
+            activities: self.activities,
             _request_id: self._request_id,
         }
     }

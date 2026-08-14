@@ -81,7 +81,9 @@ pub struct RefreshPreferences {
     pub alarm_specification: ::std::option::Option<crate::types::AlarmSpecification>,
     /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
     /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
-    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p><important>
+    /// <p>Explicitly setting <code>MaxHealthyPercentage</code> to 100 is not equivalent to omitting it. When <code>MaxHealthyPercentage</code> is explicitly set and it is mathematically impossible to replace instances while honoring both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> bounds simultaneously, Auto Scaling launches a new instance before terminating an old one (temporarily exceeding the desired capacity). When <code>MaxHealthyPercentage</code> is omitted, Auto Scaling terminates an instance and launches its replacement simultaneously. This behavioral difference can affect workflows that depend on instance replacement ordering.</p>
+    /// </important>
     pub max_healthy_percentage: ::std::option::Option<i32>,
     /// <p>The amount of time, in seconds, to wait at the end of an instance refresh before the instance refresh is considered complete.</p>
     pub bake_time: ::std::option::Option<i32>,
@@ -184,7 +186,9 @@ impl RefreshPreferences {
     }
     /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
     /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
-    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p><important>
+    /// <p>Explicitly setting <code>MaxHealthyPercentage</code> to 100 is not equivalent to omitting it. When <code>MaxHealthyPercentage</code> is explicitly set and it is mathematically impossible to replace instances while honoring both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> bounds simultaneously, Auto Scaling launches a new instance before terminating an old one (temporarily exceeding the desired capacity). When <code>MaxHealthyPercentage</code> is omitted, Auto Scaling terminates an instance and launches its replacement simultaneously. This behavioral difference can affect workflows that depend on instance replacement ordering.</p>
+    /// </important>
     pub fn max_healthy_percentage(&self) -> ::std::option::Option<i32> {
         self.max_healthy_percentage
     }
@@ -522,21 +526,27 @@ impl RefreshPreferencesBuilder {
     }
     /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
     /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
-    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p><important>
+    /// <p>Explicitly setting <code>MaxHealthyPercentage</code> to 100 is not equivalent to omitting it. When <code>MaxHealthyPercentage</code> is explicitly set and it is mathematically impossible to replace instances while honoring both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> bounds simultaneously, Auto Scaling launches a new instance before terminating an old one (temporarily exceeding the desired capacity). When <code>MaxHealthyPercentage</code> is omitted, Auto Scaling terminates an instance and launches its replacement simultaneously. This behavioral difference can affect workflows that depend on instance replacement ordering.</p>
+    /// </important>
     pub fn max_healthy_percentage(mut self, input: i32) -> Self {
         self.max_healthy_percentage = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
     /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
-    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p><important>
+    /// <p>Explicitly setting <code>MaxHealthyPercentage</code> to 100 is not equivalent to omitting it. When <code>MaxHealthyPercentage</code> is explicitly set and it is mathematically impossible to replace instances while honoring both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> bounds simultaneously, Auto Scaling launches a new instance before terminating an old one (temporarily exceeding the desired capacity). When <code>MaxHealthyPercentage</code> is omitted, Auto Scaling terminates an instance and launches its replacement simultaneously. This behavioral difference can affect workflows that depend on instance replacement ordering.</p>
+    /// </important>
     pub fn set_max_healthy_percentage(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_healthy_percentage = input;
         self
     }
     /// <p>Specifies the maximum percentage of the group that can be in service and healthy, or pending, to support your workload when replacing instances. The value is expressed as a percentage of the desired capacity of the Auto Scaling group. Value range is 100 to 200.</p>
     /// <p>If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>, and the difference between them cannot be greater than 100. A larger range increases the number of instances that can be replaced at the same time.</p>
-    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p>
+    /// <p>If you do not specify this property, the default is 100 percent, or the percentage set in the instance maintenance policy for the Auto Scaling group, if defined.</p><important>
+    /// <p>Explicitly setting <code>MaxHealthyPercentage</code> to 100 is not equivalent to omitting it. When <code>MaxHealthyPercentage</code> is explicitly set and it is mathematically impossible to replace instances while honoring both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> bounds simultaneously, Auto Scaling launches a new instance before terminating an old one (temporarily exceeding the desired capacity). When <code>MaxHealthyPercentage</code> is omitted, Auto Scaling terminates an instance and launches its replacement simultaneously. This behavioral difference can affect workflows that depend on instance replacement ordering.</p>
+    /// </important>
     pub fn get_max_healthy_percentage(&self) -> &::std::option::Option<i32> {
         &self.max_healthy_percentage
     }

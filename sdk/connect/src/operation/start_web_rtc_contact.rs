@@ -271,6 +271,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartWebRTCCo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartWebRTCContactError {
+    /// <p>You do not have sufficient permissions to perform this action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Request processing failed because of an error or failure with the service.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>One or more of the specified parameters are not valid.</p>
@@ -314,6 +316,7 @@ impl StartWebRTCContactError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRequestException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -321,6 +324,10 @@ impl StartWebRTCContactError {
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartWebRTCContactError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `StartWebRTCContactError::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
@@ -346,6 +353,7 @@ impl StartWebRTCContactError {
 impl ::std::error::Error for StartWebRTCContactError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRequestException(_inner) => ::std::option::Option::Some(_inner),
@@ -358,6 +366,7 @@ impl ::std::error::Error for StartWebRTCContactError {
 impl ::std::fmt::Display for StartWebRTCContactError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::InvalidRequestException(_inner) => _inner.fmt(f),
@@ -384,6 +393,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartWebRTCContactError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartWebRTCContactError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRequestException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -21,14 +21,20 @@ pub fn ser_create_code_review_input_input(
         crate::protocol_serde::shape_cloud_watch_log::ser_cloud_watch_log(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.service_role {
-        object.key("serviceRole").string(var_7.as_str());
+    if let Some(var_7) = &input.max_task_hours {
+        object.key("maxTaskHours").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::Float((*var_7).into()),
+        );
     }
-    if let Some(var_8) = &input.title {
-        object.key("title").string(var_8.as_str());
+    if let Some(var_8) = &input.service_role {
+        object.key("serviceRole").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.validation_mode {
-        object.key("validationMode").string(var_9.as_str());
+    if let Some(var_9) = &input.title {
+        object.key("title").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.validation_mode {
+        object.key("validationMode").string(var_10.as_str());
     }
     Ok(())
 }

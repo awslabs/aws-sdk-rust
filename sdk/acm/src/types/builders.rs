@@ -29,6 +29,8 @@ pub use crate::types::_failure_details::FailureDetailsBuilder;
 
 pub use crate::types::_renewal_summary::RenewalSummaryBuilder;
 
+pub use crate::types::_update_summary::UpdateSummaryBuilder;
+
 pub use crate::types::_acme_account_summary::AcmeAccountSummaryBuilder;
 
 pub use crate::types::_acme_domain_validation_summary::AcmeDomainValidationSummaryBuilder;
@@ -36,6 +38,8 @@ pub use crate::types::_acme_domain_validation_summary::AcmeDomainValidationSumma
 pub use crate::types::_acme_endpoint_summary::AcmeEndpointSummaryBuilder;
 
 pub use crate::types::_acme_external_account_binding_summary::AcmeExternalAccountBindingSummaryBuilder;
+
+pub use crate::types::_domain_validation_summary::DomainValidationSummaryBuilder;
 
 pub use crate::types::_certificate_summary::CertificateSummaryBuilder;
 
@@ -53,6 +57,10 @@ pub use crate::types::_key_usage::KeyUsageBuilder;
 
 pub use crate::types::_extended_key_usage::ExtendedKeyUsageBuilder;
 
+pub use crate::types::_domain_validation_method_update_summary::DomainValidationMethodUpdateSummaryBuilder;
+
+pub use crate::types::_validation_configuration::ValidationConfigurationBuilder;
+
 pub use crate::types::_x509_attributes::X509AttributesBuilder;
 
 pub use crate::types::_resource_record::ResourceRecordBuilder;
@@ -64,6 +72,10 @@ pub use crate::types::_timestamp_range::TimestampRangeBuilder;
 pub use crate::types::_distinguished_name::DistinguishedNameBuilder;
 
 pub use crate::types::_acm_certificate_metadata::AcmCertificateMetadataBuilder;
+
+pub use crate::types::_email_validation_challenge::EmailValidationChallengeBuilder;
+
+pub use crate::types::_dns_validation_challenge::DnsValidationChallengeBuilder;
 
 pub use crate::types::_common_name_filter::CommonNameFilterBuilder;
 

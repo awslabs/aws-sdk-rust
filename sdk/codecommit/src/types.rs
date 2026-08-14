@@ -79,6 +79,8 @@ pub use crate::types::_merge_hunk::MergeHunk;
 
 pub use crate::types::_pull_request_event::PullRequestEvent;
 
+pub use crate::types::_diff_hunk::DiffHunk;
+
 pub use crate::types::_reaction_for_comment::ReactionForComment;
 
 pub use crate::types::_comments_for_compared_commit::CommentsForComparedCommit;
@@ -145,7 +147,11 @@ pub use crate::types::_merge_metadata::MergeMetadata;
 
 pub use crate::types::_replacement_type_enum::ReplacementTypeEnum;
 
+pub use crate::types::_diff_change::DiffChange;
+
 pub use crate::types::_repository_trigger_event_enum::RepositoryTriggerEventEnum;
+
+pub use crate::types::_diff_change_type::DiffChangeType;
 
 mod _approval;
 
@@ -198,6 +204,12 @@ mod _conflict_resolution;
 mod _conflict_resolution_strategy_type_enum;
 
 mod _delete_file_entry;
+
+mod _diff_change;
+
+mod _diff_change_type;
+
+mod _diff_hunk;
 
 mod _difference;
 

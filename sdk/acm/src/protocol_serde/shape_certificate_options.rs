@@ -9,6 +9,9 @@ pub fn ser_certificate_options(
     if let Some(var_2) = &input.export {
         object.key("Export").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.validation_method {
+        object.key("ValidationMethod").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -48,6 +51,13 @@ where
                             builder = builder.set_export(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::CertificateExport::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "ValidationMethod" => {
+                            builder = builder.set_validation_method(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ValidationMethod::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

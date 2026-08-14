@@ -193,6 +193,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "UpdateSummary" => {
+                            builder = builder.set_update_summary(crate::protocol_serde::shape_update_summary::de_update_summary(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "CertificateKeyPairOrigin" => {
                             builder = builder.set_certificate_key_pair_origin(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -50,6 +50,10 @@ pub struct Finding {
     pub verification_script: ::std::option::Option<crate::types::VerificationScript>,
     /// <p>The rationale provided by the alignment agent explaining how the finding was adjusted based on customer preferences.</p>
     pub alignment_rationale: ::std::option::Option<::std::string::String>,
+    /// <p>The list of pentest job identifiers for revalidation jobs that retested this finding.</p>
+    pub revalidation_job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The identifier of the original finding that this revalidation finding was produced from.</p>
+    pub original_finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the finding was last updated, in UTC format.</p>
@@ -152,6 +156,16 @@ impl Finding {
     pub fn alignment_rationale(&self) -> ::std::option::Option<&str> {
         self.alignment_rationale.as_deref()
     }
+    /// <p>The list of pentest job identifiers for revalidation jobs that retested this finding.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.revalidation_job_ids.is_none()`.
+    pub fn revalidation_job_ids(&self) -> &[::std::string::String] {
+        self.revalidation_job_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The identifier of the original finding that this revalidation finding was produced from.</p>
+    pub fn original_finding_id(&self) -> ::std::option::Option<&str> {
+        self.original_finding_id.as_deref()
+    }
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -195,6 +209,8 @@ pub struct FindingBuilder {
     pub(crate) code_locations: ::std::option::Option<::std::vec::Vec<crate::types::CodeLocation>>,
     pub(crate) verification_script: ::std::option::Option<crate::types::VerificationScript>,
     pub(crate) alignment_rationale: ::std::option::Option<::std::string::String>,
+    pub(crate) revalidation_job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) original_finding_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -529,6 +545,40 @@ impl FindingBuilder {
     pub fn get_alignment_rationale(&self) -> &::std::option::Option<::std::string::String> {
         &self.alignment_rationale
     }
+    /// Appends an item to `revalidation_job_ids`.
+    ///
+    /// To override the contents of this collection use [`set_revalidation_job_ids`](Self::set_revalidation_job_ids).
+    ///
+    /// <p>The list of pentest job identifiers for revalidation jobs that retested this finding.</p>
+    pub fn revalidation_job_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.revalidation_job_ids.unwrap_or_default();
+        v.push(input.into());
+        self.revalidation_job_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of pentest job identifiers for revalidation jobs that retested this finding.</p>
+    pub fn set_revalidation_job_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.revalidation_job_ids = input;
+        self
+    }
+    /// <p>The list of pentest job identifiers for revalidation jobs that retested this finding.</p>
+    pub fn get_revalidation_job_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.revalidation_job_ids
+    }
+    /// <p>The identifier of the original finding that this revalidation finding was produced from.</p>
+    pub fn original_finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.original_finding_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the original finding that this revalidation finding was produced from.</p>
+    pub fn set_original_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.original_finding_id = input;
+        self
+    }
+    /// <p>The identifier of the original finding that this revalidation finding was produced from.</p>
+    pub fn get_original_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.original_finding_id
+    }
     /// <p>The date and time the finding was created, in UTC format.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -596,6 +646,8 @@ impl FindingBuilder {
             code_locations: self.code_locations,
             verification_script: self.verification_script,
             alignment_rationale: self.alignment_rationale,
+            revalidation_job_ids: self.revalidation_job_ids,
+            original_finding_id: self.original_finding_id,
             created_at: self.created_at,
             updated_at: self.updated_at,
         })

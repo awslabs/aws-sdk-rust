@@ -67,6 +67,8 @@ pub use crate::types::_diff_source::DiffSource;
 
 pub use crate::types::_job_status::JobStatus;
 
+pub use crate::types::_job_type::JobType;
+
 pub use crate::types::_domain_verification_method::DomainVerificationMethod;
 
 pub use crate::types::_dns_verification::DnsVerification;
@@ -470,6 +472,8 @@ mod _integration_summary;
 mod _ip_address_type;
 
 mod _job_status;
+
+mod _job_type;
 
 mod _list_security_requirement_pack_filter;
 

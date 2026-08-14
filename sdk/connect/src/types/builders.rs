@@ -269,15 +269,17 @@ pub use crate::types::_widget_destination::WidgetDestinationBuilder;
 
 pub use crate::types::_web_notification_content::WebNotificationContentBuilder;
 
-pub use crate::types::_upload_url_metadata::UploadUrlMetadataBuilder;
+pub use crate::types::_ai_agent_input::AiAgentInputBuilder;
 
 pub use crate::types::_participant_details::ParticipantDetailsBuilder;
-
-pub use crate::types::_participant_configuration::ParticipantConfigurationBuilder;
 
 pub use crate::types::_chat_message::ChatMessageBuilder;
 
 pub use crate::types::_persistent_chat::PersistentChatBuilder;
+
+pub use crate::types::_upload_url_metadata::UploadUrlMetadataBuilder;
+
+pub use crate::types::_participant_configuration::ParticipantConfigurationBuilder;
 
 pub use crate::types::_analytics_configuration::AnalyticsConfigurationBuilder;
 

@@ -261,6 +261,8 @@ pub use crate::types::error::_file_too_large_exception::FileTooLargeExceptionBui
 
 pub use crate::types::error::_invalid_blob_id_exception::InvalidBlobIdExceptionBuilder;
 
+pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
+
 pub use crate::types::error::_invalid_reaction_user_arn_exception::InvalidReactionUserArnExceptionBuilder;
 
 pub use crate::types::error::_repository_not_associated_with_pull_request_exception::RepositoryNotAssociatedWithPullRequestExceptionBuilder;

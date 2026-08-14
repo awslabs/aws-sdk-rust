@@ -17,6 +17,24 @@ pub fn de_launch_instances_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "IdempotentCallInProgress" => crate::operation::launch_instances::LaunchInstancesError::IdempotentCallInProgressFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::IdempotentCallInProgressFaultBuilder::default();
+                output = crate::protocol_serde::shape_idempotent_call_in_progress_fault::de_idempotent_call_in_progress_fault_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::launch_instances::LaunchInstancesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "IdempotentParameterMismatch" => crate::operation::launch_instances::LaunchInstancesError::IdempotentParameterMismatchError({
             #[allow(unused_mut)]
             let mut tmp = {

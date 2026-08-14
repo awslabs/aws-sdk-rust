@@ -107,6 +107,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "maxTaskHours" => {
+                            builder = builder.set_max_task_hours(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()),
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

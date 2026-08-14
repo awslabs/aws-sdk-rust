@@ -24,6 +24,8 @@ pub struct UpdateCodeReviewOutput {
     pub code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     /// <p>The validation mode for the code review.</p>
     pub validation_mode: ::std::option::Option<crate::types::ValidationMode>,
+    /// <p>The maximum number of billable task hours configured for jobs started from this code review. Null if no budget cap is set.</p>
+    pub max_task_hours: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
 impl UpdateCodeReviewOutput {
@@ -68,6 +70,10 @@ impl UpdateCodeReviewOutput {
     pub fn validation_mode(&self) -> ::std::option::Option<&crate::types::ValidationMode> {
         self.validation_mode.as_ref()
     }
+    /// <p>The maximum number of billable task hours configured for jobs started from this code review. Null if no budget cap is set.</p>
+    pub fn max_task_hours(&self) -> ::std::option::Option<f64> {
+        self.max_task_hours
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateCodeReviewOutput {
     fn request_id(&self) -> Option<&str> {
@@ -95,6 +101,7 @@ pub struct UpdateCodeReviewOutputBuilder {
     pub(crate) agent_space_id: ::std::option::Option<::std::string::String>,
     pub(crate) code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::ValidationMode>,
+    pub(crate) max_task_hours: ::std::option::Option<f64>,
     _request_id: Option<String>,
 }
 impl UpdateCodeReviewOutputBuilder {
@@ -239,6 +246,20 @@ impl UpdateCodeReviewOutputBuilder {
     pub fn get_validation_mode(&self) -> &::std::option::Option<crate::types::ValidationMode> {
         &self.validation_mode
     }
+    /// <p>The maximum number of billable task hours configured for jobs started from this code review. Null if no budget cap is set.</p>
+    pub fn max_task_hours(mut self, input: f64) -> Self {
+        self.max_task_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of billable task hours configured for jobs started from this code review. Null if no budget cap is set.</p>
+    pub fn set_max_task_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.max_task_hours = input;
+        self
+    }
+    /// <p>The maximum number of billable task hours configured for jobs started from this code review. Null if no budget cap is set.</p>
+    pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
+        &self.max_task_hours
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -270,6 +291,7 @@ impl UpdateCodeReviewOutputBuilder {
             agent_space_id: self.agent_space_id,
             code_remediation_strategy: self.code_remediation_strategy,
             validation_mode: self.validation_mode,
+            max_task_hours: self.max_task_hours,
             _request_id: self._request_id,
         })
     }

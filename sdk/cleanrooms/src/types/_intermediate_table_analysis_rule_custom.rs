@@ -18,6 +18,10 @@ pub struct IntermediateTableAnalysisRuleCustom {
     pub differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
     /// <p>The list of columns that are not allowed in the query output.</p>
     pub disallowed_output_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The aggregation thresholds that each query output group must satisfy. Clean Rooms filters out any group that represents fewer than the specified number of distinct identities. You can specify at most one threshold. You can't use aggregation thresholds with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub aggregation_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::AggregationThreshold>>,
+    /// <p>The controls that restrict how a query can compare the columns in the intermediate table. You can't use comparison controls with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub comparison_controls: ::std::option::Option<crate::types::ComparisonControls>,
 }
 impl IntermediateTableAnalysisRuleCustom {
     /// <p>The list of allowed analyses that can be performed on the intermediate table.</p>
@@ -58,6 +62,16 @@ impl IntermediateTableAnalysisRuleCustom {
     pub fn disallowed_output_columns(&self) -> &[::std::string::String] {
         self.disallowed_output_columns.as_deref().unwrap_or_default()
     }
+    /// <p>The aggregation thresholds that each query output group must satisfy. Clean Rooms filters out any group that represents fewer than the specified number of distinct identities. You can specify at most one threshold. You can't use aggregation thresholds with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregation_thresholds.is_none()`.
+    pub fn aggregation_thresholds(&self) -> &[crate::types::AggregationThreshold] {
+        self.aggregation_thresholds.as_deref().unwrap_or_default()
+    }
+    /// <p>The controls that restrict how a query can compare the columns in the intermediate table. You can't use comparison controls with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub fn comparison_controls(&self) -> ::std::option::Option<&crate::types::ComparisonControls> {
+        self.comparison_controls.as_ref()
+    }
 }
 impl IntermediateTableAnalysisRuleCustom {
     /// Creates a new builder-style object to manufacture [`IntermediateTableAnalysisRuleCustom`](crate::types::IntermediateTableAnalysisRuleCustom).
@@ -77,6 +91,8 @@ pub struct IntermediateTableAnalysisRuleCustomBuilder {
     pub(crate) allowed_result_receivers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) differential_privacy: ::std::option::Option<crate::types::DifferentialPrivacyConfiguration>,
     pub(crate) disallowed_output_columns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) aggregation_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::AggregationThreshold>>,
+    pub(crate) comparison_controls: ::std::option::Option<crate::types::ComparisonControls>,
 }
 impl IntermediateTableAnalysisRuleCustomBuilder {
     /// Appends an item to `allowed_analyses`.
@@ -207,6 +223,40 @@ impl IntermediateTableAnalysisRuleCustomBuilder {
     pub fn get_disallowed_output_columns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.disallowed_output_columns
     }
+    /// Appends an item to `aggregation_thresholds`.
+    ///
+    /// To override the contents of this collection use [`set_aggregation_thresholds`](Self::set_aggregation_thresholds).
+    ///
+    /// <p>The aggregation thresholds that each query output group must satisfy. Clean Rooms filters out any group that represents fewer than the specified number of distinct identities. You can specify at most one threshold. You can't use aggregation thresholds with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub fn aggregation_thresholds(mut self, input: crate::types::AggregationThreshold) -> Self {
+        let mut v = self.aggregation_thresholds.unwrap_or_default();
+        v.push(input);
+        self.aggregation_thresholds = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The aggregation thresholds that each query output group must satisfy. Clean Rooms filters out any group that represents fewer than the specified number of distinct identities. You can specify at most one threshold. You can't use aggregation thresholds with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub fn set_aggregation_thresholds(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationThreshold>>) -> Self {
+        self.aggregation_thresholds = input;
+        self
+    }
+    /// <p>The aggregation thresholds that each query output group must satisfy. Clean Rooms filters out any group that represents fewer than the specified number of distinct identities. You can specify at most one threshold. You can't use aggregation thresholds with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub fn get_aggregation_thresholds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationThreshold>> {
+        &self.aggregation_thresholds
+    }
+    /// <p>The controls that restrict how a query can compare the columns in the intermediate table. You can't use comparison controls with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub fn comparison_controls(mut self, input: crate::types::ComparisonControls) -> Self {
+        self.comparison_controls = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The controls that restrict how a query can compare the columns in the intermediate table. You can't use comparison controls with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub fn set_comparison_controls(mut self, input: ::std::option::Option<crate::types::ComparisonControls>) -> Self {
+        self.comparison_controls = input;
+        self
+    }
+    /// <p>The controls that restrict how a query can compare the columns in the intermediate table. You can't use comparison controls with differential privacy, or when <code>allowedAnalyses</code> allows only jobs.</p>
+    pub fn get_comparison_controls(&self) -> &::std::option::Option<crate::types::ComparisonControls> {
+        &self.comparison_controls
+    }
     /// Consumes the builder and constructs a [`IntermediateTableAnalysisRuleCustom`](crate::types::IntermediateTableAnalysisRuleCustom).
     pub fn build(self) -> crate::types::IntermediateTableAnalysisRuleCustom {
         crate::types::IntermediateTableAnalysisRuleCustom {
@@ -217,6 +267,8 @@ impl IntermediateTableAnalysisRuleCustomBuilder {
             allowed_result_receivers: self.allowed_result_receivers,
             differential_privacy: self.differential_privacy,
             disallowed_output_columns: self.disallowed_output_columns,
+            aggregation_thresholds: self.aggregation_thresholds,
+            comparison_controls: self.comparison_controls,
         }
     }
 }

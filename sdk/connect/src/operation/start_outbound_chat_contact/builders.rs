@@ -262,17 +262,17 @@ impl StartOutboundChatContactFluentBuilder {
     pub fn get_chat_duration_in_minutes(&self) -> &::std::option::Option<i32> {
         self.inner.get_chat_duration_in_minutes()
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn participant_details(mut self, input: crate::types::ParticipantDetails) -> Self {
         self.inner = self.inner.participant_details(input);
         self
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetails>) -> Self {
         self.inner = self.inner.set_participant_details(input);
         self
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         self.inner.get_participant_details()
     }

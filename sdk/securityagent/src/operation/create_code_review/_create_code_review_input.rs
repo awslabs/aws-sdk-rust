@@ -18,6 +18,8 @@ pub struct CreateCodeReviewInput {
     pub code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     /// <p>The validation mode for the code review. Valid values are SIMULATED and DISABLED.</p>
     pub validation_mode: ::std::option::Option<crate::types::ValidationMode>,
+    /// <p>The maximum number of billable task hours allowed for jobs started from this code review. Must be a positive number. If not set, jobs run to completion with no budget cap.</p>
+    pub max_task_hours: ::std::option::Option<f64>,
 }
 impl CreateCodeReviewInput {
     /// <p>The title of the code review.</p>
@@ -48,6 +50,10 @@ impl CreateCodeReviewInput {
     pub fn validation_mode(&self) -> ::std::option::Option<&crate::types::ValidationMode> {
         self.validation_mode.as_ref()
     }
+    /// <p>The maximum number of billable task hours allowed for jobs started from this code review. Must be a positive number. If not set, jobs run to completion with no budget cap.</p>
+    pub fn max_task_hours(&self) -> ::std::option::Option<f64> {
+        self.max_task_hours
+    }
 }
 impl CreateCodeReviewInput {
     /// Creates a new builder-style object to manufacture [`CreateCodeReviewInput`](crate::operation::create_code_review::CreateCodeReviewInput).
@@ -67,6 +73,7 @@ pub struct CreateCodeReviewInputBuilder {
     pub(crate) log_config: ::std::option::Option<crate::types::CloudWatchLog>,
     pub(crate) code_remediation_strategy: ::std::option::Option<crate::types::CodeRemediationStrategy>,
     pub(crate) validation_mode: ::std::option::Option<crate::types::ValidationMode>,
+    pub(crate) max_task_hours: ::std::option::Option<f64>,
 }
 impl CreateCodeReviewInputBuilder {
     /// <p>The title of the code review.</p>
@@ -170,6 +177,20 @@ impl CreateCodeReviewInputBuilder {
     pub fn get_validation_mode(&self) -> &::std::option::Option<crate::types::ValidationMode> {
         &self.validation_mode
     }
+    /// <p>The maximum number of billable task hours allowed for jobs started from this code review. Must be a positive number. If not set, jobs run to completion with no budget cap.</p>
+    pub fn max_task_hours(mut self, input: f64) -> Self {
+        self.max_task_hours = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of billable task hours allowed for jobs started from this code review. Must be a positive number. If not set, jobs run to completion with no budget cap.</p>
+    pub fn set_max_task_hours(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.max_task_hours = input;
+        self
+    }
+    /// <p>The maximum number of billable task hours allowed for jobs started from this code review. Must be a positive number. If not set, jobs run to completion with no budget cap.</p>
+    pub fn get_max_task_hours(&self) -> &::std::option::Option<f64> {
+        &self.max_task_hours
+    }
     /// Consumes the builder and constructs a [`CreateCodeReviewInput`](crate::operation::create_code_review::CreateCodeReviewInput).
     pub fn build(
         self,
@@ -182,6 +203,7 @@ impl CreateCodeReviewInputBuilder {
             log_config: self.log_config,
             code_remediation_strategy: self.code_remediation_strategy,
             validation_mode: self.validation_mode,
+            max_task_hours: self.max_task_hours,
         })
     }
 }

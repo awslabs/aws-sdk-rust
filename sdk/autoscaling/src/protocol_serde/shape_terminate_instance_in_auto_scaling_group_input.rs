@@ -11,9 +11,25 @@ pub fn ser_terminate_instance_in_auto_scaling_group_input_input_input(
         scope_1.string(var_2);
     }
     #[allow(unused_mut)]
-    let mut scope_3 = writer.prefix("ShouldDecrementDesiredCapacity");
-    if let Some(var_4) = &input.should_decrement_desired_capacity {
-        scope_3.boolean(*var_4);
+    let mut scope_3 = writer.prefix("InstanceIds");
+    if let Some(var_4) = &input.instance_ids {
+        let mut list_6 = scope_3.start_list(false, None);
+        for item_5 in var_4 {
+            #[allow(unused_mut)]
+            let mut entry_7 = list_6.entry();
+            entry_7.string(item_5);
+        }
+        list_6.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_9) = &input.auto_scaling_group_name {
+        scope_8.string(var_9);
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("ShouldDecrementDesiredCapacity");
+    if let Some(var_11) = &input.should_decrement_desired_capacity {
+        scope_10.boolean(*var_11);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

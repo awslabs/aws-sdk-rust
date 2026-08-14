@@ -24,6 +24,7 @@ Branches, by calling the following:
 Files, by calling the following:
   - DeleteFile, which deletes the content of a specified file from a specified branch.
   - GetBlob, which returns the base-64 encoded content of an individual Git blob object in a repository.
+  - GetBlobDifferences, which returns a structured, line-level diff between two blob versions in a repository, with optional surrounding context lines.
   - GetFile, which returns the base-64 encoded content of a specified file.
   - GetFolder, which returns the contents of a specified folder or directory.
   - ListFileCommitHistory, which retrieves a list of commits and changes to a specified file.
@@ -117,7 +118,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-codecommit = "1.107.0"
+aws-sdk-codecommit = "1.108.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -169,6 +169,21 @@ pub(crate) fn get_blob_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_blob_differences_output_output_correct_errors(
+    mut builder: crate::operation::get_blob_differences::builders::GetBlobDifferencesOutputBuilder,
+) -> crate::operation::get_blob_differences::builders::GetBlobDifferencesOutputBuilder {
+    if builder.hunks.is_none() {
+        builder.hunks = Some(Default::default())
+    }
+    if builder.is_binary.is_none() {
+        builder.is_binary = Some(Default::default())
+    }
+    if builder.after_blob_size.is_none() {
+        builder.after_blob_size = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_comment_reactions_output_output_correct_errors(
     mut builder: crate::operation::get_comment_reactions::builders::GetCommentReactionsOutputBuilder,
 ) -> crate::operation::get_comment_reactions::builders::GetCommentReactionsOutputBuilder {

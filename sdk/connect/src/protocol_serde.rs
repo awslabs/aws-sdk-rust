@@ -607,6 +607,8 @@ pub(crate) mod shape_send_outbound_email;
 
 pub(crate) mod shape_send_outbound_web_notification;
 
+pub(crate) mod shape_start_assistant_contact;
+
 pub(crate) mod shape_start_attached_file_upload;
 
 pub(crate) mod shape_start_chat_contact;
@@ -1129,6 +1131,8 @@ pub(crate) mod shape_send_outbound_web_notification_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_assistant_contact_input;
+
 pub(crate) mod shape_start_attached_file_upload_input;
 
 pub(crate) mod shape_start_chat_contact_input;
@@ -1334,6 +1338,8 @@ pub(crate) mod shape_agent_status_search_criteria;
 pub(crate) mod shape_agent_status_search_filter;
 
 pub(crate) mod shape_agent_status_summary_list;
+
+pub(crate) mod shape_ai_agent_input;
 
 pub(crate) mod shape_alias_configuration;
 
