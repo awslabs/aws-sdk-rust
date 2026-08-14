@@ -13,9 +13,13 @@ pub use crate::types::_network_configuration::NetworkConfiguration;
 
 pub use crate::types::_workflow_status::WorkflowStatus;
 
+pub use crate::types::_code::Code;
+
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_encryption_type::EncryptionType;
+
+pub use crate::types::_s3_location::S3Location;
 
 pub use crate::types::_workflow_run_status::WorkflowRunStatus;
 
@@ -35,6 +39,8 @@ pub use crate::types::_workflow_version_summary::WorkflowVersionSummary;
 
 pub use crate::types::_run_detail_summary::RunDetailSummary;
 
+mod _code;
+
 mod _definition_s3_location;
 
 mod _encryption_configuration;
@@ -48,6 +54,8 @@ mod _network_configuration;
 mod _run_detail_summary;
 
 mod _run_type;
+
+mod _s3_location;
 
 mod _schedule_configuration;
 

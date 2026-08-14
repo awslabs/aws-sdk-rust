@@ -253,6 +253,8 @@ pub use crate::types::_private_key_jwt_config::PrivateKeyJwtConfig;
 
 pub use crate::types::_payment_connector_type::PaymentConnectorType;
 
+pub use crate::types::_payment_connector_provision_mode::PaymentConnectorProvisionMode;
+
 pub use crate::types::_payment_connector_status::PaymentConnectorStatus;
 
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpoint;
@@ -1622,6 +1624,8 @@ mod _override_type;
 mod _passthrough_protocol_type;
 
 mod _passthrough_target_configuration;
+
+mod _payment_connector_provision_mode;
 
 mod _payment_connector_status;
 

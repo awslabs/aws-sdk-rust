@@ -274,6 +274,8 @@ pub enum PutAssetTypeError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Two processes are trying to modify a resource simultaneously.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
+    /// <p>A specified entity does not exist</p>
+    EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
     InternalServiceException(crate::types::error::InternalServiceException),
     /// <p>The input provided was not valid.</p>
@@ -315,6 +317,7 @@ impl PutAssetTypeError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EntityNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -328,6 +331,10 @@ impl PutAssetTypeError {
     /// Returns `true` if the error kind is `PutAssetTypeError::ConcurrentModificationException`.
     pub fn is_concurrent_modification_exception(&self) -> bool {
         matches!(self, Self::ConcurrentModificationException(_))
+    }
+    /// Returns `true` if the error kind is `PutAssetTypeError::EntityNotFoundException`.
+    pub fn is_entity_not_found_exception(&self) -> bool {
+        matches!(self, Self::EntityNotFoundException(_))
     }
     /// Returns `true` if the error kind is `PutAssetTypeError::InternalServiceException`.
     pub fn is_internal_service_exception(&self) -> bool {
@@ -347,6 +354,7 @@ impl ::std::error::Error for PutAssetTypeError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
+            Self::EntityNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -359,6 +367,7 @@ impl ::std::fmt::Display for PutAssetTypeError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
+            Self::EntityNotFoundException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -385,6 +394,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for PutAssetTypeE
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EntityNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

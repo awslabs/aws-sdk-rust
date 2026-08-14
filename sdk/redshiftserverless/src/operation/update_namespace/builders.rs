@@ -124,18 +124,21 @@ impl UpdateNamespaceFluentBuilder {
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.admin_user_password(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_admin_user_password()
     }

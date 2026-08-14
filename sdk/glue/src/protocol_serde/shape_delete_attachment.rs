@@ -163,6 +163,20 @@ pub(crate) fn de_delete_attachment(
                             .transpose()?,
                     );
                 }
+                "IterableFormName" => {
+                    builder = builder.set_iterable_form_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ItemIdentifier" => {
+                    builder = builder.set_item_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

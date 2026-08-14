@@ -175,6 +175,20 @@ pub(crate) fn de_associate_glossary_terms(
                             .transpose()?,
                     );
                 }
+                "IterableFormName" => {
+                    builder = builder.set_iterable_form_name(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "ItemIdentifier" => {
+                    builder = builder.set_item_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "GlossaryTerms" => {
                     builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_term_id_list::de_glossary_term_id_list(
                         tokens,

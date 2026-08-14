@@ -23,6 +23,8 @@ pub struct CreatePaymentManagerInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>A map of tag keys and values to assign to the payment manager.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encrypting sensitive payment manager data at rest. If you don't specify a key, the data is encrypted with an Amazon Web Services owned key.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreatePaymentManagerInput {
     /// <p>The name of the payment manager.</p>
@@ -59,6 +61,10 @@ impl CreatePaymentManagerInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encrypting sensitive payment manager data at rest. If you don't specify a key, the data is encrypted with an Amazon Web Services owned key.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl CreatePaymentManagerInput {
     /// Creates a new builder-style object to manufacture [`CreatePaymentManagerInput`](crate::operation::create_payment_manager::CreatePaymentManagerInput).
@@ -78,6 +84,7 @@ pub struct CreatePaymentManagerInputBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreatePaymentManagerInputBuilder {
     /// <p>The name of the payment manager.</p>
@@ -205,6 +212,20 @@ impl CreatePaymentManagerInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encrypting sensitive payment manager data at rest. If you don't specify a key, the data is encrypted with an Amazon Web Services owned key.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encrypting sensitive payment manager data at rest. If you don't specify a key, the data is encrypted with an Amazon Web Services owned key.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed KMS key to use for encrypting sensitive payment manager data at rest. If you don't specify a key, the data is encrypted with an Amazon Web Services owned key.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`CreatePaymentManagerInput`](crate::operation::create_payment_manager::CreatePaymentManagerInput).
     pub fn build(
         self,
@@ -218,6 +239,7 @@ impl CreatePaymentManagerInputBuilder {
             role_arn: self.role_arn,
             client_token: self.client_token,
             tags: self.tags,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }

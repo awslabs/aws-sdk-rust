@@ -185,6 +185,16 @@ pub(crate) fn logging_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3LocationBuilder) -> crate::types::builders::S3LocationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.object_key.is_none() {
+        builder.object_key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {

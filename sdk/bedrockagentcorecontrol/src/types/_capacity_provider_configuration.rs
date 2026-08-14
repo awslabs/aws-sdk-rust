@@ -28,6 +28,7 @@ pub struct CapacityProviderConfigurationBuilder {
 }
 impl CapacityProviderConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the capacity provider to use for the AgentCore Runtime.</p>
+    /// This field is required.
     pub fn capacity_provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.capacity_provider_arn = ::std::option::Option::Some(input.into());
         self

@@ -83,6 +83,21 @@ pub fn de_create_payment_session_http_error(
             }
             tmp
         }),
+        "SubscriptionRequiredException" => crate::operation::create_payment_session::CreatePaymentSessionError::SubscriptionRequiredException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SubscriptionRequiredExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_subscription_required_exception::de_subscription_required_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_payment_session::CreatePaymentSessionError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::subscription_required_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_payment_session::CreatePaymentSessionError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::create_payment_session::CreatePaymentSessionError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

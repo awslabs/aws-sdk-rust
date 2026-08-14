@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_check_ingested_document_acl;
+
 pub(crate) mod shape_create_invocation;
 
 pub(crate) mod shape_create_session;
@@ -44,6 +46,8 @@ pub(crate) mod shape_get_document_content;
 pub(crate) mod shape_get_execution_flow_snapshot;
 
 pub(crate) mod shape_get_flow_execution;
+
+pub(crate) mod shape_get_ingested_document_acl;
 
 pub(crate) mod shape_get_invocation_step;
 
@@ -105,6 +109,8 @@ pub(crate) mod shape_agentic_retrieve_stream_output;
 
 pub(crate) mod shape_bad_gateway_exception;
 
+pub(crate) mod shape_check_ingested_document_acl_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_invocation_input;
@@ -116,6 +122,8 @@ pub(crate) mod shape_dependency_failed_exception;
 pub(crate) mod shape_generate_query_input;
 
 pub(crate) mod shape_get_document_content_input;
+
+pub(crate) mod shape_get_ingested_document_acl_input;
 
 pub(crate) mod shape_get_invocation_step_input;
 
@@ -192,6 +200,8 @@ pub(crate) mod shape_collaborator;
 pub(crate) mod shape_collaborator_configuration;
 
 pub(crate) mod shape_custom_orchestration;
+
+pub(crate) mod shape_document_acl;
 
 pub(crate) mod shape_flow_execution_errors;
 
@@ -295,6 +305,8 @@ pub(crate) mod shape_citation_event;
 
 pub(crate) mod shape_conversation_history;
 
+pub(crate) mod shape_document_acl_membership;
+
 pub(crate) mod shape_external_sources_retrieve_and_generate_configuration;
 
 pub(crate) mod shape_file_part;
@@ -395,6 +407,8 @@ pub(crate) mod shape_bedrock_session_content_blocks;
 
 pub(crate) mod shape_condition_result_event;
 
+pub(crate) mod shape_document_acl_condition_list;
+
 pub(crate) mod shape_external_source;
 
 pub(crate) mod shape_external_sources_generation_configuration;
@@ -480,6 +494,8 @@ pub(crate) mod shape_caller_chain;
 pub(crate) mod shape_content_block;
 
 pub(crate) mod shape_content_body;
+
+pub(crate) mod shape_document_acl_condition;
 
 pub(crate) mod shape_filter_attribute;
 
@@ -579,6 +595,10 @@ pub(crate) mod shape_caller;
 
 pub(crate) mod shape_custom_orchestration_trace;
 
+pub(crate) mod shape_document_acl_group_list;
+
+pub(crate) mod shape_document_acl_user_list;
+
 pub(crate) mod shape_failure_trace;
 
 pub(crate) mod shape_flow_input_field;
@@ -650,6 +670,10 @@ pub(crate) mod shape_agentic_retrieve_warning;
 pub(crate) mod shape_api_invocation_input;
 
 pub(crate) mod shape_custom_orchestration_trace_event;
+
+pub(crate) mod shape_document_acl_group;
+
+pub(crate) mod shape_document_acl_user;
 
 pub(crate) mod shape_flow_execution_content;
 

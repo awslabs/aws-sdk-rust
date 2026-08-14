@@ -15,6 +15,8 @@ pub struct UpdatePaymentManagerInput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The updated Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt sensitive payment manager data at rest.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePaymentManagerInput {
     /// <p>The unique identifier of the payment manager to update.</p>
@@ -41,6 +43,10 @@ impl UpdatePaymentManagerInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The updated Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt sensitive payment manager data at rest.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl UpdatePaymentManagerInput {
     /// Creates a new builder-style object to manufacture [`UpdatePaymentManagerInput`](crate::operation::update_payment_manager::UpdatePaymentManagerInput).
@@ -59,6 +65,7 @@ pub struct UpdatePaymentManagerInputBuilder {
     pub(crate) authorizer_configuration: ::std::option::Option<crate::types::AuthorizerConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdatePaymentManagerInputBuilder {
     /// <p>The unique identifier of the payment manager to update.</p>
@@ -146,6 +153,20 @@ impl UpdatePaymentManagerInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The updated Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt sensitive payment manager data at rest.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The updated Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt sensitive payment manager data at rest.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The updated Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt sensitive payment manager data at rest.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`UpdatePaymentManagerInput`](crate::operation::update_payment_manager::UpdatePaymentManagerInput).
     pub fn build(
         self,
@@ -158,6 +179,7 @@ impl UpdatePaymentManagerInputBuilder {
             authorizer_configuration: self.authorizer_configuration,
             role_arn: self.role_arn,
             client_token: self.client_token,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }

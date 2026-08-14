@@ -197,7 +197,11 @@ pub use crate::types::_available_limits::AvailableLimitsBuilder;
 
 pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInputBuilder;
 
+pub use crate::types::_mpp_payment_input::MppPaymentInputBuilder;
+
 pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutputBuilder;
+
+pub use crate::types::_mpp_payment_output::MppPaymentOutputBuilder;
 
 pub use crate::types::_registry_record_summary::RegistryRecordSummaryBuilder;
 

@@ -6,6 +6,8 @@
 pub enum PaymentOutput {
     /// <p>Output from a crypto X402 payment.</p>
     CryptoX402(crate::types::CryptoX402PaymentOutput),
+    /// <p>Contains the payment credential, ready to retry the request.</p>
+    Mpp(crate::types::MppPaymentOutput),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum PaymentOutput {
     Unknown,
 }
 impl PaymentOutput {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`CryptoX402`](crate::types::PaymentOutput::CryptoX402), extracting the inner [`CryptoX402PaymentOutput`](crate::types::CryptoX402PaymentOutput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_crypto_x402(&self) -> ::std::result::Result<&crate::types::CryptoX402PaymentOutput, &Self> {
@@ -30,6 +31,19 @@ impl PaymentOutput {
     /// Returns true if this is a [`CryptoX402`](crate::types::PaymentOutput::CryptoX402).
     pub fn is_crypto_x402(&self) -> bool {
         self.as_crypto_x402().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Mpp`](crate::types::PaymentOutput::Mpp), extracting the inner [`MppPaymentOutput`](crate::types::MppPaymentOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mpp(&self) -> ::std::result::Result<&crate::types::MppPaymentOutput, &Self> {
+        if let PaymentOutput::Mpp(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Mpp`](crate::types::PaymentOutput::Mpp).
+    pub fn is_mpp(&self) -> bool {
+        self.as_mpp().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

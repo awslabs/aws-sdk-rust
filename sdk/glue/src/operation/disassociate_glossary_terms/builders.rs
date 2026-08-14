@@ -122,6 +122,34 @@ impl DisassociateGlossaryTermsFluentBuilder {
     pub fn get_asset_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_asset_identifier()
     }
+    /// <p>The name of the iterable form. When specified along with <code>itemIdentifier</code>, the glossary terms are disassociated from an item within the iterable form rather than the asset itself.</p>
+    pub fn iterable_form_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.iterable_form_name(input.into());
+        self
+    }
+    /// <p>The name of the iterable form. When specified along with <code>itemIdentifier</code>, the glossary terms are disassociated from an item within the iterable form rather than the asset itself.</p>
+    pub fn set_iterable_form_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_iterable_form_name(input);
+        self
+    }
+    /// <p>The name of the iterable form. When specified along with <code>itemIdentifier</code>, the glossary terms are disassociated from an item within the iterable form rather than the asset itself.</p>
+    pub fn get_iterable_form_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_iterable_form_name()
+    }
+    /// <p>The identifier of the item within the iterable form. Required when <code>iterableFormName</code> is specified.</p>
+    pub fn item_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.item_identifier(input.into());
+        self
+    }
+    /// <p>The identifier of the item within the iterable form. Required when <code>iterableFormName</code> is specified.</p>
+    pub fn set_item_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_item_identifier(input);
+        self
+    }
+    /// <p>The identifier of the item within the iterable form. Required when <code>iterableFormName</code> is specified.</p>
+    pub fn get_item_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_item_identifier()
+    }
     ///
     /// Appends an item to `GlossaryTermIdentifiers`.
     ///

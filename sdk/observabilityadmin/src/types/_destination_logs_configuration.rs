@@ -10,6 +10,8 @@ pub struct DestinationLogsConfiguration {
     pub backup_configuration: ::std::option::Option<crate::types::LogsBackupConfiguration>,
     /// <p>Configuration that specifies a naming pattern for destination log groups created during centralization. The pattern supports static text and dynamic variables that are replaced with source attributes when log groups are created.</p>
     pub log_group_name_configuration: ::std::option::Option<crate::types::LogGroupNameConfiguration>,
+    /// <p>Specifies the tag propagation configuration for this centralization rule. When present, <code>LogGroupNameConfiguration</code> must use a <code>LogGroupNamePattern</code> that contains <code>${source.logGroup}</code>, <code>${source.accountId}</code>, and <code>${source.region}</code>.</p>
+    pub tag_propagation_configuration: ::std::option::Option<crate::types::TagPropagationConfiguration>,
 }
 impl DestinationLogsConfiguration {
     /// <p>The encryption configuration for centralization destination log groups.</p>
@@ -23,6 +25,10 @@ impl DestinationLogsConfiguration {
     /// <p>Configuration that specifies a naming pattern for destination log groups created during centralization. The pattern supports static text and dynamic variables that are replaced with source attributes when log groups are created.</p>
     pub fn log_group_name_configuration(&self) -> ::std::option::Option<&crate::types::LogGroupNameConfiguration> {
         self.log_group_name_configuration.as_ref()
+    }
+    /// <p>Specifies the tag propagation configuration for this centralization rule. When present, <code>LogGroupNameConfiguration</code> must use a <code>LogGroupNamePattern</code> that contains <code>${source.logGroup}</code>, <code>${source.accountId}</code>, and <code>${source.region}</code>.</p>
+    pub fn tag_propagation_configuration(&self) -> ::std::option::Option<&crate::types::TagPropagationConfiguration> {
+        self.tag_propagation_configuration.as_ref()
     }
 }
 impl DestinationLogsConfiguration {
@@ -39,6 +45,7 @@ pub struct DestinationLogsConfigurationBuilder {
     pub(crate) logs_encryption_configuration: ::std::option::Option<crate::types::LogsEncryptionConfiguration>,
     pub(crate) backup_configuration: ::std::option::Option<crate::types::LogsBackupConfiguration>,
     pub(crate) log_group_name_configuration: ::std::option::Option<crate::types::LogGroupNameConfiguration>,
+    pub(crate) tag_propagation_configuration: ::std::option::Option<crate::types::TagPropagationConfiguration>,
 }
 impl DestinationLogsConfigurationBuilder {
     /// <p>The encryption configuration for centralization destination log groups.</p>
@@ -83,12 +90,27 @@ impl DestinationLogsConfigurationBuilder {
     pub fn get_log_group_name_configuration(&self) -> &::std::option::Option<crate::types::LogGroupNameConfiguration> {
         &self.log_group_name_configuration
     }
+    /// <p>Specifies the tag propagation configuration for this centralization rule. When present, <code>LogGroupNameConfiguration</code> must use a <code>LogGroupNamePattern</code> that contains <code>${source.logGroup}</code>, <code>${source.accountId}</code>, and <code>${source.region}</code>.</p>
+    pub fn tag_propagation_configuration(mut self, input: crate::types::TagPropagationConfiguration) -> Self {
+        self.tag_propagation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the tag propagation configuration for this centralization rule. When present, <code>LogGroupNameConfiguration</code> must use a <code>LogGroupNamePattern</code> that contains <code>${source.logGroup}</code>, <code>${source.accountId}</code>, and <code>${source.region}</code>.</p>
+    pub fn set_tag_propagation_configuration(mut self, input: ::std::option::Option<crate::types::TagPropagationConfiguration>) -> Self {
+        self.tag_propagation_configuration = input;
+        self
+    }
+    /// <p>Specifies the tag propagation configuration for this centralization rule. When present, <code>LogGroupNameConfiguration</code> must use a <code>LogGroupNamePattern</code> that contains <code>${source.logGroup}</code>, <code>${source.accountId}</code>, and <code>${source.region}</code>.</p>
+    pub fn get_tag_propagation_configuration(&self) -> &::std::option::Option<crate::types::TagPropagationConfiguration> {
+        &self.tag_propagation_configuration
+    }
     /// Consumes the builder and constructs a [`DestinationLogsConfiguration`](crate::types::DestinationLogsConfiguration).
     pub fn build(self) -> crate::types::DestinationLogsConfiguration {
         crate::types::DestinationLogsConfiguration {
             logs_encryption_configuration: self.logs_encryption_configuration,
             backup_configuration: self.backup_configuration,
             log_group_name_configuration: self.log_group_name_configuration,
+            tag_propagation_configuration: self.tag_propagation_configuration,
         }
     }
 }

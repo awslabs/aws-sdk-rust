@@ -6,17 +6,23 @@ pub fn ser_disassociate_glossary_terms_input_input(
     if let Some(var_1) = &input.asset_identifier {
         object.key("AssetIdentifier").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.glossary_term_identifiers {
-        let mut array_3 = object.key("GlossaryTermIdentifiers").start_array();
-        for item_4 in var_2 {
+    if let Some(var_2) = &input.iterable_form_name {
+        object.key("IterableFormName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.item_identifier {
+        object.key("ItemIdentifier").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.glossary_term_identifiers {
+        let mut array_5 = object.key("GlossaryTermIdentifiers").start_array();
+        for item_6 in var_4 {
             {
-                array_3.value().string(item_4.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
-    if let Some(var_5) = &input.client_token {
-        object.key("ClientToken").string(var_5.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("ClientToken").string(var_7.as_str());
     }
     Ok(())
 }

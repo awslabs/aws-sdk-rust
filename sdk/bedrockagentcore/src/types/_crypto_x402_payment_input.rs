@@ -8,6 +8,9 @@ pub struct CryptoX402PaymentInput {
     pub version: ::std::string::String,
     /// <p>The X402 payment payload.</p>
     pub payload: ::aws_smithy_types::Document,
+    /// <p>The maximum on-chain Permit2 allowance to grant before signing the payment authorization, in the asset's smallest denomination. This field is valid only for the <code>upto</code> (metered) scheme; supplying it for the <code>exact</code> scheme returns a validation error.</p>
+    /// <p>When set, the service approves an ERC-20 allowance for this amount before processing the payment. The approval sets, rather than adds to, the wallet's allowance. Set this field only when the wallet needs approving, for example on its first <code>upto</code> payment, to avoid a redundant on-chain transaction. Omit the field to skip allowance handling. This is the default, and the only behavior for the <code>exact</code> scheme.</p>
+    pub permit2_allowance_limit: ::std::option::Option<::std::string::String>,
 }
 impl CryptoX402PaymentInput {
     /// <p>The version of the X402 protocol.</p>
@@ -19,12 +22,18 @@ impl CryptoX402PaymentInput {
     pub fn payload(&self) -> &::aws_smithy_types::Document {
         &self.payload
     }
+    /// <p>The maximum on-chain Permit2 allowance to grant before signing the payment authorization, in the asset's smallest denomination. This field is valid only for the <code>upto</code> (metered) scheme; supplying it for the <code>exact</code> scheme returns a validation error.</p>
+    /// <p>When set, the service approves an ERC-20 allowance for this amount before processing the payment. The approval sets, rather than adds to, the wallet's allowance. Set this field only when the wallet needs approving, for example on its first <code>upto</code> payment, to avoid a redundant on-chain transaction. Omit the field to skip allowance handling. This is the default, and the only behavior for the <code>exact</code> scheme.</p>
+    pub fn permit2_allowance_limit(&self) -> ::std::option::Option<&str> {
+        self.permit2_allowance_limit.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CryptoX402PaymentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CryptoX402PaymentInput");
         formatter.field("version", &self.version);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
+        formatter.field("permit2_allowance_limit", &self.permit2_allowance_limit);
         formatter.finish()
     }
 }
@@ -41,6 +50,7 @@ impl CryptoX402PaymentInput {
 pub struct CryptoX402PaymentInputBuilder {
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) payload: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) permit2_allowance_limit: ::std::option::Option<::std::string::String>,
 }
 impl CryptoX402PaymentInputBuilder {
     /// <p>The version of the X402 protocol.</p>
@@ -73,6 +83,23 @@ impl CryptoX402PaymentInputBuilder {
     pub fn get_payload(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.payload
     }
+    /// <p>The maximum on-chain Permit2 allowance to grant before signing the payment authorization, in the asset's smallest denomination. This field is valid only for the <code>upto</code> (metered) scheme; supplying it for the <code>exact</code> scheme returns a validation error.</p>
+    /// <p>When set, the service approves an ERC-20 allowance for this amount before processing the payment. The approval sets, rather than adds to, the wallet's allowance. Set this field only when the wallet needs approving, for example on its first <code>upto</code> payment, to avoid a redundant on-chain transaction. Omit the field to skip allowance handling. This is the default, and the only behavior for the <code>exact</code> scheme.</p>
+    pub fn permit2_allowance_limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.permit2_allowance_limit = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The maximum on-chain Permit2 allowance to grant before signing the payment authorization, in the asset's smallest denomination. This field is valid only for the <code>upto</code> (metered) scheme; supplying it for the <code>exact</code> scheme returns a validation error.</p>
+    /// <p>When set, the service approves an ERC-20 allowance for this amount before processing the payment. The approval sets, rather than adds to, the wallet's allowance. Set this field only when the wallet needs approving, for example on its first <code>upto</code> payment, to avoid a redundant on-chain transaction. Omit the field to skip allowance handling. This is the default, and the only behavior for the <code>exact</code> scheme.</p>
+    pub fn set_permit2_allowance_limit(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.permit2_allowance_limit = input;
+        self
+    }
+    /// <p>The maximum on-chain Permit2 allowance to grant before signing the payment authorization, in the asset's smallest denomination. This field is valid only for the <code>upto</code> (metered) scheme; supplying it for the <code>exact</code> scheme returns a validation error.</p>
+    /// <p>When set, the service approves an ERC-20 allowance for this amount before processing the payment. The approval sets, rather than adds to, the wallet's allowance. Set this field only when the wallet needs approving, for example on its first <code>upto</code> payment, to avoid a redundant on-chain transaction. Omit the field to skip allowance handling. This is the default, and the only behavior for the <code>exact</code> scheme.</p>
+    pub fn get_permit2_allowance_limit(&self) -> &::std::option::Option<::std::string::String> {
+        &self.permit2_allowance_limit
+    }
     /// Consumes the builder and constructs a [`CryptoX402PaymentInput`](crate::types::CryptoX402PaymentInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`version`](crate::types::builders::CryptoX402PaymentInputBuilder::version)
@@ -91,6 +118,7 @@ impl CryptoX402PaymentInputBuilder {
                     "payload was not specified but it is required when building CryptoX402PaymentInput",
                 )
             })?,
+            permit2_allowance_limit: self.permit2_allowance_limit,
         })
     }
 }
@@ -99,6 +127,7 @@ impl ::std::fmt::Debug for CryptoX402PaymentInputBuilder {
         let mut formatter = f.debug_struct("CryptoX402PaymentInputBuilder");
         formatter.field("version", &self.version);
         formatter.field("payload", &"*** Sensitive Data Redacted ***");
+        formatter.field("permit2_allowance_limit", &self.permit2_allowance_limit);
         formatter.finish()
     }
 }

@@ -11,6 +11,8 @@ pub use crate::types::_query_generation_input::QueryGenerationInputBuilder;
 
 pub use crate::types::_transformation_configuration::TransformationConfigurationBuilder;
 
+pub use crate::types::_document_acl::DocumentAclBuilder;
+
 pub use crate::types::_session_state::SessionStateBuilder;
 
 pub use crate::types::_bedrock_model_configurations::BedrockModelConfigurationsBuilder;
@@ -82,6 +84,8 @@ pub use crate::types::_flow_multi_turn_input_request_event::FlowMultiTurnInputRe
 pub use crate::types::_text_to_sql_configuration::TextToSqlConfigurationBuilder;
 
 pub use crate::types::_generated_query::GeneratedQueryBuilder;
+
+pub use crate::types::_document_acl_membership::DocumentAclMembershipBuilder;
 
 pub use crate::types::_conversation_history::ConversationHistoryBuilder;
 
@@ -230,6 +234,8 @@ pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditio
 pub use crate::types::_flow_trace_node_action_event::FlowTraceNodeActionEventBuilder;
 
 pub use crate::types::_flow_trace_dependency_event::FlowTraceDependencyEventBuilder;
+
+pub use crate::types::_document_acl_condition::DocumentAclConditionBuilder;
 
 pub use crate::types::_api_result::ApiResultBuilder;
 
@@ -384,6 +390,10 @@ pub use crate::types::_flow_trace_node_input_field::FlowTraceNodeInputFieldBuild
 pub use crate::types::_flow_trace_node_output_field::FlowTraceNodeOutputFieldBuilder;
 
 pub use crate::types::_flow_trace_condition::FlowTraceConditionBuilder;
+
+pub use crate::types::_document_acl_user::DocumentAclUserBuilder;
+
+pub use crate::types::_document_acl_group::DocumentAclGroupBuilder;
 
 pub use crate::types::_content_body::ContentBodyBuilder;
 

@@ -276,8 +276,12 @@ pub enum ProcessPaymentError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The exception that occurs when the service encounters an unexpected internal error. This is a temporary condition that will resolve itself with retries. We recommend implementing exponential backoff retry logic in your application.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The exception that occurs when the specified resource does not exist. This can happen when using an invalid identifier or when trying to access a resource that has been deleted.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The exception that occurs when the request would cause a service quota to be exceeded. Review your service quotas and either reduce your request rate or request a quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>Returned when you attempt a wallet operation against a Coinbase Marketplace connector whose account does not hold an active Marketplace subscription and is not within the legacy exception period. Subscribe to the Marketplace listing before you retry the operation.</p>
+    SubscriptionRequiredException(crate::types::error::SubscriptionRequiredException),
     /// <p>The exception that occurs when the request was denied due to request throttling. This happens when you exceed the allowed request rate for an operation. Reduce the frequency of requests or implement exponential backoff retry logic in your application.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The exception that occurs when the input fails to satisfy the constraints specified by the service. Check the error message for details about which input parameter is invalid and correct your request.</p>
@@ -318,7 +322,9 @@ impl ProcessPaymentError {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::SubscriptionRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -336,9 +342,17 @@ impl ProcessPaymentError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
+    /// Returns `true` if the error kind is `ProcessPaymentError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `ProcessPaymentError::ServiceQuotaExceededException`.
     pub fn is_service_quota_exceeded_exception(&self) -> bool {
         matches!(self, Self::ServiceQuotaExceededException(_))
+    }
+    /// Returns `true` if the error kind is `ProcessPaymentError::SubscriptionRequiredException`.
+    pub fn is_subscription_required_exception(&self) -> bool {
+        matches!(self, Self::SubscriptionRequiredException(_))
     }
     /// Returns `true` if the error kind is `ProcessPaymentError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -355,7 +369,9 @@ impl ::std::error::Error for ProcessPaymentError {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
+            Self::SubscriptionRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -368,7 +384,9 @@ impl ::std::fmt::Display for ProcessPaymentError {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            Self::SubscriptionRequiredException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -395,7 +413,9 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ProcessPaymen
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::SubscriptionRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

@@ -21,6 +21,8 @@ pub use crate::types::_transformation_configuration::TransformationConfiguration
 
 pub use crate::types::_document_output_format::DocumentOutputFormat;
 
+pub use crate::types::_document_acl::DocumentAcl;
+
 pub use crate::types::_session_state::SessionState;
 
 pub use crate::types::_bedrock_model_configurations::BedrockModelConfigurations;
@@ -124,6 +126,8 @@ pub use crate::types::_query_transformation_mode::QueryTransformationMode;
 pub use crate::types::_text_to_sql_configuration::TextToSqlConfiguration;
 
 pub use crate::types::_generated_query::GeneratedQuery;
+
+pub use crate::types::_document_acl_membership::DocumentAclMembership;
 
 pub use crate::types::_conversation_history::ConversationHistory;
 
@@ -259,6 +263,8 @@ pub use crate::types::_text_to_sql_knowledge_base_configuration::TextToSqlKnowle
 
 pub use crate::types::_generated_query_type::GeneratedQueryType;
 
+pub use crate::types::_document_acl_member_relation::DocumentAclMemberRelation;
+
 pub use crate::types::_invocation_result_member::InvocationResultMember;
 
 pub use crate::types::_input_file::InputFile;
@@ -350,6 +356,8 @@ pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditio
 pub use crate::types::_flow_trace_node_action_event::FlowTraceNodeActionEvent;
 
 pub use crate::types::_flow_trace_dependency_event::FlowTraceDependencyEvent;
+
+pub use crate::types::_document_acl_condition::DocumentAclCondition;
 
 pub use crate::types::_api_result::ApiResult;
 
@@ -567,6 +575,10 @@ pub use crate::types::_flow_trace_node_output_field::FlowTraceNodeOutputField;
 
 pub use crate::types::_flow_trace_condition::FlowTraceCondition;
 
+pub use crate::types::_document_acl_user::DocumentAclUser;
+
+pub use crate::types::_document_acl_group::DocumentAclGroup;
+
 pub use crate::types::_content_body::ContentBody;
 
 pub use crate::types::_content_block::ContentBlock;
@@ -634,6 +646,8 @@ pub use crate::types::_flow_trace_node_input_content::FlowTraceNodeInputContent;
 pub use crate::types::_flow_trace_node_input_source::FlowTraceNodeInputSource;
 
 pub use crate::types::_flow_trace_node_output_content::FlowTraceNodeOutputContent;
+
+pub use crate::types::_document_acl_membership_type::DocumentAclMembershipType;
 
 pub use crate::types::_guardrail_topic_policy_assessment::GuardrailTopicPolicyAssessment;
 
@@ -872,6 +886,20 @@ mod _custom_orchestration;
 mod _custom_orchestration_trace;
 
 mod _custom_orchestration_trace_event;
+
+mod _document_acl;
+
+mod _document_acl_condition;
+
+mod _document_acl_group;
+
+mod _document_acl_member_relation;
+
+mod _document_acl_membership;
+
+mod _document_acl_membership_type;
+
+mod _document_acl_user;
 
 mod _document_output_format;
 

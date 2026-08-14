@@ -107,6 +107,8 @@ pub(crate) mod shape_update_workflow_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_code;
+
 pub(crate) mod shape_definition_s3_location;
 
 pub(crate) mod shape_encryption_configuration;
@@ -136,6 +138,8 @@ pub(crate) mod shape_workflow_run_summaries;
 pub(crate) mod shape_workflow_summaries;
 
 pub(crate) mod shape_workflow_version_summaries;
+
+pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_security_group_ids;
 

@@ -7,6 +7,7 @@ pub struct UpdateNamespaceInput {
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     pub admin_username: ::std::option::Option<::std::string::String>,
@@ -30,6 +31,7 @@ impl UpdateNamespaceInput {
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
         self.admin_user_password.as_deref()
     }
@@ -120,18 +122,21 @@ impl UpdateNamespaceInputBuilder {
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_user_password
     }

@@ -9,6 +9,10 @@ pub use crate::types::_rule_health::RuleHealth;
 
 pub use crate::types::_centralization_failure_reason::CentralizationFailureReason;
 
+pub use crate::types::_tag_propagation_status::TagPropagationStatus;
+
+pub use crate::types::_tag_propagation_failure_reason::TagPropagationFailureReason;
+
 pub use crate::types::_integration_status::IntegrationStatus;
 
 pub use crate::types::_telemetry_enrichment_status::TelemetryEnrichmentStatus;
@@ -95,6 +99,8 @@ pub use crate::types::_logs_backup_configuration::LogsBackupConfiguration;
 
 pub use crate::types::_log_group_name_configuration::LogGroupNameConfiguration;
 
+pub use crate::types::_tag_propagation_configuration::TagPropagationConfiguration;
+
 pub use crate::types::_metrics_backup_configuration::MetricsBackupConfiguration;
 
 pub use crate::types::_output_format::OutputFormat;
@@ -110,6 +116,8 @@ pub use crate::types::_encryption_strategy::EncryptionStrategy;
 pub use crate::types::_encryption_conflict_resolution_strategy::EncryptionConflictResolutionStrategy;
 
 pub use crate::types::_encryption_scope::EncryptionScope;
+
+pub use crate::types::_tag_conflict_resolution_strategy::TagConflictResolutionStrategy;
 
 pub use crate::types::_advanced_event_selector::AdvancedEventSelector;
 
@@ -244,6 +252,14 @@ mod _source_metrics_configuration;
 mod _sse_algorithm;
 
 mod _status;
+
+mod _tag_conflict_resolution_strategy;
+
+mod _tag_propagation_configuration;
+
+mod _tag_propagation_failure_reason;
+
+mod _tag_propagation_status;
 
 mod _telemetry_configuration;
 

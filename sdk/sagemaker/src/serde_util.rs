@@ -3860,12 +3860,6 @@ pub(crate) fn resource_limits_correct_errors(
 pub(crate) fn processing_cluster_config_correct_errors(
     mut builder: crate::types::builders::ProcessingClusterConfigBuilder,
 ) -> crate::types::builders::ProcessingClusterConfigBuilder {
-    if builder.instance_count.is_none() {
-        builder.instance_count = Some(Default::default())
-    }
-    if builder.instance_type.is_none() {
-        builder.instance_type = "no value was set".parse::<crate::types::ProcessingInstanceType>().ok()
-    }
     if builder.volume_size_in_gb.is_none() {
         builder.volume_size_in_gb = Some(Default::default())
     }

@@ -483,6 +483,8 @@ pub(crate) mod shape_set_token_vault_cmk_input;
 
 pub(crate) mod shape_start_policy_generation_input;
 
+pub(crate) mod shape_subscription_required_exception;
+
 pub(crate) mod shape_synchronize_gateway_targets_input;
 
 pub(crate) mod shape_tag_resource_input;

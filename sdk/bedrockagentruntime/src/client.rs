@@ -138,6 +138,8 @@ impl Client {
 
 mod agentic_retrieve_stream;
 
+mod check_ingested_document_acl;
+
 mod create_invocation;
 
 mod create_session;
@@ -184,6 +186,8 @@ mod get_document_content;
 mod get_execution_flow_snapshot;
 
 mod get_flow_execution;
+
+mod get_ingested_document_acl;
 
 mod get_invocation_step;
 

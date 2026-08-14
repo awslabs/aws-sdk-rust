@@ -21,6 +21,12 @@ pub fn ser_destination_logs_configuration(
         crate::protocol_serde::shape_log_group_name_configuration::ser_log_group_name_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.tag_propagation_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("TagPropagationConfiguration").start_object();
+        crate::protocol_serde::shape_tag_propagation_configuration::ser_tag_propagation_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,15 @@ where
                         "LogGroupNameConfiguration" => {
                             builder = builder.set_log_group_name_configuration(
                                 crate::protocol_serde::shape_log_group_name_configuration::de_log_group_name_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "TagPropagationConfiguration" => {
+                            builder = builder.set_tag_propagation_configuration(
+                                crate::protocol_serde::shape_tag_propagation_configuration::de_tag_propagation_configuration(
                                     tokens,
                                     _value,
                                     depth + 1,

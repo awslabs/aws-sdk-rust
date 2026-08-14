@@ -102,6 +102,21 @@ pub fn de_create_payment_connector_http_error(
             }
             tmp
         }),
+        "SubscriptionRequiredException" => crate::operation::create_payment_connector::CreatePaymentConnectorError::SubscriptionRequiredException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SubscriptionRequiredExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_subscription_required_exception::de_subscription_required_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_payment_connector::CreatePaymentConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::subscription_required_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_payment_connector::CreatePaymentConnectorError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::create_payment_connector::CreatePaymentConnectorError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -182,6 +197,13 @@ pub(crate) fn de_create_payment_connector(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "authorizationUrl" => {
+                    builder = builder.set_authorization_url(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

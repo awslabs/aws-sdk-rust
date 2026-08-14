@@ -123,6 +123,15 @@ pub(crate) fn metrics_backup_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn tag_propagation_configuration_correct_errors(
+    mut builder: crate::types::builders::TagPropagationConfigurationBuilder,
+) -> crate::types::builders::TagPropagationConfigurationBuilder {
+    if builder.destination_role_arn.is_none() {
+        builder.destination_role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn advanced_event_selector_correct_errors(
     mut builder: crate::types::builders::AdvancedEventSelectorBuilder,
 ) -> crate::types::builders::AdvancedEventSelectorBuilder {

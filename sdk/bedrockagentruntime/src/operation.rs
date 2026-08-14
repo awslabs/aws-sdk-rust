@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AgenticRetrieveStream` operation.
 pub mod agentic_retrieve_stream;
 
+/// Types for the `CheckIngestedDocumentAcl` operation.
+pub mod check_ingested_document_acl;
+
 /// Types for the `CreateInvocation` operation.
 pub mod create_invocation;
 
@@ -33,6 +36,9 @@ pub mod get_execution_flow_snapshot;
 
 /// Types for the `GetFlowExecution` operation.
 pub mod get_flow_execution;
+
+/// Types for the `GetIngestedDocumentAcl` operation.
+pub mod get_ingested_document_acl;
 
 /// Types for the `GetInvocationStep` operation.
 pub mod get_invocation_step;

@@ -13,6 +13,7 @@
 /// # let paymenttype = unimplemented!();
 /// match paymenttype {
 ///     PaymentType::CryptoX402 => { /* ... */ },
+///     PaymentType::Mpp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum PaymentType {
     #[allow(missing_docs)] // documentation missing in model
     CryptoX402,
+    #[allow(missing_docs)] // documentation missing in model
+    Mpp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for PaymentType {
     fn from(s: &str) -> Self {
         match s {
             "CRYPTO_X402" => PaymentType::CryptoX402,
+            "MPP" => PaymentType::Mpp,
             other => PaymentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl PaymentType {
     pub fn as_str(&self) -> &str {
         match self {
             PaymentType::CryptoX402 => "CRYPTO_X402",
+            PaymentType::Mpp => "MPP",
             PaymentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CRYPTO_X402"]
+        &["CRYPTO_X402", "MPP"]
     }
 }
 impl ::std::convert::AsRef<str> for PaymentType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for PaymentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PaymentType::CryptoX402 => write!(f, "CRYPTO_X402"),
+            PaymentType::Mpp => write!(f, "MPP"),
             PaymentType::Unknown(value) => write!(f, "{value}"),
         }
     }

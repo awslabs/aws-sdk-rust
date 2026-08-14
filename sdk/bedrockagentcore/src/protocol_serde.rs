@@ -293,6 +293,8 @@ pub(crate) mod shape_stop_runtime_session_input;
 
 pub(crate) mod shape_stop_runtime_session_output;
 
+pub(crate) mod shape_subscription_required_exception;
+
 pub(crate) mod shape_throttled_exception;
 
 pub(crate) mod shape_throttling_exception;
@@ -622,6 +624,10 @@ pub(crate) mod shape_mouse_move_result;
 pub(crate) mod shape_mouse_scroll_arguments;
 
 pub(crate) mod shape_mouse_scroll_result;
+
+pub(crate) mod shape_mpp_payment_input;
+
+pub(crate) mod shape_mpp_payment_output;
 
 pub(crate) mod shape_namespaces_list;
 
