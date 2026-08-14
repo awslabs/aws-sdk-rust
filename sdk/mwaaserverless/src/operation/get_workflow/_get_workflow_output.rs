@@ -25,6 +25,10 @@ pub struct GetWorkflowOutput {
     pub workflow_status: ::std::option::Option<crate::types::WorkflowStatus>,
     /// <p>The Amazon S3 location of the workflow definition file.</p>
     pub definition_s3_location: ::std::option::Option<crate::types::DefinitionS3Location>,
+    /// <p>The Amazon S3 location of the code artifacts provided during workflow creation or update.</p>
+    pub code: ::std::option::Option<crate::types::Code>,
+    /// <p>The time at which the code artifacts were copied for this workflow, in ISO 8601 date-time format.</p>
+    pub code_snapshotted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The schedule configuration for the workflow, including cron expressions for automated execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes schedule information in its YAML definition, the service automatically configures the appropriate triggers for automated execution. Only one version of a workflow can have an active schedule at any given time.</p>
     pub schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for workflow execution.</p>
@@ -83,6 +87,14 @@ impl GetWorkflowOutput {
     pub fn definition_s3_location(&self) -> ::std::option::Option<&crate::types::DefinitionS3Location> {
         self.definition_s3_location.as_ref()
     }
+    /// <p>The Amazon S3 location of the code artifacts provided during workflow creation or update.</p>
+    pub fn code(&self) -> ::std::option::Option<&crate::types::Code> {
+        self.code.as_ref()
+    }
+    /// <p>The time at which the code artifacts were copied for this workflow, in ISO 8601 date-time format.</p>
+    pub fn code_snapshotted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.code_snapshotted_at.as_ref()
+    }
     /// <p>The schedule configuration for the workflow, including cron expressions for automated execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes schedule information in its YAML definition, the service automatically configures the appropriate triggers for automated execution. Only one version of a workflow can have an active schedule at any given time.</p>
     pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
@@ -131,6 +143,8 @@ pub struct GetWorkflowOutputBuilder {
     pub(crate) engine_version: ::std::option::Option<i32>,
     pub(crate) workflow_status: ::std::option::Option<crate::types::WorkflowStatus>,
     pub(crate) definition_s3_location: ::std::option::Option<crate::types::DefinitionS3Location>,
+    pub(crate) code: ::std::option::Option<crate::types::Code>,
+    pub(crate) code_snapshotted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -294,6 +308,34 @@ impl GetWorkflowOutputBuilder {
     pub fn get_definition_s3_location(&self) -> &::std::option::Option<crate::types::DefinitionS3Location> {
         &self.definition_s3_location
     }
+    /// <p>The Amazon S3 location of the code artifacts provided during workflow creation or update.</p>
+    pub fn code(mut self, input: crate::types::Code) -> Self {
+        self.code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon S3 location of the code artifacts provided during workflow creation or update.</p>
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::Code>) -> Self {
+        self.code = input;
+        self
+    }
+    /// <p>The Amazon S3 location of the code artifacts provided during workflow creation or update.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::Code> {
+        &self.code
+    }
+    /// <p>The time at which the code artifacts were copied for this workflow, in ISO 8601 date-time format.</p>
+    pub fn code_snapshotted_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.code_snapshotted_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The time at which the code artifacts were copied for this workflow, in ISO 8601 date-time format.</p>
+    pub fn set_code_snapshotted_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.code_snapshotted_at = input;
+        self
+    }
+    /// <p>The time at which the code artifacts were copied for this workflow, in ISO 8601 date-time format.</p>
+    pub fn get_code_snapshotted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.code_snapshotted_at
+    }
     /// <p>The schedule configuration for the workflow, including cron expressions for automated execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes schedule information in its YAML definition, the service automatically configures the appropriate triggers for automated execution. Only one version of a workflow can have an active schedule at any given time.</p>
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
         self.schedule_configuration = ::std::option::Option::Some(input);
@@ -394,6 +436,8 @@ impl GetWorkflowOutputBuilder {
             engine_version: self.engine_version,
             workflow_status: self.workflow_status,
             definition_s3_location: self.definition_s3_location,
+            code: self.code,
+            code_snapshotted_at: self.code_snapshotted_at,
             schedule_configuration: self.schedule_configuration,
             role_arn: self.role_arn,
             network_configuration: self.network_configuration,

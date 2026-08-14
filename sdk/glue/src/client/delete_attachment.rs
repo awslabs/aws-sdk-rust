@@ -9,6 +9,8 @@ impl super::Client {
     ///   - [`attachment_name(impl Into<String>)`](crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::attachment_name) / [`set_attachment_name(Option<String>)`](crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::set_attachment_name):<br>required: **true**<br><p>The name of the attachment to delete.</p><br>
     /// - On success, responds with [`DeleteAttachmentOutput`](crate::operation::delete_attachment::DeleteAttachmentOutput) with field(s):
     ///   - [`asset_identifier(Option<String>)`](crate::operation::delete_attachment::DeleteAttachmentOutput::asset_identifier): <p>The unique identifier of the asset.</p>
+    ///   - [`iterable_form_name(Option<String>)`](crate::operation::delete_attachment::DeleteAttachmentOutput::iterable_form_name): <p>The name of the iterable form, if the deletion targets an item.</p>
+    ///   - [`item_identifier(Option<String>)`](crate::operation::delete_attachment::DeleteAttachmentOutput::item_identifier): <p>The identifier of the item within the iterable form, if applicable.</p>
     /// - On failure, responds with [`SdkError<DeleteAttachmentError>`](crate::operation::delete_attachment::DeleteAttachmentError)
     pub fn delete_attachment(&self) -> crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder {
         crate::operation::delete_attachment::builders::DeleteAttachmentFluentBuilder::new(self.handle.clone())

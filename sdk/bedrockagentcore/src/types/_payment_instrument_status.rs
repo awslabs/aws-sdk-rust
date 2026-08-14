@@ -13,6 +13,7 @@
 /// # let paymentinstrumentstatus = unimplemented!();
 /// match paymentinstrumentstatus {
 ///     PaymentInstrumentStatus::Active => { /* ... */ },
+///     PaymentInstrumentStatus::Blocked => { /* ... */ },
 ///     PaymentInstrumentStatus::Deleted => { /* ... */ },
 ///     PaymentInstrumentStatus::Failed => { /* ... */ },
 ///     PaymentInstrumentStatus::Initiated => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum PaymentInstrumentStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    Blocked,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for PaymentInstrumentStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => PaymentInstrumentStatus::Active,
+            "BLOCKED" => PaymentInstrumentStatus::Blocked,
             "DELETED" => PaymentInstrumentStatus::Deleted,
             "FAILED" => PaymentInstrumentStatus::Failed,
             "INITIATED" => PaymentInstrumentStatus::Initiated,
@@ -79,6 +83,7 @@ impl PaymentInstrumentStatus {
     pub fn as_str(&self) -> &str {
         match self {
             PaymentInstrumentStatus::Active => "ACTIVE",
+            PaymentInstrumentStatus::Blocked => "BLOCKED",
             PaymentInstrumentStatus::Deleted => "DELETED",
             PaymentInstrumentStatus::Failed => "FAILED",
             PaymentInstrumentStatus::Initiated => "INITIATED",
@@ -87,7 +92,7 @@ impl PaymentInstrumentStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DELETED", "FAILED", "INITIATED"]
+        &["ACTIVE", "BLOCKED", "DELETED", "FAILED", "INITIATED"]
     }
 }
 impl ::std::convert::AsRef<str> for PaymentInstrumentStatus {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for PaymentInstrumentStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PaymentInstrumentStatus::Active => write!(f, "ACTIVE"),
+            PaymentInstrumentStatus::Blocked => write!(f, "BLOCKED"),
             PaymentInstrumentStatus::Deleted => write!(f, "DELETED"),
             PaymentInstrumentStatus::Failed => write!(f, "FAILED"),
             PaymentInstrumentStatus::Initiated => write!(f, "INITIATED"),

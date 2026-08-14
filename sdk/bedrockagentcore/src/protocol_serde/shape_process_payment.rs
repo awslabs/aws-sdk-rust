@@ -62,6 +62,21 @@ pub fn de_process_payment_http_error(
             }
             tmp
         }),
+        "ResourceNotFoundException" => crate::operation::process_payment::ProcessPaymentError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::process_payment::ProcessPaymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ServiceQuotaExceededException" => crate::operation::process_payment::ProcessPaymentError::ServiceQuotaExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -78,6 +93,21 @@ pub fn de_process_payment_http_error(
             if tmp.message.is_none() {
                 tmp.message = _error_message;
             }
+            tmp
+        }),
+        "SubscriptionRequiredException" => crate::operation::process_payment::ProcessPaymentError::SubscriptionRequiredException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SubscriptionRequiredExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_subscription_required_exception::de_subscription_required_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::process_payment::ProcessPaymentError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::subscription_required_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::process_payment::ProcessPaymentError::unhandled)?
+            };
             tmp
         }),
         "ThrottlingException" => crate::operation::process_payment::ProcessPaymentError::ThrottlingException({

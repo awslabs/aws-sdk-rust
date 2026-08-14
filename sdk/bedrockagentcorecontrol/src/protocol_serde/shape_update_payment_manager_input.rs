@@ -18,8 +18,11 @@ pub fn ser_update_payment_manager_input_input(
     if let Some(var_5) = &input.description {
         object.key("description").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.role_arn {
-        object.key("roleArn").string(var_6.as_str());
+    if let Some(var_6) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.role_arn {
+        object.key("roleArn").string(var_7.as_str());
     }
     Ok(())
 }

@@ -1,9 +1,9 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "tests/webassembly-no-os",
     "tests/webassembly-wstd",
     "tests/no-default-features",
-    "tests/webassembly-no-os",
     "tests/telemetry"
 ]
 members = [

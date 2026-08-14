@@ -307,6 +307,8 @@ pub(crate) mod shape_sinks;
 
 pub(crate) mod shape_sources;
 
+pub(crate) mod shape_tag_propagation_configuration;
+
 pub(crate) mod shape_advanced_field_selector;
 
 pub(crate) mod shape_data_source;

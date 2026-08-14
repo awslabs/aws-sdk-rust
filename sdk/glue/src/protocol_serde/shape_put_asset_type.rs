@@ -50,6 +50,21 @@ pub fn de_put_asset_type_http_error(
             }
             tmp
         }),
+        "EntityNotFoundException" => crate::operation::put_asset_type::PutAssetTypeError::EntityNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::EntityNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_entity_not_found_exception::de_entity_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::put_asset_type::PutAssetTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServiceException" => crate::operation::put_asset_type::PutAssetTypeError::InternalServiceException({
             #[allow(unused_mut)]
             let mut tmp = {

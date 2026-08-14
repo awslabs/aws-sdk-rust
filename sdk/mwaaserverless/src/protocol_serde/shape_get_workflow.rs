@@ -221,6 +221,15 @@ pub(crate) fn de_get_workflow(
                         depth + 1,
                     )?);
                 }
+                "Code" => {
+                    builder = builder.set_code(crate::protocol_serde::shape_code::de_code(tokens, _value, depth + 1)?);
+                }
+                "CodeSnapshottedAt" => {
+                    builder = builder.set_code_snapshotted_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                    )?);
+                }
                 "ScheduleConfiguration" => {
                     builder = builder.set_schedule_configuration(crate::protocol_serde::shape_schedule_configuration::de_schedule_configuration(
                         tokens,

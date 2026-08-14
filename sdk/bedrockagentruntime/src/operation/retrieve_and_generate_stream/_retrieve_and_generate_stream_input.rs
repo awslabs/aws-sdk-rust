@@ -11,7 +11,7 @@ pub struct RetrieveAndGenerateStreamInput {
     pub retrieve_and_generate_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateConfiguration>,
     /// <p>Contains details about the session with the knowledge base.</p>
     pub session_configuration: ::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration>,
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub user_context: ::std::option::Option<crate::types::UserContext>,
 }
 impl RetrieveAndGenerateStreamInput {
@@ -31,7 +31,7 @@ impl RetrieveAndGenerateStreamInput {
     pub fn session_configuration(&self) -> ::std::option::Option<&crate::types::RetrieveAndGenerateSessionConfiguration> {
         self.session_configuration.as_ref()
     }
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub fn user_context(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.user_context.as_ref()
     }
@@ -122,17 +122,17 @@ impl RetrieveAndGenerateStreamInputBuilder {
     pub fn get_session_configuration(&self) -> &::std::option::Option<crate::types::RetrieveAndGenerateSessionConfiguration> {
         &self.session_configuration
     }
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
         self.user_context = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.user_context = input;
         self
     }
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.user_context
     }

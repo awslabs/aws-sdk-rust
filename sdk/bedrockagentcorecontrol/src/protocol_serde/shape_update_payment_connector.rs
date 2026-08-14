@@ -102,6 +102,21 @@ pub fn de_update_payment_connector_http_error(
             }
             tmp
         }),
+        "SubscriptionRequiredException" => crate::operation::update_payment_connector::UpdatePaymentConnectorError::SubscriptionRequiredException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::SubscriptionRequiredExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_subscription_required_exception::de_subscription_required_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::update_payment_connector::UpdatePaymentConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::subscription_required_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::update_payment_connector::UpdatePaymentConnectorError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::update_payment_connector::UpdatePaymentConnectorError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -182,6 +197,13 @@ pub(crate) fn de_update_payment_connector(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "authorizationUrl" => {
+                    builder = builder.set_authorization_url(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "credentialProviderConfigurations" => {
                     builder = builder.set_credential_provider_configurations(
                         crate::protocol_serde::shape_credentials_provider_configurations::de_credentials_provider_configurations(

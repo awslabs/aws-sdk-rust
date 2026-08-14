@@ -5,6 +5,10 @@
 pub struct AssociateGlossaryTermsInput {
     /// <p>The unique identifier of the asset to associate glossary terms with.</p>
     pub asset_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the iterable form. When specified along with <code>itemIdentifier</code>, the glossary terms are associated with an item within the iterable form rather than the asset itself.</p>
+    pub iterable_form_name: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the item within the iterable form. Required when <code>iterableFormName</code> is specified.</p>
+    pub item_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of glossary term identifiers to associate with the asset.</p>
     pub glossary_term_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -14,6 +18,14 @@ impl AssociateGlossaryTermsInput {
     /// <p>The unique identifier of the asset to associate glossary terms with.</p>
     pub fn asset_identifier(&self) -> ::std::option::Option<&str> {
         self.asset_identifier.as_deref()
+    }
+    /// <p>The name of the iterable form. When specified along with <code>itemIdentifier</code>, the glossary terms are associated with an item within the iterable form rather than the asset itself.</p>
+    pub fn iterable_form_name(&self) -> ::std::option::Option<&str> {
+        self.iterable_form_name.as_deref()
+    }
+    /// <p>The identifier of the item within the iterable form. Required when <code>iterableFormName</code> is specified.</p>
+    pub fn item_identifier(&self) -> ::std::option::Option<&str> {
+        self.item_identifier.as_deref()
     }
     /// <p>The list of glossary term identifiers to associate with the asset.</p>
     ///
@@ -38,6 +50,8 @@ impl AssociateGlossaryTermsInput {
 #[non_exhaustive]
 pub struct AssociateGlossaryTermsInputBuilder {
     pub(crate) asset_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) iterable_form_name: ::std::option::Option<::std::string::String>,
+    pub(crate) item_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_term_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -56,6 +70,34 @@ impl AssociateGlossaryTermsInputBuilder {
     /// <p>The unique identifier of the asset to associate glossary terms with.</p>
     pub fn get_asset_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_identifier
+    }
+    /// <p>The name of the iterable form. When specified along with <code>itemIdentifier</code>, the glossary terms are associated with an item within the iterable form rather than the asset itself.</p>
+    pub fn iterable_form_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iterable_form_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the iterable form. When specified along with <code>itemIdentifier</code>, the glossary terms are associated with an item within the iterable form rather than the asset itself.</p>
+    pub fn set_iterable_form_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iterable_form_name = input;
+        self
+    }
+    /// <p>The name of the iterable form. When specified along with <code>itemIdentifier</code>, the glossary terms are associated with an item within the iterable form rather than the asset itself.</p>
+    pub fn get_iterable_form_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iterable_form_name
+    }
+    /// <p>The identifier of the item within the iterable form. Required when <code>iterableFormName</code> is specified.</p>
+    pub fn item_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.item_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the item within the iterable form. Required when <code>iterableFormName</code> is specified.</p>
+    pub fn set_item_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.item_identifier = input;
+        self
+    }
+    /// <p>The identifier of the item within the iterable form. Required when <code>iterableFormName</code> is specified.</p>
+    pub fn get_item_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_identifier
     }
     /// Appends an item to `glossary_term_identifiers`.
     ///
@@ -100,6 +142,8 @@ impl AssociateGlossaryTermsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::associate_glossary_terms::AssociateGlossaryTermsInput {
             asset_identifier: self.asset_identifier,
+            iterable_form_name: self.iterable_form_name,
+            item_identifier: self.item_identifier,
             glossary_term_identifiers: self.glossary_term_identifiers,
             client_token: self.client_token,
         })

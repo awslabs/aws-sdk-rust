@@ -136,6 +136,20 @@ impl UpdateWorkflowFluentBuilder {
     pub fn get_definition_s3_location(&self) -> &::std::option::Option<crate::types::DefinitionS3Location> {
         self.inner.get_definition_s3_location()
     }
+    /// <p>The location of code artifacts in Amazon S3 for the updated workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn code(mut self, input: crate::types::Code) -> Self {
+        self.inner = self.inner.code(input);
+        self
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the updated workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::Code>) -> Self {
+        self.inner = self.inner.set_code(input);
+        self
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the updated workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::Code> {
+        self.inner.get_code()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Managed Workflows for Apache Airflow Serverless assumes when it executes the updated workflow.</p>
     pub fn role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.role_arn(input.into());

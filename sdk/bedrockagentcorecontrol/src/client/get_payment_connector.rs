@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_payment_connector::GetPaymentConnectorOutput::created_at): <p>The timestamp when the payment connector was created.</p>
     ///   - [`last_updated_at(DateTime)`](crate::operation::get_payment_connector::GetPaymentConnectorOutput::last_updated_at): <p>The timestamp when the payment connector was last updated.</p>
     ///   - [`status(PaymentConnectorStatus)`](crate::operation::get_payment_connector::GetPaymentConnectorOutput::status): <p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>
+    ///   - [`authorization_url(Option<String>)`](crate::operation::get_payment_connector::GetPaymentConnectorOutput::authorization_url): <p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>
     /// - On failure, responds with [`SdkError<GetPaymentConnectorError>`](crate::operation::get_payment_connector::GetPaymentConnectorError)
     pub fn get_payment_connector(&self) -> crate::operation::get_payment_connector::builders::GetPaymentConnectorFluentBuilder {
         crate::operation::get_payment_connector::builders::GetPaymentConnectorFluentBuilder::new(self.handle.clone())

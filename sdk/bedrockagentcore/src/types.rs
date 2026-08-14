@@ -301,7 +301,11 @@ pub use crate::types::_available_limits::AvailableLimits;
 
 pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInput;
 
+pub use crate::types::_mpp_payment_input::MppPaymentInput;
+
 pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutput;
+
+pub use crate::types::_mpp_payment_output::MppPaymentOutput;
 
 pub use crate::types::_registry_record_summary::RegistryRecordSummary;
 
@@ -1012,6 +1016,10 @@ mod _mouse_move_result;
 mod _mouse_scroll_arguments;
 
 mod _mouse_scroll_result;
+
+mod _mpp_payment_input;
+
+mod _mpp_payment_output;
 
 mod _o_auth2_authentication;
 

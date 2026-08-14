@@ -26,3 +26,5 @@ pub use crate::types::error::_service_exception::ServiceExceptionBuilder;
 pub use crate::types::error::_throttled_exception::ThrottledExceptionBuilder;
 
 pub use crate::types::error::_invalid_input_exception::InvalidInputExceptionBuilder;
+
+pub use crate::types::error::_subscription_required_exception::SubscriptionRequiredExceptionBuilder;

@@ -19,6 +19,8 @@ pub struct UpdatePaymentManagerOutput {
     pub last_updated_at: ::aws_smithy_types::DateTime,
     /// <p>The current status of the updated payment manager. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>
     pub status: crate::types::PaymentManagerStatus,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdatePaymentManagerOutput {
@@ -58,6 +60,10 @@ impl UpdatePaymentManagerOutput {
     pub fn status(&self) -> &crate::types::PaymentManagerStatus {
         &self.status
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdatePaymentManagerOutput {
     fn request_id(&self) -> Option<&str> {
@@ -83,6 +89,7 @@ pub struct UpdatePaymentManagerOutputBuilder {
     pub(crate) workload_identity_details: ::std::option::Option<crate::types::WorkloadIdentityDetails>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::PaymentManagerStatus>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdatePaymentManagerOutputBuilder {
@@ -205,6 +212,20 @@ impl UpdatePaymentManagerOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PaymentManagerStatus> {
         &self.status
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -271,6 +292,7 @@ impl UpdatePaymentManagerOutputBuilder {
                     "status was not specified but it is required when building UpdatePaymentManagerOutput",
                 )
             })?,
+            kms_key_arn: self.kms_key_arn,
             _request_id: self._request_id,
         })
     }

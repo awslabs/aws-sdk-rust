@@ -28,3 +28,5 @@ pub use crate::types::error::_retryable_conflict_exception::RetryableConflictExc
 pub use crate::types::error::_service_exception::ServiceExceptionBuilder;
 
 pub use crate::types::error::_throttled_exception::ThrottledExceptionBuilder;
+
+pub use crate::types::error::_subscription_required_exception::SubscriptionRequiredExceptionBuilder;

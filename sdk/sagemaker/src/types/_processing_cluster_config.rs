@@ -63,7 +63,6 @@ pub struct ProcessingClusterConfigBuilder {
 }
 impl ProcessingClusterConfigBuilder {
     /// <p>The number of ML compute instances to use in the processing job. For distributed processing jobs, specify a value greater than 1. The default value is 1.</p>
-    /// This field is required.
     pub fn instance_count(mut self, input: i32) -> Self {
         self.instance_count = ::std::option::Option::Some(input);
         self
@@ -78,7 +77,6 @@ impl ProcessingClusterConfigBuilder {
         &self.instance_count
     }
     /// <p>The ML compute instance type for the processing job.</p>
-    /// This field is required.
     pub fn instance_type(mut self, input: crate::types::ProcessingInstanceType) -> Self {
         self.instance_type = ::std::option::Option::Some(input);
         self

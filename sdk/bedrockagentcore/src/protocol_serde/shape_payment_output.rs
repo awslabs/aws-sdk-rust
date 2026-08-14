@@ -42,6 +42,10 @@ where
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'cryptoX402' cannot be null")
                                 })?,
                         )),
+                        "mpp" => Some(crate::types::PaymentOutput::Mpp(
+                            crate::protocol_serde::shape_mpp_payment_output::de_mpp_payment_output(tokens, _value, depth + 1)?
+                                .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mpp' cannot be null"))?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::PaymentOutput::Unknown)

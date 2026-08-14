@@ -186,6 +186,38 @@ impl CreatePaymentConnectorFluentBuilder {
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>> {
         self.inner.get_credential_provider_configurations()
     }
+    /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provide the credential provider configurations directly.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p></li>
+    /// </ul>
+    pub fn provision_mode(mut self, input: crate::types::PaymentConnectorProvisionMode) -> Self {
+        self.inner = self.inner.provision_mode(input);
+        self
+    }
+    /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provide the credential provider configurations directly.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p></li>
+    /// </ul>
+    pub fn set_provision_mode(mut self, input: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>) -> Self {
+        self.inner = self.inner.set_provision_mode(input);
+        self
+    }
+    /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provide the credential provider configurations directly.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p></li>
+    /// </ul>
+    pub fn get_provision_mode(&self) -> &::std::option::Option<crate::types::PaymentConnectorProvisionMode> {
+        self.inner.get_provision_mode()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
