@@ -122,6 +122,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Chat {
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("Chat")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ChatTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ChatEndpointParamsInterceptor,
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
@@ -138,6 +141,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Chat {
     }
 }
 
+#[derive(Debug)]
+struct ChatTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ChatTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ChatTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ChatInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("applicationId") {
+            if let ::std::option::Option::Some(value) = input.application_id.as_deref() {
+                captured.insert("applicationId", value);
+            }
+        }
+        if requested.should_capture("userId") {
+            if let ::std::option::Option::Some(value) = input.user_id.as_deref() {
+                captured.insert("userId", value);
+            }
+        }
+        if requested.should_capture("conversationId") {
+            if let ::std::option::Option::Some(value) = input.conversation_id.as_deref() {
+                captured.insert("conversationId", value);
+            }
+        }
+        if requested.should_capture("parentMessageId") {
+            if let ::std::option::Option::Some(value) = input.parent_message_id.as_deref() {
+                captured.insert("parentMessageId", value);
+            }
+        }
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ChatResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ChatResponseDeserializer {

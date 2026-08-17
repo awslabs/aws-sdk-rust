@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateS
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateStorediSCSIVolume")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateStorediSCSIVolumeTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateS
     }
 }
 
+#[derive(Debug)]
+struct CreateStorediSCSIVolumeTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateStorediSCSIVolumeTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateStorediSCSIVolumeTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateStorediScsiVolumeInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("GatewayARN") {
+            if let ::std::option::Option::Some(value) = input.gateway_arn.as_deref() {
+                captured.insert("GatewayARN", value);
+            }
+        }
+        if requested.should_capture("DiskId") {
+            if let ::std::option::Option::Some(value) = input.disk_id.as_deref() {
+                captured.insert("DiskId", value);
+            }
+        }
+        if requested.should_capture("SnapshotId") {
+            if let ::std::option::Option::Some(value) = input.snapshot_id.as_deref() {
+                captured.insert("SnapshotId", value);
+            }
+        }
+        if requested.should_capture("TargetName") {
+            if let ::std::option::Option::Some(value) = input.target_name.as_deref() {
+                captured.insert("TargetName", value);
+            }
+        }
+        if requested.should_capture("NetworkInterfaceId") {
+            if let ::std::option::Option::Some(value) = input.network_interface_id.as_deref() {
+                captured.insert("NetworkInterfaceId", value);
+            }
+        }
+        if requested.should_capture("KMSKey") {
+            if let ::std::option::Option::Some(value) = input.kms_key.as_deref() {
+                captured.insert("KMSKey", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateStorediSCSIVolumeResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateStorediSCSIVolumeResponseDeserializer {

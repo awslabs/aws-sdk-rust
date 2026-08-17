@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateI
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateIntent")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateIntentTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateI
     }
 }
 
+#[derive(Debug)]
+struct UpdateIntentTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateIntentTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateIntentTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateIntentInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("intentId") {
+            if let ::std::option::Option::Some(value) = input.intent_id.as_deref() {
+                captured.insert("intentId", value);
+            }
+        }
+        if requested.should_capture("intentName") {
+            if let ::std::option::Option::Some(value) = input.intent_name.as_deref() {
+                captured.insert("intentName", value);
+            }
+        }
+        if requested.should_capture("intentDisplayName") {
+            if let ::std::option::Option::Some(value) = input.intent_display_name.as_deref() {
+                captured.insert("intentDisplayName", value);
+            }
+        }
+        if requested.should_capture("description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("description", value);
+            }
+        }
+        if requested.should_capture("parentIntentSignature") {
+            if let ::std::option::Option::Some(value) = input.parent_intent_signature.as_deref() {
+                captured.insert("parentIntentSignature", value);
+            }
+        }
+        if requested.should_capture("botId") {
+            if let ::std::option::Option::Some(value) = input.bot_id.as_deref() {
+                captured.insert("botId", value);
+            }
+        }
+        if requested.should_capture("botVersion") {
+            if let ::std::option::Option::Some(value) = input.bot_version.as_deref() {
+                captured.insert("botVersion", value);
+            }
+        }
+        if requested.should_capture("localeId") {
+            if let ::std::option::Option::Some(value) = input.locale_id.as_deref() {
+                captured.insert("localeId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateIntentResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateIntentResponseDeserializer {

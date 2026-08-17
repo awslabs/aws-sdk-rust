@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateT
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateTokenWithIAM")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateTokenWithIAMTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateT
     }
 }
 
+#[derive(Debug)]
+struct CreateTokenWithIAMTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateTokenWithIAMTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateTokenWithIAMTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateTokenWithIamInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("clientId") {
+            if let ::std::option::Option::Some(value) = input.client_id.as_deref() {
+                captured.insert("clientId", value);
+            }
+        }
+        if requested.should_capture("grantType") {
+            if let ::std::option::Option::Some(value) = input.grant_type.as_deref() {
+                captured.insert("grantType", value);
+            }
+        }
+        if requested.should_capture("code") {
+            if let ::std::option::Option::Some(value) = input.code.as_deref() {
+                captured.insert("code", value);
+            }
+        }
+        if requested.should_capture("redirectUri") {
+            if let ::std::option::Option::Some(value) = input.redirect_uri.as_deref() {
+                captured.insert("redirectUri", value);
+            }
+        }
+        if requested.should_capture("subjectTokenType") {
+            if let ::std::option::Option::Some(value) = input.subject_token_type.as_deref() {
+                captured.insert("subjectTokenType", value);
+            }
+        }
+        if requested.should_capture("requestedTokenType") {
+            if let ::std::option::Option::Some(value) = input.requested_token_type.as_deref() {
+                captured.insert("requestedTokenType", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateTokenWithIAMResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateTokenWithIAMResponseDeserializer {

@@ -1035,6 +1035,21 @@ pub(crate) fn agentic_retrieve_guardrail_warning_correct_errors(
     builder
 }
 
+pub(crate) fn agentic_retrieve_memory_retrieve_details_correct_errors(
+    mut builder: crate::types::builders::AgenticRetrieveMemoryRetrieveDetailsBuilder,
+) -> crate::types::builders::AgenticRetrieveMemoryRetrieveDetailsBuilder {
+    if builder.input_query.is_none() {
+        builder.input_query = {
+            let builder = crate::types::builders::AgenticRetrieveMessageContentBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.memory_id.is_none() {
+        builder.memory_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn agentic_retrieve_warning_message_correct_errors(
     mut builder: crate::types::builders::AgenticRetrieveWarningMessageBuilder,
 ) -> crate::types::builders::AgenticRetrieveWarningMessageBuilder {

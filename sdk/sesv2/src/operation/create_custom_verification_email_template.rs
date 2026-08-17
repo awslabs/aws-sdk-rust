@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateCustomVerificationEmailTemplate")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateCustomVerificationEmailTemplateTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
     }
 }
 
+#[derive(Debug)]
+struct CreateCustomVerificationEmailTemplateTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCustomVerificationEmailTemplateTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateCustomVerificationEmailTemplateTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateCustomVerificationEmailTemplateInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("TemplateName") {
+            if let ::std::option::Option::Some(value) = input.template_name.as_deref() {
+                captured.insert("TemplateName", value);
+            }
+        }
+        if requested.should_capture("FromEmailAddress") {
+            if let ::std::option::Option::Some(value) = input.from_email_address.as_deref() {
+                captured.insert("FromEmailAddress", value);
+            }
+        }
+        if requested.should_capture("TemplateSubject") {
+            if let ::std::option::Option::Some(value) = input.template_subject.as_deref() {
+                captured.insert("TemplateSubject", value);
+            }
+        }
+        if requested.should_capture("TemplateContent") {
+            if let ::std::option::Option::Some(value) = input.template_content.as_deref() {
+                captured.insert("TemplateContent", value);
+            }
+        }
+        if requested.should_capture("SuccessRedirectionURL") {
+            if let ::std::option::Option::Some(value) = input.success_redirection_url.as_deref() {
+                captured.insert("SuccessRedirectionURL", value);
+            }
+        }
+        if requested.should_capture("FailureRedirectionURL") {
+            if let ::std::option::Option::Some(value) = input.failure_redirection_url.as_deref() {
+                captured.insert("FailureRedirectionURL", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateCustomVerificationEmailTemplateResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateCustomVerificationEmailTemplateResponseDeserializer {

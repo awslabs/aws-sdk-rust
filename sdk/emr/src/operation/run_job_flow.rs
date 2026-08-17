@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RunJobF
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RunJobFlow")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RunJobFlowTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,109 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RunJobF
     }
 }
 
+#[derive(Debug)]
+struct RunJobFlowTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RunJobFlowTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "RunJobFlowTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<RunJobFlowInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("Name", value);
+            }
+        }
+        if requested.should_capture("LogUri") {
+            if let ::std::option::Option::Some(value) = input.log_uri.as_deref() {
+                captured.insert("LogUri", value);
+            }
+        }
+        if requested.should_capture("LogEncryptionKmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.log_encryption_kms_key_id.as_deref() {
+                captured.insert("LogEncryptionKmsKeyId", value);
+            }
+        }
+        if requested.should_capture("AdditionalInfo") {
+            if let ::std::option::Option::Some(value) = input.additional_info.as_deref() {
+                captured.insert("AdditionalInfo", value);
+            }
+        }
+        if requested.should_capture("AmiVersion") {
+            if let ::std::option::Option::Some(value) = input.ami_version.as_deref() {
+                captured.insert("AmiVersion", value);
+            }
+        }
+        if requested.should_capture("ReleaseLabel") {
+            if let ::std::option::Option::Some(value) = input.release_label.as_deref() {
+                captured.insert("ReleaseLabel", value);
+            }
+        }
+        if requested.should_capture("StepExecutionRoleArn") {
+            if let ::std::option::Option::Some(value) = input.step_execution_role_arn.as_deref() {
+                captured.insert("StepExecutionRoleArn", value);
+            }
+        }
+        if requested.should_capture("JobFlowRole") {
+            if let ::std::option::Option::Some(value) = input.job_flow_role.as_deref() {
+                captured.insert("JobFlowRole", value);
+            }
+        }
+        if requested.should_capture("ServiceRole") {
+            if let ::std::option::Option::Some(value) = input.service_role.as_deref() {
+                captured.insert("ServiceRole", value);
+            }
+        }
+        if requested.should_capture("SecurityConfiguration") {
+            if let ::std::option::Option::Some(value) = input.security_configuration.as_deref() {
+                captured.insert("SecurityConfiguration", value);
+            }
+        }
+        if requested.should_capture("AutoScalingRole") {
+            if let ::std::option::Option::Some(value) = input.auto_scaling_role.as_deref() {
+                captured.insert("AutoScalingRole", value);
+            }
+        }
+        if requested.should_capture("CustomAmiId") {
+            if let ::std::option::Option::Some(value) = input.custom_ami_id.as_deref() {
+                captured.insert("CustomAmiId", value);
+            }
+        }
+        if requested.should_capture("OSReleaseLabel") {
+            if let ::std::option::Option::Some(value) = input.os_release_label.as_deref() {
+                captured.insert("OSReleaseLabel", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct RunJobFlowResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RunJobFlowResponseDeserializer {

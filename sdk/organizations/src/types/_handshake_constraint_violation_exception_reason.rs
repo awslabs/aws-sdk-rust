@@ -22,9 +22,11 @@
 ///     HandshakeConstraintViolationExceptionReason::OrganizationFromDifferentSellerOfRecord => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::OrganizationIsAlreadyPendingAllFeaturesMigration => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => { /* ... */ },
+///     HandshakeConstraintViolationExceptionReason::PastDueInvoice => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::ResponsibilityTransferAlreadyExists => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::SourceAndTargetCannotMatch => { /* ... */ },
+///     HandshakeConstraintViolationExceptionReason::TargetAccountValidationFailure => { /* ... */ },
 ///     HandshakeConstraintViolationExceptionReason::UnusedPrepaymentBalance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -75,11 +77,15 @@ pub enum HandshakeConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     OrganizationMembershipChangeRateLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    PastDueInvoice,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentInstrumentRequired,
     #[allow(missing_docs)] // documentation missing in model
     ResponsibilityTransferAlreadyExists,
     #[allow(missing_docs)] // documentation missing in model
     SourceAndTargetCannotMatch,
+    #[allow(missing_docs)] // documentation missing in model
+    TargetAccountValidationFailure,
     #[allow(missing_docs)] // documentation missing in model
     UnusedPrepaymentBalance,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -103,9 +109,11 @@ impl ::std::convert::From<&str> for HandshakeConstraintViolationExceptionReason 
             "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED" => {
                 HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded
             }
+            "PAST_DUE_INVOICE" => HandshakeConstraintViolationExceptionReason::PastDueInvoice,
             "PAYMENT_INSTRUMENT_REQUIRED" => HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired,
             "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS" => HandshakeConstraintViolationExceptionReason::ResponsibilityTransferAlreadyExists,
             "SOURCE_AND_TARGET_CANNOT_MATCH" => HandshakeConstraintViolationExceptionReason::SourceAndTargetCannotMatch,
+            "TARGET_ACCOUNT_VALIDATION_FAILURE" => HandshakeConstraintViolationExceptionReason::TargetAccountValidationFailure,
             "UNUSED_PREPAYMENT_BALANCE" => HandshakeConstraintViolationExceptionReason::UnusedPrepaymentBalance,
             other => {
                 HandshakeConstraintViolationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
@@ -138,9 +146,11 @@ impl HandshakeConstraintViolationExceptionReason {
             HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => {
                 "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED"
             }
+            HandshakeConstraintViolationExceptionReason::PastDueInvoice => "PAST_DUE_INVOICE",
             HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => "PAYMENT_INSTRUMENT_REQUIRED",
             HandshakeConstraintViolationExceptionReason::ResponsibilityTransferAlreadyExists => "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS",
             HandshakeConstraintViolationExceptionReason::SourceAndTargetCannotMatch => "SOURCE_AND_TARGET_CANNOT_MATCH",
+            HandshakeConstraintViolationExceptionReason::TargetAccountValidationFailure => "TARGET_ACCOUNT_VALIDATION_FAILURE",
             HandshakeConstraintViolationExceptionReason::UnusedPrepaymentBalance => "UNUSED_PREPAYMENT_BALANCE",
             HandshakeConstraintViolationExceptionReason::Unknown(value) => value.as_str(),
         }
@@ -158,9 +168,11 @@ impl HandshakeConstraintViolationExceptionReason {
             "ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD",
             "ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION",
             "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED",
+            "PAST_DUE_INVOICE",
             "PAYMENT_INSTRUMENT_REQUIRED",
             "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS",
             "SOURCE_AND_TARGET_CANNOT_MATCH",
+            "TARGET_ACCOUNT_VALIDATION_FAILURE",
             "UNUSED_PREPAYMENT_BALANCE",
         ]
     }
@@ -203,9 +215,11 @@ impl ::std::fmt::Display for HandshakeConstraintViolationExceptionReason {
             HandshakeConstraintViolationExceptionReason::OrganizationMembershipChangeRateLimitExceeded => {
                 write!(f, "ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED")
             }
+            HandshakeConstraintViolationExceptionReason::PastDueInvoice => write!(f, "PAST_DUE_INVOICE"),
             HandshakeConstraintViolationExceptionReason::PaymentInstrumentRequired => write!(f, "PAYMENT_INSTRUMENT_REQUIRED"),
             HandshakeConstraintViolationExceptionReason::ResponsibilityTransferAlreadyExists => write!(f, "RESPONSIBILITY_TRANSFER_ALREADY_EXISTS"),
             HandshakeConstraintViolationExceptionReason::SourceAndTargetCannotMatch => write!(f, "SOURCE_AND_TARGET_CANNOT_MATCH"),
+            HandshakeConstraintViolationExceptionReason::TargetAccountValidationFailure => write!(f, "TARGET_ACCOUNT_VALIDATION_FAILURE"),
             HandshakeConstraintViolationExceptionReason::UnusedPrepaymentBalance => write!(f, "UNUSED_PREPAYMENT_BALANCE"),
             HandshakeConstraintViolationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }

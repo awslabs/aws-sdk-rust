@@ -17,11 +17,74 @@ pub(crate) fn throttling_exception_correct_errors(
     builder
 }
 
+pub(crate) fn cancel_recovery_plan_execution_output_output_correct_errors(
+    mut builder: crate::operation::cancel_recovery_plan_execution::builders::CancelRecoveryPlanExecutionOutputBuilder,
+) -> crate::operation::cancel_recovery_plan_execution::builders::CancelRecoveryPlanExecutionOutputBuilder {
+    if builder.recovery_plan_execution.is_none() {
+        builder.recovery_plan_execution = {
+            let builder = crate::types::builders::RecoveryPlanExecutionBuilder::default();
+            crate::serde_util::recovery_plan_execution_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn create_recovery_plan_output_output_correct_errors(
+    mut builder: crate::operation::create_recovery_plan::builders::CreateRecoveryPlanOutputBuilder,
+) -> crate::operation::create_recovery_plan::builders::CreateRecoveryPlanOutputBuilder {
+    if builder.recovery_plan.is_none() {
+        builder.recovery_plan = {
+            let builder = crate::types::builders::RecoveryPlanBuilder::default();
+            crate::serde_util::recovery_plan_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn create_recovery_plan_step_output_output_correct_errors(
+    mut builder: crate::operation::create_recovery_plan_step::builders::CreateRecoveryPlanStepOutputBuilder,
+) -> crate::operation::create_recovery_plan_step::builders::CreateRecoveryPlanStepOutputBuilder {
+    if builder.recovery_plan_step.is_none() {
+        builder.recovery_plan_step = {
+            let builder = crate::types::builders::RecoveryPlanStepBuilder::default();
+            crate::serde_util::recovery_plan_step_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_replication_configuration_template_output_output_correct_errors(
     mut builder: crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateOutputBuilder,
 ) -> crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateOutputBuilder {
     if builder.replication_configuration_template_id.is_none() {
         builder.replication_configuration_template_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_recovery_plan_output_output_correct_errors(
+    mut builder: crate::operation::delete_recovery_plan::builders::DeleteRecoveryPlanOutputBuilder,
+) -> crate::operation::delete_recovery_plan::builders::DeleteRecoveryPlanOutputBuilder {
+    if builder.recovery_plan_arn.is_none() {
+        builder.recovery_plan_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_recovery_plan_execution_output_output_correct_errors(
+    mut builder: crate::operation::delete_recovery_plan_execution::builders::DeleteRecoveryPlanExecutionOutputBuilder,
+) -> crate::operation::delete_recovery_plan_execution::builders::DeleteRecoveryPlanExecutionOutputBuilder {
+    if builder.recovery_plan_execution_arn.is_none() {
+        builder.recovery_plan_execution_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_recovery_plan_step_output_output_correct_errors(
+    mut builder: crate::operation::delete_recovery_plan_step::builders::DeleteRecoveryPlanStepOutputBuilder,
+) -> crate::operation::delete_recovery_plan_step::builders::DeleteRecoveryPlanStepOutputBuilder {
+    if builder.recovery_plan_step_arn.is_none() {
+        builder.recovery_plan_step_arn = Some(Default::default())
     }
     builder
 }
@@ -35,6 +98,159 @@ pub(crate) fn get_failback_replication_configuration_output_output_correct_error
     builder
 }
 
+pub(crate) fn get_recovery_plan_output_output_correct_errors(
+    mut builder: crate::operation::get_recovery_plan::builders::GetRecoveryPlanOutputBuilder,
+) -> crate::operation::get_recovery_plan::builders::GetRecoveryPlanOutputBuilder {
+    if builder.recovery_plan.is_none() {
+        builder.recovery_plan = {
+            let builder = crate::types::builders::RecoveryPlanBuilder::default();
+            crate::serde_util::recovery_plan_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_recovery_plan_execution_output_output_correct_errors(
+    mut builder: crate::operation::get_recovery_plan_execution::builders::GetRecoveryPlanExecutionOutputBuilder,
+) -> crate::operation::get_recovery_plan_execution::builders::GetRecoveryPlanExecutionOutputBuilder {
+    if builder.recovery_plan_execution.is_none() {
+        builder.recovery_plan_execution = {
+            let builder = crate::types::builders::RecoveryPlanExecutionBuilder::default();
+            crate::serde_util::recovery_plan_execution_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_recovery_plan_execution_step_output_output_correct_errors(
+    mut builder: crate::operation::get_recovery_plan_execution_step::builders::GetRecoveryPlanExecutionStepOutputBuilder,
+) -> crate::operation::get_recovery_plan_execution_step::builders::GetRecoveryPlanExecutionStepOutputBuilder {
+    if builder.recovery_plan_execution_step.is_none() {
+        builder.recovery_plan_execution_step = {
+            let builder = crate::types::builders::RecoveryPlanExecutionStepBuilder::default();
+            crate::serde_util::recovery_plan_execution_step_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_recovery_plan_step_output_output_correct_errors(
+    mut builder: crate::operation::get_recovery_plan_step::builders::GetRecoveryPlanStepOutputBuilder,
+) -> crate::operation::get_recovery_plan_step::builders::GetRecoveryPlanStepOutputBuilder {
+    if builder.recovery_plan_step.is_none() {
+        builder.recovery_plan_step = {
+            let builder = crate::types::builders::RecoveryPlanStepBuilder::default();
+            crate::serde_util::recovery_plan_step_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn list_recovery_plan_execution_steps_output_output_correct_errors(
+    mut builder: crate::operation::list_recovery_plan_execution_steps::builders::ListRecoveryPlanExecutionStepsOutputBuilder,
+) -> crate::operation::list_recovery_plan_execution_steps::builders::ListRecoveryPlanExecutionStepsOutputBuilder {
+    if builder.recovery_plan_execution_steps.is_none() {
+        builder.recovery_plan_execution_steps = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_recovery_plan_executions_output_output_correct_errors(
+    mut builder: crate::operation::list_recovery_plan_executions::builders::ListRecoveryPlanExecutionsOutputBuilder,
+) -> crate::operation::list_recovery_plan_executions::builders::ListRecoveryPlanExecutionsOutputBuilder {
+    if builder.recovery_plan_executions.is_none() {
+        builder.recovery_plan_executions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_recovery_plan_steps_output_output_correct_errors(
+    mut builder: crate::operation::list_recovery_plan_steps::builders::ListRecoveryPlanStepsOutputBuilder,
+) -> crate::operation::list_recovery_plan_steps::builders::ListRecoveryPlanStepsOutputBuilder {
+    if builder.recovery_plan_steps.is_none() {
+        builder.recovery_plan_steps = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_recovery_plans_output_output_correct_errors(
+    mut builder: crate::operation::list_recovery_plans::builders::ListRecoveryPlansOutputBuilder,
+) -> crate::operation::list_recovery_plans::builders::ListRecoveryPlansOutputBuilder {
+    if builder.recovery_plans.is_none() {
+        builder.recovery_plans = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn reorder_recovery_plan_steps_output_output_correct_errors(
+    mut builder: crate::operation::reorder_recovery_plan_steps::builders::ReorderRecoveryPlanStepsOutputBuilder,
+) -> crate::operation::reorder_recovery_plan_steps::builders::ReorderRecoveryPlanStepsOutputBuilder {
+    if builder.recovery_plan_steps.is_none() {
+        builder.recovery_plan_steps = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn retry_recovery_plan_execution_step_output_output_correct_errors(
+    mut builder: crate::operation::retry_recovery_plan_execution_step::builders::RetryRecoveryPlanExecutionStepOutputBuilder,
+) -> crate::operation::retry_recovery_plan_execution_step::builders::RetryRecoveryPlanExecutionStepOutputBuilder {
+    if builder.recovery_plan_execution_step.is_none() {
+        builder.recovery_plan_execution_step = {
+            let builder = crate::types::builders::RecoveryPlanExecutionStepBuilder::default();
+            crate::serde_util::recovery_plan_execution_step_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn start_recovery_plan_execution_output_output_correct_errors(
+    mut builder: crate::operation::start_recovery_plan_execution::builders::StartRecoveryPlanExecutionOutputBuilder,
+) -> crate::operation::start_recovery_plan_execution::builders::StartRecoveryPlanExecutionOutputBuilder {
+    if builder.recovery_plan_execution.is_none() {
+        builder.recovery_plan_execution = {
+            let builder = crate::types::builders::RecoveryPlanExecutionBuilder::default();
+            crate::serde_util::recovery_plan_execution_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_recovery_plan_output_output_correct_errors(
+    mut builder: crate::operation::update_recovery_plan::builders::UpdateRecoveryPlanOutputBuilder,
+) -> crate::operation::update_recovery_plan::builders::UpdateRecoveryPlanOutputBuilder {
+    if builder.recovery_plan.is_none() {
+        builder.recovery_plan = {
+            let builder = crate::types::builders::RecoveryPlanBuilder::default();
+            crate::serde_util::recovery_plan_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_recovery_plan_execution_step_output_output_correct_errors(
+    mut builder: crate::operation::update_recovery_plan_execution_step::builders::UpdateRecoveryPlanExecutionStepOutputBuilder,
+) -> crate::operation::update_recovery_plan_execution_step::builders::UpdateRecoveryPlanExecutionStepOutputBuilder {
+    if builder.recovery_plan_execution_step.is_none() {
+        builder.recovery_plan_execution_step = {
+            let builder = crate::types::builders::RecoveryPlanExecutionStepBuilder::default();
+            crate::serde_util::recovery_plan_execution_step_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_recovery_plan_step_output_output_correct_errors(
+    mut builder: crate::operation::update_recovery_plan_step::builders::UpdateRecoveryPlanStepOutputBuilder,
+) -> crate::operation::update_recovery_plan_step::builders::UpdateRecoveryPlanStepOutputBuilder {
+    if builder.recovery_plan_step.is_none() {
+        builder.recovery_plan_step = {
+            let builder = crate::types::builders::RecoveryPlanStepBuilder::default();
+            crate::serde_util::recovery_plan_step_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_replication_configuration_template_output_output_correct_errors(
     mut builder: crate::operation::update_replication_configuration_template::builders::UpdateReplicationConfigurationTemplateOutputBuilder,
 ) -> crate::operation::update_replication_configuration_template::builders::UpdateReplicationConfigurationTemplateOutputBuilder {
@@ -44,9 +260,113 @@ pub(crate) fn update_replication_configuration_template_output_output_correct_er
     builder
 }
 
+pub(crate) fn recovery_plan_execution_correct_errors(
+    mut builder: crate::types::builders::RecoveryPlanExecutionBuilder,
+) -> crate::types::builders::RecoveryPlanExecutionBuilder {
+    if builder.recovery_plan_execution_arn.is_none() {
+        builder.recovery_plan_execution_arn = Some(Default::default())
+    }
+    if builder.recovery_plan_arn.is_none() {
+        builder.recovery_plan_arn = Some(Default::default())
+    }
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::RecoveryPlanExecutionMode>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecoveryPlanExecutionStatus>().ok()
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recovery_plan_correct_errors(mut builder: crate::types::builders::RecoveryPlanBuilder) -> crate::types::builders::RecoveryPlanBuilder {
+    if builder.recovery_plan_arn.is_none() {
+        builder.recovery_plan_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecoveryPlanStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recovery_plan_step_correct_errors(
+    mut builder: crate::types::builders::RecoveryPlanStepBuilder,
+) -> crate::types::builders::RecoveryPlanStepBuilder {
+    if builder.recovery_plan_step_arn.is_none() {
+        builder.recovery_plan_step_arn = Some(Default::default())
+    }
+    if builder.step_order.is_none() {
+        builder.step_order = Some(Default::default())
+    }
+    if builder.step_name.is_none() {
+        builder.step_name = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::RecoveryPlanStepConfiguration::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recovery_plan_execution_step_correct_errors(
+    mut builder: crate::types::builders::RecoveryPlanExecutionStepBuilder,
+) -> crate::types::builders::RecoveryPlanExecutionStepBuilder {
+    if builder.recovery_plan_execution_step_arn.is_none() {
+        builder.recovery_plan_execution_step_arn = Some(Default::default())
+    }
+    if builder.step_index.is_none() {
+        builder.step_index = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecoveryPlanExecutionStepStatus>().ok()
+    }
+    if builder.step_name.is_none() {
+        builder.step_name = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::RecoveryPlanExecutionStepConfiguration::Unknown)
+    }
+    if builder.attempt.is_none() {
+        builder.attempt = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn job_correct_errors(mut builder: crate::types::builders::JobBuilder) -> crate::types::builders::JobBuilder {
     if builder.job_id.is_none() {
         builder.job_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn error_detail_correct_errors(mut builder: crate::types::builders::ErrorDetailBuilder) -> crate::types::builders::ErrorDetailBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
     }
     builder
 }
@@ -62,6 +382,69 @@ pub(crate) fn pit_policy_rule_correct_errors(
     }
     if builder.retention_duration.is_none() {
         builder.retention_duration = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recovery_plan_execution_step_summary_correct_errors(
+    mut builder: crate::types::builders::RecoveryPlanExecutionStepSummaryBuilder,
+) -> crate::types::builders::RecoveryPlanExecutionStepSummaryBuilder {
+    if builder.recovery_plan_execution_step_arn.is_none() {
+        builder.recovery_plan_execution_step_arn = Some(Default::default())
+    }
+    if builder.step_name.is_none() {
+        builder.step_name = Some(Default::default())
+    }
+    if builder.step_index.is_none() {
+        builder.step_index = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecoveryPlanExecutionStepStatus>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::RecoveryPlanExecutionStepConfiguration::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn recovery_plan_execution_summary_correct_errors(
+    mut builder: crate::types::builders::RecoveryPlanExecutionSummaryBuilder,
+) -> crate::types::builders::RecoveryPlanExecutionSummaryBuilder {
+    if builder.recovery_plan_execution_arn.is_none() {
+        builder.recovery_plan_execution_arn = Some(Default::default())
+    }
+    if builder.recovery_plan_arn.is_none() {
+        builder.recovery_plan_arn = Some(Default::default())
+    }
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::RecoveryPlanExecutionMode>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecoveryPlanExecutionStatus>().ok()
+    }
+    if builder.started_at.is_none() {
+        builder.started_at = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recovery_plan_summary_correct_errors(
+    mut builder: crate::types::builders::RecoveryPlanSummaryBuilder,
+) -> crate::types::builders::RecoveryPlanSummaryBuilder {
+    if builder.recovery_plan_arn.is_none() {
+        builder.recovery_plan_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::RecoveryPlanStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(Default::default())
     }
     builder
 }
@@ -86,6 +469,51 @@ pub(crate) fn replication_configuration_template_correct_errors(
 ) -> crate::types::builders::ReplicationConfigurationTemplateBuilder {
     if builder.replication_configuration_template_id.is_none() {
         builder.replication_configuration_template_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn execution_server_step_configuration_correct_errors(
+    mut builder: crate::types::builders::ExecutionServerStepConfigurationBuilder,
+) -> crate::types::builders::ExecutionServerStepConfigurationBuilder {
+    if builder.servers.is_none() {
+        builder.servers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn server_step_configuration_correct_errors(
+    mut builder: crate::types::builders::ServerStepConfigurationBuilder,
+) -> crate::types::builders::ServerStepConfigurationBuilder {
+    if builder.servers.is_none() {
+        builder.servers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn wait_step_configuration_correct_errors(
+    mut builder: crate::types::builders::WaitStepConfigurationBuilder,
+) -> crate::types::builders::WaitStepConfigurationBuilder {
+    if builder.wait_duration_minutes.is_none() {
+        builder.wait_duration_minutes = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recovery_plan_execution_server_correct_errors(
+    mut builder: crate::types::builders::RecoveryPlanExecutionServerBuilder,
+) -> crate::types::builders::RecoveryPlanExecutionServerBuilder {
+    if builder.server_arn.is_none() {
+        builder.server_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn recovery_plan_server_correct_errors(
+    mut builder: crate::types::builders::RecoveryPlanServerBuilder,
+) -> crate::types::builders::RecoveryPlanServerBuilder {
+    if builder.server_arn.is_none() {
+        builder.server_arn = Some(Default::default())
     }
     builder
 }

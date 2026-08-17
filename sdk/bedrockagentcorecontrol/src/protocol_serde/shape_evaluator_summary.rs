@@ -56,6 +56,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "provider" => {
+                            builder = builder.set_provider(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Provider::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "level" => {
                             builder = builder.set_level(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

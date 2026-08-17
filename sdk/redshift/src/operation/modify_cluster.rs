@@ -125,6 +125,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyC
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ModifyCluster")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ModifyClusterTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -144,6 +147,119 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyC
     }
 }
 
+#[derive(Debug)]
+struct ModifyClusterTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyClusterTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ModifyClusterTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ModifyClusterInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ClusterIdentifier") {
+            if let ::std::option::Option::Some(value) = input.cluster_identifier.as_deref() {
+                captured.insert("ClusterIdentifier", value);
+            }
+        }
+        if requested.should_capture("ClusterType") {
+            if let ::std::option::Option::Some(value) = input.cluster_type.as_deref() {
+                captured.insert("ClusterType", value);
+            }
+        }
+        if requested.should_capture("NodeType") {
+            if let ::std::option::Option::Some(value) = input.node_type.as_deref() {
+                captured.insert("NodeType", value);
+            }
+        }
+        if requested.should_capture("ClusterParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.cluster_parameter_group_name.as_deref() {
+                captured.insert("ClusterParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("PreferredMaintenanceWindow") {
+            if let ::std::option::Option::Some(value) = input.preferred_maintenance_window.as_deref() {
+                captured.insert("PreferredMaintenanceWindow", value);
+            }
+        }
+        if requested.should_capture("ClusterVersion") {
+            if let ::std::option::Option::Some(value) = input.cluster_version.as_deref() {
+                captured.insert("ClusterVersion", value);
+            }
+        }
+        if requested.should_capture("HsmClientCertificateIdentifier") {
+            if let ::std::option::Option::Some(value) = input.hsm_client_certificate_identifier.as_deref() {
+                captured.insert("HsmClientCertificateIdentifier", value);
+            }
+        }
+        if requested.should_capture("HsmConfigurationIdentifier") {
+            if let ::std::option::Option::Some(value) = input.hsm_configuration_identifier.as_deref() {
+                captured.insert("HsmConfigurationIdentifier", value);
+            }
+        }
+        if requested.should_capture("NewClusterIdentifier") {
+            if let ::std::option::Option::Some(value) = input.new_cluster_identifier.as_deref() {
+                captured.insert("NewClusterIdentifier", value);
+            }
+        }
+        if requested.should_capture("ElasticIp") {
+            if let ::std::option::Option::Some(value) = input.elastic_ip.as_deref() {
+                captured.insert("ElasticIp", value);
+            }
+        }
+        if requested.should_capture("MaintenanceTrackName") {
+            if let ::std::option::Option::Some(value) = input.maintenance_track_name.as_deref() {
+                captured.insert("MaintenanceTrackName", value);
+            }
+        }
+        if requested.should_capture("KmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.kms_key_id.as_deref() {
+                captured.insert("KmsKeyId", value);
+            }
+        }
+        if requested.should_capture("AvailabilityZone") {
+            if let ::std::option::Option::Some(value) = input.availability_zone.as_deref() {
+                captured.insert("AvailabilityZone", value);
+            }
+        }
+        if requested.should_capture("MasterPasswordSecretKmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.master_password_secret_kms_key_id.as_deref() {
+                captured.insert("MasterPasswordSecretKmsKeyId", value);
+            }
+        }
+        if requested.should_capture("IpAddressType") {
+            if let ::std::option::Option::Some(value) = input.ip_address_type.as_deref() {
+                captured.insert("IpAddressType", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ModifyClusterResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ModifyClusterResponseDeserializer {

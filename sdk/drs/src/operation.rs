@@ -4,11 +4,20 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AssociateSourceNetworkStack` operation.
 pub mod associate_source_network_stack;
 
+/// Types for the `CancelRecoveryPlanExecution` operation.
+pub mod cancel_recovery_plan_execution;
+
 /// Types for the `CreateExtendedSourceServer` operation.
 pub mod create_extended_source_server;
 
 /// Types for the `CreateLaunchConfigurationTemplate` operation.
 pub mod create_launch_configuration_template;
+
+/// Types for the `CreateRecoveryPlan` operation.
+pub mod create_recovery_plan;
+
+/// Types for the `CreateRecoveryPlanStep` operation.
+pub mod create_recovery_plan_step;
 
 /// Types for the `CreateReplicationConfigurationTemplate` operation.
 pub mod create_replication_configuration_template;
@@ -27,6 +36,15 @@ pub mod delete_launch_configuration_template;
 
 /// Types for the `DeleteRecoveryInstance` operation.
 pub mod delete_recovery_instance;
+
+/// Types for the `DeleteRecoveryPlan` operation.
+pub mod delete_recovery_plan;
+
+/// Types for the `DeleteRecoveryPlanExecution` operation.
+pub mod delete_recovery_plan_execution;
+
+/// Types for the `DeleteRecoveryPlanStep` operation.
+pub mod delete_recovery_plan_step;
 
 /// Types for the `DeleteReplicationConfigurationTemplate` operation.
 pub mod delete_replication_configuration_template;
@@ -76,6 +94,18 @@ pub mod get_failback_replication_configuration;
 /// Types for the `GetLaunchConfiguration` operation.
 pub mod get_launch_configuration;
 
+/// Types for the `GetRecoveryPlan` operation.
+pub mod get_recovery_plan;
+
+/// Types for the `GetRecoveryPlanExecution` operation.
+pub mod get_recovery_plan_execution;
+
+/// Types for the `GetRecoveryPlanExecutionStep` operation.
+pub mod get_recovery_plan_execution_step;
+
+/// Types for the `GetRecoveryPlanStep` operation.
+pub mod get_recovery_plan_step;
+
 /// Types for the `GetReplicationConfiguration` operation.
 pub mod get_replication_configuration;
 
@@ -88,6 +118,18 @@ pub mod list_extensible_source_servers;
 /// Types for the `ListLaunchActions` operation.
 pub mod list_launch_actions;
 
+/// Types for the `ListRecoveryPlanExecutionSteps` operation.
+pub mod list_recovery_plan_execution_steps;
+
+/// Types for the `ListRecoveryPlanExecutions` operation.
+pub mod list_recovery_plan_executions;
+
+/// Types for the `ListRecoveryPlanSteps` operation.
+pub mod list_recovery_plan_steps;
+
+/// Types for the `ListRecoveryPlans` operation.
+pub mod list_recovery_plans;
+
 /// Types for the `ListStagingAccounts` operation.
 pub mod list_staging_accounts;
 
@@ -97,8 +139,14 @@ pub mod list_tags_for_resource;
 /// Types for the `PutLaunchAction` operation.
 pub mod put_launch_action;
 
+/// Types for the `ReorderRecoveryPlanSteps` operation.
+pub mod reorder_recovery_plan_steps;
+
 /// Types for the `RetryDataReplication` operation.
 pub mod retry_data_replication;
+
+/// Types for the `RetryRecoveryPlanExecutionStep` operation.
+pub mod retry_recovery_plan_execution_step;
 
 /// Types for the `ReverseReplication` operation.
 pub mod reverse_replication;
@@ -108,6 +156,9 @@ pub mod start_failback_launch;
 
 /// Types for the `StartRecovery` operation.
 pub mod start_recovery;
+
+/// Types for the `StartRecoveryPlanExecution` operation.
+pub mod start_recovery_plan_execution;
 
 /// Types for the `StartReplication` operation.
 pub mod start_replication;
@@ -144,6 +195,15 @@ pub mod update_launch_configuration;
 
 /// Types for the `UpdateLaunchConfigurationTemplate` operation.
 pub mod update_launch_configuration_template;
+
+/// Types for the `UpdateRecoveryPlan` operation.
+pub mod update_recovery_plan;
+
+/// Types for the `UpdateRecoveryPlanExecutionStep` operation.
+pub mod update_recovery_plan_execution_step;
+
+/// Types for the `UpdateRecoveryPlanStep` operation.
+pub mod update_recovery_plan_step;
 
 /// Types for the `UpdateReplicationConfiguration` operation.
 pub mod update_replication_configuration;

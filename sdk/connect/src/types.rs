@@ -65,6 +65,10 @@ pub use crate::types::_evaluation_form_target_configuration::EvaluationFormTarge
 
 pub use crate::types::_evaluation_form_language_configuration::EvaluationFormLanguageConfiguration;
 
+pub use crate::types::_extraction_configuration::ExtractionConfiguration;
+
+pub use crate::types::_extraction_definition_display::ExtractionDefinitionDisplay;
+
 pub use crate::types::_recurrence_config::RecurrenceConfig;
 
 pub use crate::types::_override_type::OverrideType;
@@ -168,6 +172,8 @@ pub use crate::types::_data_table::DataTable;
 pub use crate::types::_data_table_attribute::DataTableAttribute;
 
 pub use crate::types::_evaluation_form::EvaluationForm;
+
+pub use crate::types::_extraction_definition::ExtractionDefinition;
 
 pub use crate::types::_hours_of_operation::HoursOfOperation;
 
@@ -527,6 +533,8 @@ pub use crate::types::_contact_interaction_type::ContactInteractionType;
 
 pub use crate::types::_evaluation_form_language_code::EvaluationFormLanguageCode;
 
+pub use crate::types::_extraction_definition_not_found_behavior::ExtractionDefinitionNotFoundBehavior;
+
 pub use crate::types::_hours_of_operation_config::HoursOfOperationConfig;
 
 pub use crate::types::_hours_of_operation_override_config::HoursOfOperationOverrideConfig;
@@ -734,6 +742,8 @@ pub use crate::types::_default_vocabulary::DefaultVocabulary;
 pub use crate::types::_evaluation_form_summary::EvaluationFormSummary;
 
 pub use crate::types::_evaluation_form_version_summary::EvaluationFormVersionSummary;
+
+pub use crate::types::_extraction_definition_summary::ExtractionDefinitionSummary;
 
 pub use crate::types::_hours_of_operation_summary::HoursOfOperationSummary;
 
@@ -961,6 +971,8 @@ pub use crate::types::_evaluation_form_score_threshold::EvaluationFormScoreThres
 
 pub use crate::types::_evaluation_review_notification_recipient::EvaluationReviewNotificationRecipient;
 
+pub use crate::types::_not_found_behavior_type::NotFoundBehaviorType;
+
 pub use crate::types::_hours_of_operation_days::HoursOfOperationDays;
 
 pub use crate::types::_hours_of_operation_time_slice::HoursOfOperationTimeSlice;
@@ -998,6 +1010,8 @@ pub use crate::types::_assign_sla_action_definition::AssignSlaActionDefinition;
 pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinition;
 
 pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvaluationActionDefinition;
+
+pub use crate::types::_extract_information_action_definition::ExtractInformationActionDefinition;
 
 pub use crate::types::_application_type::ApplicationType;
 
@@ -1368,6 +1382,8 @@ pub use crate::types::_metric_filter::MetricFilter;
 pub use crate::types::_field_value::FieldValue;
 
 pub use crate::types::_sla_type::SlaType;
+
+pub use crate::types::_rules_extraction_definition_identifier::RulesExtractionDefinitionIdentifier;
 
 pub use crate::types::_primary_attribute_value::PrimaryAttributeValue;
 
@@ -2167,6 +2183,18 @@ mod _extension_configuration;
 
 mod _external_invocation_configuration;
 
+mod _extract_information_action_definition;
+
+mod _extraction_configuration;
+
+mod _extraction_definition;
+
+mod _extraction_definition_display;
+
+mod _extraction_definition_not_found_behavior;
+
+mod _extraction_definition_summary;
+
 mod _failed_batch_association_summary;
 
 mod _failed_request;
@@ -2406,6 +2434,8 @@ mod _next_contact_entry;
 mod _next_contact_metadata;
 
 mod _next_contact_type;
+
+mod _not_found_behavior_type;
 
 mod _notification;
 
@@ -2748,6 +2778,8 @@ mod _rule_summary;
 mod _rule_trigger_event_source;
 
 mod _rules_configuration;
+
+mod _rules_extraction_definition_identifier;
 
 mod _rules_search_criteria;
 

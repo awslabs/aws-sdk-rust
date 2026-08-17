@@ -125,6 +125,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendCom
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SendCommand")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SendCommandTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -144,6 +147,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendCom
     }
 }
 
+#[derive(Debug)]
+struct SendCommandTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SendCommandTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "SendCommandTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<SendCommandInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("DocumentName") {
+            if let ::std::option::Option::Some(value) = input.document_name.as_deref() {
+                captured.insert("DocumentName", value);
+            }
+        }
+        if requested.should_capture("DocumentVersion") {
+            if let ::std::option::Option::Some(value) = input.document_version.as_deref() {
+                captured.insert("DocumentVersion", value);
+            }
+        }
+        if requested.should_capture("DocumentHash") {
+            if let ::std::option::Option::Some(value) = input.document_hash.as_deref() {
+                captured.insert("DocumentHash", value);
+            }
+        }
+        if requested.should_capture("Comment") {
+            if let ::std::option::Option::Some(value) = input.comment.as_deref() {
+                captured.insert("Comment", value);
+            }
+        }
+        if requested.should_capture("OutputS3Region") {
+            if let ::std::option::Option::Some(value) = input.output_s3_region.as_deref() {
+                captured.insert("OutputS3Region", value);
+            }
+        }
+        if requested.should_capture("OutputS3BucketName") {
+            if let ::std::option::Option::Some(value) = input.output_s3_bucket_name.as_deref() {
+                captured.insert("OutputS3BucketName", value);
+            }
+        }
+        if requested.should_capture("OutputS3KeyPrefix") {
+            if let ::std::option::Option::Some(value) = input.output_s3_key_prefix.as_deref() {
+                captured.insert("OutputS3KeyPrefix", value);
+            }
+        }
+        if requested.should_capture("MaxConcurrency") {
+            if let ::std::option::Option::Some(value) = input.max_concurrency.as_deref() {
+                captured.insert("MaxConcurrency", value);
+            }
+        }
+        if requested.should_capture("MaxErrors") {
+            if let ::std::option::Option::Some(value) = input.max_errors.as_deref() {
+                captured.insert("MaxErrors", value);
+            }
+        }
+        if requested.should_capture("ServiceRoleArn") {
+            if let ::std::option::Option::Some(value) = input.service_role_arn.as_deref() {
+                captured.insert("ServiceRoleArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct SendCommandResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SendCommandResponseDeserializer {

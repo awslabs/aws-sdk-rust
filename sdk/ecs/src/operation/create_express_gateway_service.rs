@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateE
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateExpressGatewayService")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateExpressGatewayServiceTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateE
     }
 }
 
+#[derive(Debug)]
+struct CreateExpressGatewayServiceTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateExpressGatewayServiceTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateExpressGatewayServiceTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateExpressGatewayServiceInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("executionRoleArn") {
+            if let ::std::option::Option::Some(value) = input.execution_role_arn.as_deref() {
+                captured.insert("executionRoleArn", value);
+            }
+        }
+        if requested.should_capture("infrastructureRoleArn") {
+            if let ::std::option::Option::Some(value) = input.infrastructure_role_arn.as_deref() {
+                captured.insert("infrastructureRoleArn", value);
+            }
+        }
+        if requested.should_capture("serviceName") {
+            if let ::std::option::Option::Some(value) = input.service_name.as_deref() {
+                captured.insert("serviceName", value);
+            }
+        }
+        if requested.should_capture("cluster") {
+            if let ::std::option::Option::Some(value) = input.cluster.as_deref() {
+                captured.insert("cluster", value);
+            }
+        }
+        if requested.should_capture("healthCheckPath") {
+            if let ::std::option::Option::Some(value) = input.health_check_path.as_deref() {
+                captured.insert("healthCheckPath", value);
+            }
+        }
+        if requested.should_capture("taskRoleArn") {
+            if let ::std::option::Option::Some(value) = input.task_role_arn.as_deref() {
+                captured.insert("taskRoleArn", value);
+            }
+        }
+        if requested.should_capture("cpu") {
+            if let ::std::option::Option::Some(value) = input.cpu.as_deref() {
+                captured.insert("cpu", value);
+            }
+        }
+        if requested.should_capture("memory") {
+            if let ::std::option::Option::Some(value) = input.memory.as_deref() {
+                captured.insert("memory", value);
+            }
+        }
+        if requested.should_capture("taskDefinitionArn") {
+            if let ::std::option::Option::Some(value) = input.task_definition_arn.as_deref() {
+                captured.insert("taskDefinitionArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateExpressGatewayServiceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateExpressGatewayServiceResponseDeserializer {

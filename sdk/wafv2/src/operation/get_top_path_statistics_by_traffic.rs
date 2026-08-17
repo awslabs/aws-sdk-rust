@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetTopP
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetTopPathStatisticsByTraffic")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetTopPathStatisticsByTrafficTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetTopP
     }
 }
 
+#[derive(Debug)]
+struct GetTopPathStatisticsByTrafficTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetTopPathStatisticsByTrafficTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "GetTopPathStatisticsByTrafficTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<GetTopPathStatisticsByTrafficInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("WebAclArn") {
+            if let ::std::option::Option::Some(value) = input.web_acl_arn.as_deref() {
+                captured.insert("WebAclArn", value);
+            }
+        }
+        if requested.should_capture("UriPathPrefix") {
+            if let ::std::option::Option::Some(value) = input.uri_path_prefix.as_deref() {
+                captured.insert("UriPathPrefix", value);
+            }
+        }
+        if requested.should_capture("BotCategory") {
+            if let ::std::option::Option::Some(value) = input.bot_category.as_deref() {
+                captured.insert("BotCategory", value);
+            }
+        }
+        if requested.should_capture("BotOrganization") {
+            if let ::std::option::Option::Some(value) = input.bot_organization.as_deref() {
+                captured.insert("BotOrganization", value);
+            }
+        }
+        if requested.should_capture("BotName") {
+            if let ::std::option::Option::Some(value) = input.bot_name.as_deref() {
+                captured.insert("BotName", value);
+            }
+        }
+        if requested.should_capture("NextMarker") {
+            if let ::std::option::Option::Some(value) = input.next_marker.as_deref() {
+                captured.insert("NextMarker", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct GetTopPathStatisticsByTrafficResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetTopPathStatisticsByTrafficResponseDeserializer {

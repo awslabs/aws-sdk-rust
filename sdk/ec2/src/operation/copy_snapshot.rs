@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CopySna
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CopySnapshot")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CopySnapshotTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CopySna
     }
 }
 
+#[derive(Debug)]
+struct CopySnapshotTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CopySnapshotTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CopySnapshotTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CopySnapshotInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("Description", value);
+            }
+        }
+        if requested.should_capture("DestinationOutpostArn") {
+            if let ::std::option::Option::Some(value) = input.destination_outpost_arn.as_deref() {
+                captured.insert("DestinationOutpostArn", value);
+            }
+        }
+        if requested.should_capture("DestinationRegion") {
+            if let ::std::option::Option::Some(value) = input.destination_region.as_deref() {
+                captured.insert("DestinationRegion", value);
+            }
+        }
+        if requested.should_capture("KmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.kms_key_id.as_deref() {
+                captured.insert("KmsKeyId", value);
+            }
+        }
+        if requested.should_capture("SourceRegion") {
+            if let ::std::option::Option::Some(value) = input.source_region.as_deref() {
+                captured.insert("SourceRegion", value);
+            }
+        }
+        if requested.should_capture("SourceSnapshotId") {
+            if let ::std::option::Option::Some(value) = input.source_snapshot_id.as_deref() {
+                captured.insert("SourceSnapshotId", value);
+            }
+        }
+        if requested.should_capture("DestinationAvailabilityZone") {
+            if let ::std::option::Option::Some(value) = input.destination_availability_zone.as_deref() {
+                captured.insert("DestinationAvailabilityZone", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CopySnapshotResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CopySnapshotResponseDeserializer {

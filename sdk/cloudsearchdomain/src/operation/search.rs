@@ -119,6 +119,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Search 
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("Search")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SearchTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -138,6 +141,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Search 
     }
 }
 
+#[derive(Debug)]
+struct SearchTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SearchTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "SearchTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<SearchInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("cursor") {
+            if let ::std::option::Option::Some(value) = input.cursor.as_deref() {
+                captured.insert("cursor", value);
+            }
+        }
+        if requested.should_capture("expr") {
+            if let ::std::option::Option::Some(value) = input.expr.as_deref() {
+                captured.insert("expr", value);
+            }
+        }
+        if requested.should_capture("facet") {
+            if let ::std::option::Option::Some(value) = input.facet.as_deref() {
+                captured.insert("facet", value);
+            }
+        }
+        if requested.should_capture("filterQuery") {
+            if let ::std::option::Option::Some(value) = input.filter_query.as_deref() {
+                captured.insert("filterQuery", value);
+            }
+        }
+        if requested.should_capture("highlight") {
+            if let ::std::option::Option::Some(value) = input.highlight.as_deref() {
+                captured.insert("highlight", value);
+            }
+        }
+        if requested.should_capture("query") {
+            if let ::std::option::Option::Some(value) = input.query.as_deref() {
+                captured.insert("query", value);
+            }
+        }
+        if requested.should_capture("queryOptions") {
+            if let ::std::option::Option::Some(value) = input.query_options.as_deref() {
+                captured.insert("queryOptions", value);
+            }
+        }
+        if requested.should_capture("return") {
+            if let ::std::option::Option::Some(value) = input.r#return.as_deref() {
+                captured.insert("return", value);
+            }
+        }
+        if requested.should_capture("sort") {
+            if let ::std::option::Option::Some(value) = input.sort.as_deref() {
+                captured.insert("sort", value);
+            }
+        }
+        if requested.should_capture("stats") {
+            if let ::std::option::Option::Some(value) = input.stats.as_deref() {
+                captured.insert("stats", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct SearchResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SearchResponseDeserializer {

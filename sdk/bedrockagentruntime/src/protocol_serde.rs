@@ -185,6 +185,8 @@ pub(crate) mod shape_agent_action_group;
 
 pub(crate) mod shape_agentic_retrieve_configuration;
 
+pub(crate) mod shape_agentic_retrieve_memory_configuration;
+
 pub(crate) mod shape_agentic_retrieve_message;
 
 pub(crate) mod shape_agentic_retrieve_policy_configuration;
@@ -280,6 +282,10 @@ pub(crate) mod shape_user_context;
 pub(crate) mod shape_action_group_executor;
 
 pub(crate) mod shape_agentic_retrieve_bedrock_guardrail_configuration;
+
+pub(crate) mod shape_agentic_retrieve_memory_retrieval_config;
+
+pub(crate) mod shape_agentic_retrieve_memory_session_binding;
 
 pub(crate) mod shape_agentic_retrieve_message_content;
 
@@ -397,6 +403,8 @@ pub(crate) mod shape_trace_part;
 
 pub(crate) mod shape_agentic_retrieve_bedrock_reranking_configuration;
 
+pub(crate) mod shape_agentic_retrieve_memory_metadata_filter;
+
 pub(crate) mod shape_api_result;
 
 pub(crate) mod shape_bedrock_foundation_model_configuration;
@@ -474,6 +482,10 @@ pub(crate) mod shape_vector_search_reranking_configuration;
 pub(crate) mod shape_agentic_retrieve_bedrock_reranking_model_configuration;
 
 pub(crate) mod shape_agentic_retrieve_generated_response;
+
+pub(crate) mod shape_agentic_retrieve_memory_metadata_filter_left;
+
+pub(crate) mod shape_agentic_retrieve_memory_metadata_filter_right;
 
 pub(crate) mod shape_agentic_retrieve_results;
 
@@ -582,6 +594,8 @@ pub(crate) mod shape_agentic_retrieve_actions;
 pub(crate) mod shape_agentic_retrieve_citation_list;
 
 pub(crate) mod shape_agentic_retrieve_failures;
+
+pub(crate) mod shape_agentic_retrieve_memory_metadata_value;
 
 pub(crate) mod shape_agentic_retrieve_result_item;
 
@@ -736,6 +750,8 @@ pub(crate) mod shape_agentic_retrieve_citation_reference_list;
 pub(crate) mod shape_agentic_retrieve_full_doc_expansion_details;
 
 pub(crate) mod shape_agentic_retrieve_guardrail_warning;
+
+pub(crate) mod shape_agentic_retrieve_memory_retrieve_details;
 
 pub(crate) mod shape_agentic_retrieve_warning_message;
 

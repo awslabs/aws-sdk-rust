@@ -131,6 +131,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SubmitS
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SubmitServiceJob")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SubmitServiceJobTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -150,6 +153,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SubmitS
     }
 }
 
+#[derive(Debug)]
+struct SubmitServiceJobTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SubmitServiceJobTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "SubmitServiceJobTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<SubmitServiceJobInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("jobName") {
+            if let ::std::option::Option::Some(value) = input.job_name.as_deref() {
+                captured.insert("jobName", value);
+            }
+        }
+        if requested.should_capture("jobQueue") {
+            if let ::std::option::Option::Some(value) = input.job_queue.as_deref() {
+                captured.insert("jobQueue", value);
+            }
+        }
+        if requested.should_capture("serviceRequestPayload") {
+            if let ::std::option::Option::Some(value) = input.service_request_payload.as_deref() {
+                captured.insert("serviceRequestPayload", value);
+            }
+        }
+        if requested.should_capture("shareIdentifier") {
+            if let ::std::option::Option::Some(value) = input.share_identifier.as_deref() {
+                captured.insert("shareIdentifier", value);
+            }
+        }
+        if requested.should_capture("quotaShareName") {
+            if let ::std::option::Option::Some(value) = input.quota_share_name.as_deref() {
+                captured.insert("quotaShareName", value);
+            }
+        }
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct SubmitServiceJobResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SubmitServiceJobResponseDeserializer {

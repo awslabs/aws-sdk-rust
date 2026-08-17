@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateD
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateDeploymentGroup")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateDeploymentGroupTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateD
     }
 }
 
+#[derive(Debug)]
+struct UpdateDeploymentGroupTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateDeploymentGroupTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateDeploymentGroupTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateDeploymentGroupInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("applicationName") {
+            if let ::std::option::Option::Some(value) = input.application_name.as_deref() {
+                captured.insert("applicationName", value);
+            }
+        }
+        if requested.should_capture("currentDeploymentGroupName") {
+            if let ::std::option::Option::Some(value) = input.current_deployment_group_name.as_deref() {
+                captured.insert("currentDeploymentGroupName", value);
+            }
+        }
+        if requested.should_capture("newDeploymentGroupName") {
+            if let ::std::option::Option::Some(value) = input.new_deployment_group_name.as_deref() {
+                captured.insert("newDeploymentGroupName", value);
+            }
+        }
+        if requested.should_capture("deploymentConfigName") {
+            if let ::std::option::Option::Some(value) = input.deployment_config_name.as_deref() {
+                captured.insert("deploymentConfigName", value);
+            }
+        }
+        if requested.should_capture("serviceRoleArn") {
+            if let ::std::option::Option::Some(value) = input.service_role_arn.as_deref() {
+                captured.insert("serviceRoleArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateDeploymentGroupResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateDeploymentGroupResponseDeserializer {

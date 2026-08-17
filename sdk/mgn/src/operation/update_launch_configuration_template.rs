@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateL
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateLaunchConfigurationTemplate")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateLaunchConfigurationTemplateTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,59 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateL
     }
 }
 
+#[derive(Debug)]
+struct UpdateLaunchConfigurationTemplateTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateLaunchConfigurationTemplateTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateLaunchConfigurationTemplateTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateLaunchConfigurationTemplateInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("launchConfigurationTemplateID") {
+            if let ::std::option::Option::Some(value) = input.launch_configuration_template_id.as_deref() {
+                captured.insert("launchConfigurationTemplateID", value);
+            }
+        }
+        if requested.should_capture("mapAutoTaggingMpeID") {
+            if let ::std::option::Option::Some(value) = input.map_auto_tagging_mpe_id.as_deref() {
+                captured.insert("mapAutoTaggingMpeID", value);
+            }
+        }
+        if requested.should_capture("parametersEncryptionKey") {
+            if let ::std::option::Option::Some(value) = input.parameters_encryption_key.as_deref() {
+                captured.insert("parametersEncryptionKey", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateLaunchConfigurationTemplateResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateLaunchConfigurationTemplateResponseDeserializer {

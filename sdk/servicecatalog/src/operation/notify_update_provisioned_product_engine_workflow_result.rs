@@ -136,6 +136,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for NotifyU
             "NotifyUpdateProvisionedProductEngineWorkflowResult",
         )
         .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            NotifyUpdateProvisionedProductEngineWorkflowResultTelemetryInputCaptureInterceptor,
+        ))
+        .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
             ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
         ))
         .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -155,6 +158,66 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for NotifyU
     }
 }
 
+#[derive(Debug)]
+struct NotifyUpdateProvisionedProductEngineWorkflowResultTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept
+    for NotifyUpdateProvisionedProductEngineWorkflowResultTelemetryInputCaptureInterceptor
+{
+    fn name(&self) -> &'static str {
+        "NotifyUpdateProvisionedProductEngineWorkflowResultTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<NotifyUpdateProvisionedProductEngineWorkflowResultInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("WorkflowToken") {
+            if let ::std::option::Option::Some(value) = input.workflow_token.as_deref() {
+                captured.insert("WorkflowToken", value);
+            }
+        }
+        if requested.should_capture("RecordId") {
+            if let ::std::option::Option::Some(value) = input.record_id.as_deref() {
+                captured.insert("RecordId", value);
+            }
+        }
+        if requested.should_capture("FailureReason") {
+            if let ::std::option::Option::Some(value) = input.failure_reason.as_deref() {
+                captured.insert("FailureReason", value);
+            }
+        }
+        if requested.should_capture("IdempotencyToken") {
+            if let ::std::option::Option::Some(value) = input.idempotency_token.as_deref() {
+                captured.insert("IdempotencyToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct NotifyUpdateProvisionedProductEngineWorkflowResultResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for NotifyUpdateProvisionedProductEngineWorkflowResultResponseDeserializer {

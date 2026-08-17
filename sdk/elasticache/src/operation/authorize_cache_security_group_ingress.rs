@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Authori
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AuthorizeCacheSecurityGroupIngress")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                AuthorizeCacheSecurityGroupIngressTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,59 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Authori
     }
 }
 
+#[derive(Debug)]
+struct AuthorizeCacheSecurityGroupIngressTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AuthorizeCacheSecurityGroupIngressTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "AuthorizeCacheSecurityGroupIngressTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<AuthorizeCacheSecurityGroupIngressInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("CacheSecurityGroupName") {
+            if let ::std::option::Option::Some(value) = input.cache_security_group_name.as_deref() {
+                captured.insert("CacheSecurityGroupName", value);
+            }
+        }
+        if requested.should_capture("EC2SecurityGroupName") {
+            if let ::std::option::Option::Some(value) = input.ec2_security_group_name.as_deref() {
+                captured.insert("EC2SecurityGroupName", value);
+            }
+        }
+        if requested.should_capture("EC2SecurityGroupOwnerId") {
+            if let ::std::option::Option::Some(value) = input.ec2_security_group_owner_id.as_deref() {
+                captured.insert("EC2SecurityGroupOwnerId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct AuthorizeCacheSecurityGroupIngressResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AuthorizeCacheSecurityGroupIngressResponseDeserializer {

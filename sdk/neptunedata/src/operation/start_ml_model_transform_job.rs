@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartML
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartMLModelTransformJob")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartMLModelTransformJobTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartML
     }
 }
 
+#[derive(Debug)]
+struct StartMLModelTransformJobTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartMLModelTransformJobTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "StartMLModelTransformJobTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<StartMlModelTransformJobInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("id") {
+            if let ::std::option::Option::Some(value) = input.id.as_deref() {
+                captured.insert("id", value);
+            }
+        }
+        if requested.should_capture("dataProcessingJobId") {
+            if let ::std::option::Option::Some(value) = input.data_processing_job_id.as_deref() {
+                captured.insert("dataProcessingJobId", value);
+            }
+        }
+        if requested.should_capture("mlModelTrainingJobId") {
+            if let ::std::option::Option::Some(value) = input.ml_model_training_job_id.as_deref() {
+                captured.insert("mlModelTrainingJobId", value);
+            }
+        }
+        if requested.should_capture("trainingJobName") {
+            if let ::std::option::Option::Some(value) = input.training_job_name.as_deref() {
+                captured.insert("trainingJobName", value);
+            }
+        }
+        if requested.should_capture("modelTransformOutputS3Location") {
+            if let ::std::option::Option::Some(value) = input.model_transform_output_s3_location.as_deref() {
+                captured.insert("modelTransformOutputS3Location", value);
+            }
+        }
+        if requested.should_capture("sagemakerIamRoleArn") {
+            if let ::std::option::Option::Some(value) = input.sagemaker_iam_role_arn.as_deref() {
+                captured.insert("sagemakerIamRoleArn", value);
+            }
+        }
+        if requested.should_capture("neptuneIamRoleArn") {
+            if let ::std::option::Option::Some(value) = input.neptune_iam_role_arn.as_deref() {
+                captured.insert("neptuneIamRoleArn", value);
+            }
+        }
+        if requested.should_capture("baseProcessingInstanceType") {
+            if let ::std::option::Option::Some(value) = input.base_processing_instance_type.as_deref() {
+                captured.insert("baseProcessingInstanceType", value);
+            }
+        }
+        if requested.should_capture("volumeEncryptionKMSKey") {
+            if let ::std::option::Option::Some(value) = input.volume_encryption_kms_key.as_deref() {
+                captured.insert("volumeEncryptionKMSKey", value);
+            }
+        }
+        if requested.should_capture("s3OutputEncryptionKMSKey") {
+            if let ::std::option::Option::Some(value) = input.s3_output_encryption_kms_key.as_deref() {
+                captured.insert("s3OutputEncryptionKMSKey", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct StartMLModelTransformJobResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartMLModelTransformJobResponseDeserializer {

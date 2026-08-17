@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Activat
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ActivateGateway")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ActivateGatewayTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Activat
     }
 }
 
+#[derive(Debug)]
+struct ActivateGatewayTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ActivateGatewayTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ActivateGatewayTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ActivateGatewayInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ActivationKey") {
+            if let ::std::option::Option::Some(value) = input.activation_key.as_deref() {
+                captured.insert("ActivationKey", value);
+            }
+        }
+        if requested.should_capture("GatewayName") {
+            if let ::std::option::Option::Some(value) = input.gateway_name.as_deref() {
+                captured.insert("GatewayName", value);
+            }
+        }
+        if requested.should_capture("GatewayTimezone") {
+            if let ::std::option::Option::Some(value) = input.gateway_timezone.as_deref() {
+                captured.insert("GatewayTimezone", value);
+            }
+        }
+        if requested.should_capture("GatewayRegion") {
+            if let ::std::option::Option::Some(value) = input.gateway_region.as_deref() {
+                captured.insert("GatewayRegion", value);
+            }
+        }
+        if requested.should_capture("GatewayType") {
+            if let ::std::option::Option::Some(value) = input.gateway_type.as_deref() {
+                captured.insert("GatewayType", value);
+            }
+        }
+        if requested.should_capture("TapeDriveType") {
+            if let ::std::option::Option::Some(value) = input.tape_drive_type.as_deref() {
+                captured.insert("TapeDriveType", value);
+            }
+        }
+        if requested.should_capture("MediumChangerType") {
+            if let ::std::option::Option::Some(value) = input.medium_changer_type.as_deref() {
+                captured.insert("MediumChangerType", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ActivateGatewayResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ActivateGatewayResponseDeserializer {

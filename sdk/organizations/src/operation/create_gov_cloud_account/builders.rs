@@ -47,7 +47,7 @@ impl crate::operation::create_gov_cloud_account::builders::CreateGovCloudAccount
 /// <p>Calling <code>CreateGovCloudAccount</code> is an asynchronous request that Amazon Web Services performs in the background. Because <code>CreateGovCloudAccount</code> operates asynchronously, it can return a successful completion message even though account initialization might still be in progress. You might need to wait a few minutes before you can successfully access the account. To check the status of the request, do one of the following:</p>
 /// <ul>
 /// <li>
-/// <p>Use the <code>OperationId</code> response element from this operation to provide as a parameter to the <code>DescribeCreateAccountStatus</code> operation.</p></li>
+/// <p>Use the <code>Id</code> response element from this operation to provide as a parameter to the <code>DescribeCreateAccountStatus</code> operation.</p></li>
 /// <li>
 /// <p>Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html">Logging and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.</p></li>
 /// </ul>

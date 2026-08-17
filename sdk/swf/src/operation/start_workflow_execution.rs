@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartWo
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartWorkflowExecution")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartWorkflowExecutionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartWo
     }
 }
 
+#[derive(Debug)]
+struct StartWorkflowExecutionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartWorkflowExecutionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "StartWorkflowExecutionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<StartWorkflowExecutionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("domain") {
+            if let ::std::option::Option::Some(value) = input.domain.as_deref() {
+                captured.insert("domain", value);
+            }
+        }
+        if requested.should_capture("workflowId") {
+            if let ::std::option::Option::Some(value) = input.workflow_id.as_deref() {
+                captured.insert("workflowId", value);
+            }
+        }
+        if requested.should_capture("taskPriority") {
+            if let ::std::option::Option::Some(value) = input.task_priority.as_deref() {
+                captured.insert("taskPriority", value);
+            }
+        }
+        if requested.should_capture("input") {
+            if let ::std::option::Option::Some(value) = input.input.as_deref() {
+                captured.insert("input", value);
+            }
+        }
+        if requested.should_capture("executionStartToCloseTimeout") {
+            if let ::std::option::Option::Some(value) = input.execution_start_to_close_timeout.as_deref() {
+                captured.insert("executionStartToCloseTimeout", value);
+            }
+        }
+        if requested.should_capture("taskStartToCloseTimeout") {
+            if let ::std::option::Option::Some(value) = input.task_start_to_close_timeout.as_deref() {
+                captured.insert("taskStartToCloseTimeout", value);
+            }
+        }
+        if requested.should_capture("lambdaRole") {
+            if let ::std::option::Option::Some(value) = input.lambda_role.as_deref() {
+                captured.insert("lambdaRole", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct StartWorkflowExecutionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartWorkflowExecutionResponseDeserializer {

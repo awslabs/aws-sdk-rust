@@ -30,7 +30,7 @@ futures-core = "0.3.31"
 [dependencies.aws-smithy-eventstream]
 path = "../aws-smithy-eventstream"
 optional = true
-version = "0.61.1"
+version = "0.61.2"
 
 [dependencies.aws-smithy-http]
 path = "../aws-smithy-http"
@@ -45,7 +45,7 @@ version = "1.14.0"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["byte-stream-poll-next", "http-body-0-4-x"]
-version = "1.6.1"
+version = "1.6.2"
 
 [dependencies.http-02x]
 package = "http"

@@ -12,6 +12,8 @@
 /// ```text
 /// # let eventsourcename = unimplemented!();
 /// match eventsourcename {
+///     EventSourceName::OnAfterCallWorkAvailable => { /* ... */ },
+///     EventSourceName::OnAfterChatWorkAvailable => { /* ... */ },
 ///     EventSourceName::OnAlertUpdate => { /* ... */ },
 ///     EventSourceName::OnCaseCreate => { /* ... */ },
 ///     EventSourceName::OnCaseUpdate => { /* ... */ },
@@ -58,6 +60,10 @@
 )]
 pub enum EventSourceName {
     #[allow(missing_docs)] // documentation missing in model
+    OnAfterCallWorkAvailable,
+    #[allow(missing_docs)] // documentation missing in model
+    OnAfterChatWorkAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     OnAlertUpdate,
     #[allow(missing_docs)] // documentation missing in model
     OnCaseCreate,
@@ -98,6 +104,8 @@ pub enum EventSourceName {
 impl ::std::convert::From<&str> for EventSourceName {
     fn from(s: &str) -> Self {
         match s {
+            "OnAfterCallWorkAvailable" => EventSourceName::OnAfterCallWorkAvailable,
+            "OnAfterChatWorkAvailable" => EventSourceName::OnAfterChatWorkAvailable,
             "OnAlertUpdate" => EventSourceName::OnAlertUpdate,
             "OnCaseCreate" => EventSourceName::OnCaseCreate,
             "OnCaseUpdate" => EventSourceName::OnCaseUpdate,
@@ -130,6 +138,8 @@ impl EventSourceName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventSourceName::OnAfterCallWorkAvailable => "OnAfterCallWorkAvailable",
+            EventSourceName::OnAfterChatWorkAvailable => "OnAfterChatWorkAvailable",
             EventSourceName::OnAlertUpdate => "OnAlertUpdate",
             EventSourceName::OnCaseCreate => "OnCaseCreate",
             EventSourceName::OnCaseUpdate => "OnCaseUpdate",
@@ -153,6 +163,8 @@ impl EventSourceName {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "OnAfterCallWorkAvailable",
+            "OnAfterChatWorkAvailable",
             "OnAlertUpdate",
             "OnCaseCreate",
             "OnCaseUpdate",
@@ -193,6 +205,8 @@ impl EventSourceName {
 impl ::std::fmt::Display for EventSourceName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EventSourceName::OnAfterCallWorkAvailable => write!(f, "OnAfterCallWorkAvailable"),
+            EventSourceName::OnAfterChatWorkAvailable => write!(f, "OnAfterChatWorkAvailable"),
             EventSourceName::OnAlertUpdate => write!(f, "OnAlertUpdate"),
             EventSourceName::OnCaseCreate => write!(f, "OnCaseCreate"),
             EventSourceName::OnCaseUpdate => write!(f, "OnCaseUpdate"),

@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateL
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateLaunchConfiguration")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateLaunchConfigurationTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,104 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateL
     }
 }
 
+#[derive(Debug)]
+struct CreateLaunchConfigurationTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateLaunchConfigurationTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateLaunchConfigurationTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateLaunchConfigurationInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("LaunchConfigurationName") {
+            if let ::std::option::Option::Some(value) = input.launch_configuration_name.as_deref() {
+                captured.insert("LaunchConfigurationName", value);
+            }
+        }
+        if requested.should_capture("ImageId") {
+            if let ::std::option::Option::Some(value) = input.image_id.as_deref() {
+                captured.insert("ImageId", value);
+            }
+        }
+        if requested.should_capture("KeyName") {
+            if let ::std::option::Option::Some(value) = input.key_name.as_deref() {
+                captured.insert("KeyName", value);
+            }
+        }
+        if requested.should_capture("ClassicLinkVPCId") {
+            if let ::std::option::Option::Some(value) = input.classic_link_vpc_id.as_deref() {
+                captured.insert("ClassicLinkVPCId", value);
+            }
+        }
+        if requested.should_capture("UserData") {
+            if let ::std::option::Option::Some(value) = input.user_data.as_deref() {
+                captured.insert("UserData", value);
+            }
+        }
+        if requested.should_capture("InstanceId") {
+            if let ::std::option::Option::Some(value) = input.instance_id.as_deref() {
+                captured.insert("InstanceId", value);
+            }
+        }
+        if requested.should_capture("InstanceType") {
+            if let ::std::option::Option::Some(value) = input.instance_type.as_deref() {
+                captured.insert("InstanceType", value);
+            }
+        }
+        if requested.should_capture("KernelId") {
+            if let ::std::option::Option::Some(value) = input.kernel_id.as_deref() {
+                captured.insert("KernelId", value);
+            }
+        }
+        if requested.should_capture("RamdiskId") {
+            if let ::std::option::Option::Some(value) = input.ramdisk_id.as_deref() {
+                captured.insert("RamdiskId", value);
+            }
+        }
+        if requested.should_capture("SpotPrice") {
+            if let ::std::option::Option::Some(value) = input.spot_price.as_deref() {
+                captured.insert("SpotPrice", value);
+            }
+        }
+        if requested.should_capture("IamInstanceProfile") {
+            if let ::std::option::Option::Some(value) = input.iam_instance_profile.as_deref() {
+                captured.insert("IamInstanceProfile", value);
+            }
+        }
+        if requested.should_capture("PlacementTenancy") {
+            if let ::std::option::Option::Some(value) = input.placement_tenancy.as_deref() {
+                captured.insert("PlacementTenancy", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateLaunchConfigurationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateLaunchConfigurationResponseDeserializer {

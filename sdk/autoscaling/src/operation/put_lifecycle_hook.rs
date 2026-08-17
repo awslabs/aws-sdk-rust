@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutLife
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutLifecycleHook")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutLifecycleHookTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutLife
     }
 }
 
+#[derive(Debug)]
+struct PutLifecycleHookTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutLifecycleHookTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutLifecycleHookTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutLifecycleHookInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("LifecycleHookName") {
+            if let ::std::option::Option::Some(value) = input.lifecycle_hook_name.as_deref() {
+                captured.insert("LifecycleHookName", value);
+            }
+        }
+        if requested.should_capture("AutoScalingGroupName") {
+            if let ::std::option::Option::Some(value) = input.auto_scaling_group_name.as_deref() {
+                captured.insert("AutoScalingGroupName", value);
+            }
+        }
+        if requested.should_capture("LifecycleTransition") {
+            if let ::std::option::Option::Some(value) = input.lifecycle_transition.as_deref() {
+                captured.insert("LifecycleTransition", value);
+            }
+        }
+        if requested.should_capture("RoleARN") {
+            if let ::std::option::Option::Some(value) = input.role_arn.as_deref() {
+                captured.insert("RoleARN", value);
+            }
+        }
+        if requested.should_capture("NotificationTargetARN") {
+            if let ::std::option::Option::Some(value) = input.notification_target_arn.as_deref() {
+                captured.insert("NotificationTargetARN", value);
+            }
+        }
+        if requested.should_capture("NotificationMetadata") {
+            if let ::std::option::Option::Some(value) = input.notification_metadata.as_deref() {
+                captured.insert("NotificationMetadata", value);
+            }
+        }
+        if requested.should_capture("DefaultResult") {
+            if let ::std::option::Option::Some(value) = input.default_result.as_deref() {
+                captured.insert("DefaultResult", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutLifecycleHookResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutLifecycleHookResponseDeserializer {

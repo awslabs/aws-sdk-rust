@@ -163,6 +163,8 @@ pub use crate::types::_evaluator_summary::EvaluatorSummaryBuilder;
 
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfigBuilder;
 
+pub use crate::types::_derived_evaluator_config::DerivedEvaluatorConfigBuilder;
+
 pub use crate::types::_batch_put_limit_entry::BatchPutLimitEntryBuilder;
 
 pub use crate::types::_gateway_rate_limit_detail::GatewayRateLimitDetailBuilder;

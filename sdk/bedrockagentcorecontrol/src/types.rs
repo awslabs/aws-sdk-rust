@@ -115,6 +115,10 @@ pub use crate::types::_evaluator_status::EvaluatorStatus;
 
 pub use crate::types::_included_data::IncludedData;
 
+pub use crate::types::_evaluator_type::EvaluatorType;
+
+pub use crate::types::_provider::Provider;
+
 pub use crate::types::_gateway_rate_limit_status::GatewayRateLimitStatus;
 
 pub use crate::types::_gateway_protocol_type::GatewayProtocolType;
@@ -320,6 +324,8 @@ pub use crate::types::_evaluator_summary::EvaluatorSummary;
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfig;
 
 pub use crate::types::_code_based_evaluator_config::CodeBasedEvaluatorConfig;
+
+pub use crate::types::_derived_evaluator_config::DerivedEvaluatorConfig;
 
 pub use crate::types::_batch_put_limit_entry::BatchPutLimitEntry;
 
@@ -534,8 +540,6 @@ pub use crate::types::_vpc_configuration::VpcConfiguration;
 pub use crate::types::_instance_lifecycle_configuration::InstanceLifecycleConfiguration;
 
 pub use crate::types::_root_volume_configuration::RootVolumeConfiguration;
-
-pub use crate::types::_evaluator_type::EvaluatorType;
 
 pub use crate::types::_rating_scale::RatingScale;
 
@@ -1207,6 +1211,8 @@ mod _dataset_version_summary;
 
 mod _delete_memory_strategy_input;
 
+mod _derived_evaluator_config;
+
 mod _descriptor_type;
 
 mod _descriptors;
@@ -1692,6 +1698,8 @@ mod _private_key_jwt_config;
 mod _private_key_source;
 
 mod _protocol_configuration;
+
+mod _provider;
 
 mod _provider_prefix;
 

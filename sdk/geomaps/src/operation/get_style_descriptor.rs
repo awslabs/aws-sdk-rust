@@ -202,7 +202,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStyleDesc
                         "cannot be empty or unset",
                     ));
                 }
-                ::std::write!(output, "/styles/{Style}/descriptor", Style = style).expect("formatting should succeed");
+                ::std::write!(output, "/v2/styles/{Style}/descriptor", Style = style).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             fn uri_query(
@@ -247,9 +247,21 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStyleDesc
                         query.push_kv("buildings", &::aws_smithy_http::query::fmt_string(inner_9.as_str()));
                     }
                 }
-                if let ::std::option::Option::Some(inner_10) = &_input.key {
+                if let ::std::option::Option::Some(inner_10) = &_input.poi_density {
                     {
-                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_10));
+                        query.push_kv("poi-density", &::aws_smithy_http::query::fmt_string(inner_10.as_str()));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_11) = &_input.poi_categories {
+                    {
+                        for inner_12 in inner_11 {
+                            query.push_kv("poi-categories", &::aws_smithy_http::query::fmt_string(inner_12.as_str()));
+                        }
+                    }
+                }
+                if let ::std::option::Option::Some(inner_13) = &_input.key {
+                    {
+                        query.push_kv("key", &::aws_smithy_http::query::fmt_string(inner_13));
                     }
                 }
                 ::std::result::Result::Ok(())

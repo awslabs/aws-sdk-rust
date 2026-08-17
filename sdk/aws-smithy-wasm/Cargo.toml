@@ -30,7 +30,7 @@ version = "1.14.0"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.6.1"
+version = "1.6.2"
 
 [dependencies.sync_wrapper]
 version = "1"

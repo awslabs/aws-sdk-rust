@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UploadM
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UploadMultipartPart")
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    UploadMultipartPartTelemetryInputCaptureInterceptor,
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                     ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
                 ))
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -155,6 +158,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UploadM
     }
 }
 
+#[derive(Debug)]
+struct UploadMultipartPartTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UploadMultipartPartTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UploadMultipartPartTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UploadMultipartPartInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("accountId") {
+            if let ::std::option::Option::Some(value) = input.account_id.as_deref() {
+                captured.insert("accountId", value);
+            }
+        }
+        if requested.should_capture("vaultName") {
+            if let ::std::option::Option::Some(value) = input.vault_name.as_deref() {
+                captured.insert("vaultName", value);
+            }
+        }
+        if requested.should_capture("uploadId") {
+            if let ::std::option::Option::Some(value) = input.upload_id.as_deref() {
+                captured.insert("uploadId", value);
+            }
+        }
+        if requested.should_capture("checksum") {
+            if let ::std::option::Option::Some(value) = input.checksum.as_deref() {
+                captured.insert("checksum", value);
+            }
+        }
+        if requested.should_capture("range") {
+            if let ::std::option::Option::Some(value) = input.range.as_deref() {
+                captured.insert("range", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UploadMultipartPartResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UploadMultipartPartResponseDeserializer {

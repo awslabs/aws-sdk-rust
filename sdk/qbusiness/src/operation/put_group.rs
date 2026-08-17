@@ -120,6 +120,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutGrou
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutGroup")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutGroupTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -139,6 +142,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutGrou
     }
 }
 
+#[derive(Debug)]
+struct PutGroupTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutGroupTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutGroupTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutGroupInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("applicationId") {
+            if let ::std::option::Option::Some(value) = input.application_id.as_deref() {
+                captured.insert("applicationId", value);
+            }
+        }
+        if requested.should_capture("indexId") {
+            if let ::std::option::Option::Some(value) = input.index_id.as_deref() {
+                captured.insert("indexId", value);
+            }
+        }
+        if requested.should_capture("groupName") {
+            if let ::std::option::Option::Some(value) = input.group_name.as_deref() {
+                captured.insert("groupName", value);
+            }
+        }
+        if requested.should_capture("dataSourceId") {
+            if let ::std::option::Option::Some(value) = input.data_source_id.as_deref() {
+                captured.insert("dataSourceId", value);
+            }
+        }
+        if requested.should_capture("roleArn") {
+            if let ::std::option::Option::Some(value) = input.role_arn.as_deref() {
+                captured.insert("roleArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutGroupResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutGroupResponseDeserializer {

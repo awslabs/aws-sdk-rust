@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetJour
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetJourneyDateRangeKpi")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetJourneyDateRangeKpiTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetJour
     }
 }
 
+#[derive(Debug)]
+struct GetJourneyDateRangeKpiTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetJourneyDateRangeKpiTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "GetJourneyDateRangeKpiTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<GetJourneyDateRangeKpiInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ApplicationId") {
+            if let ::std::option::Option::Some(value) = input.application_id.as_deref() {
+                captured.insert("ApplicationId", value);
+            }
+        }
+        if requested.should_capture("JourneyId") {
+            if let ::std::option::Option::Some(value) = input.journey_id.as_deref() {
+                captured.insert("JourneyId", value);
+            }
+        }
+        if requested.should_capture("KpiName") {
+            if let ::std::option::Option::Some(value) = input.kpi_name.as_deref() {
+                captured.insert("KpiName", value);
+            }
+        }
+        if requested.should_capture("NextToken") {
+            if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
+                captured.insert("NextToken", value);
+            }
+        }
+        if requested.should_capture("PageSize") {
+            if let ::std::option::Option::Some(value) = input.page_size.as_deref() {
+                captured.insert("PageSize", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct GetJourneyDateRangeKpiResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetJourneyDateRangeKpiResponseDeserializer {

@@ -125,6 +125,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutObje
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutObject")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutObjectTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -213,6 +216,189 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutObje
     }
 }
 
+#[derive(Debug)]
+struct PutObjectTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutObjectTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutObjectTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutObjectInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Bucket") {
+            if let ::std::option::Option::Some(value) = input.bucket.as_deref() {
+                captured.insert("Bucket", value);
+            }
+        }
+        if requested.should_capture("CacheControl") {
+            if let ::std::option::Option::Some(value) = input.cache_control.as_deref() {
+                captured.insert("CacheControl", value);
+            }
+        }
+        if requested.should_capture("ContentDisposition") {
+            if let ::std::option::Option::Some(value) = input.content_disposition.as_deref() {
+                captured.insert("ContentDisposition", value);
+            }
+        }
+        if requested.should_capture("ContentEncoding") {
+            if let ::std::option::Option::Some(value) = input.content_encoding.as_deref() {
+                captured.insert("ContentEncoding", value);
+            }
+        }
+        if requested.should_capture("ContentLanguage") {
+            if let ::std::option::Option::Some(value) = input.content_language.as_deref() {
+                captured.insert("ContentLanguage", value);
+            }
+        }
+        if requested.should_capture("ContentMD5") {
+            if let ::std::option::Option::Some(value) = input.content_md5.as_deref() {
+                captured.insert("ContentMD5", value);
+            }
+        }
+        if requested.should_capture("ContentType") {
+            if let ::std::option::Option::Some(value) = input.content_type.as_deref() {
+                captured.insert("ContentType", value);
+            }
+        }
+        if requested.should_capture("ChecksumCRC32") {
+            if let ::std::option::Option::Some(value) = input.checksum_crc32.as_deref() {
+                captured.insert("ChecksumCRC32", value);
+            }
+        }
+        if requested.should_capture("ChecksumCRC32C") {
+            if let ::std::option::Option::Some(value) = input.checksum_crc32_c.as_deref() {
+                captured.insert("ChecksumCRC32C", value);
+            }
+        }
+        if requested.should_capture("ChecksumCRC64NVME") {
+            if let ::std::option::Option::Some(value) = input.checksum_crc64_nvme.as_deref() {
+                captured.insert("ChecksumCRC64NVME", value);
+            }
+        }
+        if requested.should_capture("ChecksumSHA1") {
+            if let ::std::option::Option::Some(value) = input.checksum_sha1.as_deref() {
+                captured.insert("ChecksumSHA1", value);
+            }
+        }
+        if requested.should_capture("ChecksumSHA256") {
+            if let ::std::option::Option::Some(value) = input.checksum_sha256.as_deref() {
+                captured.insert("ChecksumSHA256", value);
+            }
+        }
+        if requested.should_capture("ChecksumSHA512") {
+            if let ::std::option::Option::Some(value) = input.checksum_sha512.as_deref() {
+                captured.insert("ChecksumSHA512", value);
+            }
+        }
+        if requested.should_capture("ChecksumMD5") {
+            if let ::std::option::Option::Some(value) = input.checksum_md5.as_deref() {
+                captured.insert("ChecksumMD5", value);
+            }
+        }
+        if requested.should_capture("ChecksumXXHASH64") {
+            if let ::std::option::Option::Some(value) = input.checksum_xxhash64.as_deref() {
+                captured.insert("ChecksumXXHASH64", value);
+            }
+        }
+        if requested.should_capture("ChecksumXXHASH3") {
+            if let ::std::option::Option::Some(value) = input.checksum_xxhash3.as_deref() {
+                captured.insert("ChecksumXXHASH3", value);
+            }
+        }
+        if requested.should_capture("ChecksumXXHASH128") {
+            if let ::std::option::Option::Some(value) = input.checksum_xxhash128.as_deref() {
+                captured.insert("ChecksumXXHASH128", value);
+            }
+        }
+        if requested.should_capture("IfMatch") {
+            if let ::std::option::Option::Some(value) = input.if_match.as_deref() {
+                captured.insert("IfMatch", value);
+            }
+        }
+        if requested.should_capture("IfNoneMatch") {
+            if let ::std::option::Option::Some(value) = input.if_none_match.as_deref() {
+                captured.insert("IfNoneMatch", value);
+            }
+        }
+        if requested.should_capture("GrantFullControl") {
+            if let ::std::option::Option::Some(value) = input.grant_full_control.as_deref() {
+                captured.insert("GrantFullControl", value);
+            }
+        }
+        if requested.should_capture("GrantRead") {
+            if let ::std::option::Option::Some(value) = input.grant_read.as_deref() {
+                captured.insert("GrantRead", value);
+            }
+        }
+        if requested.should_capture("GrantReadACP") {
+            if let ::std::option::Option::Some(value) = input.grant_read_acp.as_deref() {
+                captured.insert("GrantReadACP", value);
+            }
+        }
+        if requested.should_capture("GrantWriteACP") {
+            if let ::std::option::Option::Some(value) = input.grant_write_acp.as_deref() {
+                captured.insert("GrantWriteACP", value);
+            }
+        }
+        if requested.should_capture("Key") {
+            if let ::std::option::Option::Some(value) = input.key.as_deref() {
+                captured.insert("Key", value);
+            }
+        }
+        if requested.should_capture("WebsiteRedirectLocation") {
+            if let ::std::option::Option::Some(value) = input.website_redirect_location.as_deref() {
+                captured.insert("WebsiteRedirectLocation", value);
+            }
+        }
+        if requested.should_capture("SSECustomerAlgorithm") {
+            if let ::std::option::Option::Some(value) = input.sse_customer_algorithm.as_deref() {
+                captured.insert("SSECustomerAlgorithm", value);
+            }
+        }
+        if requested.should_capture("SSECustomerKeyMD5") {
+            if let ::std::option::Option::Some(value) = input.sse_customer_key_md5.as_deref() {
+                captured.insert("SSECustomerKeyMD5", value);
+            }
+        }
+        if requested.should_capture("Tagging") {
+            if let ::std::option::Option::Some(value) = input.tagging.as_deref() {
+                captured.insert("Tagging", value);
+            }
+        }
+        if requested.should_capture("ExpectedBucketOwner") {
+            if let ::std::option::Option::Some(value) = input.expected_bucket_owner.as_deref() {
+                captured.insert("ExpectedBucketOwner", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutObjectResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutObjectResponseDeserializer {

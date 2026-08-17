@@ -16,6 +16,12 @@ pub fn ser_evaluator_config(
             crate::protocol_serde::shape_code_based_evaluator_config::ser_code_based_evaluator_config(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::EvaluatorConfig::Derived(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("derived").start_object();
+            crate::protocol_serde::shape_derived_evaluator_config::ser_derived_evaluator_config(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::EvaluatorConfig::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EvaluatorConfig",
@@ -76,6 +82,12 @@ where
                             crate::protocol_serde::shape_code_based_evaluator_config::de_code_based_evaluator_config(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'codeBased' cannot be null")
+                                })?,
+                        )),
+                        "derived" => Some(crate::types::EvaluatorConfig::Derived(
+                            crate::protocol_serde::shape_derived_evaluator_config::de_derived_evaluator_config(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'derived' cannot be null")
                                 })?,
                         )),
                         _ => {

@@ -136,6 +136,9 @@ pub mod create_email_address;
 /// Types for the `CreateEvaluationForm` operation.
 pub mod create_evaluation_form;
 
+/// Types for the `CreateExtractionDefinition` operation.
+pub mod create_extraction_definition;
+
 /// Types for the `CreateHoursOfOperation` operation.
 pub mod create_hours_of_operation;
 
@@ -256,6 +259,9 @@ pub mod delete_email_address;
 /// Types for the `DeleteEvaluationForm` operation.
 pub mod delete_evaluation_form;
 
+/// Types for the `DeleteExtractionDefinition` operation.
+pub mod delete_extraction_definition;
+
 /// Types for the `DeleteHoursOfOperation` operation.
 pub mod delete_hours_of_operation;
 
@@ -372,6 +378,9 @@ pub mod describe_email_address;
 
 /// Types for the `DescribeEvaluationForm` operation.
 pub mod describe_evaluation_form;
+
+/// Types for the `DescribeExtractionDefinition` operation.
+pub mod describe_extraction_definition;
 
 /// Types for the `DescribeHoursOfOperation` operation.
 pub mod describe_hours_of_operation;
@@ -624,6 +633,9 @@ pub mod list_evaluation_form_versions;
 
 /// Types for the `ListEvaluationForms` operation.
 pub mod list_evaluation_forms;
+
+/// Types for the `ListExtractionDefinitions` operation.
+pub mod list_extraction_definitions;
 
 /// Types for the `ListFlowAssociations` operation.
 pub mod list_flow_associations;
@@ -1023,6 +1035,9 @@ pub mod update_email_address_metadata;
 
 /// Types for the `UpdateEvaluationForm` operation.
 pub mod update_evaluation_form;
+
+/// Types for the `UpdateExtractionDefinition` operation.
+pub mod update_extraction_definition;
 
 /// Types for the `UpdateHoursOfOperation` operation.
 pub mod update_hours_of_operation;

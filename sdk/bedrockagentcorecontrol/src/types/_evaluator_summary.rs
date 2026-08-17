@@ -14,6 +14,8 @@ pub struct EvaluatorSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of evaluator, indicating whether it is a built-in evaluator provided by the service or a custom evaluator created by the user.</p>
     pub evaluator_type: crate::types::EvaluatorType,
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub provider: ::std::option::Option<crate::types::Provider>,
     /// <p>The evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     pub level: ::std::option::Option<crate::types::EvaluatorLevel>,
     /// <p>The current status of the evaluator.</p>
@@ -51,6 +53,10 @@ impl EvaluatorSummary {
     pub fn evaluator_type(&self) -> &crate::types::EvaluatorType {
         &self.evaluator_type
     }
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
+        self.provider.as_ref()
+    }
     /// <p>The evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     pub fn level(&self) -> ::std::option::Option<&crate::types::EvaluatorLevel> {
         self.level.as_ref()
@@ -84,6 +90,7 @@ impl ::std::fmt::Debug for EvaluatorSummary {
         formatter.field("evaluator_name", &self.evaluator_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_type", &self.evaluator_type);
+        formatter.field("provider", &self.provider);
         formatter.field("level", &self.level);
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
@@ -109,6 +116,7 @@ pub struct EvaluatorSummaryBuilder {
     pub(crate) evaluator_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_type: ::std::option::Option<crate::types::EvaluatorType>,
+    pub(crate) provider: ::std::option::Option<crate::types::Provider>,
     pub(crate) level: ::std::option::Option<crate::types::EvaluatorLevel>,
     pub(crate) status: ::std::option::Option<crate::types::EvaluatorStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -190,6 +198,20 @@ impl EvaluatorSummaryBuilder {
     /// <p>The type of evaluator, indicating whether it is a built-in evaluator provided by the service or a custom evaluator created by the user.</p>
     pub fn get_evaluator_type(&self) -> &::std::option::Option<crate::types::EvaluatorType> {
         &self.evaluator_type
+    }
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub fn provider(mut self, input: crate::types::Provider) -> Self {
+        self.provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
+        self.provider = input;
+        self
+    }
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
+        &self.provider
     }
     /// <p>The evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     pub fn level(mut self, input: crate::types::EvaluatorLevel) -> Self {
@@ -314,6 +336,7 @@ impl EvaluatorSummaryBuilder {
                     "evaluator_type was not specified but it is required when building EvaluatorSummary",
                 )
             })?,
+            provider: self.provider,
             level: self.level,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -346,6 +369,7 @@ impl ::std::fmt::Debug for EvaluatorSummaryBuilder {
         formatter.field("evaluator_name", &self.evaluator_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_type", &self.evaluator_type);
+        formatter.field("provider", &self.provider);
         formatter.field("level", &self.level);
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);

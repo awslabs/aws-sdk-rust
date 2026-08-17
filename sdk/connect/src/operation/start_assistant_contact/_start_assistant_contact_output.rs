@@ -7,9 +7,9 @@ pub struct StartAssistantContactOutput {
     pub contact_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the chat participant. The participant identifier remains the same throughout the chat lifecycle.</p>
     pub participant_id: ::std::option::Option<::std::string::String>,
-    /// <p>The token that the chat participant uses to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API. The token remains valid for the lifetime of the chat participant.</p>
+    /// <p>The token that the chat participant uses with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> operation. The token remains valid for the lifetime of the chat participant.</p>
     pub participant_token: ::std::option::Option<::std::string::String>,
-    /// <p>For a persistent chat, the identifier of the contact from which the chat continues. Amazon Connect returns this field only for persistent chats.</p>
+    /// <p>The identifier of the contact from which the chat continues, returned only for persistent chats.</p>
     pub continued_from_contact_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -22,11 +22,11 @@ impl StartAssistantContactOutput {
     pub fn participant_id(&self) -> ::std::option::Option<&str> {
         self.participant_id.as_deref()
     }
-    /// <p>The token that the chat participant uses to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API. The token remains valid for the lifetime of the chat participant.</p>
+    /// <p>The token that the chat participant uses with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> operation. The token remains valid for the lifetime of the chat participant.</p>
     pub fn participant_token(&self) -> ::std::option::Option<&str> {
         self.participant_token.as_deref()
     }
-    /// <p>For a persistent chat, the identifier of the contact from which the chat continues. Amazon Connect returns this field only for persistent chats.</p>
+    /// <p>The identifier of the contact from which the chat continues, returned only for persistent chats.</p>
     pub fn continued_from_contact_id(&self) -> ::std::option::Option<&str> {
         self.continued_from_contact_id.as_deref()
     }
@@ -82,31 +82,31 @@ impl StartAssistantContactOutputBuilder {
     pub fn get_participant_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.participant_id
     }
-    /// <p>The token that the chat participant uses to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API. The token remains valid for the lifetime of the chat participant.</p>
+    /// <p>The token that the chat participant uses with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> operation. The token remains valid for the lifetime of the chat participant.</p>
     pub fn participant_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.participant_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token that the chat participant uses to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API. The token remains valid for the lifetime of the chat participant.</p>
+    /// <p>The token that the chat participant uses with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> operation. The token remains valid for the lifetime of the chat participant.</p>
     pub fn set_participant_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.participant_token = input;
         self
     }
-    /// <p>The token that the chat participant uses to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API. The token remains valid for the lifetime of the chat participant.</p>
+    /// <p>The token that the chat participant uses with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> operation. The token remains valid for the lifetime of the chat participant.</p>
     pub fn get_participant_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.participant_token
     }
-    /// <p>For a persistent chat, the identifier of the contact from which the chat continues. Amazon Connect returns this field only for persistent chats.</p>
+    /// <p>The identifier of the contact from which the chat continues, returned only for persistent chats.</p>
     pub fn continued_from_contact_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.continued_from_contact_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>For a persistent chat, the identifier of the contact from which the chat continues. Amazon Connect returns this field only for persistent chats.</p>
+    /// <p>The identifier of the contact from which the chat continues, returned only for persistent chats.</p>
     pub fn set_continued_from_contact_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.continued_from_contact_id = input;
         self
     }
-    /// <p>For a persistent chat, the identifier of the contact from which the chat continues. Amazon Connect returns this field only for persistent chats.</p>
+    /// <p>The identifier of the contact from which the chat continues, returned only for persistent chats.</p>
     pub fn get_continued_from_contact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.continued_from_contact_id
     }

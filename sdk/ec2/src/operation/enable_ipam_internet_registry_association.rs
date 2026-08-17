@@ -141,6 +141,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableI
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("EnableIpamInternetRegistryAssociation")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                EnableIpamInternetRegistryAssociationTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -160,6 +163,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableI
     }
 }
 
+#[derive(Debug)]
+struct EnableIpamInternetRegistryAssociationTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableIpamInternetRegistryAssociationTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "EnableIpamInternetRegistryAssociationTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<EnableIpamInternetRegistryAssociationInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("IpamInternetRegistryAssociationId") {
+            if let ::std::option::Option::Some(value) = input.ipam_internet_registry_association_id.as_deref() {
+                captured.insert("IpamInternetRegistryAssociationId", value);
+            }
+        }
+        if requested.should_capture("RpkiVersion") {
+            if let ::std::option::Option::Some(value) = input.rpki_version.as_deref() {
+                captured.insert("RpkiVersion", value);
+            }
+        }
+        if requested.should_capture("ServiceUri") {
+            if let ::std::option::Option::Some(value) = input.service_uri.as_deref() {
+                captured.insert("ServiceUri", value);
+            }
+        }
+        if requested.should_capture("ChildHandle") {
+            if let ::std::option::Option::Some(value) = input.child_handle.as_deref() {
+                captured.insert("ChildHandle", value);
+            }
+        }
+        if requested.should_capture("ParentHandle") {
+            if let ::std::option::Option::Some(value) = input.parent_handle.as_deref() {
+                captured.insert("ParentHandle", value);
+            }
+        }
+        if requested.should_capture("ParentBpkiTa") {
+            if let ::std::option::Option::Some(value) = input.parent_bpki_ta.as_deref() {
+                captured.insert("ParentBpkiTa", value);
+            }
+        }
+        if requested.should_capture("ClientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("ClientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct EnableIpamInternetRegistryAssociationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for EnableIpamInternetRegistryAssociationResponseDeserializer {

@@ -5,6 +5,8 @@ pub use crate::types::_agentic_retrieve_policy_configuration::AgenticRetrievePol
 
 pub use crate::types::_user_context::UserContext;
 
+pub use crate::types::_agentic_retrieve_memory_configuration::AgenticRetrieveMemoryConfiguration;
+
 pub use crate::types::_agentic_retrieve_stream_response_output::AgenticRetrieveStreamResponseOutput;
 
 pub use crate::types::_flow_execution_status::FlowExecutionStatus;
@@ -94,6 +96,10 @@ pub use crate::types::_agentic_retrieve_reranking_model_type::AgenticRetrieveRer
 pub use crate::types::_agentic_retrieve_reranking_configuration::AgenticRetrieveRerankingConfiguration;
 
 pub use crate::types::_agentic_retrieve_bedrock_guardrail_configuration::AgenticRetrieveBedrockGuardrailConfiguration;
+
+pub use crate::types::_agentic_retrieve_memory_session_binding::AgenticRetrieveMemorySessionBinding;
+
+pub use crate::types::_agentic_retrieve_memory_persistence_mode::AgenticRetrieveMemoryPersistenceMode;
 
 pub use crate::types::_agentic_retrieve_result_event::AgenticRetrieveResultEvent;
 
@@ -218,6 +224,8 @@ pub use crate::types::_bedrock_foundation_model_configuration::BedrockFoundation
 pub use crate::types::_agentic_retrieve_reranking_configuration_type::AgenticRetrieveRerankingConfigurationType;
 
 pub use crate::types::_agentic_retrieve_bedrock_reranking_configuration::AgenticRetrieveBedrockRerankingConfiguration;
+
+pub use crate::types::_agentic_retrieve_memory_retrieval_config::AgenticRetrieveMemoryRetrievalConfig;
 
 pub use crate::types::_agentic_retrieve_generated_response::AgenticRetrieveGeneratedResponse;
 
@@ -457,6 +465,8 @@ pub use crate::types::_image_block::ImageBlock;
 
 pub use crate::types::_retrieval_overrides::RetrievalOverrides;
 
+pub use crate::types::_agentic_retrieve_memory_metadata_filter::AgenticRetrieveMemoryMetadataFilter;
+
 pub use crate::types::_retrieval_content::RetrievalContent;
 
 pub use crate::types::_agentic_retrieve_source_retriever::AgenticRetrieveSourceRetriever;
@@ -549,9 +559,17 @@ pub use crate::types::_image_format::ImageFormat;
 
 pub use crate::types::_image_source::ImageSource;
 
+pub use crate::types::_agentic_retrieve_memory_metadata_filter_left::AgenticRetrieveMemoryMetadataFilterLeft;
+
+pub use crate::types::_agentic_retrieve_memory_metadata_filter_operator::AgenticRetrieveMemoryMetadataFilterOperator;
+
+pub use crate::types::_agentic_retrieve_memory_metadata_filter_right::AgenticRetrieveMemoryMetadataFilterRight;
+
 pub use crate::types::_agentic_retrieve_action_details::AgenticRetrieveActionDetails;
 
 pub use crate::types::_agentic_retrieve_full_doc_expansion_details::AgenticRetrieveFullDocExpansionDetails;
+
+pub use crate::types::_agentic_retrieve_memory_retrieve_details::AgenticRetrieveMemoryRetrieveDetails;
 
 pub use crate::types::_agentic_retrieve_warning_message::AgenticRetrieveWarningMessage;
 
@@ -634,6 +652,8 @@ pub use crate::types::_attribute_type::AttributeType;
 pub use crate::types::_retrieval_result_content_column_type::RetrievalResultContentColumnType;
 
 pub use crate::types::_s3_location::S3Location;
+
+pub use crate::types::_agentic_retrieve_memory_metadata_value::AgenticRetrieveMemoryMetadataValue;
 
 pub use crate::types::_agentic_retrieve_citation_reference::AgenticRetrieveCitationReference;
 
@@ -774,6 +794,26 @@ mod _agentic_retrieve_full_doc_expansion_details;
 mod _agentic_retrieve_generated_response;
 
 mod _agentic_retrieve_guardrail_warning;
+
+mod _agentic_retrieve_memory_configuration;
+
+mod _agentic_retrieve_memory_metadata_filter;
+
+mod _agentic_retrieve_memory_metadata_filter_left;
+
+mod _agentic_retrieve_memory_metadata_filter_operator;
+
+mod _agentic_retrieve_memory_metadata_filter_right;
+
+mod _agentic_retrieve_memory_metadata_value;
+
+mod _agentic_retrieve_memory_persistence_mode;
+
+mod _agentic_retrieve_memory_retrieval_config;
+
+mod _agentic_retrieve_memory_retrieve_details;
+
+mod _agentic_retrieve_memory_session_binding;
 
 mod _agentic_retrieve_message;
 

@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateR
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateReplicationTask")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateReplicationTaskTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateR
     }
 }
 
+#[derive(Debug)]
+struct CreateReplicationTaskTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateReplicationTaskTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateReplicationTaskTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateReplicationTaskInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ReplicationTaskIdentifier") {
+            if let ::std::option::Option::Some(value) = input.replication_task_identifier.as_deref() {
+                captured.insert("ReplicationTaskIdentifier", value);
+            }
+        }
+        if requested.should_capture("SourceEndpointArn") {
+            if let ::std::option::Option::Some(value) = input.source_endpoint_arn.as_deref() {
+                captured.insert("SourceEndpointArn", value);
+            }
+        }
+        if requested.should_capture("TargetEndpointArn") {
+            if let ::std::option::Option::Some(value) = input.target_endpoint_arn.as_deref() {
+                captured.insert("TargetEndpointArn", value);
+            }
+        }
+        if requested.should_capture("ReplicationInstanceArn") {
+            if let ::std::option::Option::Some(value) = input.replication_instance_arn.as_deref() {
+                captured.insert("ReplicationInstanceArn", value);
+            }
+        }
+        if requested.should_capture("TableMappings") {
+            if let ::std::option::Option::Some(value) = input.table_mappings.as_deref() {
+                captured.insert("TableMappings", value);
+            }
+        }
+        if requested.should_capture("ReplicationTaskSettings") {
+            if let ::std::option::Option::Some(value) = input.replication_task_settings.as_deref() {
+                captured.insert("ReplicationTaskSettings", value);
+            }
+        }
+        if requested.should_capture("CdcStartPosition") {
+            if let ::std::option::Option::Some(value) = input.cdc_start_position.as_deref() {
+                captured.insert("CdcStartPosition", value);
+            }
+        }
+        if requested.should_capture("CdcStopPosition") {
+            if let ::std::option::Option::Some(value) = input.cdc_stop_position.as_deref() {
+                captured.insert("CdcStopPosition", value);
+            }
+        }
+        if requested.should_capture("TaskData") {
+            if let ::std::option::Option::Some(value) = input.task_data.as_deref() {
+                captured.insert("TaskData", value);
+            }
+        }
+        if requested.should_capture("ResourceIdentifier") {
+            if let ::std::option::Option::Some(value) = input.resource_identifier.as_deref() {
+                captured.insert("ResourceIdentifier", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateReplicationTaskResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateReplicationTaskResponseDeserializer {

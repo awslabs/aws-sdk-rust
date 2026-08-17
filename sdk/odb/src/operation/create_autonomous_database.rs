@@ -135,6 +135,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateAutonomousDatabase")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateAutonomousDatabaseTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -154,6 +157,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
     }
 }
 
+#[derive(Debug)]
+struct CreateAutonomousDatabaseTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAutonomousDatabaseTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateAutonomousDatabaseTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateAutonomousDatabaseInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("odbNetworkId") {
+            if let ::std::option::Option::Some(value) = input.odb_network_id.as_deref() {
+                captured.insert("odbNetworkId", value);
+            }
+        }
+        if requested.should_capture("displayName") {
+            if let ::std::option::Option::Some(value) = input.display_name.as_deref() {
+                captured.insert("displayName", value);
+            }
+        }
+        if requested.should_capture("dbName") {
+            if let ::std::option::Option::Some(value) = input.db_name.as_deref() {
+                captured.insert("dbName", value);
+            }
+        }
+        if requested.should_capture("characterSet") {
+            if let ::std::option::Option::Some(value) = input.character_set.as_deref() {
+                captured.insert("characterSet", value);
+            }
+        }
+        if requested.should_capture("ncharacterSet") {
+            if let ::std::option::Option::Some(value) = input.ncharacter_set.as_deref() {
+                captured.insert("ncharacterSet", value);
+            }
+        }
+        if requested.should_capture("dbVersion") {
+            if let ::std::option::Option::Some(value) = input.db_version.as_deref() {
+                captured.insert("dbVersion", value);
+            }
+        }
+        if requested.should_capture("privateEndpointIp") {
+            if let ::std::option::Option::Some(value) = input.private_endpoint_ip.as_deref() {
+                captured.insert("privateEndpointIp", value);
+            }
+        }
+        if requested.should_capture("privateEndpointLabel") {
+            if let ::std::option::Option::Some(value) = input.private_endpoint_label.as_deref() {
+                captured.insert("privateEndpointLabel", value);
+            }
+        }
+        if requested.should_capture("resourcePoolLeaderId") {
+            if let ::std::option::Option::Some(value) = input.resource_pool_leader_id.as_deref() {
+                captured.insert("resourcePoolLeaderId", value);
+            }
+        }
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateAutonomousDatabaseResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateAutonomousDatabaseResponseDeserializer {

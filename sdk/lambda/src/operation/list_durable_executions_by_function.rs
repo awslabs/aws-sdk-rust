@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDur
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListDurableExecutionsByFunction")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListDurableExecutionsByFunctionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDur
     }
 }
 
+#[derive(Debug)]
+struct ListDurableExecutionsByFunctionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDurableExecutionsByFunctionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ListDurableExecutionsByFunctionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ListDurableExecutionsByFunctionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("FunctionName") {
+            if let ::std::option::Option::Some(value) = input.function_name.as_deref() {
+                captured.insert("FunctionName", value);
+            }
+        }
+        if requested.should_capture("Qualifier") {
+            if let ::std::option::Option::Some(value) = input.qualifier.as_deref() {
+                captured.insert("Qualifier", value);
+            }
+        }
+        if requested.should_capture("DurableExecutionName") {
+            if let ::std::option::Option::Some(value) = input.durable_execution_name.as_deref() {
+                captured.insert("DurableExecutionName", value);
+            }
+        }
+        if requested.should_capture("Marker") {
+            if let ::std::option::Option::Some(value) = input.marker.as_deref() {
+                captured.insert("Marker", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ListDurableExecutionsByFunctionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListDurableExecutionsByFunctionResponseDeserializer {

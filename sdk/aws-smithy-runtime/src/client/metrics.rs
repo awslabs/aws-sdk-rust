@@ -15,7 +15,42 @@ use aws_smithy_runtime_api::client::{
     runtime_plugin::RuntimePlugin,
 };
 use aws_smithy_types::config_bag::{FrozenLayer, Layer, Storable, StoreReplace};
+use aws_smithy_types::telemetry::{CapturedTelemetryAttributes, RequestedTelemetryAttributes};
 use std::{borrow::Cow, sync::Arc, time::SystemTime};
+
+/// Sets the outcome attributes (`error.type` and `http.status_code`) on `attrs` from a
+/// finalizer-phase context.
+fn add_outcome_attrs(
+    attrs: &mut Attributes,
+    context: &aws_smithy_runtime_api::client::interceptors::context::FinalizerInterceptorContextRef<
+        '_,
+    >,
+) {
+    // Coarse category only; the error is type-erased here, so the modeled name isn't reachable.
+    // Absent on success, per OTel convention.
+    if let Some(Err(err)) = context.output_or_error() {
+        let category = if err.is_timeout_error() {
+            "timeout"
+        } else if err.is_connector_error() {
+            "connector"
+        } else if err.is_response_error() {
+            "response"
+        } else if err.is_operation_error() {
+            "operation"
+        } else {
+            "other"
+        };
+        attrs.set("error.type", AttributeValue::String(category.into()));
+    }
+
+    // Raw HTTP status code, whenever a response reached us.
+    if let Some(response) = context.response() {
+        attrs.set(
+            "http.status_code",
+            AttributeValue::I64(i64::from(response.status().as_u16())),
+        );
+    }
+}
 
 /// Struct to hold metric data in the ConfigBag
 #[derive(Debug, Clone)]
@@ -34,6 +69,11 @@ impl Storable for MeasurementsContainer {
 pub(crate) struct OperationTelemetry {
     pub(crate) operation_duration: Arc<dyn Histogram>,
     pub(crate) attempt_duration: Arc<dyn Histogram>,
+    // Body sizes are their own instruments rather than attributes on the duration histogram: body
+    // size is near-unique per call, so attaching it as a label would fragment the duration metric
+    // into one time series per byte count.
+    pub(crate) request_body_size: Arc<dyn Histogram>,
+    pub(crate) response_body_size: Arc<dyn Histogram>,
 }
 
 impl OperationTelemetry {
@@ -52,6 +92,16 @@ impl OperationTelemetry {
                 .create_histogram("smithy.client.call.attempt.duration")
                 .set_units("s")
                 .set_description("The time it takes to connect to the service, send the request, and get back HTTP status code and headers (including time queued waiting to be sent)")
+                .build(),
+            request_body_size: meter
+                .create_histogram("smithy.client.call.request.size")
+                .set_units("By")
+                .set_description("Size of the transferred request body, in bytes")
+                .build(),
+            response_body_size: meter
+                .create_histogram("smithy.client.call.response.size")
+                .set_units("By")
+                .set_description("Size of the transferred response body, in bytes")
                 .build(),
         })
     }
@@ -84,6 +134,20 @@ impl MetricsInterceptor {
             let mut attributes = Attributes::new();
             attributes.set("rpc.service", AttributeValue::String(md.service().into()));
             attributes.set("rpc.method", AttributeValue::String(md.name().into()));
+
+            // Merge captured input members that the customer opted in to *emit*. Capture-only
+            // members are present in the bag for in-process reads but are deliberately excluded
+            // from the metric label set.
+            if let (Some(captured), Some(requested)) = (
+                cfg.load::<CapturedTelemetryAttributes>(),
+                cfg.load::<RequestedTelemetryAttributes>(),
+            ) {
+                for (name, value) in captured.iter() {
+                    if requested.should_emit(name) {
+                        attributes.set(name, AttributeValue::String(value.into()));
+                    }
+                }
+            }
 
             Some(attributes)
         } else {
@@ -129,7 +193,7 @@ impl Intercept for MetricsInterceptor {
 
     fn read_after_execution(
         &self,
-        _context: &aws_smithy_runtime_api::client::interceptors::context::FinalizerInterceptorContextRef<'_>,
+        context: &aws_smithy_runtime_api::client::interceptors::context::FinalizerInterceptorContextRef<'_>,
         _runtime_components: &aws_smithy_runtime_api::client::runtime_components::RuntimeComponents,
         cfg: &mut aws_smithy_types::config_bag::ConfigBag,
     ) -> Result<(), aws_smithy_runtime_api::box_error::BoxError> {
@@ -137,7 +201,14 @@ impl Intercept for MetricsInterceptor {
 
         let attributes = self.get_attrs_from_cfg(cfg);
 
-        if let Some(attrs) = attributes {
+        if let Some(mut attrs) = attributes {
+            // The outcome is only known at the finalizer, so it is set here rather than in
+            // `get_attrs_from_cfg` (which also serves the per-attempt path).
+            add_outcome_attrs(&mut attrs, context);
+
+            // Transferred byte sizes are recorded on their own instruments by the byte
+            // interceptor (see `telemetry_bytes`), not as attributes on the duration histogram.
+
             let call_end = self.time_source.now();
             let call_duration = call_end.duration_since(measurements.call_start);
             if let Ok(elapsed) = call_duration {
@@ -213,7 +284,11 @@ impl RuntimePlugin for MetricsRuntimePlugin {
         if let Ok(interceptor) = interceptor {
             Cow::Owned(
                 RuntimeComponentsBuilder::new("Metrics")
-                    .with_interceptor(SharedInterceptor::permanent(interceptor)),
+                    .with_interceptor(SharedInterceptor::permanent(interceptor))
+                    // Counts transferred bytes into the bag for the metrics interceptor to read.
+                    .with_interceptor(SharedInterceptor::permanent(
+                        crate::client::telemetry_bytes::TelemetryBytesInterceptor,
+                    )),
             )
         } else {
             Cow::Owned(RuntimeComponentsBuilder::new("Metrics"))
@@ -281,5 +356,170 @@ impl MetricsRuntimePluginBuilder {
         } else {
             Err("Scope is required for MetricsRuntimePlugin.".into())
         }
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    use aws_smithy_async::time::SystemTimeSource;
+    use aws_smithy_types::config_bag::ConfigBag;
+
+    fn interceptor() -> MetricsInterceptor {
+        MetricsInterceptor::new(SharedTimeSource::new(SystemTimeSource::new())).unwrap()
+    }
+
+    fn cfg_with(layer: Layer) -> ConfigBag {
+        ConfigBag::of_layers(vec![layer])
+    }
+
+    fn string_attr<'a>(attrs: &'a Attributes, key: &str) -> Option<&'a str> {
+        match attrs.get(key) {
+            Some(AttributeValue::String(s)) => Some(s.as_str()),
+            _ => None,
+        }
+    }
+
+    #[test]
+    fn base_attrs_are_service_and_method() {
+        let mut layer = Layer::new("test");
+        layer.store_put(Metadata::new("GetObject", "S3"));
+
+        let attrs = interceptor()
+            .get_attrs_from_cfg(&cfg_with(layer))
+            .expect("metadata present");
+
+        assert_eq!(Some("S3"), string_attr(&attrs, "rpc.service"));
+        assert_eq!(Some("GetObject"), string_attr(&attrs, "rpc.method"));
+    }
+
+    #[test]
+    fn no_attrs_without_metadata() {
+        // Nothing to key the metric on, so no attributes are produced.
+        assert!(interceptor()
+            .get_attrs_from_cfg(&cfg_with(Layer::new("test")))
+            .is_none());
+    }
+
+    #[test]
+    fn emitted_members_are_merged_onto_attrs() {
+        let mut captured = CapturedTelemetryAttributes::new();
+        captured.insert("Bucket", "my-bucket");
+
+        let mut layer = Layer::new("test");
+        layer.store_put(Metadata::new("GetObject", "S3"));
+        layer.store_put(captured);
+        layer.store_put(RequestedTelemetryAttributes::new(["Bucket"]));
+
+        let attrs = interceptor()
+            .get_attrs_from_cfg(&cfg_with(layer))
+            .expect("metadata present");
+
+        // The emitted input member rides alongside the built-in rpc.* attributes.
+        assert_eq!(Some("my-bucket"), string_attr(&attrs, "Bucket"));
+        assert_eq!(Some("S3"), string_attr(&attrs, "rpc.service"));
+    }
+
+    #[test]
+    fn capture_only_members_are_not_emitted() {
+        // A value captured for in-process reads must not land on the metric.
+        let mut captured = CapturedTelemetryAttributes::new();
+        captured.insert("Prefix", "logs/");
+
+        let mut requested = RequestedTelemetryAttributes::default();
+        requested.capture_only(["Prefix"]);
+
+        let mut layer = Layer::new("test");
+        layer.store_put(Metadata::new("GetObject", "S3"));
+        layer.store_put(captured);
+        layer.store_put(requested);
+
+        let attrs = interceptor()
+            .get_attrs_from_cfg(&cfg_with(layer))
+            .expect("metadata present");
+
+        assert!(
+            attrs.get("Prefix").is_none(),
+            "capture-only member must not be emitted on the metric"
+        );
+    }
+
+    #[test]
+    fn nothing_captured_leaves_only_base_attrs() {
+        // Opt-in is off by default: an empty capture set adds nothing.
+        let mut layer = Layer::new("test");
+        layer.store_put(Metadata::new("GetObject", "S3"));
+        layer.store_put(CapturedTelemetryAttributes::new());
+
+        let attrs = interceptor()
+            .get_attrs_from_cfg(&cfg_with(layer))
+            .expect("metadata present");
+
+        assert_eq!(Some("GetObject"), string_attr(&attrs, "rpc.method"));
+        assert!(attrs.get("Bucket").is_none());
+    }
+
+    // --- add_outcome_attrs (the `status` dimension) ---
+
+    use aws_smithy_runtime_api::client::interceptors::context::{
+        Error, Input, InterceptorContext, Output,
+    };
+    use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
+    use aws_smithy_runtime_api::client::result::ConnectorError;
+    use aws_smithy_runtime_api::http::{Response, StatusCode};
+    use aws_smithy_types::body::SdkBody;
+
+    fn i64_attr(attrs: &Attributes, key: &str) -> Option<i64> {
+        match attrs.get(key) {
+            Some(AttributeValue::I64(v)) => Some(*v),
+            _ => None,
+        }
+    }
+
+    #[test]
+    fn outcome_on_success_has_status_code_and_no_error_type() {
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
+        ctx.set_output_or_error(Ok(Output::doesnt_matter()));
+        ctx.set_response(Response::new(
+            StatusCode::try_from(200).unwrap(),
+            SdkBody::empty(),
+        ));
+
+        let mut attrs = Attributes::new();
+        add_outcome_attrs(&mut attrs, &(&ctx).into());
+
+        // error.type is absent on success (OTel convention); status code is present.
+        assert!(attrs.get("error.type").is_none());
+        assert_eq!(Some(200), i64_attr(&attrs, "http.status_code"));
+    }
+
+    #[test]
+    fn outcome_on_failure_sets_error_type_category() {
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
+        ctx.set_output_or_error(Err(OrchestratorError::connector(ConnectorError::io(
+            "boom".into(),
+        ))));
+
+        let mut attrs = Attributes::new();
+        add_outcome_attrs(&mut attrs, &(&ctx).into());
+
+        // A connector error maps to the `connector` category.
+        assert_eq!(Some("connector"), string_attr(&attrs, "error.type"));
+    }
+
+    #[test]
+    fn outcome_without_response_omits_status_code() {
+        let mut ctx: InterceptorContext<Input, Output, Error> =
+            InterceptorContext::new(Input::doesnt_matter());
+        ctx.set_output_or_error(Err(OrchestratorError::connector(ConnectorError::io(
+            "boom".into(),
+        ))));
+
+        let mut attrs = Attributes::new();
+        add_outcome_attrs(&mut attrs, &(&ctx).into());
+
+        // No response reached us, so there is no HTTP status code to record.
+        assert!(attrs.get("http.status_code").is_none());
+        assert_eq!(Some("connector"), string_attr(&attrs, "error.type"));
     }
 }

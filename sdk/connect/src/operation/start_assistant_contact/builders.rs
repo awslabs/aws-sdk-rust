@@ -23,7 +23,7 @@ impl crate::operation::start_assistant_contact::builders::StartAssistantContactI
 /// Fluent builder constructing a request to `StartAssistantContact`.
 ///
 /// <p>Starts a chat contact with an AI agent.</p>
-/// <p>Use the returned <code>ParticipantToken</code> to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API.</p>
+/// <p>Use the returned <code>ParticipantToken</code> with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> operation.</p>
 /// <p>For more information about chat, see the following topics in the <i>Connect Customer Administrator Guide</i>:</p>
 /// <ul>
 /// <li>
@@ -130,17 +130,17 @@ impl StartAssistantContactFluentBuilder {
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
     }
-    /// <p>The AI agent that participates in the contact.</p>
+    /// <p>The AI agent configuration for this contact.</p>
     pub fn ai_agent(mut self, input: crate::types::AiAgentInput) -> Self {
         self.inner = self.inner.ai_agent(input);
         self
     }
-    /// <p>The AI agent that participates in the contact.</p>
+    /// <p>The AI agent configuration for this contact.</p>
     pub fn set_ai_agent(mut self, input: ::std::option::Option<crate::types::AiAgentInput>) -> Self {
         self.inner = self.inner.set_ai_agent(input);
         self
     }
-    /// <p>The AI agent that participates in the contact.</p>
+    /// <p>The AI agent configuration for this contact.</p>
     pub fn get_ai_agent(&self) -> &::std::option::Option<crate::types::AiAgentInput> {
         self.inner.get_ai_agent()
     }
@@ -177,20 +177,20 @@ impl StartAssistantContactFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>A map of key-value pairs to associate with the contact. Amazon Connect makes these attributes available to flows as standard contact attributes.</p>
-    /// <p>You can provide up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can contain only alphanumeric characters, dashes, and underscores.</p>
+    /// <p>A map of key-value pairs to associate with the contact. We make these attributes available to flows as standard contact attributes.</p>
+    /// <p>You can provide up to 32,768 UTF-8 bytes across all key-value pairs for each contact.</p>
     pub fn attributes(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
-    /// <p>A map of key-value pairs to associate with the contact. Amazon Connect makes these attributes available to flows as standard contact attributes.</p>
-    /// <p>You can provide up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can contain only alphanumeric characters, dashes, and underscores.</p>
+    /// <p>A map of key-value pairs to associate with the contact. We make these attributes available to flows as standard contact attributes.</p>
+    /// <p>You can provide up to 32,768 UTF-8 bytes across all key-value pairs for each contact.</p>
     pub fn set_attributes(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
-    /// <p>A map of key-value pairs to associate with the contact. Amazon Connect makes these attributes available to flows as standard contact attributes.</p>
-    /// <p>You can provide up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can contain only alphanumeric characters, dashes, and underscores.</p>
+    /// <p>A map of key-value pairs to associate with the contact. We make these attributes available to flows as standard contact attributes.</p>
+    /// <p>You can provide up to 32,768 UTF-8 bytes across all key-value pairs for each contact.</p>
     pub fn get_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_attributes()
     }

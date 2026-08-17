@@ -7,6 +7,7 @@ pub(crate) mod build_connector {
     use crate::tls::TlsContext;
     use client::connect::HttpConnector;
     use hyper_util::client::legacy as client;
+    use s2n_tls::callbacks::VerifyHostNameCallback;
     use s2n_tls::security::Policy;
     use std::sync::LazyLock;
 
@@ -32,11 +33,107 @@ pub(crate) mod build_connector {
         config.build().expect("valid s2n config")
     });
 
+    /// A host name verifier that extends standard verification with support for
+    /// additional server names.
+    ///
+    /// By default, s2n-tls verifies the server's certificate by checking that at least
+    /// one Subject Alternative Name (SAN) matches the server name set on the connection
+    /// (typically extracted from the request URI). This verifier additionally accepts
+    /// SANs that match any of the configured `additional_server_names`.
+    ///
+    /// This is useful when a server presents a certificate whose SANs do not include
+    /// the hostname used to connect, but do include an alternative name the client has
+    /// been configured to accept.
+    ///
+    /// # How it works
+    ///
+    /// When set as a `ConnectionInitializer`, this struct reads the primary server name
+    /// from the connection (which was already set by the connector from the request URI)
+    /// and installs a per-connection `VerifyHostNameCallback` that accepts hostnames
+    /// matching either the primary server name or any of the additional server names.
+    #[derive(Clone)]
+    struct AdditionalServerNamesInitializer {
+        additional_server_names: Vec<String>,
+    }
+
+    /// Per-connection callback that verifies hostnames from a certificate's SANs
+    /// against both the primary server name and any additional configured names.
+    struct AdditionalServerNamesVerifier {
+        /// The primary server name (from the connection/URI) plus all additional
+        /// server names that should be accepted.
+        accepted_names: Vec<String>,
+    }
+
+    /// Checks whether a presented hostname (from a certificate SAN) matches
+    /// an accepted reference name, using rules from RFC 6125 §6.4:
+    ///
+    /// 1. Case-insensitive exact match
+    /// 2. Single-level wildcard: a presented name like `*.example.com` matches
+    ///    a reference name like `foo.example.com` (but not `bar.foo.example.com`)
+    ///
+    /// This mirrors s2n-tls's default `s2n_default_verify_host` behavior in
+    /// <https://github.com/aws/s2n-tls/blob/main/tls/s2n_connection.c>.
+    fn matches_host_name(accepted: &str, presented: &str) -> bool {
+        // Case-insensitive exact match
+        if accepted.eq_ignore_ascii_case(presented) {
+            return true;
+        }
+
+        // Wildcard match: presented = "*.example.com", accepted = "foo.example.com"
+        if let Some(wildcard_suffix) = presented.strip_prefix("*.") {
+            if let Some((_first_label, accepted_suffix)) = accepted.split_once('.') {
+                return accepted_suffix.eq_ignore_ascii_case(wildcard_suffix);
+            }
+        }
+
+        false
+    }
+
+    impl VerifyHostNameCallback for AdditionalServerNamesVerifier {
+        fn verify_host_name(&self, host_name: &str) -> bool {
+            self.accepted_names
+                .iter()
+                .any(|accepted| matches_host_name(accepted, host_name))
+        }
+    }
+
+    impl s2n_tls::config::ConnectionInitializer for AdditionalServerNamesInitializer {
+        fn initialize_connection(
+            &self,
+            connection: &mut s2n_tls::connection::Connection,
+        ) -> Result<
+            Option<std::pin::Pin<Box<dyn s2n_tls::callbacks::ConnectionFuture>>>,
+            s2n_tls::error::Error,
+        > {
+            // Build the list of all accepted names: the primary server name (from the URI)
+            // plus all additional server names.
+            let mut accepted_names = Vec::with_capacity(self.additional_server_names.len() + 1);
+
+            // The primary server name was already set on the connection by s2n-tls-hyper/
+            // s2n-tls-tokio before the handshake begins. Read it so we can include it
+            // in the verifier's accepted names list.
+            if let Some(primary) = connection.server_name() {
+                accepted_names.push(primary.to_owned());
+            }
+
+            accepted_names.extend(self.additional_server_names.iter().cloned());
+
+            connection
+                .set_verify_host_callback(AdditionalServerNamesVerifier { accepted_names })
+                .expect("additional server names hostname verifier set on s2n connection");
+
+            Ok(None)
+        }
+    }
+
     impl TlsContext {
         fn s2n_config(&self) -> s2n_tls::config::Config {
             // TODO(s2n-tls): s2n does not support turning a config back into a builder or a way to load a trust store and re-use it
             // instead if we are only using the defaults then use a cached config, otherwise pay the cost to build a new one
-            if self.trust_store.enable_native_roots && self.trust_store.custom_certs.is_empty() {
+            if self.trust_store.enable_native_roots
+                && self.trust_store.custom_certs.is_empty()
+                && self.additional_server_names.is_empty()
+            {
                 CACHED_CONFIG.clone()
             } else {
                 let mut config = base_config();
@@ -48,6 +145,20 @@ pub(crate) mod build_connector {
                         .trust_pem(pem_cert.0.as_slice())
                         .expect("valid certificate");
                 }
+
+                if !self.additional_server_names.is_empty() {
+                    let additional_server_names: Vec<String> = self
+                        .additional_server_names
+                        .iter()
+                        .map(|name| name.0.to_str().into_owned())
+                        .collect();
+                    config
+                        .set_connection_initializer(AdditionalServerNamesInitializer {
+                            additional_server_names,
+                        })
+                        .expect("additional server names connection initializer set on s2n config");
+                }
+
                 config.build().expect("valid s2n config")
             }
         }
@@ -68,6 +179,59 @@ pub(crate) mod build_connector {
         let https_connector = builder.build();
 
         super::connect::S2nTlsConnector::new(https_connector, config, proxy_config)
+    }
+
+    #[cfg(test)]
+    mod tests {
+        use super::matches_host_name;
+
+        /// Tests modeled after s2n-tls's `s2n_default_verify_host` behavior in
+        /// <https://github.com/aws/s2n-tls/blob/main/tls/s2n_connection.c>
+        #[test]
+        fn exact_match() {
+            assert!(matches_host_name("foo.example.com", "foo.example.com"));
+            // Case-insensitive
+            assert!(matches_host_name("FOO.Example.COM", "foo.example.com"));
+        }
+
+        #[test]
+        fn wildcard_matches_single_label() {
+            assert!(matches_host_name("foo.example.com", "*.example.com"));
+            assert!(matches_host_name("bar.example.com", "*.example.com"));
+            // Case-insensitive
+            assert!(matches_host_name("FOO.Example.COM", "*.example.com"));
+        }
+
+        #[test]
+        fn wildcard_does_not_match_deeper_or_bare() {
+            // Must not match multi-level subdomain
+            assert!(!matches_host_name("bar.foo.example.com", "*.example.com"));
+            // Must not match the domain itself
+            assert!(!matches_host_name("example.com", "*.example.com"));
+        }
+
+        #[test]
+        fn no_match() {
+            assert!(!matches_host_name("other.com", "example.com"));
+            assert!(!matches_host_name("foo.other.com", "*.example.com"));
+        }
+
+        #[test]
+        fn ip_address_exact_match() {
+            assert!(matches_host_name("127.0.0.1", "127.0.0.1"));
+            assert!(matches_host_name("::1", "::1"));
+        }
+
+        #[test]
+        fn partial_wildcard_not_supported() {
+            // RFC 6125 §6.4.3 rule 3 is a MAY — intentionally unsupported,
+            // matching s2n-tls's default behavior.
+            assert!(!matches_host_name("baz1.example.com", "baz*.example.com"));
+            assert!(!matches_host_name(
+                "foo.bar.example.com",
+                "foo.*.example.com"
+            ));
+        }
     }
 }
 

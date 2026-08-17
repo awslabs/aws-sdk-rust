@@ -113,6 +113,8 @@ pub(crate) mod shape_create_email_address;
 
 pub(crate) mod shape_create_evaluation_form;
 
+pub(crate) mod shape_create_extraction_definition;
+
 pub(crate) mod shape_create_hours_of_operation;
 
 pub(crate) mod shape_create_hours_of_operation_override;
@@ -193,6 +195,8 @@ pub(crate) mod shape_delete_email_address;
 
 pub(crate) mod shape_delete_evaluation_form;
 
+pub(crate) mod shape_delete_extraction_definition;
+
 pub(crate) mod shape_delete_hours_of_operation;
 
 pub(crate) mod shape_delete_hours_of_operation_override;
@@ -270,6 +274,8 @@ pub(crate) mod shape_describe_data_table_attribute;
 pub(crate) mod shape_describe_email_address;
 
 pub(crate) mod shape_describe_evaluation_form;
+
+pub(crate) mod shape_describe_extraction_definition;
 
 pub(crate) mod shape_describe_hours_of_operation;
 
@@ -438,6 +444,8 @@ pub(crate) mod shape_list_entity_security_profiles;
 pub(crate) mod shape_list_evaluation_form_versions;
 
 pub(crate) mod shape_list_evaluation_forms;
+
+pub(crate) mod shape_list_extraction_definitions;
 
 pub(crate) mod shape_list_flow_associations;
 
@@ -705,6 +713,8 @@ pub(crate) mod shape_update_email_address_metadata;
 
 pub(crate) mod shape_update_evaluation_form;
 
+pub(crate) mod shape_update_extraction_definition;
+
 pub(crate) mod shape_update_hours_of_operation;
 
 pub(crate) mod shape_update_hours_of_operation_override;
@@ -906,6 +916,8 @@ pub(crate) mod shape_create_data_table_input;
 pub(crate) mod shape_create_email_address_input;
 
 pub(crate) mod shape_create_evaluation_form_input;
+
+pub(crate) mod shape_create_extraction_definition_input;
 
 pub(crate) mod shape_create_hours_of_operation_input;
 
@@ -1228,6 +1240,8 @@ pub(crate) mod shape_update_data_table_primary_values_input;
 pub(crate) mod shape_update_email_address_metadata_input;
 
 pub(crate) mod shape_update_evaluation_form_input;
+
+pub(crate) mod shape_update_extraction_definition_input;
 
 pub(crate) mod shape_update_hours_of_operation_input;
 
@@ -1574,6 +1588,14 @@ pub(crate) mod shape_execution_record_list;
 pub(crate) mod shape_extension_configuration;
 
 pub(crate) mod shape_external_invocation_configuration;
+
+pub(crate) mod shape_extraction_configuration;
+
+pub(crate) mod shape_extraction_definition;
+
+pub(crate) mod shape_extraction_definition_display;
+
+pub(crate) mod shape_extraction_definition_summary_list;
 
 pub(crate) mod shape_failed_batch_association_summary_list;
 
@@ -2179,6 +2201,12 @@ pub(crate) mod shape_event_bridge_action_definition;
 
 pub(crate) mod shape_execution_record;
 
+pub(crate) mod shape_extract_information_action_definition;
+
+pub(crate) mod shape_extraction_definition_not_found_behavior;
+
+pub(crate) mod shape_extraction_definition_summary;
+
 pub(crate) mod shape_failed_batch_association_summary;
 
 pub(crate) mod shape_failed_request;
@@ -2639,6 +2667,8 @@ pub(crate) mod shape_routing_profile_reference;
 
 pub(crate) mod shape_rule_attribute_and_condition;
 
+pub(crate) mod shape_rules_extraction_definition_identifier;
+
 pub(crate) mod shape_search_contacts_additional_time_range_criteria;
 
 pub(crate) mod shape_searchable_contact_attributes_criteria;
@@ -2842,6 +2872,8 @@ pub(crate) mod shape_real_time_contact_analysis_category_details;
 pub(crate) mod shape_real_time_contact_analysis_character_intervals;
 
 pub(crate) mod shape_real_time_contact_analysis_issue_detected;
+
+pub(crate) mod shape_rules_extraction_definition_identifier_list;
 
 pub(crate) mod shape_agents_criteria;
 

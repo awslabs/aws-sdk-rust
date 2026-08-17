@@ -20,23 +20,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "retrieve" => {
-                            builder = builder.set_retrieve(
-                                crate::protocol_serde::shape_agentic_retrieve_action_details::de_agentic_retrieve_action_details(
-                                    tokens,
-                                    _value,
-                                    depth + 1,
-                                )?,
-                            );
-                        }
-                        "fullDocumentExpansion" => {
-                            builder = builder.set_full_document_expansion(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "retrieve" => {
+                                builder = builder.set_retrieve(
+                                    crate::protocol_serde::shape_agentic_retrieve_action_details::de_agentic_retrieve_action_details(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "fullDocumentExpansion" => {
+                                builder = builder.set_full_document_expansion(
                                     crate::protocol_serde::shape_agentic_retrieve_full_doc_expansion_details::de_agentic_retrieve_full_doc_expansion_details(tokens, _value, depth + 1)?
                                 );
+                            }
+                            "memoryRetrieve" => {
+                                builder = builder.set_memory_retrieve(
+                                    crate::protocol_serde::shape_agentic_retrieve_memory_retrieve_details::de_agentic_retrieve_memory_retrieve_details(tokens, _value, depth + 1)?
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

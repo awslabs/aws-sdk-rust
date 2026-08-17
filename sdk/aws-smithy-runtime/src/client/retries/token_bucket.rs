@@ -34,7 +34,30 @@ const LEGACY_RETRY_TIMEOUT_COST: u32 = LEGACY_RETRY_COST * 2;
 const PERMIT_REGENERATION_AMOUNT: usize = 1;
 const DEFAULT_SUCCESS_REWARD: f32 = 0.0;
 
-/// Token bucket used for standard and adaptive retry.
+/// Token bucket that bounds retries — a client-side retry quota.
+///
+/// Each retry attempt acquires tokens from the bucket; successful requests return or refill
+/// tokens. When the bucket is empty, the retry strategy stops retrying and returns the error to
+/// the caller, even if `max_attempts` has not been reached.
+///
+/// A single token bucket is shared by every operation in a [`RetryPartition`]. Use
+/// [`TokenBucket::builder`] to configure its [`capacity`](TokenBucketBuilder::capacity) and
+/// [`refill_rate`](TokenBucketBuilder::refill_rate), and attach it to a custom [`RetryPartition`]
+/// to give a workload its own bucket instead of sharing the default one.
+///
+/// ```
+/// use aws_smithy_runtime::client::retries::TokenBucket;
+///
+/// let token_bucket = TokenBucket::builder()
+///     .capacity(5000)
+///     .refill_rate(100.0) // tokens regenerated per second
+///     .build();
+/// ```
+///
+/// A custom [`RetryPartition`] carrying this bucket can then be set on a generated client's config
+/// builder via its `retry_partition` method.
+///
+/// [`RetryPartition`]: crate::client::retries::RetryPartition
 #[derive(Clone, Debug)]
 pub struct TokenBucket {
     semaphore: Arc<Semaphore>,

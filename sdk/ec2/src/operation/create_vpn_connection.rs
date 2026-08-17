@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateV
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateVpnConnection")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateVpnConnectionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateV
     }
 }
 
+#[derive(Debug)]
+struct CreateVpnConnectionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateVpnConnectionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateVpnConnectionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateVpnConnectionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("CustomerGatewayId") {
+            if let ::std::option::Option::Some(value) = input.customer_gateway_id.as_deref() {
+                captured.insert("CustomerGatewayId", value);
+            }
+        }
+        if requested.should_capture("Type") {
+            if let ::std::option::Option::Some(value) = input.r#type.as_deref() {
+                captured.insert("Type", value);
+            }
+        }
+        if requested.should_capture("VpnGatewayId") {
+            if let ::std::option::Option::Some(value) = input.vpn_gateway_id.as_deref() {
+                captured.insert("VpnGatewayId", value);
+            }
+        }
+        if requested.should_capture("TransitGatewayId") {
+            if let ::std::option::Option::Some(value) = input.transit_gateway_id.as_deref() {
+                captured.insert("TransitGatewayId", value);
+            }
+        }
+        if requested.should_capture("VpnConcentratorId") {
+            if let ::std::option::Option::Some(value) = input.vpn_concentrator_id.as_deref() {
+                captured.insert("VpnConcentratorId", value);
+            }
+        }
+        if requested.should_capture("PreSharedKeyStorage") {
+            if let ::std::option::Option::Some(value) = input.pre_shared_key_storage.as_deref() {
+                captured.insert("PreSharedKeyStorage", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateVpnConnectionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateVpnConnectionResponseDeserializer {

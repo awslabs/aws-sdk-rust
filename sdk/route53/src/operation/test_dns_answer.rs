@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TestDNS
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("TestDNSAnswer")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                TestDNSAnswerTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TestDNS
     }
 }
 
+#[derive(Debug)]
+struct TestDNSAnswerTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TestDNSAnswerTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "TestDNSAnswerTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<TestDnsAnswerInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("HostedZoneId") {
+            if let ::std::option::Option::Some(value) = input.hosted_zone_id.as_deref() {
+                captured.insert("HostedZoneId", value);
+            }
+        }
+        if requested.should_capture("RecordName") {
+            if let ::std::option::Option::Some(value) = input.record_name.as_deref() {
+                captured.insert("RecordName", value);
+            }
+        }
+        if requested.should_capture("ResolverIP") {
+            if let ::std::option::Option::Some(value) = input.resolver_ip.as_deref() {
+                captured.insert("ResolverIP", value);
+            }
+        }
+        if requested.should_capture("EDNS0ClientSubnetIP") {
+            if let ::std::option::Option::Some(value) = input.edns0_client_subnet_ip.as_deref() {
+                captured.insert("EDNS0ClientSubnetIP", value);
+            }
+        }
+        if requested.should_capture("EDNS0ClientSubnetMask") {
+            if let ::std::option::Option::Some(value) = input.edns0_client_subnet_mask.as_deref() {
+                captured.insert("EDNS0ClientSubnetMask", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct TestDNSAnswerResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for TestDNSAnswerResponseDeserializer {

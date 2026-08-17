@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAggr
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetAggregateComplianceDetailsByConfigRule")
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    GetAggregateComplianceDetailsByConfigRuleTelemetryInputCaptureInterceptor,
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                     ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
                 ))
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAggr
     }
 }
 
+#[derive(Debug)]
+struct GetAggregateComplianceDetailsByConfigRuleTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAggregateComplianceDetailsByConfigRuleTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "GetAggregateComplianceDetailsByConfigRuleTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<GetAggregateComplianceDetailsByConfigRuleInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ConfigurationAggregatorName") {
+            if let ::std::option::Option::Some(value) = input.configuration_aggregator_name.as_deref() {
+                captured.insert("ConfigurationAggregatorName", value);
+            }
+        }
+        if requested.should_capture("ConfigRuleName") {
+            if let ::std::option::Option::Some(value) = input.config_rule_name.as_deref() {
+                captured.insert("ConfigRuleName", value);
+            }
+        }
+        if requested.should_capture("AccountId") {
+            if let ::std::option::Option::Some(value) = input.account_id.as_deref() {
+                captured.insert("AccountId", value);
+            }
+        }
+        if requested.should_capture("AwsRegion") {
+            if let ::std::option::Option::Some(value) = input.aws_region.as_deref() {
+                captured.insert("AwsRegion", value);
+            }
+        }
+        if requested.should_capture("NextToken") {
+            if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
+                captured.insert("NextToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct GetAggregateComplianceDetailsByConfigRuleResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetAggregateComplianceDetailsByConfigRuleResponseDeserializer {

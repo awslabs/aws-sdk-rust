@@ -129,6 +129,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateMultipartUpload")
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    CreateMultipartUploadTelemetryInputCaptureInterceptor,
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                     ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
                 ))
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -156,6 +159,124 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
     }
 }
 
+#[derive(Debug)]
+struct CreateMultipartUploadTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMultipartUploadTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateMultipartUploadTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateMultipartUploadInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Bucket") {
+            if let ::std::option::Option::Some(value) = input.bucket.as_deref() {
+                captured.insert("Bucket", value);
+            }
+        }
+        if requested.should_capture("CacheControl") {
+            if let ::std::option::Option::Some(value) = input.cache_control.as_deref() {
+                captured.insert("CacheControl", value);
+            }
+        }
+        if requested.should_capture("ContentDisposition") {
+            if let ::std::option::Option::Some(value) = input.content_disposition.as_deref() {
+                captured.insert("ContentDisposition", value);
+            }
+        }
+        if requested.should_capture("ContentEncoding") {
+            if let ::std::option::Option::Some(value) = input.content_encoding.as_deref() {
+                captured.insert("ContentEncoding", value);
+            }
+        }
+        if requested.should_capture("ContentLanguage") {
+            if let ::std::option::Option::Some(value) = input.content_language.as_deref() {
+                captured.insert("ContentLanguage", value);
+            }
+        }
+        if requested.should_capture("ContentType") {
+            if let ::std::option::Option::Some(value) = input.content_type.as_deref() {
+                captured.insert("ContentType", value);
+            }
+        }
+        if requested.should_capture("GrantFullControl") {
+            if let ::std::option::Option::Some(value) = input.grant_full_control.as_deref() {
+                captured.insert("GrantFullControl", value);
+            }
+        }
+        if requested.should_capture("GrantRead") {
+            if let ::std::option::Option::Some(value) = input.grant_read.as_deref() {
+                captured.insert("GrantRead", value);
+            }
+        }
+        if requested.should_capture("GrantReadACP") {
+            if let ::std::option::Option::Some(value) = input.grant_read_acp.as_deref() {
+                captured.insert("GrantReadACP", value);
+            }
+        }
+        if requested.should_capture("GrantWriteACP") {
+            if let ::std::option::Option::Some(value) = input.grant_write_acp.as_deref() {
+                captured.insert("GrantWriteACP", value);
+            }
+        }
+        if requested.should_capture("Key") {
+            if let ::std::option::Option::Some(value) = input.key.as_deref() {
+                captured.insert("Key", value);
+            }
+        }
+        if requested.should_capture("WebsiteRedirectLocation") {
+            if let ::std::option::Option::Some(value) = input.website_redirect_location.as_deref() {
+                captured.insert("WebsiteRedirectLocation", value);
+            }
+        }
+        if requested.should_capture("SSECustomerAlgorithm") {
+            if let ::std::option::Option::Some(value) = input.sse_customer_algorithm.as_deref() {
+                captured.insert("SSECustomerAlgorithm", value);
+            }
+        }
+        if requested.should_capture("SSECustomerKeyMD5") {
+            if let ::std::option::Option::Some(value) = input.sse_customer_key_md5.as_deref() {
+                captured.insert("SSECustomerKeyMD5", value);
+            }
+        }
+        if requested.should_capture("Tagging") {
+            if let ::std::option::Option::Some(value) = input.tagging.as_deref() {
+                captured.insert("Tagging", value);
+            }
+        }
+        if requested.should_capture("ExpectedBucketOwner") {
+            if let ::std::option::Option::Some(value) = input.expected_bucket_owner.as_deref() {
+                captured.insert("ExpectedBucketOwner", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateMultipartUploadResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateMultipartUploadResponseDeserializer {

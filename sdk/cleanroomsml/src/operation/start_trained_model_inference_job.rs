@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartTr
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartTrainedModelInferenceJob")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartTrainedModelInferenceJobTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartTr
     }
 }
 
+#[derive(Debug)]
+struct StartTrainedModelInferenceJobTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartTrainedModelInferenceJobTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "StartTrainedModelInferenceJobTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<StartTrainedModelInferenceJobInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("membershipIdentifier") {
+            if let ::std::option::Option::Some(value) = input.membership_identifier.as_deref() {
+                captured.insert("membershipIdentifier", value);
+            }
+        }
+        if requested.should_capture("name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("name", value);
+            }
+        }
+        if requested.should_capture("trainedModelArn") {
+            if let ::std::option::Option::Some(value) = input.trained_model_arn.as_deref() {
+                captured.insert("trainedModelArn", value);
+            }
+        }
+        if requested.should_capture("trainedModelVersionIdentifier") {
+            if let ::std::option::Option::Some(value) = input.trained_model_version_identifier.as_deref() {
+                captured.insert("trainedModelVersionIdentifier", value);
+            }
+        }
+        if requested.should_capture("configuredModelAlgorithmAssociationArn") {
+            if let ::std::option::Option::Some(value) = input.configured_model_algorithm_association_arn.as_deref() {
+                captured.insert("configuredModelAlgorithmAssociationArn", value);
+            }
+        }
+        if requested.should_capture("description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("description", value);
+            }
+        }
+        if requested.should_capture("kmsKeyArn") {
+            if let ::std::option::Option::Some(value) = input.kms_key_arn.as_deref() {
+                captured.insert("kmsKeyArn", value);
+            }
+        }
+        if requested.should_capture("mlModelInferencePayerAccountId") {
+            if let ::std::option::Option::Some(value) = input.ml_model_inference_payer_account_id.as_deref() {
+                captured.insert("mlModelInferencePayerAccountId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct StartTrainedModelInferenceJobResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartTrainedModelInferenceJobResponseDeserializer {

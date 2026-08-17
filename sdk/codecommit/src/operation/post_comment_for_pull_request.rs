@@ -141,6 +141,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PostCom
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PostCommentForPullRequest")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PostCommentForPullRequestTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -160,6 +163,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PostCom
     }
 }
 
+#[derive(Debug)]
+struct PostCommentForPullRequestTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PostCommentForPullRequestTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PostCommentForPullRequestTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PostCommentForPullRequestInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("pullRequestId") {
+            if let ::std::option::Option::Some(value) = input.pull_request_id.as_deref() {
+                captured.insert("pullRequestId", value);
+            }
+        }
+        if requested.should_capture("repositoryName") {
+            if let ::std::option::Option::Some(value) = input.repository_name.as_deref() {
+                captured.insert("repositoryName", value);
+            }
+        }
+        if requested.should_capture("beforeCommitId") {
+            if let ::std::option::Option::Some(value) = input.before_commit_id.as_deref() {
+                captured.insert("beforeCommitId", value);
+            }
+        }
+        if requested.should_capture("afterCommitId") {
+            if let ::std::option::Option::Some(value) = input.after_commit_id.as_deref() {
+                captured.insert("afterCommitId", value);
+            }
+        }
+        if requested.should_capture("content") {
+            if let ::std::option::Option::Some(value) = input.content.as_deref() {
+                captured.insert("content", value);
+            }
+        }
+        if requested.should_capture("clientRequestToken") {
+            if let ::std::option::Option::Some(value) = input.client_request_token.as_deref() {
+                captured.insert("clientRequestToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PostCommentForPullRequestResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PostCommentForPullRequestResponseDeserializer {

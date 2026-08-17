@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyL
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ModifyLocalGatewayRoute")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ModifyLocalGatewayRouteTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyL
     }
 }
 
+#[derive(Debug)]
+struct ModifyLocalGatewayRouteTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyLocalGatewayRouteTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ModifyLocalGatewayRouteTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ModifyLocalGatewayRouteInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("DestinationCidrBlock") {
+            if let ::std::option::Option::Some(value) = input.destination_cidr_block.as_deref() {
+                captured.insert("DestinationCidrBlock", value);
+            }
+        }
+        if requested.should_capture("LocalGatewayRouteTableId") {
+            if let ::std::option::Option::Some(value) = input.local_gateway_route_table_id.as_deref() {
+                captured.insert("LocalGatewayRouteTableId", value);
+            }
+        }
+        if requested.should_capture("LocalGatewayVirtualInterfaceGroupId") {
+            if let ::std::option::Option::Some(value) = input.local_gateway_virtual_interface_group_id.as_deref() {
+                captured.insert("LocalGatewayVirtualInterfaceGroupId", value);
+            }
+        }
+        if requested.should_capture("NetworkInterfaceId") {
+            if let ::std::option::Option::Some(value) = input.network_interface_id.as_deref() {
+                captured.insert("NetworkInterfaceId", value);
+            }
+        }
+        if requested.should_capture("DestinationPrefixListId") {
+            if let ::std::option::Option::Some(value) = input.destination_prefix_list_id.as_deref() {
+                captured.insert("DestinationPrefixListId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ModifyLocalGatewayRouteResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ModifyLocalGatewayRouteResponseDeserializer {

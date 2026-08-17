@@ -3490,6 +3490,18 @@ pub(crate) fn dataset_version_summary_correct_errors(
     builder
 }
 
+pub(crate) fn derived_evaluator_config_correct_errors(
+    mut builder: crate::types::builders::DerivedEvaluatorConfigBuilder,
+) -> crate::types::builders::DerivedEvaluatorConfigBuilder {
+    if builder.base_evaluator_id.is_none() {
+        builder.base_evaluator_id = Some(Default::default())
+    }
+    if builder.model_config.is_none() {
+        builder.model_config = Some(crate::types::EvaluatorModelConfig::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn ec2_configuration_correct_errors(
     mut builder: crate::types::builders::Ec2ConfigurationBuilder,
 ) -> crate::types::builders::Ec2ConfigurationBuilder {

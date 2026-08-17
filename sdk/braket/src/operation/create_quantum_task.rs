@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateQ
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateQuantumTask")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateQuantumTaskTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateQ
     }
 }
 
+#[derive(Debug)]
+struct CreateQuantumTaskTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateQuantumTaskTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateQuantumTaskTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateQuantumTaskInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+        if requested.should_capture("deviceArn") {
+            if let ::std::option::Option::Some(value) = input.device_arn.as_deref() {
+                captured.insert("deviceArn", value);
+            }
+        }
+        if requested.should_capture("deviceParameters") {
+            if let ::std::option::Option::Some(value) = input.device_parameters.as_deref() {
+                captured.insert("deviceParameters", value);
+            }
+        }
+        if requested.should_capture("outputS3Bucket") {
+            if let ::std::option::Option::Some(value) = input.output_s3_bucket.as_deref() {
+                captured.insert("outputS3Bucket", value);
+            }
+        }
+        if requested.should_capture("outputS3KeyPrefix") {
+            if let ::std::option::Option::Some(value) = input.output_s3_key_prefix.as_deref() {
+                captured.insert("outputS3KeyPrefix", value);
+            }
+        }
+        if requested.should_capture("action") {
+            if let ::std::option::Option::Some(value) = input.action.as_deref() {
+                captured.insert("action", value);
+            }
+        }
+        if requested.should_capture("jobToken") {
+            if let ::std::option::Option::Some(value) = input.job_token.as_deref() {
+                captured.insert("jobToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateQuantumTaskResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateQuantumTaskResponseDeserializer {

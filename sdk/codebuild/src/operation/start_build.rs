@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartBu
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartBuild")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartBuildTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartBu
     }
 }
 
+#[derive(Debug)]
+struct StartBuildTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartBuildTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "StartBuildTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<StartBuildInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("projectName") {
+            if let ::std::option::Option::Some(value) = input.project_name.as_deref() {
+                captured.insert("projectName", value);
+            }
+        }
+        if requested.should_capture("sourceVersion") {
+            if let ::std::option::Option::Some(value) = input.source_version.as_deref() {
+                captured.insert("sourceVersion", value);
+            }
+        }
+        if requested.should_capture("sourceLocationOverride") {
+            if let ::std::option::Option::Some(value) = input.source_location_override.as_deref() {
+                captured.insert("sourceLocationOverride", value);
+            }
+        }
+        if requested.should_capture("buildspecOverride") {
+            if let ::std::option::Option::Some(value) = input.buildspec_override.as_deref() {
+                captured.insert("buildspecOverride", value);
+            }
+        }
+        if requested.should_capture("imageOverride") {
+            if let ::std::option::Option::Some(value) = input.image_override.as_deref() {
+                captured.insert("imageOverride", value);
+            }
+        }
+        if requested.should_capture("certificateOverride") {
+            if let ::std::option::Option::Some(value) = input.certificate_override.as_deref() {
+                captured.insert("certificateOverride", value);
+            }
+        }
+        if requested.should_capture("serviceRoleOverride") {
+            if let ::std::option::Option::Some(value) = input.service_role_override.as_deref() {
+                captured.insert("serviceRoleOverride", value);
+            }
+        }
+        if requested.should_capture("encryptionKeyOverride") {
+            if let ::std::option::Option::Some(value) = input.encryption_key_override.as_deref() {
+                captured.insert("encryptionKeyOverride", value);
+            }
+        }
+        if requested.should_capture("idempotencyToken") {
+            if let ::std::option::Option::Some(value) = input.idempotency_token.as_deref() {
+                captured.insert("idempotencyToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct StartBuildResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartBuildResponseDeserializer {

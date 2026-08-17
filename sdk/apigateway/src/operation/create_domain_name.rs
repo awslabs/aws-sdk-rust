@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateD
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateDomainName")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateDomainNameTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateD
     }
 }
 
+#[derive(Debug)]
+struct CreateDomainNameTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDomainNameTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateDomainNameTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateDomainNameInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("domainName") {
+            if let ::std::option::Option::Some(value) = input.domain_name.as_deref() {
+                captured.insert("domainName", value);
+            }
+        }
+        if requested.should_capture("certificateName") {
+            if let ::std::option::Option::Some(value) = input.certificate_name.as_deref() {
+                captured.insert("certificateName", value);
+            }
+        }
+        if requested.should_capture("certificateBody") {
+            if let ::std::option::Option::Some(value) = input.certificate_body.as_deref() {
+                captured.insert("certificateBody", value);
+            }
+        }
+        if requested.should_capture("certificatePrivateKey") {
+            if let ::std::option::Option::Some(value) = input.certificate_private_key.as_deref() {
+                captured.insert("certificatePrivateKey", value);
+            }
+        }
+        if requested.should_capture("certificateChain") {
+            if let ::std::option::Option::Some(value) = input.certificate_chain.as_deref() {
+                captured.insert("certificateChain", value);
+            }
+        }
+        if requested.should_capture("certificateArn") {
+            if let ::std::option::Option::Some(value) = input.certificate_arn.as_deref() {
+                captured.insert("certificateArn", value);
+            }
+        }
+        if requested.should_capture("regionalCertificateName") {
+            if let ::std::option::Option::Some(value) = input.regional_certificate_name.as_deref() {
+                captured.insert("regionalCertificateName", value);
+            }
+        }
+        if requested.should_capture("regionalCertificateArn") {
+            if let ::std::option::Option::Some(value) = input.regional_certificate_arn.as_deref() {
+                captured.insert("regionalCertificateArn", value);
+            }
+        }
+        if requested.should_capture("ownershipVerificationCertificateArn") {
+            if let ::std::option::Option::Some(value) = input.ownership_verification_certificate_arn.as_deref() {
+                captured.insert("ownershipVerificationCertificateArn", value);
+            }
+        }
+        if requested.should_capture("policy") {
+            if let ::std::option::Option::Some(value) = input.policy.as_deref() {
+                captured.insert("policy", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateDomainNameResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateDomainNameResponseDeserializer {

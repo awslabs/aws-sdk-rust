@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ExportA
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ExportApi")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ExportApiTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ExportA
     }
 }
 
+#[derive(Debug)]
+struct ExportApiTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExportApiTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ExportApiTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ExportApiInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ApiId") {
+            if let ::std::option::Option::Some(value) = input.api_id.as_deref() {
+                captured.insert("ApiId", value);
+            }
+        }
+        if requested.should_capture("ExportVersion") {
+            if let ::std::option::Option::Some(value) = input.export_version.as_deref() {
+                captured.insert("ExportVersion", value);
+            }
+        }
+        if requested.should_capture("OutputType") {
+            if let ::std::option::Option::Some(value) = input.output_type.as_deref() {
+                captured.insert("OutputType", value);
+            }
+        }
+        if requested.should_capture("Specification") {
+            if let ::std::option::Option::Some(value) = input.specification.as_deref() {
+                captured.insert("Specification", value);
+            }
+        }
+        if requested.should_capture("StageName") {
+            if let ::std::option::Option::Some(value) = input.stage_name.as_deref() {
+                captured.insert("StageName", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ExportApiResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ExportApiResponseDeserializer {

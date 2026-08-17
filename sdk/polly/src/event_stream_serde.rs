@@ -19,7 +19,7 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for StartSpeechSynthesisSt
             ":message-type",
             ::aws_smithy_types::event_stream::HeaderValue::String("exception".into()),
         ));
-        let payload = Vec::new();
+        let payload = ::bytes::Bytes::new();
         Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
     }
 }
@@ -45,14 +45,18 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for StartSpeechSynthesisSt
             Self::Input::TextEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("TextEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_start_speech_synthesis_stream_action_stream::ser_text_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_start_speech_synthesis_stream_action_stream::ser_text_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::CloseStreamEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("CloseStreamEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_start_speech_synthesis_stream_action_stream::ser_close_stream_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_start_speech_synthesis_stream_action_stream::ser_close_stream_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::Unknown => return Err(
                                             ::aws_smithy_eventstream::error::Error::marshalling("Cannot serialize `StartSpeechSynthesisStreamActionStream::Unknown` for the request. The `Unknown` variant is intended for responses only. It occurs when an outdated client is used after a new enum variant was added on the server side.".to_owned())
@@ -91,7 +95,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for StartSpeechSynthesis
                             "expected :content-type to be 'application/octet-stream', but was '{content_type}'"
                         )));
                     }
-                    builder = builder.set_audio_chunk(Some(::aws_smithy_types::Blob::new(message.payload().as_ref())));
+                    builder = builder.set_audio_chunk(Some(::aws_smithy_types::Blob::from_maybe_shared(message.payload().clone())));
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::StartSpeechSynthesisStreamEventStream::AudioEvent(builder.build()),
                     ))

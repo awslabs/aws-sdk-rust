@@ -27,7 +27,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamUnmars
                             "expected :content-type to be 'application/octet-stream', but was '{content_type}'"
                         )));
                     }
-                    builder = builder.set_bytes(Some(::aws_smithy_types::Blob::new(message.payload().as_ref())));
+                    builder = builder.set_bytes(Some(::aws_smithy_types::Blob::from_maybe_shared(message.payload().clone())));
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::ResponseStream::PayloadPart(builder.build()),
                     ))

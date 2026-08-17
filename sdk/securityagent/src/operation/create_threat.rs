@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateT
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateThreat")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateThreatTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateT
     }
 }
 
+#[derive(Debug)]
+struct CreateThreatTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateThreatTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateThreatTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateThreatInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("agentSpaceId") {
+            if let ::std::option::Option::Some(value) = input.agent_space_id.as_deref() {
+                captured.insert("agentSpaceId", value);
+            }
+        }
+        if requested.should_capture("threatJobId") {
+            if let ::std::option::Option::Some(value) = input.threat_job_id.as_deref() {
+                captured.insert("threatJobId", value);
+            }
+        }
+        if requested.should_capture("title") {
+            if let ::std::option::Option::Some(value) = input.title.as_deref() {
+                captured.insert("title", value);
+            }
+        }
+        if requested.should_capture("statement") {
+            if let ::std::option::Option::Some(value) = input.statement.as_deref() {
+                captured.insert("statement", value);
+            }
+        }
+        if requested.should_capture("comments") {
+            if let ::std::option::Option::Some(value) = input.comments.as_deref() {
+                captured.insert("comments", value);
+            }
+        }
+        if requested.should_capture("threatSource") {
+            if let ::std::option::Option::Some(value) = input.threat_source.as_deref() {
+                captured.insert("threatSource", value);
+            }
+        }
+        if requested.should_capture("prerequisites") {
+            if let ::std::option::Option::Some(value) = input.prerequisites.as_deref() {
+                captured.insert("prerequisites", value);
+            }
+        }
+        if requested.should_capture("threatAction") {
+            if let ::std::option::Option::Some(value) = input.threat_action.as_deref() {
+                captured.insert("threatAction", value);
+            }
+        }
+        if requested.should_capture("threatImpact") {
+            if let ::std::option::Option::Some(value) = input.threat_impact.as_deref() {
+                captured.insert("threatImpact", value);
+            }
+        }
+        if requested.should_capture("recommendation") {
+            if let ::std::option::Option::Some(value) = input.recommendation.as_deref() {
+                captured.insert("recommendation", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateThreatResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateThreatResponseDeserializer {

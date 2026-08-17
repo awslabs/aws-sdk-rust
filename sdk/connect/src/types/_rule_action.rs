@@ -30,6 +30,8 @@ pub struct RuleAction {
     pub end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
     /// <p>Information about the submit automated evaluation action.</p>
     pub submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
+    /// <p>Information about the extract information action.</p>
+    pub extract_information_action: ::std::option::Option<crate::types::ExtractInformationActionDefinition>,
 }
 impl RuleAction {
     /// <p>The type of action that creates a rule.</p>
@@ -78,6 +80,10 @@ impl RuleAction {
     pub fn submit_auto_evaluation_action(&self) -> ::std::option::Option<&crate::types::SubmitAutoEvaluationActionDefinition> {
         self.submit_auto_evaluation_action.as_ref()
     }
+    /// <p>Information about the extract information action.</p>
+    pub fn extract_information_action(&self) -> ::std::option::Option<&crate::types::ExtractInformationActionDefinition> {
+        self.extract_information_action.as_ref()
+    }
 }
 impl RuleAction {
     /// Creates a new builder-style object to manufacture [`RuleAction`](crate::types::RuleAction).
@@ -100,6 +106,7 @@ pub struct RuleActionBuilder {
     pub(crate) assign_sla_action: ::std::option::Option<crate::types::AssignSlaActionDefinition>,
     pub(crate) end_associated_tasks_action: ::std::option::Option<crate::types::EndAssociatedTasksActionDefinition>,
     pub(crate) submit_auto_evaluation_action: ::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition>,
+    pub(crate) extract_information_action: ::std::option::Option<crate::types::ExtractInformationActionDefinition>,
 }
 impl RuleActionBuilder {
     /// <p>The type of action that creates a rule.</p>
@@ -261,6 +268,20 @@ impl RuleActionBuilder {
     pub fn get_submit_auto_evaluation_action(&self) -> &::std::option::Option<crate::types::SubmitAutoEvaluationActionDefinition> {
         &self.submit_auto_evaluation_action
     }
+    /// <p>Information about the extract information action.</p>
+    pub fn extract_information_action(mut self, input: crate::types::ExtractInformationActionDefinition) -> Self {
+        self.extract_information_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the extract information action.</p>
+    pub fn set_extract_information_action(mut self, input: ::std::option::Option<crate::types::ExtractInformationActionDefinition>) -> Self {
+        self.extract_information_action = input;
+        self
+    }
+    /// <p>Information about the extract information action.</p>
+    pub fn get_extract_information_action(&self) -> &::std::option::Option<crate::types::ExtractInformationActionDefinition> {
+        &self.extract_information_action
+    }
     /// Consumes the builder and constructs a [`RuleAction`](crate::types::RuleAction).
     /// This method will fail if any of the following fields are not set:
     /// - [`action_type`](crate::types::builders::RuleActionBuilder::action_type)
@@ -281,6 +302,7 @@ impl RuleActionBuilder {
             assign_sla_action: self.assign_sla_action,
             end_associated_tasks_action: self.end_associated_tasks_action,
             submit_auto_evaluation_action: self.submit_auto_evaluation_action,
+            extract_information_action: self.extract_information_action,
         })
     }
 }

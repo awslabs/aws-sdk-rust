@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateAccountSubscription")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateAccountSubscriptionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,99 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
     }
 }
 
+#[derive(Debug)]
+struct CreateAccountSubscriptionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAccountSubscriptionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateAccountSubscriptionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateAccountSubscriptionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("AwsAccountId") {
+            if let ::std::option::Option::Some(value) = input.aws_account_id.as_deref() {
+                captured.insert("AwsAccountId", value);
+            }
+        }
+        if requested.should_capture("AccountName") {
+            if let ::std::option::Option::Some(value) = input.account_name.as_deref() {
+                captured.insert("AccountName", value);
+            }
+        }
+        if requested.should_capture("NotificationEmail") {
+            if let ::std::option::Option::Some(value) = input.notification_email.as_deref() {
+                captured.insert("NotificationEmail", value);
+            }
+        }
+        if requested.should_capture("ActiveDirectoryName") {
+            if let ::std::option::Option::Some(value) = input.active_directory_name.as_deref() {
+                captured.insert("ActiveDirectoryName", value);
+            }
+        }
+        if requested.should_capture("Realm") {
+            if let ::std::option::Option::Some(value) = input.realm.as_deref() {
+                captured.insert("Realm", value);
+            }
+        }
+        if requested.should_capture("DirectoryId") {
+            if let ::std::option::Option::Some(value) = input.directory_id.as_deref() {
+                captured.insert("DirectoryId", value);
+            }
+        }
+        if requested.should_capture("FirstName") {
+            if let ::std::option::Option::Some(value) = input.first_name.as_deref() {
+                captured.insert("FirstName", value);
+            }
+        }
+        if requested.should_capture("LastName") {
+            if let ::std::option::Option::Some(value) = input.last_name.as_deref() {
+                captured.insert("LastName", value);
+            }
+        }
+        if requested.should_capture("EmailAddress") {
+            if let ::std::option::Option::Some(value) = input.email_address.as_deref() {
+                captured.insert("EmailAddress", value);
+            }
+        }
+        if requested.should_capture("ContactNumber") {
+            if let ::std::option::Option::Some(value) = input.contact_number.as_deref() {
+                captured.insert("ContactNumber", value);
+            }
+        }
+        if requested.should_capture("IAMIdentityCenterInstanceArn") {
+            if let ::std::option::Option::Some(value) = input.iam_identity_center_instance_arn.as_deref() {
+                captured.insert("IAMIdentityCenterInstanceArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateAccountSubscriptionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateAccountSubscriptionResponseDeserializer {

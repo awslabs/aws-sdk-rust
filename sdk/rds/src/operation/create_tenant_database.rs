@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateT
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateTenantDatabase")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateTenantDatabaseTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateT
     }
 }
 
+#[derive(Debug)]
+struct CreateTenantDatabaseTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateTenantDatabaseTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateTenantDatabaseTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateTenantDatabaseInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("DBInstanceIdentifier") {
+            if let ::std::option::Option::Some(value) = input.db_instance_identifier.as_deref() {
+                captured.insert("DBInstanceIdentifier", value);
+            }
+        }
+        if requested.should_capture("TenantDBName") {
+            if let ::std::option::Option::Some(value) = input.tenant_db_name.as_deref() {
+                captured.insert("TenantDBName", value);
+            }
+        }
+        if requested.should_capture("MasterUsername") {
+            if let ::std::option::Option::Some(value) = input.master_username.as_deref() {
+                captured.insert("MasterUsername", value);
+            }
+        }
+        if requested.should_capture("CharacterSetName") {
+            if let ::std::option::Option::Some(value) = input.character_set_name.as_deref() {
+                captured.insert("CharacterSetName", value);
+            }
+        }
+        if requested.should_capture("NcharCharacterSetName") {
+            if let ::std::option::Option::Some(value) = input.nchar_character_set_name.as_deref() {
+                captured.insert("NcharCharacterSetName", value);
+            }
+        }
+        if requested.should_capture("MasterUserSecretKmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.master_user_secret_kms_key_id.as_deref() {
+                captured.insert("MasterUserSecretKmsKeyId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateTenantDatabaseResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateTenantDatabaseResponseDeserializer {

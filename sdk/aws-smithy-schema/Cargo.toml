@@ -28,6 +28,6 @@ version = "1.14.0"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 default-features = false
-version = "1.6.1"
+version = "1.6.2"
 
 [dev-dependencies]

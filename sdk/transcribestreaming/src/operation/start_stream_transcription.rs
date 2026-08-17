@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartSt
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartStreamTranscription")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartStreamTranscriptionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 StartStreamTranscriptionEndpointParamsInterceptor,
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
@@ -149,6 +152,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartSt
     }
 }
 
+#[derive(Debug)]
+struct StartStreamTranscriptionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartStreamTranscriptionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "StartStreamTranscriptionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<StartStreamTranscriptionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("VocabularyName") {
+            if let ::std::option::Option::Some(value) = input.vocabulary_name.as_deref() {
+                captured.insert("VocabularyName", value);
+            }
+        }
+        if requested.should_capture("SessionId") {
+            if let ::std::option::Option::Some(value) = input.session_id.as_deref() {
+                captured.insert("SessionId", value);
+            }
+        }
+        if requested.should_capture("VocabularyFilterName") {
+            if let ::std::option::Option::Some(value) = input.vocabulary_filter_name.as_deref() {
+                captured.insert("VocabularyFilterName", value);
+            }
+        }
+        if requested.should_capture("PiiEntityTypes") {
+            if let ::std::option::Option::Some(value) = input.pii_entity_types.as_deref() {
+                captured.insert("PiiEntityTypes", value);
+            }
+        }
+        if requested.should_capture("LanguageModelName") {
+            if let ::std::option::Option::Some(value) = input.language_model_name.as_deref() {
+                captured.insert("LanguageModelName", value);
+            }
+        }
+        if requested.should_capture("LanguageOptions") {
+            if let ::std::option::Option::Some(value) = input.language_options.as_deref() {
+                captured.insert("LanguageOptions", value);
+            }
+        }
+        if requested.should_capture("VocabularyNames") {
+            if let ::std::option::Option::Some(value) = input.vocabulary_names.as_deref() {
+                captured.insert("VocabularyNames", value);
+            }
+        }
+        if requested.should_capture("VocabularyFilterNames") {
+            if let ::std::option::Option::Some(value) = input.vocabulary_filter_names.as_deref() {
+                captured.insert("VocabularyFilterNames", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct StartStreamTranscriptionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartStreamTranscriptionResponseDeserializer {

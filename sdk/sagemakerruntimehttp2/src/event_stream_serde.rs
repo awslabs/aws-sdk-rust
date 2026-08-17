@@ -19,7 +19,7 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for RequestStreamEventErro
             ":message-type",
             ::aws_smithy_types::event_stream::HeaderValue::String("exception".into()),
         ));
-        let payload = Vec::new();
+        let payload = ::bytes::Bytes::new();
         Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
     }
 }
@@ -61,10 +61,10 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for RequestStreamEventMars
                 }
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/octet-stream".into())));
                 if let Some(inner_payload) = inner.bytes {
-                    inner_payload.into_inner()
+                    ::aws_smithy_types::Blob::from(inner_payload).into_bytes()
                 }
                  else  {
-                    Vec::new()
+                    ::bytes::Bytes::new()
                 }
             }
             Self::Input::Unknown => return Err(
@@ -105,7 +105,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for ResponseStreamEventU
                                 "expected :content-type to be 'application/octet-stream', but was '{content_type}'"
                             )));
                         }
-                        builder = builder.set_bytes(Some(::aws_smithy_types::Blob::new(message.payload().as_ref())));
+                        builder = builder.set_bytes(Some(::aws_smithy_types::Blob::from_maybe_shared(message.payload().clone())));
                         for header in message.headers() {
                             match header.name().as_str() {
                                 "DataType" => {

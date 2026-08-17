@@ -915,6 +915,8 @@ pub(crate) mod shape_dataset_version_summary;
 
 pub(crate) mod shape_delete_memory_strategy_input;
 
+pub(crate) mod shape_derived_evaluator_config;
+
 pub(crate) mod shape_ec2_configuration;
 
 pub(crate) mod shape_efs_access_point_configuration;

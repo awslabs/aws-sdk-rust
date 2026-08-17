@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRev
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListRevenueAttributionAllocations")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListRevenueAttributionAllocationsTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRev
     }
 }
 
+#[derive(Debug)]
+struct ListRevenueAttributionAllocationsTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRevenueAttributionAllocationsTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ListRevenueAttributionAllocationsTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ListRevenueAttributionAllocationsInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("RevenueAttributionIdentifier") {
+            if let ::std::option::Option::Some(value) = input.revenue_attribution_identifier.as_deref() {
+                captured.insert("RevenueAttributionIdentifier", value);
+            }
+        }
+        if requested.should_capture("AfterEffectiveFrom") {
+            if let ::std::option::Option::Some(value) = input.after_effective_from.as_deref() {
+                captured.insert("AfterEffectiveFrom", value);
+            }
+        }
+        if requested.should_capture("BeforeEffectiveFrom") {
+            if let ::std::option::Option::Some(value) = input.before_effective_from.as_deref() {
+                captured.insert("BeforeEffectiveFrom", value);
+            }
+        }
+        if requested.should_capture("AfterEffectiveUntil") {
+            if let ::std::option::Option::Some(value) = input.after_effective_until.as_deref() {
+                captured.insert("AfterEffectiveUntil", value);
+            }
+        }
+        if requested.should_capture("BeforeEffectiveUntil") {
+            if let ::std::option::Option::Some(value) = input.before_effective_until.as_deref() {
+                captured.insert("BeforeEffectiveUntil", value);
+            }
+        }
+        if requested.should_capture("RevenueAttributionRevision") {
+            if let ::std::option::Option::Some(value) = input.revenue_attribution_revision.as_deref() {
+                captured.insert("RevenueAttributionRevision", value);
+            }
+        }
+        if requested.should_capture("NextToken") {
+            if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
+                captured.insert("NextToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ListRevenueAttributionAllocationsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListRevenueAttributionAllocationsResponseDeserializer {

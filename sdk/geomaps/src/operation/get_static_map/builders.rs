@@ -22,10 +22,7 @@ impl crate::operation::get_static_map::builders::GetStaticMapInputBuilder {
 }
 /// Fluent builder constructing a request to `GetStaticMap`.
 ///
-/// <note>
-/// <p>This operation is not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
-/// </note>
-/// <p><code>GetStaticMap</code> provides high-quality static map images with customizable options. You can modify the map's appearance and overlay additional information. It's an ideal solution for applications requiring tailored static map snapshots.</p>
+/// <p><code>GetStaticMap</code> provides high-quality static map images with customizable options. You can modify the map's appearance and overlay additional information. It's an ideal solution for applications requiring tailored static map snapshots. Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
 /// <p>For more information, see the following topics in the <i>Amazon Location Service Developer Guide</i>:</p>
 /// <ul>
 /// <li>

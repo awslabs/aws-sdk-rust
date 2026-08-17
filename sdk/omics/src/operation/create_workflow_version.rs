@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateW
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateWorkflowVersion")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateWorkflowVersionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,104 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateW
     }
 }
 
+#[derive(Debug)]
+struct CreateWorkflowVersionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateWorkflowVersionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateWorkflowVersionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateWorkflowVersionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("workflowId") {
+            if let ::std::option::Option::Some(value) = input.workflow_id.as_deref() {
+                captured.insert("workflowId", value);
+            }
+        }
+        if requested.should_capture("versionName") {
+            if let ::std::option::Option::Some(value) = input.version_name.as_deref() {
+                captured.insert("versionName", value);
+            }
+        }
+        if requested.should_capture("definitionUri") {
+            if let ::std::option::Option::Some(value) = input.definition_uri.as_deref() {
+                captured.insert("definitionUri", value);
+            }
+        }
+        if requested.should_capture("description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("description", value);
+            }
+        }
+        if requested.should_capture("main") {
+            if let ::std::option::Option::Some(value) = input.main.as_deref() {
+                captured.insert("main", value);
+            }
+        }
+        if requested.should_capture("requestId") {
+            if let ::std::option::Option::Some(value) = input.request_id.as_deref() {
+                captured.insert("requestId", value);
+            }
+        }
+        if requested.should_capture("workflowBucketOwnerId") {
+            if let ::std::option::Option::Some(value) = input.workflow_bucket_owner_id.as_deref() {
+                captured.insert("workflowBucketOwnerId", value);
+            }
+        }
+        if requested.should_capture("containerRegistryMapUri") {
+            if let ::std::option::Option::Some(value) = input.container_registry_map_uri.as_deref() {
+                captured.insert("containerRegistryMapUri", value);
+            }
+        }
+        if requested.should_capture("readmeMarkdown") {
+            if let ::std::option::Option::Some(value) = input.readme_markdown.as_deref() {
+                captured.insert("readmeMarkdown", value);
+            }
+        }
+        if requested.should_capture("parameterTemplatePath") {
+            if let ::std::option::Option::Some(value) = input.parameter_template_path.as_deref() {
+                captured.insert("parameterTemplatePath", value);
+            }
+        }
+        if requested.should_capture("readmePath") {
+            if let ::std::option::Option::Some(value) = input.readme_path.as_deref() {
+                captured.insert("readmePath", value);
+            }
+        }
+        if requested.should_capture("readmeUri") {
+            if let ::std::option::Option::Some(value) = input.readme_uri.as_deref() {
+                captured.insert("readmeUri", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateWorkflowVersionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateWorkflowVersionResponseDeserializer {

@@ -5,6 +5,8 @@ pub use crate::types::_agentic_retrieve_policy_configuration::AgenticRetrievePol
 
 pub use crate::types::_user_context::UserContextBuilder;
 
+pub use crate::types::_agentic_retrieve_memory_configuration::AgenticRetrieveMemoryConfigurationBuilder;
+
 pub use crate::types::_model_performance_configuration::ModelPerformanceConfigurationBuilder;
 
 pub use crate::types::_query_generation_input::QueryGenerationInputBuilder;
@@ -58,6 +60,8 @@ pub use crate::types::_foundation_model_configuration::FoundationModelConfigurat
 pub use crate::types::_agentic_retrieve_reranking_configuration::AgenticRetrieveRerankingConfigurationBuilder;
 
 pub use crate::types::_agentic_retrieve_bedrock_guardrail_configuration::AgenticRetrieveBedrockGuardrailConfigurationBuilder;
+
+pub use crate::types::_agentic_retrieve_memory_session_binding::AgenticRetrieveMemorySessionBindingBuilder;
 
 pub use crate::types::_agentic_retrieve_result_event::AgenticRetrieveResultEventBuilder;
 
@@ -158,6 +162,8 @@ pub use crate::types::_agentic_retrieve_message_content::AgenticRetrieveMessageC
 pub use crate::types::_bedrock_foundation_model_configuration::BedrockFoundationModelConfigurationBuilder;
 
 pub use crate::types::_agentic_retrieve_bedrock_reranking_configuration::AgenticRetrieveBedrockRerankingConfigurationBuilder;
+
+pub use crate::types::_agentic_retrieve_memory_retrieval_config::AgenticRetrieveMemoryRetrievalConfigBuilder;
 
 pub use crate::types::_agentic_retrieve_generated_response::AgenticRetrieveGeneratedResponseBuilder;
 
@@ -303,6 +309,8 @@ pub use crate::types::_image_block::ImageBlockBuilder;
 
 pub use crate::types::_retrieval_overrides::RetrievalOverridesBuilder;
 
+pub use crate::types::_agentic_retrieve_memory_metadata_filter::AgenticRetrieveMemoryMetadataFilterBuilder;
+
 pub use crate::types::_retrieval_content::RetrievalContentBuilder;
 
 pub use crate::types::_agentic_retrieve_source_retriever::AgenticRetrieveSourceRetrieverBuilder;
@@ -378,6 +386,8 @@ pub use crate::types::_retrieval_result_content_column::RetrievalResultContentCo
 pub use crate::types::_agentic_retrieve_action_details::AgenticRetrieveActionDetailsBuilder;
 
 pub use crate::types::_agentic_retrieve_full_doc_expansion_details::AgenticRetrieveFullDocExpansionDetailsBuilder;
+
+pub use crate::types::_agentic_retrieve_memory_retrieve_details::AgenticRetrieveMemoryRetrieveDetailsBuilder;
 
 pub use crate::types::_agentic_retrieve_warning_message::AgenticRetrieveWarningMessageBuilder;
 

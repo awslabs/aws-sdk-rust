@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutMetr
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutMetricAlarm")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutMetricAlarmTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutMetr
     }
 }
 
+#[derive(Debug)]
+struct PutMetricAlarmTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutMetricAlarmTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutMetricAlarmTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutMetricAlarmInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("AlarmName") {
+            if let ::std::option::Option::Some(value) = input.alarm_name.as_deref() {
+                captured.insert("AlarmName", value);
+            }
+        }
+        if requested.should_capture("AlarmDescription") {
+            if let ::std::option::Option::Some(value) = input.alarm_description.as_deref() {
+                captured.insert("AlarmDescription", value);
+            }
+        }
+        if requested.should_capture("MetricName") {
+            if let ::std::option::Option::Some(value) = input.metric_name.as_deref() {
+                captured.insert("MetricName", value);
+            }
+        }
+        if requested.should_capture("Namespace") {
+            if let ::std::option::Option::Some(value) = input.namespace.as_deref() {
+                captured.insert("Namespace", value);
+            }
+        }
+        if requested.should_capture("ExtendedStatistic") {
+            if let ::std::option::Option::Some(value) = input.extended_statistic.as_deref() {
+                captured.insert("ExtendedStatistic", value);
+            }
+        }
+        if requested.should_capture("TreatMissingData") {
+            if let ::std::option::Option::Some(value) = input.treat_missing_data.as_deref() {
+                captured.insert("TreatMissingData", value);
+            }
+        }
+        if requested.should_capture("EvaluateLowSampleCountPercentile") {
+            if let ::std::option::Option::Some(value) = input.evaluate_low_sample_count_percentile.as_deref() {
+                captured.insert("EvaluateLowSampleCountPercentile", value);
+            }
+        }
+        if requested.should_capture("ThresholdMetricId") {
+            if let ::std::option::Option::Some(value) = input.threshold_metric_id.as_deref() {
+                captured.insert("ThresholdMetricId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutMetricAlarmResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutMetricAlarmResponseDeserializer {

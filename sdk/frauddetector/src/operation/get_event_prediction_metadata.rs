@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEven
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetEventPredictionMetadata")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetEventPredictionMetadataTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEven
     }
 }
 
+#[derive(Debug)]
+struct GetEventPredictionMetadataTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetEventPredictionMetadataTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "GetEventPredictionMetadataTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<GetEventPredictionMetadataInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("eventId") {
+            if let ::std::option::Option::Some(value) = input.event_id.as_deref() {
+                captured.insert("eventId", value);
+            }
+        }
+        if requested.should_capture("eventTypeName") {
+            if let ::std::option::Option::Some(value) = input.event_type_name.as_deref() {
+                captured.insert("eventTypeName", value);
+            }
+        }
+        if requested.should_capture("detectorId") {
+            if let ::std::option::Option::Some(value) = input.detector_id.as_deref() {
+                captured.insert("detectorId", value);
+            }
+        }
+        if requested.should_capture("detectorVersionId") {
+            if let ::std::option::Option::Some(value) = input.detector_version_id.as_deref() {
+                captured.insert("detectorVersionId", value);
+            }
+        }
+        if requested.should_capture("predictionTimestamp") {
+            if let ::std::option::Option::Some(value) = input.prediction_timestamp.as_deref() {
+                captured.insert("predictionTimestamp", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct GetEventPredictionMetadataResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetEventPredictionMetadataResponseDeserializer {

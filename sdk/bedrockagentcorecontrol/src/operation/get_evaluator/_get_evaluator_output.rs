@@ -13,6 +13,22 @@ pub struct GetEvaluatorOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration of the evaluator, including LLM-as-a-Judge or code-based settings.</p>
     pub evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
+    /// <p>The kind of evaluator resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Builtin</code> – An Amazon Web Services-managed global evaluator.</p></li>
+    /// <li>
+    /// <p><code>ThirdParty</code> – An Amazon Web Services-managed global evaluator from a third-party provider.</p></li>
+    /// <li>
+    /// <p><code>Custom</code> – A customer-created evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomCode</code> – A customer-created code-based evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomDerived</code> – A customer-created evaluator derived from an existing base evaluator.</p></li>
+    /// </ul>
+    pub evaluator_type: ::std::option::Option<crate::types::EvaluatorType>,
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub provider: ::std::option::Option<crate::types::Provider>,
     /// <p>The evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     pub level: crate::types::EvaluatorLevel,
     /// <p>The current status of the evaluator.</p>
@@ -51,6 +67,26 @@ impl GetEvaluatorOutput {
     pub fn evaluator_config(&self) -> ::std::option::Option<&crate::types::EvaluatorConfig> {
         self.evaluator_config.as_ref()
     }
+    /// <p>The kind of evaluator resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Builtin</code> – An Amazon Web Services-managed global evaluator.</p></li>
+    /// <li>
+    /// <p><code>ThirdParty</code> – An Amazon Web Services-managed global evaluator from a third-party provider.</p></li>
+    /// <li>
+    /// <p><code>Custom</code> – A customer-created evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomCode</code> – A customer-created code-based evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomDerived</code> – A customer-created evaluator derived from an existing base evaluator.</p></li>
+    /// </ul>
+    pub fn evaluator_type(&self) -> ::std::option::Option<&crate::types::EvaluatorType> {
+        self.evaluator_type.as_ref()
+    }
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
+        self.provider.as_ref()
+    }
     /// <p>The evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     pub fn level(&self) -> &crate::types::EvaluatorLevel {
         &self.level
@@ -84,6 +120,8 @@ impl ::std::fmt::Debug for GetEvaluatorOutput {
         formatter.field("evaluator_name", &self.evaluator_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_config", &self.evaluator_config);
+        formatter.field("evaluator_type", &self.evaluator_type);
+        formatter.field("provider", &self.provider);
         formatter.field("level", &self.level);
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
@@ -115,6 +153,8 @@ pub struct GetEvaluatorOutputBuilder {
     pub(crate) evaluator_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) evaluator_config: ::std::option::Option<crate::types::EvaluatorConfig>,
+    pub(crate) evaluator_type: ::std::option::Option<crate::types::EvaluatorType>,
+    pub(crate) provider: ::std::option::Option<crate::types::Provider>,
     pub(crate) level: ::std::option::Option<crate::types::EvaluatorLevel>,
     pub(crate) status: ::std::option::Option<crate::types::EvaluatorStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -197,6 +237,70 @@ impl GetEvaluatorOutputBuilder {
     /// <p>The configuration of the evaluator, including LLM-as-a-Judge or code-based settings.</p>
     pub fn get_evaluator_config(&self) -> &::std::option::Option<crate::types::EvaluatorConfig> {
         &self.evaluator_config
+    }
+    /// <p>The kind of evaluator resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Builtin</code> – An Amazon Web Services-managed global evaluator.</p></li>
+    /// <li>
+    /// <p><code>ThirdParty</code> – An Amazon Web Services-managed global evaluator from a third-party provider.</p></li>
+    /// <li>
+    /// <p><code>Custom</code> – A customer-created evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomCode</code> – A customer-created code-based evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomDerived</code> – A customer-created evaluator derived from an existing base evaluator.</p></li>
+    /// </ul>
+    pub fn evaluator_type(mut self, input: crate::types::EvaluatorType) -> Self {
+        self.evaluator_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The kind of evaluator resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Builtin</code> – An Amazon Web Services-managed global evaluator.</p></li>
+    /// <li>
+    /// <p><code>ThirdParty</code> – An Amazon Web Services-managed global evaluator from a third-party provider.</p></li>
+    /// <li>
+    /// <p><code>Custom</code> – A customer-created evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomCode</code> – A customer-created code-based evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomDerived</code> – A customer-created evaluator derived from an existing base evaluator.</p></li>
+    /// </ul>
+    pub fn set_evaluator_type(mut self, input: ::std::option::Option<crate::types::EvaluatorType>) -> Self {
+        self.evaluator_type = input;
+        self
+    }
+    /// <p>The kind of evaluator resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Builtin</code> – An Amazon Web Services-managed global evaluator.</p></li>
+    /// <li>
+    /// <p><code>ThirdParty</code> – An Amazon Web Services-managed global evaluator from a third-party provider.</p></li>
+    /// <li>
+    /// <p><code>Custom</code> – A customer-created evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomCode</code> – A customer-created code-based evaluator.</p></li>
+    /// <li>
+    /// <p><code>CustomDerived</code> – A customer-created evaluator derived from an existing base evaluator.</p></li>
+    /// </ul>
+    pub fn get_evaluator_type(&self) -> &::std::option::Option<crate::types::EvaluatorType> {
+        &self.evaluator_type
+    }
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub fn provider(mut self, input: crate::types::Provider) -> Self {
+        self.provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
+        self.provider = input;
+        self
+    }
+    /// <p>The source of the evaluator's logic: Amazon Web Services, a third-party library, or you.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
+        &self.provider
     }
     /// <p>The evaluation level (<code>TOOL_CALL</code>, <code>TRACE</code>, or <code>SESSION</code>) that determines the scope of evaluation.</p>
     /// This field is required.
@@ -328,6 +432,8 @@ impl GetEvaluatorOutputBuilder {
             })?,
             description: self.description,
             evaluator_config: self.evaluator_config,
+            evaluator_type: self.evaluator_type,
+            provider: self.provider,
             level: self.level.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "level",
@@ -366,6 +472,8 @@ impl ::std::fmt::Debug for GetEvaluatorOutputBuilder {
         formatter.field("evaluator_name", &self.evaluator_name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("evaluator_config", &self.evaluator_config);
+        formatter.field("evaluator_type", &self.evaluator_type);
+        formatter.field("provider", &self.provider);
         formatter.field("level", &self.level);
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);

@@ -27,7 +27,7 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for SelectObjectContentE
                             "expected :content-type to be 'application/octet-stream', but was '{content_type}'"
                         )));
                     }
-                    builder = builder.set_payload(Some(::aws_smithy_types::Blob::new(message.payload().as_ref())));
+                    builder = builder.set_payload(Some(::aws_smithy_types::Blob::from_maybe_shared(message.payload().clone())));
                     Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::types::SelectObjectContentEventStream::Records(builder.build()),
                     ))

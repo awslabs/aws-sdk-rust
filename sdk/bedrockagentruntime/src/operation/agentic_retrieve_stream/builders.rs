@@ -203,6 +203,20 @@ impl AgenticRetrieveStreamFluentBuilder {
     pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
         self.inner.get_user_context()
     }
+    /// <p>The configuration for using an Amazon Bedrock AgentCore Memory resource with this retrieval.</p>
+    pub fn memory_configuration(mut self, input: crate::types::AgenticRetrieveMemoryConfiguration) -> Self {
+        self.inner = self.inner.memory_configuration(input);
+        self
+    }
+    /// <p>The configuration for using an Amazon Bedrock AgentCore Memory resource with this retrieval.</p>
+    pub fn set_memory_configuration(mut self, input: ::std::option::Option<crate::types::AgenticRetrieveMemoryConfiguration>) -> Self {
+        self.inner = self.inner.set_memory_configuration(input);
+        self
+    }
+    /// <p>The configuration for using an Amazon Bedrock AgentCore Memory resource with this retrieval.</p>
+    pub fn get_memory_configuration(&self) -> &::std::option::Option<crate::types::AgenticRetrieveMemoryConfiguration> {
+        self.inner.get_memory_configuration()
+    }
     /// <p>Whether to generate a response based on the retrieved results.</p>
     pub fn generate_response(mut self, input: bool) -> Self {
         self.inner = self.inner.generate_response(input);

@@ -16,6 +16,7 @@
 ///     InvalidInputExceptionReason::DuplicateTagKey => { /* ... */ },
 ///     InvalidInputExceptionReason::EndDateNotEndOfMonth => { /* ... */ },
 ///     InvalidInputExceptionReason::EndDateTooEarly => { /* ... */ },
+///     InvalidInputExceptionReason::EndDateTooLate => { /* ... */ },
 ///     InvalidInputExceptionReason::ImmutablePolicy => { /* ... */ },
 ///     InvalidInputExceptionReason::InputRequired => { /* ... */ },
 ///     InvalidInputExceptionReason::InvalidEmailAddressTarget => { /* ... */ },
@@ -88,6 +89,8 @@ pub enum InvalidInputExceptionReason {
     EndDateNotEndOfMonth,
     #[allow(missing_docs)] // documentation missing in model
     EndDateTooEarly,
+    #[allow(missing_docs)] // documentation missing in model
+    EndDateTooLate,
     #[allow(missing_docs)] // documentation missing in model
     ImmutablePolicy,
     #[allow(missing_docs)] // documentation missing in model
@@ -171,6 +174,7 @@ impl ::std::convert::From<&str> for InvalidInputExceptionReason {
             "DUPLICATE_TAG_KEY" => InvalidInputExceptionReason::DuplicateTagKey,
             "END_DATE_NOT_END_OF_MONTH" => InvalidInputExceptionReason::EndDateNotEndOfMonth,
             "END_DATE_TOO_EARLY" => InvalidInputExceptionReason::EndDateTooEarly,
+            "END_DATE_TOO_LATE" => InvalidInputExceptionReason::EndDateTooLate,
             "IMMUTABLE_POLICY" => InvalidInputExceptionReason::ImmutablePolicy,
             "INPUT_REQUIRED" => InvalidInputExceptionReason::InputRequired,
             "INVALID_EMAIL_ADDRESS_TARGET" => InvalidInputExceptionReason::InvalidEmailAddressTarget,
@@ -226,6 +230,7 @@ impl InvalidInputExceptionReason {
             InvalidInputExceptionReason::DuplicateTagKey => "DUPLICATE_TAG_KEY",
             InvalidInputExceptionReason::EndDateNotEndOfMonth => "END_DATE_NOT_END_OF_MONTH",
             InvalidInputExceptionReason::EndDateTooEarly => "END_DATE_TOO_EARLY",
+            InvalidInputExceptionReason::EndDateTooLate => "END_DATE_TOO_LATE",
             InvalidInputExceptionReason::ImmutablePolicy => "IMMUTABLE_POLICY",
             InvalidInputExceptionReason::InputRequired => "INPUT_REQUIRED",
             InvalidInputExceptionReason::InvalidEmailAddressTarget => "INVALID_EMAIL_ADDRESS_TARGET",
@@ -272,6 +277,7 @@ impl InvalidInputExceptionReason {
             "DUPLICATE_TAG_KEY",
             "END_DATE_NOT_END_OF_MONTH",
             "END_DATE_TOO_EARLY",
+            "END_DATE_TOO_LATE",
             "IMMUTABLE_POLICY",
             "INPUT_REQUIRED",
             "INVALID_EMAIL_ADDRESS_TARGET",
@@ -335,6 +341,7 @@ impl ::std::fmt::Display for InvalidInputExceptionReason {
             InvalidInputExceptionReason::DuplicateTagKey => write!(f, "DUPLICATE_TAG_KEY"),
             InvalidInputExceptionReason::EndDateNotEndOfMonth => write!(f, "END_DATE_NOT_END_OF_MONTH"),
             InvalidInputExceptionReason::EndDateTooEarly => write!(f, "END_DATE_TOO_EARLY"),
+            InvalidInputExceptionReason::EndDateTooLate => write!(f, "END_DATE_TOO_LATE"),
             InvalidInputExceptionReason::ImmutablePolicy => write!(f, "IMMUTABLE_POLICY"),
             InvalidInputExceptionReason::InputRequired => write!(f, "INPUT_REQUIRED"),
             InvalidInputExceptionReason::InvalidEmailAddressTarget => write!(f, "INVALID_EMAIL_ADDRESS_TARGET"),

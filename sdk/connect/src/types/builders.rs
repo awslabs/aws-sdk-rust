@@ -27,6 +27,10 @@ pub use crate::types::_evaluation_form_target_configuration::EvaluationFormTarge
 
 pub use crate::types::_evaluation_form_language_configuration::EvaluationFormLanguageConfigurationBuilder;
 
+pub use crate::types::_extraction_configuration::ExtractionConfigurationBuilder;
+
+pub use crate::types::_extraction_definition_display::ExtractionDefinitionDisplayBuilder;
+
 pub use crate::types::_recurrence_config::RecurrenceConfigBuilder;
 
 pub use crate::types::_metric_calculation::MetricCalculationBuilder;
@@ -88,6 +92,8 @@ pub use crate::types::_data_table::DataTableBuilder;
 pub use crate::types::_data_table_attribute::DataTableAttributeBuilder;
 
 pub use crate::types::_evaluation_form::EvaluationFormBuilder;
+
+pub use crate::types::_extraction_definition::ExtractionDefinitionBuilder;
 
 pub use crate::types::_hours_of_operation::HoursOfOperationBuilder;
 
@@ -385,6 +391,8 @@ pub use crate::types::_problem_detail::ProblemDetailBuilder;
 
 pub use crate::types::_validation_enum::ValidationEnumBuilder;
 
+pub use crate::types::_extraction_definition_not_found_behavior::ExtractionDefinitionNotFoundBehaviorBuilder;
+
 pub use crate::types::_hours_of_operation_config::HoursOfOperationConfigBuilder;
 
 pub use crate::types::_hours_of_operation_override_config::HoursOfOperationOverrideConfigBuilder;
@@ -552,6 +560,8 @@ pub use crate::types::_default_vocabulary::DefaultVocabularyBuilder;
 pub use crate::types::_evaluation_form_summary::EvaluationFormSummaryBuilder;
 
 pub use crate::types::_evaluation_form_version_summary::EvaluationFormVersionSummaryBuilder;
+
+pub use crate::types::_extraction_definition_summary::ExtractionDefinitionSummaryBuilder;
 
 pub use crate::types::_hours_of_operation_summary::HoursOfOperationSummaryBuilder;
 
@@ -762,6 +772,8 @@ pub use crate::types::_assign_sla_action_definition::AssignSlaActionDefinitionBu
 pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTasksActionDefinitionBuilder;
 
 pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvaluationActionDefinitionBuilder;
+
+pub use crate::types::_extract_information_action_definition::ExtractInformationActionDefinitionBuilder;
 
 pub use crate::types::_primary_attribute_access_control_configuration_item::PrimaryAttributeAccessControlConfigurationItemBuilder;
 
@@ -1010,6 +1022,8 @@ pub use crate::types::_question_points_configuration::QuestionPointsConfiguratio
 pub use crate::types::_metric_filter::MetricFilterBuilder;
 
 pub use crate::types::_field_value::FieldValueBuilder;
+
+pub use crate::types::_rules_extraction_definition_identifier::RulesExtractionDefinitionIdentifierBuilder;
 
 pub use crate::types::_primary_attribute_value::PrimaryAttributeValueBuilder;
 

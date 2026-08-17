@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateD
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateDBCluster")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateDBClusterTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,134 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateD
     }
 }
 
+#[derive(Debug)]
+struct CreateDBClusterTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDBClusterTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateDBClusterTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateDbClusterInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("CharacterSetName") {
+            if let ::std::option::Option::Some(value) = input.character_set_name.as_deref() {
+                captured.insert("CharacterSetName", value);
+            }
+        }
+        if requested.should_capture("DatabaseName") {
+            if let ::std::option::Option::Some(value) = input.database_name.as_deref() {
+                captured.insert("DatabaseName", value);
+            }
+        }
+        if requested.should_capture("DBClusterIdentifier") {
+            if let ::std::option::Option::Some(value) = input.db_cluster_identifier.as_deref() {
+                captured.insert("DBClusterIdentifier", value);
+            }
+        }
+        if requested.should_capture("DBClusterParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.db_cluster_parameter_group_name.as_deref() {
+                captured.insert("DBClusterParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("DBSubnetGroupName") {
+            if let ::std::option::Option::Some(value) = input.db_subnet_group_name.as_deref() {
+                captured.insert("DBSubnetGroupName", value);
+            }
+        }
+        if requested.should_capture("Engine") {
+            if let ::std::option::Option::Some(value) = input.engine.as_deref() {
+                captured.insert("Engine", value);
+            }
+        }
+        if requested.should_capture("EngineVersion") {
+            if let ::std::option::Option::Some(value) = input.engine_version.as_deref() {
+                captured.insert("EngineVersion", value);
+            }
+        }
+        if requested.should_capture("MasterUsername") {
+            if let ::std::option::Option::Some(value) = input.master_username.as_deref() {
+                captured.insert("MasterUsername", value);
+            }
+        }
+        if requested.should_capture("MasterUserPassword") {
+            if let ::std::option::Option::Some(value) = input.master_user_password.as_deref() {
+                captured.insert("MasterUserPassword", value);
+            }
+        }
+        if requested.should_capture("OptionGroupName") {
+            if let ::std::option::Option::Some(value) = input.option_group_name.as_deref() {
+                captured.insert("OptionGroupName", value);
+            }
+        }
+        if requested.should_capture("PreferredBackupWindow") {
+            if let ::std::option::Option::Some(value) = input.preferred_backup_window.as_deref() {
+                captured.insert("PreferredBackupWindow", value);
+            }
+        }
+        if requested.should_capture("PreferredMaintenanceWindow") {
+            if let ::std::option::Option::Some(value) = input.preferred_maintenance_window.as_deref() {
+                captured.insert("PreferredMaintenanceWindow", value);
+            }
+        }
+        if requested.should_capture("ReplicationSourceIdentifier") {
+            if let ::std::option::Option::Some(value) = input.replication_source_identifier.as_deref() {
+                captured.insert("ReplicationSourceIdentifier", value);
+            }
+        }
+        if requested.should_capture("KmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.kms_key_id.as_deref() {
+                captured.insert("KmsKeyId", value);
+            }
+        }
+        if requested.should_capture("PreSignedUrl") {
+            if let ::std::option::Option::Some(value) = input.pre_signed_url.as_deref() {
+                captured.insert("PreSignedUrl", value);
+            }
+        }
+        if requested.should_capture("GlobalClusterIdentifier") {
+            if let ::std::option::Option::Some(value) = input.global_cluster_identifier.as_deref() {
+                captured.insert("GlobalClusterIdentifier", value);
+            }
+        }
+        if requested.should_capture("StorageType") {
+            if let ::std::option::Option::Some(value) = input.storage_type.as_deref() {
+                captured.insert("StorageType", value);
+            }
+        }
+        if requested.should_capture("NetworkType") {
+            if let ::std::option::Option::Some(value) = input.network_type.as_deref() {
+                captured.insert("NetworkType", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateDBClusterResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateDBClusterResponseDeserializer {

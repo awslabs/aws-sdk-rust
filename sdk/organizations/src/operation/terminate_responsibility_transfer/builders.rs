@@ -23,6 +23,7 @@ impl crate::operation::terminate_responsibility_transfer::builders::TerminateRes
 /// Fluent builder constructing a request to `TerminateResponsibilityTransfer`.
 ///
 /// <p>Ends a transfer. A <i>transfer</i> is an arrangement between two management accounts where one account designates the other with specified responsibilities for their organization.</p>
+/// <p>When a transfer ends, Organizations publishes a <code>ResponsibilityTransferTerminated</code> service event to CloudTrail. Each affected account receives this event, including upstream participants such as distributors in a chained transfer. For an example log entry, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-terminate-responsibility-transfer">Example log entries: TerminateResponsibilityTransfer</a> in the <i>Organizations User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateResponsibilityTransferFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

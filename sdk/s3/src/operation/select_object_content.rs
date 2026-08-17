@@ -123,7 +123,8 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SelectO
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
                     let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SelectObjectContent")
-                            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(SelectObjectContentEndpointParamsInterceptor))
+                            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(SelectObjectContentTelemetryInputCaptureInterceptor))
+.with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(SelectObjectContentEndpointParamsInterceptor))
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::select_object_content::SelectObjectContentError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::select_object_content::SelectObjectContentError>::new())
 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::select_object_content::SelectObjectContentError>::builder().transient_errors({
@@ -136,6 +137,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SelectO
     }
 }
 
+#[derive(Debug)]
+struct SelectObjectContentTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SelectObjectContentTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "SelectObjectContentTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<SelectObjectContentInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Bucket") {
+            if let ::std::option::Option::Some(value) = input.bucket.as_deref() {
+                captured.insert("Bucket", value);
+            }
+        }
+        if requested.should_capture("Key") {
+            if let ::std::option::Option::Some(value) = input.key.as_deref() {
+                captured.insert("Key", value);
+            }
+        }
+        if requested.should_capture("SSECustomerAlgorithm") {
+            if let ::std::option::Option::Some(value) = input.sse_customer_algorithm.as_deref() {
+                captured.insert("SSECustomerAlgorithm", value);
+            }
+        }
+        if requested.should_capture("SSECustomerKeyMD5") {
+            if let ::std::option::Option::Some(value) = input.sse_customer_key_md5.as_deref() {
+                captured.insert("SSECustomerKeyMD5", value);
+            }
+        }
+        if requested.should_capture("Expression") {
+            if let ::std::option::Option::Some(value) = input.expression.as_deref() {
+                captured.insert("Expression", value);
+            }
+        }
+        if requested.should_capture("ExpectedBucketOwner") {
+            if let ::std::option::Option::Some(value) = input.expected_bucket_owner.as_deref() {
+                captured.insert("ExpectedBucketOwner", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct SelectObjectContentResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SelectObjectContentResponseDeserializer {

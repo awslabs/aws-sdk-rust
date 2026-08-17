@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateO
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateOdbNetwork")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateOdbNetworkTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateO
     }
 }
 
+#[derive(Debug)]
+struct UpdateOdbNetworkTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateOdbNetworkTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateOdbNetworkTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateOdbNetworkInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("odbNetworkId") {
+            if let ::std::option::Option::Some(value) = input.odb_network_id.as_deref() {
+                captured.insert("odbNetworkId", value);
+            }
+        }
+        if requested.should_capture("displayName") {
+            if let ::std::option::Option::Some(value) = input.display_name.as_deref() {
+                captured.insert("displayName", value);
+            }
+        }
+        if requested.should_capture("s3PolicyDocument") {
+            if let ::std::option::Option::Some(value) = input.s3_policy_document.as_deref() {
+                captured.insert("s3PolicyDocument", value);
+            }
+        }
+        if requested.should_capture("stsPolicyDocument") {
+            if let ::std::option::Option::Some(value) = input.sts_policy_document.as_deref() {
+                captured.insert("stsPolicyDocument", value);
+            }
+        }
+        if requested.should_capture("kmsPolicyDocument") {
+            if let ::std::option::Option::Some(value) = input.kms_policy_document.as_deref() {
+                captured.insert("kmsPolicyDocument", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateOdbNetworkResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateOdbNetworkResponseDeserializer {

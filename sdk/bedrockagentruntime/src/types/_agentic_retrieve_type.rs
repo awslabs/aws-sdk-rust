@@ -12,6 +12,7 @@
 /// ```text
 /// # let agenticretrievetype = unimplemented!();
 /// match agenticretrievetype {
+///     AgenticRetrieveType::BedrockAgentCoreMemory => { /* ... */ },
 ///     AgenticRetrieveType::BedrockKnowledgeBase => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -41,6 +42,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AgenticRetrieveType {
+    /// <p>An AgentCore Memory resource. Long-term memory retrievals report under the Retrieval step with this source type.</p>
+    BedrockAgentCoreMemory,
     /// <p>A Bedrock knowledge base retrieval source.</p>
     BedrockKnowledgeBase,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -50,6 +53,7 @@ pub enum AgenticRetrieveType {
 impl ::std::convert::From<&str> for AgenticRetrieveType {
     fn from(s: &str) -> Self {
         match s {
+            "BedrockAgentCoreMemory" => AgenticRetrieveType::BedrockAgentCoreMemory,
             "BedrockKnowledgeBase" => AgenticRetrieveType::BedrockKnowledgeBase,
             other => AgenticRetrieveType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl AgenticRetrieveType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AgenticRetrieveType::BedrockAgentCoreMemory => "BedrockAgentCoreMemory",
             AgenticRetrieveType::BedrockKnowledgeBase => "BedrockKnowledgeBase",
             AgenticRetrieveType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BedrockKnowledgeBase"]
+        &["BedrockAgentCoreMemory", "BedrockKnowledgeBase"]
     }
 }
 impl ::std::convert::AsRef<str> for AgenticRetrieveType {
@@ -95,6 +100,7 @@ impl AgenticRetrieveType {
 impl ::std::fmt::Display for AgenticRetrieveType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AgenticRetrieveType::BedrockAgentCoreMemory => write!(f, "BedrockAgentCoreMemory"),
             AgenticRetrieveType::BedrockKnowledgeBase => write!(f, "BedrockKnowledgeBase"),
             AgenticRetrieveType::Unknown(value) => write!(f, "{value}"),
         }

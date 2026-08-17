@@ -30,6 +30,9 @@ pub mod error;
 pub mod event_stream;
 pub mod primitive;
 pub mod retry;
+
+/// Types for carrying values selected from an operation's input through to telemetry.
+pub mod telemetry;
 pub mod timeout;
 
 /// Utilities for type erasure.

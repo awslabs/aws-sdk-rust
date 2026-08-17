@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendVoi
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SendVoiceMessage")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SendVoiceMessageTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendVoi
     }
 }
 
+#[derive(Debug)]
+struct SendVoiceMessageTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SendVoiceMessageTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "SendVoiceMessageTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<SendVoiceMessageInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("CallerId") {
+            if let ::std::option::Option::Some(value) = input.caller_id.as_deref() {
+                captured.insert("CallerId", value);
+            }
+        }
+        if requested.should_capture("ConfigurationSetName") {
+            if let ::std::option::Option::Some(value) = input.configuration_set_name.as_deref() {
+                captured.insert("ConfigurationSetName", value);
+            }
+        }
+        if requested.should_capture("DestinationPhoneNumber") {
+            if let ::std::option::Option::Some(value) = input.destination_phone_number.as_deref() {
+                captured.insert("DestinationPhoneNumber", value);
+            }
+        }
+        if requested.should_capture("OriginationPhoneNumber") {
+            if let ::std::option::Option::Some(value) = input.origination_phone_number.as_deref() {
+                captured.insert("OriginationPhoneNumber", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct SendVoiceMessageResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SendVoiceMessageResponseDeserializer {

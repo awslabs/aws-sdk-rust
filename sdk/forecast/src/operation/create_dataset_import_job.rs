@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateD
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateDatasetImportJob")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateDatasetImportJobTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateD
     }
 }
 
+#[derive(Debug)]
+struct CreateDatasetImportJobTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDatasetImportJobTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateDatasetImportJobTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateDatasetImportJobInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("DatasetImportJobName") {
+            if let ::std::option::Option::Some(value) = input.dataset_import_job_name.as_deref() {
+                captured.insert("DatasetImportJobName", value);
+            }
+        }
+        if requested.should_capture("DatasetArn") {
+            if let ::std::option::Option::Some(value) = input.dataset_arn.as_deref() {
+                captured.insert("DatasetArn", value);
+            }
+        }
+        if requested.should_capture("TimestampFormat") {
+            if let ::std::option::Option::Some(value) = input.timestamp_format.as_deref() {
+                captured.insert("TimestampFormat", value);
+            }
+        }
+        if requested.should_capture("TimeZone") {
+            if let ::std::option::Option::Some(value) = input.time_zone.as_deref() {
+                captured.insert("TimeZone", value);
+            }
+        }
+        if requested.should_capture("GeolocationFormat") {
+            if let ::std::option::Option::Some(value) = input.geolocation_format.as_deref() {
+                captured.insert("GeolocationFormat", value);
+            }
+        }
+        if requested.should_capture("Format") {
+            if let ::std::option::Option::Some(value) = input.format.as_deref() {
+                captured.insert("Format", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateDatasetImportJobResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateDatasetImportJobResponseDeserializer {

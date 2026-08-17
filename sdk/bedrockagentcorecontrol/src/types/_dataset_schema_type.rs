@@ -14,6 +14,7 @@
 /// match datasetschematype {
 ///     DatasetSchemaType::AgentcoreEvaluationPredefinedV1 => { /* ... */ },
 ///     DatasetSchemaType::AgentcoreEvaluationSimulatedV1 => { /* ... */ },
+///     DatasetSchemaType::GenericEvaluationPredefinedV1 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum DatasetSchemaType {
     AgentcoreEvaluationPredefinedV1,
     /// <p> AgentCore simulated evaluation schema, version 1. Dataset for synthetic data generation where each example is a scenario used to generate full conversations. </p>
     AgentcoreEvaluationSimulatedV1,
+    /// <p> Unified generic evaluation schema, version 1. Supports single-turn (string input) and multi-turn (message list input) across all evaluation frameworks. </p>
+    GenericEvaluationPredefinedV1,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for DatasetSchemaType {
         match s {
             "AGENTCORE_EVALUATION_PREDEFINED_V1" => DatasetSchemaType::AgentcoreEvaluationPredefinedV1,
             "AGENTCORE_EVALUATION_SIMULATED_V1" => DatasetSchemaType::AgentcoreEvaluationSimulatedV1,
+            "GENERIC_EVALUATION_PREDEFINED_V1" => DatasetSchemaType::GenericEvaluationPredefinedV1,
             other => DatasetSchemaType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,17 @@ impl DatasetSchemaType {
         match self {
             DatasetSchemaType::AgentcoreEvaluationPredefinedV1 => "AGENTCORE_EVALUATION_PREDEFINED_V1",
             DatasetSchemaType::AgentcoreEvaluationSimulatedV1 => "AGENTCORE_EVALUATION_SIMULATED_V1",
+            DatasetSchemaType::GenericEvaluationPredefinedV1 => "GENERIC_EVALUATION_PREDEFINED_V1",
             DatasetSchemaType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENTCORE_EVALUATION_PREDEFINED_V1", "AGENTCORE_EVALUATION_SIMULATED_V1"]
+        &[
+            "AGENTCORE_EVALUATION_PREDEFINED_V1",
+            "AGENTCORE_EVALUATION_SIMULATED_V1",
+            "GENERIC_EVALUATION_PREDEFINED_V1",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for DatasetSchemaType {
@@ -102,6 +111,7 @@ impl ::std::fmt::Display for DatasetSchemaType {
         match self {
             DatasetSchemaType::AgentcoreEvaluationPredefinedV1 => write!(f, "AGENTCORE_EVALUATION_PREDEFINED_V1"),
             DatasetSchemaType::AgentcoreEvaluationSimulatedV1 => write!(f, "AGENTCORE_EVALUATION_SIMULATED_V1"),
+            DatasetSchemaType::GenericEvaluationPredefinedV1 => write!(f, "GENERIC_EVALUATION_PREDEFINED_V1"),
             DatasetSchemaType::Unknown(value) => write!(f, "{value}"),
         }
     }

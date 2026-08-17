@@ -8,6 +8,8 @@ pub struct AgenticRetrieveAction {
     pub retrieve: ::std::option::Option<crate::types::AgenticRetrieveActionDetails>,
     /// <p>Details of a full document expansion action.</p>
     pub full_document_expansion: ::std::option::Option<crate::types::AgenticRetrieveFullDocExpansionDetails>,
+    /// <p>The details of a long-term memory retrieval that the agent chose to perform.</p>
+    pub memory_retrieve: ::std::option::Option<crate::types::AgenticRetrieveMemoryRetrieveDetails>,
 }
 impl AgenticRetrieveAction {
     /// <p>Details of the retrieve action.</p>
@@ -17,6 +19,10 @@ impl AgenticRetrieveAction {
     /// <p>Details of a full document expansion action.</p>
     pub fn full_document_expansion(&self) -> ::std::option::Option<&crate::types::AgenticRetrieveFullDocExpansionDetails> {
         self.full_document_expansion.as_ref()
+    }
+    /// <p>The details of a long-term memory retrieval that the agent chose to perform.</p>
+    pub fn memory_retrieve(&self) -> ::std::option::Option<&crate::types::AgenticRetrieveMemoryRetrieveDetails> {
+        self.memory_retrieve.as_ref()
     }
 }
 impl AgenticRetrieveAction {
@@ -32,6 +38,7 @@ impl AgenticRetrieveAction {
 pub struct AgenticRetrieveActionBuilder {
     pub(crate) retrieve: ::std::option::Option<crate::types::AgenticRetrieveActionDetails>,
     pub(crate) full_document_expansion: ::std::option::Option<crate::types::AgenticRetrieveFullDocExpansionDetails>,
+    pub(crate) memory_retrieve: ::std::option::Option<crate::types::AgenticRetrieveMemoryRetrieveDetails>,
 }
 impl AgenticRetrieveActionBuilder {
     /// <p>Details of the retrieve action.</p>
@@ -62,11 +69,26 @@ impl AgenticRetrieveActionBuilder {
     pub fn get_full_document_expansion(&self) -> &::std::option::Option<crate::types::AgenticRetrieveFullDocExpansionDetails> {
         &self.full_document_expansion
     }
+    /// <p>The details of a long-term memory retrieval that the agent chose to perform.</p>
+    pub fn memory_retrieve(mut self, input: crate::types::AgenticRetrieveMemoryRetrieveDetails) -> Self {
+        self.memory_retrieve = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details of a long-term memory retrieval that the agent chose to perform.</p>
+    pub fn set_memory_retrieve(mut self, input: ::std::option::Option<crate::types::AgenticRetrieveMemoryRetrieveDetails>) -> Self {
+        self.memory_retrieve = input;
+        self
+    }
+    /// <p>The details of a long-term memory retrieval that the agent chose to perform.</p>
+    pub fn get_memory_retrieve(&self) -> &::std::option::Option<crate::types::AgenticRetrieveMemoryRetrieveDetails> {
+        &self.memory_retrieve
+    }
     /// Consumes the builder and constructs a [`AgenticRetrieveAction`](crate::types::AgenticRetrieveAction).
     pub fn build(self) -> crate::types::AgenticRetrieveAction {
         crate::types::AgenticRetrieveAction {
             retrieve: self.retrieve,
             full_document_expansion: self.full_document_expansion,
+            memory_retrieve: self.memory_retrieve,
         }
     }
 }

@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateG
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateGameSession")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateGameSessionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateG
     }
 }
 
+#[derive(Debug)]
+struct CreateGameSessionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateGameSessionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateGameSessionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateGameSessionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("FleetId") {
+            if let ::std::option::Option::Some(value) = input.fleet_id.as_deref() {
+                captured.insert("FleetId", value);
+            }
+        }
+        if requested.should_capture("AliasId") {
+            if let ::std::option::Option::Some(value) = input.alias_id.as_deref() {
+                captured.insert("AliasId", value);
+            }
+        }
+        if requested.should_capture("Name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("Name", value);
+            }
+        }
+        if requested.should_capture("CreatorId") {
+            if let ::std::option::Option::Some(value) = input.creator_id.as_deref() {
+                captured.insert("CreatorId", value);
+            }
+        }
+        if requested.should_capture("GameSessionId") {
+            if let ::std::option::Option::Some(value) = input.game_session_id.as_deref() {
+                captured.insert("GameSessionId", value);
+            }
+        }
+        if requested.should_capture("IdempotencyToken") {
+            if let ::std::option::Option::Some(value) = input.idempotency_token.as_deref() {
+                captured.insert("IdempotencyToken", value);
+            }
+        }
+        if requested.should_capture("Location") {
+            if let ::std::option::Option::Some(value) = input.location.as_deref() {
+                captured.insert("Location", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateGameSessionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateGameSessionResponseDeserializer {

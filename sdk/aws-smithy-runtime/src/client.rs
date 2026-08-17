@@ -56,3 +56,6 @@ pub mod waiters;
 
 /// Tooling for collecting client metrics.
 pub mod metrics;
+
+/// Byte-transfer counting for telemetry.
+pub(crate) mod telemetry_bytes;

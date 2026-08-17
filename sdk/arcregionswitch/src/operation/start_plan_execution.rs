@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartPl
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartPlanExecution")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartPlanExecutionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -159,6 +162,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartPl
     }
 }
 
+#[derive(Debug)]
+struct StartPlanExecutionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartPlanExecutionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "StartPlanExecutionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<StartPlanExecutionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("planArn") {
+            if let ::std::option::Option::Some(value) = input.plan_arn.as_deref() {
+                captured.insert("planArn", value);
+            }
+        }
+        if requested.should_capture("targetRegion") {
+            if let ::std::option::Option::Some(value) = input.target_region.as_deref() {
+                captured.insert("targetRegion", value);
+            }
+        }
+        if requested.should_capture("comment") {
+            if let ::std::option::Option::Some(value) = input.comment.as_deref() {
+                captured.insert("comment", value);
+            }
+        }
+        if requested.should_capture("latestVersion") {
+            if let ::std::option::Option::Some(value) = input.latest_version.as_deref() {
+                captured.insert("latestVersion", value);
+            }
+        }
+        if requested.should_capture("recoveryExecutionId") {
+            if let ::std::option::Option::Some(value) = input.recovery_execution_id.as_deref() {
+                captured.insert("recoveryExecutionId", value);
+            }
+        }
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct StartPlanExecutionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartPlanExecutionResponseDeserializer {

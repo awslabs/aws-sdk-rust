@@ -71,6 +71,39 @@ pub struct GetStyleDescriptorInput {
     /// </ul>
     /// <p><code>Buildings3D</code> is valid only for the <code>Standard</code> and <code>Monochrome</code> map styles.</p>
     pub buildings: ::std::option::Option<crate::types::Buildings>,
+    /// <p>Controls how densely points of interest are rendered on the map. The density value controls the zoom level at which each category of points of interest appears, and how quickly less prominent points of interest are revealed as you zoom in. Denser values display more points of interest at lower zoom levels.</p>
+    /// <p>Use <code>Off</code> to hide all points of interest. When you omit this parameter, the map renders at <code>Default</code> density.</p><note>
+    /// <p>The difference between density values is most noticeable at mid-range zoom levels. At high zoom levels, all density values converge on displaying every available point of interest.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub poi_density: ::std::option::Option<crate::types::PoiDensity>,
+    /// <p>Renders only the specified categories of points of interest. When you omit this parameter, the map renders all categories.</p>
+    /// <p>The following categories are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FoodAndDrink</code></p></li>
+    /// <li>
+    /// <p><code>Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>SightsAndMuseums</code></p></li>
+    /// <li>
+    /// <p><code>Transportation</code></p></li>
+    /// <li>
+    /// <p><code>Accommodations</code></p></li>
+    /// <li>
+    /// <p><code>LeisureAndOutdoor</code></p></li>
+    /// <li>
+    /// <p><code>Shopping</code></p></li>
+    /// <li>
+    /// <p><code>BusinessAndServices</code></p></li>
+    /// <li>
+    /// <p><code>FacilitiesAndBuildings</code></p></li>
+    /// </ul>
+    /// <p>Specify each category as a separate <code>poi-categories</code> query parameter. Duplicate values are rejected.</p><note>
+    /// <p>This parameter has no effect when <code>poi-density</code> is set to <code>Off</code>, which hides all points of interest regardless of category.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub poi_categories: ::std::option::Option<::std::vec::Vec<crate::types::PoiCategory>>,
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
@@ -161,6 +194,45 @@ impl GetStyleDescriptorInput {
     pub fn buildings(&self) -> ::std::option::Option<&crate::types::Buildings> {
         self.buildings.as_ref()
     }
+    /// <p>Controls how densely points of interest are rendered on the map. The density value controls the zoom level at which each category of points of interest appears, and how quickly less prominent points of interest are revealed as you zoom in. Denser values display more points of interest at lower zoom levels.</p>
+    /// <p>Use <code>Off</code> to hide all points of interest. When you omit this parameter, the map renders at <code>Default</code> density.</p><note>
+    /// <p>The difference between density values is most noticeable at mid-range zoom levels. At high zoom levels, all density values converge on displaying every available point of interest.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn poi_density(&self) -> ::std::option::Option<&crate::types::PoiDensity> {
+        self.poi_density.as_ref()
+    }
+    /// <p>Renders only the specified categories of points of interest. When you omit this parameter, the map renders all categories.</p>
+    /// <p>The following categories are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FoodAndDrink</code></p></li>
+    /// <li>
+    /// <p><code>Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>SightsAndMuseums</code></p></li>
+    /// <li>
+    /// <p><code>Transportation</code></p></li>
+    /// <li>
+    /// <p><code>Accommodations</code></p></li>
+    /// <li>
+    /// <p><code>LeisureAndOutdoor</code></p></li>
+    /// <li>
+    /// <p><code>Shopping</code></p></li>
+    /// <li>
+    /// <p><code>BusinessAndServices</code></p></li>
+    /// <li>
+    /// <p><code>FacilitiesAndBuildings</code></p></li>
+    /// </ul>
+    /// <p>Specify each category as a separate <code>poi-categories</code> query parameter. Duplicate values are rejected.</p><note>
+    /// <p>This parameter has no effect when <code>poi-density</code> is set to <code>Off</code>, which hides all points of interest regardless of category.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.poi_categories.is_none()`.
+    pub fn poi_categories(&self) -> &[crate::types::PoiCategory] {
+        self.poi_categories.as_deref().unwrap_or_default()
+    }
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
         self.key.as_deref()
@@ -177,6 +249,8 @@ impl ::std::fmt::Debug for GetStyleDescriptorInput {
         formatter.field("traffic", &self.traffic);
         formatter.field("travel_modes", &self.travel_modes);
         formatter.field("buildings", &self.buildings);
+        formatter.field("poi_density", &self.poi_density);
+        formatter.field("poi_categories", &self.poi_categories);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -200,6 +274,8 @@ pub struct GetStyleDescriptorInputBuilder {
     pub(crate) traffic: ::std::option::Option<crate::types::Traffic>,
     pub(crate) travel_modes: ::std::option::Option<::std::vec::Vec<crate::types::TravelMode>>,
     pub(crate) buildings: ::std::option::Option<crate::types::Buildings>,
+    pub(crate) poi_density: ::std::option::Option<crate::types::PoiDensity>,
+    pub(crate) poi_categories: ::std::option::Option<::std::vec::Vec<crate::types::PoiCategory>>,
     pub(crate) key: ::std::option::Option<::std::string::String>,
 }
 impl GetStyleDescriptorInputBuilder {
@@ -478,6 +554,127 @@ impl GetStyleDescriptorInputBuilder {
     pub fn get_buildings(&self) -> &::std::option::Option<crate::types::Buildings> {
         &self.buildings
     }
+    /// <p>Controls how densely points of interest are rendered on the map. The density value controls the zoom level at which each category of points of interest appears, and how quickly less prominent points of interest are revealed as you zoom in. Denser values display more points of interest at lower zoom levels.</p>
+    /// <p>Use <code>Off</code> to hide all points of interest. When you omit this parameter, the map renders at <code>Default</code> density.</p><note>
+    /// <p>The difference between density values is most noticeable at mid-range zoom levels. At high zoom levels, all density values converge on displaying every available point of interest.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn poi_density(mut self, input: crate::types::PoiDensity) -> Self {
+        self.poi_density = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls how densely points of interest are rendered on the map. The density value controls the zoom level at which each category of points of interest appears, and how quickly less prominent points of interest are revealed as you zoom in. Denser values display more points of interest at lower zoom levels.</p>
+    /// <p>Use <code>Off</code> to hide all points of interest. When you omit this parameter, the map renders at <code>Default</code> density.</p><note>
+    /// <p>The difference between density values is most noticeable at mid-range zoom levels. At high zoom levels, all density values converge on displaying every available point of interest.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_poi_density(mut self, input: ::std::option::Option<crate::types::PoiDensity>) -> Self {
+        self.poi_density = input;
+        self
+    }
+    /// <p>Controls how densely points of interest are rendered on the map. The density value controls the zoom level at which each category of points of interest appears, and how quickly less prominent points of interest are revealed as you zoom in. Denser values display more points of interest at lower zoom levels.</p>
+    /// <p>Use <code>Off</code> to hide all points of interest. When you omit this parameter, the map renders at <code>Default</code> density.</p><note>
+    /// <p>The difference between density values is most noticeable at mid-range zoom levels. At high zoom levels, all density values converge on displaying every available point of interest.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_poi_density(&self) -> &::std::option::Option<crate::types::PoiDensity> {
+        &self.poi_density
+    }
+    /// Appends an item to `poi_categories`.
+    ///
+    /// To override the contents of this collection use [`set_poi_categories`](Self::set_poi_categories).
+    ///
+    /// <p>Renders only the specified categories of points of interest. When you omit this parameter, the map renders all categories.</p>
+    /// <p>The following categories are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FoodAndDrink</code></p></li>
+    /// <li>
+    /// <p><code>Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>SightsAndMuseums</code></p></li>
+    /// <li>
+    /// <p><code>Transportation</code></p></li>
+    /// <li>
+    /// <p><code>Accommodations</code></p></li>
+    /// <li>
+    /// <p><code>LeisureAndOutdoor</code></p></li>
+    /// <li>
+    /// <p><code>Shopping</code></p></li>
+    /// <li>
+    /// <p><code>BusinessAndServices</code></p></li>
+    /// <li>
+    /// <p><code>FacilitiesAndBuildings</code></p></li>
+    /// </ul>
+    /// <p>Specify each category as a separate <code>poi-categories</code> query parameter. Duplicate values are rejected.</p><note>
+    /// <p>This parameter has no effect when <code>poi-density</code> is set to <code>Off</code>, which hides all points of interest regardless of category.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn poi_categories(mut self, input: crate::types::PoiCategory) -> Self {
+        let mut v = self.poi_categories.unwrap_or_default();
+        v.push(input);
+        self.poi_categories = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Renders only the specified categories of points of interest. When you omit this parameter, the map renders all categories.</p>
+    /// <p>The following categories are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FoodAndDrink</code></p></li>
+    /// <li>
+    /// <p><code>Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>SightsAndMuseums</code></p></li>
+    /// <li>
+    /// <p><code>Transportation</code></p></li>
+    /// <li>
+    /// <p><code>Accommodations</code></p></li>
+    /// <li>
+    /// <p><code>LeisureAndOutdoor</code></p></li>
+    /// <li>
+    /// <p><code>Shopping</code></p></li>
+    /// <li>
+    /// <p><code>BusinessAndServices</code></p></li>
+    /// <li>
+    /// <p><code>FacilitiesAndBuildings</code></p></li>
+    /// </ul>
+    /// <p>Specify each category as a separate <code>poi-categories</code> query parameter. Duplicate values are rejected.</p><note>
+    /// <p>This parameter has no effect when <code>poi-density</code> is set to <code>Off</code>, which hides all points of interest regardless of category.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn set_poi_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PoiCategory>>) -> Self {
+        self.poi_categories = input;
+        self
+    }
+    /// <p>Renders only the specified categories of points of interest. When you omit this parameter, the map renders all categories.</p>
+    /// <p>The following categories are currently supported:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FoodAndDrink</code></p></li>
+    /// <li>
+    /// <p><code>Entertainment</code></p></li>
+    /// <li>
+    /// <p><code>SightsAndMuseums</code></p></li>
+    /// <li>
+    /// <p><code>Transportation</code></p></li>
+    /// <li>
+    /// <p><code>Accommodations</code></p></li>
+    /// <li>
+    /// <p><code>LeisureAndOutdoor</code></p></li>
+    /// <li>
+    /// <p><code>Shopping</code></p></li>
+    /// <li>
+    /// <p><code>BusinessAndServices</code></p></li>
+    /// <li>
+    /// <p><code>FacilitiesAndBuildings</code></p></li>
+    /// </ul>
+    /// <p>Specify each category as a separate <code>poi-categories</code> query parameter. Duplicate values are rejected.</p><note>
+    /// <p>This parameter has no effect when <code>poi-density</code> is set to <code>Off</code>, which hides all points of interest regardless of category.</p>
+    /// </note>
+    /// <p>This parameter is valid only for the <code>Standard</code> and <code>Hybrid</code> map styles. In <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers, this parameter is valid only for the <code>Standard</code> map style.</p>
+    pub fn get_poi_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PoiCategory>> {
+        &self.poi_categories
+    }
     /// <p>Optional: The API key to be used for authorization. Either an API key or valid SigV4 signature must be provided when making a request.</p>
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
@@ -506,6 +703,8 @@ impl GetStyleDescriptorInputBuilder {
             traffic: self.traffic,
             travel_modes: self.travel_modes,
             buildings: self.buildings,
+            poi_density: self.poi_density,
+            poi_categories: self.poi_categories,
             key: self.key,
         })
     }
@@ -521,6 +720,8 @@ impl ::std::fmt::Debug for GetStyleDescriptorInputBuilder {
         formatter.field("traffic", &self.traffic);
         formatter.field("travel_modes", &self.travel_modes);
         formatter.field("buildings", &self.buildings);
+        formatter.field("poi_density", &self.poi_density);
+        formatter.field("poi_categories", &self.poi_categories);
         formatter.field("key", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
