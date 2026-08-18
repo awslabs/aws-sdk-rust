@@ -29,11 +29,15 @@ pub(crate) mod shape_cancel_change_set;
 
 pub(crate) mod shape_delete_resource_policy;
 
+pub(crate) mod shape_describe_assessment;
+
 pub(crate) mod shape_describe_change_set;
 
 pub(crate) mod shape_describe_entity;
 
 pub(crate) mod shape_get_resource_policy;
+
+pub(crate) mod shape_list_assessments;
 
 pub(crate) mod shape_list_change_sets;
 
@@ -61,7 +65,11 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_batch_describe_entities_input;
 
+pub(crate) mod shape_describe_assessment_input;
+
 pub(crate) mod shape_internal_service_exception;
+
+pub(crate) mod shape_list_assessments_input;
 
 pub(crate) mod shape_list_change_sets_input;
 
@@ -89,11 +97,19 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_assessment_summary_list;
+
+pub(crate) mod shape_assessment_target_filter;
+
+pub(crate) mod shape_assessment_target_summary;
+
 pub(crate) mod shape_change;
 
 pub(crate) mod shape_change_set_description;
 
 pub(crate) mod shape_change_set_summary_list;
+
+pub(crate) mod shape_control_assessment_list;
 
 pub(crate) mod shape_entity_details;
 
@@ -109,15 +125,27 @@ pub(crate) mod shape_errors;
 
 pub(crate) mod shape_filter;
 
+pub(crate) mod shape_framework_filters;
+
+pub(crate) mod shape_framework_summary;
+
 pub(crate) mod shape_sort;
 
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_validation_exception_field_list;
+
 pub(crate) mod shape_ami_product_filters;
 
 pub(crate) mod shape_ami_product_sort;
+
+pub(crate) mod shape_ami_security_filters;
+
+pub(crate) mod shape_ami_security_summary;
+
+pub(crate) mod shape_assessment_summary;
 
 pub(crate) mod shape_batch_describe_error_detail;
 
@@ -128,6 +156,12 @@ pub(crate) mod shape_change_summary;
 pub(crate) mod shape_container_product_filters;
 
 pub(crate) mod shape_container_product_sort;
+
+pub(crate) mod shape_container_security_filters;
+
+pub(crate) mod shape_container_security_summary;
+
+pub(crate) mod shape_control_assessment;
 
 pub(crate) mod shape_data_product_filters;
 
@@ -159,6 +193,8 @@ pub(crate) mod shape_saa_s_product_filters;
 
 pub(crate) mod shape_saa_s_product_sort;
 
+pub(crate) mod shape_validation_exception_field;
+
 pub(crate) mod shape_ami_product_entity_id_filter;
 
 pub(crate) mod shape_ami_product_last_modified_date_filter;
@@ -178,6 +214,8 @@ pub(crate) mod shape_container_product_summary;
 pub(crate) mod shape_container_product_title_filter;
 
 pub(crate) mod shape_container_product_visibility_filter;
+
+pub(crate) mod shape_control_error_list;
 
 pub(crate) mod shape_data_product_entity_id_filter;
 
@@ -293,6 +331,8 @@ pub(crate) mod shape_ami_product_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_container_product_last_modified_date_filter_date_range;
 
+pub(crate) mod shape_control_error;
+
 pub(crate) mod shape_data_product_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_error_detail;
@@ -322,3 +362,7 @@ pub(crate) mod shape_resale_authorization_created_date_filter_date_range;
 pub(crate) mod shape_resale_authorization_last_modified_date_filter_date_range;
 
 pub(crate) mod shape_saa_s_product_last_modified_date_filter_date_range;
+
+pub(crate) mod shape_error_scope_list;
+
+pub(crate) mod shape_error_scope;

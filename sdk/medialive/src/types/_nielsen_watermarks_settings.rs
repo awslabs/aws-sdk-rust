@@ -10,6 +10,8 @@ pub struct NielsenWatermarksSettings {
     pub nielsen_distribution_type: ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
     pub nielsen_naes_ii_nw_settings: ::std::option::Option<crate::types::NielsenNaesIiNw>,
+    /// Complete these fields only if you want to insert watermarks of type Nielsen NAES VI (NW) only, without inserting NAES II (N2) watermarks.
+    pub nielsen_nw_only_settings: ::std::option::Option<crate::types::NielsenNwOnly>,
 }
 impl NielsenWatermarksSettings {
     /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
@@ -23,6 +25,10 @@ impl NielsenWatermarksSettings {
     /// Complete these fields only if you want to insert watermarks of type Nielsen NAES II (N2) and Nielsen NAES VI (NW).
     pub fn nielsen_naes_ii_nw_settings(&self) -> ::std::option::Option<&crate::types::NielsenNaesIiNw> {
         self.nielsen_naes_ii_nw_settings.as_ref()
+    }
+    /// Complete these fields only if you want to insert watermarks of type Nielsen NAES VI (NW) only, without inserting NAES II (N2) watermarks.
+    pub fn nielsen_nw_only_settings(&self) -> ::std::option::Option<&crate::types::NielsenNwOnly> {
+        self.nielsen_nw_only_settings.as_ref()
     }
 }
 impl NielsenWatermarksSettings {
@@ -39,6 +45,7 @@ pub struct NielsenWatermarksSettingsBuilder {
     pub(crate) nielsen_cbet_settings: ::std::option::Option<crate::types::NielsenCbet>,
     pub(crate) nielsen_distribution_type: ::std::option::Option<crate::types::NielsenWatermarksDistributionTypes>,
     pub(crate) nielsen_naes_ii_nw_settings: ::std::option::Option<crate::types::NielsenNaesIiNw>,
+    pub(crate) nielsen_nw_only_settings: ::std::option::Option<crate::types::NielsenNwOnly>,
 }
 impl NielsenWatermarksSettingsBuilder {
     /// Complete these fields only if you want to insert watermarks of type Nielsen CBET
@@ -83,12 +90,27 @@ impl NielsenWatermarksSettingsBuilder {
     pub fn get_nielsen_naes_ii_nw_settings(&self) -> &::std::option::Option<crate::types::NielsenNaesIiNw> {
         &self.nielsen_naes_ii_nw_settings
     }
+    /// Complete these fields only if you want to insert watermarks of type Nielsen NAES VI (NW) only, without inserting NAES II (N2) watermarks.
+    pub fn nielsen_nw_only_settings(mut self, input: crate::types::NielsenNwOnly) -> Self {
+        self.nielsen_nw_only_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Complete these fields only if you want to insert watermarks of type Nielsen NAES VI (NW) only, without inserting NAES II (N2) watermarks.
+    pub fn set_nielsen_nw_only_settings(mut self, input: ::std::option::Option<crate::types::NielsenNwOnly>) -> Self {
+        self.nielsen_nw_only_settings = input;
+        self
+    }
+    /// Complete these fields only if you want to insert watermarks of type Nielsen NAES VI (NW) only, without inserting NAES II (N2) watermarks.
+    pub fn get_nielsen_nw_only_settings(&self) -> &::std::option::Option<crate::types::NielsenNwOnly> {
+        &self.nielsen_nw_only_settings
+    }
     /// Consumes the builder and constructs a [`NielsenWatermarksSettings`](crate::types::NielsenWatermarksSettings).
     pub fn build(self) -> crate::types::NielsenWatermarksSettings {
         crate::types::NielsenWatermarksSettings {
             nielsen_cbet_settings: self.nielsen_cbet_settings,
             nielsen_distribution_type: self.nielsen_distribution_type,
             nielsen_naes_ii_nw_settings: self.nielsen_naes_ii_nw_settings,
+            nielsen_nw_only_settings: self.nielsen_nw_only_settings,
         }
     }
 }

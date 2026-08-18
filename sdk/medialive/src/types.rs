@@ -747,6 +747,8 @@ pub use crate::types::_nielsen_watermarks_distribution_types::NielsenWatermarksD
 
 pub use crate::types::_nielsen_naes_ii_nw::NielsenNaesIiNw;
 
+pub use crate::types::_nielsen_nw_only::NielsenNwOnly;
+
 pub use crate::types::_aac_coding_mode::AacCodingMode;
 
 pub use crate::types::_aac_input_type::AacInputType;
@@ -2412,6 +2414,8 @@ mod _nielsen_cbet;
 mod _nielsen_configuration;
 
 mod _nielsen_naes_ii_nw;
+
+mod _nielsen_nw_only;
 
 mod _nielsen_pcm_to_id3_tagging_state;
 

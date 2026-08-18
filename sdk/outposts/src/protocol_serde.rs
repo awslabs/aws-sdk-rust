@@ -31,6 +31,8 @@ pub(crate) mod shape_create_order;
 
 pub(crate) mod shape_create_outpost;
 
+pub(crate) mod shape_create_private_connectivity_config;
+
 pub(crate) mod shape_create_quote;
 
 pub(crate) mod shape_create_renewal;
@@ -58,6 +60,8 @@ pub(crate) mod shape_get_outpost_billing_information;
 pub(crate) mod shape_get_outpost_instance_types;
 
 pub(crate) mod shape_get_outpost_supported_instance_types;
+
+pub(crate) mod shape_get_private_connectivity_config;
 
 pub(crate) mod shape_get_quote;
 
@@ -124,6 +128,8 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_order_input;
 
 pub(crate) mod shape_create_outpost_input;
+
+pub(crate) mod shape_create_private_connectivity_config_input;
 
 pub(crate) mod shape_create_quote_input;
 
@@ -197,6 +203,8 @@ pub(crate) mod shape_outpost_list_definition;
 
 pub(crate) mod shape_pricing_option_list;
 
+pub(crate) mod shape_private_connectivity_config;
+
 pub(crate) mod shape_quote;
 
 pub(crate) mod shape_quote_capacity;
@@ -216,6 +224,8 @@ pub(crate) mod shape_site_list_definition;
 pub(crate) mod shape_subscription_list;
 
 pub(crate) mod shape_tag_map;
+
+pub(crate) mod shape_vpc_information;
 
 pub(crate) mod shape_account_id_list;
 
@@ -265,6 +275,8 @@ pub(crate) mod shape_supported_storage_list;
 
 pub(crate) mod shape_supported_uplink_gbps_list_definition;
 
+pub(crate) mod shape_vpc_information_list;
+
 pub(crate) mod shape_asset_location;
 
 pub(crate) mod shape_compute_attributes;
@@ -298,6 +310,8 @@ pub(crate) mod shape_line_item_asset_information_list;
 pub(crate) mod shape_quote_specification_list;
 
 pub(crate) mod shape_shipment_information;
+
+pub(crate) mod shape_subnet_ids;
 
 pub(crate) mod shape_asset_instance_type_capacity;
 

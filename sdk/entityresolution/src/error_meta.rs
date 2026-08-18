@@ -283,6 +283,9 @@ impl From<crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowE
             crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_id_mapping_workflow::DeleteIdMappingWorkflowError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -312,6 +315,9 @@ impl From<crate::operation::delete_id_namespace::DeleteIdNamespaceError> for Err
         match err {
             crate::operation::delete_id_namespace::DeleteIdNamespaceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_id_namespace::DeleteIdNamespaceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_id_namespace::DeleteIdNamespaceError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::delete_id_namespace::DeleteIdNamespaceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_id_namespace::DeleteIdNamespaceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_id_namespace::DeleteIdNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
@@ -343,6 +349,9 @@ impl From<crate::operation::delete_matching_workflow::DeleteMatchingWorkflowErro
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_matching_workflow::DeleteMatchingWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
@@ -406,6 +415,9 @@ impl From<crate::operation::delete_schema_mapping::DeleteSchemaMappingError> for
             crate::operation::delete_schema_mapping::DeleteSchemaMappingError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_schema_mapping::DeleteSchemaMappingError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
+            }
+            crate::operation::delete_schema_mapping::DeleteSchemaMappingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_schema_mapping::DeleteSchemaMappingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_schema_mapping::DeleteSchemaMappingError::ValidationException(inner) => Error::ValidationException(inner),

@@ -22,7 +22,7 @@ impl crate::operation::delete_id_mapping_workflow::builders::DeleteIdMappingWork
 }
 /// Fluent builder constructing a request to `DeleteIdMappingWorkflow`.
 ///
-/// <p>Deletes the <code>IdMappingWorkflow</code> with a given name. This operation will succeed even if a workflow with the given name does not exist.</p>
+/// <p>Deletes the <code>IdMappingWorkflow</code> with a given name. This operation returns a <code>ResourceNotFoundException</code> if a workflow with the given name does not exist.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIdMappingWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

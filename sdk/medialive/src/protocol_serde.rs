@@ -1147,6 +1147,8 @@ pub(crate) mod shape_nielsen_cbet;
 
 pub(crate) mod shape_nielsen_naes_ii_nw;
 
+pub(crate) mod shape_nielsen_nw_only;
+
 pub(crate) mod shape_output_location_ref;
 
 pub(crate) mod shape_pipeline_pause_state_settings;

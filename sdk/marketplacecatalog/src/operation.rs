@@ -10,6 +10,9 @@ pub mod cancel_change_set;
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
 
+/// Types for the `DescribeAssessment` operation.
+pub mod describe_assessment;
+
 /// Types for the `DescribeChangeSet` operation.
 pub mod describe_change_set;
 
@@ -18,6 +21,9 @@ pub mod describe_entity;
 
 /// Types for the `GetResourcePolicy` operation.
 pub mod get_resource_policy;
+
+/// Types for the `ListAssessments` operation.
+pub mod list_assessments;
 
 /// Types for the `ListChangeSets` operation.
 pub mod list_change_sets;

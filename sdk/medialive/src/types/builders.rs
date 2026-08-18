@@ -511,6 +511,8 @@ pub use crate::types::_nielsen_cbet::NielsenCbetBuilder;
 
 pub use crate::types::_nielsen_naes_ii_nw::NielsenNaesIiNwBuilder;
 
+pub use crate::types::_nielsen_nw_only::NielsenNwOnlyBuilder;
+
 pub use crate::types::_audio_channel_mapping::AudioChannelMappingBuilder;
 
 pub use crate::types::_archive_cdn_settings::ArchiveCdnSettingsBuilder;

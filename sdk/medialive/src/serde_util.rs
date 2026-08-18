@@ -725,6 +725,18 @@ pub(crate) fn nielsen_naes_ii_nw_correct_errors(
     builder
 }
 
+pub(crate) fn nielsen_nw_only_correct_errors(
+    mut builder: crate::types::builders::NielsenNwOnlyBuilder,
+) -> crate::types::builders::NielsenNwOnlyBuilder {
+    if builder.check_digit_string.is_none() {
+        builder.check_digit_string = Some(Default::default())
+    }
+    if builder.sid.is_none() {
+        builder.sid = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn pipeline_pause_state_settings_correct_errors(
     mut builder: crate::types::builders::PipelinePauseStateSettingsBuilder,
 ) -> crate::types::builders::PipelinePauseStateSettingsBuilder {

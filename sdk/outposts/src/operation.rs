@@ -13,6 +13,9 @@ pub mod create_order;
 /// Types for the `CreateOutpost` operation.
 pub mod create_outpost;
 
+/// Types for the `CreatePrivateConnectivityConfig` operation.
+pub mod create_private_connectivity_config;
+
 /// Types for the `CreateQuote` operation.
 pub mod create_quote;
 
@@ -54,6 +57,9 @@ pub mod get_outpost_instance_types;
 
 /// Types for the `GetOutpostSupportedInstanceTypes` operation.
 pub mod get_outpost_supported_instance_types;
+
+/// Types for the `GetPrivateConnectivityConfig` operation.
+pub mod get_private_connectivity_config;
 
 /// Types for the `GetQuote` operation.
 pub mod get_quote;

@@ -14,6 +14,7 @@
 /// match m2tsscte35control {
 ///     M2tsScte35Control::None => { /* ... */ },
 ///     M2tsScte35Control::Passthrough => { /* ... */ },
+///     M2tsScte35Control::Scte35WithoutIdr => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum M2tsScte35Control {
     None,
     #[allow(missing_docs)] // documentation missing in model
     Passthrough,
+    #[allow(missing_docs)] // documentation missing in model
+    Scte35WithoutIdr,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for M2tsScte35Control {
         match s {
             "NONE" => M2tsScte35Control::None,
             "PASSTHROUGH" => M2tsScte35Control::Passthrough,
+            "SCTE_35_WITHOUT_IDR" => M2tsScte35Control::Scte35WithoutIdr,
             other => M2tsScte35Control::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl M2tsScte35Control {
         match self {
             M2tsScte35Control::None => "NONE",
             M2tsScte35Control::Passthrough => "PASSTHROUGH",
+            M2tsScte35Control::Scte35WithoutIdr => "SCTE_35_WITHOUT_IDR",
             M2tsScte35Control::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE", "PASSTHROUGH"]
+        &["NONE", "PASSTHROUGH", "SCTE_35_WITHOUT_IDR"]
     }
 }
 impl ::std::convert::AsRef<str> for M2tsScte35Control {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for M2tsScte35Control {
         match self {
             M2tsScte35Control::None => write!(f, "NONE"),
             M2tsScte35Control::Passthrough => write!(f, "PASSTHROUGH"),
+            M2tsScte35Control::Scte35WithoutIdr => write!(f, "SCTE_35_WITHOUT_IDR"),
             M2tsScte35Control::Unknown(value) => write!(f, "{value}"),
         }
     }

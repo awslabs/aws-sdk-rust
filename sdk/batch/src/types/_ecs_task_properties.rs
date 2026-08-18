@@ -16,7 +16,9 @@ pub struct EcsTaskProperties {
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified <code>task</code> share the same IPC resources.</p>
     /// <p>If <code>none</code> is specified, the IPC resources within the containers of a task are private, and are not shared with other containers in a task or on the container instance.</p>
-    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p>
+    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p><note>
+    /// <p>This parameter is not supported for jobs that run on Fargate resources.</p>
+    /// </note>
     pub ipc_mode: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) that's associated with the Amazon ECS task.</p><note>
     /// <p>This is object is comparable to <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_ContainerProperties.html">ContainerProperties:jobRoleArn</a>.</p>
@@ -59,7 +61,9 @@ impl EcsTaskProperties {
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified <code>task</code> share the same IPC resources.</p>
     /// <p>If <code>none</code> is specified, the IPC resources within the containers of a task are private, and are not shared with other containers in a task or on the container instance.</p>
-    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p>
+    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p><note>
+    /// <p>This parameter is not supported for jobs that run on Fargate resources.</p>
+    /// </note>
     pub fn ipc_mode(&self) -> ::std::option::Option<&str> {
         self.ipc_mode.as_deref()
     }
@@ -185,7 +189,9 @@ impl EcsTaskPropertiesBuilder {
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified <code>task</code> share the same IPC resources.</p>
     /// <p>If <code>none</code> is specified, the IPC resources within the containers of a task are private, and are not shared with other containers in a task or on the container instance.</p>
-    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p>
+    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p><note>
+    /// <p>This parameter is not supported for jobs that run on Fargate resources.</p>
+    /// </note>
     pub fn ipc_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ipc_mode = ::std::option::Option::Some(input.into());
         self
@@ -194,7 +200,9 @@ impl EcsTaskPropertiesBuilder {
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified <code>task</code> share the same IPC resources.</p>
     /// <p>If <code>none</code> is specified, the IPC resources within the containers of a task are private, and are not shared with other containers in a task or on the container instance.</p>
-    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p>
+    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p><note>
+    /// <p>This parameter is not supported for jobs that run on Fargate resources.</p>
+    /// </note>
     pub fn set_ipc_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ipc_mode = input;
         self
@@ -203,7 +211,9 @@ impl EcsTaskPropertiesBuilder {
     /// <p>If <code>host</code> is specified, all containers within the tasks that specified the <code>host</code> IPC mode on the same container instance share the same IPC resources with the host Amazon EC2 instance.</p>
     /// <p>If <code>task</code> is specified, all containers within the specified <code>task</code> share the same IPC resources.</p>
     /// <p>If <code>none</code> is specified, the IPC resources within the containers of a task are private, and are not shared with other containers in a task or on the container instance.</p>
-    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p>
+    /// <p>If no value is specified, then the IPC resource namespace sharing depends on the Docker daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC settings</a> in the Docker run reference.</p><note>
+    /// <p>This parameter is not supported for jobs that run on Fargate resources.</p>
+    /// </note>
     pub fn get_ipc_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipc_mode
     }

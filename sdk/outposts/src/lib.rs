@@ -23,6 +23,8 @@
 #![cfg_attr(docsrs, feature(doc_cfg))]
 //! Amazon Web Services Outposts is a fully managed service that extends Amazon Web Services infrastructure, APIs, and tools to customer premises. By providing local access to Amazon Web Services managed infrastructure, Amazon Web Services Outposts enables customers to build and run applications on premises using the same programming interfaces as in Amazon Web Services Regions, while using local compute and storage resources for lower latency and local data processing needs.
 //!
+//! You can use certain Amazon EC2 API actions for Amazon Web Services Outposts. For more information on these API actions, see [Amazon Web Services Outposts actions](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/operation-list-outposts.html) in the _Amazon EC2 API Reference_.
+//!
 //! ## Getting Started
 //!
 //! > Examples are available for many services and operations, check out the
@@ -35,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-outposts = "1.122.0"
+//! aws-sdk-outposts = "1.123.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

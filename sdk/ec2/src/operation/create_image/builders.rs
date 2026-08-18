@@ -30,6 +30,8 @@ impl crate::operation::create_image::builders::CreateImageInputBuilder {
 /// <p>If the source instance is in a Region, you must create the snapshots in the same Region as the instance.</p></li>
 /// <li>
 /// <p>If the source instance is in a Local Zone, you can create the snapshots in the same Local Zone or in its parent Region.</p></li>
+/// <li>
+/// <p>If the source instance is on an Outpost that supports local snapshots, you can create the snapshots on the same Outpost or in the parent Region of that Outpost. In this case, you must use the <code>SnapshotLocation</code> parameter to specify where to create the snapshots.</p></li>
 /// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -161,46 +163,52 @@ impl CreateImageFluentBuilder {
         self.inner.get_tag_specifications()
     }
     /// <note>
-    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// <p>Only supported for instances in Local Zones and for instances on Outposts that support local snapshots. If the source instance is not in one of these locations, omit this parameter.</p>
     /// </note>
     /// <p>The Amazon S3 location where the snapshots will be stored.</p>
     /// <ul>
     /// <li>
-    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <p>To create local snapshots in the same Local Zone or on the same Outpost as the source instance, specify <code>local</code>.</p></li>
     /// <li>
-    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone or Outpost, specify <code>regional</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>regional</code></p>
+    /// <p>If the source instance is in a Local Zone and you omit this parameter, regional snapshots are created in the parent Region of the Local Zone.</p>
+    /// <p>If the source instance is on an Outpost that supports local snapshots, this parameter is required. If you omit it, the request fails with an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Default: <code>regional</code> (for instances in Local Zones only)</p>
     pub fn snapshot_location(mut self, input: crate::types::SnapshotLocationEnum) -> Self {
         self.inner = self.inner.snapshot_location(input);
         self
     }
     /// <note>
-    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// <p>Only supported for instances in Local Zones and for instances on Outposts that support local snapshots. If the source instance is not in one of these locations, omit this parameter.</p>
     /// </note>
     /// <p>The Amazon S3 location where the snapshots will be stored.</p>
     /// <ul>
     /// <li>
-    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <p>To create local snapshots in the same Local Zone or on the same Outpost as the source instance, specify <code>local</code>.</p></li>
     /// <li>
-    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone or Outpost, specify <code>regional</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>regional</code></p>
+    /// <p>If the source instance is in a Local Zone and you omit this parameter, regional snapshots are created in the parent Region of the Local Zone.</p>
+    /// <p>If the source instance is on an Outpost that supports local snapshots, this parameter is required. If you omit it, the request fails with an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Default: <code>regional</code> (for instances in Local Zones only)</p>
     pub fn set_snapshot_location(mut self, input: ::std::option::Option<crate::types::SnapshotLocationEnum>) -> Self {
         self.inner = self.inner.set_snapshot_location(input);
         self
     }
     /// <note>
-    /// <p>Only supported for instances in Local Zones. If the source instance is not in a Local Zone, omit this parameter.</p>
+    /// <p>Only supported for instances in Local Zones and for instances on Outposts that support local snapshots. If the source instance is not in one of these locations, omit this parameter.</p>
     /// </note>
     /// <p>The Amazon S3 location where the snapshots will be stored.</p>
     /// <ul>
     /// <li>
-    /// <p>To create local snapshots in the same Local Zone as the source instance, specify <code>local</code>.</p></li>
+    /// <p>To create local snapshots in the same Local Zone or on the same Outpost as the source instance, specify <code>local</code>.</p></li>
     /// <li>
-    /// <p>To create regional snapshots in the parent Region of the Local Zone, specify <code>regional</code> or omit this parameter.</p></li>
+    /// <p>To create regional snapshots in the parent Region of the Local Zone or Outpost, specify <code>regional</code>.</p></li>
     /// </ul>
-    /// <p>Default: <code>regional</code></p>
+    /// <p>If the source instance is in a Local Zone and you omit this parameter, regional snapshots are created in the parent Region of the Local Zone.</p>
+    /// <p>If the source instance is on an Outpost that supports local snapshots, this parameter is required. If you omit it, the request fails with an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Default: <code>regional</code> (for instances in Local Zones only)</p>
     pub fn get_snapshot_location(&self) -> &::std::option::Option<crate::types::SnapshotLocationEnum> {
         self.inner.get_snapshot_location()
     }
