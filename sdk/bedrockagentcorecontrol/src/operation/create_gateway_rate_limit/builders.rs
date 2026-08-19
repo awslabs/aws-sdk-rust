@@ -136,31 +136,31 @@ impl CreateGatewayRateLimitFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// Optional customer-defined limit ID. If not provided, system generates one.
+    /// <p>An optional customer-defined identifier for the rate limit. If not provided, the system generates one.</p>
     pub fn rate_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rate_limit_id(input.into());
         self
     }
-    /// Optional customer-defined limit ID. If not provided, system generates one.
+    /// <p>An optional customer-defined identifier for the rate limit. If not provided, the system generates one.</p>
     pub fn set_rate_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_rate_limit_id(input);
         self
     }
-    /// Optional customer-defined limit ID. If not provided, system generates one.
+    /// <p>An optional customer-defined identifier for the rate limit. If not provided, the system generates one.</p>
     pub fn get_rate_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rate_limit_id()
     }
-    /// Optional human-readable description for this limit.
+    /// <p>An optional human-readable description for this rate limit. If not provided, the rate limit is created without a description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Optional human-readable description for this limit.
+    /// <p>An optional human-readable description for this rate limit. If not provided, the rate limit is created without a description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Optional human-readable description for this limit.
+    /// <p>An optional human-readable description for this rate limit. If not provided, the rate limit is created without a description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -169,17 +169,17 @@ impl CreateGatewayRateLimitFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_dimension_keys`](Self::set_dimension_keys).
     ///
-    /// Ordered list of dimension names defining the scope of this limit. Unique per gateway — no two limits can share the same dimensionKeys.
+    /// <p>The ordered list of dimension key names that define the scope of this rate limit. Must be unique per gateway—no two rate limits can share the same dimension keys.</p>
     pub fn dimension_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dimension_keys(input.into());
         self
     }
-    /// Ordered list of dimension names defining the scope of this limit. Unique per gateway — no two limits can share the same dimensionKeys.
+    /// <p>The ordered list of dimension key names that define the scope of this rate limit. Must be unique per gateway—no two rate limits can share the same dimension keys.</p>
     pub fn set_dimension_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_dimension_keys(input);
         self
     }
-    /// Ordered list of dimension names defining the scope of this limit. Unique per gateway — no two limits can share the same dimensionKeys.
+    /// <p>The ordered list of dimension key names that define the scope of this rate limit. Must be unique per gateway—no two rate limits can share the same dimension keys.</p>
     pub fn get_dimension_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_dimension_keys()
     }
@@ -188,17 +188,17 @@ impl CreateGatewayRateLimitFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// Rule entries mapping dimension values to rate configurations.
+    /// <p>The rule entries that map dimension values to rate configurations.</p>
     pub fn entries(mut self, input: crate::types::LimitEntry) -> Self {
         self.inner = self.inner.entries(input);
         self
     }
-    /// Rule entries mapping dimension values to rate configurations.
+    /// <p>The rule entries that map dimension values to rate configurations.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LimitEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
-    /// Rule entries mapping dimension values to rate configurations.
+    /// <p>The rule entries that map dimension values to rate configurations.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LimitEntry>> {
         self.inner.get_entries()
     }

@@ -100,6 +100,46 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError> for Error {
+    fn from(err: crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError) -> Self {
+        match err {
+            crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::activate_certificate_authority::ActivateCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_access_policy::AssociateAccessPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -343,6 +383,46 @@ impl From<crate::operation::create_capability::CreateCapabilityError> for Error 
             crate::operation::create_capability::CreateCapabilityError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::create_capability::CreateCapabilityError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_capability::CreateCapabilityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_certificate_authority::CreateCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_certificate_authority::CreateCertificateAuthorityError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_certificate_authority::CreateCertificateAuthorityError> for Error {
+    fn from(err: crate::operation::create_certificate_authority::CreateCertificateAuthorityError) -> Self {
+        match err {
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::ResourceLimitExceededException(inner) => {
+                Error::ResourceLimitExceededException(inner)
+            }
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_certificate_authority::CreateCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -608,6 +688,43 @@ impl From<crate::operation::delete_capability::DeleteCapabilityError> for Error 
             crate::operation::delete_capability::DeleteCapabilityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_capability::DeleteCapabilityError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::delete_capability::DeleteCapabilityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError> for Error {
+    fn from(err: crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError) -> Self {
+        match err {
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::ResourceInUseException(inner) => {
+                Error::ResourceInUseException(inner)
+            }
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -945,6 +1062,43 @@ impl From<crate::operation::describe_capability::DescribeCapabilityError> for Er
             }
             crate::operation::describe_capability::DescribeCapabilityError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::describe_capability::DescribeCapabilityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError> for Error {
+    fn from(err: crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError) -> Self {
+        match err {
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError::ServerException(inner) => {
+                Error::ServerException(inner)
+            }
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1502,6 +1656,40 @@ impl From<crate::operation::list_capabilities::ListCapabilitiesError> for Error 
             crate::operation::list_capabilities::ListCapabilitiesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::list_capabilities::ListCapabilitiesError::ServerException(inner) => Error::ServerException(inner),
             crate::operation::list_capabilities::ListCapabilitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError> for Error {
+    fn from(err: crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError) -> Self {
+        match err {
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError::ServerException(inner) => Error::ServerException(inner),
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

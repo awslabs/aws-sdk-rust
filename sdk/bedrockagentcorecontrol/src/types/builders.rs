@@ -219,6 +219,8 @@ pub use crate::types::_memory_summary::MemorySummaryBuilder;
 
 pub use crate::types::_indexed_key::IndexedKeyBuilder;
 
+pub use crate::types::_namespace_key_entry::NamespaceKeyEntryBuilder;
+
 pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2ProviderConfigOutputBuilder;
 
 pub use crate::types::_google_oauth2_provider_config_output::GoogleOauth2ProviderConfigOutputBuilder;
@@ -376,6 +378,8 @@ pub use crate::types::_user_preference_memory_strategy_input::UserPreferenceMemo
 pub use crate::types::_custom_memory_strategy_input::CustomMemoryStrategyInputBuilder;
 
 pub use crate::types::_episodic_memory_strategy_input::EpisodicMemoryStrategyInputBuilder;
+
+pub use crate::types::_namespace_key_validation::NamespaceKeyValidationBuilder;
 
 pub use crate::types::_memory_strategy::MemoryStrategyBuilder;
 

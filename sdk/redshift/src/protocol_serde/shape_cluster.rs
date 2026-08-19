@@ -794,6 +794,16 @@ pub fn de_cluster(
                 builder = builder.set_extra_compute_for_automatic_optimization(var_63);
             }
             ,
+            s if s.matches("LoggingPublishStatus") /* LoggingPublishStatus com.amazonaws.redshift#Cluster$LoggingPublishStatus */ =>  {
+                let var_64 =
+                    Some(
+                        crate::protocol_serde::shape_logging_publish_status::de_logging_publish_status(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_logging_publish_status(var_64);
+            }
+            ,
             _ => {}
         }
     }

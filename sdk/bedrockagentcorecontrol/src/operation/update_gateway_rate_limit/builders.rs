@@ -136,17 +136,17 @@ impl UpdateGatewayRateLimitFluentBuilder {
     pub fn get_rate_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_rate_limit_id()
     }
-    /// Optional human-readable description for this limit.
+    /// <p>The updated human-readable description for this rate limit.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Optional human-readable description for this limit.
+    /// <p>The updated human-readable description for this rate limit.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Optional human-readable description for this limit.
+    /// <p>The updated human-readable description for this rate limit.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
@@ -155,17 +155,17 @@ impl UpdateGatewayRateLimitFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+    /// <p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>
     pub fn entries(mut self, input: crate::types::LimitEntry) -> Self {
         self.inner = self.inner.entries(input);
         self
     }
-    /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+    /// <p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LimitEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
-    /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+    /// <p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LimitEntry>> {
         self.inner.get_entries()
     }

@@ -7,7 +7,7 @@ pub struct BatchPutGatewayRateLimitsInput {
     pub gateway_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+    /// <p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>
     pub rate_limits: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutLimitEntry>>,
 }
 impl BatchPutGatewayRateLimitsInput {
@@ -19,7 +19,7 @@ impl BatchPutGatewayRateLimitsInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+    /// <p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rate_limits.is_none()`.
     pub fn rate_limits(&self) -> &[crate::types::BatchPutLimitEntry] {
@@ -75,19 +75,19 @@ impl BatchPutGatewayRateLimitsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_rate_limits`](Self::set_rate_limits).
     ///
-    /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+    /// <p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>
     pub fn rate_limits(mut self, input: crate::types::BatchPutLimitEntry) -> Self {
         let mut v = self.rate_limits.unwrap_or_default();
         v.push(input);
         self.rate_limits = ::std::option::Option::Some(v);
         self
     }
-    /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+    /// <p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>
     pub fn set_rate_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutLimitEntry>>) -> Self {
         self.rate_limits = input;
         self
     }
-    /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+    /// <p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>
     pub fn get_rate_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutLimitEntry>> {
         &self.rate_limits
     }

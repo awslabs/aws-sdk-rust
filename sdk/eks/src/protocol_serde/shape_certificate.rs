@@ -28,6 +28,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "active" => {
+                            builder = builder.set_active(
+                                crate::protocol_serde::shape_active_certificate_authority::de_active_certificate_authority(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

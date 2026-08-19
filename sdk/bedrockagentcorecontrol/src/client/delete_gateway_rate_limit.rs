@@ -6,8 +6,8 @@ impl super::Client {
     ///   - [`gateway_identifier(impl Into<String>)`](crate::operation::delete_gateway_rate_limit::builders::DeleteGatewayRateLimitFluentBuilder::gateway_identifier) / [`set_gateway_identifier(Option<String>)`](crate::operation::delete_gateway_rate_limit::builders::DeleteGatewayRateLimitFluentBuilder::set_gateway_identifier):<br>required: **true**<br><p>The unique identifier of the gateway.</p><br>
     ///   - [`rate_limit_id(impl Into<String>)`](crate::operation::delete_gateway_rate_limit::builders::DeleteGatewayRateLimitFluentBuilder::rate_limit_id) / [`set_rate_limit_id(Option<String>)`](crate::operation::delete_gateway_rate_limit::builders::DeleteGatewayRateLimitFluentBuilder::set_rate_limit_id):<br>required: **true**<br><p>The unique identifier of the rate limit to delete.</p><br>
     /// - On success, responds with [`DeleteGatewayRateLimitOutput`](crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitOutput) with field(s):
-    ///   - [`rate_limit_id(String)`](crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitOutput::rate_limit_id): Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
-    ///   - [`status(GatewayRateLimitStatus)`](crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitOutput::status): Status of a gateway limit
+    ///   - [`rate_limit_id(String)`](crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitOutput::rate_limit_id): <p>The unique identifier of the deleted rate limit.</p>
+    ///   - [`status(GatewayRateLimitStatus)`](crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitOutput::status): <p>The current status of the rate limit deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteGatewayRateLimitError>`](crate::operation::delete_gateway_rate_limit::DeleteGatewayRateLimitError)
     pub fn delete_gateway_rate_limit(&self) -> crate::operation::delete_gateway_rate_limit::builders::DeleteGatewayRateLimitFluentBuilder {
         crate::operation::delete_gateway_rate_limit::builders::DeleteGatewayRateLimitFluentBuilder::new(self.handle.clone())

@@ -7,6 +7,12 @@ pub use crate::types::_endpoint_access::EndpointAccess;
 
 pub use crate::types::_namespace::Namespace;
 
+pub use crate::types::_log_destination_type::LogDestinationType;
+
+pub use crate::types::_s3_table_action::S3TableAction;
+
+pub use crate::types::_s3_table_granularity::S3TableGranularity;
+
 pub use crate::types::_lakehouse_registration::LakehouseRegistration;
 
 pub use crate::types::_lakehouse_idc_registration::LakehouseIdcRegistration;
@@ -53,6 +59,8 @@ pub use crate::types::_log_export::LogExport;
 
 pub use crate::types::_namespace_status::NamespaceStatus;
 
+pub use crate::types::_s3_table_publish_status::S3TablePublishStatus;
+
 pub use crate::types::_snapshot_status::SnapshotStatus;
 
 pub use crate::types::_offering_type::OfferingType;
@@ -93,6 +101,8 @@ mod _lakehouse_idc_registration;
 
 mod _lakehouse_registration;
 
+mod _log_destination_type;
+
 mod _log_export;
 
 mod _managed_workgroup_list_item;
@@ -118,6 +128,12 @@ mod _reservation;
 mod _reservation_offering;
 
 mod _resource_policy;
+
+mod _s3_table_action;
+
+mod _s3_table_granularity;
+
+mod _s3_table_publish_status;
 
 mod _schedule;
 

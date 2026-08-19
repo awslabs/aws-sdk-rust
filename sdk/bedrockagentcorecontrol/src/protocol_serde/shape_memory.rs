@@ -110,6 +110,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "namespaceKeys" => {
+                            builder = builder.set_namespace_keys(crate::protocol_serde::shape_namespace_keys_list::de_namespace_keys_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "streamDeliveryResources" => {
                             builder = builder.set_stream_delivery_resources(
                                 crate::protocol_serde::shape_stream_delivery_resources::de_stream_delivery_resources(tokens, _value, depth + 1)?,

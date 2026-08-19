@@ -194,6 +194,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableLogging
                 captured.insert("S3KeyPrefix", value);
             }
         }
+        if requested.should_capture("S3TableKmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.s3_table_kms_key_id.as_deref() {
+                captured.insert("S3TableKmsKeyId", value);
+            }
+        }
+        if requested.should_capture("S3TableGranularity") {
+            if let ::std::option::Option::Some(value) = input.s3_table_granularity.as_deref() {
+                captured.insert("S3TableGranularity", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

@@ -28,6 +28,8 @@ pub struct UpdateComputeEnvironmentInput {
     pub update_policy: ::std::option::Option<crate::types::UpdatePolicy>,
     /// <p>Reserved.</p>
     pub context: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub ecs_settings: ::std::option::Option<crate::types::EcsSettings>,
 }
 impl UpdateComputeEnvironmentInput {
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
@@ -68,6 +70,10 @@ impl UpdateComputeEnvironmentInput {
     pub fn context(&self) -> ::std::option::Option<&str> {
         self.context.as_deref()
     }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn ecs_settings(&self) -> ::std::option::Option<&crate::types::EcsSettings> {
+        self.ecs_settings.as_ref()
+    }
 }
 impl UpdateComputeEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`UpdateComputeEnvironmentInput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentInput).
@@ -87,6 +93,7 @@ pub struct UpdateComputeEnvironmentInputBuilder {
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
     pub(crate) update_policy: ::std::option::Option<crate::types::UpdatePolicy>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
+    pub(crate) ecs_settings: ::std::option::Option<crate::types::EcsSettings>,
 }
 impl UpdateComputeEnvironmentInputBuilder {
     /// <p>The name or full Amazon Resource Name (ARN) of the compute environment to update.</p>
@@ -218,6 +225,20 @@ impl UpdateComputeEnvironmentInputBuilder {
     pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.context
     }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn ecs_settings(mut self, input: crate::types::EcsSettings) -> Self {
+        self.ecs_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn set_ecs_settings(mut self, input: ::std::option::Option<crate::types::EcsSettings>) -> Self {
+        self.ecs_settings = input;
+        self
+    }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn get_ecs_settings(&self) -> &::std::option::Option<crate::types::EcsSettings> {
+        &self.ecs_settings
+    }
     /// Consumes the builder and constructs a [`UpdateComputeEnvironmentInput`](crate::operation::update_compute_environment::UpdateComputeEnvironmentInput).
     pub fn build(
         self,
@@ -233,6 +254,7 @@ impl UpdateComputeEnvironmentInputBuilder {
             service_role: self.service_role,
             update_policy: self.update_policy,
             context: self.context,
+            ecs_settings: self.ecs_settings,
         })
     }
 }

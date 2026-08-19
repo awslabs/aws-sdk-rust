@@ -16,7 +16,7 @@ pub struct CustomOauth2ProviderConfigOutput {
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>
     pub private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
 }
 impl CustomOauth2ProviderConfigOutput {
@@ -46,7 +46,7 @@ impl CustomOauth2ProviderConfigOutput {
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
     }
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>
     pub fn private_key_jwt_config(&self) -> ::std::option::Option<&crate::types::PrivateKeyJwtConfig> {
         self.private_key_jwt_config.as_ref()
     }
@@ -162,17 +162,17 @@ impl CustomOauth2ProviderConfigOutputBuilder {
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
     }
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>
     pub fn private_key_jwt_config(mut self, input: crate::types::PrivateKeyJwtConfig) -> Self {
         self.private_key_jwt_config = ::std::option::Option::Some(input);
         self
     }
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>
     pub fn set_private_key_jwt_config(mut self, input: ::std::option::Option<crate::types::PrivateKeyJwtConfig>) -> Self {
         self.private_key_jwt_config = input;
         self
     }
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>
     pub fn get_private_key_jwt_config(&self) -> &::std::option::Option<crate::types::PrivateKeyJwtConfig> {
         &self.private_key_jwt_config
     }

@@ -7,6 +7,8 @@ pub struct GetMemoryRecordInput {
     pub memory_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the memory record to retrieve.</p>
     pub memory_record_id: ::std::option::Option<::std::string::String>,
+    /// <p>The namespace of the memory record to retrieve. This value is used for IAM condition key authorization.</p>
+    pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl GetMemoryRecordInput {
     /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
@@ -16,6 +18,10 @@ impl GetMemoryRecordInput {
     /// <p>The identifier of the memory record to retrieve.</p>
     pub fn memory_record_id(&self) -> ::std::option::Option<&str> {
         self.memory_record_id.as_deref()
+    }
+    /// <p>The namespace of the memory record to retrieve. This value is used for IAM condition key authorization.</p>
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
+        self.namespace.as_deref()
     }
 }
 impl GetMemoryRecordInput {
@@ -31,6 +37,7 @@ impl GetMemoryRecordInput {
 pub struct GetMemoryRecordInputBuilder {
     pub(crate) memory_id: ::std::option::Option<::std::string::String>,
     pub(crate) memory_record_id: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
 impl GetMemoryRecordInputBuilder {
     /// <p>The identifier of the AgentCore Memory resource containing the memory record.</p>
@@ -63,6 +70,20 @@ impl GetMemoryRecordInputBuilder {
     pub fn get_memory_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_record_id
     }
+    /// <p>The namespace of the memory record to retrieve. This value is used for IAM condition key authorization.</p>
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The namespace of the memory record to retrieve. This value is used for IAM condition key authorization.</p>
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace = input;
+        self
+    }
+    /// <p>The namespace of the memory record to retrieve. This value is used for IAM condition key authorization.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Consumes the builder and constructs a [`GetMemoryRecordInput`](crate::operation::get_memory_record::GetMemoryRecordInput).
     pub fn build(
         self,
@@ -70,6 +91,7 @@ impl GetMemoryRecordInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_memory_record::GetMemoryRecordInput {
             memory_id: self.memory_id,
             memory_record_id: self.memory_record_id,
+            namespace: self.namespace,
         })
     }
 }

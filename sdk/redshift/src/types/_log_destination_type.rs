@@ -14,6 +14,7 @@
 /// match logdestinationtype {
 ///     LogDestinationType::Cloudwatch => { /* ... */ },
 ///     LogDestinationType::S3 => { /* ... */ },
+///     LogDestinationType::S3Table => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum LogDestinationType {
     Cloudwatch,
     #[allow(missing_docs)] // documentation missing in model
     S3,
+    #[allow(missing_docs)] // documentation missing in model
+    S3Table,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for LogDestinationType {
         match s {
             "cloudwatch" => LogDestinationType::Cloudwatch,
             "s3" => LogDestinationType::S3,
+            "s3table" => LogDestinationType::S3Table,
             other => LogDestinationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl LogDestinationType {
         match self {
             LogDestinationType::Cloudwatch => "cloudwatch",
             LogDestinationType::S3 => "s3",
+            LogDestinationType::S3Table => "s3table",
             LogDestinationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["cloudwatch", "s3"]
+        &["cloudwatch", "s3", "s3table"]
     }
 }
 impl ::std::convert::AsRef<str> for LogDestinationType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for LogDestinationType {
         match self {
             LogDestinationType::Cloudwatch => write!(f, "cloudwatch"),
             LogDestinationType::S3 => write!(f, "s3"),
+            LogDestinationType::S3Table => write!(f, "s3table"),
             LogDestinationType::Unknown(value) => write!(f, "{value}"),
         }
     }

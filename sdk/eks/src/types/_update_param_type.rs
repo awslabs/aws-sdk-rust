@@ -12,8 +12,10 @@
 /// ```text
 /// # let updateparamtype = unimplemented!();
 /// match updateparamtype {
+///     UpdateParamType::ActiveCertificateAuthority => { /* ... */ },
 ///     UpdateParamType::AddonVersion => { /* ... */ },
 ///     UpdateParamType::AuthenticationMode => { /* ... */ },
+///     UpdateParamType::CertificateAuthorityId => { /* ... */ },
 ///     UpdateParamType::ClusterLogging => { /* ... */ },
 ///     UpdateParamType::ComputeConfig => { /* ... */ },
 ///     UpdateParamType::ConfigurationValues => { /* ... */ },
@@ -51,10 +53,12 @@
 ///     UpdateParamType::RoleMappingsToRemove => { /* ... */ },
 ///     UpdateParamType::SecurityGroups => { /* ... */ },
 ///     UpdateParamType::ServiceAccountRoleArn => { /* ... */ },
+///     UpdateParamType::SigningStatus => { /* ... */ },
 ///     UpdateParamType::StorageConfig => { /* ... */ },
 ///     UpdateParamType::Subnets => { /* ... */ },
 ///     UpdateParamType::TaintsToAdd => { /* ... */ },
 ///     UpdateParamType::TaintsToRemove => { /* ... */ },
+///     UpdateParamType::TrustedCertificateAuthorities => { /* ... */ },
 ///     UpdateParamType::UpdateStrategy => { /* ... */ },
 ///     UpdateParamType::UpdatedTier => { /* ... */ },
 ///     UpdateParamType::UpgradePolicy => { /* ... */ },
@@ -95,9 +99,13 @@
 )]
 pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
+    ActiveCertificateAuthority,
+    #[allow(missing_docs)] // documentation missing in model
     AddonVersion,
     #[allow(missing_docs)] // documentation missing in model
     AuthenticationMode,
+    #[allow(missing_docs)] // documentation missing in model
+    CertificateAuthorityId,
     #[allow(missing_docs)] // documentation missing in model
     ClusterLogging,
     #[allow(missing_docs)] // documentation missing in model
@@ -173,6 +181,8 @@ pub enum UpdateParamType {
     #[allow(missing_docs)] // documentation missing in model
     ServiceAccountRoleArn,
     #[allow(missing_docs)] // documentation missing in model
+    SigningStatus,
+    #[allow(missing_docs)] // documentation missing in model
     StorageConfig,
     #[allow(missing_docs)] // documentation missing in model
     Subnets,
@@ -180,6 +190,8 @@ pub enum UpdateParamType {
     TaintsToAdd,
     #[allow(missing_docs)] // documentation missing in model
     TaintsToRemove,
+    #[allow(missing_docs)] // documentation missing in model
+    TrustedCertificateAuthorities,
     #[allow(missing_docs)] // documentation missing in model
     UpdateStrategy,
     #[allow(missing_docs)] // documentation missing in model
@@ -209,8 +221,10 @@ pub enum UpdateParamType {
 impl ::std::convert::From<&str> for UpdateParamType {
     fn from(s: &str) -> Self {
         match s {
+            "ActiveCertificateAuthority" => UpdateParamType::ActiveCertificateAuthority,
             "AddonVersion" => UpdateParamType::AddonVersion,
             "AuthenticationMode" => UpdateParamType::AuthenticationMode,
+            "CertificateAuthorityId" => UpdateParamType::CertificateAuthorityId,
             "ClusterLogging" => UpdateParamType::ClusterLogging,
             "ComputeConfig" => UpdateParamType::ComputeConfig,
             "ConfigurationValues" => UpdateParamType::ConfigurationValues,
@@ -248,10 +262,12 @@ impl ::std::convert::From<&str> for UpdateParamType {
             "RoleMappingsToRemove" => UpdateParamType::RoleMappingsToRemove,
             "SecurityGroups" => UpdateParamType::SecurityGroups,
             "ServiceAccountRoleArn" => UpdateParamType::ServiceAccountRoleArn,
+            "SigningStatus" => UpdateParamType::SigningStatus,
             "StorageConfig" => UpdateParamType::StorageConfig,
             "Subnets" => UpdateParamType::Subnets,
             "TaintsToAdd" => UpdateParamType::TaintsToAdd,
             "TaintsToRemove" => UpdateParamType::TaintsToRemove,
+            "TrustedCertificateAuthorities" => UpdateParamType::TrustedCertificateAuthorities,
             "UpdateStrategy" => UpdateParamType::UpdateStrategy,
             "UpdatedTier" => UpdateParamType::UpdatedTier,
             "UpgradePolicy" => UpdateParamType::UpgradePolicy,
@@ -278,8 +294,10 @@ impl UpdateParamType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            UpdateParamType::ActiveCertificateAuthority => "ActiveCertificateAuthority",
             UpdateParamType::AddonVersion => "AddonVersion",
             UpdateParamType::AuthenticationMode => "AuthenticationMode",
+            UpdateParamType::CertificateAuthorityId => "CertificateAuthorityId",
             UpdateParamType::ClusterLogging => "ClusterLogging",
             UpdateParamType::ComputeConfig => "ComputeConfig",
             UpdateParamType::ConfigurationValues => "ConfigurationValues",
@@ -317,10 +335,12 @@ impl UpdateParamType {
             UpdateParamType::RoleMappingsToRemove => "RoleMappingsToRemove",
             UpdateParamType::SecurityGroups => "SecurityGroups",
             UpdateParamType::ServiceAccountRoleArn => "ServiceAccountRoleArn",
+            UpdateParamType::SigningStatus => "SigningStatus",
             UpdateParamType::StorageConfig => "StorageConfig",
             UpdateParamType::Subnets => "Subnets",
             UpdateParamType::TaintsToAdd => "TaintsToAdd",
             UpdateParamType::TaintsToRemove => "TaintsToRemove",
+            UpdateParamType::TrustedCertificateAuthorities => "TrustedCertificateAuthorities",
             UpdateParamType::UpdateStrategy => "UpdateStrategy",
             UpdateParamType::UpdatedTier => "UpdatedTier",
             UpdateParamType::UpgradePolicy => "UpgradePolicy",
@@ -338,8 +358,10 @@ impl UpdateParamType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "ActiveCertificateAuthority",
             "AddonVersion",
             "AuthenticationMode",
+            "CertificateAuthorityId",
             "ClusterLogging",
             "ComputeConfig",
             "ConfigurationValues",
@@ -377,10 +399,12 @@ impl UpdateParamType {
             "RoleMappingsToRemove",
             "SecurityGroups",
             "ServiceAccountRoleArn",
+            "SigningStatus",
             "StorageConfig",
             "Subnets",
             "TaintsToAdd",
             "TaintsToRemove",
+            "TrustedCertificateAuthorities",
             "UpdateStrategy",
             "UpdatedTier",
             "UpgradePolicy",
@@ -415,8 +439,10 @@ impl UpdateParamType {
 impl ::std::fmt::Display for UpdateParamType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            UpdateParamType::ActiveCertificateAuthority => write!(f, "ActiveCertificateAuthority"),
             UpdateParamType::AddonVersion => write!(f, "AddonVersion"),
             UpdateParamType::AuthenticationMode => write!(f, "AuthenticationMode"),
+            UpdateParamType::CertificateAuthorityId => write!(f, "CertificateAuthorityId"),
             UpdateParamType::ClusterLogging => write!(f, "ClusterLogging"),
             UpdateParamType::ComputeConfig => write!(f, "ComputeConfig"),
             UpdateParamType::ConfigurationValues => write!(f, "ConfigurationValues"),
@@ -454,10 +480,12 @@ impl ::std::fmt::Display for UpdateParamType {
             UpdateParamType::RoleMappingsToRemove => write!(f, "RoleMappingsToRemove"),
             UpdateParamType::SecurityGroups => write!(f, "SecurityGroups"),
             UpdateParamType::ServiceAccountRoleArn => write!(f, "ServiceAccountRoleArn"),
+            UpdateParamType::SigningStatus => write!(f, "SigningStatus"),
             UpdateParamType::StorageConfig => write!(f, "StorageConfig"),
             UpdateParamType::Subnets => write!(f, "Subnets"),
             UpdateParamType::TaintsToAdd => write!(f, "TaintsToAdd"),
             UpdateParamType::TaintsToRemove => write!(f, "TaintsToRemove"),
+            UpdateParamType::TrustedCertificateAuthorities => write!(f, "TrustedCertificateAuthorities"),
             UpdateParamType::UpdateStrategy => write!(f, "UpdateStrategy"),
             UpdateParamType::UpdatedTier => write!(f, "UpdatedTier"),
             UpdateParamType::UpgradePolicy => write!(f, "UpgradePolicy"),

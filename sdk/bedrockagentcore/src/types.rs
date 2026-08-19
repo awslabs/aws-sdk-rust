@@ -87,6 +87,8 @@ pub use crate::types::_branch::Branch;
 
 pub use crate::types::_extraction_mode::ExtractionMode;
 
+pub use crate::types::_extraction_config::ExtractionConfig;
+
 pub use crate::types::_event::Event;
 
 pub use crate::types::_memory_record::MemoryRecord;
@@ -408,6 +410,8 @@ pub use crate::types::_session_metadata_shape::SessionMetadataShape;
 pub use crate::types::_memory_record_status::MemoryRecordStatus;
 
 pub use crate::types::_conversational::Conversational;
+
+pub use crate::types::_memory_json_data::MemoryJsonData;
 
 pub use crate::types::_memory_record_metadata_value::MemoryRecordMetadataValue;
 
@@ -791,6 +795,8 @@ mod _execution_summary_clustering_result_content;
 
 mod _external_proxy;
 
+mod _extraction_config;
+
 mod _extraction_job;
 
 mod _extraction_job_filter_input;
@@ -970,6 +976,8 @@ mod _live_view_stream;
 mod _mcp_descriptor;
 
 mod _memory_content;
+
+mod _memory_json_data;
 
 mod _memory_metadata_filter_expression;
 

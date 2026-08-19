@@ -26,21 +26,30 @@ pub fn ser_memory_record_update_input(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.memory_strategy_id {
-        object.key("memoryStrategyId").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.metadata {
-        #[allow(unused_mut)]
-        let mut object_8 = object.key("metadata").start_object();
-        for (key_9, value_10) in var_7 {
+    if let Some(var_6) = &input.source_namespaces {
+        let mut array_7 = object.key("sourceNamespaces").start_array();
+        for item_8 in var_6 {
             {
-                #[allow(unused_mut)]
-                let mut object_11 = object_8.key(key_9.as_str()).start_object();
-                crate::protocol_serde::shape_memory_record_metadata_value::ser_memory_record_metadata_value(&mut object_11, value_10)?;
-                object_11.finish();
+                array_7.value().string(item_8.as_str());
             }
         }
-        object_8.finish();
+        array_7.finish();
+    }
+    if let Some(var_9) = &input.memory_strategy_id {
+        object.key("memoryStrategyId").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.metadata {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("metadata").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = object_11.key(key_12.as_str()).start_object();
+                crate::protocol_serde::shape_memory_record_metadata_value::ser_memory_record_metadata_value(&mut object_14, value_13)?;
+                object_14.finish();
+            }
+        }
+        object_11.finish();
     }
     Ok(())
 }

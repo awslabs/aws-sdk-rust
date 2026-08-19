@@ -36,6 +36,18 @@ pub fn ser_video_description(
             ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
+    if let Some(var_9) = &input.crop_rectangle {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("cropRectangle").start_object();
+        crate::protocol_serde::shape_video_position_rectangle::ser_video_position_rectangle(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.output_position_rectangle {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("outputPositionRectangle").start_object();
+        crate::protocol_serde::shape_video_position_rectangle::ser_video_position_rectangle(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -60,58 +72,70 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "codecSettings" => {
-                            builder = builder.set_codec_settings(crate::protocol_serde::shape_video_codec_settings::de_video_codec_settings(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "codecSettings" => {
+                                builder = builder.set_codec_settings(crate::protocol_serde::shape_video_codec_settings::de_video_codec_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "height" => {
+                                builder = builder.set_height(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "name" => {
+                                builder = builder.set_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "respondToAfd" => {
+                                builder = builder.set_respond_to_afd(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::VideoDescriptionRespondToAfd::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "scalingBehavior" => {
+                                builder = builder.set_scaling_behavior(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::VideoDescriptionScalingBehavior::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "sharpness" => {
+                                builder = builder.set_sharpness(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "width" => {
+                                builder = builder.set_width(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "cropRectangle" => {
+                                builder = builder.set_crop_rectangle(
+                                    crate::protocol_serde::shape_video_position_rectangle::de_video_position_rectangle(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "outputPositionRectangle" => {
+                                builder = builder.set_output_position_rectangle(
+                                    crate::protocol_serde::shape_video_position_rectangle::de_video_position_rectangle(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "height" => {
-                            builder = builder.set_height(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "name" => {
-                            builder = builder.set_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "respondToAfd" => {
-                            builder = builder.set_respond_to_afd(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::VideoDescriptionRespondToAfd::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "scalingBehavior" => {
-                            builder = builder.set_scaling_behavior(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::VideoDescriptionScalingBehavior::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "sharpness" => {
-                            builder = builder.set_sharpness(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        "width" => {
-                            builder = builder.set_width(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

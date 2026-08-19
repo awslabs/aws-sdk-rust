@@ -351,6 +351,8 @@ pub use crate::types::_output_group_settings::OutputGroupSettingsBuilder;
 
 pub use crate::types::_video_codec_settings::VideoCodecSettingsBuilder;
 
+pub use crate::types::_video_position_rectangle::VideoPositionRectangleBuilder;
+
 pub use crate::types::_color_correction::ColorCorrectionBuilder;
 
 pub use crate::types::_network_input_settings::NetworkInputSettingsBuilder;

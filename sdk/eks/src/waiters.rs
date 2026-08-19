@@ -6,6 +6,9 @@ pub mod addon_active;
 /// Supporting types for the `addon_deleted` waiter.
 pub mod addon_deleted;
 
+/// Supporting types for the `certificate_authority_update_complete` waiter.
+pub mod certificate_authority_update_complete;
+
 /// Supporting types for the `cluster_active` waiter.
 pub mod cluster_active;
 

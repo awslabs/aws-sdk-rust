@@ -35,6 +35,8 @@ pub use crate::types::_vpc_endpoint::VpcEndpointBuilder;
 
 pub use crate::types::_managed_workgroup_list_item::ManagedWorkgroupListItemBuilder;
 
+pub use crate::types::_s3_table_publish_status::S3TablePublishStatusBuilder;
+
 pub use crate::types::_create_snapshot_schedule_action_parameters::CreateSnapshotScheduleActionParametersBuilder;
 
 pub use crate::types::_scheduled_action_association::ScheduledActionAssociationBuilder;

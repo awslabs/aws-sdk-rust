@@ -12,6 +12,8 @@ pub struct MemoryRecordUpdateInput {
     pub content: ::std::option::Option<crate::types::MemoryContent>,
     /// <p>The updated list of namespace identifiers for categorizing the memory record.</p>
     pub namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The namespaces of the source memory record being updated. This value is used for IAM condition key authorization.</p>
+    pub source_namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The updated ID of the memory strategy that defines how this memory record is grouped.</p>
     pub memory_strategy_id: ::std::option::Option<::std::string::String>,
     /// <p>Metadata key-value pairs to be stored with the memory record.</p>
@@ -37,6 +39,12 @@ impl MemoryRecordUpdateInput {
     pub fn namespaces(&self) -> &[::std::string::String] {
         self.namespaces.as_deref().unwrap_or_default()
     }
+    /// <p>The namespaces of the source memory record being updated. This value is used for IAM condition key authorization.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_namespaces.is_none()`.
+    pub fn source_namespaces(&self) -> &[::std::string::String] {
+        self.source_namespaces.as_deref().unwrap_or_default()
+    }
     /// <p>The updated ID of the memory strategy that defines how this memory record is grouped.</p>
     pub fn memory_strategy_id(&self) -> ::std::option::Option<&str> {
         self.memory_strategy_id.as_deref()
@@ -61,6 +69,7 @@ pub struct MemoryRecordUpdateInputBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) content: ::std::option::Option<crate::types::MemoryContent>,
     pub(crate) namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_namespaces: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) memory_strategy_id: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MemoryRecordMetadataValue>>,
 }
@@ -129,6 +138,26 @@ impl MemoryRecordUpdateInputBuilder {
     pub fn get_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.namespaces
     }
+    /// Appends an item to `source_namespaces`.
+    ///
+    /// To override the contents of this collection use [`set_source_namespaces`](Self::set_source_namespaces).
+    ///
+    /// <p>The namespaces of the source memory record being updated. This value is used for IAM condition key authorization.</p>
+    pub fn source_namespaces(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.source_namespaces.unwrap_or_default();
+        v.push(input.into());
+        self.source_namespaces = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The namespaces of the source memory record being updated. This value is used for IAM condition key authorization.</p>
+    pub fn set_source_namespaces(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.source_namespaces = input;
+        self
+    }
+    /// <p>The namespaces of the source memory record being updated. This value is used for IAM condition key authorization.</p>
+    pub fn get_source_namespaces(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_namespaces
+    }
     /// <p>The updated ID of the memory strategy that defines how this memory record is grouped.</p>
     pub fn memory_strategy_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.memory_strategy_id = ::std::option::Option::Some(input.into());
@@ -188,6 +217,7 @@ impl MemoryRecordUpdateInputBuilder {
             })?,
             content: self.content,
             namespaces: self.namespaces,
+            source_namespaces: self.source_namespaces,
             memory_strategy_id: self.memory_strategy_id,
             metadata: self.metadata,
         })

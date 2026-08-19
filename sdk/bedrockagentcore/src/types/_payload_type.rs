@@ -8,6 +8,8 @@ pub enum PayloadType {
     Blob(::aws_smithy_types::Document),
     /// <p>The conversational content of the payload.</p>
     Conversational(crate::types::Conversational),
+    /// <p>The JSON content of the payload. Use this type to store non-conversational, JSON-formatted data, such as behavioral events, activity logs, or system events.</p>
+    Json(crate::types::MemoryJsonData),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -45,6 +47,19 @@ impl PayloadType {
     pub fn is_conversational(&self) -> bool {
         self.as_conversational().is_ok()
     }
+    /// Tries to convert the enum instance into [`Json`](crate::types::PayloadType::Json), extracting the inner [`MemoryJsonData`](crate::types::MemoryJsonData).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_json(&self) -> ::std::result::Result<&crate::types::MemoryJsonData, &Self> {
+        if let PayloadType::Json(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Json`](crate::types::PayloadType::Json).
+    pub fn is_json(&self) -> bool {
+        self.as_json().is_ok()
+    }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
@@ -55,6 +70,7 @@ impl ::std::fmt::Debug for PayloadType {
         match self {
             PayloadType::Blob(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             PayloadType::Conversational(val) => f.debug_tuple("Conversational").field(&val).finish(),
+            PayloadType::Json(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             PayloadType::Unknown => f.debug_tuple("Unknown").finish(),
         }
     }

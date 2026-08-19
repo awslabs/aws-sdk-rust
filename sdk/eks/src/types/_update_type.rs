@@ -18,6 +18,7 @@
 ///     UpdateType::AssociateIdentityProviderConfig => { /* ... */ },
 ///     UpdateType::AutoModeUpdate => { /* ... */ },
 ///     UpdateType::CapabilityUpdate => { /* ... */ },
+///     UpdateType::CertificateAuthorityUpdate => { /* ... */ },
 ///     UpdateType::ConfigUpdate => { /* ... */ },
 ///     UpdateType::ControlPlaneComponentConfigUpdate => { /* ... */ },
 ///     UpdateType::ControlPlaneEgressUpdate => { /* ... */ },
@@ -74,6 +75,8 @@ pub enum UpdateType {
     #[allow(missing_docs)] // documentation missing in model
     CapabilityUpdate,
     #[allow(missing_docs)] // documentation missing in model
+    CertificateAuthorityUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigUpdate,
     #[allow(missing_docs)] // documentation missing in model
     ControlPlaneComponentConfigUpdate,
@@ -116,6 +119,7 @@ impl ::std::convert::From<&str> for UpdateType {
             "AssociateIdentityProviderConfig" => UpdateType::AssociateIdentityProviderConfig,
             "AutoModeUpdate" => UpdateType::AutoModeUpdate,
             "CapabilityUpdate" => UpdateType::CapabilityUpdate,
+            "CertificateAuthorityUpdate" => UpdateType::CertificateAuthorityUpdate,
             "ConfigUpdate" => UpdateType::ConfigUpdate,
             "ControlPlaneComponentConfigUpdate" => UpdateType::ControlPlaneComponentConfigUpdate,
             "ControlPlaneEgressUpdate" => UpdateType::ControlPlaneEgressUpdate,
@@ -152,6 +156,7 @@ impl UpdateType {
             UpdateType::AssociateIdentityProviderConfig => "AssociateIdentityProviderConfig",
             UpdateType::AutoModeUpdate => "AutoModeUpdate",
             UpdateType::CapabilityUpdate => "CapabilityUpdate",
+            UpdateType::CertificateAuthorityUpdate => "CertificateAuthorityUpdate",
             UpdateType::ConfigUpdate => "ConfigUpdate",
             UpdateType::ControlPlaneComponentConfigUpdate => "ControlPlaneComponentConfigUpdate",
             UpdateType::ControlPlaneEgressUpdate => "ControlPlaneEgressUpdate",
@@ -179,6 +184,7 @@ impl UpdateType {
             "AssociateIdentityProviderConfig",
             "AutoModeUpdate",
             "CapabilityUpdate",
+            "CertificateAuthorityUpdate",
             "ConfigUpdate",
             "ControlPlaneComponentConfigUpdate",
             "ControlPlaneEgressUpdate",
@@ -223,6 +229,7 @@ impl ::std::fmt::Display for UpdateType {
             UpdateType::AssociateIdentityProviderConfig => write!(f, "AssociateIdentityProviderConfig"),
             UpdateType::AutoModeUpdate => write!(f, "AutoModeUpdate"),
             UpdateType::CapabilityUpdate => write!(f, "CapabilityUpdate"),
+            UpdateType::CertificateAuthorityUpdate => write!(f, "CertificateAuthorityUpdate"),
             UpdateType::ConfigUpdate => write!(f, "ConfigUpdate"),
             UpdateType::ControlPlaneComponentConfigUpdate => write!(f, "ControlPlaneComponentConfigUpdate"),
             UpdateType::ControlPlaneEgressUpdate => write!(f, "ControlPlaneEgressUpdate"),

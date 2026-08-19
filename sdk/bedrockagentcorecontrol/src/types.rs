@@ -413,6 +413,8 @@ pub use crate::types::_memory_strategy_input::MemoryStrategyInput;
 
 pub use crate::types::_indexed_key::IndexedKey;
 
+pub use crate::types::_namespace_key_entry::NamespaceKeyEntry;
+
 pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2ProviderConfigOutput;
 
 pub use crate::types::_google_oauth2_provider_config_output::GoogleOauth2ProviderConfigOutput;
@@ -626,6 +628,8 @@ pub use crate::types::_custom_memory_strategy_input::CustomMemoryStrategyInput;
 pub use crate::types::_episodic_memory_strategy_input::EpisodicMemoryStrategyInput;
 
 pub use crate::types::_metadata_value_type::MetadataValueType;
+
+pub use crate::types::_namespace_key_validation::NamespaceKeyValidation;
 
 pub use crate::types::_stream_delivery_resource::StreamDeliveryResource;
 
@@ -1584,6 +1588,10 @@ mod _modify_self_managed_configuration;
 mod _modify_strategy_configuration;
 
 mod _monitoring;
+
+mod _namespace_key_entry;
+
+mod _namespace_key_validation;
 
 mod _network_configuration;
 

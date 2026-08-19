@@ -399,6 +399,8 @@ pub(crate) mod shape_managed_workgroup_list_item;
 
 pub(crate) mod shape_next_invocations_list;
 
+pub(crate) mod shape_s3_table_publish_status;
+
 pub(crate) mod shape_scheduled_action_association;
 
 pub(crate) mod shape_security_group_id_list;
@@ -414,6 +416,10 @@ pub(crate) mod shape_vpc_ids;
 pub(crate) mod shape_vpc_security_group_membership_list;
 
 pub(crate) mod shape_network_interface_list;
+
+pub(crate) mod shape_s3_table_last_ingestion_time_map;
+
+pub(crate) mod shape_s3_table_name_list;
 
 pub(crate) mod shape_update_target;
 

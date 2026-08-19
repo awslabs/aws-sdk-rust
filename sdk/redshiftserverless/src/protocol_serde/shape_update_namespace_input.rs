@@ -42,5 +42,26 @@ pub fn ser_update_namespace_input_input(
     if let Some(var_13) = &input.admin_password_secret_kms_key_id {
         object.key("adminPasswordSecretKmsKeyId").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.log_destination_type {
+        object.key("logDestinationType").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.s3_table_action {
+        object.key("s3TableAction").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.s3_table_names {
+        let mut array_17 = object.key("s3TableNames").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
+    if let Some(var_19) = &input.s3_table_kms_key_id {
+        object.key("s3TableKmsKeyId").string(var_19.as_str());
+    }
+    if let Some(var_20) = &input.s3_table_granularity {
+        object.key("s3TableGranularity").string(var_20.as_str());
+    }
     Ok(())
 }

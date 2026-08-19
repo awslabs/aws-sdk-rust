@@ -198,6 +198,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteMemoryR
                 captured.insert("memoryRecordId", value);
             }
         }
+        if requested.should_capture("namespace") {
+            if let ::std::option::Option::Some(value) = input.namespace.as_deref() {
+                captured.insert("namespace", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())
@@ -279,6 +284,18 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteMemory
                 .expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::delete_memory_record::DeleteMemoryRecordInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_3) = &_input.namespace {
+                    {
+                        query.push_kv("namespace", &::aws_smithy_http::query::fmt_string(inner_3));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::delete_memory_record::DeleteMemoryRecordInput,
@@ -286,6 +303,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteMemory
             ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("DELETE").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;

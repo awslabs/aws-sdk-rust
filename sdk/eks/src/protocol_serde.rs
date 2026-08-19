@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_activate_certificate_authority;
+
 pub(crate) mod shape_associate_access_policy;
 
 pub(crate) mod shape_associate_encryption_config;
@@ -36,6 +38,8 @@ pub(crate) mod shape_create_access_entry;
 pub(crate) mod shape_create_addon;
 
 pub(crate) mod shape_create_capability;
+
+pub(crate) mod shape_create_certificate_authority;
 
 pub(crate) mod shape_create_cluster;
 
@@ -52,6 +56,8 @@ pub(crate) mod shape_delete_access_entry;
 pub(crate) mod shape_delete_addon;
 
 pub(crate) mod shape_delete_capability;
+
+pub(crate) mod shape_delete_certificate_authority;
 
 pub(crate) mod shape_delete_cluster;
 
@@ -74,6 +80,8 @@ pub(crate) mod shape_describe_addon_configuration;
 pub(crate) mod shape_describe_addon_versions;
 
 pub(crate) mod shape_describe_capability;
+
+pub(crate) mod shape_describe_certificate_authority;
 
 pub(crate) mod shape_describe_cluster;
 
@@ -108,6 +116,8 @@ pub(crate) mod shape_list_addons;
 pub(crate) mod shape_list_associated_access_policies;
 
 pub(crate) mod shape_list_capabilities;
+
+pub(crate) mod shape_list_certificate_authorities;
 
 pub(crate) mod shape_list_clusters;
 
@@ -163,6 +173,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_activate_certificate_authority_input;
+
 pub(crate) mod shape_associate_access_policy_input;
 
 pub(crate) mod shape_associate_encryption_config_input;
@@ -180,6 +192,8 @@ pub(crate) mod shape_create_access_entry_input;
 pub(crate) mod shape_create_addon_input;
 
 pub(crate) mod shape_create_capability_input;
+
+pub(crate) mod shape_create_certificate_authority_input;
 
 pub(crate) mod shape_create_cluster_input;
 
@@ -268,6 +282,12 @@ pub(crate) mod shape_capability;
 pub(crate) mod shape_capability_configuration_request;
 
 pub(crate) mod shape_capability_summary_list;
+
+pub(crate) mod shape_certificate_authority;
+
+pub(crate) mod shape_certificate_authority_summary;
+
+pub(crate) mod shape_certificate_authority_summary_list;
 
 pub(crate) mod shape_cluster;
 
@@ -393,6 +413,10 @@ pub(crate) mod shape_capability_summary;
 
 pub(crate) mod shape_certificate;
 
+pub(crate) mod shape_certificate_authority_scheduled_events;
+
+pub(crate) mod shape_certificate_authority_validity;
+
 pub(crate) mod shape_cluster_health;
 
 pub(crate) mod shape_cluster_version_information;
@@ -480,6 +504,8 @@ pub(crate) mod shape_upgrade_policy_response;
 pub(crate) mod shape_vpc_config_response;
 
 pub(crate) mod shape_zonal_shift_config_response;
+
+pub(crate) mod shape_active_certificate_authority;
 
 pub(crate) mod shape_addon_compatibility_details;
 

@@ -15,23 +15,29 @@ pub fn ser_update_compute_environment_input_input(
     if let Some(var_4) = &input.context {
         object.key("context").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.service_role {
-        object.key("serviceRole").string(var_5.as_str());
+    if let Some(var_5) = &input.ecs_settings {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("ecsSettings").start_object();
+        crate::protocol_serde::shape_ecs_settings::ser_ecs_settings(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.state {
-        object.key("state").string(var_6.as_str());
+    if let Some(var_7) = &input.service_role {
+        object.key("serviceRole").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.unmanagedv_cpus {
+    if let Some(var_8) = &input.state {
+        object.key("state").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.unmanagedv_cpus {
         object.key("unmanagedvCpus").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    if let Some(var_8) = &input.update_policy {
+    if let Some(var_10) = &input.update_policy {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("updatePolicy").start_object();
-        crate::protocol_serde::shape_update_policy::ser_update_policy(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_11 = object.key("updatePolicy").start_object();
+        crate::protocol_serde::shape_update_policy::ser_update_policy(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

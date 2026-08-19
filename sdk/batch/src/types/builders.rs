@@ -3,6 +3,8 @@ pub use crate::types::_compute_resource::ComputeResourceBuilder;
 
 pub use crate::types::_eks_configuration::EksConfigurationBuilder;
 
+pub use crate::types::_ecs_settings::EcsSettingsBuilder;
+
 pub use crate::types::_quota_share_resource_sharing_configuration::QuotaShareResourceSharingConfigurationBuilder;
 
 pub use crate::types::_quota_share_preemption_configuration::QuotaSharePreemptionConfigurationBuilder;

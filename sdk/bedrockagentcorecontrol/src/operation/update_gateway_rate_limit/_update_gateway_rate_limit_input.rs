@@ -7,9 +7,9 @@ pub struct UpdateGatewayRateLimitInput {
     pub gateway_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the rate limit to update.</p>
     pub rate_limit_id: ::std::option::Option<::std::string::String>,
-    /// Optional human-readable description for this limit.
+    /// <p>The updated human-readable description for this rate limit.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+    /// <p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::LimitEntry>>,
 }
 impl UpdateGatewayRateLimitInput {
@@ -21,11 +21,11 @@ impl UpdateGatewayRateLimitInput {
     pub fn rate_limit_id(&self) -> ::std::option::Option<&str> {
         self.rate_limit_id.as_deref()
     }
-    /// Optional human-readable description for this limit.
+    /// <p>The updated human-readable description for this rate limit.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+    /// <p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
     pub fn entries(&self) -> &[crate::types::LimitEntry] {
@@ -79,17 +79,17 @@ impl UpdateGatewayRateLimitInputBuilder {
     pub fn get_rate_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rate_limit_id
     }
-    /// Optional human-readable description for this limit.
+    /// <p>The updated human-readable description for this rate limit.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// Optional human-readable description for this limit.
+    /// <p>The updated human-readable description for this rate limit.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// Optional human-readable description for this limit.
+    /// <p>The updated human-readable description for this rate limit.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -97,19 +97,19 @@ impl UpdateGatewayRateLimitInputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+    /// <p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>
     pub fn entries(mut self, input: crate::types::LimitEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+    /// <p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::LimitEntry>>) -> Self {
         self.entries = input;
         self
     }
-    /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+    /// <p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LimitEntry>> {
         &self.entries
     }

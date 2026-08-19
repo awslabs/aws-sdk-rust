@@ -294,4 +294,18 @@ impl CreateComputeEnvironmentFluentBuilder {
     pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_context()
     }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn ecs_settings(mut self, input: crate::types::EcsSettings) -> Self {
+        self.inner = self.inner.ecs_settings(input);
+        self
+    }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn set_ecs_settings(mut self, input: ::std::option::Option<crate::types::EcsSettings>) -> Self {
+        self.inner = self.inner.set_ecs_settings(input);
+        self
+    }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn get_ecs_settings(&self) -> &::std::option::Option<crate::types::EcsSettings> {
+        self.inner.get_ecs_settings()
+    }
 }

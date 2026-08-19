@@ -529,6 +529,8 @@ pub use crate::types::_video_description_respond_to_afd::VideoDescriptionRespond
 
 pub use crate::types::_video_description_scaling_behavior::VideoDescriptionScalingBehavior;
 
+pub use crate::types::_video_position_rectangle::VideoPositionRectangle;
+
 pub use crate::types::_color_correction::ColorCorrection;
 
 pub use crate::types::_input_preference::InputPreference;
@@ -2760,6 +2762,8 @@ mod _video_description;
 mod _video_description_respond_to_afd;
 
 mod _video_description_scaling_behavior;
+
+mod _video_position_rectangle;
 
 mod _video_selector;
 

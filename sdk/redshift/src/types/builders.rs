@@ -29,6 +29,8 @@ pub use crate::types::_snapshot_copy_grant::SnapshotCopyGrantBuilder;
 
 pub use crate::types::_default_cluster_parameters::DefaultClusterParametersBuilder;
 
+pub use crate::types::_s3_table_publish_status::S3TablePublishStatusBuilder;
+
 pub use crate::types::_resource_policy::ResourcePolicyBuilder;
 
 pub use crate::types::_aqua_configuration::AquaConfigurationBuilder;
@@ -62,6 +64,8 @@ pub use crate::types::_resize_info::ResizeInfoBuilder;
 pub use crate::types::_reserved_node_exchange_status::ReservedNodeExchangeStatusBuilder;
 
 pub use crate::types::_secondary_cluster_info::SecondaryClusterInfoBuilder;
+
+pub use crate::types::_logging_publish_status::LoggingPublishStatusBuilder;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembershipBuilder;
 

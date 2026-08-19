@@ -377,6 +377,8 @@ pub(crate) mod shape_event_list;
 
 pub(crate) mod shape_execution_summary_clustering_result_content;
 
+pub(crate) mod shape_extraction_config;
+
 pub(crate) mod shape_extraction_job;
 
 pub(crate) mod shape_extraction_job_filter_input;
@@ -594,6 +596,8 @@ pub(crate) mod shape_key_type_result;
 pub(crate) mod shape_live_view_stream;
 
 pub(crate) mod shape_memory_content;
+
+pub(crate) mod shape_memory_json_data;
 
 pub(crate) mod shape_memory_record_left_expression;
 

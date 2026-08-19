@@ -30,6 +30,8 @@ pub struct Memory {
     pub strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategy>>,
     /// <p>The indexed metadata keys for this memory. Only indexed keys can be used in metadata filters.</p>
     pub indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
+    /// <p>The namespace variable key definitions for this memory. Namespace keys define custom variables used in <code>namespaceTemplates</code> with optional validation rules.</p>
+    pub namespace_keys: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>,
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
     /// <p>ARN of the resource managing this memory (e.g. a harness). When set, strategy modifications and deletion are only allowed through the managing resource.</p>
@@ -95,6 +97,12 @@ impl Memory {
     pub fn indexed_keys(&self) -> &[crate::types::IndexedKey] {
         self.indexed_keys.as_deref().unwrap_or_default()
     }
+    /// <p>The namespace variable key definitions for this memory. Namespace keys define custom variables used in <code>namespaceTemplates</code> with optional validation rules.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespace_keys.is_none()`.
+    pub fn namespace_keys(&self) -> &[crate::types::NamespaceKeyEntry] {
+        self.namespace_keys.as_deref().unwrap_or_default()
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(&self) -> ::std::option::Option<&crate::types::StreamDeliveryResources> {
         self.stream_delivery_resources.as_ref()
@@ -120,6 +128,7 @@ impl ::std::fmt::Debug for Memory {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("strategies", &self.strategies);
         formatter.field("indexed_keys", &self.indexed_keys);
+        formatter.field("namespace_keys", &self.namespace_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.field("managed_by_resource_arn", &self.managed_by_resource_arn);
         formatter.finish()
@@ -149,6 +158,7 @@ pub struct MemoryBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategy>>,
     pub(crate) indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
+    pub(crate) namespace_keys: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>,
     pub(crate) stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
     pub(crate) managed_by_resource_arn: ::std::option::Option<::std::string::String>,
 }
@@ -354,6 +364,26 @@ impl MemoryBuilder {
     pub fn get_indexed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>> {
         &self.indexed_keys
     }
+    /// Appends an item to `namespace_keys`.
+    ///
+    /// To override the contents of this collection use [`set_namespace_keys`](Self::set_namespace_keys).
+    ///
+    /// <p>The namespace variable key definitions for this memory. Namespace keys define custom variables used in <code>namespaceTemplates</code> with optional validation rules.</p>
+    pub fn namespace_keys(mut self, input: crate::types::NamespaceKeyEntry) -> Self {
+        let mut v = self.namespace_keys.unwrap_or_default();
+        v.push(input);
+        self.namespace_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The namespace variable key definitions for this memory. Namespace keys define custom variables used in <code>namespaceTemplates</code> with optional validation rules.</p>
+    pub fn set_namespace_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>) -> Self {
+        self.namespace_keys = input;
+        self
+    }
+    /// <p>The namespace variable key definitions for this memory. Namespace keys define custom variables used in <code>namespaceTemplates</code> with optional validation rules.</p>
+    pub fn get_namespace_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>> {
+        &self.namespace_keys
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
         self.stream_delivery_resources = ::std::option::Option::Some(input);
@@ -438,6 +468,7 @@ impl MemoryBuilder {
             })?,
             strategies: self.strategies,
             indexed_keys: self.indexed_keys,
+            namespace_keys: self.namespace_keys,
             stream_delivery_resources: self.stream_delivery_resources,
             managed_by_resource_arn: self.managed_by_resource_arn,
         })
@@ -459,6 +490,7 @@ impl ::std::fmt::Debug for MemoryBuilder {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("strategies", &self.strategies);
         formatter.field("indexed_keys", &self.indexed_keys);
+        formatter.field("namespace_keys", &self.namespace_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.field("managed_by_resource_arn", &self.managed_by_resource_arn);
         formatter.finish()

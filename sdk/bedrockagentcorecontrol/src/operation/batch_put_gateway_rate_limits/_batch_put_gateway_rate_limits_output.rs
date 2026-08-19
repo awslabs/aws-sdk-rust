@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutGatewayRateLimitsOutput {
-    /// The resulting set of rate limits after the batch operation.
+    /// <p>The resulting set of rate limits after the batch operation.</p>
     pub rate_limits: ::std::vec::Vec<crate::types::GatewayRateLimitDetail>,
     _request_id: Option<String>,
 }
 impl BatchPutGatewayRateLimitsOutput {
-    /// The resulting set of rate limits after the batch operation.
+    /// <p>The resulting set of rate limits after the batch operation.</p>
     pub fn rate_limits(&self) -> &[crate::types::GatewayRateLimitDetail] {
         use std::ops::Deref;
         self.rate_limits.deref()
@@ -38,19 +38,19 @@ impl BatchPutGatewayRateLimitsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_rate_limits`](Self::set_rate_limits).
     ///
-    /// The resulting set of rate limits after the batch operation.
+    /// <p>The resulting set of rate limits after the batch operation.</p>
     pub fn rate_limits(mut self, input: crate::types::GatewayRateLimitDetail) -> Self {
         let mut v = self.rate_limits.unwrap_or_default();
         v.push(input);
         self.rate_limits = ::std::option::Option::Some(v);
         self
     }
-    /// The resulting set of rate limits after the batch operation.
+    /// <p>The resulting set of rate limits after the batch operation.</p>
     pub fn set_rate_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GatewayRateLimitDetail>>) -> Self {
         self.rate_limits = input;
         self
     }
-    /// The resulting set of rate limits after the batch operation.
+    /// <p>The resulting set of rate limits after the batch operation.</p>
     pub fn get_rate_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GatewayRateLimitDetail>> {
         &self.rate_limits
     }

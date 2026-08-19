@@ -7,6 +7,10 @@ pub struct UpdateServiceNetworkVpcAssociationInput {
     pub service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub private_dns_enabled: ::std::option::Option<bool>,
+    /// <p>DNS options for the service network VPC association.</p>
+    pub dns_options: ::std::option::Option<crate::types::DnsOptions>,
 }
 impl UpdateServiceNetworkVpcAssociationInput {
     /// <p>The ID or ARN of the association.</p>
@@ -18,6 +22,14 @@ impl UpdateServiceNetworkVpcAssociationInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn private_dns_enabled(&self) -> ::std::option::Option<bool> {
+        self.private_dns_enabled
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn dns_options(&self) -> ::std::option::Option<&crate::types::DnsOptions> {
+        self.dns_options.as_ref()
     }
 }
 impl UpdateServiceNetworkVpcAssociationInput {
@@ -33,6 +45,8 @@ impl UpdateServiceNetworkVpcAssociationInput {
 pub struct UpdateServiceNetworkVpcAssociationInputBuilder {
     pub(crate) service_network_vpc_association_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) private_dns_enabled: ::std::option::Option<bool>,
+    pub(crate) dns_options: ::std::option::Option<crate::types::DnsOptions>,
 }
 impl UpdateServiceNetworkVpcAssociationInputBuilder {
     /// <p>The ID or ARN of the association.</p>
@@ -70,6 +84,34 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.private_dns_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.private_dns_enabled = input;
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        &self.private_dns_enabled
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn dns_options(mut self, input: crate::types::DnsOptions) -> Self {
+        self.dns_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptions>) -> Self {
+        self.dns_options = input;
+        self
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptions> {
+        &self.dns_options
+    }
     /// Consumes the builder and constructs a [`UpdateServiceNetworkVpcAssociationInput`](crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput).
     pub fn build(
         self,
@@ -81,6 +123,8 @@ impl UpdateServiceNetworkVpcAssociationInputBuilder {
             crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput {
                 service_network_vpc_association_identifier: self.service_network_vpc_association_identifier,
                 security_group_ids: self.security_group_ids,
+                private_dns_enabled: self.private_dns_enabled,
+                dns_options: self.dns_options,
             },
         )
     }
