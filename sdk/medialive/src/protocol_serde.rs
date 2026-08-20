@@ -893,6 +893,8 @@ pub(crate) mod shape_srt_listener_decryption_request;
 
 pub(crate) mod shape_video_codec_settings;
 
+pub(crate) mod shape_video_position_rectangle;
+
 pub(crate) mod shape_video_selector;
 
 pub(crate) mod shape_aac_settings;

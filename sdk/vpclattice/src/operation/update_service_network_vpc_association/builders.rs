@@ -141,4 +141,32 @@ impl UpdateServiceNetworkVpcAssociationFluentBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_security_group_ids()
     }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn private_dns_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.private_dns_enabled(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn set_private_dns_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_private_dns_enabled(input);
+        self
+    }
+    /// <p>Indicates if private DNS is enabled for the VPC association.</p>
+    pub fn get_private_dns_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_private_dns_enabled()
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn dns_options(mut self, input: crate::types::DnsOptions) -> Self {
+        self.inner = self.inner.dns_options(input);
+        self
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn set_dns_options(mut self, input: ::std::option::Option<crate::types::DnsOptions>) -> Self {
+        self.inner = self.inner.set_dns_options(input);
+        self
+    }
+    /// <p>DNS options for the service network VPC association.</p>
+    pub fn get_dns_options(&self) -> &::std::option::Option<crate::types::DnsOptions> {
+        self.inner.get_dns_options()
+    }
 }

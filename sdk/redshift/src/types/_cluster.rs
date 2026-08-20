@@ -203,6 +203,8 @@ pub struct Cluster {
     /// <p>A boolean value that, if <code>true</code>, indicates that the cluster allocates additional compute resources to run automatic optimization operations.</p>
     /// <p>Default: false</p>
     pub extra_compute_for_automatic_optimization: ::std::option::Option<::std::string::String>,
+    /// <p>The status of system table publishing for the cluster. This field is present only when system table publishing is configured.</p>
+    pub logging_publish_status: ::std::option::Option<crate::types::LoggingPublishStatus>,
 }
 impl Cluster {
     /// <p>The unique identifier of the cluster.</p>
@@ -546,6 +548,10 @@ impl Cluster {
     pub fn extra_compute_for_automatic_optimization(&self) -> ::std::option::Option<&str> {
         self.extra_compute_for_automatic_optimization.as_deref()
     }
+    /// <p>The status of system table publishing for the cluster. This field is present only when system table publishing is configured.</p>
+    pub fn logging_publish_status(&self) -> ::std::option::Option<&crate::types::LoggingPublishStatus> {
+        self.logging_publish_status.as_ref()
+    }
 }
 impl Cluster {
     /// Creates a new builder-style object to manufacture [`Cluster`](crate::types::Cluster).
@@ -621,6 +627,7 @@ pub struct ClusterBuilder {
     pub(crate) lakehouse_registration_status: ::std::option::Option<::std::string::String>,
     pub(crate) catalog_arn: ::std::option::Option<::std::string::String>,
     pub(crate) extra_compute_for_automatic_optimization: ::std::option::Option<::std::string::String>,
+    pub(crate) logging_publish_status: ::std::option::Option<crate::types::LoggingPublishStatus>,
 }
 impl ClusterBuilder {
     /// <p>The unique identifier of the cluster.</p>
@@ -1778,6 +1785,20 @@ impl ClusterBuilder {
     pub fn get_extra_compute_for_automatic_optimization(&self) -> &::std::option::Option<::std::string::String> {
         &self.extra_compute_for_automatic_optimization
     }
+    /// <p>The status of system table publishing for the cluster. This field is present only when system table publishing is configured.</p>
+    pub fn logging_publish_status(mut self, input: crate::types::LoggingPublishStatus) -> Self {
+        self.logging_publish_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of system table publishing for the cluster. This field is present only when system table publishing is configured.</p>
+    pub fn set_logging_publish_status(mut self, input: ::std::option::Option<crate::types::LoggingPublishStatus>) -> Self {
+        self.logging_publish_status = input;
+        self
+    }
+    /// <p>The status of system table publishing for the cluster. This field is present only when system table publishing is configured.</p>
+    pub fn get_logging_publish_status(&self) -> &::std::option::Option<crate::types::LoggingPublishStatus> {
+        &self.logging_publish_status
+    }
     /// Consumes the builder and constructs a [`Cluster`](crate::types::Cluster).
     pub fn build(self) -> crate::types::Cluster {
         crate::types::Cluster {
@@ -1844,6 +1865,7 @@ impl ClusterBuilder {
             lakehouse_registration_status: self.lakehouse_registration_status,
             catalog_arn: self.catalog_arn,
             extra_compute_for_automatic_optimization: self.extra_compute_for_automatic_optimization,
+            logging_publish_status: self.logging_publish_status,
         }
     }
 }

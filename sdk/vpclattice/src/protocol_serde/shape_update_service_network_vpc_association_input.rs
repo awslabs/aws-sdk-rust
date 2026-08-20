@@ -3,14 +3,23 @@ pub fn ser_update_service_network_vpc_association_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.security_group_ids {
-        let mut array_2 = object.key("securityGroupIds").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.dns_options {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("dnsOptions").start_object();
+        crate::protocol_serde::shape_dns_options::ser_dns_options(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.private_dns_enabled {
+        object.key("privateDnsEnabled").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.security_group_ids {
+        let mut array_5 = object.key("securityGroupIds").start_array();
+        for item_6 in var_4 {
             {
-                array_2.value().string(item_3.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_2.finish();
+        array_5.finish();
     }
     Ok(())
 }

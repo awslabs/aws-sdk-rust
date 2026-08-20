@@ -11,7 +11,7 @@ pub struct CreateEventInput {
     pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the event occurred. If not specified, the current time is used.</p>
     pub event_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The content payload of the event. This can include conversational data or binary content.</p>
+    /// <p>The content payload of the event. This can include conversational data, JSON data, or binary content.</p>
     pub payload: ::std::option::Option<::std::vec::Vec<crate::types::PayloadType>>,
     /// <p>The branch information for this event. Branches allow for organizing events into different conversation threads or paths.</p>
     pub branch: ::std::option::Option<crate::types::Branch>,
@@ -21,6 +21,8 @@ pub struct CreateEventInput {
     pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
     pub extraction_mode: ::std::option::Option<crate::types::ExtractionMode>,
+    /// <p>The extraction configuration for long-term memory records. Use this parameter to specify namespace variable keys and their values for namespace substitution during extraction.</p>
+    pub extraction_config: ::std::option::Option<crate::types::ExtractionConfig>,
 }
 impl CreateEventInput {
     /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
@@ -39,7 +41,7 @@ impl CreateEventInput {
     pub fn event_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.event_timestamp.as_ref()
     }
-    /// <p>The content payload of the event. This can include conversational data or binary content.</p>
+    /// <p>The content payload of the event. This can include conversational data, JSON data, or binary content.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.payload.is_none()`.
     pub fn payload(&self) -> &[crate::types::PayloadType] {
@@ -60,6 +62,10 @@ impl CreateEventInput {
     /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
     pub fn extraction_mode(&self) -> ::std::option::Option<&crate::types::ExtractionMode> {
         self.extraction_mode.as_ref()
+    }
+    /// <p>The extraction configuration for long-term memory records. Use this parameter to specify namespace variable keys and their values for namespace substitution during extraction.</p>
+    pub fn extraction_config(&self) -> ::std::option::Option<&crate::types::ExtractionConfig> {
+        self.extraction_config.as_ref()
     }
 }
 impl CreateEventInput {
@@ -82,6 +88,7 @@ pub struct CreateEventInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::MetadataValue>>,
     pub(crate) extraction_mode: ::std::option::Option<crate::types::ExtractionMode>,
+    pub(crate) extraction_config: ::std::option::Option<crate::types::ExtractionConfig>,
 }
 impl CreateEventInputBuilder {
     /// <p>The identifier of the AgentCore Memory resource in which to create the event.</p>
@@ -147,19 +154,19 @@ impl CreateEventInputBuilder {
     ///
     /// To override the contents of this collection use [`set_payload`](Self::set_payload).
     ///
-    /// <p>The content payload of the event. This can include conversational data or binary content.</p>
+    /// <p>The content payload of the event. This can include conversational data, JSON data, or binary content.</p>
     pub fn payload(mut self, input: crate::types::PayloadType) -> Self {
         let mut v = self.payload.unwrap_or_default();
         v.push(input);
         self.payload = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The content payload of the event. This can include conversational data or binary content.</p>
+    /// <p>The content payload of the event. This can include conversational data, JSON data, or binary content.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PayloadType>>) -> Self {
         self.payload = input;
         self
     }
-    /// <p>The content payload of the event. This can include conversational data or binary content.</p>
+    /// <p>The content payload of the event. This can include conversational data, JSON data, or binary content.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PayloadType>> {
         &self.payload
     }
@@ -228,6 +235,20 @@ impl CreateEventInputBuilder {
     pub fn get_extraction_mode(&self) -> &::std::option::Option<crate::types::ExtractionMode> {
         &self.extraction_mode
     }
+    /// <p>The extraction configuration for long-term memory records. Use this parameter to specify namespace variable keys and their values for namespace substitution during extraction.</p>
+    pub fn extraction_config(mut self, input: crate::types::ExtractionConfig) -> Self {
+        self.extraction_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The extraction configuration for long-term memory records. Use this parameter to specify namespace variable keys and their values for namespace substitution during extraction.</p>
+    pub fn set_extraction_config(mut self, input: ::std::option::Option<crate::types::ExtractionConfig>) -> Self {
+        self.extraction_config = input;
+        self
+    }
+    /// <p>The extraction configuration for long-term memory records. Use this parameter to specify namespace variable keys and their values for namespace substitution during extraction.</p>
+    pub fn get_extraction_config(&self) -> &::std::option::Option<crate::types::ExtractionConfig> {
+        &self.extraction_config
+    }
     /// Consumes the builder and constructs a [`CreateEventInput`](crate::operation::create_event::CreateEventInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_event::CreateEventInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_event::CreateEventInput {
@@ -240,6 +261,7 @@ impl CreateEventInputBuilder {
             client_token: self.client_token,
             metadata: self.metadata,
             extraction_mode: self.extraction_mode,
+            extraction_config: self.extraction_config,
         })
     }
 }

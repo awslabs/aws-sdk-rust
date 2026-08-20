@@ -211,6 +211,25 @@ impl UpdateMemoryFluentBuilder {
     pub fn get_add_indexed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>> {
         self.inner.get_add_indexed_keys()
     }
+    ///
+    /// Appends an item to `namespaceKeys`.
+    ///
+    /// To override the contents of this collection use [`set_namespace_keys`](Self::set_namespace_keys).
+    ///
+    /// <p>The namespace variable key definitions with validation rules for this memory. Use this parameter to update existing <code>namespaceKey</code> validation rules or add new keys when namespace templates change.</p>
+    pub fn namespace_keys(mut self, input: crate::types::NamespaceKeyEntry) -> Self {
+        self.inner = self.inner.namespace_keys(input);
+        self
+    }
+    /// <p>The namespace variable key definitions with validation rules for this memory. Use this parameter to update existing <code>namespaceKey</code> validation rules or add new keys when namespace templates change.</p>
+    pub fn set_namespace_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>) -> Self {
+        self.inner = self.inner.set_namespace_keys(input);
+        self
+    }
+    /// <p>The namespace variable key definitions with validation rules for this memory. Use this parameter to update existing <code>namespaceKey</code> validation rules or add new keys when namespace templates change.</p>
+    pub fn get_namespace_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>> {
+        self.inner.get_namespace_keys()
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
         self.inner = self.inner.stream_delivery_resources(input);

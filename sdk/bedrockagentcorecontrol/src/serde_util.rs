@@ -4631,6 +4631,15 @@ pub(crate) fn memory_strategy_correct_errors(
     builder
 }
 
+pub(crate) fn namespace_key_entry_correct_errors(
+    mut builder: crate::types::builders::NamespaceKeyEntryBuilder,
+) -> crate::types::builders::NamespaceKeyEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn on_behalf_of_token_exchange_config_type_correct_errors(
     mut builder: crate::types::builders::OnBehalfOfTokenExchangeConfigTypeBuilder,
 ) -> crate::types::builders::OnBehalfOfTokenExchangeConfigTypeBuilder {

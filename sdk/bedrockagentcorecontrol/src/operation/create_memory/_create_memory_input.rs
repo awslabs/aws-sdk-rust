@@ -19,6 +19,8 @@ pub struct CreateMemoryInput {
     pub memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
     /// <p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>
     pub indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
+    /// <p>The namespace variable key definitions with optional validation rules. Use these <code>namespaceKeys</code> in <code>namespaceTemplates</code> to control namespace hierarchy.</p>
+    pub namespace_keys: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>,
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
     /// <p>A map of tag keys and values to assign to an AgentCore Memory. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
@@ -61,6 +63,12 @@ impl CreateMemoryInput {
     pub fn indexed_keys(&self) -> &[crate::types::IndexedKey] {
         self.indexed_keys.as_deref().unwrap_or_default()
     }
+    /// <p>The namespace variable key definitions with optional validation rules. Use these <code>namespaceKeys</code> in <code>namespaceTemplates</code> to control namespace hierarchy.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespace_keys.is_none()`.
+    pub fn namespace_keys(&self) -> &[crate::types::NamespaceKeyEntry] {
+        self.namespace_keys.as_deref().unwrap_or_default()
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(&self) -> ::std::option::Option<&crate::types::StreamDeliveryResources> {
         self.stream_delivery_resources.as_ref()
@@ -81,6 +89,7 @@ impl ::std::fmt::Debug for CreateMemoryInput {
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_strategies", &self.memory_strategies);
         formatter.field("indexed_keys", &self.indexed_keys);
+        formatter.field("namespace_keys", &self.namespace_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.field("tags", &self.tags);
         formatter.finish()
@@ -105,6 +114,7 @@ pub struct CreateMemoryInputBuilder {
     pub(crate) event_expiry_duration: ::std::option::Option<i32>,
     pub(crate) memory_strategies: ::std::option::Option<::std::vec::Vec<crate::types::MemoryStrategyInput>>,
     pub(crate) indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
+    pub(crate) namespace_keys: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>,
     pub(crate) stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -235,6 +245,26 @@ impl CreateMemoryInputBuilder {
     pub fn get_indexed_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>> {
         &self.indexed_keys
     }
+    /// Appends an item to `namespace_keys`.
+    ///
+    /// To override the contents of this collection use [`set_namespace_keys`](Self::set_namespace_keys).
+    ///
+    /// <p>The namespace variable key definitions with optional validation rules. Use these <code>namespaceKeys</code> in <code>namespaceTemplates</code> to control namespace hierarchy.</p>
+    pub fn namespace_keys(mut self, input: crate::types::NamespaceKeyEntry) -> Self {
+        let mut v = self.namespace_keys.unwrap_or_default();
+        v.push(input);
+        self.namespace_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The namespace variable key definitions with optional validation rules. Use these <code>namespaceKeys</code> in <code>namespaceTemplates</code> to control namespace hierarchy.</p>
+    pub fn set_namespace_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>) -> Self {
+        self.namespace_keys = input;
+        self
+    }
+    /// <p>The namespace variable key definitions with optional validation rules. Use these <code>namespaceKeys</code> in <code>namespaceTemplates</code> to control namespace hierarchy.</p>
+    pub fn get_namespace_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>> {
+        &self.namespace_keys
+    }
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub fn stream_delivery_resources(mut self, input: crate::types::StreamDeliveryResources) -> Self {
         self.stream_delivery_resources = ::std::option::Option::Some(input);
@@ -282,6 +312,7 @@ impl CreateMemoryInputBuilder {
             event_expiry_duration: self.event_expiry_duration,
             memory_strategies: self.memory_strategies,
             indexed_keys: self.indexed_keys,
+            namespace_keys: self.namespace_keys,
             stream_delivery_resources: self.stream_delivery_resources,
             tags: self.tags,
         })
@@ -298,6 +329,7 @@ impl ::std::fmt::Debug for CreateMemoryInputBuilder {
         formatter.field("event_expiry_duration", &self.event_expiry_duration);
         formatter.field("memory_strategies", &self.memory_strategies);
         formatter.field("indexed_keys", &self.indexed_keys);
+        formatter.field("namespace_keys", &self.namespace_keys);
         formatter.field("stream_delivery_resources", &self.stream_delivery_resources);
         formatter.field("tags", &self.tags);
         formatter.finish()

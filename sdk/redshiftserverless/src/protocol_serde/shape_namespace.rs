@@ -125,6 +125,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "s3TablePublishStatus" => {
+                            builder = builder.set_s3_table_publish_status(
+                                crate::protocol_serde::shape_s3_table_publish_status::de_s3_table_publish_status(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

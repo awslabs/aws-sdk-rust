@@ -39,6 +39,8 @@ pub struct CreateComputeEnvironmentInput {
     pub eks_configuration: ::std::option::Option<crate::types::EksConfiguration>,
     /// <p>Reserved.</p>
     pub context: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub ecs_settings: ::std::option::Option<crate::types::EcsSettings>,
 }
 impl CreateComputeEnvironmentInput {
     /// <p>The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -94,6 +96,10 @@ impl CreateComputeEnvironmentInput {
     pub fn context(&self) -> ::std::option::Option<&str> {
         self.context.as_deref()
     }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn ecs_settings(&self) -> ::std::option::Option<&crate::types::EcsSettings> {
+        self.ecs_settings.as_ref()
+    }
 }
 impl CreateComputeEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`CreateComputeEnvironmentInput`](crate::operation::create_compute_environment::CreateComputeEnvironmentInput).
@@ -115,6 +121,7 @@ pub struct CreateComputeEnvironmentInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) eks_configuration: ::std::option::Option<crate::types::EksConfiguration>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
+    pub(crate) ecs_settings: ::std::option::Option<crate::types::EcsSettings>,
 }
 impl CreateComputeEnvironmentInputBuilder {
     /// <p>The name for your compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -302,6 +309,20 @@ impl CreateComputeEnvironmentInputBuilder {
     pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.context
     }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn ecs_settings(mut self, input: crate::types::EcsSettings) -> Self {
+        self.ecs_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn set_ecs_settings(mut self, input: ::std::option::Option<crate::types::EcsSettings>) -> Self {
+        self.ecs_settings = input;
+        self
+    }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection for the compute environment.</p>
+    pub fn get_ecs_settings(&self) -> &::std::option::Option<crate::types::EcsSettings> {
+        &self.ecs_settings
+    }
     /// Consumes the builder and constructs a [`CreateComputeEnvironmentInput`](crate::operation::create_compute_environment::CreateComputeEnvironmentInput).
     pub fn build(
         self,
@@ -319,6 +340,7 @@ impl CreateComputeEnvironmentInputBuilder {
             tags: self.tags,
             eks_configuration: self.eks_configuration,
             context: self.context,
+            ecs_settings: self.ecs_settings,
         })
     }
 }

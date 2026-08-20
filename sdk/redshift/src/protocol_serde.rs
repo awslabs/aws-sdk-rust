@@ -1035,6 +1035,8 @@ pub(crate) mod shape_resume_cluster_message;
 
 pub(crate) mod shape_s3_access_grants_scope_union;
 
+pub(crate) mod shape_s3_table_publish_status;
+
 pub(crate) mod shape_schedule_definition_list;
 
 pub(crate) mod shape_scheduled_action_list;
@@ -1139,6 +1141,8 @@ pub(crate) mod shape_ip_range_list;
 
 pub(crate) mod shape_lake_formation_query;
 
+pub(crate) mod shape_logging_publish_status;
+
 pub(crate) mod shape_maintenance_track;
 
 pub(crate) mod shape_network_interface_list;
@@ -1170,6 +1174,8 @@ pub(crate) mod shape_resize_info;
 pub(crate) mod shape_restorable_node_type_list;
 
 pub(crate) mod shape_restore_status;
+
+pub(crate) mod shape_s3_table_last_ingestion_time_map;
 
 pub(crate) mod shape_scheduled_action;
 

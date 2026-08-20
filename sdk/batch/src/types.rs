@@ -7,6 +7,8 @@ pub use crate::types::_compute_resource::ComputeResource;
 
 pub use crate::types::_eks_configuration::EksConfiguration;
 
+pub use crate::types::_ecs_settings::EcsSettings;
+
 pub use crate::types::_jq_state::JqState;
 
 pub use crate::types::_job_queue_type::JobQueueType;
@@ -86,6 +88,8 @@ pub use crate::types::_cr_allocation_strategy::CrAllocationStrategy;
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecification;
 
 pub use crate::types::_compute_scaling_policy::ComputeScalingPolicy;
+
+pub use crate::types::_container_insights::ContainerInsights;
 
 pub use crate::types::_compute_environment_order::ComputeEnvironmentOrder;
 
@@ -379,6 +383,8 @@ mod _consumable_resource_summary;
 
 mod _container_detail;
 
+mod _container_insights;
+
 mod _container_overrides;
 
 mod _container_properties;
@@ -402,6 +408,8 @@ mod _ecs_properties;
 mod _ecs_properties_detail;
 
 mod _ecs_properties_override;
+
+mod _ecs_settings;
 
 mod _ecs_task_details;
 

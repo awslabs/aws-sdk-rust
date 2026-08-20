@@ -6,11 +6,17 @@
 pub struct Certificate {
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
     pub data: ::std::option::Option<::std::string::String>,
+    /// <p>An object identifying the certificate authority that is currently signing certificates for the cluster.</p>
+    pub active: ::std::option::Option<crate::types::ActiveCertificateAuthority>,
 }
 impl Certificate {
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
+    }
+    /// <p>An object identifying the certificate authority that is currently signing certificates for the cluster.</p>
+    pub fn active(&self) -> ::std::option::Option<&crate::types::ActiveCertificateAuthority> {
+        self.active.as_ref()
     }
 }
 impl Certificate {
@@ -25,6 +31,7 @@ impl Certificate {
 #[non_exhaustive]
 pub struct CertificateBuilder {
     pub(crate) data: ::std::option::Option<::std::string::String>,
+    pub(crate) active: ::std::option::Option<crate::types::ActiveCertificateAuthority>,
 }
 impl CertificateBuilder {
     /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add this to the <code>certificate-authority-data</code> section of the <code>kubeconfig</code> file for your cluster.</p>
@@ -41,8 +48,25 @@ impl CertificateBuilder {
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.data
     }
+    /// <p>An object identifying the certificate authority that is currently signing certificates for the cluster.</p>
+    pub fn active(mut self, input: crate::types::ActiveCertificateAuthority) -> Self {
+        self.active = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object identifying the certificate authority that is currently signing certificates for the cluster.</p>
+    pub fn set_active(mut self, input: ::std::option::Option<crate::types::ActiveCertificateAuthority>) -> Self {
+        self.active = input;
+        self
+    }
+    /// <p>An object identifying the certificate authority that is currently signing certificates for the cluster.</p>
+    pub fn get_active(&self) -> &::std::option::Option<crate::types::ActiveCertificateAuthority> {
+        &self.active
+    }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {
-        crate::types::Certificate { data: self.data }
+        crate::types::Certificate {
+            data: self.data,
+            active: self.active,
+        }
     }
 }

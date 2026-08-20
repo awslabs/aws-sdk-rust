@@ -721,6 +721,8 @@ pub(crate) mod shape_metadata_configuration;
 
 pub(crate) mod shape_modify_memory_strategies;
 
+pub(crate) mod shape_namespace_key_entry;
+
 pub(crate) mod shape_network_configuration;
 
 pub(crate) mod shape_oauth2_credential_providers;
@@ -1036,6 +1038,10 @@ pub(crate) mod shape_microsoft_oauth2_provider_config_input;
 pub(crate) mod shape_microsoft_oauth2_provider_config_output;
 
 pub(crate) mod shape_modify_memory_strategy_input;
+
+pub(crate) mod shape_namespace_key_validation;
+
+pub(crate) mod shape_namespace_keys_list;
 
 pub(crate) mod shape_o_auth2_authorization_data;
 
@@ -1478,6 +1484,8 @@ pub(crate) mod shape_metadata_schema_list;
 pub(crate) mod shape_model_entry;
 
 pub(crate) mod shape_modify_invocation_configuration_input;
+
+pub(crate) mod shape_namespace_allowed_values_list;
 
 pub(crate) mod shape_o_auth_custom_parameters;
 

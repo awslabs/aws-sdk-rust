@@ -6,12 +6,12 @@ impl super::Client {
     ///   - [`gateway_identifier(impl Into<String>)`](crate::operation::get_gateway_rate_limit::builders::GetGatewayRateLimitFluentBuilder::gateway_identifier) / [`set_gateway_identifier(Option<String>)`](crate::operation::get_gateway_rate_limit::builders::GetGatewayRateLimitFluentBuilder::set_gateway_identifier):<br>required: **true**<br><p>The unique identifier of the gateway.</p><br>
     ///   - [`rate_limit_id(impl Into<String>)`](crate::operation::get_gateway_rate_limit::builders::GetGatewayRateLimitFluentBuilder::rate_limit_id) / [`set_rate_limit_id(Option<String>)`](crate::operation::get_gateway_rate_limit::builders::GetGatewayRateLimitFluentBuilder::set_rate_limit_id):<br>required: **true**<br><p>The unique identifier of the rate limit to retrieve.</p><br>
     /// - On success, responds with [`GetGatewayRateLimitOutput`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput) with field(s):
-    ///   - [`rate_limit_id(String)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::rate_limit_id): Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
+    ///   - [`rate_limit_id(String)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::rate_limit_id): <p>The unique identifier of the rate limit.</p>
     ///   - [`gateway_identifier(String)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::gateway_identifier): <p>The unique identifier of the gateway.</p>
-    ///   - [`description(Option<String>)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::description): Optional human-readable description for this limit.
-    ///   - [`dimension_keys(Vec::<String>)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::dimension_keys): Ordered list of dimension key names defining the scope of a limit
-    ///   - [`entries(Vec::<LimitEntry>)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::entries): List of rule entries within a limit
-    ///   - [`status(GatewayRateLimitStatus)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::status): Status of a gateway limit
+    ///   - [`description(Option<String>)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::description): <p>The human-readable description of the rate limit.</p>
+    ///   - [`dimension_keys(Vec::<String>)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::dimension_keys): <p>The ordered list of dimension key names that define the scope of this rate limit.</p>
+    ///   - [`entries(Vec::<LimitEntry>)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::entries): <p>The list of rule entries that map dimension values to rate configurations.</p>
+    ///   - [`status(GatewayRateLimitStatus)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::status): <p>The current status of the rate limit.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::created_at): <p>The timestamp when the rate limit was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitOutput::updated_at): <p>The timestamp when the rate limit was last updated.</p>
     /// - On failure, responds with [`SdkError<GetGatewayRateLimitError>`](crate::operation::get_gateway_rate_limit::GetGatewayRateLimitError)

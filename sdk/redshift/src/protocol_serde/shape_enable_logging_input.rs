@@ -36,6 +36,16 @@ pub fn ser_enable_logging_input_input_input(
         }
         list_12.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("S3TableKmsKeyId");
+    if let Some(var_15) = &input.s3_table_kms_key_id {
+        scope_14.string(var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("S3TableGranularity");
+    if let Some(var_17) = &input.s3_table_granularity {
+        scope_16.string(var_17);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

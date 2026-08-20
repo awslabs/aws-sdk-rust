@@ -547,6 +547,24 @@ pub(crate) fn timed_metadata_schedule_action_settings_correct_errors(
     builder
 }
 
+pub(crate) fn video_position_rectangle_correct_errors(
+    mut builder: crate::types::builders::VideoPositionRectangleBuilder,
+) -> crate::types::builders::VideoPositionRectangleBuilder {
+    if builder.height.is_none() {
+        builder.height = Some(Default::default())
+    }
+    if builder.width.is_none() {
+        builder.width = Some(Default::default())
+    }
+    if builder.x.is_none() {
+        builder.x = Some(Default::default())
+    }
+    if builder.y.is_none() {
+        builder.y = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn archive_group_settings_correct_errors(
     mut builder: crate::types::builders::ArchiveGroupSettingsBuilder,
 ) -> crate::types::builders::ArchiveGroupSettingsBuilder {

@@ -6,5 +6,8 @@ pub fn ser_memory_record_delete_input(
     {
         object.key("memoryRecordId").string(input.memory_record_id.as_str());
     }
+    if let Some(var_1) = &input.namespace {
+        object.key("namespace").string(var_1.as_str());
+    }
     Ok(())
 }

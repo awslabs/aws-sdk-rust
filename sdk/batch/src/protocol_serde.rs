@@ -235,6 +235,8 @@ pub(crate) mod shape_ecs_properties;
 
 pub(crate) mod shape_ecs_properties_override;
 
+pub(crate) mod shape_ecs_settings;
+
 pub(crate) mod shape_eks_configuration;
 
 pub(crate) mod shape_eks_properties;

@@ -7,12 +7,26 @@ pub struct DisableLoggingInput {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>. When set to <code>s3table</code>, stops system table publishing. When omitted, the operation disables audit logging.</p>
+    pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
+    /// <p>The collection of log types to stop exporting. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to stop publishing. Omitting this parameter or passing <code>all</code> stops publishing all system tables.</p>
+    pub log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisableLoggingInput {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
     /// <p>Example: <code>examplecluster</code></p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
+    }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>. When set to <code>s3table</code>, stops system table publishing. When omitted, the operation disables audit logging.</p>
+    pub fn log_destination_type(&self) -> ::std::option::Option<&crate::types::LogDestinationType> {
+        self.log_destination_type.as_ref()
+    }
+    /// <p>The collection of log types to stop exporting. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to stop publishing. Omitting this parameter or passing <code>all</code> stops publishing all system tables.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
+    pub fn log_exports(&self) -> &[::std::string::String] {
+        self.log_exports.as_deref().unwrap_or_default()
     }
 }
 impl DisableLoggingInput {
@@ -27,6 +41,8 @@ impl DisableLoggingInput {
 #[non_exhaustive]
 pub struct DisableLoggingInputBuilder {
     pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
+    pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisableLoggingInputBuilder {
     /// <p>The identifier of the cluster on which logging is to be stopped.</p>
@@ -47,12 +63,48 @@ impl DisableLoggingInputBuilder {
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.cluster_identifier
     }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>. When set to <code>s3table</code>, stops system table publishing. When omitted, the operation disables audit logging.</p>
+    pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
+        self.log_destination_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>. When set to <code>s3table</code>, stops system table publishing. When omitted, the operation disables audit logging.</p>
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
+        self.log_destination_type = input;
+        self
+    }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>. When set to <code>s3table</code>, stops system table publishing. When omitted, the operation disables audit logging.</p>
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
+        &self.log_destination_type
+    }
+    /// Appends an item to `log_exports`.
+    ///
+    /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
+    ///
+    /// <p>The collection of log types to stop exporting. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to stop publishing. Omitting this parameter or passing <code>all</code> stops publishing all system tables.</p>
+    pub fn log_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.log_exports.unwrap_or_default();
+        v.push(input.into());
+        self.log_exports = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The collection of log types to stop exporting. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to stop publishing. Omitting this parameter or passing <code>all</code> stops publishing all system tables.</p>
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.log_exports = input;
+        self
+    }
+    /// <p>The collection of log types to stop exporting. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to stop publishing. Omitting this parameter or passing <code>all</code> stops publishing all system tables.</p>
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_exports
+    }
     /// Consumes the builder and constructs a [`DisableLoggingInput`](crate::operation::disable_logging::DisableLoggingInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disable_logging::DisableLoggingInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_logging::DisableLoggingInput {
             cluster_identifier: self.cluster_identifier,
+            log_destination_type: self.log_destination_type,
+            log_exports: self.log_exports,
         })
     }
 }

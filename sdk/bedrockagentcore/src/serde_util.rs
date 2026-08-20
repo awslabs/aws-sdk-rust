@@ -2024,6 +2024,15 @@ pub(crate) fn mcp_descriptor_correct_errors(
     builder
 }
 
+pub(crate) fn memory_json_data_correct_errors(
+    mut builder: crate::types::builders::MemoryJsonDataBuilder,
+) -> crate::types::builders::MemoryJsonDataBuilder {
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn online_evaluation_trace_config_correct_errors(
     mut builder: crate::types::builders::OnlineEvaluationTraceConfigBuilder,
 ) -> crate::types::builders::OnlineEvaluationTraceConfigBuilder {

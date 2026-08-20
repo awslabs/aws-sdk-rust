@@ -10,6 +10,22 @@ pub fn ser_disable_logging_input_input_input(
     if let Some(var_2) = &input.cluster_identifier {
         scope_1.string(var_2);
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("LogDestinationType");
+    if let Some(var_4) = &input.log_destination_type {
+        scope_3.string(var_4.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("LogExports");
+    if let Some(var_6) = &input.log_exports {
+        let mut list_8 = scope_5.start_list(false, None);
+        for item_7 in var_6 {
+            #[allow(unused_mut)]
+            let mut entry_9 = list_8.entry();
+            entry_9.string(item_7);
+        }
+        list_8.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }
