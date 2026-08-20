@@ -6,7 +6,7 @@
 pub struct ProvisionedPollerConfig {
     /// <p>The minimum number of event pollers this event source can scale down to. For Amazon SQS events source mappings, default is 2, and minimum 2 required. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 1.</p>
     pub minimum_pollers: ::std::option::Option<i32>,
-    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum value allowed is 1.</p>
+    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS event source mappings, the accepted range is between 2 and 10,000, with a default of 200. For Amazon MSK and self-managed Apache Kafka event source mappings, the accepted range is between 1 and 2,000, with a default of 200.</p>
     pub maximum_pollers: ::std::option::Option<i32>,
     /// <p>(Amazon MSK and self-managed Apache Kafka) The name of the provisioned poller group. Use this option to group multiple ESMs within the event source's VPC to share Event Poller Unit (EPU) capacity. You can use this option to optimize Provisioned mode costs for your ESMs. You can group up to 100 ESMs per poller group and aggregate maximum pollers across all ESMs in a group cannot exceed 2000.</p>
     pub poller_group_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl ProvisionedPollerConfig {
     pub fn minimum_pollers(&self) -> ::std::option::Option<i32> {
         self.minimum_pollers
     }
-    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum value allowed is 1.</p>
+    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS event source mappings, the accepted range is between 2 and 10,000, with a default of 200. For Amazon MSK and self-managed Apache Kafka event source mappings, the accepted range is between 1 and 2,000, with a default of 200.</p>
     pub fn maximum_pollers(&self) -> ::std::option::Option<i32> {
         self.maximum_pollers
     }
@@ -55,17 +55,17 @@ impl ProvisionedPollerConfigBuilder {
     pub fn get_minimum_pollers(&self) -> &::std::option::Option<i32> {
         &self.minimum_pollers
     }
-    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum value allowed is 1.</p>
+    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS event source mappings, the accepted range is between 2 and 10,000, with a default of 200. For Amazon MSK and self-managed Apache Kafka event source mappings, the accepted range is between 1 and 2,000, with a default of 200.</p>
     pub fn maximum_pollers(mut self, input: i32) -> Self {
         self.maximum_pollers = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum value allowed is 1.</p>
+    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS event source mappings, the accepted range is between 2 and 10,000, with a default of 200. For Amazon MSK and self-managed Apache Kafka event source mappings, the accepted range is between 1 and 2,000, with a default of 200.</p>
     pub fn set_maximum_pollers(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum_pollers = input;
         self
     }
-    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS events source mappings, default is 200, and minimum value allowed is 2. For Amazon MSK and self-managed Apache Kafka event source mappings, default is 200, and minimum value allowed is 1.</p>
+    /// <p>The maximum number of event pollers this event source can scale up to. For Amazon SQS event source mappings, the accepted range is between 2 and 10,000, with a default of 200. For Amazon MSK and self-managed Apache Kafka event source mappings, the accepted range is between 1 and 2,000, with a default of 200.</p>
     pub fn get_maximum_pollers(&self) -> &::std::option::Option<i32> {
         &self.maximum_pollers
     }

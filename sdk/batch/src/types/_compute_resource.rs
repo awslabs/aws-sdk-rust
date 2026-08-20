@@ -4,9 +4,10 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ComputeResource {
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>Multi-node parallel jobs aren't supported on Spot Instances.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>ECS_MANAGED_INSTANCES</code>, you must also specify a <code>managedInstancesProvider</code> configuration. To use Spot capacity, set <code>capacityOptionType</code> to <code>SPOT</code> in the <code>managedInstancesProvider.instanceLaunchTemplate</code> configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>Multi-node parallel jobs aren't supported on Spot Instances or Amazon ECS Managed Instances.</p>
     /// </note>
     pub r#type: ::std::option::Option<crate::types::CrType>,
     /// <p>The allocation strategy to use for the compute resource if not enough instances of the best fitting instance type can be allocated. This might be because of availability of the instance type in the Region or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon EC2 service limits</a>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/allocation-strategies.html">Allocation strategies</a> in the <i>Batch User Guide</i>.</p><note>
@@ -147,11 +148,18 @@ pub struct ComputeResource {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub scaling_policy: ::std::option::Option<crate::types::ComputeScalingPolicy>,
+    /// <p>The configuration for the Amazon ECS Managed Instances capacity provider. This parameter is required when <code>computeResources.type</code> is <code>ECS_MANAGED_INSTANCES</code> and must not be specified for other compute environment types.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p>
+    pub managed_instances_provider: ::std::option::Option<crate::types::ManagedInstancesProvider>,
+    /// <p>The tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances launched by the compute environment. These tags are separate from the compute environment resource tags (the top-level <code>tags</code> parameter). Use <code>capacityTags</code> for cost allocation and organization of the underlying infrastructure resources.</p>
+    /// <p>This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub capacity_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComputeResource {
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>Multi-node parallel jobs aren't supported on Spot Instances.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>ECS_MANAGED_INSTANCES</code>, you must also specify a <code>managedInstancesProvider</code> configuration. To use Spot capacity, set <code>capacityOptionType</code> to <code>SPOT</code> in the <code>managedInstancesProvider.instanceLaunchTemplate</code> configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>Multi-node parallel jobs aren't supported on Spot Instances or Amazon ECS Managed Instances.</p>
     /// </note>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CrType> {
         self.r#type.as_ref()
@@ -336,6 +344,16 @@ impl ComputeResource {
     pub fn scaling_policy(&self) -> ::std::option::Option<&crate::types::ComputeScalingPolicy> {
         self.scaling_policy.as_ref()
     }
+    /// <p>The configuration for the Amazon ECS Managed Instances capacity provider. This parameter is required when <code>computeResources.type</code> is <code>ECS_MANAGED_INSTANCES</code> and must not be specified for other compute environment types.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p>
+    pub fn managed_instances_provider(&self) -> ::std::option::Option<&crate::types::ManagedInstancesProvider> {
+        self.managed_instances_provider.as_ref()
+    }
+    /// <p>The tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances launched by the compute environment. These tags are separate from the compute environment resource tags (the top-level <code>tags</code> parameter). Use <code>capacityTags</code> for cost allocation and organization of the underlying infrastructure resources.</p>
+    /// <p>This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub fn capacity_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.capacity_tags.as_ref()
+    }
 }
 impl ComputeResource {
     /// Creates a new builder-style object to manufacture [`ComputeResource`](crate::types::ComputeResource).
@@ -366,28 +384,33 @@ pub struct ComputeResourceBuilder {
     pub(crate) launch_template: ::std::option::Option<crate::types::LaunchTemplateSpecification>,
     pub(crate) ec2_configuration: ::std::option::Option<::std::vec::Vec<crate::types::Ec2Configuration>>,
     pub(crate) scaling_policy: ::std::option::Option<crate::types::ComputeScalingPolicy>,
+    pub(crate) managed_instances_provider: ::std::option::Option<crate::types::ManagedInstancesProvider>,
+    pub(crate) capacity_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComputeResourceBuilder {
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>Multi-node parallel jobs aren't supported on Spot Instances.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>ECS_MANAGED_INSTANCES</code>, you must also specify a <code>managedInstancesProvider</code> configuration. To use Spot capacity, set <code>capacityOptionType</code> to <code>SPOT</code> in the <code>managedInstancesProvider.instanceLaunchTemplate</code> configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>Multi-node parallel jobs aren't supported on Spot Instances or Amazon ECS Managed Instances.</p>
     /// </note>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::CrType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>Multi-node parallel jobs aren't supported on Spot Instances.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>ECS_MANAGED_INSTANCES</code>, you must also specify a <code>managedInstancesProvider</code> configuration. To use Spot capacity, set <code>capacityOptionType</code> to <code>SPOT</code> in the <code>managedInstancesProvider.instanceLaunchTemplate</code> configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>Multi-node parallel jobs aren't supported on Spot Instances or Amazon ECS Managed Instances.</p>
     /// </note>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CrType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
-    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p><note>
-    /// <p>Multi-node parallel jobs aren't supported on Spot Instances.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>If you choose <code>ECS_MANAGED_INSTANCES</code>, you must also specify a <code>managedInstancesProvider</code> configuration. To use Spot capacity, set <code>capacityOptionType</code> to <code>SPOT</code> in the <code>managedInstancesProvider.instanceLaunchTemplate</code> configuration. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p><note>
+    /// <p>Multi-node parallel jobs aren't supported on Spot Instances or Amazon ECS Managed Instances.</p>
     /// </note>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CrType> {
         &self.r#type
@@ -973,6 +996,49 @@ impl ComputeResourceBuilder {
     pub fn get_scaling_policy(&self) -> &::std::option::Option<crate::types::ComputeScalingPolicy> {
         &self.scaling_policy
     }
+    /// <p>The configuration for the Amazon ECS Managed Instances capacity provider. This parameter is required when <code>computeResources.type</code> is <code>ECS_MANAGED_INSTANCES</code> and must not be specified for other compute environment types.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p>
+    pub fn managed_instances_provider(mut self, input: crate::types::ManagedInstancesProvider) -> Self {
+        self.managed_instances_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances capacity provider. This parameter is required when <code>computeResources.type</code> is <code>ECS_MANAGED_INSTANCES</code> and must not be specified for other compute environment types.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p>
+    pub fn set_managed_instances_provider(mut self, input: ::std::option::Option<crate::types::ManagedInstancesProvider>) -> Self {
+        self.managed_instances_provider = input;
+        self
+    }
+    /// <p>The configuration for the Amazon ECS Managed Instances capacity provider. This parameter is required when <code>computeResources.type</code> is <code>ECS_MANAGED_INSTANCES</code> and must not be specified for other compute environment types.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/ecs_managed_instances.html">Amazon ECS Managed Instances compute environments</a> in the <i>Batch User Guide</i>.</p>
+    pub fn get_managed_instances_provider(&self) -> &::std::option::Option<crate::types::ManagedInstancesProvider> {
+        &self.managed_instances_provider
+    }
+    /// Adds a key-value pair to `capacity_tags`.
+    ///
+    /// To override the contents of this collection use [`set_capacity_tags`](Self::set_capacity_tags).
+    ///
+    /// <p>The tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances launched by the compute environment. These tags are separate from the compute environment resource tags (the top-level <code>tags</code> parameter). Use <code>capacityTags</code> for cost allocation and organization of the underlying infrastructure resources.</p>
+    /// <p>This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub fn capacity_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.capacity_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.capacity_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances launched by the compute environment. These tags are separate from the compute environment resource tags (the top-level <code>tags</code> parameter). Use <code>capacityTags</code> for cost allocation and organization of the underlying infrastructure resources.</p>
+    /// <p>This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub fn set_capacity_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.capacity_tags = input;
+        self
+    }
+    /// <p>The tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances launched by the compute environment. These tags are separate from the compute environment resource tags (the top-level <code>tags</code> parameter). Use <code>capacityTags</code> for cost allocation and organization of the underlying infrastructure resources.</p>
+    /// <p>This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub fn get_capacity_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.capacity_tags
+    }
     /// Consumes the builder and constructs a [`ComputeResource`](crate::types::ComputeResource).
     pub fn build(self) -> crate::types::ComputeResource {
         crate::types::ComputeResource {
@@ -994,6 +1060,8 @@ impl ComputeResourceBuilder {
             launch_template: self.launch_template,
             ec2_configuration: self.ec2_configuration,
             scaling_policy: self.scaling_policy,
+            managed_instances_provider: self.managed_instances_provider,
+            capacity_tags: self.capacity_tags,
         }
     }
 }

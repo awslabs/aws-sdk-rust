@@ -153,6 +153,34 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "prefixPoolSizeIpv4" => {
+                            builder = builder.set_prefix_pool_size_ipv4(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "prefixPoolSizeIpv6" => {
+                            builder = builder.set_prefix_pool_size_ipv6(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "prefixPoolUnallocatedCountIpv4" => {
+                            builder = builder.set_prefix_pool_unallocated_count_ipv4(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "prefixPoolUnallocatedCountIpv6" => {
+                            builder = builder.set_prefix_pool_unallocated_count_ipv6(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "rateLimiterStatus" => {
                             builder = builder.set_rate_limiter_status(crate::protocol_serde::shape_rate_limiter_status::de_rate_limiter_status(
                                 tokens,

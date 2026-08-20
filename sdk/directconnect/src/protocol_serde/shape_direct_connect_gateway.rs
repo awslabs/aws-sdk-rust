@@ -63,6 +63,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "totalPrefixPoolAllocations" => {
+                            builder = builder.set_total_prefix_pool_allocations(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
                         }

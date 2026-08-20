@@ -39,6 +39,8 @@
 
 #![allow(missing_docs)]
 
+pub mod connection;
+
 use aws_smithy_async::future::never::Never;
 use aws_smithy_async::future::BoxFuture;
 use aws_smithy_runtime_api::client::http::SharedHttpClient;
@@ -335,7 +337,7 @@ impl WireMockServer {
     /// **Note**: This must be used in tandem with [`Self::dns_resolver`]
     pub fn http_client(&self) -> SharedHttpClient {
         let resolver = self.dns_resolver();
-        crate::client::build_with_tcp_conn_fn(None, None, move || {
+        crate::client::build_with_tcp_conn_fn(None, None, None, move || {
             hyper_util::client::legacy::connect::HttpConnector::new_with_resolver(
                 resolver.clone().0,
             )

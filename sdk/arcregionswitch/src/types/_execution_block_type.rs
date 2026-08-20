@@ -28,6 +28,7 @@
 ///     ExecutionBlockType::Parallel => { /* ... */ },
 ///     ExecutionBlockType::RdsCreateCrossRegionReplica => { /* ... */ },
 ///     ExecutionBlockType::RdsPromoteReadReplica => { /* ... */ },
+///     ExecutionBlockType::RdsSwitchoverReadReplica => { /* ... */ },
 ///     ExecutionBlockType::Route53HealthCheck => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -90,6 +91,8 @@ pub enum ExecutionBlockType {
     #[allow(missing_docs)] // documentation missing in model
     RdsPromoteReadReplica,
     #[allow(missing_docs)] // documentation missing in model
+    RdsSwitchoverReadReplica,
+    #[allow(missing_docs)] // documentation missing in model
     Route53HealthCheck,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -114,6 +117,7 @@ impl ::std::convert::From<&str> for ExecutionBlockType {
             "Parallel" => ExecutionBlockType::Parallel,
             "RdsCreateCrossRegionReplica" => ExecutionBlockType::RdsCreateCrossRegionReplica,
             "RdsPromoteReadReplica" => ExecutionBlockType::RdsPromoteReadReplica,
+            "RdsSwitchoverReadReplica" => ExecutionBlockType::RdsSwitchoverReadReplica,
             "Route53HealthCheck" => ExecutionBlockType::Route53HealthCheck,
             other => ExecutionBlockType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -146,6 +150,7 @@ impl ExecutionBlockType {
             ExecutionBlockType::Parallel => "Parallel",
             ExecutionBlockType::RdsCreateCrossRegionReplica => "RdsCreateCrossRegionReplica",
             ExecutionBlockType::RdsPromoteReadReplica => "RdsPromoteReadReplica",
+            ExecutionBlockType::RdsSwitchoverReadReplica => "RdsSwitchoverReadReplica",
             ExecutionBlockType::Route53HealthCheck => "Route53HealthCheck",
             ExecutionBlockType::Unknown(value) => value.as_str(),
         }
@@ -169,6 +174,7 @@ impl ExecutionBlockType {
             "Parallel",
             "RdsCreateCrossRegionReplica",
             "RdsPromoteReadReplica",
+            "RdsSwitchoverReadReplica",
             "Route53HealthCheck",
         ]
     }
@@ -209,6 +215,7 @@ impl ::std::fmt::Display for ExecutionBlockType {
             ExecutionBlockType::Parallel => write!(f, "Parallel"),
             ExecutionBlockType::RdsCreateCrossRegionReplica => write!(f, "RdsCreateCrossRegionReplica"),
             ExecutionBlockType::RdsPromoteReadReplica => write!(f, "RdsPromoteReadReplica"),
+            ExecutionBlockType::RdsSwitchoverReadReplica => write!(f, "RdsSwitchoverReadReplica"),
             ExecutionBlockType::Route53HealthCheck => write!(f, "Route53HealthCheck"),
             ExecutionBlockType::Unknown(value) => write!(f, "{value}"),
         }

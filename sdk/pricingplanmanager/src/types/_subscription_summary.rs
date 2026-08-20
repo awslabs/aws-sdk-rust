@@ -18,7 +18,7 @@ pub struct SubscriptionSummary {
     pub status: crate::types::Status,
     /// <p>A human-readable explanation of the current status, present when additional context is available.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The ARNs of the AWS resources covered by this subscription.</p>
+    /// <p>The ARNs of the resources covered by this subscription.</p>
     pub resource_arns: ::std::vec::Vec<::std::string::String>,
     /// <p>The date and time when the subscription was created, in ISO 8601 format.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -59,7 +59,7 @@ impl SubscriptionSummary {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The ARNs of the AWS resources covered by this subscription.</p>
+    /// <p>The ARNs of the resources covered by this subscription.</p>
     pub fn resource_arns(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.resource_arns.deref()
@@ -208,19 +208,19 @@ impl SubscriptionSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p>The ARNs of the AWS resources covered by this subscription.</p>
+    /// <p>The ARNs of the resources covered by this subscription.</p>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
         v.push(input.into());
         self.resource_arns = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The ARNs of the AWS resources covered by this subscription.</p>
+    /// <p>The ARNs of the resources covered by this subscription.</p>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resource_arns = input;
         self
     }
-    /// <p>The ARNs of the AWS resources covered by this subscription.</p>
+    /// <p>The ARNs of the resources covered by this subscription.</p>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resource_arns
     }

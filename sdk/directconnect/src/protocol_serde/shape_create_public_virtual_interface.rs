@@ -329,6 +329,20 @@ pub(crate) fn de_create_public_virtual_interface(
                     "siteLinkEnabled" => {
                         builder = builder.set_site_link_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                     }
+                    "prefixPoolAllocatedCountIpv4" => {
+                        builder = builder.set_prefix_pool_allocated_count_ipv4(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                .map(i32::try_from)
+                                .transpose()?,
+                        );
+                    }
+                    "prefixPoolAllocatedCountIpv6" => {
+                        builder = builder.set_prefix_pool_allocated_count_ipv6(
+                            ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                .map(i32::try_from)
+                                .transpose()?,
+                        );
+                    }
                     "rateLimit" => {
                         builder = builder.set_rate_limit(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

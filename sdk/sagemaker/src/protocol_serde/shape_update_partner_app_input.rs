@@ -21,29 +21,38 @@ pub fn ser_update_partner_app_input_input(
         crate::protocol_serde::shape_partner_app_config::ser_partner_app_config(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.enable_iam_session_based_identity {
-        object.key("EnableIamSessionBasedIdentity").boolean(*var_7);
+    if let Some(var_7) = &input.idc_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("IdcConfig").start_object();
+        crate::protocol_serde::shape_idc_config_input::ser_idc_config_input(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.enable_auto_minor_version_upgrade {
-        object.key("EnableAutoMinorVersionUpgrade").boolean(*var_8);
+    if let Some(var_9) = &input.auth_type {
+        object.key("AuthType").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.app_version {
-        object.key("AppVersion").string(var_9.as_str());
+    if let Some(var_10) = &input.enable_iam_session_based_identity {
+        object.key("EnableIamSessionBasedIdentity").boolean(*var_10);
     }
-    if let Some(var_10) = &input.client_token {
-        object.key("ClientToken").string(var_10.as_str());
+    if let Some(var_11) = &input.enable_auto_minor_version_upgrade {
+        object.key("EnableAutoMinorVersionUpgrade").boolean(*var_11);
     }
-    if let Some(var_11) = &input.tags {
-        let mut array_12 = object.key("Tags").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.app_version {
+        object.key("AppVersion").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.client_token {
+        object.key("ClientToken").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("Tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_12.finish();
+        array_15.finish();
     }
     Ok(())
 }

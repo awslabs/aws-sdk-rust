@@ -197,6 +197,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMlflowA
                 captured.insert("RoleArn", value);
             }
         }
+        if requested.should_capture("KmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.kms_key_id.as_deref() {
+                captured.insert("KmsKeyId", value);
+            }
+        }
         if requested.should_capture("WeeklyMaintenanceWindowStart") {
             if let ::std::option::Option::Some(value) = input.weekly_maintenance_window_start.as_deref() {
                 captured.insert("WeeklyMaintenanceWindowStart", value);

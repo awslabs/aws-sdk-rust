@@ -32,7 +32,7 @@ pub struct JobDefinition {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether to propagate the tags from the job or job definition to the corresponding Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the tasks when the tasks are created. For tags with the same name, job tags are given priority over job definitions tags. If the total number of combined tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code> state.</p>
     pub propagate_tags: ::std::option::Option<bool>,
-    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>. Jobs run on Amazon ECS Managed Instances specify <code>MANAGED_INSTANCES</code>.</p>
     pub platform_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>,
     /// <p>An object that contains the properties for the Amazon ECS resources of a job.When <code>ecsProperties</code> is used in the job definition, it can't be used in addition to <code>containerProperties</code>, <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
     pub ecs_properties: ::std::option::Option<crate::types::EcsProperties>,
@@ -98,7 +98,7 @@ impl JobDefinition {
     pub fn propagate_tags(&self) -> ::std::option::Option<bool> {
         self.propagate_tags
     }
-    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>. Jobs run on Amazon ECS Managed Instances specify <code>MANAGED_INSTANCES</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.platform_capabilities.is_none()`.
     pub fn platform_capabilities(&self) -> &[crate::types::PlatformCapability] {
@@ -360,19 +360,19 @@ impl JobDefinitionBuilder {
     ///
     /// To override the contents of this collection use [`set_platform_capabilities`](Self::set_platform_capabilities).
     ///
-    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>. Jobs run on Amazon ECS Managed Instances specify <code>MANAGED_INSTANCES</code>.</p>
     pub fn platform_capabilities(mut self, input: crate::types::PlatformCapability) -> Self {
         let mut v = self.platform_capabilities.unwrap_or_default();
         v.push(input);
         self.platform_capabilities = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>. Jobs run on Amazon ECS Managed Instances specify <code>MANAGED_INSTANCES</code>.</p>
     pub fn set_platform_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>>) -> Self {
         self.platform_capabilities = input;
         self
     }
-    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.</p>
+    /// <p>The platform capabilities required by the job definition. If no value is specified, it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>. Jobs run on Amazon ECS Managed Instances specify <code>MANAGED_INSTANCES</code>.</p>
     pub fn get_platform_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PlatformCapability>> {
         &self.platform_capabilities
     }

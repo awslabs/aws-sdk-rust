@@ -23,7 +23,7 @@ impl crate::operation::associate_resources_to_subscription::builders::AssociateR
 /// Fluent builder constructing a request to `AssociateResourcesToSubscription`.
 ///
 /// <p>Adds one or more resources to an existing subscription. The subscription must be in an active state that is not pending other changes.</p><note>
-/// <p>For subscriptions in the CloudFront plan family, the associated resources must include exactly one Amazon CloudFront distribution and one AWS WAF web ACL. You can also include other supported resources, such as Amazon Route 53 hosted zones, and CloudFront KeyValueStores.</p>
+/// <p>For subscriptions in the CloudFront plan family, the associated resources must include exactly one Amazon CloudFront distribution and one WAF web ACL. You can also include other supported resources, such as Amazon Route 53 hosted zones, and CloudFront KeyValueStores.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateResourcesToSubscriptionFluentBuilder {

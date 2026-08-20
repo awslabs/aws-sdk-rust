@@ -209,6 +209,8 @@ pub(crate) mod shape_rds_create_cross_region_replica_configuration;
 
 pub(crate) mod shape_rds_promote_read_replica_configuration;
 
+pub(crate) mod shape_rds_switchover_read_replica_configuration;
+
 pub(crate) mod shape_region_switch_plan_configuration;
 
 pub(crate) mod shape_route53_health_check_configuration;
@@ -248,6 +250,8 @@ pub(crate) mod shape_lambda_ungraceful;
 pub(crate) mod shape_lambdas;
 
 pub(crate) mod shape_neptune_ungraceful;
+
+pub(crate) mod shape_rds_ungraceful;
 
 pub(crate) mod shape_route53_resource_record_set;
 

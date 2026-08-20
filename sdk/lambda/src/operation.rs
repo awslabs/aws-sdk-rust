@@ -61,6 +61,9 @@ pub mod delete_layer_version;
 /// Types for the `DeleteProvisionedConcurrencyConfig` operation.
 pub mod delete_provisioned_concurrency_config;
 
+/// Types for the `DeleteResourcePolicy` operation.
+pub mod delete_resource_policy;
+
 /// Types for the `GetAccountSettings` operation.
 pub mod get_account_settings;
 
@@ -123,6 +126,9 @@ pub mod get_policy;
 
 /// Types for the `GetProvisionedConcurrencyConfig` operation.
 pub mod get_provisioned_concurrency_config;
+
+/// Types for the `GetResourcePolicy` operation.
+pub mod get_resource_policy;
 
 /// Types for the `GetRuntimeManagementConfig` operation.
 pub mod get_runtime_management_config;
@@ -204,6 +210,9 @@ pub mod put_function_scaling_config;
 
 /// Types for the `PutProvisionedConcurrencyConfig` operation.
 pub mod put_provisioned_concurrency_config;
+
+/// Types for the `PutResourcePolicy` operation.
+pub mod put_resource_policy;
 
 /// Types for the `PutRuntimeManagementConfig` operation.
 pub mod put_runtime_management_config;

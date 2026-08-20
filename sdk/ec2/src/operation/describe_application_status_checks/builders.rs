@@ -22,7 +22,7 @@ impl crate::operation::describe_application_status_checks::builders::DescribeApp
 }
 /// Fluent builder constructing a request to `DescribeApplicationStatusChecks`.
 ///
-/// <p>Describes one or more application status checks. Returns configuration details for your application status checks, including protocol, port, path, thresholds, and associations. The following rules apply:</p>
+/// <p>Describes application status checks, including configuration details such as protocol, port, path, thresholds, and associations. Results are paginated. Use the <code>NextToken</code> parameter to retrieve additional results. The following rules apply:</p>
 /// <ul>
 /// <li>
 /// <p>If you do not specify any application status check IDs, all checks in your account are returned.</p></li>

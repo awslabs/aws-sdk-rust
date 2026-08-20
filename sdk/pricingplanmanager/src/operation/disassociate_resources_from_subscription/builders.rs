@@ -23,7 +23,7 @@ impl crate::operation::disassociate_resources_from_subscription::builders::Disas
 /// Fluent builder constructing a request to `DisassociateResourcesFromSubscription`.
 ///
 /// <p>Removes one or more resources from an existing subscription.</p><note>
-/// <p>For subscriptions in the CloudFront plan family, the associated resources must always include exactly one Amazon CloudFront distribution and exactly one AWS WAF web ACL. You cannot remove these required resources.</p>
+/// <p>For subscriptions in the CloudFront plan family, the associated resources must always include exactly one Amazon CloudFront distribution and exactly one WAF web ACL. You cannot remove these required resources.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DisassociateResourcesFromSubscriptionFluentBuilder {

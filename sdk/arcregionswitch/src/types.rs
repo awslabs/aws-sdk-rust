@@ -109,6 +109,8 @@ pub use crate::types::_aurora_provisioned_scaling_configuration::AuroraProvision
 
 pub use crate::types::_neptune_global_database_configuration::NeptuneGlobalDatabaseConfiguration;
 
+pub use crate::types::_rds_switchover_read_replica_configuration::RdsSwitchoverReadReplicaConfiguration;
+
 pub use crate::types::_region_to_run_in::RegionToRunIn;
 
 pub use crate::types::_lambda_ungraceful::LambdaUngraceful;
@@ -143,6 +145,8 @@ pub use crate::types::_neptune_default_behavior::NeptuneDefaultBehavior;
 
 pub use crate::types::_neptune_ungraceful::NeptuneUngraceful;
 
+pub use crate::types::_rds_ungraceful::RdsUngraceful;
+
 pub use crate::types::_lambdas::Lambdas;
 
 pub use crate::types::_lambda_ungraceful_behavior::LambdaUngracefulBehavior;
@@ -164,6 +168,8 @@ pub use crate::types::_event_source_mapping::EventSourceMapping;
 pub use crate::types::_lambda_event_source_mapping_ungraceful_behavior::LambdaEventSourceMappingUngracefulBehavior;
 
 pub use crate::types::_neptune_ungraceful_behavior::NeptuneUngracefulBehavior;
+
+pub use crate::types::_rds_ungraceful_behavior::RdsUngracefulBehavior;
 
 pub use crate::types::_arc_routing_control_state::ArcRoutingControlState;
 
@@ -292,6 +298,12 @@ mod _plan;
 mod _rds_create_cross_region_replica_configuration;
 
 mod _rds_promote_read_replica_configuration;
+
+mod _rds_switchover_read_replica_configuration;
+
+mod _rds_ungraceful;
+
+mod _rds_ungraceful_behavior;
 
 mod _recovery_approach;
 

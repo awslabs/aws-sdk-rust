@@ -517,6 +517,21 @@ pub(crate) fn log_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn managed_instances_provider_correct_errors(
+    mut builder: crate::types::builders::ManagedInstancesProviderBuilder,
+) -> crate::types::builders::ManagedInstancesProviderBuilder {
+    if builder.infrastructure_role_arn.is_none() {
+        builder.infrastructure_role_arn = Some(Default::default())
+    }
+    if builder.instance_launch_template.is_none() {
+        builder.instance_launch_template = {
+            let builder = crate::types::builders::InstanceLaunchTemplateBuilder::default();
+            Some(crate::serde_util::instance_launch_template_correct_errors(builder).build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn repository_credentials_correct_errors(
     mut builder: crate::types::builders::RepositoryCredentialsBuilder,
 ) -> crate::types::builders::RepositoryCredentialsBuilder {
@@ -561,6 +576,21 @@ pub(crate) fn evaluate_on_exit_correct_errors(
 ) -> crate::types::builders::EvaluateOnExitBuilder {
     if builder.action.is_none() {
         builder.action = "no value was set".parse::<crate::types::RetryAction>().ok()
+    }
+    builder
+}
+
+pub(crate) fn instance_launch_template_correct_errors(
+    mut builder: crate::types::builders::InstanceLaunchTemplateBuilder,
+) -> crate::types::builders::InstanceLaunchTemplateBuilder {
+    if builder.ec2_instance_profile_arn.is_none() {
+        builder.ec2_instance_profile_arn = Some(Default::default())
+    }
+    if builder.network_configuration.is_none() {
+        builder.network_configuration = {
+            let builder = crate::types::builders::ManagedInstancesNetworkConfigurationBuilder::default();
+            Some(crate::serde_util::managed_instances_network_configuration_correct_errors(builder).build())
+        }
     }
     builder
 }
@@ -653,6 +683,18 @@ pub(crate) fn image_pull_secret_correct_errors(
 ) -> crate::types::builders::ImagePullSecretBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_instances_network_configuration_correct_errors(
+    mut builder: crate::types::builders::ManagedInstancesNetworkConfigurationBuilder,
+) -> crate::types::builders::ManagedInstancesNetworkConfigurationBuilder {
+    if builder.subnets.is_none() {
+        builder.subnets = Some(Default::default())
+    }
+    if builder.security_groups.is_none() {
+        builder.security_groups = Some(Default::default())
     }
     builder
 }

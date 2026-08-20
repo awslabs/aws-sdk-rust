@@ -165,6 +165,34 @@ impl UpdateVirtualInterfaceAttributesFluentBuilder {
     pub fn get_virtual_interface_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_virtual_interface_name()
     }
+    /// <p>The number of inbound IPv4 route prefixes to allocate to the virtual interface. Not applicable to public virtual interfaces.</p>
+    pub fn prefix_pool_allocated_count_ipv4(mut self, input: i32) -> Self {
+        self.inner = self.inner.prefix_pool_allocated_count_ipv4(input);
+        self
+    }
+    /// <p>The number of inbound IPv4 route prefixes to allocate to the virtual interface. Not applicable to public virtual interfaces.</p>
+    pub fn set_prefix_pool_allocated_count_ipv4(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_prefix_pool_allocated_count_ipv4(input);
+        self
+    }
+    /// <p>The number of inbound IPv4 route prefixes to allocate to the virtual interface. Not applicable to public virtual interfaces.</p>
+    pub fn get_prefix_pool_allocated_count_ipv4(&self) -> &::std::option::Option<i32> {
+        self.inner.get_prefix_pool_allocated_count_ipv4()
+    }
+    /// <p>The number of inbound IPv6 route prefixes to allocate to the virtual interface. Not applicable to public virtual interfaces.</p>
+    pub fn prefix_pool_allocated_count_ipv6(mut self, input: i32) -> Self {
+        self.inner = self.inner.prefix_pool_allocated_count_ipv6(input);
+        self
+    }
+    /// <p>The number of inbound IPv6 route prefixes to allocate to the virtual interface. Not applicable to public virtual interfaces.</p>
+    pub fn set_prefix_pool_allocated_count_ipv6(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_prefix_pool_allocated_count_ipv6(input);
+        self
+    }
+    /// <p>The number of inbound IPv6 route prefixes to allocate to the virtual interface. Not applicable to public virtual interfaces.</p>
+    pub fn get_prefix_pool_allocated_count_ipv6(&self) -> &::std::option::Option<i32> {
+        self.inner.get_prefix_pool_allocated_count_ipv6()
+    }
     /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. Use this to update the bandwidth allocation on an existing virtual interface.</p>
     pub fn rate_limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.rate_limit(input.into());

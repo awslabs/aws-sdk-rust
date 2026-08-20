@@ -295,6 +295,8 @@ pub use crate::types::_partner_app_maintenance_config::PartnerAppMaintenanceConf
 
 pub use crate::types::_partner_app_config::PartnerAppConfig;
 
+pub use crate::types::_idc_config_input::IdcConfigInput;
+
 pub use crate::types::_partner_app_auth_type::PartnerAppAuthType;
 
 pub use crate::types::_pipeline_definition_s3_location::PipelineDefinitionS3Location;
@@ -556,6 +558,8 @@ pub use crate::types::_partner_app_status::PartnerAppStatus;
 pub use crate::types::_error_info::ErrorInfo;
 
 pub use crate::types::_available_upgrade::AvailableUpgrade;
+
+pub use crate::types::_idc_config_output::IdcConfigOutput;
 
 pub use crate::types::_pipeline_status::PipelineStatus;
 
@@ -3322,6 +3326,10 @@ mod _hyperband_strategy_config;
 mod _iam_identity;
 
 mod _iam_policy_constraints;
+
+mod _idc_config_input;
+
+mod _idc_config_output;
 
 mod _identity_provider_o_auth_setting;
 

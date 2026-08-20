@@ -63,6 +63,9 @@ pub fn ser_ecs_task_properties(
     if let Some(var_20) = &input.enable_execute_command {
         object.key("enableExecuteCommand").boolean(*var_20);
     }
+    if let Some(var_21) = &input.network_mode {
+        object.key("networkMode").string(var_21.as_str());
+    }
     Ok(())
 }
 
@@ -156,6 +159,13 @@ where
                         }
                         "enableExecuteCommand" => {
                             builder = builder.set_enable_execute_command(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "networkMode" => {
+                            builder = builder.set_network_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

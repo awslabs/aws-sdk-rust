@@ -139,9 +139,10 @@ pub struct ComputeResourceUpdate {
     /// </note>
     /// <p>When updating a compute environment, changing this setting requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
     pub update_to_latest_image_version: ::std::option::Option<bool>,
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>You cannot change the type to or from <code>ECS_MANAGED_INSTANCES</code>.</p>
     pub r#type: ::std::option::Option<crate::types::CrType>,
     /// <p>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment. This parameter is overridden by the <code>imageIdOverride</code> member of the <code>Ec2Configuration</code> structure. To remove the custom AMI ID and use the default AMI ID, set this value to an empty string.</p>
     /// <p>When updating a compute environment, changing the AMI ID requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p><note>
@@ -154,6 +155,10 @@ pub struct ComputeResourceUpdate {
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't specify it.</p>
     /// </note>
     pub scaling_policy: ::std::option::Option<crate::types::ComputeScalingPolicy>,
+    /// <p>The updated configuration for the Amazon ECS Managed Instances capacity provider. This parameter is only valid when the compute environment type is <code>ECS_MANAGED_INSTANCES</code>. You cannot change <code>capacityOptionType</code> or <code>fipsEnabled</code> on update.</p>
+    pub managed_instances_provider: ::std::option::Option<crate::types::UpdateManagedInstancesProviderConfiguration>,
+    /// <p>The updated tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances. This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub capacity_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComputeResourceUpdate {
     /// <p>The minimum number of vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p><note>
@@ -329,9 +334,10 @@ impl ComputeResourceUpdate {
     pub fn update_to_latest_image_version(&self) -> ::std::option::Option<bool> {
         self.update_to_latest_image_version
     }
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>You cannot change the type to or from <code>ECS_MANAGED_INSTANCES</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CrType> {
         self.r#type.as_ref()
     }
@@ -349,6 +355,14 @@ impl ComputeResourceUpdate {
     /// </note>
     pub fn scaling_policy(&self) -> ::std::option::Option<&crate::types::ComputeScalingPolicy> {
         self.scaling_policy.as_ref()
+    }
+    /// <p>The updated configuration for the Amazon ECS Managed Instances capacity provider. This parameter is only valid when the compute environment type is <code>ECS_MANAGED_INSTANCES</code>. You cannot change <code>capacityOptionType</code> or <code>fipsEnabled</code> on update.</p>
+    pub fn managed_instances_provider(&self) -> ::std::option::Option<&crate::types::UpdateManagedInstancesProviderConfiguration> {
+        self.managed_instances_provider.as_ref()
+    }
+    /// <p>The updated tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances. This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub fn capacity_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.capacity_tags.as_ref()
     }
 }
 impl ComputeResourceUpdate {
@@ -380,6 +394,8 @@ pub struct ComputeResourceUpdateBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::CrType>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_policy: ::std::option::Option<crate::types::ComputeScalingPolicy>,
+    pub(crate) managed_instances_provider: ::std::option::Option<crate::types::UpdateManagedInstancesProviderConfiguration>,
+    pub(crate) capacity_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl ComputeResourceUpdateBuilder {
     /// <p>The minimum number of vCPUs that an environment should maintain (even if the compute environment is <code>DISABLED</code>).</p><note>
@@ -937,23 +953,26 @@ impl ComputeResourceUpdateBuilder {
     pub fn get_update_to_latest_image_version(&self) -> &::std::option::Option<bool> {
         &self.update_to_latest_image_version
     }
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>You cannot change the type to or from <code>ECS_MANAGED_INSTANCES</code>.</p>
     pub fn r#type(mut self, input: crate::types::CrType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>You cannot change the type to or from <code>ECS_MANAGED_INSTANCES</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::CrType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, or <code>FARGATE_SPOT</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>The type of compute environment: <code>EC2</code>, <code>SPOT</code>, <code>FARGATE</code>, <code>FARGATE_SPOT</code>, or <code>ECS_MANAGED_INSTANCES</code>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute environments</a> in the <i>Batch User Guide</i>.</p>
     /// <p>If you choose <code>SPOT</code>, you must also specify an Amazon EC2 Spot Fleet role with the <code>spotIamFleetRole</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/spot_fleet_IAM_role.html">Amazon EC2 spot fleet role</a> in the <i>Batch User Guide</i>.</p>
     /// <p>When updating a compute environment, changing the type of a compute environment requires an infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
+    /// <p>You cannot change the type to or from <code>ECS_MANAGED_INSTANCES</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::CrType> {
         &self.r#type
     }
@@ -1006,6 +1025,43 @@ impl ComputeResourceUpdateBuilder {
     pub fn get_scaling_policy(&self) -> &::std::option::Option<crate::types::ComputeScalingPolicy> {
         &self.scaling_policy
     }
+    /// <p>The updated configuration for the Amazon ECS Managed Instances capacity provider. This parameter is only valid when the compute environment type is <code>ECS_MANAGED_INSTANCES</code>. You cannot change <code>capacityOptionType</code> or <code>fipsEnabled</code> on update.</p>
+    pub fn managed_instances_provider(mut self, input: crate::types::UpdateManagedInstancesProviderConfiguration) -> Self {
+        self.managed_instances_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated configuration for the Amazon ECS Managed Instances capacity provider. This parameter is only valid when the compute environment type is <code>ECS_MANAGED_INSTANCES</code>. You cannot change <code>capacityOptionType</code> or <code>fipsEnabled</code> on update.</p>
+    pub fn set_managed_instances_provider(mut self, input: ::std::option::Option<crate::types::UpdateManagedInstancesProviderConfiguration>) -> Self {
+        self.managed_instances_provider = input;
+        self
+    }
+    /// <p>The updated configuration for the Amazon ECS Managed Instances capacity provider. This parameter is only valid when the compute environment type is <code>ECS_MANAGED_INSTANCES</code>. You cannot change <code>capacityOptionType</code> or <code>fipsEnabled</code> on update.</p>
+    pub fn get_managed_instances_provider(&self) -> &::std::option::Option<crate::types::UpdateManagedInstancesProviderConfiguration> {
+        &self.managed_instances_provider
+    }
+    /// Adds a key-value pair to `capacity_tags`.
+    ///
+    /// To override the contents of this collection use [`set_capacity_tags`](Self::set_capacity_tags).
+    ///
+    /// <p>The updated tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances. This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub fn capacity_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.capacity_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.capacity_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The updated tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances. This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub fn set_capacity_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.capacity_tags = input;
+        self
+    }
+    /// <p>The updated tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances. This parameter is only valid for <code>ECS_MANAGED_INSTANCES</code> compute environments. You must have the <code>batch:SetCapacityTags</code> permission on the compute environment resource to use this parameter.</p>
+    pub fn get_capacity_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.capacity_tags
+    }
     /// Consumes the builder and constructs a [`ComputeResourceUpdate`](crate::types::ComputeResourceUpdate).
     pub fn build(self) -> crate::types::ComputeResourceUpdate {
         crate::types::ComputeResourceUpdate {
@@ -1027,6 +1083,8 @@ impl ComputeResourceUpdateBuilder {
             r#type: self.r#type,
             image_id: self.image_id,
             scaling_policy: self.scaling_policy,
+            managed_instances_provider: self.managed_instances_provider,
+            capacity_tags: self.capacity_tags,
         }
     }
 }

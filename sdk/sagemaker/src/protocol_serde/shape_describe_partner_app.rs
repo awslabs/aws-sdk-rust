@@ -202,6 +202,13 @@ pub(crate) fn de_describe_partner_app(
                         depth + 1,
                     )?);
                 }
+                "IdcConfig" => {
+                    builder = builder.set_idc_config(crate::protocol_serde::shape_idc_config_output::de_idc_config_output(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

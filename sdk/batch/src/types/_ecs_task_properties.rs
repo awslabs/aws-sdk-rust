@@ -29,14 +29,19 @@ pub struct EcsTaskProperties {
     /// <p>If <code>task</code> is specified, all containers within the specified task share the same process namespace.</p>
     /// <p>If no value is specified, the default is a private namespace for each container. For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID settings</a> in the Docker run reference.</p>
     pub pid_mode: ::std::option::Option<::std::string::String>,
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources or Amazon ECS Managed Instances must not specify this parameter.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Use this to specify the operating system family (<code>operatingSystemFamily</code>) and CPU architecture (<code>cpuArchitecture</code>).</p>
+    /// <p>For Amazon ECS Managed Instances, the valid value for <code>operatingSystemFamily</code> is <code>LINUX</code> (default). The valid values for <code>cpuArchitecture</code> are <code>X86_64</code> and <code>ARM64</code>.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     /// <p>A list of volumes that are associated with the job.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
     pub enable_execute_command: ::std::option::Option<bool>,
+    /// <p>The network mode to use for the task. Valid values: <code>host</code>. When not specified, the default is <code>host</code>.</p>
+    /// <p>With <code>host</code> mode, the container shares the host instance's network stack directly. When running tasks that use the <code>host</code> network mode, do not run containers using the root user (UID 0). Running as root grants unrestricted access to host resources and increases the attack surface.</p>
+    /// <p>This parameter only applies to jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability). It cannot be specified for Fargate or Amazon EC2 platform job definitions.</p>
+    pub network_mode: ::std::option::Option<::std::string::String>,
 }
 impl EcsTaskProperties {
     /// <p>This object is a list of containers.</p>
@@ -80,11 +85,12 @@ impl EcsTaskProperties {
     pub fn pid_mode(&self) -> ::std::option::Option<&str> {
         self.pid_mode.as_deref()
     }
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources or Amazon ECS Managed Instances must not specify this parameter.</p>
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Use this to specify the operating system family (<code>operatingSystemFamily</code>) and CPU architecture (<code>cpuArchitecture</code>).</p>
+    /// <p>For Amazon ECS Managed Instances, the valid value for <code>operatingSystemFamily</code> is <code>LINUX</code> (default). The valid values for <code>cpuArchitecture</code> are <code>X86_64</code> and <code>ARM64</code>.</p>
     pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
@@ -97,6 +103,12 @@ impl EcsTaskProperties {
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
     pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
         self.enable_execute_command
+    }
+    /// <p>The network mode to use for the task. Valid values: <code>host</code>. When not specified, the default is <code>host</code>.</p>
+    /// <p>With <code>host</code> mode, the container shares the host instance's network stack directly. When running tasks that use the <code>host</code> network mode, do not run containers using the root user (UID 0). Running as root grants unrestricted access to host resources and increases the attack surface.</p>
+    /// <p>This parameter only applies to jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability). It cannot be specified for Fargate or Amazon EC2 platform job definitions.</p>
+    pub fn network_mode(&self) -> ::std::option::Option<&str> {
+        self.network_mode.as_deref()
     }
 }
 impl EcsTaskProperties {
@@ -121,6 +133,7 @@ pub struct EcsTaskPropertiesBuilder {
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
+    pub(crate) network_mode: ::std::option::Option<::std::string::String>,
 }
 impl EcsTaskPropertiesBuilder {
     /// Appends an item to `containers`.
@@ -260,31 +273,34 @@ impl EcsTaskPropertiesBuilder {
     pub fn get_pid_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.pid_mode
     }
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources or Amazon ECS Managed Instances must not specify this parameter.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources or Amazon ECS Managed Instances must not specify this parameter.</p>
     pub fn set_network_configuration(mut self, input: ::std::option::Option<crate::types::NetworkConfiguration>) -> Self {
         self.network_configuration = input;
         self
     }
-    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
+    /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources or Amazon ECS Managed Instances must not specify this parameter.</p>
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Use this to specify the operating system family (<code>operatingSystemFamily</code>) and CPU architecture (<code>cpuArchitecture</code>).</p>
+    /// <p>For Amazon ECS Managed Instances, the valid value for <code>operatingSystemFamily</code> is <code>LINUX</code> (default). The valid values for <code>cpuArchitecture</code> are <code>X86_64</code> and <code>ARM64</code>.</p>
     pub fn runtime_platform(mut self, input: crate::types::RuntimePlatform) -> Self {
         self.runtime_platform = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Use this to specify the operating system family (<code>operatingSystemFamily</code>) and CPU architecture (<code>cpuArchitecture</code>).</p>
+    /// <p>For Amazon ECS Managed Instances, the valid value for <code>operatingSystemFamily</code> is <code>LINUX</code> (default). The valid values for <code>cpuArchitecture</code> are <code>X86_64</code> and <code>ARM64</code>.</p>
     pub fn set_runtime_platform(mut self, input: ::std::option::Option<crate::types::RuntimePlatform>) -> Self {
         self.runtime_platform = input;
         self
     }
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Use this to specify the operating system family (<code>operatingSystemFamily</code>) and CPU architecture (<code>cpuArchitecture</code>).</p>
+    /// <p>For Amazon ECS Managed Instances, the valid value for <code>operatingSystemFamily</code> is <code>LINUX</code> (default). The valid values for <code>cpuArchitecture</code> are <code>X86_64</code> and <code>ARM64</code>.</p>
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
         &self.runtime_platform
     }
@@ -322,6 +338,26 @@ impl EcsTaskPropertiesBuilder {
     pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
         &self.enable_execute_command
     }
+    /// <p>The network mode to use for the task. Valid values: <code>host</code>. When not specified, the default is <code>host</code>.</p>
+    /// <p>With <code>host</code> mode, the container shares the host instance's network stack directly. When running tasks that use the <code>host</code> network mode, do not run containers using the root user (UID 0). Running as root grants unrestricted access to host resources and increases the attack surface.</p>
+    /// <p>This parameter only applies to jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability). It cannot be specified for Fargate or Amazon EC2 platform job definitions.</p>
+    pub fn network_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_mode = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network mode to use for the task. Valid values: <code>host</code>. When not specified, the default is <code>host</code>.</p>
+    /// <p>With <code>host</code> mode, the container shares the host instance's network stack directly. When running tasks that use the <code>host</code> network mode, do not run containers using the root user (UID 0). Running as root grants unrestricted access to host resources and increases the attack surface.</p>
+    /// <p>This parameter only applies to jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability). It cannot be specified for Fargate or Amazon EC2 platform job definitions.</p>
+    pub fn set_network_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_mode = input;
+        self
+    }
+    /// <p>The network mode to use for the task. Valid values: <code>host</code>. When not specified, the default is <code>host</code>.</p>
+    /// <p>With <code>host</code> mode, the container shares the host instance's network stack directly. When running tasks that use the <code>host</code> network mode, do not run containers using the root user (UID 0). Running as root grants unrestricted access to host resources and increases the attack surface.</p>
+    /// <p>This parameter only applies to jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability). It cannot be specified for Fargate or Amazon EC2 platform job definitions.</p>
+    pub fn get_network_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_mode
+    }
     /// Consumes the builder and constructs a [`EcsTaskProperties`](crate::types::EcsTaskProperties).
     pub fn build(self) -> crate::types::EcsTaskProperties {
         crate::types::EcsTaskProperties {
@@ -336,6 +372,7 @@ impl EcsTaskPropertiesBuilder {
             runtime_platform: self.runtime_platform,
             volumes: self.volumes,
             enable_execute_command: self.enable_execute_command,
+            network_mode: self.network_mode,
         }
     }
 }

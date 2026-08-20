@@ -309,4 +309,18 @@ impl SendEmailFluentBuilder {
     pub fn get_list_management_options(&self) -> &::std::option::Option<crate::types::ListManagementOptions> {
         self.inner.get_list_management_options()
     }
+    /// <p>An object that overrides, for this message only, settings that would otherwise apply to it. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn configuration_overrides(mut self, input: crate::types::ConfigurationOverrides) -> Self {
+        self.inner = self.inner.configuration_overrides(input);
+        self
+    }
+    /// <p>An object that overrides, for this message only, settings that would otherwise apply to it. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ConfigurationOverrides>) -> Self {
+        self.inner = self.inner.set_configuration_overrides(input);
+        self
+    }
+    /// <p>An object that overrides, for this message only, settings that would otherwise apply to it. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+        self.inner.get_configuration_overrides()
+    }
 }

@@ -89,6 +89,8 @@ pub use crate::types::_launch_template_specification::LaunchTemplateSpecificatio
 
 pub use crate::types::_compute_scaling_policy::ComputeScalingPolicy;
 
+pub use crate::types::_managed_instances_provider::ManagedInstancesProvider;
+
 pub use crate::types::_container_insights::ContainerInsights;
 
 pub use crate::types::_compute_environment_order::ComputeEnvironmentOrder;
@@ -167,9 +169,15 @@ pub use crate::types::_eks_pod_properties_override::EksPodPropertiesOverride;
 
 pub use crate::types::_cr_update_allocation_strategy::CrUpdateAllocationStrategy;
 
+pub use crate::types::_update_managed_instances_provider_configuration::UpdateManagedInstancesProviderConfiguration;
+
 pub use crate::types::_userdata_type::UserdataType;
 
 pub use crate::types::_ec2_configuration::Ec2Configuration;
+
+pub use crate::types::_instance_launch_template::InstanceLaunchTemplate;
+
+pub use crate::types::_infrastructure_optimization::InfrastructureOptimization;
 
 pub use crate::types::_job_state_time_limit_actions_state::JobStateTimeLimitActionsState;
 
@@ -243,7 +251,19 @@ pub use crate::types::_node_property_override::NodePropertyOverride;
 
 pub use crate::types::_task_properties_override::TaskPropertiesOverride;
 
+pub use crate::types::_instance_launch_template_update::InstanceLaunchTemplateUpdate;
+
 pub use crate::types::_launch_template_specification_override::LaunchTemplateSpecificationOverride;
+
+pub use crate::types::_managed_instances_network_configuration::ManagedInstancesNetworkConfiguration;
+
+pub use crate::types::_instance_requirements_request::InstanceRequirementsRequest;
+
+pub use crate::types::_managed_instances_storage_configuration::ManagedInstancesStorageConfiguration;
+
+pub use crate::types::_capacity_reservation_request::CapacityReservationRequest;
+
+pub use crate::types::_managed_instances_local_storage_configuration::ManagedInstancesLocalStorageConfiguration;
 
 pub use crate::types::_attempt_detail::AttemptDetail;
 
@@ -358,6 +378,8 @@ mod _attempt_ecs_task_details;
 mod _attempt_task_container_details;
 
 mod _capacity_limit;
+
+mod _capacity_reservation_request;
 
 mod _ce_state;
 
@@ -497,6 +519,14 @@ mod _host;
 
 mod _image_pull_secret;
 
+mod _infrastructure_optimization;
+
+mod _instance_launch_template;
+
+mod _instance_launch_template_update;
+
+mod _instance_requirements_request;
+
 mod _job_capacity_usage_summary;
 
 mod _job_definition;
@@ -544,6 +574,14 @@ mod _list_jobs_by_consumable_resource_summary;
 mod _log_configuration;
 
 mod _log_driver;
+
+mod _managed_instances_local_storage_configuration;
+
+mod _managed_instances_network_configuration;
+
+mod _managed_instances_provider;
+
+mod _managed_instances_storage_configuration;
 
 mod _mount_point;
 
@@ -672,6 +710,8 @@ mod _task_properties_override;
 mod _tmpfs;
 
 mod _ulimit;
+
+mod _update_managed_instances_provider_configuration;
 
 mod _update_policy;
 

@@ -184,11 +184,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RegisterImage
                 captured.insert("ImageLocation", value);
             }
         }
-        if requested.should_capture("UefiData") {
-            if let ::std::option::Option::Some(value) = input.uefi_data.as_deref() {
-                captured.insert("UefiData", value);
-            }
-        }
         if requested.should_capture("Name") {
             if let ::std::option::Option::Some(value) = input.name.as_deref() {
                 captured.insert("Name", value);

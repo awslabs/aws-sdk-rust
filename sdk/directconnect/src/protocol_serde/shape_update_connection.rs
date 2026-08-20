@@ -247,6 +247,34 @@ pub(crate) fn de_update_connection(
                     builder =
                         builder.set_partner_interconnect_mac_sec_capable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "prefixPoolSizeIpv4" => {
+                    builder = builder.set_prefix_pool_size_ipv4(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "prefixPoolSizeIpv6" => {
+                    builder = builder.set_prefix_pool_size_ipv6(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "prefixPoolUnallocatedCountIpv4" => {
+                    builder = builder.set_prefix_pool_unallocated_count_ipv4(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
+                "prefixPoolUnallocatedCountIpv6" => {
+                    builder = builder.set_prefix_pool_unallocated_count_ipv6(
+                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                            .map(i32::try_from)
+                            .transpose()?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

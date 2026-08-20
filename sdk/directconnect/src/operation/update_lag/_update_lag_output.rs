@@ -63,6 +63,14 @@ pub struct UpdateLagOutput {
     pub encryption_mode: ::std::option::Option<::std::string::String>,
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     pub mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub prefix_pool_size_ipv4: ::std::option::Option<i32>,
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub prefix_pool_size_ipv6: ::std::option::Option<i32>,
+    /// <p>The number of inbound IPv4 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
+    /// <p>The number of inbound IPv6 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
     /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
     pub rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
     _request_id: Option<String>,
@@ -175,6 +183,22 @@ impl UpdateLagOutput {
     pub fn mac_sec_keys(&self) -> &[crate::types::MacSecKey] {
         self.mac_sec_keys.as_deref().unwrap_or_default()
     }
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn prefix_pool_size_ipv4(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_size_ipv4
+    }
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn prefix_pool_size_ipv6(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_size_ipv6
+    }
+    /// <p>The number of inbound IPv4 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn prefix_pool_unallocated_count_ipv4(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_unallocated_count_ipv4
+    }
+    /// <p>The number of inbound IPv6 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn prefix_pool_unallocated_count_ipv6(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_unallocated_count_ipv6
+    }
     /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
     pub fn rate_limiter_status(&self) -> ::std::option::Option<&crate::types::RateLimiterStatus> {
         self.rate_limiter_status.as_ref()
@@ -217,6 +241,10 @@ pub struct UpdateLagOutputBuilder {
     pub(crate) mac_sec_capable: ::std::option::Option<bool>,
     pub(crate) encryption_mode: ::std::option::Option<::std::string::String>,
     pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
+    pub(crate) prefix_pool_size_ipv4: ::std::option::Option<i32>,
+    pub(crate) prefix_pool_size_ipv6: ::std::option::Option<i32>,
+    pub(crate) prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
+    pub(crate) prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
     pub(crate) rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
     _request_id: Option<String>,
 }
@@ -584,6 +612,62 @@ impl UpdateLagOutputBuilder {
     pub fn get_mac_sec_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>> {
         &self.mac_sec_keys
     }
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn prefix_pool_size_ipv4(mut self, input: i32) -> Self {
+        self.prefix_pool_size_ipv4 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn set_prefix_pool_size_ipv4(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_size_ipv4 = input;
+        self
+    }
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn get_prefix_pool_size_ipv4(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_size_ipv4
+    }
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn prefix_pool_size_ipv6(mut self, input: i32) -> Self {
+        self.prefix_pool_size_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn set_prefix_pool_size_ipv6(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_size_ipv6 = input;
+        self
+    }
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the LAG. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn get_prefix_pool_size_ipv6(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_size_ipv6
+    }
+    /// <p>The number of inbound IPv4 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn prefix_pool_unallocated_count_ipv4(mut self, input: i32) -> Self {
+        self.prefix_pool_unallocated_count_ipv4 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of inbound IPv4 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn set_prefix_pool_unallocated_count_ipv4(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_unallocated_count_ipv4 = input;
+        self
+    }
+    /// <p>The number of inbound IPv4 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn get_prefix_pool_unallocated_count_ipv4(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_unallocated_count_ipv4
+    }
+    /// <p>The number of inbound IPv6 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn prefix_pool_unallocated_count_ipv6(mut self, input: i32) -> Self {
+        self.prefix_pool_unallocated_count_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of inbound IPv6 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn set_prefix_pool_unallocated_count_ipv6(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_unallocated_count_ipv6 = input;
+        self
+    }
+    /// <p>The number of inbound IPv6 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
+    pub fn get_prefix_pool_unallocated_count_ipv6(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_unallocated_count_ipv6
+    }
     /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
     pub fn rate_limiter_status(mut self, input: crate::types::RateLimiterStatus) -> Self {
         self.rate_limiter_status = ::std::option::Option::Some(input);
@@ -631,6 +715,10 @@ impl UpdateLagOutputBuilder {
             mac_sec_capable: self.mac_sec_capable,
             encryption_mode: self.encryption_mode,
             mac_sec_keys: self.mac_sec_keys,
+            prefix_pool_size_ipv4: self.prefix_pool_size_ipv4,
+            prefix_pool_size_ipv6: self.prefix_pool_size_ipv6,
+            prefix_pool_unallocated_count_ipv4: self.prefix_pool_unallocated_count_ipv4,
+            prefix_pool_unallocated_count_ipv6: self.prefix_pool_unallocated_count_ipv6,
             rate_limiter_status: self.rate_limiter_status,
             _request_id: self._request_id,
         }

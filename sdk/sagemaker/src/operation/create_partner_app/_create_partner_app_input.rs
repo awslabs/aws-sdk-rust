@@ -17,7 +17,15 @@ pub struct CreatePartnerAppInput {
     pub tier: ::std::option::Option<::std::string::String>,
     /// <p>Configuration settings for the SageMaker Partner AI App.</p>
     pub application_config: ::std::option::Option<crate::types::PartnerAppConfig>,
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>Specifies the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App. Specify this parameter when <code>AuthType</code> is <code>IDC</code>. Apps that use <code>IAM</code> authorization don't use this parameter.</p>
+    pub idc_config: ::std::option::Option<crate::types::IdcConfigInput>,
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity. Specify the Identity Center instance to use in <code>IdcConfig</code>.</p></li>
+    /// </ul>
     pub auth_type: ::std::option::Option<crate::types::PartnerAppAuthType>,
     /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.</p>
     pub enable_iam_session_based_identity: ::std::option::Option<bool>,
@@ -57,7 +65,17 @@ impl CreatePartnerAppInput {
     pub fn application_config(&self) -> ::std::option::Option<&crate::types::PartnerAppConfig> {
         self.application_config.as_ref()
     }
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>Specifies the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App. Specify this parameter when <code>AuthType</code> is <code>IDC</code>. Apps that use <code>IAM</code> authorization don't use this parameter.</p>
+    pub fn idc_config(&self) -> ::std::option::Option<&crate::types::IdcConfigInput> {
+        self.idc_config.as_ref()
+    }
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity. Specify the Identity Center instance to use in <code>IdcConfig</code>.</p></li>
+    /// </ul>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::PartnerAppAuthType> {
         self.auth_type.as_ref()
     }
@@ -98,6 +116,7 @@ pub struct CreatePartnerAppInputBuilder {
     pub(crate) maintenance_config: ::std::option::Option<crate::types::PartnerAppMaintenanceConfig>,
     pub(crate) tier: ::std::option::Option<::std::string::String>,
     pub(crate) application_config: ::std::option::Option<crate::types::PartnerAppConfig>,
+    pub(crate) idc_config: ::std::option::Option<crate::types::IdcConfigInput>,
     pub(crate) auth_type: ::std::option::Option<crate::types::PartnerAppAuthType>,
     pub(crate) enable_iam_session_based_identity: ::std::option::Option<bool>,
     pub(crate) enable_auto_minor_version_upgrade: ::std::option::Option<bool>,
@@ -207,18 +226,50 @@ impl CreatePartnerAppInputBuilder {
     pub fn get_application_config(&self) -> &::std::option::Option<crate::types::PartnerAppConfig> {
         &self.application_config
     }
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>Specifies the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App. Specify this parameter when <code>AuthType</code> is <code>IDC</code>. Apps that use <code>IAM</code> authorization don't use this parameter.</p>
+    pub fn idc_config(mut self, input: crate::types::IdcConfigInput) -> Self {
+        self.idc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App. Specify this parameter when <code>AuthType</code> is <code>IDC</code>. Apps that use <code>IAM</code> authorization don't use this parameter.</p>
+    pub fn set_idc_config(mut self, input: ::std::option::Option<crate::types::IdcConfigInput>) -> Self {
+        self.idc_config = input;
+        self
+    }
+    /// <p>Specifies the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App. Specify this parameter when <code>AuthType</code> is <code>IDC</code>. Apps that use <code>IAM</code> authorization don't use this parameter.</p>
+    pub fn get_idc_config(&self) -> &::std::option::Option<crate::types::IdcConfigInput> {
+        &self.idc_config
+    }
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity. Specify the Identity Center instance to use in <code>IdcConfig</code>.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn auth_type(mut self, input: crate::types::PartnerAppAuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity. Specify the Identity Center instance to use in <code>IdcConfig</code>.</p></li>
+    /// </ul>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::PartnerAppAuthType>) -> Self {
         self.auth_type = input;
         self
     }
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity. Specify the Identity Center instance to use in <code>IdcConfig</code>.</p></li>
+    /// </ul>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::PartnerAppAuthType> {
         &self.auth_type
     }
@@ -296,6 +347,7 @@ impl CreatePartnerAppInputBuilder {
             maintenance_config: self.maintenance_config,
             tier: self.tier,
             application_config: self.application_config,
+            idc_config: self.idc_config,
             auth_type: self.auth_type,
             enable_iam_session_based_identity: self.enable_iam_session_based_identity,
             enable_auto_minor_version_upgrade: self.enable_auto_minor_version_upgrade,

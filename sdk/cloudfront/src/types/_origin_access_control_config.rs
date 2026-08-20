@@ -8,7 +8,7 @@ pub struct OriginAccessControlConfig {
     pub name: ::std::string::String,
     /// <p>A description of the origin access control.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid values are <code>sigv4</code> and <code>sigv4a</code>.</p>
     pub signing_protocol: crate::types::OriginAccessControlSigningProtocols,
     /// <p>Specifies which requests CloudFront signs (adds authentication information to). Specify <code>always</code> for the most common use case. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html#oac-advanced-settings">origin access control advanced settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     /// <p>This field can have one of the following values:</p>
@@ -34,7 +34,7 @@ impl OriginAccessControlConfig {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid values are <code>sigv4</code> and <code>sigv4a</code>.</p>
     pub fn signing_protocol(&self) -> &crate::types::OriginAccessControlSigningProtocols {
         &self.signing_protocol
     }
@@ -103,18 +103,18 @@ impl OriginAccessControlConfigBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid values are <code>sigv4</code> and <code>sigv4a</code>.</p>
     /// This field is required.
     pub fn signing_protocol(mut self, input: crate::types::OriginAccessControlSigningProtocols) -> Self {
         self.signing_protocol = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid values are <code>sigv4</code> and <code>sigv4a</code>.</p>
     pub fn set_signing_protocol(mut self, input: ::std::option::Option<crate::types::OriginAccessControlSigningProtocols>) -> Self {
         self.signing_protocol = input;
         self
     }
-    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.</p>
+    /// <p>The signing protocol of the origin access control, which determines how CloudFront signs (authenticates) requests. The only valid values are <code>sigv4</code> and <code>sigv4a</code>.</p>
     pub fn get_signing_protocol(&self) -> &::std::option::Option<crate::types::OriginAccessControlSigningProtocols> {
         &self.signing_protocol
     }

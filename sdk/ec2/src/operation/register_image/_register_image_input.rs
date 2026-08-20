@@ -2,7 +2,7 @@
 
 /// <p>Contains the parameters for RegisterImage.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RegisterImageInput {
     /// <p>The full path to your AMI manifest in Amazon S3 storage. The specified bucket must have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned ACL</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
     pub image_location: ::std::option::Option<::std::string::String>,
@@ -153,6 +153,30 @@ impl RegisterImageInput {
         self.ena_support
     }
 }
+impl ::std::fmt::Debug for RegisterImageInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisterImageInput");
+        formatter.field("image_location", &self.image_location);
+        formatter.field("billing_products", &self.billing_products);
+        formatter.field("boot_mode", &self.boot_mode);
+        formatter.field("tpm_support", &self.tpm_support);
+        formatter.field("uefi_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("imds_support", &self.imds_support);
+        formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("dry_run", &self.dry_run);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("architecture", &self.architecture);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("root_device_name", &self.root_device_name);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("virtualization_type", &self.virtualization_type);
+        formatter.field("sriov_net_support", &self.sriov_net_support);
+        formatter.field("ena_support", &self.ena_support);
+        formatter.finish()
+    }
+}
 impl RegisterImageInput {
     /// Creates a new builder-style object to manufacture [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
     pub fn builder() -> crate::operation::register_image::builders::RegisterImageInputBuilder {
@@ -161,7 +185,7 @@ impl RegisterImageInput {
 }
 
 /// A builder for [`RegisterImageInput`](crate::operation::register_image::RegisterImageInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RegisterImageInputBuilder {
     pub(crate) image_location: ::std::option::Option<::std::string::String>,
@@ -527,5 +551,29 @@ impl RegisterImageInputBuilder {
             sriov_net_support: self.sriov_net_support,
             ena_support: self.ena_support,
         })
+    }
+}
+impl ::std::fmt::Debug for RegisterImageInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RegisterImageInputBuilder");
+        formatter.field("image_location", &self.image_location);
+        formatter.field("billing_products", &self.billing_products);
+        formatter.field("boot_mode", &self.boot_mode);
+        formatter.field("tpm_support", &self.tpm_support);
+        formatter.field("uefi_data", &"*** Sensitive Data Redacted ***");
+        formatter.field("imds_support", &self.imds_support);
+        formatter.field("tag_specifications", &self.tag_specifications);
+        formatter.field("dry_run", &self.dry_run);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("architecture", &self.architecture);
+        formatter.field("kernel_id", &self.kernel_id);
+        formatter.field("ramdisk_id", &self.ramdisk_id);
+        formatter.field("root_device_name", &self.root_device_name);
+        formatter.field("block_device_mappings", &self.block_device_mappings);
+        formatter.field("virtualization_type", &self.virtualization_type);
+        formatter.field("sriov_net_support", &self.sriov_net_support);
+        formatter.field("ena_support", &self.ena_support);
+        formatter.finish()
     }
 }

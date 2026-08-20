@@ -257,6 +257,8 @@ mod delete_layer_version;
 
 mod delete_provisioned_concurrency_config;
 
+mod delete_resource_policy;
+
 mod get_account_settings;
 
 mod get_alias;
@@ -298,6 +300,8 @@ mod get_layer_version_policy;
 mod get_policy;
 
 mod get_provisioned_concurrency_config;
+
+mod get_resource_policy;
 
 mod get_runtime_management_config;
 
@@ -352,6 +356,8 @@ mod put_function_recursion_config;
 mod put_function_scaling_config;
 
 mod put_provisioned_concurrency_config;
+
+mod put_resource_policy;
 
 mod put_runtime_management_config;
 

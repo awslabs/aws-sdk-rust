@@ -15,53 +15,59 @@ pub fn ser_send_bulk_email_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.default_content {
+    if let Some(var_5) = &input.configuration_overrides {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("DefaultContent").start_object();
-        crate::protocol_serde::shape_bulk_email_content::ser_bulk_email_content(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_6 = object.key("ConfigurationOverrides").start_object();
+        crate::protocol_serde::shape_configuration_overrides::ser_configuration_overrides(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_8) = &input.default_email_tags {
-        let mut array_9 = object.key("DefaultEmailTags").start_array();
-        for item_10 in var_8 {
+    if let Some(var_7) = &input.configuration_set_name {
+        object.key("ConfigurationSetName").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.default_content {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("DefaultContent").start_object();
+        crate::protocol_serde::shape_bulk_email_content::ser_bulk_email_content(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.default_email_tags {
+        let mut array_11 = object.key("DefaultEmailTags").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_message_tag::ser_message_tag(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_message_tag::ser_message_tag(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.endpoint_id {
-        object.key("EndpointId").string(var_12.as_str());
+    if let Some(var_14) = &input.endpoint_id {
+        object.key("EndpointId").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.feedback_forwarding_email_address {
-        object.key("FeedbackForwardingEmailAddress").string(var_13.as_str());
+    if let Some(var_15) = &input.feedback_forwarding_email_address {
+        object.key("FeedbackForwardingEmailAddress").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.feedback_forwarding_email_address_identity_arn {
-        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_14.as_str());
+    if let Some(var_16) = &input.feedback_forwarding_email_address_identity_arn {
+        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.from_email_address {
-        object.key("FromEmailAddress").string(var_15.as_str());
+    if let Some(var_17) = &input.from_email_address {
+        object.key("FromEmailAddress").string(var_17.as_str());
     }
-    if let Some(var_16) = &input.from_email_address_identity_arn {
-        object.key("FromEmailAddressIdentityArn").string(var_16.as_str());
+    if let Some(var_18) = &input.from_email_address_identity_arn {
+        object.key("FromEmailAddressIdentityArn").string(var_18.as_str());
     }
-    if let Some(var_17) = &input.reply_to_addresses {
-        let mut array_18 = object.key("ReplyToAddresses").start_array();
-        for item_19 in var_17 {
+    if let Some(var_19) = &input.reply_to_addresses {
+        let mut array_20 = object.key("ReplyToAddresses").start_array();
+        for item_21 in var_19 {
             {
-                array_18.value().string(item_19.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_18.finish();
+        array_20.finish();
     }
-    if let Some(var_20) = &input.tenant_name {
-        object.key("TenantName").string(var_20.as_str());
+    if let Some(var_22) = &input.tenant_name {
+        object.key("TenantName").string(var_22.as_str());
     }
     Ok(())
 }

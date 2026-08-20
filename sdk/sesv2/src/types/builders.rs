@@ -81,6 +81,8 @@ pub use crate::types::_suppression_validation_options::SuppressionValidationOpti
 
 pub use crate::types::_bulk_email_content::BulkEmailContentBuilder;
 
+pub use crate::types::_configuration_overrides::ConfigurationOverridesBuilder;
+
 pub use crate::types::_destination::DestinationBuilder;
 
 pub use crate::types::_list_management_options::ListManagementOptionsBuilder;
@@ -188,6 +190,8 @@ pub use crate::types::_tenant_info::TenantInfoBuilder;
 pub use crate::types::_suppression_condition_threshold::SuppressionConditionThresholdBuilder;
 
 pub use crate::types::_bulk_email_entry::BulkEmailEntryBuilder;
+
+pub use crate::types::_tracking_configuration_overrides::TrackingConfigurationOverridesBuilder;
 
 pub use crate::types::_bulk_email_entry_result::BulkEmailEntryResultBuilder;
 

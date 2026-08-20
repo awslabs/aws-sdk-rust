@@ -26,12 +26,14 @@ pub struct EcsTaskDetails {
     pub pid_mode: ::std::option::Option<::std::string::String>,
     /// <p>The network configuration for jobs that are running on Fargate resources. Jobs that are running on Amazon EC2 resources must not specify this parameter.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Contains the operating system family and CPU architecture of the task.</p>
     pub runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     /// <p>A list of data volumes used in a job.</p>
     pub volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
     pub enable_execute_command: ::std::option::Option<bool>,
+    /// <p>The network mode configured for the task. This field is populated for jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability) and always returns <code>host</code>.</p>
+    pub network_mode: ::std::option::Option<::std::string::String>,
 }
 impl EcsTaskDetails {
     /// <p>A list of containers that are included in the <code>taskProperties</code> list.</p>
@@ -78,7 +80,7 @@ impl EcsTaskDetails {
     pub fn network_configuration(&self) -> ::std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Contains the operating system family and CPU architecture of the task.</p>
     pub fn runtime_platform(&self) -> ::std::option::Option<&crate::types::RuntimePlatform> {
         self.runtime_platform.as_ref()
     }
@@ -91,6 +93,10 @@ impl EcsTaskDetails {
     /// <p>Determines whether execute command functionality is turned on for this task. If <code>true</code>, execute command functionality is turned on all the containers in the task.</p>
     pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
         self.enable_execute_command
+    }
+    /// <p>The network mode configured for the task. This field is populated for jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability) and always returns <code>host</code>.</p>
+    pub fn network_mode(&self) -> ::std::option::Option<&str> {
+        self.network_mode.as_deref()
     }
 }
 impl EcsTaskDetails {
@@ -117,6 +123,7 @@ pub struct EcsTaskDetailsBuilder {
     pub(crate) runtime_platform: ::std::option::Option<crate::types::RuntimePlatform>,
     pub(crate) volumes: ::std::option::Option<::std::vec::Vec<crate::types::Volume>>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
+    pub(crate) network_mode: ::std::option::Option<::std::string::String>,
 }
 impl EcsTaskDetailsBuilder {
     /// Appends an item to `containers`.
@@ -271,17 +278,17 @@ impl EcsTaskDetailsBuilder {
     pub fn get_network_configuration(&self) -> &::std::option::Option<crate::types::NetworkConfiguration> {
         &self.network_configuration
     }
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Contains the operating system family and CPU architecture of the task.</p>
     pub fn runtime_platform(mut self, input: crate::types::RuntimePlatform) -> Self {
         self.runtime_platform = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Contains the operating system family and CPU architecture of the task.</p>
     pub fn set_runtime_platform(mut self, input: ::std::option::Option<crate::types::RuntimePlatform>) -> Self {
         self.runtime_platform = input;
         self
     }
-    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate.</p>
+    /// <p>An object that represents the compute environment architecture for Batch jobs on Fargate or Amazon ECS Managed Instances. Contains the operating system family and CPU architecture of the task.</p>
     pub fn get_runtime_platform(&self) -> &::std::option::Option<crate::types::RuntimePlatform> {
         &self.runtime_platform
     }
@@ -319,6 +326,20 @@ impl EcsTaskDetailsBuilder {
     pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
         &self.enable_execute_command
     }
+    /// <p>The network mode configured for the task. This field is populated for jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability) and always returns <code>host</code>.</p>
+    pub fn network_mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.network_mode = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The network mode configured for the task. This field is populated for jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability) and always returns <code>host</code>.</p>
+    pub fn set_network_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.network_mode = input;
+        self
+    }
+    /// <p>The network mode configured for the task. This field is populated for jobs running on Amazon ECS Managed Instances (<code>MANAGED_INSTANCES</code> platform capability) and always returns <code>host</code>.</p>
+    pub fn get_network_mode(&self) -> &::std::option::Option<::std::string::String> {
+        &self.network_mode
+    }
     /// Consumes the builder and constructs a [`EcsTaskDetails`](crate::types::EcsTaskDetails).
     pub fn build(self) -> crate::types::EcsTaskDetails {
         crate::types::EcsTaskDetails {
@@ -335,6 +356,7 @@ impl EcsTaskDetailsBuilder {
             runtime_platform: self.runtime_platform,
             volumes: self.volumes,
             enable_execute_command: self.enable_execute_command,
+            network_mode: self.network_mode,
         }
     }
 }

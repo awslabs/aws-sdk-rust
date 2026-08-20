@@ -74,6 +74,14 @@ pub struct CreateConnectionOutput {
     pub rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
     /// <p>Indicates whether the interconnect hosting this connection supports MAC Security (MACsec).</p>
     pub partner_interconnect_mac_sec_capable: ::std::option::Option<bool>,
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub prefix_pool_size_ipv4: ::std::option::Option<i32>,
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub prefix_pool_size_ipv6: ::std::option::Option<i32>,
+    /// <p>The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
+    /// <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl CreateConnectionOutput {
@@ -199,6 +207,22 @@ impl CreateConnectionOutput {
     pub fn partner_interconnect_mac_sec_capable(&self) -> ::std::option::Option<bool> {
         self.partner_interconnect_mac_sec_capable
     }
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub fn prefix_pool_size_ipv4(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_size_ipv4
+    }
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub fn prefix_pool_size_ipv6(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_size_ipv6
+    }
+    /// <p>The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub fn prefix_pool_unallocated_count_ipv4(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_unallocated_count_ipv4
+    }
+    /// <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub fn prefix_pool_unallocated_count_ipv6(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_unallocated_count_ipv6
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateConnectionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -240,6 +264,10 @@ pub struct CreateConnectionOutputBuilder {
     pub(crate) mac_sec_keys: ::std::option::Option<::std::vec::Vec<crate::types::MacSecKey>>,
     pub(crate) rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
     pub(crate) partner_interconnect_mac_sec_capable: ::std::option::Option<bool>,
+    pub(crate) prefix_pool_size_ipv4: ::std::option::Option<i32>,
+    pub(crate) prefix_pool_size_ipv6: ::std::option::Option<i32>,
+    pub(crate) prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
+    pub(crate) prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl CreateConnectionOutputBuilder {
@@ -657,6 +685,62 @@ impl CreateConnectionOutputBuilder {
     pub fn get_partner_interconnect_mac_sec_capable(&self) -> &::std::option::Option<bool> {
         &self.partner_interconnect_mac_sec_capable
     }
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub fn prefix_pool_size_ipv4(mut self, input: i32) -> Self {
+        self.prefix_pool_size_ipv4 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub fn set_prefix_pool_size_ipv4(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_size_ipv4 = input;
+        self
+    }
+    /// <p>The total number of inbound IPv4 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub fn get_prefix_pool_size_ipv4(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_size_ipv4
+    }
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub fn prefix_pool_size_ipv6(mut self, input: i32) -> Self {
+        self.prefix_pool_size_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub fn set_prefix_pool_size_ipv6(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_size_ipv6 = input;
+        self
+    }
+    /// <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
+    pub fn get_prefix_pool_size_ipv6(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_size_ipv6
+    }
+    /// <p>The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub fn prefix_pool_unallocated_count_ipv4(mut self, input: i32) -> Self {
+        self.prefix_pool_unallocated_count_ipv4 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub fn set_prefix_pool_unallocated_count_ipv4(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_unallocated_count_ipv4 = input;
+        self
+    }
+    /// <p>The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub fn get_prefix_pool_unallocated_count_ipv4(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_unallocated_count_ipv4
+    }
+    /// <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub fn prefix_pool_unallocated_count_ipv6(mut self, input: i32) -> Self {
+        self.prefix_pool_unallocated_count_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub fn set_prefix_pool_unallocated_count_ipv6(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_unallocated_count_ipv6 = input;
+        self
+    }
+    /// <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    pub fn get_prefix_pool_unallocated_count_ipv6(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_unallocated_count_ipv6
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -693,6 +777,10 @@ impl CreateConnectionOutputBuilder {
             mac_sec_keys: self.mac_sec_keys,
             rate_limiter_status: self.rate_limiter_status,
             partner_interconnect_mac_sec_capable: self.partner_interconnect_mac_sec_capable,
+            prefix_pool_size_ipv4: self.prefix_pool_size_ipv4,
+            prefix_pool_size_ipv6: self.prefix_pool_size_ipv6,
+            prefix_pool_unallocated_count_ipv4: self.prefix_pool_unallocated_count_ipv4,
+            prefix_pool_unallocated_count_ipv6: self.prefix_pool_unallocated_count_ipv6,
             _request_id: self._request_id,
         }
     }

@@ -14,6 +14,7 @@
 /// match jobqueuetype {
 ///     JobQueueType::Ecs => { /* ... */ },
 ///     JobQueueType::EcsFargate => { /* ... */ },
+///     JobQueueType::EcsManagedInstances => { /* ... */ },
 ///     JobQueueType::Eks => { /* ... */ },
 ///     JobQueueType::SagemakerTraining => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum JobQueueType {
     #[allow(missing_docs)] // documentation missing in model
     EcsFargate,
     #[allow(missing_docs)] // documentation missing in model
+    EcsManagedInstances,
+    #[allow(missing_docs)] // documentation missing in model
     Eks,
     #[allow(missing_docs)] // documentation missing in model
     SagemakerTraining,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for JobQueueType {
         match s {
             "ECS" => JobQueueType::Ecs,
             "ECS_FARGATE" => JobQueueType::EcsFargate,
+            "ECS_MANAGED_INSTANCES" => JobQueueType::EcsManagedInstances,
             "EKS" => JobQueueType::Eks,
             "SAGEMAKER_TRAINING" => JobQueueType::SagemakerTraining,
             other => JobQueueType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl JobQueueType {
         match self {
             JobQueueType::Ecs => "ECS",
             JobQueueType::EcsFargate => "ECS_FARGATE",
+            JobQueueType::EcsManagedInstances => "ECS_MANAGED_INSTANCES",
             JobQueueType::Eks => "EKS",
             JobQueueType::SagemakerTraining => "SAGEMAKER_TRAINING",
             JobQueueType::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl JobQueueType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ECS", "ECS_FARGATE", "EKS", "SAGEMAKER_TRAINING"]
+        &["ECS", "ECS_FARGATE", "ECS_MANAGED_INSTANCES", "EKS", "SAGEMAKER_TRAINING"]
     }
 }
 impl ::std::convert::AsRef<str> for JobQueueType {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for JobQueueType {
         match self {
             JobQueueType::Ecs => write!(f, "ECS"),
             JobQueueType::EcsFargate => write!(f, "ECS_FARGATE"),
+            JobQueueType::EcsManagedInstances => write!(f, "ECS_MANAGED_INSTANCES"),
             JobQueueType::Eks => write!(f, "EKS"),
             JobQueueType::SagemakerTraining => write!(f, "SAGEMAKER_TRAINING"),
             JobQueueType::Unknown(value) => write!(f, "{value}"),

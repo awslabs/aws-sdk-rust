@@ -22,7 +22,7 @@ impl crate::operation::put_account_pricing_attributes::builders::PutAccountPrici
 }
 /// Fluent builder constructing a request to `PutAccountPricingAttributes`.
 ///
-/// <p>Set the pricing plan for your Amazon SES account. Use this operation to choose a billing plan that packages multiple Amazon SES features at a single rate.</p>
+/// <p>Set the pricing plan for your Amazon SES account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutAccountPricingAttributesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,46 +108,46 @@ impl PutAccountPricingAttributesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The pricing plan to apply to your Amazon SES account. Can be one of the following:</p>
+    /// <p>The pricing plan to apply to your Amazon SES account. For details about each plan, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>. Can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>NONE</code> – No pricing plan is applied; billing follows per-feature pricing.</p></li>
+    /// <p><code>NONE</code></p></li>
     /// <li>
-    /// <p><code>ESSENTIALS</code> – Baseline Amazon SES capabilities and select premium features.</p></li>
+    /// <p><code>ESSENTIALS</code></p></li>
     /// <li>
-    /// <p><code>PRO</code> – Includes everything in <code>ESSENTIALS</code>, plus additional premium features for growing senders.</p></li>
+    /// <p><code>PRO</code></p></li>
     /// <li>
-    /// <p><code>ENTERPRISE</code> – Includes everything in <code>PRO</code>, plus features intended for large-scale senders.</p></li>
+    /// <p><code>ENTERPRISE</code></p></li>
     /// </ul>
     pub fn plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.inner = self.inner.plan(input);
         self
     }
-    /// <p>The pricing plan to apply to your Amazon SES account. Can be one of the following:</p>
+    /// <p>The pricing plan to apply to your Amazon SES account. For details about each plan, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>. Can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>NONE</code> – No pricing plan is applied; billing follows per-feature pricing.</p></li>
+    /// <p><code>NONE</code></p></li>
     /// <li>
-    /// <p><code>ESSENTIALS</code> – Baseline Amazon SES capabilities and select premium features.</p></li>
+    /// <p><code>ESSENTIALS</code></p></li>
     /// <li>
-    /// <p><code>PRO</code> – Includes everything in <code>ESSENTIALS</code>, plus additional premium features for growing senders.</p></li>
+    /// <p><code>PRO</code></p></li>
     /// <li>
-    /// <p><code>ENTERPRISE</code> – Includes everything in <code>PRO</code>, plus features intended for large-scale senders.</p></li>
+    /// <p><code>ENTERPRISE</code></p></li>
     /// </ul>
     pub fn set_plan(mut self, input: ::std::option::Option<crate::types::PricingPlan>) -> Self {
         self.inner = self.inner.set_plan(input);
         self
     }
-    /// <p>The pricing plan to apply to your Amazon SES account. Can be one of the following:</p>
+    /// <p>The pricing plan to apply to your Amazon SES account. For details about each plan, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>. Can be one of the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>NONE</code> – No pricing plan is applied; billing follows per-feature pricing.</p></li>
+    /// <p><code>NONE</code></p></li>
     /// <li>
-    /// <p><code>ESSENTIALS</code> – Baseline Amazon SES capabilities and select premium features.</p></li>
+    /// <p><code>ESSENTIALS</code></p></li>
     /// <li>
-    /// <p><code>PRO</code> – Includes everything in <code>ESSENTIALS</code>, plus additional premium features for growing senders.</p></li>
+    /// <p><code>PRO</code></p></li>
     /// <li>
-    /// <p><code>ENTERPRISE</code> – Includes everything in <code>PRO</code>, plus features intended for large-scale senders.</p></li>
+    /// <p><code>ENTERPRISE</code></p></li>
     /// </ul>
     pub fn get_plan(&self) -> &::std::option::Option<crate::types::PricingPlan> {
         self.inner.get_plan()

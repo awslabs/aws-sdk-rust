@@ -3421,6 +3421,15 @@ pub(crate) fn hyper_parameter_tuning_job_warm_start_config_correct_errors(
     builder
 }
 
+pub(crate) fn idc_config_output_correct_errors(
+    mut builder: crate::types::builders::IdcConfigOutputBuilder,
+) -> crate::types::builders::IdcConfigOutputBuilder {
+    if builder.instance_arn.is_none() {
+        builder.instance_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn inference_component_deployment_config_correct_errors(
     mut builder: crate::types::builders::InferenceComponentDeploymentConfigBuilder,
 ) -> crate::types::builders::InferenceComponentDeploymentConfigBuilder {

@@ -18,8 +18,20 @@ pub fn ser_update_virtual_interface_attributes_input_input(
     if let Some(var_4) = &input.virtual_interface_name {
         object.key("virtualInterfaceName").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.rate_limit {
-        object.key("rateLimit").string(var_5.as_str());
+    if let Some(var_5) = &input.prefix_pool_allocated_count_ipv4 {
+        object.key("prefixPoolAllocatedCountIpv4").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.prefix_pool_allocated_count_ipv6 {
+        object.key("prefixPoolAllocatedCountIpv6").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
+    }
+    if let Some(var_7) = &input.rate_limit {
+        object.key("rateLimit").string(var_7.as_str());
     }
     Ok(())
 }

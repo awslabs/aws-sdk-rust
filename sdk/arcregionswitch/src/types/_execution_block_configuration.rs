@@ -34,6 +34,8 @@ pub enum ExecutionBlockConfiguration {
     RdsCreateCrossRegionReadReplicaConfig(crate::types::RdsCreateCrossRegionReplicaConfiguration),
     /// <p>An Amazon RDS promote read replica execution block.</p>
     RdsPromoteReadReplicaConfig(crate::types::RdsPromoteReadReplicaConfiguration),
+    /// <p>An Amazon RDS switchover read replica execution block.</p>
+    RdsSwitchoverReadReplicaConfig(crate::types::RdsSwitchoverReadReplicaConfiguration),
     /// <p>A Region switch plan execution block.</p>
     RegionSwitchPlanConfig(crate::types::RegionSwitchPlanConfiguration),
     /// <p>The Amazon Route 53 health check configuration.</p>
@@ -245,6 +247,19 @@ impl ExecutionBlockConfiguration {
     /// Returns true if this is a [`RdsPromoteReadReplicaConfig`](crate::types::ExecutionBlockConfiguration::RdsPromoteReadReplicaConfig).
     pub fn is_rds_promote_read_replica_config(&self) -> bool {
         self.as_rds_promote_read_replica_config().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RdsSwitchoverReadReplicaConfig`](crate::types::ExecutionBlockConfiguration::RdsSwitchoverReadReplicaConfig), extracting the inner [`RdsSwitchoverReadReplicaConfiguration`](crate::types::RdsSwitchoverReadReplicaConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rds_switchover_read_replica_config(&self) -> ::std::result::Result<&crate::types::RdsSwitchoverReadReplicaConfiguration, &Self> {
+        if let ExecutionBlockConfiguration::RdsSwitchoverReadReplicaConfig(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RdsSwitchoverReadReplicaConfig`](crate::types::ExecutionBlockConfiguration::RdsSwitchoverReadReplicaConfig).
+    pub fn is_rds_switchover_read_replica_config(&self) -> bool {
+        self.as_rds_switchover_read_replica_config().is_ok()
     }
     /// Tries to convert the enum instance into [`RegionSwitchPlanConfig`](crate::types::ExecutionBlockConfiguration::RegionSwitchPlanConfig), extracting the inner [`RegionSwitchPlanConfiguration`](crate::types::RegionSwitchPlanConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

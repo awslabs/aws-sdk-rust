@@ -123,6 +123,8 @@ pub use crate::types::_suppression_list_reason::SuppressionListReason;
 
 pub use crate::types::_bulk_email_content::BulkEmailContent;
 
+pub use crate::types::_configuration_overrides::ConfigurationOverrides;
+
 pub use crate::types::_destination::Destination;
 
 pub use crate::types::_list_management_options::ListManagementOptions;
@@ -253,6 +255,8 @@ pub use crate::types::_suppression_condition_threshold::SuppressionConditionThre
 
 pub use crate::types::_bulk_email_entry::BulkEmailEntry;
 
+pub use crate::types::_tracking_configuration_overrides::TrackingConfigurationOverrides;
+
 pub use crate::types::_bulk_email_entry_result::BulkEmailEntryResult;
 
 pub use crate::types::_metric_namespace::MetricNamespace;
@@ -368,6 +372,8 @@ mod _cloud_watch_destination;
 mod _cloud_watch_dimension_configuration;
 
 mod _complaint;
+
+mod _configuration_overrides;
 
 mod _contact;
 
@@ -650,6 +656,8 @@ mod _topic;
 mod _topic_filter;
 
 mod _topic_preference;
+
+mod _tracking_configuration_overrides;
 
 mod _tracking_options;
 
