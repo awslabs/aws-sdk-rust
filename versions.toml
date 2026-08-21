@@ -2777,6 +2777,10 @@ source_hash = '4fffc0f0fc1792a0b118211ac00556d30fd2b55c83d68115c1c18b04c2bc82e4'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'a8f1b2a455177901ffed9a70663e388ea2567d785ec1eaa08e9e7264dcf36bcd'
+
+[release]
+tag = 'release-2026-08-21'
+
 [release.crates]
 aws-sdk-backup = '1.120.1'
 aws-sdk-bedrockagentcore = '1.63.0'
