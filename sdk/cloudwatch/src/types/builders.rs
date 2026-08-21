@@ -15,6 +15,8 @@ pub use crate::types::_metric_characteristics::MetricCharacteristicsBuilder;
 
 pub use crate::types::_scheduled_query_configuration::ScheduledQueryConfigurationBuilder;
 
+pub use crate::types::_warm_up_configuration::WarmUpConfigurationBuilder;
+
 pub use crate::types::_dimension::DimensionBuilder;
 
 pub use crate::types::_partial_failure::PartialFailureBuilder;

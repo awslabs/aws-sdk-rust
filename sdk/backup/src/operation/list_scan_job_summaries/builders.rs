@@ -22,7 +22,7 @@ impl crate::operation::list_scan_job_summaries::builders::ListScanJobSummariesIn
 }
 /// Fluent builder constructing a request to `ListScanJobSummaries`.
 ///
-/// <p>This is a request for a summary of scan jobs created or running within the most recent 30 days.</p>
+/// <p>This is a request for a summary of scan jobs created or running within the most recent 14 days.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListScanJobSummariesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

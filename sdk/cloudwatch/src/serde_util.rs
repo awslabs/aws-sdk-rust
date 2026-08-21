@@ -193,6 +193,15 @@ pub(crate) fn scheduled_query_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn warm_up_configuration_correct_errors(
+    mut builder: crate::types::builders::WarmUpConfigurationBuilder,
+) -> crate::types::builders::WarmUpConfigurationBuilder {
+    if builder.warm_up_period_duration_in_minutes.is_none() {
+        builder.warm_up_period_duration_in_minutes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn alarm_prom_ql_criteria_correct_errors(
     mut builder: crate::types::builders::AlarmPromQlCriteriaBuilder,
 ) -> crate::types::builders::AlarmPromQlCriteriaBuilder {

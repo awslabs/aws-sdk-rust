@@ -49,6 +49,21 @@ where
                                 crate::protocol_serde::shape_stickiness_configuration::de_stickiness_configuration(tokens, _value, depth + 1)?,
                             );
                         }
+                        "staticQueryParameters" => {
+                            builder = builder.set_static_query_parameters(
+                                crate::protocol_serde::shape_static_query_parameters::de_static_query_parameters(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "staticQueryParameterConflictResolution" => {
+                            builder = builder.set_static_query_parameter_conflict_resolution(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::StaticQueryParameterConflictResolution::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -91,6 +106,19 @@ pub fn ser_passthrough_target_configuration(
         let mut object_4 = object.key("stickinessConfiguration").start_object();
         crate::protocol_serde::shape_stickiness_configuration::ser_stickiness_configuration(&mut object_4, var_3)?;
         object_4.finish();
+    }
+    if let Some(var_5) = &input.static_query_parameters {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("staticQueryParameters").start_object();
+        for (key_7, value_8) in var_5 {
+            {
+                object_6.key(key_7.as_str()).string(value_8.as_str());
+            }
+        }
+        object_6.finish();
+    }
+    if let Some(var_9) = &input.static_query_parameter_conflict_resolution {
+        object.key("staticQueryParameterConflictResolution").string(var_9.as_str());
     }
     Ok(())
 }

@@ -30,5 +30,15 @@ pub fn ser_create_remote_access_session_configuration(
         crate::protocol_serde::shape_device_proxy::ser_device_proxy(&mut object_9, var_8)?;
         object_9.finish();
     }
+    if let Some(var_10) = &input.parameters {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("parameters").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                object_11.key(key_12.as_str()).string(value_13.as_str());
+            }
+        }
+        object_11.finish();
+    }
     Ok(())
 }

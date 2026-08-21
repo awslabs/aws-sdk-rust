@@ -22,7 +22,9 @@ impl crate::operation::list_samples::builders::ListSamplesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSamples`.
 ///
-/// <p>Gets information about samples, given an AWS Device Farm job ARN.</p>
+/// <p>Gets information about samples, given an AWS Device Farm job ARN.</p><important>
+/// <p>Device Farm does not support performance data samples during test executions.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSamplesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

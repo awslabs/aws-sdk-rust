@@ -302,6 +302,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
             .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+            .set_account_id_endpoint_mode(::std::option::Option::Some(
+                cfg.load::<::aws_types::endpoint_config::AccountIdEndpointMode>()
+                    .cloned()
+                    .unwrap_or_default()
+                    .to_string(),
+            ))
             .set_operation_type(Some("control".to_string()))
             .set_resource_arn(Some(
                 _input

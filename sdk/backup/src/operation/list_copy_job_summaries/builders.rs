@@ -22,7 +22,7 @@ impl crate::operation::list_copy_job_summaries::builders::ListCopyJobSummariesIn
 }
 /// Fluent builder constructing a request to `ListCopyJobSummaries`.
 ///
-/// <p>This request obtains a list of copy jobs created or running within the the most recent 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
+/// <p>This request obtains a list of copy jobs created or running within the the most recent 14 days. You can include parameters AccountID, State, ResourceType, MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
 /// <p>This request returns a summary that contains Region, Account, State, RestourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCopyJobSummariesFluentBuilder {

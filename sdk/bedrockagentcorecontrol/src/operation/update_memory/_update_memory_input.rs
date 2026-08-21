@@ -17,7 +17,7 @@ pub struct UpdateMemoryInput {
     pub memory_strategies: ::std::option::Option<crate::types::ModifyMemoryStrategies>,
     /// <p>Additional metadata keys to index. Previously indexed keys cannot be removed.</p>
     pub add_indexed_keys: ::std::option::Option<::std::vec::Vec<crate::types::IndexedKey>>,
-    /// <p>The namespace variable key definitions with validation rules for this memory. Use this parameter to update existing <code>namespaceKey</code> validation rules or add new keys when namespace templates change.</p>
+    /// <p>The namespace variable key definitions with validation rules for this memory. This value fully replaces the existing set — any key you omit is removed. Any referenced <code>namespaceKey</code> omission will throw ValidationException.</p>
     pub namespace_keys: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>,
     /// <p>Configuration for streaming memory record data to external resources.</p>
     pub stream_delivery_resources: ::std::option::Option<crate::types::StreamDeliveryResources>,
@@ -53,7 +53,7 @@ impl UpdateMemoryInput {
     pub fn add_indexed_keys(&self) -> &[crate::types::IndexedKey] {
         self.add_indexed_keys.as_deref().unwrap_or_default()
     }
-    /// <p>The namespace variable key definitions with validation rules for this memory. Use this parameter to update existing <code>namespaceKey</code> validation rules or add new keys when namespace templates change.</p>
+    /// <p>The namespace variable key definitions with validation rules for this memory. This value fully replaces the existing set — any key you omit is removed. Any referenced <code>namespaceKey</code> omission will throw ValidationException.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.namespace_keys.is_none()`.
     pub fn namespace_keys(&self) -> &[crate::types::NamespaceKeyEntry] {
@@ -210,19 +210,19 @@ impl UpdateMemoryInputBuilder {
     ///
     /// To override the contents of this collection use [`set_namespace_keys`](Self::set_namespace_keys).
     ///
-    /// <p>The namespace variable key definitions with validation rules for this memory. Use this parameter to update existing <code>namespaceKey</code> validation rules or add new keys when namespace templates change.</p>
+    /// <p>The namespace variable key definitions with validation rules for this memory. This value fully replaces the existing set — any key you omit is removed. Any referenced <code>namespaceKey</code> omission will throw ValidationException.</p>
     pub fn namespace_keys(mut self, input: crate::types::NamespaceKeyEntry) -> Self {
         let mut v = self.namespace_keys.unwrap_or_default();
         v.push(input);
         self.namespace_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The namespace variable key definitions with validation rules for this memory. Use this parameter to update existing <code>namespaceKey</code> validation rules or add new keys when namespace templates change.</p>
+    /// <p>The namespace variable key definitions with validation rules for this memory. This value fully replaces the existing set — any key you omit is removed. Any referenced <code>namespaceKey</code> omission will throw ValidationException.</p>
     pub fn set_namespace_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>>) -> Self {
         self.namespace_keys = input;
         self
     }
-    /// <p>The namespace variable key definitions with validation rules for this memory. Use this parameter to update existing <code>namespaceKey</code> validation rules or add new keys when namespace templates change.</p>
+    /// <p>The namespace variable key definitions with validation rules for this memory. This value fully replaces the existing set — any key you omit is removed. Any referenced <code>namespaceKey</code> omission will throw ValidationException.</p>
     pub fn get_namespace_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NamespaceKeyEntry>> {
         &self.namespace_keys
     }

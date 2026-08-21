@@ -8,6 +8,8 @@ pub struct StickinessConfiguration {
     pub identifier: ::std::string::String,
     /// <p>The session stickiness timeout, in seconds. After this duration of inactivity, the session affinity expires. Valid values range from 1 to 86400.</p>
     pub timeout: ::std::option::Option<i32>,
+    /// <p>Additional headers to include in session affinity routing. When set, requests are only considered part of the same session if both the <code>identifier</code> and all composite identifier values match.</p>
+    pub composite_identifier: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StickinessConfiguration {
     /// <p>The expression that identifies where to extract the session identifier from the request (for example, <code>$context.header.x-session-id</code>).</p>
@@ -18,6 +20,12 @@ impl StickinessConfiguration {
     /// <p>The session stickiness timeout, in seconds. After this duration of inactivity, the session affinity expires. Valid values range from 1 to 86400.</p>
     pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
+    }
+    /// <p>Additional headers to include in session affinity routing. When set, requests are only considered part of the same session if both the <code>identifier</code> and all composite identifier values match.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.composite_identifier.is_none()`.
+    pub fn composite_identifier(&self) -> &[::std::string::String] {
+        self.composite_identifier.as_deref().unwrap_or_default()
     }
 }
 impl StickinessConfiguration {
@@ -33,6 +41,7 @@ impl StickinessConfiguration {
 pub struct StickinessConfigurationBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) timeout: ::std::option::Option<i32>,
+    pub(crate) composite_identifier: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl StickinessConfigurationBuilder {
     /// <p>The expression that identifies where to extract the session identifier from the request (for example, <code>$context.header.x-session-id</code>).</p>
@@ -64,6 +73,26 @@ impl StickinessConfigurationBuilder {
     pub fn get_timeout(&self) -> &::std::option::Option<i32> {
         &self.timeout
     }
+    /// Appends an item to `composite_identifier`.
+    ///
+    /// To override the contents of this collection use [`set_composite_identifier`](Self::set_composite_identifier).
+    ///
+    /// <p>Additional headers to include in session affinity routing. When set, requests are only considered part of the same session if both the <code>identifier</code> and all composite identifier values match.</p>
+    pub fn composite_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.composite_identifier.unwrap_or_default();
+        v.push(input.into());
+        self.composite_identifier = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Additional headers to include in session affinity routing. When set, requests are only considered part of the same session if both the <code>identifier</code> and all composite identifier values match.</p>
+    pub fn set_composite_identifier(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.composite_identifier = input;
+        self
+    }
+    /// <p>Additional headers to include in session affinity routing. When set, requests are only considered part of the same session if both the <code>identifier</code> and all composite identifier values match.</p>
+    pub fn get_composite_identifier(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.composite_identifier
+    }
     /// Consumes the builder and constructs a [`StickinessConfiguration`](crate::types::StickinessConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`identifier`](crate::types::builders::StickinessConfigurationBuilder::identifier)
@@ -76,6 +105,7 @@ impl StickinessConfigurationBuilder {
                 )
             })?,
             timeout: self.timeout,
+            composite_identifier: self.composite_identifier,
         })
     }
 }

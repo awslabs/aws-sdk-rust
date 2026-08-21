@@ -350,6 +350,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_warm_up_configuration;
+
 pub(crate) mod shape_alarm_contributor;
 
 pub(crate) mod shape_alarm_history_item;

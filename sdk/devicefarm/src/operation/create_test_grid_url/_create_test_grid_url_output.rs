@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateTestGridUrlOutput {
-    /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>.</p>
+    /// <p>A signed URL, expiring in the time specified by the <code>CreateTestGridUrlRequest</code>, to be passed to a <code>RemoteWebDriver</code>.</p>
     pub url: ::std::option::Option<::std::string::String>,
-    /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
+    /// <p>The number of seconds the URL stays active from creation.</p>
     pub expires: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateTestGridUrlOutput {
-    /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>.</p>
+    /// <p>A signed URL, expiring in the time specified by the <code>CreateTestGridUrlRequest</code>, to be passed to a <code>RemoteWebDriver</code>.</p>
     pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
-    /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
+    /// <p>The number of seconds the URL stays active from creation.</p>
     pub fn expires(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
@@ -49,31 +49,31 @@ pub struct CreateTestGridUrlOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateTestGridUrlOutputBuilder {
-    /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>.</p>
+    /// <p>A signed URL, expiring in the time specified by the <code>CreateTestGridUrlRequest</code>, to be passed to a <code>RemoteWebDriver</code>.</p>
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>.</p>
+    /// <p>A signed URL, expiring in the time specified by the <code>CreateTestGridUrlRequest</code>, to be passed to a <code>RemoteWebDriver</code>.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>A signed URL, expiring in <code>CreateTestGridUrlRequest$expiresInSeconds</code> seconds, to be passed to a <code>RemoteWebDriver</code>.</p>
+    /// <p>A signed URL, expiring in the time specified by the <code>CreateTestGridUrlRequest</code>, to be passed to a <code>RemoteWebDriver</code>.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }
-    /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
+    /// <p>The number of seconds the URL stays active from creation.</p>
     pub fn expires(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expires = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
+    /// <p>The number of seconds the URL stays active from creation.</p>
     pub fn set_expires(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expires = input;
         self
     }
-    /// <p>The number of seconds the URL from <code>CreateTestGridUrlResult$url</code> stays active.</p>
+    /// <p>The number of seconds the URL stays active from creation.</p>
     pub fn get_expires(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expires
     }

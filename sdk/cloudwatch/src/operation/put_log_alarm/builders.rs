@@ -457,4 +457,21 @@ impl PutLogAlarmFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn warm_up_configuration(mut self, input: crate::types::WarmUpConfiguration) -> Self {
+        self.inner = self.inner.warm_up_configuration(input);
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn set_warm_up_configuration(mut self, input: ::std::option::Option<crate::types::WarmUpConfiguration>) -> Self {
+        self.inner = self.inner.set_warm_up_configuration(input);
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_warm_up_configuration(&self) -> &::std::option::Option<crate::types::WarmUpConfiguration> {
+        self.inner.get_warm_up_configuration()
+    }
 }

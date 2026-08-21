@@ -22,7 +22,7 @@ impl crate::operation::list_restore_job_summaries::builders::ListRestoreJobSumma
 }
 /// Fluent builder constructing a request to `ListRestoreJobSummaries`.
 ///
-/// <p>This request obtains a summary of restore jobs created or running within the the most recent 30 days. You can include parameters AccountID, State, ResourceType, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
+/// <p>This request obtains a summary of restore jobs created or running within the the most recent 14 days. You can include parameters AccountID, State, ResourceType, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
 /// <p>This request returns a summary that contains Region, Account, State, RestourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRestoreJobSummariesFluentBuilder {

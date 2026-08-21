@@ -1401,6 +1401,8 @@ pub(crate) mod shape_self_managed_configuration_input;
 
 pub(crate) mod shape_semantic_override_configuration_input;
 
+pub(crate) mod shape_static_query_parameters;
+
 pub(crate) mod shape_stickiness_configuration;
 
 pub(crate) mod shape_strategy_configuration;
@@ -1436,6 +1438,8 @@ pub(crate) mod shape_api_gateway_tool_overrides;
 pub(crate) mod shape_capacity_reservation_specification;
 
 pub(crate) mod shape_claim_match_value_type;
+
+pub(crate) mod shape_composite_identifier_list;
 
 pub(crate) mod shape_configuration_bundle_reference;
 

@@ -18,7 +18,7 @@ pub struct RestoreTestingRecoveryPointSelection {
     /// <p>These are the types of recovery points.</p>
     /// <p>Include <code>SNAPSHOT</code> to restore only snapshot recovery points; include <code>CONTINUOUS</code> to restore continuous recovery points (point in time restore / PITR); use both to restore either a snapshot or a continuous recovery point. The recovery point will be determined by the value for <code>Algorithm</code>.</p>
     pub recovery_point_types: ::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingRecoveryPointType>>,
-    /// <p>Accepted values are integers from 1 to 365.</p>
+    /// <p>Accepted values are integers from 1 to 365. If not included, the value defaults to 30. The selection window is calculated from the actual job execution time, not the plan's scheduled start time.</p>
     pub selection_window_days: i32,
 }
 impl RestoreTestingRecoveryPointSelection {
@@ -45,7 +45,7 @@ impl RestoreTestingRecoveryPointSelection {
     pub fn recovery_point_types(&self) -> &[crate::types::RestoreTestingRecoveryPointType] {
         self.recovery_point_types.as_deref().unwrap_or_default()
     }
-    /// <p>Accepted values are integers from 1 to 365.</p>
+    /// <p>Accepted values are integers from 1 to 365. If not included, the value defaults to 30. The selection window is calculated from the actual job execution time, not the plan's scheduled start time.</p>
     pub fn selection_window_days(&self) -> i32 {
         self.selection_window_days
     }
@@ -145,17 +145,17 @@ impl RestoreTestingRecoveryPointSelectionBuilder {
     pub fn get_recovery_point_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RestoreTestingRecoveryPointType>> {
         &self.recovery_point_types
     }
-    /// <p>Accepted values are integers from 1 to 365.</p>
+    /// <p>Accepted values are integers from 1 to 365. If not included, the value defaults to 30. The selection window is calculated from the actual job execution time, not the plan's scheduled start time.</p>
     pub fn selection_window_days(mut self, input: i32) -> Self {
         self.selection_window_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Accepted values are integers from 1 to 365.</p>
+    /// <p>Accepted values are integers from 1 to 365. If not included, the value defaults to 30. The selection window is calculated from the actual job execution time, not the plan's scheduled start time.</p>
     pub fn set_selection_window_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.selection_window_days = input;
         self
     }
-    /// <p>Accepted values are integers from 1 to 365.</p>
+    /// <p>Accepted values are integers from 1 to 365. If not included, the value defaults to 30. The selection window is calculated from the actual job execution time, not the plan's scheduled start time.</p>
     pub fn get_selection_window_days(&self) -> &::std::option::Option<i32> {
         &self.selection_window_days
     }

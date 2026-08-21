@@ -71,6 +71,9 @@ pub struct PutLogAlarmInput {
     pub treat_missing_data: ::std::option::Option<::std::string::String>,
     /// <p>A list of key-value pairs to associate with the alarm. You can use tags to categorize and manage your alarms.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
 }
 impl PutLogAlarmInput {
     /// <p>The name for the alarm. This name must be unique within the Amazon Web Services account and Region.</p>
@@ -179,6 +182,11 @@ impl PutLogAlarmInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn warm_up_configuration(&self) -> ::std::option::Option<&crate::types::WarmUpConfiguration> {
+        self.warm_up_configuration.as_ref()
+    }
 }
 impl PutLogAlarmInput {
     /// Creates a new builder-style object to manufacture [`PutLogAlarmInput`](crate::operation::put_log_alarm::PutLogAlarmInput).
@@ -206,6 +214,7 @@ pub struct PutLogAlarmInputBuilder {
     pub(crate) comparison_operator: ::std::option::Option<crate::types::ComparisonOperator>,
     pub(crate) treat_missing_data: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
 }
 impl PutLogAlarmInputBuilder {
     /// <p>The name for the alarm. This name must be unique within the Amazon Web Services account and Region.</p>
@@ -562,6 +571,23 @@ impl PutLogAlarmInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn warm_up_configuration(mut self, input: crate::types::WarmUpConfiguration) -> Self {
+        self.warm_up_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn set_warm_up_configuration(mut self, input: ::std::option::Option<crate::types::WarmUpConfiguration>) -> Self {
+        self.warm_up_configuration = input;
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing data.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_warm_up_configuration(&self) -> &::std::option::Option<crate::types::WarmUpConfiguration> {
+        &self.warm_up_configuration
+    }
     /// Consumes the builder and constructs a [`PutLogAlarmInput`](crate::operation::put_log_alarm::PutLogAlarmInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_log_alarm::PutLogAlarmInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_log_alarm::PutLogAlarmInput {
@@ -580,6 +606,7 @@ impl PutLogAlarmInputBuilder {
             comparison_operator: self.comparison_operator,
             treat_missing_data: self.treat_missing_data,
             tags: self.tags,
+            warm_up_configuration: self.warm_up_configuration,
         })
     }
 }
