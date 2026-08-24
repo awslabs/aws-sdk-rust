@@ -877,6 +877,8 @@ pub use crate::types::_real_time_contact_analysis_segment_attachments::RealTimeC
 
 pub use crate::types::_real_time_contact_analysis_segment_post_contact_summary::RealTimeContactAnalysisSegmentPostContactSummaryBuilder;
 
+pub use crate::types::_real_time_contact_analysis_segment_extracted_information::RealTimeContactAnalysisSegmentExtractedInformationBuilder;
+
 pub use crate::types::_common_attribute_and_condition::CommonAttributeAndConditionBuilder;
 
 pub use crate::types::_tag_condition::TagConditionBuilder;
@@ -1041,6 +1043,8 @@ pub use crate::types::_real_time_contact_analysis_issue_detected::RealTimeContac
 
 pub use crate::types::_real_time_contact_analysis_attachment::RealTimeContactAnalysisAttachmentBuilder;
 
+pub use crate::types::_real_time_contact_analysis_extracted_information_value::RealTimeContactAnalysisExtractedInformationValueBuilder;
+
 pub use crate::types::_transcript_criteria::TranscriptCriteriaBuilder;
 
 pub use crate::types::_searchable_agent_criteria_step::SearchableAgentCriteriaStepBuilder;
@@ -1093,6 +1097,8 @@ pub use crate::types::_real_time_contact_analysis_point_of_interest::RealTimeCon
 
 pub use crate::types::_real_time_contact_analysis_transcript_item_with_content::RealTimeContactAnalysisTranscriptItemWithContentBuilder;
 
+pub use crate::types::_real_time_contact_analysis_transcript_item_with_character_offsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder;
+
 pub use crate::types::_agents_criteria::AgentsCriteriaBuilder;
 
 pub use crate::types::_automatic_fail_configuration::AutomaticFailConfigurationBuilder;
@@ -1110,8 +1116,6 @@ pub use crate::types::_evaluation_form_item_enablement_source::EvaluationFormIte
 pub use crate::types::_evaluation_transcript_point_of_interest::EvaluationTranscriptPointOfInterestBuilder;
 
 pub use crate::types::_evaluation_automation_rule_category::EvaluationAutomationRuleCategoryBuilder;
-
-pub use crate::types::_real_time_contact_analysis_transcript_item_with_character_offsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder;
 
 pub use crate::types::_evaluation_form_item_enablement_source_value::EvaluationFormItemEnablementSourceValueBuilder;
 

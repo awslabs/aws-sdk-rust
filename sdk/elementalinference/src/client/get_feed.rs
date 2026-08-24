@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`id(String)`](crate::operation::get_feed::GetFeedOutput::id): <p>The ID of the feed.</p>
     ///   - [`data_endpoints(Vec::<String>)`](crate::operation::get_feed::GetFeedOutput::data_endpoints): <p>The dataEndpoints of the feed.</p>
     ///   - [`outputs(Vec::<GetOutput>)`](crate::operation::get_feed::GetFeedOutput::outputs): <p>An array of the outputs in the feed.</p>
+    ///   - [`access_role_arn(Option<String>)`](crate::operation::get_feed::GetFeedOutput::access_role_arn): <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that Elemental Inference assumes. Elemental Inference uses this role to access resources in your account on your behalf. This property is absent if the feed doesn't have an IAM role.</p>
     ///   - [`status(FeedStatus)`](crate::operation::get_feed::GetFeedOutput::status): <p>The status of the feed.</p>
     ///   - [`association(Option<FeedAssociation>)`](crate::operation::get_feed::GetFeedOutput::association): <p>Information about the resource that is associated with the feed. It's possible that there is no associated resource. This is not an error.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_feed::GetFeedOutput::tags): <p>A list of the tags, if any, for the feed.</p>

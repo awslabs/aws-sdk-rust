@@ -33,6 +33,11 @@ where
                                     crate::protocol_serde::shape_post_contact_summary::de_post_contact_summary(tokens, _value, depth + 1)?,
                                 );
                             }
+                            "ExtractedInformation" => {
+                                builder = builder.set_extracted_information(
+                                    crate::protocol_serde::shape_extracted_information::de_extracted_information(tokens, _value, depth + 1)?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

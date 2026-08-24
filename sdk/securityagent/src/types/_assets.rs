@@ -14,6 +14,8 @@ pub struct Assets {
     pub source_code: ::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>>,
     /// <p>The list of integrated repositories associated with the pentest.</p>
     pub integrated_repositories: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedRepository>>,
+    /// <p>The trust anchors used to validate target endpoint TLS certificates. Provide these for endpoints served by a private or internal certificate authority (CA), an intermediate CA, or a self-signed certificate.</p>
+    pub trusted_ca_certificates: ::std::option::Option<::std::vec::Vec<crate::types::TrustedCaCertificate>>,
 }
 impl Assets {
     /// <p>The list of endpoints to test during the pentest.</p>
@@ -46,6 +48,12 @@ impl Assets {
     pub fn integrated_repositories(&self) -> &[crate::types::IntegratedRepository] {
         self.integrated_repositories.as_deref().unwrap_or_default()
     }
+    /// <p>The trust anchors used to validate target endpoint TLS certificates. Provide these for endpoints served by a private or internal certificate authority (CA), an intermediate CA, or a self-signed certificate.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trusted_ca_certificates.is_none()`.
+    pub fn trusted_ca_certificates(&self) -> &[crate::types::TrustedCaCertificate] {
+        self.trusted_ca_certificates.as_deref().unwrap_or_default()
+    }
 }
 impl Assets {
     /// Creates a new builder-style object to manufacture [`Assets`](crate::types::Assets).
@@ -63,6 +71,7 @@ pub struct AssetsBuilder {
     pub(crate) documents: ::std::option::Option<::std::vec::Vec<crate::types::DocumentInfo>>,
     pub(crate) source_code: ::std::option::Option<::std::vec::Vec<crate::types::SourceCodeRepository>>,
     pub(crate) integrated_repositories: ::std::option::Option<::std::vec::Vec<crate::types::IntegratedRepository>>,
+    pub(crate) trusted_ca_certificates: ::std::option::Option<::std::vec::Vec<crate::types::TrustedCaCertificate>>,
 }
 impl AssetsBuilder {
     /// Appends an item to `endpoints`.
@@ -165,6 +174,26 @@ impl AssetsBuilder {
     pub fn get_integrated_repositories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegratedRepository>> {
         &self.integrated_repositories
     }
+    /// Appends an item to `trusted_ca_certificates`.
+    ///
+    /// To override the contents of this collection use [`set_trusted_ca_certificates`](Self::set_trusted_ca_certificates).
+    ///
+    /// <p>The trust anchors used to validate target endpoint TLS certificates. Provide these for endpoints served by a private or internal certificate authority (CA), an intermediate CA, or a self-signed certificate.</p>
+    pub fn trusted_ca_certificates(mut self, input: crate::types::TrustedCaCertificate) -> Self {
+        let mut v = self.trusted_ca_certificates.unwrap_or_default();
+        v.push(input);
+        self.trusted_ca_certificates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The trust anchors used to validate target endpoint TLS certificates. Provide these for endpoints served by a private or internal certificate authority (CA), an intermediate CA, or a self-signed certificate.</p>
+    pub fn set_trusted_ca_certificates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TrustedCaCertificate>>) -> Self {
+        self.trusted_ca_certificates = input;
+        self
+    }
+    /// <p>The trust anchors used to validate target endpoint TLS certificates. Provide these for endpoints served by a private or internal certificate authority (CA), an intermediate CA, or a self-signed certificate.</p>
+    pub fn get_trusted_ca_certificates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TrustedCaCertificate>> {
+        &self.trusted_ca_certificates
+    }
     /// Consumes the builder and constructs a [`Assets`](crate::types::Assets).
     pub fn build(self) -> crate::types::Assets {
         crate::types::Assets {
@@ -173,6 +202,7 @@ impl AssetsBuilder {
             documents: self.documents,
             source_code: self.source_code,
             integrated_repositories: self.integrated_repositories,
+            trusted_ca_certificates: self.trusted_ca_certificates,
         }
     }
 }

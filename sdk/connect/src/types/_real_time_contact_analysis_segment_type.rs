@@ -15,6 +15,7 @@
 ///     RealTimeContactAnalysisSegmentType::Attachments => { /* ... */ },
 ///     RealTimeContactAnalysisSegmentType::Categories => { /* ... */ },
 ///     RealTimeContactAnalysisSegmentType::Event => { /* ... */ },
+///     RealTimeContactAnalysisSegmentType::ExtractedInformation => { /* ... */ },
 ///     RealTimeContactAnalysisSegmentType::Issues => { /* ... */ },
 ///     RealTimeContactAnalysisSegmentType::PostContactSummary => { /* ... */ },
 ///     RealTimeContactAnalysisSegmentType::Transcript => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum RealTimeContactAnalysisSegmentType {
     #[allow(missing_docs)] // documentation missing in model
     Event,
     #[allow(missing_docs)] // documentation missing in model
+    ExtractedInformation,
+    #[allow(missing_docs)] // documentation missing in model
     Issues,
     #[allow(missing_docs)] // documentation missing in model
     PostContactSummary,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for RealTimeContactAnalysisSegmentType {
             "Attachments" => RealTimeContactAnalysisSegmentType::Attachments,
             "Categories" => RealTimeContactAnalysisSegmentType::Categories,
             "Event" => RealTimeContactAnalysisSegmentType::Event,
+            "ExtractedInformation" => RealTimeContactAnalysisSegmentType::ExtractedInformation,
             "Issues" => RealTimeContactAnalysisSegmentType::Issues,
             "PostContactSummary" => RealTimeContactAnalysisSegmentType::PostContactSummary,
             "Transcript" => RealTimeContactAnalysisSegmentType::Transcript,
@@ -89,6 +93,7 @@ impl RealTimeContactAnalysisSegmentType {
             RealTimeContactAnalysisSegmentType::Attachments => "Attachments",
             RealTimeContactAnalysisSegmentType::Categories => "Categories",
             RealTimeContactAnalysisSegmentType::Event => "Event",
+            RealTimeContactAnalysisSegmentType::ExtractedInformation => "ExtractedInformation",
             RealTimeContactAnalysisSegmentType::Issues => "Issues",
             RealTimeContactAnalysisSegmentType::PostContactSummary => "PostContactSummary",
             RealTimeContactAnalysisSegmentType::Transcript => "Transcript",
@@ -97,7 +102,15 @@ impl RealTimeContactAnalysisSegmentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Attachments", "Categories", "Event", "Issues", "PostContactSummary", "Transcript"]
+        &[
+            "Attachments",
+            "Categories",
+            "Event",
+            "ExtractedInformation",
+            "Issues",
+            "PostContactSummary",
+            "Transcript",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for RealTimeContactAnalysisSegmentType {
@@ -123,6 +136,7 @@ impl ::std::fmt::Display for RealTimeContactAnalysisSegmentType {
             RealTimeContactAnalysisSegmentType::Attachments => write!(f, "Attachments"),
             RealTimeContactAnalysisSegmentType::Categories => write!(f, "Categories"),
             RealTimeContactAnalysisSegmentType::Event => write!(f, "Event"),
+            RealTimeContactAnalysisSegmentType::ExtractedInformation => write!(f, "ExtractedInformation"),
             RealTimeContactAnalysisSegmentType::Issues => write!(f, "Issues"),
             RealTimeContactAnalysisSegmentType::PostContactSummary => write!(f, "PostContactSummary"),
             RealTimeContactAnalysisSegmentType::Transcript => write!(f, "Transcript"),

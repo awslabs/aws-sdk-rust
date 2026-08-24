@@ -263,6 +263,8 @@ pub use crate::types::_kafka_cluster_sasl_scram_authentication::KafkaClusterSasl
 
 pub use crate::types::_kafka_cluster_mtls_authentication::KafkaClusterMtlsAuthentication;
 
+pub use crate::types::_kafka_cluster_sasl_o_auth_bearer_authentication::KafkaClusterSaslOAuthBearerAuthentication;
+
 pub use crate::types::_kafka_cluster_encryption_in_transit_type::KafkaClusterEncryptionInTransitType;
 
 pub use crate::types::_consumer_group_offset_sync_mode::ConsumerGroupOffsetSyncMode;
@@ -291,6 +293,14 @@ pub use crate::types::_partition_strategy::PartitionStrategy;
 
 pub use crate::types::_kafka_cluster_sasl_scram_mechanism::KafkaClusterSaslScramMechanism;
 
+pub use crate::types::_kafka_cluster_o_auth_client_credentials::KafkaClusterOAuthClientCredentials;
+
+pub use crate::types::_kafka_cluster_o_auth_iam_jwt_bearer::KafkaClusterOAuthIamJwtBearer;
+
+pub use crate::types::_kafka_cluster_o_auth_client_credentials_assertion::KafkaClusterOAuthClientCredentialsAssertion;
+
+pub use crate::types::_token_endpoint_authentication_method::TokenEndpointAuthenticationMethod;
+
 pub use crate::types::_replication_starting_position_type::ReplicationStartingPositionType;
 
 pub use crate::types::_replication_topic_name_configuration_type::ReplicationTopicNameConfigurationType;
@@ -300,6 +310,8 @@ pub use crate::types::_vpc_connectivity_scram::VpcConnectivityScram;
 pub use crate::types::_vpc_connectivity_iam::VpcConnectivityIam;
 
 pub use crate::types::_partition_source::PartitionSource;
+
+pub use crate::types::_jwt_signing_algorithm::JwtSigningAlgorithm;
 
 mod _amazon_msk_cluster;
 
@@ -417,6 +429,8 @@ mod _jmx_exporter;
 
 mod _jmx_exporter_info;
 
+mod _jwt_signing_algorithm;
+
 mod _kafka_cluster;
 
 mod _kafka_cluster_client_authentication;
@@ -430,6 +444,14 @@ mod _kafka_cluster_encryption_in_transit;
 mod _kafka_cluster_encryption_in_transit_type;
 
 mod _kafka_cluster_mtls_authentication;
+
+mod _kafka_cluster_o_auth_client_credentials;
+
+mod _kafka_cluster_o_auth_client_credentials_assertion;
+
+mod _kafka_cluster_o_auth_iam_jwt_bearer;
+
+mod _kafka_cluster_sasl_o_auth_bearer_authentication;
 
 mod _kafka_cluster_sasl_scram_authentication;
 
@@ -554,6 +576,8 @@ mod _table_creation;
 mod _target_compression_type;
 
 mod _tls;
+
+mod _token_endpoint_authentication_method;
 
 mod _topic_configuration;
 

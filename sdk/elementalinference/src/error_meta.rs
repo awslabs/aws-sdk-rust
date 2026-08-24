@@ -337,6 +337,34 @@ impl From<crate::operation::get_feed::GetFeedError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_fixture::GetFixtureError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_fixture::GetFixtureError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_fixture::GetFixtureError> for Error {
+    fn from(err: crate::operation::get_fixture::GetFixtureError) -> Self {
+        match err {
+            crate::operation::get_fixture::GetFixtureError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_fixture::GetFixtureError::GatewayTimedOutException(inner) => Error::GatewayTimedOutException(inner),
+            crate::operation::get_fixture::GetFixtureError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_fixture::GetFixtureError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_fixture::GetFixtureError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::get_fixture::GetFixtureError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::get_fixture::GetFixtureError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_fixture::GetFixtureError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dictionaries::ListDictionariesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

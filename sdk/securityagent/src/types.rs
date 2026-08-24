@@ -229,6 +229,8 @@ pub use crate::types::_source_code_repository::SourceCodeRepository;
 
 pub use crate::types::_integrated_repository::IntegratedRepository;
 
+pub use crate::types::_trusted_ca_certificate::TrustedCaCertificate;
+
 pub use crate::types::_user_role::UserRole;
 
 pub use crate::types::_network_traffic_rule::NetworkTrafficRule;
@@ -266,6 +268,8 @@ pub use crate::types::_code_remediation_task_status::CodeRemediationTaskStatus;
 pub use crate::types::_code_location::CodeLocation;
 
 pub use crate::types::_authentication::Authentication;
+
+pub use crate::types::_ca_certificate_source::CaCertificateSource;
 
 pub use crate::types::_network_traffic_rule_effect::NetworkTrafficRuleEffect;
 
@@ -350,6 +354,8 @@ mod _bitbucket_repository_metadata;
 mod _bitbucket_repository_resource;
 
 mod _bitbucket_resource_capabilities;
+
+mod _ca_certificate_source;
 
 mod _category;
 
@@ -600,6 +606,8 @@ mod _threat_severity;
 mod _threat_status;
 
 mod _threat_summary;
+
+mod _trusted_ca_certificate;
 
 mod _update_security_requirement_entry;
 

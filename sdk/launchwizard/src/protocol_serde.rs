@@ -121,6 +121,8 @@ pub(crate) mod shape_workload_deployment_pattern_data;
 
 pub(crate) mod shape_workload_deployment_pattern_data_summary_list;
 
+pub(crate) mod shape_account_constraints_list;
+
 pub(crate) mod shape_deployment_event_data_summary;
 
 pub(crate) mod shape_deployment_specifications;
@@ -131,9 +133,17 @@ pub(crate) mod shape_workload_data_summary;
 
 pub(crate) mod shape_workload_deployment_pattern_data_summary;
 
+pub(crate) mod shape_account_constraint;
+
+pub(crate) mod shape_deployment_event_metadata;
+
 pub(crate) mod shape_deployment_specifications_field;
 
 pub(crate) mod shape_allowed_values;
+
+pub(crate) mod shape_delegated_admin_constraint;
+
+pub(crate) mod shape_management_account_constraint;
 
 pub(crate) mod shape_specifications_conditional_data;
 

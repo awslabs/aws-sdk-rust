@@ -8,6 +8,8 @@ pub struct KafkaClusterClientAuthentication {
     pub sasl_scram: ::std::option::Option<crate::types::KafkaClusterSaslScramAuthentication>,
     /// <p>Details for mTLS client authentication.</p>
     pub mtls: ::std::option::Option<crate::types::KafkaClusterMtlsAuthentication>,
+    /// <p>Details for SASL/OAUTHBEARER client authentication.</p>
+    pub sasl_o_auth_bearer: ::std::option::Option<crate::types::KafkaClusterSaslOAuthBearerAuthentication>,
 }
 impl KafkaClusterClientAuthentication {
     /// <p>Details for SASL/SCRAM client authentication.</p>
@@ -17,6 +19,10 @@ impl KafkaClusterClientAuthentication {
     /// <p>Details for mTLS client authentication.</p>
     pub fn mtls(&self) -> ::std::option::Option<&crate::types::KafkaClusterMtlsAuthentication> {
         self.mtls.as_ref()
+    }
+    /// <p>Details for SASL/OAUTHBEARER client authentication.</p>
+    pub fn sasl_o_auth_bearer(&self) -> ::std::option::Option<&crate::types::KafkaClusterSaslOAuthBearerAuthentication> {
+        self.sasl_o_auth_bearer.as_ref()
     }
 }
 impl KafkaClusterClientAuthentication {
@@ -32,6 +38,7 @@ impl KafkaClusterClientAuthentication {
 pub struct KafkaClusterClientAuthenticationBuilder {
     pub(crate) sasl_scram: ::std::option::Option<crate::types::KafkaClusterSaslScramAuthentication>,
     pub(crate) mtls: ::std::option::Option<crate::types::KafkaClusterMtlsAuthentication>,
+    pub(crate) sasl_o_auth_bearer: ::std::option::Option<crate::types::KafkaClusterSaslOAuthBearerAuthentication>,
 }
 impl KafkaClusterClientAuthenticationBuilder {
     /// <p>Details for SASL/SCRAM client authentication.</p>
@@ -62,11 +69,26 @@ impl KafkaClusterClientAuthenticationBuilder {
     pub fn get_mtls(&self) -> &::std::option::Option<crate::types::KafkaClusterMtlsAuthentication> {
         &self.mtls
     }
+    /// <p>Details for SASL/OAUTHBEARER client authentication.</p>
+    pub fn sasl_o_auth_bearer(mut self, input: crate::types::KafkaClusterSaslOAuthBearerAuthentication) -> Self {
+        self.sasl_o_auth_bearer = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details for SASL/OAUTHBEARER client authentication.</p>
+    pub fn set_sasl_o_auth_bearer(mut self, input: ::std::option::Option<crate::types::KafkaClusterSaslOAuthBearerAuthentication>) -> Self {
+        self.sasl_o_auth_bearer = input;
+        self
+    }
+    /// <p>Details for SASL/OAUTHBEARER client authentication.</p>
+    pub fn get_sasl_o_auth_bearer(&self) -> &::std::option::Option<crate::types::KafkaClusterSaslOAuthBearerAuthentication> {
+        &self.sasl_o_auth_bearer
+    }
     /// Consumes the builder and constructs a [`KafkaClusterClientAuthentication`](crate::types::KafkaClusterClientAuthentication).
     pub fn build(self) -> crate::types::KafkaClusterClientAuthentication {
         crate::types::KafkaClusterClientAuthentication {
             sasl_scram: self.sasl_scram,
             mtls: self.mtls,
+            sasl_o_auth_bearer: self.sasl_o_auth_bearer,
         }
     }
 }

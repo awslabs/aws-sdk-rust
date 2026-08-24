@@ -15,6 +15,15 @@ pub fn ser_kafka_cluster_client_authentication(
         crate::protocol_serde::shape_kafka_cluster_mtls_authentication::ser_kafka_cluster_mtls_authentication(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.sasl_o_auth_bearer {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("saslOAuthBearer").start_object();
+        crate::protocol_serde::shape_kafka_cluster_sasl_o_auth_bearer_authentication::ser_kafka_cluster_sasl_o_auth_bearer_authentication(
+            &mut object_6,
+            var_5,
+        )?;
+        object_6.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +66,11 @@ where
                                     depth + 1,
                                 )?,
                             );
+                        }
+                        "saslOAuthBearer" => {
+                            builder = builder.set_sasl_o_auth_bearer(
+                                    crate::protocol_serde::shape_kafka_cluster_sasl_o_auth_bearer_authentication::de_kafka_cluster_sasl_o_auth_bearer_authentication(tokens, _value, depth + 1)?
+                                );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

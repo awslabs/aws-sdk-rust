@@ -55,6 +55,13 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "metadata" => {
+                            builder = builder.set_metadata(crate::protocol_serde::shape_deployment_event_metadata::de_deployment_event_metadata(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

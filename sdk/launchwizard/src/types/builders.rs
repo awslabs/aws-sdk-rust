@@ -21,4 +21,8 @@ pub use crate::types::_deployment_pattern_version_filter::DeploymentPatternVersi
 
 pub use crate::types::_deployment_specifications_field::DeploymentSpecificationsFieldBuilder;
 
+pub use crate::types::_management_account_constraint::ManagementAccountConstraintBuilder;
+
+pub use crate::types::_delegated_admin_constraint::DelegatedAdminConstraintBuilder;
+
 pub use crate::types::_deployment_conditional_field::DeploymentConditionalFieldBuilder;

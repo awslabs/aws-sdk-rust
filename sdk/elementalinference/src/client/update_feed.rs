@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`id(String)`](crate::operation::update_feed::UpdateFeedOutput::id): <p>The ID of the feed.</p>
     ///   - [`data_endpoints(Vec::<String>)`](crate::operation::update_feed::UpdateFeedOutput::data_endpoints): <p>The data endpoints of the feed.</p>
     ///   - [`outputs(Vec::<GetOutput>)`](crate::operation::update_feed::UpdateFeedOutput::outputs): <p>The array of outputs in the feed. You might have left this array unchanged, or you might have changed it.</p>
+    ///   - [`access_role_arn(Option<String>)`](crate::operation::update_feed::UpdateFeedOutput::access_role_arn): <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role for the feed, after the update. This property is absent if the feed doesn't have an IAM role.</p>
     ///   - [`status(FeedStatus)`](crate::operation::update_feed::UpdateFeedOutput::status): <p>The status of the feed.</p>
     ///   - [`association(Option<FeedAssociation>)`](crate::operation::update_feed::UpdateFeedOutput::association): <p>Information about the resource that is associated with the feed, if any.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::update_feed::UpdateFeedOutput::tags): <p>The tags associated with the feed.</p>

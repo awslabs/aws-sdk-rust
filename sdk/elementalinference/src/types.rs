@@ -9,6 +9,8 @@ pub use crate::types::_feed_status::FeedStatus;
 
 pub use crate::types::_feed_association::FeedAssociation;
 
+pub use crate::types::_competitor::Competitor;
+
 pub use crate::types::_search_filter::SearchFilter;
 
 pub use crate::types::_fixture_summary::FixtureSummary;
@@ -28,8 +30,6 @@ pub use crate::types::_filter_name::FilterName;
 pub use crate::types::_output_config::OutputConfig;
 
 pub use crate::types::_output_status::OutputStatus;
-
-pub use crate::types::_competitor::Competitor;
 
 pub use crate::types::_cropping_config::CroppingConfig;
 

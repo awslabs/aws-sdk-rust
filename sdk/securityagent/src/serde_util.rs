@@ -1124,6 +1124,15 @@ pub(crate) fn integrated_repository_correct_errors(
     builder
 }
 
+pub(crate) fn trusted_ca_certificate_correct_errors(
+    mut builder: crate::types::builders::TrustedCaCertificateBuilder,
+) -> crate::types::builders::TrustedCaCertificateBuilder {
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::CaCertificateSource::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn bitbucket_repository_metadata_correct_errors(
     mut builder: crate::types::builders::BitbucketRepositoryMetadataBuilder,
 ) -> crate::types::builders::BitbucketRepositoryMetadataBuilder {

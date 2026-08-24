@@ -485,6 +485,8 @@ pub(crate) mod shape_jmx_exporter_info;
 
 pub(crate) mod shape_kafka_cluster_mtls_authentication;
 
+pub(crate) mod shape_kafka_cluster_sasl_o_auth_bearer_authentication;
+
 pub(crate) mod shape_kafka_cluster_sasl_scram_authentication;
 
 pub(crate) mod shape_list_of_broker_ebs_volume_info;
@@ -530,6 +532,12 @@ pub(crate) mod shape_zookeeper_node_info;
 pub(crate) mod shape_cluster_operation_step_info;
 
 pub(crate) mod shape_jmx_exporter;
+
+pub(crate) mod shape_kafka_cluster_o_auth_client_credentials;
+
+pub(crate) mod shape_kafka_cluster_o_auth_client_credentials_assertion;
+
+pub(crate) mod shape_kafka_cluster_o_auth_iam_jwt_bearer;
 
 pub(crate) mod shape_kafka_cluster_summary;
 

@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-launchwizard = "1.109.0"
+//! aws-sdk-launchwizard = "1.110.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -202,6 +202,8 @@ mod endpoint_lib;
 mod lens;
 
 mod json_errors;
+
+mod serde_util;
 
 #[doc(inline)]
 pub use client::Client;

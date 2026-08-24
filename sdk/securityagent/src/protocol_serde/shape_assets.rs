@@ -40,6 +40,11 @@ where
                                 crate::protocol_serde::shape_integrated_repository_list::de_integrated_repository_list(tokens, _value, depth + 1)?,
                             );
                         }
+                        "trustedCaCertificates" => {
+                            builder = builder.set_trusted_ca_certificates(
+                                crate::protocol_serde::shape_trusted_ca_certificate_list::de_trusted_ca_certificate_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -120,6 +125,18 @@ pub fn ser_assets(
             }
         }
         array_18.finish();
+    }
+    if let Some(var_21) = &input.trusted_ca_certificates {
+        let mut array_22 = object.key("trustedCaCertificates").start_array();
+        for item_23 in var_21 {
+            {
+                #[allow(unused_mut)]
+                let mut object_24 = array_22.value().start_object();
+                crate::protocol_serde::shape_trusted_ca_certificate::ser_trusted_ca_certificate(&mut object_24, item_23)?;
+                object_24.finish();
+            }
+        }
+        array_22.finish();
     }
     Ok(())
 }

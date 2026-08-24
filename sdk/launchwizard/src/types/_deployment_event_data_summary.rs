@@ -14,6 +14,8 @@ pub struct DeploymentEventDataSummary {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp of the deployment event.</p>
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// A map of metadata key-value pairs associated with a deployment event. For error detection events, contains workload context and log excerpts used for troubleshooting.
+    pub metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DeploymentEventDataSummary {
     /// <p>The name of the deployment event.</p>
@@ -36,6 +38,10 @@ impl DeploymentEventDataSummary {
     pub fn timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
+    /// A map of metadata key-value pairs associated with a deployment event. For error detection events, contains workload context and log excerpts used for troubleshooting.
+    pub fn metadata(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.metadata.as_ref()
+    }
 }
 impl DeploymentEventDataSummary {
     /// Creates a new builder-style object to manufacture [`DeploymentEventDataSummary`](crate::types::DeploymentEventDataSummary).
@@ -53,6 +59,7 @@ pub struct DeploymentEventDataSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::EventStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl DeploymentEventDataSummaryBuilder {
     /// <p>The name of the deployment event.</p>
@@ -125,6 +132,26 @@ impl DeploymentEventDataSummaryBuilder {
     pub fn get_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.timestamp
     }
+    /// Adds a key-value pair to `metadata`.
+    ///
+    /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+    ///
+    /// A map of metadata key-value pairs associated with a deployment event. For error detection events, contains workload context and log excerpts used for troubleshooting.
+    pub fn metadata(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.metadata.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.metadata = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// A map of metadata key-value pairs associated with a deployment event. For error detection events, contains workload context and log excerpts used for troubleshooting.
+    pub fn set_metadata(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.metadata = input;
+        self
+    }
+    /// A map of metadata key-value pairs associated with a deployment event. For error detection events, contains workload context and log excerpts used for troubleshooting.
+    pub fn get_metadata(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.metadata
+    }
     /// Consumes the builder and constructs a [`DeploymentEventDataSummary`](crate::types::DeploymentEventDataSummary).
     pub fn build(self) -> crate::types::DeploymentEventDataSummary {
         crate::types::DeploymentEventDataSummary {
@@ -133,6 +160,7 @@ impl DeploymentEventDataSummaryBuilder {
             status: self.status,
             status_reason: self.status_reason,
             timestamp: self.timestamp,
+            metadata: self.metadata,
         }
     }
 }

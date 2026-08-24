@@ -219,6 +219,8 @@ pub use crate::types::_kafka_cluster_sasl_scram_authentication::KafkaClusterSasl
 
 pub use crate::types::_kafka_cluster_mtls_authentication::KafkaClusterMtlsAuthenticationBuilder;
 
+pub use crate::types::_kafka_cluster_sasl_o_auth_bearer_authentication::KafkaClusterSaslOAuthBearerAuthenticationBuilder;
+
 pub use crate::types::_replication_starting_position::ReplicationStartingPositionBuilder;
 
 pub use crate::types::_replication_topic_name_configuration::ReplicationTopicNameConfigurationBuilder;
@@ -236,6 +238,12 @@ pub use crate::types::_replication_info_summary::ReplicationInfoSummaryBuilder;
 pub use crate::types::_vpc_connectivity_sasl::VpcConnectivitySaslBuilder;
 
 pub use crate::types::_vpc_connectivity_tls::VpcConnectivityTlsBuilder;
+
+pub use crate::types::_kafka_cluster_o_auth_client_credentials::KafkaClusterOAuthClientCredentialsBuilder;
+
+pub use crate::types::_kafka_cluster_o_auth_iam_jwt_bearer::KafkaClusterOAuthIamJwtBearerBuilder;
+
+pub use crate::types::_kafka_cluster_o_auth_client_credentials_assertion::KafkaClusterOAuthClientCredentialsAssertionBuilder;
 
 pub use crate::types::_vpc_connectivity_scram::VpcConnectivityScramBuilder;
 

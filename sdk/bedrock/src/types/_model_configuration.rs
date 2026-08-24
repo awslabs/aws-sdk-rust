@@ -4,7 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelConfiguration {
-    /// <p>The ID of the model to use for optimization.</p>
+    /// <p>The model to use for optimization. The value depends on the resource that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html">Models at a glance</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a cross-Region (system-defined) inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for inference profiles</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an application inference profile, specify its full ARN, including the account ID and Region.</p></li>
+    /// </ul>
     pub model_id: ::std::string::String,
     /// <p>The inference configuration for the model, including parameters such as maximum tokens, temperature, and top-p.</p>
     pub inference_config: ::std::option::Option<crate::types::InferenceConfiguration>,
@@ -12,7 +20,15 @@ pub struct ModelConfiguration {
     pub additional_model_request_fields: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl ModelConfiguration {
-    /// <p>The ID of the model to use for optimization.</p>
+    /// <p>The model to use for optimization. The value depends on the resource that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html">Models at a glance</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a cross-Region (system-defined) inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for inference profiles</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an application inference profile, specify its full ARN, including the account ID and Region.</p></li>
+    /// </ul>
     pub fn model_id(&self) -> &str {
         use std::ops::Deref;
         self.model_id.deref()
@@ -45,18 +61,42 @@ pub struct ModelConfigurationBuilder {
         ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
 }
 impl ModelConfigurationBuilder {
-    /// <p>The ID of the model to use for optimization.</p>
+    /// <p>The model to use for optimization. The value depends on the resource that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html">Models at a glance</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a cross-Region (system-defined) inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for inference profiles</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an application inference profile, specify its full ARN, including the account ID and Region.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn model_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.model_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the model to use for optimization.</p>
+    /// <p>The model to use for optimization. The value depends on the resource that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html">Models at a glance</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a cross-Region (system-defined) inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for inference profiles</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an application inference profile, specify its full ARN, including the account ID and Region.</p></li>
+    /// </ul>
     pub fn set_model_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.model_id = input;
         self
     }
-    /// <p>The ID of the model to use for optimization.</p>
+    /// <p>The model to use for optimization. The value depends on the resource that you use:</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you use a base model, specify the model ID or its ARN. For a list of model IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html">Models at a glance</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use a cross-Region (system-defined) inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported Regions and models for inference profiles</a> in the Amazon Bedrock User Guide.</p></li>
+    /// <li>
+    /// <p>If you use an application inference profile, specify its full ARN, including the account ID and Region.</p></li>
+    /// </ul>
     pub fn get_model_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_id
     }

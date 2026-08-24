@@ -33,6 +33,8 @@ pub struct GetDbClusterOutput {
     pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The ID of the DB parameter group assigned to your DB cluster.</p>
     pub db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the DB parameter group actually applied to your DB cluster. When the service applies optimized defaults, it creates a service-managed DB parameter group and this field reflects that group, while dbParameterGroupIdentifier reflects the customer-provided DB parameter group. When no service-managed DB parameter group is applied, this value matches dbParameterGroupIdentifier.</p>
+    pub effective_db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
     pub log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     /// <p>The maintenance schedule for the DB cluster.</p>
@@ -121,6 +123,10 @@ impl GetDbClusterOutput {
     pub fn db_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
         self.db_parameter_group_identifier.as_deref()
     }
+    /// <p>The ID of the DB parameter group actually applied to your DB cluster. When the service applies optimized defaults, it creates a service-managed DB parameter group and this field reflects that group, while dbParameterGroupIdentifier reflects the customer-provided DB parameter group. When no service-managed DB parameter group is applied, this value matches dbParameterGroupIdentifier.</p>
+    pub fn effective_db_parameter_group_identifier(&self) -> ::std::option::Option<&str> {
+        self.effective_db_parameter_group_identifier.as_deref()
+    }
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
     pub fn log_delivery_configuration(&self) -> ::std::option::Option<&crate::types::LogDeliveryConfiguration> {
         self.log_delivery_configuration.as_ref()
@@ -203,6 +209,7 @@ pub struct GetDbClusterOutputBuilder {
     pub(crate) engine_type: ::std::option::Option<crate::types::EngineType>,
     pub(crate) publicly_accessible: ::std::option::Option<bool>,
     pub(crate) db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) effective_db_parameter_group_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) log_delivery_configuration: ::std::option::Option<crate::types::LogDeliveryConfiguration>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     pub(crate) last_maintenance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -430,6 +437,20 @@ impl GetDbClusterOutputBuilder {
     pub fn get_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_parameter_group_identifier
     }
+    /// <p>The ID of the DB parameter group actually applied to your DB cluster. When the service applies optimized defaults, it creates a service-managed DB parameter group and this field reflects that group, while dbParameterGroupIdentifier reflects the customer-provided DB parameter group. When no service-managed DB parameter group is applied, this value matches dbParameterGroupIdentifier.</p>
+    pub fn effective_db_parameter_group_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.effective_db_parameter_group_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the DB parameter group actually applied to your DB cluster. When the service applies optimized defaults, it creates a service-managed DB parameter group and this field reflects that group, while dbParameterGroupIdentifier reflects the customer-provided DB parameter group. When no service-managed DB parameter group is applied, this value matches dbParameterGroupIdentifier.</p>
+    pub fn set_effective_db_parameter_group_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.effective_db_parameter_group_identifier = input;
+        self
+    }
+    /// <p>The ID of the DB parameter group actually applied to your DB cluster. When the service applies optimized defaults, it creates a service-managed DB parameter group and this field reflects that group, while dbParameterGroupIdentifier reflects the customer-provided DB parameter group. When no service-managed DB parameter group is applied, this value matches dbParameterGroupIdentifier.</p>
+    pub fn get_effective_db_parameter_group_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_db_parameter_group_identifier
+    }
     /// <p>Configuration for sending InfluxDB engine logs to send to specified S3 bucket.</p>
     pub fn log_delivery_configuration(mut self, input: crate::types::LogDeliveryConfiguration) -> Self {
         self.log_delivery_configuration = ::std::option::Option::Some(input);
@@ -650,6 +671,7 @@ impl GetDbClusterOutputBuilder {
             engine_type: self.engine_type,
             publicly_accessible: self.publicly_accessible,
             db_parameter_group_identifier: self.db_parameter_group_identifier,
+            effective_db_parameter_group_identifier: self.effective_db_parameter_group_identifier,
             log_delivery_configuration: self.log_delivery_configuration,
             maintenance_schedule: self.maintenance_schedule,
             last_maintenance_time: self.last_maintenance_time,

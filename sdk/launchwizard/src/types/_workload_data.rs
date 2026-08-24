@@ -11,6 +11,8 @@ pub struct WorkloadData {
     /// <p>The status of a workload.</p>
     /// <p><i>You can list deployments in the <code>DISABLED</code> status.</i></p>
     pub status: ::std::option::Option<crate::types::WorkloadStatus>,
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub account_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>,
     /// <p>The description of a workload.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The URL of a workload document.</p>
@@ -33,6 +35,12 @@ impl WorkloadData {
     /// <p><i>You can list deployments in the <code>DISABLED</code> status.</i></p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkloadStatus> {
         self.status.as_ref()
+    }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_constraints.is_none()`.
+    pub fn account_constraints(&self) -> &[crate::types::AccountConstraint] {
+        self.account_constraints.as_deref().unwrap_or_default()
     }
     /// <p>The description of a workload.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -65,6 +73,7 @@ pub struct WorkloadDataBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkloadStatus>,
+    pub(crate) account_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) documentation_url: ::std::option::Option<::std::string::String>,
     pub(crate) icon_url: ::std::option::Option<::std::string::String>,
@@ -115,6 +124,26 @@ impl WorkloadDataBuilder {
     /// <p><i>You can list deployments in the <code>DISABLED</code> status.</i></p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkloadStatus> {
         &self.status
+    }
+    /// Appends an item to `account_constraints`.
+    ///
+    /// To override the contents of this collection use [`set_account_constraints`](Self::set_account_constraints).
+    ///
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn account_constraints(mut self, input: crate::types::AccountConstraint) -> Self {
+        let mut v = self.account_constraints.unwrap_or_default();
+        v.push(input);
+        self.account_constraints = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn set_account_constraints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>) -> Self {
+        self.account_constraints = input;
+        self
+    }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn get_account_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>> {
+        &self.account_constraints
     }
     /// <p>The description of a workload.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -178,6 +207,7 @@ impl WorkloadDataBuilder {
             workload_name: self.workload_name,
             display_name: self.display_name,
             status: self.status,
+            account_constraints: self.account_constraints,
             description: self.description,
             documentation_url: self.documentation_url,
             icon_url: self.icon_url,
