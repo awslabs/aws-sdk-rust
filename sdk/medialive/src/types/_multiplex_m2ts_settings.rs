@@ -28,7 +28,7 @@ pub struct MultiplexM2tsSettings {
     pub pcr_control: ::std::option::Option<crate::types::M2tsPcrControl>,
     /// Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.
     pub pcr_period: ::std::option::Option<i32>,
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub scte35_control: ::std::option::Option<crate::types::M2tsScte35Control>,
     /// Defines the amount SCTE-35 preroll will be increased (in milliseconds) on the output. Preroll is the amount of time between the presence of a SCTE-35 indication in a transport stream and the PTS of the video frame it references. Zero means don't add pullup (it doesn't mean set the preroll to zero). Negative pullup is not supported, which means that you can't make the preroll shorter. Be aware that latency in the output will increase by the pullup amount.
     pub scte35_preroll_pullup_milliseconds: ::std::option::Option<f64>,
@@ -82,7 +82,7 @@ impl MultiplexM2tsSettings {
     pub fn pcr_period(&self) -> ::std::option::Option<i32> {
         self.pcr_period
     }
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub fn scte35_control(&self) -> ::std::option::Option<&crate::types::M2tsScte35Control> {
         self.scte35_control.as_ref()
     }
@@ -286,17 +286,17 @@ impl MultiplexM2tsSettingsBuilder {
     pub fn get_pcr_period(&self) -> &::std::option::Option<i32> {
         &self.pcr_period
     }
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub fn scte35_control(mut self, input: crate::types::M2tsScte35Control) -> Self {
         self.scte35_control = ::std::option::Option::Some(input);
         self
     }
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub fn set_scte35_control(mut self, input: ::std::option::Option<crate::types::M2tsScte35Control>) -> Self {
         self.scte35_control = input;
         self
     }
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub fn get_scte35_control(&self) -> &::std::option::Option<crate::types::M2tsScte35Control> {
         &self.scte35_control
     }

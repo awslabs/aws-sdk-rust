@@ -36,11 +36,23 @@ pub fn ser_update_memory_input_input(
         crate::protocol_serde::shape_modify_memory_strategies::ser_modify_memory_strategies(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.stream_delivery_resources {
+    if let Some(var_11) = &input.namespace_keys {
+        let mut array_12 = object.key("namespaceKeys").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_namespace_key_entry::ser_namespace_key_entry(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
+    }
+    if let Some(var_15) = &input.stream_delivery_resources {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("streamDeliveryResources").start_object();
-        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_16 = object.key("streamDeliveryResources").start_object();
+        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

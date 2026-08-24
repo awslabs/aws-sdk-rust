@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateCertificateOptions")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateCertificateOptionsTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,49 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
     }
 }
 
+#[derive(Debug)]
+struct UpdateCertificateOptionsTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCertificateOptionsTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateCertificateOptionsTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateCertificateOptionsInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("CertificateArn") {
+            if let ::std::option::Option::Some(value) = input.certificate_arn.as_deref() {
+                captured.insert("CertificateArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateCertificateOptionsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateCertificateOptionsResponseDeserializer {
@@ -270,6 +316,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCertifi
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateCertificateOptionsError {
+    /// <p>You are trying to update a resource or configuration that is already being created or updated. Wait for the previous operation to finish and try again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
     InvalidArnException(crate::types::error::InvalidArnException),
     /// <p>Processing has reached an invalid state.</p>
@@ -313,6 +361,7 @@ impl UpdateCertificateOptionsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArnException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -320,6 +369,10 @@ impl UpdateCertificateOptionsError {
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateCertificateOptionsError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `UpdateCertificateOptionsError::InvalidArnException`.
     pub fn is_invalid_arn_exception(&self) -> bool {
@@ -345,6 +398,7 @@ impl UpdateCertificateOptionsError {
 impl ::std::error::Error for UpdateCertificateOptionsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArnException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidStateException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -357,6 +411,7 @@ impl ::std::error::Error for UpdateCertificateOptionsError {
 impl ::std::fmt::Display for UpdateCertificateOptionsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InvalidArnException(_inner) => _inner.fmt(f),
             Self::InvalidStateException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
@@ -383,6 +438,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateCertificateOptionsErr
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateCertificateOptionsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArnException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

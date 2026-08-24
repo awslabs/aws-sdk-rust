@@ -125,6 +125,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateAssociation")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateAssociationTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -144,6 +147,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
     }
 }
 
+#[derive(Debug)]
+struct CreateAssociationTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAssociationTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateAssociationTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateAssociationInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("Name", value);
+            }
+        }
+        if requested.should_capture("DocumentVersion") {
+            if let ::std::option::Option::Some(value) = input.document_version.as_deref() {
+                captured.insert("DocumentVersion", value);
+            }
+        }
+        if requested.should_capture("InstanceId") {
+            if let ::std::option::Option::Some(value) = input.instance_id.as_deref() {
+                captured.insert("InstanceId", value);
+            }
+        }
+        if requested.should_capture("ScheduleExpression") {
+            if let ::std::option::Option::Some(value) = input.schedule_expression.as_deref() {
+                captured.insert("ScheduleExpression", value);
+            }
+        }
+        if requested.should_capture("AssociationName") {
+            if let ::std::option::Option::Some(value) = input.association_name.as_deref() {
+                captured.insert("AssociationName", value);
+            }
+        }
+        if requested.should_capture("AutomationTargetParameterName") {
+            if let ::std::option::Option::Some(value) = input.automation_target_parameter_name.as_deref() {
+                captured.insert("AutomationTargetParameterName", value);
+            }
+        }
+        if requested.should_capture("MaxErrors") {
+            if let ::std::option::Option::Some(value) = input.max_errors.as_deref() {
+                captured.insert("MaxErrors", value);
+            }
+        }
+        if requested.should_capture("MaxConcurrency") {
+            if let ::std::option::Option::Some(value) = input.max_concurrency.as_deref() {
+                captured.insert("MaxConcurrency", value);
+            }
+        }
+        if requested.should_capture("AssociationDispatchAssumeRole") {
+            if let ::std::option::Option::Some(value) = input.association_dispatch_assume_role.as_deref() {
+                captured.insert("AssociationDispatchAssumeRole", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateAssociationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateAssociationResponseDeserializer {

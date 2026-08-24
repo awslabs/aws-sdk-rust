@@ -19,10 +19,14 @@ pub struct EnableLoggingInput {
     /// <p>The prefix applied to the log file names.</p>
     /// <p>Valid characters are any letter from any language, any whitespace character, any numeric character, and the following characters: underscore (<code>_</code>), period (<code>.</code>), colon (<code>:</code>), slash (<code>/</code>), equal (<code>=</code>), plus (<code>+</code>), backslash (<code>\</code>), hyphen (<code>-</code>), at symbol (<code>@</code>).</p>
     pub s3_key_prefix: ::std::option::Option<::std::string::String>,
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to publish. Omitting this parameter, passing an empty list, or including the value <code>all</code> publishes all current and future system tables.</p>
     pub log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The identifier of a customer managed KMS key used to encrypt the S3 tables. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub s3_table_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The scope of system table publishing. Valid values are <code>cluster</code> and <code>account</code>. A value of <code>cluster</code> scopes publishing to the individual cluster. A value of <code>account</code> scopes publishing to the Amazon Web Services account. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub s3_table_granularity: ::std::option::Option<::std::string::String>,
 }
 impl EnableLoggingInput {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
@@ -46,15 +50,23 @@ impl EnableLoggingInput {
     pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub fn log_destination_type(&self) -> ::std::option::Option<&crate::types::LogDestinationType> {
         self.log_destination_type.as_ref()
     }
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to publish. Omitting this parameter, passing an empty list, or including the value <code>all</code> publishes all current and future system tables.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
     pub fn log_exports(&self) -> &[::std::string::String] {
         self.log_exports.as_deref().unwrap_or_default()
+    }
+    /// <p>The identifier of a customer managed KMS key used to encrypt the S3 tables. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.s3_table_kms_key_id.as_deref()
+    }
+    /// <p>The scope of system table publishing. Valid values are <code>cluster</code> and <code>account</code>. A value of <code>cluster</code> scopes publishing to the individual cluster. A value of <code>account</code> scopes publishing to the Amazon Web Services account. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_granularity(&self) -> ::std::option::Option<&str> {
+        self.s3_table_granularity.as_deref()
     }
 }
 impl EnableLoggingInput {
@@ -73,6 +85,8 @@ pub struct EnableLoggingInputBuilder {
     pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,
     pub(crate) log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
     pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) s3_table_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_table_granularity: ::std::option::Option<::std::string::String>,
 }
 impl EnableLoggingInputBuilder {
     /// <p>The identifier of the cluster on which logging is to be started.</p>
@@ -145,17 +159,17 @@ impl EnableLoggingInputBuilder {
     pub fn get_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_key_prefix
     }
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
         self.log_destination_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
         self.log_destination_type = input;
         self
     }
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
         &self.log_destination_type
     }
@@ -163,21 +177,49 @@ impl EnableLoggingInputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
     ///
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to publish. Omitting this parameter, passing an empty list, or including the value <code>all</code> publishes all current and future system tables.</p>
     pub fn log_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
         v.push(input.into());
         self.log_exports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to publish. Omitting this parameter, passing an empty list, or including the value <code>all</code> publishes all current and future system tables.</p>
     pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_exports = input;
         self
     }
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to publish. Omitting this parameter, passing an empty list, or including the value <code>all</code> publishes all current and future system tables.</p>
     pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_exports
+    }
+    /// <p>The identifier of a customer managed KMS key used to encrypt the S3 tables. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_table_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of a customer managed KMS key used to encrypt the S3 tables. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub fn set_s3_table_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_table_kms_key_id = input;
+        self
+    }
+    /// <p>The identifier of a customer managed KMS key used to encrypt the S3 tables. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub fn get_s3_table_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_table_kms_key_id
+    }
+    /// <p>The scope of system table publishing. Valid values are <code>cluster</code> and <code>account</code>. A value of <code>cluster</code> scopes publishing to the individual cluster. A value of <code>account</code> scopes publishing to the Amazon Web Services account. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_granularity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_table_granularity = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The scope of system table publishing. Valid values are <code>cluster</code> and <code>account</code>. A value of <code>cluster</code> scopes publishing to the individual cluster. A value of <code>account</code> scopes publishing to the Amazon Web Services account. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub fn set_s3_table_granularity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_table_granularity = input;
+        self
+    }
+    /// <p>The scope of system table publishing. Valid values are <code>cluster</code> and <code>account</code>. A value of <code>cluster</code> scopes publishing to the individual cluster. A value of <code>account</code> scopes publishing to the Amazon Web Services account. This parameter is valid only when <code>LogDestinationType</code> is <code>s3table</code>.</p>
+    pub fn get_s3_table_granularity(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_table_granularity
     }
     /// Consumes the builder and constructs a [`EnableLoggingInput`](crate::operation::enable_logging::EnableLoggingInput).
     pub fn build(
@@ -189,6 +231,8 @@ impl EnableLoggingInputBuilder {
             s3_key_prefix: self.s3_key_prefix,
             log_destination_type: self.log_destination_type,
             log_exports: self.log_exports,
+            s3_table_kms_key_id: self.s3_table_kms_key_id,
+            s3_table_granularity: self.s3_table_granularity,
         })
     }
 }

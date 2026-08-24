@@ -3,6 +3,8 @@ pub use crate::types::_order::OrderBuilder;
 
 pub use crate::types::_outpost::OutpostBuilder;
 
+pub use crate::types::_private_connectivity_config::PrivateConnectivityConfigBuilder;
+
 pub use crate::types::_quote::QuoteBuilder;
 
 pub use crate::types::_address::AddressBuilder;
@@ -20,6 +22,8 @@ pub use crate::types::_catalog_item::CatalogItemBuilder;
 pub use crate::types::_connection_details::ConnectionDetailsBuilder;
 
 pub use crate::types::_line_item_request::LineItemRequestBuilder;
+
+pub use crate::types::_vpc_information::VpcInformationBuilder;
 
 pub use crate::types::_quote_capacity::QuoteCapacityBuilder;
 

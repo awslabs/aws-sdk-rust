@@ -25,9 +25,15 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_associate_source_network_stack;
 
+pub(crate) mod shape_cancel_recovery_plan_execution;
+
 pub(crate) mod shape_create_extended_source_server;
 
 pub(crate) mod shape_create_launch_configuration_template;
+
+pub(crate) mod shape_create_recovery_plan;
+
+pub(crate) mod shape_create_recovery_plan_step;
 
 pub(crate) mod shape_create_replication_configuration_template;
 
@@ -40,6 +46,12 @@ pub(crate) mod shape_delete_launch_action;
 pub(crate) mod shape_delete_launch_configuration_template;
 
 pub(crate) mod shape_delete_recovery_instance;
+
+pub(crate) mod shape_delete_recovery_plan;
+
+pub(crate) mod shape_delete_recovery_plan_execution;
+
+pub(crate) mod shape_delete_recovery_plan_step;
 
 pub(crate) mod shape_delete_replication_configuration_template;
 
@@ -73,6 +85,14 @@ pub(crate) mod shape_get_failback_replication_configuration;
 
 pub(crate) mod shape_get_launch_configuration;
 
+pub(crate) mod shape_get_recovery_plan;
+
+pub(crate) mod shape_get_recovery_plan_execution;
+
+pub(crate) mod shape_get_recovery_plan_execution_step;
+
+pub(crate) mod shape_get_recovery_plan_step;
+
 pub(crate) mod shape_get_replication_configuration;
 
 pub(crate) mod shape_initialize_service;
@@ -81,19 +101,33 @@ pub(crate) mod shape_list_extensible_source_servers;
 
 pub(crate) mod shape_list_launch_actions;
 
+pub(crate) mod shape_list_recovery_plan_execution_steps;
+
+pub(crate) mod shape_list_recovery_plan_executions;
+
+pub(crate) mod shape_list_recovery_plan_steps;
+
+pub(crate) mod shape_list_recovery_plans;
+
 pub(crate) mod shape_list_staging_accounts;
 
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_launch_action;
 
+pub(crate) mod shape_reorder_recovery_plan_steps;
+
 pub(crate) mod shape_retry_data_replication;
+
+pub(crate) mod shape_retry_recovery_plan_execution_step;
 
 pub(crate) mod shape_reverse_replication;
 
 pub(crate) mod shape_start_failback_launch;
 
 pub(crate) mod shape_start_recovery;
+
+pub(crate) mod shape_start_recovery_plan_execution;
 
 pub(crate) mod shape_start_replication;
 
@@ -119,6 +153,12 @@ pub(crate) mod shape_update_launch_configuration;
 
 pub(crate) mod shape_update_launch_configuration_template;
 
+pub(crate) mod shape_update_recovery_plan;
+
+pub(crate) mod shape_update_recovery_plan_execution_step;
+
+pub(crate) mod shape_update_recovery_plan_step;
+
 pub(crate) mod shape_update_replication_configuration;
 
 pub(crate) mod shape_update_replication_configuration_template;
@@ -135,11 +175,17 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_source_network_stack_input;
 
+pub(crate) mod shape_cancel_recovery_plan_execution_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_extended_source_server_input;
 
 pub(crate) mod shape_create_launch_configuration_template_input;
+
+pub(crate) mod shape_create_recovery_plan_input;
+
+pub(crate) mod shape_create_recovery_plan_step_input;
 
 pub(crate) mod shape_create_replication_configuration_template_input;
 
@@ -152,6 +198,12 @@ pub(crate) mod shape_delete_launch_action_input;
 pub(crate) mod shape_delete_launch_configuration_template_input;
 
 pub(crate) mod shape_delete_recovery_instance_input;
+
+pub(crate) mod shape_delete_recovery_plan_execution_input;
+
+pub(crate) mod shape_delete_recovery_plan_input;
+
+pub(crate) mod shape_delete_recovery_plan_step_input;
 
 pub(crate) mod shape_delete_replication_configuration_template_input;
 
@@ -185,6 +237,14 @@ pub(crate) mod shape_get_failback_replication_configuration_input;
 
 pub(crate) mod shape_get_launch_configuration_input;
 
+pub(crate) mod shape_get_recovery_plan_execution_input;
+
+pub(crate) mod shape_get_recovery_plan_execution_step_input;
+
+pub(crate) mod shape_get_recovery_plan_input;
+
+pub(crate) mod shape_get_recovery_plan_step_input;
+
 pub(crate) mod shape_get_replication_configuration_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -193,11 +253,23 @@ pub(crate) mod shape_list_extensible_source_servers_input;
 
 pub(crate) mod shape_list_launch_actions_input;
 
+pub(crate) mod shape_list_recovery_plan_execution_steps_input;
+
+pub(crate) mod shape_list_recovery_plan_executions_input;
+
+pub(crate) mod shape_list_recovery_plan_steps_input;
+
+pub(crate) mod shape_list_recovery_plans_input;
+
 pub(crate) mod shape_put_launch_action_input;
+
+pub(crate) mod shape_reorder_recovery_plan_steps_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_retry_data_replication_input;
+
+pub(crate) mod shape_retry_recovery_plan_execution_step_input;
 
 pub(crate) mod shape_reverse_replication_input;
 
@@ -206,6 +278,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_start_failback_launch_input;
 
 pub(crate) mod shape_start_recovery_input;
+
+pub(crate) mod shape_start_recovery_plan_execution_input;
 
 pub(crate) mod shape_start_replication_input;
 
@@ -232,6 +306,12 @@ pub(crate) mod shape_update_failback_replication_configuration_input;
 pub(crate) mod shape_update_launch_configuration_input;
 
 pub(crate) mod shape_update_launch_configuration_template_input;
+
+pub(crate) mod shape_update_recovery_plan_execution_step_input;
+
+pub(crate) mod shape_update_recovery_plan_input;
+
+pub(crate) mod shape_update_recovery_plan_step_input;
 
 pub(crate) mod shape_update_replication_configuration_input;
 
@@ -279,9 +359,33 @@ pub(crate) mod shape_licensing;
 
 pub(crate) mod shape_life_cycle;
 
+pub(crate) mod shape_list_recovery_plan_execution_steps_filter;
+
 pub(crate) mod shape_pit_policy;
 
 pub(crate) mod shape_pit_policy_rule;
+
+pub(crate) mod shape_recovery_plan;
+
+pub(crate) mod shape_recovery_plan_execution;
+
+pub(crate) mod shape_recovery_plan_execution_source_server;
+
+pub(crate) mod shape_recovery_plan_execution_step;
+
+pub(crate) mod shape_recovery_plan_execution_step_summary_list;
+
+pub(crate) mod shape_recovery_plan_execution_summary_list;
+
+pub(crate) mod shape_recovery_plan_server;
+
+pub(crate) mod shape_recovery_plan_step;
+
+pub(crate) mod shape_recovery_plan_step_configuration;
+
+pub(crate) mod shape_recovery_plan_step_list;
+
+pub(crate) mod shape_recovery_plan_summary_list;
 
 pub(crate) mod shape_recovery_snapshots_list;
 
@@ -329,6 +433,8 @@ pub(crate) mod shape_data_replication_initiation;
 
 pub(crate) mod shape_disks;
 
+pub(crate) mod shape_error_detail;
+
 pub(crate) mod shape_identification_hints;
 
 pub(crate) mod shape_job_log;
@@ -349,13 +455,25 @@ pub(crate) mod shape_recovery_instance;
 
 pub(crate) mod shape_recovery_life_cycle;
 
+pub(crate) mod shape_recovery_plan_execution_step_configuration;
+
+pub(crate) mod shape_recovery_plan_execution_step_summary;
+
+pub(crate) mod shape_recovery_plan_execution_summary;
+
+pub(crate) mod shape_recovery_plan_summary;
+
 pub(crate) mod shape_recovery_snapshot;
 
 pub(crate) mod shape_replication_configuration_template;
 
+pub(crate) mod shape_server_step_configuration;
+
 pub(crate) mod shape_staging_source_server;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_wait_step_configuration;
 
 pub(crate) mod shape_cpu;
 
@@ -366,6 +484,8 @@ pub(crate) mod shape_data_replication_initiation_steps;
 pub(crate) mod shape_disk;
 
 pub(crate) mod shape_ebs_snapshots_list;
+
+pub(crate) mod shape_execution_server_step_configuration;
 
 pub(crate) mod shape_job_log_event_data;
 
@@ -403,6 +523,10 @@ pub(crate) mod shape_recovery_instance_data_replication_initiation;
 
 pub(crate) mod shape_recovery_instance_disks;
 
+pub(crate) mod shape_recovery_plan_execution_servers;
+
+pub(crate) mod shape_recovery_plan_servers;
+
 pub(crate) mod shape_launch_action_runs;
 
 pub(crate) mod shape_recovery_instance_data_replication_info_replicated_disk;
@@ -410,6 +534,8 @@ pub(crate) mod shape_recovery_instance_data_replication_info_replicated_disk;
 pub(crate) mod shape_recovery_instance_data_replication_initiation_steps;
 
 pub(crate) mod shape_recovery_instance_disk;
+
+pub(crate) mod shape_recovery_plan_execution_server;
 
 pub(crate) mod shape_source_network_data;
 

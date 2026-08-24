@@ -67,6 +67,9 @@ pub mod list_acme_endpoints;
 /// Types for the `ListAcmeExternalAccountBindings` operation.
 pub mod list_acme_external_account_bindings;
 
+/// Types for the `ListCertificateDomainValidations` operation.
+pub mod list_certificate_domain_validations;
+
 /// Types for the `ListCertificates` operation.
 pub mod list_certificates;
 

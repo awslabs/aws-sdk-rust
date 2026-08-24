@@ -125,6 +125,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateS
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateService")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateServiceTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -144,6 +147,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateS
     }
 }
 
+#[derive(Debug)]
+struct CreateServiceTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateServiceTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateServiceTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateServiceInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("name", value);
+            }
+        }
+        if requested.should_capture("templateName") {
+            if let ::std::option::Option::Some(value) = input.template_name.as_deref() {
+                captured.insert("templateName", value);
+            }
+        }
+        if requested.should_capture("templateMajorVersion") {
+            if let ::std::option::Option::Some(value) = input.template_major_version.as_deref() {
+                captured.insert("templateMajorVersion", value);
+            }
+        }
+        if requested.should_capture("templateMinorVersion") {
+            if let ::std::option::Option::Some(value) = input.template_minor_version.as_deref() {
+                captured.insert("templateMinorVersion", value);
+            }
+        }
+        if requested.should_capture("repositoryConnectionArn") {
+            if let ::std::option::Option::Some(value) = input.repository_connection_arn.as_deref() {
+                captured.insert("repositoryConnectionArn", value);
+            }
+        }
+        if requested.should_capture("repositoryId") {
+            if let ::std::option::Option::Some(value) = input.repository_id.as_deref() {
+                captured.insert("repositoryId", value);
+            }
+        }
+        if requested.should_capture("branchName") {
+            if let ::std::option::Option::Some(value) = input.branch_name.as_deref() {
+                captured.insert("branchName", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateServiceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateServiceResponseDeserializer {

@@ -13,6 +13,14 @@ pub struct CreatePaymentConnectorInput {
     pub r#type: ::std::option::Option<crate::types::PaymentConnectorType>,
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
     pub credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>>,
+    /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provide the credential provider configurations directly.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p></li>
+    /// </ul>
+    pub provision_mode: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>,
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -39,6 +47,16 @@ impl CreatePaymentConnectorInput {
     pub fn credential_provider_configurations(&self) -> &[crate::types::CredentialsProviderConfiguration] {
         self.credential_provider_configurations.as_deref().unwrap_or_default()
     }
+    /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provide the credential provider configurations directly.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p></li>
+    /// </ul>
+    pub fn provision_mode(&self) -> ::std::option::Option<&crate::types::PaymentConnectorProvisionMode> {
+        self.provision_mode.as_ref()
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -60,6 +78,7 @@ pub struct CreatePaymentConnectorInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::PaymentConnectorType>,
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>>,
+    pub(crate) provision_mode: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreatePaymentConnectorInputBuilder {
@@ -145,6 +164,38 @@ impl CreatePaymentConnectorInputBuilder {
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>> {
         &self.credential_provider_configurations
     }
+    /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provide the credential provider configurations directly.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p></li>
+    /// </ul>
+    pub fn provision_mode(mut self, input: crate::types::PaymentConnectorProvisionMode) -> Self {
+        self.provision_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provide the credential provider configurations directly.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p></li>
+    /// </ul>
+    pub fn set_provision_mode(mut self, input: ::std::option::Option<crate::types::PaymentConnectorProvisionMode>) -> Self {
+        self.provision_mode = input;
+        self
+    }
+    /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>MANUAL</code> - You provide the credential provider configurations directly.</p></li>
+    /// <li>
+    /// <p><code>QUICK_CREATE</code> - The service orchestrates OAuth consent and provisions the credential provider for you.</p></li>
+    /// </ul>
+    pub fn get_provision_mode(&self) -> &::std::option::Option<crate::types::PaymentConnectorProvisionMode> {
+        &self.provision_mode
+    }
     /// <p>A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a>.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -172,6 +223,7 @@ impl CreatePaymentConnectorInputBuilder {
             description: self.description,
             r#type: self.r#type,
             credential_provider_configurations: self.credential_provider_configurations,
+            provision_mode: self.provision_mode,
             client_token: self.client_token,
         })
     }

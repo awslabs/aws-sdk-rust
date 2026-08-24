@@ -19,6 +19,10 @@ pub struct GetCentralizationRuleForOrganizationOutput {
     pub rule_health: ::std::option::Option<crate::types::RuleHealth>,
     /// <p>The reason why an organization centralization rule is marked UNHEALTHY.</p>
     pub failure_reason: ::std::option::Option<crate::types::CentralizationFailureReason>,
+    /// <p>The health status of tag propagation for this rule. This status is independent of the overall <code>RuleHealth</code> for log delivery. Returns <code>Healthy</code> when the most recent tag-propagation attempt succeeded, or <code>Unhealthy</code> when the most recent attempt failed.</p>
+    pub tag_propagation_status: ::std::option::Option<crate::types::TagPropagationStatus>,
+    /// <p>The reason tag propagation is unhealthy for this rule. Only present when <code>TagPropagationStatus</code> is <code>Unhealthy</code>.</p>
+    pub tag_propagation_failure_reason: ::std::option::Option<crate::types::TagPropagationFailureReason>,
     /// <p>The configuration details for the organization centralization rule.</p>
     pub centralization_rule: ::std::option::Option<crate::types::CentralizationRule>,
     _request_id: Option<String>,
@@ -56,6 +60,14 @@ impl GetCentralizationRuleForOrganizationOutput {
     pub fn failure_reason(&self) -> ::std::option::Option<&crate::types::CentralizationFailureReason> {
         self.failure_reason.as_ref()
     }
+    /// <p>The health status of tag propagation for this rule. This status is independent of the overall <code>RuleHealth</code> for log delivery. Returns <code>Healthy</code> when the most recent tag-propagation attempt succeeded, or <code>Unhealthy</code> when the most recent attempt failed.</p>
+    pub fn tag_propagation_status(&self) -> ::std::option::Option<&crate::types::TagPropagationStatus> {
+        self.tag_propagation_status.as_ref()
+    }
+    /// <p>The reason tag propagation is unhealthy for this rule. Only present when <code>TagPropagationStatus</code> is <code>Unhealthy</code>.</p>
+    pub fn tag_propagation_failure_reason(&self) -> ::std::option::Option<&crate::types::TagPropagationFailureReason> {
+        self.tag_propagation_failure_reason.as_ref()
+    }
     /// <p>The configuration details for the organization centralization rule.</p>
     pub fn centralization_rule(&self) -> ::std::option::Option<&crate::types::CentralizationRule> {
         self.centralization_rule.as_ref()
@@ -85,6 +97,8 @@ pub struct GetCentralizationRuleForOrganizationOutputBuilder {
     pub(crate) last_update_time_stamp: ::std::option::Option<i64>,
     pub(crate) rule_health: ::std::option::Option<crate::types::RuleHealth>,
     pub(crate) failure_reason: ::std::option::Option<crate::types::CentralizationFailureReason>,
+    pub(crate) tag_propagation_status: ::std::option::Option<crate::types::TagPropagationStatus>,
+    pub(crate) tag_propagation_failure_reason: ::std::option::Option<crate::types::TagPropagationFailureReason>,
     pub(crate) centralization_rule: ::std::option::Option<crate::types::CentralizationRule>,
     _request_id: Option<String>,
 }
@@ -201,6 +215,34 @@ impl GetCentralizationRuleForOrganizationOutputBuilder {
     pub fn get_failure_reason(&self) -> &::std::option::Option<crate::types::CentralizationFailureReason> {
         &self.failure_reason
     }
+    /// <p>The health status of tag propagation for this rule. This status is independent of the overall <code>RuleHealth</code> for log delivery. Returns <code>Healthy</code> when the most recent tag-propagation attempt succeeded, or <code>Unhealthy</code> when the most recent attempt failed.</p>
+    pub fn tag_propagation_status(mut self, input: crate::types::TagPropagationStatus) -> Self {
+        self.tag_propagation_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The health status of tag propagation for this rule. This status is independent of the overall <code>RuleHealth</code> for log delivery. Returns <code>Healthy</code> when the most recent tag-propagation attempt succeeded, or <code>Unhealthy</code> when the most recent attempt failed.</p>
+    pub fn set_tag_propagation_status(mut self, input: ::std::option::Option<crate::types::TagPropagationStatus>) -> Self {
+        self.tag_propagation_status = input;
+        self
+    }
+    /// <p>The health status of tag propagation for this rule. This status is independent of the overall <code>RuleHealth</code> for log delivery. Returns <code>Healthy</code> when the most recent tag-propagation attempt succeeded, or <code>Unhealthy</code> when the most recent attempt failed.</p>
+    pub fn get_tag_propagation_status(&self) -> &::std::option::Option<crate::types::TagPropagationStatus> {
+        &self.tag_propagation_status
+    }
+    /// <p>The reason tag propagation is unhealthy for this rule. Only present when <code>TagPropagationStatus</code> is <code>Unhealthy</code>.</p>
+    pub fn tag_propagation_failure_reason(mut self, input: crate::types::TagPropagationFailureReason) -> Self {
+        self.tag_propagation_failure_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason tag propagation is unhealthy for this rule. Only present when <code>TagPropagationStatus</code> is <code>Unhealthy</code>.</p>
+    pub fn set_tag_propagation_failure_reason(mut self, input: ::std::option::Option<crate::types::TagPropagationFailureReason>) -> Self {
+        self.tag_propagation_failure_reason = input;
+        self
+    }
+    /// <p>The reason tag propagation is unhealthy for this rule. Only present when <code>TagPropagationStatus</code> is <code>Unhealthy</code>.</p>
+    pub fn get_tag_propagation_failure_reason(&self) -> &::std::option::Option<crate::types::TagPropagationFailureReason> {
+        &self.tag_propagation_failure_reason
+    }
     /// <p>The configuration details for the organization centralization rule.</p>
     pub fn centralization_rule(mut self, input: crate::types::CentralizationRule) -> Self {
         self.centralization_rule = ::std::option::Option::Some(input);
@@ -235,6 +277,8 @@ impl GetCentralizationRuleForOrganizationOutputBuilder {
             last_update_time_stamp: self.last_update_time_stamp,
             rule_health: self.rule_health,
             failure_reason: self.failure_reason,
+            tag_propagation_status: self.tag_propagation_status,
+            tag_propagation_failure_reason: self.tag_propagation_failure_reason,
             centralization_rule: self.centralization_rule,
             _request_id: self._request_id,
         }

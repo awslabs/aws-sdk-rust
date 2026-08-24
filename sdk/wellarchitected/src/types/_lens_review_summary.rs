@@ -17,7 +17,7 @@ pub struct LensReviewSummary {
     pub lens_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the lens.</p>
     pub lens_status: ::std::option::Option<crate::types::LensStatus>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub risk_counts: ::std::option::Option<::std::collections::HashMap<crate::types::Risk, i32>>,
@@ -50,7 +50,7 @@ impl LensReviewSummary {
     pub fn lens_status(&self) -> ::std::option::Option<&crate::types::LensStatus> {
         self.lens_status.as_ref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -170,17 +170,17 @@ impl LensReviewSummaryBuilder {
     pub fn get_lens_status(&self) -> &::std::option::Option<crate::types::LensStatus> {
         &self.lens_status
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the lens review was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

@@ -80,7 +80,7 @@ pub struct M2tsSettings {
     pub rate_mode: ::std::option::Option<crate::types::M2tsRateMode>,
     /// Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
     pub scte27_pids: ::std::option::Option<::std::string::String>,
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub scte35_control: ::std::option::Option<crate::types::M2tsScte35Control>,
     /// Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).
     pub scte35_pid: ::std::option::Option<::std::string::String>,
@@ -254,7 +254,7 @@ impl M2tsSettings {
     pub fn scte27_pids(&self) -> ::std::option::Option<&str> {
         self.scte27_pids.as_deref()
     }
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub fn scte35_control(&self) -> ::std::option::Option<&crate::types::M2tsScte35Control> {
         self.scte35_control.as_ref()
     }
@@ -888,17 +888,17 @@ impl M2tsSettingsBuilder {
     pub fn get_scte27_pids(&self) -> &::std::option::Option<::std::string::String> {
         &self.scte27_pids
     }
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub fn scte35_control(mut self, input: crate::types::M2tsScte35Control) -> Self {
         self.scte35_control = ::std::option::Option::Some(input);
         self
     }
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub fn set_scte35_control(mut self, input: ::std::option::Option<crate::types::M2tsScte35Control>) -> Self {
         self.scte35_control = input;
         self
     }
-    /// Optionally pass SCTE-35 signals from the input source to this output.
+    /// SCTE-35 control. Option "none" indicates that a SCTE-35 marker will not be inserted, nor will an IDR be inserted at the SCTE-35 cue point, nor will the segment be segmented. Option "scte35WithoutIdr" indicates that a SCTE-35 marker will be inserted to indicate the cue point, but MediaLive will not insert an IDR on that frame nor will it introduce a new segment boundary there if it wasn't already going to be one (this option is required for use with downstream multiview bitstream stitching workflows). Option "passthrough" indicates that a SCTE-35 marker will be inserted to indicate the cue point, and an IDR will be inserted on that frame, and MediaLive itself will introduce a new segment boundary there.
     pub fn get_scte35_control(&self) -> &::std::option::Option<crate::types::M2tsScte35Control> {
         &self.scte35_control
     }

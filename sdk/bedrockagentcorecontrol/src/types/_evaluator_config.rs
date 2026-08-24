@@ -6,6 +6,8 @@
 pub enum EvaluatorConfig {
     /// <p>Configuration for a code-based evaluator that uses a customer-managed Lambda function to programmatically assess agent performance.</p>
     CodeBased(crate::types::CodeBasedEvaluatorConfig),
+    /// <p>The configuration for an evaluator derived from an existing base evaluator (a built-in or third-party evaluator), run on your own model. The base evaluator supplies the prompt and scoring.</p>
+    Derived(crate::types::DerivedEvaluatorConfig),
     /// <p>The LLM-as-a-Judge configuration that uses a language model to evaluate agent performance based on custom instructions and rating scales.</p>
     LlmAsAJudge(crate::types::LlmAsAJudgeEvaluatorConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl EvaluatorConfig {
     /// Returns true if this is a [`CodeBased`](crate::types::EvaluatorConfig::CodeBased).
     pub fn is_code_based(&self) -> bool {
         self.as_code_based().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Derived`](crate::types::EvaluatorConfig::Derived), extracting the inner [`DerivedEvaluatorConfig`](crate::types::DerivedEvaluatorConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_derived(&self) -> ::std::result::Result<&crate::types::DerivedEvaluatorConfig, &Self> {
+        if let EvaluatorConfig::Derived(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Derived`](crate::types::EvaluatorConfig::Derived).
+    pub fn is_derived(&self) -> bool {
+        self.as_derived().is_ok()
     }
     /// Tries to convert the enum instance into [`LlmAsAJudge`](crate::types::EvaluatorConfig::LlmAsAJudge), extracting the inner [`LlmAsAJudgeEvaluatorConfig`](crate::types::LlmAsAJudgeEvaluatorConfig).
     /// Returns `Err(&Self)` if it can't be converted.

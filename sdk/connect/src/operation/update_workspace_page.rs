@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateW
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateWorkspacePage")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateWorkspacePageTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateW
     }
 }
 
+#[derive(Debug)]
+struct UpdateWorkspacePageTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateWorkspacePageTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateWorkspacePageTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateWorkspacePageInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("InstanceId") {
+            if let ::std::option::Option::Some(value) = input.instance_id.as_deref() {
+                captured.insert("InstanceId", value);
+            }
+        }
+        if requested.should_capture("WorkspaceId") {
+            if let ::std::option::Option::Some(value) = input.workspace_id.as_deref() {
+                captured.insert("WorkspaceId", value);
+            }
+        }
+        if requested.should_capture("Page") {
+            if let ::std::option::Option::Some(value) = input.page.as_deref() {
+                captured.insert("Page", value);
+            }
+        }
+        if requested.should_capture("NewPage") {
+            if let ::std::option::Option::Some(value) = input.new_page.as_deref() {
+                captured.insert("NewPage", value);
+            }
+        }
+        if requested.should_capture("ResourceArn") {
+            if let ::std::option::Option::Some(value) = input.resource_arn.as_deref() {
+                captured.insert("ResourceArn", value);
+            }
+        }
+        if requested.should_capture("Slug") {
+            if let ::std::option::Option::Some(value) = input.slug.as_deref() {
+                captured.insert("Slug", value);
+            }
+        }
+        if requested.should_capture("InputData") {
+            if let ::std::option::Option::Some(value) = input.input_data.as_deref() {
+                captured.insert("InputData", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateWorkspacePageResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateWorkspacePageResponseDeserializer {

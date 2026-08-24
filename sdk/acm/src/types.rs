@@ -75,6 +75,8 @@ pub use crate::types::_renewal_summary::RenewalSummary;
 
 pub use crate::types::_renewal_eligibility::RenewalEligibility;
 
+pub use crate::types::_update_summary::UpdateSummary;
+
 pub use crate::types::_certificate_key_pair_origin::CertificateKeyPairOrigin;
 
 pub use crate::types::_acme_account_summary::AcmeAccountSummary;
@@ -84,6 +86,8 @@ pub use crate::types::_acme_domain_validation_summary::AcmeDomainValidationSumma
 pub use crate::types::_acme_endpoint_summary::AcmeEndpointSummary;
 
 pub use crate::types::_acme_external_account_binding_summary::AcmeExternalAccountBindingSummary;
+
+pub use crate::types::_domain_validation_summary::DomainValidationSummary;
 
 pub use crate::types::_certificate_export::CertificateExport;
 
@@ -111,6 +115,14 @@ pub use crate::types::_key_usage::KeyUsage;
 
 pub use crate::types::_extended_key_usage::ExtendedKeyUsage;
 
+pub use crate::types::_update_status::UpdateStatus;
+
+pub use crate::types::_update_type::UpdateType;
+
+pub use crate::types::_domain_validation_method_update_summary::DomainValidationMethodUpdateSummary;
+
+pub use crate::types::_validation_configuration::ValidationConfiguration;
+
 pub use crate::types::_extended_key_usage_name::ExtendedKeyUsageName;
 
 pub use crate::types::_key_usage_name::KeyUsageName;
@@ -133,6 +145,8 @@ pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_http_redirect::HttpRedirect;
 
+pub use crate::types::_validation_challenge::ValidationChallenge;
+
 pub use crate::types::_subject_filter::SubjectFilter;
 
 pub use crate::types::_subject_alternative_name_filter::SubjectAlternativeNameFilter;
@@ -144,6 +158,10 @@ pub use crate::types::_distinguished_name::DistinguishedName;
 pub use crate::types::_acm_certificate_metadata::AcmCertificateMetadata;
 
 pub use crate::types::_record_type::RecordType;
+
+pub use crate::types::_email_validation_challenge::EmailValidationChallenge;
+
+pub use crate::types::_dns_validation_challenge::DnsValidationChallenge;
 
 pub use crate::types::_common_name_filter::CommonNameFilter;
 
@@ -231,6 +249,8 @@ mod _dns_prevalidation_details;
 
 mod _dns_prevalidation_options;
 
+mod _dns_validation_challenge;
+
 mod _domain_scope;
 
 mod _domain_scope_option;
@@ -239,7 +259,13 @@ mod _domain_status;
 
 mod _domain_validation;
 
+mod _domain_validation_method_update_summary;
+
 mod _domain_validation_option;
+
+mod _domain_validation_summary;
+
+mod _email_validation_challenge;
 
 mod _expiration;
 
@@ -308,6 +334,16 @@ mod _throttling_reason;
 mod _time_type;
 
 mod _timestamp_range;
+
+mod _update_status;
+
+mod _update_summary;
+
+mod _update_type;
+
+mod _validation_challenge;
+
+mod _validation_configuration;
 
 mod _validation_method;
 

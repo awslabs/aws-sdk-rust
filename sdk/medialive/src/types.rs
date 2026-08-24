@@ -529,6 +529,8 @@ pub use crate::types::_video_description_respond_to_afd::VideoDescriptionRespond
 
 pub use crate::types::_video_description_scaling_behavior::VideoDescriptionScalingBehavior;
 
+pub use crate::types::_video_position_rectangle::VideoPositionRectangle;
+
 pub use crate::types::_color_correction::ColorCorrection;
 
 pub use crate::types::_input_preference::InputPreference;
@@ -746,6 +748,8 @@ pub use crate::types::_nielsen_cbet::NielsenCbet;
 pub use crate::types::_nielsen_watermarks_distribution_types::NielsenWatermarksDistributionTypes;
 
 pub use crate::types::_nielsen_naes_ii_nw::NielsenNaesIiNw;
+
+pub use crate::types::_nielsen_nw_only::NielsenNwOnly;
 
 pub use crate::types::_aac_coding_mode::AacCodingMode;
 
@@ -2413,6 +2417,8 @@ mod _nielsen_configuration;
 
 mod _nielsen_naes_ii_nw;
 
+mod _nielsen_nw_only;
+
 mod _nielsen_pcm_to_id3_tagging_state;
 
 mod _nielsen_watermark_timezones;
@@ -2756,6 +2762,8 @@ mod _video_description;
 mod _video_description_respond_to_afd;
 
 mod _video_description_scaling_behavior;
+
+mod _video_position_rectangle;
 
 mod _video_selector;
 

@@ -120,6 +120,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutFile
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutFile")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutFileTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -139,6 +142,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutFile
     }
 }
 
+#[derive(Debug)]
+struct PutFileTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutFileTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutFileTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutFileInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("repositoryName") {
+            if let ::std::option::Option::Some(value) = input.repository_name.as_deref() {
+                captured.insert("repositoryName", value);
+            }
+        }
+        if requested.should_capture("branchName") {
+            if let ::std::option::Option::Some(value) = input.branch_name.as_deref() {
+                captured.insert("branchName", value);
+            }
+        }
+        if requested.should_capture("filePath") {
+            if let ::std::option::Option::Some(value) = input.file_path.as_deref() {
+                captured.insert("filePath", value);
+            }
+        }
+        if requested.should_capture("parentCommitId") {
+            if let ::std::option::Option::Some(value) = input.parent_commit_id.as_deref() {
+                captured.insert("parentCommitId", value);
+            }
+        }
+        if requested.should_capture("commitMessage") {
+            if let ::std::option::Option::Some(value) = input.commit_message.as_deref() {
+                captured.insert("commitMessage", value);
+            }
+        }
+        if requested.should_capture("name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("name", value);
+            }
+        }
+        if requested.should_capture("email") {
+            if let ::std::option::Option::Some(value) = input.email.as_deref() {
+                captured.insert("email", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutFileResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutFileResponseDeserializer {

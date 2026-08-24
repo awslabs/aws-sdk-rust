@@ -1050,6 +1050,23 @@ impl PutMetricAlarmFluentBuilder {
     pub fn get_evaluation_window(&self) -> &::std::option::Option<crate::types::EvaluationWindow> {
         self.inner.get_evaluation_window()
     }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn warm_up_configuration(mut self, input: crate::types::WarmUpConfiguration) -> Self {
+        self.inner = self.inner.warm_up_configuration(input);
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn set_warm_up_configuration(mut self, input: ::std::option::Option<crate::types::WarmUpConfiguration>) -> Self {
+        self.inner = self.inner.set_warm_up_configuration(input);
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_warm_up_configuration(&self) -> &::std::option::Option<crate::types::WarmUpConfiguration> {
+        self.inner.get_warm_up_configuration()
+    }
     /// <p>The evaluation criteria for the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code>, a <code>Metrics</code> array, or an <code>EvaluationCriteria</code>.</p>
     /// <p>If you use the <code>EvaluationCriteria</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, <code>ExtendedStatistic</code>, <code>Metrics</code>, <code>Threshold</code>, <code>ComparisonOperator</code>, <code>ThresholdMetricId</code>, <code>EvaluationPeriods</code>, or <code>DatapointsToAlarm</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, all evaluation parameters are defined within this structure.</p>
     /// <p>For an example of how to use this parameter, see the <b>PromQL alarm</b> example on this page.</p>

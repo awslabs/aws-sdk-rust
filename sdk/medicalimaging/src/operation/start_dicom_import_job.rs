@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartDI
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartDICOMImportJob")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartDICOMImportJobTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -159,6 +162,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartDI
     }
 }
 
+#[derive(Debug)]
+struct StartDICOMImportJobTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartDICOMImportJobTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "StartDICOMImportJobTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<StartDicomImportJobInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("jobName") {
+            if let ::std::option::Option::Some(value) = input.job_name.as_deref() {
+                captured.insert("jobName", value);
+            }
+        }
+        if requested.should_capture("dataAccessRoleArn") {
+            if let ::std::option::Option::Some(value) = input.data_access_role_arn.as_deref() {
+                captured.insert("dataAccessRoleArn", value);
+            }
+        }
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+        if requested.should_capture("datastoreId") {
+            if let ::std::option::Option::Some(value) = input.datastore_id.as_deref() {
+                captured.insert("datastoreId", value);
+            }
+        }
+        if requested.should_capture("inputS3Uri") {
+            if let ::std::option::Option::Some(value) = input.input_s3_uri.as_deref() {
+                captured.insert("inputS3Uri", value);
+            }
+        }
+        if requested.should_capture("outputS3Uri") {
+            if let ::std::option::Option::Some(value) = input.output_s3_uri.as_deref() {
+                captured.insert("outputS3Uri", value);
+            }
+        }
+        if requested.should_capture("inputOwnerAccountId") {
+            if let ::std::option::Option::Some(value) = input.input_owner_account_id.as_deref() {
+                captured.insert("inputOwnerAccountId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct StartDICOMImportJobResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartDICOMImportJobResponseDeserializer {

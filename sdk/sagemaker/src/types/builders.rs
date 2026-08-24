@@ -217,6 +217,8 @@ pub use crate::types::_partner_app_maintenance_config::PartnerAppMaintenanceConf
 
 pub use crate::types::_partner_app_config::PartnerAppConfigBuilder;
 
+pub use crate::types::_idc_config_input::IdcConfigInputBuilder;
+
 pub use crate::types::_pipeline_definition_s3_location::PipelineDefinitionS3LocationBuilder;
 
 pub use crate::types::_parallelism_configuration::ParallelismConfigurationBuilder;
@@ -380,6 +382,8 @@ pub use crate::types::_optimization_output::OptimizationOutputBuilder;
 pub use crate::types::_error_info::ErrorInfoBuilder;
 
 pub use crate::types::_available_upgrade::AvailableUpgradeBuilder;
+
+pub use crate::types::_idc_config_output::IdcConfigOutputBuilder;
 
 pub use crate::types::_pipeline_experiment_config::PipelineExperimentConfigBuilder;
 

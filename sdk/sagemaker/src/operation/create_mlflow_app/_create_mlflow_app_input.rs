@@ -9,6 +9,8 @@ pub struct CreateMlflowAppInput {
     pub artifact_store_uri: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for an IAM role in your account that the MLflow App uses to access the artifact store in Amazon S3. The role should have the <code>AmazonS3FullAccess</code> permission.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. If you don't specify a value, the MLflow App is not encrypted with a customer-managed key.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable or disable automatic registration of new MLflow models to the SageMaker Model Registry. To enable automatic model registration, set this value to <code>AutoModelRegistrationEnabled</code>. To disable automatic model registration, set this value to <code>AutoModelRegistrationDisabled</code>. If not specified, <code>AutomaticModelRegistration</code> defaults to <code>AutoModelRegistrationDisabled</code>.</p>
     pub model_registration_mode: ::std::option::Option<crate::types::ModelRegistrationMode>,
     /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: TUE:03:30.</p>
@@ -32,6 +34,10 @@ impl CreateMlflowAppInput {
     /// <p>The Amazon Resource Name (ARN) for an IAM role in your account that the MLflow App uses to access the artifact store in Amazon S3. The role should have the <code>AmazonS3FullAccess</code> permission.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. If you don't specify a value, the MLflow App is not encrypted with a customer-managed key.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
     /// <p>Whether to enable or disable automatic registration of new MLflow models to the SageMaker Model Registry. To enable automatic model registration, set this value to <code>AutoModelRegistrationEnabled</code>. To disable automatic model registration, set this value to <code>AutoModelRegistrationDisabled</code>. If not specified, <code>AutomaticModelRegistration</code> defaults to <code>AutoModelRegistrationDisabled</code>.</p>
     pub fn model_registration_mode(&self) -> ::std::option::Option<&crate::types::ModelRegistrationMode> {
@@ -72,6 +78,7 @@ pub struct CreateMlflowAppInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) artifact_store_uri: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) model_registration_mode: ::std::option::Option<crate::types::ModelRegistrationMode>,
     pub(crate) weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
     pub(crate) account_default_status: ::std::option::Option<crate::types::AccountDefaultStatus>,
@@ -123,6 +130,20 @@ impl CreateMlflowAppInputBuilder {
     /// <p>The Amazon Resource Name (ARN) for an IAM role in your account that the MLflow App uses to access the artifact store in Amazon S3. The role should have the <code>AmazonS3FullAccess</code> permission.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
+    }
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. If you don't specify a value, the MLflow App is not encrypted with a customer-managed key.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. If you don't specify a value, the MLflow App is not encrypted with a customer-managed key.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. If you don't specify a value, the MLflow App is not encrypted with a customer-managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>Whether to enable or disable automatic registration of new MLflow models to the SageMaker Model Registry. To enable automatic model registration, set this value to <code>AutoModelRegistrationEnabled</code>. To disable automatic model registration, set this value to <code>AutoModelRegistrationDisabled</code>. If not specified, <code>AutomaticModelRegistration</code> defaults to <code>AutoModelRegistrationDisabled</code>.</p>
     pub fn model_registration_mode(mut self, input: crate::types::ModelRegistrationMode) -> Self {
@@ -214,6 +235,7 @@ impl CreateMlflowAppInputBuilder {
             name: self.name,
             artifact_store_uri: self.artifact_store_uri,
             role_arn: self.role_arn,
+            kms_key_id: self.kms_key_id,
             model_registration_mode: self.model_registration_mode,
             weekly_maintenance_window_start: self.weekly_maintenance_window_start,
             account_default_status: self.account_default_status,

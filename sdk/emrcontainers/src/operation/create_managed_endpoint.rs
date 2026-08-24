@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateManagedEndpoint")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateManagedEndpointTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -159,6 +162,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
     }
 }
 
+#[derive(Debug)]
+struct CreateManagedEndpointTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateManagedEndpointTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateManagedEndpointTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateManagedEndpointInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("name", value);
+            }
+        }
+        if requested.should_capture("virtualClusterId") {
+            if let ::std::option::Option::Some(value) = input.virtual_cluster_id.as_deref() {
+                captured.insert("virtualClusterId", value);
+            }
+        }
+        if requested.should_capture("type") {
+            if let ::std::option::Option::Some(value) = input.r#type.as_deref() {
+                captured.insert("type", value);
+            }
+        }
+        if requested.should_capture("releaseLabel") {
+            if let ::std::option::Option::Some(value) = input.release_label.as_deref() {
+                captured.insert("releaseLabel", value);
+            }
+        }
+        if requested.should_capture("executionRoleArn") {
+            if let ::std::option::Option::Some(value) = input.execution_role_arn.as_deref() {
+                captured.insert("executionRoleArn", value);
+            }
+        }
+        if requested.should_capture("certificateArn") {
+            if let ::std::option::Option::Some(value) = input.certificate_arn.as_deref() {
+                captured.insert("certificateArn", value);
+            }
+        }
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateManagedEndpointResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateManagedEndpointResponseDeserializer {

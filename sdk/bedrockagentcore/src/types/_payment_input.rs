@@ -6,6 +6,8 @@
 pub enum PaymentInput {
     /// <p>Input for a crypto X402 payment.</p>
     CryptoX402(crate::types::CryptoX402PaymentInput),
+    /// <p>Contains the payment challenge from a 402 Payment Required response. Forward the raw <code>WWW-Authenticate: Payment</code> header value verbatim. In response, you receive a payment credential that satisfies the challenge. Provide exactly one challenge per request.</p>
+    Mpp(crate::types::MppPaymentInput),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum PaymentInput {
     Unknown,
 }
 impl PaymentInput {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`CryptoX402`](crate::types::PaymentInput::CryptoX402), extracting the inner [`CryptoX402PaymentInput`](crate::types::CryptoX402PaymentInput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_crypto_x402(&self) -> ::std::result::Result<&crate::types::CryptoX402PaymentInput, &Self> {
@@ -30,6 +31,19 @@ impl PaymentInput {
     /// Returns true if this is a [`CryptoX402`](crate::types::PaymentInput::CryptoX402).
     pub fn is_crypto_x402(&self) -> bool {
         self.as_crypto_x402().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Mpp`](crate::types::PaymentInput::Mpp), extracting the inner [`MppPaymentInput`](crate::types::MppPaymentInput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_mpp(&self) -> ::std::result::Result<&crate::types::MppPaymentInput, &Self> {
+        if let PaymentInput::Mpp(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Mpp`](crate::types::PaymentInput::Mpp).
+    pub fn is_mpp(&self) -> bool {
+        self.as_mpp().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

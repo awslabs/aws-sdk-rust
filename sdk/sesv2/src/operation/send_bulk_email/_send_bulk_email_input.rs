@@ -32,6 +32,8 @@ pub struct SendBulkEmailInput {
     /// <p>The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.</p>
     /// </note>
     pub tenant_name: ::std::option::Option<::std::string::String>,
+    /// <p>An object that overrides, for the messages in this request only, settings that would otherwise apply to them. The overrides apply to every message in the request. Each setting that you don't override keeps the value that already applies.</p>
+    pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
 }
 impl SendBulkEmailInput {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
@@ -90,6 +92,10 @@ impl SendBulkEmailInput {
     pub fn tenant_name(&self) -> ::std::option::Option<&str> {
         self.tenant_name.as_deref()
     }
+    /// <p>An object that overrides, for the messages in this request only, settings that would otherwise apply to them. The overrides apply to every message in the request. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
+        self.configuration_overrides.as_ref()
+    }
 }
 impl SendBulkEmailInput {
     /// Creates a new builder-style object to manufacture [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
@@ -113,6 +119,7 @@ pub struct SendBulkEmailInputBuilder {
     pub(crate) configuration_set_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_name: ::std::option::Option<::std::string::String>,
+    pub(crate) configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
 }
 impl SendBulkEmailInputBuilder {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
@@ -306,6 +313,20 @@ impl SendBulkEmailInputBuilder {
     pub fn get_tenant_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.tenant_name
     }
+    /// <p>An object that overrides, for the messages in this request only, settings that would otherwise apply to them. The overrides apply to every message in the request. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn configuration_overrides(mut self, input: crate::types::ConfigurationOverrides) -> Self {
+        self.configuration_overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that overrides, for the messages in this request only, settings that would otherwise apply to them. The overrides apply to every message in the request. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ConfigurationOverrides>) -> Self {
+        self.configuration_overrides = input;
+        self
+    }
+    /// <p>An object that overrides, for the messages in this request only, settings that would otherwise apply to them. The overrides apply to every message in the request. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+        &self.configuration_overrides
+    }
     /// Consumes the builder and constructs a [`SendBulkEmailInput`](crate::operation::send_bulk_email::SendBulkEmailInput).
     pub fn build(
         self,
@@ -322,6 +343,7 @@ impl SendBulkEmailInputBuilder {
             configuration_set_name: self.configuration_set_name,
             endpoint_id: self.endpoint_id,
             tenant_name: self.tenant_name,
+            configuration_overrides: self.configuration_overrides,
         })
     }
 }

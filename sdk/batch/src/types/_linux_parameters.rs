@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LinuxParameters {
-    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub devices: ::std::option::Option<::std::vec::Vec<crate::types::Device>>,
@@ -40,7 +40,7 @@ pub struct LinuxParameters {
     pub swappiness: ::std::option::Option<i32>,
 }
 impl LinuxParameters {
-    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     ///
@@ -114,7 +114,7 @@ impl LinuxParametersBuilder {
     ///
     /// To override the contents of this collection use [`set_devices`](Self::set_devices).
     ///
-    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn devices(mut self, input: crate::types::Device) -> Self {
@@ -123,14 +123,14 @@ impl LinuxParametersBuilder {
         self.devices = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn set_devices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Device>>) -> Self {
         self.devices = input;
         self
     }
-    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
+    /// <p>Any of the host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker Remote API</a> and the <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p><note>
     /// <p>This parameter isn't applicable to jobs that are running on Fargate resources. Don't provide it for these jobs.</p>
     /// </note>
     pub fn get_devices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Device>> {

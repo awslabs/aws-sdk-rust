@@ -23,8 +23,9 @@ impl crate::operation::terminate_instance_in_auto_scaling_group::builders::Termi
 /// Fluent builder constructing a request to `TerminateInstanceInAutoScalingGroup`.
 ///
 /// <p>Terminates the specified instance and optionally adjusts the desired group size. This operation cannot be called on instances in a warm pool.</p>
-/// <p>This call simply makes a termination request. The instance is not terminated immediately. When an instance is terminated, the instance status changes to <code>terminated</code>. You can't connect to or start an instance after you've terminated it.</p>
+/// <p>This call simply makes a termination request. The instances are not terminated immediately. When an instance is terminated, the instance status changes to <code>terminated</code>. You can't connect to or start an instance after you've terminated it.</p>
 /// <p>If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto Scaling launches instances to replace the ones that are terminated.</p>
+/// <p>To terminate multiple instances in a single call, use the <code>InstanceIds</code> and <code>AutoScalingGroupName</code> parameters instead of <code>InstanceId</code>. When terminating multiple instances, the response populates <code>Activities</code> instead of <code>Activity</code>.</p>
 /// <p>By default, Amazon EC2 Auto Scaling balances instances across all Availability Zones. If you decrement the desired capacity, your Auto Scaling group can become unbalanced between Availability Zones. Amazon EC2 Auto Scaling tries to rebalance the group, and rebalancing might terminate instances in other zones. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-scaling-manually.html">Manual scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TerminateInstanceInAutoScalingGroupFluentBuilder {
@@ -125,6 +126,42 @@ impl TerminateInstanceInAutoScalingGroupFluentBuilder {
     /// <p>The ID of the instance.</p>
     pub fn get_instance_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_instance_id()
+    }
+    ///
+    /// Appends an item to `InstanceIds`.
+    ///
+    /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+    ///
+    /// <p>The IDs of the instances. You can specify up to 100 instances.</p>
+    /// <p>This parameter requires that you also specify <code>AutoScalingGroupName</code>.</p>
+    pub fn instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.instance_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the instances. You can specify up to 100 instances.</p>
+    /// <p>This parameter requires that you also specify <code>AutoScalingGroupName</code>.</p>
+    pub fn set_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_instance_ids(input);
+        self
+    }
+    /// <p>The IDs of the instances. You can specify up to 100 instances.</p>
+    /// <p>This parameter requires that you also specify <code>AutoScalingGroupName</code>.</p>
+    pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_instance_ids()
+    }
+    /// <p>The name of the Auto Scaling group. Required when using <code>InstanceIds</code>.</p>
+    pub fn auto_scaling_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.auto_scaling_group_name(input.into());
+        self
+    }
+    /// <p>The name of the Auto Scaling group. Required when using <code>InstanceIds</code>.</p>
+    pub fn set_auto_scaling_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_auto_scaling_group_name(input);
+        self
+    }
+    /// <p>The name of the Auto Scaling group. Required when using <code>InstanceIds</code>.</p>
+    pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_auto_scaling_group_name()
     }
     /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling group.</p>
     pub fn should_decrement_desired_capacity(mut self, input: bool) -> Self {

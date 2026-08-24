@@ -125,6 +125,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEnti
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetEntityRecords")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetEntityRecordsTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -144,6 +147,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEnti
     }
 }
 
+#[derive(Debug)]
+struct GetEntityRecordsTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetEntityRecordsTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "GetEntityRecordsTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<GetEntityRecordsInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ConnectionName") {
+            if let ::std::option::Option::Some(value) = input.connection_name.as_deref() {
+                captured.insert("ConnectionName", value);
+            }
+        }
+        if requested.should_capture("CatalogId") {
+            if let ::std::option::Option::Some(value) = input.catalog_id.as_deref() {
+                captured.insert("CatalogId", value);
+            }
+        }
+        if requested.should_capture("EntityName") {
+            if let ::std::option::Option::Some(value) = input.entity_name.as_deref() {
+                captured.insert("EntityName", value);
+            }
+        }
+        if requested.should_capture("NextToken") {
+            if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
+                captured.insert("NextToken", value);
+            }
+        }
+        if requested.should_capture("DataStoreApiVersion") {
+            if let ::std::option::Option::Some(value) = input.data_store_api_version.as_deref() {
+                captured.insert("DataStoreApiVersion", value);
+            }
+        }
+        if requested.should_capture("FilterPredicate") {
+            if let ::std::option::Option::Some(value) = input.filter_predicate.as_deref() {
+                captured.insert("FilterPredicate", value);
+            }
+        }
+        if requested.should_capture("OrderBy") {
+            if let ::std::option::Option::Some(value) = input.order_by.as_deref() {
+                captured.insert("OrderBy", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct GetEntityRecordsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetEntityRecordsResponseDeserializer {

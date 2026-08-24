@@ -22,7 +22,7 @@ impl crate::operation::list_backup_job_summaries::builders::ListBackupJobSummari
 }
 /// Fluent builder constructing a request to `ListBackupJobSummaries`.
 ///
-/// <p>This is a request for a summary of backup jobs created or running within the most recent 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
+/// <p>This is a request for a summary of backup jobs created or running within the most recent 14 days. You can include parameters AccountID, State, ResourceType, MessageCategory, AggregationPeriod, MaxResults, or NextToken to filter results.</p>
 /// <p>This request returns a summary that contains Region, Account, State, ResourceType, MessageCategory, StartTime, EndTime, and Count of included jobs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListBackupJobSummariesFluentBuilder {

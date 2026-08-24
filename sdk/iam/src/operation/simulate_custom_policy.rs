@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Simulat
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SimulateCustomPolicy")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SimulateCustomPolicyTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Simulat
     }
 }
 
+#[derive(Debug)]
+struct SimulateCustomPolicyTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SimulateCustomPolicyTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "SimulateCustomPolicyTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<SimulateCustomPolicyInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ResourcePolicy") {
+            if let ::std::option::Option::Some(value) = input.resource_policy.as_deref() {
+                captured.insert("ResourcePolicy", value);
+            }
+        }
+        if requested.should_capture("ResourceOwner") {
+            if let ::std::option::Option::Some(value) = input.resource_owner.as_deref() {
+                captured.insert("ResourceOwner", value);
+            }
+        }
+        if requested.should_capture("CallerArn") {
+            if let ::std::option::Option::Some(value) = input.caller_arn.as_deref() {
+                captured.insert("CallerArn", value);
+            }
+        }
+        if requested.should_capture("ResourceHandlingOption") {
+            if let ::std::option::Option::Some(value) = input.resource_handling_option.as_deref() {
+                captured.insert("ResourceHandlingOption", value);
+            }
+        }
+        if requested.should_capture("Marker") {
+            if let ::std::option::Option::Some(value) = input.marker.as_deref() {
+                captured.insert("Marker", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct SimulateCustomPolicyResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SimulateCustomPolicyResponseDeserializer {

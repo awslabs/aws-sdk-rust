@@ -171,17 +171,17 @@ impl CreateEventFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_payload`](Self::set_payload).
     ///
-    /// <p>The content payload of the event. This can include conversational data or binary content.</p>
+    /// <p>The content payload of the event. This can include conversational data, JSON data, or binary content.</p>
     pub fn payload(mut self, input: crate::types::PayloadType) -> Self {
         self.inner = self.inner.payload(input);
         self
     }
-    /// <p>The content payload of the event. This can include conversational data or binary content.</p>
+    /// <p>The content payload of the event. This can include conversational data, JSON data, or binary content.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PayloadType>>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
-    /// <p>The content payload of the event. This can include conversational data or binary content.</p>
+    /// <p>The content payload of the event. This can include conversational data, JSON data, or binary content.</p>
     pub fn get_payload(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PayloadType>> {
         self.inner.get_payload()
     }
@@ -248,5 +248,19 @@ impl CreateEventFluentBuilder {
     /// <p>Controls long-term memory extraction for this event. When set to <code>SKIP</code>, the event is stored in short-term memory but is excluded from long-term memory extraction. If not specified, the event is processed for extraction as usual.</p>
     pub fn get_extraction_mode(&self) -> &::std::option::Option<crate::types::ExtractionMode> {
         self.inner.get_extraction_mode()
+    }
+    /// <p>The extraction configuration for long-term memory records. Use this parameter to specify namespace variable keys and their values for namespace substitution during extraction.</p>
+    pub fn extraction_config(mut self, input: crate::types::ExtractionConfig) -> Self {
+        self.inner = self.inner.extraction_config(input);
+        self
+    }
+    /// <p>The extraction configuration for long-term memory records. Use this parameter to specify namespace variable keys and their values for namespace substitution during extraction.</p>
+    pub fn set_extraction_config(mut self, input: ::std::option::Option<crate::types::ExtractionConfig>) -> Self {
+        self.inner = self.inner.set_extraction_config(input);
+        self
+    }
+    /// <p>The extraction configuration for long-term memory records. Use this parameter to specify namespace variable keys and their values for namespace substitution during extraction.</p>
+    pub fn get_extraction_config(&self) -> &::std::option::Option<crate::types::ExtractionConfig> {
+        self.inner.get_extraction_config()
     }
 }

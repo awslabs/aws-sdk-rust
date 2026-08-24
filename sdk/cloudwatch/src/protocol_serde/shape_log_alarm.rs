@@ -84,6 +84,14 @@ pub(crate) fn de_log_alarm(
             "ActionLogLineRoleArn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_action_log_line_role_arn(Some(decoder.string()?)))
             })?,
+            "WarmUpConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_warm_up_configuration(Some(crate::protocol_serde::shape_warm_up_configuration::de_warm_up_configuration(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

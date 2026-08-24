@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateI
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateIntegration")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateIntegrationTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateI
     }
 }
 
+#[derive(Debug)]
+struct CreateIntegrationTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateIntegrationTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateIntegrationTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateIntegrationInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ApiId") {
+            if let ::std::option::Option::Some(value) = input.api_id.as_deref() {
+                captured.insert("ApiId", value);
+            }
+        }
+        if requested.should_capture("ConnectionId") {
+            if let ::std::option::Option::Some(value) = input.connection_id.as_deref() {
+                captured.insert("ConnectionId", value);
+            }
+        }
+        if requested.should_capture("CredentialsArn") {
+            if let ::std::option::Option::Some(value) = input.credentials_arn.as_deref() {
+                captured.insert("CredentialsArn", value);
+            }
+        }
+        if requested.should_capture("Description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("Description", value);
+            }
+        }
+        if requested.should_capture("IntegrationMethod") {
+            if let ::std::option::Option::Some(value) = input.integration_method.as_deref() {
+                captured.insert("IntegrationMethod", value);
+            }
+        }
+        if requested.should_capture("IntegrationSubtype") {
+            if let ::std::option::Option::Some(value) = input.integration_subtype.as_deref() {
+                captured.insert("IntegrationSubtype", value);
+            }
+        }
+        if requested.should_capture("IntegrationUri") {
+            if let ::std::option::Option::Some(value) = input.integration_uri.as_deref() {
+                captured.insert("IntegrationUri", value);
+            }
+        }
+        if requested.should_capture("PayloadFormatVersion") {
+            if let ::std::option::Option::Some(value) = input.payload_format_version.as_deref() {
+                captured.insert("PayloadFormatVersion", value);
+            }
+        }
+        if requested.should_capture("TemplateSelectionExpression") {
+            if let ::std::option::Option::Some(value) = input.template_selection_expression.as_deref() {
+                captured.insert("TemplateSelectionExpression", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateIntegrationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateIntegrationResponseDeserializer {

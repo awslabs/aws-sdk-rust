@@ -29,7 +29,7 @@ pub struct CheckDetail {
     pub flagged_resources: ::std::option::Option<i32>,
     /// <p>Reason associated to the check.</p>
     pub reason: ::std::option::Option<crate::types::CheckFailureReason>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the check was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CheckDetail {
@@ -82,7 +82,7 @@ impl CheckDetail {
     pub fn reason(&self) -> ::std::option::Option<&crate::types::CheckFailureReason> {
         self.reason.as_ref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the check was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -284,17 +284,17 @@ impl CheckDetailBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<crate::types::CheckFailureReason> {
         &self.reason
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the check was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the check was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the check was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

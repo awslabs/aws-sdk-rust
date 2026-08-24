@@ -107,6 +107,18 @@ pub(crate) fn create_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_extraction_definition_output_output_correct_errors(
+    mut builder: crate::operation::create_extraction_definition::builders::CreateExtractionDefinitionOutputBuilder,
+) -> crate::operation::create_extraction_definition::builders::CreateExtractionDefinitionOutputBuilder {
+    if builder.extraction_definition_arn.is_none() {
+        builder.extraction_definition_arn = Some(Default::default())
+    }
+    if builder.extraction_definition_id.is_none() {
+        builder.extraction_definition_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_metric_output_output_correct_errors(
     mut builder: crate::operation::create_metric::builders::CreateMetricOutputBuilder,
 ) -> crate::operation::create_metric::builders::CreateMetricOutputBuilder {
@@ -308,6 +320,18 @@ pub(crate) fn describe_evaluation_form_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_extraction_definition_output_output_correct_errors(
+    mut builder: crate::operation::describe_extraction_definition::builders::DescribeExtractionDefinitionOutputBuilder,
+) -> crate::operation::describe_extraction_definition::builders::DescribeExtractionDefinitionOutputBuilder {
+    if builder.extraction_definition.is_none() {
+        builder.extraction_definition = {
+            let builder = crate::types::builders::ExtractionDefinitionBuilder::default();
+            crate::serde_util::extraction_definition_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_metric_output_output_correct_errors(
     mut builder: crate::operation::describe_metric::builders::DescribeMetricOutputBuilder,
 ) -> crate::operation::describe_metric::builders::DescribeMetricOutputBuilder {
@@ -487,6 +511,15 @@ pub(crate) fn list_evaluation_forms_output_output_correct_errors(
 ) -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsOutputBuilder {
     if builder.evaluation_form_summary_list.is_none() {
         builder.evaluation_form_summary_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_extraction_definitions_output_output_correct_errors(
+    mut builder: crate::operation::list_extraction_definitions::builders::ListExtractionDefinitionsOutputBuilder,
+) -> crate::operation::list_extraction_definitions::builders::ListExtractionDefinitionsOutputBuilder {
+    if builder.extraction_definition_summary_list.is_none() {
+        builder.extraction_definition_summary_list = Some(Default::default())
     }
     builder
 }
@@ -829,6 +862,36 @@ pub(crate) fn evaluation_form_correct_errors(
     builder
 }
 
+pub(crate) fn extraction_definition_correct_errors(
+    mut builder: crate::types::builders::ExtractionDefinitionBuilder,
+) -> crate::types::builders::ExtractionDefinitionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.extraction_definition_id.is_none() {
+        builder.extraction_definition_id = Some(Default::default())
+    }
+    if builder.extraction_definition_arn.is_none() {
+        builder.extraction_definition_arn = Some(Default::default())
+    }
+    if builder.extraction_configuration.is_none() {
+        builder.extraction_configuration = {
+            let builder = crate::types::builders::ExtractionConfigurationBuilder::default();
+            crate::serde_util::extraction_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_by.is_none() {
+        builder.last_updated_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn metric_definition_correct_errors(
     mut builder: crate::types::builders::MetricDefinitionBuilder,
 ) -> crate::types::builders::MetricDefinitionBuilder {
@@ -1002,6 +1065,15 @@ pub(crate) fn evaluation_metadata_correct_errors(
     }
     if builder.evaluator_arn.is_none() {
         builder.evaluator_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn extraction_configuration_correct_errors(
+    mut builder: crate::types::builders::ExtractionConfigurationBuilder,
+) -> crate::types::builders::ExtractionConfigurationBuilder {
+    if builder.prompt_hint.is_none() {
+        builder.prompt_hint = Some(Default::default())
     }
     builder
 }
@@ -1484,6 +1556,30 @@ pub(crate) fn evaluation_summary_correct_errors(
     builder
 }
 
+pub(crate) fn extraction_definition_summary_correct_errors(
+    mut builder: crate::types::builders::ExtractionDefinitionSummaryBuilder,
+) -> crate::types::builders::ExtractionDefinitionSummaryBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.extraction_definition_id.is_none() {
+        builder.extraction_definition_id = Some(Default::default())
+    }
+    if builder.extraction_definition_arn.is_none() {
+        builder.extraction_definition_arn = Some(Default::default())
+    }
+    if builder.created_time.is_none() {
+        builder.created_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_time.is_none() {
+        builder.last_updated_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_updated_by.is_none() {
+        builder.last_updated_by = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn hours_of_operations_identifier_correct_errors(
     mut builder: crate::types::builders::HoursOfOperationsIdentifierBuilder,
 ) -> crate::types::builders::HoursOfOperationsIdentifierBuilder {
@@ -1887,6 +1983,15 @@ pub(crate) fn evaluation_search_metadata_correct_errors(
     builder
 }
 
+pub(crate) fn extraction_definition_not_found_behavior_correct_errors(
+    mut builder: crate::types::builders::ExtractionDefinitionNotFoundBehaviorBuilder,
+) -> crate::types::builders::ExtractionDefinitionNotFoundBehaviorBuilder {
+    if builder.behavior.is_none() {
+        builder.behavior = "no value was set".parse::<crate::types::NotFoundBehaviorType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn flow_quick_connect_config_correct_errors(
     mut builder: crate::types::builders::FlowQuickConnectConfigBuilder,
 ) -> crate::types::builders::FlowQuickConnectConfigBuilder {
@@ -2226,6 +2331,15 @@ pub(crate) fn event_bridge_action_definition_correct_errors(
     builder
 }
 
+pub(crate) fn extract_information_action_definition_correct_errors(
+    mut builder: crate::types::builders::ExtractInformationActionDefinitionBuilder,
+) -> crate::types::builders::ExtractInformationActionDefinitionBuilder {
+    if builder.rules_extraction_definitions.is_none() {
+        builder.rules_extraction_definitions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn hours_of_operation_time_slice_correct_errors(
     mut builder: crate::types::builders::HoursOfOperationTimeSliceBuilder,
 ) -> crate::types::builders::HoursOfOperationTimeSliceBuilder {
@@ -2481,6 +2595,15 @@ pub(crate) fn real_time_contact_analysis_character_interval_correct_errors(
 pub(crate) fn reference_correct_errors(mut builder: crate::types::builders::ReferenceBuilder) -> crate::types::builders::ReferenceBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ReferenceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn rules_extraction_definition_identifier_correct_errors(
+    mut builder: crate::types::builders::RulesExtractionDefinitionIdentifierBuilder,
+) -> crate::types::builders::RulesExtractionDefinitionIdentifierBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
     }
     builder
 }

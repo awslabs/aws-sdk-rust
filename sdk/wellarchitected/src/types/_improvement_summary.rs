@@ -15,9 +15,9 @@ pub struct ImprovementSummary {
     pub risk: ::std::option::Option<crate::types::Risk>,
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub improvement_plan_url: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan details.</p>
+    /// <p>This value is only applicable to custom lenses.</p>
     pub improvement_plans: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>,
     /// <p>Configuration of the Jira integration.</p>
     pub jira_configuration: ::std::option::Option<crate::types::JiraConfiguration>,
@@ -42,11 +42,11 @@ impl ImprovementSummary {
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub fn improvement_plan_url(&self) -> ::std::option::Option<&str> {
         self.improvement_plan_url.as_deref()
     }
     /// <p>The improvement plan details.</p>
+    /// <p>This value is only applicable to custom lenses.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.improvement_plans.is_none()`.
     pub fn improvement_plans(&self) -> &[crate::types::ChoiceImprovementPlan] {
@@ -138,21 +138,18 @@ impl ImprovementSummaryBuilder {
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub fn improvement_plan_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.improvement_plan_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub fn set_improvement_plan_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.improvement_plan_url = input;
         self
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub fn get_improvement_plan_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.improvement_plan_url
     }
@@ -161,6 +158,7 @@ impl ImprovementSummaryBuilder {
     /// To override the contents of this collection use [`set_improvement_plans`](Self::set_improvement_plans).
     ///
     /// <p>The improvement plan details.</p>
+    /// <p>This value is only applicable to custom lenses.</p>
     pub fn improvement_plans(mut self, input: crate::types::ChoiceImprovementPlan) -> Self {
         let mut v = self.improvement_plans.unwrap_or_default();
         v.push(input);
@@ -168,11 +166,13 @@ impl ImprovementSummaryBuilder {
         self
     }
     /// <p>The improvement plan details.</p>
+    /// <p>This value is only applicable to custom lenses.</p>
     pub fn set_improvement_plans(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>>) -> Self {
         self.improvement_plans = input;
         self
     }
     /// <p>The improvement plan details.</p>
+    /// <p>This value is only applicable to custom lenses.</p>
     pub fn get_improvement_plans(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChoiceImprovementPlan>> {
         &self.improvement_plans
     }

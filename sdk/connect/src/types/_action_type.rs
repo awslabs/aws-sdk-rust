@@ -17,6 +17,7 @@
 ///     ActionType::CreateCase => { /* ... */ },
 ///     ActionType::CreateTask => { /* ... */ },
 ///     ActionType::EndAssociatedTasks => { /* ... */ },
+///     ActionType::ExtractInformation => { /* ... */ },
 ///     ActionType::GenerateEventbridgeEvent => { /* ... */ },
 ///     ActionType::SendNotification => { /* ... */ },
 ///     ActionType::SubmitAutoEvaluation => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum ActionType {
     #[allow(missing_docs)] // documentation missing in model
     EndAssociatedTasks,
     #[allow(missing_docs)] // documentation missing in model
+    ExtractInformation,
+    #[allow(missing_docs)] // documentation missing in model
     GenerateEventbridgeEvent,
     #[allow(missing_docs)] // documentation missing in model
     SendNotification,
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for ActionType {
             "CREATE_CASE" => ActionType::CreateCase,
             "CREATE_TASK" => ActionType::CreateTask,
             "END_ASSOCIATED_TASKS" => ActionType::EndAssociatedTasks,
+            "EXTRACT_INFORMATION" => ActionType::ExtractInformation,
             "GENERATE_EVENTBRIDGE_EVENT" => ActionType::GenerateEventbridgeEvent,
             "SEND_NOTIFICATION" => ActionType::SendNotification,
             "SUBMIT_AUTO_EVALUATION" => ActionType::SubmitAutoEvaluation,
@@ -103,6 +107,7 @@ impl ActionType {
             ActionType::CreateCase => "CREATE_CASE",
             ActionType::CreateTask => "CREATE_TASK",
             ActionType::EndAssociatedTasks => "END_ASSOCIATED_TASKS",
+            ActionType::ExtractInformation => "EXTRACT_INFORMATION",
             ActionType::GenerateEventbridgeEvent => "GENERATE_EVENTBRIDGE_EVENT",
             ActionType::SendNotification => "SEND_NOTIFICATION",
             ActionType::SubmitAutoEvaluation => "SUBMIT_AUTO_EVALUATION",
@@ -118,6 +123,7 @@ impl ActionType {
             "CREATE_CASE",
             "CREATE_TASK",
             "END_ASSOCIATED_TASKS",
+            "EXTRACT_INFORMATION",
             "GENERATE_EVENTBRIDGE_EVENT",
             "SEND_NOTIFICATION",
             "SUBMIT_AUTO_EVALUATION",
@@ -150,6 +156,7 @@ impl ::std::fmt::Display for ActionType {
             ActionType::CreateCase => write!(f, "CREATE_CASE"),
             ActionType::CreateTask => write!(f, "CREATE_TASK"),
             ActionType::EndAssociatedTasks => write!(f, "END_ASSOCIATED_TASKS"),
+            ActionType::ExtractInformation => write!(f, "EXTRACT_INFORMATION"),
             ActionType::GenerateEventbridgeEvent => write!(f, "GENERATE_EVENTBRIDGE_EVENT"),
             ActionType::SendNotification => write!(f, "SEND_NOTIFICATION"),
             ActionType::SubmitAutoEvaluation => write!(f, "SUBMIT_AUTO_EVALUATION"),

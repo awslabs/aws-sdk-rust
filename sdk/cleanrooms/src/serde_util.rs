@@ -3624,6 +3624,18 @@ pub(crate) fn budget_parameter_correct_errors(
     builder
 }
 
+pub(crate) fn comparison_controls_correct_errors(
+    mut builder: crate::types::builders::ComparisonControlsBuilder,
+) -> crate::types::builders::ComparisonControlsBuilder {
+    if builder.allowed_literal_comparison_columns.is_none() {
+        builder.allowed_literal_comparison_columns = Some(Default::default())
+    }
+    if builder.allowed_column_comparison_columns.is_none() {
+        builder.allowed_column_comparison_columns = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn differential_privacy_configuration_correct_errors(
     mut builder: crate::types::builders::DifferentialPrivacyConfigurationBuilder,
 ) -> crate::types::builders::DifferentialPrivacyConfigurationBuilder {
@@ -3753,6 +3765,24 @@ pub(crate) fn aggregation_constraint_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::AggregationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn aggregation_threshold_correct_errors(
+    mut builder: crate::types::builders::AggregationThresholdBuilder,
+) -> crate::types::builders::AggregationThresholdBuilder {
+    if builder.identity_columns.is_none() {
+        builder.identity_columns = Some(Default::default())
+    }
+    if builder.minimum_identity_count.is_none() {
+        builder.minimum_identity_count = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::AggregationThresholdType>().ok()
+    }
+    if builder.allowed_aggregate_expression_type.is_none() {
+        builder.allowed_aggregate_expression_type = "no value was set".parse::<crate::types::AllowedAggregateExpressionType>().ok()
     }
     builder
 }
@@ -3891,6 +3921,18 @@ pub(crate) fn differential_privacy_column_correct_errors(
 ) -> crate::types::builders::DifferentialPrivacyColumnBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn output_column_threshold_correct_errors(
+    mut builder: crate::types::builders::OutputColumnThresholdBuilder,
+) -> crate::types::builders::OutputColumnThresholdBuilder {
+    if builder.output_column_name.is_none() {
+        builder.output_column_name = Some(Default::default())
+    }
+    if builder.minimum_identity_count.is_none() {
+        builder.minimum_identity_count = Some(Default::default())
     }
     builder
 }

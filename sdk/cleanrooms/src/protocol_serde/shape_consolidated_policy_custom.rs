@@ -58,6 +58,18 @@ where
                                 )?,
                             );
                         }
+                        "aggregationThresholds" => {
+                            builder = builder.set_aggregation_thresholds(
+                                crate::protocol_serde::shape_aggregation_threshold_list::de_aggregation_threshold_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "comparisonControls" => {
+                            builder = builder.set_comparison_controls(crate::protocol_serde::shape_comparison_controls::de_comparison_controls(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "allowedResultReceivers" => {
                             builder = builder.set_allowed_result_receivers(
                                 crate::protocol_serde::shape_allowed_result_receivers::de_allowed_result_receivers(tokens, _value, depth + 1)?,

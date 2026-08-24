@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateB
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateBrokerType")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateBrokerTypeTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,59 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateB
     }
 }
 
+#[derive(Debug)]
+struct UpdateBrokerTypeTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateBrokerTypeTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateBrokerTypeTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateBrokerTypeInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ClusterArn") {
+            if let ::std::option::Option::Some(value) = input.cluster_arn.as_deref() {
+                captured.insert("ClusterArn", value);
+            }
+        }
+        if requested.should_capture("CurrentVersion") {
+            if let ::std::option::Option::Some(value) = input.current_version.as_deref() {
+                captured.insert("CurrentVersion", value);
+            }
+        }
+        if requested.should_capture("TargetInstanceType") {
+            if let ::std::option::Option::Some(value) = input.target_instance_type.as_deref() {
+                captured.insert("TargetInstanceType", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateBrokerTypeResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateBrokerTypeResponseDeserializer {

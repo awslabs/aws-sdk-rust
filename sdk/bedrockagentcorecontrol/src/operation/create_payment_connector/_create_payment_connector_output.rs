@@ -17,6 +17,8 @@ pub struct CreatePaymentConnectorOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The current status of the payment connector. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>
     pub status: crate::types::PaymentConnectorStatus,
+    /// <p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>
+    pub authorization_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePaymentConnectorOutput {
@@ -52,6 +54,10 @@ impl CreatePaymentConnectorOutput {
     pub fn status(&self) -> &crate::types::PaymentConnectorStatus {
         &self.status
     }
+    /// <p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>
+    pub fn authorization_url(&self) -> ::std::option::Option<&str> {
+        self.authorization_url.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreatePaymentConnectorOutput {
     fn request_id(&self) -> Option<&str> {
@@ -76,6 +82,7 @@ pub struct CreatePaymentConnectorOutputBuilder {
     pub(crate) credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::PaymentConnectorStatus>,
+    pub(crate) authorization_url: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreatePaymentConnectorOutputBuilder {
@@ -192,6 +199,20 @@ impl CreatePaymentConnectorOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::PaymentConnectorStatus> {
         &self.status
     }
+    /// <p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>
+    pub fn authorization_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.authorization_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>
+    pub fn set_authorization_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.authorization_url = input;
+        self
+    }
+    /// <p>The URL that the user must open to complete OAuth consent. This field is only present when the payment connector status is <code>PENDING_AUTHENTICATION</code>.</p>
+    pub fn get_authorization_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.authorization_url
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -259,6 +280,7 @@ impl CreatePaymentConnectorOutputBuilder {
                     "status was not specified but it is required when building CreatePaymentConnectorOutput",
                 )
             })?,
+            authorization_url: self.authorization_url,
             _request_id: self._request_id,
         })
     }

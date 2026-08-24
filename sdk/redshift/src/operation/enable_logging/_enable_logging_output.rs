@@ -16,10 +16,12 @@ pub struct EnableLoggingOutput {
     pub last_failure_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The message indicating that logs failed to be delivered.</p>
     pub last_failure_message: ::std::option::Option<::std::string::String>,
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables being published.</p>
     pub log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The status of system table publishing to S3 Tables. This field is populated only when system table publishing is active.</p>
+    pub s3_tables: ::std::option::Option<crate::types::S3TablePublishStatus>,
     _request_id: Option<String>,
 }
 impl EnableLoggingOutput {
@@ -47,15 +49,19 @@ impl EnableLoggingOutput {
     pub fn last_failure_message(&self) -> ::std::option::Option<&str> {
         self.last_failure_message.as_deref()
     }
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub fn log_destination_type(&self) -> ::std::option::Option<&crate::types::LogDestinationType> {
         self.log_destination_type.as_ref()
     }
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables being published.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_exports.is_none()`.
     pub fn log_exports(&self) -> &[::std::string::String] {
         self.log_exports.as_deref().unwrap_or_default()
+    }
+    /// <p>The status of system table publishing to S3 Tables. This field is populated only when system table publishing is active.</p>
+    pub fn s3_tables(&self) -> ::std::option::Option<&crate::types::S3TablePublishStatus> {
+        self.s3_tables.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for EnableLoggingOutput {
@@ -82,6 +88,7 @@ pub struct EnableLoggingOutputBuilder {
     pub(crate) last_failure_message: ::std::option::Option<::std::string::String>,
     pub(crate) log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
     pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) s3_tables: ::std::option::Option<crate::types::S3TablePublishStatus>,
     _request_id: Option<String>,
 }
 impl EnableLoggingOutputBuilder {
@@ -169,17 +176,17 @@ impl EnableLoggingOutputBuilder {
     pub fn get_last_failure_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_failure_message
     }
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
         self.log_destination_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
         self.log_destination_type = input;
         self
     }
-    /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>.</p>
     pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
         &self.log_destination_type
     }
@@ -187,21 +194,35 @@ impl EnableLoggingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
     ///
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables being published.</p>
     pub fn log_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
         v.push(input.into());
         self.log_exports = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables being published.</p>
     pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.log_exports = input;
         self
     }
-    /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
+    /// <p>The collection of exported log types. When <code>LogDestinationType</code> is <code>s3</code> or <code>cloudwatch</code>, possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables being published.</p>
     pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_exports
+    }
+    /// <p>The status of system table publishing to S3 Tables. This field is populated only when system table publishing is active.</p>
+    pub fn s3_tables(mut self, input: crate::types::S3TablePublishStatus) -> Self {
+        self.s3_tables = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of system table publishing to S3 Tables. This field is populated only when system table publishing is active.</p>
+    pub fn set_s3_tables(mut self, input: ::std::option::Option<crate::types::S3TablePublishStatus>) -> Self {
+        self.s3_tables = input;
+        self
+    }
+    /// <p>The status of system table publishing to S3 Tables. This field is populated only when system table publishing is active.</p>
+    pub fn get_s3_tables(&self) -> &::std::option::Option<crate::types::S3TablePublishStatus> {
+        &self.s3_tables
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -223,6 +244,7 @@ impl EnableLoggingOutputBuilder {
             last_failure_message: self.last_failure_message,
             log_destination_type: self.log_destination_type,
             log_exports: self.log_exports,
+            s3_tables: self.s3_tables,
             _request_id: self._request_id,
         }
     }

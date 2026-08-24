@@ -1,6 +1,10 @@
 # aws-sdk-wellarchitected
 
-This is the _Well-Architected Tool API Reference_. The WA Tool API provides programmatic access to the [Well-Architected Tool](http://aws.amazon.com/well-architected-tool) in the [Amazon Web Services Management Console](https://console.aws.amazon.com/wellarchitected). For information about the Well-Architected Tool, see the [Well-Architected Tool User Guide](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
+Amazon Web Services Well-Architected helps you evaluate your architectures against Amazon Web Services best practices across operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability. The service includes the Amazon Web Services Well-Architected Agent for AI-powered recommendations tailored to your specific environment, and the [Well-Architected Tool](http://aws.amazon.com/well-architected-tool) for conducting reviews and tracking improvements.
+
+This is the _Amazon Web Services Well-Architected API Reference_. Through this API, you can programmatically access personalized recommendations and automation scripts from the Amazon Web Services Well-Architected Agent, and create and manage workloads, conduct lens reviews, track milestones, manage custom lenses, share workloads across accounts, and manage profiles with the Well-Architected Tool.
+
+For more information about the service, see the [Amazon Web Services Well-Architected User Guide](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
 
 ## Getting Started
 
@@ -14,7 +18,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-wellarchitected = "1.106.0"
+aws-sdk-wellarchitected = "1.109.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

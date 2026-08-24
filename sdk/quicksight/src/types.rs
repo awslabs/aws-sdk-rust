@@ -29,6 +29,10 @@ pub use crate::types::_analysis_definition::AnalysisDefinition;
 
 pub use crate::types::_validation_strategy::ValidationStrategy;
 
+pub use crate::types::_applicable_to::ApplicableTo;
+
+pub use crate::types::_approval_policy::ApprovalPolicy;
+
 pub use crate::types::_brand_definition::BrandDefinition;
 
 pub use crate::types::_brand_detail::BrandDetail;
@@ -70,6 +74,12 @@ pub use crate::types::_data_source_credentials::DataSourceCredentials;
 pub use crate::types::_vpc_connection_properties::VpcConnectionProperties;
 
 pub use crate::types::_ssl_properties::SslProperties;
+
+pub use crate::types::_dlp_provider_type::DlpProviderType;
+
+pub use crate::types::_provider_config::ProviderConfig;
+
+pub use crate::types::_dlp_action::DlpAction;
 
 pub use crate::types::_folder_type::FolderType;
 
@@ -189,6 +199,8 @@ pub use crate::types::_data_set_refresh_properties::DataSetRefreshProperties;
 
 pub use crate::types::_data_source::DataSource;
 
+pub use crate::types::_dlp_setting_details::DlpSettingDetails;
+
 pub use crate::types::_flow_publish_state::FlowPublishState;
 
 pub use crate::types::_flow_detail::FlowDetail;
@@ -202,6 +214,8 @@ pub use crate::types::_ingestion::Ingestion;
 pub use crate::types::_q_data_key::QDataKey;
 
 pub use crate::types::_knowledge_base::KnowledgeBase;
+
+pub use crate::types::_limits_profile::LimitsProfile;
 
 pub use crate::types::_namespace_info_v2::NamespaceInfoV2;
 
@@ -232,6 +246,8 @@ pub use crate::types::_registered_user_embedding_experience_configuration::Regis
 pub use crate::types::_embedding_identity_type::EmbeddingIdentityType;
 
 pub use crate::types::_user_identifier::UserIdentifier;
+
+pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_theme_type::ThemeType;
 
@@ -275,6 +291,12 @@ pub use crate::types::_batch_delete_knowledge_base_success::BatchDeleteKnowledge
 
 pub use crate::types::_batch_delete_knowledge_base_failure::BatchDeleteKnowledgeBaseFailure;
 
+pub use crate::types::_user_limits_entry::UserLimitsEntry;
+
+pub use crate::types::_user_limits::UserLimits;
+
+pub use crate::types::_batch_describe_user_limits_error::BatchDescribeUserLimitsError;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_connection_auth_type::ConnectionAuthType;
@@ -296,6 +318,12 @@ pub use crate::types::_asset_options::AssetOptions;
 pub use crate::types::_query_execution_options::QueryExecutionOptions;
 
 pub use crate::types::_validation_strategy_mode::ValidationStrategyMode;
+
+pub use crate::types::_governed_action::GovernedAction;
+
+pub use crate::types::_asset_type::AssetType;
+
+pub use crate::types::_applicable_to_type::ApplicableToType;
 
 pub use crate::types::_application_theme::ApplicationTheme;
 
@@ -441,6 +469,8 @@ pub use crate::types::_web_proxy_credentials::WebProxyCredentials;
 
 pub use crate::types::_o_auth_client_credentials::OAuthClientCredentials;
 
+pub use crate::types::_microsoft_purview_provider_config::MicrosoftPurviewProviderConfig;
+
 pub use crate::types::_permission::Permission;
 
 pub use crate::types::_kb_template_configuration::KbTemplateConfiguration;
@@ -450,6 +480,8 @@ pub use crate::types::_image_extraction_configuration::ImageExtractionConfigurat
 pub use crate::types::_audio_extraction_configuration::AudioExtractionConfiguration;
 
 pub use crate::types::_video_extraction_configuration::VideoExtractionConfiguration;
+
+pub use crate::types::_profile_limit_value::ProfileLimitValue;
 
 pub use crate::types::_refresh_frequency::RefreshFrequency;
 
@@ -504,6 +536,8 @@ pub use crate::types::_refresh_failure_configuration::RefreshFailureConfiguratio
 pub use crate::types::_data_source_error_info::DataSourceErrorInfo;
 
 pub use crate::types::_credential_status::CredentialStatus;
+
+pub use crate::types::_dlp_setting_status::DlpSettingStatus;
 
 pub use crate::types::_error_info::ErrorInfo;
 
@@ -572,6 +606,8 @@ pub use crate::types::_dashboard_summary::DashboardSummary;
 pub use crate::types::_dashboard_version_summary::DashboardVersionSummary;
 
 pub use crate::types::_data_set_summary::DataSetSummary;
+
+pub use crate::types::_dlp_setting_summary::DlpSettingSummary;
 
 pub use crate::types::_flow_summary::FlowSummary;
 
@@ -791,6 +827,8 @@ pub use crate::types::_web_crawler_auth_type::WebCrawlerAuthType;
 
 pub use crate::types::_auth_type::AuthType;
 
+pub use crate::types::_microsoft_purview_credentials::MicrosoftPurviewCredentials;
+
 pub use crate::types::_image_extraction_status::ImageExtractionStatus;
 
 pub use crate::types::_audio_extraction_status::AudioExtractionStatus;
@@ -798,6 +836,8 @@ pub use crate::types::_audio_extraction_status::AudioExtractionStatus;
 pub use crate::types::_video_extraction_status::VideoExtractionStatus;
 
 pub use crate::types::_video_extraction_type::VideoExtractionType;
+
+pub use crate::types::_limit_unit::LimitUnit;
 
 pub use crate::types::_refresh_interval::RefreshInterval;
 
@@ -851,6 +891,8 @@ pub use crate::types::_asset_bundle_export_job_dashboard_override_properties::As
 
 pub use crate::types::_asset_bundle_export_job_folder_override_properties::AssetBundleExportJobFolderOverrideProperties;
 
+pub use crate::types::_asset_bundle_export_job_topic_v2_override_properties::AssetBundleExportJobTopicV2OverrideProperties;
+
 pub use crate::types::_asset_bundle_import_job_vpc_connection_override_parameters::AssetBundleImportJobVpcConnectionOverrideParameters;
 
 pub use crate::types::_asset_bundle_import_job_refresh_schedule_override_parameters::AssetBundleImportJobRefreshScheduleOverrideParameters;
@@ -867,6 +909,8 @@ pub use crate::types::_asset_bundle_import_job_dashboard_override_parameters::As
 
 pub use crate::types::_asset_bundle_import_job_folder_override_parameters::AssetBundleImportJobFolderOverrideParameters;
 
+pub use crate::types::_asset_bundle_import_job_topic_v2_override_parameters::AssetBundleImportJobTopicV2OverrideParameters;
+
 pub use crate::types::_asset_bundle_import_job_data_source_override_permissions::AssetBundleImportJobDataSourceOverridePermissions;
 
 pub use crate::types::_asset_bundle_import_job_data_set_override_permissions::AssetBundleImportJobDataSetOverridePermissions;
@@ -878,6 +922,8 @@ pub use crate::types::_asset_bundle_import_job_analysis_override_permissions::As
 pub use crate::types::_asset_bundle_import_job_dashboard_override_permissions::AssetBundleImportJobDashboardOverridePermissions;
 
 pub use crate::types::_asset_bundle_import_job_folder_override_permissions::AssetBundleImportJobFolderOverridePermissions;
+
+pub use crate::types::_asset_bundle_import_job_topic_v2_override_permissions::AssetBundleImportJobTopicV2OverridePermissions;
 
 pub use crate::types::_asset_bundle_import_job_vpc_connection_override_tags::AssetBundleImportJobVpcConnectionOverrideTags;
 
@@ -892,6 +938,8 @@ pub use crate::types::_asset_bundle_import_job_analysis_override_tags::AssetBund
 pub use crate::types::_asset_bundle_import_job_dashboard_override_tags::AssetBundleImportJobDashboardOverrideTags;
 
 pub use crate::types::_asset_bundle_import_job_folder_override_tags::AssetBundleImportJobFolderOverrideTags;
+
+pub use crate::types::_asset_bundle_import_job_topic_v2_override_tags::AssetBundleImportJobTopicV2OverrideTags;
 
 pub use crate::types::_dashboard_error_type::DashboardErrorType;
 
@@ -990,6 +1038,8 @@ pub use crate::types::_topic_ir_contribution_analysis::TopicIrContributionAnalys
 pub use crate::types::_visual_options::VisualOptions;
 
 pub use crate::types::_visual_role::VisualRole;
+
+pub use crate::types::_effective_limit::EffectiveLimit;
 
 pub use crate::types::_authorization_code_grant_credentials_source::AuthorizationCodeGrantCredentialsSource;
 
@@ -1101,6 +1151,8 @@ pub use crate::types::_table_semantic_metadata::TableSemanticMetadata;
 
 pub use crate::types::_data_set_semantic_description::DataSetSemanticDescription;
 
+pub use crate::types::_label_action_mapping::LabelActionMapping;
+
 pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_data_set_schema::DataSetSchema;
@@ -1200,6 +1252,8 @@ pub use crate::types::_contribution_analysis_direction::ContributionAnalysisDire
 pub use crate::types::_contribution_analysis_sort_type::ContributionAnalysisSortType;
 
 pub use crate::types::_slot::Slot;
+
+pub use crate::types::_limit_source::LimitSource;
 
 pub use crate::types::_authorization_code_grant_details::AuthorizationCodeGrantDetails;
 
@@ -1338,6 +1392,8 @@ pub use crate::types::_asset_bundle_export_job_analysis_property_to_override::As
 pub use crate::types::_asset_bundle_export_job_dashboard_property_to_override::AssetBundleExportJobDashboardPropertyToOverride;
 
 pub use crate::types::_asset_bundle_export_job_folder_property_to_override::AssetBundleExportJobFolderPropertyToOverride;
+
+pub use crate::types::_asset_bundle_export_job_topic_v2_property_to_override::AssetBundleExportJobTopicV2PropertyToOverride;
 
 pub use crate::types::_asset_bundle_import_job_data_source_credential_pair::AssetBundleImportJobDataSourceCredentialPair;
 
@@ -2961,7 +3017,13 @@ mod _append_operation;
 
 mod _appended_column;
 
+mod _applicable_to;
+
+mod _applicable_to_type;
+
 mod _application_theme;
+
+mod _approval_policy;
 
 mod _arc_axis_configuration;
 
@@ -3014,6 +3076,10 @@ mod _asset_bundle_export_job_summary;
 mod _asset_bundle_export_job_theme_override_properties;
 
 mod _asset_bundle_export_job_theme_property_to_override;
+
+mod _asset_bundle_export_job_topic_v2_override_properties;
+
+mod _asset_bundle_export_job_topic_v2_property_to_override;
 
 mod _asset_bundle_export_job_validation_strategy;
 
@@ -3083,6 +3149,12 @@ mod _asset_bundle_import_job_theme_override_permissions;
 
 mod _asset_bundle_import_job_theme_override_tags;
 
+mod _asset_bundle_import_job_topic_v2_override_parameters;
+
+mod _asset_bundle_import_job_topic_v2_override_permissions;
+
+mod _asset_bundle_import_job_topic_v2_override_tags;
+
 mod _asset_bundle_import_job_vpc_connection_override_parameters;
 
 mod _asset_bundle_import_job_vpc_connection_override_tags;
@@ -3098,6 +3170,8 @@ mod _asset_bundle_resource_link_sharing_configuration;
 mod _asset_bundle_resource_permissions;
 
 mod _asset_options;
+
+mod _asset_type;
 
 mod _assignment_status;
 
@@ -3190,6 +3264,8 @@ mod _basic_auth_connection_metadata;
 mod _batch_delete_knowledge_base_failure;
 
 mod _batch_delete_knowledge_base_success;
+
+mod _batch_describe_user_limits_error;
 
 mod _big_query_parameters;
 
@@ -3791,6 +3867,16 @@ mod _display_format;
 
 mod _display_format_options;
 
+mod _dlp_action;
+
+mod _dlp_provider_type;
+
+mod _dlp_setting_details;
+
+mod _dlp_setting_status;
+
+mod _dlp_setting_summary;
+
 mod _donut_center_options;
 
 mod _donut_options;
@@ -3802,6 +3888,8 @@ mod _drop_down_control_display_options;
 mod _dynamic_default_value;
 
 mod _edition;
+
+mod _effective_limit;
 
 mod _embedding_identity_type;
 
@@ -4121,6 +4209,8 @@ mod _google_drive_parameters;
 
 mod _governance;
 
+mod _governed_action;
+
 mod _gradient_color;
 
 mod _gradient_stop;
@@ -4343,6 +4433,8 @@ mod _kpi_visual_standard_layout;
 
 mod _kpi_visual_standard_layout_type;
 
+mod _label_action_mapping;
+
 mod _label_options;
 
 mod _layer_custom_action;
@@ -4362,6 +4454,12 @@ mod _layout_element_type;
 mod _legend_options;
 
 mod _legend_position;
+
+mod _limit_source;
+
+mod _limit_unit;
+
+mod _limits_profile;
 
 mod _line_chart_aggregated_field_wells;
 
@@ -4446,6 +4544,10 @@ mod _member_id_arn_pair;
 mod _member_type;
 
 mod _metric_comparison_computation;
+
+mod _microsoft_purview_credentials;
+
+mod _microsoft_purview_provider_config;
 
 mod _minimum_label_type;
 
@@ -4709,6 +4811,8 @@ mod _presto_parameters;
 
 mod _primary_value_display_type;
 
+mod _profile_limit_value;
+
 mod _progress_bar_options;
 
 mod _project_operation;
@@ -4716,6 +4820,8 @@ mod _project_operation;
 mod _property_role;
 
 mod _property_usage;
+
+mod _provider_config;
 
 mod _purchase_mode;
 
@@ -4876,6 +4982,8 @@ mod _resize_option;
 mod _resource_permission;
 
 mod _resource_status;
+
+mod _resource_type;
 
 mod _reviewed_answer_error_code;
 
@@ -5564,6 +5672,10 @@ mod _user_index_capacity_filter;
 mod _user_index_capacity_sort_by;
 
 mod _user_index_capacity_sort_order;
+
+mod _user_limits;
+
+mod _user_limits_entry;
 
 mod _user_name_or_email_filter;
 

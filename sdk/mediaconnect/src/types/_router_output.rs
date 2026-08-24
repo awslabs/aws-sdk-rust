@@ -50,6 +50,8 @@ pub struct RouterOutput {
     pub maintenance_schedule_type: ::std::option::Option<crate::types::MaintenanceScheduleType>,
     /// <p>The current maintenance schedule details for this router output.</p>
     pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
 }
 impl RouterOutput {
     /// <p>The name of the router output.</p>
@@ -150,6 +152,10 @@ impl RouterOutput {
     pub fn maintenance_schedule(&self) -> ::std::option::Option<&crate::types::MaintenanceSchedule> {
         self.maintenance_schedule.as_ref()
     }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn fabric_configuration(&self) -> ::std::option::Option<&crate::types::FabricConfiguration> {
+        self.fabric_configuration.as_ref()
+    }
 }
 impl RouterOutput {
     /// Creates a new builder-style object to manufacture [`RouterOutput`](crate::types::RouterOutput).
@@ -185,6 +191,7 @@ pub struct RouterOutputBuilder {
     pub(crate) maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
     pub(crate) maintenance_schedule_type: ::std::option::Option<crate::types::MaintenanceScheduleType>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
+    pub(crate) fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
 }
 impl RouterOutputBuilder {
     /// <p>The name of the router output.</p>
@@ -538,6 +545,21 @@ impl RouterOutputBuilder {
     pub fn get_maintenance_schedule(&self) -> &::std::option::Option<crate::types::MaintenanceSchedule> {
         &self.maintenance_schedule
     }
+    /// <p>The fabric configuration settings for the router output.</p>
+    /// This field is required.
+    pub fn fabric_configuration(mut self, input: crate::types::FabricConfiguration) -> Self {
+        self.fabric_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn set_fabric_configuration(mut self, input: ::std::option::Option<crate::types::FabricConfiguration>) -> Self {
+        self.fabric_configuration = input;
+        self
+    }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
+        &self.fabric_configuration
+    }
     /// Consumes the builder and constructs a [`RouterOutput`](crate::types::RouterOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::RouterOutputBuilder::name)
@@ -661,6 +683,7 @@ impl RouterOutputBuilder {
             maintenance_configuration: self.maintenance_configuration,
             maintenance_schedule_type: self.maintenance_schedule_type,
             maintenance_schedule: self.maintenance_schedule,
+            fabric_configuration: self.fabric_configuration,
         })
     }
 }

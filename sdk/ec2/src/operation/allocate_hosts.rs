@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Allocat
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AllocateHosts")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                AllocateHostsTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Allocat
     }
 }
 
+#[derive(Debug)]
+struct AllocateHostsTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AllocateHostsTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "AllocateHostsTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<AllocateHostsInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("InstanceFamily") {
+            if let ::std::option::Option::Some(value) = input.instance_family.as_deref() {
+                captured.insert("InstanceFamily", value);
+            }
+        }
+        if requested.should_capture("OutpostArn") {
+            if let ::std::option::Option::Some(value) = input.outpost_arn.as_deref() {
+                captured.insert("OutpostArn", value);
+            }
+        }
+        if requested.should_capture("AvailabilityZoneId") {
+            if let ::std::option::Option::Some(value) = input.availability_zone_id.as_deref() {
+                captured.insert("AvailabilityZoneId", value);
+            }
+        }
+        if requested.should_capture("ClientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("ClientToken", value);
+            }
+        }
+        if requested.should_capture("InstanceType") {
+            if let ::std::option::Option::Some(value) = input.instance_type.as_deref() {
+                captured.insert("InstanceType", value);
+            }
+        }
+        if requested.should_capture("AvailabilityZone") {
+            if let ::std::option::Option::Some(value) = input.availability_zone.as_deref() {
+                captured.insert("AvailabilityZone", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct AllocateHostsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AllocateHostsResponseDeserializer {

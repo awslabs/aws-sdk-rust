@@ -61,6 +61,8 @@ pub use crate::types::_source_type::SourceType;
 
 pub use crate::types::_log_destination_type::LogDestinationType;
 
+pub use crate::types::_s3_table_publish_status::S3TablePublishStatus;
+
 pub use crate::types::_action_type::ActionType;
 
 pub use crate::types::_scheduled_action_type_values::ScheduledActionTypeValues;
@@ -110,6 +112,8 @@ pub use crate::types::_resize_info::ResizeInfo;
 pub use crate::types::_reserved_node_exchange_status::ReservedNodeExchangeStatus;
 
 pub use crate::types::_secondary_cluster_info::SecondaryClusterInfo;
+
+pub use crate::types::_logging_publish_status::LoggingPublishStatus;
 
 pub use crate::types::_vpc_security_group_membership::VpcSecurityGroupMembership;
 
@@ -397,6 +401,8 @@ mod _lakehouse_registration;
 
 mod _log_destination_type;
 
+mod _logging_publish_status;
+
 mod _maintenance_track;
 
 mod _mode;
@@ -476,6 +482,8 @@ mod _resume_cluster_message;
 mod _revision_target;
 
 mod _s3_access_grants_scope_union;
+
+mod _s3_table_publish_status;
 
 mod _schedule_state;
 

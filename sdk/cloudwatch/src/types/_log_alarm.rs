@@ -50,6 +50,9 @@ pub struct LogAlarm {
     pub action_log_line_count: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that CloudWatch assumes to retrieve log events for inclusion in alarm action notifications. Set when <code>ActionLogLineCount</code> is greater than 0.</p>
     pub action_log_line_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. During the warm-up period, the alarm stays in <code>INSUFFICIENT_DATA</code> and does not perform alarm actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
 }
 impl LogAlarm {
     /// <p>The name of the alarm.</p>
@@ -148,6 +151,11 @@ impl LogAlarm {
     pub fn action_log_line_role_arn(&self) -> ::std::option::Option<&str> {
         self.action_log_line_role_arn.as_deref()
     }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. During the warm-up period, the alarm stays in <code>INSUFFICIENT_DATA</code> and does not perform alarm actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn warm_up_configuration(&self) -> ::std::option::Option<&crate::types::WarmUpConfiguration> {
+        self.warm_up_configuration.as_ref()
+    }
 }
 impl LogAlarm {
     /// Creates a new builder-style object to manufacture [`LogAlarm`](crate::types::LogAlarm).
@@ -182,6 +190,7 @@ pub struct LogAlarmBuilder {
     pub(crate) evaluation_state: ::std::option::Option<crate::types::EvaluationState>,
     pub(crate) action_log_line_count: ::std::option::Option<i32>,
     pub(crate) action_log_line_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
 }
 impl LogAlarmBuilder {
     /// <p>The name of the alarm.</p>
@@ -516,6 +525,23 @@ impl LogAlarmBuilder {
     pub fn get_action_log_line_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.action_log_line_role_arn
     }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. During the warm-up period, the alarm stays in <code>INSUFFICIENT_DATA</code> and does not perform alarm actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn warm_up_configuration(mut self, input: crate::types::WarmUpConfiguration) -> Self {
+        self.warm_up_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. During the warm-up period, the alarm stays in <code>INSUFFICIENT_DATA</code> and does not perform alarm actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn set_warm_up_configuration(mut self, input: ::std::option::Option<crate::types::WarmUpConfiguration>) -> Self {
+        self.warm_up_configuration = input;
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. During the warm-up period, the alarm stays in <code>INSUFFICIENT_DATA</code> and does not perform alarm actions.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_warm_up_configuration(&self) -> &::std::option::Option<crate::types::WarmUpConfiguration> {
+        &self.warm_up_configuration
+    }
     /// Consumes the builder and constructs a [`LogAlarm`](crate::types::LogAlarm).
     pub fn build(self) -> crate::types::LogAlarm {
         crate::types::LogAlarm {
@@ -541,6 +567,7 @@ impl LogAlarmBuilder {
             evaluation_state: self.evaluation_state,
             action_log_line_count: self.action_log_line_count,
             action_log_line_role_arn: self.action_log_line_role_arn,
+            warm_up_configuration: self.warm_up_configuration,
         }
     }
 }

@@ -45,7 +45,13 @@ pub struct DescribePartnerAppOutput {
     pub version: ::std::option::Option<::std::string::String>,
     /// <p>Configuration settings for the SageMaker Partner AI App.</p>
     pub application_config: ::std::option::Option<crate::types::PartnerAppConfig>,
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity.</p></li>
+    /// </ul>
     pub auth_type: ::std::option::Option<crate::types::PartnerAppAuthType>,
     /// <p>When set to <code>TRUE</code>, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.</p>
     pub enable_iam_session_based_identity: ::std::option::Option<bool>,
@@ -57,6 +63,8 @@ pub struct DescribePartnerAppOutput {
     pub current_version_eol_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>
     pub available_upgrade: ::std::option::Option<crate::types::AvailableUpgrade>,
+    /// <p>Contains the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App, including the Identity Center instance and the Identity Center application that SageMaker creates for the app. The service returns this field for apps that use <code>IDC</code> authorization.</p>
+    pub idc_config: ::std::option::Option<crate::types::IdcConfigOutput>,
     _request_id: Option<String>,
 }
 impl DescribePartnerAppOutput {
@@ -128,7 +136,13 @@ impl DescribePartnerAppOutput {
     pub fn application_config(&self) -> ::std::option::Option<&crate::types::PartnerAppConfig> {
         self.application_config.as_ref()
     }
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity.</p></li>
+    /// </ul>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::PartnerAppAuthType> {
         self.auth_type.as_ref()
     }
@@ -151,6 +165,10 @@ impl DescribePartnerAppOutput {
     /// <p>A map of available minor version upgrades for the SageMaker Partner AI App. The key is the semantic version number, and the value is a list of release notes for that version. A null value indicates no upgrades are available.</p>
     pub fn available_upgrade(&self) -> ::std::option::Option<&crate::types::AvailableUpgrade> {
         self.available_upgrade.as_ref()
+    }
+    /// <p>Contains the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App, including the Identity Center instance and the Identity Center application that SageMaker creates for the app. The service returns this field for apps that use <code>IDC</code> authorization.</p>
+    pub fn idc_config(&self) -> ::std::option::Option<&crate::types::IdcConfigOutput> {
+        self.idc_config.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribePartnerAppOutput {
@@ -188,6 +206,7 @@ pub struct DescribePartnerAppOutputBuilder {
     pub(crate) enable_auto_minor_version_upgrade: ::std::option::Option<bool>,
     pub(crate) current_version_eol_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) available_upgrade: ::std::option::Option<crate::types::AvailableUpgrade>,
+    pub(crate) idc_config: ::std::option::Option<crate::types::IdcConfigOutput>,
     _request_id: Option<String>,
 }
 impl DescribePartnerAppOutputBuilder {
@@ -421,17 +440,35 @@ impl DescribePartnerAppOutputBuilder {
     pub fn get_application_config(&self) -> &::std::option::Option<crate::types::PartnerAppConfig> {
         &self.application_config
     }
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity.</p></li>
+    /// </ul>
     pub fn auth_type(mut self, input: crate::types::PartnerAppAuthType) -> Self {
         self.auth_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity.</p></li>
+    /// </ul>
     pub fn set_auth_type(mut self, input: ::std::option::Option<crate::types::PartnerAppAuthType>) -> Self {
         self.auth_type = input;
         self
     }
-    /// <p>The authorization type that users use to access the SageMaker Partner AI App.</p>
+    /// <p>The authorization type that users use to access the SageMaker Partner AI App. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IAM</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM identity.</p></li>
+    /// <li>
+    /// <p><code>IDC</code>: Users access the SageMaker Partner AI App with their Amazon Web Services IAM Identity Center identity.</p></li>
+    /// </ul>
     pub fn get_auth_type(&self) -> &::std::option::Option<crate::types::PartnerAppAuthType> {
         &self.auth_type
     }
@@ -505,6 +542,20 @@ impl DescribePartnerAppOutputBuilder {
     pub fn get_available_upgrade(&self) -> &::std::option::Option<crate::types::AvailableUpgrade> {
         &self.available_upgrade
     }
+    /// <p>Contains the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App, including the Identity Center instance and the Identity Center application that SageMaker creates for the app. The service returns this field for apps that use <code>IDC</code> authorization.</p>
+    pub fn idc_config(mut self, input: crate::types::IdcConfigOutput) -> Self {
+        self.idc_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App, including the Identity Center instance and the Identity Center application that SageMaker creates for the app. The service returns this field for apps that use <code>IDC</code> authorization.</p>
+    pub fn set_idc_config(mut self, input: ::std::option::Option<crate::types::IdcConfigOutput>) -> Self {
+        self.idc_config = input;
+        self
+    }
+    /// <p>Contains the Amazon Web Services IAM Identity Center configuration for the SageMaker Partner AI App, including the Identity Center instance and the Identity Center application that SageMaker creates for the app. The service returns this field for apps that use <code>IDC</code> authorization.</p>
+    pub fn get_idc_config(&self) -> &::std::option::Option<crate::types::IdcConfigOutput> {
+        &self.idc_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -536,6 +587,7 @@ impl DescribePartnerAppOutputBuilder {
             enable_auto_minor_version_upgrade: self.enable_auto_minor_version_upgrade,
             current_version_eol_date: self.current_version_eol_date,
             available_upgrade: self.available_upgrade,
+            idc_config: self.idc_config,
             _request_id: self._request_id,
         }
     }

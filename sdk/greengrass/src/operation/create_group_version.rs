@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateG
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateGroupVersion")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateGroupVersionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateG
     }
 }
 
+#[derive(Debug)]
+struct CreateGroupVersionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateGroupVersionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateGroupVersionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateGroupVersionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("AmznClientToken") {
+            if let ::std::option::Option::Some(value) = input.amzn_client_token.as_deref() {
+                captured.insert("AmznClientToken", value);
+            }
+        }
+        if requested.should_capture("ConnectorDefinitionVersionArn") {
+            if let ::std::option::Option::Some(value) = input.connector_definition_version_arn.as_deref() {
+                captured.insert("ConnectorDefinitionVersionArn", value);
+            }
+        }
+        if requested.should_capture("CoreDefinitionVersionArn") {
+            if let ::std::option::Option::Some(value) = input.core_definition_version_arn.as_deref() {
+                captured.insert("CoreDefinitionVersionArn", value);
+            }
+        }
+        if requested.should_capture("DeviceDefinitionVersionArn") {
+            if let ::std::option::Option::Some(value) = input.device_definition_version_arn.as_deref() {
+                captured.insert("DeviceDefinitionVersionArn", value);
+            }
+        }
+        if requested.should_capture("FunctionDefinitionVersionArn") {
+            if let ::std::option::Option::Some(value) = input.function_definition_version_arn.as_deref() {
+                captured.insert("FunctionDefinitionVersionArn", value);
+            }
+        }
+        if requested.should_capture("GroupId") {
+            if let ::std::option::Option::Some(value) = input.group_id.as_deref() {
+                captured.insert("GroupId", value);
+            }
+        }
+        if requested.should_capture("LoggerDefinitionVersionArn") {
+            if let ::std::option::Option::Some(value) = input.logger_definition_version_arn.as_deref() {
+                captured.insert("LoggerDefinitionVersionArn", value);
+            }
+        }
+        if requested.should_capture("ResourceDefinitionVersionArn") {
+            if let ::std::option::Option::Some(value) = input.resource_definition_version_arn.as_deref() {
+                captured.insert("ResourceDefinitionVersionArn", value);
+            }
+        }
+        if requested.should_capture("SubscriptionDefinitionVersionArn") {
+            if let ::std::option::Option::Some(value) = input.subscription_definition_version_arn.as_deref() {
+                captured.insert("SubscriptionDefinitionVersionArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateGroupVersionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateGroupVersionResponseDeserializer {

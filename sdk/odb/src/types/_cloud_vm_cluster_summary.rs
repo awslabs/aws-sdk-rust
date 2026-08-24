@@ -60,7 +60,7 @@ pub struct CloudVmClusterSummary {
     pub oci_url: ::std::option::Option<::std::string::String>,
     /// <p>The domain of the VM cluster.</p>
     pub domain: ::std::option::Option<::std::string::String>,
-    /// <p>The FQDN of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
+    /// <p>The fully qualified domain name (FQDN) of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
     pub scan_dns_name: ::std::option::Option<::std::string::String>,
     /// <p>The OCID of the DNS record for the SCAN IP addresses that are associated with the VM cluster.</p>
     pub scan_dns_record_id: ::std::option::Option<::std::string::String>,
@@ -207,7 +207,7 @@ impl CloudVmClusterSummary {
     pub fn domain(&self) -> ::std::option::Option<&str> {
         self.domain.as_deref()
     }
-    /// <p>The FQDN of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
+    /// <p>The fully qualified domain name (FQDN) of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
     pub fn scan_dns_name(&self) -> ::std::option::Option<&str> {
         self.scan_dns_name.as_deref()
     }
@@ -731,17 +731,17 @@ impl CloudVmClusterSummaryBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
-    /// <p>The FQDN of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
+    /// <p>The fully qualified domain name (FQDN) of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
     pub fn scan_dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scan_dns_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The FQDN of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
+    /// <p>The fully qualified domain name (FQDN) of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
     pub fn set_scan_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scan_dns_name = input;
         self
     }
-    /// <p>The FQDN of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
+    /// <p>The fully qualified domain name (FQDN) of the DNS record for the Single Client Access Name (SCAN) IP addresses that are associated with the VM cluster.</p>
     pub fn get_scan_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.scan_dns_name
     }

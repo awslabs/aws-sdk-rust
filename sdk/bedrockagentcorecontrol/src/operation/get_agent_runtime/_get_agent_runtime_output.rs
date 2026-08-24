@@ -314,7 +314,6 @@ impl GetAgentRuntimeOutputBuilder {
         &self.role_arn
     }
     /// <p>The network configuration for the AgentCore Runtime.</p>
-    /// This field is required.
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
         self.network_configuration = ::std::option::Option::Some(input);
         self

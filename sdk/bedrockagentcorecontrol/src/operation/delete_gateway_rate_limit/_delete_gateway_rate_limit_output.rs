@@ -3,19 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayRateLimitOutput {
-    /// Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
+    /// <p>The unique identifier of the deleted rate limit.</p>
     pub rate_limit_id: ::std::string::String,
-    /// Status of a gateway limit
+    /// <p>The current status of the rate limit deletion.</p>
     pub status: crate::types::GatewayRateLimitStatus,
     _request_id: Option<String>,
 }
 impl DeleteGatewayRateLimitOutput {
-    /// Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
+    /// <p>The unique identifier of the deleted rate limit.</p>
     pub fn rate_limit_id(&self) -> &str {
         use std::ops::Deref;
         self.rate_limit_id.deref()
     }
-    /// Status of a gateway limit
+    /// <p>The current status of the rate limit deletion.</p>
     pub fn status(&self) -> &crate::types::GatewayRateLimitStatus {
         &self.status
     }
@@ -41,33 +41,33 @@ pub struct DeleteGatewayRateLimitOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteGatewayRateLimitOutputBuilder {
-    /// Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
+    /// <p>The unique identifier of the deleted rate limit.</p>
     /// This field is required.
     pub fn rate_limit_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rate_limit_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
+    /// <p>The unique identifier of the deleted rate limit.</p>
     pub fn set_rate_limit_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.rate_limit_id = input;
         self
     }
-    /// Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.
+    /// <p>The unique identifier of the deleted rate limit.</p>
     pub fn get_rate_limit_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.rate_limit_id
     }
-    /// Status of a gateway limit
+    /// <p>The current status of the rate limit deletion.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::GatewayRateLimitStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// Status of a gateway limit
+    /// <p>The current status of the rate limit deletion.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::GatewayRateLimitStatus>) -> Self {
         self.status = input;
         self
     }
-    /// Status of a gateway limit
+    /// <p>The current status of the rate limit deletion.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::GatewayRateLimitStatus> {
         &self.status
     }

@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateCluster")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateClusterTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,99 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
     }
 }
 
+#[derive(Debug)]
+struct UpdateClusterTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateClusterTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateClusterTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateClusterInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ClusterName") {
+            if let ::std::option::Option::Some(value) = input.cluster_name.as_deref() {
+                captured.insert("ClusterName", value);
+            }
+        }
+        if requested.should_capture("Description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("Description", value);
+            }
+        }
+        if requested.should_capture("MaintenanceWindow") {
+            if let ::std::option::Option::Some(value) = input.maintenance_window.as_deref() {
+                captured.insert("MaintenanceWindow", value);
+            }
+        }
+        if requested.should_capture("SnsTopicArn") {
+            if let ::std::option::Option::Some(value) = input.sns_topic_arn.as_deref() {
+                captured.insert("SnsTopicArn", value);
+            }
+        }
+        if requested.should_capture("SnsTopicStatus") {
+            if let ::std::option::Option::Some(value) = input.sns_topic_status.as_deref() {
+                captured.insert("SnsTopicStatus", value);
+            }
+        }
+        if requested.should_capture("ParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.parameter_group_name.as_deref() {
+                captured.insert("ParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("SnapshotWindow") {
+            if let ::std::option::Option::Some(value) = input.snapshot_window.as_deref() {
+                captured.insert("SnapshotWindow", value);
+            }
+        }
+        if requested.should_capture("NodeType") {
+            if let ::std::option::Option::Some(value) = input.node_type.as_deref() {
+                captured.insert("NodeType", value);
+            }
+        }
+        if requested.should_capture("Engine") {
+            if let ::std::option::Option::Some(value) = input.engine.as_deref() {
+                captured.insert("Engine", value);
+            }
+        }
+        if requested.should_capture("EngineVersion") {
+            if let ::std::option::Option::Some(value) = input.engine_version.as_deref() {
+                captured.insert("EngineVersion", value);
+            }
+        }
+        if requested.should_capture("ACLName") {
+            if let ::std::option::Option::Some(value) = input.acl_name.as_deref() {
+                captured.insert("ACLName", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateClusterResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateClusterResponseDeserializer {

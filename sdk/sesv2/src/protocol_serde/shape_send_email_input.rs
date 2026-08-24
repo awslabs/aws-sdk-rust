@@ -3,65 +3,71 @@ pub fn ser_send_email_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_email::SendEmailInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.content {
+    if let Some(var_1) = &input.configuration_overrides {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Content").start_object();
-        crate::protocol_serde::shape_email_content::ser_email_content(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_2 = object.key("ConfigurationOverrides").start_object();
+        crate::protocol_serde::shape_configuration_overrides::ser_configuration_overrides(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_4) = &input.destination {
+    if let Some(var_3) = &input.configuration_set_name {
+        object.key("ConfigurationSetName").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.content {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Destination").start_object();
-        crate::protocol_serde::shape_destination::ser_destination(&mut object_5, var_4)?;
+        let mut object_5 = object.key("Content").start_object();
+        crate::protocol_serde::shape_email_content::ser_email_content(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if let Some(var_6) = &input.email_tags {
-        let mut array_7 = object.key("EmailTags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_6) = &input.destination {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("Destination").start_object();
+        crate::protocol_serde::shape_destination::ser_destination(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.email_tags {
+        let mut array_9 = object.key("EmailTags").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_message_tag::ser_message_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_message_tag::ser_message_tag(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.endpoint_id {
-        object.key("EndpointId").string(var_10.as_str());
+    if let Some(var_12) = &input.endpoint_id {
+        object.key("EndpointId").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.feedback_forwarding_email_address {
-        object.key("FeedbackForwardingEmailAddress").string(var_11.as_str());
+    if let Some(var_13) = &input.feedback_forwarding_email_address {
+        object.key("FeedbackForwardingEmailAddress").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.feedback_forwarding_email_address_identity_arn {
-        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_12.as_str());
+    if let Some(var_14) = &input.feedback_forwarding_email_address_identity_arn {
+        object.key("FeedbackForwardingEmailAddressIdentityArn").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.from_email_address {
-        object.key("FromEmailAddress").string(var_13.as_str());
+    if let Some(var_15) = &input.from_email_address {
+        object.key("FromEmailAddress").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.from_email_address_identity_arn {
-        object.key("FromEmailAddressIdentityArn").string(var_14.as_str());
+    if let Some(var_16) = &input.from_email_address_identity_arn {
+        object.key("FromEmailAddressIdentityArn").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.list_management_options {
+    if let Some(var_17) = &input.list_management_options {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("ListManagementOptions").start_object();
-        crate::protocol_serde::shape_list_management_options::ser_list_management_options(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("ListManagementOptions").start_object();
+        crate::protocol_serde::shape_list_management_options::ser_list_management_options(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_17) = &input.reply_to_addresses {
-        let mut array_18 = object.key("ReplyToAddresses").start_array();
-        for item_19 in var_17 {
+    if let Some(var_19) = &input.reply_to_addresses {
+        let mut array_20 = object.key("ReplyToAddresses").start_array();
+        for item_21 in var_19 {
             {
-                array_18.value().string(item_19.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_18.finish();
+        array_20.finish();
     }
-    if let Some(var_20) = &input.tenant_name {
-        object.key("TenantName").string(var_20.as_str());
+    if let Some(var_22) = &input.tenant_name {
+        object.key("TenantName").string(var_22.as_str());
     }
     Ok(())
 }

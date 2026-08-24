@@ -129,6 +129,8 @@ pub use crate::types::_router_output_configuration::RouterOutputConfiguration;
 
 pub use crate::types::_router_output_tier::RouterOutputTier;
 
+pub use crate::types::_fabric_configuration::FabricConfiguration;
+
 pub use crate::types::_router_output::RouterOutput;
 
 pub use crate::types::_router_output_state::RouterOutputState;
@@ -294,6 +296,8 @@ pub use crate::types::_standard_router_output_configuration::StandardRouterOutpu
 pub use crate::types::_media_connect_flow_router_output_configuration::MediaConnectFlowRouterOutputConfiguration;
 
 pub use crate::types::_media_live_input_router_output_configuration::MediaLiveInputRouterOutputConfiguration;
+
+pub use crate::types::_fabric_latency_mode::FabricLatencyMode;
 
 pub use crate::types::_router_output_type::RouterOutputType;
 
@@ -544,6 +548,10 @@ mod _encryption;
 mod _entitlement;
 
 mod _entitlement_status;
+
+mod _fabric_configuration;
+
+mod _fabric_latency_mode;
 
 mod _failover_config;
 

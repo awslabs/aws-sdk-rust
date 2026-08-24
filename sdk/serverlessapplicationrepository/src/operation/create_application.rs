@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateApplication")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateApplicationTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,114 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
     }
 }
 
+#[derive(Debug)]
+struct CreateApplicationTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateApplicationTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateApplicationTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateApplicationInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Author") {
+            if let ::std::option::Option::Some(value) = input.author.as_deref() {
+                captured.insert("Author", value);
+            }
+        }
+        if requested.should_capture("Description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("Description", value);
+            }
+        }
+        if requested.should_capture("HomePageUrl") {
+            if let ::std::option::Option::Some(value) = input.home_page_url.as_deref() {
+                captured.insert("HomePageUrl", value);
+            }
+        }
+        if requested.should_capture("LicenseBody") {
+            if let ::std::option::Option::Some(value) = input.license_body.as_deref() {
+                captured.insert("LicenseBody", value);
+            }
+        }
+        if requested.should_capture("LicenseUrl") {
+            if let ::std::option::Option::Some(value) = input.license_url.as_deref() {
+                captured.insert("LicenseUrl", value);
+            }
+        }
+        if requested.should_capture("Name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("Name", value);
+            }
+        }
+        if requested.should_capture("ReadmeBody") {
+            if let ::std::option::Option::Some(value) = input.readme_body.as_deref() {
+                captured.insert("ReadmeBody", value);
+            }
+        }
+        if requested.should_capture("ReadmeUrl") {
+            if let ::std::option::Option::Some(value) = input.readme_url.as_deref() {
+                captured.insert("ReadmeUrl", value);
+            }
+        }
+        if requested.should_capture("SemanticVersion") {
+            if let ::std::option::Option::Some(value) = input.semantic_version.as_deref() {
+                captured.insert("SemanticVersion", value);
+            }
+        }
+        if requested.should_capture("SourceCodeArchiveUrl") {
+            if let ::std::option::Option::Some(value) = input.source_code_archive_url.as_deref() {
+                captured.insert("SourceCodeArchiveUrl", value);
+            }
+        }
+        if requested.should_capture("SourceCodeUrl") {
+            if let ::std::option::Option::Some(value) = input.source_code_url.as_deref() {
+                captured.insert("SourceCodeUrl", value);
+            }
+        }
+        if requested.should_capture("SpdxLicenseId") {
+            if let ::std::option::Option::Some(value) = input.spdx_license_id.as_deref() {
+                captured.insert("SpdxLicenseId", value);
+            }
+        }
+        if requested.should_capture("TemplateBody") {
+            if let ::std::option::Option::Some(value) = input.template_body.as_deref() {
+                captured.insert("TemplateBody", value);
+            }
+        }
+        if requested.should_capture("TemplateUrl") {
+            if let ::std::option::Option::Some(value) = input.template_url.as_deref() {
+                captured.insert("TemplateUrl", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateApplicationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateApplicationResponseDeserializer {

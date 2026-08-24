@@ -35,6 +35,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "compositeIdentifier" => {
+                            builder = builder.set_composite_identifier(
+                                crate::protocol_serde::shape_composite_identifier_list::de_composite_identifier_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -68,6 +73,15 @@ pub fn ser_stickiness_configuration(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
+    }
+    if let Some(var_2) = &input.composite_identifier {
+        let mut array_3 = object.key("compositeIdentifier").start_array();
+        for item_4 in var_2 {
+            {
+                array_3.value().string(item_4.as_str());
+            }
+        }
+        array_3.finish();
     }
     Ok(())
 }

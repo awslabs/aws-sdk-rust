@@ -893,6 +893,8 @@ pub(crate) mod shape_srt_listener_decryption_request;
 
 pub(crate) mod shape_video_codec_settings;
 
+pub(crate) mod shape_video_position_rectangle;
+
 pub(crate) mod shape_video_selector;
 
 pub(crate) mod shape_aac_settings;
@@ -1146,6 +1148,8 @@ pub(crate) mod shape_multiplex_output_settings;
 pub(crate) mod shape_nielsen_cbet;
 
 pub(crate) mod shape_nielsen_naes_ii_nw;
+
+pub(crate) mod shape_nielsen_nw_only;
 
 pub(crate) mod shape_output_location_ref;
 

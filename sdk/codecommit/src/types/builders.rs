@@ -59,6 +59,8 @@ pub use crate::types::_merge_hunk::MergeHunkBuilder;
 
 pub use crate::types::_pull_request_event::PullRequestEventBuilder;
 
+pub use crate::types::_diff_hunk::DiffHunkBuilder;
+
 pub use crate::types::_reaction_for_comment::ReactionForCommentBuilder;
 
 pub use crate::types::_comments_for_compared_commit::CommentsForComparedCommitBuilder;
@@ -114,3 +116,5 @@ pub use crate::types::_reaction_value_formats::ReactionValueFormatsBuilder;
 pub use crate::types::_blob_metadata::BlobMetadataBuilder;
 
 pub use crate::types::_merge_metadata::MergeMetadataBuilder;
+
+pub use crate::types::_diff_change::DiffChangeBuilder;

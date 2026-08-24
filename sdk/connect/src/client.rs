@@ -226,6 +226,8 @@ mod create_email_address;
 
 mod create_evaluation_form;
 
+mod create_extraction_definition;
+
 mod create_hours_of_operation;
 
 mod create_hours_of_operation_override;
@@ -333,6 +335,8 @@ mod delete_email_address;
 
 mod delete_evaluation_form;
 
+mod delete_extraction_definition;
+
 mod delete_hours_of_operation;
 
 mod delete_hours_of_operation_override;
@@ -410,6 +414,8 @@ mod describe_data_table_attribute;
 mod describe_email_address;
 
 mod describe_evaluation_form;
+
+mod describe_extraction_definition;
 
 mod describe_hours_of_operation;
 
@@ -579,6 +585,8 @@ mod list_evaluation_form_versions;
 
 mod list_evaluation_forms;
 
+mod list_extraction_definitions;
+
 mod list_flow_associations;
 
 mod list_hours_of_operation_overrides;
@@ -747,6 +755,8 @@ mod send_outbound_email;
 
 mod send_outbound_web_notification;
 
+mod start_assistant_contact;
+
 mod start_attached_file_upload;
 
 mod start_chat_contact;
@@ -842,6 +852,8 @@ mod update_data_table_primary_values;
 mod update_email_address_metadata;
 
 mod update_evaluation_form;
+
+mod update_extraction_definition;
 
 mod update_hours_of_operation;
 

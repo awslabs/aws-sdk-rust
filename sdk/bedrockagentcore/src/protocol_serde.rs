@@ -293,6 +293,8 @@ pub(crate) mod shape_stop_runtime_session_input;
 
 pub(crate) mod shape_stop_runtime_session_output;
 
+pub(crate) mod shape_subscription_required_exception;
+
 pub(crate) mod shape_throttled_exception;
 
 pub(crate) mod shape_throttling_exception;
@@ -374,6 +376,8 @@ pub(crate) mod shape_event;
 pub(crate) mod shape_event_list;
 
 pub(crate) mod shape_execution_summary_clustering_result_content;
+
+pub(crate) mod shape_extraction_config;
 
 pub(crate) mod shape_extraction_job;
 
@@ -593,6 +597,8 @@ pub(crate) mod shape_live_view_stream;
 
 pub(crate) mod shape_memory_content;
 
+pub(crate) mod shape_memory_json_data;
+
 pub(crate) mod shape_memory_record_left_expression;
 
 pub(crate) mod shape_memory_record_metadata_map;
@@ -622,6 +628,10 @@ pub(crate) mod shape_mouse_move_result;
 pub(crate) mod shape_mouse_scroll_arguments;
 
 pub(crate) mod shape_mouse_scroll_result;
+
+pub(crate) mod shape_mpp_payment_input;
+
+pub(crate) mod shape_mpp_payment_output;
 
 pub(crate) mod shape_namespaces_list;
 

@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDis
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListDistributionsByRealtimeLogConfig")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListDistributionsByRealtimeLogConfigTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,59 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDis
     }
 }
 
+#[derive(Debug)]
+struct ListDistributionsByRealtimeLogConfigTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDistributionsByRealtimeLogConfigTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ListDistributionsByRealtimeLogConfigTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ListDistributionsByRealtimeLogConfigInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Marker") {
+            if let ::std::option::Option::Some(value) = input.marker.as_deref() {
+                captured.insert("Marker", value);
+            }
+        }
+        if requested.should_capture("RealtimeLogConfigName") {
+            if let ::std::option::Option::Some(value) = input.realtime_log_config_name.as_deref() {
+                captured.insert("RealtimeLogConfigName", value);
+            }
+        }
+        if requested.should_capture("RealtimeLogConfigArn") {
+            if let ::std::option::Option::Some(value) = input.realtime_log_config_arn.as_deref() {
+                captured.insert("RealtimeLogConfigArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ListDistributionsByRealtimeLogConfigResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListDistributionsByRealtimeLogConfigResponseDeserializer {

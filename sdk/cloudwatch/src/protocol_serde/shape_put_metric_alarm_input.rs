@@ -110,12 +110,16 @@ pub fn ser_put_metric_alarm_input_input(
         encoder.str("EvaluationWindow");
         crate::protocol_serde::shape_evaluation_window::ser_evaluation_window(encoder, var_29)?;
     }
-    if let Some(var_30) = &input.evaluation_criteria {
-        encoder.str("EvaluationCriteria");
-        crate::protocol_serde::shape_evaluation_criteria::ser_evaluation_criteria(encoder, var_30)?;
+    if let Some(var_30) = &input.warm_up_configuration {
+        encoder.str("WarmUpConfiguration");
+        crate::protocol_serde::shape_warm_up_configuration::ser_warm_up_configuration(encoder, var_30)?;
     }
-    if let Some(var_31) = &input.evaluation_interval {
-        encoder.str("EvaluationInterval").integer(*var_31);
+    if let Some(var_31) = &input.evaluation_criteria {
+        encoder.str("EvaluationCriteria");
+        crate::protocol_serde::shape_evaluation_criteria::ser_evaluation_criteria(encoder, var_31)?;
+    }
+    if let Some(var_32) = &input.evaluation_interval {
+        encoder.str("EvaluationInterval").integer(*var_32);
     }
     encoder.end();
     Ok(())

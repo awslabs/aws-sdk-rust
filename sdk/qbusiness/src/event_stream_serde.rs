@@ -19,7 +19,7 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for ChatInputStreamErrorMa
             ":message-type",
             ::aws_smithy_types::event_stream::HeaderValue::String("exception".into()),
         ));
-        let payload = Vec::new();
+        let payload = ::bytes::Bytes::new();
         Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
     }
 }
@@ -45,38 +45,50 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for ChatInputStreamMarshal
             Self::Input::ConfigurationEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("configurationEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_chat_input_stream::ser_configuration_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_chat_input_stream::ser_configuration_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::TextEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("textEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_chat_input_stream::ser_text_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_chat_input_stream::ser_text_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::AttachmentEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("attachmentEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_chat_input_stream::ser_attachment_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_chat_input_stream::ser_attachment_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::ActionExecutionEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("actionExecutionEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_chat_input_stream::ser_action_execution_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_chat_input_stream::ser_action_execution_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::EndOfInputEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("endOfInputEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_chat_input_stream::ser_end_of_input_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_chat_input_stream::ser_end_of_input_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::AuthChallengeResponseEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("authChallengeResponseEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_chat_input_stream::ser_auth_challenge_response_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_chat_input_stream::ser_auth_challenge_response_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::Unknown => return Err(
                                             ::aws_smithy_eventstream::error::Error::marshalling("Cannot serialize `ChatInputStream::Unknown` for the request. The `Unknown` variant is intended for responses only. It occurs when an outdated client is used after a new enum variant was added on the server side.".to_owned())

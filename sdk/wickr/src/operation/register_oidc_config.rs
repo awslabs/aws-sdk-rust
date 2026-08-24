@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Registe
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RegisterOidcConfig")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RegisterOidcConfigTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Registe
     }
 }
 
+#[derive(Debug)]
+struct RegisterOidcConfigTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RegisterOidcConfigTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "RegisterOidcConfigTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<RegisterOidcConfigInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("networkId") {
+            if let ::std::option::Option::Some(value) = input.network_id.as_deref() {
+                captured.insert("networkId", value);
+            }
+        }
+        if requested.should_capture("companyId") {
+            if let ::std::option::Option::Some(value) = input.company_id.as_deref() {
+                captured.insert("companyId", value);
+            }
+        }
+        if requested.should_capture("customUsername") {
+            if let ::std::option::Option::Some(value) = input.custom_username.as_deref() {
+                captured.insert("customUsername", value);
+            }
+        }
+        if requested.should_capture("extraAuthParams") {
+            if let ::std::option::Option::Some(value) = input.extra_auth_params.as_deref() {
+                captured.insert("extraAuthParams", value);
+            }
+        }
+        if requested.should_capture("issuer") {
+            if let ::std::option::Option::Some(value) = input.issuer.as_deref() {
+                captured.insert("issuer", value);
+            }
+        }
+        if requested.should_capture("scopes") {
+            if let ::std::option::Option::Some(value) = input.scopes.as_deref() {
+                captured.insert("scopes", value);
+            }
+        }
+        if requested.should_capture("userId") {
+            if let ::std::option::Option::Some(value) = input.user_id.as_deref() {
+                captured.insert("userId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct RegisterOidcConfigResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RegisterOidcConfigResponseDeserializer {

@@ -7,6 +7,8 @@ pub enum Error {
     ActiveInstanceRefreshNotFoundFault(crate::types::error::ActiveInstanceRefreshNotFoundFault),
     /// <p>You already have an Auto Scaling group or launch configuration with this name.</p>
     AlreadyExistsFault(crate::types::error::AlreadyExistsFault),
+    /// <p>The service is currently processing another request with the same client token. Retry the request with the same client token—the in-flight operation will complete and return its result.</p>
+    IdempotentCallInProgressFault(crate::types::error::IdempotentCallInProgressFault),
     /// <p>Indicates that the parameters in the current request do not match the parameters from a previous request with the same client token within the idempotency window.</p>
     IdempotentParameterMismatchError(crate::types::error::IdempotentParameterMismatchError),
     /// <p>The request failed because an active instance refresh already exists for the specified Auto Scaling group.</p>
@@ -39,6 +41,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::ActiveInstanceRefreshNotFoundFault(inner) => inner.fmt(f),
             Error::AlreadyExistsFault(inner) => inner.fmt(f),
+            Error::IdempotentCallInProgressFault(inner) => inner.fmt(f),
             Error::IdempotentParameterMismatchError(inner) => inner.fmt(f),
             Error::InstanceRefreshInProgressFault(inner) => inner.fmt(f),
             Error::InvalidNextToken(inner) => inner.fmt(f),
@@ -71,6 +74,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::ActiveInstanceRefreshNotFoundFault(inner) => inner.meta(),
             Self::AlreadyExistsFault(inner) => inner.meta(),
+            Self::IdempotentCallInProgressFault(inner) => inner.meta(),
             Self::IdempotentParameterMismatchError(inner) => inner.meta(),
             Self::InstanceRefreshInProgressFault(inner) => inner.meta(),
             Self::InvalidNextToken(inner) => inner.meta(),
@@ -1546,6 +1550,9 @@ where
 impl From<crate::operation::launch_instances::LaunchInstancesError> for Error {
     fn from(err: crate::operation::launch_instances::LaunchInstancesError) -> Self {
         match err {
+            crate::operation::launch_instances::LaunchInstancesError::IdempotentCallInProgressFault(inner) => {
+                Error::IdempotentCallInProgressFault(inner)
+            }
             crate::operation::launch_instances::LaunchInstancesError::IdempotentParameterMismatchError(inner) => {
                 Error::IdempotentParameterMismatchError(inner)
             }
@@ -2010,6 +2017,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::ActiveInstanceRefreshNotFoundFault(inner) => inner.source(),
             Error::AlreadyExistsFault(inner) => inner.source(),
+            Error::IdempotentCallInProgressFault(inner) => inner.source(),
             Error::IdempotentParameterMismatchError(inner) => inner.source(),
             Error::InstanceRefreshInProgressFault(inner) => inner.source(),
             Error::InvalidNextToken(inner) => inner.source(),
@@ -2028,6 +2036,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::ActiveInstanceRefreshNotFoundFault(e) => e.request_id(),
             Self::AlreadyExistsFault(e) => e.request_id(),
+            Self::IdempotentCallInProgressFault(e) => e.request_id(),
             Self::IdempotentParameterMismatchError(e) => e.request_id(),
             Self::InstanceRefreshInProgressFault(e) => e.request_id(),
             Self::InvalidNextToken(e) => e.request_id(),

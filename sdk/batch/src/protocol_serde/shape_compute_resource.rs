@@ -109,6 +109,22 @@ pub fn ser_compute_resource(
         crate::protocol_serde::shape_compute_scaling_policy::ser_compute_scaling_policy(&mut object_32, var_31)?;
         object_32.finish();
     }
+    if let Some(var_33) = &input.managed_instances_provider {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("managedInstancesProvider").start_object();
+        crate::protocol_serde::shape_managed_instances_provider::ser_managed_instances_provider(&mut object_34, var_33)?;
+        object_34.finish();
+    }
+    if let Some(var_35) = &input.capacity_tags {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("capacityTags").start_object();
+        for (key_37, value_38) in var_35 {
+            {
+                object_36.key(key_37.as_str()).string(value_38.as_str());
+            }
+        }
+        object_36.finish();
+    }
     Ok(())
 }
 
@@ -243,6 +259,18 @@ where
                         }
                         "scalingPolicy" => {
                             builder = builder.set_scaling_policy(crate::protocol_serde::shape_compute_scaling_policy::de_compute_scaling_policy(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "managedInstancesProvider" => {
+                            builder = builder.set_managed_instances_provider(
+                                crate::protocol_serde::shape_managed_instances_provider::de_managed_instances_provider(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "capacityTags" => {
+                            builder = builder.set_capacity_tags(crate::protocol_serde::shape_tagris_tags_map::de_tagris_tags_map(
                                 tokens,
                                 _value,
                                 depth + 1,

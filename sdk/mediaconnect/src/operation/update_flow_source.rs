@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateF
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateFlowSource")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateFlowSourceTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateF
     }
 }
 
+#[derive(Debug)]
+struct UpdateFlowSourceTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateFlowSourceTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateFlowSourceTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateFlowSourceInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("Description", value);
+            }
+        }
+        if requested.should_capture("EntitlementArn") {
+            if let ::std::option::Option::Some(value) = input.entitlement_arn.as_deref() {
+                captured.insert("EntitlementArn", value);
+            }
+        }
+        if requested.should_capture("FlowArn") {
+            if let ::std::option::Option::Some(value) = input.flow_arn.as_deref() {
+                captured.insert("FlowArn", value);
+            }
+        }
+        if requested.should_capture("SenderIpAddress") {
+            if let ::std::option::Option::Some(value) = input.sender_ip_address.as_deref() {
+                captured.insert("SenderIpAddress", value);
+            }
+        }
+        if requested.should_capture("SourceArn") {
+            if let ::std::option::Option::Some(value) = input.source_arn.as_deref() {
+                captured.insert("SourceArn", value);
+            }
+        }
+        if requested.should_capture("SourceListenerAddress") {
+            if let ::std::option::Option::Some(value) = input.source_listener_address.as_deref() {
+                captured.insert("SourceListenerAddress", value);
+            }
+        }
+        if requested.should_capture("StreamId") {
+            if let ::std::option::Option::Some(value) = input.stream_id.as_deref() {
+                captured.insert("StreamId", value);
+            }
+        }
+        if requested.should_capture("VpcInterfaceName") {
+            if let ::std::option::Option::Some(value) = input.vpc_interface_name.as_deref() {
+                captured.insert("VpcInterfaceName", value);
+            }
+        }
+        if requested.should_capture("WhitelistCidr") {
+            if let ::std::option::Option::Some(value) = input.whitelist_cidr.as_deref() {
+                captured.insert("WhitelistCidr", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateFlowSourceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateFlowSourceResponseDeserializer {

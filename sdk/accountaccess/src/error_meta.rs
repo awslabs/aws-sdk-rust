@@ -93,6 +93,7 @@ impl From<crate::operation::create_application::CreateApplicationError> for Erro
             crate::operation::create_application::CreateApplicationError::AlreadyCreatedException(inner) => Error::AlreadyCreatedException(inner),
             crate::operation::create_application::CreateApplicationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_application::CreateApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_application::CreateApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_application::CreateApplicationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_application::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -149,6 +150,7 @@ impl From<crate::operation::delete_application::DeleteApplicationError> for Erro
             crate::operation::delete_application::DeleteApplicationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_application::DeleteApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_application::DeleteApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_application::DeleteApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_application::DeleteApplicationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_application::DeleteApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -201,6 +203,7 @@ impl From<crate::operation::get_application::GetApplicationError> for Error {
             crate::operation::get_application::GetApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_application::GetApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_application::GetApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_application::GetApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_application::GetApplicationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_application::GetApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }

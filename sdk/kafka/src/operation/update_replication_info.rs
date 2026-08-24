@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateR
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateReplicationInfo")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateReplicationInfoTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateR
     }
 }
 
+#[derive(Debug)]
+struct UpdateReplicationInfoTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateReplicationInfoTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateReplicationInfoTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateReplicationInfoInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("CurrentVersion") {
+            if let ::std::option::Option::Some(value) = input.current_version.as_deref() {
+                captured.insert("CurrentVersion", value);
+            }
+        }
+        if requested.should_capture("ReplicatorArn") {
+            if let ::std::option::Option::Some(value) = input.replicator_arn.as_deref() {
+                captured.insert("ReplicatorArn", value);
+            }
+        }
+        if requested.should_capture("SourceKafkaClusterArn") {
+            if let ::std::option::Option::Some(value) = input.source_kafka_cluster_arn.as_deref() {
+                captured.insert("SourceKafkaClusterArn", value);
+            }
+        }
+        if requested.should_capture("SourceKafkaClusterId") {
+            if let ::std::option::Option::Some(value) = input.source_kafka_cluster_id.as_deref() {
+                captured.insert("SourceKafkaClusterId", value);
+            }
+        }
+        if requested.should_capture("TargetKafkaClusterArn") {
+            if let ::std::option::Option::Some(value) = input.target_kafka_cluster_arn.as_deref() {
+                captured.insert("TargetKafkaClusterArn", value);
+            }
+        }
+        if requested.should_capture("TargetKafkaClusterId") {
+            if let ::std::option::Option::Some(value) = input.target_kafka_cluster_id.as_deref() {
+                captured.insert("TargetKafkaClusterId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateReplicationInfoResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateReplicationInfoResponseDeserializer {

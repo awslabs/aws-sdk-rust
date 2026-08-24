@@ -311,6 +311,8 @@ pub use crate::types::_access_budget::AccessBudgetBuilder;
 
 pub use crate::types::_differential_privacy_configuration::DifferentialPrivacyConfigurationBuilder;
 
+pub use crate::types::_comparison_controls::ComparisonControlsBuilder;
+
 pub use crate::types::_id_mapping_table_input_source::IdMappingTableInputSourceBuilder;
 
 pub use crate::types::_inherited_additional_analyses::InheritedAdditionalAnalysesBuilder;
@@ -353,6 +355,8 @@ pub use crate::types::_aggregate_column::AggregateColumnBuilder;
 
 pub use crate::types::_aggregation_constraint::AggregationConstraintBuilder;
 
+pub use crate::types::_aggregation_threshold::AggregationThresholdBuilder;
+
 pub use crate::types::_protected_job_single_member_output::ProtectedJobSingleMemberOutputBuilder;
 
 pub use crate::types::_protected_query_single_member_output::ProtectedQuerySingleMemberOutputBuilder;
@@ -376,3 +380,5 @@ pub use crate::types::_protected_job_direct_analysis_configuration_details::Prot
 pub use crate::types::_direct_analysis_configuration_details::DirectAnalysisConfigurationDetailsBuilder;
 
 pub use crate::types::_query_constraint_require_overlap::QueryConstraintRequireOverlapBuilder;
+
+pub use crate::types::_output_column_threshold::OutputColumnThresholdBuilder;

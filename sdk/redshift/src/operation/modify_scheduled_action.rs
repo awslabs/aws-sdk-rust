@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyS
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ModifyScheduledAction")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ModifyScheduledActionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyS
     }
 }
 
+#[derive(Debug)]
+struct ModifyScheduledActionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyScheduledActionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ModifyScheduledActionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ModifyScheduledActionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ScheduledActionName") {
+            if let ::std::option::Option::Some(value) = input.scheduled_action_name.as_deref() {
+                captured.insert("ScheduledActionName", value);
+            }
+        }
+        if requested.should_capture("Schedule") {
+            if let ::std::option::Option::Some(value) = input.schedule.as_deref() {
+                captured.insert("Schedule", value);
+            }
+        }
+        if requested.should_capture("IamRole") {
+            if let ::std::option::Option::Some(value) = input.iam_role.as_deref() {
+                captured.insert("IamRole", value);
+            }
+        }
+        if requested.should_capture("ScheduledActionDescription") {
+            if let ::std::option::Option::Some(value) = input.scheduled_action_description.as_deref() {
+                captured.insert("ScheduledActionDescription", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ModifyScheduledActionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ModifyScheduledActionResponseDeserializer {

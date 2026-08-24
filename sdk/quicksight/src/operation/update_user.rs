@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateU
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateUser")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateUserTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateU
     }
 }
 
+#[derive(Debug)]
+struct UpdateUserTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateUserTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateUserTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateUserInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("UserName") {
+            if let ::std::option::Option::Some(value) = input.user_name.as_deref() {
+                captured.insert("UserName", value);
+            }
+        }
+        if requested.should_capture("AwsAccountId") {
+            if let ::std::option::Option::Some(value) = input.aws_account_id.as_deref() {
+                captured.insert("AwsAccountId", value);
+            }
+        }
+        if requested.should_capture("Namespace") {
+            if let ::std::option::Option::Some(value) = input.namespace.as_deref() {
+                captured.insert("Namespace", value);
+            }
+        }
+        if requested.should_capture("Email") {
+            if let ::std::option::Option::Some(value) = input.email.as_deref() {
+                captured.insert("Email", value);
+            }
+        }
+        if requested.should_capture("CustomPermissionsName") {
+            if let ::std::option::Option::Some(value) = input.custom_permissions_name.as_deref() {
+                captured.insert("CustomPermissionsName", value);
+            }
+        }
+        if requested.should_capture("ExternalLoginFederationProviderType") {
+            if let ::std::option::Option::Some(value) = input.external_login_federation_provider_type.as_deref() {
+                captured.insert("ExternalLoginFederationProviderType", value);
+            }
+        }
+        if requested.should_capture("CustomFederationProviderUrl") {
+            if let ::std::option::Option::Some(value) = input.custom_federation_provider_url.as_deref() {
+                captured.insert("CustomFederationProviderUrl", value);
+            }
+        }
+        if requested.should_capture("ExternalLoginId") {
+            if let ::std::option::Option::Some(value) = input.external_login_id.as_deref() {
+                captured.insert("ExternalLoginId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateUserResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateUserResponseDeserializer {

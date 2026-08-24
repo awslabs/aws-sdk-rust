@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDash
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetDashboardEmbedUrl")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetDashboardEmbedUrlTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDash
     }
 }
 
+#[derive(Debug)]
+struct GetDashboardEmbedUrlTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDashboardEmbedUrlTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "GetDashboardEmbedUrlTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<GetDashboardEmbedUrlInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("AwsAccountId") {
+            if let ::std::option::Option::Some(value) = input.aws_account_id.as_deref() {
+                captured.insert("AwsAccountId", value);
+            }
+        }
+        if requested.should_capture("DashboardId") {
+            if let ::std::option::Option::Some(value) = input.dashboard_id.as_deref() {
+                captured.insert("DashboardId", value);
+            }
+        }
+        if requested.should_capture("UserArn") {
+            if let ::std::option::Option::Some(value) = input.user_arn.as_deref() {
+                captured.insert("UserArn", value);
+            }
+        }
+        if requested.should_capture("Namespace") {
+            if let ::std::option::Option::Some(value) = input.namespace.as_deref() {
+                captured.insert("Namespace", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct GetDashboardEmbedUrlResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetDashboardEmbedUrlResponseDeserializer {

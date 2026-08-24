@@ -108,6 +108,78 @@ pub(crate) fn match_describe_addon_1cce2c05524fb92d4(
     false
 }
 
+/// Matcher union: {"output":{"path":"update.status","expected":"Failed","comparator":"stringEquals"}}
+pub(crate) fn match_describe_update_cd49d08c9b5f4af48(
+    _result: ::std::result::Result<&crate::operation::describe_update::DescribeUpdateOutput, &crate::operation::describe_update::DescribeUpdateError>,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_update::DescribeUpdateOutput,
+    ) -> ::std::option::Option<&'a crate::types::UpdateStatus> {
+        let _fld_1 = _output.update.as_ref()?;
+        let _fld_2 = _fld_1.status.as_ref()?;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "Failed";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"update.status","expected":"Cancelled","comparator":"stringEquals"}}
+pub(crate) fn match_describe_update_66d0e8fc7076c4aea(
+    _result: ::std::result::Result<&crate::operation::describe_update::DescribeUpdateOutput, &crate::operation::describe_update::DescribeUpdateError>,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_update::DescribeUpdateOutput,
+    ) -> ::std::option::Option<&'a crate::types::UpdateStatus> {
+        let _fld_1 = _output.update.as_ref()?;
+        let _fld_2 = _fld_1.status.as_ref()?;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "Cancelled";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"update.status","expected":"Successful","comparator":"stringEquals"}}
+pub(crate) fn match_describe_update_1aaa27fed90a46960(
+    _result: ::std::result::Result<&crate::operation::describe_update::DescribeUpdateOutput, &crate::operation::describe_update::DescribeUpdateError>,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_update::DescribeUpdateOutput,
+    ) -> ::std::option::Option<&'a crate::types::UpdateStatus> {
+        let _fld_1 = _output.update.as_ref()?;
+        let _fld_2 = _fld_1.status.as_ref()?;
+        ::std::option::Option::Some(_fld_2)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "Successful";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"cluster.status","expected":"DELETING","comparator":"stringEquals"}}
 pub(crate) fn match_describe_cluster_2e0bd61808cbeec1a(
     _result: ::std::result::Result<

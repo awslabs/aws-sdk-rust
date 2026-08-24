@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateT
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateTableMetadataLocation")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateTableMetadataLocationTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateT
     }
 }
 
+#[derive(Debug)]
+struct UpdateTableMetadataLocationTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateTableMetadataLocationTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateTableMetadataLocationTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateTableMetadataLocationInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("tableBucketARN") {
+            if let ::std::option::Option::Some(value) = input.table_bucket_arn.as_deref() {
+                captured.insert("tableBucketARN", value);
+            }
+        }
+        if requested.should_capture("namespace") {
+            if let ::std::option::Option::Some(value) = input.namespace.as_deref() {
+                captured.insert("namespace", value);
+            }
+        }
+        if requested.should_capture("name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("name", value);
+            }
+        }
+        if requested.should_capture("versionToken") {
+            if let ::std::option::Option::Some(value) = input.version_token.as_deref() {
+                captured.insert("versionToken", value);
+            }
+        }
+        if requested.should_capture("metadataLocation") {
+            if let ::std::option::Option::Some(value) = input.metadata_location.as_deref() {
+                captured.insert("metadataLocation", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateTableMetadataLocationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateTableMetadataLocationResponseDeserializer {

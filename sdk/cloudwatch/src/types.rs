@@ -35,6 +35,8 @@ pub use crate::types::_scheduled_query_configuration::ScheduledQueryConfiguratio
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
 
+pub use crate::types::_warm_up_configuration::WarmUpConfiguration;
+
 pub use crate::types::_evaluation_window::EvaluationWindow;
 
 pub use crate::types::_evaluation_criteria::EvaluationCriteria;
@@ -262,6 +264,8 @@ mod _status_code;
 mod _tag;
 
 mod _wall_clock_window;
+
+mod _warm_up_configuration;
 
 /// Builders
 pub mod builders;

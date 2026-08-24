@@ -125,6 +125,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutObje
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutObjectAcl")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutObjectAclTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -210,6 +213,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutObje
     }
 }
 
+#[derive(Debug)]
+struct PutObjectAclTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutObjectAclTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutObjectAclTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutObjectAclInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Bucket") {
+            if let ::std::option::Option::Some(value) = input.bucket.as_deref() {
+                captured.insert("Bucket", value);
+            }
+        }
+        if requested.should_capture("ContentMD5") {
+            if let ::std::option::Option::Some(value) = input.content_md5.as_deref() {
+                captured.insert("ContentMD5", value);
+            }
+        }
+        if requested.should_capture("GrantFullControl") {
+            if let ::std::option::Option::Some(value) = input.grant_full_control.as_deref() {
+                captured.insert("GrantFullControl", value);
+            }
+        }
+        if requested.should_capture("GrantRead") {
+            if let ::std::option::Option::Some(value) = input.grant_read.as_deref() {
+                captured.insert("GrantRead", value);
+            }
+        }
+        if requested.should_capture("GrantReadACP") {
+            if let ::std::option::Option::Some(value) = input.grant_read_acp.as_deref() {
+                captured.insert("GrantReadACP", value);
+            }
+        }
+        if requested.should_capture("GrantWrite") {
+            if let ::std::option::Option::Some(value) = input.grant_write.as_deref() {
+                captured.insert("GrantWrite", value);
+            }
+        }
+        if requested.should_capture("GrantWriteACP") {
+            if let ::std::option::Option::Some(value) = input.grant_write_acp.as_deref() {
+                captured.insert("GrantWriteACP", value);
+            }
+        }
+        if requested.should_capture("Key") {
+            if let ::std::option::Option::Some(value) = input.key.as_deref() {
+                captured.insert("Key", value);
+            }
+        }
+        if requested.should_capture("VersionId") {
+            if let ::std::option::Option::Some(value) = input.version_id.as_deref() {
+                captured.insert("VersionId", value);
+            }
+        }
+        if requested.should_capture("ExpectedBucketOwner") {
+            if let ::std::option::Option::Some(value) = input.expected_bucket_owner.as_deref() {
+                captured.insert("ExpectedBucketOwner", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutObjectAclResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutObjectAclResponseDeserializer {

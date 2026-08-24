@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetChan
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("GetChannelMessage")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                GetChannelMessageTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetChan
     }
 }
 
+#[derive(Debug)]
+struct GetChannelMessageTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetChannelMessageTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "GetChannelMessageTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<GetChannelMessageInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ChannelArn") {
+            if let ::std::option::Option::Some(value) = input.channel_arn.as_deref() {
+                captured.insert("ChannelArn", value);
+            }
+        }
+        if requested.should_capture("MessageId") {
+            if let ::std::option::Option::Some(value) = input.message_id.as_deref() {
+                captured.insert("MessageId", value);
+            }
+        }
+        if requested.should_capture("ChimeBearer") {
+            if let ::std::option::Option::Some(value) = input.chime_bearer.as_deref() {
+                captured.insert("ChimeBearer", value);
+            }
+        }
+        if requested.should_capture("SubChannelId") {
+            if let ::std::option::Option::Some(value) = input.sub_channel_id.as_deref() {
+                captured.insert("SubChannelId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct GetChannelMessageResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetChannelMessageResponseDeserializer {

@@ -7,6 +7,9 @@ pub mod accept_marketplace_registration;
 /// Types for the `AssociateIamRoleToResource` operation.
 pub mod associate_iam_role_to_resource;
 
+/// Types for the `AssociateVirtualMachinesToExadbVmCluster` operation.
+pub mod associate_virtual_machines_to_exadb_vm_cluster;
+
 /// Types for the `CreateAutonomousDatabase` operation.
 pub mod create_autonomous_database;
 
@@ -24,6 +27,12 @@ pub mod create_cloud_exadata_infrastructure;
 
 /// Types for the `CreateCloudVmCluster` operation.
 pub mod create_cloud_vm_cluster;
+
+/// Types for the `CreateExadbVmCluster` operation.
+pub mod create_exadb_vm_cluster;
+
+/// Types for the `CreateExascaleDbStorageVault` operation.
+pub mod create_exascale_db_storage_vault;
 
 /// Types for the `CreateOdbNetwork` operation.
 pub mod create_odb_network;
@@ -46,6 +55,12 @@ pub mod delete_cloud_exadata_infrastructure;
 /// Types for the `DeleteCloudVmCluster` operation.
 pub mod delete_cloud_vm_cluster;
 
+/// Types for the `DeleteExadbVmCluster` operation.
+pub mod delete_exadb_vm_cluster;
+
+/// Types for the `DeleteExascaleDbStorageVault` operation.
+pub mod delete_exascale_db_storage_vault;
+
 /// Types for the `DeleteOdbNetwork` operation.
 pub mod delete_odb_network;
 
@@ -54,6 +69,9 @@ pub mod delete_odb_peering_connection;
 
 /// Types for the `DisassociateIamRoleFromResource` operation.
 pub mod disassociate_iam_role_from_resource;
+
+/// Types for the `DisassociateVirtualMachinesFromExadbVmCluster` operation.
+pub mod disassociate_virtual_machines_from_exadb_vm_cluster;
 
 /// Types for the `FailoverAutonomousDatabase` operation.
 pub mod failover_autonomous_database;
@@ -84,6 +102,12 @@ pub mod get_db_node;
 
 /// Types for the `GetDbServer` operation.
 pub mod get_db_server;
+
+/// Types for the `GetExadbVmCluster` operation.
+pub mod get_exadb_vm_cluster;
+
+/// Types for the `GetExascaleDbStorageVault` operation.
+pub mod get_exascale_db_storage_vault;
 
 /// Types for the `GetOciOnboardingStatus` operation.
 pub mod get_oci_onboarding_status;
@@ -135,6 +159,15 @@ pub mod list_db_servers;
 
 /// Types for the `ListDbSystemShapes` operation.
 pub mod list_db_system_shapes;
+
+/// Types for the `ListExadbVmClusters` operation.
+pub mod list_exadb_vm_clusters;
+
+/// Types for the `ListExascaleDbStorageVaults` operation.
+pub mod list_exascale_db_storage_vaults;
+
+/// Types for the `ListGiMinorVersions` operation.
+pub mod list_gi_minor_versions;
 
 /// Types for the `ListGiVersions` operation.
 pub mod list_gi_versions;
@@ -192,6 +225,12 @@ pub mod update_autonomous_database_backup;
 
 /// Types for the `UpdateCloudExadataInfrastructure` operation.
 pub mod update_cloud_exadata_infrastructure;
+
+/// Types for the `UpdateExadbVmCluster` operation.
+pub mod update_exadb_vm_cluster;
+
+/// Types for the `UpdateExascaleDbStorageVault` operation.
+pub mod update_exascale_db_storage_vault;
 
 /// Types for the `UpdateOdbNetwork` operation.
 pub mod update_odb_network;

@@ -26,6 +26,8 @@ pub struct DirectConnectGateway {
     pub direct_connect_gateway_state: ::std::option::Option<crate::types::DirectConnectGatewayState>,
     /// <p>The error message if the state of an object failed to advance.</p>
     pub state_change_error: ::std::option::Option<::std::string::String>,
+    /// <p>The total number of inbound route prefixes allocated to the attachments on the Direct Connect gateway. The count combines the IPv4 and IPv6 address families.</p>
+    pub total_prefix_pool_allocations: ::std::option::Option<i32>,
     /// <p>Information about a tag.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -64,6 +66,10 @@ impl DirectConnectGateway {
     pub fn state_change_error(&self) -> ::std::option::Option<&str> {
         self.state_change_error.as_deref()
     }
+    /// <p>The total number of inbound route prefixes allocated to the attachments on the Direct Connect gateway. The count combines the IPv4 and IPv6 address families.</p>
+    pub fn total_prefix_pool_allocations(&self) -> ::std::option::Option<i32> {
+        self.total_prefix_pool_allocations
+    }
     /// <p>Information about a tag.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -88,6 +94,7 @@ pub struct DirectConnectGatewayBuilder {
     pub(crate) owner_account: ::std::option::Option<::std::string::String>,
     pub(crate) direct_connect_gateway_state: ::std::option::Option<crate::types::DirectConnectGatewayState>,
     pub(crate) state_change_error: ::std::option::Option<::std::string::String>,
+    pub(crate) total_prefix_pool_allocations: ::std::option::Option<i32>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl DirectConnectGatewayBuilder {
@@ -205,6 +212,20 @@ impl DirectConnectGatewayBuilder {
     pub fn get_state_change_error(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_change_error
     }
+    /// <p>The total number of inbound route prefixes allocated to the attachments on the Direct Connect gateway. The count combines the IPv4 and IPv6 address families.</p>
+    pub fn total_prefix_pool_allocations(mut self, input: i32) -> Self {
+        self.total_prefix_pool_allocations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of inbound route prefixes allocated to the attachments on the Direct Connect gateway. The count combines the IPv4 and IPv6 address families.</p>
+    pub fn set_total_prefix_pool_allocations(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_prefix_pool_allocations = input;
+        self
+    }
+    /// <p>The total number of inbound route prefixes allocated to the attachments on the Direct Connect gateway. The count combines the IPv4 and IPv6 address families.</p>
+    pub fn get_total_prefix_pool_allocations(&self) -> &::std::option::Option<i32> {
+        &self.total_prefix_pool_allocations
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -234,6 +255,7 @@ impl DirectConnectGatewayBuilder {
             owner_account: self.owner_account,
             direct_connect_gateway_state: self.direct_connect_gateway_state,
             state_change_error: self.state_change_error,
+            total_prefix_pool_allocations: self.total_prefix_pool_allocations,
             tags: self.tags,
         }
     }

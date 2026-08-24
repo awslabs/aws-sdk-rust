@@ -15,48 +15,54 @@ pub fn ser_create_workflow_input_input(
         crate::protocol_serde::shape_definition_s3_location::ser_definition_s3_location(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.role_arn {
-        object.key("RoleArn").string(var_5.as_str());
-    }
-    if let Some(var_6) = &input.description {
-        object.key("Description").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.encryption_configuration {
+    if let Some(var_5) = &input.code {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("EncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_8, var_7)?;
-        object_8.finish();
+        let mut object_6 = object.key("Code").start_object();
+        crate::protocol_serde::shape_code::ser_code(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_9) = &input.logging_configuration {
+    if let Some(var_7) = &input.role_arn {
+        object.key("RoleArn").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.description {
+        object.key("Description").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("LoggingConfiguration").start_object();
-        crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(&mut object_10, var_9)?;
+        let mut object_10 = object.key("EncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.engine_version {
+    if let Some(var_11) = &input.logging_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("LoggingConfiguration").start_object();
+        crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.engine_version {
         object.key("EngineVersion").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_12) = &input.network_configuration {
+    if let Some(var_14) = &input.network_configuration {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("NetworkConfiguration").start_object();
-        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_13, var_12)?;
-        object_13.finish();
-    }
-    if let Some(var_14) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_15 = object.key("Tags").start_object();
-        for (key_16, value_17) in var_14 {
-            {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
-            }
-        }
+        let mut object_15 = object.key("NetworkConfiguration").start_object();
+        crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_15, var_14)?;
         object_15.finish();
     }
-    if let Some(var_18) = &input.trigger_mode {
-        object.key("TriggerMode").string(var_18.as_str());
+    if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("Tags").start_object();
+        for (key_18, value_19) in var_16 {
+            {
+                object_17.key(key_18.as_str()).string(value_19.as_str());
+            }
+        }
+        object_17.finish();
+    }
+    if let Some(var_20) = &input.trigger_mode {
+        object.key("TriggerMode").string(var_20.as_str());
     }
     Ok(())
 }

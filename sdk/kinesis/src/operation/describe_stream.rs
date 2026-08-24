@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeStream")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DescribeStreamTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
     }
 }
 
+#[derive(Debug)]
+struct DescribeStreamTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeStreamTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "DescribeStreamTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<DescribeStreamInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("StreamName") {
+            if let ::std::option::Option::Some(value) = input.stream_name.as_deref() {
+                captured.insert("StreamName", value);
+            }
+        }
+        if requested.should_capture("ExclusiveStartShardId") {
+            if let ::std::option::Option::Some(value) = input.exclusive_start_shard_id.as_deref() {
+                captured.insert("ExclusiveStartShardId", value);
+            }
+        }
+        if requested.should_capture("StreamARN") {
+            if let ::std::option::Option::Some(value) = input.stream_arn.as_deref() {
+                captured.insert("StreamARN", value);
+            }
+        }
+        if requested.should_capture("StreamId") {
+            if let ::std::option::Option::Some(value) = input.stream_id.as_deref() {
+                captured.insert("StreamId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct DescribeStreamResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeStreamResponseDeserializer {
@@ -246,6 +307,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeStrea
             .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
+            .set_account_id_endpoint_mode(::std::option::Option::Some(
+                cfg.load::<::aws_types::endpoint_config::AccountIdEndpointMode>()
+                    .cloned()
+                    .unwrap_or_default()
+                    .to_string(),
+            ))
             .set_operation_type(Some("control".to_string()))
             .set_stream_arn(_input.stream_arn.clone())
             .set_stream_id(_input.stream_id.clone())

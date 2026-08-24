@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ImportH
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ImportHubContent")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ImportHubContentTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ImportH
     }
 }
 
+#[derive(Debug)]
+struct ImportHubContentTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportHubContentTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ImportHubContentTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ImportHubContentInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("HubContentName") {
+            if let ::std::option::Option::Some(value) = input.hub_content_name.as_deref() {
+                captured.insert("HubContentName", value);
+            }
+        }
+        if requested.should_capture("HubContentVersion") {
+            if let ::std::option::Option::Some(value) = input.hub_content_version.as_deref() {
+                captured.insert("HubContentVersion", value);
+            }
+        }
+        if requested.should_capture("DocumentSchemaVersion") {
+            if let ::std::option::Option::Some(value) = input.document_schema_version.as_deref() {
+                captured.insert("DocumentSchemaVersion", value);
+            }
+        }
+        if requested.should_capture("HubName") {
+            if let ::std::option::Option::Some(value) = input.hub_name.as_deref() {
+                captured.insert("HubName", value);
+            }
+        }
+        if requested.should_capture("HubContentDisplayName") {
+            if let ::std::option::Option::Some(value) = input.hub_content_display_name.as_deref() {
+                captured.insert("HubContentDisplayName", value);
+            }
+        }
+        if requested.should_capture("HubContentDescription") {
+            if let ::std::option::Option::Some(value) = input.hub_content_description.as_deref() {
+                captured.insert("HubContentDescription", value);
+            }
+        }
+        if requested.should_capture("HubContentMarkdown") {
+            if let ::std::option::Option::Some(value) = input.hub_content_markdown.as_deref() {
+                captured.insert("HubContentMarkdown", value);
+            }
+        }
+        if requested.should_capture("HubContentDocument") {
+            if let ::std::option::Option::Some(value) = input.hub_content_document.as_deref() {
+                captured.insert("HubContentDocument", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ImportHubContentResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ImportHubContentResponseDeserializer {

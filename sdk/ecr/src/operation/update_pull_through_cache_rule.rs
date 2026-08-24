@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateP
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdatePullThroughCacheRule")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdatePullThroughCacheRuleTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateP
     }
 }
 
+#[derive(Debug)]
+struct UpdatePullThroughCacheRuleTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdatePullThroughCacheRuleTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdatePullThroughCacheRuleTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdatePullThroughCacheRuleInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("registryId") {
+            if let ::std::option::Option::Some(value) = input.registry_id.as_deref() {
+                captured.insert("registryId", value);
+            }
+        }
+        if requested.should_capture("ecrRepositoryPrefix") {
+            if let ::std::option::Option::Some(value) = input.ecr_repository_prefix.as_deref() {
+                captured.insert("ecrRepositoryPrefix", value);
+            }
+        }
+        if requested.should_capture("credentialArn") {
+            if let ::std::option::Option::Some(value) = input.credential_arn.as_deref() {
+                captured.insert("credentialArn", value);
+            }
+        }
+        if requested.should_capture("customRoleArn") {
+            if let ::std::option::Option::Some(value) = input.custom_role_arn.as_deref() {
+                captured.insert("customRoleArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdatePullThroughCacheRuleResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdatePullThroughCacheRuleResponseDeserializer {

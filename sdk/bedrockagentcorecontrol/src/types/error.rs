@@ -29,6 +29,8 @@ pub use crate::types::error::_service_exception::ServiceException;
 
 pub use crate::types::error::_throttled_exception::ThrottledException;
 
+pub use crate::types::error::_subscription_required_exception::SubscriptionRequiredException;
+
 mod _access_denied_exception;
 
 mod _concurrent_modification_exception;
@@ -50,6 +52,8 @@ mod _retryable_conflict_exception;
 mod _service_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _subscription_required_exception;
 
 mod _throttled_exception;
 

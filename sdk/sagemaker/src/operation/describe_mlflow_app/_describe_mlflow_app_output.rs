@@ -13,6 +13,8 @@ pub struct DescribeMlflowAppOutput {
     pub mlflow_version: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for an IAM role in your account that the MLflow App uses to access the artifact store in Amazon S3.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. This field is absent if the MLflow App is not encrypted with a customer-managed key.</p>
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The current creation status of the described MLflow App.</p>
     pub status: ::std::option::Option<crate::types::MlflowAppStatus>,
     /// <p>Whether automatic registration of new MLflow models to the SageMaker Model Registry is enabled.</p>
@@ -55,6 +57,10 @@ impl DescribeMlflowAppOutput {
     /// <p>The Amazon Resource Name (ARN) for an IAM role in your account that the MLflow App uses to access the artifact store in Amazon S3.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. This field is absent if the MLflow App is not encrypted with a customer-managed key.</p>
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.kms_key_id.as_deref()
     }
     /// <p>The current creation status of the described MLflow App.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::MlflowAppStatus> {
@@ -120,6 +126,7 @@ pub struct DescribeMlflowAppOutputBuilder {
     pub(crate) artifact_store_uri: ::std::option::Option<::std::string::String>,
     pub(crate) mlflow_version: ::std::option::Option<::std::string::String>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::MlflowAppStatus>,
     pub(crate) model_registration_mode: ::std::option::Option<crate::types::ModelRegistrationMode>,
     pub(crate) account_default_status: ::std::option::Option<crate::types::AccountDefaultStatus>,
@@ -202,6 +209,20 @@ impl DescribeMlflowAppOutputBuilder {
     /// <p>The Amazon Resource Name (ARN) for an IAM role in your account that the MLflow App uses to access the artifact store in Amazon S3.</p>
     pub fn get_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.role_arn
+    }
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. This field is absent if the MLflow App is not encrypted with a customer-managed key.</p>
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. This field is absent if the MLflow App is not encrypted with a customer-managed key.</p>
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_id = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated with the MLflow App. This field is absent if the MLflow App is not encrypted with a customer-managed key.</p>
+    pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_id
     }
     /// <p>The current creation status of the described MLflow App.</p>
     pub fn status(mut self, input: crate::types::MlflowAppStatus) -> Self {
@@ -366,6 +387,7 @@ impl DescribeMlflowAppOutputBuilder {
             artifact_store_uri: self.artifact_store_uri,
             mlflow_version: self.mlflow_version,
             role_arn: self.role_arn,
+            kms_key_id: self.kms_key_id,
             status: self.status,
             model_registration_mode: self.model_registration_mode,
             account_default_status: self.account_default_status,

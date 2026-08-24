@@ -125,4 +125,37 @@ impl DisableLoggingFluentBuilder {
     pub fn get_cluster_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cluster_identifier()
     }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>. When set to <code>s3table</code>, stops system table publishing. When omitted, the operation disables audit logging.</p>
+    pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
+        self.inner = self.inner.log_destination_type(input);
+        self
+    }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>. When set to <code>s3table</code>, stops system table publishing. When omitted, the operation disables audit logging.</p>
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
+        self.inner = self.inner.set_log_destination_type(input);
+        self
+    }
+    /// <p>The log destination type. An enum with possible values of <code>s3</code>, <code>cloudwatch</code>, and <code>s3table</code>. When set to <code>s3table</code>, stops system table publishing. When omitted, the operation disables audit logging.</p>
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
+        self.inner.get_log_destination_type()
+    }
+    ///
+    /// Appends an item to `LogExports`.
+    ///
+    /// To override the contents of this collection use [`set_log_exports`](Self::set_log_exports).
+    ///
+    /// <p>The collection of log types to stop exporting. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to stop publishing. Omitting this parameter or passing <code>all</code> stops publishing all system tables.</p>
+    pub fn log_exports(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.log_exports(input.into());
+        self
+    }
+    /// <p>The collection of log types to stop exporting. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to stop publishing. Omitting this parameter or passing <code>all</code> stops publishing all system tables.</p>
+    pub fn set_log_exports(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_log_exports(input);
+        self
+    }
+    /// <p>The collection of log types to stop exporting. When <code>LogDestinationType</code> is <code>s3table</code>, the values are the names of the system tables to stop publishing. Omitting this parameter or passing <code>all</code> stops publishing all system tables.</p>
+    pub fn get_log_exports(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_log_exports()
+    }
 }

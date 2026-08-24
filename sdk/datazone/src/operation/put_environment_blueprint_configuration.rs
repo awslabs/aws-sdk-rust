@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutEnvi
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutEnvironmentBlueprintConfiguration")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutEnvironmentBlueprintConfigurationTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutEnvi
     }
 }
 
+#[derive(Debug)]
+struct PutEnvironmentBlueprintConfigurationTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutEnvironmentBlueprintConfigurationTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutEnvironmentBlueprintConfigurationTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutEnvironmentBlueprintConfigurationInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("domainIdentifier") {
+            if let ::std::option::Option::Some(value) = input.domain_identifier.as_deref() {
+                captured.insert("domainIdentifier", value);
+            }
+        }
+        if requested.should_capture("environmentBlueprintIdentifier") {
+            if let ::std::option::Option::Some(value) = input.environment_blueprint_identifier.as_deref() {
+                captured.insert("environmentBlueprintIdentifier", value);
+            }
+        }
+        if requested.should_capture("provisioningRoleArn") {
+            if let ::std::option::Option::Some(value) = input.provisioning_role_arn.as_deref() {
+                captured.insert("provisioningRoleArn", value);
+            }
+        }
+        if requested.should_capture("manageAccessRoleArn") {
+            if let ::std::option::Option::Some(value) = input.manage_access_role_arn.as_deref() {
+                captured.insert("manageAccessRoleArn", value);
+            }
+        }
+        if requested.should_capture("environmentRolePermissionBoundary") {
+            if let ::std::option::Option::Some(value) = input.environment_role_permission_boundary.as_deref() {
+                captured.insert("environmentRolePermissionBoundary", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutEnvironmentBlueprintConfigurationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutEnvironmentBlueprintConfigurationResponseDeserializer {

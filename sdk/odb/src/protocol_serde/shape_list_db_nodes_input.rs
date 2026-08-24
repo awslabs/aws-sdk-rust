@@ -15,5 +15,8 @@ pub fn ser_list_db_nodes_input_input(
     if let Some(var_3) = &input.cloud_vm_cluster_id {
         object.key("cloudVmClusterId").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.exadb_vm_cluster_id {
+        object.key("exadbVmClusterId").string(var_4.as_str());
+    }
     Ok(())
 }

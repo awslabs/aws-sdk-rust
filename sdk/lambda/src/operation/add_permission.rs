@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AddPerm
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AddPermission")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                AddPermissionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AddPerm
     }
 }
 
+#[derive(Debug)]
+struct AddPermissionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AddPermissionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "AddPermissionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<AddPermissionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("FunctionName") {
+            if let ::std::option::Option::Some(value) = input.function_name.as_deref() {
+                captured.insert("FunctionName", value);
+            }
+        }
+        if requested.should_capture("StatementId") {
+            if let ::std::option::Option::Some(value) = input.statement_id.as_deref() {
+                captured.insert("StatementId", value);
+            }
+        }
+        if requested.should_capture("Action") {
+            if let ::std::option::Option::Some(value) = input.action.as_deref() {
+                captured.insert("Action", value);
+            }
+        }
+        if requested.should_capture("Principal") {
+            if let ::std::option::Option::Some(value) = input.principal.as_deref() {
+                captured.insert("Principal", value);
+            }
+        }
+        if requested.should_capture("SourceArn") {
+            if let ::std::option::Option::Some(value) = input.source_arn.as_deref() {
+                captured.insert("SourceArn", value);
+            }
+        }
+        if requested.should_capture("SourceAccount") {
+            if let ::std::option::Option::Some(value) = input.source_account.as_deref() {
+                captured.insert("SourceAccount", value);
+            }
+        }
+        if requested.should_capture("EventSourceToken") {
+            if let ::std::option::Option::Some(value) = input.event_source_token.as_deref() {
+                captured.insert("EventSourceToken", value);
+            }
+        }
+        if requested.should_capture("Qualifier") {
+            if let ::std::option::Option::Some(value) = input.qualifier.as_deref() {
+                captured.insert("Qualifier", value);
+            }
+        }
+        if requested.should_capture("RevisionId") {
+            if let ::std::option::Option::Some(value) = input.revision_id.as_deref() {
+                captured.insert("RevisionId", value);
+            }
+        }
+        if requested.should_capture("PrincipalOrgID") {
+            if let ::std::option::Option::Some(value) = input.principal_org_id.as_deref() {
+                captured.insert("PrincipalOrgID", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct AddPermissionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AddPermissionResponseDeserializer {
@@ -295,7 +386,7 @@ pub enum AddPermissionError {
     /// <p><b>For all other API operations:</b> Call <code>GetFunction</code> or <code>GetAlias</code> to retrieve the latest RevisionId for your resource.</p></li>
     /// </ul>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
-    /// <p>The resource-based policy you tried to add to the Lambda function would grant public access to it, and your account's <code>BlockPublicAccess</code> setting prevents public access. For more information about blocking public access to Lambda functions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#access-control-block-public-access">Block public access to Lambda resources</a>.</p>
+    /// <p>The resource-based policy you tried to add to the Lambda resource would grant public access to it, which isn't allowed.</p>
     PublicPolicyException(crate::types::error::PublicPolicyException),
     /// <p>The resource already exists, or another operation is in progress.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),

@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPho
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListPhoneNumbersV2")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListPhoneNumbersV2TelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPho
     }
 }
 
+#[derive(Debug)]
+struct ListPhoneNumbersV2TelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPhoneNumbersV2TelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ListPhoneNumbersV2TelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ListPhoneNumbersV2Input>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("TargetArn") {
+            if let ::std::option::Option::Some(value) = input.target_arn.as_deref() {
+                captured.insert("TargetArn", value);
+            }
+        }
+        if requested.should_capture("InstanceId") {
+            if let ::std::option::Option::Some(value) = input.instance_id.as_deref() {
+                captured.insert("InstanceId", value);
+            }
+        }
+        if requested.should_capture("NextToken") {
+            if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
+                captured.insert("NextToken", value);
+            }
+        }
+        if requested.should_capture("PhoneNumberPrefix") {
+            if let ::std::option::Option::Some(value) = input.phone_number_prefix.as_deref() {
+                captured.insert("PhoneNumberPrefix", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ListPhoneNumbersV2ResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListPhoneNumbersV2ResponseDeserializer {

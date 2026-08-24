@@ -215,6 +215,16 @@ pub fn de_disable_logging(
                 builder = builder.set_log_exports(var_8);
             }
             ,
+            s if s.matches("S3Tables") /* S3Tables com.amazonaws.redshift.synthetic#DisableLoggingOutput$S3Tables */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_s3_table_publish_status::de_s3_table_publish_status(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_s3_tables(var_9);
+            }
+            ,
             _ => {}
         }
         }

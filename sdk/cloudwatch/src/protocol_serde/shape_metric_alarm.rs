@@ -116,6 +116,14 @@ pub(crate) fn de_metric_alarm(
                     )?)),
                 )
             })?,
+            "WarmUpConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_warm_up_configuration(Some(crate::protocol_serde::shape_warm_up_configuration::de_warm_up_configuration(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
             "EvaluationCriteria" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_evaluation_criteria(Some(crate::protocol_serde::shape_evaluation_criteria::de_evaluation_criteria(

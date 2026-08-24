@@ -425,6 +425,8 @@ pub(crate) mod shape_bulk_email_entry;
 
 pub(crate) mod shape_bulk_email_entry_result_list;
 
+pub(crate) mod shape_configuration_overrides;
+
 pub(crate) mod shape_configuration_set_name_list;
 
 pub(crate) mod shape_custom_verification_email_templates_list;
@@ -690,6 +692,8 @@ pub(crate) mod shape_tenant_info;
 pub(crate) mod shape_tenant_resource;
 
 pub(crate) mod shape_topic_filter;
+
+pub(crate) mod shape_tracking_configuration_overrides;
 
 pub(crate) mod shape_volume_statistics;
 

@@ -15,7 +15,6 @@ pub struct ReviewTemplateAnswer {
     pub question_description: ::std::option::Option<::std::string::String>,
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub improvement_plan_url: ::std::option::Option<::std::string::String>,
     /// <p>The helpful resource URL.</p>
     /// <p>For Amazon Web Services official lenses, this is the helpful resource URL for a question or choice.</p>
@@ -62,7 +61,6 @@ impl ReviewTemplateAnswer {
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub fn improvement_plan_url(&self) -> ::std::option::Option<&str> {
         self.improvement_plan_url.as_deref()
     }
@@ -203,21 +201,18 @@ impl ReviewTemplateAnswerBuilder {
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub fn improvement_plan_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.improvement_plan_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub fn set_improvement_plan_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.improvement_plan_url = input;
         self
     }
     /// <p>The improvement plan URL for a question in an Amazon Web Services official lenses.</p>
     /// <p>This value is only available if the question has been answered.</p>
-    /// <p>This value does not apply to custom lenses.</p>
     pub fn get_improvement_plan_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.improvement_plan_url
     }

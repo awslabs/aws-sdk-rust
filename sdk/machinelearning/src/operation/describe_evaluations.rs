@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DescribeEvaluations")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                DescribeEvaluationsTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
     }
 }
 
+#[derive(Debug)]
+struct DescribeEvaluationsTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeEvaluationsTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "DescribeEvaluationsTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<DescribeEvaluationsInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("EQ") {
+            if let ::std::option::Option::Some(value) = input.eq.as_deref() {
+                captured.insert("EQ", value);
+            }
+        }
+        if requested.should_capture("GT") {
+            if let ::std::option::Option::Some(value) = input.gt.as_deref() {
+                captured.insert("GT", value);
+            }
+        }
+        if requested.should_capture("LT") {
+            if let ::std::option::Option::Some(value) = input.lt.as_deref() {
+                captured.insert("LT", value);
+            }
+        }
+        if requested.should_capture("GE") {
+            if let ::std::option::Option::Some(value) = input.ge.as_deref() {
+                captured.insert("GE", value);
+            }
+        }
+        if requested.should_capture("LE") {
+            if let ::std::option::Option::Some(value) = input.le.as_deref() {
+                captured.insert("LE", value);
+            }
+        }
+        if requested.should_capture("NE") {
+            if let ::std::option::Option::Some(value) = input.ne.as_deref() {
+                captured.insert("NE", value);
+            }
+        }
+        if requested.should_capture("Prefix") {
+            if let ::std::option::Option::Some(value) = input.prefix.as_deref() {
+                captured.insert("Prefix", value);
+            }
+        }
+        if requested.should_capture("NextToken") {
+            if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
+                captured.insert("NextToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct DescribeEvaluationsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeEvaluationsResponseDeserializer {

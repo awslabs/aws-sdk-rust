@@ -10,7 +10,7 @@ pub struct Milestone {
     /// <p>The name of the milestone in a workload.</p>
     /// <p>Milestone names must be unique within a workload.</p>
     pub milestone_name: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the milestone was recorded.</p>
     pub recorded_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A workload return object.</p>
     pub workload: ::std::option::Option<crate::types::Workload>,
@@ -26,7 +26,7 @@ impl Milestone {
     pub fn milestone_name(&self) -> ::std::option::Option<&str> {
         self.milestone_name.as_deref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the milestone was recorded.</p>
     pub fn recorded_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.recorded_at.as_ref()
     }
@@ -86,17 +86,17 @@ impl MilestoneBuilder {
     pub fn get_milestone_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.milestone_name
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the milestone was recorded.</p>
     pub fn recorded_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.recorded_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the milestone was recorded.</p>
     pub fn set_recorded_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.recorded_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the milestone was recorded.</p>
     pub fn get_recorded_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.recorded_at
     }

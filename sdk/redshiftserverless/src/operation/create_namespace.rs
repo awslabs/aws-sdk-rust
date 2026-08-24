@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateN
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateNamespace")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateNamespaceTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateN
     }
 }
 
+#[derive(Debug)]
+struct CreateNamespaceTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateNamespaceTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateNamespaceTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateNamespaceInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("namespaceName") {
+            if let ::std::option::Option::Some(value) = input.namespace_name.as_deref() {
+                captured.insert("namespaceName", value);
+            }
+        }
+        if requested.should_capture("dbName") {
+            if let ::std::option::Option::Some(value) = input.db_name.as_deref() {
+                captured.insert("dbName", value);
+            }
+        }
+        if requested.should_capture("kmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.kms_key_id.as_deref() {
+                captured.insert("kmsKeyId", value);
+            }
+        }
+        if requested.should_capture("defaultIamRoleArn") {
+            if let ::std::option::Option::Some(value) = input.default_iam_role_arn.as_deref() {
+                captured.insert("defaultIamRoleArn", value);
+            }
+        }
+        if requested.should_capture("adminPasswordSecretKmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.admin_password_secret_kms_key_id.as_deref() {
+                captured.insert("adminPasswordSecretKmsKeyId", value);
+            }
+        }
+        if requested.should_capture("redshiftIdcApplicationArn") {
+            if let ::std::option::Option::Some(value) = input.redshift_idc_application_arn.as_deref() {
+                captured.insert("redshiftIdcApplicationArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateNamespaceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateNamespaceResponseDeserializer {

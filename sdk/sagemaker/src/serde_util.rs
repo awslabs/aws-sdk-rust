@@ -3421,6 +3421,15 @@ pub(crate) fn hyper_parameter_tuning_job_warm_start_config_correct_errors(
     builder
 }
 
+pub(crate) fn idc_config_output_correct_errors(
+    mut builder: crate::types::builders::IdcConfigOutputBuilder,
+) -> crate::types::builders::IdcConfigOutputBuilder {
+    if builder.instance_arn.is_none() {
+        builder.instance_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn inference_component_deployment_config_correct_errors(
     mut builder: crate::types::builders::InferenceComponentDeploymentConfigBuilder,
 ) -> crate::types::builders::InferenceComponentDeploymentConfigBuilder {
@@ -3860,12 +3869,6 @@ pub(crate) fn resource_limits_correct_errors(
 pub(crate) fn processing_cluster_config_correct_errors(
     mut builder: crate::types::builders::ProcessingClusterConfigBuilder,
 ) -> crate::types::builders::ProcessingClusterConfigBuilder {
-    if builder.instance_count.is_none() {
-        builder.instance_count = Some(Default::default())
-    }
-    if builder.instance_type.is_none() {
-        builder.instance_type = "no value was set".parse::<crate::types::ProcessingInstanceType>().ok()
-    }
     if builder.volume_size_in_gb.is_none() {
         builder.volume_size_in_gb = Some(Default::default())
     }

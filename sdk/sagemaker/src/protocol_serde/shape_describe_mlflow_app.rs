@@ -115,6 +115,13 @@ pub(crate) fn de_describe_mlflow_app(
                             .transpose()?,
                     );
                 }
+                "KmsKeyId" => {
+                    builder = builder.set_kms_key_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "Status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

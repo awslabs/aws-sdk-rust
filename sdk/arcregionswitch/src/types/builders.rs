@@ -69,6 +69,8 @@ pub use crate::types::_aurora_provisioned_scaling_configuration::AuroraProvision
 
 pub use crate::types::_neptune_global_database_configuration::NeptuneGlobalDatabaseConfigurationBuilder;
 
+pub use crate::types::_rds_switchover_read_replica_configuration::RdsSwitchoverReadReplicaConfigurationBuilder;
+
 pub use crate::types::_lambda_ungraceful::LambdaUngracefulBuilder;
 
 pub use crate::types::_ec2_ungraceful::Ec2UngracefulBuilder;
@@ -86,6 +88,8 @@ pub use crate::types::_document_db_ungraceful::DocumentDbUngracefulBuilder;
 pub use crate::types::_lambda_event_source_mapping_ungraceful::LambdaEventSourceMappingUngracefulBuilder;
 
 pub use crate::types::_neptune_ungraceful::NeptuneUngracefulBuilder;
+
+pub use crate::types::_rds_ungraceful::RdsUngracefulBuilder;
 
 pub use crate::types::_lambdas::LambdasBuilder;
 

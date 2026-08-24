@@ -35,6 +35,8 @@ pub struct SendEmailInput {
     pub tenant_name: ::std::option::Option<::std::string::String>,
     /// <p>An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.</p>
     pub list_management_options: ::std::option::Option<crate::types::ListManagementOptions>,
+    /// <p>An object that overrides, for this message only, settings that would otherwise apply to it. Each setting that you don't override keeps the value that already applies.</p>
+    pub configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
 }
 impl SendEmailInput {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
@@ -96,6 +98,10 @@ impl SendEmailInput {
     pub fn list_management_options(&self) -> ::std::option::Option<&crate::types::ListManagementOptions> {
         self.list_management_options.as_ref()
     }
+    /// <p>An object that overrides, for this message only, settings that would otherwise apply to it. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn configuration_overrides(&self) -> ::std::option::Option<&crate::types::ConfigurationOverrides> {
+        self.configuration_overrides.as_ref()
+    }
 }
 impl SendEmailInput {
     /// Creates a new builder-style object to manufacture [`SendEmailInput`](crate::operation::send_email::SendEmailInput).
@@ -120,6 +126,7 @@ pub struct SendEmailInputBuilder {
     pub(crate) endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) tenant_name: ::std::option::Option<::std::string::String>,
     pub(crate) list_management_options: ::std::option::Option<crate::types::ListManagementOptions>,
+    pub(crate) configuration_overrides: ::std::option::Option<crate::types::ConfigurationOverrides>,
 }
 impl SendEmailInputBuilder {
     /// <p>The email address to use as the "From" address for the email. The address that you specify has to be verified.</p>
@@ -324,6 +331,20 @@ impl SendEmailInputBuilder {
     pub fn get_list_management_options(&self) -> &::std::option::Option<crate::types::ListManagementOptions> {
         &self.list_management_options
     }
+    /// <p>An object that overrides, for this message only, settings that would otherwise apply to it. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn configuration_overrides(mut self, input: crate::types::ConfigurationOverrides) -> Self {
+        self.configuration_overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that overrides, for this message only, settings that would otherwise apply to it. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn set_configuration_overrides(mut self, input: ::std::option::Option<crate::types::ConfigurationOverrides>) -> Self {
+        self.configuration_overrides = input;
+        self
+    }
+    /// <p>An object that overrides, for this message only, settings that would otherwise apply to it. Each setting that you don't override keeps the value that already applies.</p>
+    pub fn get_configuration_overrides(&self) -> &::std::option::Option<crate::types::ConfigurationOverrides> {
+        &self.configuration_overrides
+    }
     /// Consumes the builder and constructs a [`SendEmailInput`](crate::operation::send_email::SendEmailInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_email::SendEmailInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_email::SendEmailInput {
@@ -339,6 +360,7 @@ impl SendEmailInputBuilder {
             endpoint_id: self.endpoint_id,
             tenant_name: self.tenant_name,
             list_management_options: self.list_management_options,
+            configuration_overrides: self.configuration_overrides,
         })
     }
 }

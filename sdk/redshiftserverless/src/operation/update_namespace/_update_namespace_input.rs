@@ -7,6 +7,7 @@ pub struct UpdateNamespaceInput {
     pub namespace_name: ::std::option::Option<::std::string::String>,
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The username of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUserPassword</code>.</p>
     pub admin_username: ::std::option::Option<::std::string::String>,
@@ -22,6 +23,22 @@ pub struct UpdateNamespaceInput {
     pub manage_admin_password: ::std::option::Option<bool>,
     /// <p>The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code> is true.</p>
     pub admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The destination for the log data. Valid values are <code>s3table</code> and <code>cloudwatch</code>.</p>
+    /// <p>Set this to <code>s3table</code> to manage Amazon S3 Tables system-table publishing for the namespace.</p>
+    pub log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
+    /// <p>Whether to enable or disable Amazon S3 Tables publishing. Valid values are <code>Enable</code> and <code>Disable</code>, matched case-insensitively.</p>
+    /// <p>When omitted, defaults to <code>Enable</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub s3_table_action: ::std::option::Option<crate::types::S3TableAction>,
+    /// <p>The system tables to publish (on enable) or to stop publishing (on disable). Each value is either a system table view name that begins with <code>sys_</code> or the keyword <code>all</code>.</p>
+    /// <p>Omitting this parameter, passing an empty list, or including <code>all</code> each select every current and future system table. Each name must be 1-128 characters, and the list can contain up to 256 names.</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub s3_table_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The identifier of the Key Management Service key used to encrypt the published Amazon S3 Tables data. When omitted, the data is encrypted with SSE-S3 (Amazon S3 managed keys).</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub s3_table_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>The scope of the Amazon S3 Tables destination. Valid values are <code>namespace</code> and <code>account</code>, matched case-insensitively. <code>namespace</code> scopes the published tables to this namespace; <code>account</code> scopes them to the Amazon Web Services account.</p>
+    /// <p>Required when enabling. Omitting this parameter or passing a blank value fails with <code>ValidationException</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub s3_table_granularity: ::std::option::Option<crate::types::S3TableGranularity>,
 }
 impl UpdateNamespaceInput {
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
@@ -30,6 +47,7 @@ impl UpdateNamespaceInput {
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
         self.admin_user_password.as_deref()
     }
@@ -65,6 +83,34 @@ impl UpdateNamespaceInput {
     pub fn admin_password_secret_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.admin_password_secret_kms_key_id.as_deref()
     }
+    /// <p>The destination for the log data. Valid values are <code>s3table</code> and <code>cloudwatch</code>.</p>
+    /// <p>Set this to <code>s3table</code> to manage Amazon S3 Tables system-table publishing for the namespace.</p>
+    pub fn log_destination_type(&self) -> ::std::option::Option<&crate::types::LogDestinationType> {
+        self.log_destination_type.as_ref()
+    }
+    /// <p>Whether to enable or disable Amazon S3 Tables publishing. Valid values are <code>Enable</code> and <code>Disable</code>, matched case-insensitively.</p>
+    /// <p>When omitted, defaults to <code>Enable</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_action(&self) -> ::std::option::Option<&crate::types::S3TableAction> {
+        self.s3_table_action.as_ref()
+    }
+    /// <p>The system tables to publish (on enable) or to stop publishing (on disable). Each value is either a system table view name that begins with <code>sys_</code> or the keyword <code>all</code>.</p>
+    /// <p>Omitting this parameter, passing an empty list, or including <code>all</code> each select every current and future system table. Each name must be 1-128 characters, and the list can contain up to 256 names.</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.s3_table_names.is_none()`.
+    pub fn s3_table_names(&self) -> &[::std::string::String] {
+        self.s3_table_names.as_deref().unwrap_or_default()
+    }
+    /// <p>The identifier of the Key Management Service key used to encrypt the published Amazon S3 Tables data. When omitted, the data is encrypted with SSE-S3 (Amazon S3 managed keys).</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_kms_key_id(&self) -> ::std::option::Option<&str> {
+        self.s3_table_kms_key_id.as_deref()
+    }
+    /// <p>The scope of the Amazon S3 Tables destination. Valid values are <code>namespace</code> and <code>account</code>, matched case-insensitively. <code>namespace</code> scopes the published tables to this namespace; <code>account</code> scopes them to the Amazon Web Services account.</p>
+    /// <p>Required when enabling. Omitting this parameter or passing a blank value fails with <code>ValidationException</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_granularity(&self) -> ::std::option::Option<&crate::types::S3TableGranularity> {
+        self.s3_table_granularity.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateNamespaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -78,6 +124,11 @@ impl ::std::fmt::Debug for UpdateNamespaceInput {
         formatter.field("log_exports", &self.log_exports);
         formatter.field("manage_admin_password", &self.manage_admin_password);
         formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
+        formatter.field("log_destination_type", &self.log_destination_type);
+        formatter.field("s3_table_action", &self.s3_table_action);
+        formatter.field("s3_table_names", &self.s3_table_names);
+        formatter.field("s3_table_kms_key_id", &self.s3_table_kms_key_id);
+        formatter.field("s3_table_granularity", &self.s3_table_granularity);
         formatter.finish()
     }
 }
@@ -101,6 +152,11 @@ pub struct UpdateNamespaceInputBuilder {
     pub(crate) log_exports: ::std::option::Option<::std::vec::Vec<crate::types::LogExport>>,
     pub(crate) manage_admin_password: ::std::option::Option<bool>,
     pub(crate) admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) log_destination_type: ::std::option::Option<crate::types::LogDestinationType>,
+    pub(crate) s3_table_action: ::std::option::Option<crate::types::S3TableAction>,
+    pub(crate) s3_table_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) s3_table_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_table_granularity: ::std::option::Option<crate::types::S3TableGranularity>,
 }
 impl UpdateNamespaceInputBuilder {
     /// <p>The name of the namespace to update. You can't update the name of a namespace once it is created.</p>
@@ -120,18 +176,21 @@ impl UpdateNamespaceInputBuilder {
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn admin_user_password(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.admin_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn set_admin_user_password(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.admin_user_password = input;
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace. This parameter must be updated together with <code>adminUsername</code>.</p>
     /// <p>You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is true.</p>
+    /// <p>If your admin user account is locked, this operation also unlocks your account and resets the failed-login counter. This option is available only when account lockout security is enabled for the namespace.</p>
     pub fn get_admin_user_password(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_user_password
     }
@@ -245,6 +304,100 @@ impl UpdateNamespaceInputBuilder {
     pub fn get_admin_password_secret_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.admin_password_secret_kms_key_id
     }
+    /// <p>The destination for the log data. Valid values are <code>s3table</code> and <code>cloudwatch</code>.</p>
+    /// <p>Set this to <code>s3table</code> to manage Amazon S3 Tables system-table publishing for the namespace.</p>
+    pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
+        self.log_destination_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination for the log data. Valid values are <code>s3table</code> and <code>cloudwatch</code>.</p>
+    /// <p>Set this to <code>s3table</code> to manage Amazon S3 Tables system-table publishing for the namespace.</p>
+    pub fn set_log_destination_type(mut self, input: ::std::option::Option<crate::types::LogDestinationType>) -> Self {
+        self.log_destination_type = input;
+        self
+    }
+    /// <p>The destination for the log data. Valid values are <code>s3table</code> and <code>cloudwatch</code>.</p>
+    /// <p>Set this to <code>s3table</code> to manage Amazon S3 Tables system-table publishing for the namespace.</p>
+    pub fn get_log_destination_type(&self) -> &::std::option::Option<crate::types::LogDestinationType> {
+        &self.log_destination_type
+    }
+    /// <p>Whether to enable or disable Amazon S3 Tables publishing. Valid values are <code>Enable</code> and <code>Disable</code>, matched case-insensitively.</p>
+    /// <p>When omitted, defaults to <code>Enable</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_action(mut self, input: crate::types::S3TableAction) -> Self {
+        self.s3_table_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to enable or disable Amazon S3 Tables publishing. Valid values are <code>Enable</code> and <code>Disable</code>, matched case-insensitively.</p>
+    /// <p>When omitted, defaults to <code>Enable</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn set_s3_table_action(mut self, input: ::std::option::Option<crate::types::S3TableAction>) -> Self {
+        self.s3_table_action = input;
+        self
+    }
+    /// <p>Whether to enable or disable Amazon S3 Tables publishing. Valid values are <code>Enable</code> and <code>Disable</code>, matched case-insensitively.</p>
+    /// <p>When omitted, defaults to <code>Enable</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn get_s3_table_action(&self) -> &::std::option::Option<crate::types::S3TableAction> {
+        &self.s3_table_action
+    }
+    /// Appends an item to `s3_table_names`.
+    ///
+    /// To override the contents of this collection use [`set_s3_table_names`](Self::set_s3_table_names).
+    ///
+    /// <p>The system tables to publish (on enable) or to stop publishing (on disable). Each value is either a system table view name that begins with <code>sys_</code> or the keyword <code>all</code>.</p>
+    /// <p>Omitting this parameter, passing an empty list, or including <code>all</code> each select every current and future system table. Each name must be 1-128 characters, and the list can contain up to 256 names.</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.s3_table_names.unwrap_or_default();
+        v.push(input.into());
+        self.s3_table_names = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The system tables to publish (on enable) or to stop publishing (on disable). Each value is either a system table view name that begins with <code>sys_</code> or the keyword <code>all</code>.</p>
+    /// <p>Omitting this parameter, passing an empty list, or including <code>all</code> each select every current and future system table. Each name must be 1-128 characters, and the list can contain up to 256 names.</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn set_s3_table_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.s3_table_names = input;
+        self
+    }
+    /// <p>The system tables to publish (on enable) or to stop publishing (on disable). Each value is either a system table view name that begins with <code>sys_</code> or the keyword <code>all</code>.</p>
+    /// <p>Omitting this parameter, passing an empty list, or including <code>all</code> each select every current and future system table. Each name must be 1-128 characters, and the list can contain up to 256 names.</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn get_s3_table_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.s3_table_names
+    }
+    /// <p>The identifier of the Key Management Service key used to encrypt the published Amazon S3 Tables data. When omitted, the data is encrypted with SSE-S3 (Amazon S3 managed keys).</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_table_kms_key_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the Key Management Service key used to encrypt the published Amazon S3 Tables data. When omitted, the data is encrypted with SSE-S3 (Amazon S3 managed keys).</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn set_s3_table_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_table_kms_key_id = input;
+        self
+    }
+    /// <p>The identifier of the Key Management Service key used to encrypt the published Amazon S3 Tables data. When omitted, the data is encrypted with SSE-S3 (Amazon S3 managed keys).</p>
+    /// <p>Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn get_s3_table_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_table_kms_key_id
+    }
+    /// <p>The scope of the Amazon S3 Tables destination. Valid values are <code>namespace</code> and <code>account</code>, matched case-insensitively. <code>namespace</code> scopes the published tables to this namespace; <code>account</code> scopes them to the Amazon Web Services account.</p>
+    /// <p>Required when enabling. Omitting this parameter or passing a blank value fails with <code>ValidationException</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn s3_table_granularity(mut self, input: crate::types::S3TableGranularity) -> Self {
+        self.s3_table_granularity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scope of the Amazon S3 Tables destination. Valid values are <code>namespace</code> and <code>account</code>, matched case-insensitively. <code>namespace</code> scopes the published tables to this namespace; <code>account</code> scopes them to the Amazon Web Services account.</p>
+    /// <p>Required when enabling. Omitting this parameter or passing a blank value fails with <code>ValidationException</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn set_s3_table_granularity(mut self, input: ::std::option::Option<crate::types::S3TableGranularity>) -> Self {
+        self.s3_table_granularity = input;
+        self
+    }
+    /// <p>The scope of the Amazon S3 Tables destination. Valid values are <code>namespace</code> and <code>account</code>, matched case-insensitively. <code>namespace</code> scopes the published tables to this namespace; <code>account</code> scopes them to the Amazon Web Services account.</p>
+    /// <p>Required when enabling. Omitting this parameter or passing a blank value fails with <code>ValidationException</code>. Valid only when <code>logDestinationType</code> is <code>s3table</code>.</p>
+    pub fn get_s3_table_granularity(&self) -> &::std::option::Option<crate::types::S3TableGranularity> {
+        &self.s3_table_granularity
+    }
     /// Consumes the builder and constructs a [`UpdateNamespaceInput`](crate::operation::update_namespace::UpdateNamespaceInput).
     pub fn build(
         self,
@@ -259,6 +412,11 @@ impl UpdateNamespaceInputBuilder {
             log_exports: self.log_exports,
             manage_admin_password: self.manage_admin_password,
             admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
+            log_destination_type: self.log_destination_type,
+            s3_table_action: self.s3_table_action,
+            s3_table_names: self.s3_table_names,
+            s3_table_kms_key_id: self.s3_table_kms_key_id,
+            s3_table_granularity: self.s3_table_granularity,
         })
     }
 }
@@ -274,6 +432,11 @@ impl ::std::fmt::Debug for UpdateNamespaceInputBuilder {
         formatter.field("log_exports", &self.log_exports);
         formatter.field("manage_admin_password", &self.manage_admin_password);
         formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
+        formatter.field("log_destination_type", &self.log_destination_type);
+        formatter.field("s3_table_action", &self.s3_table_action);
+        formatter.field("s3_table_names", &self.s3_table_names);
+        formatter.field("s3_table_kms_key_id", &self.s3_table_kms_key_id);
+        formatter.field("s3_table_granularity", &self.s3_table_granularity);
         formatter.finish()
     }
 }

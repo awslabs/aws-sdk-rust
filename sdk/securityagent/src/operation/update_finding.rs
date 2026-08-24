@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateF
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateFinding")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateFindingTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateF
     }
 }
 
+#[derive(Debug)]
+struct UpdateFindingTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateFindingTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateFindingTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateFindingInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("findingId") {
+            if let ::std::option::Option::Some(value) = input.finding_id.as_deref() {
+                captured.insert("findingId", value);
+            }
+        }
+        if requested.should_capture("agentSpaceId") {
+            if let ::std::option::Option::Some(value) = input.agent_space_id.as_deref() {
+                captured.insert("agentSpaceId", value);
+            }
+        }
+        if requested.should_capture("name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("name", value);
+            }
+        }
+        if requested.should_capture("description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("description", value);
+            }
+        }
+        if requested.should_capture("riskType") {
+            if let ::std::option::Option::Some(value) = input.risk_type.as_deref() {
+                captured.insert("riskType", value);
+            }
+        }
+        if requested.should_capture("riskScore") {
+            if let ::std::option::Option::Some(value) = input.risk_score.as_deref() {
+                captured.insert("riskScore", value);
+            }
+        }
+        if requested.should_capture("attackScript") {
+            if let ::std::option::Option::Some(value) = input.attack_script.as_deref() {
+                captured.insert("attackScript", value);
+            }
+        }
+        if requested.should_capture("reasoning") {
+            if let ::std::option::Option::Some(value) = input.reasoning.as_deref() {
+                captured.insert("reasoning", value);
+            }
+        }
+        if requested.should_capture("customerNote") {
+            if let ::std::option::Option::Some(value) = input.customer_note.as_deref() {
+                captured.insert("customerNote", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateFindingResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateFindingResponseDeserializer {

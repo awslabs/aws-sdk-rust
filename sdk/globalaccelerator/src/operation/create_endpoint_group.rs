@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateE
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateEndpointGroup")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateEndpointGroupTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -159,6 +162,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateE
     }
 }
 
+#[derive(Debug)]
+struct CreateEndpointGroupTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateEndpointGroupTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateEndpointGroupTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateEndpointGroupInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ListenerArn") {
+            if let ::std::option::Option::Some(value) = input.listener_arn.as_deref() {
+                captured.insert("ListenerArn", value);
+            }
+        }
+        if requested.should_capture("EndpointGroupRegion") {
+            if let ::std::option::Option::Some(value) = input.endpoint_group_region.as_deref() {
+                captured.insert("EndpointGroupRegion", value);
+            }
+        }
+        if requested.should_capture("HealthCheckPath") {
+            if let ::std::option::Option::Some(value) = input.health_check_path.as_deref() {
+                captured.insert("HealthCheckPath", value);
+            }
+        }
+        if requested.should_capture("IdempotencyToken") {
+            if let ::std::option::Option::Some(value) = input.idempotency_token.as_deref() {
+                captured.insert("IdempotencyToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateEndpointGroupResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateEndpointGroupResponseDeserializer {

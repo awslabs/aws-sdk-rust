@@ -5,11 +5,15 @@ pub use crate::types::_agentic_retrieve_policy_configuration::AgenticRetrievePol
 
 pub use crate::types::_user_context::UserContextBuilder;
 
+pub use crate::types::_agentic_retrieve_memory_configuration::AgenticRetrieveMemoryConfigurationBuilder;
+
 pub use crate::types::_model_performance_configuration::ModelPerformanceConfigurationBuilder;
 
 pub use crate::types::_query_generation_input::QueryGenerationInputBuilder;
 
 pub use crate::types::_transformation_configuration::TransformationConfigurationBuilder;
+
+pub use crate::types::_document_acl::DocumentAclBuilder;
 
 pub use crate::types::_session_state::SessionStateBuilder;
 
@@ -57,6 +61,8 @@ pub use crate::types::_agentic_retrieve_reranking_configuration::AgenticRetrieve
 
 pub use crate::types::_agentic_retrieve_bedrock_guardrail_configuration::AgenticRetrieveBedrockGuardrailConfigurationBuilder;
 
+pub use crate::types::_agentic_retrieve_memory_session_binding::AgenticRetrieveMemorySessionBindingBuilder;
+
 pub use crate::types::_agentic_retrieve_result_event::AgenticRetrieveResultEventBuilder;
 
 pub use crate::types::_agentic_retrieve_trace_event::AgenticRetrieveTraceEventBuilder;
@@ -82,6 +88,8 @@ pub use crate::types::_flow_multi_turn_input_request_event::FlowMultiTurnInputRe
 pub use crate::types::_text_to_sql_configuration::TextToSqlConfigurationBuilder;
 
 pub use crate::types::_generated_query::GeneratedQueryBuilder;
+
+pub use crate::types::_document_acl_membership::DocumentAclMembershipBuilder;
 
 pub use crate::types::_conversation_history::ConversationHistoryBuilder;
 
@@ -154,6 +162,8 @@ pub use crate::types::_agentic_retrieve_message_content::AgenticRetrieveMessageC
 pub use crate::types::_bedrock_foundation_model_configuration::BedrockFoundationModelConfigurationBuilder;
 
 pub use crate::types::_agentic_retrieve_bedrock_reranking_configuration::AgenticRetrieveBedrockRerankingConfigurationBuilder;
+
+pub use crate::types::_agentic_retrieve_memory_retrieval_config::AgenticRetrieveMemoryRetrievalConfigBuilder;
 
 pub use crate::types::_agentic_retrieve_generated_response::AgenticRetrieveGeneratedResponseBuilder;
 
@@ -231,6 +241,8 @@ pub use crate::types::_flow_trace_node_action_event::FlowTraceNodeActionEventBui
 
 pub use crate::types::_flow_trace_dependency_event::FlowTraceDependencyEventBuilder;
 
+pub use crate::types::_document_acl_condition::DocumentAclConditionBuilder;
+
 pub use crate::types::_api_result::ApiResultBuilder;
 
 pub use crate::types::_function_result::FunctionResultBuilder;
@@ -296,6 +308,8 @@ pub use crate::types::_retrieval_result_google_drive_location::RetrievalResultGo
 pub use crate::types::_image_block::ImageBlockBuilder;
 
 pub use crate::types::_retrieval_overrides::RetrievalOverridesBuilder;
+
+pub use crate::types::_agentic_retrieve_memory_metadata_filter::AgenticRetrieveMemoryMetadataFilterBuilder;
 
 pub use crate::types::_retrieval_content::RetrievalContentBuilder;
 
@@ -373,6 +387,8 @@ pub use crate::types::_agentic_retrieve_action_details::AgenticRetrieveActionDet
 
 pub use crate::types::_agentic_retrieve_full_doc_expansion_details::AgenticRetrieveFullDocExpansionDetailsBuilder;
 
+pub use crate::types::_agentic_retrieve_memory_retrieve_details::AgenticRetrieveMemoryRetrieveDetailsBuilder;
+
 pub use crate::types::_agentic_retrieve_warning_message::AgenticRetrieveWarningMessageBuilder;
 
 pub use crate::types::_agentic_retrieve_guardrail_warning::AgenticRetrieveGuardrailWarningBuilder;
@@ -384,6 +400,10 @@ pub use crate::types::_flow_trace_node_input_field::FlowTraceNodeInputFieldBuild
 pub use crate::types::_flow_trace_node_output_field::FlowTraceNodeOutputFieldBuilder;
 
 pub use crate::types::_flow_trace_condition::FlowTraceConditionBuilder;
+
+pub use crate::types::_document_acl_user::DocumentAclUserBuilder;
+
+pub use crate::types::_document_acl_group::DocumentAclGroupBuilder;
 
 pub use crate::types::_content_body::ContentBodyBuilder;
 

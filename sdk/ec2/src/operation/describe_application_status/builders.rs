@@ -22,7 +22,7 @@ impl crate::operation::describe_application_status::builders::DescribeApplicatio
 }
 /// Fluent builder constructing a request to `DescribeApplicationStatus`.
 ///
-/// <p>Describes the application status for the specified instances. Returns the aggregated application health status for each instance. The following rules apply:</p>
+/// <p>Describes the aggregated application health status for the specified instances. The following rules apply:</p>
 /// <ul>
 /// <li>
 /// <p>The instance-level status is derived from all application status checks with the aggregation setting set to <code>included</code>.</p></li>

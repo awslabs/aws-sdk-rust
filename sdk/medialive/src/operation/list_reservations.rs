@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRes
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListReservations")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListReservationsTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRes
     }
 }
 
+#[derive(Debug)]
+struct ListReservationsTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListReservationsTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ListReservationsTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ListReservationsInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ChannelClass") {
+            if let ::std::option::Option::Some(value) = input.channel_class.as_deref() {
+                captured.insert("ChannelClass", value);
+            }
+        }
+        if requested.should_capture("Codec") {
+            if let ::std::option::Option::Some(value) = input.codec.as_deref() {
+                captured.insert("Codec", value);
+            }
+        }
+        if requested.should_capture("MaximumBitrate") {
+            if let ::std::option::Option::Some(value) = input.maximum_bitrate.as_deref() {
+                captured.insert("MaximumBitrate", value);
+            }
+        }
+        if requested.should_capture("MaximumFramerate") {
+            if let ::std::option::Option::Some(value) = input.maximum_framerate.as_deref() {
+                captured.insert("MaximumFramerate", value);
+            }
+        }
+        if requested.should_capture("NextToken") {
+            if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
+                captured.insert("NextToken", value);
+            }
+        }
+        if requested.should_capture("Resolution") {
+            if let ::std::option::Option::Some(value) = input.resolution.as_deref() {
+                captured.insert("Resolution", value);
+            }
+        }
+        if requested.should_capture("ResourceType") {
+            if let ::std::option::Option::Some(value) = input.resource_type.as_deref() {
+                captured.insert("ResourceType", value);
+            }
+        }
+        if requested.should_capture("SpecialFeature") {
+            if let ::std::option::Option::Some(value) = input.special_feature.as_deref() {
+                captured.insert("SpecialFeature", value);
+            }
+        }
+        if requested.should_capture("VideoQuality") {
+            if let ::std::option::Option::Some(value) = input.video_quality.as_deref() {
+                captured.insert("VideoQuality", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ListReservationsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListReservationsResponseDeserializer {

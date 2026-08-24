@@ -5,6 +5,8 @@ pub use crate::types::_agentic_retrieve_policy_configuration::AgenticRetrievePol
 
 pub use crate::types::_user_context::UserContext;
 
+pub use crate::types::_agentic_retrieve_memory_configuration::AgenticRetrieveMemoryConfiguration;
+
 pub use crate::types::_agentic_retrieve_stream_response_output::AgenticRetrieveStreamResponseOutput;
 
 pub use crate::types::_flow_execution_status::FlowExecutionStatus;
@@ -20,6 +22,8 @@ pub use crate::types::_query_generation_input::QueryGenerationInput;
 pub use crate::types::_transformation_configuration::TransformationConfiguration;
 
 pub use crate::types::_document_output_format::DocumentOutputFormat;
+
+pub use crate::types::_document_acl::DocumentAcl;
 
 pub use crate::types::_session_state::SessionState;
 
@@ -93,6 +97,10 @@ pub use crate::types::_agentic_retrieve_reranking_configuration::AgenticRetrieve
 
 pub use crate::types::_agentic_retrieve_bedrock_guardrail_configuration::AgenticRetrieveBedrockGuardrailConfiguration;
 
+pub use crate::types::_agentic_retrieve_memory_session_binding::AgenticRetrieveMemorySessionBinding;
+
+pub use crate::types::_agentic_retrieve_memory_persistence_mode::AgenticRetrieveMemoryPersistenceMode;
+
 pub use crate::types::_agentic_retrieve_result_event::AgenticRetrieveResultEvent;
 
 pub use crate::types::_agentic_retrieve_trace_event::AgenticRetrieveTraceEvent;
@@ -124,6 +132,8 @@ pub use crate::types::_query_transformation_mode::QueryTransformationMode;
 pub use crate::types::_text_to_sql_configuration::TextToSqlConfiguration;
 
 pub use crate::types::_generated_query::GeneratedQuery;
+
+pub use crate::types::_document_acl_membership::DocumentAclMembership;
 
 pub use crate::types::_conversation_history::ConversationHistory;
 
@@ -215,6 +225,8 @@ pub use crate::types::_agentic_retrieve_reranking_configuration_type::AgenticRet
 
 pub use crate::types::_agentic_retrieve_bedrock_reranking_configuration::AgenticRetrieveBedrockRerankingConfiguration;
 
+pub use crate::types::_agentic_retrieve_memory_retrieval_config::AgenticRetrieveMemoryRetrievalConfig;
+
 pub use crate::types::_agentic_retrieve_generated_response::AgenticRetrieveGeneratedResponse;
 
 pub use crate::types::_agentic_retrieve_trace_event_attributes::AgenticRetrieveTraceEventAttributes;
@@ -258,6 +270,8 @@ pub use crate::types::_text_to_sql_configuration_type::TextToSqlConfigurationTyp
 pub use crate::types::_text_to_sql_knowledge_base_configuration::TextToSqlKnowledgeBaseConfiguration;
 
 pub use crate::types::_generated_query_type::GeneratedQueryType;
+
+pub use crate::types::_document_acl_member_relation::DocumentAclMemberRelation;
 
 pub use crate::types::_invocation_result_member::InvocationResultMember;
 
@@ -350,6 +364,8 @@ pub use crate::types::_flow_trace_condition_node_result_event::FlowTraceConditio
 pub use crate::types::_flow_trace_node_action_event::FlowTraceNodeActionEvent;
 
 pub use crate::types::_flow_trace_dependency_event::FlowTraceDependencyEvent;
+
+pub use crate::types::_document_acl_condition::DocumentAclCondition;
 
 pub use crate::types::_api_result::ApiResult;
 
@@ -449,6 +465,8 @@ pub use crate::types::_image_block::ImageBlock;
 
 pub use crate::types::_retrieval_overrides::RetrievalOverrides;
 
+pub use crate::types::_agentic_retrieve_memory_metadata_filter::AgenticRetrieveMemoryMetadataFilter;
+
 pub use crate::types::_retrieval_content::RetrievalContent;
 
 pub use crate::types::_agentic_retrieve_source_retriever::AgenticRetrieveSourceRetriever;
@@ -541,9 +559,17 @@ pub use crate::types::_image_format::ImageFormat;
 
 pub use crate::types::_image_source::ImageSource;
 
+pub use crate::types::_agentic_retrieve_memory_metadata_filter_left::AgenticRetrieveMemoryMetadataFilterLeft;
+
+pub use crate::types::_agentic_retrieve_memory_metadata_filter_operator::AgenticRetrieveMemoryMetadataFilterOperator;
+
+pub use crate::types::_agentic_retrieve_memory_metadata_filter_right::AgenticRetrieveMemoryMetadataFilterRight;
+
 pub use crate::types::_agentic_retrieve_action_details::AgenticRetrieveActionDetails;
 
 pub use crate::types::_agentic_retrieve_full_doc_expansion_details::AgenticRetrieveFullDocExpansionDetails;
+
+pub use crate::types::_agentic_retrieve_memory_retrieve_details::AgenticRetrieveMemoryRetrieveDetails;
 
 pub use crate::types::_agentic_retrieve_warning_message::AgenticRetrieveWarningMessage;
 
@@ -566,6 +592,10 @@ pub use crate::types::_flow_trace_node_input_field::FlowTraceNodeInputField;
 pub use crate::types::_flow_trace_node_output_field::FlowTraceNodeOutputField;
 
 pub use crate::types::_flow_trace_condition::FlowTraceCondition;
+
+pub use crate::types::_document_acl_user::DocumentAclUser;
+
+pub use crate::types::_document_acl_group::DocumentAclGroup;
 
 pub use crate::types::_content_body::ContentBody;
 
@@ -623,6 +653,8 @@ pub use crate::types::_retrieval_result_content_column_type::RetrievalResultCont
 
 pub use crate::types::_s3_location::S3Location;
 
+pub use crate::types::_agentic_retrieve_memory_metadata_value::AgenticRetrieveMemoryMetadataValue;
+
 pub use crate::types::_agentic_retrieve_citation_reference::AgenticRetrieveCitationReference;
 
 pub use crate::types::_node_input_execution_chain_item::NodeInputExecutionChainItem;
@@ -634,6 +666,8 @@ pub use crate::types::_flow_trace_node_input_content::FlowTraceNodeInputContent;
 pub use crate::types::_flow_trace_node_input_source::FlowTraceNodeInputSource;
 
 pub use crate::types::_flow_trace_node_output_content::FlowTraceNodeOutputContent;
+
+pub use crate::types::_document_acl_membership_type::DocumentAclMembershipType;
 
 pub use crate::types::_guardrail_topic_policy_assessment::GuardrailTopicPolicyAssessment;
 
@@ -761,6 +795,26 @@ mod _agentic_retrieve_generated_response;
 
 mod _agentic_retrieve_guardrail_warning;
 
+mod _agentic_retrieve_memory_configuration;
+
+mod _agentic_retrieve_memory_metadata_filter;
+
+mod _agentic_retrieve_memory_metadata_filter_left;
+
+mod _agentic_retrieve_memory_metadata_filter_operator;
+
+mod _agentic_retrieve_memory_metadata_filter_right;
+
+mod _agentic_retrieve_memory_metadata_value;
+
+mod _agentic_retrieve_memory_persistence_mode;
+
+mod _agentic_retrieve_memory_retrieval_config;
+
+mod _agentic_retrieve_memory_retrieve_details;
+
+mod _agentic_retrieve_memory_session_binding;
+
 mod _agentic_retrieve_message;
 
 mod _agentic_retrieve_message_content;
@@ -872,6 +926,20 @@ mod _custom_orchestration;
 mod _custom_orchestration_trace;
 
 mod _custom_orchestration_trace_event;
+
+mod _document_acl;
+
+mod _document_acl_condition;
+
+mod _document_acl_group;
+
+mod _document_acl_member_relation;
+
+mod _document_acl_membership;
+
+mod _document_acl_membership_type;
+
+mod _document_acl_user;
 
 mod _document_output_format;
 

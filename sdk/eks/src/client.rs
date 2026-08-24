@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AssociateAccessPolicy`](crate::operation::associate_access_policy) operation has
-/// a [`Client::associate_access_policy`], function which returns a builder for that operation.
+/// For example, the [`ActivateCertificateAuthority`](crate::operation::activate_certificate_authority) operation has
+/// a [`Client::activate_certificate_authority`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.associate_access_policy()
+/// let result = client.activate_certificate_authority()
 ///     .cluster_name("example")
 ///     .send()
 ///     .await;
@@ -156,6 +156,10 @@ pub trait Waiters {
     fn wait_until_nodegroup_active(&self) -> crate::waiters::nodegroup_active::NodegroupActiveFluentBuilder;
     /// Wait for `nodegroup_deleted`
     fn wait_until_nodegroup_deleted(&self) -> crate::waiters::nodegroup_deleted::NodegroupDeletedFluentBuilder;
+    /// Wait for `certificate_authority_update_complete`
+    fn wait_until_certificate_authority_update_complete(
+        &self,
+    ) -> crate::waiters::certificate_authority_update_complete::CertificateAuthorityUpdateCompleteFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_addon_active(&self) -> crate::waiters::addon_active::AddonActiveFluentBuilder {
@@ -182,6 +186,11 @@ impl Waiters for Client {
     fn wait_until_nodegroup_deleted(&self) -> crate::waiters::nodegroup_deleted::NodegroupDeletedFluentBuilder {
         crate::waiters::nodegroup_deleted::NodegroupDeletedFluentBuilder::new(self.handle.clone())
     }
+    fn wait_until_certificate_authority_update_complete(
+        &self,
+    ) -> crate::waiters::certificate_authority_update_complete::CertificateAuthorityUpdateCompleteFluentBuilder {
+        crate::waiters::certificate_authority_update_complete::CertificateAuthorityUpdateCompleteFluentBuilder::new(self.handle.clone())
+    }
 }
 
 impl Client {
@@ -200,6 +209,8 @@ impl Client {
     }
 }
 
+mod activate_certificate_authority;
+
 mod associate_access_policy;
 
 mod associate_encryption_config;
@@ -213,6 +224,8 @@ mod create_access_entry;
 mod create_addon;
 
 mod create_capability;
+
+mod create_certificate_authority;
 
 mod create_cluster;
 
@@ -235,7 +248,7 @@ mod create_pod_identity_association;
 /// # let client: aws_sdk_eks::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.associate_access_policy()
+/// let result = client.activate_certificate_authority()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -256,6 +269,8 @@ mod delete_access_entry;
 mod delete_addon;
 
 mod delete_capability;
+
+mod delete_certificate_authority;
 
 mod delete_cluster;
 
@@ -278,6 +293,8 @@ mod describe_addon_configuration;
 mod describe_addon_versions;
 
 mod describe_capability;
+
+mod describe_certificate_authority;
 
 mod describe_cluster;
 
@@ -312,6 +329,8 @@ mod list_addons;
 mod list_associated_access_policies;
 
 mod list_capabilities;
+
+mod list_certificate_authorities;
 
 mod list_clusters;
 

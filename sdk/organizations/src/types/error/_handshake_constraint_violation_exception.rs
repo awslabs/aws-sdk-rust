@@ -19,17 +19,21 @@
 /// <li>
 /// <p>ORGANIZATION_ALREADY_HAS_ALL_FEATURES: The handshake request is invalid because the organization has already enabled all features.</p></li>
 /// <li>
-/// <p>ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different marketplace than the accounts in the organization.</p></li>
+/// <p>ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that operates in the same Amazon Web Services partition as your account.</p></li>
 /// <li>
 /// <p>ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the organization has already started the process to enable all features.</p></li>
 /// <li>
 /// <p>ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership of an account too quickly after its previous change.</p></li>
+/// <li>
+/// <p>PAST_DUE_INVOICE: Your organization has an invoice that is past due.</p></li>
 /// <li>
 /// <p>PAYMENT_INSTRUMENT_REQUIRED: You can't complete the operation with an account that doesn't have a payment instrument, such as a credit card, associated with it.</p></li>
 /// <li>
 /// <p>RESPONSIBILITY_TRANSFER_ALREADY_EXISTS: You cannot perform this operation with the current transfer.</p></li>
 /// <li>
 /// <p>SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it is both the sender and recipient of the invitation.</p></li>
+/// <li>
+/// <p>TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account. Contact your billing administrator or Amazon Web Services Support for assistance.</p></li>
 /// <li>
 /// <p>UNUSED_PREPAYMENT_BALANCE: Your organization has an outstanding pre-payment balance.</p></li>
 /// </ul>

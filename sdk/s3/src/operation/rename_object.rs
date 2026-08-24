@@ -131,6 +131,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RenameO
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RenameObject")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RenameObjectTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -156,6 +159,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RenameO
     }
 }
 
+#[derive(Debug)]
+struct RenameObjectTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RenameObjectTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "RenameObjectTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<RenameObjectInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Bucket") {
+            if let ::std::option::Option::Some(value) = input.bucket.as_deref() {
+                captured.insert("Bucket", value);
+            }
+        }
+        if requested.should_capture("Key") {
+            if let ::std::option::Option::Some(value) = input.key.as_deref() {
+                captured.insert("Key", value);
+            }
+        }
+        if requested.should_capture("RenameSource") {
+            if let ::std::option::Option::Some(value) = input.rename_source.as_deref() {
+                captured.insert("RenameSource", value);
+            }
+        }
+        if requested.should_capture("DestinationIfMatch") {
+            if let ::std::option::Option::Some(value) = input.destination_if_match.as_deref() {
+                captured.insert("DestinationIfMatch", value);
+            }
+        }
+        if requested.should_capture("DestinationIfNoneMatch") {
+            if let ::std::option::Option::Some(value) = input.destination_if_none_match.as_deref() {
+                captured.insert("DestinationIfNoneMatch", value);
+            }
+        }
+        if requested.should_capture("SourceIfMatch") {
+            if let ::std::option::Option::Some(value) = input.source_if_match.as_deref() {
+                captured.insert("SourceIfMatch", value);
+            }
+        }
+        if requested.should_capture("SourceIfNoneMatch") {
+            if let ::std::option::Option::Some(value) = input.source_if_none_match.as_deref() {
+                captured.insert("SourceIfNoneMatch", value);
+            }
+        }
+        if requested.should_capture("ClientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("ClientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct RenameObjectResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RenameObjectResponseDeserializer {

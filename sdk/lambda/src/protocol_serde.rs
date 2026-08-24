@@ -63,6 +63,8 @@ pub(crate) mod shape_delete_layer_version;
 
 pub(crate) mod shape_delete_provisioned_concurrency_config;
 
+pub(crate) mod shape_delete_resource_policy;
+
 pub(crate) mod shape_get_account_settings;
 
 pub(crate) mod shape_get_alias;
@@ -104,6 +106,8 @@ pub(crate) mod shape_get_layer_version_policy;
 pub(crate) mod shape_get_policy;
 
 pub(crate) mod shape_get_provisioned_concurrency_config;
+
+pub(crate) mod shape_get_resource_policy;
 
 pub(crate) mod shape_get_runtime_management_config;
 
@@ -164,6 +168,8 @@ pub(crate) mod shape_put_function_recursion_config;
 pub(crate) mod shape_put_function_scaling_config;
 
 pub(crate) mod shape_put_provisioned_concurrency_config;
+
+pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_put_runtime_management_config;
 
@@ -328,6 +334,8 @@ pub(crate) mod shape_put_function_recursion_config_input;
 pub(crate) mod shape_put_function_scaling_config_input;
 
 pub(crate) mod shape_put_provisioned_concurrency_config_input;
+
+pub(crate) mod shape_put_resource_policy_input;
 
 pub(crate) mod shape_put_runtime_management_config_input;
 

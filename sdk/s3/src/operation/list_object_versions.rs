@@ -123,7 +123,8 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListObj
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
         #[allow(unused_mut)]
                     let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListObjectVersions")
-                            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default()))
+                            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(ListObjectVersionsTelemetryInputCaptureInterceptor))
+.with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default()))
 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(ListObjectVersionsEndpointParamsInterceptor))
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::list_object_versions::ListObjectVersionsError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::list_object_versions::ListObjectVersionsError>::new())
@@ -137,6 +138,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListObj
     }
 }
 
+#[derive(Debug)]
+struct ListObjectVersionsTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListObjectVersionsTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ListObjectVersionsTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ListObjectVersionsInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Bucket") {
+            if let ::std::option::Option::Some(value) = input.bucket.as_deref() {
+                captured.insert("Bucket", value);
+            }
+        }
+        if requested.should_capture("Delimiter") {
+            if let ::std::option::Option::Some(value) = input.delimiter.as_deref() {
+                captured.insert("Delimiter", value);
+            }
+        }
+        if requested.should_capture("KeyMarker") {
+            if let ::std::option::Option::Some(value) = input.key_marker.as_deref() {
+                captured.insert("KeyMarker", value);
+            }
+        }
+        if requested.should_capture("Prefix") {
+            if let ::std::option::Option::Some(value) = input.prefix.as_deref() {
+                captured.insert("Prefix", value);
+            }
+        }
+        if requested.should_capture("VersionIdMarker") {
+            if let ::std::option::Option::Some(value) = input.version_id_marker.as_deref() {
+                captured.insert("VersionIdMarker", value);
+            }
+        }
+        if requested.should_capture("ExpectedBucketOwner") {
+            if let ::std::option::Option::Some(value) = input.expected_bucket_owner.as_deref() {
+                captured.insert("ExpectedBucketOwner", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ListObjectVersionsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListObjectVersionsResponseDeserializer {

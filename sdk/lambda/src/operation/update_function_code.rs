@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateF
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateFunctionCode")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateFunctionCodeTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateF
     }
 }
 
+#[derive(Debug)]
+struct UpdateFunctionCodeTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateFunctionCodeTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateFunctionCodeTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateFunctionCodeInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("FunctionName") {
+            if let ::std::option::Option::Some(value) = input.function_name.as_deref() {
+                captured.insert("FunctionName", value);
+            }
+        }
+        if requested.should_capture("S3Bucket") {
+            if let ::std::option::Option::Some(value) = input.s3_bucket.as_deref() {
+                captured.insert("S3Bucket", value);
+            }
+        }
+        if requested.should_capture("S3Key") {
+            if let ::std::option::Option::Some(value) = input.s3_key.as_deref() {
+                captured.insert("S3Key", value);
+            }
+        }
+        if requested.should_capture("S3ObjectVersion") {
+            if let ::std::option::Option::Some(value) = input.s3_object_version.as_deref() {
+                captured.insert("S3ObjectVersion", value);
+            }
+        }
+        if requested.should_capture("ImageUri") {
+            if let ::std::option::Option::Some(value) = input.image_uri.as_deref() {
+                captured.insert("ImageUri", value);
+            }
+        }
+        if requested.should_capture("RevisionId") {
+            if let ::std::option::Option::Some(value) = input.revision_id.as_deref() {
+                captured.insert("RevisionId", value);
+            }
+        }
+        if requested.should_capture("SourceKMSKeyArn") {
+            if let ::std::option::Option::Some(value) = input.source_kms_key_arn.as_deref() {
+                captured.insert("SourceKMSKeyArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateFunctionCodeResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateFunctionCodeResponseDeserializer {

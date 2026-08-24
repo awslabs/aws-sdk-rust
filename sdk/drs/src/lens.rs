@@ -99,6 +99,46 @@ pub(crate) fn reflens_list_launch_actions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_recovery_plan_execution_steps_output_output_next_token(
+    input: &crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_recovery_plan_executions_output_output_next_token(
+    input: &crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_recovery_plan_steps_output_output_next_token(
+    input: &crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_recovery_plans_output_output_next_token(
+    input: &crate::operation::list_recovery_plans::ListRecoveryPlansOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_staging_accounts_output_output_next_token(
     input: &crate::operation::list_staging_accounts::ListStagingAccountsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -176,6 +216,34 @@ pub(crate) fn lens_list_launch_actions_output_output_items(
     input: crate::operation::list_launch_actions::ListLaunchActionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::LaunchAction>> {
     let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recovery_plan_execution_steps_output_output_recovery_plan_execution_steps(
+    input: crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPlanExecutionStepSummary>> {
+    let input = input.recovery_plan_execution_steps;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recovery_plan_executions_output_output_recovery_plan_executions(
+    input: crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPlanExecutionSummary>> {
+    let input = input.recovery_plan_executions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recovery_plan_steps_output_output_recovery_plan_steps(
+    input: crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPlanStep>> {
+    let input = input.recovery_plan_steps;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_recovery_plans_output_output_recovery_plans(
+    input: crate::operation::list_recovery_plans::ListRecoveryPlansOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecoveryPlanSummary>> {
+    let input = input.recovery_plans;
     ::std::option::Option::Some(input)
 }
 

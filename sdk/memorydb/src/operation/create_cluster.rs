@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateCluster")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateClusterTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,114 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
     }
 }
 
+#[derive(Debug)]
+struct CreateClusterTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateClusterTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateClusterTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateClusterInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ClusterName") {
+            if let ::std::option::Option::Some(value) = input.cluster_name.as_deref() {
+                captured.insert("ClusterName", value);
+            }
+        }
+        if requested.should_capture("NodeType") {
+            if let ::std::option::Option::Some(value) = input.node_type.as_deref() {
+                captured.insert("NodeType", value);
+            }
+        }
+        if requested.should_capture("MultiRegionClusterName") {
+            if let ::std::option::Option::Some(value) = input.multi_region_cluster_name.as_deref() {
+                captured.insert("MultiRegionClusterName", value);
+            }
+        }
+        if requested.should_capture("ParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.parameter_group_name.as_deref() {
+                captured.insert("ParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("Description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("Description", value);
+            }
+        }
+        if requested.should_capture("SubnetGroupName") {
+            if let ::std::option::Option::Some(value) = input.subnet_group_name.as_deref() {
+                captured.insert("SubnetGroupName", value);
+            }
+        }
+        if requested.should_capture("MaintenanceWindow") {
+            if let ::std::option::Option::Some(value) = input.maintenance_window.as_deref() {
+                captured.insert("MaintenanceWindow", value);
+            }
+        }
+        if requested.should_capture("SnsTopicArn") {
+            if let ::std::option::Option::Some(value) = input.sns_topic_arn.as_deref() {
+                captured.insert("SnsTopicArn", value);
+            }
+        }
+        if requested.should_capture("KmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.kms_key_id.as_deref() {
+                captured.insert("KmsKeyId", value);
+            }
+        }
+        if requested.should_capture("SnapshotName") {
+            if let ::std::option::Option::Some(value) = input.snapshot_name.as_deref() {
+                captured.insert("SnapshotName", value);
+            }
+        }
+        if requested.should_capture("SnapshotWindow") {
+            if let ::std::option::Option::Some(value) = input.snapshot_window.as_deref() {
+                captured.insert("SnapshotWindow", value);
+            }
+        }
+        if requested.should_capture("ACLName") {
+            if let ::std::option::Option::Some(value) = input.acl_name.as_deref() {
+                captured.insert("ACLName", value);
+            }
+        }
+        if requested.should_capture("Engine") {
+            if let ::std::option::Option::Some(value) = input.engine.as_deref() {
+                captured.insert("Engine", value);
+            }
+        }
+        if requested.should_capture("EngineVersion") {
+            if let ::std::option::Option::Some(value) = input.engine_version.as_deref() {
+                captured.insert("EngineVersion", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateClusterResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateClusterResponseDeserializer {

@@ -170,6 +170,13 @@ pub(crate) fn de_get_evaluator(
                             .transpose()?,
                     );
                 }
+                "evaluatorType" => {
+                    builder = builder.set_evaluator_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::EvaluatorType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "kmsKeyArn" => {
                     builder = builder.set_kms_key_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -186,6 +193,13 @@ pub(crate) fn de_get_evaluator(
                 }
                 "lockedForModification" => {
                     builder = builder.set_locked_for_modification(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
+                "provider" => {
+                    builder = builder.set_provider(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::Provider::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 "status" => {
                     builder = builder.set_status(

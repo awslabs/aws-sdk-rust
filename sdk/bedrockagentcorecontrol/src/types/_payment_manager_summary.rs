@@ -28,6 +28,8 @@ pub struct PaymentManagerSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the payment manager was last updated.</p>
     pub last_updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl PaymentManagerSummary {
     /// <p>The Amazon Resource Name (ARN) of the payment manager.</p>
@@ -76,6 +78,10 @@ impl PaymentManagerSummary {
     pub fn last_updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.last_updated_at
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
+    }
 }
 impl PaymentManagerSummary {
     /// Creates a new builder-style object to manufacture [`PaymentManagerSummary`](crate::types::PaymentManagerSummary).
@@ -97,6 +103,7 @@ pub struct PaymentManagerSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::PaymentManagerStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
 }
 impl PaymentManagerSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the payment manager.</p>
@@ -250,6 +257,20 @@ impl PaymentManagerSummaryBuilder {
     pub fn get_last_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_at
     }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
+    }
     /// Consumes the builder and constructs a [`PaymentManagerSummary`](crate::types::PaymentManagerSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`payment_manager_arn`](crate::types::builders::PaymentManagerSummaryBuilder::payment_manager_arn)
@@ -305,6 +326,7 @@ impl PaymentManagerSummaryBuilder {
                     "last_updated_at was not specified but it is required when building PaymentManagerSummary",
                 )
             })?,
+            kms_key_arn: self.kms_key_arn,
         })
     }
 }

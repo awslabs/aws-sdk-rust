@@ -13,6 +13,7 @@
 /// # let originaccesscontrolsigningprotocols = unimplemented!();
 /// match originaccesscontrolsigningprotocols {
 ///     OriginAccessControlSigningProtocols::Sigv4 => { /* ... */ },
+///     OriginAccessControlSigningProtocols::Sigv4a => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum OriginAccessControlSigningProtocols {
     #[allow(missing_docs)] // documentation missing in model
     Sigv4,
+    #[allow(missing_docs)] // documentation missing in model
+    Sigv4a,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for OriginAccessControlSigningProtocols {
     fn from(s: &str) -> Self {
         match s {
             "sigv4" => OriginAccessControlSigningProtocols::Sigv4,
+            "sigv4a" => OriginAccessControlSigningProtocols::Sigv4a,
             other => OriginAccessControlSigningProtocols::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl OriginAccessControlSigningProtocols {
     pub fn as_str(&self) -> &str {
         match self {
             OriginAccessControlSigningProtocols::Sigv4 => "sigv4",
+            OriginAccessControlSigningProtocols::Sigv4a => "sigv4a",
             OriginAccessControlSigningProtocols::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["sigv4"]
+        &["sigv4", "sigv4a"]
     }
 }
 impl ::std::convert::AsRef<str> for OriginAccessControlSigningProtocols {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for OriginAccessControlSigningProtocols {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             OriginAccessControlSigningProtocols::Sigv4 => write!(f, "sigv4"),
+            OriginAccessControlSigningProtocols::Sigv4a => write!(f, "sigv4a"),
             OriginAccessControlSigningProtocols::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateApi")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateApiTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
     }
 }
 
+#[derive(Debug)]
+struct CreateApiTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateApiTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateApiTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateApiInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ApiKeySelectionExpression") {
+            if let ::std::option::Option::Some(value) = input.api_key_selection_expression.as_deref() {
+                captured.insert("ApiKeySelectionExpression", value);
+            }
+        }
+        if requested.should_capture("CredentialsArn") {
+            if let ::std::option::Option::Some(value) = input.credentials_arn.as_deref() {
+                captured.insert("CredentialsArn", value);
+            }
+        }
+        if requested.should_capture("Description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("Description", value);
+            }
+        }
+        if requested.should_capture("Name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("Name", value);
+            }
+        }
+        if requested.should_capture("RouteKey") {
+            if let ::std::option::Option::Some(value) = input.route_key.as_deref() {
+                captured.insert("RouteKey", value);
+            }
+        }
+        if requested.should_capture("RouteSelectionExpression") {
+            if let ::std::option::Option::Some(value) = input.route_selection_expression.as_deref() {
+                captured.insert("RouteSelectionExpression", value);
+            }
+        }
+        if requested.should_capture("Target") {
+            if let ::std::option::Option::Some(value) = input.target.as_deref() {
+                captured.insert("Target", value);
+            }
+        }
+        if requested.should_capture("Version") {
+            if let ::std::option::Option::Some(value) = input.version.as_deref() {
+                captured.insert("Version", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateApiResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateApiResponseDeserializer {

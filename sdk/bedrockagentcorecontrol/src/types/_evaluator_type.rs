@@ -15,6 +15,8 @@
 ///     EvaluatorType::Builtin => { /* ... */ },
 ///     EvaluatorType::Custom => { /* ... */ },
 ///     EvaluatorType::Code => { /* ... */ },
+///     EvaluatorType::CustomDerived => { /* ... */ },
+///     EvaluatorType::ThirdParty => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +51,10 @@ pub enum EvaluatorType {
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     Code,
+    #[allow(missing_docs)] // documentation missing in model
+    CustomDerived,
+    #[allow(missing_docs)] // documentation missing in model
+    ThirdParty,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +65,8 @@ impl ::std::convert::From<&str> for EvaluatorType {
             "Builtin" => EvaluatorType::Builtin,
             "Custom" => EvaluatorType::Custom,
             "CustomCode" => EvaluatorType::Code,
+            "CustomDerived" => EvaluatorType::CustomDerived,
+            "ThirdParty" => EvaluatorType::ThirdParty,
             other => EvaluatorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +85,14 @@ impl EvaluatorType {
             EvaluatorType::Builtin => "Builtin",
             EvaluatorType::Custom => "Custom",
             EvaluatorType::Code => "CustomCode",
+            EvaluatorType::CustomDerived => "CustomDerived",
+            EvaluatorType::ThirdParty => "ThirdParty",
             EvaluatorType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Builtin", "Custom", "CustomCode"]
+        &["Builtin", "Custom", "CustomCode", "CustomDerived", "ThirdParty"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluatorType {
@@ -108,6 +118,8 @@ impl ::std::fmt::Display for EvaluatorType {
             EvaluatorType::Builtin => write!(f, "Builtin"),
             EvaluatorType::Custom => write!(f, "Custom"),
             EvaluatorType::Code => write!(f, "CustomCode"),
+            EvaluatorType::CustomDerived => write!(f, "CustomDerived"),
+            EvaluatorType::ThirdParty => write!(f, "ThirdParty"),
             EvaluatorType::Unknown(value) => write!(f, "{value}"),
         }
     }

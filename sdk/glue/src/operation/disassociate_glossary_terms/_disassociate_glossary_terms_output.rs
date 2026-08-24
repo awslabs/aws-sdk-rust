@@ -5,6 +5,10 @@
 pub struct DisassociateGlossaryTermsOutput {
     /// <p>The unique identifier of the asset.</p>
     pub asset_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the iterable form, if the disassociation targets an item.</p>
+    pub iterable_form_name: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub item_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The remaining glossary terms associated with the asset.</p>
     pub glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -13,6 +17,14 @@ impl DisassociateGlossaryTermsOutput {
     /// <p>The unique identifier of the asset.</p>
     pub fn asset_identifier(&self) -> ::std::option::Option<&str> {
         self.asset_identifier.as_deref()
+    }
+    /// <p>The name of the iterable form, if the disassociation targets an item.</p>
+    pub fn iterable_form_name(&self) -> ::std::option::Option<&str> {
+        self.iterable_form_name.as_deref()
+    }
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub fn item_identifier(&self) -> ::std::option::Option<&str> {
+        self.item_identifier.as_deref()
     }
     /// <p>The remaining glossary terms associated with the asset.</p>
     ///
@@ -38,6 +50,8 @@ impl DisassociateGlossaryTermsOutput {
 #[non_exhaustive]
 pub struct DisassociateGlossaryTermsOutputBuilder {
     pub(crate) asset_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) iterable_form_name: ::std::option::Option<::std::string::String>,
+    pub(crate) item_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) glossary_terms: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -55,6 +69,34 @@ impl DisassociateGlossaryTermsOutputBuilder {
     /// <p>The unique identifier of the asset.</p>
     pub fn get_asset_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_identifier
+    }
+    /// <p>The name of the iterable form, if the disassociation targets an item.</p>
+    pub fn iterable_form_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iterable_form_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the iterable form, if the disassociation targets an item.</p>
+    pub fn set_iterable_form_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iterable_form_name = input;
+        self
+    }
+    /// <p>The name of the iterable form, if the disassociation targets an item.</p>
+    pub fn get_iterable_form_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iterable_form_name
+    }
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub fn item_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.item_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub fn set_item_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.item_identifier = input;
+        self
+    }
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub fn get_item_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_identifier
     }
     /// Appends an item to `glossary_terms`.
     ///
@@ -89,6 +131,8 @@ impl DisassociateGlossaryTermsOutputBuilder {
     pub fn build(self) -> crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsOutput {
         crate::operation::disassociate_glossary_terms::DisassociateGlossaryTermsOutput {
             asset_identifier: self.asset_identifier,
+            iterable_form_name: self.iterable_form_name,
+            item_identifier: self.item_identifier,
             glossary_terms: self.glossary_terms,
             _request_id: self._request_id,
         }

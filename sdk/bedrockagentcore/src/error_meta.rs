@@ -23,6 +23,8 @@ pub enum Error {
     ServiceException(crate::types::error::ServiceException),
     /// <p>The exception that occurs when the request would cause a service quota to be exceeded. Review your service quotas and either reduce your request rate or request a quota increase.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
+    /// <p>Returned when you attempt a wallet operation against a Coinbase Marketplace connector whose account does not hold an active Marketplace subscription and is not within the legacy exception period. Subscribe to the Marketplace listing before you retry the operation.</p>
+    SubscriptionRequiredException(crate::types::error::SubscriptionRequiredException),
     /// <p>The request was denied due to request throttling. Reduce the frequency of requests and try again.</p>
     ThrottledException(crate::types::error::ThrottledException),
     /// <p>The exception that occurs when the request was denied due to request throttling. This happens when you exceed the allowed request rate for an operation. Reduce the frequency of requests or implement exponential backoff retry logic in your application.</p>
@@ -53,6 +55,7 @@ impl ::std::fmt::Display for Error {
             Error::RuntimeClientError(inner) => inner.fmt(f),
             Error::ServiceException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
+            Error::SubscriptionRequiredException(inner) => inner.fmt(f),
             Error::ThrottledException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
             Error::UnauthorizedException(inner) => inner.fmt(f),
@@ -88,6 +91,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::RuntimeClientError(inner) => inner.meta(),
             Self::ServiceException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
+            Self::SubscriptionRequiredException(inner) => inner.meta(),
             Self::ThrottledException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::UnauthorizedException(inner) => inner.meta(),
@@ -342,8 +346,14 @@ impl From<crate::operation::create_payment_instrument::CreatePaymentInstrumentEr
             crate::operation::create_payment_instrument::CreatePaymentInstrumentError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_payment_instrument::CreatePaymentInstrumentError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_payment_instrument::CreatePaymentInstrumentError::SubscriptionRequiredException(inner) => {
+                Error::SubscriptionRequiredException(inner)
             }
             crate::operation::create_payment_instrument::CreatePaymentInstrumentError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
@@ -379,6 +389,9 @@ impl From<crate::operation::create_payment_session::CreatePaymentSessionError> f
             }
             crate::operation::create_payment_session::CreatePaymentSessionError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_payment_session::CreatePaymentSessionError::SubscriptionRequiredException(inner) => {
+                Error::SubscriptionRequiredException(inner)
             }
             crate::operation::create_payment_session::CreatePaymentSessionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_payment_session::CreatePaymentSessionError::ValidationException(inner) => Error::ValidationException(inner),
@@ -1831,8 +1844,12 @@ impl From<crate::operation::process_payment::ProcessPaymentError> for Error {
             crate::operation::process_payment::ProcessPaymentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::process_payment::ProcessPaymentError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::process_payment::ProcessPaymentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::process_payment::ProcessPaymentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::process_payment::ProcessPaymentError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::process_payment::ProcessPaymentError::SubscriptionRequiredException(inner) => {
+                Error::SubscriptionRequiredException(inner)
             }
             crate::operation::process_payment::ProcessPaymentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::process_payment::ProcessPaymentError::ValidationException(inner) => Error::ValidationException(inner),
@@ -2449,6 +2466,7 @@ impl ::std::error::Error for Error {
             Error::RuntimeClientError(inner) => inner.source(),
             Error::ServiceException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
+            Error::SubscriptionRequiredException(inner) => inner.source(),
             Error::ThrottledException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
             Error::UnauthorizedException(inner) => inner.source(),
@@ -2470,6 +2488,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::RuntimeClientError(e) => e.request_id(),
             Self::ServiceException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::SubscriptionRequiredException(e) => e.request_id(),
             Self::ThrottledException(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
             Self::UnauthorizedException(e) => e.request_id(),

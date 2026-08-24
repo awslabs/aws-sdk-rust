@@ -141,6 +141,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutReso
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutResourcePermissionStatement")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutResourcePermissionStatementTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -160,6 +163,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutReso
     }
 }
 
+#[derive(Debug)]
+struct PutResourcePermissionStatementTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutResourcePermissionStatementTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutResourcePermissionStatementTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutResourcePermissionStatementInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("sourceVpc") {
+            if let ::std::option::Option::Some(value) = input.source_vpc.as_deref() {
+                captured.insert("sourceVpc", value);
+            }
+        }
+        if requested.should_capture("signinSourceVpce") {
+            if let ::std::option::Option::Some(value) = input.signin_source_vpce.as_deref() {
+                captured.insert("signinSourceVpce", value);
+            }
+        }
+        if requested.should_capture("consoleSourceVpce") {
+            if let ::std::option::Option::Some(value) = input.console_source_vpce.as_deref() {
+                captured.insert("consoleSourceVpce", value);
+            }
+        }
+        if requested.should_capture("vpcSourceIp") {
+            if let ::std::option::Option::Some(value) = input.vpc_source_ip.as_deref() {
+                captured.insert("vpcSourceIp", value);
+            }
+        }
+        if requested.should_capture("sourceIp") {
+            if let ::std::option::Option::Some(value) = input.source_ip.as_deref() {
+                captured.insert("sourceIp", value);
+            }
+        }
+        if requested.should_capture("requestedRegion") {
+            if let ::std::option::Option::Some(value) = input.requested_region.as_deref() {
+                captured.insert("requestedRegion", value);
+            }
+        }
+        if requested.should_capture("excludedPrincipal") {
+            if let ::std::option::Option::Some(value) = input.excluded_principal.as_deref() {
+                captured.insert("excludedPrincipal", value);
+            }
+        }
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutResourcePermissionStatementResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutResourcePermissionStatementResponseDeserializer {

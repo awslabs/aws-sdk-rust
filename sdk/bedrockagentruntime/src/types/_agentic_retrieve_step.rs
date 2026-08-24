@@ -15,6 +15,7 @@
 ///     AgenticRetrieveStep::FullDocumentExpansion => { /* ... */ },
 ///     AgenticRetrieveStep::Planning => { /* ... */ },
 ///     AgenticRetrieveStep::Retrieval => { /* ... */ },
+///     AgenticRetrieveStep::SessionHistoryLoad => { /* ... */ },
 ///     AgenticRetrieveStep::SpeculativeRetrieval => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -50,6 +51,8 @@ pub enum AgenticRetrieveStep {
     Planning,
     /// <p>The retrieval phase where data is fetched.</p>
     Retrieval,
+    /// <p>The phase that restores prior session history from AgentCore Memory short-term memory, before the agent begins work.</p>
+    SessionHistoryLoad,
     /// <p>A speculative retrieval phase for optimization.</p>
     SpeculativeRetrieval,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -62,6 +65,7 @@ impl ::std::convert::From<&str> for AgenticRetrieveStep {
             "FullDocumentExpansion" => AgenticRetrieveStep::FullDocumentExpansion,
             "Planning" => AgenticRetrieveStep::Planning,
             "Retrieval" => AgenticRetrieveStep::Retrieval,
+            "SessionHistoryLoad" => AgenticRetrieveStep::SessionHistoryLoad,
             "SpeculativeRetrieval" => AgenticRetrieveStep::SpeculativeRetrieval,
             other => AgenticRetrieveStep::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -81,13 +85,20 @@ impl AgenticRetrieveStep {
             AgenticRetrieveStep::FullDocumentExpansion => "FullDocumentExpansion",
             AgenticRetrieveStep::Planning => "Planning",
             AgenticRetrieveStep::Retrieval => "Retrieval",
+            AgenticRetrieveStep::SessionHistoryLoad => "SessionHistoryLoad",
             AgenticRetrieveStep::SpeculativeRetrieval => "SpeculativeRetrieval",
             AgenticRetrieveStep::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FullDocumentExpansion", "Planning", "Retrieval", "SpeculativeRetrieval"]
+        &[
+            "FullDocumentExpansion",
+            "Planning",
+            "Retrieval",
+            "SessionHistoryLoad",
+            "SpeculativeRetrieval",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AgenticRetrieveStep {
@@ -113,6 +124,7 @@ impl ::std::fmt::Display for AgenticRetrieveStep {
             AgenticRetrieveStep::FullDocumentExpansion => write!(f, "FullDocumentExpansion"),
             AgenticRetrieveStep::Planning => write!(f, "Planning"),
             AgenticRetrieveStep::Retrieval => write!(f, "Retrieval"),
+            AgenticRetrieveStep::SessionHistoryLoad => write!(f, "SessionHistoryLoad"),
             AgenticRetrieveStep::SpeculativeRetrieval => write!(f, "SpeculativeRetrieval"),
             AgenticRetrieveStep::Unknown(value) => write!(f, "{value}"),
         }

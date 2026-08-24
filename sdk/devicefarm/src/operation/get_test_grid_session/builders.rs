@@ -22,12 +22,12 @@ impl crate::operation::get_test_grid_session::builders::GetTestGridSessionInputB
 }
 /// Fluent builder constructing a request to `GetTestGridSession`.
 ///
-/// <p>A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from <code>CreateTestGridUrlResult$url</code>. You can use the following to look up sessions:</p>
+/// <p>A session is an instance of a browser created through a <code>RemoteWebDriver</code> with the URL from <code> CreateTestGridUrlResult</code>. You can use the following to look up sessions:</p>
 /// <ul>
 /// <li>
-/// <p>The session ARN (<code>GetTestGridSessionRequest$sessionArn</code>).</p></li>
+/// <p>The session ARN.</p></li>
 /// <li>
-/// <p>The project ARN and a session ID (<code>GetTestGridSessionRequest$projectArn</code> and <code>GetTestGridSessionRequest$sessionId</code>).</p></li>
+/// <p>The project ARN and a session ID.</p></li>
 /// </ul>
 /// <p></p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

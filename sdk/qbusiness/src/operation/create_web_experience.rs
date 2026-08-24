@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateW
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateWebExperience")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateWebExperienceTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateW
     }
 }
 
+#[derive(Debug)]
+struct CreateWebExperienceTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateWebExperienceTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateWebExperienceTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateWebExperienceInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("applicationId") {
+            if let ::std::option::Option::Some(value) = input.application_id.as_deref() {
+                captured.insert("applicationId", value);
+            }
+        }
+        if requested.should_capture("title") {
+            if let ::std::option::Option::Some(value) = input.title.as_deref() {
+                captured.insert("title", value);
+            }
+        }
+        if requested.should_capture("subtitle") {
+            if let ::std::option::Option::Some(value) = input.subtitle.as_deref() {
+                captured.insert("subtitle", value);
+            }
+        }
+        if requested.should_capture("welcomeMessage") {
+            if let ::std::option::Option::Some(value) = input.welcome_message.as_deref() {
+                captured.insert("welcomeMessage", value);
+            }
+        }
+        if requested.should_capture("roleArn") {
+            if let ::std::option::Option::Some(value) = input.role_arn.as_deref() {
+                captured.insert("roleArn", value);
+            }
+        }
+        if requested.should_capture("clientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("clientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateWebExperienceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateWebExperienceResponseDeserializer {

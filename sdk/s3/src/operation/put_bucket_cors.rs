@@ -125,6 +125,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBuck
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutBucketCors")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutBucketCorsTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -210,6 +213,59 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBuck
     }
 }
 
+#[derive(Debug)]
+struct PutBucketCorsTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutBucketCorsTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutBucketCorsTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutBucketCorsInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Bucket") {
+            if let ::std::option::Option::Some(value) = input.bucket.as_deref() {
+                captured.insert("Bucket", value);
+            }
+        }
+        if requested.should_capture("ContentMD5") {
+            if let ::std::option::Option::Some(value) = input.content_md5.as_deref() {
+                captured.insert("ContentMD5", value);
+            }
+        }
+        if requested.should_capture("ExpectedBucketOwner") {
+            if let ::std::option::Option::Some(value) = input.expected_bucket_owner.as_deref() {
+                captured.insert("ExpectedBucketOwner", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutBucketCorsResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutBucketCorsResponseDeserializer {

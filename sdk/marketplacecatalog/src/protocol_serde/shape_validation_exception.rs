@@ -19,6 +19,11 @@ pub(crate) fn de_validation_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "ValidationExceptionFieldList" => {
+                    builder = builder.set_validation_exception_field_list(
+                        crate::protocol_serde::shape_validation_exception_field_list::de_validation_exception_field_list(tokens, _value, depth + 1)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

@@ -130,6 +130,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ecsSettings" => {
+                            builder =
+                                builder.set_ecs_settings(crate::protocol_serde::shape_ecs_settings::de_ecs_settings(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

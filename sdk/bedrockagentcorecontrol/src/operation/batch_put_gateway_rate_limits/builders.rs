@@ -141,17 +141,17 @@ impl BatchPutGatewayRateLimitsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_rate_limits`](Self::set_rate_limits).
     ///
-    /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+    /// <p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>
     pub fn rate_limits(mut self, input: crate::types::BatchPutLimitEntry) -> Self {
         self.inner = self.inner.rate_limits(input);
         self
     }
-    /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+    /// <p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>
     pub fn set_rate_limits(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchPutLimitEntry>>) -> Self {
         self.inner = self.inner.set_rate_limits(input);
         self
     }
-    /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+    /// <p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>
     pub fn get_rate_limits(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchPutLimitEntry>> {
         self.inner.get_rate_limits()
     }

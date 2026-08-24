@@ -75,6 +75,10 @@ pub fn ser_execution_block_configuration(
             encoder.str("neptuneGlobalDatabaseConfig");
             crate::protocol_serde::shape_neptune_global_database_configuration::ser_neptune_global_database_configuration(encoder, inner)?;
         }
+        crate::types::ExecutionBlockConfiguration::RdsSwitchoverReadReplicaConfig(inner) => {
+            encoder.str("rdsSwitchoverReadReplicaConfig");
+            crate::protocol_serde::shape_rds_switchover_read_replica_configuration::ser_rds_switchover_read_replica_configuration(encoder, inner)?;
+        }
         crate::types::ExecutionBlockConfiguration::Unknown => {
             return ::std::result::Result::Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "ExecutionBlockConfiguration",
@@ -160,6 +164,12 @@ pub(crate) fn de_execution_block_configuration(
             ),
             "neptuneGlobalDatabaseConfig" => crate::types::ExecutionBlockConfiguration::NeptuneGlobalDatabaseConfig(
                 crate::protocol_serde::shape_neptune_global_database_configuration::de_neptune_global_database_configuration(decoder, depth + 1)?,
+            ),
+            "rdsSwitchoverReadReplicaConfig" => crate::types::ExecutionBlockConfiguration::RdsSwitchoverReadReplicaConfig(
+                crate::protocol_serde::shape_rds_switchover_read_replica_configuration::de_rds_switchover_read_replica_configuration(
+                    decoder,
+                    depth + 1,
+                )?,
             ),
             _ => {
                 decoder.skip()?;

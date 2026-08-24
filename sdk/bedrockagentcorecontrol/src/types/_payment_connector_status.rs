@@ -12,10 +12,15 @@
 /// ```text
 /// # let paymentconnectorstatus = unimplemented!();
 /// match paymentconnectorstatus {
+///     PaymentConnectorStatus::AuthenticationExpired => { /* ... */ },
+///     PaymentConnectorStatus::AuthenticationFailed => { /* ... */ },
+///     PaymentConnectorStatus::AwsMarketplaceSubscriptionRequired => { /* ... */ },
 ///     PaymentConnectorStatus::CreateFailed => { /* ... */ },
 ///     PaymentConnectorStatus::Creating => { /* ... */ },
 ///     PaymentConnectorStatus::DeleteFailed => { /* ... */ },
 ///     PaymentConnectorStatus::Deleting => { /* ... */ },
+///     PaymentConnectorStatus::PendingAuthentication => { /* ... */ },
+///     PaymentConnectorStatus::Provisioning => { /* ... */ },
 ///     PaymentConnectorStatus::Ready => { /* ... */ },
 ///     PaymentConnectorStatus::UpdateFailed => { /* ... */ },
 ///     PaymentConnectorStatus::Updating => { /* ... */ },
@@ -48,6 +53,12 @@
 )]
 pub enum PaymentConnectorStatus {
     #[allow(missing_docs)] // documentation missing in model
+    AuthenticationExpired,
+    #[allow(missing_docs)] // documentation missing in model
+    AuthenticationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsMarketplaceSubscriptionRequired,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
     #[allow(missing_docs)] // documentation missing in model
     Creating,
@@ -55,6 +66,10 @@ pub enum PaymentConnectorStatus {
     DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingAuthentication,
+    #[allow(missing_docs)] // documentation missing in model
+    Provisioning,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     #[allow(missing_docs)] // documentation missing in model
@@ -68,10 +83,15 @@ pub enum PaymentConnectorStatus {
 impl ::std::convert::From<&str> for PaymentConnectorStatus {
     fn from(s: &str) -> Self {
         match s {
+            "AUTHENTICATION_EXPIRED" => PaymentConnectorStatus::AuthenticationExpired,
+            "AUTHENTICATION_FAILED" => PaymentConnectorStatus::AuthenticationFailed,
+            "AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED" => PaymentConnectorStatus::AwsMarketplaceSubscriptionRequired,
             "CREATE_FAILED" => PaymentConnectorStatus::CreateFailed,
             "CREATING" => PaymentConnectorStatus::Creating,
             "DELETE_FAILED" => PaymentConnectorStatus::DeleteFailed,
             "DELETING" => PaymentConnectorStatus::Deleting,
+            "PENDING_AUTHENTICATION" => PaymentConnectorStatus::PendingAuthentication,
+            "PROVISIONING" => PaymentConnectorStatus::Provisioning,
             "READY" => PaymentConnectorStatus::Ready,
             "UPDATE_FAILED" => PaymentConnectorStatus::UpdateFailed,
             "UPDATING" => PaymentConnectorStatus::Updating,
@@ -90,10 +110,15 @@ impl PaymentConnectorStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PaymentConnectorStatus::AuthenticationExpired => "AUTHENTICATION_EXPIRED",
+            PaymentConnectorStatus::AuthenticationFailed => "AUTHENTICATION_FAILED",
+            PaymentConnectorStatus::AwsMarketplaceSubscriptionRequired => "AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED",
             PaymentConnectorStatus::CreateFailed => "CREATE_FAILED",
             PaymentConnectorStatus::Creating => "CREATING",
             PaymentConnectorStatus::DeleteFailed => "DELETE_FAILED",
             PaymentConnectorStatus::Deleting => "DELETING",
+            PaymentConnectorStatus::PendingAuthentication => "PENDING_AUTHENTICATION",
+            PaymentConnectorStatus::Provisioning => "PROVISIONING",
             PaymentConnectorStatus::Ready => "READY",
             PaymentConnectorStatus::UpdateFailed => "UPDATE_FAILED",
             PaymentConnectorStatus::Updating => "UPDATING",
@@ -103,10 +128,15 @@ impl PaymentConnectorStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AUTHENTICATION_EXPIRED",
+            "AUTHENTICATION_FAILED",
+            "AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED",
             "CREATE_FAILED",
             "CREATING",
             "DELETE_FAILED",
             "DELETING",
+            "PENDING_AUTHENTICATION",
+            "PROVISIONING",
             "READY",
             "UPDATE_FAILED",
             "UPDATING",
@@ -133,10 +163,15 @@ impl PaymentConnectorStatus {
 impl ::std::fmt::Display for PaymentConnectorStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PaymentConnectorStatus::AuthenticationExpired => write!(f, "AUTHENTICATION_EXPIRED"),
+            PaymentConnectorStatus::AuthenticationFailed => write!(f, "AUTHENTICATION_FAILED"),
+            PaymentConnectorStatus::AwsMarketplaceSubscriptionRequired => write!(f, "AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED"),
             PaymentConnectorStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             PaymentConnectorStatus::Creating => write!(f, "CREATING"),
             PaymentConnectorStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             PaymentConnectorStatus::Deleting => write!(f, "DELETING"),
+            PaymentConnectorStatus::PendingAuthentication => write!(f, "PENDING_AUTHENTICATION"),
+            PaymentConnectorStatus::Provisioning => write!(f, "PROVISIONING"),
             PaymentConnectorStatus::Ready => write!(f, "READY"),
             PaymentConnectorStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
             PaymentConnectorStatus::Updating => write!(f, "UPDATING"),

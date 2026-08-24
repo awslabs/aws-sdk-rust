@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Restore
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RestoreDBInstanceToPointInTime")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RestoreDBInstanceToPointInTimeTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,174 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Restore
     }
 }
 
+#[derive(Debug)]
+struct RestoreDBInstanceToPointInTimeTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestoreDBInstanceToPointInTimeTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "RestoreDBInstanceToPointInTimeTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<RestoreDbInstanceToPointInTimeInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("SourceDBInstanceIdentifier") {
+            if let ::std::option::Option::Some(value) = input.source_db_instance_identifier.as_deref() {
+                captured.insert("SourceDBInstanceIdentifier", value);
+            }
+        }
+        if requested.should_capture("TargetDBInstanceIdentifier") {
+            if let ::std::option::Option::Some(value) = input.target_db_instance_identifier.as_deref() {
+                captured.insert("TargetDBInstanceIdentifier", value);
+            }
+        }
+        if requested.should_capture("DBInstanceClass") {
+            if let ::std::option::Option::Some(value) = input.db_instance_class.as_deref() {
+                captured.insert("DBInstanceClass", value);
+            }
+        }
+        if requested.should_capture("AvailabilityZone") {
+            if let ::std::option::Option::Some(value) = input.availability_zone.as_deref() {
+                captured.insert("AvailabilityZone", value);
+            }
+        }
+        if requested.should_capture("DBSubnetGroupName") {
+            if let ::std::option::Option::Some(value) = input.db_subnet_group_name.as_deref() {
+                captured.insert("DBSubnetGroupName", value);
+            }
+        }
+        if requested.should_capture("LicenseModel") {
+            if let ::std::option::Option::Some(value) = input.license_model.as_deref() {
+                captured.insert("LicenseModel", value);
+            }
+        }
+        if requested.should_capture("DBName") {
+            if let ::std::option::Option::Some(value) = input.db_name.as_deref() {
+                captured.insert("DBName", value);
+            }
+        }
+        if requested.should_capture("Engine") {
+            if let ::std::option::Option::Some(value) = input.engine.as_deref() {
+                captured.insert("Engine", value);
+            }
+        }
+        if requested.should_capture("OptionGroupName") {
+            if let ::std::option::Option::Some(value) = input.option_group_name.as_deref() {
+                captured.insert("OptionGroupName", value);
+            }
+        }
+        if requested.should_capture("StorageType") {
+            if let ::std::option::Option::Some(value) = input.storage_type.as_deref() {
+                captured.insert("StorageType", value);
+            }
+        }
+        if requested.should_capture("TdeCredentialArn") {
+            if let ::std::option::Option::Some(value) = input.tde_credential_arn.as_deref() {
+                captured.insert("TdeCredentialArn", value);
+            }
+        }
+        if requested.should_capture("Domain") {
+            if let ::std::option::Option::Some(value) = input.domain.as_deref() {
+                captured.insert("Domain", value);
+            }
+        }
+        if requested.should_capture("DomainIAMRoleName") {
+            if let ::std::option::Option::Some(value) = input.domain_iam_role_name.as_deref() {
+                captured.insert("DomainIAMRoleName", value);
+            }
+        }
+        if requested.should_capture("DomainFqdn") {
+            if let ::std::option::Option::Some(value) = input.domain_fqdn.as_deref() {
+                captured.insert("DomainFqdn", value);
+            }
+        }
+        if requested.should_capture("DomainOu") {
+            if let ::std::option::Option::Some(value) = input.domain_ou.as_deref() {
+                captured.insert("DomainOu", value);
+            }
+        }
+        if requested.should_capture("DomainAuthSecretArn") {
+            if let ::std::option::Option::Some(value) = input.domain_auth_secret_arn.as_deref() {
+                captured.insert("DomainAuthSecretArn", value);
+            }
+        }
+        if requested.should_capture("DBParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.db_parameter_group_name.as_deref() {
+                captured.insert("DBParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("SourceDbiResourceId") {
+            if let ::std::option::Option::Some(value) = input.source_dbi_resource_id.as_deref() {
+                captured.insert("SourceDbiResourceId", value);
+            }
+        }
+        if requested.should_capture("NetworkType") {
+            if let ::std::option::Option::Some(value) = input.network_type.as_deref() {
+                captured.insert("NetworkType", value);
+            }
+        }
+        if requested.should_capture("SourceDBInstanceAutomatedBackupsArn") {
+            if let ::std::option::Option::Some(value) = input.source_db_instance_automated_backups_arn.as_deref() {
+                captured.insert("SourceDBInstanceAutomatedBackupsArn", value);
+            }
+        }
+        if requested.should_capture("BackupTarget") {
+            if let ::std::option::Option::Some(value) = input.backup_target.as_deref() {
+                captured.insert("BackupTarget", value);
+            }
+        }
+        if requested.should_capture("CustomIamInstanceProfile") {
+            if let ::std::option::Option::Some(value) = input.custom_iam_instance_profile.as_deref() {
+                captured.insert("CustomIamInstanceProfile", value);
+            }
+        }
+        if requested.should_capture("PreferredBackupWindow") {
+            if let ::std::option::Option::Some(value) = input.preferred_backup_window.as_deref() {
+                captured.insert("PreferredBackupWindow", value);
+            }
+        }
+        if requested.should_capture("CACertificateIdentifier") {
+            if let ::std::option::Option::Some(value) = input.ca_certificate_identifier.as_deref() {
+                captured.insert("CACertificateIdentifier", value);
+            }
+        }
+        if requested.should_capture("EngineLifecycleSupport") {
+            if let ::std::option::Option::Some(value) = input.engine_lifecycle_support.as_deref() {
+                captured.insert("EngineLifecycleSupport", value);
+            }
+        }
+        if requested.should_capture("MasterUserSecretKmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.master_user_secret_kms_key_id.as_deref() {
+                captured.insert("MasterUserSecretKmsKeyId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct RestoreDBInstanceToPointInTimeResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RestoreDBInstanceToPointInTimeResponseDeserializer {

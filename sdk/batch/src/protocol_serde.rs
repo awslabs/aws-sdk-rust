@@ -235,6 +235,8 @@ pub(crate) mod shape_ecs_properties;
 
 pub(crate) mod shape_ecs_properties_override;
 
+pub(crate) mod shape_ecs_settings;
+
 pub(crate) mod shape_eks_configuration;
 
 pub(crate) mod shape_eks_properties;
@@ -359,6 +361,8 @@ pub(crate) mod shape_list_jobs_by_consumable_resource_summary;
 
 pub(crate) mod shape_log_configuration;
 
+pub(crate) mod shape_managed_instances_provider;
+
 pub(crate) mod shape_mount_point;
 
 pub(crate) mod shape_network_configuration;
@@ -407,6 +411,8 @@ pub(crate) mod shape_task_properties_override;
 
 pub(crate) mod shape_ulimit;
 
+pub(crate) mod shape_update_managed_instances_provider_configuration;
+
 pub(crate) mod shape_volume;
 
 pub(crate) mod shape_array_properties_detail;
@@ -451,6 +457,12 @@ pub(crate) mod shape_host;
 
 pub(crate) mod shape_image_pull_secret;
 
+pub(crate) mod shape_infrastructure_optimization;
+
+pub(crate) mod shape_instance_launch_template;
+
+pub(crate) mod shape_instance_launch_template_update;
+
 pub(crate) mod shape_job_capacity_usage_summary_list;
 
 pub(crate) mod shape_job_dependency_list;
@@ -489,6 +501,8 @@ pub(crate) mod shape_array_job_status_summary;
 
 pub(crate) mod shape_attempt_detail;
 
+pub(crate) mod shape_capacity_reservation_request;
+
 pub(crate) mod shape_consumable_resource_list;
 
 pub(crate) mod shape_ec2_configuration_list;
@@ -525,11 +539,19 @@ pub(crate) mod shape_firelens_configuration;
 
 pub(crate) mod shape_front_of_quota_share_job_summary;
 
+pub(crate) mod shape_instance_requirements_request;
+
 pub(crate) mod shape_job_capacity_usage_summary;
 
 pub(crate) mod shape_list_ecs_task_details;
 
 pub(crate) mod shape_list_ecs_task_properties;
+
+pub(crate) mod shape_managed_instances_local_storage_configuration;
+
+pub(crate) mod shape_managed_instances_network_configuration;
+
+pub(crate) mod shape_managed_instances_storage_configuration;
 
 pub(crate) mod shape_mount_points;
 

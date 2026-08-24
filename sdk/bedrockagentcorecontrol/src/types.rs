@@ -115,6 +115,10 @@ pub use crate::types::_evaluator_status::EvaluatorStatus;
 
 pub use crate::types::_included_data::IncludedData;
 
+pub use crate::types::_evaluator_type::EvaluatorType;
+
+pub use crate::types::_provider::Provider;
+
 pub use crate::types::_gateway_rate_limit_status::GatewayRateLimitStatus;
 
 pub use crate::types::_gateway_protocol_type::GatewayProtocolType;
@@ -253,6 +257,8 @@ pub use crate::types::_private_key_jwt_config::PrivateKeyJwtConfig;
 
 pub use crate::types::_payment_connector_type::PaymentConnectorType;
 
+pub use crate::types::_payment_connector_provision_mode::PaymentConnectorProvisionMode;
+
 pub use crate::types::_payment_connector_status::PaymentConnectorStatus;
 
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpoint;
@@ -318,6 +324,8 @@ pub use crate::types::_evaluator_summary::EvaluatorSummary;
 pub use crate::types::_llm_as_a_judge_evaluator_config::LlmAsAJudgeEvaluatorConfig;
 
 pub use crate::types::_code_based_evaluator_config::CodeBasedEvaluatorConfig;
+
+pub use crate::types::_derived_evaluator_config::DerivedEvaluatorConfig;
 
 pub use crate::types::_batch_put_limit_entry::BatchPutLimitEntry;
 
@@ -404,6 +412,8 @@ pub use crate::types::_memory_summary::MemorySummary;
 pub use crate::types::_memory_strategy_input::MemoryStrategyInput;
 
 pub use crate::types::_indexed_key::IndexedKey;
+
+pub use crate::types::_namespace_key_entry::NamespaceKeyEntry;
 
 pub use crate::types::_custom_oauth2_provider_config_output::CustomOauth2ProviderConfigOutput;
 
@@ -533,8 +543,6 @@ pub use crate::types::_instance_lifecycle_configuration::InstanceLifecycleConfig
 
 pub use crate::types::_root_volume_configuration::RootVolumeConfiguration;
 
-pub use crate::types::_evaluator_type::EvaluatorType;
-
 pub use crate::types::_rating_scale::RatingScale;
 
 pub use crate::types::_evaluator_model_config::EvaluatorModelConfig;
@@ -621,6 +629,8 @@ pub use crate::types::_episodic_memory_strategy_input::EpisodicMemoryStrategyInp
 
 pub use crate::types::_metadata_value_type::MetadataValueType;
 
+pub use crate::types::_namespace_key_validation::NamespaceKeyValidation;
+
 pub use crate::types::_stream_delivery_resource::StreamDeliveryResource;
 
 pub use crate::types::_memory_strategy::MemoryStrategy;
@@ -702,6 +712,8 @@ pub use crate::types::_http_api_schema_configuration::HttpApiSchemaConfiguration
 pub use crate::types::_passthrough_protocol_type::PassthroughProtocolType;
 
 pub use crate::types::_stickiness_configuration::StickinessConfiguration;
+
+pub use crate::types::_static_query_parameter_conflict_resolution::StaticQueryParameterConflictResolution;
 
 pub use crate::types::_http_connector_source::HttpConnectorSource;
 
@@ -1205,6 +1217,8 @@ mod _dataset_version_summary;
 
 mod _delete_memory_strategy_input;
 
+mod _derived_evaluator_config;
+
 mod _descriptor_type;
 
 mod _descriptors;
@@ -1577,6 +1591,10 @@ mod _modify_strategy_configuration;
 
 mod _monitoring;
 
+mod _namespace_key_entry;
+
+mod _namespace_key_validation;
+
 mod _network_configuration;
 
 mod _network_mode;
@@ -1622,6 +1640,8 @@ mod _override_type;
 mod _passthrough_protocol_type;
 
 mod _passthrough_target_configuration;
+
+mod _payment_connector_provision_mode;
 
 mod _payment_connector_status;
 
@@ -1688,6 +1708,8 @@ mod _private_key_jwt_config;
 mod _private_key_source;
 
 mod _protocol_configuration;
+
+mod _provider;
 
 mod _provider_prefix;
 
@@ -1812,6 +1834,8 @@ mod _slack_oauth2_provider_config_input;
 mod _slack_oauth2_provider_config_output;
 
 mod _static_override;
+
+mod _static_query_parameter_conflict_resolution;
 
 mod _static_route;
 

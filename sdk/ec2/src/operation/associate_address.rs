@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AssociateAddress")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                AssociateAddressTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
     }
 }
 
+#[derive(Debug)]
+struct AssociateAddressTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssociateAddressTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "AssociateAddressTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<AssociateAddressInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("AllocationId") {
+            if let ::std::option::Option::Some(value) = input.allocation_id.as_deref() {
+                captured.insert("AllocationId", value);
+            }
+        }
+        if requested.should_capture("InstanceId") {
+            if let ::std::option::Option::Some(value) = input.instance_id.as_deref() {
+                captured.insert("InstanceId", value);
+            }
+        }
+        if requested.should_capture("PublicIp") {
+            if let ::std::option::Option::Some(value) = input.public_ip.as_deref() {
+                captured.insert("PublicIp", value);
+            }
+        }
+        if requested.should_capture("NetworkInterfaceId") {
+            if let ::std::option::Option::Some(value) = input.network_interface_id.as_deref() {
+                captured.insert("NetworkInterfaceId", value);
+            }
+        }
+        if requested.should_capture("PrivateIpAddress") {
+            if let ::std::option::Option::Some(value) = input.private_ip_address.as_deref() {
+                captured.insert("PrivateIpAddress", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct AssociateAddressResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AssociateAddressResponseDeserializer {

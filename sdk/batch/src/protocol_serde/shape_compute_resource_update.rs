@@ -109,5 +109,24 @@ pub fn ser_compute_resource_update(
         crate::protocol_serde::shape_compute_scaling_policy::ser_compute_scaling_policy(&mut object_32, var_31)?;
         object_32.finish();
     }
+    if let Some(var_33) = &input.managed_instances_provider {
+        #[allow(unused_mut)]
+        let mut object_34 = object.key("managedInstancesProvider").start_object();
+        crate::protocol_serde::shape_update_managed_instances_provider_configuration::ser_update_managed_instances_provider_configuration(
+            &mut object_34,
+            var_33,
+        )?;
+        object_34.finish();
+    }
+    if let Some(var_35) = &input.capacity_tags {
+        #[allow(unused_mut)]
+        let mut object_36 = object.key("capacityTags").start_object();
+        for (key_37, value_38) in var_35 {
+            {
+                object_36.key(key_37.as_str()).string(value_38.as_str());
+            }
+        }
+        object_36.finish();
+    }
     Ok(())
 }

@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Allocat
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("AllocateAddress")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                AllocateAddressTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Allocat
     }
 }
 
+#[derive(Debug)]
+struct AllocateAddressTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AllocateAddressTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "AllocateAddressTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<AllocateAddressInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Address") {
+            if let ::std::option::Option::Some(value) = input.address.as_deref() {
+                captured.insert("Address", value);
+            }
+        }
+        if requested.should_capture("PublicIpv4Pool") {
+            if let ::std::option::Option::Some(value) = input.public_ipv4_pool.as_deref() {
+                captured.insert("PublicIpv4Pool", value);
+            }
+        }
+        if requested.should_capture("NetworkBorderGroup") {
+            if let ::std::option::Option::Some(value) = input.network_border_group.as_deref() {
+                captured.insert("NetworkBorderGroup", value);
+            }
+        }
+        if requested.should_capture("CustomerOwnedIpv4Pool") {
+            if let ::std::option::Option::Some(value) = input.customer_owned_ipv4_pool.as_deref() {
+                captured.insert("CustomerOwnedIpv4Pool", value);
+            }
+        }
+        if requested.should_capture("IpamPoolId") {
+            if let ::std::option::Option::Some(value) = input.ipam_pool_id.as_deref() {
+                captured.insert("IpamPoolId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct AllocateAddressResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AllocateAddressResponseDeserializer {

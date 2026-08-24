@@ -202,11 +202,55 @@ impl Builder {
         for framework_metadata in config_bag.load::<::aws_types::sdk_ua_metadata::FrameworkMetadata>() {
             builder.push_framework_metadata(framework_metadata.clone());
         }
+        builder.set_account_id_endpoint_mode(config_bag.load::<::aws_types::endpoint_config::AccountIdEndpointMode>().cloned());
         builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
         builder.set_use_dual_stack(config_bag.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0));
         builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
         builder.set_region(config_bag.load::<crate::config::Region>().cloned());
         builder
+    }
+    /// Names operation-input members whose values are captured *and* emitted as
+    /// attributes on the client's built-in metrics (e.g. `["Bucket"]`).
+    ///
+    /// Emitting implies capture, so an emitted member is also readable in-process
+    /// via `CapturedTelemetryAttributes` on the config bag. Names are Smithy input
+    /// member names; only string-valued, non-sensitive members are eligible, and
+    /// naming any other member has no effect. Off by default.
+    ///
+    /// Prefer bounded identifiers here: an emitted member becomes a metric label, so
+    /// high-cardinality values (like object keys) fragment the metrics and inflate
+    /// cost. Use [`Self::capture_input_attributes`] for values you want to read
+    /// in-process without emitting them on the metrics.
+    pub fn emit_input_attributes(mut self, names: impl ::std::iter::IntoIterator<Item = impl ::std::convert::Into<::std::string::String>>) -> Self {
+        let mut requested = self
+            .config
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .cloned()
+            .unwrap_or_default();
+        requested.emit(names.into_iter().map(|n| n.into()));
+        self.config.store_put(requested);
+        self
+    }
+
+    /// Names operation-input members whose values are captured into
+    /// `CapturedTelemetryAttributes` for in-process reads (e.g. from a custom
+    /// interceptor), but are **not** emitted on the built-in metrics.
+    ///
+    /// Use this for values you need during the operation lifecycle but do not want on
+    /// the metric label set (for example, high-cardinality identifiers). Names follow
+    /// the same eligibility rules as [`Self::emit_input_attributes`]. Off by default.
+    pub fn capture_input_attributes(
+        mut self,
+        names: impl ::std::iter::IntoIterator<Item = impl ::std::convert::Into<::std::string::String>>,
+    ) -> Self {
+        let mut requested = self
+            .config
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .cloned()
+            .unwrap_or_default();
+        requested.capture_only(names.into_iter().map(|n| n.into()));
+        self.config.store_put(requested);
+        self
     }
     /// Set the [`StalledStreamProtectionConfig`](crate::config::StalledStreamProtectionConfig)
     /// to configure protection for stalled streams.
@@ -577,6 +621,15 @@ impl Builder {
     /// let retry_config = RetryConfig::standard().with_max_attempts(5);
     /// let config = Config::builder().retry_config(retry_config).build();
     /// ```
+    ///
+    /// # Retry token bucket
+    ///
+    /// [`RetryConfig`](::aws_smithy_types::retry::RetryConfig) controls *how many* times to retry and *how long* to back
+    /// off. Retries are **also** gated by a retry token bucket (also called the retry quota) that
+    /// is shared across a [`RetryPartition`](::aws_smithy_runtime::client::retries::RetryPartition). To configure the token bucket — for
+    /// example, to set
+    /// its capacity or to give a workload its own bucket — see [`Self::retry_partition`] and
+    /// [`RetryPartition::custom`](::aws_smithy_runtime::client::retries::RetryPartition::custom).
     pub fn retry_config(mut self, retry_config: ::aws_smithy_types::retry::RetryConfig) -> Self {
         self.set_retry_config(Some(retry_config));
         self
@@ -720,7 +773,9 @@ impl Builder {
     ///
     /// # Notes
     ///
-    /// - This is an advanced setting — most users won't need to modify it.
+    /// - This is an advanced setting. A common reason to set it is to size or isolate the retry
+    ///   token bucket — for example, giving a high-throughput workload its own bucket. Otherwise
+    ///   most users won't need to modify it.
     /// - A configured client rate limiter has no effect unless [`RetryConfig::adaptive`](::aws_smithy_types::retry::RetryConfig::adaptive) is used.
     ///
     /// # Examples
@@ -735,6 +790,21 @@ impl Builder {
     ///     .retry_partition(RetryPartition::custom("custom")
     ///         .token_bucket(token_bucket)
     ///         .build()
+    ///     )
+    ///     .build();
+    /// ```
+    ///
+    /// Sizing the retry token bucket (for example, for a high-throughput workload), or giving a
+    /// workload its own bucket:
+    /// ```no_run
+    /// use aws_sdk_kinesis::config::Config;
+    /// use aws_sdk_kinesis::config::retry::{RetryPartition, TokenBucket};
+    ///
+    /// let config = Config::builder()
+    ///     .retry_partition(
+    ///         RetryPartition::custom("high-throughput")
+    ///             .token_bucket(TokenBucket::builder().capacity(5000).build())
+    ///             .build(),
     ///     )
     ///     .build();
     /// ```
@@ -1107,6 +1177,19 @@ impl Builder {
         self.config.store_or_unset(gen);
         self
     }
+    /// The AccountId Endpoint Mode.
+    pub fn account_id_endpoint_mode(mut self, account_id_endpoint_mode: ::aws_types::endpoint_config::AccountIdEndpointMode) -> Self {
+        self.set_account_id_endpoint_mode(::std::option::Option::Some(account_id_endpoint_mode));
+        self
+    }
+    /// The AccountId Endpoint Mode.
+    pub fn set_account_id_endpoint_mode(
+        &mut self,
+        account_id_endpoint_mode: ::std::option::Option<::aws_types::endpoint_config::AccountIdEndpointMode>,
+    ) -> &mut Self {
+        self.config.store_or_unset(account_id_endpoint_mode);
+        self
+    }
     /// Sets the endpoint URL used to communicate with this service.
     ///
     /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
@@ -1370,6 +1453,9 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
             ::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new(),
         ));
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            crate::account_id_endpoint::AccountIdEndpointFeatureTrackerInterceptor,
+        ));
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
@@ -1494,6 +1580,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
                     .or_else(|| input.endpoint_url().map(|s| s.to_string())),
             );
         }
+        builder.set_account_id_endpoint_mode(input.account_id_endpoint_mode().cloned());
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());
@@ -1639,6 +1726,8 @@ pub mod http;
 pub mod interceptors;
 
 /// Retry configuration.
+///
+/// [`RetryConfig`](crate::config::retry::RetryConfig) sets the number of retry attempts and the backoff between them. Retries are additionally bounded by a retry token bucket (a shared retry quota): [`TokenBucket`](crate::config::retry::TokenBucket) holds the tokens and [`RetryPartition`](crate::config::retry::RetryPartition) determines which clients and operations share one. To size the token bucket or give a workload its own, use [`Builder::retry_partition`](crate::config::Builder::retry_partition).
 pub mod retry;
 
 /// Timeout configuration.

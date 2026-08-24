@@ -6,7 +6,7 @@
 pub struct JiraConfiguration {
     /// <p>The URL of the associated Jira issue.</p>
     pub jira_issue_url: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the Jira configuration was last synced.</p>
     pub last_synced_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl JiraConfiguration {
@@ -14,7 +14,7 @@ impl JiraConfiguration {
     pub fn jira_issue_url(&self) -> ::std::option::Option<&str> {
         self.jira_issue_url.as_deref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the Jira configuration was last synced.</p>
     pub fn last_synced_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_synced_time.as_ref()
     }
@@ -48,17 +48,17 @@ impl JiraConfigurationBuilder {
     pub fn get_jira_issue_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.jira_issue_url
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the Jira configuration was last synced.</p>
     pub fn last_synced_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_synced_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the Jira configuration was last synced.</p>
     pub fn set_last_synced_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_synced_time = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the Jira configuration was last synced.</p>
     pub fn get_last_synced_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_synced_time
     }

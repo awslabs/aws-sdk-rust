@@ -141,6 +141,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for InvokeA
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("InvokeAgentRuntimeCommand")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                InvokeAgentRuntimeCommandTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 InvokeAgentRuntimeCommandEndpointParamsInterceptor,
             ))
             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
@@ -157,6 +160,94 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for InvokeA
     }
 }
 
+#[derive(Debug)]
+struct InvokeAgentRuntimeCommandTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeAgentRuntimeCommandTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "InvokeAgentRuntimeCommandTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<InvokeAgentRuntimeCommandInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("contentType") {
+            if let ::std::option::Option::Some(value) = input.content_type.as_deref() {
+                captured.insert("contentType", value);
+            }
+        }
+        if requested.should_capture("accept") {
+            if let ::std::option::Option::Some(value) = input.accept.as_deref() {
+                captured.insert("accept", value);
+            }
+        }
+        if requested.should_capture("runtimeSessionId") {
+            if let ::std::option::Option::Some(value) = input.runtime_session_id.as_deref() {
+                captured.insert("runtimeSessionId", value);
+            }
+        }
+        if requested.should_capture("traceId") {
+            if let ::std::option::Option::Some(value) = input.trace_id.as_deref() {
+                captured.insert("traceId", value);
+            }
+        }
+        if requested.should_capture("traceParent") {
+            if let ::std::option::Option::Some(value) = input.trace_parent.as_deref() {
+                captured.insert("traceParent", value);
+            }
+        }
+        if requested.should_capture("traceState") {
+            if let ::std::option::Option::Some(value) = input.trace_state.as_deref() {
+                captured.insert("traceState", value);
+            }
+        }
+        if requested.should_capture("baggage") {
+            if let ::std::option::Option::Some(value) = input.baggage.as_deref() {
+                captured.insert("baggage", value);
+            }
+        }
+        if requested.should_capture("agentRuntimeArn") {
+            if let ::std::option::Option::Some(value) = input.agent_runtime_arn.as_deref() {
+                captured.insert("agentRuntimeArn", value);
+            }
+        }
+        if requested.should_capture("qualifier") {
+            if let ::std::option::Option::Some(value) = input.qualifier.as_deref() {
+                captured.insert("qualifier", value);
+            }
+        }
+        if requested.should_capture("accountId") {
+            if let ::std::option::Option::Some(value) = input.account_id.as_deref() {
+                captured.insert("accountId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct InvokeAgentRuntimeCommandResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for InvokeAgentRuntimeCommandResponseDeserializer {

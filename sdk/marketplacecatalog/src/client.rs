@@ -169,11 +169,15 @@ pub mod customize;
 
 mod delete_resource_policy;
 
+mod describe_assessment;
+
 mod describe_change_set;
 
 mod describe_entity;
 
 mod get_resource_policy;
+
+mod list_assessments;
 
 mod list_change_sets;
 

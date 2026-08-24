@@ -144,6 +144,8 @@ mod create_order;
 
 mod create_outpost;
 
+mod create_private_connectivity_config;
+
 mod create_quote;
 
 mod create_renewal;
@@ -198,6 +200,8 @@ mod get_outpost_billing_information;
 mod get_outpost_instance_types;
 
 mod get_outpost_supported_instance_types;
+
+mod get_private_connectivity_config;
 
 mod get_quote;
 

@@ -48,21 +48,33 @@ pub fn ser_create_memory_input_input(
     if let Some(var_14) = &input.name {
         object.key("name").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.stream_delivery_resources {
-        #[allow(unused_mut)]
-        let mut object_16 = object.key("streamDeliveryResources").start_object();
-        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_16, var_15)?;
-        object_16.finish();
-    }
-    if let Some(var_17) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_18 = object.key("tags").start_object();
-        for (key_19, value_20) in var_17 {
+    if let Some(var_15) = &input.namespace_keys {
+        let mut array_16 = object.key("namespaceKeys").start_array();
+        for item_17 in var_15 {
             {
-                object_18.key(key_19.as_str()).string(value_20.as_str());
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_namespace_key_entry::ser_namespace_key_entry(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
-        object_18.finish();
+        array_16.finish();
+    }
+    if let Some(var_19) = &input.stream_delivery_resources {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("streamDeliveryResources").start_object();
+        crate::protocol_serde::shape_stream_delivery_resources::ser_stream_delivery_resources(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_22 = object.key("tags").start_object();
+        for (key_23, value_24) in var_21 {
+            {
+                object_22.key(key_23.as_str()).string(value_24.as_str());
+            }
+        }
+        object_22.finish();
     }
     Ok(())
 }

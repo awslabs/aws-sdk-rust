@@ -239,6 +239,20 @@ impl CreateRouterOutputFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn fabric_configuration(mut self, input: crate::types::FabricConfiguration) -> Self {
+        self.inner = self.inner.fabric_configuration(input);
+        self
+    }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn set_fabric_configuration(mut self, input: ::std::option::Option<crate::types::FabricConfiguration>) -> Self {
+        self.inner = self.inner.set_fabric_configuration(input);
+        self
+    }
+    /// <p>The fabric configuration settings for the router output.</p>
+    pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
+        self.inner.get_fabric_configuration()
+    }
     /// <p>A unique identifier for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

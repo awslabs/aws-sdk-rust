@@ -449,6 +449,15 @@ pub(crate) fn create_online_evaluation_config_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn subscription_required_exception_correct_errors(
+    mut builder: crate::types::error::builders::SubscriptionRequiredExceptionBuilder,
+) -> crate::types::error::builders::SubscriptionRequiredExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_payment_connector_output_output_correct_errors(
     mut builder: crate::operation::create_payment_connector::builders::CreatePaymentConnectorOutputBuilder,
 ) -> crate::operation::create_payment_connector::builders::CreatePaymentConnectorOutputBuilder {
@@ -958,12 +967,6 @@ pub(crate) fn get_agent_runtime_output_output_correct_errors(
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
-    }
-    if builder.network_configuration.is_none() {
-        builder.network_configuration = {
-            let builder = crate::types::builders::NetworkConfigurationBuilder::default();
-            crate::serde_util::network_configuration_correct_errors(builder).build().ok()
-        }
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AgentRuntimeStatus>().ok()
@@ -2926,15 +2929,6 @@ pub(crate) fn harness_endpoint_correct_errors(
     builder
 }
 
-pub(crate) fn network_configuration_correct_errors(
-    mut builder: crate::types::builders::NetworkConfigurationBuilder,
-) -> crate::types::builders::NetworkConfigurationBuilder {
-    if builder.network_mode.is_none() {
-        builder.network_mode = "no value was set".parse::<crate::types::NetworkMode>().ok()
-    }
-    builder
-}
-
 pub(crate) fn browser_network_configuration_correct_errors(
     mut builder: crate::types::builders::BrowserNetworkConfigurationBuilder,
 ) -> crate::types::builders::BrowserNetworkConfigurationBuilder {
@@ -3015,6 +3009,15 @@ pub(crate) fn browser_signing_config_output_correct_errors(
     builder
 }
 
+pub(crate) fn capacity_provider_configuration_correct_errors(
+    mut builder: crate::types::builders::CapacityProviderConfigurationBuilder,
+) -> crate::types::builders::CapacityProviderConfigurationBuilder {
+    if builder.capacity_provider_arn.is_none() {
+        builder.capacity_provider_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn clustering_config_correct_errors(
     mut builder: crate::types::builders::ClusteringConfigBuilder,
 ) -> crate::types::builders::ClusteringConfigBuilder {
@@ -3032,6 +3035,15 @@ pub(crate) fn gateway_policy_engine_configuration_correct_errors(
     }
     if builder.mode.is_none() {
         builder.mode = "no value was set".parse::<crate::types::GatewayPolicyEngineMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn network_configuration_correct_errors(
+    mut builder: crate::types::builders::NetworkConfigurationBuilder,
+) -> crate::types::builders::NetworkConfigurationBuilder {
+    if builder.network_mode.is_none() {
+        builder.network_mode = "no value was set".parse::<crate::types::NetworkMode>().ok()
     }
     builder
 }
@@ -3474,6 +3486,18 @@ pub(crate) fn dataset_version_summary_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn derived_evaluator_config_correct_errors(
+    mut builder: crate::types::builders::DerivedEvaluatorConfigBuilder,
+) -> crate::types::builders::DerivedEvaluatorConfigBuilder {
+    if builder.base_evaluator_id.is_none() {
+        builder.base_evaluator_id = Some(Default::default())
+    }
+    if builder.model_config.is_none() {
+        builder.model_config = Some(crate::types::EvaluatorModelConfig::Unknown)
     }
     builder
 }
@@ -4603,6 +4627,15 @@ pub(crate) fn memory_strategy_correct_errors(
     }
     if builder.namespace_templates.is_none() {
         builder.namespace_templates = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn namespace_key_entry_correct_errors(
+    mut builder: crate::types::builders::NamespaceKeyEntryBuilder,
+) -> crate::types::builders::NamespaceKeyEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
     }
     builder
 }

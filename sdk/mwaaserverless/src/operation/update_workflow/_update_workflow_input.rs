@@ -7,6 +7,8 @@ pub struct UpdateWorkflowInput {
     pub workflow_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location where the updated workflow definition file is stored.</p>
     pub definition_s3_location: ::std::option::Option<crate::types::DefinitionS3Location>,
+    /// <p>The location of code artifacts in Amazon S3 for the updated workflow. The service copies the code from this location at the time of the request.</p>
+    pub code: ::std::option::Option<crate::types::Code>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Managed Workflows for Apache Airflow Serverless assumes when it executes the updated workflow.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An updated description for the workflow.</p>
@@ -28,6 +30,10 @@ impl UpdateWorkflowInput {
     /// <p>The Amazon S3 location where the updated workflow definition file is stored.</p>
     pub fn definition_s3_location(&self) -> ::std::option::Option<&crate::types::DefinitionS3Location> {
         self.definition_s3_location.as_ref()
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the updated workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn code(&self) -> ::std::option::Option<&crate::types::Code> {
+        self.code.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Managed Workflows for Apache Airflow Serverless assumes when it executes the updated workflow.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -67,6 +73,7 @@ impl UpdateWorkflowInput {
 pub struct UpdateWorkflowInputBuilder {
     pub(crate) workflow_arn: ::std::option::Option<::std::string::String>,
     pub(crate) definition_s3_location: ::std::option::Option<crate::types::DefinitionS3Location>,
+    pub(crate) code: ::std::option::Option<crate::types::Code>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) logging_configuration: ::std::option::Option<crate::types::LoggingConfiguration>,
@@ -104,6 +111,20 @@ impl UpdateWorkflowInputBuilder {
     /// <p>The Amazon S3 location where the updated workflow definition file is stored.</p>
     pub fn get_definition_s3_location(&self) -> &::std::option::Option<crate::types::DefinitionS3Location> {
         &self.definition_s3_location
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the updated workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn code(mut self, input: crate::types::Code) -> Self {
+        self.code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the updated workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::Code>) -> Self {
+        self.code = input;
+        self
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the updated workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::Code> {
+        &self.code
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Managed Workflows for Apache Airflow Serverless assumes when it executes the updated workflow.</p>
     /// This field is required.
@@ -197,6 +218,7 @@ impl UpdateWorkflowInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_workflow::UpdateWorkflowInput {
             workflow_arn: self.workflow_arn,
             definition_s3_location: self.definition_s3_location,
+            code: self.code,
             role_arn: self.role_arn,
             description: self.description,
             logging_configuration: self.logging_configuration,

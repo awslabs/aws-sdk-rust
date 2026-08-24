@@ -213,6 +213,8 @@ mod get_approval_rule_template;
 
 mod get_blob;
 
+mod get_blob_differences;
+
 mod get_branch;
 
 mod get_comment;

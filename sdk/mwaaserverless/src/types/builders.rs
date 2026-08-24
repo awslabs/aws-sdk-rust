@@ -9,6 +9,8 @@ pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
 
 pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
 
+pub use crate::types::_s3_location::S3LocationBuilder;
+
 pub use crate::types::_workflow_run_detail::WorkflowRunDetailBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;

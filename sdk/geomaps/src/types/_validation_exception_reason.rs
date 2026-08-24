@@ -46,13 +46,9 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
-    /// The input cannot be parsed. For example a required JSON document, ARN identifier,
-    /// date value, or numeric field cannot be parsed.
-    ///
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
-    /// The input is present and parsable, but it is otherwise invalid. For example, a
-    /// required numeric argument is outside the allowed range.
-    ///
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
     /// The required input is missing.
     Missing,

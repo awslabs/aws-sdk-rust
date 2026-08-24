@@ -13,6 +13,10 @@ pub use crate::types::_analysis_definition::AnalysisDefinitionBuilder;
 
 pub use crate::types::_validation_strategy::ValidationStrategyBuilder;
 
+pub use crate::types::_applicable_to::ApplicableToBuilder;
+
+pub use crate::types::_approval_policy::ApprovalPolicyBuilder;
+
 pub use crate::types::_brand_definition::BrandDefinitionBuilder;
 
 pub use crate::types::_brand_detail::BrandDetailBuilder;
@@ -121,6 +125,8 @@ pub use crate::types::_data_set_refresh_properties::DataSetRefreshPropertiesBuil
 
 pub use crate::types::_data_source::DataSourceBuilder;
 
+pub use crate::types::_dlp_setting_details::DlpSettingDetailsBuilder;
+
 pub use crate::types::_flow_detail::FlowDetailBuilder;
 
 pub use crate::types::_folder::FolderBuilder;
@@ -132,6 +138,8 @@ pub use crate::types::_ingestion::IngestionBuilder;
 pub use crate::types::_q_data_key::QDataKeyBuilder;
 
 pub use crate::types::_knowledge_base::KnowledgeBaseBuilder;
+
+pub use crate::types::_limits_profile::LimitsProfileBuilder;
 
 pub use crate::types::_namespace_info_v2::NamespaceInfoV2Builder;
 
@@ -174,6 +182,12 @@ pub use crate::types::_invalid_topic_reviewed_answer::InvalidTopicReviewedAnswer
 pub use crate::types::_batch_delete_knowledge_base_success::BatchDeleteKnowledgeBaseSuccessBuilder;
 
 pub use crate::types::_batch_delete_knowledge_base_failure::BatchDeleteKnowledgeBaseFailureBuilder;
+
+pub use crate::types::_user_limits_entry::UserLimitsEntryBuilder;
+
+pub use crate::types::_user_limits::UserLimitsBuilder;
+
+pub use crate::types::_batch_describe_user_limits_error::BatchDescribeUserLimitsErrorBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
@@ -321,6 +335,8 @@ pub use crate::types::_web_proxy_credentials::WebProxyCredentialsBuilder;
 
 pub use crate::types::_o_auth_client_credentials::OAuthClientCredentialsBuilder;
 
+pub use crate::types::_microsoft_purview_provider_config::MicrosoftPurviewProviderConfigBuilder;
+
 pub use crate::types::_permission::PermissionBuilder;
 
 pub use crate::types::_kb_template_configuration::KbTemplateConfigurationBuilder;
@@ -330,6 +346,8 @@ pub use crate::types::_image_extraction_configuration::ImageExtractionConfigurat
 pub use crate::types::_audio_extraction_configuration::AudioExtractionConfigurationBuilder;
 
 pub use crate::types::_video_extraction_configuration::VideoExtractionConfigurationBuilder;
+
+pub use crate::types::_profile_limit_value::ProfileLimitValueBuilder;
 
 pub use crate::types::_refresh_frequency::RefreshFrequencyBuilder;
 
@@ -438,6 +456,8 @@ pub use crate::types::_dashboard_summary::DashboardSummaryBuilder;
 pub use crate::types::_dashboard_version_summary::DashboardVersionSummaryBuilder;
 
 pub use crate::types::_data_set_summary::DataSetSummaryBuilder;
+
+pub use crate::types::_dlp_setting_summary::DlpSettingSummaryBuilder;
 
 pub use crate::types::_flow_summary::FlowSummaryBuilder;
 
@@ -625,6 +645,8 @@ pub use crate::types::_manifest_file_location::ManifestFileLocationBuilder;
 
 pub use crate::types::_o_auth_parameters::OAuthParametersBuilder;
 
+pub use crate::types::_microsoft_purview_credentials::MicrosoftPurviewCredentialsBuilder;
+
 pub use crate::types::_schedule_refresh_on_entity::ScheduleRefreshOnEntityBuilder;
 
 pub use crate::types::_data_set_configuration::DataSetConfigurationBuilder;
@@ -669,6 +691,8 @@ pub use crate::types::_asset_bundle_export_job_dashboard_override_properties::As
 
 pub use crate::types::_asset_bundle_export_job_folder_override_properties::AssetBundleExportJobFolderOverridePropertiesBuilder;
 
+pub use crate::types::_asset_bundle_export_job_topic_v2_override_properties::AssetBundleExportJobTopicV2OverridePropertiesBuilder;
+
 pub use crate::types::_asset_bundle_import_job_vpc_connection_override_parameters::AssetBundleImportJobVpcConnectionOverrideParametersBuilder;
 
 pub use crate::types::_asset_bundle_import_job_refresh_schedule_override_parameters::AssetBundleImportJobRefreshScheduleOverrideParametersBuilder;
@@ -685,6 +709,8 @@ pub use crate::types::_asset_bundle_import_job_dashboard_override_parameters::As
 
 pub use crate::types::_asset_bundle_import_job_folder_override_parameters::AssetBundleImportJobFolderOverrideParametersBuilder;
 
+pub use crate::types::_asset_bundle_import_job_topic_v2_override_parameters::AssetBundleImportJobTopicV2OverrideParametersBuilder;
+
 pub use crate::types::_asset_bundle_import_job_data_source_override_permissions::AssetBundleImportJobDataSourceOverridePermissionsBuilder;
 
 pub use crate::types::_asset_bundle_import_job_data_set_override_permissions::AssetBundleImportJobDataSetOverridePermissionsBuilder;
@@ -696,6 +722,8 @@ pub use crate::types::_asset_bundle_import_job_analysis_override_permissions::As
 pub use crate::types::_asset_bundle_import_job_dashboard_override_permissions::AssetBundleImportJobDashboardOverridePermissionsBuilder;
 
 pub use crate::types::_asset_bundle_import_job_folder_override_permissions::AssetBundleImportJobFolderOverridePermissionsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_topic_v2_override_permissions::AssetBundleImportJobTopicV2OverridePermissionsBuilder;
 
 pub use crate::types::_asset_bundle_import_job_vpc_connection_override_tags::AssetBundleImportJobVpcConnectionOverrideTagsBuilder;
 
@@ -710,6 +738,8 @@ pub use crate::types::_asset_bundle_import_job_analysis_override_tags::AssetBund
 pub use crate::types::_asset_bundle_import_job_dashboard_override_tags::AssetBundleImportJobDashboardOverrideTagsBuilder;
 
 pub use crate::types::_asset_bundle_import_job_folder_override_tags::AssetBundleImportJobFolderOverrideTagsBuilder;
+
+pub use crate::types::_asset_bundle_import_job_topic_v2_override_tags::AssetBundleImportJobTopicV2OverrideTagsBuilder;
 
 pub use crate::types::_snapshot_anonymous_user_redacted::SnapshotAnonymousUserRedactedBuilder;
 
@@ -750,6 +780,8 @@ pub use crate::types::_topic_sort_clause::TopicSortClauseBuilder;
 pub use crate::types::_topic_ir_contribution_analysis::TopicIrContributionAnalysisBuilder;
 
 pub use crate::types::_visual_options::VisualOptionsBuilder;
+
+pub use crate::types::_effective_limit::EffectiveLimitBuilder;
 
 pub use crate::types::_data_set_reference::DataSetReferenceBuilder;
 
@@ -836,6 +868,8 @@ pub use crate::types::_row_level_permission_configuration::RowLevelPermissionCon
 pub use crate::types::_table_semantic_metadata::TableSemanticMetadataBuilder;
 
 pub use crate::types::_data_set_semantic_description::DataSetSemanticDescriptionBuilder;
+
+pub use crate::types::_label_action_mapping::LabelActionMappingBuilder;
 
 pub use crate::types::_data_set_schema::DataSetSchemaBuilder;
 

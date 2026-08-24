@@ -259,6 +259,16 @@ pub(crate) fn reflens_list_evaluation_forms_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_extraction_definitions_output_output_next_token(
+    input: &crate::operation::list_extraction_definitions::ListExtractionDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_flow_associations_output_output_next_token(
     input: &crate::operation::list_flow_associations::ListFlowAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1033,6 +1043,13 @@ pub(crate) fn lens_list_evaluation_forms_output_output_evaluation_form_summary_l
     input: crate::operation::list_evaluation_forms::ListEvaluationFormsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormSummary>> {
     let input = input.evaluation_form_summary_list;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_extraction_definitions_output_output_extraction_definition_summary_list(
+    input: crate::operation::list_extraction_definitions::ListExtractionDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExtractionDefinitionSummary>> {
+    let input = input.extraction_definition_summary_list;
     ::std::option::Option::Some(input)
 }
 

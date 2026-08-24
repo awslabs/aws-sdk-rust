@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Restore
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RestoreFromClusterSnapshot")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RestoreFromClusterSnapshotTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,164 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Restore
     }
 }
 
+#[derive(Debug)]
+struct RestoreFromClusterSnapshotTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestoreFromClusterSnapshotTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "RestoreFromClusterSnapshotTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<RestoreFromClusterSnapshotInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ClusterIdentifier") {
+            if let ::std::option::Option::Some(value) = input.cluster_identifier.as_deref() {
+                captured.insert("ClusterIdentifier", value);
+            }
+        }
+        if requested.should_capture("SnapshotIdentifier") {
+            if let ::std::option::Option::Some(value) = input.snapshot_identifier.as_deref() {
+                captured.insert("SnapshotIdentifier", value);
+            }
+        }
+        if requested.should_capture("SnapshotArn") {
+            if let ::std::option::Option::Some(value) = input.snapshot_arn.as_deref() {
+                captured.insert("SnapshotArn", value);
+            }
+        }
+        if requested.should_capture("SnapshotClusterIdentifier") {
+            if let ::std::option::Option::Some(value) = input.snapshot_cluster_identifier.as_deref() {
+                captured.insert("SnapshotClusterIdentifier", value);
+            }
+        }
+        if requested.should_capture("AvailabilityZone") {
+            if let ::std::option::Option::Some(value) = input.availability_zone.as_deref() {
+                captured.insert("AvailabilityZone", value);
+            }
+        }
+        if requested.should_capture("ClusterSubnetGroupName") {
+            if let ::std::option::Option::Some(value) = input.cluster_subnet_group_name.as_deref() {
+                captured.insert("ClusterSubnetGroupName", value);
+            }
+        }
+        if requested.should_capture("OwnerAccount") {
+            if let ::std::option::Option::Some(value) = input.owner_account.as_deref() {
+                captured.insert("OwnerAccount", value);
+            }
+        }
+        if requested.should_capture("HsmClientCertificateIdentifier") {
+            if let ::std::option::Option::Some(value) = input.hsm_client_certificate_identifier.as_deref() {
+                captured.insert("HsmClientCertificateIdentifier", value);
+            }
+        }
+        if requested.should_capture("HsmConfigurationIdentifier") {
+            if let ::std::option::Option::Some(value) = input.hsm_configuration_identifier.as_deref() {
+                captured.insert("HsmConfigurationIdentifier", value);
+            }
+        }
+        if requested.should_capture("ElasticIp") {
+            if let ::std::option::Option::Some(value) = input.elastic_ip.as_deref() {
+                captured.insert("ElasticIp", value);
+            }
+        }
+        if requested.should_capture("ClusterParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.cluster_parameter_group_name.as_deref() {
+                captured.insert("ClusterParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("PreferredMaintenanceWindow") {
+            if let ::std::option::Option::Some(value) = input.preferred_maintenance_window.as_deref() {
+                captured.insert("PreferredMaintenanceWindow", value);
+            }
+        }
+        if requested.should_capture("KmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.kms_key_id.as_deref() {
+                captured.insert("KmsKeyId", value);
+            }
+        }
+        if requested.should_capture("NodeType") {
+            if let ::std::option::Option::Some(value) = input.node_type.as_deref() {
+                captured.insert("NodeType", value);
+            }
+        }
+        if requested.should_capture("AdditionalInfo") {
+            if let ::std::option::Option::Some(value) = input.additional_info.as_deref() {
+                captured.insert("AdditionalInfo", value);
+            }
+        }
+        if requested.should_capture("MaintenanceTrackName") {
+            if let ::std::option::Option::Some(value) = input.maintenance_track_name.as_deref() {
+                captured.insert("MaintenanceTrackName", value);
+            }
+        }
+        if requested.should_capture("SnapshotScheduleIdentifier") {
+            if let ::std::option::Option::Some(value) = input.snapshot_schedule_identifier.as_deref() {
+                captured.insert("SnapshotScheduleIdentifier", value);
+            }
+        }
+        if requested.should_capture("DefaultIamRoleArn") {
+            if let ::std::option::Option::Some(value) = input.default_iam_role_arn.as_deref() {
+                captured.insert("DefaultIamRoleArn", value);
+            }
+        }
+        if requested.should_capture("ReservedNodeId") {
+            if let ::std::option::Option::Some(value) = input.reserved_node_id.as_deref() {
+                captured.insert("ReservedNodeId", value);
+            }
+        }
+        if requested.should_capture("TargetReservedNodeOfferingId") {
+            if let ::std::option::Option::Some(value) = input.target_reserved_node_offering_id.as_deref() {
+                captured.insert("TargetReservedNodeOfferingId", value);
+            }
+        }
+        if requested.should_capture("MasterPasswordSecretKmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.master_password_secret_kms_key_id.as_deref() {
+                captured.insert("MasterPasswordSecretKmsKeyId", value);
+            }
+        }
+        if requested.should_capture("IpAddressType") {
+            if let ::std::option::Option::Some(value) = input.ip_address_type.as_deref() {
+                captured.insert("IpAddressType", value);
+            }
+        }
+        if requested.should_capture("CatalogName") {
+            if let ::std::option::Option::Some(value) = input.catalog_name.as_deref() {
+                captured.insert("CatalogName", value);
+            }
+        }
+        if requested.should_capture("RedshiftIdcApplicationArn") {
+            if let ::std::option::Option::Some(value) = input.redshift_idc_application_arn.as_deref() {
+                captured.insert("RedshiftIdcApplicationArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct RestoreFromClusterSnapshotResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RestoreFromClusterSnapshotResponseDeserializer {

@@ -65,6 +65,8 @@ pub use crate::types::_logs_backup_configuration::LogsBackupConfigurationBuilder
 
 pub use crate::types::_log_group_name_configuration::LogGroupNameConfigurationBuilder;
 
+pub use crate::types::_tag_propagation_configuration::TagPropagationConfigurationBuilder;
+
 pub use crate::types::_metrics_backup_configuration::MetricsBackupConfigurationBuilder;
 
 pub use crate::types::_logging_filter::LoggingFilterBuilder;

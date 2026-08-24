@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`last_updated_at(DateTime)`](crate::operation::get_payment_manager::GetPaymentManagerOutput::last_updated_at): <p>The timestamp when the payment manager was last updated.</p>
     ///   - [`status(PaymentManagerStatus)`](crate::operation::get_payment_manager::GetPaymentManagerOutput::status): <p>The current status of the payment manager. Possible values include <code>CREATING</code>, <code>READY</code>, <code>UPDATING</code>, <code>DELETING</code>, <code>CREATE_FAILED</code>, <code>UPDATE_FAILED</code>, and <code>DELETE_FAILED</code>.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_payment_manager::GetPaymentManagerOutput::tags): <p>The tags associated with the payment manager.</p>
+    ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_payment_manager::GetPaymentManagerOutput::kms_key_arn): <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager data at rest, if configured.</p>
     /// - On failure, responds with [`SdkError<GetPaymentManagerError>`](crate::operation::get_payment_manager::GetPaymentManagerError)
     pub fn get_payment_manager(&self) -> crate::operation::get_payment_manager::builders::GetPaymentManagerFluentBuilder {
         crate::operation::get_payment_manager::builders::GetPaymentManagerFluentBuilder::new(self.handle.clone())

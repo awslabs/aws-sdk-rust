@@ -23,9 +23,13 @@ pub use crate::types::_traffic::Traffic;
 
 pub use crate::types::_buildings::Buildings;
 
+pub use crate::types::_poi_density::PoiDensity;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_travel_mode::TravelMode;
+
+pub use crate::types::_poi_category::PoiCategory;
 
 pub use crate::types::_tile_additional_feature::TileAdditionalFeature;
 
@@ -40,6 +44,10 @@ mod _label_size;
 mod _map_feature_mode;
 
 mod _map_style;
+
+mod _poi_category;
+
+mod _poi_density;
 
 mod _scale_bar_unit;
 

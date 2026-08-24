@@ -22,7 +22,7 @@ impl crate::operation::delete_matching_workflow::builders::DeleteMatchingWorkflo
 }
 /// Fluent builder constructing a request to `DeleteMatchingWorkflow`.
 ///
-/// <p>Deletes the <code>MatchingWorkflow</code> with a given name. This operation will succeed even if a workflow with the given name does not exist.</p>
+/// <p>Deletes the <code>MatchingWorkflow</code> with a given name. This operation returns a <code>ResourceNotFoundException</code> if a workflow with the given name does not exist.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteMatchingWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

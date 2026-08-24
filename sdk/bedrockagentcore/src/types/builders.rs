@@ -25,6 +25,8 @@ pub use crate::types::_execution_summary_clustering_result_content::ExecutionSum
 
 pub use crate::types::_branch::BranchBuilder;
 
+pub use crate::types::_extraction_config::ExtractionConfigBuilder;
+
 pub use crate::types::_event::EventBuilder;
 
 pub use crate::types::_memory_record::MemoryRecordBuilder;
@@ -197,7 +199,11 @@ pub use crate::types::_available_limits::AvailableLimitsBuilder;
 
 pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInputBuilder;
 
+pub use crate::types::_mpp_payment_input::MppPaymentInputBuilder;
+
 pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutputBuilder;
+
+pub use crate::types::_mpp_payment_output::MppPaymentOutputBuilder;
 
 pub use crate::types::_registry_record_summary::RegistryRecordSummaryBuilder;
 
@@ -254,6 +260,8 @@ pub use crate::types::_recommendation_result_configuration_bundle::Recommendatio
 pub use crate::types::_session_metadata_shape::SessionMetadataShapeBuilder;
 
 pub use crate::types::_conversational::ConversationalBuilder;
+
+pub use crate::types::_memory_json_data::MemoryJsonDataBuilder;
 
 pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpressionBuilder;
 

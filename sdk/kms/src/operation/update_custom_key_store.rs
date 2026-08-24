@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateCustomKeyStore")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateCustomKeyStoreTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateC
     }
 }
 
+#[derive(Debug)]
+struct UpdateCustomKeyStoreTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCustomKeyStoreTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateCustomKeyStoreTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateCustomKeyStoreInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("CustomKeyStoreId") {
+            if let ::std::option::Option::Some(value) = input.custom_key_store_id.as_deref() {
+                captured.insert("CustomKeyStoreId", value);
+            }
+        }
+        if requested.should_capture("NewCustomKeyStoreName") {
+            if let ::std::option::Option::Some(value) = input.new_custom_key_store_name.as_deref() {
+                captured.insert("NewCustomKeyStoreName", value);
+            }
+        }
+        if requested.should_capture("CloudHsmClusterId") {
+            if let ::std::option::Option::Some(value) = input.cloud_hsm_cluster_id.as_deref() {
+                captured.insert("CloudHsmClusterId", value);
+            }
+        }
+        if requested.should_capture("XksProxyUriEndpoint") {
+            if let ::std::option::Option::Some(value) = input.xks_proxy_uri_endpoint.as_deref() {
+                captured.insert("XksProxyUriEndpoint", value);
+            }
+        }
+        if requested.should_capture("XksProxyUriPath") {
+            if let ::std::option::Option::Some(value) = input.xks_proxy_uri_path.as_deref() {
+                captured.insert("XksProxyUriPath", value);
+            }
+        }
+        if requested.should_capture("XksProxyVpcEndpointServiceName") {
+            if let ::std::option::Option::Some(value) = input.xks_proxy_vpc_endpoint_service_name.as_deref() {
+                captured.insert("XksProxyVpcEndpointServiceName", value);
+            }
+        }
+        if requested.should_capture("XksProxyVpcEndpointServiceOwner") {
+            if let ::std::option::Option::Some(value) = input.xks_proxy_vpc_endpoint_service_owner.as_deref() {
+                captured.insert("XksProxyVpcEndpointServiceOwner", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateCustomKeyStoreResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateCustomKeyStoreResponseDeserializer {

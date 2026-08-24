@@ -32,7 +32,7 @@ expect_shape_fn!(fn expect_byte[Byte] -> i8 { value -> *value });
 expect_shape_fn!(fn expect_int16[Int16] -> i16 { value -> *value });
 expect_shape_fn!(fn expect_int32[Int32] -> i32 { value -> *value });
 expect_shape_fn!(fn expect_int64[Int64] -> i64 { value -> *value });
-expect_shape_fn!(fn expect_byte_array[ByteArray] -> Blob { bytes -> Blob::new(bytes.as_ref()) });
+expect_shape_fn!(fn expect_byte_array[ByteArray] -> Blob { bytes -> Blob::from_maybe_shared(bytes.clone()) });
 expect_shape_fn!(fn expect_string[String] -> String { value -> value.as_str().into() });
 expect_shape_fn!(fn expect_timestamp[Timestamp] -> DateTime { value -> *value });
 

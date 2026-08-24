@@ -22,9 +22,9 @@
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 //! Integrate high-quality base map data into your applications using [MapLibre](https://maplibre.org). Capabilities include:
-//!   - Access to comprehensive base map data, allowing you to tailor the map display to your specific needs.
-//!   - Multiple pre-designed map styles suited for various application types, such as navigation, logistics, or data visualization.
-//!   - Generation of static map images for scenarios where interactive maps aren't suitable, such as:
+//!   - Access to comprehensive base map data, allowing you to tailor the map display to your specific needs. See [GetTile](https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html).
+//!   - Multiple pre-designed map styles suited for various application types, such as navigation, logistics, or data visualization. See [GetStyleDescriptor](https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStyleDescriptor.html).
+//!   - Generation of static map images for scenarios where interactive maps aren't suitable. See [GetStaticMap](https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStaticMap.html). Use cases include:
 //!     - Embedding in emails or documents
 //!     - Displaying in low-bandwidth environments
 //!     - Creating printable maps
@@ -42,7 +42,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-geomaps = "1.62.0"
+//! aws-sdk-geomaps = "1.64.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

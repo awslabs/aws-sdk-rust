@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateD
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateDBInstance")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateDBInstanceTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateD
     }
 }
 
+#[derive(Debug)]
+struct CreateDBInstanceTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateDBInstanceTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateDBInstanceTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateDbInstanceInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("DBInstanceIdentifier") {
+            if let ::std::option::Option::Some(value) = input.db_instance_identifier.as_deref() {
+                captured.insert("DBInstanceIdentifier", value);
+            }
+        }
+        if requested.should_capture("DBInstanceClass") {
+            if let ::std::option::Option::Some(value) = input.db_instance_class.as_deref() {
+                captured.insert("DBInstanceClass", value);
+            }
+        }
+        if requested.should_capture("Engine") {
+            if let ::std::option::Option::Some(value) = input.engine.as_deref() {
+                captured.insert("Engine", value);
+            }
+        }
+        if requested.should_capture("AvailabilityZone") {
+            if let ::std::option::Option::Some(value) = input.availability_zone.as_deref() {
+                captured.insert("AvailabilityZone", value);
+            }
+        }
+        if requested.should_capture("PreferredMaintenanceWindow") {
+            if let ::std::option::Option::Some(value) = input.preferred_maintenance_window.as_deref() {
+                captured.insert("PreferredMaintenanceWindow", value);
+            }
+        }
+        if requested.should_capture("DBClusterIdentifier") {
+            if let ::std::option::Option::Some(value) = input.db_cluster_identifier.as_deref() {
+                captured.insert("DBClusterIdentifier", value);
+            }
+        }
+        if requested.should_capture("PerformanceInsightsKMSKeyId") {
+            if let ::std::option::Option::Some(value) = input.performance_insights_kms_key_id.as_deref() {
+                captured.insert("PerformanceInsightsKMSKeyId", value);
+            }
+        }
+        if requested.should_capture("CACertificateIdentifier") {
+            if let ::std::option::Option::Some(value) = input.ca_certificate_identifier.as_deref() {
+                captured.insert("CACertificateIdentifier", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateDBInstanceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateDBInstanceResponseDeserializer {

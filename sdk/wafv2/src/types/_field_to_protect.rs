@@ -6,7 +6,9 @@
 pub struct FieldToProtect {
     /// <p>Specifies the web request component type to protect.</p>
     pub field_type: crate::types::FieldToProtectType,
-    /// <p>Specifies the keys to protect for the specified field type. If you don't specify any key, then all keys for the field type are protected.</p>
+    /// <p>Specifies the keys to protect for the specified field type.</p>
+    /// <p>Required for <code>SINGLE_HEADER</code>, <code>SINGLE_COOKIE</code>, and <code>SINGLE_QUERY_ARGUMENT</code>: provide a non-empty array naming the specific headers, cookies, or query arguments to protect. There is no option to protect all keys of these field types, so enumerate each key you intend to protect.</p>
+    /// <p>Must be omitted for <code>QUERY_STRING</code> and <code>BODY</code>: the entire component is protected and these field types take no keys. Supplying <code>FieldKeys</code> for them is rejected.</p>
     pub field_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl FieldToProtect {
@@ -14,7 +16,9 @@ impl FieldToProtect {
     pub fn field_type(&self) -> &crate::types::FieldToProtectType {
         &self.field_type
     }
-    /// <p>Specifies the keys to protect for the specified field type. If you don't specify any key, then all keys for the field type are protected.</p>
+    /// <p>Specifies the keys to protect for the specified field type.</p>
+    /// <p>Required for <code>SINGLE_HEADER</code>, <code>SINGLE_COOKIE</code>, and <code>SINGLE_QUERY_ARGUMENT</code>: provide a non-empty array naming the specific headers, cookies, or query arguments to protect. There is no option to protect all keys of these field types, so enumerate each key you intend to protect.</p>
+    /// <p>Must be omitted for <code>QUERY_STRING</code> and <code>BODY</code>: the entire component is protected and these field types take no keys. Supplying <code>FieldKeys</code> for them is rejected.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.field_keys.is_none()`.
     pub fn field_keys(&self) -> &[::std::string::String] {
@@ -55,19 +59,25 @@ impl FieldToProtectBuilder {
     ///
     /// To override the contents of this collection use [`set_field_keys`](Self::set_field_keys).
     ///
-    /// <p>Specifies the keys to protect for the specified field type. If you don't specify any key, then all keys for the field type are protected.</p>
+    /// <p>Specifies the keys to protect for the specified field type.</p>
+    /// <p>Required for <code>SINGLE_HEADER</code>, <code>SINGLE_COOKIE</code>, and <code>SINGLE_QUERY_ARGUMENT</code>: provide a non-empty array naming the specific headers, cookies, or query arguments to protect. There is no option to protect all keys of these field types, so enumerate each key you intend to protect.</p>
+    /// <p>Must be omitted for <code>QUERY_STRING</code> and <code>BODY</code>: the entire component is protected and these field types take no keys. Supplying <code>FieldKeys</code> for them is rejected.</p>
     pub fn field_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.field_keys.unwrap_or_default();
         v.push(input.into());
         self.field_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specifies the keys to protect for the specified field type. If you don't specify any key, then all keys for the field type are protected.</p>
+    /// <p>Specifies the keys to protect for the specified field type.</p>
+    /// <p>Required for <code>SINGLE_HEADER</code>, <code>SINGLE_COOKIE</code>, and <code>SINGLE_QUERY_ARGUMENT</code>: provide a non-empty array naming the specific headers, cookies, or query arguments to protect. There is no option to protect all keys of these field types, so enumerate each key you intend to protect.</p>
+    /// <p>Must be omitted for <code>QUERY_STRING</code> and <code>BODY</code>: the entire component is protected and these field types take no keys. Supplying <code>FieldKeys</code> for them is rejected.</p>
     pub fn set_field_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.field_keys = input;
         self
     }
-    /// <p>Specifies the keys to protect for the specified field type. If you don't specify any key, then all keys for the field type are protected.</p>
+    /// <p>Specifies the keys to protect for the specified field type.</p>
+    /// <p>Required for <code>SINGLE_HEADER</code>, <code>SINGLE_COOKIE</code>, and <code>SINGLE_QUERY_ARGUMENT</code>: provide a non-empty array naming the specific headers, cookies, or query arguments to protect. There is no option to protect all keys of these field types, so enumerate each key you intend to protect.</p>
+    /// <p>Must be omitted for <code>QUERY_STRING</code> and <code>BODY</code>: the entire component is protected and these field types take no keys. Supplying <code>FieldKeys</code> for them is rejected.</p>
     pub fn get_field_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.field_keys
     }

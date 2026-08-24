@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateCase")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateCaseTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
     }
 }
 
+#[derive(Debug)]
+struct CreateCaseTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCaseTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateCaseTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateCaseInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("subject") {
+            if let ::std::option::Option::Some(value) = input.subject.as_deref() {
+                captured.insert("subject", value);
+            }
+        }
+        if requested.should_capture("serviceCode") {
+            if let ::std::option::Option::Some(value) = input.service_code.as_deref() {
+                captured.insert("serviceCode", value);
+            }
+        }
+        if requested.should_capture("severityCode") {
+            if let ::std::option::Option::Some(value) = input.severity_code.as_deref() {
+                captured.insert("severityCode", value);
+            }
+        }
+        if requested.should_capture("categoryCode") {
+            if let ::std::option::Option::Some(value) = input.category_code.as_deref() {
+                captured.insert("categoryCode", value);
+            }
+        }
+        if requested.should_capture("communicationBody") {
+            if let ::std::option::Option::Some(value) = input.communication_body.as_deref() {
+                captured.insert("communicationBody", value);
+            }
+        }
+        if requested.should_capture("language") {
+            if let ::std::option::Option::Some(value) = input.language.as_deref() {
+                captured.insert("language", value);
+            }
+        }
+        if requested.should_capture("issueType") {
+            if let ::std::option::Option::Some(value) = input.issue_type.as_deref() {
+                captured.insert("issueType", value);
+            }
+        }
+        if requested.should_capture("attachmentSetId") {
+            if let ::std::option::Option::Some(value) = input.attachment_set_id.as_deref() {
+                captured.insert("attachmentSetId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateCaseResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateCaseResponseDeserializer {

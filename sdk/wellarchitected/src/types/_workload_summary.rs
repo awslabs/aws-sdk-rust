@@ -13,7 +13,7 @@ pub struct WorkloadSummary {
     pub workload_name: ::std::option::Option<::std::string::String>,
     /// <p>An Amazon Web Services account ID.</p>
     pub owner: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     /// <p>If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.</p>
@@ -45,7 +45,7 @@ impl WorkloadSummary {
     pub fn owner(&self) -> ::std::option::Option<&str> {
         self.owner.as_deref()
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -157,17 +157,17 @@ impl WorkloadSummaryBuilder {
     pub fn get_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.owner
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>The date and time recorded.</p>
+    /// <p>The date and time when the workload was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

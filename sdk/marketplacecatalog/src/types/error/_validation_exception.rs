@@ -7,7 +7,17 @@
 pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>A list of detailed entries describing the request fields that failed validation. Present when the failure can be attributed to one or more specific fields.</p>
+    pub validation_exception_field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ValidationException {
+    /// <p>A list of detailed entries describing the request fields that failed validation. Present when the failure can be attributed to one or more specific fields.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.validation_exception_field_list.is_none()`.
+    pub fn validation_exception_field_list(&self) -> &[crate::types::ValidationExceptionField] {
+        self.validation_exception_field_list.as_deref().unwrap_or_default()
+    }
 }
 impl ValidationException {
     /// Returns the error message.
@@ -50,6 +60,7 @@ impl ValidationException {
 #[non_exhaustive]
 pub struct ValidationExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) validation_exception_field_list: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
@@ -67,6 +78,29 @@ impl ValidationExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// Appends an item to `validation_exception_field_list`.
+    ///
+    /// To override the contents of this collection use [`set_validation_exception_field_list`](Self::set_validation_exception_field_list).
+    ///
+    /// <p>A list of detailed entries describing the request fields that failed validation. Present when the failure can be attributed to one or more specific fields.</p>
+    pub fn validation_exception_field_list(mut self, input: crate::types::ValidationExceptionField) -> Self {
+        let mut v = self.validation_exception_field_list.unwrap_or_default();
+        v.push(input);
+        self.validation_exception_field_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of detailed entries describing the request fields that failed validation. Present when the failure can be attributed to one or more specific fields.</p>
+    pub fn set_validation_exception_field_list(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>>,
+    ) -> Self {
+        self.validation_exception_field_list = input;
+        self
+    }
+    /// <p>A list of detailed entries describing the request fields that failed validation. Present when the failure can be attributed to one or more specific fields.</p>
+    pub fn get_validation_exception_field_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ValidationExceptionField>> {
+        &self.validation_exception_field_list
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -82,6 +116,7 @@ impl ValidationExceptionBuilder {
     pub fn build(self) -> crate::types::error::ValidationException {
         crate::types::error::ValidationException {
             message: self.message,
+            validation_exception_field_list: self.validation_exception_field_list,
             meta: self.meta.unwrap_or_default(),
         }
     }

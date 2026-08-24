@@ -1995,6 +1995,10 @@ pub(crate) mod shape_hyper_parameter_tuning_job_warm_start_config;
 
 pub(crate) mod shape_hyper_parameters;
 
+pub(crate) mod shape_idc_config_input;
+
+pub(crate) mod shape_idc_config_output;
+
 pub(crate) mod shape_image_versions;
 
 pub(crate) mod shape_images;

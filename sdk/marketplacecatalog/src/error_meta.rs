@@ -165,6 +165,34 @@ impl From<crate::operation::delete_resource_policy::DeleteResourcePolicyError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_assessment::DescribeAssessmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_assessment::DescribeAssessmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_assessment::DescribeAssessmentError> for Error {
+    fn from(err: crate::operation::describe_assessment::DescribeAssessmentError) -> Self {
+        match err {
+            crate::operation::describe_assessment::DescribeAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_assessment::DescribeAssessmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_change_set::DescribeChangeSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -247,6 +275,31 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
             crate::operation::get_resource_policy::GetResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assessments::ListAssessmentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assessments::ListAssessmentsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_assessments::ListAssessmentsError> for Error {
+    fn from(err: crate::operation::list_assessments::ListAssessmentsError) -> Self {
+        match err {
+            crate::operation::list_assessments::ListAssessmentsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

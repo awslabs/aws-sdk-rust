@@ -1,6 +1,6 @@
 # aws-sdk-pricingplanmanager
 
-Manages flat-rate pricing subscriptions for supported AWS services. Use this API to create, approve, update, and cancel subscriptions; associate and disassociate resources; and retrieve subscription details. With a flat-rate pricing subscription, you pay a fixed recurring fee for eligible resources instead of usage-based pricing.
+Manages flat-rate pricing subscriptions for supported services. Use this API to create, approve, update, and cancel subscriptions; associate and disassociate resources; and retrieve subscription details. With a flat-rate pricing subscription, you pay a fixed recurring fee for eligible resources instead of usage-based pricing.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-pricingplanmanager = "1.0.0"
+aws-sdk-pricingplanmanager = "1.2.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

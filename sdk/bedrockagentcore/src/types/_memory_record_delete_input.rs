@@ -6,12 +6,18 @@
 pub struct MemoryRecordDeleteInput {
     /// <p>The unique ID of the memory record to be deleted.</p>
     pub memory_record_id: ::std::string::String,
+    /// <p>The namespace of the memory record being deleted. This value is used for IAM condition key authorization.</p>
+    pub namespace: ::std::option::Option<::std::string::String>,
 }
 impl MemoryRecordDeleteInput {
     /// <p>The unique ID of the memory record to be deleted.</p>
     pub fn memory_record_id(&self) -> &str {
         use std::ops::Deref;
         self.memory_record_id.deref()
+    }
+    /// <p>The namespace of the memory record being deleted. This value is used for IAM condition key authorization.</p>
+    pub fn namespace(&self) -> ::std::option::Option<&str> {
+        self.namespace.as_deref()
     }
 }
 impl MemoryRecordDeleteInput {
@@ -26,6 +32,7 @@ impl MemoryRecordDeleteInput {
 #[non_exhaustive]
 pub struct MemoryRecordDeleteInputBuilder {
     pub(crate) memory_record_id: ::std::option::Option<::std::string::String>,
+    pub(crate) namespace: ::std::option::Option<::std::string::String>,
 }
 impl MemoryRecordDeleteInputBuilder {
     /// <p>The unique ID of the memory record to be deleted.</p>
@@ -43,6 +50,20 @@ impl MemoryRecordDeleteInputBuilder {
     pub fn get_memory_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.memory_record_id
     }
+    /// <p>The namespace of the memory record being deleted. This value is used for IAM condition key authorization.</p>
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The namespace of the memory record being deleted. This value is used for IAM condition key authorization.</p>
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.namespace = input;
+        self
+    }
+    /// <p>The namespace of the memory record being deleted. This value is used for IAM condition key authorization.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.namespace
+    }
     /// Consumes the builder and constructs a [`MemoryRecordDeleteInput`](crate::types::MemoryRecordDeleteInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`memory_record_id`](crate::types::builders::MemoryRecordDeleteInputBuilder::memory_record_id)
@@ -54,6 +75,7 @@ impl MemoryRecordDeleteInputBuilder {
                     "memory_record_id was not specified but it is required when building MemoryRecordDeleteInput",
                 )
             })?,
+            namespace: self.namespace,
         })
     }
 }

@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Execute
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ExecuteStatement")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ExecuteStatementTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,89 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Execute
     }
 }
 
+#[derive(Debug)]
+struct ExecuteStatementTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExecuteStatementTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ExecuteStatementTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ExecuteStatementInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Sql") {
+            if let ::std::option::Option::Some(value) = input.sql.as_deref() {
+                captured.insert("Sql", value);
+            }
+        }
+        if requested.should_capture("ClusterIdentifier") {
+            if let ::std::option::Option::Some(value) = input.cluster_identifier.as_deref() {
+                captured.insert("ClusterIdentifier", value);
+            }
+        }
+        if requested.should_capture("SecretArn") {
+            if let ::std::option::Option::Some(value) = input.secret_arn.as_deref() {
+                captured.insert("SecretArn", value);
+            }
+        }
+        if requested.should_capture("DbUser") {
+            if let ::std::option::Option::Some(value) = input.db_user.as_deref() {
+                captured.insert("DbUser", value);
+            }
+        }
+        if requested.should_capture("Database") {
+            if let ::std::option::Option::Some(value) = input.database.as_deref() {
+                captured.insert("Database", value);
+            }
+        }
+        if requested.should_capture("StatementName") {
+            if let ::std::option::Option::Some(value) = input.statement_name.as_deref() {
+                captured.insert("StatementName", value);
+            }
+        }
+        if requested.should_capture("WorkgroupName") {
+            if let ::std::option::Option::Some(value) = input.workgroup_name.as_deref() {
+                captured.insert("WorkgroupName", value);
+            }
+        }
+        if requested.should_capture("ClientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("ClientToken", value);
+            }
+        }
+        if requested.should_capture("SessionId") {
+            if let ::std::option::Option::Some(value) = input.session_id.as_deref() {
+                captured.insert("SessionId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ExecuteStatementResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ExecuteStatementResponseDeserializer {

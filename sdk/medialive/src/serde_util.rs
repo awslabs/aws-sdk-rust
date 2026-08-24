@@ -547,6 +547,24 @@ pub(crate) fn timed_metadata_schedule_action_settings_correct_errors(
     builder
 }
 
+pub(crate) fn video_position_rectangle_correct_errors(
+    mut builder: crate::types::builders::VideoPositionRectangleBuilder,
+) -> crate::types::builders::VideoPositionRectangleBuilder {
+    if builder.height.is_none() {
+        builder.height = Some(Default::default())
+    }
+    if builder.width.is_none() {
+        builder.width = Some(Default::default())
+    }
+    if builder.x.is_none() {
+        builder.x = Some(Default::default())
+    }
+    if builder.y.is_none() {
+        builder.y = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn archive_group_settings_correct_errors(
     mut builder: crate::types::builders::ArchiveGroupSettingsBuilder,
 ) -> crate::types::builders::ArchiveGroupSettingsBuilder {
@@ -716,6 +734,18 @@ pub(crate) fn nielsen_cbet_correct_errors(mut builder: crate::types::builders::N
 pub(crate) fn nielsen_naes_ii_nw_correct_errors(
     mut builder: crate::types::builders::NielsenNaesIiNwBuilder,
 ) -> crate::types::builders::NielsenNaesIiNwBuilder {
+    if builder.check_digit_string.is_none() {
+        builder.check_digit_string = Some(Default::default())
+    }
+    if builder.sid.is_none() {
+        builder.sid = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn nielsen_nw_only_correct_errors(
+    mut builder: crate::types::builders::NielsenNwOnlyBuilder,
+) -> crate::types::builders::NielsenNwOnlyBuilder {
     if builder.check_digit_string.is_none() {
         builder.check_digit_string = Some(Default::default())
     }

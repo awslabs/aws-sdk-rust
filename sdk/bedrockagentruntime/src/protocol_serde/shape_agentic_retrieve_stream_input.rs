@@ -12,44 +12,50 @@ pub fn ser_agentic_retrieve_stream_input_input(
     if let Some(var_3) = &input.generate_response {
         object.key("generateResponse").boolean(*var_3);
     }
-    if let Some(var_4) = &input.messages {
-        let mut array_5 = object.key("messages").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.memory_configuration {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("memoryConfiguration").start_object();
+        crate::protocol_serde::shape_agentic_retrieve_memory_configuration::ser_agentic_retrieve_memory_configuration(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.messages {
+        let mut array_7 = object.key("messages").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_agentic_retrieve_message::ser_agentic_retrieve_message(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_agentic_retrieve_message::ser_agentic_retrieve_message(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_5.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.next_token {
-        object.key("nextToken").string(var_8.as_str());
+    if let Some(var_10) = &input.next_token {
+        object.key("nextToken").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.policy_configuration {
+    if let Some(var_11) = &input.policy_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("policyConfiguration").start_object();
-        crate::protocol_serde::shape_agentic_retrieve_policy_configuration::ser_agentic_retrieve_policy_configuration(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_12 = object.key("policyConfiguration").start_object();
+        crate::protocol_serde::shape_agentic_retrieve_policy_configuration::ser_agentic_retrieve_policy_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_11) = &input.retrievers {
-        let mut array_12 = object.key("retrievers").start_array();
-        for item_13 in var_11 {
+    if let Some(var_13) = &input.retrievers {
+        let mut array_14 = object.key("retrievers").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_agentic_retriever::ser_agentic_retriever(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_agentic_retriever::ser_agentic_retriever(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_12.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.user_context {
+    if let Some(var_17) = &input.user_context {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("userContext").start_object();
-        crate::protocol_serde::shape_user_context::ser_user_context(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("userContext").start_object();
+        crate::protocol_serde::shape_user_context::ser_user_context(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }

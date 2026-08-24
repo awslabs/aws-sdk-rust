@@ -120,6 +120,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Publish
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("Publish")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PublishTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -139,6 +142,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Publish
     }
 }
 
+#[derive(Debug)]
+struct PublishTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PublishTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PublishTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PublishInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("topic") {
+            if let ::std::option::Option::Some(value) = input.topic.as_deref() {
+                captured.insert("topic", value);
+            }
+        }
+        if requested.should_capture("userProperties") {
+            if let ::std::option::Option::Some(value) = input.user_properties.as_deref() {
+                captured.insert("userProperties", value);
+            }
+        }
+        if requested.should_capture("contentType") {
+            if let ::std::option::Option::Some(value) = input.content_type.as_deref() {
+                captured.insert("contentType", value);
+            }
+        }
+        if requested.should_capture("responseTopic") {
+            if let ::std::option::Option::Some(value) = input.response_topic.as_deref() {
+                captured.insert("responseTopic", value);
+            }
+        }
+        if requested.should_capture("correlationData") {
+            if let ::std::option::Option::Some(value) = input.correlation_data.as_deref() {
+                captured.insert("correlationData", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PublishResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PublishResponseDeserializer {

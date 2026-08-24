@@ -13,6 +13,7 @@
 /// # let crtype = unimplemented!();
 /// match crtype {
 ///     CrType::Ec2 => { /* ... */ },
+///     CrType::EcsManagedInstances => { /* ... */ },
 ///     CrType::Fargate => { /* ... */ },
 ///     CrType::FargateSpot => { /* ... */ },
 ///     CrType::Spot => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum CrType {
     #[allow(missing_docs)] // documentation missing in model
     Ec2,
     #[allow(missing_docs)] // documentation missing in model
+    EcsManagedInstances,
+    #[allow(missing_docs)] // documentation missing in model
     Fargate,
     #[allow(missing_docs)] // documentation missing in model
     FargateSpot,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for CrType {
     fn from(s: &str) -> Self {
         match s {
             "EC2" => CrType::Ec2,
+            "ECS_MANAGED_INSTANCES" => CrType::EcsManagedInstances,
             "FARGATE" => CrType::Fargate,
             "FARGATE_SPOT" => CrType::FargateSpot,
             "SPOT" => CrType::Spot,
@@ -79,6 +83,7 @@ impl CrType {
     pub fn as_str(&self) -> &str {
         match self {
             CrType::Ec2 => "EC2",
+            CrType::EcsManagedInstances => "ECS_MANAGED_INSTANCES",
             CrType::Fargate => "FARGATE",
             CrType::FargateSpot => "FARGATE_SPOT",
             CrType::Spot => "SPOT",
@@ -87,7 +92,7 @@ impl CrType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "FARGATE", "FARGATE_SPOT", "SPOT"]
+        &["EC2", "ECS_MANAGED_INSTANCES", "FARGATE", "FARGATE_SPOT", "SPOT"]
     }
 }
 impl ::std::convert::AsRef<str> for CrType {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for CrType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CrType::Ec2 => write!(f, "EC2"),
+            CrType::EcsManagedInstances => write!(f, "ECS_MANAGED_INSTANCES"),
             CrType::Fargate => write!(f, "FARGATE"),
             CrType::FargateSpot => write!(f, "FARGATE_SPOT"),
             CrType::Spot => write!(f, "SPOT"),

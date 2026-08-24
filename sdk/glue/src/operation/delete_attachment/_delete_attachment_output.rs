@@ -5,12 +5,24 @@
 pub struct DeleteAttachmentOutput {
     /// <p>The unique identifier of the asset.</p>
     pub asset_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the iterable form, if the deletion targets an item.</p>
+    pub iterable_form_name: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub item_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteAttachmentOutput {
     /// <p>The unique identifier of the asset.</p>
     pub fn asset_identifier(&self) -> ::std::option::Option<&str> {
         self.asset_identifier.as_deref()
+    }
+    /// <p>The name of the iterable form, if the deletion targets an item.</p>
+    pub fn iterable_form_name(&self) -> ::std::option::Option<&str> {
+        self.iterable_form_name.as_deref()
+    }
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub fn item_identifier(&self) -> ::std::option::Option<&str> {
+        self.item_identifier.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteAttachmentOutput {
@@ -30,6 +42,8 @@ impl DeleteAttachmentOutput {
 #[non_exhaustive]
 pub struct DeleteAttachmentOutputBuilder {
     pub(crate) asset_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) iterable_form_name: ::std::option::Option<::std::string::String>,
+    pub(crate) item_identifier: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteAttachmentOutputBuilder {
@@ -47,6 +61,34 @@ impl DeleteAttachmentOutputBuilder {
     pub fn get_asset_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.asset_identifier
     }
+    /// <p>The name of the iterable form, if the deletion targets an item.</p>
+    pub fn iterable_form_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.iterable_form_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the iterable form, if the deletion targets an item.</p>
+    pub fn set_iterable_form_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.iterable_form_name = input;
+        self
+    }
+    /// <p>The name of the iterable form, if the deletion targets an item.</p>
+    pub fn get_iterable_form_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.iterable_form_name
+    }
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub fn item_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.item_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub fn set_item_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.item_identifier = input;
+        self
+    }
+    /// <p>The identifier of the item within the iterable form, if applicable.</p>
+    pub fn get_item_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.item_identifier
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +102,8 @@ impl DeleteAttachmentOutputBuilder {
     pub fn build(self) -> crate::operation::delete_attachment::DeleteAttachmentOutput {
         crate::operation::delete_attachment::DeleteAttachmentOutput {
             asset_identifier: self.asset_identifier,
+            iterable_form_name: self.iterable_form_name,
+            item_identifier: self.item_identifier,
             _request_id: self._request_id,
         }
     }

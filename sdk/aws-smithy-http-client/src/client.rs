@@ -111,6 +111,7 @@ pub struct ConnectorBuilder<Tls = TlsUnset> {
     sleep_impl: Option<SharedAsyncSleep>,
     client_builder: Option<hyper_util::client::legacy::Builder>,
     pool_idle_timeout: Option<Option<Duration>>,
+    pool_max_idle_per_host: Option<usize>,
     enable_tcp_nodelay: bool,
     interface: Option<String>,
     proxy_config: Option<proxy::ProxyConfig>,
@@ -125,6 +126,7 @@ impl<Tls: Default> Default for ConnectorBuilder<Tls> {
             sleep_impl: None,
             client_builder: None,
             pool_idle_timeout: None,
+            pool_max_idle_per_host: None,
             // Curated default: TCP_NODELAY on. Without it, Nagle's algorithm
             // can hold a small write while earlier data is unacknowledged. On
             // request shapes emitted as multiple sub-MSS writes, this can add
@@ -163,6 +165,7 @@ impl ConnectorBuilder<TlsUnset> {
             interface: self.interface,
             proxy_config: self.proxy_config,
             pool_idle_timeout: self.pool_idle_timeout,
+            pool_max_idle_per_host: self.pool_max_idle_per_host,
             tls: TlsProviderSelected {
                 provider,
                 context: TlsContext::default(),
@@ -212,9 +215,9 @@ impl<Any> ConnectorBuilder<Any> {
         C::Future: Unpin + Send + 'static,
         C::Error: Into<BoxError>,
     {
-        let client_builder = self
-            .client_builder
-            .unwrap_or_else(|| new_tokio_hyper_builder(self.pool_idle_timeout));
+        let client_builder = self.client_builder.unwrap_or_else(|| {
+            new_tokio_hyper_builder(self.pool_idle_timeout, self.pool_max_idle_per_host)
+        });
         let sleep_impl = self.sleep_impl.or_else(default_async_sleep);
         let (connect_timeout, read_timeout) = self
             .connector_settings
@@ -428,6 +431,41 @@ impl<Any> ConnectorBuilder<Any> {
         self
     }
 
+    /// Sets the maximum number of idle pooled connections allowed per host.
+    ///
+    /// Default is determined by the underlying hyper client, which is currently no limit
+    /// (`usize::MAX`) - see [hyper_util::client::legacy::Builder::pool_max_idle_per_host].
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// # #[cfg(feature = "rustls-aws-lc")]
+    /// # {
+    /// use aws_smithy_http_client::{Connector, tls};
+    ///
+    /// let connector = Connector::builder()
+    ///     .pool_max_idle_per_host(70)
+    ///     .tls_provider(tls::Provider::Rustls(tls::rustls_provider::CryptoMode::AwsLc))
+    ///     .build();
+    /// # }
+    /// # Ok::<(), Box<dyn std::error::Error>>(())
+    /// ```
+    pub fn pool_max_idle_per_host(mut self, val: usize) -> Self {
+        self.pool_max_idle_per_host = Some(val);
+        self
+    }
+
+    /// Sets the maximum number of idle pooled connections allowed per host.
+    ///
+    /// Pass `None` to use the hyper default (currently no limit, `usize::MAX`) - see
+    /// [hyper_util::client::legacy::Builder::pool_max_idle_per_host].
+    ///
+    /// This is the mutable version of [`pool_max_idle_per_host`](Self::pool_max_idle_per_host).
+    pub fn set_pool_max_idle_per_host(&mut self, val: Option<usize>) -> &mut Self {
+        self.pool_max_idle_per_host = val;
+        self
+    }
+
     /// Override the Hyper client [`Builder`](hyper_util::client::legacy::Builder) used to construct this client.
     ///
     /// This enables changing settings like forcing HTTP2 and modifying other default client behavior.
@@ -498,6 +536,7 @@ fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<Connect
 
 fn new_tokio_hyper_builder(
     pool_idle_timeout: Option<Option<Duration>>,
+    pool_max_idle_per_host: Option<usize>,
 ) -> hyper_util::client::legacy::Builder {
     let mut builder = hyper_util::client::legacy::Builder::new(TokioExecutor::new());
     // Explicitly setting the pool_timer is required for connection timeouts to work.
@@ -505,6 +544,10 @@ fn new_tokio_hyper_builder(
 
     if let Some(pool_idle_timeout) = pool_idle_timeout {
         builder.pool_idle_timeout(pool_idle_timeout);
+    }
+
+    if let Some(max_idle) = pool_max_idle_per_host {
+        builder.pool_max_idle_per_host(max_idle);
     }
 
     builder
@@ -762,6 +805,7 @@ where
 pub struct Builder<Tls = TlsUnset> {
     client_builder: Option<hyper_util::client::legacy::Builder>,
     pool_idle_timeout: Option<Option<Duration>>,
+    pool_max_idle_per_host: Option<usize>,
     #[allow(unused)]
     tls_provider: Tls,
 }
@@ -843,6 +887,7 @@ cfg_tls! {
             build_with_conn_fn(
                 self.client_builder,
                 self.pool_idle_timeout,
+                self.pool_max_idle_per_host,
                 move |client_builder, settings, runtime_components| {
                     let builder = new_conn_builder(client_builder, settings, runtime_components)
                         .tls_provider(self.tls_provider.provider.clone())
@@ -860,6 +905,7 @@ cfg_tls! {
             build_with_conn_fn(
                 self.client_builder,
                 self.pool_idle_timeout,
+                self.pool_max_idle_per_host,
                 move |client_builder, settings, runtime_components| {
                     let builder = new_conn_builder(client_builder, settings, runtime_components)
                         .tls_provider(self.tls_provider.provider.clone())
@@ -935,6 +981,41 @@ impl<Any> Builder<Any> {
         self.pool_idle_timeout = val;
         self
     }
+
+    /// Sets the maximum number of idle pooled connections allowed per host.
+    ///
+    /// Default is determined by the underlying hyper client, which is currently no limit
+    /// (`usize::MAX`) - see [hyper_util::client::legacy::Builder::pool_max_idle_per_host].
+    ///
+    /// # Examples
+    ///
+    /// ```rust
+    /// # #[cfg(feature = "rustls-aws-lc")]
+    /// # {
+    /// use aws_smithy_http_client::{Builder, tls};
+    ///
+    /// let client = Builder::new()
+    ///     .pool_max_idle_per_host(70)
+    ///     .tls_provider(tls::Provider::Rustls(tls::rustls_provider::CryptoMode::AwsLc))
+    ///     .build_https();
+    /// # }
+    /// # Ok::<(), Box<dyn std::error::Error>>(())
+    /// ```
+    pub fn pool_max_idle_per_host(mut self, val: usize) -> Self {
+        self.pool_max_idle_per_host = Some(val);
+        self
+    }
+
+    /// Sets the maximum number of idle pooled connections allowed per host.
+    ///
+    /// Pass `None` to use the hyper default (currently no limit, `usize::MAX`) - see
+    /// [hyper_util::client::legacy::Builder::pool_max_idle_per_host].
+    ///
+    /// This is the mutable version of [`pool_max_idle_per_host`](Self::pool_max_idle_per_host).
+    pub fn set_pool_max_idle_per_host(&mut self, val: Option<usize>) -> &mut Self {
+        self.pool_max_idle_per_host = val;
+        self
+    }
 }
 
 impl Builder<TlsUnset> {
@@ -955,6 +1036,7 @@ impl Builder<TlsUnset> {
         build_with_conn_fn(
             self.client_builder,
             self.pool_idle_timeout,
+            self.pool_max_idle_per_host,
             move |_builder, settings, runtime_components| {
                 connector_fn(settings, runtime_components)
             },
@@ -967,6 +1049,7 @@ impl Builder<TlsUnset> {
         build_with_conn_fn(
             self.client_builder,
             self.pool_idle_timeout,
+            self.pool_max_idle_per_host,
             move |client_builder, settings, runtime_components| {
                 let builder = new_conn_builder(client_builder, settings, runtime_components);
                 builder.build_http()
@@ -979,6 +1062,7 @@ impl Builder<TlsUnset> {
         Builder {
             client_builder: self.client_builder,
             pool_idle_timeout: self.pool_idle_timeout,
+            pool_max_idle_per_host: self.pool_max_idle_per_host,
             tls_provider: TlsProviderSelected {
                 provider,
                 context: TlsContext::default(),
@@ -990,6 +1074,7 @@ impl Builder<TlsUnset> {
 pub(crate) fn build_with_conn_fn<F>(
     client_builder: Option<hyper_util::client::legacy::Builder>,
     pool_idle_timeout: Option<Option<Duration>>,
+    pool_max_idle_per_host: Option<usize>,
     connector_fn: F,
 ) -> SharedHttpClient
 where
@@ -1002,8 +1087,8 @@ where
         + Sync
         + 'static,
 {
-    let client_builder =
-        client_builder.unwrap_or_else(|| new_tokio_hyper_builder(pool_idle_timeout));
+    let client_builder = client_builder
+        .unwrap_or_else(|| new_tokio_hyper_builder(pool_idle_timeout, pool_max_idle_per_host));
     SharedHttpClient::new(HyperClient {
         connector_cache: RwLock::new(HashMap::new()),
         client_builder,
@@ -1015,6 +1100,7 @@ where
 pub(crate) fn build_with_tcp_conn_fn<C, F>(
     client_builder: Option<hyper_util::client::legacy::Builder>,
     pool_idle_timeout: Option<Option<Duration>>,
+    pool_max_idle_per_host: Option<usize>,
     tcp_connector_fn: F,
 ) -> SharedHttpClient
 where
@@ -1029,6 +1115,7 @@ where
     build_with_conn_fn(
         client_builder,
         pool_idle_timeout,
+        pool_max_idle_per_host,
         move |client_builder, settings, runtime_components| {
             let builder = new_conn_builder(client_builder, settings, runtime_components);
             builder.wrap_connector(tcp_connector_fn())
@@ -1072,7 +1159,7 @@ mod test {
     async fn connector_selection() {
         // Create a client that increments a count every time it creates a new Connector
         let creation_count = Arc::new(AtomicU32::new(0));
-        let http_client = build_with_tcp_conn_fn(None, None, {
+        let http_client = build_with_tcp_conn_fn(None, None, None, {
             let count = creation_count.clone();
             move || {
                 count.fetch_add(1, Ordering::Relaxed);
@@ -1346,5 +1433,16 @@ mod test {
             s2n_error,
             s2n_tls_hyper::error::Error::InvalidScheme
         ));
+    }
+
+    /// The default HTTP client reports "hyper" / "1.x" as its connector metadata.
+    #[test]
+    fn connector_metadata_identifies_hyper_1x() {
+        let client = crate::Builder::new().build_http();
+        let metadata = client
+            .connector_metadata()
+            .expect("connector metadata should be present");
+        assert_eq!(metadata.name(), Cow::Borrowed("hyper"));
+        assert_eq!(metadata.version(), Some(Cow::Borrowed("1.x")));
     }
 }

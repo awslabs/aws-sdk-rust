@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for LaunchI
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("LaunchInstances")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                LaunchInstancesTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,54 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for LaunchI
     }
 }
 
+#[derive(Debug)]
+struct LaunchInstancesTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for LaunchInstancesTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "LaunchInstancesTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<LaunchInstancesInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("AutoScalingGroupName") {
+            if let ::std::option::Option::Some(value) = input.auto_scaling_group_name.as_deref() {
+                captured.insert("AutoScalingGroupName", value);
+            }
+        }
+        if requested.should_capture("ClientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("ClientToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct LaunchInstancesResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for LaunchInstancesResponseDeserializer {
@@ -271,6 +322,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for LaunchInstanc
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum LaunchInstancesError {
+    /// <p>The service is currently processing another request with the same client token. Retry the request with the same client token—the in-flight operation will complete and return its result.</p>
+    IdempotentCallInProgressFault(crate::types::error::IdempotentCallInProgressFault),
     /// <p>Indicates that the parameters in the current request do not match the parameters from a previous request with the same client token within the idempotency window.</p>
     IdempotentParameterMismatchError(crate::types::error::IdempotentParameterMismatchError),
     /// <p>You already have a pending update to an Amazon EC2 Auto Scaling resource (for example, an Auto Scaling group, instance, or load balancer).</p>
@@ -308,10 +361,15 @@ impl LaunchInstancesError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::IdempotentCallInProgressFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IdempotentParameterMismatchError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceContentionFault(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `LaunchInstancesError::IdempotentCallInProgressFault`.
+    pub fn is_idempotent_call_in_progress_fault(&self) -> bool {
+        matches!(self, Self::IdempotentCallInProgressFault(_))
     }
     /// Returns `true` if the error kind is `LaunchInstancesError::IdempotentParameterMismatchError`.
     pub fn is_idempotent_parameter_mismatch_error(&self) -> bool {
@@ -325,6 +383,7 @@ impl LaunchInstancesError {
 impl ::std::error::Error for LaunchInstancesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::IdempotentCallInProgressFault(_inner) => ::std::option::Option::Some(_inner),
             Self::IdempotentParameterMismatchError(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceContentionFault(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -334,6 +393,7 @@ impl ::std::error::Error for LaunchInstancesError {
 impl ::std::fmt::Display for LaunchInstancesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::IdempotentCallInProgressFault(_inner) => _inner.fmt(f),
             Self::IdempotentParameterMismatchError(_inner) => _inner.fmt(f),
             Self::ResourceContentionFault(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -357,6 +417,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for LaunchInstancesError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for LaunchInstancesError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::IdempotentCallInProgressFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IdempotentParameterMismatchError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceContentionFault(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

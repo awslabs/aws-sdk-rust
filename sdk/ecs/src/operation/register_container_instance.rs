@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Registe
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RegisterContainerInstance")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RegisterContainerInstanceTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Registe
     }
 }
 
+#[derive(Debug)]
+struct RegisterContainerInstanceTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RegisterContainerInstanceTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "RegisterContainerInstanceTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<RegisterContainerInstanceInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("cluster") {
+            if let ::std::option::Option::Some(value) = input.cluster.as_deref() {
+                captured.insert("cluster", value);
+            }
+        }
+        if requested.should_capture("instanceIdentityDocument") {
+            if let ::std::option::Option::Some(value) = input.instance_identity_document.as_deref() {
+                captured.insert("instanceIdentityDocument", value);
+            }
+        }
+        if requested.should_capture("instanceIdentityDocumentSignature") {
+            if let ::std::option::Option::Some(value) = input.instance_identity_document_signature.as_deref() {
+                captured.insert("instanceIdentityDocumentSignature", value);
+            }
+        }
+        if requested.should_capture("containerInstanceArn") {
+            if let ::std::option::Option::Some(value) = input.container_instance_arn.as_deref() {
+                captured.insert("containerInstanceArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct RegisterContainerInstanceResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RegisterContainerInstanceResponseDeserializer {

@@ -34,6 +34,8 @@ pub struct Namespace {
     pub lakehouse_registration_status: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Glue Data Catalog associated with the namespace enabled with Amazon Redshift federated permissions.</p>
     pub catalog_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The current Amazon S3 Tables log-publishing status for the namespace. Not returned when S3 Tables publishing has never been configured for the namespace.</p>
+    pub s3_table_publish_status: ::std::option::Option<crate::types::S3TablePublishStatus>,
 }
 impl Namespace {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
@@ -100,6 +102,10 @@ impl Namespace {
     pub fn catalog_arn(&self) -> ::std::option::Option<&str> {
         self.catalog_arn.as_deref()
     }
+    /// <p>The current Amazon S3 Tables log-publishing status for the namespace. Not returned when S3 Tables publishing has never been configured for the namespace.</p>
+    pub fn s3_table_publish_status(&self) -> ::std::option::Option<&crate::types::S3TablePublishStatus> {
+        self.s3_table_publish_status.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Namespace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -119,6 +125,7 @@ impl ::std::fmt::Debug for Namespace {
         formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
         formatter.field("lakehouse_registration_status", &self.lakehouse_registration_status);
         formatter.field("catalog_arn", &self.catalog_arn);
+        formatter.field("s3_table_publish_status", &self.s3_table_publish_status);
         formatter.finish()
     }
 }
@@ -148,6 +155,7 @@ pub struct NamespaceBuilder {
     pub(crate) admin_password_secret_kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) lakehouse_registration_status: ::std::option::Option<::std::string::String>,
     pub(crate) catalog_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_table_publish_status: ::std::option::Option<crate::types::S3TablePublishStatus>,
 }
 impl NamespaceBuilder {
     /// <p>The Amazon Resource Name (ARN) associated with a namespace.</p>
@@ -372,6 +380,20 @@ impl NamespaceBuilder {
     pub fn get_catalog_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog_arn
     }
+    /// <p>The current Amazon S3 Tables log-publishing status for the namespace. Not returned when S3 Tables publishing has never been configured for the namespace.</p>
+    pub fn s3_table_publish_status(mut self, input: crate::types::S3TablePublishStatus) -> Self {
+        self.s3_table_publish_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current Amazon S3 Tables log-publishing status for the namespace. Not returned when S3 Tables publishing has never been configured for the namespace.</p>
+    pub fn set_s3_table_publish_status(mut self, input: ::std::option::Option<crate::types::S3TablePublishStatus>) -> Self {
+        self.s3_table_publish_status = input;
+        self
+    }
+    /// <p>The current Amazon S3 Tables log-publishing status for the namespace. Not returned when S3 Tables publishing has never been configured for the namespace.</p>
+    pub fn get_s3_table_publish_status(&self) -> &::std::option::Option<crate::types::S3TablePublishStatus> {
+        &self.s3_table_publish_status
+    }
     /// Consumes the builder and constructs a [`Namespace`](crate::types::Namespace).
     pub fn build(self) -> crate::types::Namespace {
         crate::types::Namespace {
@@ -390,6 +412,7 @@ impl NamespaceBuilder {
             admin_password_secret_kms_key_id: self.admin_password_secret_kms_key_id,
             lakehouse_registration_status: self.lakehouse_registration_status,
             catalog_arn: self.catalog_arn,
+            s3_table_publish_status: self.s3_table_publish_status,
         }
     }
 }
@@ -411,6 +434,7 @@ impl ::std::fmt::Debug for NamespaceBuilder {
         formatter.field("admin_password_secret_kms_key_id", &self.admin_password_secret_kms_key_id);
         formatter.field("lakehouse_registration_status", &self.lakehouse_registration_status);
         formatter.field("catalog_arn", &self.catalog_arn);
+        formatter.field("s3_table_publish_status", &self.s3_table_publish_status);
         formatter.finish()
     }
 }

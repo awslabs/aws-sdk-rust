@@ -3,25 +3,45 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use bytes::Bytes;
+use std::any::Any;
+
 /// Binary Blob Type
 ///
 /// Blobs represent protocol-agnostic binary content.
 #[derive(Debug, Default, PartialEq, Eq, Hash, Clone)]
 pub struct Blob {
-    inner: Vec<u8>,
+    inner: Bytes,
 }
 
 impl Blob {
     /// Creates a new blob from the given `input`.
     pub fn new<T: Into<Vec<u8>>>(input: T) -> Self {
         Blob {
-            inner: input.into(),
+            inner: input.into().into(),
         }
+    }
+
+    /// Creates a new blob, reusing an existing shared allocation when possible.
+    pub fn from_maybe_shared<T: AsRef<[u8]> + 'static>(input: T) -> Self {
+        let mut input = Some(input);
+        let inner =
+            if let Some(bytes) = (&mut input as &mut dyn Any).downcast_mut::<Option<Bytes>>() {
+                bytes.take().expect("input is present")
+            } else {
+                Bytes::copy_from_slice(input.as_ref().expect("input is present").as_ref())
+            };
+        Blob { inner }
+    }
+
+    /// Consumes the `Blob` and returns its contents as `Bytes`.
+    pub fn into_bytes(self) -> Bytes {
+        self.inner
     }
 
     /// Consumes the `Blob` and returns a `Vec<u8>` with its contents.
     pub fn into_inner(self) -> Vec<u8> {
-        self.inner
+        self.inner.into()
     }
 }
 
@@ -85,7 +105,7 @@ mod serde_deserialize {
             E: serde::de::Error,
         {
             match crate::base64::decode(v) {
-                Ok(inner) => Ok(Blob { inner }),
+                Ok(inner) => Ok(Blob::from(inner)),
                 Err(e) => Err(E::custom(e)),
             }
         }
@@ -102,7 +122,7 @@ mod serde_deserialize {
         where
             E: serde::de::Error,
         {
-            Ok(Blob { inner: v })
+            Ok(Blob::from(v))
         }
     }
 
@@ -123,6 +143,7 @@ mod serde_deserialize {
 #[cfg(test)]
 mod test {
     use crate::Blob;
+    use bytes::Bytes;
 
     #[test]
     fn blob_conversion() {
@@ -137,6 +158,25 @@ mod test {
         let blob2: Blob = my_vec.into();
         let vec2: Vec<u8> = blob2.into();
         assert_eq!(orig_vec, vec2);
+    }
+
+    #[test]
+    fn blob_reuses_bytes() {
+        let bytes = Bytes::from_static(b"some shared bytes");
+        let original_ptr = bytes.as_ptr();
+
+        let blob = Blob::from_maybe_shared(bytes);
+        let bytes = blob.into_bytes();
+
+        assert_eq!(original_ptr, bytes.as_ptr());
+    }
+
+    #[test]
+    fn blob_new_accepts_borrowed_data() {
+        let bytes = vec![1, 2, 3];
+        let blob = Blob::new(bytes.as_slice());
+
+        assert_eq!(bytes, blob.as_ref());
     }
 }
 
@@ -160,7 +200,7 @@ mod test_serde {
         let aws_in_base64 = r#"{"blob":"QVdT"}"#;
         let for_test = ForTest {
             blob: Blob {
-                inner: vec![b'A', b'W', b'S'],
+                inner: vec![b'A', b'W', b'S'].into(),
             },
         };
         assert_eq!(for_test, serde_json::from_str(aws_in_base64).unwrap());
@@ -174,7 +214,7 @@ mod test_serde {
 
         let for_test = ForTest {
             blob: Blob {
-                inner: vec![b'A', b'W', b'S'],
+                inner: vec![b'A', b'W', b'S'].into(),
             },
         };
         let mut buf = vec![];

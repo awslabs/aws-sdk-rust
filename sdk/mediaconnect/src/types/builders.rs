@@ -83,6 +83,8 @@ pub use crate::types::_router_input_thumbnail_details::RouterInputThumbnailDetai
 
 pub use crate::types::_router_network_interface::RouterNetworkInterfaceBuilder;
 
+pub use crate::types::_fabric_configuration::FabricConfigurationBuilder;
+
 pub use crate::types::_router_output::RouterOutputBuilder;
 
 pub use crate::types::_listed_entitlement::ListedEntitlementBuilder;

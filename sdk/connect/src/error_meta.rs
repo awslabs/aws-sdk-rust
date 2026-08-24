@@ -2013,6 +2013,51 @@ impl From<crate::operation::create_evaluation_form::CreateEvaluationFormError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_extraction_definition::CreateExtractionDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_extraction_definition::CreateExtractionDefinitionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_extraction_definition::CreateExtractionDefinitionError> for Error {
+    fn from(err: crate::operation::create_extraction_definition::CreateExtractionDefinitionError) -> Self {
+        match err {
+            crate::operation::create_extraction_definition::CreateExtractionDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_extraction_definition::CreateExtractionDefinitionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::create_extraction_definition::CreateExtractionDefinitionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_extraction_definition::CreateExtractionDefinitionError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::create_extraction_definition::CreateExtractionDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_extraction_definition::CreateExtractionDefinitionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_extraction_definition::CreateExtractionDefinitionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_extraction_definition::CreateExtractionDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_hours_of_operation::CreateHoursOfOperationError, R>>
     for Error
 where
@@ -3516,6 +3561,45 @@ impl From<crate::operation::delete_evaluation_form::DeleteEvaluationFormError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError> for Error {
+    fn from(err: crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError) -> Self {
+        match err {
+            crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_extraction_definition::DeleteExtractionDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError, R>>
     for Error
 where
@@ -4871,6 +4955,49 @@ impl From<crate::operation::describe_evaluation_form::DescribeEvaluationFormErro
             }
             crate::operation::describe_evaluation_form::DescribeEvaluationFormError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::describe_evaluation_form::DescribeEvaluationFormError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError> for Error {
+    fn from(err: crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError) -> Self {
+        match err {
+            crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::describe_extraction_definition::DescribeExtractionDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7946,6 +8073,45 @@ impl From<crate::operation::list_evaluation_form_versions::ListEvaluationFormVer
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_extraction_definitions::ListExtractionDefinitionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_extraction_definitions::ListExtractionDefinitionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_extraction_definitions::ListExtractionDefinitionsError> for Error {
+    fn from(err: crate::operation::list_extraction_definitions::ListExtractionDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_extraction_definitions::ListExtractionDefinitionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_extraction_definitions::ListExtractionDefinitionsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_extraction_definitions::ListExtractionDefinitionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_extraction_definitions::ListExtractionDefinitionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_extraction_definitions::ListExtractionDefinitionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_extraction_definitions::ListExtractionDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_flow_associations::ListFlowAssociationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -10791,6 +10957,48 @@ impl From<crate::operation::send_outbound_web_notification::SendOutboundWebNotif
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_assistant_contact::StartAssistantContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_assistant_contact::StartAssistantContactError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_assistant_contact::StartAssistantContactError> for Error {
+    fn from(err: crate::operation::start_assistant_contact::StartAssistantContactError) -> Self {
+        match err {
+            crate::operation::start_assistant_contact::StartAssistantContactError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_assistant_contact::StartAssistantContactError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_assistant_contact::StartAssistantContactError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_attached_file_upload::StartAttachedFileUploadError, R>>
     for Error
 where
@@ -11409,6 +11617,7 @@ where
 impl From<crate::operation::start_web_rtc_contact::StartWebRTCContactError> for Error {
     fn from(err: crate::operation::start_web_rtc_contact::StartWebRTCContactError) -> Self {
         match err {
+            crate::operation::start_web_rtc_contact::StartWebRTCContactError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::start_web_rtc_contact::StartWebRTCContactError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
@@ -12666,6 +12875,48 @@ impl From<crate::operation::update_evaluation_form::UpdateEvaluationFormError> f
             }
             crate::operation::update_evaluation_form::UpdateEvaluationFormError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_evaluation_form::UpdateEvaluationFormError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_extraction_definition::UpdateExtractionDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_extraction_definition::UpdateExtractionDefinitionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_extraction_definition::UpdateExtractionDefinitionError> for Error {
+    fn from(err: crate::operation::update_extraction_definition::UpdateExtractionDefinitionError) -> Self {
+        match err {
+            crate::operation::update_extraction_definition::UpdateExtractionDefinitionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_extraction_definition::UpdateExtractionDefinitionError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_extraction_definition::UpdateExtractionDefinitionError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_extraction_definition::UpdateExtractionDefinitionError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::update_extraction_definition::UpdateExtractionDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_extraction_definition::UpdateExtractionDefinitionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_extraction_definition::UpdateExtractionDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

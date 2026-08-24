@@ -122,6 +122,45 @@ impl From<crate::operation::agentic_retrieve_stream::AgenticRetrieveStreamError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError> for Error {
+    fn from(err: crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError) -> Self {
+        match err {
+            crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::check_ingested_document_acl::CheckIngestedDocumentAclError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_invocation::CreateInvocationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -421,6 +460,41 @@ impl From<crate::operation::get_flow_execution::GetFlowExecutionError> for Error
             crate::operation::get_flow_execution::GetFlowExecutionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_flow_execution::GetFlowExecutionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_flow_execution::GetFlowExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError> for Error {
+    fn from(err: crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError) -> Self {
+        match err {
+            crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_ingested_document_acl::GetIngestedDocumentAclError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

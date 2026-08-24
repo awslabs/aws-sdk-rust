@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutTemp
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("PutTemplateAction")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                PutTemplateActionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutTemp
     }
 }
 
+#[derive(Debug)]
+struct PutTemplateActionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutTemplateActionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "PutTemplateActionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<PutTemplateActionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("launchConfigurationTemplateID") {
+            if let ::std::option::Option::Some(value) = input.launch_configuration_template_id.as_deref() {
+                captured.insert("launchConfigurationTemplateID", value);
+            }
+        }
+        if requested.should_capture("actionName") {
+            if let ::std::option::Option::Some(value) = input.action_name.as_deref() {
+                captured.insert("actionName", value);
+            }
+        }
+        if requested.should_capture("documentIdentifier") {
+            if let ::std::option::Option::Some(value) = input.document_identifier.as_deref() {
+                captured.insert("documentIdentifier", value);
+            }
+        }
+        if requested.should_capture("actionID") {
+            if let ::std::option::Option::Some(value) = input.action_id.as_deref() {
+                captured.insert("actionID", value);
+            }
+        }
+        if requested.should_capture("documentVersion") {
+            if let ::std::option::Option::Some(value) = input.document_version.as_deref() {
+                captured.insert("documentVersion", value);
+            }
+        }
+        if requested.should_capture("operatingSystem") {
+            if let ::std::option::Option::Some(value) = input.operating_system.as_deref() {
+                captured.insert("operatingSystem", value);
+            }
+        }
+        if requested.should_capture("description") {
+            if let ::std::option::Option::Some(value) = input.description.as_deref() {
+                captured.insert("description", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct PutTemplateActionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutTemplateActionResponseDeserializer {

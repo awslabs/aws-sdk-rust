@@ -383,6 +383,8 @@ pub enum Error {
     TitleRequiredException(crate::types::error::TitleRequiredException),
     /// <p>The maximum number of tags for an CodeCommit resource has been exceeded.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),
+    /// <p>The specified input is either not valid, or it could not be validated.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -584,6 +586,7 @@ impl ::std::fmt::Display for Error {
             Error::TipsDivergenceExceededException(inner) => inner.fmt(f),
             Error::TitleRequiredException(inner) => inner.fmt(f),
             Error::TooManyTagsException(inner) => inner.fmt(f),
+            Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -794,6 +797,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::TipsDivergenceExceededException(inner) => inner.meta(),
             Self::TitleRequiredException(inner) => inner.meta(),
             Self::TooManyTagsException(inner) => inner.meta(),
+            Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -2153,6 +2157,64 @@ impl From<crate::operation::get_blob::GetBlobError> for Error {
             crate::operation::get_blob::GetBlobError::RepositoryDoesNotExistException(inner) => Error::RepositoryDoesNotExistException(inner),
             crate::operation::get_blob::GetBlobError::RepositoryNameRequiredException(inner) => Error::RepositoryNameRequiredException(inner),
             crate::operation::get_blob::GetBlobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_blob_differences::GetBlobDifferencesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_blob_differences::GetBlobDifferencesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_blob_differences::GetBlobDifferencesError> for Error {
+    fn from(err: crate::operation::get_blob_differences::GetBlobDifferencesError) -> Self {
+        match err {
+            crate::operation::get_blob_differences::GetBlobDifferencesError::BlobIdDoesNotExistException(inner) => {
+                Error::BlobIdDoesNotExistException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::BlobIdRequiredException(inner) => Error::BlobIdRequiredException(inner),
+            crate::operation::get_blob_differences::GetBlobDifferencesError::EncryptionIntegrityChecksFailedException(inner) => {
+                Error::EncryptionIntegrityChecksFailedException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::EncryptionKeyAccessDeniedException(inner) => {
+                Error::EncryptionKeyAccessDeniedException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::EncryptionKeyDisabledException(inner) => {
+                Error::EncryptionKeyDisabledException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::EncryptionKeyNotFoundException(inner) => {
+                Error::EncryptionKeyNotFoundException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::EncryptionKeyUnavailableException(inner) => {
+                Error::EncryptionKeyUnavailableException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::FileTooLargeException(inner) => Error::FileTooLargeException(inner),
+            crate::operation::get_blob_differences::GetBlobDifferencesError::InvalidBlobIdException(inner) => Error::InvalidBlobIdException(inner),
+            crate::operation::get_blob_differences::GetBlobDifferencesError::InvalidContinuationTokenException(inner) => {
+                Error::InvalidContinuationTokenException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::InvalidMaxResultsException(inner) => {
+                Error::InvalidMaxResultsException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::InvalidRepositoryNameException(inner) => {
+                Error::InvalidRepositoryNameException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::RepositoryDoesNotExistException(inner) => {
+                Error::RepositoryDoesNotExistException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::RepositoryNameRequiredException(inner) => {
+                Error::RepositoryNameRequiredException(inner)
+            }
+            crate::operation::get_blob_differences::GetBlobDifferencesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_blob_differences::GetBlobDifferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5473,6 +5535,7 @@ impl ::std::error::Error for Error {
             Error::TipsDivergenceExceededException(inner) => inner.source(),
             Error::TitleRequiredException(inner) => inner.source(),
             Error::TooManyTagsException(inner) => inner.source(),
+            Error::ValidationException(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -5669,6 +5732,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::TipsDivergenceExceededException(e) => e.request_id(),
             Self::TitleRequiredException(e) => e.request_id(),
             Self::TooManyTagsException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

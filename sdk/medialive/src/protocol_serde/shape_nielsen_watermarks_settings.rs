@@ -18,6 +18,12 @@ pub fn ser_nielsen_watermarks_settings(
         crate::protocol_serde::shape_nielsen_naes_ii_nw::ser_nielsen_naes_ii_nw(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.nielsen_nw_only_settings {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("nielsenNwOnlySettings").start_object();
+        crate::protocol_serde::shape_nielsen_nw_only::ser_nielsen_nw_only(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -64,6 +70,13 @@ where
                             builder = builder.set_nielsen_naes_ii_nw_settings(
                                 crate::protocol_serde::shape_nielsen_naes_ii_nw::de_nielsen_naes_ii_nw(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "nielsenNwOnlySettings" => {
+                            builder = builder.set_nielsen_nw_only_settings(crate::protocol_serde::shape_nielsen_nw_only::de_nielsen_nw_only(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

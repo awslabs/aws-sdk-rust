@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for MergeBr
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("MergeBranchesByThreeWay")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                MergeBranchesByThreeWayTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for MergeBr
     }
 }
 
+#[derive(Debug)]
+struct MergeBranchesByThreeWayTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for MergeBranchesByThreeWayTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "MergeBranchesByThreeWayTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<MergeBranchesByThreeWayInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("repositoryName") {
+            if let ::std::option::Option::Some(value) = input.repository_name.as_deref() {
+                captured.insert("repositoryName", value);
+            }
+        }
+        if requested.should_capture("sourceCommitSpecifier") {
+            if let ::std::option::Option::Some(value) = input.source_commit_specifier.as_deref() {
+                captured.insert("sourceCommitSpecifier", value);
+            }
+        }
+        if requested.should_capture("destinationCommitSpecifier") {
+            if let ::std::option::Option::Some(value) = input.destination_commit_specifier.as_deref() {
+                captured.insert("destinationCommitSpecifier", value);
+            }
+        }
+        if requested.should_capture("targetBranch") {
+            if let ::std::option::Option::Some(value) = input.target_branch.as_deref() {
+                captured.insert("targetBranch", value);
+            }
+        }
+        if requested.should_capture("authorName") {
+            if let ::std::option::Option::Some(value) = input.author_name.as_deref() {
+                captured.insert("authorName", value);
+            }
+        }
+        if requested.should_capture("email") {
+            if let ::std::option::Option::Some(value) = input.email.as_deref() {
+                captured.insert("email", value);
+            }
+        }
+        if requested.should_capture("commitMessage") {
+            if let ::std::option::Option::Some(value) = input.commit_message.as_deref() {
+                captured.insert("commitMessage", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct MergeBranchesByThreeWayResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for MergeBranchesByThreeWayResponseDeserializer {

@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ImportB
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ImportBackendAuth")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ImportBackendAuthTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ImportB
     }
 }
 
+#[derive(Debug)]
+struct ImportBackendAuthTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportBackendAuthTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ImportBackendAuthTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ImportBackendAuthInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("AppId") {
+            if let ::std::option::Option::Some(value) = input.app_id.as_deref() {
+                captured.insert("AppId", value);
+            }
+        }
+        if requested.should_capture("BackendEnvironmentName") {
+            if let ::std::option::Option::Some(value) = input.backend_environment_name.as_deref() {
+                captured.insert("BackendEnvironmentName", value);
+            }
+        }
+        if requested.should_capture("IdentityPoolId") {
+            if let ::std::option::Option::Some(value) = input.identity_pool_id.as_deref() {
+                captured.insert("IdentityPoolId", value);
+            }
+        }
+        if requested.should_capture("NativeClientId") {
+            if let ::std::option::Option::Some(value) = input.native_client_id.as_deref() {
+                captured.insert("NativeClientId", value);
+            }
+        }
+        if requested.should_capture("UserPoolId") {
+            if let ::std::option::Option::Some(value) = input.user_pool_id.as_deref() {
+                captured.insert("UserPoolId", value);
+            }
+        }
+        if requested.should_capture("WebClientId") {
+            if let ::std::option::Option::Some(value) = input.web_client_id.as_deref() {
+                captured.insert("WebClientId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ImportBackendAuthResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ImportBackendAuthResponseDeserializer {

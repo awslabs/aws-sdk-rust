@@ -347,9 +347,11 @@ mod tests {
     use std::error::Error;
     use std::fs;
 
-    use aws_smithy_runtime_api::client::http::HttpConnector;
-    use aws_smithy_runtime_api::client::http::SharedHttpConnector;
+    #[cfg(feature = "legacy-test-util")]
+    use aws_smithy_runtime_api::client::http::{HttpConnector, SharedHttpConnector};
+    #[cfg(feature = "legacy-test-util")]
     use aws_smithy_types::body::SdkBody;
+    #[cfg(feature = "legacy-test-util")]
     use aws_smithy_types::byte_stream::ByteStream;
 
     #[tokio::test]

@@ -7444,6 +7444,7 @@ impl From<crate::operation::put_asset_type::PutAssetTypeError> for Error {
             crate::operation::put_asset_type::PutAssetTypeError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
+            crate::operation::put_asset_type::PutAssetTypeError::EntityNotFoundException(inner) => Error::EntityNotFoundException(inner),
             crate::operation::put_asset_type::PutAssetTypeError::InternalServiceException(inner) => Error::InternalServiceException(inner),
             crate::operation::put_asset_type::PutAssetTypeError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::put_asset_type::PutAssetTypeError::ThrottlingException(inner) => Error::ThrottlingException(inner),

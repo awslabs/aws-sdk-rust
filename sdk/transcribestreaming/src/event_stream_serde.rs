@@ -19,7 +19,7 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for AudioStreamErrorMarsha
             ":message-type",
             ::aws_smithy_types::event_stream::HeaderValue::String("exception".into()),
         ));
-        let payload = Vec::new();
+        let payload = ::bytes::Bytes::new();
         Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
     }
 }
@@ -46,17 +46,19 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller 
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("AudioEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/octet-stream".into())));
                 if let Some(inner_payload) = inner.audio_chunk {
-                    inner_payload.into_inner()
+                    ::aws_smithy_types::Blob::from(inner_payload).into_bytes()
                 }
                  else  {
-                    Vec::new()
+                    ::bytes::Bytes::new()
                 }
             }
             Self::Input::ConfigurationEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("ConfigurationEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_audio_stream::ser_configuration_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_audio_stream::ser_configuration_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::Unknown => return Err(
                                             ::aws_smithy_eventstream::error::Error::marshalling("Cannot serialize `AudioStream::Unknown` for the request. The `Unknown` variant is intended for responses only. It occurs when an outdated client is used after a new enum variant was added on the server side.".to_owned())
@@ -87,7 +89,7 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for MedicalScribeInputStre
             ":message-type",
             ::aws_smithy_types::event_stream::HeaderValue::String("exception".into()),
         ));
-        let payload = Vec::new();
+        let payload = ::bytes::Bytes::new();
         Ok(::aws_smithy_types::event_stream::Message::new_from_parts(headers, payload))
     }
 }
@@ -113,19 +115,23 @@ impl ::aws_smithy_eventstream::frame::MarshallMessage for MedicalScribeInputStre
             Self::Input::AudioEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("AudioEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/octet-stream".into())));
-                inner.audio_chunk.into_inner()
+                ::aws_smithy_types::Blob::from(inner.audio_chunk).into_bytes()
             }
             Self::Input::SessionControlEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("SessionControlEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_medical_scribe_input_stream::ser_session_control_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_medical_scribe_input_stream::ser_session_control_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::ConfigurationEvent(inner) =>  {
                 headers.push(::aws_smithy_types::event_stream::Header::new(":event-type", ::aws_smithy_types::event_stream::HeaderValue::String("ConfigurationEvent".into())));
                 headers.push(::aws_smithy_types::event_stream::Header::new(":content-type", ::aws_smithy_types::event_stream::HeaderValue::String("application/json".into())));
-                crate::protocol_serde::shape_medical_scribe_input_stream::ser_configuration_event_payload(&inner)
-                                            .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                ::bytes::Bytes::from(
+                                            crate::protocol_serde::shape_medical_scribe_input_stream::ser_configuration_event_payload(&inner)
+                                                .map_err(|err| ::aws_smithy_eventstream::error::Error::marshalling(format!("{err}")))?
+                                        )
             }
             Self::Input::Unknown => return Err(
                                             ::aws_smithy_eventstream::error::Error::marshalling("Cannot serialize `MedicalScribeInputStream::Unknown` for the request. The `Unknown` variant is intended for responses only. It occurs when an outdated client is used after a new enum variant was added on the server side.".to_owned())

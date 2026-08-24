@@ -22,7 +22,7 @@ impl crate::operation::delete_id_namespace::builders::DeleteIdNamespaceInputBuil
 }
 /// Fluent builder constructing a request to `DeleteIdNamespace`.
 ///
-/// <p>Deletes the <code>IdNamespace</code> with a given name.</p>
+/// <p>Deletes the <code>IdNamespace</code> with a given name. This operation returns a <code>ResourceNotFoundException</code> if an ID namespace with the given name does not exist.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteIdNamespaceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

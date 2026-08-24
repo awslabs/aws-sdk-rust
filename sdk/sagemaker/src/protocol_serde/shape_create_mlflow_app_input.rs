@@ -12,35 +12,38 @@ pub fn ser_create_mlflow_app_input_input(
     if let Some(var_3) = &input.role_arn {
         object.key("RoleArn").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.model_registration_mode {
-        object.key("ModelRegistrationMode").string(var_4.as_str());
+    if let Some(var_4) = &input.kms_key_id {
+        object.key("KmsKeyId").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.weekly_maintenance_window_start {
-        object.key("WeeklyMaintenanceWindowStart").string(var_5.as_str());
+    if let Some(var_5) = &input.model_registration_mode {
+        object.key("ModelRegistrationMode").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.account_default_status {
-        object.key("AccountDefaultStatus").string(var_6.as_str());
+    if let Some(var_6) = &input.weekly_maintenance_window_start {
+        object.key("WeeklyMaintenanceWindowStart").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.default_domain_id_list {
-        let mut array_8 = object.key("DefaultDomainIdList").start_array();
-        for item_9 in var_7 {
+    if let Some(var_7) = &input.account_default_status {
+        object.key("AccountDefaultStatus").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.default_domain_id_list {
+        let mut array_9 = object.key("DefaultDomainIdList").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("Tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("Tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
     Ok(())
 }

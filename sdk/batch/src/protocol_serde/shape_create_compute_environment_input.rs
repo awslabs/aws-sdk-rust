@@ -15,35 +15,41 @@ pub fn ser_create_compute_environment_input_input(
     if let Some(var_4) = &input.context {
         object.key("context").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.eks_configuration {
+    if let Some(var_5) = &input.ecs_settings {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("eksConfiguration").start_object();
-        crate::protocol_serde::shape_eks_configuration::ser_eks_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("ecsSettings").start_object();
+        crate::protocol_serde::shape_ecs_settings::ser_ecs_settings(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.service_role {
-        object.key("serviceRole").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.state {
-        object.key("state").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_7) = &input.eks_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_8 = object.key("eksConfiguration").start_object();
+        crate::protocol_serde::shape_eks_configuration::ser_eks_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.service_role {
+        object.key("serviceRole").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.state {
+        object.key("state").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
-    if let Some(var_13) = &input.r#type {
-        object.key("type").string(var_13.as_str());
+    if let Some(var_15) = &input.r#type {
+        object.key("type").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.unmanagedv_cpus {
+    if let Some(var_16) = &input.unmanagedv_cpus {
         object.key("unmanagedvCpus").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_14).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
     Ok(())

@@ -57,6 +57,24 @@ pub fn ser_intermediate_table_analysis_rule_custom(
         }
         array_17.finish();
     }
+    if let Some(var_19) = &input.aggregation_thresholds {
+        let mut array_20 = object.key("aggregationThresholds").start_array();
+        for item_21 in var_19 {
+            {
+                #[allow(unused_mut)]
+                let mut object_22 = array_20.value().start_object();
+                crate::protocol_serde::shape_aggregation_threshold::ser_aggregation_threshold(&mut object_22, item_21)?;
+                object_22.finish();
+            }
+        }
+        array_20.finish();
+    }
+    if let Some(var_23) = &input.comparison_controls {
+        #[allow(unused_mut)]
+        let mut object_24 = object.key("comparisonControls").start_object();
+        crate::protocol_serde::shape_comparison_controls::ser_comparison_controls(&mut object_24, var_23)?;
+        object_24.finish();
+    }
     Ok(())
 }
 
@@ -128,6 +146,18 @@ where
                             builder = builder.set_disallowed_output_columns(
                                 crate::protocol_serde::shape_analysis_rule_column_list::de_analysis_rule_column_list(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "aggregationThresholds" => {
+                            builder = builder.set_aggregation_thresholds(
+                                crate::protocol_serde::shape_aggregation_threshold_list::de_aggregation_threshold_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "comparisonControls" => {
+                            builder = builder.set_comparison_controls(crate::protocol_serde::shape_comparison_controls::de_comparison_controls(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

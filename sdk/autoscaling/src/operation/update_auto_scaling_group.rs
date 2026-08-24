@@ -133,6 +133,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateA
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateAutoScalingGroup")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateAutoScalingGroupTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -152,6 +155,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateA
     }
 }
 
+#[derive(Debug)]
+struct UpdateAutoScalingGroupTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateAutoScalingGroupTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateAutoScalingGroupTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateAutoScalingGroupInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("AutoScalingGroupName") {
+            if let ::std::option::Option::Some(value) = input.auto_scaling_group_name.as_deref() {
+                captured.insert("AutoScalingGroupName", value);
+            }
+        }
+        if requested.should_capture("LaunchConfigurationName") {
+            if let ::std::option::Option::Some(value) = input.launch_configuration_name.as_deref() {
+                captured.insert("LaunchConfigurationName", value);
+            }
+        }
+        if requested.should_capture("HealthCheckType") {
+            if let ::std::option::Option::Some(value) = input.health_check_type.as_deref() {
+                captured.insert("HealthCheckType", value);
+            }
+        }
+        if requested.should_capture("PlacementGroup") {
+            if let ::std::option::Option::Some(value) = input.placement_group.as_deref() {
+                captured.insert("PlacementGroup", value);
+            }
+        }
+        if requested.should_capture("VPCZoneIdentifier") {
+            if let ::std::option::Option::Some(value) = input.vpc_zone_identifier.as_deref() {
+                captured.insert("VPCZoneIdentifier", value);
+            }
+        }
+        if requested.should_capture("ServiceLinkedRoleARN") {
+            if let ::std::option::Option::Some(value) = input.service_linked_role_arn.as_deref() {
+                captured.insert("ServiceLinkedRoleARN", value);
+            }
+        }
+        if requested.should_capture("Context") {
+            if let ::std::option::Option::Some(value) = input.context.as_deref() {
+                captured.insert("Context", value);
+            }
+        }
+        if requested.should_capture("DesiredCapacityType") {
+            if let ::std::option::Option::Some(value) = input.desired_capacity_type.as_deref() {
+                captured.insert("DesiredCapacityType", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateAutoScalingGroupResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateAutoScalingGroupResponseDeserializer {

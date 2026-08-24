@@ -138,9 +138,15 @@ impl Client {
 
 mod associate_source_network_stack;
 
+mod cancel_recovery_plan_execution;
+
 mod create_extended_source_server;
 
 mod create_launch_configuration_template;
+
+mod create_recovery_plan;
+
+mod create_recovery_plan_step;
 
 mod create_replication_configuration_template;
 
@@ -181,6 +187,12 @@ mod delete_launch_configuration_template;
 
 mod delete_recovery_instance;
 
+mod delete_recovery_plan;
+
+mod delete_recovery_plan_execution;
+
+mod delete_recovery_plan_step;
+
 mod delete_replication_configuration_template;
 
 mod delete_source_network;
@@ -213,6 +225,14 @@ mod get_failback_replication_configuration;
 
 mod get_launch_configuration;
 
+mod get_recovery_plan;
+
+mod get_recovery_plan_execution;
+
+mod get_recovery_plan_execution_step;
+
+mod get_recovery_plan_step;
+
 mod get_replication_configuration;
 
 mod initialize_service;
@@ -221,19 +241,33 @@ mod list_extensible_source_servers;
 
 mod list_launch_actions;
 
+mod list_recovery_plan_execution_steps;
+
+mod list_recovery_plan_executions;
+
+mod list_recovery_plan_steps;
+
+mod list_recovery_plans;
+
 mod list_staging_accounts;
 
 mod list_tags_for_resource;
 
 mod put_launch_action;
 
+mod reorder_recovery_plan_steps;
+
 mod retry_data_replication;
+
+mod retry_recovery_plan_execution_step;
 
 mod reverse_replication;
 
 mod start_failback_launch;
 
 mod start_recovery;
+
+mod start_recovery_plan_execution;
 
 mod start_replication;
 
@@ -258,6 +292,12 @@ mod update_failback_replication_configuration;
 mod update_launch_configuration;
 
 mod update_launch_configuration_template;
+
+mod update_recovery_plan;
+
+mod update_recovery_plan_execution_step;
+
+mod update_recovery_plan_step;
 
 mod update_replication_configuration;
 

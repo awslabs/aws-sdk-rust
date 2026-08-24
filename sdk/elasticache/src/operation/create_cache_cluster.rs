@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateCacheCluster")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateCacheClusterTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,114 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
     }
 }
 
+#[derive(Debug)]
+struct CreateCacheClusterTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateCacheClusterTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateCacheClusterTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateCacheClusterInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("CacheClusterId") {
+            if let ::std::option::Option::Some(value) = input.cache_cluster_id.as_deref() {
+                captured.insert("CacheClusterId", value);
+            }
+        }
+        if requested.should_capture("ReplicationGroupId") {
+            if let ::std::option::Option::Some(value) = input.replication_group_id.as_deref() {
+                captured.insert("ReplicationGroupId", value);
+            }
+        }
+        if requested.should_capture("PreferredAvailabilityZone") {
+            if let ::std::option::Option::Some(value) = input.preferred_availability_zone.as_deref() {
+                captured.insert("PreferredAvailabilityZone", value);
+            }
+        }
+        if requested.should_capture("CacheNodeType") {
+            if let ::std::option::Option::Some(value) = input.cache_node_type.as_deref() {
+                captured.insert("CacheNodeType", value);
+            }
+        }
+        if requested.should_capture("Engine") {
+            if let ::std::option::Option::Some(value) = input.engine.as_deref() {
+                captured.insert("Engine", value);
+            }
+        }
+        if requested.should_capture("EngineVersion") {
+            if let ::std::option::Option::Some(value) = input.engine_version.as_deref() {
+                captured.insert("EngineVersion", value);
+            }
+        }
+        if requested.should_capture("CacheParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.cache_parameter_group_name.as_deref() {
+                captured.insert("CacheParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("CacheSubnetGroupName") {
+            if let ::std::option::Option::Some(value) = input.cache_subnet_group_name.as_deref() {
+                captured.insert("CacheSubnetGroupName", value);
+            }
+        }
+        if requested.should_capture("SnapshotName") {
+            if let ::std::option::Option::Some(value) = input.snapshot_name.as_deref() {
+                captured.insert("SnapshotName", value);
+            }
+        }
+        if requested.should_capture("PreferredMaintenanceWindow") {
+            if let ::std::option::Option::Some(value) = input.preferred_maintenance_window.as_deref() {
+                captured.insert("PreferredMaintenanceWindow", value);
+            }
+        }
+        if requested.should_capture("NotificationTopicArn") {
+            if let ::std::option::Option::Some(value) = input.notification_topic_arn.as_deref() {
+                captured.insert("NotificationTopicArn", value);
+            }
+        }
+        if requested.should_capture("SnapshotWindow") {
+            if let ::std::option::Option::Some(value) = input.snapshot_window.as_deref() {
+                captured.insert("SnapshotWindow", value);
+            }
+        }
+        if requested.should_capture("AuthToken") {
+            if let ::std::option::Option::Some(value) = input.auth_token.as_deref() {
+                captured.insert("AuthToken", value);
+            }
+        }
+        if requested.should_capture("PreferredOutpostArn") {
+            if let ::std::option::Option::Some(value) = input.preferred_outpost_arn.as_deref() {
+                captured.insert("PreferredOutpostArn", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateCacheClusterResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateCacheClusterResponseDeserializer {

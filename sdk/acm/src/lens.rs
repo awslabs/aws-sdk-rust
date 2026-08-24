@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_acme_external_account_bindings_output_output_next_tok
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_certificate_domain_validations_output_output_next_token(
+    input: &crate::operation::list_certificate_domain_validations::ListCertificateDomainValidationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_certificates_output_output_next_token(
     input: &crate::operation::list_certificates::ListCertificatesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -84,6 +94,13 @@ pub(crate) fn lens_list_acme_external_account_bindings_output_output_external_ac
     input: crate::operation::list_acme_external_account_bindings::ListAcmeExternalAccountBindingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AcmeExternalAccountBindingSummary>> {
     let input = input.external_account_bindings?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_certificate_domain_validations_output_output_domain_validation_summary_list(
+    input: crate::operation::list_certificate_domain_validations::ListCertificateDomainValidationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationSummary>> {
+    let input = input.domain_validation_summary_list?;
     ::std::option::Option::Some(input)
 }
 

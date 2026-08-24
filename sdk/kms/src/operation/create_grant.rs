@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateG
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateGrant")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateGrantTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateG
     }
 }
 
+#[derive(Debug)]
+struct CreateGrantTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateGrantTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateGrantTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateGrantInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("KeyId") {
+            if let ::std::option::Option::Some(value) = input.key_id.as_deref() {
+                captured.insert("KeyId", value);
+            }
+        }
+        if requested.should_capture("GranteePrincipal") {
+            if let ::std::option::Option::Some(value) = input.grantee_principal.as_deref() {
+                captured.insert("GranteePrincipal", value);
+            }
+        }
+        if requested.should_capture("RetiringPrincipal") {
+            if let ::std::option::Option::Some(value) = input.retiring_principal.as_deref() {
+                captured.insert("RetiringPrincipal", value);
+            }
+        }
+        if requested.should_capture("Name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("Name", value);
+            }
+        }
+        if requested.should_capture("GranteeServicePrincipal") {
+            if let ::std::option::Option::Some(value) = input.grantee_service_principal.as_deref() {
+                captured.insert("GranteeServicePrincipal", value);
+            }
+        }
+        if requested.should_capture("RetiringServicePrincipal") {
+            if let ::std::option::Option::Some(value) = input.retiring_service_principal.as_deref() {
+                captured.insert("RetiringServicePrincipal", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateGrantResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateGrantResponseDeserializer {

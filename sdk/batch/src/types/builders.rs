@@ -3,6 +3,8 @@ pub use crate::types::_compute_resource::ComputeResourceBuilder;
 
 pub use crate::types::_eks_configuration::EksConfigurationBuilder;
 
+pub use crate::types::_ecs_settings::EcsSettingsBuilder;
+
 pub use crate::types::_quota_share_resource_sharing_configuration::QuotaShareResourceSharingConfigurationBuilder;
 
 pub use crate::types::_quota_share_preemption_configuration::QuotaSharePreemptionConfigurationBuilder;
@@ -58,6 +60,8 @@ pub use crate::types::_update_policy::UpdatePolicyBuilder;
 pub use crate::types::_launch_template_specification::LaunchTemplateSpecificationBuilder;
 
 pub use crate::types::_compute_scaling_policy::ComputeScalingPolicyBuilder;
+
+pub use crate::types::_managed_instances_provider::ManagedInstancesProviderBuilder;
 
 pub use crate::types::_compute_environment_order::ComputeEnvironmentOrderBuilder;
 
@@ -125,7 +129,13 @@ pub use crate::types::_job_dependency::JobDependencyBuilder;
 
 pub use crate::types::_eks_pod_properties_override::EksPodPropertiesOverrideBuilder;
 
+pub use crate::types::_update_managed_instances_provider_configuration::UpdateManagedInstancesProviderConfigurationBuilder;
+
 pub use crate::types::_ec2_configuration::Ec2ConfigurationBuilder;
+
+pub use crate::types::_instance_launch_template::InstanceLaunchTemplateBuilder;
+
+pub use crate::types::_infrastructure_optimization::InfrastructureOptimizationBuilder;
 
 pub use crate::types::_share_attributes::ShareAttributesBuilder;
 
@@ -179,7 +189,19 @@ pub use crate::types::_node_property_override::NodePropertyOverrideBuilder;
 
 pub use crate::types::_task_properties_override::TaskPropertiesOverrideBuilder;
 
+pub use crate::types::_instance_launch_template_update::InstanceLaunchTemplateUpdateBuilder;
+
 pub use crate::types::_launch_template_specification_override::LaunchTemplateSpecificationOverrideBuilder;
+
+pub use crate::types::_managed_instances_network_configuration::ManagedInstancesNetworkConfigurationBuilder;
+
+pub use crate::types::_instance_requirements_request::InstanceRequirementsRequestBuilder;
+
+pub use crate::types::_managed_instances_storage_configuration::ManagedInstancesStorageConfigurationBuilder;
+
+pub use crate::types::_capacity_reservation_request::CapacityReservationRequestBuilder;
+
+pub use crate::types::_managed_instances_local_storage_configuration::ManagedInstancesLocalStorageConfigurationBuilder;
 
 pub use crate::types::_attempt_detail::AttemptDetailBuilder;
 

@@ -7,7 +7,7 @@ pub struct StartMaterializedViewRefreshTaskRunInput {
     pub catalog_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database where the table resides.</p>
     pub database_name: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the table to generate run the materialized view refresh task.</p>
+    /// <p>The name of the materialized view to run the refresh task for.</p>
     pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this is a full refresh of the task run.</p>
     pub full_refresh: ::std::option::Option<bool>,
@@ -21,7 +21,7 @@ impl StartMaterializedViewRefreshTaskRunInput {
     pub fn database_name(&self) -> ::std::option::Option<&str> {
         self.database_name.as_deref()
     }
-    /// <p>The name of the table to generate run the materialized view refresh task.</p>
+    /// <p>The name of the materialized view to run the refresh task for.</p>
     pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
@@ -77,18 +77,18 @@ impl StartMaterializedViewRefreshTaskRunInputBuilder {
     pub fn get_database_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.database_name
     }
-    /// <p>The name of the table to generate run the materialized view refresh task.</p>
+    /// <p>The name of the materialized view to run the refresh task for.</p>
     /// This field is required.
     pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.table_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the table to generate run the materialized view refresh task.</p>
+    /// <p>The name of the materialized view to run the refresh task for.</p>
     pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
-    /// <p>The name of the table to generate run the materialized view refresh task.</p>
+    /// <p>The name of the materialized view to run the refresh task for.</p>
     pub fn get_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.table_name
     }

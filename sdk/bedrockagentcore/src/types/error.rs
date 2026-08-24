@@ -27,6 +27,8 @@ pub use crate::types::error::_throttled_exception::ThrottledException;
 
 pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
+pub use crate::types::error::_subscription_required_exception::SubscriptionRequiredException;
+
 /// Error type for the `CodeInterpreterStreamOutputError` operation.
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
@@ -495,6 +497,8 @@ mod _runtime_client_error;
 mod _service_exception;
 
 mod _service_quota_exceeded_exception;
+
+mod _subscription_required_exception;
 
 mod _throttled_exception;
 

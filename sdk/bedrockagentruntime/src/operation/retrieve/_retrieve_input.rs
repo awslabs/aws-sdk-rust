@@ -13,7 +13,7 @@ pub struct RetrieveInput {
     pub guardrail_configuration: ::std::option::Option<crate::types::GuardrailConfiguration>,
     /// <p>If there are more results than can fit in the response, the response returns a <code>nextToken</code>. Use this token in the <code>nextToken</code> field of another request to retrieve the next batch of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub user_context: ::std::option::Option<crate::types::UserContext>,
 }
 impl RetrieveInput {
@@ -37,7 +37,7 @@ impl RetrieveInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub fn user_context(&self) -> ::std::option::Option<&crate::types::UserContext> {
         self.user_context.as_ref()
     }
@@ -145,17 +145,17 @@ impl RetrieveInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub fn user_context(mut self, input: crate::types::UserContext) -> Self {
         self.user_context = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub fn set_user_context(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
         self.user_context = input;
         self
     }
-    /// <p>Contains information about the user making the request. Use this to pass user identity information for access control filtering, so that retrieval results only include documents the user is authorized to access.</p>
+    /// <p>Contains information about the user making the request. This is used for access control filtering to ensure that retrieval results only include documents the user is authorized to access.</p>
     pub fn get_user_context(&self) -> &::std::option::Option<crate::types::UserContext> {
         &self.user_context
     }

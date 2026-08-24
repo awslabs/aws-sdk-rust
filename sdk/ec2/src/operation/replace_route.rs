@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Replace
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ReplaceRoute")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ReplaceRouteTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,124 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Replace
     }
 }
 
+#[derive(Debug)]
+struct ReplaceRouteTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ReplaceRouteTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ReplaceRouteTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ReplaceRouteInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("DestinationPrefixListId") {
+            if let ::std::option::Option::Some(value) = input.destination_prefix_list_id.as_deref() {
+                captured.insert("DestinationPrefixListId", value);
+            }
+        }
+        if requested.should_capture("VpcEndpointId") {
+            if let ::std::option::Option::Some(value) = input.vpc_endpoint_id.as_deref() {
+                captured.insert("VpcEndpointId", value);
+            }
+        }
+        if requested.should_capture("TransitGatewayId") {
+            if let ::std::option::Option::Some(value) = input.transit_gateway_id.as_deref() {
+                captured.insert("TransitGatewayId", value);
+            }
+        }
+        if requested.should_capture("LocalGatewayId") {
+            if let ::std::option::Option::Some(value) = input.local_gateway_id.as_deref() {
+                captured.insert("LocalGatewayId", value);
+            }
+        }
+        if requested.should_capture("CarrierGatewayId") {
+            if let ::std::option::Option::Some(value) = input.carrier_gateway_id.as_deref() {
+                captured.insert("CarrierGatewayId", value);
+            }
+        }
+        if requested.should_capture("CoreNetworkArn") {
+            if let ::std::option::Option::Some(value) = input.core_network_arn.as_deref() {
+                captured.insert("CoreNetworkArn", value);
+            }
+        }
+        if requested.should_capture("OdbNetworkArn") {
+            if let ::std::option::Option::Some(value) = input.odb_network_arn.as_deref() {
+                captured.insert("OdbNetworkArn", value);
+            }
+        }
+        if requested.should_capture("RouteTableId") {
+            if let ::std::option::Option::Some(value) = input.route_table_id.as_deref() {
+                captured.insert("RouteTableId", value);
+            }
+        }
+        if requested.should_capture("DestinationCidrBlock") {
+            if let ::std::option::Option::Some(value) = input.destination_cidr_block.as_deref() {
+                captured.insert("DestinationCidrBlock", value);
+            }
+        }
+        if requested.should_capture("GatewayId") {
+            if let ::std::option::Option::Some(value) = input.gateway_id.as_deref() {
+                captured.insert("GatewayId", value);
+            }
+        }
+        if requested.should_capture("DestinationIpv6CidrBlock") {
+            if let ::std::option::Option::Some(value) = input.destination_ipv6_cidr_block.as_deref() {
+                captured.insert("DestinationIpv6CidrBlock", value);
+            }
+        }
+        if requested.should_capture("EgressOnlyInternetGatewayId") {
+            if let ::std::option::Option::Some(value) = input.egress_only_internet_gateway_id.as_deref() {
+                captured.insert("EgressOnlyInternetGatewayId", value);
+            }
+        }
+        if requested.should_capture("InstanceId") {
+            if let ::std::option::Option::Some(value) = input.instance_id.as_deref() {
+                captured.insert("InstanceId", value);
+            }
+        }
+        if requested.should_capture("NetworkInterfaceId") {
+            if let ::std::option::Option::Some(value) = input.network_interface_id.as_deref() {
+                captured.insert("NetworkInterfaceId", value);
+            }
+        }
+        if requested.should_capture("VpcPeeringConnectionId") {
+            if let ::std::option::Option::Some(value) = input.vpc_peering_connection_id.as_deref() {
+                captured.insert("VpcPeeringConnectionId", value);
+            }
+        }
+        if requested.should_capture("NatGatewayId") {
+            if let ::std::option::Option::Some(value) = input.nat_gateway_id.as_deref() {
+                captured.insert("NatGatewayId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ReplaceRouteResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ReplaceRouteResponseDeserializer {

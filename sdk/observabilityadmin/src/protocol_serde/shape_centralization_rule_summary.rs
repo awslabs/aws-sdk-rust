@@ -77,6 +77,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "TagPropagationStatus" => {
+                            builder = builder.set_tag_propagation_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TagPropagationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "TagPropagationFailureReason" => {
+                            builder = builder.set_tag_propagation_failure_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TagPropagationFailureReason::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "DestinationAccountId" => {
                             builder = builder.set_destination_account_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

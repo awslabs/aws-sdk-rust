@@ -14,6 +14,7 @@
 /// match platformcapability {
 ///     PlatformCapability::Ec2 => { /* ... */ },
 ///     PlatformCapability::Fargate => { /* ... */ },
+///     PlatformCapability::ManagedInstances => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum PlatformCapability {
     Ec2,
     #[allow(missing_docs)] // documentation missing in model
     Fargate,
+    #[allow(missing_docs)] // documentation missing in model
+    ManagedInstances,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for PlatformCapability {
         match s {
             "EC2" => PlatformCapability::Ec2,
             "FARGATE" => PlatformCapability::Fargate,
+            "MANAGED_INSTANCES" => PlatformCapability::ManagedInstances,
             other => PlatformCapability::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl PlatformCapability {
         match self {
             PlatformCapability::Ec2 => "EC2",
             PlatformCapability::Fargate => "FARGATE",
+            PlatformCapability::ManagedInstances => "MANAGED_INSTANCES",
             PlatformCapability::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EC2", "FARGATE"]
+        &["EC2", "FARGATE", "MANAGED_INSTANCES"]
     }
 }
 impl ::std::convert::AsRef<str> for PlatformCapability {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for PlatformCapability {
         match self {
             PlatformCapability::Ec2 => write!(f, "EC2"),
             PlatformCapability::Fargate => write!(f, "FARGATE"),
+            PlatformCapability::ManagedInstances => write!(f, "MANAGED_INSTANCES"),
             PlatformCapability::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -158,37 +158,37 @@ impl CreateSubscriptionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_arns`](Self::set_resource_arns).
     ///
-    /// <p>The ARNs of the AWS resources to include in the subscription. Specify one or more supported resources.</p><note>
-    /// <p>For subscriptions in the CloudFront plan family, the resources must include exactly one Amazon CloudFront distribution and exactly one AWS WAF web ACL. You can also include other supported resources, such as Amazon Route 53 hosted zones and CloudFront KeyValueStores.</p>
+    /// <p>The ARNs of the resources to include in the subscription. Specify one or more supported resources.</p><note>
+    /// <p>For subscriptions in the CloudFront plan family, the resources must include exactly one Amazon CloudFront distribution and exactly one WAF web ACL. You can also include other supported resources, such as Amazon Route 53 hosted zones and CloudFront KeyValueStores.</p>
     /// </note>
     pub fn resource_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arns(input.into());
         self
     }
-    /// <p>The ARNs of the AWS resources to include in the subscription. Specify one or more supported resources.</p><note>
-    /// <p>For subscriptions in the CloudFront plan family, the resources must include exactly one Amazon CloudFront distribution and exactly one AWS WAF web ACL. You can also include other supported resources, such as Amazon Route 53 hosted zones and CloudFront KeyValueStores.</p>
+    /// <p>The ARNs of the resources to include in the subscription. Specify one or more supported resources.</p><note>
+    /// <p>For subscriptions in the CloudFront plan family, the resources must include exactly one Amazon CloudFront distribution and exactly one WAF web ACL. You can also include other supported resources, such as Amazon Route 53 hosted zones and CloudFront KeyValueStores.</p>
     /// </note>
     pub fn set_resource_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_resource_arns(input);
         self
     }
-    /// <p>The ARNs of the AWS resources to include in the subscription. Specify one or more supported resources.</p><note>
-    /// <p>For subscriptions in the CloudFront plan family, the resources must include exactly one Amazon CloudFront distribution and exactly one AWS WAF web ACL. You can also include other supported resources, such as Amazon Route 53 hosted zones and CloudFront KeyValueStores.</p>
+    /// <p>The ARNs of the resources to include in the subscription. Specify one or more supported resources.</p><note>
+    /// <p>For subscriptions in the CloudFront plan family, the resources must include exactly one Amazon CloudFront distribution and exactly one WAF web ACL. You can also include other supported resources, such as Amazon Route 53 hosted zones and CloudFront KeyValueStores.</p>
     /// </note>
     pub fn get_resource_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_resource_arns()
     }
-    /// <p>Determines whether the subscription requires explicit approval before billing starts. Set to <code>MANUAL</code> to require a separate <code>ApprovePaidSubscription</code> call, or <code>IMMEDIATE</code> to activate the subscription right away. Defaults to <code>IMMEDIATE</code> if not specified.</p>
+    /// <p>Determines whether the subscription requires explicit approval before billing starts. Set to <code>MANUAL</code> to require a separate <code>ApprovePaidSubscription</code> call, or <code>IMMEDIATE</code> to activate the subscription right away. For paid tier plans, this defaults to <code>MANUAL</code> if not specified. For the <code>FREE</code> plan tier, only <code>IMMEDIATE</code> is supported, and it is the default.</p>
     pub fn approval_mode(mut self, input: crate::types::ApprovalMode) -> Self {
         self.inner = self.inner.approval_mode(input);
         self
     }
-    /// <p>Determines whether the subscription requires explicit approval before billing starts. Set to <code>MANUAL</code> to require a separate <code>ApprovePaidSubscription</code> call, or <code>IMMEDIATE</code> to activate the subscription right away. Defaults to <code>IMMEDIATE</code> if not specified.</p>
+    /// <p>Determines whether the subscription requires explicit approval before billing starts. Set to <code>MANUAL</code> to require a separate <code>ApprovePaidSubscription</code> call, or <code>IMMEDIATE</code> to activate the subscription right away. For paid tier plans, this defaults to <code>MANUAL</code> if not specified. For the <code>FREE</code> plan tier, only <code>IMMEDIATE</code> is supported, and it is the default.</p>
     pub fn set_approval_mode(mut self, input: ::std::option::Option<crate::types::ApprovalMode>) -> Self {
         self.inner = self.inner.set_approval_mode(input);
         self
     }
-    /// <p>Determines whether the subscription requires explicit approval before billing starts. Set to <code>MANUAL</code> to require a separate <code>ApprovePaidSubscription</code> call, or <code>IMMEDIATE</code> to activate the subscription right away. Defaults to <code>IMMEDIATE</code> if not specified.</p>
+    /// <p>Determines whether the subscription requires explicit approval before billing starts. Set to <code>MANUAL</code> to require a separate <code>ApprovePaidSubscription</code> call, or <code>IMMEDIATE</code> to activate the subscription right away. For paid tier plans, this defaults to <code>MANUAL</code> if not specified. For the <code>FREE</code> plan tier, only <code>IMMEDIATE</code> is supported, and it is the default.</p>
     pub fn get_approval_mode(&self) -> &::std::option::Option<crate::types::ApprovalMode> {
         self.inner.get_approval_mode()
     }

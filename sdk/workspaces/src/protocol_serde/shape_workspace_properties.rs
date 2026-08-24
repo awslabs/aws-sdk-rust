@@ -45,6 +45,9 @@ pub fn ser_workspace_properties(
         crate::protocol_serde::shape_global_accelerator_for_work_space::ser_global_accelerator_for_work_space(&mut object_11, var_10)?;
         object_11.finish();
     }
+    if let Some(var_12) = &input.nested_virtualization_enabled {
+        object.key("NestedVirtualizationEnabled").boolean(*var_12);
+    }
     Ok(())
 }
 
@@ -123,6 +126,10 @@ where
                                     depth + 1,
                                 )?,
                             );
+                        }
+                        "NestedVirtualizationEnabled" => {
+                            builder =
+                                builder.set_nested_virtualization_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

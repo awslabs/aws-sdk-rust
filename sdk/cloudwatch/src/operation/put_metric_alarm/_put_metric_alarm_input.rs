@@ -239,6 +239,9 @@ pub struct PutMetricAlarmInput {
     /// <p>You can use <code>EvaluationWindow</code> with any type of metric alarm except alarms that are based on a PromQL query.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm evaluation windows</a> in the <i>CloudWatch User Guide</i>.</p>
     pub evaluation_window: ::std::option::Option<crate::types::EvaluationWindow>,
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
     /// <p>The evaluation criteria for the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code>, a <code>Metrics</code> array, or an <code>EvaluationCriteria</code>.</p>
     /// <p>If you use the <code>EvaluationCriteria</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, <code>ExtendedStatistic</code>, <code>Metrics</code>, <code>Threshold</code>, <code>ComparisonOperator</code>, <code>ThresholdMetricId</code>, <code>EvaluationPeriods</code>, or <code>DatapointsToAlarm</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, all evaluation parameters are defined within this structure.</p>
     /// <p>For an example of how to use this parameter, see the <b>PromQL alarm</b> example on this page.</p>
@@ -542,6 +545,11 @@ impl PutMetricAlarmInput {
     pub fn evaluation_window(&self) -> ::std::option::Option<&crate::types::EvaluationWindow> {
         self.evaluation_window.as_ref()
     }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn warm_up_configuration(&self) -> ::std::option::Option<&crate::types::WarmUpConfiguration> {
+        self.warm_up_configuration.as_ref()
+    }
     /// <p>The evaluation criteria for the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code>, a <code>Metrics</code> array, or an <code>EvaluationCriteria</code>.</p>
     /// <p>If you use the <code>EvaluationCriteria</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, <code>ExtendedStatistic</code>, <code>Metrics</code>, <code>Threshold</code>, <code>ComparisonOperator</code>, <code>ThresholdMetricId</code>, <code>EvaluationPeriods</code>, or <code>DatapointsToAlarm</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, all evaluation parameters are defined within this structure.</p>
     /// <p>For an example of how to use this parameter, see the <b>PromQL alarm</b> example on this page.</p>
@@ -588,6 +596,7 @@ pub struct PutMetricAlarmInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) threshold_metric_id: ::std::option::Option<::std::string::String>,
     pub(crate) evaluation_window: ::std::option::Option<crate::types::EvaluationWindow>,
+    pub(crate) warm_up_configuration: ::std::option::Option<crate::types::WarmUpConfiguration>,
     pub(crate) evaluation_criteria: ::std::option::Option<crate::types::EvaluationCriteria>,
     pub(crate) evaluation_interval: ::std::option::Option<i32>,
 }
@@ -1521,6 +1530,23 @@ impl PutMetricAlarmInputBuilder {
     pub fn get_evaluation_window(&self) -> &::std::option::Option<crate::types::EvaluationWindow> {
         &self.evaluation_window
     }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn warm_up_configuration(mut self, input: crate::types::WarmUpConfiguration) -> Self {
+        self.warm_up_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn set_warm_up_configuration(mut self, input: ::std::option::Option<crate::types::WarmUpConfiguration>) -> Self {
+        self.warm_up_configuration = input;
+        self
+    }
+    /// <p>The warm-up configuration for the alarm. A warm-up period delays alarm evaluation after you create or update the alarm. The warm-up period reduces alarm noise from missing data while a new resource or service starts publishing metrics.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
+    pub fn get_warm_up_configuration(&self) -> &::std::option::Option<crate::types::WarmUpConfiguration> {
+        &self.warm_up_configuration
+    }
     /// <p>The evaluation criteria for the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code>, a <code>Metrics</code> array, or an <code>EvaluationCriteria</code>.</p>
     /// <p>If you use the <code>EvaluationCriteria</code> parameter, you cannot include the <code>Namespace</code>, <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Unit</code>, <code>Statistic</code>, <code>ExtendedStatistic</code>, <code>Metrics</code>, <code>Threshold</code>, <code>ComparisonOperator</code>, <code>ThresholdMetricId</code>, <code>EvaluationPeriods</code>, or <code>DatapointsToAlarm</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, all evaluation parameters are defined within this structure.</p>
     /// <p>For an example of how to use this parameter, see the <b>PromQL alarm</b> example on this page.</p>
@@ -1586,6 +1612,7 @@ impl PutMetricAlarmInputBuilder {
             tags: self.tags,
             threshold_metric_id: self.threshold_metric_id,
             evaluation_window: self.evaluation_window,
+            warm_up_configuration: self.warm_up_configuration,
             evaluation_criteria: self.evaluation_criteria,
             evaluation_interval: self.evaluation_interval,
         })

@@ -135,6 +135,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateP
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreatePodIdentityAssociation")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreatePodIdentityAssociationTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -154,6 +157,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateP
     }
 }
 
+#[derive(Debug)]
+struct CreatePodIdentityAssociationTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreatePodIdentityAssociationTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreatePodIdentityAssociationTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreatePodIdentityAssociationInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("clusterName") {
+            if let ::std::option::Option::Some(value) = input.cluster_name.as_deref() {
+                captured.insert("clusterName", value);
+            }
+        }
+        if requested.should_capture("namespace") {
+            if let ::std::option::Option::Some(value) = input.namespace.as_deref() {
+                captured.insert("namespace", value);
+            }
+        }
+        if requested.should_capture("serviceAccount") {
+            if let ::std::option::Option::Some(value) = input.service_account.as_deref() {
+                captured.insert("serviceAccount", value);
+            }
+        }
+        if requested.should_capture("roleArn") {
+            if let ::std::option::Option::Some(value) = input.role_arn.as_deref() {
+                captured.insert("roleArn", value);
+            }
+        }
+        if requested.should_capture("clientRequestToken") {
+            if let ::std::option::Option::Some(value) = input.client_request_token.as_deref() {
+                captured.insert("clientRequestToken", value);
+            }
+        }
+        if requested.should_capture("targetRoleArn") {
+            if let ::std::option::Option::Some(value) = input.target_role_arn.as_deref() {
+                captured.insert("targetRoleArn", value);
+            }
+        }
+        if requested.should_capture("policy") {
+            if let ::std::option::Option::Some(value) = input.policy.as_deref() {
+                captured.insert("policy", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreatePodIdentityAssociationResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreatePodIdentityAssociationResponseDeserializer {

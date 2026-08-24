@@ -12,6 +12,12 @@ pub struct CreateRemoteAccessSessionConfiguration {
     pub vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The device proxy to be configured on the device for the remote access session.</p>
     pub device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
+    /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// </ul>
+    pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRemoteAccessSessionConfiguration {
     /// <p>A list of upload ARNs for app packages to be installed onto your device. (Maximum 3)</p>
@@ -34,6 +40,14 @@ impl CreateRemoteAccessSessionConfiguration {
     pub fn device_proxy(&self) -> ::std::option::Option<&crate::types::DeviceProxy> {
         self.device_proxy.as_ref()
     }
+    /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// </ul>
+    pub fn parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.parameters.as_ref()
+    }
 }
 impl CreateRemoteAccessSessionConfiguration {
     /// Creates a new builder-style object to manufacture [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
@@ -50,6 +64,7 @@ pub struct CreateRemoteAccessSessionConfigurationBuilder {
     pub(crate) billing_method: ::std::option::Option<crate::types::BillingMethod>,
     pub(crate) vpce_configuration_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) device_proxy: ::std::option::Option<crate::types::DeviceProxy>,
+    pub(crate) parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRemoteAccessSessionConfigurationBuilder {
     /// Appends an item to `auxiliary_apps`.
@@ -120,6 +135,38 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
     pub fn get_device_proxy(&self) -> &::std::option::Option<crate::types::DeviceProxy> {
         &self.device_proxy
     }
+    /// Adds a key-value pair to `parameters`.
+    ///
+    /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+    ///
+    /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// </ul>
+    pub fn parameters(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.parameters = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// </ul>
+    pub fn set_parameters(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.parameters = input;
+        self
+    }
+    /// <p>The name-value string pairs that specify additional settings for the remote access session.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>appium:version</code>: The major version of the Appium server to use for the session (for example, 2 or 3). The service may reject the selected version if it is not available for the selected device.</p></li>
+    /// </ul>
+    pub fn get_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.parameters
+    }
     /// Consumes the builder and constructs a [`CreateRemoteAccessSessionConfiguration`](crate::types::CreateRemoteAccessSessionConfiguration).
     pub fn build(self) -> crate::types::CreateRemoteAccessSessionConfiguration {
         crate::types::CreateRemoteAccessSessionConfiguration {
@@ -127,6 +174,7 @@ impl CreateRemoteAccessSessionConfigurationBuilder {
             billing_method: self.billing_method,
             vpce_configuration_arns: self.vpce_configuration_arns,
             device_proxy: self.device_proxy,
+            parameters: self.parameters,
         }
     }
 }

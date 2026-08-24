@@ -41,6 +41,8 @@ pub struct ComputeEnvironmentDetail {
     pub uuid: ::std::option::Option<::std::string::String>,
     /// <p>Reserved.</p>
     pub context: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection.</p>
+    pub ecs_settings: ::std::option::Option<crate::types::EcsSettings>,
 }
 impl ComputeEnvironmentDetail {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -112,6 +114,10 @@ impl ComputeEnvironmentDetail {
     pub fn context(&self) -> ::std::option::Option<&str> {
         self.context.as_deref()
     }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection.</p>
+    pub fn ecs_settings(&self) -> ::std::option::Option<&crate::types::EcsSettings> {
+        self.ecs_settings.as_ref()
+    }
 }
 impl ComputeEnvironmentDetail {
     /// Creates a new builder-style object to manufacture [`ComputeEnvironmentDetail`](crate::types::ComputeEnvironmentDetail).
@@ -140,6 +146,7 @@ pub struct ComputeEnvironmentDetailBuilder {
     pub(crate) container_orchestration_type: ::std::option::Option<crate::types::OrchestrationType>,
     pub(crate) uuid: ::std::option::Option<::std::string::String>,
     pub(crate) context: ::std::option::Option<::std::string::String>,
+    pub(crate) ecs_settings: ::std::option::Option<crate::types::EcsSettings>,
 }
 impl ComputeEnvironmentDetailBuilder {
     /// <p>The name of the compute environment. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).</p>
@@ -389,6 +396,20 @@ impl ComputeEnvironmentDetailBuilder {
     pub fn get_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.context
     }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection.</p>
+    pub fn ecs_settings(mut self, input: crate::types::EcsSettings) -> Self {
+        self.ecs_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection.</p>
+    pub fn set_ecs_settings(mut self, input: ::std::option::Option<crate::types::EcsSettings>) -> Self {
+        self.ecs_settings = input;
+        self
+    }
+    /// <p>The Amazon ECS settings for the compute environment. These settings control CloudWatch Container Insights collection.</p>
+    pub fn get_ecs_settings(&self) -> &::std::option::Option<crate::types::EcsSettings> {
+        &self.ecs_settings
+    }
     /// Consumes the builder and constructs a [`ComputeEnvironmentDetail`](crate::types::ComputeEnvironmentDetail).
     pub fn build(self) -> crate::types::ComputeEnvironmentDetail {
         crate::types::ComputeEnvironmentDetail {
@@ -408,6 +429,7 @@ impl ComputeEnvironmentDetailBuilder {
             container_orchestration_type: self.container_orchestration_type,
             uuid: self.uuid,
             context: self.context,
+            ecs_settings: self.ecs_settings,
         }
     }
 }

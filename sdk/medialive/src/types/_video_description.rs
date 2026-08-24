@@ -18,6 +18,10 @@ pub struct VideoDescription {
     pub sharpness: ::std::option::Option<i32>,
     /// Output video width, in pixels. Must be an even number. For most codecs, you can leave this field and height blank in order to use the height and width (resolution) from the source. Note, however, that leaving blank is not recommended. For the Frame Capture codec, height and width are required.
     pub width: ::std::option::Option<i32>,
+    /// Region of the input video to crop before scaling. If not specified, the entire input frame is used. Note: Unlike {@link outputPositionRectangle}, the bounds of cropRectangle are validated at ingest time by the encoder/scaler rather than at the API level, because the input resolution is not known until the source is probed. Field-level constraints on (x, y, width, height) defined on {@link VideoPositionRectangle} still apply.
+    pub crop_rectangle: ::std::option::Option<crate::types::VideoPositionRectangle>,
+    /// Position of the encoded video within the output frame. The area outside the rectangle is filled with black. If not specified, the video fills the entire output frame. When used, both {@link width} and {@link height} of the VideoDescription must be explicitly specified so that the rectangle can be validated against the output frame.
+    pub output_position_rectangle: ::std::option::Option<crate::types::VideoPositionRectangle>,
 }
 impl VideoDescription {
     /// Video codec settings.
@@ -48,6 +52,14 @@ impl VideoDescription {
     pub fn width(&self) -> ::std::option::Option<i32> {
         self.width
     }
+    /// Region of the input video to crop before scaling. If not specified, the entire input frame is used. Note: Unlike {@link outputPositionRectangle}, the bounds of cropRectangle are validated at ingest time by the encoder/scaler rather than at the API level, because the input resolution is not known until the source is probed. Field-level constraints on (x, y, width, height) defined on {@link VideoPositionRectangle} still apply.
+    pub fn crop_rectangle(&self) -> ::std::option::Option<&crate::types::VideoPositionRectangle> {
+        self.crop_rectangle.as_ref()
+    }
+    /// Position of the encoded video within the output frame. The area outside the rectangle is filled with black. If not specified, the video fills the entire output frame. When used, both {@link width} and {@link height} of the VideoDescription must be explicitly specified so that the rectangle can be validated against the output frame.
+    pub fn output_position_rectangle(&self) -> ::std::option::Option<&crate::types::VideoPositionRectangle> {
+        self.output_position_rectangle.as_ref()
+    }
 }
 impl VideoDescription {
     /// Creates a new builder-style object to manufacture [`VideoDescription`](crate::types::VideoDescription).
@@ -67,6 +79,8 @@ pub struct VideoDescriptionBuilder {
     pub(crate) scaling_behavior: ::std::option::Option<crate::types::VideoDescriptionScalingBehavior>,
     pub(crate) sharpness: ::std::option::Option<i32>,
     pub(crate) width: ::std::option::Option<i32>,
+    pub(crate) crop_rectangle: ::std::option::Option<crate::types::VideoPositionRectangle>,
+    pub(crate) output_position_rectangle: ::std::option::Option<crate::types::VideoPositionRectangle>,
 }
 impl VideoDescriptionBuilder {
     /// Video codec settings.
@@ -168,6 +182,34 @@ impl VideoDescriptionBuilder {
     pub fn get_width(&self) -> &::std::option::Option<i32> {
         &self.width
     }
+    /// Region of the input video to crop before scaling. If not specified, the entire input frame is used. Note: Unlike {@link outputPositionRectangle}, the bounds of cropRectangle are validated at ingest time by the encoder/scaler rather than at the API level, because the input resolution is not known until the source is probed. Field-level constraints on (x, y, width, height) defined on {@link VideoPositionRectangle} still apply.
+    pub fn crop_rectangle(mut self, input: crate::types::VideoPositionRectangle) -> Self {
+        self.crop_rectangle = ::std::option::Option::Some(input);
+        self
+    }
+    /// Region of the input video to crop before scaling. If not specified, the entire input frame is used. Note: Unlike {@link outputPositionRectangle}, the bounds of cropRectangle are validated at ingest time by the encoder/scaler rather than at the API level, because the input resolution is not known until the source is probed. Field-level constraints on (x, y, width, height) defined on {@link VideoPositionRectangle} still apply.
+    pub fn set_crop_rectangle(mut self, input: ::std::option::Option<crate::types::VideoPositionRectangle>) -> Self {
+        self.crop_rectangle = input;
+        self
+    }
+    /// Region of the input video to crop before scaling. If not specified, the entire input frame is used. Note: Unlike {@link outputPositionRectangle}, the bounds of cropRectangle are validated at ingest time by the encoder/scaler rather than at the API level, because the input resolution is not known until the source is probed. Field-level constraints on (x, y, width, height) defined on {@link VideoPositionRectangle} still apply.
+    pub fn get_crop_rectangle(&self) -> &::std::option::Option<crate::types::VideoPositionRectangle> {
+        &self.crop_rectangle
+    }
+    /// Position of the encoded video within the output frame. The area outside the rectangle is filled with black. If not specified, the video fills the entire output frame. When used, both {@link width} and {@link height} of the VideoDescription must be explicitly specified so that the rectangle can be validated against the output frame.
+    pub fn output_position_rectangle(mut self, input: crate::types::VideoPositionRectangle) -> Self {
+        self.output_position_rectangle = ::std::option::Option::Some(input);
+        self
+    }
+    /// Position of the encoded video within the output frame. The area outside the rectangle is filled with black. If not specified, the video fills the entire output frame. When used, both {@link width} and {@link height} of the VideoDescription must be explicitly specified so that the rectangle can be validated against the output frame.
+    pub fn set_output_position_rectangle(mut self, input: ::std::option::Option<crate::types::VideoPositionRectangle>) -> Self {
+        self.output_position_rectangle = input;
+        self
+    }
+    /// Position of the encoded video within the output frame. The area outside the rectangle is filled with black. If not specified, the video fills the entire output frame. When used, both {@link width} and {@link height} of the VideoDescription must be explicitly specified so that the rectangle can be validated against the output frame.
+    pub fn get_output_position_rectangle(&self) -> &::std::option::Option<crate::types::VideoPositionRectangle> {
+        &self.output_position_rectangle
+    }
     /// Consumes the builder and constructs a [`VideoDescription`](crate::types::VideoDescription).
     pub fn build(self) -> crate::types::VideoDescription {
         crate::types::VideoDescription {
@@ -178,6 +220,8 @@ impl VideoDescriptionBuilder {
             scaling_behavior: self.scaling_behavior,
             sharpness: self.sharpness,
             width: self.width,
+            crop_rectangle: self.crop_rectangle,
+            output_position_rectangle: self.output_position_rectangle,
         }
     }
 }

@@ -483,6 +483,8 @@ pub(crate) mod shape_set_token_vault_cmk_input;
 
 pub(crate) mod shape_start_policy_generation_input;
 
+pub(crate) mod shape_subscription_required_exception;
+
 pub(crate) mod shape_synchronize_gateway_targets_input;
 
 pub(crate) mod shape_tag_resource_input;
@@ -719,6 +721,8 @@ pub(crate) mod shape_metadata_configuration;
 
 pub(crate) mod shape_modify_memory_strategies;
 
+pub(crate) mod shape_namespace_key_entry;
+
 pub(crate) mod shape_network_configuration;
 
 pub(crate) mod shape_oauth2_credential_providers;
@@ -913,6 +917,8 @@ pub(crate) mod shape_dataset_version_summary;
 
 pub(crate) mod shape_delete_memory_strategy_input;
 
+pub(crate) mod shape_derived_evaluator_config;
+
 pub(crate) mod shape_ec2_configuration;
 
 pub(crate) mod shape_efs_access_point_configuration;
@@ -1032,6 +1038,10 @@ pub(crate) mod shape_microsoft_oauth2_provider_config_input;
 pub(crate) mod shape_microsoft_oauth2_provider_config_output;
 
 pub(crate) mod shape_modify_memory_strategy_input;
+
+pub(crate) mod shape_namespace_key_validation;
+
+pub(crate) mod shape_namespace_keys_list;
 
 pub(crate) mod shape_o_auth2_authorization_data;
 
@@ -1391,6 +1401,8 @@ pub(crate) mod shape_self_managed_configuration_input;
 
 pub(crate) mod shape_semantic_override_configuration_input;
 
+pub(crate) mod shape_static_query_parameters;
+
 pub(crate) mod shape_stickiness_configuration;
 
 pub(crate) mod shape_strategy_configuration;
@@ -1426,6 +1438,8 @@ pub(crate) mod shape_api_gateway_tool_overrides;
 pub(crate) mod shape_capacity_reservation_specification;
 
 pub(crate) mod shape_claim_match_value_type;
+
+pub(crate) mod shape_composite_identifier_list;
 
 pub(crate) mod shape_configuration_bundle_reference;
 
@@ -1474,6 +1488,8 @@ pub(crate) mod shape_metadata_schema_list;
 pub(crate) mod shape_model_entry;
 
 pub(crate) mod shape_modify_invocation_configuration_input;
+
+pub(crate) mod shape_namespace_allowed_values_list;
 
 pub(crate) mod shape_o_auth_custom_parameters;
 

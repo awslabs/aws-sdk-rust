@@ -32,6 +32,9 @@ pub struct WorkspaceProperties {
     pub operating_system_name: ::std::option::Option<crate::types::OperatingSystemName>,
     /// <p>Indicates the Global Accelerator properties.</p>
     pub global_accelerator: ::std::option::Option<crate::types::GlobalAcceleratorForWorkSpace>,
+    /// <p>Specifies whether nested virtualization is enabled for the WorkSpace.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub nested_virtualization_enabled: ::std::option::Option<bool>,
 }
 impl WorkspaceProperties {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p><note>
@@ -80,6 +83,11 @@ impl WorkspaceProperties {
     pub fn global_accelerator(&self) -> ::std::option::Option<&crate::types::GlobalAcceleratorForWorkSpace> {
         self.global_accelerator.as_ref()
     }
+    /// <p>Specifies whether nested virtualization is enabled for the WorkSpace.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub fn nested_virtualization_enabled(&self) -> ::std::option::Option<bool> {
+        self.nested_virtualization_enabled
+    }
 }
 impl WorkspaceProperties {
     /// Creates a new builder-style object to manufacture [`WorkspaceProperties`](crate::types::WorkspaceProperties).
@@ -100,6 +108,7 @@ pub struct WorkspacePropertiesBuilder {
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
     pub(crate) operating_system_name: ::std::option::Option<crate::types::OperatingSystemName>,
     pub(crate) global_accelerator: ::std::option::Option<crate::types::GlobalAcceleratorForWorkSpace>,
+    pub(crate) nested_virtualization_enabled: ::std::option::Option<bool>,
 }
 impl WorkspacePropertiesBuilder {
     /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running Mode</a>.</p><note>
@@ -256,6 +265,23 @@ impl WorkspacePropertiesBuilder {
     pub fn get_global_accelerator(&self) -> &::std::option::Option<crate::types::GlobalAcceleratorForWorkSpace> {
         &self.global_accelerator
     }
+    /// <p>Specifies whether nested virtualization is enabled for the WorkSpace.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub fn nested_virtualization_enabled(mut self, input: bool) -> Self {
+        self.nested_virtualization_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether nested virtualization is enabled for the WorkSpace.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub fn set_nested_virtualization_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.nested_virtualization_enabled = input;
+        self
+    }
+    /// <p>Specifies whether nested virtualization is enabled for the WorkSpace.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub fn get_nested_virtualization_enabled(&self) -> &::std::option::Option<bool> {
+        &self.nested_virtualization_enabled
+    }
     /// Consumes the builder and constructs a [`WorkspaceProperties`](crate::types::WorkspaceProperties).
     pub fn build(self) -> crate::types::WorkspaceProperties {
         crate::types::WorkspaceProperties {
@@ -267,6 +293,7 @@ impl WorkspacePropertiesBuilder {
             protocols: self.protocols,
             operating_system_name: self.operating_system_name,
             global_accelerator: self.global_accelerator,
+            nested_virtualization_enabled: self.nested_virtualization_enabled,
         }
     }
 }

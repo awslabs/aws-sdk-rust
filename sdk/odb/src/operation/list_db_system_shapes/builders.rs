@@ -173,4 +173,18 @@ impl ListDbSystemShapesFluentBuilder {
     pub fn get_availability_zone_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_availability_zone_id()
     }
+    /// <p>The shape family to filter results by.</p>
+    pub fn shape_family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.shape_family(input.into());
+        self
+    }
+    /// <p>The shape family to filter results by.</p>
+    pub fn set_shape_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_shape_family(input);
+        self
+    }
+    /// <p>The shape family to filter results by.</p>
+    pub fn get_shape_family(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_shape_family()
+    }
 }

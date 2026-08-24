@@ -134,6 +134,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartEn
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("StartEngagement")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                StartEngagementTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -153,6 +156,84 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartEn
     }
 }
 
+#[derive(Debug)]
+struct StartEngagementTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartEngagementTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "StartEngagementTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<StartEngagementInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ContactId") {
+            if let ::std::option::Option::Some(value) = input.contact_id.as_deref() {
+                captured.insert("ContactId", value);
+            }
+        }
+        if requested.should_capture("Sender") {
+            if let ::std::option::Option::Some(value) = input.sender.as_deref() {
+                captured.insert("Sender", value);
+            }
+        }
+        if requested.should_capture("Subject") {
+            if let ::std::option::Option::Some(value) = input.subject.as_deref() {
+                captured.insert("Subject", value);
+            }
+        }
+        if requested.should_capture("Content") {
+            if let ::std::option::Option::Some(value) = input.content.as_deref() {
+                captured.insert("Content", value);
+            }
+        }
+        if requested.should_capture("PublicSubject") {
+            if let ::std::option::Option::Some(value) = input.public_subject.as_deref() {
+                captured.insert("PublicSubject", value);
+            }
+        }
+        if requested.should_capture("PublicContent") {
+            if let ::std::option::Option::Some(value) = input.public_content.as_deref() {
+                captured.insert("PublicContent", value);
+            }
+        }
+        if requested.should_capture("IncidentId") {
+            if let ::std::option::Option::Some(value) = input.incident_id.as_deref() {
+                captured.insert("IncidentId", value);
+            }
+        }
+        if requested.should_capture("IdempotencyToken") {
+            if let ::std::option::Option::Some(value) = input.idempotency_token.as_deref() {
+                captured.insert("IdempotencyToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct StartEngagementResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartEngagementResponseDeserializer {

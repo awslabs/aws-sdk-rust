@@ -5,11 +5,19 @@ pub use crate::types::error::_no_such_entity_exception::NoSuchEntityException;
 
 pub use crate::types::error::_service_failure_exception::ServiceFailureException;
 
+pub use crate::types::error::_entity_already_exists_exception::EntityAlreadyExistsException;
+
 pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededException;
 
-pub use crate::types::error::_entity_already_exists_exception::EntityAlreadyExistsException;
+pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentException;
+
+pub use crate::types::error::_name_conflict_exception::NameConflictException;
+
+pub use crate::types::error::_role_modified_exception::RoleModifiedException;
+
+pub use crate::types::error::_role_template_disabled_exception::RoleTemplateDisabledException;
 
 pub use crate::types::error::_unmodifiable_entity_exception::UnmodifiableEntityException;
 
@@ -22,8 +30,6 @@ pub use crate::types::error::_invalid_user_type_exception::InvalidUserTypeExcept
 pub use crate::types::error::_password_policy_violation_exception::PasswordPolicyViolationException;
 
 pub use crate::types::error::_open_id_idp_communication_error_exception::OpenIdIdpCommunicationErrorException;
-
-pub use crate::types::error::_malformed_policy_document_exception::MalformedPolicyDocumentException;
 
 pub use crate::types::error::_service_not_supported_exception::ServiceNotSupportedException;
 
@@ -113,6 +119,8 @@ mod _malformed_certificate_exception;
 
 mod _malformed_policy_document_exception;
 
+mod _name_conflict_exception;
+
 mod _no_such_entity_exception;
 
 mod _open_id_idp_communication_error_exception;
@@ -128,6 +136,10 @@ mod _policy_evaluation_exception;
 mod _policy_not_attachable_exception;
 
 mod _report_generation_limit_exceeded_exception;
+
+mod _role_modified_exception;
+
+mod _role_template_disabled_exception;
 
 mod _service_access_not_enabled_exception;
 

@@ -86,6 +86,15 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn associate_virtual_machines_to_exadb_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::associate_virtual_machines_to_exadb_vm_cluster::builders::AssociateVirtualMachinesToExadbVmClusterOutputBuilder,
+) -> crate::operation::associate_virtual_machines_to_exadb_vm_cluster::builders::AssociateVirtualMachinesToExadbVmClusterOutputBuilder {
+    if builder.exadb_vm_cluster_id.is_none() {
+        builder.exadb_vm_cluster_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_autonomous_database_output_output_correct_errors(
     mut builder: crate::operation::create_autonomous_database::builders::CreateAutonomousDatabaseOutputBuilder,
 ) -> crate::operation::create_autonomous_database::builders::CreateAutonomousDatabaseOutputBuilder {
@@ -140,6 +149,24 @@ pub(crate) fn create_cloud_vm_cluster_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_exadb_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::create_exadb_vm_cluster::builders::CreateExadbVmClusterOutputBuilder,
+) -> crate::operation::create_exadb_vm_cluster::builders::CreateExadbVmClusterOutputBuilder {
+    if builder.exadb_vm_cluster_id.is_none() {
+        builder.exadb_vm_cluster_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_exascale_db_storage_vault_output_output_correct_errors(
+    mut builder: crate::operation::create_exascale_db_storage_vault::builders::CreateExascaleDbStorageVaultOutputBuilder,
+) -> crate::operation::create_exascale_db_storage_vault::builders::CreateExascaleDbStorageVaultOutputBuilder {
+    if builder.exascale_db_storage_vault_id.is_none() {
+        builder.exascale_db_storage_vault_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_odb_network_output_output_correct_errors(
     mut builder: crate::operation::create_odb_network::builders::CreateOdbNetworkOutputBuilder,
 ) -> crate::operation::create_odb_network::builders::CreateOdbNetworkOutputBuilder {
@@ -154,6 +181,15 @@ pub(crate) fn create_odb_peering_connection_output_output_correct_errors(
 ) -> crate::operation::create_odb_peering_connection::builders::CreateOdbPeeringConnectionOutputBuilder {
     if builder.odb_peering_connection_id.is_none() {
         builder.odb_peering_connection_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn disassociate_virtual_machines_from_exadb_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::builders::DisassociateVirtualMachinesFromExadbVmClusterOutputBuilder,
+) -> crate::operation::disassociate_virtual_machines_from_exadb_vm_cluster::builders::DisassociateVirtualMachinesFromExadbVmClusterOutputBuilder {
+    if builder.exadb_vm_cluster_id.is_none() {
+        builder.exadb_vm_cluster_id = Some(Default::default())
     }
     builder
 }
@@ -186,6 +222,30 @@ pub(crate) fn get_autonomous_database_wallet_details_output_output_correct_error
         builder.autonomous_database_wallet_details = {
             let builder = crate::types::builders::AutonomousDatabaseWalletDetailsBuilder::default();
             Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_exadb_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::get_exadb_vm_cluster::builders::GetExadbVmClusterOutputBuilder,
+) -> crate::operation::get_exadb_vm_cluster::builders::GetExadbVmClusterOutputBuilder {
+    if builder.exadb_vm_cluster.is_none() {
+        builder.exadb_vm_cluster = {
+            let builder = crate::types::builders::ExadbVmClusterBuilder::default();
+            crate::serde_util::exadb_vm_cluster_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_exascale_db_storage_vault_output_output_correct_errors(
+    mut builder: crate::operation::get_exascale_db_storage_vault::builders::GetExascaleDbStorageVaultOutputBuilder,
+) -> crate::operation::get_exascale_db_storage_vault::builders::GetExascaleDbStorageVaultOutputBuilder {
+    if builder.exascale_db_storage_vault.is_none() {
+        builder.exascale_db_storage_vault = {
+            let builder = crate::types::builders::ExascaleDbStorageVaultBuilder::default();
+            crate::serde_util::exascale_db_storage_vault_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -304,6 +364,33 @@ pub(crate) fn list_db_system_shapes_output_output_correct_errors(
 ) -> crate::operation::list_db_system_shapes::builders::ListDbSystemShapesOutputBuilder {
     if builder.db_system_shapes.is_none() {
         builder.db_system_shapes = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_exadb_vm_clusters_output_output_correct_errors(
+    mut builder: crate::operation::list_exadb_vm_clusters::builders::ListExadbVmClustersOutputBuilder,
+) -> crate::operation::list_exadb_vm_clusters::builders::ListExadbVmClustersOutputBuilder {
+    if builder.exadb_vm_clusters.is_none() {
+        builder.exadb_vm_clusters = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_exascale_db_storage_vaults_output_output_correct_errors(
+    mut builder: crate::operation::list_exascale_db_storage_vaults::builders::ListExascaleDbStorageVaultsOutputBuilder,
+) -> crate::operation::list_exascale_db_storage_vaults::builders::ListExascaleDbStorageVaultsOutputBuilder {
+    if builder.exascale_db_storage_vaults.is_none() {
+        builder.exascale_db_storage_vaults = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_gi_minor_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_gi_minor_versions::builders::ListGiMinorVersionsOutputBuilder,
+) -> crate::operation::list_gi_minor_versions::builders::ListGiMinorVersionsOutputBuilder {
+    if builder.gi_minor_versions.is_none() {
+        builder.gi_minor_versions = Some(Default::default())
     }
     builder
 }
@@ -452,6 +539,24 @@ pub(crate) fn update_cloud_exadata_infrastructure_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_exadb_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::update_exadb_vm_cluster::builders::UpdateExadbVmClusterOutputBuilder,
+) -> crate::operation::update_exadb_vm_cluster::builders::UpdateExadbVmClusterOutputBuilder {
+    if builder.exadb_vm_cluster_id.is_none() {
+        builder.exadb_vm_cluster_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_exascale_db_storage_vault_output_output_correct_errors(
+    mut builder: crate::operation::update_exascale_db_storage_vault::builders::UpdateExascaleDbStorageVaultOutputBuilder,
+) -> crate::operation::update_exascale_db_storage_vault::builders::UpdateExascaleDbStorageVaultOutputBuilder {
+    if builder.exascale_db_storage_vault_id.is_none() {
+        builder.exascale_db_storage_vault_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_odb_network_output_output_correct_errors(
     mut builder: crate::operation::update_odb_network::builders::UpdateOdbNetworkOutputBuilder,
 ) -> crate::operation::update_odb_network::builders::UpdateOdbNetworkOutputBuilder {
@@ -466,6 +571,24 @@ pub(crate) fn update_odb_peering_connection_output_output_correct_errors(
 ) -> crate::operation::update_odb_peering_connection::builders::UpdateOdbPeeringConnectionOutputBuilder {
     if builder.odb_peering_connection_id.is_none() {
         builder.odb_peering_connection_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn exadb_vm_cluster_correct_errors(
+    mut builder: crate::types::builders::ExadbVmClusterBuilder,
+) -> crate::types::builders::ExadbVmClusterBuilder {
+    if builder.exadb_vm_cluster_id.is_none() {
+        builder.exadb_vm_cluster_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn exascale_db_storage_vault_correct_errors(
+    mut builder: crate::types::builders::ExascaleDbStorageVaultBuilder,
+) -> crate::types::builders::ExascaleDbStorageVaultBuilder {
+    if builder.exascale_db_storage_vault_id.is_none() {
+        builder.exascale_db_storage_vault_id = Some(Default::default())
     }
     builder
 }
@@ -536,6 +659,33 @@ pub(crate) fn cloud_vm_cluster_summary_correct_errors(
 ) -> crate::types::builders::CloudVmClusterSummaryBuilder {
     if builder.cloud_vm_cluster_id.is_none() {
         builder.cloud_vm_cluster_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn exadb_vm_cluster_summary_correct_errors(
+    mut builder: crate::types::builders::ExadbVmClusterSummaryBuilder,
+) -> crate::types::builders::ExadbVmClusterSummaryBuilder {
+    if builder.exadb_vm_cluster_id.is_none() {
+        builder.exadb_vm_cluster_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn exascale_db_storage_vault_summary_correct_errors(
+    mut builder: crate::types::builders::ExascaleDbStorageVaultSummaryBuilder,
+) -> crate::types::builders::ExascaleDbStorageVaultSummaryBuilder {
+    if builder.exascale_db_storage_vault_id.is_none() {
+        builder.exascale_db_storage_vault_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn gi_minor_version_summary_correct_errors(
+    mut builder: crate::types::builders::GiMinorVersionSummaryBuilder,
+) -> crate::types::builders::GiMinorVersionSummaryBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
     }
     builder
 }

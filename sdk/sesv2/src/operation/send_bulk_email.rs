@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendBul
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SendBulkEmail")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SendBulkEmailTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendBul
     }
 }
 
+#[derive(Debug)]
+struct SendBulkEmailTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SendBulkEmailTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "SendBulkEmailTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<SendBulkEmailInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("FromEmailAddress") {
+            if let ::std::option::Option::Some(value) = input.from_email_address.as_deref() {
+                captured.insert("FromEmailAddress", value);
+            }
+        }
+        if requested.should_capture("FromEmailAddressIdentityArn") {
+            if let ::std::option::Option::Some(value) = input.from_email_address_identity_arn.as_deref() {
+                captured.insert("FromEmailAddressIdentityArn", value);
+            }
+        }
+        if requested.should_capture("FeedbackForwardingEmailAddress") {
+            if let ::std::option::Option::Some(value) = input.feedback_forwarding_email_address.as_deref() {
+                captured.insert("FeedbackForwardingEmailAddress", value);
+            }
+        }
+        if requested.should_capture("FeedbackForwardingEmailAddressIdentityArn") {
+            if let ::std::option::Option::Some(value) = input.feedback_forwarding_email_address_identity_arn.as_deref() {
+                captured.insert("FeedbackForwardingEmailAddressIdentityArn", value);
+            }
+        }
+        if requested.should_capture("ConfigurationSetName") {
+            if let ::std::option::Option::Some(value) = input.configuration_set_name.as_deref() {
+                captured.insert("ConfigurationSetName", value);
+            }
+        }
+        if requested.should_capture("EndpointId") {
+            if let ::std::option::Option::Some(value) = input.endpoint_id.as_deref() {
+                captured.insert("EndpointId", value);
+            }
+        }
+        if requested.should_capture("TenantName") {
+            if let ::std::option::Option::Some(value) = input.tenant_name.as_deref() {
+                captured.insert("TenantName", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct SendBulkEmailResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SendBulkEmailResponseDeserializer {

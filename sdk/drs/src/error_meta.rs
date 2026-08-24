@@ -121,6 +121,55 @@ impl From<crate::operation::associate_source_network_stack::AssociateSourceNetwo
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError> for Error {
+    fn from(err: crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError) -> Self {
+        match err {
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::cancel_recovery_plan_execution::CancelRecoveryPlanExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_extended_source_server::CreateExtendedSourceServerError, R>>
     for Error
 where
@@ -215,6 +264,80 @@ impl From<crate::operation::create_launch_configuration_template::CreateLaunchCo
             crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_recovery_plan::CreateRecoveryPlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_recovery_plan::CreateRecoveryPlanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_recovery_plan::CreateRecoveryPlanError> for Error {
+    fn from(err: crate::operation::create_recovery_plan::CreateRecoveryPlanError) -> Self {
+        match err {
+            crate::operation::create_recovery_plan::CreateRecoveryPlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_recovery_plan::CreateRecoveryPlanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_recovery_plan::CreateRecoveryPlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_recovery_plan::CreateRecoveryPlanError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_recovery_plan::CreateRecoveryPlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_recovery_plan::CreateRecoveryPlanError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::create_recovery_plan::CreateRecoveryPlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_recovery_plan::CreateRecoveryPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError> for Error {
+    fn from(err: crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError) -> Self {
+        match err {
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_recovery_plan_step::CreateRecoveryPlanStepError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -428,6 +551,126 @@ impl From<crate::operation::delete_recovery_instance::DeleteRecoveryInstanceErro
                 Error::UninitializedAccountException(inner)
             }
             crate::operation::delete_recovery_instance::DeleteRecoveryInstanceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recovery_plan::DeleteRecoveryPlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recovery_plan::DeleteRecoveryPlanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_recovery_plan::DeleteRecoveryPlanError> for Error {
+    fn from(err: crate::operation::delete_recovery_plan::DeleteRecoveryPlanError) -> Self {
+        match err {
+            crate::operation::delete_recovery_plan::DeleteRecoveryPlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_recovery_plan::DeleteRecoveryPlanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_recovery_plan::DeleteRecoveryPlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_recovery_plan::DeleteRecoveryPlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_recovery_plan::DeleteRecoveryPlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_recovery_plan::DeleteRecoveryPlanError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::delete_recovery_plan::DeleteRecoveryPlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_recovery_plan::DeleteRecoveryPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError> for Error {
+    fn from(err: crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError) -> Self {
+        match err {
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_recovery_plan_execution::DeleteRecoveryPlanExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError> for Error {
+    fn from(err: crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError) -> Self {
+        match err {
+            crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_recovery_plan_step::DeleteRecoveryPlanStepError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1012,6 +1255,156 @@ impl From<crate::operation::get_launch_configuration::GetLaunchConfigurationErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_plan::GetRecoveryPlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_plan::GetRecoveryPlanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_recovery_plan::GetRecoveryPlanError> for Error {
+    fn from(err: crate::operation::get_recovery_plan::GetRecoveryPlanError) -> Self {
+        match err {
+            crate::operation::get_recovery_plan::GetRecoveryPlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_recovery_plan::GetRecoveryPlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_recovery_plan::GetRecoveryPlanError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_recovery_plan::GetRecoveryPlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_recovery_plan::GetRecoveryPlanError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::get_recovery_plan::GetRecoveryPlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_recovery_plan::GetRecoveryPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError> for Error {
+    fn from(err: crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError) -> Self {
+        match err {
+            crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_recovery_plan_execution::GetRecoveryPlanExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError> for Error {
+    fn from(err: crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError) -> Self {
+        match err {
+            crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_recovery_plan_execution_step::GetRecoveryPlanExecutionStepError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError> for Error {
+    fn from(err: crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError) -> Self {
+        match err {
+            crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_recovery_plan_step::GetRecoveryPlanStepError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_replication_configuration::GetReplicationConfigurationError, R>>
     for Error
 where
@@ -1151,6 +1544,160 @@ impl From<crate::operation::list_launch_actions::ListLaunchActionsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError> for Error {
+    fn from(err: crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError) -> Self {
+        match err {
+            crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_recovery_plan_executions::ListRecoveryPlanExecutionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError> for Error {
+    fn from(err: crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError) -> Self {
+        match err {
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_recovery_plan_execution_steps::ListRecoveryPlanExecutionStepsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recovery_plans::ListRecoveryPlansError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recovery_plans::ListRecoveryPlansError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_recovery_plans::ListRecoveryPlansError> for Error {
+    fn from(err: crate::operation::list_recovery_plans::ListRecoveryPlansError) -> Self {
+        match err {
+            crate::operation::list_recovery_plans::ListRecoveryPlansError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_recovery_plans::ListRecoveryPlansError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_recovery_plans::ListRecoveryPlansError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_recovery_plans::ListRecoveryPlansError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_recovery_plans::ListRecoveryPlansError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_recovery_plans::ListRecoveryPlansError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError> for Error {
+    fn from(err: crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError) -> Self {
+        match err {
+            crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_recovery_plan_steps::ListRecoveryPlanStepsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_staging_accounts::ListStagingAccountsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1240,6 +1787,49 @@ impl From<crate::operation::put_launch_action::PutLaunchActionError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError> for Error {
+    fn from(err: crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError) -> Self {
+        match err {
+            crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::reorder_recovery_plan_steps::ReorderRecoveryPlanStepsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::retry_data_replication::RetryDataReplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1269,6 +1859,59 @@ impl From<crate::operation::retry_data_replication::RetryDataReplicationError> f
             }
             crate::operation::retry_data_replication::RetryDataReplicationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::retry_data_replication::RetryDataReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError> for Error {
+    fn from(err: crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError) -> Self {
+        match err {
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::retry_recovery_plan_execution_step::RetryRecoveryPlanExecutionStepError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1360,6 +2003,54 @@ impl From<crate::operation::start_recovery::StartRecoveryError> for Error {
             crate::operation::start_recovery::StartRecoveryError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_recovery::StartRecoveryError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
             crate::operation::start_recovery::StartRecoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError> for Error {
+    fn from(err: crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError) -> Self {
+        match err {
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_recovery_plan_execution::StartRecoveryPlanExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1795,6 +2486,130 @@ impl From<crate::operation::update_launch_configuration_template::UpdateLaunchCo
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_recovery_plan::UpdateRecoveryPlanError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_recovery_plan::UpdateRecoveryPlanError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_recovery_plan::UpdateRecoveryPlanError> for Error {
+    fn from(err: crate::operation::update_recovery_plan::UpdateRecoveryPlanError) -> Self {
+        match err {
+            crate::operation::update_recovery_plan::UpdateRecoveryPlanError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_recovery_plan::UpdateRecoveryPlanError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_recovery_plan::UpdateRecoveryPlanError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_recovery_plan::UpdateRecoveryPlanError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_recovery_plan::UpdateRecoveryPlanError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_recovery_plan::UpdateRecoveryPlanError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::update_recovery_plan::UpdateRecoveryPlanError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_recovery_plan::UpdateRecoveryPlanError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError> for Error {
+    fn from(err: crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError) -> Self {
+        match err {
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_recovery_plan_execution_step::UpdateRecoveryPlanExecutionStepError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError> for Error {
+    fn from(err: crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError) -> Self {
+        match err {
+            crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_recovery_plan_step::UpdateRecoveryPlanStepError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

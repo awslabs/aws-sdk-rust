@@ -20,36 +20,42 @@ pub fn ser_create_event_input_input(
             .key("eventTimestamp")
             .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_6) = &input.extraction_mode {
-        object.key("extractionMode").string(var_6.as_str());
-    }
-    if let Some(var_7) = &input.metadata {
+    if let Some(var_6) = &input.extraction_config {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("metadata").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_7 = object.key("extractionConfig").start_object();
+        crate::protocol_serde::shape_extraction_config::ser_extraction_config(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.extraction_mode {
+        object.key("extractionMode").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.metadata {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("metadata").start_object();
+        for (key_11, value_12) in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = object_8.key(key_9.as_str()).start_object();
-                crate::protocol_serde::shape_metadata_value::ser_metadata_value(&mut object_11, value_10)?;
-                object_11.finish();
+                let mut object_13 = object_10.key(key_11.as_str()).start_object();
+                crate::protocol_serde::shape_metadata_value::ser_metadata_value(&mut object_13, value_12)?;
+                object_13.finish();
             }
         }
-        object_8.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.payload {
-        let mut array_13 = object.key("payload").start_array();
-        for item_14 in var_12 {
+    if let Some(var_14) = &input.payload {
+        let mut array_15 = object.key("payload").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_payload_type::ser_payload_type(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_payload_type::ser_payload_type(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_13.finish();
+        array_15.finish();
     }
-    if let Some(var_16) = &input.session_id {
-        object.key("sessionId").string(var_16.as_str());
+    if let Some(var_18) = &input.session_id {
+        object.key("sessionId").string(var_18.as_str());
     }
     Ok(())
 }

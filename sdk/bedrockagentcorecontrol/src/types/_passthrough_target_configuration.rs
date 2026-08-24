@@ -22,6 +22,16 @@ pub struct PassthroughTargetConfiguration {
     pub schema: ::std::option::Option<crate::types::HttpApiSchemaConfiguration>,
     /// <p>The session stickiness configuration for the passthrough target. This configuration routes requests within the same session to the same target.</p>
     pub stickiness_configuration: ::std::option::Option<crate::types::StickinessConfiguration>,
+    /// <p>A map of static query parameters that the gateway always appends to the outbound URL when forwarding requests to the target. The total outbound URL length, which includes the endpoint and the percent-encoded query parameters, is enforced by the service.</p>
+    pub static_query_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Controls precedence when a client request supplies a query parameter whose name matches a configured static query parameter. If not set, defaults to <code>CLIENT_OVERRIDE</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_OVERRIDE</code> - The client-supplied value overrides the configured static value for that parameter name.</p></li>
+    /// <li>
+    /// <p><code>STATIC_OVERRIDE</code> - The configured static value is retained, overriding the client-supplied value for that parameter name.</p></li>
+    /// </ul>
+    pub static_query_parameter_conflict_resolution: ::std::option::Option<crate::types::StaticQueryParameterConflictResolution>,
 }
 impl PassthroughTargetConfiguration {
     /// <p>The HTTPS endpoint that the gateway forwards requests to for this passthrough target.</p>
@@ -51,6 +61,20 @@ impl PassthroughTargetConfiguration {
     pub fn stickiness_configuration(&self) -> ::std::option::Option<&crate::types::StickinessConfiguration> {
         self.stickiness_configuration.as_ref()
     }
+    /// <p>A map of static query parameters that the gateway always appends to the outbound URL when forwarding requests to the target. The total outbound URL length, which includes the endpoint and the percent-encoded query parameters, is enforced by the service.</p>
+    pub fn static_query_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.static_query_parameters.as_ref()
+    }
+    /// <p>Controls precedence when a client request supplies a query parameter whose name matches a configured static query parameter. If not set, defaults to <code>CLIENT_OVERRIDE</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_OVERRIDE</code> - The client-supplied value overrides the configured static value for that parameter name.</p></li>
+    /// <li>
+    /// <p><code>STATIC_OVERRIDE</code> - The configured static value is retained, overriding the client-supplied value for that parameter name.</p></li>
+    /// </ul>
+    pub fn static_query_parameter_conflict_resolution(&self) -> ::std::option::Option<&crate::types::StaticQueryParameterConflictResolution> {
+        self.static_query_parameter_conflict_resolution.as_ref()
+    }
 }
 impl PassthroughTargetConfiguration {
     /// Creates a new builder-style object to manufacture [`PassthroughTargetConfiguration`](crate::types::PassthroughTargetConfiguration).
@@ -67,6 +91,8 @@ pub struct PassthroughTargetConfigurationBuilder {
     pub(crate) protocol_type: ::std::option::Option<crate::types::PassthroughProtocolType>,
     pub(crate) schema: ::std::option::Option<crate::types::HttpApiSchemaConfiguration>,
     pub(crate) stickiness_configuration: ::std::option::Option<crate::types::StickinessConfiguration>,
+    pub(crate) static_query_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) static_query_parameter_conflict_resolution: ::std::option::Option<crate::types::StaticQueryParameterConflictResolution>,
 }
 impl PassthroughTargetConfigurationBuilder {
     /// <p>The HTTPS endpoint that the gateway forwards requests to for this passthrough target.</p>
@@ -157,6 +183,68 @@ impl PassthroughTargetConfigurationBuilder {
     pub fn get_stickiness_configuration(&self) -> &::std::option::Option<crate::types::StickinessConfiguration> {
         &self.stickiness_configuration
     }
+    /// Adds a key-value pair to `static_query_parameters`.
+    ///
+    /// To override the contents of this collection use [`set_static_query_parameters`](Self::set_static_query_parameters).
+    ///
+    /// <p>A map of static query parameters that the gateway always appends to the outbound URL when forwarding requests to the target. The total outbound URL length, which includes the endpoint and the percent-encoded query parameters, is enforced by the service.</p>
+    pub fn static_query_parameters(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.static_query_parameters.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.static_query_parameters = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of static query parameters that the gateway always appends to the outbound URL when forwarding requests to the target. The total outbound URL length, which includes the endpoint and the percent-encoded query parameters, is enforced by the service.</p>
+    pub fn set_static_query_parameters(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.static_query_parameters = input;
+        self
+    }
+    /// <p>A map of static query parameters that the gateway always appends to the outbound URL when forwarding requests to the target. The total outbound URL length, which includes the endpoint and the percent-encoded query parameters, is enforced by the service.</p>
+    pub fn get_static_query_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.static_query_parameters
+    }
+    /// <p>Controls precedence when a client request supplies a query parameter whose name matches a configured static query parameter. If not set, defaults to <code>CLIENT_OVERRIDE</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_OVERRIDE</code> - The client-supplied value overrides the configured static value for that parameter name.</p></li>
+    /// <li>
+    /// <p><code>STATIC_OVERRIDE</code> - The configured static value is retained, overriding the client-supplied value for that parameter name.</p></li>
+    /// </ul>
+    pub fn static_query_parameter_conflict_resolution(mut self, input: crate::types::StaticQueryParameterConflictResolution) -> Self {
+        self.static_query_parameter_conflict_resolution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls precedence when a client request supplies a query parameter whose name matches a configured static query parameter. If not set, defaults to <code>CLIENT_OVERRIDE</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_OVERRIDE</code> - The client-supplied value overrides the configured static value for that parameter name.</p></li>
+    /// <li>
+    /// <p><code>STATIC_OVERRIDE</code> - The configured static value is retained, overriding the client-supplied value for that parameter name.</p></li>
+    /// </ul>
+    pub fn set_static_query_parameter_conflict_resolution(
+        mut self,
+        input: ::std::option::Option<crate::types::StaticQueryParameterConflictResolution>,
+    ) -> Self {
+        self.static_query_parameter_conflict_resolution = input;
+        self
+    }
+    /// <p>Controls precedence when a client request supplies a query parameter whose name matches a configured static query parameter. If not set, defaults to <code>CLIENT_OVERRIDE</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_OVERRIDE</code> - The client-supplied value overrides the configured static value for that parameter name.</p></li>
+    /// <li>
+    /// <p><code>STATIC_OVERRIDE</code> - The configured static value is retained, overriding the client-supplied value for that parameter name.</p></li>
+    /// </ul>
+    pub fn get_static_query_parameter_conflict_resolution(&self) -> &::std::option::Option<crate::types::StaticQueryParameterConflictResolution> {
+        &self.static_query_parameter_conflict_resolution
+    }
     /// Consumes the builder and constructs a [`PassthroughTargetConfiguration`](crate::types::PassthroughTargetConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::PassthroughTargetConfigurationBuilder::endpoint)
@@ -177,6 +265,8 @@ impl PassthroughTargetConfigurationBuilder {
             })?,
             schema: self.schema,
             stickiness_configuration: self.stickiness_configuration,
+            static_query_parameters: self.static_query_parameters,
+            static_query_parameter_conflict_resolution: self.static_query_parameter_conflict_resolution,
         })
     }
 }

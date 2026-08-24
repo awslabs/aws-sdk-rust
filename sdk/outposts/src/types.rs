@@ -11,6 +11,8 @@ pub use crate::types::_supported_hardware_type::SupportedHardwareType;
 
 pub use crate::types::_outpost::Outpost;
 
+pub use crate::types::_private_connectivity_config::PrivateConnectivityConfig;
+
 pub use crate::types::_quote::Quote;
 
 pub use crate::types::_currency_code::CurrencyCode;
@@ -64,6 +66,10 @@ pub use crate::types::_line_item_request::LineItemRequest;
 pub use crate::types::_order_status::OrderStatus;
 
 pub use crate::types::_order_type::OrderType;
+
+pub use crate::types::_vpc_information::VpcInformation;
+
+pub use crate::types::_private_connectivity_status::PrivateConnectivityStatus;
 
 pub use crate::types::_quote_capacity::QuoteCapacity;
 
@@ -277,6 +283,10 @@ mod _pricing_option;
 
 mod _pricing_result;
 
+mod _private_connectivity_config;
+
+mod _private_connectivity_status;
+
 mod _quote;
 
 mod _quote_capacity;
@@ -334,6 +344,8 @@ mod _task_action_on_blocking_instances;
 mod _uplink_count;
 
 mod _uplink_gbps;
+
+mod _vpc_information;
 
 /// Builders
 pub mod builders;

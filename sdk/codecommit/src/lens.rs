@@ -19,6 +19,16 @@ pub(crate) fn reflens_describe_pull_request_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_blob_differences_output_output_next_token(
+    input: &crate::operation::get_blob_differences::GetBlobDifferencesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_comment_reactions_output_output_next_token(
     input: &crate::operation::get_comment_reactions::GetCommentReactionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -136,6 +146,13 @@ pub(crate) fn reflens_list_repositories_for_approval_rule_template_output_output
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_blob_differences_output_output_hunks(
+    input: crate::operation::get_blob_differences::GetBlobDifferencesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DiffHunk>> {
+    let input = input.hunks;
     ::std::option::Option::Some(input)
 }
 

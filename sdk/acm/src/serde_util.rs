@@ -8,6 +8,15 @@ pub(crate) fn create_acme_domain_validation_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn domain_validation_summary_correct_errors(
+    mut builder: crate::types::builders::DomainValidationSummaryBuilder,
+) -> crate::types::builders::DomainValidationSummaryBuilder {
+    if builder.domain_name.is_none() {
+        builder.domain_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn renewal_summary_correct_errors(
     mut builder: crate::types::builders::RenewalSummaryBuilder,
 ) -> crate::types::builders::RenewalSummaryBuilder {

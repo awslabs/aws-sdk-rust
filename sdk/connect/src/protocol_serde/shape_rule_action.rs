@@ -60,6 +60,12 @@ pub fn ser_rule_action(
         crate::protocol_serde::shape_submit_auto_evaluation_action_definition::ser_submit_auto_evaluation_action_definition(&mut object_18, var_17)?;
         object_18.finish();
     }
+    if let Some(var_19) = &input.extract_information_action {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("ExtractInformationAction").start_object();
+        crate::protocol_serde::shape_extract_information_action_definition::ser_extract_information_action_definition(&mut object_20, var_19)?;
+        object_20.finish();
+    }
     Ok(())
 }
 
@@ -162,6 +168,15 @@ where
                             "SubmitAutoEvaluationAction" => {
                                 builder = builder.set_submit_auto_evaluation_action(
                                     crate::protocol_serde::shape_submit_auto_evaluation_action_definition::de_submit_auto_evaluation_action_definition(tokens, _value, depth + 1)?
+                                );
+                            }
+                            "ExtractInformationAction" => {
+                                builder = builder.set_extract_information_action(
+                                    crate::protocol_serde::shape_extract_information_action_definition::de_extract_information_action_definition(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
                                 );
                             }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

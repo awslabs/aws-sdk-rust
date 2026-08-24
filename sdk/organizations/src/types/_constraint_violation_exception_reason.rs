@@ -17,6 +17,7 @@
 ///     ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountCreationNotComplete => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => { /* ... */ },
+///     ConstraintViolationExceptionReason::AccountNotActiveForTransferResponsibility => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AccountNumberLimitExceeded => { /* ... */ },
 ///     ConstraintViolationExceptionReason::ActiveResponsibilityTransferProcess => { /* ... */ },
 ///     ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => { /* ... */ },
@@ -55,6 +56,8 @@
 ///     ConstraintViolationExceptionReason::TagPolicyViolation => { /* ... */ },
 ///     ConstraintViolationExceptionReason::TransferResponsibilitySourceDeletionInProgress => { /* ... */ },
 ///     ConstraintViolationExceptionReason::TransferResponsibilityTargetDeletionInProgress => { /* ... */ },
+///     ConstraintViolationExceptionReason::TransferResponsibilityUpdateNotAllowed => { /* ... */ },
+///     ConstraintViolationExceptionReason::UnmetBillingPrerequisite => { /* ... */ },
 ///     ConstraintViolationExceptionReason::UnsupportedPricing => { /* ... */ },
 ///     ConstraintViolationExceptionReason::WaitPeriodActive => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -95,6 +98,8 @@ pub enum ConstraintViolationExceptionReason {
     AccountCreationNotComplete,
     #[allow(missing_docs)] // documentation missing in model
     AccountCreationRateLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
+    AccountNotActiveForTransferResponsibility,
     #[allow(missing_docs)] // documentation missing in model
     AccountNumberLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
@@ -172,6 +177,10 @@ pub enum ConstraintViolationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     TransferResponsibilityTargetDeletionInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    TransferResponsibilityUpdateNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
+    UnmetBillingPrerequisite,
+    #[allow(missing_docs)] // documentation missing in model
     UnsupportedPricing,
     #[allow(missing_docs)] // documentation missing in model
     WaitPeriodActive,
@@ -187,6 +196,7 @@ impl ::std::convert::From<&str> for ConstraintViolationExceptionReason {
             "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION" => ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification,
             "ACCOUNT_CREATION_NOT_COMPLETE" => ConstraintViolationExceptionReason::AccountCreationNotComplete,
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded,
+            "ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY" => ConstraintViolationExceptionReason::AccountNotActiveForTransferResponsibility,
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED" => ConstraintViolationExceptionReason::AccountNumberLimitExceeded,
             "ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS" => ConstraintViolationExceptionReason::ActiveResponsibilityTransferProcess,
             "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED" => {
@@ -243,6 +253,8 @@ impl ::std::convert::From<&str> for ConstraintViolationExceptionReason {
             "TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS" => {
                 ConstraintViolationExceptionReason::TransferResponsibilityTargetDeletionInProgress
             }
+            "TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED" => ConstraintViolationExceptionReason::TransferResponsibilityUpdateNotAllowed,
+            "UNMET_BILLING_PREREQUISITE" => ConstraintViolationExceptionReason::UnmetBillingPrerequisite,
             "UNSUPPORTED_PRICING" => ConstraintViolationExceptionReason::UnsupportedPricing,
             "WAIT_PERIOD_ACTIVE" => ConstraintViolationExceptionReason::WaitPeriodActive,
             other => ConstraintViolationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -265,6 +277,7 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::AccountCannotLeaveWithoutPhoneVerification => "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
             ConstraintViolationExceptionReason::AccountCreationNotComplete => "ACCOUNT_CREATION_NOT_COMPLETE",
             ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
+            ConstraintViolationExceptionReason::AccountNotActiveForTransferResponsibility => "ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY",
             ConstraintViolationExceptionReason::AccountNumberLimitExceeded => "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
             ConstraintViolationExceptionReason::ActiveResponsibilityTransferProcess => "ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS",
             ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => {
@@ -321,6 +334,8 @@ impl ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::TransferResponsibilityTargetDeletionInProgress => {
                 "TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS"
             }
+            ConstraintViolationExceptionReason::TransferResponsibilityUpdateNotAllowed => "TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED",
+            ConstraintViolationExceptionReason::UnmetBillingPrerequisite => "UNMET_BILLING_PREREQUISITE",
             ConstraintViolationExceptionReason::UnsupportedPricing => "UNSUPPORTED_PRICING",
             ConstraintViolationExceptionReason::WaitPeriodActive => "WAIT_PERIOD_ACTIVE",
             ConstraintViolationExceptionReason::Unknown(value) => value.as_str(),
@@ -334,6 +349,7 @@ impl ConstraintViolationExceptionReason {
             "ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION",
             "ACCOUNT_CREATION_NOT_COMPLETE",
             "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED",
+            "ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY",
             "ACCOUNT_NUMBER_LIMIT_EXCEEDED",
             "ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS",
             "ALL_FEATURES_MIGRATION_ORGANIZATION_SIZE_LIMIT_EXCEEDED",
@@ -372,6 +388,8 @@ impl ConstraintViolationExceptionReason {
             "TAG_POLICY_VIOLATION",
             "TRANSFER_RESPONSIBILITY_SOURCE_DELETION_IN_PROGRESS",
             "TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS",
+            "TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED",
+            "UNMET_BILLING_PREREQUISITE",
             "UNSUPPORTED_PRICING",
             "WAIT_PERIOD_ACTIVE",
         ]
@@ -404,6 +422,9 @@ impl ::std::fmt::Display for ConstraintViolationExceptionReason {
             }
             ConstraintViolationExceptionReason::AccountCreationNotComplete => write!(f, "ACCOUNT_CREATION_NOT_COMPLETE"),
             ConstraintViolationExceptionReason::AccountCreationRateLimitExceeded => write!(f, "ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED"),
+            ConstraintViolationExceptionReason::AccountNotActiveForTransferResponsibility => {
+                write!(f, "ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY")
+            }
             ConstraintViolationExceptionReason::AccountNumberLimitExceeded => write!(f, "ACCOUNT_NUMBER_LIMIT_EXCEEDED"),
             ConstraintViolationExceptionReason::ActiveResponsibilityTransferProcess => write!(f, "ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS"),
             ConstraintViolationExceptionReason::AllFeaturesMigrationOrganizationSizeLimitExceeded => {
@@ -468,6 +489,8 @@ impl ::std::fmt::Display for ConstraintViolationExceptionReason {
             ConstraintViolationExceptionReason::TransferResponsibilityTargetDeletionInProgress => {
                 write!(f, "TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS")
             }
+            ConstraintViolationExceptionReason::TransferResponsibilityUpdateNotAllowed => write!(f, "TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED"),
+            ConstraintViolationExceptionReason::UnmetBillingPrerequisite => write!(f, "UNMET_BILLING_PREREQUISITE"),
             ConstraintViolationExceptionReason::UnsupportedPricing => write!(f, "UNSUPPORTED_PRICING"),
             ConstraintViolationExceptionReason::WaitPeriodActive => write!(f, "WAIT_PERIOD_ACTIVE"),
             ConstraintViolationExceptionReason::Unknown(value) => write!(f, "{value}"),

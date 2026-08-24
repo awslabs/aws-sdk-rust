@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModificationState {
-    /// <p>The resource.</p>
+    /// <p>The WorkSpace property being modified.</p>
     pub resource: ::std::option::Option<crate::types::ModificationResourceEnum>,
     /// <p>The modification state.</p>
     pub state: ::std::option::Option<crate::types::ModificationStateEnum>,
 }
 impl ModificationState {
-    /// <p>The resource.</p>
+    /// <p>The WorkSpace property being modified.</p>
     pub fn resource(&self) -> ::std::option::Option<&crate::types::ModificationResourceEnum> {
         self.resource.as_ref()
     }
@@ -34,17 +34,17 @@ pub struct ModificationStateBuilder {
     pub(crate) state: ::std::option::Option<crate::types::ModificationStateEnum>,
 }
 impl ModificationStateBuilder {
-    /// <p>The resource.</p>
+    /// <p>The WorkSpace property being modified.</p>
     pub fn resource(mut self, input: crate::types::ModificationResourceEnum) -> Self {
         self.resource = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource.</p>
+    /// <p>The WorkSpace property being modified.</p>
     pub fn set_resource(mut self, input: ::std::option::Option<crate::types::ModificationResourceEnum>) -> Self {
         self.resource = input;
         self
     }
-    /// <p>The resource.</p>
+    /// <p>The WorkSpace property being modified.</p>
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::ModificationResourceEnum> {
         &self.resource
     }

@@ -9,6 +9,8 @@ pub struct CreateWorkflowInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon S3 location where the workflow definition file is stored. This must point to a valid YAML file that defines the workflow structure using supported Amazon Web Services operators and tasks. Amazon Managed Workflows for Apache Airflow Serverless takes a snapshot of the definition at creation time, so subsequent changes to the Amazon S3 object will not affect the workflow unless you create a new version. In your YAML definition, include task dependencies, scheduling information, and operator configurations that are compatible with the Amazon Managed Workflows for Apache Airflow Serverless execution environment.</p>
     pub definition_s3_location: ::std::option::Option<crate::types::DefinitionS3Location>,
+    /// <p>The location of code artifacts in Amazon S3 for the workflow. The service copies the code from this location at the time of the request.</p>
+    pub code: ::std::option::Option<crate::types::Code>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Managed Workflows for Apache Airflow Serverless assumes when executing the workflow. This role must have the necessary permissions to access the required Amazon Web Services services and resources that your workflow tasks will interact with. The role is used for task execution in the isolated, multi-tenant environment and should follow the principle of least privilege. Amazon Managed Workflows for Apache Airflow Serverless validates role access during workflow creation but runtime permission checks are performed by the target services.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the workflow that you can use to provide additional context about the workflow's purpose and functionality.</p>
@@ -38,6 +40,10 @@ impl CreateWorkflowInput {
     /// <p>The Amazon S3 location where the workflow definition file is stored. This must point to a valid YAML file that defines the workflow structure using supported Amazon Web Services operators and tasks. Amazon Managed Workflows for Apache Airflow Serverless takes a snapshot of the definition at creation time, so subsequent changes to the Amazon S3 object will not affect the workflow unless you create a new version. In your YAML definition, include task dependencies, scheduling information, and operator configurations that are compatible with the Amazon Managed Workflows for Apache Airflow Serverless execution environment.</p>
     pub fn definition_s3_location(&self) -> ::std::option::Option<&crate::types::DefinitionS3Location> {
         self.definition_s3_location.as_ref()
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn code(&self) -> ::std::option::Option<&crate::types::Code> {
+        self.code.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Managed Workflows for Apache Airflow Serverless assumes when executing the workflow. This role must have the necessary permissions to access the required Amazon Web Services services and resources that your workflow tasks will interact with. The role is used for task execution in the isolated, multi-tenant environment and should follow the principle of least privilege. Amazon Managed Workflows for Apache Airflow Serverless validates role access during workflow creation but runtime permission checks are performed by the target services.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
@@ -86,6 +92,7 @@ pub struct CreateWorkflowInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) definition_s3_location: ::std::option::Option<crate::types::DefinitionS3Location>,
+    pub(crate) code: ::std::option::Option<crate::types::Code>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
@@ -139,6 +146,20 @@ impl CreateWorkflowInputBuilder {
     /// <p>The Amazon S3 location where the workflow definition file is stored. This must point to a valid YAML file that defines the workflow structure using supported Amazon Web Services operators and tasks. Amazon Managed Workflows for Apache Airflow Serverless takes a snapshot of the definition at creation time, so subsequent changes to the Amazon S3 object will not affect the workflow unless you create a new version. In your YAML definition, include task dependencies, scheduling information, and operator configurations that are compatible with the Amazon Managed Workflows for Apache Airflow Serverless execution environment.</p>
     pub fn get_definition_s3_location(&self) -> &::std::option::Option<crate::types::DefinitionS3Location> {
         &self.definition_s3_location
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn code(mut self, input: crate::types::Code) -> Self {
+        self.code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn set_code(mut self, input: ::std::option::Option<crate::types::Code>) -> Self {
+        self.code = input;
+        self
+    }
+    /// <p>The location of code artifacts in Amazon S3 for the workflow. The service copies the code from this location at the time of the request.</p>
+    pub fn get_code(&self) -> &::std::option::Option<crate::types::Code> {
+        &self.code
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that Amazon Managed Workflows for Apache Airflow Serverless assumes when executing the workflow. This role must have the necessary permissions to access the required Amazon Web Services services and resources that your workflow tasks will interact with. The role is used for task execution in the isolated, multi-tenant environment and should follow the principle of least privilege. Amazon Managed Workflows for Apache Airflow Serverless validates role access during workflow creation but runtime permission checks are performed by the target services.</p>
     /// This field is required.
@@ -267,6 +288,7 @@ impl CreateWorkflowInputBuilder {
             name: self.name,
             client_token: self.client_token,
             definition_s3_location: self.definition_s3_location,
+            code: self.code,
             role_arn: self.role_arn,
             description: self.description,
             encryption_configuration: self.encryption_configuration,

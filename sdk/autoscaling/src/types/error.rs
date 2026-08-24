@@ -17,6 +17,8 @@ pub use crate::types::error::_scaling_activity_in_progress_fault::ScalingActivit
 
 pub use crate::types::error::_invalid_next_token::InvalidNextToken;
 
+pub use crate::types::error::_idempotent_call_in_progress_fault::IdempotentCallInProgressFault;
+
 pub use crate::types::error::_idempotent_parameter_mismatch_error::IdempotentParameterMismatchError;
 
 pub use crate::types::error::_irreversible_instance_refresh_fault::IrreversibleInstanceRefreshFault;
@@ -24,6 +26,8 @@ pub use crate::types::error::_irreversible_instance_refresh_fault::IrreversibleI
 mod _active_instance_refresh_not_found_fault;
 
 mod _already_exists_fault;
+
+mod _idempotent_call_in_progress_fault;
 
 mod _idempotent_parameter_mismatch_error;
 

@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SubmitT
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("SubmitTaskStateChange")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                SubmitTaskStateChangeTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,64 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SubmitT
     }
 }
 
+#[derive(Debug)]
+struct SubmitTaskStateChangeTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SubmitTaskStateChangeTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "SubmitTaskStateChangeTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<SubmitTaskStateChangeInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("cluster") {
+            if let ::std::option::Option::Some(value) = input.cluster.as_deref() {
+                captured.insert("cluster", value);
+            }
+        }
+        if requested.should_capture("task") {
+            if let ::std::option::Option::Some(value) = input.task.as_deref() {
+                captured.insert("task", value);
+            }
+        }
+        if requested.should_capture("status") {
+            if let ::std::option::Option::Some(value) = input.status.as_deref() {
+                captured.insert("status", value);
+            }
+        }
+        if requested.should_capture("reason") {
+            if let ::std::option::Option::Some(value) = input.reason.as_deref() {
+                captured.insert("reason", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct SubmitTaskStateChangeResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SubmitTaskStateChangeResponseDeserializer {

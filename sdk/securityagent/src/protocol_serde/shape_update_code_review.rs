@@ -94,6 +94,10 @@ pub(crate) fn de_update_code_review(
                         depth + 1,
                     )?);
                 }
+                "maxTaskHours" => {
+                    builder = builder
+                        .set_max_task_hours(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f64_lossy()));
+                }
                 "serviceRole" => {
                     builder = builder.set_service_role(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

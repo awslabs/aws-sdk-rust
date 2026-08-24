@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Registe
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("RegisterTaskDefinition")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                RegisterTaskDefinitionTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -147,6 +150,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Registe
     }
 }
 
+#[derive(Debug)]
+struct RegisterTaskDefinitionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RegisterTaskDefinitionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "RegisterTaskDefinitionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<RegisterTaskDefinitionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("family") {
+            if let ::std::option::Option::Some(value) = input.family.as_deref() {
+                captured.insert("family", value);
+            }
+        }
+        if requested.should_capture("taskRoleArn") {
+            if let ::std::option::Option::Some(value) = input.task_role_arn.as_deref() {
+                captured.insert("taskRoleArn", value);
+            }
+        }
+        if requested.should_capture("executionRoleArn") {
+            if let ::std::option::Option::Some(value) = input.execution_role_arn.as_deref() {
+                captured.insert("executionRoleArn", value);
+            }
+        }
+        if requested.should_capture("cpu") {
+            if let ::std::option::Option::Some(value) = input.cpu.as_deref() {
+                captured.insert("cpu", value);
+            }
+        }
+        if requested.should_capture("memory") {
+            if let ::std::option::Option::Some(value) = input.memory.as_deref() {
+                captured.insert("memory", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct RegisterTaskDefinitionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RegisterTaskDefinitionResponseDeserializer {

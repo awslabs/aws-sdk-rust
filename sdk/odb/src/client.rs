@@ -140,6 +140,8 @@ mod accept_marketplace_registration;
 
 mod associate_iam_role_to_resource;
 
+mod associate_virtual_machines_to_exadb_vm_cluster;
+
 mod create_autonomous_database;
 
 mod create_autonomous_database_backup;
@@ -151,6 +153,10 @@ mod create_cloud_autonomous_vm_cluster;
 mod create_cloud_exadata_infrastructure;
 
 mod create_cloud_vm_cluster;
+
+mod create_exadb_vm_cluster;
+
+mod create_exascale_db_storage_vault;
 
 mod create_odb_network;
 
@@ -193,11 +199,17 @@ mod delete_cloud_exadata_infrastructure;
 
 mod delete_cloud_vm_cluster;
 
+mod delete_exadb_vm_cluster;
+
+mod delete_exascale_db_storage_vault;
+
 mod delete_odb_network;
 
 mod delete_odb_peering_connection;
 
 mod disassociate_iam_role_from_resource;
+
+mod disassociate_virtual_machines_from_exadb_vm_cluster;
 
 mod failover_autonomous_database;
 
@@ -218,6 +230,10 @@ mod get_cloud_vm_cluster;
 mod get_db_node;
 
 mod get_db_server;
+
+mod get_exadb_vm_cluster;
+
+mod get_exascale_db_storage_vault;
 
 mod get_oci_onboarding_status;
 
@@ -252,6 +268,12 @@ mod list_db_nodes;
 mod list_db_servers;
 
 mod list_db_system_shapes;
+
+mod list_exadb_vm_clusters;
+
+mod list_exascale_db_storage_vaults;
+
+mod list_gi_minor_versions;
 
 mod list_gi_versions;
 
@@ -290,6 +312,10 @@ mod update_autonomous_database;
 mod update_autonomous_database_backup;
 
 mod update_cloud_exadata_infrastructure;
+
+mod update_exadb_vm_cluster;
+
+mod update_exascale_db_storage_vault;
 
 mod update_odb_network;
 

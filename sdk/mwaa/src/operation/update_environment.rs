@@ -124,6 +124,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateE
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("UpdateEnvironment")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                UpdateEnvironmentTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -143,6 +146,109 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateE
     }
 }
 
+#[derive(Debug)]
+struct UpdateEnvironmentTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateEnvironmentTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateEnvironmentTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<UpdateEnvironmentInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("Name", value);
+            }
+        }
+        if requested.should_capture("ExecutionRoleArn") {
+            if let ::std::option::Option::Some(value) = input.execution_role_arn.as_deref() {
+                captured.insert("ExecutionRoleArn", value);
+            }
+        }
+        if requested.should_capture("AirflowVersion") {
+            if let ::std::option::Option::Some(value) = input.airflow_version.as_deref() {
+                captured.insert("AirflowVersion", value);
+            }
+        }
+        if requested.should_capture("DagS3Path") {
+            if let ::std::option::Option::Some(value) = input.dag_s3_path.as_deref() {
+                captured.insert("DagS3Path", value);
+            }
+        }
+        if requested.should_capture("EnvironmentClass") {
+            if let ::std::option::Option::Some(value) = input.environment_class.as_deref() {
+                captured.insert("EnvironmentClass", value);
+            }
+        }
+        if requested.should_capture("PluginsS3Path") {
+            if let ::std::option::Option::Some(value) = input.plugins_s3_path.as_deref() {
+                captured.insert("PluginsS3Path", value);
+            }
+        }
+        if requested.should_capture("PluginsS3ObjectVersion") {
+            if let ::std::option::Option::Some(value) = input.plugins_s3_object_version.as_deref() {
+                captured.insert("PluginsS3ObjectVersion", value);
+            }
+        }
+        if requested.should_capture("RequirementsS3Path") {
+            if let ::std::option::Option::Some(value) = input.requirements_s3_path.as_deref() {
+                captured.insert("RequirementsS3Path", value);
+            }
+        }
+        if requested.should_capture("RequirementsS3ObjectVersion") {
+            if let ::std::option::Option::Some(value) = input.requirements_s3_object_version.as_deref() {
+                captured.insert("RequirementsS3ObjectVersion", value);
+            }
+        }
+        if requested.should_capture("SourceBucketArn") {
+            if let ::std::option::Option::Some(value) = input.source_bucket_arn.as_deref() {
+                captured.insert("SourceBucketArn", value);
+            }
+        }
+        if requested.should_capture("StartupScriptS3Path") {
+            if let ::std::option::Option::Some(value) = input.startup_script_s3_path.as_deref() {
+                captured.insert("StartupScriptS3Path", value);
+            }
+        }
+        if requested.should_capture("StartupScriptS3ObjectVersion") {
+            if let ::std::option::Option::Some(value) = input.startup_script_s3_object_version.as_deref() {
+                captured.insert("StartupScriptS3ObjectVersion", value);
+            }
+        }
+        if requested.should_capture("WeeklyMaintenanceWindowStart") {
+            if let ::std::option::Option::Some(value) = input.weekly_maintenance_window_start.as_deref() {
+                captured.insert("WeeklyMaintenanceWindowStart", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct UpdateEnvironmentResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateEnvironmentResponseDeserializer {

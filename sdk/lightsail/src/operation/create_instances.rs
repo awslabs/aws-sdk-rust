@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateI
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateInstances")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateInstancesTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateI
     }
 }
 
+#[derive(Debug)]
+struct CreateInstancesTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateInstancesTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateInstancesTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateInstancesInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("availabilityZone") {
+            if let ::std::option::Option::Some(value) = input.availability_zone.as_deref() {
+                captured.insert("availabilityZone", value);
+            }
+        }
+        if requested.should_capture("customImageName") {
+            if let ::std::option::Option::Some(value) = input.custom_image_name.as_deref() {
+                captured.insert("customImageName", value);
+            }
+        }
+        if requested.should_capture("blueprintId") {
+            if let ::std::option::Option::Some(value) = input.blueprint_id.as_deref() {
+                captured.insert("blueprintId", value);
+            }
+        }
+        if requested.should_capture("bundleId") {
+            if let ::std::option::Option::Some(value) = input.bundle_id.as_deref() {
+                captured.insert("bundleId", value);
+            }
+        }
+        if requested.should_capture("userData") {
+            if let ::std::option::Option::Some(value) = input.user_data.as_deref() {
+                captured.insert("userData", value);
+            }
+        }
+        if requested.should_capture("keyPairName") {
+            if let ::std::option::Option::Some(value) = input.key_pair_name.as_deref() {
+                captured.insert("keyPairName", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateInstancesResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateInstancesResponseDeserializer {

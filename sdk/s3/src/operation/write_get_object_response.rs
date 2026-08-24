@@ -128,6 +128,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for WriteGe
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("WriteGetObjectResponse")
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    WriteGetObjectResponseTelemetryInputCaptureInterceptor,
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                     ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
                 ))
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -155,6 +158,179 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for WriteGe
     }
 }
 
+#[derive(Debug)]
+struct WriteGetObjectResponseTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for WriteGetObjectResponseTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "WriteGetObjectResponseTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<WriteGetObjectResponseInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("RequestRoute") {
+            if let ::std::option::Option::Some(value) = input.request_route.as_deref() {
+                captured.insert("RequestRoute", value);
+            }
+        }
+        if requested.should_capture("RequestToken") {
+            if let ::std::option::Option::Some(value) = input.request_token.as_deref() {
+                captured.insert("RequestToken", value);
+            }
+        }
+        if requested.should_capture("ErrorCode") {
+            if let ::std::option::Option::Some(value) = input.error_code.as_deref() {
+                captured.insert("ErrorCode", value);
+            }
+        }
+        if requested.should_capture("ErrorMessage") {
+            if let ::std::option::Option::Some(value) = input.error_message.as_deref() {
+                captured.insert("ErrorMessage", value);
+            }
+        }
+        if requested.should_capture("AcceptRanges") {
+            if let ::std::option::Option::Some(value) = input.accept_ranges.as_deref() {
+                captured.insert("AcceptRanges", value);
+            }
+        }
+        if requested.should_capture("CacheControl") {
+            if let ::std::option::Option::Some(value) = input.cache_control.as_deref() {
+                captured.insert("CacheControl", value);
+            }
+        }
+        if requested.should_capture("ContentDisposition") {
+            if let ::std::option::Option::Some(value) = input.content_disposition.as_deref() {
+                captured.insert("ContentDisposition", value);
+            }
+        }
+        if requested.should_capture("ContentEncoding") {
+            if let ::std::option::Option::Some(value) = input.content_encoding.as_deref() {
+                captured.insert("ContentEncoding", value);
+            }
+        }
+        if requested.should_capture("ContentLanguage") {
+            if let ::std::option::Option::Some(value) = input.content_language.as_deref() {
+                captured.insert("ContentLanguage", value);
+            }
+        }
+        if requested.should_capture("ContentRange") {
+            if let ::std::option::Option::Some(value) = input.content_range.as_deref() {
+                captured.insert("ContentRange", value);
+            }
+        }
+        if requested.should_capture("ContentType") {
+            if let ::std::option::Option::Some(value) = input.content_type.as_deref() {
+                captured.insert("ContentType", value);
+            }
+        }
+        if requested.should_capture("ChecksumCRC32") {
+            if let ::std::option::Option::Some(value) = input.checksum_crc32.as_deref() {
+                captured.insert("ChecksumCRC32", value);
+            }
+        }
+        if requested.should_capture("ChecksumCRC32C") {
+            if let ::std::option::Option::Some(value) = input.checksum_crc32_c.as_deref() {
+                captured.insert("ChecksumCRC32C", value);
+            }
+        }
+        if requested.should_capture("ChecksumCRC64NVME") {
+            if let ::std::option::Option::Some(value) = input.checksum_crc64_nvme.as_deref() {
+                captured.insert("ChecksumCRC64NVME", value);
+            }
+        }
+        if requested.should_capture("ChecksumSHA1") {
+            if let ::std::option::Option::Some(value) = input.checksum_sha1.as_deref() {
+                captured.insert("ChecksumSHA1", value);
+            }
+        }
+        if requested.should_capture("ChecksumSHA256") {
+            if let ::std::option::Option::Some(value) = input.checksum_sha256.as_deref() {
+                captured.insert("ChecksumSHA256", value);
+            }
+        }
+        if requested.should_capture("ChecksumSHA512") {
+            if let ::std::option::Option::Some(value) = input.checksum_sha512.as_deref() {
+                captured.insert("ChecksumSHA512", value);
+            }
+        }
+        if requested.should_capture("ChecksumMD5") {
+            if let ::std::option::Option::Some(value) = input.checksum_md5.as_deref() {
+                captured.insert("ChecksumMD5", value);
+            }
+        }
+        if requested.should_capture("ChecksumXXHASH64") {
+            if let ::std::option::Option::Some(value) = input.checksum_xxhash64.as_deref() {
+                captured.insert("ChecksumXXHASH64", value);
+            }
+        }
+        if requested.should_capture("ChecksumXXHASH3") {
+            if let ::std::option::Option::Some(value) = input.checksum_xxhash3.as_deref() {
+                captured.insert("ChecksumXXHASH3", value);
+            }
+        }
+        if requested.should_capture("ChecksumXXHASH128") {
+            if let ::std::option::Option::Some(value) = input.checksum_xxhash128.as_deref() {
+                captured.insert("ChecksumXXHASH128", value);
+            }
+        }
+        if requested.should_capture("ETag") {
+            if let ::std::option::Option::Some(value) = input.e_tag.as_deref() {
+                captured.insert("ETag", value);
+            }
+        }
+        if requested.should_capture("Expiration") {
+            if let ::std::option::Option::Some(value) = input.expiration.as_deref() {
+                captured.insert("Expiration", value);
+            }
+        }
+        if requested.should_capture("Restore") {
+            if let ::std::option::Option::Some(value) = input.restore.as_deref() {
+                captured.insert("Restore", value);
+            }
+        }
+        if requested.should_capture("SSECustomerAlgorithm") {
+            if let ::std::option::Option::Some(value) = input.sse_customer_algorithm.as_deref() {
+                captured.insert("SSECustomerAlgorithm", value);
+            }
+        }
+        if requested.should_capture("SSECustomerKeyMD5") {
+            if let ::std::option::Option::Some(value) = input.sse_customer_key_md5.as_deref() {
+                captured.insert("SSECustomerKeyMD5", value);
+            }
+        }
+        if requested.should_capture("VersionId") {
+            if let ::std::option::Option::Some(value) = input.version_id.as_deref() {
+                captured.insert("VersionId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct WriteGetObjectResponseResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for WriteGetObjectResponseResponseDeserializer {

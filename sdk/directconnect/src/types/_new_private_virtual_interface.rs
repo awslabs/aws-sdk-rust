@@ -54,6 +54,10 @@ pub struct NewPrivateVirtualInterface {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub enable_site_link: ::std::option::Option<bool>,
+    /// <p>The number of inbound IPv4 route prefixes to allocate to the virtual interface.</p>
+    pub prefix_pool_allocated_count_ipv4: ::std::option::Option<i32>,
+    /// <p>The number of inbound IPv6 route prefixes to allocate to the virtual interface.</p>
+    pub prefix_pool_allocated_count_ipv6: ::std::option::Option<i32>,
     /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. The rate limit restricts the maximum bandwidth that the virtual interface can use on the parent connection.</p>
     pub rate_limit: ::std::option::Option<::std::string::String>,
 }
@@ -137,6 +141,14 @@ impl NewPrivateVirtualInterface {
     pub fn enable_site_link(&self) -> ::std::option::Option<bool> {
         self.enable_site_link
     }
+    /// <p>The number of inbound IPv4 route prefixes to allocate to the virtual interface.</p>
+    pub fn prefix_pool_allocated_count_ipv4(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_allocated_count_ipv4
+    }
+    /// <p>The number of inbound IPv6 route prefixes to allocate to the virtual interface.</p>
+    pub fn prefix_pool_allocated_count_ipv6(&self) -> ::std::option::Option<i32> {
+        self.prefix_pool_allocated_count_ipv6
+    }
     /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. The rate limit restricts the maximum bandwidth that the virtual interface can use on the parent connection.</p>
     pub fn rate_limit(&self) -> ::std::option::Option<&str> {
         self.rate_limit.as_deref()
@@ -166,6 +178,8 @@ pub struct NewPrivateVirtualInterfaceBuilder {
     pub(crate) direct_connect_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) enable_site_link: ::std::option::Option<bool>,
+    pub(crate) prefix_pool_allocated_count_ipv4: ::std::option::Option<i32>,
+    pub(crate) prefix_pool_allocated_count_ipv6: ::std::option::Option<i32>,
     pub(crate) rate_limit: ::std::option::Option<::std::string::String>,
 }
 impl NewPrivateVirtualInterfaceBuilder {
@@ -431,6 +445,34 @@ impl NewPrivateVirtualInterfaceBuilder {
     pub fn get_enable_site_link(&self) -> &::std::option::Option<bool> {
         &self.enable_site_link
     }
+    /// <p>The number of inbound IPv4 route prefixes to allocate to the virtual interface.</p>
+    pub fn prefix_pool_allocated_count_ipv4(mut self, input: i32) -> Self {
+        self.prefix_pool_allocated_count_ipv4 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of inbound IPv4 route prefixes to allocate to the virtual interface.</p>
+    pub fn set_prefix_pool_allocated_count_ipv4(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_allocated_count_ipv4 = input;
+        self
+    }
+    /// <p>The number of inbound IPv4 route prefixes to allocate to the virtual interface.</p>
+    pub fn get_prefix_pool_allocated_count_ipv4(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_allocated_count_ipv4
+    }
+    /// <p>The number of inbound IPv6 route prefixes to allocate to the virtual interface.</p>
+    pub fn prefix_pool_allocated_count_ipv6(mut self, input: i32) -> Self {
+        self.prefix_pool_allocated_count_ipv6 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of inbound IPv6 route prefixes to allocate to the virtual interface.</p>
+    pub fn set_prefix_pool_allocated_count_ipv6(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.prefix_pool_allocated_count_ipv6 = input;
+        self
+    }
+    /// <p>The number of inbound IPv6 route prefixes to allocate to the virtual interface.</p>
+    pub fn get_prefix_pool_allocated_count_ipv6(&self) -> &::std::option::Option<i32> {
+        &self.prefix_pool_allocated_count_ipv6
+    }
     /// <p>The rate limit (bandwidth allocation) to apply to the virtual interface. The rate limit restricts the maximum bandwidth that the virtual interface can use on the parent connection.</p>
     pub fn rate_limit(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.rate_limit = ::std::option::Option::Some(input.into());
@@ -468,6 +510,8 @@ impl NewPrivateVirtualInterfaceBuilder {
             direct_connect_gateway_id: self.direct_connect_gateway_id,
             tags: self.tags,
             enable_site_link: self.enable_site_link,
+            prefix_pool_allocated_count_ipv4: self.prefix_pool_allocated_count_ipv4,
+            prefix_pool_allocated_count_ipv6: self.prefix_pool_allocated_count_ipv6,
             rate_limit: self.rate_limit,
         })
     }

@@ -7,7 +7,7 @@ pub struct NewSessionDetails {
     /// <p>The supported chat message content types. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.</p>
     /// <p>Content types must always contain <code> text/plain</code>. You can then put any other supported type in the list. For example, all the following lists are valid because they contain <code>text/plain</code>: <code>\[text/plain, text/markdown, application/json\]</code>, <code>\[text/markdown, text/plain\]</code>, <code>\[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response\]</code>.</p>
     pub supported_messaging_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub participant_details: ::std::option::Option<crate::types::ParticipantDetails>,
     /// <p>A custom key-value pair using an attribute map. The attributes are standard Connect Customer attributes. They can be accessed in flows just like any other contact attributes.</p>
     /// <p>There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute keys can include only alphanumeric, dash, and underscore characters.</p>
@@ -23,7 +23,7 @@ impl NewSessionDetails {
     pub fn supported_messaging_content_types(&self) -> &[::std::string::String] {
         self.supported_messaging_content_types.as_deref().unwrap_or_default()
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn participant_details(&self) -> ::std::option::Option<&crate::types::ParticipantDetails> {
         self.participant_details.as_ref()
     }
@@ -77,17 +77,17 @@ impl NewSessionDetailsBuilder {
     pub fn get_supported_messaging_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_messaging_content_types
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn participant_details(mut self, input: crate::types::ParticipantDetails) -> Self {
         self.participant_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn set_participant_details(mut self, input: ::std::option::Option<crate::types::ParticipantDetails>) -> Self {
         self.participant_details = input;
         self
     }
-    /// <p>The customer's details.</p>
+    /// <p>The details of the participant, including their display name.</p>
     pub fn get_participant_details(&self) -> &::std::option::Option<crate::types::ParticipantDetails> {
         &self.participant_details
     }

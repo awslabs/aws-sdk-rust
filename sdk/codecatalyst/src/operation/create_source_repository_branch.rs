@@ -123,6 +123,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateS
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateSourceRepositoryBranch")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateSourceRepositoryBranchTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -142,6 +145,69 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateS
     }
 }
 
+#[derive(Debug)]
+struct CreateSourceRepositoryBranchTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateSourceRepositoryBranchTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateSourceRepositoryBranchTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateSourceRepositoryBranchInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("spaceName") {
+            if let ::std::option::Option::Some(value) = input.space_name.as_deref() {
+                captured.insert("spaceName", value);
+            }
+        }
+        if requested.should_capture("projectName") {
+            if let ::std::option::Option::Some(value) = input.project_name.as_deref() {
+                captured.insert("projectName", value);
+            }
+        }
+        if requested.should_capture("sourceRepositoryName") {
+            if let ::std::option::Option::Some(value) = input.source_repository_name.as_deref() {
+                captured.insert("sourceRepositoryName", value);
+            }
+        }
+        if requested.should_capture("name") {
+            if let ::std::option::Option::Some(value) = input.name.as_deref() {
+                captured.insert("name", value);
+            }
+        }
+        if requested.should_capture("headCommitId") {
+            if let ::std::option::Option::Some(value) = input.head_commit_id.as_deref() {
+                captured.insert("headCommitId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateSourceRepositoryBranchResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateSourceRepositoryBranchResponseDeserializer {

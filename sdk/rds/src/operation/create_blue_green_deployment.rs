@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateB
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateBlueGreenDeployment")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateBlueGreenDeploymentTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateB
     }
 }
 
+#[derive(Debug)]
+struct CreateBlueGreenDeploymentTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateBlueGreenDeploymentTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateBlueGreenDeploymentTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateBlueGreenDeploymentInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("BlueGreenDeploymentName") {
+            if let ::std::option::Option::Some(value) = input.blue_green_deployment_name.as_deref() {
+                captured.insert("BlueGreenDeploymentName", value);
+            }
+        }
+        if requested.should_capture("Source") {
+            if let ::std::option::Option::Some(value) = input.source.as_deref() {
+                captured.insert("Source", value);
+            }
+        }
+        if requested.should_capture("TargetEngineVersion") {
+            if let ::std::option::Option::Some(value) = input.target_engine_version.as_deref() {
+                captured.insert("TargetEngineVersion", value);
+            }
+        }
+        if requested.should_capture("TargetDBParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.target_db_parameter_group_name.as_deref() {
+                captured.insert("TargetDBParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("TargetDBClusterParameterGroupName") {
+            if let ::std::option::Option::Some(value) = input.target_db_cluster_parameter_group_name.as_deref() {
+                captured.insert("TargetDBClusterParameterGroupName", value);
+            }
+        }
+        if requested.should_capture("TargetDBInstanceClass") {
+            if let ::std::option::Option::Some(value) = input.target_db_instance_class.as_deref() {
+                captured.insert("TargetDBInstanceClass", value);
+            }
+        }
+        if requested.should_capture("TargetStorageType") {
+            if let ::std::option::Option::Some(value) = input.target_storage_type.as_deref() {
+                captured.insert("TargetStorageType", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateBlueGreenDeploymentResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateBlueGreenDeploymentResponseDeserializer {

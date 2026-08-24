@@ -11,6 +11,18 @@ pub(crate) fn batch_delete_knowledge_base_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn batch_describe_user_limits_output_output_correct_errors(
+    mut builder: crate::operation::batch_describe_user_limits::builders::BatchDescribeUserLimitsOutputBuilder,
+) -> crate::operation::batch_describe_user_limits::builders::BatchDescribeUserLimitsOutputBuilder {
+    if builder.user_limits.is_none() {
+        builder.user_limits = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_agent_output_output_correct_errors(
     mut builder: crate::operation::create_agent::builders::CreateAgentOutputBuilder,
 ) -> crate::operation::create_agent::builders::CreateAgentOutputBuilder {
@@ -29,11 +41,35 @@ pub(crate) fn create_agent_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_approval_policy_output_output_correct_errors(
+    mut builder: crate::operation::create_approval_policy::builders::CreateApprovalPolicyOutputBuilder,
+) -> crate::operation::create_approval_policy::builders::CreateApprovalPolicyOutputBuilder {
+    if builder.policy.is_none() {
+        builder.policy = {
+            let builder = crate::types::builders::ApprovalPolicyBuilder::default();
+            crate::serde_util::approval_policy_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn internal_server_exception_correct_errors(
     mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
 ) -> crate::types::error::builders::InternalServerExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_dlp_setting_output_output_correct_errors(
+    mut builder: crate::operation::create_dlp_setting::builders::CreateDlpSettingOutputBuilder,
+) -> crate::operation::create_dlp_setting::builders::CreateDlpSettingOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.dlp_setting_id.is_none() {
+        builder.dlp_setting_id = Some(Default::default())
     }
     builder
 }
@@ -65,11 +101,35 @@ pub(crate) fn create_knowledge_base_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_limits_profile_output_output_correct_errors(
+    mut builder: crate::operation::create_limits_profile::builders::CreateLimitsProfileOutputBuilder,
+) -> crate::operation::create_limits_profile::builders::CreateLimitsProfileOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_space_output_output_correct_errors(
     mut builder: crate::operation::create_space::builders::CreateSpaceOutputBuilder,
 ) -> crate::operation::create_space::builders::CreateSpaceOutputBuilder {
     if builder.space_id.is_none() {
         builder.space_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_dlp_setting_output_output_correct_errors(
+    mut builder: crate::operation::delete_dlp_setting::builders::DeleteDlpSettingOutputBuilder,
+) -> crate::operation::delete_dlp_setting::builders::DeleteDlpSettingOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.dlp_setting_id.is_none() {
+        builder.dlp_setting_id = Some(Default::default())
     }
     builder
 }
@@ -82,6 +142,15 @@ pub(crate) fn delete_knowledge_base_output_output_correct_errors(
     }
     if builder.knowledge_base_id.is_none() {
         builder.knowledge_base_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn delete_limits_profile_output_output_correct_errors(
+    mut builder: crate::operation::delete_limits_profile::builders::DeleteLimitsProfileOutputBuilder,
+) -> crate::operation::delete_limits_profile::builders::DeleteLimitsProfileOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
     }
     builder
 }
@@ -125,6 +194,18 @@ pub(crate) fn describe_agent_permissions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_approval_policy_output_output_correct_errors(
+    mut builder: crate::operation::describe_approval_policy::builders::DescribeApprovalPolicyOutputBuilder,
+) -> crate::operation::describe_approval_policy::builders::DescribeApprovalPolicyOutputBuilder {
+    if builder.policy.is_none() {
+        builder.policy = {
+            let builder = crate::types::builders::ApprovalPolicyBuilder::default();
+            crate::serde_util::approval_policy_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_automation_job_output_output_correct_errors(
     mut builder: crate::operation::describe_automation_job::builders::DescribeAutomationJobOutputBuilder,
 ) -> crate::operation::describe_automation_job::builders::DescribeAutomationJobOutputBuilder {
@@ -133,6 +214,18 @@ pub(crate) fn describe_automation_job_output_output_correct_errors(
     }
     if builder.job_status.is_none() {
         builder.job_status = "no value was set".parse::<crate::types::AutomationJobStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn describe_dlp_setting_output_output_correct_errors(
+    mut builder: crate::operation::describe_dlp_setting::builders::DescribeDlpSettingOutputBuilder,
+) -> crate::operation::describe_dlp_setting::builders::DescribeDlpSettingOutputBuilder {
+    if builder.dlp_setting.is_none() {
+        builder.dlp_setting = {
+            let builder = crate::types::builders::DlpSettingDetailsBuilder::default();
+            crate::serde_util::dlp_setting_details_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -169,6 +262,18 @@ pub(crate) fn describe_knowledge_base_permissions_output_output_correct_errors(
     }
     if builder.knowledge_base_id.is_none() {
         builder.knowledge_base_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn describe_limits_profile_output_output_correct_errors(
+    mut builder: crate::operation::describe_limits_profile::builders::DescribeLimitsProfileOutputBuilder,
+) -> crate::operation::describe_limits_profile::builders::DescribeLimitsProfileOutputBuilder {
+    if builder.profile.is_none() {
+        builder.profile = {
+            let builder = crate::types::builders::LimitsProfileBuilder::default();
+            crate::serde_util::limits_profile_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -308,11 +413,38 @@ pub(crate) fn list_agents_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_approval_policies_output_output_correct_errors(
+    mut builder: crate::operation::list_approval_policies::builders::ListApprovalPoliciesOutputBuilder,
+) -> crate::operation::list_approval_policies::builders::ListApprovalPoliciesOutputBuilder {
+    if builder.policies.is_none() {
+        builder.policies = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_dlp_settings_output_output_correct_errors(
+    mut builder: crate::operation::list_dlp_settings::builders::ListDlpSettingsOutputBuilder,
+) -> crate::operation::list_dlp_settings::builders::ListDlpSettingsOutputBuilder {
+    if builder.dlp_setting_summaries.is_none() {
+        builder.dlp_setting_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_knowledge_bases_output_output_correct_errors(
     mut builder: crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder,
 ) -> crate::operation::list_knowledge_bases::builders::ListKnowledgeBasesOutputBuilder {
     if builder.knowledge_base_summaries.is_none() {
         builder.knowledge_base_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_limits_profiles_output_output_correct_errors(
+    mut builder: crate::operation::list_limits_profiles::builders::ListLimitsProfilesOutputBuilder,
+) -> crate::operation::list_limits_profiles::builders::ListLimitsProfilesOutputBuilder {
+    if builder.profiles.is_none() {
+        builder.profiles = Some(Default::default())
     }
     builder
 }
@@ -410,6 +542,30 @@ pub(crate) fn update_agent_permissions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_approval_policy_output_output_correct_errors(
+    mut builder: crate::operation::update_approval_policy::builders::UpdateApprovalPolicyOutputBuilder,
+) -> crate::operation::update_approval_policy::builders::UpdateApprovalPolicyOutputBuilder {
+    if builder.policy.is_none() {
+        builder.policy = {
+            let builder = crate::types::builders::ApprovalPolicyBuilder::default();
+            crate::serde_util::approval_policy_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn update_dlp_setting_output_output_correct_errors(
+    mut builder: crate::operation::update_dlp_setting::builders::UpdateDlpSettingOutputBuilder,
+) -> crate::operation::update_dlp_setting::builders::UpdateDlpSettingOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.dlp_setting_id.is_none() {
+        builder.dlp_setting_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_flow_output_output_correct_errors(
     mut builder: crate::operation::update_flow::builders::UpdateFlowOutputBuilder,
 ) -> crate::operation::update_flow::builders::UpdateFlowOutputBuilder {
@@ -464,6 +620,15 @@ pub(crate) fn update_knowledge_base_permissions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_limits_profile_output_output_correct_errors(
+    mut builder: crate::operation::update_limits_profile::builders::UpdateLimitsProfileOutputBuilder,
+) -> crate::operation::update_limits_profile::builders::UpdateLimitsProfileOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_space_output_output_correct_errors(
     mut builder: crate::operation::update_space::builders::UpdateSpaceOutputBuilder,
 ) -> crate::operation::update_space::builders::UpdateSpaceOutputBuilder {
@@ -491,6 +656,42 @@ pub(crate) fn update_space_resources_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn approval_policy_correct_errors(
+    mut builder: crate::types::builders::ApprovalPolicyBuilder,
+) -> crate::types::builders::ApprovalPolicyBuilder {
+    if builder.policy_id.is_none() {
+        builder.policy_id = Some(Default::default())
+    }
+    if builder.policy_arn.is_none() {
+        builder.policy_arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.actions.is_none() {
+        builder.actions = Some(Default::default())
+    }
+    if builder.asset_types.is_none() {
+        builder.asset_types = Some(Default::default())
+    }
+    if builder.applicable_to.is_none() {
+        builder.applicable_to = {
+            let builder = crate::types::builders::ApplicableToBuilder::default();
+            crate::serde_util::applicable_to_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.approval_groups.is_none() {
+        builder.approval_groups = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn agent_correct_errors(mut builder: crate::types::builders::AgentBuilder) -> crate::types::builders::AgentBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -512,6 +713,39 @@ pub(crate) fn agent_correct_errors(mut builder: crate::types::builders::AgentBui
     }
     if builder.creator.is_none() {
         builder.creator = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn dlp_setting_details_correct_errors(
+    mut builder: crate::types::builders::DlpSettingDetailsBuilder,
+) -> crate::types::builders::DlpSettingDetailsBuilder {
+    if builder.dlp_setting_id.is_none() {
+        builder.dlp_setting_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DlpSettingStatus>().ok()
+    }
+    if builder.provider_type.is_none() {
+        builder.provider_type = "no value was set".parse::<crate::types::DlpProviderType>().ok()
+    }
+    if builder.provider_config.is_none() {
+        builder.provider_config = Some(crate::types::ProviderConfig::Unknown)
+    }
+    if builder.provider_outage_action.is_none() {
+        builder.provider_outage_action = "no value was set".parse::<crate::types::DlpAction>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -564,6 +798,33 @@ pub(crate) fn knowledge_base_correct_errors(
             let builder = crate::types::builders::KnowledgeBaseConfigurationBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn limits_profile_correct_errors(
+    mut builder: crate::types::builders::LimitsProfileBuilder,
+) -> crate::types::builders::LimitsProfileBuilder {
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.profile_name.is_none() {
+        builder.profile_name = Some(Default::default())
+    }
+    if builder.resource_limits.is_none() {
+        builder.resource_limits = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -702,6 +963,13 @@ pub(crate) fn topic_v2_details_correct_errors(
     builder
 }
 
+pub(crate) fn applicable_to_correct_errors(mut builder: crate::types::builders::ApplicableToBuilder) -> crate::types::builders::ApplicableToBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ApplicableToType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn action_connector_summary_correct_errors(
     mut builder: crate::types::builders::ActionConnectorSummaryBuilder,
 ) -> crate::types::builders::ActionConnectorSummaryBuilder {
@@ -781,6 +1049,18 @@ pub(crate) fn batch_delete_knowledge_base_success_correct_errors(
     builder
 }
 
+pub(crate) fn batch_describe_user_limits_error_correct_errors(
+    mut builder: crate::types::builders::BatchDescribeUserLimitsErrorBuilder,
+) -> crate::types::builders::BatchDescribeUserLimitsErrorBuilder {
+    if builder.error_code.is_none() {
+        builder.error_code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_prompt_interface_correct_errors(
     mut builder: crate::types::builders::CustomPromptInterfaceBuilder,
 ) -> crate::types::builders::CustomPromptInterfaceBuilder {
@@ -807,6 +1087,33 @@ pub(crate) fn data_prep_configuration_correct_errors(
     }
     if builder.destination_table_map.is_none() {
         builder.destination_table_map = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dlp_setting_summary_correct_errors(
+    mut builder: crate::types::builders::DlpSettingSummaryBuilder,
+) -> crate::types::builders::DlpSettingSummaryBuilder {
+    if builder.dlp_setting_id.is_none() {
+        builder.dlp_setting_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DlpSettingStatus>().ok()
+    }
+    if builder.provider_type.is_none() {
+        builder.provider_type = "no value was set".parse::<crate::types::DlpProviderType>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1066,6 +1373,19 @@ pub(crate) fn topic_reviewed_answer_correct_errors(
     builder
 }
 
+pub(crate) fn user_limits_correct_errors(mut builder: crate::types::builders::UserLimitsBuilder) -> crate::types::builders::UserLimitsBuilder {
+    if builder.user_name.is_none() {
+        builder.user_name = Some(Default::default())
+    }
+    if builder.namespace.is_none() {
+        builder.namespace = Some(Default::default())
+    }
+    if builder.effective_limits.is_none() {
+        builder.effective_limits = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn vpc_connection_properties_correct_errors(
     mut builder: crate::types::builders::VpcConnectionPropertiesBuilder,
 ) -> crate::types::builders::VpcConnectionPropertiesBuilder {
@@ -1168,6 +1488,18 @@ pub(crate) fn asset_bundle_export_job_refresh_schedule_override_properties_corre
 pub(crate) fn asset_bundle_export_job_theme_override_properties_correct_errors(
     mut builder: crate::types::builders::AssetBundleExportJobThemeOverridePropertiesBuilder,
 ) -> crate::types::builders::AssetBundleExportJobThemeOverridePropertiesBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.properties.is_none() {
+        builder.properties = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_export_job_topic_v2_override_properties_correct_errors(
+    mut builder: crate::types::builders::AssetBundleExportJobTopicV2OverridePropertiesBuilder,
+) -> crate::types::builders::AssetBundleExportJobTopicV2OverridePropertiesBuilder {
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
@@ -1398,6 +1730,42 @@ pub(crate) fn asset_bundle_import_job_theme_override_tags_correct_errors(
 ) -> crate::types::builders::AssetBundleImportJobThemeOverrideTagsBuilder {
     if builder.theme_ids.is_none() {
         builder.theme_ids = Some(Default::default())
+    }
+    if builder.tags.is_none() {
+        builder.tags = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_topic_v2_override_parameters_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobTopicV2OverrideParametersBuilder,
+) -> crate::types::builders::AssetBundleImportJobTopicV2OverrideParametersBuilder {
+    if builder.topic_id.is_none() {
+        builder.topic_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_topic_v2_override_permissions_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobTopicV2OverridePermissionsBuilder,
+) -> crate::types::builders::AssetBundleImportJobTopicV2OverridePermissionsBuilder {
+    if builder.topic_ids.is_none() {
+        builder.topic_ids = Some(Default::default())
+    }
+    if builder.permissions.is_none() {
+        builder.permissions = {
+            let builder = crate::types::builders::AssetBundleResourcePermissionsBuilder::default();
+            crate::serde_util::asset_bundle_resource_permissions_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn asset_bundle_import_job_topic_v2_override_tags_correct_errors(
+    mut builder: crate::types::builders::AssetBundleImportJobTopicV2OverrideTagsBuilder,
+) -> crate::types::builders::AssetBundleImportJobTopicV2OverrideTagsBuilder {
+    if builder.topic_ids.is_none() {
+        builder.topic_ids = Some(Default::default())
     }
     if builder.tags.is_none() {
         builder.tags = Some(Default::default())
@@ -1687,6 +2055,24 @@ pub(crate) fn maria_db_parameters_correct_errors(
     builder
 }
 
+pub(crate) fn microsoft_purview_provider_config_correct_errors(
+    mut builder: crate::types::builders::MicrosoftPurviewProviderConfigBuilder,
+) -> crate::types::builders::MicrosoftPurviewProviderConfigBuilder {
+    if builder.credentials.is_none() {
+        builder.credentials = {
+            let builder = crate::types::builders::MicrosoftPurviewCredentialsBuilder::default();
+            crate::serde_util::microsoft_purview_credentials_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.label_action_mappings.is_none() {
+        builder.label_action_mappings = Some(Default::default())
+    }
+    if builder.unmapped_action.is_none() {
+        builder.unmapped_action = "no value was set".parse::<crate::types::DlpAction>().ok()
+    }
+    builder
+}
+
 pub(crate) fn my_sql_parameters_correct_errors(
     mut builder: crate::types::builders::MySqlParametersBuilder,
 ) -> crate::types::builders::MySqlParametersBuilder {
@@ -1743,6 +2129,18 @@ pub(crate) fn presto_parameters_correct_errors(
     }
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn profile_limit_value_correct_errors(
+    mut builder: crate::types::builders::ProfileLimitValueBuilder,
+) -> crate::types::builders::ProfileLimitValueBuilder {
+    if builder.max_value.is_none() {
+        builder.max_value = Some(Default::default())
+    }
+    if builder.unit.is_none() {
+        builder.unit = "no value was set".parse::<crate::types::LimitUnit>().ok()
     }
     builder
 }
@@ -2140,6 +2538,27 @@ pub(crate) fn destination_table_correct_errors(
     builder
 }
 
+pub(crate) fn effective_limit_correct_errors(
+    mut builder: crate::types::builders::EffectiveLimitBuilder,
+) -> crate::types::builders::EffectiveLimitBuilder {
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::ResourceType>().ok()
+    }
+    if builder.limit_value.is_none() {
+        builder.limit_value = Some(Default::default())
+    }
+    if builder.limit_unit.is_none() {
+        builder.limit_unit = "no value was set".parse::<crate::types::LimitUnit>().ok()
+    }
+    if builder.source.is_none() {
+        builder.source = "no value was set".parse::<crate::types::LimitSource>().ok()
+    }
+    if builder.profile_id.is_none() {
+        builder.profile_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn file_source_correct_errors(mut builder: crate::types::builders::FileSourceBuilder) -> crate::types::builders::FileSourceBuilder {
     if builder.data_source_arn.is_none() {
         builder.data_source_arn = Some(Default::default())
@@ -2258,6 +2677,15 @@ pub(crate) fn manifest_file_location_correct_errors(
     }
     if builder.key.is_none() {
         builder.key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn microsoft_purview_credentials_correct_errors(
+    mut builder: crate::types::builders::MicrosoftPurviewCredentialsBuilder,
+) -> crate::types::builders::MicrosoftPurviewCredentialsBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
     }
     builder
 }
@@ -2697,6 +3125,21 @@ pub(crate) fn join_operation_correct_errors(
     }
     if builder.on_clause.is_none() {
         builder.on_clause = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn label_action_mapping_correct_errors(
+    mut builder: crate::types::builders::LabelActionMappingBuilder,
+) -> crate::types::builders::LabelActionMappingBuilder {
+    if builder.label_id.is_none() {
+        builder.label_id = Some(Default::default())
+    }
+    if builder.label_name.is_none() {
+        builder.label_name = Some(Default::default())
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::DlpAction>().ok()
     }
     builder
 }

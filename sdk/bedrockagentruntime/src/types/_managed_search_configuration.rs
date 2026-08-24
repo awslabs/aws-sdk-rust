@@ -6,14 +6,7 @@
 pub struct ManagedSearchConfiguration {
     /// <p>The number of results to retrieve.</p>
     pub number_of_results: ::std::option::Option<i32>,
-    /// <p>Specifies the filters to use on the metadata attributes in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>. See the examples below to see how to use these filters.</p>
-    /// <p>This data type is used in the following API operations:</p>
-    /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve request</a> – in the <code>filter</code> field</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate request</a> – in the <code>filter</code> field</p></li>
-    /// </ul>
+    /// <p>Filters the metadata of the retrieved results so that Amazon Bedrock returns only results that match the filter.</p>
     pub filter: ::std::option::Option<crate::types::RetrievalFilter>,
     /// <p>The type of reranking model to use when reranking results retrieved from the managed search. Use <code>CUSTOM</code> to specify a model, <code>MANAGED</code> to use the service default, or <code>NONE</code> to disable reranking.</p>
     pub reranking_model_type: ::std::option::Option<crate::types::RerankingModelType>,
@@ -25,14 +18,7 @@ impl ManagedSearchConfiguration {
     pub fn number_of_results(&self) -> ::std::option::Option<i32> {
         self.number_of_results
     }
-    /// <p>Specifies the filters to use on the metadata attributes in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>. See the examples below to see how to use these filters.</p>
-    /// <p>This data type is used in the following API operations:</p>
-    /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve request</a> – in the <code>filter</code> field</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate request</a> – in the <code>filter</code> field</p></li>
-    /// </ul>
+    /// <p>Filters the metadata of the retrieved results so that Amazon Bedrock returns only results that match the filter.</p>
     pub fn filter(&self) -> ::std::option::Option<&crate::types::RetrievalFilter> {
         self.filter.as_ref()
     }
@@ -86,38 +72,17 @@ impl ManagedSearchConfigurationBuilder {
     pub fn get_number_of_results(&self) -> &::std::option::Option<i32> {
         &self.number_of_results
     }
-    /// <p>Specifies the filters to use on the metadata attributes in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>. See the examples below to see how to use these filters.</p>
-    /// <p>This data type is used in the following API operations:</p>
-    /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve request</a> – in the <code>filter</code> field</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate request</a> – in the <code>filter</code> field</p></li>
-    /// </ul>
+    /// <p>Filters the metadata of the retrieved results so that Amazon Bedrock returns only results that match the filter.</p>
     pub fn filter(mut self, input: crate::types::RetrievalFilter) -> Self {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the filters to use on the metadata attributes in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>. See the examples below to see how to use these filters.</p>
-    /// <p>This data type is used in the following API operations:</p>
-    /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve request</a> – in the <code>filter</code> field</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate request</a> – in the <code>filter</code> field</p></li>
-    /// </ul>
+    /// <p>Filters the metadata of the retrieved results so that Amazon Bedrock returns only results that match the filter.</p>
     pub fn set_filter(mut self, input: ::std::option::Option<crate::types::RetrievalFilter>) -> Self {
         self.filter = input;
         self
     }
-    /// <p>Specifies the filters to use on the metadata attributes in the knowledge base data sources before returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query configurations</a>. See the examples below to see how to use these filters.</p>
-    /// <p>This data type is used in the following API operations:</p>
-    /// <ul>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve request</a> – in the <code>filter</code> field</p></li>
-    /// <li>
-    /// <p><a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate request</a> – in the <code>filter</code> field</p></li>
-    /// </ul>
+    /// <p>Filters the metadata of the retrieved results so that Amazon Bedrock returns only results that match the filter.</p>
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::RetrievalFilter> {
         &self.filter
     }

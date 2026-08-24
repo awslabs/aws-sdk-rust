@@ -137,4 +137,18 @@ impl DeleteMemoryRecordFluentBuilder {
     pub fn get_memory_record_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_memory_record_id()
     }
+    /// <p>The namespace of the memory record to delete. This value is used for IAM condition key authorization.</p>
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.namespace(input.into());
+        self
+    }
+    /// <p>The namespace of the memory record to delete. This value is used for IAM condition key authorization.</p>
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_namespace(input);
+        self
+    }
+    /// <p>The namespace of the memory record to delete. This value is used for IAM condition key authorization.</p>
+    pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_namespace()
+    }
 }

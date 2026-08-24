@@ -116,6 +116,15 @@ pub(crate) fn create_event_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn subscription_required_exception_correct_errors(
+    mut builder: crate::types::error::builders::SubscriptionRequiredExceptionBuilder,
+) -> crate::types::error::builders::SubscriptionRequiredExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_payment_instrument_output_output_correct_errors(
     mut builder: crate::operation::create_payment_instrument::builders::CreatePaymentInstrumentOutputBuilder,
 ) -> crate::operation::create_payment_instrument::builders::CreatePaymentInstrumentOutputBuilder {
@@ -1373,6 +1382,21 @@ pub(crate) fn mouse_scroll_result_correct_errors(
     builder
 }
 
+pub(crate) fn mpp_payment_output_correct_errors(
+    mut builder: crate::types::builders::MppPaymentOutputBuilder,
+) -> crate::types::builders::MppPaymentOutputBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.selected_payment_id.is_none() {
+        builder.selected_payment_id = Some(Default::default())
+    }
+    if builder.payment_credential.is_none() {
+        builder.payment_credential = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn online_evaluation_config_source_correct_errors(
     mut builder: crate::types::builders::OnlineEvaluationConfigSourceBuilder,
 ) -> crate::types::builders::OnlineEvaluationConfigSourceBuilder {
@@ -1996,6 +2020,15 @@ pub(crate) fn mcp_descriptor_correct_errors(
             let builder = crate::types::builders::ToolsDefinitionBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn memory_json_data_correct_errors(
+    mut builder: crate::types::builders::MemoryJsonDataBuilder,
+) -> crate::types::builders::MemoryJsonDataBuilder {
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
     }
     builder
 }

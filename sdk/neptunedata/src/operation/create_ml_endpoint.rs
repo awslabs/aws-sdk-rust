@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateMLEndpoint")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateMLEndpointTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateM
     }
 }
 
+#[derive(Debug)]
+struct CreateMLEndpointTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMLEndpointTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateMLEndpointTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateMlEndpointInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("id") {
+            if let ::std::option::Option::Some(value) = input.id.as_deref() {
+                captured.insert("id", value);
+            }
+        }
+        if requested.should_capture("mlModelTrainingJobId") {
+            if let ::std::option::Option::Some(value) = input.ml_model_training_job_id.as_deref() {
+                captured.insert("mlModelTrainingJobId", value);
+            }
+        }
+        if requested.should_capture("mlModelTransformJobId") {
+            if let ::std::option::Option::Some(value) = input.ml_model_transform_job_id.as_deref() {
+                captured.insert("mlModelTransformJobId", value);
+            }
+        }
+        if requested.should_capture("neptuneIamRoleArn") {
+            if let ::std::option::Option::Some(value) = input.neptune_iam_role_arn.as_deref() {
+                captured.insert("neptuneIamRoleArn", value);
+            }
+        }
+        if requested.should_capture("modelName") {
+            if let ::std::option::Option::Some(value) = input.model_name.as_deref() {
+                captured.insert("modelName", value);
+            }
+        }
+        if requested.should_capture("instanceType") {
+            if let ::std::option::Option::Some(value) = input.instance_type.as_deref() {
+                captured.insert("instanceType", value);
+            }
+        }
+        if requested.should_capture("volumeEncryptionKMSKey") {
+            if let ::std::option::Option::Some(value) = input.volume_encryption_kms_key.as_deref() {
+                captured.insert("volumeEncryptionKMSKey", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateMLEndpointResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateMLEndpointResponseDeserializer {

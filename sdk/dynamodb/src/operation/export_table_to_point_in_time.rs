@@ -135,6 +135,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ExportT
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ExportTableToPointInTime")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ExportTableToPointInTimeTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -154,6 +157,74 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ExportT
     }
 }
 
+#[derive(Debug)]
+struct ExportTableToPointInTimeTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ExportTableToPointInTimeTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ExportTableToPointInTimeTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ExportTableToPointInTimeInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("TableArn") {
+            if let ::std::option::Option::Some(value) = input.table_arn.as_deref() {
+                captured.insert("TableArn", value);
+            }
+        }
+        if requested.should_capture("ClientToken") {
+            if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
+                captured.insert("ClientToken", value);
+            }
+        }
+        if requested.should_capture("S3Bucket") {
+            if let ::std::option::Option::Some(value) = input.s3_bucket.as_deref() {
+                captured.insert("S3Bucket", value);
+            }
+        }
+        if requested.should_capture("S3BucketOwner") {
+            if let ::std::option::Option::Some(value) = input.s3_bucket_owner.as_deref() {
+                captured.insert("S3BucketOwner", value);
+            }
+        }
+        if requested.should_capture("S3Prefix") {
+            if let ::std::option::Option::Some(value) = input.s3_prefix.as_deref() {
+                captured.insert("S3Prefix", value);
+            }
+        }
+        if requested.should_capture("S3SseKmsKeyId") {
+            if let ::std::option::Option::Some(value) = input.s3_sse_kms_key_id.as_deref() {
+                captured.insert("S3SseKmsKeyId", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ExportTableToPointInTimeResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ExportTableToPointInTimeResponseDeserializer {

@@ -98,10 +98,14 @@ pub(crate) mod build_connector {
     use crate::tls::TlsContext;
     use client::connect::HttpConnector;
     use hyper_util::client::legacy as client;
+    use rustls::client::danger::ServerCertVerified;
+    use rustls::client::danger::ServerCertVerifier;
+    use rustls::client::WebPkiServerVerifier;
     use rustls::crypto::CryptoProvider;
     use rustls_native_certs::CertificateResult;
     use rustls_pki_types::pem::PemObject;
     use rustls_pki_types::CertificateDer;
+    use rustls_pki_types::ServerName as RustlsServerName;
     use std::sync::Arc;
     use std::sync::LazyLock;
 
@@ -170,6 +174,13 @@ pub(crate) mod build_connector {
 
             roots
         }
+
+        fn additional_server_names(&self) -> Vec<RustlsServerName<'static>> {
+            self.additional_server_names
+                .iter()
+                .map(|name| name.0.clone())
+                .collect()
+        }
     }
 
     /// Create a rustls ClientConfig with smithy-rs defaults
@@ -181,17 +192,120 @@ pub(crate) mod build_connector {
         tls_context: &TlsContext,
     ) -> rustls::ClientConfig {
         let skip_restrict = crypto_mode.is_custom();
-        let provider = if skip_restrict {
+        let provider = Arc::new(if skip_restrict {
             crypto_mode.provider()
         } else {
             restrict_ciphers(crypto_mode.provider())
-        };
+        });
         let root_certs = tls_context.rustls_root_certs();
-        rustls::ClientConfig::builder_with_provider(Arc::new(provider))
+        let additional_server_names = tls_context.additional_server_names();
+
+        let builder = rustls::ClientConfig::builder_with_provider(Arc::clone(&provider))
             .with_safe_default_protocol_versions()
-            .expect("Error with the TLS configuration. Please file a bug report under https://github.com/smithy-lang/smithy-rs/issues.")
-            .with_root_certificates(root_certs)
-            .with_no_client_auth()
+            .expect("Error with the TLS configuration. Please file a bug report under https://github.com/smithy-lang/smithy-rs/issues.");
+
+        if additional_server_names.is_empty() {
+            builder
+                .with_root_certificates(root_certs)
+                .with_no_client_auth()
+        } else {
+            let web_pki_server_verifier = WebPkiServerVerifier::builder_with_provider(
+                Arc::new(root_certs),
+                Arc::clone(&provider),
+            )
+            .build()
+            .expect("at least one root certificate was provided as a trust anchor");
+
+            builder
+                .dangerous()
+                .with_custom_certificate_verifier(Arc::new(ServerVerifier {
+                    web_pki_server_verifier,
+                    additional_server_names,
+                }))
+                .with_no_client_auth()
+        }
+    }
+
+    /// A server certificate verifier that extends standard WebPKI verification with
+    /// support for additional server names.
+    ///
+    /// By default, rustls verifies the server's certificate against the hostname from
+    /// the request URI. This verifier first attempts standard verification against that
+    /// hostname, and if it fails, retries verification against each name in
+    /// [`additional_server_names`](crate::tls::TlsContext::additional_server_names).
+    /// This is useful when a server presents a certificate whose Subject Alternative
+    /// Names (SANs) do not include the hostname used to connect, but do include an
+    /// alternative name the client has been configured to accept.
+    ///
+    /// All other verification behavior (signature validation, trust chain resolution,
+    /// TLS 1.2/1.3 signature checks) is delegated to the inner [`WebPkiServerVerifier`].
+    #[derive(Debug)]
+    struct ServerVerifier {
+        web_pki_server_verifier: Arc<WebPkiServerVerifier>,
+        additional_server_names: Vec<RustlsServerName<'static>>,
+    }
+
+    impl ServerCertVerifier for ServerVerifier {
+        fn verify_server_cert(
+            &self,
+            end_entity: &CertificateDer<'_>,
+            intermediates: &[CertificateDer<'_>],
+            server_name: &RustlsServerName<'_>,
+            ocsp_response: &[u8],
+            now: rustls_pki_types::UnixTime,
+        ) -> Result<rustls::client::danger::ServerCertVerified, rustls::Error> {
+            match self.web_pki_server_verifier.verify_server_cert(
+                end_entity,
+                intermediates,
+                server_name,
+                ocsp_response,
+                now,
+            ) {
+                Ok(server_cert_verified) => Ok(server_cert_verified),
+                Err(error) => {
+                    let matched = self.additional_server_names.iter().any(|alt_name| {
+                        self.web_pki_server_verifier
+                            .verify_server_cert(
+                                end_entity,
+                                intermediates,
+                                alt_name,
+                                ocsp_response,
+                                now,
+                            )
+                            .is_ok()
+                    });
+                    if matched {
+                        Ok(ServerCertVerified::assertion())
+                    } else {
+                        Err(error)
+                    }
+                }
+            }
+        }
+
+        fn verify_tls12_signature(
+            &self,
+            message: &[u8],
+            cert: &CertificateDer<'_>,
+            dss: &rustls::DigitallySignedStruct,
+        ) -> Result<rustls::client::danger::HandshakeSignatureValid, rustls::Error> {
+            self.web_pki_server_verifier
+                .verify_tls12_signature(message, cert, dss)
+        }
+
+        fn verify_tls13_signature(
+            &self,
+            message: &[u8],
+            cert: &CertificateDer<'_>,
+            dss: &rustls::DigitallySignedStruct,
+        ) -> Result<rustls::client::danger::HandshakeSignatureValid, rustls::Error> {
+            self.web_pki_server_verifier
+                .verify_tls13_signature(message, cert, dss)
+        }
+
+        fn supported_verify_schemes(&self) -> Vec<rustls::SignatureScheme> {
+            self.web_pki_server_verifier.supported_verify_schemes()
+        }
     }
 
     pub(crate) fn wrap_connector<R>(
@@ -345,7 +459,7 @@ pub(crate) mod connect {
             dst: Uri,
             intercept: hyper_util::client::proxy::matcher::Intercept,
         ) -> Connecting {
-            use rustls_pki_types::ServerName;
+            use rustls_pki_types::ServerName as RustlsServerName;
             // For HTTPS through HTTP proxy, we need to:
             // 1. Establish CONNECT tunnel using the HTTPS connector
             // 2. Perform manual TLS handshake over the tunneled stream
@@ -378,7 +492,7 @@ pub(crate) mod connect {
                     .host()
                     .ok_or("missing host in URI for TLS handshake")?;
 
-                let server_name = ServerName::try_from(host.to_owned()).map_err(|e| {
+                let server_name = RustlsServerName::try_from(host.to_owned()).map_err(|e| {
                     BoxError::from(format!("invalid server name for TLS handshake: {e}"))
                 })?;
 

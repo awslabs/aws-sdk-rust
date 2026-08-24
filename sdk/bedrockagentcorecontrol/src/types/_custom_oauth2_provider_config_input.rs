@@ -18,7 +18,7 @@ pub struct CustomOauth2ProviderConfigInput {
     pub on_behalf_of_token_exchange_config: ::std::option::Option<crate::types::OnBehalfOfTokenExchangeConfigType>,
     /// <p>The client authentication method to use when authenticating with the token endpoint.</p>
     pub client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The private_key_jwt client authentication configuration for this credential provider. When specified, the credential provider uses JWT client assertions to authenticate with the token endpoint.</p>
     pub private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
     /// <p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
@@ -56,7 +56,7 @@ impl CustomOauth2ProviderConfigInput {
     pub fn client_authentication_method(&self) -> ::std::option::Option<&crate::types::ClientAuthenticationMethodType> {
         self.client_authentication_method.as_ref()
     }
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The private_key_jwt client authentication configuration for this credential provider. When specified, the credential provider uses JWT client assertions to authenticate with the token endpoint.</p>
     pub fn private_key_jwt_config(&self) -> ::std::option::Option<&crate::types::PrivateKeyJwtConfig> {
         self.private_key_jwt_config.as_ref()
     }
@@ -209,17 +209,17 @@ impl CustomOauth2ProviderConfigInputBuilder {
     pub fn get_client_authentication_method(&self) -> &::std::option::Option<crate::types::ClientAuthenticationMethodType> {
         &self.client_authentication_method
     }
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The private_key_jwt client authentication configuration for this credential provider. When specified, the credential provider uses JWT client assertions to authenticate with the token endpoint.</p>
     pub fn private_key_jwt_config(mut self, input: crate::types::PrivateKeyJwtConfig) -> Self {
         self.private_key_jwt_config = ::std::option::Option::Some(input);
         self
     }
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The private_key_jwt client authentication configuration for this credential provider. When specified, the credential provider uses JWT client assertions to authenticate with the token endpoint.</p>
     pub fn set_private_key_jwt_config(mut self, input: ::std::option::Option<crate::types::PrivateKeyJwtConfig>) -> Self {
         self.private_key_jwt_config = input;
         self
     }
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.
+    /// <p>The private_key_jwt client authentication configuration for this credential provider. When specified, the credential provider uses JWT client assertions to authenticate with the token endpoint.</p>
     pub fn get_private_key_jwt_config(&self) -> &::std::option::Option<crate::types::PrivateKeyJwtConfig> {
         &self.private_key_jwt_config
     }

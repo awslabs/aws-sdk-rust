@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateR
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("CreateRoute")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                CreateRouteTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -146,6 +149,79 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateR
     }
 }
 
+#[derive(Debug)]
+struct CreateRouteTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateRouteTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateRouteTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<CreateRouteInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("ApiId") {
+            if let ::std::option::Option::Some(value) = input.api_id.as_deref() {
+                captured.insert("ApiId", value);
+            }
+        }
+        if requested.should_capture("AuthorizerId") {
+            if let ::std::option::Option::Some(value) = input.authorizer_id.as_deref() {
+                captured.insert("AuthorizerId", value);
+            }
+        }
+        if requested.should_capture("ModelSelectionExpression") {
+            if let ::std::option::Option::Some(value) = input.model_selection_expression.as_deref() {
+                captured.insert("ModelSelectionExpression", value);
+            }
+        }
+        if requested.should_capture("OperationName") {
+            if let ::std::option::Option::Some(value) = input.operation_name.as_deref() {
+                captured.insert("OperationName", value);
+            }
+        }
+        if requested.should_capture("RouteKey") {
+            if let ::std::option::Option::Some(value) = input.route_key.as_deref() {
+                captured.insert("RouteKey", value);
+            }
+        }
+        if requested.should_capture("RouteResponseSelectionExpression") {
+            if let ::std::option::Option::Some(value) = input.route_response_selection_expression.as_deref() {
+                captured.insert("RouteResponseSelectionExpression", value);
+            }
+        }
+        if requested.should_capture("Target") {
+            if let ::std::option::Option::Some(value) = input.target.as_deref() {
+                captured.insert("Target", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct CreateRouteResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateRouteResponseDeserializer {

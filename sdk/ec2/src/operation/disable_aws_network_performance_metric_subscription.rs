@@ -129,6 +129,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disable
         let mut rcb =
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("DisableAwsNetworkPerformanceMetricSubscription")
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                    DisableAwsNetworkPerformanceMetricSubscriptionTelemetryInputCaptureInterceptor,
+                ))
+                .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                     ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
                 ))
                 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -148,6 +151,54 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disable
     }
 }
 
+#[derive(Debug)]
+struct DisableAwsNetworkPerformanceMetricSubscriptionTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisableAwsNetworkPerformanceMetricSubscriptionTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "DisableAwsNetworkPerformanceMetricSubscriptionTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<DisableAwsNetworkPerformanceMetricSubscriptionInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("Source") {
+            if let ::std::option::Option::Some(value) = input.source.as_deref() {
+                captured.insert("Source", value);
+            }
+        }
+        if requested.should_capture("Destination") {
+            if let ::std::option::Option::Some(value) = input.destination.as_deref() {
+                captured.insert("Destination", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct DisableAwsNetworkPerformanceMetricSubscriptionResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DisableAwsNetworkPerformanceMetricSubscriptionResponseDeserializer {
