@@ -206,24 +206,6 @@ pub(crate) fn get_feed_output_output_correct_errors(
     builder
 }
 
-pub(crate) fn list_dictionaries_output_output_correct_errors(
-    mut builder: crate::operation::list_dictionaries::builders::ListDictionariesOutputBuilder,
-) -> crate::operation::list_dictionaries::builders::ListDictionariesOutputBuilder {
-    if builder.dictionaries.is_none() {
-        builder.dictionaries = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn list_feeds_output_output_correct_errors(
-    mut builder: crate::operation::list_feeds::builders::ListFeedsOutputBuilder,
-) -> crate::operation::list_feeds::builders::ListFeedsOutputBuilder {
-    if builder.feeds.is_none() {
-        builder.feeds = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn gateway_timed_out_exception_correct_errors(
     mut builder: crate::types::error::builders::GatewayTimedOutExceptionBuilder,
 ) -> crate::types::error::builders::GatewayTimedOutExceptionBuilder {
@@ -238,6 +220,42 @@ pub(crate) fn service_unavailable_exception_correct_errors(
 ) -> crate::types::error::builders::ServiceUnavailableExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_fixture_output_output_correct_errors(
+    mut builder: crate::operation::get_fixture::builders::GetFixtureOutputBuilder,
+) -> crate::operation::get_fixture::builders::GetFixtureOutputBuilder {
+    if builder.fixture_id.is_none() {
+        builder.fixture_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = Some(Default::default())
+    }
+    if builder.competitors.is_none() {
+        builder.competitors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_dictionaries_output_output_correct_errors(
+    mut builder: crate::operation::list_dictionaries::builders::ListDictionariesOutputBuilder,
+) -> crate::operation::list_dictionaries::builders::ListDictionariesOutputBuilder {
+    if builder.dictionaries.is_none() {
+        builder.dictionaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_feeds_output_output_correct_errors(
+    mut builder: crate::operation::list_feeds::builders::ListFeedsOutputBuilder,
+) -> crate::operation::list_feeds::builders::ListFeedsOutputBuilder {
+    if builder.feeds.is_none() {
+        builder.feeds = Some(Default::default())
     }
     builder
 }

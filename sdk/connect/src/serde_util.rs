@@ -2124,6 +2124,18 @@ pub(crate) fn real_time_contact_analysis_segment_event_correct_errors(
     builder
 }
 
+pub(crate) fn real_time_contact_analysis_segment_extracted_information_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisSegmentExtractedInformationBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisSegmentExtractedInformationBuilder {
+    if builder.extraction_definition_id.is_none() {
+        builder.extraction_definition_id = Some(Default::default())
+    }
+    if builder.extraction_definition_name.is_none() {
+        builder.extraction_definition_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn real_time_contact_analysis_segment_issues_correct_errors(
     mut builder: crate::types::builders::RealTimeContactAnalysisSegmentIssuesBuilder,
 ) -> crate::types::builders::RealTimeContactAnalysisSegmentIssuesBuilder {
@@ -2503,6 +2515,18 @@ pub(crate) fn real_time_contact_analysis_category_details_correct_errors(
     builder
 }
 
+pub(crate) fn real_time_contact_analysis_extracted_information_value_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisExtractedInformationValueBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisExtractedInformationValueBuilder {
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
+    }
+    if builder.points_of_interest.is_none() {
+        builder.points_of_interest = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn real_time_contact_analysis_issue_detected_correct_errors(
     mut builder: crate::types::builders::RealTimeContactAnalysisIssueDetectedBuilder,
 ) -> crate::types::builders::RealTimeContactAnalysisIssueDetectedBuilder {
@@ -2641,6 +2665,15 @@ pub(crate) fn metric_filter_string_condition_correct_errors(
     builder
 }
 
+pub(crate) fn real_time_contact_analysis_transcript_item_with_character_offsets_correct_errors(
+    mut builder: crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder,
+) -> crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn real_time_contact_analysis_transcript_item_with_content_correct_errors(
     mut builder: crate::types::builders::RealTimeContactAnalysisTranscriptItemWithContentBuilder,
 ) -> crate::types::builders::RealTimeContactAnalysisTranscriptItemWithContentBuilder {
@@ -2743,15 +2776,6 @@ pub(crate) fn question_option_points_configuration_correct_errors(
 ) -> crate::types::builders::QuestionOptionPointsConfigurationBuilder {
     if builder.point_value.is_none() {
         builder.point_value = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn real_time_contact_analysis_transcript_item_with_character_offsets_correct_errors(
-    mut builder: crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder,
-) -> crate::types::builders::RealTimeContactAnalysisTranscriptItemWithCharacterOffsetsBuilder {
-    if builder.id.is_none() {
-        builder.id = Some(Default::default())
     }
     builder
 }

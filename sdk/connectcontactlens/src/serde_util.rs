@@ -36,6 +36,18 @@ pub(crate) fn categories_correct_errors(mut builder: crate::types::builders::Cat
     builder
 }
 
+pub(crate) fn extracted_information_correct_errors(
+    mut builder: crate::types::builders::ExtractedInformationBuilder,
+) -> crate::types::builders::ExtractedInformationBuilder {
+    if builder.extraction_definition_id.is_none() {
+        builder.extraction_definition_id = Some(Default::default())
+    }
+    if builder.extraction_definition_name.is_none() {
+        builder.extraction_definition_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn post_contact_summary_correct_errors(
     mut builder: crate::types::builders::PostContactSummaryBuilder,
 ) -> crate::types::builders::PostContactSummaryBuilder {
@@ -70,6 +82,18 @@ pub(crate) fn transcript_correct_errors(mut builder: crate::types::builders::Tra
 pub(crate) fn category_details_correct_errors(
     mut builder: crate::types::builders::CategoryDetailsBuilder,
 ) -> crate::types::builders::CategoryDetailsBuilder {
+    if builder.points_of_interest.is_none() {
+        builder.points_of_interest = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn extracted_information_value_correct_errors(
+    mut builder: crate::types::builders::ExtractedInformationValueBuilder,
+) -> crate::types::builders::ExtractedInformationValueBuilder {
+    if builder.content.is_none() {
+        builder.content = Some(Default::default())
+    }
     if builder.points_of_interest.is_none() {
         builder.points_of_interest = Some(Default::default())
     }

@@ -2649,6 +2649,8 @@ pub(crate) mod shape_real_time_contact_analysis_segment_categories;
 
 pub(crate) mod shape_real_time_contact_analysis_segment_event;
 
+pub(crate) mod shape_real_time_contact_analysis_segment_extracted_information;
+
 pub(crate) mod shape_real_time_contact_analysis_segment_issues;
 
 pub(crate) mod shape_real_time_contact_analysis_segment_post_contact_summary;
@@ -2795,6 +2797,8 @@ pub(crate) mod shape_queue_reference;
 
 pub(crate) mod shape_real_time_contact_analysis_attachments;
 
+pub(crate) mod shape_real_time_contact_analysis_extracted_information_values;
+
 pub(crate) mod shape_real_time_contact_analysis_issues_detected;
 
 pub(crate) mod shape_real_time_contact_analysis_matched_details;
@@ -2871,6 +2875,8 @@ pub(crate) mod shape_real_time_contact_analysis_category_details;
 
 pub(crate) mod shape_real_time_contact_analysis_character_intervals;
 
+pub(crate) mod shape_real_time_contact_analysis_extracted_information_value;
+
 pub(crate) mod shape_real_time_contact_analysis_issue_detected;
 
 pub(crate) mod shape_rules_extraction_definition_identifier_list;
@@ -2905,6 +2911,8 @@ pub(crate) mod shape_real_time_contact_analysis_character_interval;
 
 pub(crate) mod shape_real_time_contact_analysis_points_of_interest;
 
+pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_character_offsets;
+
 pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_content;
 
 pub(crate) mod shape_sla_field_value_union_list;
@@ -2937,6 +2945,8 @@ pub(crate) mod shape_primary_value_list;
 
 pub(crate) mod shape_real_time_contact_analysis_point_of_interest;
 
+pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_character_offsets;
+
 pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_content;
 
 pub(crate) mod shape_single_select_question_rule_category_automation;
@@ -2953,8 +2963,6 @@ pub(crate) mod shape_metric_filter_value_list;
 
 pub(crate) mod shape_number_value_list;
 
-pub(crate) mod shape_real_time_contact_analysis_transcript_items_with_character_offsets;
-
 pub(crate) mod shape_reference_id_list;
 
 pub(crate) mod shape_string_value_list;
@@ -2964,8 +2972,6 @@ pub(crate) mod shape_agent_ids;
 pub(crate) mod shape_evaluation_automation_rule_category;
 
 pub(crate) mod shape_evaluation_transcript_point_of_interest;
-
-pub(crate) mod shape_real_time_contact_analysis_transcript_item_with_character_offsets;
 
 pub(crate) mod shape_evaluation_form_item_enablement_source_value_list;
 

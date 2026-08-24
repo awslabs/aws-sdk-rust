@@ -28,6 +28,9 @@ pub mod get_dictionary;
 /// Types for the `GetFeed` operation.
 pub mod get_feed;
 
+/// Types for the `GetFixture` operation.
+pub mod get_fixture;
+
 /// Types for the `ListDictionaries` operation.
 pub mod list_dictionaries;
 

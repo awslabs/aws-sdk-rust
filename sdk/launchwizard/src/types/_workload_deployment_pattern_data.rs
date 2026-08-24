@@ -20,6 +20,8 @@ pub struct WorkloadDeploymentPatternData {
     pub status: ::std::option::Option<crate::types::WorkloadDeploymentPatternStatus>,
     /// <p>The status message of the deployment pattern.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub account_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>,
     /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     pub specifications: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSpecificationsField>>,
 }
@@ -56,6 +58,12 @@ impl WorkloadDeploymentPatternData {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_constraints.is_none()`.
+    pub fn account_constraints(&self) -> &[crate::types::AccountConstraint] {
+        self.account_constraints.as_deref().unwrap_or_default()
+    }
     /// <p>The settings specified for the deployment. These settings define how to deploy and configure your resources created by the deployment. For more information about the specifications required for creating a deployment for a SAP workload, see <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/launch-wizard-specifications-sap.html">SAP deployment specifications</a>. To retrieve the specifications required to create a deployment for other workloads, use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_GetWorkloadDeploymentPattern.html"> <code>GetWorkloadDeploymentPattern</code> </a> operation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.specifications.is_none()`.
@@ -82,6 +90,7 @@ pub struct WorkloadDeploymentPatternDataBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkloadDeploymentPatternStatus>,
     pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) account_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>,
     pub(crate) specifications: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentSpecificationsField>>,
 }
 impl WorkloadDeploymentPatternDataBuilder {
@@ -197,6 +206,26 @@ impl WorkloadDeploymentPatternDataBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
+    /// Appends an item to `account_constraints`.
+    ///
+    /// To override the contents of this collection use [`set_account_constraints`](Self::set_account_constraints).
+    ///
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn account_constraints(mut self, input: crate::types::AccountConstraint) -> Self {
+        let mut v = self.account_constraints.unwrap_or_default();
+        v.push(input);
+        self.account_constraints = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn set_account_constraints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>) -> Self {
+        self.account_constraints = input;
+        self
+    }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn get_account_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>> {
+        &self.account_constraints
+    }
     /// Appends an item to `specifications`.
     ///
     /// To override the contents of this collection use [`set_specifications`](Self::set_specifications).
@@ -228,6 +257,7 @@ impl WorkloadDeploymentPatternDataBuilder {
             description: self.description,
             status: self.status,
             status_message: self.status_message,
+            account_constraints: self.account_constraints,
             specifications: self.specifications,
         }
     }

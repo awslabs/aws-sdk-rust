@@ -10,6 +10,8 @@ pub struct WorkloadDataSummary {
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the workload.</p>
     pub status: ::std::option::Option<crate::types::WorkloadStatus>,
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub account_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>,
 }
 impl WorkloadDataSummary {
     /// <p>The name of the workload.</p>
@@ -23,6 +25,12 @@ impl WorkloadDataSummary {
     /// <p>The status of the workload.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::WorkloadStatus> {
         self.status.as_ref()
+    }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_constraints.is_none()`.
+    pub fn account_constraints(&self) -> &[crate::types::AccountConstraint] {
+        self.account_constraints.as_deref().unwrap_or_default()
     }
 }
 impl WorkloadDataSummary {
@@ -39,6 +47,7 @@ pub struct WorkloadDataSummaryBuilder {
     pub(crate) workload_name: ::std::option::Option<::std::string::String>,
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::WorkloadStatus>,
+    pub(crate) account_constraints: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>,
 }
 impl WorkloadDataSummaryBuilder {
     /// <p>The name of the workload.</p>
@@ -83,12 +92,33 @@ impl WorkloadDataSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::WorkloadStatus> {
         &self.status
     }
+    /// Appends an item to `account_constraints`.
+    ///
+    /// To override the contents of this collection use [`set_account_constraints`](Self::set_account_constraints).
+    ///
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn account_constraints(mut self, input: crate::types::AccountConstraint) -> Self {
+        let mut v = self.account_constraints.unwrap_or_default();
+        v.push(input);
+        self.account_constraints = ::std::option::Option::Some(v);
+        self
+    }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn set_account_constraints(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>>) -> Self {
+        self.account_constraints = input;
+        self
+    }
+    /// Optional list of constraints describing what kind of AWS account is allowed to deploy this workload or deployment pattern. Within a single list the semantics are OR: an account satisfies the list if it satisfies any entry. Workload-level and pattern-level lists combine with AND at deployment time. An absent or empty list at this level means no constraint at this level.
+    pub fn get_account_constraints(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountConstraint>> {
+        &self.account_constraints
+    }
     /// Consumes the builder and constructs a [`WorkloadDataSummary`](crate::types::WorkloadDataSummary).
     pub fn build(self) -> crate::types::WorkloadDataSummary {
         crate::types::WorkloadDataSummary {
             workload_name: self.workload_name,
             display_name: self.display_name,
             status: self.status,
+            account_constraints: self.account_constraints,
         }
     }
 }

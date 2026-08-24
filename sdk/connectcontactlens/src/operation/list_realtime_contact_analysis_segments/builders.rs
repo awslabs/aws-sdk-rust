@@ -22,7 +22,9 @@ impl crate::operation::list_realtime_contact_analysis_segments::builders::ListRe
 }
 /// Fluent builder constructing a request to `ListRealtimeContactAnalysisSegments`.
 ///
-/// <p>Provides a list of analysis segments for a real-time analysis session.</p>
+/// <p>Provides a list of analysis segments for a real-time analysis session for voice.</p><note>
+/// <p>Voice data is retained for 24 hours. You must invoke this API during that time.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRealtimeContactAnalysisSegmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

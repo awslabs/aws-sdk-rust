@@ -10,6 +10,8 @@ pub enum RealtimeContactAnalysisSegment {
     Categories(crate::types::RealTimeContactAnalysisSegmentCategories),
     /// <p>Segment type describing a contact event.</p>
     Event(crate::types::RealTimeContactAnalysisSegmentEvent),
+    /// <p>The extracted information from the conversation.</p>
+    ExtractedInformation(crate::types::RealTimeContactAnalysisSegmentExtractedInformation),
     /// <p>Segment type containing a list of detected issues.</p>
     Issues(crate::types::RealTimeContactAnalysisSegmentIssues),
     /// <p>Information about the post-contact summary.</p>
@@ -65,6 +67,19 @@ impl RealtimeContactAnalysisSegment {
     /// Returns true if this is a [`Event`](crate::types::RealtimeContactAnalysisSegment::Event).
     pub fn is_event(&self) -> bool {
         self.as_event().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ExtractedInformation`](crate::types::RealtimeContactAnalysisSegment::ExtractedInformation), extracting the inner [`RealTimeContactAnalysisSegmentExtractedInformation`](crate::types::RealTimeContactAnalysisSegmentExtractedInformation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_extracted_information(&self) -> ::std::result::Result<&crate::types::RealTimeContactAnalysisSegmentExtractedInformation, &Self> {
+        if let RealtimeContactAnalysisSegment::ExtractedInformation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ExtractedInformation`](crate::types::RealtimeContactAnalysisSegment::ExtractedInformation).
+    pub fn is_extracted_information(&self) -> bool {
+        self.as_extracted_information().is_ok()
     }
     /// Tries to convert the enum instance into [`Issues`](crate::types::RealtimeContactAnalysisSegment::Issues), extracting the inner [`RealTimeContactAnalysisSegmentIssues`](crate::types::RealTimeContactAnalysisSegmentIssues).
     /// Returns `Err(&Self)` if it can't be converted.

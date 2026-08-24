@@ -41,6 +41,8 @@ pub(crate) mod shape_get_dictionary;
 
 pub(crate) mod shape_get_feed;
 
+pub(crate) mod shape_get_fixture;
+
 pub(crate) mod shape_list_dictionaries;
 
 pub(crate) mod shape_list_feeds;
@@ -99,6 +101,8 @@ pub(crate) mod shape_update_feed_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_competitor_list;
+
 pub(crate) mod shape_create_output;
 
 pub(crate) mod shape_dictionary_summary_list;
@@ -121,6 +125,8 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_update_output;
 
+pub(crate) mod shape_competitor;
+
 pub(crate) mod shape_dictionary_summary;
 
 pub(crate) mod shape_feed_summary;
@@ -133,15 +139,11 @@ pub(crate) mod shape_output_config;
 
 pub(crate) mod shape_clipping_config;
 
-pub(crate) mod shape_competitor_list;
-
 pub(crate) mod shape_cropping_config;
 
 pub(crate) mod shape_subtitling_config;
 
 pub(crate) mod shape_aspect_ratio;
-
-pub(crate) mod shape_competitor;
 
 pub(crate) mod shape_data_source_configuration;
 

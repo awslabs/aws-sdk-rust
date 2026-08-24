@@ -465,6 +465,18 @@ pub(crate) fn kafka_cluster_mtls_authentication_correct_errors(
     builder
 }
 
+pub(crate) fn kafka_cluster_sasl_o_auth_bearer_authentication_correct_errors(
+    mut builder: crate::types::builders::KafkaClusterSaslOAuthBearerAuthenticationBuilder,
+) -> crate::types::builders::KafkaClusterSaslOAuthBearerAuthenticationBuilder {
+    if builder.token_endpoint_url.is_none() {
+        builder.token_endpoint_url = Some(Default::default())
+    }
+    if builder.token_endpoint_authentication_method.is_none() {
+        builder.token_endpoint_authentication_method = "no value was set".parse::<crate::types::TokenEndpointAuthenticationMethod>().ok()
+    }
+    builder
+}
+
 pub(crate) fn kafka_cluster_sasl_scram_authentication_correct_errors(
     mut builder: crate::types::builders::KafkaClusterSaslScramAuthenticationBuilder,
 ) -> crate::types::builders::KafkaClusterSaslScramAuthenticationBuilder {
@@ -505,6 +517,39 @@ pub(crate) fn jmx_exporter_info_correct_errors(
 ) -> crate::types::builders::JmxExporterInfoBuilder {
     if builder.enabled_in_broker.is_none() {
         builder.enabled_in_broker = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn kafka_cluster_o_auth_client_credentials_correct_errors(
+    mut builder: crate::types::builders::KafkaClusterOAuthClientCredentialsBuilder,
+) -> crate::types::builders::KafkaClusterOAuthClientCredentialsBuilder {
+    if builder.token_request_secret_arn.is_none() {
+        builder.token_request_secret_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn kafka_cluster_o_auth_client_credentials_assertion_correct_errors(
+    mut builder: crate::types::builders::KafkaClusterOAuthClientCredentialsAssertionBuilder,
+) -> crate::types::builders::KafkaClusterOAuthClientCredentialsAssertionBuilder {
+    if builder.audience.is_none() {
+        builder.audience = Some(Default::default())
+    }
+    if builder.signing_algorithm.is_none() {
+        builder.signing_algorithm = "no value was set".parse::<crate::types::JwtSigningAlgorithm>().ok()
+    }
+    builder
+}
+
+pub(crate) fn kafka_cluster_o_auth_iam_jwt_bearer_correct_errors(
+    mut builder: crate::types::builders::KafkaClusterOAuthIamJwtBearerBuilder,
+) -> crate::types::builders::KafkaClusterOAuthIamJwtBearerBuilder {
+    if builder.audience.is_none() {
+        builder.audience = Some(Default::default())
+    }
+    if builder.signing_algorithm.is_none() {
+        builder.signing_algorithm = "no value was set".parse::<crate::types::JwtSigningAlgorithm>().ok()
     }
     builder
 }

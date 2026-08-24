@@ -42,6 +42,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "accountConstraints" => {
+                            builder = builder.set_account_constraints(
+                                crate::protocol_serde::shape_account_constraints_list::de_account_constraints_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

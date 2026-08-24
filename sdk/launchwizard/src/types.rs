@@ -27,13 +27,23 @@ pub use crate::types::_deployment_filter_key::DeploymentFilterKey;
 
 pub use crate::types::_deployment_pattern_version_filter::DeploymentPatternVersionFilter;
 
+pub use crate::types::_account_constraint::AccountConstraint;
+
 pub use crate::types::_event_status::EventStatus;
 
 pub use crate::types::_deployment_specifications_field::DeploymentSpecificationsField;
 
 pub use crate::types::_deployment_pattern_version_filter_key::DeploymentPatternVersionFilterKey;
 
+pub use crate::types::_management_account_constraint::ManagementAccountConstraint;
+
+pub use crate::types::_delegated_admin_constraint::DelegatedAdminConstraint;
+
 pub use crate::types::_deployment_conditional_field::DeploymentConditionalField;
+
+mod _account_constraint;
+
+mod _delegated_admin_constraint;
 
 mod _deployment_conditional_field;
 
@@ -58,6 +68,8 @@ mod _deployment_specifications_field;
 mod _deployment_status;
 
 mod _event_status;
+
+mod _management_account_constraint;
 
 mod _workload_data;
 

@@ -7,9 +7,13 @@ pub use crate::types::_categories::CategoriesBuilder;
 
 pub use crate::types::_post_contact_summary::PostContactSummaryBuilder;
 
+pub use crate::types::_extracted_information::ExtractedInformationBuilder;
+
 pub use crate::types::_issue_detected::IssueDetectedBuilder;
 
 pub use crate::types::_category_details::CategoryDetailsBuilder;
+
+pub use crate::types::_extracted_information_value::ExtractedInformationValueBuilder;
 
 pub use crate::types::_character_offsets::CharacterOffsetsBuilder;
 

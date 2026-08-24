@@ -210,6 +210,8 @@ mod get_dictionary;
 
 mod get_feed;
 
+mod get_fixture;
+
 mod list_dictionaries;
 
 mod list_feeds;

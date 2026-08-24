@@ -715,6 +715,10 @@ pub(crate) mod shape_threat_model_summary;
 
 pub(crate) mod shape_threat_summary;
 
+pub(crate) mod shape_trusted_ca_certificate;
+
+pub(crate) mod shape_trusted_ca_certificate_list;
+
 pub(crate) mod shape_user_config;
 
 pub(crate) mod shape_validation_exception_field;
@@ -726,6 +730,8 @@ pub(crate) mod shape_authentication;
 pub(crate) mod shape_bitbucket_repository_resource;
 
 pub(crate) mod shape_bitbucket_resource_capabilities;
+
+pub(crate) mod shape_ca_certificate_source;
 
 pub(crate) mod shape_category_list;
 

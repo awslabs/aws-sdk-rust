@@ -13,6 +13,8 @@ pub struct CreateFeedOutput {
     pub data_endpoints: ::std::vec::Vec<::std::string::String>,
     /// <p>Repeats the outputs that you specified in the request.</p>
     pub outputs: ::std::vec::Vec<crate::types::GetOutput>,
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that you specified in the request. This property is absent if you didn't specify an IAM role.</p>
+    pub access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the feed. After creation of the feed has succeeded, the status will be AVAILABLE.</p>
     pub status: crate::types::FeedStatus,
     /// <p>The association for this feed. When you create the feed, this property is empty. You must associate a resource with the feed using AssociateFeed or UpdateFeed.</p>
@@ -46,6 +48,10 @@ impl CreateFeedOutput {
     pub fn outputs(&self) -> &[crate::types::GetOutput] {
         use std::ops::Deref;
         self.outputs.deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that you specified in the request. This property is absent if you didn't specify an IAM role.</p>
+    pub fn access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.access_role_arn.as_deref()
     }
     /// <p>The current status of the feed. After creation of the feed has succeeded, the status will be AVAILABLE.</p>
     pub fn status(&self) -> &crate::types::FeedStatus {
@@ -81,6 +87,7 @@ pub struct CreateFeedOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) data_endpoints: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::GetOutput>>,
+    pub(crate) access_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::FeedStatus>,
     pub(crate) association: ::std::option::Option<crate::types::FeedAssociation>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -171,6 +178,20 @@ impl CreateFeedOutputBuilder {
     /// <p>Repeats the outputs that you specified in the request.</p>
     pub fn get_outputs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GetOutput>> {
         &self.outputs
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that you specified in the request. This property is absent if you didn't specify an IAM role.</p>
+    pub fn access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.access_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that you specified in the request. This property is absent if you didn't specify an IAM role.</p>
+    pub fn set_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.access_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that you specified in the request. This property is absent if you didn't specify an IAM role.</p>
+    pub fn get_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.access_role_arn
     }
     /// <p>The current status of the feed. After creation of the feed has succeeded, the status will be AVAILABLE.</p>
     /// This field is required.
@@ -270,6 +291,7 @@ impl CreateFeedOutputBuilder {
                     "outputs was not specified but it is required when building CreateFeedOutput",
                 )
             })?,
+            access_role_arn: self.access_role_arn,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",

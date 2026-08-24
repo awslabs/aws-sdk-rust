@@ -77,6 +77,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "accountConstraints" => {
+                            builder = builder.set_account_constraints(
+                                crate::protocol_serde::shape_account_constraints_list::de_account_constraints_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "specifications" => {
                             builder = builder.set_specifications(
                                 crate::protocol_serde::shape_deployment_specifications_data::de_deployment_specifications_data(

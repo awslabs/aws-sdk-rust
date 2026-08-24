@@ -1145,6 +1145,8 @@ pub use crate::types::_real_time_contact_analysis_segment_attachments::RealTimeC
 
 pub use crate::types::_real_time_contact_analysis_segment_post_contact_summary::RealTimeContactAnalysisSegmentPostContactSummary;
 
+pub use crate::types::_real_time_contact_analysis_segment_extracted_information::RealTimeContactAnalysisSegmentExtractedInformation;
+
 pub use crate::types::_execution_record_status::ExecutionRecordStatus;
 
 pub use crate::types::_notification_source::NotificationSource;
@@ -1325,6 +1327,8 @@ pub use crate::types::_real_time_contact_analysis_post_contact_summary_status::R
 
 pub use crate::types::_real_time_contact_analysis_post_contact_summary_failure_code::RealTimeContactAnalysisPostContactSummaryFailureCode;
 
+pub use crate::types::_real_time_contact_analysis_extracted_information_failure_code::RealTimeContactAnalysisExtractedInformationFailureCode;
+
 pub use crate::types::_action_summary::ActionSummary;
 
 pub use crate::types::_contact_evaluation_attribute_key::ContactEvaluationAttributeKey;
@@ -1410,6 +1414,8 @@ pub use crate::types::_real_time_contact_analysis_category_details::RealTimeCont
 pub use crate::types::_real_time_contact_analysis_issue_detected::RealTimeContactAnalysisIssueDetected;
 
 pub use crate::types::_real_time_contact_analysis_attachment::RealTimeContactAnalysisAttachment;
+
+pub use crate::types::_real_time_contact_analysis_extracted_information_value::RealTimeContactAnalysisExtractedInformationValue;
 
 pub use crate::types::_transcript_criteria::TranscriptCriteria;
 
@@ -1505,6 +1511,8 @@ pub use crate::types::_real_time_contact_analysis_point_of_interest::RealTimeCon
 
 pub use crate::types::_real_time_contact_analysis_transcript_item_with_content::RealTimeContactAnalysisTranscriptItemWithContent;
 
+pub use crate::types::_real_time_contact_analysis_transcript_item_with_character_offsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets;
+
 pub use crate::types::_agents_criteria::AgentsCriteria;
 
 pub use crate::types::_automatic_fail_configuration::AutomaticFailConfiguration;
@@ -1532,8 +1540,6 @@ pub use crate::types::_evaluation_form_item_source_values_comparator::Evaluation
 pub use crate::types::_evaluation_transcript_point_of_interest::EvaluationTranscriptPointOfInterest;
 
 pub use crate::types::_evaluation_automation_rule_category::EvaluationAutomationRuleCategory;
-
-pub use crate::types::_real_time_contact_analysis_transcript_item_with_character_offsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets;
 
 pub use crate::types::_single_select_question_rule_category_automation_condition::SingleSelectQuestionRuleCategoryAutomationCondition;
 
@@ -2651,6 +2657,10 @@ mod _real_time_contact_analysis_category_details;
 
 mod _real_time_contact_analysis_character_interval;
 
+mod _real_time_contact_analysis_extracted_information_failure_code;
+
+mod _real_time_contact_analysis_extracted_information_value;
+
 mod _real_time_contact_analysis_issue_detected;
 
 mod _real_time_contact_analysis_output_type;
@@ -2666,6 +2676,8 @@ mod _real_time_contact_analysis_segment_attachments;
 mod _real_time_contact_analysis_segment_categories;
 
 mod _real_time_contact_analysis_segment_event;
+
+mod _real_time_contact_analysis_segment_extracted_information;
 
 mod _real_time_contact_analysis_segment_issues;
 

@@ -7,15 +7,21 @@ pub use crate::types::_categories::Categories;
 
 pub use crate::types::_post_contact_summary::PostContactSummary;
 
+pub use crate::types::_extracted_information::ExtractedInformation;
+
 pub use crate::types::_sentiment_value::SentimentValue;
 
 pub use crate::types::_post_contact_summary_status::PostContactSummaryStatus;
 
 pub use crate::types::_post_contact_summary_failure_code::PostContactSummaryFailureCode;
 
+pub use crate::types::_extracted_information_failure_code::ExtractedInformationFailureCode;
+
 pub use crate::types::_issue_detected::IssueDetected;
 
 pub use crate::types::_category_details::CategoryDetails;
+
+pub use crate::types::_extracted_information_value::ExtractedInformationValue;
 
 pub use crate::types::_character_offsets::CharacterOffsets;
 
@@ -26,6 +32,12 @@ mod _categories;
 mod _category_details;
 
 mod _character_offsets;
+
+mod _extracted_information;
+
+mod _extracted_information_failure_code;
+
+mod _extracted_information_value;
 
 mod _issue_detected;
 

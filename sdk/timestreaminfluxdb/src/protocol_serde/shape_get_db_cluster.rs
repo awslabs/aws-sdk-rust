@@ -236,6 +236,13 @@ pub(crate) fn de_get_db_cluster(
                             .transpose()?,
                     );
                 }
+                "effectiveDbParameterGroupIdentifier" => {
+                    builder = builder.set_effective_db_parameter_group_identifier(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "logDeliveryConfiguration" => {
                     builder = builder.set_log_delivery_configuration(
                         crate::protocol_serde::shape_log_delivery_configuration::de_log_delivery_configuration(tokens, _value, depth + 1)?,

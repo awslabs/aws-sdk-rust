@@ -10,6 +10,8 @@ pub struct RealtimeContactAnalysisSegment {
     pub categories: ::std::option::Option<crate::types::Categories>,
     /// <p>Information about the post-contact summary.</p>
     pub post_contact_summary: ::std::option::Option<crate::types::PostContactSummary>,
+    /// <p>The extracted information from the conversation.</p>
+    pub extracted_information: ::std::option::Option<crate::types::ExtractedInformation>,
 }
 impl RealtimeContactAnalysisSegment {
     /// <p>The analyzed transcript.</p>
@@ -23,6 +25,10 @@ impl RealtimeContactAnalysisSegment {
     /// <p>Information about the post-contact summary.</p>
     pub fn post_contact_summary(&self) -> ::std::option::Option<&crate::types::PostContactSummary> {
         self.post_contact_summary.as_ref()
+    }
+    /// <p>The extracted information from the conversation.</p>
+    pub fn extracted_information(&self) -> ::std::option::Option<&crate::types::ExtractedInformation> {
+        self.extracted_information.as_ref()
     }
 }
 impl RealtimeContactAnalysisSegment {
@@ -39,6 +45,7 @@ pub struct RealtimeContactAnalysisSegmentBuilder {
     pub(crate) transcript: ::std::option::Option<crate::types::Transcript>,
     pub(crate) categories: ::std::option::Option<crate::types::Categories>,
     pub(crate) post_contact_summary: ::std::option::Option<crate::types::PostContactSummary>,
+    pub(crate) extracted_information: ::std::option::Option<crate::types::ExtractedInformation>,
 }
 impl RealtimeContactAnalysisSegmentBuilder {
     /// <p>The analyzed transcript.</p>
@@ -83,12 +90,27 @@ impl RealtimeContactAnalysisSegmentBuilder {
     pub fn get_post_contact_summary(&self) -> &::std::option::Option<crate::types::PostContactSummary> {
         &self.post_contact_summary
     }
+    /// <p>The extracted information from the conversation.</p>
+    pub fn extracted_information(mut self, input: crate::types::ExtractedInformation) -> Self {
+        self.extracted_information = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The extracted information from the conversation.</p>
+    pub fn set_extracted_information(mut self, input: ::std::option::Option<crate::types::ExtractedInformation>) -> Self {
+        self.extracted_information = input;
+        self
+    }
+    /// <p>The extracted information from the conversation.</p>
+    pub fn get_extracted_information(&self) -> &::std::option::Option<crate::types::ExtractedInformation> {
+        &self.extracted_information
+    }
     /// Consumes the builder and constructs a [`RealtimeContactAnalysisSegment`](crate::types::RealtimeContactAnalysisSegment).
     pub fn build(self) -> crate::types::RealtimeContactAnalysisSegment {
         crate::types::RealtimeContactAnalysisSegment {
             transcript: self.transcript,
             categories: self.categories,
             post_contact_summary: self.post_contact_summary,
+            extracted_information: self.extracted_information,
         }
     }
 }
