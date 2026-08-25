@@ -22,6 +22,9 @@ impl crate::operation::put_verification_state_on_violation::builders::PutVerific
 }
 /// Fluent builder constructing a request to `PutVerificationStateOnViolation`.
 ///
+/// <note>
+/// <p>The IoT Device Defender detect feature will no longer be available to new customers starting August 31, 2026. If you would like to use the detect feature, sign up prior to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see IoT Device Defender detect feature availability change in the IoT Device Defender Developer Guide. There is no change to IoT Device Defender audit availability.</p>
+/// </note>
 /// <p>Set a verification state and provide a description of that verification state on a violation (detect alarm).</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutVerificationStateOnViolationFluentBuilder {

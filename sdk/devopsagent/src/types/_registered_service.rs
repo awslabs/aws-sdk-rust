@@ -18,6 +18,10 @@ pub struct RegisteredService {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the private connection used for VPC connectivity.</p>
     pub private_connection_name: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp when the service was registered.</p>
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the service was last updated.</p>
+    pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RegisteredService {
     /// <p>The unique identifier of a service.</p>
@@ -51,6 +55,14 @@ impl RegisteredService {
     pub fn private_connection_name(&self) -> ::std::option::Option<&str> {
         self.private_connection_name.as_deref()
     }
+    /// <p>The timestamp when the service was registered.</p>
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
+    }
+    /// <p>The timestamp when the service was last updated.</p>
+    pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.updated_at.as_ref()
+    }
 }
 impl RegisteredService {
     /// Creates a new builder-style object to manufacture [`RegisteredService`](crate::types::RegisteredService).
@@ -70,6 +82,8 @@ pub struct RegisteredServiceBuilder {
     pub(crate) additional_service_details: ::std::option::Option<crate::types::AdditionalServiceDetails>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) private_connection_name: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RegisteredServiceBuilder {
     /// <p>The unique identifier of a service.</p>
@@ -178,6 +192,36 @@ impl RegisteredServiceBuilder {
     pub fn get_private_connection_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.private_connection_name
     }
+    /// <p>The timestamp when the service was registered.</p>
+    /// This field is required.
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the service was registered.</p>
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input;
+        self
+    }
+    /// <p>The timestamp when the service was registered.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
+    /// <p>The timestamp when the service was last updated.</p>
+    /// This field is required.
+    pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.updated_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the service was last updated.</p>
+    pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.updated_at = input;
+        self
+    }
+    /// <p>The timestamp when the service was last updated.</p>
+    pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.updated_at
+    }
     /// Consumes the builder and constructs a [`RegisteredService`](crate::types::RegisteredService).
     /// This method will fail if any of the following fields are not set:
     /// - [`service_id`](crate::types::builders::RegisteredServiceBuilder::service_id)
@@ -201,6 +245,8 @@ impl RegisteredServiceBuilder {
             additional_service_details: self.additional_service_details,
             kms_key_arn: self.kms_key_arn,
             private_connection_name: self.private_connection_name,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
         })
     }
 }

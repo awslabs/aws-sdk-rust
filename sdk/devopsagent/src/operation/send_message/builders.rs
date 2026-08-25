@@ -200,4 +200,18 @@ impl SendMessageFluentBuilder {
     pub fn get_asset_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_asset_ids()
     }
+    /// <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized values default to balanced.</p>
+    pub fn model_tier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.model_tier(input.into());
+        self
+    }
+    /// <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized values default to balanced.</p>
+    pub fn set_model_tier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_model_tier(input);
+        self
+    }
+    /// <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized values default to balanced.</p>
+    pub fn get_model_tier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_model_tier()
+    }
 }

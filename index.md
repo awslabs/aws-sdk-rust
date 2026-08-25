@@ -395,6 +395,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | FinSpace User Environment Management service | [aws-sdk-finspace](https://crates.io/crates/aws-sdk-finspace) ([docs](https://docs.rs/aws-sdk-finspace)) |
 | Firewall Management Service | [aws-sdk-fms](https://crates.io/crates/aws-sdk-fms) ([docs](https://docs.rs/aws-sdk-fms)) |
 | IAM Roles Anywhere | [aws-sdk-rolesanywhere](https://crates.io/crates/aws-sdk-rolesanywhere) ([docs](https://docs.rs/aws-sdk-rolesanywhere)) |
+| IAM Toolbox (Preview) | [aws-sdk-iamtoolbox](https://crates.io/crates/aws-sdk-iamtoolbox) ([docs](https://docs.rs/aws-sdk-iamtoolbox)) |
 | Inspector Scan | [aws-sdk-inspectorscan](https://crates.io/crates/aws-sdk-inspectorscan) ([docs](https://docs.rs/aws-sdk-inspectorscan)) |
 | Inspector2 | [aws-sdk-inspector2](https://crates.io/crates/aws-sdk-inspector2) ([docs](https://docs.rs/aws-sdk-inspector2)) |
 | Interconnect | [aws-sdk-interconnect](https://crates.io/crates/aws-sdk-interconnect) ([docs](https://docs.rs/aws-sdk-interconnect)) |

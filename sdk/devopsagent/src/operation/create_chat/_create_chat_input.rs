@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChatInput {
-    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    /// <p>The unique identifier for the agent space where the chat will be created.</p>
     pub agent_space_id: ::std::option::Option<::std::string::String>,
     /// <p>The user identifier for the chat. This field is deprecated and will be ignored — the service resolves user identity from the authenticated session.</p>
     #[deprecated(note = "userId is managed by the service and should not be provided by the caller", since = "2026-04-15")]
@@ -13,7 +13,7 @@ pub struct CreateChatInput {
     pub user_type: ::std::option::Option<crate::types::UserType>,
 }
 impl CreateChatInput {
-    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    /// <p>The unique identifier for the agent space where the chat will be created.</p>
     pub fn agent_space_id(&self) -> ::std::option::Option<&str> {
         self.agent_space_id.as_deref()
     }
@@ -43,18 +43,18 @@ pub struct CreateChatInputBuilder {
     pub(crate) user_type: ::std::option::Option<crate::types::UserType>,
 }
 impl CreateChatInputBuilder {
-    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    /// <p>The unique identifier for the agent space where the chat will be created.</p>
     /// This field is required.
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agent_space_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    /// <p>The unique identifier for the agent space where the chat will be created.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agent_space_id = input;
         self
     }
-    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    /// <p>The unique identifier for the agent space where the chat will be created.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }

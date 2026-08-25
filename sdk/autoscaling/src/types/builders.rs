@@ -117,6 +117,8 @@ pub use crate::types::_predictive_scaling_metric_specification::PredictiveScalin
 
 pub use crate::types::_launch_template_overrides::LaunchTemplateOverridesBuilder;
 
+pub use crate::types::_distribution_segment::DistributionSegmentBuilder;
+
 pub use crate::types::_suspended_process::SuspendedProcessBuilder;
 
 pub use crate::types::_enabled_metric::EnabledMetricBuilder;

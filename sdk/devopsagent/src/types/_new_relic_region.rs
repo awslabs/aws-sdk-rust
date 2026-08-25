@@ -13,6 +13,7 @@
 /// # let newrelicregion = unimplemented!();
 /// match newrelicregion {
 ///     NewRelicRegion::Eu => { /* ... */ },
+///     NewRelicRegion::Jp => { /* ... */ },
 ///     NewRelicRegion::Us => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -44,6 +45,8 @@
 pub enum NewRelicRegion {
     /// <p>EU region</p>
     Eu,
+    #[allow(missing_docs)] // documentation missing in model
+    Jp,
     /// <p>US region</p>
     Us,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for NewRelicRegion {
     fn from(s: &str) -> Self {
         match s {
             "EU" => NewRelicRegion::Eu,
+            "JP" => NewRelicRegion::Jp,
             "US" => NewRelicRegion::Us,
             other => NewRelicRegion::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl NewRelicRegion {
     pub fn as_str(&self) -> &str {
         match self {
             NewRelicRegion::Eu => "EU",
+            NewRelicRegion::Jp => "JP",
             NewRelicRegion::Us => "US",
             NewRelicRegion::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EU", "US"]
+        &["EU", "JP", "US"]
     }
 }
 impl ::std::convert::AsRef<str> for NewRelicRegion {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for NewRelicRegion {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             NewRelicRegion::Eu => write!(f, "EU"),
+            NewRelicRegion::Jp => write!(f, "JP"),
             NewRelicRegion::Us => write!(f, "US"),
             NewRelicRegion::Unknown(value) => write!(f, "{value}"),
         }

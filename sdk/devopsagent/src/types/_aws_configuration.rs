@@ -10,6 +10,10 @@ pub struct AwsConfiguration {
     pub account_id: ::std::string::String,
     /// <p>Account Type 'monitor' for AIDevOps monitoring.</p>
     pub account_type: crate::types::MonitorAccountType,
+    /// <p>Optional IAM role ARN to be assumed by AIDevOps for elevated directed actions on behalf of the customer. Used for mutating operations gated by elevatedActionsEnabled on the AgentSpace. When not provided, only non-elevated directed actions are available for this AWS account.</p>
+    pub agent_elevated_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Validation status of the agentElevatedRoleArn. Updated asynchronously after the customer registers an elevated role. Possible values: PENDING_CONFIRMATION (validation in progress), VALID (role validated), INVALID (validation failed).</p>
+    pub agent_elevated_role_arn_status: ::std::option::Option<crate::types::ValidationStatus>,
 }
 impl AwsConfiguration {
     /// <p>Role ARN to be assumed by AIDevOps to operate on behalf of customer.</p>
@@ -26,6 +30,14 @@ impl AwsConfiguration {
     pub fn account_type(&self) -> &crate::types::MonitorAccountType {
         &self.account_type
     }
+    /// <p>Optional IAM role ARN to be assumed by AIDevOps for elevated directed actions on behalf of the customer. Used for mutating operations gated by elevatedActionsEnabled on the AgentSpace. When not provided, only non-elevated directed actions are available for this AWS account.</p>
+    pub fn agent_elevated_role_arn(&self) -> ::std::option::Option<&str> {
+        self.agent_elevated_role_arn.as_deref()
+    }
+    /// <p>Validation status of the agentElevatedRoleArn. Updated asynchronously after the customer registers an elevated role. Possible values: PENDING_CONFIRMATION (validation in progress), VALID (role validated), INVALID (validation failed).</p>
+    pub fn agent_elevated_role_arn_status(&self) -> ::std::option::Option<&crate::types::ValidationStatus> {
+        self.agent_elevated_role_arn_status.as_ref()
+    }
 }
 impl AwsConfiguration {
     /// Creates a new builder-style object to manufacture [`AwsConfiguration`](crate::types::AwsConfiguration).
@@ -41,6 +53,8 @@ pub struct AwsConfigurationBuilder {
     pub(crate) assumable_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_type: ::std::option::Option<crate::types::MonitorAccountType>,
+    pub(crate) agent_elevated_role_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) agent_elevated_role_arn_status: ::std::option::Option<crate::types::ValidationStatus>,
 }
 impl AwsConfigurationBuilder {
     /// <p>Role ARN to be assumed by AIDevOps to operate on behalf of customer.</p>
@@ -88,6 +102,34 @@ impl AwsConfigurationBuilder {
     pub fn get_account_type(&self) -> &::std::option::Option<crate::types::MonitorAccountType> {
         &self.account_type
     }
+    /// <p>Optional IAM role ARN to be assumed by AIDevOps for elevated directed actions on behalf of the customer. Used for mutating operations gated by elevatedActionsEnabled on the AgentSpace. When not provided, only non-elevated directed actions are available for this AWS account.</p>
+    pub fn agent_elevated_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agent_elevated_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Optional IAM role ARN to be assumed by AIDevOps for elevated directed actions on behalf of the customer. Used for mutating operations gated by elevatedActionsEnabled on the AgentSpace. When not provided, only non-elevated directed actions are available for this AWS account.</p>
+    pub fn set_agent_elevated_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agent_elevated_role_arn = input;
+        self
+    }
+    /// <p>Optional IAM role ARN to be assumed by AIDevOps for elevated directed actions on behalf of the customer. Used for mutating operations gated by elevatedActionsEnabled on the AgentSpace. When not provided, only non-elevated directed actions are available for this AWS account.</p>
+    pub fn get_agent_elevated_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agent_elevated_role_arn
+    }
+    /// <p>Validation status of the agentElevatedRoleArn. Updated asynchronously after the customer registers an elevated role. Possible values: PENDING_CONFIRMATION (validation in progress), VALID (role validated), INVALID (validation failed).</p>
+    pub fn agent_elevated_role_arn_status(mut self, input: crate::types::ValidationStatus) -> Self {
+        self.agent_elevated_role_arn_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Validation status of the agentElevatedRoleArn. Updated asynchronously after the customer registers an elevated role. Possible values: PENDING_CONFIRMATION (validation in progress), VALID (role validated), INVALID (validation failed).</p>
+    pub fn set_agent_elevated_role_arn_status(mut self, input: ::std::option::Option<crate::types::ValidationStatus>) -> Self {
+        self.agent_elevated_role_arn_status = input;
+        self
+    }
+    /// <p>Validation status of the agentElevatedRoleArn. Updated asynchronously after the customer registers an elevated role. Possible values: PENDING_CONFIRMATION (validation in progress), VALID (role validated), INVALID (validation failed).</p>
+    pub fn get_agent_elevated_role_arn_status(&self) -> &::std::option::Option<crate::types::ValidationStatus> {
+        &self.agent_elevated_role_arn_status
+    }
     /// Consumes the builder and constructs a [`AwsConfiguration`](crate::types::AwsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`assumable_role_arn`](crate::types::builders::AwsConfigurationBuilder::assumable_role_arn)
@@ -113,6 +155,8 @@ impl AwsConfigurationBuilder {
                     "account_type was not specified but it is required when building AwsConfiguration",
                 )
             })?,
+            agent_elevated_role_arn: self.agent_elevated_role_arn,
+            agent_elevated_role_arn_status: self.agent_elevated_role_arn_status,
         })
     }
 }

@@ -52,6 +52,20 @@ pub fn de_create_private_connection_http_error(
             };
             tmp
         }),
+        "InvalidParameterException" => crate::operation::create_private_connection::CreatePrivateConnectionError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_private_connection::CreatePrivateConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::invalid_parameter_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_private_connection::CreatePrivateConnectionError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::create_private_connection::CreatePrivateConnectionError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -104,20 +118,6 @@ pub fn de_create_private_connection_http_error(
                         .map_err(crate::operation::create_private_connection::CreatePrivateConnectionError::unhandled)?;
                 let output = output.meta(generic);
                 crate::serde_util::content_size_exceeded_exception_correct_errors(output)
-                    .build()
-                    .map_err(crate::operation::create_private_connection::CreatePrivateConnectionError::unhandled)?
-            };
-            tmp
-        }),
-        "InvalidParameterException" => crate::operation::create_private_connection::CreatePrivateConnectionError::InvalidParameterException({
-            #[allow(unused_mut)]
-            let mut tmp = {
-                #[allow(unused_mut)]
-                let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
-                    .map_err(crate::operation::create_private_connection::CreatePrivateConnectionError::unhandled)?;
-                let output = output.meta(generic);
-                crate::serde_util::invalid_parameter_exception_correct_errors(output)
                     .build()
                     .map_err(crate::operation::create_private_connection::CreatePrivateConnectionError::unhandled)?
             };

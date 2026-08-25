@@ -15,5 +15,11 @@ pub fn ser_topic_rule_destination_configuration(
         crate::protocol_serde::shape_vpc_destination_configuration::ser_vpc_destination_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
+    if let Some(var_5) = &input.influx_db_configuration {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("influxDBConfiguration").start_object();
+        crate::protocol_serde::shape_influx_db_destination_configuration::ser_influx_db_destination_configuration(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

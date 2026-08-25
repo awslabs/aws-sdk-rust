@@ -16,6 +16,8 @@ pub struct CreateAgentSpaceInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags to add to the AgentSpace at creation time.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
+    pub preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
 }
 impl CreateAgentSpaceInput {
     /// <p>The name of the AgentSpace.</p>
@@ -42,6 +44,10 @@ impl CreateAgentSpaceInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
+    pub fn preferences(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
+        self.preferences.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateAgentSpaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -52,6 +58,7 @@ impl ::std::fmt::Debug for CreateAgentSpaceInput {
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
+        formatter.field("preferences", &self.preferences);
         formatter.finish()
     }
 }
@@ -72,6 +79,7 @@ pub struct CreateAgentSpaceInputBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
 }
 impl CreateAgentSpaceInputBuilder {
     /// <p>The name of the AgentSpace.</p>
@@ -165,6 +173,26 @@ impl CreateAgentSpaceInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `preferences`.
+    ///
+    /// To override the contents of this collection use [`set_preferences`](Self::set_preferences).
+    ///
+    /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
+    pub fn preferences(mut self, k: crate::types::AgentSpacePreferenceKey, v: bool) -> Self {
+        let mut hash_map = self.preferences.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.preferences = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
+    pub fn set_preferences(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>) -> Self {
+        self.preferences = input;
+        self
+    }
+    /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
+    pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
+        &self.preferences
+    }
     /// Consumes the builder and constructs a [`CreateAgentSpaceInput`](crate::operation::create_agent_space::CreateAgentSpaceInput).
     pub fn build(
         self,
@@ -176,6 +204,7 @@ impl CreateAgentSpaceInputBuilder {
             kms_key_arn: self.kms_key_arn,
             client_token: self.client_token,
             tags: self.tags,
+            preferences: self.preferences,
         })
     }
 }
@@ -188,6 +217,7 @@ impl ::std::fmt::Debug for CreateAgentSpaceInputBuilder {
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
+        formatter.field("preferences", &self.preferences);
         formatter.finish()
     }
 }

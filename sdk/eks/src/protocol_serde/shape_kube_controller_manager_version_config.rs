@@ -21,6 +21,15 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "podGcControllerConfig" => {
+                            builder = builder.set_pod_gc_controller_config(
+                                crate::protocol_serde::shape_pod_gc_controller_version_config::de_pod_gc_controller_version_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "horizontalPodAutoscalerControllerConfig" => {
                             builder = builder.set_horizontal_pod_autoscaler_controller_config(
                                     crate::protocol_serde::shape_horizontal_pod_autoscaler_controller_version_config::de_horizontal_pod_autoscaler_controller_version_config(tokens, _value, depth + 1)?

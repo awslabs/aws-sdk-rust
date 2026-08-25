@@ -14,6 +14,7 @@
 /// match markettype {
 ///     MarketType::CapacityBlock => { /* ... */ },
 ///     MarketType::InterruptibleCapacityReservation => { /* ... */ },
+///     MarketType::OnDemand => { /* ... */ },
 ///     MarketType::Spot => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum MarketType {
     #[allow(missing_docs)] // documentation missing in model
     InterruptibleCapacityReservation,
     #[allow(missing_docs)] // documentation missing in model
+    OnDemand,
+    #[allow(missing_docs)] // documentation missing in model
     Spot,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for MarketType {
         match s {
             "capacity-block" => MarketType::CapacityBlock,
             "interruptible-capacity-reservation" => MarketType::InterruptibleCapacityReservation,
+            "on-demand" => MarketType::OnDemand,
             "spot" => MarketType::Spot,
             other => MarketType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl MarketType {
         match self {
             MarketType::CapacityBlock => "capacity-block",
             MarketType::InterruptibleCapacityReservation => "interruptible-capacity-reservation",
+            MarketType::OnDemand => "on-demand",
             MarketType::Spot => "spot",
             MarketType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["capacity-block", "interruptible-capacity-reservation", "spot"]
+        &["capacity-block", "interruptible-capacity-reservation", "on-demand", "spot"]
     }
 }
 impl ::std::convert::AsRef<str> for MarketType {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for MarketType {
         match self {
             MarketType::CapacityBlock => write!(f, "capacity-block"),
             MarketType::InterruptibleCapacityReservation => write!(f, "interruptible-capacity-reservation"),
+            MarketType::OnDemand => write!(f, "on-demand"),
             MarketType::Spot => write!(f, "spot"),
             MarketType::Unknown(value) => write!(f, "{value}"),
         }

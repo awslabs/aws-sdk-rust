@@ -999,6 +999,12 @@ pub use crate::types::_fleet_on_demand_allocation_strategy::FleetOnDemandAllocat
 
 pub use crate::types::_capacity_reservation_options_request::CapacityReservationOptionsRequest;
 
+pub use crate::types::_reserved_capacity_allocation_strategy::ReservedCapacityAllocationStrategy;
+
+pub use crate::types::_fleet_capacity_reservation_target_request::FleetCapacityReservationTargetRequest;
+
+pub use crate::types::_reserved_capacity_fallback_options_request::ReservedCapacityFallbackOptionsRequest;
+
 pub use crate::types::_fleet_launch_template_config_request::FleetLaunchTemplateConfigRequest;
 
 pub use crate::types::_default_target_capacity_type::DefaultTargetCapacityType;
@@ -2419,6 +2425,8 @@ pub use crate::types::_allocation_type::AllocationType;
 
 pub use crate::types::_fleet_replacement_strategy::FleetReplacementStrategy;
 
+pub use crate::types::_reserved_capacity_fallback_market_type::ReservedCapacityFallbackMarketType;
+
 pub use crate::types::_fleet_launch_template_overrides_request::FleetLaunchTemplateOverridesRequest;
 
 pub use crate::types::_fleet_launch_template_overrides::FleetLaunchTemplateOverrides;
@@ -2498,6 +2506,8 @@ pub use crate::types::_fleet_launch_template_config::FleetLaunchTemplateConfig;
 pub use crate::types::_fleet_spot_maintenance_strategies::FleetSpotMaintenanceStrategies;
 
 pub use crate::types::_capacity_reservation_options::CapacityReservationOptions;
+
+pub use crate::types::_reserved_capacity_fallback_options::ReservedCapacityFallbackOptions;
 
 pub use crate::types::_describe_fleet_error::DescribeFleetError;
 
@@ -3650,6 +3660,8 @@ mod _fleet_activity_status;
 mod _fleet_block_device_mapping_request;
 
 mod _fleet_capacity_reservation;
+
+mod _fleet_capacity_reservation_target_request;
 
 mod _fleet_capacity_reservation_tenancy;
 
@@ -4876,6 +4888,14 @@ mod _reservation_state;
 mod _reservation_type;
 
 mod _reservation_value;
+
+mod _reserved_capacity_allocation_strategy;
+
+mod _reserved_capacity_fallback_market_type;
+
+mod _reserved_capacity_fallback_options;
+
+mod _reserved_capacity_fallback_options_request;
 
 mod _reserved_capacity_options;
 

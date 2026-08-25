@@ -24,8 +24,11 @@ pub fn ser_send_message_input_input(
     if let Some(var_7) = &input.execution_id {
         object.key("executionId").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.user_id {
-        object.key("userId").string(var_8.as_str());
+    if let Some(var_8) = &input.model_tier {
+        object.key("modelTier").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.user_id {
+        object.key("userId").string(var_9.as_str());
     }
     Ok(())
 }

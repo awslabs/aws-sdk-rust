@@ -12,6 +12,18 @@ pub fn ser_mcp_server_sigv4_configuration(
         }
         array_1.finish();
     }
+    if let Some(var_3) = &input.tool_details {
+        let mut array_4 = object.key("toolDetails").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_mcp_tool_detail::ser_mcp_tool_detail(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
+    }
     Ok(())
 }
 
@@ -39,6 +51,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tools" => {
                             builder = builder.set_tools(crate::protocol_serde::shape_mcp_tools_list::de_mcp_tools_list(tokens, _value, depth + 1)?);
+                        }
+                        "toolDetails" => {
+                            builder = builder.set_tool_details(crate::protocol_serde::shape_mcp_tool_details_list::de_mcp_tool_details_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

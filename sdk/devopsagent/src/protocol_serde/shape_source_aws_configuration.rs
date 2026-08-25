@@ -15,6 +15,12 @@ pub fn ser_source_aws_configuration(
     if let Some(var_1) = &input.external_id {
         object.key("externalId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.agent_elevated_role_arn {
+        object.key("agentElevatedRoleArn").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.agent_elevated_role_arn_status {
+        object.key("agentElevatedRoleArnStatus").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -65,6 +71,20 @@ where
                             builder = builder.set_external_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "agentElevatedRoleArn" => {
+                            builder = builder.set_agent_elevated_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "agentElevatedRoleArnStatus" => {
+                            builder = builder.set_agent_elevated_role_arn_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ValidationStatus::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

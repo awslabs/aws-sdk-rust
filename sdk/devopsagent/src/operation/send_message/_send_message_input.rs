@@ -17,6 +17,8 @@ pub struct SendMessageInput {
     pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Optional list of asset identifiers to attach to the message</p>
     pub asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized values default to balanced.</p>
+    pub model_tier: ::std::option::Option<::std::string::String>,
 }
 impl SendMessageInput {
     /// <p>The agent space identifier</p>
@@ -46,6 +48,10 @@ impl SendMessageInput {
     pub fn asset_ids(&self) -> &[::std::string::String] {
         self.asset_ids.as_deref().unwrap_or_default()
     }
+    /// <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized values default to balanced.</p>
+    pub fn model_tier(&self) -> ::std::option::Option<&str> {
+        self.model_tier.as_deref()
+    }
 }
 impl SendMessageInput {
     /// Creates a new builder-style object to manufacture [`SendMessageInput`](crate::operation::send_message::SendMessageInput).
@@ -64,6 +70,7 @@ pub struct SendMessageInputBuilder {
     pub(crate) context: ::std::option::Option<crate::types::SendMessageContext>,
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) asset_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) model_tier: ::std::option::Option<::std::string::String>,
 }
 impl SendMessageInputBuilder {
     /// <p>The agent space identifier</p>
@@ -162,6 +169,20 @@ impl SendMessageInputBuilder {
     pub fn get_asset_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.asset_ids
     }
+    /// <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized values default to balanced.</p>
+    pub fn model_tier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.model_tier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized values default to balanced.</p>
+    pub fn set_model_tier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.model_tier = input;
+        self
+    }
+    /// <p>Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized values default to balanced.</p>
+    pub fn get_model_tier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.model_tier
+    }
     /// Consumes the builder and constructs a [`SendMessageInput`](crate::operation::send_message::SendMessageInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::send_message::SendMessageInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_message::SendMessageInput {
@@ -171,6 +192,7 @@ impl SendMessageInputBuilder {
             context: self.context,
             user_id: self.user_id,
             asset_ids: self.asset_ids,
+            model_tier: self.model_tier,
         })
     }
 }

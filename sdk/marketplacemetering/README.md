@@ -15,7 +15,7 @@ _MeterUsage_
   - Vendor-metered tagging: Supported allocation tagging
 
 _BatchMeterUsage_
-  - Submits the metering record for a set of customers. BatchMeterUsage API calls are captured by CloudTrail. You can use CloudTrail to verify that the software as a subscription (SaaS) metering records that you sent are accurate by searching for records with the eventName of BatchMeterUsage. You can also use CloudTrail to audit records over time. For more information, see the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html).
+  - Submits the metering record for a set of customers. BatchMeterUsage API calls are captured by CloudTrail. You can use CloudTrail to verify that the software as a service (SaaS) metering records that you sent are accurate by searching for records with the eventName of BatchMeterUsage. You can also use CloudTrail to audit records over time. For more information, see the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html).
   - Called from: SaaS applications
   - Supported product type: SaaS
   - Vendor-metered tagging: Supports allocation tagging
@@ -30,7 +30,7 @@ _ResolveCustomer_
 
 __Entitlement and metering for paid container products__
 
-_RegisteredUsage_
+_RegisterUsage_
   - Provides software entitlement and metering. Paid container software products sold through Amazon Web Services Marketplace must integrate with the Marketplace Metering Service and call the RegisterUsage operation. Free and Bring Your Own License model (BYOL) products for Amazon ECS or Amazon EKS aren't required to call RegisterUsage. However, you can do so if you want to receive usage data in your seller reports. For more information about using the RegisterUsage operation, see [Container-based products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
   - Called from: Paid container software products
   - Supported product type: Containers
@@ -56,7 +56,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-marketplacemetering = "1.111.0"
+aws-sdk-marketplacemetering = "1.112.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

@@ -197,4 +197,23 @@ impl CreateAgentSpaceFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    ///
+    /// Adds a key-value pair to `preferences`.
+    ///
+    /// To override the contents of this collection use [`set_preferences`](Self::set_preferences).
+    ///
+    /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
+    pub fn preferences(mut self, k: crate::types::AgentSpacePreferenceKey, v: bool) -> Self {
+        self.inner = self.inner.preferences(k, v);
+        self
+    }
+    /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
+    pub fn set_preferences(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>) -> Self {
+        self.inner = self.inner.set_preferences(input);
+        self
+    }
+    /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
+    pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
+        self.inner.get_preferences()
+    }
 }

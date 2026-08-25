@@ -43,6 +43,17 @@ pub fn ser_instances_distribution(
     if let Some(var_12) = &input.spot_max_price {
         scope_11.string(var_12);
     }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("DistributionSegments");
+    if let Some(var_14) = &input.distribution_segments {
+        let mut list_16 = scope_13.start_list(false, None);
+        for item_15 in var_14 {
+            #[allow(unused_mut)]
+            let mut entry_17 = list_16.entry();
+            crate::protocol_serde::shape_distribution_segment::ser_distribution_segment(entry_17, item_15)?;
+        }
+        list_16.finish();
+    }
     Ok(())
 }
 
@@ -59,7 +70,7 @@ pub fn de_instances_distribution(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("OnDemandAllocationStrategy") /* OnDemandAllocationStrategy com.amazonaws.autoscaling#InstancesDistribution$OnDemandAllocationStrategy */ =>  {
-                let var_13 =
+                let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -68,11 +79,11 @@ pub fn de_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_allocation_strategy(var_13);
+                builder = builder.set_on_demand_allocation_strategy(var_18);
             }
             ,
             s if s.matches("OnDemandBaseCapacity") /* OnDemandBaseCapacity com.amazonaws.autoscaling#InstancesDistribution$OnDemandBaseCapacity */ =>  {
-                let var_14 =
+                let var_19 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -83,11 +94,11 @@ pub fn de_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_base_capacity(var_14);
+                builder = builder.set_on_demand_base_capacity(var_19);
             }
             ,
             s if s.matches("OnDemandPercentageAboveBaseCapacity") /* OnDemandPercentageAboveBaseCapacity com.amazonaws.autoscaling#InstancesDistribution$OnDemandPercentageAboveBaseCapacity */ =>  {
-                let var_15 =
+                let var_20 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -98,11 +109,11 @@ pub fn de_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_on_demand_percentage_above_base_capacity(var_15);
+                builder = builder.set_on_demand_percentage_above_base_capacity(var_20);
             }
             ,
             s if s.matches("SpotAllocationStrategy") /* SpotAllocationStrategy com.amazonaws.autoscaling#InstancesDistribution$SpotAllocationStrategy */ =>  {
-                let var_16 =
+                let var_21 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -111,11 +122,11 @@ pub fn de_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_spot_allocation_strategy(var_16);
+                builder = builder.set_spot_allocation_strategy(var_21);
             }
             ,
             s if s.matches("SpotInstancePools") /* SpotInstancePools com.amazonaws.autoscaling#InstancesDistribution$SpotInstancePools */ =>  {
-                let var_17 =
+                let var_22 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -126,11 +137,11 @@ pub fn de_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_spot_instance_pools(var_17);
+                builder = builder.set_spot_instance_pools(var_22);
             }
             ,
             s if s.matches("SpotMaxPrice") /* SpotMaxPrice com.amazonaws.autoscaling#InstancesDistribution$SpotMaxPrice */ =>  {
-                let var_18 =
+                let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -139,7 +150,17 @@ pub fn de_instances_distribution(
                         ?
                     )
                 ;
-                builder = builder.set_spot_max_price(var_18);
+                builder = builder.set_spot_max_price(var_23);
+            }
+            ,
+            s if s.matches("DistributionSegments") /* DistributionSegments com.amazonaws.autoscaling#InstancesDistribution$DistributionSegments */ =>  {
+                let var_24 =
+                    Some(
+                        crate::protocol_serde::shape_distribution_segments::de_distribution_segments(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_distribution_segments(var_24);
             }
             ,
             _ => {}

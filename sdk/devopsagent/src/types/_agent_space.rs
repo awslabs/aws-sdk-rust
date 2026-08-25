@@ -18,6 +18,8 @@ pub struct AgentSpace {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the AgentSpace</p>
     pub agent_space_id: ::std::string::String,
+    /// <p>The preferences configured on the agent space. Preferences that are not set take their default values.</p>
+    pub preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
 }
 impl AgentSpace {
     /// <p>The name of the AgentSpace.</p>
@@ -50,6 +52,10 @@ impl AgentSpace {
         use std::ops::Deref;
         self.agent_space_id.deref()
     }
+    /// <p>The preferences configured on the agent space. Preferences that are not set take their default values.</p>
+    pub fn preferences(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
+        self.preferences.as_ref()
+    }
 }
 impl ::std::fmt::Debug for AgentSpace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -61,6 +67,7 @@ impl ::std::fmt::Debug for AgentSpace {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("agent_space_id", &self.agent_space_id);
+        formatter.field("preferences", &self.preferences);
         formatter.finish()
     }
 }
@@ -82,6 +89,7 @@ pub struct AgentSpaceBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_space_id: ::std::option::Option<::std::string::String>,
+    pub(crate) preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
 }
 impl AgentSpaceBuilder {
     /// <p>The name of the AgentSpace.</p>
@@ -186,6 +194,26 @@ impl AgentSpaceBuilder {
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_space_id
     }
+    /// Adds a key-value pair to `preferences`.
+    ///
+    /// To override the contents of this collection use [`set_preferences`](Self::set_preferences).
+    ///
+    /// <p>The preferences configured on the agent space. Preferences that are not set take their default values.</p>
+    pub fn preferences(mut self, k: crate::types::AgentSpacePreferenceKey, v: bool) -> Self {
+        let mut hash_map = self.preferences.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.preferences = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The preferences configured on the agent space. Preferences that are not set take their default values.</p>
+    pub fn set_preferences(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>) -> Self {
+        self.preferences = input;
+        self
+    }
+    /// <p>The preferences configured on the agent space. Preferences that are not set take their default values.</p>
+    pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
+        &self.preferences
+    }
     /// Consumes the builder and constructs a [`AgentSpace`](crate::types::AgentSpace).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AgentSpaceBuilder::name)
@@ -221,6 +249,7 @@ impl AgentSpaceBuilder {
                     "agent_space_id was not specified but it is required when building AgentSpace",
                 )
             })?,
+            preferences: self.preferences,
         })
     }
 }
@@ -234,6 +263,7 @@ impl ::std::fmt::Debug for AgentSpaceBuilder {
         formatter.field("updated_at", &self.updated_at);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("agent_space_id", &self.agent_space_id);
+        formatter.field("preferences", &self.preferences);
         formatter.finish()
     }
 }

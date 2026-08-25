@@ -11,14 +11,38 @@ pub fn de_reserved_capacity_options(
     let mut builder = crate::types::ReservedCapacityOptions::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("reservationTypeSet") /* ReservationTypes com.amazonaws.ec2#ReservedCapacityOptions$ReservationTypes */ =>  {
+            s if s.matches("allocationStrategy") /* AllocationStrategy com.amazonaws.ec2#ReservedCapacityOptions$AllocationStrategy */ =>  {
                 let var_1 =
+                    Some(
+                        Result::<crate::types::ReservedCapacityAllocationStrategy, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ReservedCapacityAllocationStrategy::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_allocation_strategy(var_1);
+            }
+            ,
+            s if s.matches("reservationTypeSet") /* ReservationTypes com.amazonaws.ec2#ReservedCapacityOptions$ReservationTypes */ =>  {
+                let var_2 =
                     Some(
                         crate::protocol_serde::shape_reservation_type_list::de_reservation_type_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_reservation_types(var_1);
+                builder = builder.set_reservation_types(var_2);
+            }
+            ,
+            s if s.matches("reservedCapacityFallbackOptions") /* ReservedCapacityFallbackOptions com.amazonaws.ec2#ReservedCapacityOptions$ReservedCapacityFallbackOptions */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_reserved_capacity_fallback_options::de_reserved_capacity_fallback_options(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_reserved_capacity_fallback_options(var_3);
             }
             ,
             _ => {}

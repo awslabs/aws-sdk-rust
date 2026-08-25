@@ -6,7 +6,7 @@
 pub struct DescribeFleetError {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
     pub launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
-    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance. If you are using <code>ReservedCapacityOptions</code> with <code>on-demand-capacity-reservation</code> in the <code>ReservationTypes</code> list, the value can also be <code>on-demand-capacity-reservation</code>.</p>
     pub lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
     /// <p>The error code that indicates why the instance could not be launched. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
     pub error_code: ::std::option::Option<::std::string::String>,
@@ -18,7 +18,7 @@ impl DescribeFleetError {
     pub fn launch_template_and_overrides(&self) -> ::std::option::Option<&crate::types::LaunchTemplateAndOverridesResponse> {
         self.launch_template_and_overrides.as_ref()
     }
-    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance. If you are using <code>ReservedCapacityOptions</code> with <code>on-demand-capacity-reservation</code> in the <code>ReservationTypes</code> list, the value can also be <code>on-demand-capacity-reservation</code>.</p>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::InstanceLifecycle> {
         self.lifecycle.as_ref()
     }
@@ -62,17 +62,17 @@ impl DescribeFleetErrorBuilder {
     pub fn get_launch_template_and_overrides(&self) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
         &self.launch_template_and_overrides
     }
-    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance. If you are using <code>ReservedCapacityOptions</code> with <code>on-demand-capacity-reservation</code> in the <code>ReservationTypes</code> list, the value can also be <code>on-demand-capacity-reservation</code>.</p>
     pub fn lifecycle(mut self, input: crate::types::InstanceLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance. If you are using <code>ReservedCapacityOptions</code> with <code>on-demand-capacity-reservation</code> in the <code>ReservationTypes</code> list, the value can also be <code>on-demand-capacity-reservation</code>.</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::InstanceLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
-    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that could not be launched was a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance. If you are using <code>ReservedCapacityOptions</code> with <code>on-demand-capacity-reservation</code> in the <code>ReservationTypes</code> list, the value can also be <code>on-demand-capacity-reservation</code>.</p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::InstanceLifecycle> {
         &self.lifecycle
     }

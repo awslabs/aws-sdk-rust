@@ -47,6 +47,12 @@ pub use crate::types::_send_message_context::SendMessageContext;
 
 pub use crate::types::_send_message_events::SendMessageEvents;
 
+pub use crate::types::_approval_action_type::ApprovalActionType;
+
+pub use crate::types::_approval_pattern::ApprovalPattern;
+
+pub use crate::types::_approval_status::ApprovalStatus;
+
 pub use crate::types::_task_status::TaskStatus;
 
 pub use crate::types::_goal_schedule_input::GoalScheduleInput;
@@ -107,6 +113,8 @@ pub use crate::types::_journal_record::JournalRecord;
 
 pub use crate::types::_pending_message::PendingMessage;
 
+pub use crate::types::_approval_action::ApprovalAction;
+
 pub use crate::types::_send_message_response_created_event::SendMessageResponseCreatedEvent;
 
 pub use crate::types::_send_message_response_in_progress_event::SendMessageResponseInProgressEvent;
@@ -136,6 +144,8 @@ pub use crate::types::_service_configuration::ServiceConfiguration;
 pub use crate::types::_association::Association;
 
 pub use crate::types::_generic_webhook::GenericWebhook;
+
+pub use crate::types::_agent_space_preference_key::AgentSpacePreferenceKey;
 
 pub use crate::types::_private_connection_summary::PrivateConnectionSummary;
 
@@ -327,11 +337,25 @@ pub use crate::types::_assistant_message_block::AssistantMessageBlock;
 
 pub use crate::types::_slack_channel::SlackChannel;
 
+pub use crate::types::_mcp_tool_detail::McpToolDetail;
+
+pub use crate::types::_tool_classification::ToolClassification;
+
 mod _additional_service_details;
 
 mod _additional_service_registration_step;
 
 mod _agent_space;
+
+mod _agent_space_preference_key;
+
+mod _approval_action;
+
+mod _approval_action_type;
+
+mod _approval_pattern;
+
+mod _approval_status;
 
 mod _asset;
 
@@ -460,6 +484,8 @@ mod _mcp_server_sigv4_configuration;
 mod _mcp_server_sigv4_service_details;
 
 mod _mcp_server_splunk_configuration;
+
+mod _mcp_tool_detail;
 
 mod _message;
 
@@ -634,6 +660,8 @@ mod _task_sort_order;
 mod _task_status;
 
 mod _task_type;
+
+mod _tool_classification;
 
 mod _trigger;
 

@@ -52,6 +52,8 @@ pub struct Action {
     pub open_search: ::std::option::Option<crate::types::OpenSearchAction>,
     /// <p>The Amazon Location Service rule action sends device location updates from an MQTT message to an Amazon Location tracker resource.</p>
     pub location: ::std::option::Option<crate::types::LocationAction>,
+    /// <p>Write data to an InfluxDB database.</p>
+    pub influx_db: ::std::option::Option<crate::types::InfluxDbAction>,
 }
 impl Action {
     /// <p>Write to a DynamoDB table.</p>
@@ -148,6 +150,10 @@ impl Action {
     pub fn location(&self) -> ::std::option::Option<&crate::types::LocationAction> {
         self.location.as_ref()
     }
+    /// <p>Write data to an InfluxDB database.</p>
+    pub fn influx_db(&self) -> ::std::option::Option<&crate::types::InfluxDbAction> {
+        self.influx_db.as_ref()
+    }
 }
 impl Action {
     /// Creates a new builder-style object to manufacture [`Action`](crate::types::Action).
@@ -183,6 +189,7 @@ pub struct ActionBuilder {
     pub(crate) kafka: ::std::option::Option<crate::types::KafkaAction>,
     pub(crate) open_search: ::std::option::Option<crate::types::OpenSearchAction>,
     pub(crate) location: ::std::option::Option<crate::types::LocationAction>,
+    pub(crate) influx_db: ::std::option::Option<crate::types::InfluxDbAction>,
 }
 impl ActionBuilder {
     /// <p>Write to a DynamoDB table.</p>
@@ -513,6 +520,20 @@ impl ActionBuilder {
     pub fn get_location(&self) -> &::std::option::Option<crate::types::LocationAction> {
         &self.location
     }
+    /// <p>Write data to an InfluxDB database.</p>
+    pub fn influx_db(mut self, input: crate::types::InfluxDbAction) -> Self {
+        self.influx_db = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Write data to an InfluxDB database.</p>
+    pub fn set_influx_db(mut self, input: ::std::option::Option<crate::types::InfluxDbAction>) -> Self {
+        self.influx_db = input;
+        self
+    }
+    /// <p>Write data to an InfluxDB database.</p>
+    pub fn get_influx_db(&self) -> &::std::option::Option<crate::types::InfluxDbAction> {
+        &self.influx_db
+    }
     /// Consumes the builder and constructs a [`Action`](crate::types::Action).
     pub fn build(self) -> crate::types::Action {
         crate::types::Action {
@@ -539,6 +560,7 @@ impl ActionBuilder {
             kafka: self.kafka,
             open_search: self.open_search,
             location: self.location,
+            influx_db: self.influx_db,
         }
     }
 }

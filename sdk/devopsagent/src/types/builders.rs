@@ -19,6 +19,8 @@ pub use crate::types::_task_filter::TaskFilterBuilder;
 
 pub use crate::types::_send_message_context::SendMessageContextBuilder;
 
+pub use crate::types::_approval_pattern::ApprovalPatternBuilder;
+
 pub use crate::types::_goal_schedule_input::GoalScheduleInputBuilder;
 
 pub use crate::types::_goal::GoalBuilder;
@@ -58,6 +60,8 @@ pub use crate::types::_execution::ExecutionBuilder;
 pub use crate::types::_journal_record::JournalRecordBuilder;
 
 pub use crate::types::_pending_message::PendingMessageBuilder;
+
+pub use crate::types::_approval_action::ApprovalActionBuilder;
 
 pub use crate::types::_send_message_response_created_event::SendMessageResponseCreatedEventBuilder;
 
@@ -224,3 +228,5 @@ pub use crate::types::_remote_agent_o_auth_client_credentials_config::RemoteAgen
 pub use crate::types::_remote_agent_bearer_token_config::RemoteAgentBearerTokenConfigBuilder;
 
 pub use crate::types::_slack_channel::SlackChannelBuilder;
+
+pub use crate::types::_mcp_tool_detail::McpToolDetailBuilder;

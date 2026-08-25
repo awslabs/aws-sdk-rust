@@ -127,6 +127,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_agent_space;
 
+pub(crate) mod shape_update_approval_action;
+
 pub(crate) mod shape_update_asset;
 
 pub(crate) mod shape_update_asset_file;
@@ -211,6 +213,8 @@ pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_agent_space_input;
 
+pub(crate) mod shape_update_approval_action_input;
+
 pub(crate) mod shape_update_asset_file_input;
 
 pub(crate) mod shape_update_asset_input;
@@ -242,6 +246,8 @@ pub(crate) mod shape_additional_service_registration_step;
 pub(crate) mod shape_agent_space;
 
 pub(crate) mod shape_agent_space_list;
+
+pub(crate) mod shape_approval_pattern;
 
 pub(crate) mod shape_asset;
 
@@ -330,6 +336,10 @@ pub(crate) mod shape_validation_exception_field_list;
 pub(crate) mod shape_webhooks_list;
 
 pub(crate) mod shape_additional_service_details;
+
+pub(crate) mod shape_agent_space_preferences;
+
+pub(crate) mod shape_approval_action;
 
 pub(crate) mod shape_asset_file_content;
 
@@ -463,6 +473,8 @@ pub(crate) mod shape_mcp_server_authorization_config;
 
 pub(crate) mod shape_mcp_server_sigv4_authorization_config;
 
+pub(crate) mod shape_mcp_tool_detail;
+
 pub(crate) mod shape_message;
 
 pub(crate) mod shape_new_relic_service_authorization_config;
@@ -520,6 +532,8 @@ pub(crate) mod shape_mcp_server_bearer_token_config;
 pub(crate) mod shape_mcp_server_o_auth3_lo_config;
 
 pub(crate) mod shape_mcp_server_o_auth_client_credentials_config;
+
+pub(crate) mod shape_mcp_tool_details_list;
 
 pub(crate) mod shape_mcp_tools_list;
 

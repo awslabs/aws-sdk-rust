@@ -15,6 +15,10 @@ pub struct GitHubConfiguration {
     /// <p>GitHub instance identifier (e.g., github.com or github.enterprise.com)</p>
     pub instance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Optional role ARN that AIDevOps assumes at runtime for automatic verification testing and VPC connectivity on this association.</p>
+    #[deprecated(
+        note = "Superseded by the ReleaseManagement association. Configure the runtime role on the ReleaseManagement association and reference it via releaseManagementAssociationId.",
+        since = "2026-08-04"
+    )]
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl GitHubConfiguration {
@@ -42,6 +46,10 @@ impl GitHubConfiguration {
         self.instance_identifier.as_deref()
     }
     /// <p>Optional role ARN that AIDevOps assumes at runtime for automatic verification testing and VPC connectivity on this association.</p>
+    #[deprecated(
+        note = "Superseded by the ReleaseManagement association. Configure the runtime role on the ReleaseManagement association and reference it via releaseManagementAssociationId.",
+        since = "2026-08-04"
+    )]
     pub fn runtime_role_arn(&self) -> ::std::option::Option<&str> {
         self.runtime_role_arn.as_deref()
     }
@@ -140,16 +148,28 @@ impl GitHubConfigurationBuilder {
         &self.instance_identifier
     }
     /// <p>Optional role ARN that AIDevOps assumes at runtime for automatic verification testing and VPC connectivity on this association.</p>
+    #[deprecated(
+        note = "Superseded by the ReleaseManagement association. Configure the runtime role on the ReleaseManagement association and reference it via releaseManagementAssociationId.",
+        since = "2026-08-04"
+    )]
     pub fn runtime_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.runtime_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Optional role ARN that AIDevOps assumes at runtime for automatic verification testing and VPC connectivity on this association.</p>
+    #[deprecated(
+        note = "Superseded by the ReleaseManagement association. Configure the runtime role on the ReleaseManagement association and reference it via releaseManagementAssociationId.",
+        since = "2026-08-04"
+    )]
     pub fn set_runtime_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.runtime_role_arn = input;
         self
     }
     /// <p>Optional role ARN that AIDevOps assumes at runtime for automatic verification testing and VPC connectivity on this association.</p>
+    #[deprecated(
+        note = "Superseded by the ReleaseManagement association. Configure the runtime role on the ReleaseManagement association and reference it via releaseManagementAssociationId.",
+        since = "2026-08-04"
+    )]
     pub fn get_runtime_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.runtime_role_arn
     }

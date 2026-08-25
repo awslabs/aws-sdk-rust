@@ -23,10 +23,10 @@ impl crate::operation::batch_meter_usage::builders::BatchMeterUsageInputBuilder 
 /// Fluent builder constructing a request to `BatchMeterUsage`.
 ///
 /// <important>
-/// <p>Amazon Web Services Marketplace is introducing Concurrent Agreements, enabling buyers to make multiple purchases per Amazon Web Services account. Starting June 1, 2026, new SaaS products must use <code>CustomerAWSAccountId</code> (instead of <code>CustomerIdentifier</code>), <code>LicenseArn</code> (instead of <code>ProductCode</code>) to support this feature. <code>BatchMeterUsage</code> does not support <code>CustomerIdentifier</code> for new integrations. Existing integrations continue to work. Review the new integration for Concurrent Agreements <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.</p>
+/// <p>Amazon Web Services Marketplace is introducing Concurrent Agreements, enabling buyers to make multiple purchases per Amazon Web Services account. Starting June 1, 2026, new SaaS products must use <code>CustomerAWSAccountId</code> (instead of <code>CustomerIdentifier</code>), <code>LicenseArn</code> (instead of <code>ProductCode</code>) to support this feature. <code>BatchMeterUsage</code> does not support <code>CustomerIdentifier</code> for new integrations. Existing integrations continue to work. Review the new integration for Concurrent Agreements <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>. For additional implementation details, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-licensearn-example">BatchMeterUsage code example with LicenseArn</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
 /// </important>
 /// <p>To post metering records for customers, SaaS applications call <code>BatchMeterUsage</code>, which is used for metering SaaS flexible consumption pricing (FCP). Identical requests are idempotent and can be retried with the same records or a subset of records. Each <code>BatchMeterUsage</code> request is for only one product. If you want to meter usage for multiple products, you must make multiple <code>BatchMeterUsage</code> calls.</p>
-/// <p>Usage records should be submitted in quick succession following a recorded event. Usage records aren't accepted 24 hours or more after an event. At the end of each billing cycle, a 6-hour grace period applies. We accept usage records for the previous billing month until 06:00 UTC on the first day of the next month. For example, you must submit March usage records before 06:00 UTC on April 1. After this grace period, we return a <code>TimestampOutOfBoundsException</code> error.</p>
+/// <p>Usage records should be submitted in quick succession following a recorded event. Usage records aren't accepted 24 hours or more after an event. At the end of each billing cycle, a 6-hour grace period applies. We accept usage records for the previous billing month until 06:00 UTC on the first day of the next month. For example, you must submit March usage records before 06:00 UTC on April 1. On April 1 at 05:00 UTC, you can still submit records for March 31 (within the 6-hour grace period). After 06:00 UTC on April 1, March records are rejected regardless of the normal 24-hour submission window. After this grace period, we return a <code>TimestampOutOfBoundsException</code> error.</p>
 /// <p><code>BatchMeterUsage</code> can process up to 25 <code>UsageRecords</code> at a time, and each request must be less than 1 MB in size. Optionally, you can have multiple usage allocations for usage data that's split into buckets according to predefined tags.</p>
 /// <p><code>BatchMeterUsage</code> returns a list of <code>UsageRecordResult</code> objects, which have each <code>UsageRecord</code>. It also returns a list of <code>UnprocessedRecords</code>, which indicate errors on the service side that should be retried.</p>
 /// <p>For Amazon Web Services Regions that support <code>BatchMeterUsage</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#batchmeterusage-region-support">BatchMeterUsage Region support</a>.</p><note>
@@ -136,17 +136,26 @@ impl BatchMeterUsageFluentBuilder {
     pub fn get_usage_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageRecord>> {
         self.inner.get_usage_records()
     }
-    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p><important>
+    /// <p><code>ProductCode</code> is required only for legacy integrations that use <code>CustomerIdentifier</code>. For new integrations using <code>LicenseArn</code> (Concurrent Agreements), do NOT include <code>ProductCode</code> at the request level. The <code>LicenseArn</code> in each <code>UsageRecord</code> identifies both the product and the specific agreement.</p>
+    /// <p>Sending metering records with both <code>ProductCode</code> and <code>LicenseArn</code> for the same customer within the same hour will result in duplicate billing. If you are migrating from product-based metering to license-based metering, stop sending <code>ProductCode</code> before you start sending <code>LicenseArn</code>.</p>
+    /// </important>
     pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_code(input.into());
         self
     }
-    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p><important>
+    /// <p><code>ProductCode</code> is required only for legacy integrations that use <code>CustomerIdentifier</code>. For new integrations using <code>LicenseArn</code> (Concurrent Agreements), do NOT include <code>ProductCode</code> at the request level. The <code>LicenseArn</code> in each <code>UsageRecord</code> identifies both the product and the specific agreement.</p>
+    /// <p>Sending metering records with both <code>ProductCode</code> and <code>LicenseArn</code> for the same customer within the same hour will result in duplicate billing. If you are migrating from product-based metering to license-based metering, stop sending <code>ProductCode</code> before you start sending <code>LicenseArn</code>.</p>
+    /// </important>
     pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_product_code(input);
         self
     }
-    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
+    /// <p>Product code is used to uniquely identify a product in Amazon Web Services Marketplace. The product code should be the same as the one used during the publishing of a new product.</p><important>
+    /// <p><code>ProductCode</code> is required only for legacy integrations that use <code>CustomerIdentifier</code>. For new integrations using <code>LicenseArn</code> (Concurrent Agreements), do NOT include <code>ProductCode</code> at the request level. The <code>LicenseArn</code> in each <code>UsageRecord</code> identifies both the product and the specific agreement.</p>
+    /// <p>Sending metering records with both <code>ProductCode</code> and <code>LicenseArn</code> for the same customer within the same hour will result in duplicate billing. If you are migrating from product-based metering to license-based metering, stop sending <code>ProductCode</code> before you start sending <code>LicenseArn</code>.</p>
+    /// </important>
     pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_product_code()
     }

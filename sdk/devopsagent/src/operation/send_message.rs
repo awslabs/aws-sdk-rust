@@ -199,6 +199,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SendMessageTe
                 captured.insert("userId", value);
             }
         }
+        if requested.should_capture("modelTier") {
+            if let ::std::option::Option::Some(value) = input.model_tier.as_deref() {
+                captured.insert("modelTier", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

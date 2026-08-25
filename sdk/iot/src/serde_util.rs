@@ -450,6 +450,24 @@ pub(crate) fn http_action_correct_errors(mut builder: crate::types::builders::Ht
     builder
 }
 
+pub(crate) fn influx_db_action_correct_errors(
+    mut builder: crate::types::builders::InfluxDbActionBuilder,
+) -> crate::types::builders::InfluxDbActionBuilder {
+    if builder.destination_arn.is_none() {
+        builder.destination_arn = Some(Default::default())
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.database_name.is_none() {
+        builder.database_name = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn iot_events_action_correct_errors(
     mut builder: crate::types::builders::IotEventsActionBuilder,
 ) -> crate::types::builders::IotEventsActionBuilder {

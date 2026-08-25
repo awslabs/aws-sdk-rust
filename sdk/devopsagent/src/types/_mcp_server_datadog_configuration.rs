@@ -3,7 +3,18 @@
 /// <p>Mixin for webhook update support.</p>
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
-pub struct McpServerDatadogConfiguration {}
+pub struct McpServerDatadogConfiguration {
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    pub enabled_elevated_tools: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>,
+}
+impl McpServerDatadogConfiguration {
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_elevated_tools.is_none()`.
+    pub fn enabled_elevated_tools(&self) -> &[crate::types::McpToolDetail] {
+        self.enabled_elevated_tools.as_deref().unwrap_or_default()
+    }
+}
 impl McpServerDatadogConfiguration {
     /// Creates a new builder-style object to manufacture [`McpServerDatadogConfiguration`](crate::types::McpServerDatadogConfiguration).
     pub fn builder() -> crate::types::builders::McpServerDatadogConfigurationBuilder {
@@ -14,10 +25,34 @@ impl McpServerDatadogConfiguration {
 /// A builder for [`McpServerDatadogConfiguration`](crate::types::McpServerDatadogConfiguration).
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
-pub struct McpServerDatadogConfigurationBuilder {}
+pub struct McpServerDatadogConfigurationBuilder {
+    pub(crate) enabled_elevated_tools: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>,
+}
 impl McpServerDatadogConfigurationBuilder {
+    /// Appends an item to `enabled_elevated_tools`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_elevated_tools`](Self::set_enabled_elevated_tools).
+    ///
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    pub fn enabled_elevated_tools(mut self, input: crate::types::McpToolDetail) -> Self {
+        let mut v = self.enabled_elevated_tools.unwrap_or_default();
+        v.push(input);
+        self.enabled_elevated_tools = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    pub fn set_enabled_elevated_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>) -> Self {
+        self.enabled_elevated_tools = input;
+        self
+    }
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    pub fn get_enabled_elevated_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>> {
+        &self.enabled_elevated_tools
+    }
     /// Consumes the builder and constructs a [`McpServerDatadogConfiguration`](crate::types::McpServerDatadogConfiguration).
     pub fn build(self) -> crate::types::McpServerDatadogConfiguration {
-        crate::types::McpServerDatadogConfiguration {}
+        crate::types::McpServerDatadogConfiguration {
+            enabled_elevated_tools: self.enabled_elevated_tools,
+        }
     }
 }

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssetSourceUrlContent {
-    /// <p>The source URL to import asset content from</p>
+    /// <p>The source URL to import asset content from.</p>
     pub url: ::std::string::String,
 }
 impl AssetSourceUrlContent {
-    /// <p>The source URL to import asset content from</p>
+    /// <p>The source URL to import asset content from.</p>
     pub fn url(&self) -> &str {
         use std::ops::Deref;
         self.url.deref()
@@ -28,18 +28,18 @@ pub struct AssetSourceUrlContentBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl AssetSourceUrlContentBuilder {
-    /// <p>The source URL to import asset content from</p>
+    /// <p>The source URL to import asset content from.</p>
     /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The source URL to import asset content from</p>
+    /// <p>The source URL to import asset content from.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The source URL to import asset content from</p>
+    /// <p>The source URL to import asset content from.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

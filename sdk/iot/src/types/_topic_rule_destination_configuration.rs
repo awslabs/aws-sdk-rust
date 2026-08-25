@@ -8,6 +8,8 @@ pub struct TopicRuleDestinationConfiguration {
     pub http_url_configuration: ::std::option::Option<crate::types::HttpUrlDestinationConfiguration>,
     /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
     pub vpc_configuration: ::std::option::Option<crate::types::VpcDestinationConfiguration>,
+    /// <p>The configuration of an InfluxDB topic rule destination, which you specify when you call <code>CreateTopicRuleDestination</code>.</p>
+    pub influx_db_configuration: ::std::option::Option<crate::types::InfluxDbDestinationConfiguration>,
 }
 impl TopicRuleDestinationConfiguration {
     /// <p>Configuration of the HTTP URL.</p>
@@ -17,6 +19,10 @@ impl TopicRuleDestinationConfiguration {
     /// <p>Configuration of the virtual private cloud (VPC) connection.</p>
     pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::VpcDestinationConfiguration> {
         self.vpc_configuration.as_ref()
+    }
+    /// <p>The configuration of an InfluxDB topic rule destination, which you specify when you call <code>CreateTopicRuleDestination</code>.</p>
+    pub fn influx_db_configuration(&self) -> ::std::option::Option<&crate::types::InfluxDbDestinationConfiguration> {
+        self.influx_db_configuration.as_ref()
     }
 }
 impl TopicRuleDestinationConfiguration {
@@ -32,6 +38,7 @@ impl TopicRuleDestinationConfiguration {
 pub struct TopicRuleDestinationConfigurationBuilder {
     pub(crate) http_url_configuration: ::std::option::Option<crate::types::HttpUrlDestinationConfiguration>,
     pub(crate) vpc_configuration: ::std::option::Option<crate::types::VpcDestinationConfiguration>,
+    pub(crate) influx_db_configuration: ::std::option::Option<crate::types::InfluxDbDestinationConfiguration>,
 }
 impl TopicRuleDestinationConfigurationBuilder {
     /// <p>Configuration of the HTTP URL.</p>
@@ -62,11 +69,26 @@ impl TopicRuleDestinationConfigurationBuilder {
     pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::VpcDestinationConfiguration> {
         &self.vpc_configuration
     }
+    /// <p>The configuration of an InfluxDB topic rule destination, which you specify when you call <code>CreateTopicRuleDestination</code>.</p>
+    pub fn influx_db_configuration(mut self, input: crate::types::InfluxDbDestinationConfiguration) -> Self {
+        self.influx_db_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration of an InfluxDB topic rule destination, which you specify when you call <code>CreateTopicRuleDestination</code>.</p>
+    pub fn set_influx_db_configuration(mut self, input: ::std::option::Option<crate::types::InfluxDbDestinationConfiguration>) -> Self {
+        self.influx_db_configuration = input;
+        self
+    }
+    /// <p>The configuration of an InfluxDB topic rule destination, which you specify when you call <code>CreateTopicRuleDestination</code>.</p>
+    pub fn get_influx_db_configuration(&self) -> &::std::option::Option<crate::types::InfluxDbDestinationConfiguration> {
+        &self.influx_db_configuration
+    }
     /// Consumes the builder and constructs a [`TopicRuleDestinationConfiguration`](crate::types::TopicRuleDestinationConfiguration).
     pub fn build(self) -> crate::types::TopicRuleDestinationConfiguration {
         crate::types::TopicRuleDestinationConfiguration {
             http_url_configuration: self.http_url_configuration,
             vpc_configuration: self.vpc_configuration,
+            influx_db_configuration: self.influx_db_configuration,
         }
     }
 }

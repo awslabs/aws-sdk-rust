@@ -17,6 +17,7 @@
 ///     ExecutionStatus::Running => { /* ... */ },
 ///     ExecutionStatus::Stopped => { /* ... */ },
 ///     ExecutionStatus::TimedOut => { /* ... */ },
+///     ExecutionStatus::Waiting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +56,8 @@ pub enum ExecutionStatus {
     Stopped,
     /// <p>Unlike in the case of user-initiated Cancelation, a customer won't be billed</p>
     TimedOut,
+    #[allow(missing_docs)] // documentation missing in model
+    Waiting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for ExecutionStatus {
             "RUNNING" => ExecutionStatus::Running,
             "STOPPED" => ExecutionStatus::Stopped,
             "TIMED_OUT" => ExecutionStatus::TimedOut,
+            "WAITING" => ExecutionStatus::Waiting,
             other => ExecutionStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,12 +91,13 @@ impl ExecutionStatus {
             ExecutionStatus::Running => "RUNNING",
             ExecutionStatus::Stopped => "STOPPED",
             ExecutionStatus::TimedOut => "TIMED_OUT",
+            ExecutionStatus::Waiting => "WAITING",
             ExecutionStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CANCELED", "FAILED", "RUNNING", "STOPPED", "TIMED_OUT"]
+        &["CANCELED", "FAILED", "RUNNING", "STOPPED", "TIMED_OUT", "WAITING"]
     }
 }
 impl ::std::convert::AsRef<str> for ExecutionStatus {
@@ -120,6 +125,7 @@ impl ::std::fmt::Display for ExecutionStatus {
             ExecutionStatus::Running => write!(f, "RUNNING"),
             ExecutionStatus::Stopped => write!(f, "STOPPED"),
             ExecutionStatus::TimedOut => write!(f, "TIMED_OUT"),
+            ExecutionStatus::Waiting => write!(f, "WAITING"),
             ExecutionStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

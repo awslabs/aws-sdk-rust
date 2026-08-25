@@ -3783,6 +3783,8 @@ pub(crate) mod shape_federated_authentication_request;
 
 pub(crate) mod shape_fleet_capacity_reservation_set;
 
+pub(crate) mod shape_fleet_capacity_reservation_target_request;
+
 pub(crate) mod shape_fleet_launch_template_overrides_request;
 
 pub(crate) mod shape_fleet_launch_template_specification;
@@ -4218,6 +4220,8 @@ pub(crate) mod shape_request_filter_port_range;
 pub(crate) mod shape_reservation_list;
 
 pub(crate) mod shape_reservation_value;
+
+pub(crate) mod shape_reserved_capacity_fallback_options_request;
 
 pub(crate) mod shape_reserved_instance_reservation_value_set;
 
@@ -5941,6 +5945,8 @@ pub(crate) mod shape_regional_summary;
 
 pub(crate) mod shape_reservation_type_list;
 
+pub(crate) mod shape_reserved_capacity_fallback_options;
+
 pub(crate) mod shape_reserved_instances_id;
 
 pub(crate) mod shape_reserved_instances_modification_result;
@@ -6084,6 +6090,8 @@ pub(crate) mod shape_placement_response;
 pub(crate) mod shape_prefix_list_id_set;
 
 pub(crate) mod shape_protocol_int_list;
+
+pub(crate) mod shape_reserved_capacity_fallback_market_type_list;
 
 pub(crate) mod shape_resource_statement;
 

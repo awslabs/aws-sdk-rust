@@ -306,6 +306,9 @@ impl From<crate::operation::create_private_connection::CreatePrivateConnectionEr
             crate::operation::create_private_connection::CreatePrivateConnectionError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::create_private_connection::CreatePrivateConnectionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
             crate::operation::create_private_connection::CreatePrivateConnectionError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -315,9 +318,6 @@ impl From<crate::operation::create_private_connection::CreatePrivateConnectionEr
             crate::operation::create_private_connection::CreatePrivateConnectionError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_private_connection::CreatePrivateConnectionError::ContentSizeExceededException(inner) => {
                 Error::ContentSizeExceededException(inner)
-            }
-            crate::operation::create_private_connection::CreatePrivateConnectionError::InvalidParameterException(inner) => {
-                Error::InvalidParameterException(inner)
             }
             crate::operation::create_private_connection::CreatePrivateConnectionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -1870,6 +1870,46 @@ impl From<crate::operation::update_agent_space::UpdateAgentSpaceError> for Error
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_agent_space::UpdateAgentSpaceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_approval_action::UpdateApprovalActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_approval_action::UpdateApprovalActionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_approval_action::UpdateApprovalActionError> for Error {
+    fn from(err: crate::operation::update_approval_action::UpdateApprovalActionError) -> Self {
+        match err {
+            crate::operation::update_approval_action::UpdateApprovalActionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_approval_action::UpdateApprovalActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_approval_action::UpdateApprovalActionError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_approval_action::UpdateApprovalActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_approval_action::UpdateApprovalActionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_approval_action::UpdateApprovalActionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_approval_action::UpdateApprovalActionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_approval_action::UpdateApprovalActionError::ContentSizeExceededException(inner) => {
+                Error::ContentSizeExceededException(inner)
+            }
+            crate::operation::update_approval_action::UpdateApprovalActionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_approval_action::UpdateApprovalActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -6,12 +6,20 @@
 pub struct McpServerConfiguration {
     /// <p>List of MCP tools can be used with the association.</p>
     pub tools: ::std::vec::Vec<::std::string::String>,
+    /// <p>List of MCP tools with their access categorization. When provided, the tool names must match those in the tools member.</p>
+    pub tool_details: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>,
 }
 impl McpServerConfiguration {
     /// <p>List of MCP tools can be used with the association.</p>
     pub fn tools(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.tools.deref()
+    }
+    /// <p>List of MCP tools with their access categorization. When provided, the tool names must match those in the tools member.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tool_details.is_none()`.
+    pub fn tool_details(&self) -> &[crate::types::McpToolDetail] {
+        self.tool_details.as_deref().unwrap_or_default()
     }
 }
 impl McpServerConfiguration {
@@ -26,6 +34,7 @@ impl McpServerConfiguration {
 #[non_exhaustive]
 pub struct McpServerConfigurationBuilder {
     pub(crate) tools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) tool_details: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>,
 }
 impl McpServerConfigurationBuilder {
     /// Appends an item to `tools`.
@@ -48,6 +57,26 @@ impl McpServerConfigurationBuilder {
     pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tools
     }
+    /// Appends an item to `tool_details`.
+    ///
+    /// To override the contents of this collection use [`set_tool_details`](Self::set_tool_details).
+    ///
+    /// <p>List of MCP tools with their access categorization. When provided, the tool names must match those in the tools member.</p>
+    pub fn tool_details(mut self, input: crate::types::McpToolDetail) -> Self {
+        let mut v = self.tool_details.unwrap_or_default();
+        v.push(input);
+        self.tool_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of MCP tools with their access categorization. When provided, the tool names must match those in the tools member.</p>
+    pub fn set_tool_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>) -> Self {
+        self.tool_details = input;
+        self
+    }
+    /// <p>List of MCP tools with their access categorization. When provided, the tool names must match those in the tools member.</p>
+    pub fn get_tool_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>> {
+        &self.tool_details
+    }
     /// Consumes the builder and constructs a [`McpServerConfiguration`](crate::types::McpServerConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`tools`](crate::types::builders::McpServerConfigurationBuilder::tools)
@@ -59,6 +88,7 @@ impl McpServerConfigurationBuilder {
                     "tools was not specified but it is required when building McpServerConfiguration",
                 )
             })?,
+            tool_details: self.tool_details,
         })
     }
 }

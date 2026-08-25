@@ -22,6 +22,7 @@
 ///     TaskStatus::PendingTriage => { /* ... */ },
 ///     TaskStatus::Skipped => { /* ... */ },
 ///     TaskStatus::TimedOut => { /* ... */ },
+///     TaskStatus::Waiting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -70,6 +71,8 @@ pub enum TaskStatus {
     Skipped,
     /// <p>Task has exceeded its time limit</p>
     TimedOut,
+    #[allow(missing_docs)] // documentation missing in model
+    Waiting,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -87,6 +90,7 @@ impl ::std::convert::From<&str> for TaskStatus {
             "PENDING_TRIAGE" => TaskStatus::PendingTriage,
             "SKIPPED" => TaskStatus::Skipped,
             "TIMED_OUT" => TaskStatus::TimedOut,
+            "WAITING" => TaskStatus::Waiting,
             other => TaskStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -112,6 +116,7 @@ impl TaskStatus {
             TaskStatus::PendingTriage => "PENDING_TRIAGE",
             TaskStatus::Skipped => "SKIPPED",
             TaskStatus::TimedOut => "TIMED_OUT",
+            TaskStatus::Waiting => "WAITING",
             TaskStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -128,6 +133,7 @@ impl TaskStatus {
             "PENDING_TRIAGE",
             "SKIPPED",
             "TIMED_OUT",
+            "WAITING",
         ]
     }
 }
@@ -161,6 +167,7 @@ impl ::std::fmt::Display for TaskStatus {
             TaskStatus::PendingTriage => write!(f, "PENDING_TRIAGE"),
             TaskStatus::Skipped => write!(f, "SKIPPED"),
             TaskStatus::TimedOut => write!(f, "TIMED_OUT"),
+            TaskStatus::Waiting => write!(f, "WAITING"),
             TaskStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

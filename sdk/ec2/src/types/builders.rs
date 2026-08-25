@@ -607,6 +607,10 @@ pub use crate::types::_fleet_spot_maintenance_strategies_request::FleetSpotMaint
 
 pub use crate::types::_capacity_reservation_options_request::CapacityReservationOptionsRequestBuilder;
 
+pub use crate::types::_fleet_capacity_reservation_target_request::FleetCapacityReservationTargetRequestBuilder;
+
+pub use crate::types::_reserved_capacity_fallback_options_request::ReservedCapacityFallbackOptionsRequestBuilder;
+
 pub use crate::types::_fleet_launch_template_config_request::FleetLaunchTemplateConfigRequestBuilder;
 
 pub use crate::types::_create_fleet_error::CreateFleetErrorBuilder;
@@ -1636,6 +1640,8 @@ pub use crate::types::_fleet_launch_template_config::FleetLaunchTemplateConfigBu
 pub use crate::types::_fleet_spot_maintenance_strategies::FleetSpotMaintenanceStrategiesBuilder;
 
 pub use crate::types::_capacity_reservation_options::CapacityReservationOptionsBuilder;
+
+pub use crate::types::_reserved_capacity_fallback_options::ReservedCapacityFallbackOptionsBuilder;
 
 pub use crate::types::_describe_fleet_error::DescribeFleetErrorBuilder;
 

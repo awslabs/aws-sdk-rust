@@ -19,9 +19,9 @@ pub struct UsageRecord {
     pub quantity: ::std::option::Option<i32>,
     /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
     pub usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
-    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
-    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
-    /// </note>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><important>
+    /// <p>If you have an existing integration and need the <code>CustomerAWSAccountId</code> that corresponds to a <code>CustomerIdentifier</code>, contact <a href="https://aws.amazon.com/marketplace/management/contact-us/">AWS Marketplace Seller Operations</a> to obtain the mapping. Do not request the <code>CustomerAWSAccountId</code> directly from buyers. We cannot verify that a buyer-provided account ID is authentic, which can result in incorrect metering or billing.</p>
+    /// </important>
     pub customer_aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>LicenseArn</code> is a unique identifier for a specific granted license. These are used for software purchased through Amazon Web Services Marketplace.</p><note>
     /// <p>To access your <code>CustomerAWSAccountId</code> and <code>LicenseArn</code> mapping, visit <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements Feeds</a>.</p>
@@ -57,9 +57,9 @@ impl UsageRecord {
     pub fn usage_allocations(&self) -> &[crate::types::UsageAllocation] {
         self.usage_allocations.as_deref().unwrap_or_default()
     }
-    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
-    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
-    /// </note>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><important>
+    /// <p>If you have an existing integration and need the <code>CustomerAWSAccountId</code> that corresponds to a <code>CustomerIdentifier</code>, contact <a href="https://aws.amazon.com/marketplace/management/contact-us/">AWS Marketplace Seller Operations</a> to obtain the mapping. Do not request the <code>CustomerAWSAccountId</code> directly from buyers. We cannot verify that a buyer-provided account ID is authentic, which can result in incorrect metering or billing.</p>
+    /// </important>
     pub fn customer_aws_account_id(&self) -> ::std::option::Option<&str> {
         self.customer_aws_account_id.as_deref()
     }
@@ -180,23 +180,23 @@ impl UsageRecordBuilder {
     pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
         &self.usage_allocations
     }
-    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
-    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
-    /// </note>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><important>
+    /// <p>If you have an existing integration and need the <code>CustomerAWSAccountId</code> that corresponds to a <code>CustomerIdentifier</code>, contact <a href="https://aws.amazon.com/marketplace/management/contact-us/">AWS Marketplace Seller Operations</a> to obtain the mapping. Do not request the <code>CustomerAWSAccountId</code> directly from buyers. We cannot verify that a buyer-provided account ID is authentic, which can result in incorrect metering or billing.</p>
+    /// </important>
     pub fn customer_aws_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.customer_aws_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
-    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
-    /// </note>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><important>
+    /// <p>If you have an existing integration and need the <code>CustomerAWSAccountId</code> that corresponds to a <code>CustomerIdentifier</code>, contact <a href="https://aws.amazon.com/marketplace/management/contact-us/">AWS Marketplace Seller Operations</a> to obtain the mapping. Do not request the <code>CustomerAWSAccountId</code> directly from buyers. We cannot verify that a buyer-provided account ID is authentic, which can result in incorrect metering or billing.</p>
+    /// </important>
     pub fn set_customer_aws_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.customer_aws_account_id = input;
         self
     }
-    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><note>
-    /// <p>For existing integrations, to access your <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account Feeds</a>.</p>
-    /// </note>
+    /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><important>
+    /// <p>If you have an existing integration and need the <code>CustomerAWSAccountId</code> that corresponds to a <code>CustomerIdentifier</code>, contact <a href="https://aws.amazon.com/marketplace/management/contact-us/">AWS Marketplace Seller Operations</a> to obtain the mapping. Do not request the <code>CustomerAWSAccountId</code> directly from buyers. We cannot verify that a buyer-provided account ID is authentic, which can result in incorrect metering or billing.</p>
+    /// </important>
     pub fn get_customer_aws_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.customer_aws_account_id
     }

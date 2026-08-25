@@ -123,6 +123,8 @@ pub use crate::types::_service_node_port_range::ServiceNodePortRangeBuilder;
 
 pub use crate::types::_node_resources_fit_config::NodeResourcesFitConfigBuilder;
 
+pub use crate::types::_pod_gc_controller_config_request::PodGcControllerConfigRequestBuilder;
+
 pub use crate::types::_horizontal_pod_autoscaler_controller_config_request::HorizontalPodAutoscalerControllerConfigRequestBuilder;
 
 pub use crate::types::_vpc_config_response::VpcConfigResponseBuilder;
@@ -221,6 +223,8 @@ pub use crate::types::_control_plane_placement_response::ControlPlanePlacementRe
 
 pub use crate::types::_etcd_placement_response::EtcdPlacementResponseBuilder;
 
+pub use crate::types::_pod_gc_controller_config_response::PodGcControllerConfigResponseBuilder;
+
 pub use crate::types::_horizontal_pod_autoscaler_controller_config_response::HorizontalPodAutoscalerControllerConfigResponseBuilder;
 
 pub use crate::types::_license::LicenseBuilder;
@@ -273,6 +277,8 @@ pub use crate::types::_port_range_parameter_config::PortRangeParameterConfigBuil
 
 pub use crate::types::_node_resources_fit_version_config::NodeResourcesFitVersionConfigBuilder;
 
+pub use crate::types::_pod_gc_controller_version_config::PodGcControllerVersionConfigBuilder;
+
 pub use crate::types::_horizontal_pod_autoscaler_controller_version_config::HorizontalPodAutoscalerControllerVersionConfigBuilder;
 
 pub use crate::types::_sso_identity::SsoIdentityBuilder;
@@ -285,11 +291,15 @@ pub use crate::types::_port_range_constraints::PortRangeConstraintsBuilder;
 
 pub use crate::types::_scoring_strategy_config::ScoringStrategyConfigBuilder;
 
+pub use crate::types::_integer_parameter_config::IntegerParameterConfigBuilder;
+
 pub use crate::types::_client_stat::ClientStatBuilder;
 
 pub use crate::types::_integer_range_constraint::IntegerRangeConstraintBuilder;
 
 pub use crate::types::_scoring_strategy_constraints::ScoringStrategyConstraintsBuilder;
+
+pub use crate::types::_integer_constraints::IntegerConstraintsBuilder;
 
 pub use crate::types::_allowed_values_constraint::AllowedValuesConstraintBuilder;
 

@@ -437,6 +437,8 @@ pub(crate) mod shape_auto_scaling_group;
 
 pub(crate) mod shape_auto_scaling_instance_details;
 
+pub(crate) mod shape_distribution_segment;
+
 pub(crate) mod shape_failed_scheduled_update_group_action_request;
 
 pub(crate) mod shape_instance;
@@ -573,6 +575,8 @@ pub(crate) mod shape_capacity_reservation_resource_group_arns;
 
 pub(crate) mod shape_cpu_performance_factor_request;
 
+pub(crate) mod shape_distribution_segments;
+
 pub(crate) mod shape_metric_data_queries;
 
 pub(crate) mod shape_metric_dimensions;
@@ -582,6 +586,8 @@ pub(crate) mod shape_overrides;
 pub(crate) mod shape_target_tracking_metric_data_queries;
 
 pub(crate) mod shape_performance_factor_reference_request;
+
+pub(crate) mod shape_target_capacity_types;
 
 pub(crate) mod shape_accelerator_manufacturers;
 

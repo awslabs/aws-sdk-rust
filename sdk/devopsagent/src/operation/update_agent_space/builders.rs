@@ -164,4 +164,23 @@ impl UpdateAgentSpaceFluentBuilder {
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale()
     }
+    ///
+    /// Adds a key-value pair to `preferences`.
+    ///
+    /// To override the contents of this collection use [`set_preferences`](Self::set_preferences).
+    ///
+    /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
+    pub fn preferences(mut self, k: crate::types::AgentSpacePreferenceKey, v: bool) -> Self {
+        self.inner = self.inner.preferences(k, v);
+        self
+    }
+    /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
+    pub fn set_preferences(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>) -> Self {
+        self.inner = self.inner.set_preferences(input);
+        self
+    }
+    /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
+    pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
+        self.inner.get_preferences()
+    }
 }

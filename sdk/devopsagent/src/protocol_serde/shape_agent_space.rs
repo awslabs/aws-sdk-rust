@@ -68,6 +68,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "preferences" => {
+                            builder = builder.set_preferences(crate::protocol_serde::shape_agent_space_preferences::de_agent_space_preferences(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

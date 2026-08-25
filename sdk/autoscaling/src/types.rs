@@ -157,6 +157,8 @@ pub use crate::types::_metric_statistic::MetricStatistic;
 
 pub use crate::types::_launch_template_overrides::LaunchTemplateOverrides;
 
+pub use crate::types::_distribution_segment::DistributionSegment;
+
 pub use crate::types::_suspended_process::SuspendedProcess;
 
 pub use crate::types::_enabled_metric::EnabledMetric;
@@ -216,6 +218,8 @@ pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMem
 pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequest;
 
 pub use crate::types::_baseline_performance_factors_request::BaselinePerformanceFactorsRequest;
+
+pub use crate::types::_target_capacity_type::TargetCapacityType;
 
 pub use crate::types::_metric_data_query::MetricDataQuery;
 
@@ -294,6 +298,8 @@ mod _customized_metric_specification;
 mod _deletion_protection;
 
 mod _desired_configuration;
+
+mod _distribution_segment;
 
 mod _ebs;
 
@@ -458,6 +464,8 @@ mod _suspended_process;
 mod _tag;
 
 mod _tag_description;
+
+mod _target_capacity_type;
 
 mod _target_tracking_configuration;
 

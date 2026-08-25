@@ -102,17 +102,17 @@ impl ListChatsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    /// <p>The unique identifier for the agent space to list chats from.</p>
     pub fn agent_space_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.agent_space_id(input.into());
         self
     }
-    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    /// <p>The unique identifier for the agent space to list chats from.</p>
     pub fn set_agent_space_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_agent_space_id(input);
         self
     }
-    /// <p>Unique identifier for an agent space (allows alphanumeric characters and hyphens; 1-64 characters)</p>
+    /// <p>The unique identifier for the agent space to list chats from.</p>
     pub fn get_agent_space_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agent_space_id()
     }

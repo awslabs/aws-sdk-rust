@@ -173,9 +173,13 @@ pub use crate::types::_http_url_destination_configuration::HttpUrlDestinationCon
 
 pub use crate::types::_vpc_destination_configuration::VpcDestinationConfigurationBuilder;
 
+pub use crate::types::_influx_db_destination_configuration::InfluxDbDestinationConfigurationBuilder;
+
 pub use crate::types::_http_url_destination_properties::HttpUrlDestinationPropertiesBuilder;
 
 pub use crate::types::_vpc_destination_properties::VpcDestinationPropertiesBuilder;
+
+pub use crate::types::_influx_db_destination_properties::InfluxDbDestinationPropertiesBuilder;
 
 pub use crate::types::_audit_notification_target::AuditNotificationTargetBuilder;
 
@@ -389,6 +393,8 @@ pub use crate::types::_open_search_action::OpenSearchActionBuilder;
 
 pub use crate::types::_location_action::LocationActionBuilder;
 
+pub use crate::types::_influx_db_action::InfluxDbActionBuilder;
+
 pub use crate::types::_scheduled_job_rollout::ScheduledJobRolloutBuilder;
 
 pub use crate::types::_field::FieldBuilder;
@@ -404,6 +410,8 @@ pub use crate::types::_job_execution_summary::JobExecutionSummaryBuilder;
 pub use crate::types::_http_url_destination_summary::HttpUrlDestinationSummaryBuilder;
 
 pub use crate::types::_vpc_destination_summary::VpcDestinationSummaryBuilder;
+
+pub use crate::types::_influx_db_destination_summary::InfluxDbDestinationSummaryBuilder;
 
 pub use crate::types::_thing_connectivity::ThingConnectivityBuilder;
 
@@ -436,6 +444,8 @@ pub use crate::types::_http_authorization::HttpAuthorizationBuilder;
 pub use crate::types::_batch_config::BatchConfigBuilder;
 
 pub use crate::types::_location_timestamp::LocationTimestampBuilder;
+
+pub use crate::types::_influx_db_batch_config::InfluxDbBatchConfigBuilder;
 
 pub use crate::types::_geo_location_target::GeoLocationTargetBuilder;
 

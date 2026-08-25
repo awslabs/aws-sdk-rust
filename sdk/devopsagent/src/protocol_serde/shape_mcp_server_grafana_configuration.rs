@@ -18,6 +18,18 @@ pub fn ser_mcp_server_grafana_configuration(
         }
         array_3.finish();
     }
+    if let Some(var_5) = &input.enabled_elevated_tools {
+        let mut array_6 = object.key("enabledElevatedTools").start_array();
+        for item_7 in var_5 {
+            {
+                #[allow(unused_mut)]
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_mcp_tool_detail::ser_mcp_tool_detail(&mut object_8, item_7)?;
+                object_8.finish();
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
@@ -59,6 +71,11 @@ where
                         }
                         "tools" => {
                             builder = builder.set_tools(crate::protocol_serde::shape_mcp_tools_list::de_mcp_tools_list(tokens, _value, depth + 1)?);
+                        }
+                        "enabledElevatedTools" => {
+                            builder = builder.set_enabled_elevated_tools(
+                                crate::protocol_serde::shape_mcp_tool_details_list::de_mcp_tool_details_list(tokens, _value, depth + 1)?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

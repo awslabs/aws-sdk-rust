@@ -3,14 +3,20 @@ pub fn ser_kube_controller_manager_config_request(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::KubeControllerManagerConfigRequest,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.horizontal_pod_autoscaler_controller_config {
+    if let Some(var_1) = &input.pod_gc_controller_config {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("horizontalPodAutoscalerControllerConfig").start_object();
-        crate::protocol_serde::shape_horizontal_pod_autoscaler_controller_config_request::ser_horizontal_pod_autoscaler_controller_config_request(
-            &mut object_2,
-            var_1,
-        )?;
+        let mut object_2 = object.key("podGcControllerConfig").start_object();
+        crate::protocol_serde::shape_pod_gc_controller_config_request::ser_pod_gc_controller_config_request(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.horizontal_pod_autoscaler_controller_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("horizontalPodAutoscalerControllerConfig").start_object();
+        crate::protocol_serde::shape_horizontal_pod_autoscaler_controller_config_request::ser_horizontal_pod_autoscaler_controller_config_request(
+            &mut object_4,
+            var_3,
+        )?;
+        object_4.finish();
     }
     Ok(())
 }

@@ -12,5 +12,11 @@ pub fn ser_send_message_context(
     if let Some(var_3) = &input.user_action_response {
         object.key("userActionResponse").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.approval_action {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("approvalAction").start_object();
+        crate::protocol_serde::shape_approval_action::ser_approval_action(&mut object_5, var_4)?;
+        object_5.finish();
+    }
     Ok(())
 }

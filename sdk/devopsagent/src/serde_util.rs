@@ -530,6 +530,18 @@ pub(crate) fn update_agent_space_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_approval_action_output_output_correct_errors(
+    mut builder: crate::operation::update_approval_action::builders::UpdateApprovalActionOutputBuilder,
+) -> crate::operation::update_approval_action::builders::UpdateApprovalActionOutputBuilder {
+    if builder.approval_id.is_none() {
+        builder.approval_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ApprovalStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn update_asset_output_output_correct_errors(
     mut builder: crate::operation::update_asset::builders::UpdateAssetOutputBuilder,
 ) -> crate::operation::update_asset::builders::UpdateAssetOutputBuilder {
@@ -838,6 +850,12 @@ pub(crate) fn registered_service_correct_errors(
     }
     if builder.service_type.is_none() {
         builder.service_type = "no value was set".parse::<crate::types::Service>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1495,6 +1513,15 @@ pub(crate) fn slack_transmission_target_correct_errors(
             let builder = crate::types::builders::SlackChannelBuilder::default();
             crate::serde_util::slack_channel_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn mcp_tool_detail_correct_errors(
+    mut builder: crate::types::builders::McpToolDetailBuilder,
+) -> crate::types::builders::McpToolDetailBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

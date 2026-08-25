@@ -273,9 +273,13 @@ pub use crate::types::_http_url_destination_configuration::HttpUrlDestinationCon
 
 pub use crate::types::_vpc_destination_configuration::VpcDestinationConfiguration;
 
+pub use crate::types::_influx_db_destination_configuration::InfluxDbDestinationConfiguration;
+
 pub use crate::types::_http_url_destination_properties::HttpUrlDestinationProperties;
 
 pub use crate::types::_vpc_destination_properties::VpcDestinationProperties;
+
+pub use crate::types::_influx_db_destination_properties::InfluxDbDestinationProperties;
 
 pub use crate::types::_audit_notification_type::AuditNotificationType;
 
@@ -519,6 +523,12 @@ pub use crate::types::_open_search_action::OpenSearchAction;
 
 pub use crate::types::_location_action::LocationAction;
 
+pub use crate::types::_influx_db_action::InfluxDbAction;
+
+pub use crate::types::_influx_db_version::InfluxDbVersion;
+
+pub use crate::types::_influx_db_secret_type::InfluxDbSecretType;
+
 pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_audit_check_run_status::AuditCheckRunStatus;
@@ -546,6 +556,8 @@ pub use crate::types::_sbom_validation_error_code::SbomValidationErrorCode;
 pub use crate::types::_http_url_destination_summary::HttpUrlDestinationSummary;
 
 pub use crate::types::_vpc_destination_summary::VpcDestinationSummary;
+
+pub use crate::types::_influx_db_destination_summary::InfluxDbDestinationSummary;
 
 pub use crate::types::_violation_event_type::ViolationEventType;
 
@@ -602,6 +614,10 @@ pub use crate::types::_http_authorization::HttpAuthorization;
 pub use crate::types::_batch_config::BatchConfig;
 
 pub use crate::types::_location_timestamp::LocationTimestamp;
+
+pub use crate::types::_influx_db_timestamp_unit::InfluxDbTimestampUnit;
+
+pub use crate::types::_influx_db_batch_config::InfluxDbBatchConfig;
 
 pub use crate::types::_config_name::ConfigName;
 
@@ -958,6 +974,22 @@ mod _implicit_deny;
 mod _index_status;
 
 mod _indexing_filter;
+
+mod _influx_db_action;
+
+mod _influx_db_batch_config;
+
+mod _influx_db_destination_configuration;
+
+mod _influx_db_destination_properties;
+
+mod _influx_db_destination_summary;
+
+mod _influx_db_secret_type;
+
+mod _influx_db_timestamp_unit;
+
+mod _influx_db_version;
 
 mod _iot_analytics_action;
 

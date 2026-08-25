@@ -5,17 +5,32 @@ pub fn ser_reserved_capacity_options_request(
     input: &crate::types::ReservedCapacityOptionsRequest,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("ReservationType");
-    if let Some(var_2) = &input.reservation_types {
-        if !var_2.is_empty() {
-            let mut list_4 = scope_1.start_list(true, Some("ReservationType"));
-            for item_3 in var_2 {
+    let mut scope_1 = writer.prefix("AllocationStrategy");
+    if let Some(var_2) = &input.allocation_strategy {
+        scope_1.string(var_2.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("ReservationType");
+    if let Some(var_4) = &input.reservation_types {
+        if !var_4.is_empty() {
+            let mut list_6 = scope_3.start_list(true, Some("ReservationType"));
+            for item_5 in var_4 {
                 #[allow(unused_mut)]
-                let mut entry_5 = list_4.entry();
-                entry_5.string(item_3.as_str());
+                let mut entry_7 = list_6.entry();
+                entry_7.string(item_5.as_str());
             }
-            list_4.finish();
+            list_6.finish();
         }
+    }
+    #[allow(unused_mut)]
+    let mut scope_8 = writer.prefix("CapacityReservationTarget");
+    if let Some(var_9) = &input.capacity_reservation_target {
+        crate::protocol_serde::shape_fleet_capacity_reservation_target_request::ser_fleet_capacity_reservation_target_request(scope_8, var_9)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("ReservedCapacityFallbackOptions");
+    if let Some(var_11) = &input.reserved_capacity_fallback_options {
+        crate::protocol_serde::shape_reserved_capacity_fallback_options_request::ser_reserved_capacity_fallback_options_request(scope_10, var_11)?;
     }
     Ok(())
 }

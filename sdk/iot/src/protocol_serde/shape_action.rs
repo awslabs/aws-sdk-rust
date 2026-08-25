@@ -151,6 +151,13 @@ where
                                     depth + 1,
                                 )?);
                             }
+                            "influxDB" => {
+                                builder = builder.set_influx_db(crate::protocol_serde::shape_influx_db_action::de_influx_db_action(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -310,6 +317,12 @@ pub fn ser_action(
         let mut object_46 = object.key("location").start_object();
         crate::protocol_serde::shape_location_action::ser_location_action(&mut object_46, var_45)?;
         object_46.finish();
+    }
+    if let Some(var_47) = &input.influx_db {
+        #[allow(unused_mut)]
+        let mut object_48 = object.key("influxDB").start_object();
+        crate::protocol_serde::shape_influx_db_action::ser_influx_db_action(&mut object_48, var_47)?;
+        object_48.finish();
     }
     Ok(())
 }

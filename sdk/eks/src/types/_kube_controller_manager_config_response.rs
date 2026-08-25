@@ -4,10 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubeControllerManagerConfigResponse {
+    /// <p>The pod garbage collection controller configuration.</p>
+    pub pod_gc_controller_config: ::std::option::Option<crate::types::PodGcControllerConfigResponse>,
     /// <p>The horizontal pod autoscaler controller configuration.</p>
     pub horizontal_pod_autoscaler_controller_config: ::std::option::Option<crate::types::HorizontalPodAutoscalerControllerConfigResponse>,
 }
 impl KubeControllerManagerConfigResponse {
+    /// <p>The pod garbage collection controller configuration.</p>
+    pub fn pod_gc_controller_config(&self) -> ::std::option::Option<&crate::types::PodGcControllerConfigResponse> {
+        self.pod_gc_controller_config.as_ref()
+    }
     /// <p>The horizontal pod autoscaler controller configuration.</p>
     pub fn horizontal_pod_autoscaler_controller_config(
         &self,
@@ -26,9 +32,24 @@ impl KubeControllerManagerConfigResponse {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct KubeControllerManagerConfigResponseBuilder {
+    pub(crate) pod_gc_controller_config: ::std::option::Option<crate::types::PodGcControllerConfigResponse>,
     pub(crate) horizontal_pod_autoscaler_controller_config: ::std::option::Option<crate::types::HorizontalPodAutoscalerControllerConfigResponse>,
 }
 impl KubeControllerManagerConfigResponseBuilder {
+    /// <p>The pod garbage collection controller configuration.</p>
+    pub fn pod_gc_controller_config(mut self, input: crate::types::PodGcControllerConfigResponse) -> Self {
+        self.pod_gc_controller_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The pod garbage collection controller configuration.</p>
+    pub fn set_pod_gc_controller_config(mut self, input: ::std::option::Option<crate::types::PodGcControllerConfigResponse>) -> Self {
+        self.pod_gc_controller_config = input;
+        self
+    }
+    /// <p>The pod garbage collection controller configuration.</p>
+    pub fn get_pod_gc_controller_config(&self) -> &::std::option::Option<crate::types::PodGcControllerConfigResponse> {
+        &self.pod_gc_controller_config
+    }
     /// <p>The horizontal pod autoscaler controller configuration.</p>
     pub fn horizontal_pod_autoscaler_controller_config(mut self, input: crate::types::HorizontalPodAutoscalerControllerConfigResponse) -> Self {
         self.horizontal_pod_autoscaler_controller_config = ::std::option::Option::Some(input);
@@ -51,6 +72,7 @@ impl KubeControllerManagerConfigResponseBuilder {
     /// Consumes the builder and constructs a [`KubeControllerManagerConfigResponse`](crate::types::KubeControllerManagerConfigResponse).
     pub fn build(self) -> crate::types::KubeControllerManagerConfigResponse {
         crate::types::KubeControllerManagerConfigResponse {
+            pod_gc_controller_config: self.pod_gc_controller_config,
             horizontal_pod_autoscaler_controller_config: self.horizontal_pod_autoscaler_controller_config,
         }
     }

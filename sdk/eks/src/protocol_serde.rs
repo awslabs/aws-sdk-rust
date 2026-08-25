@@ -479,6 +479,8 @@ pub(crate) mod shape_oidc_identity_provider_config;
 
 pub(crate) mod shape_outpost_config_response;
 
+pub(crate) mod shape_pod_gc_controller_config_request;
+
 pub(crate) mod shape_pod_identity_association_summary;
 
 pub(crate) mod shape_provider;
@@ -555,6 +557,8 @@ pub(crate) mod shape_node_repair_config_overrides_list;
 
 pub(crate) mod shape_oidc;
 
+pub(crate) mod shape_pod_gc_controller_config_response;
+
 pub(crate) mod shape_remote_node_network_list;
 
 pub(crate) mod shape_remote_pod_network_list;
@@ -617,6 +621,8 @@ pub(crate) mod shape_log_types;
 
 pub(crate) mod shape_node_resources_fit_version_config;
 
+pub(crate) mod shape_pod_gc_controller_version_config;
+
 pub(crate) mod shape_port_range_parameter_config;
 
 pub(crate) mod shape_resource_weight_list;
@@ -627,11 +633,15 @@ pub(crate) mod shape_compatibility;
 
 pub(crate) mod shape_duration_constraints;
 
+pub(crate) mod shape_integer_parameter_config;
+
 pub(crate) mod shape_port_range_constraints;
 
 pub(crate) mod shape_scoring_strategy_config;
 
 pub(crate) mod shape_sso_identity_list;
+
+pub(crate) mod shape_integer_constraints;
 
 pub(crate) mod shape_integer_range_constraint;
 

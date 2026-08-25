@@ -4,10 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct KubeControllerManagerVersionConfig {
+    /// <p>The pod garbage collection controller configuration with default value and constraints.</p>
+    pub pod_gc_controller_config: ::std::option::Option<crate::types::PodGcControllerVersionConfig>,
     /// <p>The horizontal pod autoscaler controller configuration with default value and constraints.</p>
     pub horizontal_pod_autoscaler_controller_config: ::std::option::Option<crate::types::HorizontalPodAutoscalerControllerVersionConfig>,
 }
 impl KubeControllerManagerVersionConfig {
+    /// <p>The pod garbage collection controller configuration with default value and constraints.</p>
+    pub fn pod_gc_controller_config(&self) -> ::std::option::Option<&crate::types::PodGcControllerVersionConfig> {
+        self.pod_gc_controller_config.as_ref()
+    }
     /// <p>The horizontal pod autoscaler controller configuration with default value and constraints.</p>
     pub fn horizontal_pod_autoscaler_controller_config(
         &self,
@@ -26,9 +32,24 @@ impl KubeControllerManagerVersionConfig {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct KubeControllerManagerVersionConfigBuilder {
+    pub(crate) pod_gc_controller_config: ::std::option::Option<crate::types::PodGcControllerVersionConfig>,
     pub(crate) horizontal_pod_autoscaler_controller_config: ::std::option::Option<crate::types::HorizontalPodAutoscalerControllerVersionConfig>,
 }
 impl KubeControllerManagerVersionConfigBuilder {
+    /// <p>The pod garbage collection controller configuration with default value and constraints.</p>
+    pub fn pod_gc_controller_config(mut self, input: crate::types::PodGcControllerVersionConfig) -> Self {
+        self.pod_gc_controller_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The pod garbage collection controller configuration with default value and constraints.</p>
+    pub fn set_pod_gc_controller_config(mut self, input: ::std::option::Option<crate::types::PodGcControllerVersionConfig>) -> Self {
+        self.pod_gc_controller_config = input;
+        self
+    }
+    /// <p>The pod garbage collection controller configuration with default value and constraints.</p>
+    pub fn get_pod_gc_controller_config(&self) -> &::std::option::Option<crate::types::PodGcControllerVersionConfig> {
+        &self.pod_gc_controller_config
+    }
     /// <p>The horizontal pod autoscaler controller configuration with default value and constraints.</p>
     pub fn horizontal_pod_autoscaler_controller_config(mut self, input: crate::types::HorizontalPodAutoscalerControllerVersionConfig) -> Self {
         self.horizontal_pod_autoscaler_controller_config = ::std::option::Option::Some(input);
@@ -51,6 +72,7 @@ impl KubeControllerManagerVersionConfigBuilder {
     /// Consumes the builder and constructs a [`KubeControllerManagerVersionConfig`](crate::types::KubeControllerManagerVersionConfig).
     pub fn build(self) -> crate::types::KubeControllerManagerVersionConfig {
         crate::types::KubeControllerManagerVersionConfig {
+            pod_gc_controller_config: self.pod_gc_controller_config,
             horizontal_pod_autoscaler_controller_config: self.horizontal_pod_autoscaler_controller_config,
         }
     }

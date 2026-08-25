@@ -12,6 +12,8 @@ pub struct UpdateAgentSpaceInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The updated locale for the AgentSpace, which determines the language used in agent responses.</p>
     pub locale: ::std::option::Option<::std::string::String>,
+    /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
+    pub preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
 }
 impl UpdateAgentSpaceInput {
     /// <p>The unique identifier of the AgentSpace</p>
@@ -30,6 +32,10 @@ impl UpdateAgentSpaceInput {
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
+    /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
+    pub fn preferences(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
+        self.preferences.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateAgentSpaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for UpdateAgentSpaceInput {
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("locale", &self.locale);
+        formatter.field("preferences", &self.preferences);
         formatter.finish()
     }
 }
@@ -56,6 +63,7 @@ pub struct UpdateAgentSpaceInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
+    pub(crate) preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
 }
 impl UpdateAgentSpaceInputBuilder {
     /// <p>The unique identifier of the AgentSpace</p>
@@ -115,6 +123,26 @@ impl UpdateAgentSpaceInputBuilder {
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }
+    /// Adds a key-value pair to `preferences`.
+    ///
+    /// To override the contents of this collection use [`set_preferences`](Self::set_preferences).
+    ///
+    /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
+    pub fn preferences(mut self, k: crate::types::AgentSpacePreferenceKey, v: bool) -> Self {
+        let mut hash_map = self.preferences.unwrap_or_default();
+        hash_map.insert(k, v);
+        self.preferences = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
+    pub fn set_preferences(mut self, input: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>) -> Self {
+        self.preferences = input;
+        self
+    }
+    /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
+    pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
+        &self.preferences
+    }
     /// Consumes the builder and constructs a [`UpdateAgentSpaceInput`](crate::operation::update_agent_space::UpdateAgentSpaceInput).
     pub fn build(
         self,
@@ -124,6 +152,7 @@ impl UpdateAgentSpaceInputBuilder {
             name: self.name,
             description: self.description,
             locale: self.locale,
+            preferences: self.preferences,
         })
     }
 }
@@ -134,6 +163,7 @@ impl ::std::fmt::Debug for UpdateAgentSpaceInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("locale", &self.locale);
+        formatter.field("preferences", &self.preferences);
         formatter.finish()
     }
 }

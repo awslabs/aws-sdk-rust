@@ -267,6 +267,8 @@ mod untag_resource;
 
 mod update_agent_space;
 
+mod update_approval_action;
+
 mod update_asset;
 
 mod update_asset_file;

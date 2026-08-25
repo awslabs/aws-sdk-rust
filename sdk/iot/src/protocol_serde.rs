@@ -1289,6 +1289,10 @@ pub(crate) mod shape_http_url_destination_properties;
 
 pub(crate) mod shape_indexing_filter;
 
+pub(crate) mod shape_influx_db_destination_configuration;
+
+pub(crate) mod shape_influx_db_destination_properties;
+
 pub(crate) mod shape_issuer_certificate_identifier;
 
 pub(crate) mod shape_job_execution_status_details;
@@ -1459,6 +1463,10 @@ pub(crate) mod shape_http_action;
 
 pub(crate) mod shape_http_url_destination_summary;
 
+pub(crate) mod shape_influx_db_action;
+
+pub(crate) mod shape_influx_db_destination_summary;
+
 pub(crate) mod shape_iot_analytics_action;
 
 pub(crate) mod shape_iot_events_action;
@@ -1562,6 +1570,10 @@ pub(crate) mod shape_http_action_header;
 pub(crate) mod shape_http_authorization;
 
 pub(crate) mod shape_implicit_deny;
+
+pub(crate) mod shape_influx_db_batch_config;
+
+pub(crate) mod shape_influx_db_tag_map;
 
 pub(crate) mod shape_kafka_action_header;
 

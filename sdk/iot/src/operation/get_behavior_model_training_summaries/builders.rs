@@ -22,6 +22,9 @@ impl crate::operation::get_behavior_model_training_summaries::builders::GetBehav
 }
 /// Fluent builder constructing a request to `GetBehaviorModelTrainingSummaries`.
 ///
+/// <note>
+/// <p>The IoT Device Defender detect feature will no longer be available to new customers starting August 31, 2026. If you would like to use the detect feature, sign up prior to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see IoT Device Defender detect feature availability change in the IoT Device Defender Developer Guide. There is no change to IoT Device Defender audit availability.</p>
+/// </note>
 /// <p>Returns a Device Defender's ML Detect Security Profile training model's status.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -68,6 +68,15 @@ where
                                 crate::protocol_serde::shape_vpc_destination_properties::de_vpc_destination_properties(tokens, _value, depth + 1)?,
                             );
                         }
+                        "influxDBProperties" => {
+                            builder = builder.set_influx_db_properties(
+                                crate::protocol_serde::shape_influx_db_destination_properties::de_influx_db_destination_properties(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

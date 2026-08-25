@@ -6,7 +6,7 @@
 pub struct DescribeFleetsInstances {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
     pub launch_template_and_overrides: ::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
-    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance.</p>
     pub lifecycle: ::std::option::Option<crate::types::InstanceLifecycle>,
     /// <p>The IDs of the instances.</p>
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -20,7 +20,7 @@ impl DescribeFleetsInstances {
     pub fn launch_template_and_overrides(&self) -> ::std::option::Option<&crate::types::LaunchTemplateAndOverridesResponse> {
         self.launch_template_and_overrides.as_ref()
     }
-    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance.</p>
     pub fn lifecycle(&self) -> ::std::option::Option<&crate::types::InstanceLifecycle> {
         self.lifecycle.as_ref()
     }
@@ -71,17 +71,17 @@ impl DescribeFleetsInstancesBuilder {
     pub fn get_launch_template_and_overrides(&self) -> &::std::option::Option<crate::types::LaunchTemplateAndOverridesResponse> {
         &self.launch_template_and_overrides
     }
-    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance.</p>
     pub fn lifecycle(mut self, input: crate::types::InstanceLifecycle) -> Self {
         self.lifecycle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance.</p>
     pub fn set_lifecycle(mut self, input: ::std::option::Option<crate::types::InstanceLifecycle>) -> Self {
         self.lifecycle = input;
         self
     }
-    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block, or Interruptible Capacity Reservation instance.</p>
+    /// <p>Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block for ML, or interruptible Capacity Reservation instance.</p>
     pub fn get_lifecycle(&self) -> &::std::option::Option<crate::types::InstanceLifecycle> {
         &self.lifecycle
     }

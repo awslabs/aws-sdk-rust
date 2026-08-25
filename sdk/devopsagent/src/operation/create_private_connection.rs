@@ -323,6 +323,8 @@ pub enum CreatePrivateConnectionError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception is thrown when an unexpected error occurs in the processing of a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>One or more parameters provided in the request are invalid.</p>
+    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The request was throttled due to too many requests. Please slow down and try again.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by the service.</p>
@@ -331,8 +333,6 @@ pub enum CreatePrivateConnectionError {
     ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown when the content size exceeds the allowed limit.</p>
     ContentSizeExceededException(crate::types::error::ContentSizeExceededException),
-    /// <p>One or more parameters provided in the request are invalid.</p>
-    InvalidParameterException(crate::types::error::InvalidParameterException),
     /// <p>The requested resource could not be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request would exceed the service quota limit.</p>
@@ -372,11 +372,11 @@ impl CreatePrivateConnectionError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ContentSizeExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -389,6 +389,10 @@ impl CreatePrivateConnectionError {
     /// Returns `true` if the error kind is `CreatePrivateConnectionError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `CreatePrivateConnectionError::InvalidParameterException`.
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(self, Self::InvalidParameterException(_))
     }
     /// Returns `true` if the error kind is `CreatePrivateConnectionError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
@@ -406,10 +410,6 @@ impl CreatePrivateConnectionError {
     pub fn is_content_size_exceeded_exception(&self) -> bool {
         matches!(self, Self::ContentSizeExceededException(_))
     }
-    /// Returns `true` if the error kind is `CreatePrivateConnectionError::InvalidParameterException`.
-    pub fn is_invalid_parameter_exception(&self) -> bool {
-        matches!(self, Self::InvalidParameterException(_))
-    }
     /// Returns `true` if the error kind is `CreatePrivateConnectionError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
@@ -424,11 +424,11 @@ impl ::std::error::Error for CreatePrivateConnectionError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ContentSizeExceededException(_inner) => ::std::option::Option::Some(_inner),
-            Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -440,11 +440,11 @@ impl ::std::fmt::Display for CreatePrivateConnectionError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::ContentSizeExceededException(_inner) => _inner.fmt(f),
-            Self::InvalidParameterException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -474,11 +474,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreatePrivate
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ContentSizeExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

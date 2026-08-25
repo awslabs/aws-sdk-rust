@@ -44,6 +44,8 @@ pub struct TopicRuleDestination {
     pub http_url_properties: ::std::option::Option<crate::types::HttpUrlDestinationProperties>,
     /// <p>Properties of the virtual private cloud (VPC) connection.</p>
     pub vpc_properties: ::std::option::Option<crate::types::VpcDestinationProperties>,
+    /// <p>The properties of an InfluxDB topic rule destination, as returned by <code>CreateTopicRuleDestination</code> and <code>GetTopicRuleDestination</code>.</p>
+    pub influx_db_properties: ::std::option::Option<crate::types::InfluxDbDestinationProperties>,
 }
 impl TopicRuleDestination {
     /// <p>The topic rule destination URL.</p>
@@ -100,6 +102,10 @@ impl TopicRuleDestination {
     pub fn vpc_properties(&self) -> ::std::option::Option<&crate::types::VpcDestinationProperties> {
         self.vpc_properties.as_ref()
     }
+    /// <p>The properties of an InfluxDB topic rule destination, as returned by <code>CreateTopicRuleDestination</code> and <code>GetTopicRuleDestination</code>.</p>
+    pub fn influx_db_properties(&self) -> ::std::option::Option<&crate::types::InfluxDbDestinationProperties> {
+        self.influx_db_properties.as_ref()
+    }
 }
 impl TopicRuleDestination {
     /// Creates a new builder-style object to manufacture [`TopicRuleDestination`](crate::types::TopicRuleDestination).
@@ -119,6 +125,7 @@ pub struct TopicRuleDestinationBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) http_url_properties: ::std::option::Option<crate::types::HttpUrlDestinationProperties>,
     pub(crate) vpc_properties: ::std::option::Option<crate::types::VpcDestinationProperties>,
+    pub(crate) influx_db_properties: ::std::option::Option<crate::types::InfluxDbDestinationProperties>,
 }
 impl TopicRuleDestinationBuilder {
     /// <p>The topic rule destination URL.</p>
@@ -297,6 +304,20 @@ impl TopicRuleDestinationBuilder {
     pub fn get_vpc_properties(&self) -> &::std::option::Option<crate::types::VpcDestinationProperties> {
         &self.vpc_properties
     }
+    /// <p>The properties of an InfluxDB topic rule destination, as returned by <code>CreateTopicRuleDestination</code> and <code>GetTopicRuleDestination</code>.</p>
+    pub fn influx_db_properties(mut self, input: crate::types::InfluxDbDestinationProperties) -> Self {
+        self.influx_db_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The properties of an InfluxDB topic rule destination, as returned by <code>CreateTopicRuleDestination</code> and <code>GetTopicRuleDestination</code>.</p>
+    pub fn set_influx_db_properties(mut self, input: ::std::option::Option<crate::types::InfluxDbDestinationProperties>) -> Self {
+        self.influx_db_properties = input;
+        self
+    }
+    /// <p>The properties of an InfluxDB topic rule destination, as returned by <code>CreateTopicRuleDestination</code> and <code>GetTopicRuleDestination</code>.</p>
+    pub fn get_influx_db_properties(&self) -> &::std::option::Option<crate::types::InfluxDbDestinationProperties> {
+        &self.influx_db_properties
+    }
     /// Consumes the builder and constructs a [`TopicRuleDestination`](crate::types::TopicRuleDestination).
     pub fn build(self) -> crate::types::TopicRuleDestination {
         crate::types::TopicRuleDestination {
@@ -307,6 +328,7 @@ impl TopicRuleDestinationBuilder {
             status_reason: self.status_reason,
             http_url_properties: self.http_url_properties,
             vpc_properties: self.vpc_properties,
+            influx_db_properties: self.influx_db_properties,
         }
     }
 }

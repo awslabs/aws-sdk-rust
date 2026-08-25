@@ -8,8 +8,10 @@ pub struct SendMessageContext {
     pub current_page: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the last message in the conversation</p>
     pub last_message: ::std::option::Option<::std::string::String>,
-    /// <p>Response to a UI prompt (not a text conversation message). Operator App SDK clients set this to the control-string sentinel `"APPROVAL_ACTION"` when the request is resuming a paused tool call after an operator approval decision; in that case the structured decision context lives on the sibling `approvalAction` member and the chat agent reads from there. Preserved as a String for back-compat: pre-typed-approval clients still encode arbitrary UI-prompt responses as JSON in this field, and the chat agent parses them out during the transition.</p>
+    /// <p>Response to a UI prompt (not a text conversation message). Set this to the sentinel value `"APPROVAL_ACTION"` when the request is resuming a paused execution after an approval decision; in that case the structured decision is provided on the sibling `approvalAction` member. Preserved as a String for backward compatibility: clients that predate the typed approval field may still encode UI-prompt responses as JSON in this field.</p>
     pub user_action_response: ::std::option::Option<::std::string::String>,
+    /// <p>An approval decision supplied when resuming a paused agent execution. When an agent execution pauses to request approval for an elevated action, SendMessage streams an approval request carrying interrupt identifiers. To resume the paused execution, call SendMessage again with `userActionResponse` set to `"APPROVAL_ACTION"` and this member populated with those identifiers and the decision (APPROVED or REJECTED). Optional; omit it for messages that are not resuming an approval.</p>
+    pub approval_action: ::std::option::Option<crate::types::ApprovalAction>,
 }
 impl SendMessageContext {
     /// <p>The current page or view the user is on</p>
@@ -20,9 +22,13 @@ impl SendMessageContext {
     pub fn last_message(&self) -> ::std::option::Option<&str> {
         self.last_message.as_deref()
     }
-    /// <p>Response to a UI prompt (not a text conversation message). Operator App SDK clients set this to the control-string sentinel `"APPROVAL_ACTION"` when the request is resuming a paused tool call after an operator approval decision; in that case the structured decision context lives on the sibling `approvalAction` member and the chat agent reads from there. Preserved as a String for back-compat: pre-typed-approval clients still encode arbitrary UI-prompt responses as JSON in this field, and the chat agent parses them out during the transition.</p>
+    /// <p>Response to a UI prompt (not a text conversation message). Set this to the sentinel value `"APPROVAL_ACTION"` when the request is resuming a paused execution after an approval decision; in that case the structured decision is provided on the sibling `approvalAction` member. Preserved as a String for backward compatibility: clients that predate the typed approval field may still encode UI-prompt responses as JSON in this field.</p>
     pub fn user_action_response(&self) -> ::std::option::Option<&str> {
         self.user_action_response.as_deref()
+    }
+    /// <p>An approval decision supplied when resuming a paused agent execution. When an agent execution pauses to request approval for an elevated action, SendMessage streams an approval request carrying interrupt identifiers. To resume the paused execution, call SendMessage again with `userActionResponse` set to `"APPROVAL_ACTION"` and this member populated with those identifiers and the decision (APPROVED or REJECTED). Optional; omit it for messages that are not resuming an approval.</p>
+    pub fn approval_action(&self) -> ::std::option::Option<&crate::types::ApprovalAction> {
+        self.approval_action.as_ref()
     }
 }
 impl SendMessageContext {
@@ -39,6 +45,7 @@ pub struct SendMessageContextBuilder {
     pub(crate) current_page: ::std::option::Option<::std::string::String>,
     pub(crate) last_message: ::std::option::Option<::std::string::String>,
     pub(crate) user_action_response: ::std::option::Option<::std::string::String>,
+    pub(crate) approval_action: ::std::option::Option<crate::types::ApprovalAction>,
 }
 impl SendMessageContextBuilder {
     /// <p>The current page or view the user is on</p>
@@ -69,19 +76,33 @@ impl SendMessageContextBuilder {
     pub fn get_last_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_message
     }
-    /// <p>Response to a UI prompt (not a text conversation message). Operator App SDK clients set this to the control-string sentinel `"APPROVAL_ACTION"` when the request is resuming a paused tool call after an operator approval decision; in that case the structured decision context lives on the sibling `approvalAction` member and the chat agent reads from there. Preserved as a String for back-compat: pre-typed-approval clients still encode arbitrary UI-prompt responses as JSON in this field, and the chat agent parses them out during the transition.</p>
+    /// <p>Response to a UI prompt (not a text conversation message). Set this to the sentinel value `"APPROVAL_ACTION"` when the request is resuming a paused execution after an approval decision; in that case the structured decision is provided on the sibling `approvalAction` member. Preserved as a String for backward compatibility: clients that predate the typed approval field may still encode UI-prompt responses as JSON in this field.</p>
     pub fn user_action_response(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.user_action_response = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Response to a UI prompt (not a text conversation message). Operator App SDK clients set this to the control-string sentinel `"APPROVAL_ACTION"` when the request is resuming a paused tool call after an operator approval decision; in that case the structured decision context lives on the sibling `approvalAction` member and the chat agent reads from there. Preserved as a String for back-compat: pre-typed-approval clients still encode arbitrary UI-prompt responses as JSON in this field, and the chat agent parses them out during the transition.</p>
+    /// <p>Response to a UI prompt (not a text conversation message). Set this to the sentinel value `"APPROVAL_ACTION"` when the request is resuming a paused execution after an approval decision; in that case the structured decision is provided on the sibling `approvalAction` member. Preserved as a String for backward compatibility: clients that predate the typed approval field may still encode UI-prompt responses as JSON in this field.</p>
     pub fn set_user_action_response(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.user_action_response = input;
         self
     }
-    /// <p>Response to a UI prompt (not a text conversation message). Operator App SDK clients set this to the control-string sentinel `"APPROVAL_ACTION"` when the request is resuming a paused tool call after an operator approval decision; in that case the structured decision context lives on the sibling `approvalAction` member and the chat agent reads from there. Preserved as a String for back-compat: pre-typed-approval clients still encode arbitrary UI-prompt responses as JSON in this field, and the chat agent parses them out during the transition.</p>
+    /// <p>Response to a UI prompt (not a text conversation message). Set this to the sentinel value `"APPROVAL_ACTION"` when the request is resuming a paused execution after an approval decision; in that case the structured decision is provided on the sibling `approvalAction` member. Preserved as a String for backward compatibility: clients that predate the typed approval field may still encode UI-prompt responses as JSON in this field.</p>
     pub fn get_user_action_response(&self) -> &::std::option::Option<::std::string::String> {
         &self.user_action_response
+    }
+    /// <p>An approval decision supplied when resuming a paused agent execution. When an agent execution pauses to request approval for an elevated action, SendMessage streams an approval request carrying interrupt identifiers. To resume the paused execution, call SendMessage again with `userActionResponse` set to `"APPROVAL_ACTION"` and this member populated with those identifiers and the decision (APPROVED or REJECTED). Optional; omit it for messages that are not resuming an approval.</p>
+    pub fn approval_action(mut self, input: crate::types::ApprovalAction) -> Self {
+        self.approval_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An approval decision supplied when resuming a paused agent execution. When an agent execution pauses to request approval for an elevated action, SendMessage streams an approval request carrying interrupt identifiers. To resume the paused execution, call SendMessage again with `userActionResponse` set to `"APPROVAL_ACTION"` and this member populated with those identifiers and the decision (APPROVED or REJECTED). Optional; omit it for messages that are not resuming an approval.</p>
+    pub fn set_approval_action(mut self, input: ::std::option::Option<crate::types::ApprovalAction>) -> Self {
+        self.approval_action = input;
+        self
+    }
+    /// <p>An approval decision supplied when resuming a paused agent execution. When an agent execution pauses to request approval for an elevated action, SendMessage streams an approval request carrying interrupt identifiers. To resume the paused execution, call SendMessage again with `userActionResponse` set to `"APPROVAL_ACTION"` and this member populated with those identifiers and the decision (APPROVED or REJECTED). Optional; omit it for messages that are not resuming an approval.</p>
+    pub fn get_approval_action(&self) -> &::std::option::Option<crate::types::ApprovalAction> {
+        &self.approval_action
     }
     /// Consumes the builder and constructs a [`SendMessageContext`](crate::types::SendMessageContext).
     pub fn build(self) -> crate::types::SendMessageContext {
@@ -89,6 +110,7 @@ impl SendMessageContextBuilder {
             current_page: self.current_page,
             last_message: self.last_message,
             user_action_response: self.user_action_response,
+            approval_action: self.approval_action,
         }
     }
 }

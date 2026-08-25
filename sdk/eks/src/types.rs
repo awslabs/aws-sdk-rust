@@ -169,6 +169,8 @@ pub use crate::types::_service_node_port_range::ServiceNodePortRange;
 
 pub use crate::types::_node_resources_fit_config::NodeResourcesFitConfig;
 
+pub use crate::types::_pod_gc_controller_config_request::PodGcControllerConfigRequest;
+
 pub use crate::types::_horizontal_pod_autoscaler_controller_config_request::HorizontalPodAutoscalerControllerConfigRequest;
 
 pub use crate::types::_vpc_config_response::VpcConfigResponse;
@@ -289,6 +291,8 @@ pub use crate::types::_control_plane_placement_response::ControlPlanePlacementRe
 
 pub use crate::types::_etcd_placement_response::EtcdPlacementResponse;
 
+pub use crate::types::_pod_gc_controller_config_response::PodGcControllerConfigResponse;
+
 pub use crate::types::_horizontal_pod_autoscaler_controller_config_response::HorizontalPodAutoscalerControllerConfigResponse;
 
 pub use crate::types::_license::License;
@@ -369,6 +373,8 @@ pub use crate::types::_port_range_parameter_config::PortRangeParameterConfig;
 
 pub use crate::types::_node_resources_fit_version_config::NodeResourcesFitVersionConfig;
 
+pub use crate::types::_pod_gc_controller_version_config::PodGcControllerVersionConfig;
+
 pub use crate::types::_horizontal_pod_autoscaler_controller_version_config::HorizontalPodAutoscalerControllerVersionConfig;
 
 pub use crate::types::_sso_identity::SsoIdentity;
@@ -381,6 +387,8 @@ pub use crate::types::_port_range_constraints::PortRangeConstraints;
 
 pub use crate::types::_scoring_strategy_config::ScoringStrategyConfig;
 
+pub use crate::types::_integer_parameter_config::IntegerParameterConfig;
+
 pub use crate::types::_client_stat::ClientStat;
 
 pub use crate::types::_sso_identity_type::SsoIdentityType;
@@ -388,6 +396,8 @@ pub use crate::types::_sso_identity_type::SsoIdentityType;
 pub use crate::types::_integer_range_constraint::IntegerRangeConstraint;
 
 pub use crate::types::_scoring_strategy_constraints::ScoringStrategyConstraints;
+
+pub use crate::types::_integer_constraints::IntegerConstraints;
 
 pub use crate::types::_allowed_values_constraint::AllowedValuesConstraint;
 
@@ -615,6 +625,10 @@ mod _insights_filter;
 
 mod _insights_refresh_status;
 
+mod _integer_constraints;
+
+mod _integer_parameter_config;
+
 mod _integer_range_constraint;
 
 mod _ip_family;
@@ -688,6 +702,12 @@ mod _oidc_identity_provider_config_request;
 mod _outpost_config_request;
 
 mod _outpost_config_response;
+
+mod _pod_gc_controller_config_request;
+
+mod _pod_gc_controller_config_response;
+
+mod _pod_gc_controller_version_config;
 
 mod _pod_identity_association;
 

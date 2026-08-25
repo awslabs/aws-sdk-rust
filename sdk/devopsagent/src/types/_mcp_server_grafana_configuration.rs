@@ -10,6 +10,8 @@ pub struct McpServerGrafanaConfiguration {
     pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>List of MCP tools that can be used.</p>
     pub tools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    pub enabled_elevated_tools: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>,
 }
 impl McpServerGrafanaConfiguration {
     /// <p>Grafana instance URL (e.g., https://your-instance.grafana.net)</p>
@@ -27,6 +29,12 @@ impl McpServerGrafanaConfiguration {
     pub fn tools(&self) -> &[::std::string::String] {
         self.tools.as_deref().unwrap_or_default()
     }
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.enabled_elevated_tools.is_none()`.
+    pub fn enabled_elevated_tools(&self) -> &[crate::types::McpToolDetail] {
+        self.enabled_elevated_tools.as_deref().unwrap_or_default()
+    }
 }
 impl McpServerGrafanaConfiguration {
     /// Creates a new builder-style object to manufacture [`McpServerGrafanaConfiguration`](crate::types::McpServerGrafanaConfiguration).
@@ -42,6 +50,7 @@ pub struct McpServerGrafanaConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
     pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) tools: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) enabled_elevated_tools: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>,
 }
 impl McpServerGrafanaConfigurationBuilder {
     /// <p>Grafana instance URL (e.g., https://your-instance.grafana.net)</p>
@@ -93,6 +102,26 @@ impl McpServerGrafanaConfigurationBuilder {
     pub fn get_tools(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.tools
     }
+    /// Appends an item to `enabled_elevated_tools`.
+    ///
+    /// To override the contents of this collection use [`set_enabled_elevated_tools`](Self::set_enabled_elevated_tools).
+    ///
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    pub fn enabled_elevated_tools(mut self, input: crate::types::McpToolDetail) -> Self {
+        let mut v = self.enabled_elevated_tools.unwrap_or_default();
+        v.push(input);
+        self.enabled_elevated_tools = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    pub fn set_enabled_elevated_tools(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>>) -> Self {
+        self.enabled_elevated_tools = input;
+        self
+    }
+    /// <p>The subset of elevated-access tools enabled for this integration.</p>
+    pub fn get_enabled_elevated_tools(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::McpToolDetail>> {
+        &self.enabled_elevated_tools
+    }
     /// Consumes the builder and constructs a [`McpServerGrafanaConfiguration`](crate::types::McpServerGrafanaConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`endpoint`](crate::types::builders::McpServerGrafanaConfigurationBuilder::endpoint)
@@ -106,6 +135,7 @@ impl McpServerGrafanaConfigurationBuilder {
             })?,
             organization_id: self.organization_id,
             tools: self.tools,
+            enabled_elevated_tools: self.enabled_elevated_tools,
         })
     }
 }

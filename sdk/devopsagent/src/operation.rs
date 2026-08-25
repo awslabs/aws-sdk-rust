@@ -157,6 +157,9 @@ pub mod untag_resource;
 /// Types for the `UpdateAgentSpace` operation.
 pub mod update_agent_space;
 
+/// Types for the `UpdateApprovalAction` operation.
+pub mod update_approval_action;
+
 /// Types for the `UpdateAsset` operation.
 pub mod update_asset;
 
