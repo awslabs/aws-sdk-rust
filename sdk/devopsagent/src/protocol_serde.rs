@@ -461,6 +461,8 @@ pub(crate) mod shape_slack_configuration;
 
 pub(crate) mod shape_source_aws_configuration;
 
+pub(crate) mod shape_trigger_filter_group;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_webhook;
@@ -480,6 +482,8 @@ pub(crate) mod shape_message;
 pub(crate) mod shape_new_relic_service_authorization_config;
 
 pub(crate) mod shape_pager_duty_authorization_config;
+
+pub(crate) mod shape_pattern_filter;
 
 pub(crate) mod shape_registered_azure_dev_ops_service_details;
 
@@ -561,6 +565,8 @@ pub(crate) mod shape_service_now_o_auth_client_credentials_config;
 
 pub(crate) mod shape_slack_channel;
 
+pub(crate) mod shape_trigger_filter_groups;
+
 pub(crate) mod shape_user_message;
 
 pub(crate) mod shape_web_identity_token_audience_list;
@@ -572,3 +578,7 @@ pub(crate) mod shape_send_message_json_delta;
 pub(crate) mod shape_send_message_text_delta;
 
 pub(crate) mod shape_user_message_block;
+
+pub(crate) mod shape_trigger_event_list;
+
+pub(crate) mod shape_trigger_regex_pattern_list;

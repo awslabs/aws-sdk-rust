@@ -22,6 +22,9 @@ pub struct ProductUserSummary {
     pub subscription_start_date: ::std::option::Option<::std::string::String>,
     /// <p>The end date of a subscription.</p>
     pub subscription_end_date: ::std::option::Option<::std::string::String>,
+    /// <p>The expiration date of the license associated with this subscription, in ISO 8601 UTC format (for example, <code>2025-03-15T00:00:00Z</code>).</p>
+    /// <p>This field applies only to subscriptions that use license server endpoints, such as Remote Desktop Services (RDS) Subscriber Access License (SAL). It returns <code>null</code> for products that don't use license-based subscriptions.</p>
+    pub license_expiration_date: ::std::option::Option<::std::string::String>,
 }
 impl ProductUserSummary {
     /// <p>The user name from the identity provider for this product user.</p>
@@ -63,6 +66,11 @@ impl ProductUserSummary {
     pub fn subscription_end_date(&self) -> ::std::option::Option<&str> {
         self.subscription_end_date.as_deref()
     }
+    /// <p>The expiration date of the license associated with this subscription, in ISO 8601 UTC format (for example, <code>2025-03-15T00:00:00Z</code>).</p>
+    /// <p>This field applies only to subscriptions that use license server endpoints, such as Remote Desktop Services (RDS) Subscriber Access License (SAL). It returns <code>null</code> for products that don't use license-based subscriptions.</p>
+    pub fn license_expiration_date(&self) -> ::std::option::Option<&str> {
+        self.license_expiration_date.as_deref()
+    }
 }
 impl ProductUserSummary {
     /// Creates a new builder-style object to manufacture [`ProductUserSummary`](crate::types::ProductUserSummary).
@@ -84,6 +92,7 @@ pub struct ProductUserSummaryBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_start_date: ::std::option::Option<::std::string::String>,
     pub(crate) subscription_end_date: ::std::option::Option<::std::string::String>,
+    pub(crate) license_expiration_date: ::std::option::Option<::std::string::String>,
 }
 impl ProductUserSummaryBuilder {
     /// <p>The user name from the identity provider for this product user.</p>
@@ -216,6 +225,23 @@ impl ProductUserSummaryBuilder {
     pub fn get_subscription_end_date(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscription_end_date
     }
+    /// <p>The expiration date of the license associated with this subscription, in ISO 8601 UTC format (for example, <code>2025-03-15T00:00:00Z</code>).</p>
+    /// <p>This field applies only to subscriptions that use license server endpoints, such as Remote Desktop Services (RDS) Subscriber Access License (SAL). It returns <code>null</code> for products that don't use license-based subscriptions.</p>
+    pub fn license_expiration_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.license_expiration_date = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The expiration date of the license associated with this subscription, in ISO 8601 UTC format (for example, <code>2025-03-15T00:00:00Z</code>).</p>
+    /// <p>This field applies only to subscriptions that use license server endpoints, such as Remote Desktop Services (RDS) Subscriber Access License (SAL). It returns <code>null</code> for products that don't use license-based subscriptions.</p>
+    pub fn set_license_expiration_date(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.license_expiration_date = input;
+        self
+    }
+    /// <p>The expiration date of the license associated with this subscription, in ISO 8601 UTC format (for example, <code>2025-03-15T00:00:00Z</code>).</p>
+    /// <p>This field applies only to subscriptions that use license server endpoints, such as Remote Desktop Services (RDS) Subscriber Access License (SAL). It returns <code>null</code> for products that don't use license-based subscriptions.</p>
+    pub fn get_license_expiration_date(&self) -> &::std::option::Option<::std::string::String> {
+        &self.license_expiration_date
+    }
     /// Consumes the builder and constructs a [`ProductUserSummary`](crate::types::ProductUserSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`username`](crate::types::builders::ProductUserSummaryBuilder::username)
@@ -247,6 +273,7 @@ impl ProductUserSummaryBuilder {
             domain: self.domain,
             subscription_start_date: self.subscription_start_date,
             subscription_end_date: self.subscription_end_date,
+            license_expiration_date: self.license_expiration_date,
         })
     }
 }

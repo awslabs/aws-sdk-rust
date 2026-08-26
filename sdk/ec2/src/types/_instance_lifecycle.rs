@@ -12,6 +12,7 @@
 /// ```text
 /// # let instancelifecycle = unimplemented!();
 /// match instancelifecycle {
+///     InstanceLifecycle::CapacityBlock => { /* ... */ },
 ///     InstanceLifecycle::InterruptibleCapacityReservation => { /* ... */ },
 ///     InstanceLifecycle::OnDemand => { /* ... */ },
 ///     InstanceLifecycle::Spot => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum InstanceLifecycle {
     #[allow(missing_docs)] // documentation missing in model
+    CapacityBlock,
+    #[allow(missing_docs)] // documentation missing in model
     InterruptibleCapacityReservation,
     #[allow(missing_docs)] // documentation missing in model
     OnDemand,
@@ -56,6 +59,7 @@ pub enum InstanceLifecycle {
 impl ::std::convert::From<&str> for InstanceLifecycle {
     fn from(s: &str) -> Self {
         match s {
+            "capacity-block" => InstanceLifecycle::CapacityBlock,
             "interruptible-capacity-reservation" => InstanceLifecycle::InterruptibleCapacityReservation,
             "on-demand" => InstanceLifecycle::OnDemand,
             "spot" => InstanceLifecycle::Spot,
@@ -74,6 +78,7 @@ impl InstanceLifecycle {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            InstanceLifecycle::CapacityBlock => "capacity-block",
             InstanceLifecycle::InterruptibleCapacityReservation => "interruptible-capacity-reservation",
             InstanceLifecycle::OnDemand => "on-demand",
             InstanceLifecycle::Spot => "spot",
@@ -82,7 +87,7 @@ impl InstanceLifecycle {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["interruptible-capacity-reservation", "on-demand", "spot"]
+        &["capacity-block", "interruptible-capacity-reservation", "on-demand", "spot"]
     }
 }
 impl ::std::convert::AsRef<str> for InstanceLifecycle {
@@ -105,6 +110,7 @@ impl InstanceLifecycle {
 impl ::std::fmt::Display for InstanceLifecycle {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            InstanceLifecycle::CapacityBlock => write!(f, "capacity-block"),
             InstanceLifecycle::InterruptibleCapacityReservation => write!(f, "interruptible-capacity-reservation"),
             InstanceLifecycle::OnDemand => write!(f, "on-demand"),
             InstanceLifecycle::Spot => write!(f, "spot"),

@@ -1532,3 +1532,12 @@ pub(crate) fn slack_channel_correct_errors(mut builder: crate::types::builders::
     }
     builder
 }
+
+pub(crate) fn pattern_filter_correct_errors(
+    mut builder: crate::types::builders::PatternFilterBuilder,
+) -> crate::types::builders::PatternFilterBuilder {
+    if builder.patterns.is_none() {
+        builder.patterns = Some(Default::default())
+    }
+    builder
+}

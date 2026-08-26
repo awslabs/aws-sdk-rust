@@ -6,11 +6,19 @@
 pub struct CapabilityConfiguration {
     /// <p>Whether the capability is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>Optional trigger filter groups. Evaluated only when enabled=true; retained while the capability is disabled, so re-enabling restores the prior trigger behavior.</p>
+    pub trigger_filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::TriggerFilterGroup>>,
 }
 impl CapabilityConfiguration {
     /// <p>Whether the capability is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
+    }
+    /// <p>Optional trigger filter groups. Evaluated only when enabled=true; retained while the capability is disabled, so re-enabling restores the prior trigger behavior.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.trigger_filter_groups.is_none()`.
+    pub fn trigger_filter_groups(&self) -> &[crate::types::TriggerFilterGroup] {
+        self.trigger_filter_groups.as_deref().unwrap_or_default()
     }
 }
 impl CapabilityConfiguration {
@@ -25,6 +33,7 @@ impl CapabilityConfiguration {
 #[non_exhaustive]
 pub struct CapabilityConfigurationBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) trigger_filter_groups: ::std::option::Option<::std::vec::Vec<crate::types::TriggerFilterGroup>>,
 }
 impl CapabilityConfigurationBuilder {
     /// <p>Whether the capability is enabled.</p>
@@ -41,8 +50,31 @@ impl CapabilityConfigurationBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// Appends an item to `trigger_filter_groups`.
+    ///
+    /// To override the contents of this collection use [`set_trigger_filter_groups`](Self::set_trigger_filter_groups).
+    ///
+    /// <p>Optional trigger filter groups. Evaluated only when enabled=true; retained while the capability is disabled, so re-enabling restores the prior trigger behavior.</p>
+    pub fn trigger_filter_groups(mut self, input: crate::types::TriggerFilterGroup) -> Self {
+        let mut v = self.trigger_filter_groups.unwrap_or_default();
+        v.push(input);
+        self.trigger_filter_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Optional trigger filter groups. Evaluated only when enabled=true; retained while the capability is disabled, so re-enabling restores the prior trigger behavior.</p>
+    pub fn set_trigger_filter_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TriggerFilterGroup>>) -> Self {
+        self.trigger_filter_groups = input;
+        self
+    }
+    /// <p>Optional trigger filter groups. Evaluated only when enabled=true; retained while the capability is disabled, so re-enabling restores the prior trigger behavior.</p>
+    pub fn get_trigger_filter_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TriggerFilterGroup>> {
+        &self.trigger_filter_groups
+    }
     /// Consumes the builder and constructs a [`CapabilityConfiguration`](crate::types::CapabilityConfiguration).
     pub fn build(self) -> crate::types::CapabilityConfiguration {
-        crate::types::CapabilityConfiguration { enabled: self.enabled }
+        crate::types::CapabilityConfiguration {
+            enabled: self.enabled,
+            trigger_filter_groups: self.trigger_filter_groups,
+        }
     }
 }

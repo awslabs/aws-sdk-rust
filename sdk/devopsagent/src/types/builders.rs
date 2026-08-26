@@ -230,3 +230,7 @@ pub use crate::types::_remote_agent_bearer_token_config::RemoteAgentBearerTokenC
 pub use crate::types::_slack_channel::SlackChannelBuilder;
 
 pub use crate::types::_mcp_tool_detail::McpToolDetailBuilder;
+
+pub use crate::types::_trigger_filter_group::TriggerFilterGroupBuilder;
+
+pub use crate::types::_pattern_filter::PatternFilterBuilder;

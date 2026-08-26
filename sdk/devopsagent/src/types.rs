@@ -339,7 +339,13 @@ pub use crate::types::_slack_channel::SlackChannel;
 
 pub use crate::types::_mcp_tool_detail::McpToolDetail;
 
+pub use crate::types::_trigger_filter_group::TriggerFilterGroup;
+
 pub use crate::types::_tool_classification::ToolClassification;
+
+pub use crate::types::_pattern_filter::PatternFilter;
+
+pub use crate::types::_trigger_event::TriggerEvent;
 
 mod _additional_service_details;
 
@@ -511,6 +517,8 @@ mod _pager_duty_details;
 
 mod _pager_duty_o_auth_client_credentials_config;
 
+mod _pattern_filter;
+
 mod _pending_message;
 
 mod _post_register_service_supported_service;
@@ -666,6 +674,10 @@ mod _tool_classification;
 mod _trigger;
 
 mod _trigger_condition;
+
+mod _trigger_event;
+
+mod _trigger_filter_group;
 
 mod _usage_metric;
 
