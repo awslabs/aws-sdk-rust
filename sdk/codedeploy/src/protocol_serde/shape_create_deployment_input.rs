@@ -42,11 +42,14 @@ pub fn ser_create_deployment_input_input(
     if let Some(var_13) = &input.file_exists_behavior {
         object.key("fileExistsBehavior").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.override_alarm_configuration {
+    if let Some(var_14) = &input.deployment_mode {
+        object.key("deploymentMode").string(var_14.as_str());
+    }
+    if let Some(var_15) = &input.override_alarm_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("overrideAlarmConfiguration").start_object();
-        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("overrideAlarmConfiguration").start_object();
+        crate::protocol_serde::shape_alarm_configuration::ser_alarm_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

@@ -685,6 +685,8 @@ pub(crate) mod shape_data_source_run_summaries;
 
 pub(crate) mod shape_data_source_summaries;
 
+pub(crate) mod shape_delete_progress;
+
 pub(crate) mod shape_deployment;
 
 pub(crate) mod shape_deployment_properties;
@@ -730,6 +732,8 @@ pub(crate) mod shape_environment_summaries;
 pub(crate) mod shape_failure_cause;
 
 pub(crate) mod shape_failure_reasons;
+
+pub(crate) mod shape_failure_reasons_list;
 
 pub(crate) mod shape_filter_clause;
 
@@ -1038,6 +1042,8 @@ pub(crate) mod shape_environment_profile_summary;
 pub(crate) mod shape_environment_resolved_account;
 
 pub(crate) mod shape_environment_summary;
+
+pub(crate) mod shape_failure_reason;
 
 pub(crate) mod shape_filter;
 

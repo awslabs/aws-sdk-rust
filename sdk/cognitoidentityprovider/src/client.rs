@@ -146,6 +146,8 @@ mod admin_confirm_sign_up;
 
 mod admin_create_user;
 
+mod admin_delete_software_token;
+
 mod admin_delete_user;
 
 mod admin_delete_user_attributes;

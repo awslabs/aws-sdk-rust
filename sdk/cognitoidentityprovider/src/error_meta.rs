@@ -499,6 +499,54 @@ impl From<crate::operation::admin_create_user::AdminCreateUserError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError> for Error {
+    fn from(err: crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError) -> Self {
+        match err {
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::UserNotConfirmedException(inner) => {
+                Error::UserNotConfirmedException(inner)
+            }
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::UserNotFoundException(inner) => {
+                Error::UserNotFoundException(inner)
+            }
+            crate::operation::admin_delete_software_token::AdminDeleteSoftwareTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_delete_user::AdminDeleteUserError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

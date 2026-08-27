@@ -94,6 +94,76 @@ pub fn de_tag_resource_http_error(
             }
             tmp
         }),
+        "AccessDeniedException" => crate::operation::tag_resource::TagResourceError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServerException" => crate::operation::tag_resource::TagResourceError::InternalServerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InternalServerExceptionBuilder::default();
+                output = crate::protocol_serde::shape_internal_server_exception::de_internal_server_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_internal_server_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::tag_resource::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => crate::operation::tag_resource::TagResourceError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                output = output.set_retry_after_seconds(
+                    crate::protocol_serde::shape_throttling_exception::de_retry_after_seconds_header(_response_headers).map_err(|_| {
+                        crate::operation::tag_resource::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After")
+                    })?,
+                );
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => crate::operation::tag_resource::TagResourceError::ValidationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ValidationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_validation_exception::de_validation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::operation::tag_resource::TagResourceError::generic(generic),
     })
 }

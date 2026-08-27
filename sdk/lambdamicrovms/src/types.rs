@@ -7,6 +7,10 @@ pub use crate::types::_hooks::Hooks;
 
 pub use crate::types::_microvm_image_state::MicrovmImageState;
 
+pub use crate::types::_idle_policy::IdlePolicy;
+
+pub use crate::types::_microvm_state::MicrovmState;
+
 pub use crate::types::_microvm_image_version_state::MicrovmImageVersionState;
 
 pub use crate::types::_build_state::BuildState;
@@ -18,10 +22,6 @@ pub use crate::types::_chipset::Chipset;
 pub use crate::types::_snapshot_build::SnapshotBuild;
 
 pub use crate::types::_microvm_image_version_status::MicrovmImageVersionStatus;
-
-pub use crate::types::_idle_policy::IdlePolicy;
-
-pub use crate::types::_microvm_state::MicrovmState;
 
 pub use crate::types::_logging_disabled::LoggingDisabled;
 
@@ -39,23 +39,25 @@ pub use crate::types::_microvm_image_hooks::MicrovmImageHooks;
 
 pub use crate::types::_managed_microvm_image_summary::ManagedMicrovmImageSummary;
 
+pub use crate::types::_microvm_item::MicrovmItem;
+
+pub use crate::types::_port_specification::PortSpecification;
+
+pub use crate::types::_microvm_image_summary::MicrovmImageSummary;
+
 pub use crate::types::_managed_microvm_image_version::ManagedMicrovmImageVersion;
 
 pub use crate::types::_microvm_image_build_summary::MicrovmImageBuildSummary;
 
-pub use crate::types::_microvm_image_summary::MicrovmImageSummary;
-
 pub use crate::types::_microvm_image_version_summary::MicrovmImageVersionSummary;
-
-pub use crate::types::_microvm_item::MicrovmItem;
-
-pub use crate::types::_port_specification::PortSpecification;
 
 pub use crate::types::_hook_state::HookState;
 
 pub use crate::types::_port_range::PortRange;
 
 pub use crate::types::_unit::Unit;
+
+pub use crate::types::_managed_microvm_image_version_status::ManagedMicrovmImageVersionStatus;
 
 mod _architecture;
 
@@ -84,6 +86,8 @@ mod _logging_disabled;
 mod _managed_microvm_image_summary;
 
 mod _managed_microvm_image_version;
+
+mod _managed_microvm_image_version_status;
 
 mod _microvm_hooks;
 

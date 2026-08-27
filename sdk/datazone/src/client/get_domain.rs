@@ -20,6 +20,8 @@ impl super::Client {
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_domain::GetDomainOutput::tags): <p>The tags specified for the Amazon DataZone domain.</p>
     ///   - [`domain_version(Option<DomainVersion>)`](crate::operation::get_domain::GetDomainOutput::domain_version): <p>The version of the domain.</p>
     ///   - [`service_role(Option<String>)`](crate::operation::get_domain::GetDomainOutput::service_role): <p>The service role of the domain.</p>
+    ///   - [`failure_reasons(Option<Vec::<FailureReason>>)`](crate::operation::get_domain::GetDomainOutput::failure_reasons): <p>The list of failure reasons for resources that Amazon DataZone could not delete during a cascade deletion of the domain.</p>
+    ///   - [`delete_progress(Option<DeleteProgress>)`](crate::operation::get_domain::GetDomainOutput::delete_progress): <p>The progress of the current domain deletion, including the number of projects that Amazon DataZone successfully deleted.</p>
     /// - On failure, responds with [`SdkError<GetDomainError>`](crate::operation::get_domain::GetDomainError)
     pub fn get_domain(&self) -> crate::operation::get_domain::builders::GetDomainFluentBuilder {
         crate::operation::get_domain::builders::GetDomainFluentBuilder::new(self.handle.clone())

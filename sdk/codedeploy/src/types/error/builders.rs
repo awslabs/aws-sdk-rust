@@ -69,6 +69,8 @@ pub use crate::types::error::_application_limit_exceeded_exception::ApplicationL
 
 pub use crate::types::error::_invalid_tags_to_add_exception::InvalidTagsToAddExceptionBuilder;
 
+pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
+
 pub use crate::types::error::_alarms_limit_exceeded_exception::AlarmsLimitExceededExceptionBuilder;
 
 pub use crate::types::error::_deployment_group_does_not_exist_exception::DeploymentGroupDoesNotExistExceptionBuilder;
@@ -85,11 +87,15 @@ pub use crate::types::error::_invalid_auto_scaling_group_exception::InvalidAutoS
 
 pub use crate::types::error::_invalid_deployment_config_name_exception::InvalidDeploymentConfigNameExceptionBuilder;
 
+pub use crate::types::error::_invalid_ecs_service_exception::InvalidEcsServiceExceptionBuilder;
+
 pub use crate::types::error::_invalid_file_exists_behavior_exception::InvalidFileExistsBehaviorExceptionBuilder;
 
 pub use crate::types::error::_invalid_git_hub_account_token_exception::InvalidGitHubAccountTokenExceptionBuilder;
 
 pub use crate::types::error::_invalid_ignore_application_stop_failures_value_exception::InvalidIgnoreApplicationStopFailuresValueExceptionBuilder;
+
+pub use crate::types::error::_invalid_input_exception::InvalidInputExceptionBuilder;
 
 pub use crate::types::error::_invalid_load_balancer_info_exception::InvalidLoadBalancerInfoExceptionBuilder;
 
@@ -102,8 +108,6 @@ pub use crate::types::error::_invalid_traffic_routing_configuration_exception::I
 pub use crate::types::error::_invalid_update_outdated_instances_only_value_exception::InvalidUpdateOutdatedInstancesOnlyValueExceptionBuilder;
 
 pub use crate::types::error::_revision_does_not_exist_exception::RevisionDoesNotExistExceptionBuilder;
-
-pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_deployment_config_already_exists_exception::DeploymentConfigAlreadyExistsExceptionBuilder;
 
@@ -128,10 +132,6 @@ pub use crate::types::error::_invalid_deployment_style_exception::InvalidDeploym
 pub use crate::types::error::_invalid_ec2_tag_combination_exception::InvalidEc2TagCombinationExceptionBuilder;
 
 pub use crate::types::error::_invalid_ec2_tag_exception::InvalidEc2TagExceptionBuilder;
-
-pub use crate::types::error::_invalid_ecs_service_exception::InvalidEcsServiceExceptionBuilder;
-
-pub use crate::types::error::_invalid_input_exception::InvalidInputExceptionBuilder;
 
 pub use crate::types::error::_invalid_on_premises_tag_combination_exception::InvalidOnPremisesTagCombinationExceptionBuilder;
 

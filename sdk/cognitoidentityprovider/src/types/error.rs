@@ -43,6 +43,8 @@ pub use crate::types::error::_unsupported_user_state_exception::UnsupportedUserS
 
 pub use crate::types::error::_username_exists_exception::UsernameExistsException;
 
+pub use crate::types::error::_user_not_confirmed_exception::UserNotConfirmedException;
+
 pub use crate::types::error::_alias_exists_exception::AliasExistsException;
 
 pub use crate::types::error::_invalid_user_pool_configuration_exception::InvalidUserPoolConfigurationException;
@@ -54,8 +56,6 @@ pub use crate::types::error::_mfa_method_not_found_exception::MfaMethodNotFoundE
 pub use crate::types::error::_password_reset_required_exception::PasswordResetRequiredException;
 
 pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperationException;
-
-pub use crate::types::error::_user_not_confirmed_exception::UserNotConfirmedException;
 
 pub use crate::types::error::_user_pool_add_on_not_enabled_exception::UserPoolAddOnNotEnabledException;
 

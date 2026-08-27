@@ -2251,6 +2251,9 @@ pub mod replace_iam_instance_profile_association;
 /// Types for the `ReplaceImageCriteriaInAllowedImagesSettings` operation.
 pub mod replace_image_criteria_in_allowed_images_settings;
 
+/// Types for the `ReplaceImageInstanceTypeSpecification` operation.
+pub mod replace_image_instance_type_specification;
+
 /// Types for the `ReplaceNetworkAclAssociation` operation.
 pub mod replace_network_acl_association;
 

@@ -24,6 +24,26 @@ pub fn de_list_deployment_instances_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ApplicationDoesNotExistException" => {
+            crate::operation::list_deployment_instances::ListDeploymentInstancesError::ApplicationDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ApplicationDoesNotExistExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_application_does_not_exist_exception::de_application_does_not_exist_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::list_deployment_instances::ListDeploymentInstancesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "DeploymentDoesNotExistException" => {
             crate::operation::list_deployment_instances::ListDeploymentInstancesError::DeploymentDoesNotExistException({
                 #[allow(unused_mut)]
@@ -35,6 +55,22 @@ pub fn de_list_deployment_instances_http_error(
                         output,
                     )
                     .map_err(crate::operation::list_deployment_instances::ListDeploymentInstancesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DeploymentGroupDoesNotExistException" => {
+            crate::operation::list_deployment_instances::ListDeploymentInstancesError::DeploymentGroupDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::DeploymentGroupDoesNotExistExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_deployment_group_does_not_exist_exception::de_deployment_group_does_not_exist_exception_json_err(_response_body, output).map_err(crate::operation::list_deployment_instances::ListDeploymentInstancesError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

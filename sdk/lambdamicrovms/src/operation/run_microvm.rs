@@ -204,11 +204,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RunMicrovmTel
                 captured.insert("executionRoleArn", value);
             }
         }
-        if requested.should_capture("runHookPayload") {
-            if let ::std::option::Option::Some(value) = input.run_hook_payload.as_deref() {
-                captured.insert("runHookPayload", value);
-            }
-        }
         if requested.should_capture("clientToken") {
             if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
                 captured.insert("clientToken", value);
@@ -336,6 +331,8 @@ pub enum RunMicrovmError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be completed due to a conflict with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>There is insufficient capacity to fulfill the request. Retry the request later.</p>
+    InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
     /// <p>An internal server error occurred. Retry the request later.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource does not exist.</p>
@@ -381,6 +378,7 @@ impl RunMicrovmError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InsufficientCapacityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -396,6 +394,10 @@ impl RunMicrovmError {
     /// Returns `true` if the error kind is `RunMicrovmError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
         matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `RunMicrovmError::InsufficientCapacityException`.
+    pub fn is_insufficient_capacity_exception(&self) -> bool {
+        matches!(self, Self::InsufficientCapacityException(_))
     }
     /// Returns `true` if the error kind is `RunMicrovmError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -423,6 +425,7 @@ impl ::std::error::Error for RunMicrovmError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InsufficientCapacityException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -437,6 +440,7 @@ impl ::std::fmt::Display for RunMicrovmError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::InsufficientCapacityException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
@@ -469,6 +473,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RunMicrovmErr
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InsufficientCapacityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

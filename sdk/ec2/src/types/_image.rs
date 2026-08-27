@@ -67,6 +67,8 @@ pub struct Image {
     pub public_ssm_parameter_name: ::std::option::Option<::std::string::String>,
     /// <p>The watermarks attached to the AMI.</p>
     pub image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>>,
+    /// <p>The instance type specification for the AMI, which defines which instance types are compatible with this image.</p>
+    pub instance_type_specification: ::std::option::Option<crate::types::InstanceTypeSpecification>,
     /// <p>The ID of the AMI.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The location of the AMI.</p>
@@ -216,6 +218,10 @@ impl Image {
     pub fn image_watermarks(&self) -> &[crate::types::ImageWatermark] {
         self.image_watermarks.as_deref().unwrap_or_default()
     }
+    /// <p>The instance type specification for the AMI, which defines which instance types are compatible with this image.</p>
+    pub fn instance_type_specification(&self) -> ::std::option::Option<&crate::types::InstanceTypeSpecification> {
+        self.instance_type_specification.as_ref()
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(&self) -> ::std::option::Option<&str> {
         self.image_id.as_deref()
@@ -305,6 +311,7 @@ pub struct ImageBuilder {
     pub(crate) free_tier_eligible: ::std::option::Option<bool>,
     pub(crate) public_ssm_parameter_name: ::std::option::Option<::std::string::String>,
     pub(crate) image_watermarks: ::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>>,
+    pub(crate) instance_type_specification: ::std::option::Option<crate::types::InstanceTypeSpecification>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
     pub(crate) image_location: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::ImageState>,
@@ -742,6 +749,20 @@ impl ImageBuilder {
     pub fn get_image_watermarks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ImageWatermark>> {
         &self.image_watermarks
     }
+    /// <p>The instance type specification for the AMI, which defines which instance types are compatible with this image.</p>
+    pub fn instance_type_specification(mut self, input: crate::types::InstanceTypeSpecification) -> Self {
+        self.instance_type_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance type specification for the AMI, which defines which instance types are compatible with this image.</p>
+    pub fn set_instance_type_specification(mut self, input: ::std::option::Option<crate::types::InstanceTypeSpecification>) -> Self {
+        self.instance_type_specification = input;
+        self
+    }
+    /// <p>The instance type specification for the AMI, which defines which instance types are compatible with this image.</p>
+    pub fn get_instance_type_specification(&self) -> &::std::option::Option<crate::types::InstanceTypeSpecification> {
+        &self.instance_type_specification
+    }
     /// <p>The ID of the AMI.</p>
     pub fn image_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_id = ::std::option::Option::Some(input.into());
@@ -946,6 +967,7 @@ impl ImageBuilder {
             free_tier_eligible: self.free_tier_eligible,
             public_ssm_parameter_name: self.public_ssm_parameter_name,
             image_watermarks: self.image_watermarks,
+            instance_type_specification: self.instance_type_specification,
             image_id: self.image_id,
             image_location: self.image_location,
             state: self.state,

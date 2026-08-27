@@ -33,6 +33,8 @@ pub(crate) mod shape_admin_confirm_sign_up;
 
 pub(crate) mod shape_admin_create_user;
 
+pub(crate) mod shape_admin_delete_software_token;
+
 pub(crate) mod shape_admin_delete_user;
 
 pub(crate) mod shape_admin_delete_user_attributes;
@@ -300,6 +302,8 @@ pub(crate) mod shape_admin_add_user_to_group_input;
 pub(crate) mod shape_admin_confirm_sign_up_input;
 
 pub(crate) mod shape_admin_create_user_input;
+
+pub(crate) mod shape_admin_delete_software_token_input;
 
 pub(crate) mod shape_admin_delete_user_attributes_input;
 

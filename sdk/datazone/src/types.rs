@@ -27,6 +27,8 @@ pub use crate::types::_domain_status::DomainStatus;
 
 pub use crate::types::_domain_version::DomainVersion;
 
+pub use crate::types::_delete_progress::DeleteProgress;
+
 pub use crate::types::_model::Model;
 
 pub use crate::types::_form_type_status::FormTypeStatus;
@@ -260,6 +262,8 @@ pub use crate::types::_lineage_import_status::LineageImportStatus;
 pub use crate::types::_auth_type::AuthType;
 
 pub use crate::types::_user_assignment::UserAssignment;
+
+pub use crate::types::_failure_reason::FailureReason;
 
 pub use crate::types::_domain_unit_owner_properties::DomainUnitOwnerProperties;
 
@@ -1113,6 +1117,8 @@ mod _data_source_summary;
 
 mod _data_zone_entity_type;
 
+mod _delete_progress;
+
 mod _deployment;
 
 mod _deployment_mode;
@@ -1194,6 +1200,8 @@ mod _equal_to_expression;
 mod _event_summary;
 
 mod _failure_cause;
+
+mod _failure_reason;
 
 mod _file_format;
 

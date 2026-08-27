@@ -136,18 +136,32 @@ impl DeleteDomainFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
+    /// <p>Specifies whether to skip the check that prevents deletion of a domain that still contains resources. When you use this parameter, Amazon DataZone deletes the domain but might not remove its associated resources, which can leave orphaned resources behind. To delete a domain and fully clean up its associated resources, use <code>cascadeDelete</code> instead. You can't use this parameter together with <code>cascadeDelete</code>.</p>
     pub fn skip_deletion_check(mut self, input: bool) -> Self {
         self.inner = self.inner.skip_deletion_check(input);
         self
     }
-    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
+    /// <p>Specifies whether to skip the check that prevents deletion of a domain that still contains resources. When you use this parameter, Amazon DataZone deletes the domain but might not remove its associated resources, which can leave orphaned resources behind. To delete a domain and fully clean up its associated resources, use <code>cascadeDelete</code> instead. You can't use this parameter together with <code>cascadeDelete</code>.</p>
     pub fn set_skip_deletion_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_skip_deletion_check(input);
         self
     }
-    /// <p>Specifies the optional flag to delete all child entities within the domain.</p>
+    /// <p>Specifies whether to skip the check that prevents deletion of a domain that still contains resources. When you use this parameter, Amazon DataZone deletes the domain but might not remove its associated resources, which can leave orphaned resources behind. To delete a domain and fully clean up its associated resources, use <code>cascadeDelete</code> instead. You can't use this parameter together with <code>cascadeDelete</code>.</p>
     pub fn get_skip_deletion_check(&self) -> &::std::option::Option<bool> {
         self.inner.get_skip_deletion_check()
+    }
+    /// <p>Specifies whether to delete the domain along with all of its associated resources. When you use this parameter, Amazon DataZone deletes the domain and cleanly removes its associated resources without leaving orphaned resources behind. Amazon DataZone reports deletion progress in the <code>deleteProgress</code> field. Amazon DataZone reports any resources that it can't delete in the <code>failureReasons</code> field of the <code>GetDomain</code> response. You can't use this parameter together with <code>skipDeletionCheck</code>. If you don't specify a value, the default is <code>false</code>.</p>
+    pub fn cascade_delete(mut self, input: bool) -> Self {
+        self.inner = self.inner.cascade_delete(input);
+        self
+    }
+    /// <p>Specifies whether to delete the domain along with all of its associated resources. When you use this parameter, Amazon DataZone deletes the domain and cleanly removes its associated resources without leaving orphaned resources behind. Amazon DataZone reports deletion progress in the <code>deleteProgress</code> field. Amazon DataZone reports any resources that it can't delete in the <code>failureReasons</code> field of the <code>GetDomain</code> response. You can't use this parameter together with <code>skipDeletionCheck</code>. If you don't specify a value, the default is <code>false</code>.</p>
+    pub fn set_cascade_delete(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_cascade_delete(input);
+        self
+    }
+    /// <p>Specifies whether to delete the domain along with all of its associated resources. When you use this parameter, Amazon DataZone deletes the domain and cleanly removes its associated resources without leaving orphaned resources behind. Amazon DataZone reports deletion progress in the <code>deleteProgress</code> field. Amazon DataZone reports any resources that it can't delete in the <code>failureReasons</code> field of the <code>GetDomain</code> response. You can't use this parameter together with <code>skipDeletionCheck</code>. If you don't specify a value, the default is <code>false</code>.</p>
+    pub fn get_cascade_delete(&self) -> &::std::option::Option<bool> {
+        self.inner.get_cascade_delete()
     }
 }

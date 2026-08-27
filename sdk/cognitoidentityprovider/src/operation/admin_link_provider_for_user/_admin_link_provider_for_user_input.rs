@@ -8,9 +8,7 @@ pub struct AdminLinkProviderForUserInput {
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
-    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p><important>
-    /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
-    /// </important>
+    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
     pub destination_user: ::std::option::Option<crate::types::ProviderUserIdentifierType>,
     /// <p>An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.</p>
     /// <p>If the <code>SourceUser</code> is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively. The <code>ProviderAttributeValue</code> for the user must be the same value as the <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social IdP token.</p>
@@ -32,9 +30,7 @@ impl AdminLinkProviderForUserInput {
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
-    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p><important>
-    /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
-    /// </important>
+    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
     pub fn destination_user(&self) -> ::std::option::Option<&crate::types::ProviderUserIdentifierType> {
         self.destination_user.as_ref()
     }
@@ -86,9 +82,7 @@ impl AdminLinkProviderForUserInputBuilder {
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
-    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p><important>
-    /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
-    /// </important>
+    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
     /// This field is required.
     pub fn destination_user(mut self, input: crate::types::ProviderUserIdentifierType) -> Self {
         self.destination_user = ::std::option::Option::Some(input);
@@ -97,9 +91,7 @@ impl AdminLinkProviderForUserInputBuilder {
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
-    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p><important>
-    /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
-    /// </important>
+    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
     pub fn set_destination_user(mut self, input: ::std::option::Option<crate::types::ProviderUserIdentifierType>) -> Self {
         self.destination_user = input;
         self
@@ -107,9 +99,7 @@ impl AdminLinkProviderForUserInputBuilder {
     /// <p>The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.</p>
     /// <p>For a native username + password user, the <code>ProviderAttributeValue</code> for the <code>DestinationUser</code> should be the username in the user pool. For a federated user, it should be the provider-specific <code>user_id</code>.</p>
     /// <p>The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.</p>
-    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p><important>
-    /// <p>All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.</p>
-    /// </important>
+    /// <p>The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito user pools.</p>
     pub fn get_destination_user(&self) -> &::std::option::Option<crate::types::ProviderUserIdentifierType> {
         &self.destination_user
     }

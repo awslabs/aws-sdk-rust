@@ -17,6 +17,8 @@ pub struct QueryStatistics {
     pub estimated_bytes_skipped: f64,
     /// <p>The number of log groups that were scanned by this query.</p>
     pub log_groups_scanned: f64,
+    /// <p>The number of rows in the final query result set. This value represents the total number of output rows across all pages. For queries that include post-aggregation filters (such as <code>stats count(*) by field | filter count &gt; threshold</code>), this value might be less than <code>recordsMatched</code>. It reflects only the rows that survived all operations in the query.</p>
+    pub result_count: f64,
 }
 impl QueryStatistics {
     /// <p>The number of log events that matched the query string.</p>
@@ -43,6 +45,10 @@ impl QueryStatistics {
     pub fn log_groups_scanned(&self) -> f64 {
         self.log_groups_scanned
     }
+    /// <p>The number of rows in the final query result set. This value represents the total number of output rows across all pages. For queries that include post-aggregation filters (such as <code>stats count(*) by field | filter count &gt; threshold</code>), this value might be less than <code>recordsMatched</code>. It reflects only the rows that survived all operations in the query.</p>
+    pub fn result_count(&self) -> f64 {
+        self.result_count
+    }
 }
 impl QueryStatistics {
     /// Creates a new builder-style object to manufacture [`QueryStatistics`](crate::types::QueryStatistics).
@@ -61,6 +67,7 @@ pub struct QueryStatisticsBuilder {
     pub(crate) bytes_scanned: ::std::option::Option<f64>,
     pub(crate) estimated_bytes_skipped: ::std::option::Option<f64>,
     pub(crate) log_groups_scanned: ::std::option::Option<f64>,
+    pub(crate) result_count: ::std::option::Option<f64>,
 }
 impl QueryStatisticsBuilder {
     /// <p>The number of log events that matched the query string.</p>
@@ -147,6 +154,20 @@ impl QueryStatisticsBuilder {
     pub fn get_log_groups_scanned(&self) -> &::std::option::Option<f64> {
         &self.log_groups_scanned
     }
+    /// <p>The number of rows in the final query result set. This value represents the total number of output rows across all pages. For queries that include post-aggregation filters (such as <code>stats count(*) by field | filter count &gt; threshold</code>), this value might be less than <code>recordsMatched</code>. It reflects only the rows that survived all operations in the query.</p>
+    pub fn result_count(mut self, input: f64) -> Self {
+        self.result_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of rows in the final query result set. This value represents the total number of output rows across all pages. For queries that include post-aggregation filters (such as <code>stats count(*) by field | filter count &gt; threshold</code>), this value might be less than <code>recordsMatched</code>. It reflects only the rows that survived all operations in the query.</p>
+    pub fn set_result_count(mut self, input: ::std::option::Option<f64>) -> Self {
+        self.result_count = input;
+        self
+    }
+    /// <p>The number of rows in the final query result set. This value represents the total number of output rows across all pages. For queries that include post-aggregation filters (such as <code>stats count(*) by field | filter count &gt; threshold</code>), this value might be less than <code>recordsMatched</code>. It reflects only the rows that survived all operations in the query.</p>
+    pub fn get_result_count(&self) -> &::std::option::Option<f64> {
+        &self.result_count
+    }
     /// Consumes the builder and constructs a [`QueryStatistics`](crate::types::QueryStatistics).
     pub fn build(self) -> crate::types::QueryStatistics {
         crate::types::QueryStatistics {
@@ -156,6 +177,7 @@ impl QueryStatisticsBuilder {
             bytes_scanned: self.bytes_scanned.unwrap_or_default(),
             estimated_bytes_skipped: self.estimated_bytes_skipped.unwrap_or_default(),
             log_groups_scanned: self.log_groups_scanned.unwrap_or_default(),
+            result_count: self.result_count.unwrap_or_default(),
         }
     }
 }

@@ -223,6 +223,24 @@ pub fn de_create_deployment_http_error(
             }
             tmp
         }),
+        "InvalidComputePlatformException" => crate::operation::create_deployment::CreateDeploymentError::InvalidComputePlatformException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidComputePlatformExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_compute_platform_exception::de_invalid_compute_platform_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidDeploymentConfigNameException" => crate::operation::create_deployment::CreateDeploymentError::InvalidDeploymentConfigNameException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -251,6 +269,22 @@ pub fn de_create_deployment_http_error(
                     output,
                 )
                 .map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidECSServiceException" => crate::operation::create_deployment::CreateDeploymentError::InvalidEcsServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidEcsServiceExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_invalid_ecs_service_exception::de_invalid_ecs_service_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };
@@ -311,6 +345,21 @@ pub fn de_create_deployment_http_error(
                 tmp
             })
         }
+        "InvalidInputException" => crate::operation::create_deployment::CreateDeploymentError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::create_deployment::CreateDeploymentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InvalidLoadBalancerInfoException" => crate::operation::create_deployment::CreateDeploymentError::InvalidLoadBalancerInfoException({
             #[allow(unused_mut)]
             let mut tmp = {

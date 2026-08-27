@@ -363,16 +363,22 @@ pub enum CreateDeploymentError {
     InvalidAutoRollbackConfigException(crate::types::error::InvalidAutoRollbackConfigException),
     /// <p>The Auto Scaling group was specified in an invalid format or does not exist.</p>
     InvalidAutoScalingGroupException(crate::types::error::InvalidAutoScalingGroupException),
+    /// <p>The computePlatform is invalid. The computePlatform should be <code>Lambda</code>, <code>Server</code>, or <code>ECS</code>.</p>
+    InvalidComputePlatformException(crate::types::error::InvalidComputePlatformException),
     /// <p>The deployment configuration name was specified in an invalid format.</p>
     InvalidDeploymentConfigNameException(crate::types::error::InvalidDeploymentConfigNameException),
     /// <p>The deployment group name was specified in an invalid format.</p>
     InvalidDeploymentGroupNameException(crate::types::error::InvalidDeploymentGroupNameException),
+    /// <p>The Amazon ECS service identifier is not valid.</p>
+    InvalidEcsServiceException(crate::types::error::InvalidEcsServiceException),
     /// <p>An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles files or directories that already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values include "DISALLOW," "OVERWRITE," and "RETAIN."</p>
     InvalidFileExistsBehaviorException(crate::types::error::InvalidFileExistsBehaviorException),
     /// <p>The GitHub token is not valid.</p>
     InvalidGitHubAccountTokenException(crate::types::error::InvalidGitHubAccountTokenException),
     /// <p>The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <code>false</code> is expected. For EC2/On-premises deployments, <code>true</code> or <code>false</code> is expected.</p>
     InvalidIgnoreApplicationStopFailuresValueException(crate::types::error::InvalidIgnoreApplicationStopFailuresValueException),
+    /// <p>The input was specified in an invalid format.</p>
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>An invalid load balancer name, or no load balancer name, was specified.</p>
     InvalidLoadBalancerInfoException(crate::types::error::InvalidLoadBalancerInfoException),
     /// <p>The revision was specified in an invalid format.</p>
@@ -446,11 +452,14 @@ impl CreateDeploymentError {
             Self::InvalidApplicationNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAutoRollbackConfigException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidAutoScalingGroupException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidComputePlatformException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDeploymentConfigNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidDeploymentGroupNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidEcsServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidFileExistsBehaviorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidGitHubAccountTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidIgnoreApplicationStopFailuresValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidLoadBalancerInfoException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRevisionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidRoleException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -511,6 +520,10 @@ impl CreateDeploymentError {
     pub fn is_invalid_auto_scaling_group_exception(&self) -> bool {
         matches!(self, Self::InvalidAutoScalingGroupException(_))
     }
+    /// Returns `true` if the error kind is `CreateDeploymentError::InvalidComputePlatformException`.
+    pub fn is_invalid_compute_platform_exception(&self) -> bool {
+        matches!(self, Self::InvalidComputePlatformException(_))
+    }
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidDeploymentConfigNameException`.
     pub fn is_invalid_deployment_config_name_exception(&self) -> bool {
         matches!(self, Self::InvalidDeploymentConfigNameException(_))
@@ -518,6 +531,10 @@ impl CreateDeploymentError {
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidDeploymentGroupNameException`.
     pub fn is_invalid_deployment_group_name_exception(&self) -> bool {
         matches!(self, Self::InvalidDeploymentGroupNameException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDeploymentError::InvalidEcsServiceException`.
+    pub fn is_invalid_ecs_service_exception(&self) -> bool {
+        matches!(self, Self::InvalidEcsServiceException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidFileExistsBehaviorException`.
     pub fn is_invalid_file_exists_behavior_exception(&self) -> bool {
@@ -530,6 +547,10 @@ impl CreateDeploymentError {
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidIgnoreApplicationStopFailuresValueException`.
     pub fn is_invalid_ignore_application_stop_failures_value_exception(&self) -> bool {
         matches!(self, Self::InvalidIgnoreApplicationStopFailuresValueException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDeploymentError::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(self, Self::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `CreateDeploymentError::InvalidLoadBalancerInfoException`.
     pub fn is_invalid_load_balancer_info_exception(&self) -> bool {
@@ -583,11 +604,14 @@ impl ::std::error::Error for CreateDeploymentError {
             Self::InvalidApplicationNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutoRollbackConfigException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidAutoScalingGroupException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidComputePlatformException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDeploymentConfigNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidDeploymentGroupNameException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidEcsServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidFileExistsBehaviorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidGitHubAccountTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidLoadBalancerInfoException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRevisionException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidRoleException(_inner) => ::std::option::Option::Some(_inner),
@@ -616,11 +640,14 @@ impl ::std::fmt::Display for CreateDeploymentError {
             Self::InvalidApplicationNameException(_inner) => _inner.fmt(f),
             Self::InvalidAutoRollbackConfigException(_inner) => _inner.fmt(f),
             Self::InvalidAutoScalingGroupException(_inner) => _inner.fmt(f),
+            Self::InvalidComputePlatformException(_inner) => _inner.fmt(f),
             Self::InvalidDeploymentConfigNameException(_inner) => _inner.fmt(f),
             Self::InvalidDeploymentGroupNameException(_inner) => _inner.fmt(f),
+            Self::InvalidEcsServiceException(_inner) => _inner.fmt(f),
             Self::InvalidFileExistsBehaviorException(_inner) => _inner.fmt(f),
             Self::InvalidGitHubAccountTokenException(_inner) => _inner.fmt(f),
             Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => _inner.fmt(f),
+            Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::InvalidLoadBalancerInfoException(_inner) => _inner.fmt(f),
             Self::InvalidRevisionException(_inner) => _inner.fmt(f),
             Self::InvalidRoleException(_inner) => _inner.fmt(f),
@@ -663,13 +690,16 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDeploym
             Self::InvalidApplicationNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAutoRollbackConfigException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidAutoScalingGroupException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidComputePlatformException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDeploymentConfigNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidDeploymentGroupNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidEcsServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidFileExistsBehaviorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidGitHubAccountTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidIgnoreApplicationStopFailuresValueException(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
+            Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidLoadBalancerInfoException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRevisionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidRoleException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

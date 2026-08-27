@@ -325,8 +325,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDeploymen
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListDeploymentInstancesError {
+    /// <p>The application does not exist with the user or Amazon Web Services account.</p>
+    ApplicationDoesNotExistException(crate::types::error::ApplicationDoesNotExistException),
     /// <p>The deployment with the user or Amazon Web Services account does not exist.</p>
     DeploymentDoesNotExistException(crate::types::error::DeploymentDoesNotExistException),
+    /// <p>The named deployment group with the user or Amazon Web Services account does not exist.</p>
+    DeploymentGroupDoesNotExistException(crate::types::error::DeploymentGroupDoesNotExistException),
     /// <p>At least one deployment ID must be specified.</p>
     DeploymentIdRequiredException(crate::types::error::DeploymentIdRequiredException),
     /// <p>The specified deployment has not started.</p>
@@ -378,7 +382,9 @@ impl ListDeploymentInstancesError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ApplicationDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DeploymentDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DeploymentGroupDoesNotExistException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DeploymentIdRequiredException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::DeploymentNotStartedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidComputePlatformException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -391,9 +397,17 @@ impl ListDeploymentInstancesError {
             Self::Unhandled(e) => &e.meta,
         }
     }
+    /// Returns `true` if the error kind is `ListDeploymentInstancesError::ApplicationDoesNotExistException`.
+    pub fn is_application_does_not_exist_exception(&self) -> bool {
+        matches!(self, Self::ApplicationDoesNotExistException(_))
+    }
     /// Returns `true` if the error kind is `ListDeploymentInstancesError::DeploymentDoesNotExistException`.
     pub fn is_deployment_does_not_exist_exception(&self) -> bool {
         matches!(self, Self::DeploymentDoesNotExistException(_))
+    }
+    /// Returns `true` if the error kind is `ListDeploymentInstancesError::DeploymentGroupDoesNotExistException`.
+    pub fn is_deployment_group_does_not_exist_exception(&self) -> bool {
+        matches!(self, Self::DeploymentGroupDoesNotExistException(_))
     }
     /// Returns `true` if the error kind is `ListDeploymentInstancesError::DeploymentIdRequiredException`.
     pub fn is_deployment_id_required_exception(&self) -> bool {
@@ -435,7 +449,9 @@ impl ListDeploymentInstancesError {
 impl ::std::error::Error for ListDeploymentInstancesError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ApplicationDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::DeploymentDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DeploymentGroupDoesNotExistException(_inner) => ::std::option::Option::Some(_inner),
             Self::DeploymentIdRequiredException(_inner) => ::std::option::Option::Some(_inner),
             Self::DeploymentNotStartedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidComputePlatformException(_inner) => ::std::option::Option::Some(_inner),
@@ -452,7 +468,9 @@ impl ::std::error::Error for ListDeploymentInstancesError {
 impl ::std::fmt::Display for ListDeploymentInstancesError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ApplicationDoesNotExistException(_inner) => _inner.fmt(f),
             Self::DeploymentDoesNotExistException(_inner) => _inner.fmt(f),
+            Self::DeploymentGroupDoesNotExistException(_inner) => _inner.fmt(f),
             Self::DeploymentIdRequiredException(_inner) => _inner.fmt(f),
             Self::DeploymentNotStartedException(_inner) => _inner.fmt(f),
             Self::InvalidComputePlatformException(_inner) => _inner.fmt(f),
@@ -483,7 +501,9 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListDeploymentInstancesErro
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListDeploymentInstancesError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ApplicationDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DeploymentDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DeploymentGroupDoesNotExistException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DeploymentIdRequiredException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::DeploymentNotStartedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidComputePlatformException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

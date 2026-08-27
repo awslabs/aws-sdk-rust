@@ -1930,6 +1930,8 @@ mod replace_iam_instance_profile_association;
 
 mod replace_image_criteria_in_allowed_images_settings;
 
+mod replace_image_instance_type_specification;
+
 mod replace_network_acl_association;
 
 mod replace_network_acl_entry;

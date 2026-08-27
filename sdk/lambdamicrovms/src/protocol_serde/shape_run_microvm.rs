@@ -47,6 +47,21 @@ pub fn de_run_microvm_http_error(
             }
             tmp
         }),
+        "InsufficientCapacityException" => crate::operation::run_microvm::RunMicrovmError::InsufficientCapacityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InsufficientCapacityExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_insufficient_capacity_exception::de_insufficient_capacity_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::run_microvm::RunMicrovmError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::insufficient_capacity_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::run_microvm::RunMicrovmError::unhandled)?
+            };
+            tmp
+        }),
         "InternalServerException" => crate::operation::run_microvm::RunMicrovmError::InternalServerException({
             #[allow(unused_mut)]
             let mut tmp = {

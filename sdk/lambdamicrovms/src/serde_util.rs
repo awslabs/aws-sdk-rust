@@ -242,6 +242,15 @@ pub(crate) fn list_microvms_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn insufficient_capacity_exception_correct_errors(
+    mut builder: crate::types::error::builders::InsufficientCapacityExceptionBuilder,
+) -> crate::types::error::builders::InsufficientCapacityExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn run_microvm_output_output_correct_errors(
     mut builder: crate::operation::run_microvm::builders::RunMicrovmOutputBuilder,
 ) -> crate::operation::run_microvm::builders::RunMicrovmOutputBuilder {

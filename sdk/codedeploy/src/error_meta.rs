@@ -923,6 +923,7 @@ impl From<crate::operation::create_application::CreateApplicationError> for Erro
                 Error::InvalidComputePlatformException(inner)
             }
             crate::operation::create_application::CreateApplicationError::InvalidTagsToAddException(inner) => Error::InvalidTagsToAddException(inner),
+            crate::operation::create_application::CreateApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_application::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -980,12 +981,16 @@ impl From<crate::operation::create_deployment::CreateDeploymentError> for Error 
             crate::operation::create_deployment::CreateDeploymentError::InvalidAutoScalingGroupException(inner) => {
                 Error::InvalidAutoScalingGroupException(inner)
             }
+            crate::operation::create_deployment::CreateDeploymentError::InvalidComputePlatformException(inner) => {
+                Error::InvalidComputePlatformException(inner)
+            }
             crate::operation::create_deployment::CreateDeploymentError::InvalidDeploymentConfigNameException(inner) => {
                 Error::InvalidDeploymentConfigNameException(inner)
             }
             crate::operation::create_deployment::CreateDeploymentError::InvalidDeploymentGroupNameException(inner) => {
                 Error::InvalidDeploymentGroupNameException(inner)
             }
+            crate::operation::create_deployment::CreateDeploymentError::InvalidEcsServiceException(inner) => Error::InvalidEcsServiceException(inner),
             crate::operation::create_deployment::CreateDeploymentError::InvalidFileExistsBehaviorException(inner) => {
                 Error::InvalidFileExistsBehaviorException(inner)
             }
@@ -995,6 +1000,7 @@ impl From<crate::operation::create_deployment::CreateDeploymentError> for Error 
             crate::operation::create_deployment::CreateDeploymentError::InvalidIgnoreApplicationStopFailuresValueException(inner) => {
                 Error::InvalidIgnoreApplicationStopFailuresValueException(inner)
             }
+            crate::operation::create_deployment::CreateDeploymentError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_deployment::CreateDeploymentError::InvalidLoadBalancerInfoException(inner) => {
                 Error::InvalidLoadBalancerInfoException(inner)
             }
@@ -1829,8 +1835,14 @@ where
 impl From<crate::operation::list_deployment_instances::ListDeploymentInstancesError> for Error {
     fn from(err: crate::operation::list_deployment_instances::ListDeploymentInstancesError) -> Self {
         match err {
+            crate::operation::list_deployment_instances::ListDeploymentInstancesError::ApplicationDoesNotExistException(inner) => {
+                Error::ApplicationDoesNotExistException(inner)
+            }
             crate::operation::list_deployment_instances::ListDeploymentInstancesError::DeploymentDoesNotExistException(inner) => {
                 Error::DeploymentDoesNotExistException(inner)
+            }
+            crate::operation::list_deployment_instances::ListDeploymentInstancesError::DeploymentGroupDoesNotExistException(inner) => {
+                Error::DeploymentGroupDoesNotExistException(inner)
             }
             crate::operation::list_deployment_instances::ListDeploymentInstancesError::DeploymentIdRequiredException(inner) => {
                 Error::DeploymentIdRequiredException(inner)
@@ -1928,8 +1940,14 @@ where
 impl From<crate::operation::list_deployment_targets::ListDeploymentTargetsError> for Error {
     fn from(err: crate::operation::list_deployment_targets::ListDeploymentTargetsError) -> Self {
         match err {
+            crate::operation::list_deployment_targets::ListDeploymentTargetsError::ApplicationDoesNotExistException(inner) => {
+                Error::ApplicationDoesNotExistException(inner)
+            }
             crate::operation::list_deployment_targets::ListDeploymentTargetsError::DeploymentDoesNotExistException(inner) => {
                 Error::DeploymentDoesNotExistException(inner)
+            }
+            crate::operation::list_deployment_targets::ListDeploymentTargetsError::DeploymentGroupDoesNotExistException(inner) => {
+                Error::DeploymentGroupDoesNotExistException(inner)
             }
             crate::operation::list_deployment_targets::ListDeploymentTargetsError::DeploymentIdRequiredException(inner) => {
                 Error::DeploymentIdRequiredException(inner)

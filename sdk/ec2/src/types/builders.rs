@@ -479,6 +479,8 @@ pub use crate::types::_transit_gateway_multicast_registered_group_members::Trans
 
 pub use crate::types::_transit_gateway_multicast_registered_group_sources::TransitGatewayMulticastRegisteredGroupSourcesBuilder;
 
+pub use crate::types::_instance_type_specification_request::InstanceTypeSpecificationRequestBuilder;
+
 pub use crate::types::_spot_fleet_request_config_data::SpotFleetRequestConfigDataBuilder;
 
 pub use crate::types::_request_spot_launch_specification::RequestSpotLaunchSpecificationBuilder;
@@ -1387,6 +1389,8 @@ pub use crate::types::_host_properties::HostPropertiesBuilder;
 
 pub use crate::types::_host_cpu_options::HostCpuOptionsBuilder;
 
+pub use crate::types::_instance_type_specification::InstanceTypeSpecificationBuilder;
+
 pub use crate::types::_ebs_instance_block_device::EbsInstanceBlockDeviceBuilder;
 
 pub use crate::types::_instance_state::InstanceStateBuilder;
@@ -1798,6 +1802,8 @@ pub use crate::types::_federated_authentication::FederatedAuthenticationBuilder;
 pub use crate::types::_fleet_spot_capacity_rebalance::FleetSpotCapacityRebalanceBuilder;
 
 pub use crate::types::_instance_capacity::InstanceCapacityBuilder;
+
+pub use crate::types::_instance_type_item::InstanceTypeItemBuilder;
 
 pub use crate::types::_instance_status_details::InstanceStatusDetailsBuilder;
 

@@ -56,7 +56,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-codedeploy = "1.111.0"
+//! aws-sdk-codedeploy = "1.112.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

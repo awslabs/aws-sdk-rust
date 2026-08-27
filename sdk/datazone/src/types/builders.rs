@@ -13,6 +13,8 @@ pub use crate::types::_data_source_run_lineage_summary::DataSourceRunLineageSumm
 
 pub use crate::types::_single_sign_on::SingleSignOnBuilder;
 
+pub use crate::types::_delete_progress::DeleteProgressBuilder;
+
 pub use crate::types::_term_relations::TermRelationsBuilder;
 
 pub use crate::types::_metadata_generation_run_target::MetadataGenerationRunTargetBuilder;
@@ -78,6 +80,8 @@ pub use crate::types::_form_entry_input::FormEntryInputBuilder;
 pub use crate::types::_form_entry_output::FormEntryOutputBuilder;
 
 pub use crate::types::_data_product_item::DataProductItemBuilder;
+
+pub use crate::types::_failure_reason::FailureReasonBuilder;
 
 pub use crate::types::_asset_listing::AssetListingBuilder;
 

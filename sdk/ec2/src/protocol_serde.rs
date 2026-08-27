@@ -3023,6 +3023,10 @@ pub(crate) mod shape_replace_image_criteria_in_allowed_images_settings;
 
 pub(crate) mod shape_replace_image_criteria_in_allowed_images_settings_input;
 
+pub(crate) mod shape_replace_image_instance_type_specification;
+
+pub(crate) mod shape_replace_image_instance_type_specification_input;
+
 pub(crate) mod shape_replace_network_acl_association;
 
 pub(crate) mod shape_replace_network_acl_association_input;
@@ -3378,6 +3382,8 @@ pub(crate) mod shape_instance_requirements_with_metadata_request;
 pub(crate) mod shape_instance_secondary_interface_specification_request;
 
 pub(crate) mod shape_instance_specification;
+
+pub(crate) mod shape_instance_type_specification_request;
 
 pub(crate) mod shape_integrate_services;
 
@@ -5501,6 +5507,8 @@ pub(crate) mod shape_instance_status_summary;
 
 pub(crate) mod shape_instance_storage_info;
 
+pub(crate) mod shape_instance_type_specification;
+
 pub(crate) mod shape_instance_types_list;
 
 pub(crate) mod shape_internet_gateway_attachment;
@@ -5963,6 +5971,8 @@ pub(crate) mod shape_string_list;
 
 pub(crate) mod shape_supported_additional_processor_feature_list;
 
+pub(crate) mod shape_supported_instance_type_set;
+
 pub(crate) mod shape_tag_field_specification_response;
 
 pub(crate) mod shape_tag_specification_list;
@@ -5976,6 +5986,8 @@ pub(crate) mod shape_transit_gateway_attachment_bgp_configuration;
 pub(crate) mod shape_transit_gateway_route_table_route;
 
 pub(crate) mod shape_tunnel_option;
+
+pub(crate) mod shape_unsupported_instance_type_set;
 
 pub(crate) mod shape_verified_access_endpoint_port_range;
 
@@ -6050,6 +6062,8 @@ pub(crate) mod shape_instance_secondary_interface_attachment;
 pub(crate) mod shape_instance_secondary_interface_private_ip_address_list;
 
 pub(crate) mod shape_instance_status_details;
+
+pub(crate) mod shape_instance_type_item;
 
 pub(crate) mod shape_ip_ranges;
 

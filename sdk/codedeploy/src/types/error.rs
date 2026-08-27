@@ -69,6 +69,8 @@ pub use crate::types::error::_application_limit_exceeded_exception::ApplicationL
 
 pub use crate::types::error::_invalid_tags_to_add_exception::InvalidTagsToAddException;
 
+pub use crate::types::error::_throttling_exception::ThrottlingException;
+
 pub use crate::types::error::_alarms_limit_exceeded_exception::AlarmsLimitExceededException;
 
 pub use crate::types::error::_deployment_group_does_not_exist_exception::DeploymentGroupDoesNotExistException;
@@ -85,11 +87,15 @@ pub use crate::types::error::_invalid_auto_scaling_group_exception::InvalidAutoS
 
 pub use crate::types::error::_invalid_deployment_config_name_exception::InvalidDeploymentConfigNameException;
 
+pub use crate::types::error::_invalid_ecs_service_exception::InvalidEcsServiceException;
+
 pub use crate::types::error::_invalid_file_exists_behavior_exception::InvalidFileExistsBehaviorException;
 
 pub use crate::types::error::_invalid_git_hub_account_token_exception::InvalidGitHubAccountTokenException;
 
 pub use crate::types::error::_invalid_ignore_application_stop_failures_value_exception::InvalidIgnoreApplicationStopFailuresValueException;
+
+pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
 pub use crate::types::error::_invalid_load_balancer_info_exception::InvalidLoadBalancerInfoException;
 
@@ -102,8 +108,6 @@ pub use crate::types::error::_invalid_traffic_routing_configuration_exception::I
 pub use crate::types::error::_invalid_update_outdated_instances_only_value_exception::InvalidUpdateOutdatedInstancesOnlyValueException;
 
 pub use crate::types::error::_revision_does_not_exist_exception::RevisionDoesNotExistException;
-
-pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_deployment_config_already_exists_exception::DeploymentConfigAlreadyExistsException;
 
@@ -128,10 +132,6 @@ pub use crate::types::error::_invalid_deployment_style_exception::InvalidDeploym
 pub use crate::types::error::_invalid_ec2_tag_combination_exception::InvalidEc2TagCombinationException;
 
 pub use crate::types::error::_invalid_ec2_tag_exception::InvalidEc2TagException;
-
-pub use crate::types::error::_invalid_ecs_service_exception::InvalidEcsServiceException;
-
-pub use crate::types::error::_invalid_input_exception::InvalidInputException;
 
 pub use crate::types::error::_invalid_on_premises_tag_combination_exception::InvalidOnPremisesTagCombinationException;
 

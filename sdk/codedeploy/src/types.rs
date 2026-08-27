@@ -11,6 +11,8 @@ pub use crate::types::_auto_rollback_configuration::AutoRollbackConfiguration;
 
 pub use crate::types::_file_exists_behavior::FileExistsBehavior;
 
+pub use crate::types::_deployment_mode::DeploymentMode;
+
 pub use crate::types::_alarm_configuration::AlarmConfiguration;
 
 pub use crate::types::_minimum_healthy_hosts::MinimumHealthyHosts;
@@ -212,6 +214,8 @@ mod _deployment_creator;
 mod _deployment_group_info;
 
 mod _deployment_info;
+
+mod _deployment_mode;
 
 mod _deployment_option;
 

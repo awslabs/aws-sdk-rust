@@ -560,6 +560,21 @@ pub fn de_db_snapshot(
                 builder = builder.set_snapshot_availability_zone(var_41);
             }
             ,
+            s if s.matches("FullSnapshotSizeInBytes") /* FullSnapshotSizeInBytes com.amazonaws.rds#DBSnapshot$FullSnapshotSizeInBytes */ =>  {
+                let var_42 =
+                    Some(
+                         {
+                            <i64 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (long: `com.amazonaws.rds#LongOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_full_snapshot_size_in_bytes(var_42);
+            }
+            ,
             _ => {}
         }
     }

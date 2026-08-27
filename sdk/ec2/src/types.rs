@@ -791,6 +791,8 @@ pub use crate::types::_transit_gateway_multicast_registered_group_members::Trans
 
 pub use crate::types::_transit_gateway_multicast_registered_group_sources::TransitGatewayMulticastRegisteredGroupSources;
 
+pub use crate::types::_instance_type_specification_request::InstanceTypeSpecificationRequest;
+
 pub use crate::types::_report_status_type::ReportStatusType;
 
 pub use crate::types::_spot_fleet_request_config_data::SpotFleetRequestConfigData;
@@ -2121,6 +2123,8 @@ pub use crate::types::_hypervisor_type::HypervisorType;
 
 pub use crate::types::_device_type::DeviceType;
 
+pub use crate::types::_instance_type_specification::InstanceTypeSpecification;
+
 pub use crate::types::_image_state::ImageState;
 
 pub use crate::types::_image_type_values::ImageTypeValues;
@@ -2724,6 +2728,8 @@ pub use crate::types::_fleet_spot_capacity_rebalance::FleetSpotCapacityRebalance
 pub use crate::types::_instance_capacity::InstanceCapacity;
 
 pub use crate::types::_image_reference_option_name::ImageReferenceOptionName;
+
+pub use crate::types::_instance_type_item::InstanceTypeItem;
 
 pub use crate::types::_instance_status_details::InstanceStatusDetails;
 
@@ -4057,7 +4063,13 @@ mod _instance_type_info;
 
 mod _instance_type_info_from_instance_requirements;
 
+mod _instance_type_item;
+
 mod _instance_type_offering;
+
+mod _instance_type_specification;
+
+mod _instance_type_specification_request;
 
 mod _instance_usage;
 

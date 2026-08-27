@@ -166,6 +166,13 @@ pub(crate) fn de_get_domain(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "deleteProgress" => {
+                    builder = builder.set_delete_progress(crate::protocol_serde::shape_delete_progress::de_delete_progress(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -186,6 +193,13 @@ pub(crate) fn de_get_domain(
                             .map(|s| s.to_unescaped().map(|u| crate::types::DomainVersion::from(u.as_ref())))
                             .transpose()?,
                     );
+                }
+                "failureReasons" => {
+                    builder = builder.set_failure_reasons(crate::protocol_serde::shape_failure_reasons_list::de_failure_reasons_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "id" => {
                     builder = builder.set_id(

@@ -89,6 +89,8 @@ pub(crate) mod shape_create_microvm_image_input;
 
 pub(crate) mod shape_create_microvm_shell_auth_token_input;
 
+pub(crate) mod shape_insufficient_capacity_exception;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_parameter_value_exception;

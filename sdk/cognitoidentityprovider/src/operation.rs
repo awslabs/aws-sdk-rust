@@ -16,6 +16,9 @@ pub mod admin_confirm_sign_up;
 /// Types for the `AdminCreateUser` operation.
 pub mod admin_create_user;
 
+/// Types for the `AdminDeleteSoftwareToken` operation.
+pub mod admin_delete_software_token;
+
 /// Types for the `AdminDeleteUser` operation.
 pub mod admin_delete_user;
 

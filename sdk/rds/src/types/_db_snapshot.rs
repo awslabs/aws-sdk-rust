@@ -98,6 +98,10 @@ pub struct DbSnapshot {
     pub additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
     /// <p>Specifies the name of the Availability Zone where RDS stores the DB snapshot. This value is valid only for snapshots that RDS stores on a Dedicated Local Zone.</p>
     pub snapshot_availability_zone: ::std::option::Option<::std::string::String>,
+    /// <p>The full size of the DB snapshot, in bytes.</p><important>
+    /// <p>This is not the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub full_snapshot_size_in_bytes: ::std::option::Option<i64>,
 }
 impl DbSnapshot {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -281,6 +285,12 @@ impl DbSnapshot {
     pub fn snapshot_availability_zone(&self) -> ::std::option::Option<&str> {
         self.snapshot_availability_zone.as_deref()
     }
+    /// <p>The full size of the DB snapshot, in bytes.</p><important>
+    /// <p>This is not the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub fn full_snapshot_size_in_bytes(&self) -> ::std::option::Option<i64> {
+        self.full_snapshot_size_in_bytes
+    }
 }
 impl DbSnapshot {
     /// Creates a new builder-style object to manufacture [`DbSnapshot`](crate::types::DbSnapshot).
@@ -334,6 +344,7 @@ pub struct DbSnapshotBuilder {
     pub(crate) dedicated_log_volume: ::std::option::Option<bool>,
     pub(crate) additional_storage_volumes: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalStorageVolume>>,
     pub(crate) snapshot_availability_zone: ::std::option::Option<::std::string::String>,
+    pub(crate) full_snapshot_size_in_bytes: ::std::option::Option<i64>,
 }
 impl DbSnapshotBuilder {
     /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -961,6 +972,26 @@ impl DbSnapshotBuilder {
     pub fn get_snapshot_availability_zone(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_availability_zone
     }
+    /// <p>The full size of the DB snapshot, in bytes.</p><important>
+    /// <p>This is not the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub fn full_snapshot_size_in_bytes(mut self, input: i64) -> Self {
+        self.full_snapshot_size_in_bytes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The full size of the DB snapshot, in bytes.</p><important>
+    /// <p>This is not the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub fn set_full_snapshot_size_in_bytes(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.full_snapshot_size_in_bytes = input;
+        self
+    }
+    /// <p>The full size of the DB snapshot, in bytes.</p><important>
+    /// <p>This is not the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
+    /// </important>
+    pub fn get_full_snapshot_size_in_bytes(&self) -> &::std::option::Option<i64> {
+        &self.full_snapshot_size_in_bytes
+    }
     /// Consumes the builder and constructs a [`DbSnapshot`](crate::types::DbSnapshot).
     pub fn build(self) -> crate::types::DbSnapshot {
         crate::types::DbSnapshot {
@@ -1005,6 +1036,7 @@ impl DbSnapshotBuilder {
             dedicated_log_volume: self.dedicated_log_volume,
             additional_storage_volumes: self.additional_storage_volumes,
             snapshot_availability_zone: self.snapshot_availability_zone,
+            full_snapshot_size_in_bytes: self.full_snapshot_size_in_bytes,
         }
     }
 }

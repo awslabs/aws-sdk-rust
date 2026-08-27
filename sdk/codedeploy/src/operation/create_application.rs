@@ -324,6 +324,8 @@ pub enum CreateApplicationError {
     InvalidComputePlatformException(crate::types::error::InvalidComputePlatformException),
     /// <p>The specified tags are not valid.</p>
     InvalidTagsToAddException(crate::types::error::InvalidTagsToAddException),
+    /// <p>An API function was called too frequently.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -363,6 +365,7 @@ impl CreateApplicationError {
             Self::InvalidApplicationNameException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidComputePlatformException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidTagsToAddException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -390,6 +393,10 @@ impl CreateApplicationError {
     pub fn is_invalid_tags_to_add_exception(&self) -> bool {
         matches!(self, Self::InvalidTagsToAddException(_))
     }
+    /// Returns `true` if the error kind is `CreateApplicationError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
 }
 impl ::std::error::Error for CreateApplicationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -400,6 +407,7 @@ impl ::std::error::Error for CreateApplicationError {
             Self::InvalidApplicationNameException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidComputePlatformException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidTagsToAddException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -413,6 +421,7 @@ impl ::std::fmt::Display for CreateApplicationError {
             Self::InvalidApplicationNameException(_inner) => _inner.fmt(f),
             Self::InvalidComputePlatformException(_inner) => _inner.fmt(f),
             Self::InvalidTagsToAddException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -440,6 +449,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateApplica
             Self::InvalidApplicationNameException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidComputePlatformException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidTagsToAddException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

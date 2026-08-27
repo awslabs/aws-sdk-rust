@@ -339,6 +339,14 @@ pub enum UntagResourceError {
     ServiceException(crate::types::error::ServiceException),
     /// <p>The request throughput limit was exceeded. Retry the request later.</p>
     TooManyRequestsException(crate::types::error::TooManyRequestsException),
+    /// <p>You do not have sufficient access to perform this action.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>An internal server error occurred. Retry the request later.</p>
+    InternalServerException(crate::types::error::InternalServerException),
+    /// <p>The request was denied due to request throttling. Retry the request later.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>The input does not satisfy the constraints specified by the service.</p>
+    ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -377,6 +385,10 @@ impl UntagResourceError {
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
     }
@@ -400,6 +412,22 @@ impl UntagResourceError {
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(self, Self::TooManyRequestsException(_))
     }
+    /// Returns `true` if the error kind is `UntagResourceError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceError::InternalServerException`.
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(self, Self::InternalServerException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
+    /// Returns `true` if the error kind is `UntagResourceError::ValidationException`.
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(self, Self::ValidationException(_))
+    }
 }
 impl ::std::error::Error for UntagResourceError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
@@ -409,6 +437,10 @@ impl ::std::error::Error for UntagResourceError {
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -421,6 +453,10 @@ impl ::std::fmt::Display for UntagResourceError {
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
+            Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -436,7 +472,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UntagResourceError {
         ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
     }
     fn retryable_error_kind(&self) -> ::std::option::Option<::aws_smithy_types::retry::ErrorKind> {
-        ::std::option::Option::None
+        match self {
+            Self::InternalServerException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            Self::ThrottlingException(inner) => ::std::option::Option::Some(inner.retryable_error_kind()),
+            _ => ::std::option::Option::None,
+        }
     }
 }
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UntagResourceError {
@@ -447,6 +487,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UntagResource
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

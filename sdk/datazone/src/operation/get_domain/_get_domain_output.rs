@@ -33,6 +33,10 @@ pub struct GetDomainOutput {
     pub domain_version: ::std::option::Option<crate::types::DomainVersion>,
     /// <p>The service role of the domain.</p>
     pub service_role: ::std::option::Option<::std::string::String>,
+    /// <p>The list of failure reasons for resources that Amazon DataZone could not delete during a cascade deletion of the domain.</p>
+    pub failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::FailureReason>>,
+    /// <p>The progress of the current domain deletion, including the number of projects that Amazon DataZone successfully deleted.</p>
+    pub delete_progress: ::std::option::Option<crate::types::DeleteProgress>,
     _request_id: Option<String>,
 }
 impl GetDomainOutput {
@@ -98,6 +102,16 @@ impl GetDomainOutput {
     pub fn service_role(&self) -> ::std::option::Option<&str> {
         self.service_role.as_deref()
     }
+    /// <p>The list of failure reasons for resources that Amazon DataZone could not delete during a cascade deletion of the domain.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.failure_reasons.is_none()`.
+    pub fn failure_reasons(&self) -> &[crate::types::FailureReason] {
+        self.failure_reasons.as_deref().unwrap_or_default()
+    }
+    /// <p>The progress of the current domain deletion, including the number of projects that Amazon DataZone successfully deleted.</p>
+    pub fn delete_progress(&self) -> ::std::option::Option<&crate::types::DeleteProgress> {
+        self.delete_progress.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetDomainOutput {
     fn request_id(&self) -> Option<&str> {
@@ -130,6 +144,8 @@ pub struct GetDomainOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) domain_version: ::std::option::Option<crate::types::DomainVersion>,
     pub(crate) service_role: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_reasons: ::std::option::Option<::std::vec::Vec<crate::types::FailureReason>>,
+    pub(crate) delete_progress: ::std::option::Option<crate::types::DeleteProgress>,
     _request_id: Option<String>,
 }
 impl GetDomainOutputBuilder {
@@ -352,6 +368,40 @@ impl GetDomainOutputBuilder {
     pub fn get_service_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_role
     }
+    /// Appends an item to `failure_reasons`.
+    ///
+    /// To override the contents of this collection use [`set_failure_reasons`](Self::set_failure_reasons).
+    ///
+    /// <p>The list of failure reasons for resources that Amazon DataZone could not delete during a cascade deletion of the domain.</p>
+    pub fn failure_reasons(mut self, input: crate::types::FailureReason) -> Self {
+        let mut v = self.failure_reasons.unwrap_or_default();
+        v.push(input);
+        self.failure_reasons = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of failure reasons for resources that Amazon DataZone could not delete during a cascade deletion of the domain.</p>
+    pub fn set_failure_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FailureReason>>) -> Self {
+        self.failure_reasons = input;
+        self
+    }
+    /// <p>The list of failure reasons for resources that Amazon DataZone could not delete during a cascade deletion of the domain.</p>
+    pub fn get_failure_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FailureReason>> {
+        &self.failure_reasons
+    }
+    /// <p>The progress of the current domain deletion, including the number of projects that Amazon DataZone successfully deleted.</p>
+    pub fn delete_progress(mut self, input: crate::types::DeleteProgress) -> Self {
+        self.delete_progress = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The progress of the current domain deletion, including the number of projects that Amazon DataZone successfully deleted.</p>
+    pub fn set_delete_progress(mut self, input: ::std::option::Option<crate::types::DeleteProgress>) -> Self {
+        self.delete_progress = input;
+        self
+    }
+    /// <p>The progress of the current domain deletion, including the number of projects that Amazon DataZone successfully deleted.</p>
+    pub fn get_delete_progress(&self) -> &::std::option::Option<crate::types::DeleteProgress> {
+        &self.delete_progress
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -398,6 +448,8 @@ impl GetDomainOutputBuilder {
             tags: self.tags,
             domain_version: self.domain_version,
             service_role: self.service_role,
+            failure_reasons: self.failure_reasons,
+            delete_progress: self.delete_progress,
             _request_id: self._request_id,
         })
     }

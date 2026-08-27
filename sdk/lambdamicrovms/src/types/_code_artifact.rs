@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CodeArtifact {
-    /// <p>The URI of the code artifact, such as an Amazon S3 path or Amazon ECR image URI.</p>
+    /// <p>The URI of the code artifact in Amazon S3.</p>
     Uri(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

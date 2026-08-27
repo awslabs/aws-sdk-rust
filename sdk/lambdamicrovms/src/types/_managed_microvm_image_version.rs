@@ -8,6 +8,8 @@ pub struct ManagedMicrovmImageVersion {
     pub image_arn: ::std::string::String,
     /// <p>The version of the managed MicroVM image.</p>
     pub image_version: ::std::string::String,
+    /// <p>The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE (the version is available for use) or DEPRECATED (the version is deprecated; do not use it for new MicroVM images).</p>
+    pub status: ::std::option::Option<crate::types::ManagedMicrovmImageVersionStatus>,
     /// <p>The timestamp when the version was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the version was last updated.</p>
@@ -23,6 +25,10 @@ impl ManagedMicrovmImageVersion {
     pub fn image_version(&self) -> &str {
         use std::ops::Deref;
         self.image_version.deref()
+    }
+    /// <p>The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE (the version is available for use) or DEPRECATED (the version is deprecated; do not use it for new MicroVM images).</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::ManagedMicrovmImageVersionStatus> {
+        self.status.as_ref()
     }
     /// <p>The timestamp when the version was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -46,6 +52,7 @@ impl ManagedMicrovmImageVersion {
 pub struct ManagedMicrovmImageVersionBuilder {
     pub(crate) image_arn: ::std::option::Option<::std::string::String>,
     pub(crate) image_version: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::ManagedMicrovmImageVersionStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -79,6 +86,20 @@ impl ManagedMicrovmImageVersionBuilder {
     /// <p>The version of the managed MicroVM image.</p>
     pub fn get_image_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_version
+    }
+    /// <p>The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE (the version is available for use) or DEPRECATED (the version is deprecated; do not use it for new MicroVM images).</p>
+    pub fn status(mut self, input: crate::types::ManagedMicrovmImageVersionStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE (the version is available for use) or DEPRECATED (the version is deprecated; do not use it for new MicroVM images).</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ManagedMicrovmImageVersionStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE (the version is available for use) or DEPRECATED (the version is deprecated; do not use it for new MicroVM images).</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::ManagedMicrovmImageVersionStatus> {
+        &self.status
     }
     /// <p>The timestamp when the version was created.</p>
     /// This field is required.
@@ -128,6 +149,7 @@ impl ManagedMicrovmImageVersionBuilder {
                     "image_version was not specified but it is required when building ManagedMicrovmImageVersion",
                 )
             })?,
+            status: self.status,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

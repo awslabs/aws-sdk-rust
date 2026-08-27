@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be completed due to a conflict with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>There is insufficient capacity to fulfill the request. Retry the request later.</p>
+    InsufficientCapacityException(crate::types::error::InsufficientCapacityException),
     /// <p>An internal server error occurred. Retry the request later.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>One of the parameters in the request is not valid.</p>
@@ -39,6 +41,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::InsufficientCapacityException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::InvalidParameterValueException(inner) => inner.fmt(f),
             Error::ResourceConflictException(inner) => inner.fmt(f),
@@ -71,6 +74,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::InsufficientCapacityException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::InvalidParameterValueException(inner) => inner.meta(),
             Self::ResourceConflictException(inner) => inner.meta(),
@@ -107,6 +111,7 @@ impl From<crate::operation::create_microvm_auth_token::CreateMicrovmAuthTokenErr
             crate::operation::create_microvm_auth_token::CreateMicrovmAuthTokenError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
+            crate::operation::create_microvm_auth_token::CreateMicrovmAuthTokenError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_microvm_auth_token::CreateMicrovmAuthTokenError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
@@ -177,6 +182,9 @@ impl From<crate::operation::create_microvm_shell_auth_token::CreateMicrovmShellA
         match err {
             crate::operation::create_microvm_shell_auth_token::CreateMicrovmShellAuthTokenError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_microvm_shell_auth_token::CreateMicrovmShellAuthTokenError::ConflictException(inner) => {
+                Error::ConflictException(inner)
             }
             crate::operation::create_microvm_shell_auth_token::CreateMicrovmShellAuthTokenError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
@@ -613,6 +621,10 @@ impl From<crate::operation::list_tags::ListTagsError> for Error {
             crate::operation::list_tags::ListTagsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_tags::ListTagsError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::list_tags::ListTagsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_tags::ListTagsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags::ListTagsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_tags::ListTagsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_tags::ListTagsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_tags::ListTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -663,6 +675,7 @@ impl From<crate::operation::run_microvm::RunMicrovmError> for Error {
         match err {
             crate::operation::run_microvm::RunMicrovmError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::run_microvm::RunMicrovmError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::run_microvm::RunMicrovmError::InsufficientCapacityException(inner) => Error::InsufficientCapacityException(inner),
             crate::operation::run_microvm::RunMicrovmError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::run_microvm::RunMicrovmError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::run_microvm::RunMicrovmError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
@@ -721,6 +734,10 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::tag_resource::TagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -776,6 +793,10 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -859,6 +880,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::InsufficientCapacityException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::InvalidParameterValueException(inner) => inner.source(),
             Error::ResourceConflictException(inner) => inner.source(),
@@ -877,6 +899,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::InsufficientCapacityException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::InvalidParameterValueException(e) => e.request_id(),
             Self::ResourceConflictException(e) => e.request_id(),

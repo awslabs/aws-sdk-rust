@@ -20492,6 +20492,40 @@ impl From<crate::operation::replace_image_criteria_in_allowed_images_settings::R
     }
 }
 impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::replace_image_instance_type_specification::ReplaceImageInstanceTypeSpecificationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::replace_image_instance_type_specification::ReplaceImageInstanceTypeSpecificationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::replace_image_instance_type_specification::ReplaceImageInstanceTypeSpecificationError> for Error {
+    fn from(err: crate::operation::replace_image_instance_type_specification::ReplaceImageInstanceTypeSpecificationError) -> Self {
+        match err {
+            crate::operation::replace_image_instance_type_specification::ReplaceImageInstanceTypeSpecificationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError, R>>
     for Error
 where

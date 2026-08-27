@@ -270,6 +270,8 @@ impl ImageAvailableFluentBuilder {
     /// <li>
     /// <p><code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the Amazon EBS volume is encrypted.</p></li>
     /// <li>
+    /// <p><code>boot-mode</code> – The boot mode of the image (<code>legacy-bios</code> | <code>uefi</code> | <code>uefi-preferred</code>).</p></li>
+    /// <li>
     /// <p><code>creation-date</code> - The time when the image was created, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2021-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
     /// <li>
     /// <p><code>description</code> - The description of the image (provided during image creation).</p></li>
@@ -295,6 +297,10 @@ impl ImageAvailableFluentBuilder {
     /// <p><code>image-watermark.watermark-key</code> - The watermark identifier, in <code>accountId:watermarkName</code> format (for example, <code>123456789012:approvedAmi</code>).</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-type-specification.supported-instance-type</code> – The instance types that are compatible with the AMI, as specified by the AMI owner. Values can be individual instance types (for example, <code>t3.micro</code>) or wildcard patterns that match multiple instance types (for example, <code>t3.*</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-type-specification.unsupported-instance-type</code> – The instance types that are not compatible with the AMI, as specified by the AMI owner. Values can be individual instance types (for example, <code>t3.micro</code>) or wildcard patterns that match multiple instance types (for example, <code>t3.*</code>).</p></li>
     /// <li>
     /// <p><code>is-public</code> - A Boolean that indicates whether the image is public.</p></li>
     /// <li>
@@ -363,6 +369,8 @@ impl ImageAvailableFluentBuilder {
     /// <li>
     /// <p><code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the Amazon EBS volume is encrypted.</p></li>
     /// <li>
+    /// <p><code>boot-mode</code> – The boot mode of the image (<code>legacy-bios</code> | <code>uefi</code> | <code>uefi-preferred</code>).</p></li>
+    /// <li>
     /// <p><code>creation-date</code> - The time when the image was created, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2021-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
     /// <li>
     /// <p><code>description</code> - The description of the image (provided during image creation).</p></li>
@@ -388,6 +396,10 @@ impl ImageAvailableFluentBuilder {
     /// <p><code>image-watermark.watermark-key</code> - The watermark identifier, in <code>accountId:watermarkName</code> format (for example, <code>123456789012:approvedAmi</code>).</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-type-specification.supported-instance-type</code> – The instance types that are compatible with the AMI, as specified by the AMI owner. Values can be individual instance types (for example, <code>t3.micro</code>) or wildcard patterns that match multiple instance types (for example, <code>t3.*</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-type-specification.unsupported-instance-type</code> – The instance types that are not compatible with the AMI, as specified by the AMI owner. Values can be individual instance types (for example, <code>t3.micro</code>) or wildcard patterns that match multiple instance types (for example, <code>t3.*</code>).</p></li>
     /// <li>
     /// <p><code>is-public</code> - A Boolean that indicates whether the image is public.</p></li>
     /// <li>
@@ -456,6 +468,8 @@ impl ImageAvailableFluentBuilder {
     /// <li>
     /// <p><code>block-device-mapping.encrypted</code> - A Boolean that indicates whether the Amazon EBS volume is encrypted.</p></li>
     /// <li>
+    /// <p><code>boot-mode</code> – The boot mode of the image (<code>legacy-bios</code> | <code>uefi</code> | <code>uefi-preferred</code>).</p></li>
+    /// <li>
     /// <p><code>creation-date</code> - The time when the image was created, in the ISO 8601 format in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <code>2021-09-29T11:04:43.305Z</code>. You can use a wildcard (<code>*</code>), for example, <code>2021-09-29T*</code>, which matches an entire day.</p></li>
     /// <li>
     /// <p><code>description</code> - The description of the image (provided during image creation).</p></li>
@@ -481,6 +495,10 @@ impl ImageAvailableFluentBuilder {
     /// <p><code>image-watermark.watermark-key</code> - The watermark identifier, in <code>accountId:watermarkName</code> format (for example, <code>123456789012:approvedAmi</code>).</p></li>
     /// <li>
     /// <p><code>image-type</code> - The image type (<code>machine</code> | <code>kernel</code> | <code>ramdisk</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-type-specification.supported-instance-type</code> – The instance types that are compatible with the AMI, as specified by the AMI owner. Values can be individual instance types (for example, <code>t3.micro</code>) or wildcard patterns that match multiple instance types (for example, <code>t3.*</code>).</p></li>
+    /// <li>
+    /// <p><code>instance-type-specification.unsupported-instance-type</code> – The instance types that are not compatible with the AMI, as specified by the AMI owner. Values can be individual instance types (for example, <code>t3.micro</code>) or wildcard patterns that match multiple instance types (for example, <code>t3.*</code>).</p></li>
     /// <li>
     /// <p><code>is-public</code> - A Boolean that indicates whether the image is public.</p></li>
     /// <li>
