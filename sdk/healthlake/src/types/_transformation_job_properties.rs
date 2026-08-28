@@ -12,7 +12,7 @@ pub struct TransformationJobProperties {
     pub input_data_config: ::std::option::Option<crate::types::TransformationInputDataConfig>,
     /// <p>The Amazon S3 location and encryption configuration for the converted output.</p>
     pub output_data_config: ::std::option::Option<crate::types::TransformationOutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants AWS HealthLake access to the specified Amazon S3 locations. AWS HealthLake assumes this role to read input files and write output files.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that grants HealthLake access to the specified Amazon S3 locations. HealthLake assumes this role to read input files and write output files.</p>
     pub data_access_role_arn: ::std::string::String,
     /// <p>The timestamp when the job was submitted.</p>
     pub submit_time: ::aws_smithy_types::DateTime,
@@ -26,7 +26,7 @@ pub struct TransformationJobProperties {
     pub profile_version: ::std::option::Option<i32>,
     /// <p>The timestamp when the job completed or failed.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
+    /// <p>Specifies whether drift detection is enabled for this job. When enabled, HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
     pub drift_detection_enabled: ::std::option::Option<bool>,
     /// <p>Specifies whether FHIR R4 Provenance resource generation is enabled for this transformation job. When provenance is enabled, the service also generates related DocumentReference and Device resources.</p>
     pub provenance_enabled: ::std::option::Option<bool>,
@@ -53,7 +53,7 @@ impl TransformationJobProperties {
     pub fn output_data_config(&self) -> ::std::option::Option<&crate::types::TransformationOutputDataConfig> {
         self.output_data_config.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants AWS HealthLake access to the specified Amazon S3 locations. AWS HealthLake assumes this role to read input files and write output files.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that grants HealthLake access to the specified Amazon S3 locations. HealthLake assumes this role to read input files and write output files.</p>
     pub fn data_access_role_arn(&self) -> &str {
         use std::ops::Deref;
         self.data_access_role_arn.deref()
@@ -82,7 +82,7 @@ impl TransformationJobProperties {
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
+    /// <p>Specifies whether drift detection is enabled for this job. When enabled, HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
     pub fn drift_detection_enabled(&self) -> ::std::option::Option<bool> {
         self.drift_detection_enabled
     }
@@ -187,18 +187,18 @@ impl TransformationJobPropertiesBuilder {
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::TransformationOutputDataConfig> {
         &self.output_data_config
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants AWS HealthLake access to the specified Amazon S3 locations. AWS HealthLake assumes this role to read input files and write output files.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that grants HealthLake access to the specified Amazon S3 locations. HealthLake assumes this role to read input files and write output files.</p>
     /// This field is required.
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants AWS HealthLake access to the specified Amazon S3 locations. AWS HealthLake assumes this role to read input files and write output files.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that grants HealthLake access to the specified Amazon S3 locations. HealthLake assumes this role to read input files and write output files.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants AWS HealthLake access to the specified Amazon S3 locations. AWS HealthLake assumes this role to read input files and write output files.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that grants HealthLake access to the specified Amazon S3 locations. HealthLake assumes this role to read input files and write output files.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }
@@ -287,17 +287,17 @@ impl TransformationJobPropertiesBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
-    /// <p>Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
+    /// <p>Specifies whether drift detection is enabled for this job. When enabled, HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
     pub fn drift_detection_enabled(mut self, input: bool) -> Self {
         self.drift_detection_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
+    /// <p>Specifies whether drift detection is enabled for this job. When enabled, HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
     pub fn set_drift_detection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.drift_detection_enabled = input;
         self
     }
-    /// <p>Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
+    /// <p>Specifies whether drift detection is enabled for this job. When enabled, HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
     pub fn get_drift_detection_enabled(&self) -> &::std::option::Option<bool> {
         &self.drift_detection_enabled
     }

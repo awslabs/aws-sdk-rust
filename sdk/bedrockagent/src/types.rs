@@ -211,6 +211,8 @@ pub use crate::types::_deletion_protection_configuration::DeletionProtectionConf
 
 pub use crate::types::_media_extraction_configuration::MediaExtractionConfiguration;
 
+pub use crate::types::_sync_schedule::SyncSchedule;
+
 pub use crate::types::_web_source_configuration::WebSourceConfiguration;
 
 pub use crate::types::_web_crawler_configuration::WebCrawlerConfiguration;
@@ -387,6 +389,12 @@ pub use crate::types::_audio_extraction_configuration::AudioExtractionConfigurat
 
 pub use crate::types::_video_extraction_configuration::VideoExtractionConfiguration;
 
+pub use crate::types::_daily_schedule::DailySchedule;
+
+pub use crate::types::_weekly_schedule::WeeklySchedule;
+
+pub use crate::types::_monthly_schedule::MonthlySchedule;
+
 pub use crate::types::_url_configuration::UrlConfiguration;
 
 pub use crate::types::_web_crawler_limits::WebCrawlerLimits;
@@ -483,6 +491,10 @@ pub use crate::types::_incompatible_loop_node_type::IncompatibleLoopNodeType;
 
 pub use crate::types::_parameter_detail::ParameterDetail;
 
+pub use crate::types::_day_of_week::DayOfWeek;
+
+pub use crate::types::_day_of_month::DayOfMonth;
+
 pub use crate::types::_crawl_filter_configuration_type::CrawlFilterConfigurationType;
 
 pub use crate::types::_pattern_object_filter_configuration::PatternObjectFilterConfiguration;
@@ -540,6 +552,8 @@ pub use crate::types::_flow_condition::FlowCondition;
 pub use crate::types::_flow_node_input_category::FlowNodeInputCategory;
 
 pub use crate::types::_type_::Type;
+
+pub use crate::types::_last_day_of_month::LastDayOfMonth;
 
 pub use crate::types::_seed_url::SeedUrl;
 
@@ -777,6 +791,8 @@ mod _custom_transformation_configuration;
 
 mod _cyclic_connection_flow_validation_details;
 
+mod _daily_schedule;
+
 mod _data_deletion_policy;
 
 mod _data_source;
@@ -788,6 +804,10 @@ mod _data_source_status;
 mod _data_source_summary;
 
 mod _data_source_type;
+
+mod _day_of_month;
+
+mod _day_of_week;
 
 mod _deletion_protection_configuration;
 
@@ -951,6 +971,8 @@ mod _knowledge_base_type;
 
 mod _lambda_function_flow_node_configuration;
 
+mod _last_day_of_month;
+
 mod _lex_flow_node_configuration;
 
 mod _loop_controller_flow_node_configuration;
@@ -1012,6 +1034,8 @@ mod _missing_starting_nodes_flow_validation_details;
 mod _mongo_db_atlas_configuration;
 
 mod _mongo_db_atlas_field_mapping;
+
+mod _monthly_schedule;
 
 mod _multiple_loop_controller_nodes_flow_validation_details;
 
@@ -1213,6 +1237,8 @@ mod _supplemental_data_storage_location_type;
 
 mod _supported_languages;
 
+mod _sync_schedule;
+
 mod _system_content_block;
 
 mod _text_content_doc;
@@ -1290,6 +1316,8 @@ mod _web_data_source_configuration;
 mod _web_scope_type;
 
 mod _web_source_configuration;
+
+mod _weekly_schedule;
 
 /// Builders
 pub mod builders;

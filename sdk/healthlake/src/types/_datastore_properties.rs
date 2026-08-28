@@ -16,7 +16,7 @@ pub struct DatastoreProperties {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The FHIR release version supported by the data store. Current support is for version <code>R4</code>.</p>
     pub datastore_type_version: crate::types::FhirVersion,
-    /// <p>The AWS endpoint for the data store.</p>
+    /// <p>The Amazon Web Services endpoint for the data store.</p>
     pub datastore_endpoint: ::std::string::String,
     /// <p>The server-side encryption key configuration for a customer provided encryption key.</p>
     pub sse_configuration: ::std::option::Option<crate::types::SseConfiguration>,
@@ -32,6 +32,8 @@ pub struct DatastoreProperties {
     pub analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
     /// <p>The profile configuration for the data store.</p>
     pub profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
+    /// The backup status information for the data store.
+    pub backup_status_info: ::std::option::Option<crate::types::DatastoreBackupStatus>,
 }
 impl DatastoreProperties {
     /// <p>The data store identifier.</p>
@@ -60,7 +62,7 @@ impl DatastoreProperties {
     pub fn datastore_type_version(&self) -> &crate::types::FhirVersion {
         &self.datastore_type_version
     }
-    /// <p>The AWS endpoint for the data store.</p>
+    /// <p>The Amazon Web Services endpoint for the data store.</p>
     pub fn datastore_endpoint(&self) -> &str {
         use std::ops::Deref;
         self.datastore_endpoint.deref()
@@ -93,6 +95,10 @@ impl DatastoreProperties {
     pub fn profile_configuration(&self) -> ::std::option::Option<&crate::types::ProfileConfiguration> {
         self.profile_configuration.as_ref()
     }
+    /// The backup status information for the data store.
+    pub fn backup_status_info(&self) -> ::std::option::Option<&crate::types::DatastoreBackupStatus> {
+        self.backup_status_info.as_ref()
+    }
 }
 impl DatastoreProperties {
     /// Creates a new builder-style object to manufacture [`DatastoreProperties`](crate::types::DatastoreProperties).
@@ -119,6 +125,7 @@ pub struct DatastorePropertiesBuilder {
     pub(crate) nlp_configuration: ::std::option::Option<crate::types::NlpConfiguration>,
     pub(crate) analytics_configuration: ::std::option::Option<crate::types::AnalyticsConfiguration>,
     pub(crate) profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
+    pub(crate) backup_status_info: ::std::option::Option<crate::types::DatastoreBackupStatus>,
 }
 impl DatastorePropertiesBuilder {
     /// <p>The data store identifier.</p>
@@ -209,18 +216,18 @@ impl DatastorePropertiesBuilder {
     pub fn get_datastore_type_version(&self) -> &::std::option::Option<crate::types::FhirVersion> {
         &self.datastore_type_version
     }
-    /// <p>The AWS endpoint for the data store.</p>
+    /// <p>The Amazon Web Services endpoint for the data store.</p>
     /// This field is required.
     pub fn datastore_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS endpoint for the data store.</p>
+    /// <p>The Amazon Web Services endpoint for the data store.</p>
     pub fn set_datastore_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_endpoint = input;
         self
     }
-    /// <p>The AWS endpoint for the data store.</p>
+    /// <p>The Amazon Web Services endpoint for the data store.</p>
     pub fn get_datastore_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_endpoint
     }
@@ -322,6 +329,20 @@ impl DatastorePropertiesBuilder {
     pub fn get_profile_configuration(&self) -> &::std::option::Option<crate::types::ProfileConfiguration> {
         &self.profile_configuration
     }
+    /// The backup status information for the data store.
+    pub fn backup_status_info(mut self, input: crate::types::DatastoreBackupStatus) -> Self {
+        self.backup_status_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// The backup status information for the data store.
+    pub fn set_backup_status_info(mut self, input: ::std::option::Option<crate::types::DatastoreBackupStatus>) -> Self {
+        self.backup_status_info = input;
+        self
+    }
+    /// The backup status information for the data store.
+    pub fn get_backup_status_info(&self) -> &::std::option::Option<crate::types::DatastoreBackupStatus> {
+        &self.backup_status_info
+    }
     /// Consumes the builder and constructs a [`DatastoreProperties`](crate::types::DatastoreProperties).
     /// This method will fail if any of the following fields are not set:
     /// - [`datastore_id`](crate::types::builders::DatastorePropertiesBuilder::datastore_id)
@@ -370,6 +391,7 @@ impl DatastorePropertiesBuilder {
             nlp_configuration: self.nlp_configuration,
             analytics_configuration: self.analytics_configuration,
             profile_configuration: self.profile_configuration,
+            backup_status_info: self.backup_status_info,
         })
     }
 }

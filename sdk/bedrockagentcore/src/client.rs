@@ -231,6 +231,8 @@ mod get_workload_access_token_for_jwt;
 
 mod get_workload_access_token_for_user_id;
 
+mod ingest_data;
+
 mod invoke_agent_runtime;
 
 mod invoke_agent_runtime_command;

@@ -113,6 +113,8 @@ pub use crate::types::_domain_description_type::DomainDescriptionType;
 
 pub use crate::types::_code_delivery_details_type::CodeDeliveryDetailsType;
 
+pub use crate::types::_client_authentication_result_type::ClientAuthenticationResultType;
+
 pub use crate::types::_log_delivery_configuration_type::LogDeliveryConfigurationType;
 
 pub use crate::types::_limit_definition_type::LimitDefinitionType;
@@ -354,6 +356,8 @@ mod _challenge_name_type;
 mod _challenge_response;
 
 mod _challenge_response_type;
+
+mod _client_authentication_result_type;
 
 mod _client_secret_descriptor_type;
 

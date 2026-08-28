@@ -585,6 +585,8 @@ pub(crate) mod shape_share_point_source_configuration;
 
 pub(crate) mod shape_supplemental_data_storage_configuration;
 
+pub(crate) mod shape_sync_schedule;
+
 pub(crate) mod shape_text_prompt_template_configuration;
 
 pub(crate) mod shape_transformation;
@@ -608,6 +610,8 @@ pub(crate) mod shape_condition_flow_node_configuration;
 pub(crate) mod shape_crawl_filter_configuration;
 
 pub(crate) mod shape_cyclic_connection_flow_validation_details;
+
+pub(crate) mod shape_daily_schedule;
 
 pub(crate) mod shape_duplicate_condition_expression_flow_validation_details;
 
@@ -683,6 +687,8 @@ pub(crate) mod shape_missing_node_output_flow_validation_details;
 
 pub(crate) mod shape_missing_starting_nodes_flow_validation_details;
 
+pub(crate) mod shape_monthly_schedule;
+
 pub(crate) mod shape_multiple_loop_controller_nodes_flow_validation_details;
 
 pub(crate) mod shape_multiple_loop_input_nodes_flow_validation_details;
@@ -747,11 +753,15 @@ pub(crate) mod shape_video_extraction_configuration;
 
 pub(crate) mod shape_web_crawler_limits;
 
+pub(crate) mod shape_weekly_schedule;
+
 pub(crate) mod shape_audio_configuration;
 
 pub(crate) mod shape_byte_content_doc;
 
 pub(crate) mod shape_content_block;
+
+pub(crate) mod shape_day_of_month;
 
 pub(crate) mod shape_filter_list;
 
@@ -822,6 +832,8 @@ pub(crate) mod shape_auto_tool_choice;
 pub(crate) mod shape_curated_query;
 
 pub(crate) mod shape_flow_conditions;
+
+pub(crate) mod shape_last_day_of_month;
 
 pub(crate) mod shape_pattern_object_filter;
 

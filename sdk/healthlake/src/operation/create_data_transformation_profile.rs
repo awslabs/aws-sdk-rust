@@ -358,7 +358,7 @@ pub enum CreateDataTransformationProfileError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// The request exceeds the service quota.
+    /// <p>The request exceeds the service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The user has exceeded their maximum number of allowed calls to the given API.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

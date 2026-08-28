@@ -4,18 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataTransformationS3Configuration {
-    /// <p>The Amazon S3 URI where AWS HealthLake writes the converted output files.</p>
+    /// <p>The Amazon S3 URI where HealthLake writes the converted output files.</p>
     pub s3_uri: ::std::string::String,
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
     pub kms_key_id: ::std::string::String,
 }
 impl DataTransformationS3Configuration {
-    /// <p>The Amazon S3 URI where AWS HealthLake writes the converted output files.</p>
+    /// <p>The Amazon S3 URI where HealthLake writes the converted output files.</p>
     pub fn s3_uri(&self) -> &str {
         use std::ops::Deref;
         self.s3_uri.deref()
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
     pub fn kms_key_id(&self) -> &str {
         use std::ops::Deref;
         self.kms_key_id.deref()
@@ -36,33 +36,33 @@ pub struct DataTransformationS3ConfigurationBuilder {
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
 }
 impl DataTransformationS3ConfigurationBuilder {
-    /// <p>The Amazon S3 URI where AWS HealthLake writes the converted output files.</p>
+    /// <p>The Amazon S3 URI where HealthLake writes the converted output files.</p>
     /// This field is required.
     pub fn s3_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_uri = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 URI where AWS HealthLake writes the converted output files.</p>
+    /// <p>The Amazon S3 URI where HealthLake writes the converted output files.</p>
     pub fn set_s3_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_uri = input;
         self
     }
-    /// <p>The Amazon S3 URI where AWS HealthLake writes the converted output files.</p>
+    /// <p>The Amazon S3 URI where HealthLake writes the converted output files.</p>
     pub fn get_s3_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_uri
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
     /// This field is required.
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the transformation job output written to Amazon S3.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

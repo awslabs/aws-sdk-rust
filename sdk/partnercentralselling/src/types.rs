@@ -81,6 +81,8 @@ pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomer;
 
 pub use crate::types::_aws_opportunity_project::AwsOpportunityProject;
 
+pub use crate::types::_aws_software_revenue::AwsSoftwareRevenue;
+
 pub use crate::types::_prospecting_from_engagement_task_sort::ProspectingFromEngagementTaskSort;
 
 pub use crate::types::_prospecting_task_status::ProspectingTaskStatus;
@@ -328,6 +330,8 @@ mod _aws_product_insights;
 mod _aws_product_optimization;
 
 mod _aws_products_spend_insights_by_source;
+
+mod _aws_software_revenue;
 
 mod _aws_submission;
 

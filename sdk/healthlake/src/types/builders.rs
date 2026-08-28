@@ -11,6 +11,8 @@ pub use crate::types::_nlp_configuration::NlpConfigurationBuilder;
 
 pub use crate::types::_profile_configuration::ProfileConfigurationBuilder;
 
+pub use crate::types::_backup_configuration::BackupConfigurationBuilder;
+
 pub use crate::types::_transformation_job_properties::TransformationJobPropertiesBuilder;
 
 pub use crate::types::_datastore_properties::DatastorePropertiesBuilder;
@@ -45,6 +47,8 @@ pub use crate::types::_transformation_job_progress_report::TransformationJobProg
 
 pub use crate::types::_error_cause::ErrorCauseBuilder;
 
+pub use crate::types::_datastore_backup_status::DatastoreBackupStatusBuilder;
+
 pub use crate::types::_job_progress_report::JobProgressReportBuilder;
 
 pub use crate::types::_transformation_job_summary::TransformationJobSummaryBuilder;
@@ -52,6 +56,8 @@ pub use crate::types::_transformation_job_summary::TransformationJobSummaryBuild
 pub use crate::types::_data_transformation_profile_summary::DataTransformationProfileSummaryBuilder;
 
 pub use crate::types::_data_transformation_profile_version_summary::DataTransformationProfileVersionSummaryBuilder;
+
+pub use crate::types::_continuous_backup_restore_configuration::ContinuousBackupRestoreConfigurationBuilder;
 
 pub use crate::types::_data_transformation_s3_configuration::DataTransformationS3ConfigurationBuilder;
 

@@ -22,7 +22,7 @@ impl crate::operation::start_data_transformation_job::builders::StartDataTransfo
 }
 /// Fluent builder constructing a request to `StartDataTransformationJob`.
 ///
-/// <p>Starts an asynchronous data transformation job that converts source files from Amazon Simple Storage Service (Amazon S3) and writes the output to Amazon S3 or AWS HealthLake.</p>
+/// <p>Starts an asynchronous data transformation job that converts source files from Amazon Simple Storage Service (Amazon S3) and writes the output to Amazon S3 or HealthLake.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartDataTransformationJobFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -122,31 +122,31 @@ impl StartDataTransformationJobFluentBuilder {
     pub fn get_input_data_config(&self) -> &::std::option::Option<crate::types::TransformationInputDataConfig> {
         self.inner.get_input_data_config()
     }
-    /// <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption configuration.</p>
+    /// <p>The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon Web Services KMS) encryption configuration.</p>
     pub fn output_data_config(mut self, input: crate::types::TransformationOutputDataConfig) -> Self {
         self.inner = self.inner.output_data_config(input);
         self
     }
-    /// <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption configuration.</p>
+    /// <p>The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon Web Services KMS) encryption configuration.</p>
     pub fn set_output_data_config(mut self, input: ::std::option::Option<crate::types::TransformationOutputDataConfig>) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
-    /// <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption configuration.</p>
+    /// <p>The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon Web Services KMS) encryption configuration.</p>
     pub fn get_output_data_config(&self) -> &::std::option::Option<crate::types::TransformationOutputDataConfig> {
         self.inner.get_output_data_config()
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that AWS HealthLake assumes to read from and write to the specified Amazon S3 locations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that HealthLake assumes to read from and write to the specified Amazon S3 locations.</p>
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that AWS HealthLake assumes to read from and write to the specified Amazon S3 locations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that HealthLake assumes to read from and write to the specified Amazon S3 locations.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that AWS HealthLake assumes to read from and write to the specified Amazon S3 locations.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that HealthLake assumes to read from and write to the specified Amazon S3 locations.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_access_role_arn()
     }
@@ -192,17 +192,17 @@ impl StartDataTransformationJobFluentBuilder {
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_id()
     }
-    /// <p>Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
+    /// <p>Specifies whether drift detection is enabled for this job. When enabled, HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
     pub fn drift_detection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.drift_detection_enabled(input);
         self
     }
-    /// <p>Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
+    /// <p>Specifies whether drift detection is enabled for this job. When enabled, HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
     pub fn set_drift_detection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_drift_detection_enabled(input);
         self
     }
-    /// <p>Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
+    /// <p>Specifies whether drift detection is enabled for this job. When enabled, HealthLake writes a drift report to the output Amazon S3 location alongside the converted files.</p>
     pub fn get_drift_detection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_drift_detection_enabled()
     }

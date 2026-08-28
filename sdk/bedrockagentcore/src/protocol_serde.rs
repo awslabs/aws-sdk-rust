@@ -91,6 +91,8 @@ pub(crate) mod shape_get_workload_access_token_for_jwt;
 
 pub(crate) mod shape_get_workload_access_token_for_user_id;
 
+pub(crate) mod shape_ingest_data;
+
 pub(crate) mod shape_invoke_agent_runtime;
 
 pub(crate) mod shape_invoke_agent_runtime_command;
@@ -218,6 +220,8 @@ pub(crate) mod shape_get_workload_access_token_for_jwt_input;
 pub(crate) mod shape_get_workload_access_token_for_user_id_input;
 
 pub(crate) mod shape_get_workload_access_token_input;
+
+pub(crate) mod shape_ingest_data_input;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -350,6 +354,8 @@ pub(crate) mod shape_certificate;
 pub(crate) mod shape_certificates;
 
 pub(crate) mod shape_code_interpreter_session_summaries;
+
+pub(crate) mod shape_content_source;
 
 pub(crate) mod shape_data_source_config;
 
@@ -579,6 +585,8 @@ pub(crate) mod shape_harness_skill_s3_source;
 
 pub(crate) mod shape_harness_tool_configuration;
 
+pub(crate) mod shape_inline_memory_content;
+
 pub(crate) mod shape_input_content_block;
 
 pub(crate) mod shape_key_press_arguments;
@@ -738,6 +746,8 @@ pub(crate) mod shape_harness_tool_result_block;
 pub(crate) mod shape_harness_tool_use_block;
 
 pub(crate) mod shape_ignored_reference_input_fields;
+
+pub(crate) mod shape_ingest_payload_type;
 
 pub(crate) mod shape_left_expression;
 

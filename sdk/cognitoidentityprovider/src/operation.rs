@@ -196,6 +196,9 @@ pub mod describe_risk_configuration;
 /// Types for the `DescribeTerms` operation.
 pub mod describe_terms;
 
+/// Types for the `DescribeTermsByClient` operation.
+pub mod describe_terms_by_client;
+
 /// Types for the `DescribeUserImportJob` operation.
 pub mod describe_user_import_job;
 
@@ -213,6 +216,9 @@ pub mod forget_device;
 
 /// Types for the `ForgotPassword` operation.
 pub mod forgot_password;
+
+/// Types for the `GetClientToken` operation.
+pub mod get_client_token;
 
 /// Types for the `GetCSVHeader` operation.
 pub mod get_csv_header;

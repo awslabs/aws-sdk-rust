@@ -22,7 +22,7 @@ pub struct ImportJobProperties {
     pub job_output_data_config: ::std::option::Option<crate::types::OutputDataConfig>,
     /// <p>Displays the progress of the import job, including total resources scanned, total resources imported, and total size of data imported.</p>
     pub job_progress_report: ::std::option::Option<crate::types::JobProgressReport>,
-    /// <p>The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants HealthLake access to the input data.</p>
     pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>An explanation of any errors that might have occurred during the FHIR import job.</p>
     pub message: ::std::option::Option<::std::string::String>,
@@ -68,7 +68,7 @@ impl ImportJobProperties {
     pub fn job_progress_report(&self) -> ::std::option::Option<&crate::types::JobProgressReport> {
         self.job_progress_report.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants HealthLake access to the input data.</p>
     pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
@@ -237,17 +237,17 @@ impl ImportJobPropertiesBuilder {
     pub fn get_job_progress_report(&self) -> &::std::option::Option<crate::types::JobProgressReport> {
         &self.job_progress_report
     }
-    /// <p>The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants HealthLake access to the input data.</p>
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_access_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants HealthLake access to the input data.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_access_role_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input data.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants HealthLake access to the input data.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_access_role_arn
     }

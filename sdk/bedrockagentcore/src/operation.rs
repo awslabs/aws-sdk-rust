@@ -103,6 +103,9 @@ pub mod get_workload_access_token_for_jwt;
 /// Types for the `GetWorkloadAccessTokenForUserId` operation.
 pub mod get_workload_access_token_for_user_id;
 
+/// Types for the `IngestData` operation.
+pub mod ingest_data;
+
 /// Types for the `InvokeAgentRuntime` operation.
 pub mod invoke_agent_runtime;
 

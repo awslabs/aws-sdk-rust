@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum InputDataConfig {
-    /// <p>The <code>S3Uri</code> is the user-specified S3 location of the FHIR data to be imported into AWS HealthLake.</p>
+    /// <p>The <code>S3Uri</code> is the user-specified Amazon S3 location of the FHIR data to be imported into HealthLake.</p>
     S3Uri(::std::string::String),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

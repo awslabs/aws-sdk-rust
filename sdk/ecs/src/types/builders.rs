@@ -149,6 +149,8 @@ pub use crate::types::_linear_configuration::LinearConfigurationBuilder;
 
 pub use crate::types::_canary_configuration::CanaryConfigurationBuilder;
 
+pub use crate::types::_deployment_early_success_criteria::DeploymentEarlySuccessCriteriaBuilder;
+
 pub use crate::types::_placement_constraint::PlacementConstraintBuilder;
 
 pub use crate::types::_placement_strategy::PlacementStrategyBuilder;

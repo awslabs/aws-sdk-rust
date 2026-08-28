@@ -60,5 +60,11 @@ pub fn ser_create_fhir_datastore_input_input(
         crate::protocol_serde::shape_profile_configuration::ser_profile_configuration(&mut object_19, var_18)?;
         object_19.finish();
     }
+    if let Some(var_20) = &input.backup_configuration {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("BackupConfiguration").start_object();
+        crate::protocol_serde::shape_backup_configuration::ser_backup_configuration(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }

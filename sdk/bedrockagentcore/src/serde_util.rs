@@ -485,6 +485,15 @@ pub(crate) fn get_workload_access_token_for_user_id_output_output_correct_errors
     builder
 }
 
+pub(crate) fn ingest_data_output_output_correct_errors(
+    mut builder: crate::operation::ingest_data::builders::IngestDataOutputBuilder,
+) -> crate::operation::ingest_data::builders::IngestDataOutputBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn invoke_agent_runtime_output_output_correct_errors(
     mut builder: crate::operation::invoke_agent_runtime::builders::InvokeAgentRuntimeOutputBuilder,
 ) -> crate::operation::invoke_agent_runtime::builders::InvokeAgentRuntimeOutputBuilder {

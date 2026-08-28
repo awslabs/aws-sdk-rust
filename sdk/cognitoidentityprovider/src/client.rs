@@ -293,6 +293,8 @@ mod describe_risk_configuration;
 
 mod describe_terms;
 
+mod describe_terms_by_client;
+
 mod describe_user_import_job;
 
 mod describe_user_pool;
@@ -304,6 +306,8 @@ mod describe_user_pool_domain;
 mod forget_device;
 
 mod forgot_password;
+
+mod get_client_token;
 
 mod get_csv_header;
 

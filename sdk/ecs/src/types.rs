@@ -229,6 +229,8 @@ pub use crate::types::_linear_configuration::LinearConfiguration;
 
 pub use crate::types::_canary_configuration::CanaryConfiguration;
 
+pub use crate::types::_deployment_early_success_criteria::DeploymentEarlySuccessCriteria;
+
 pub use crate::types::_placement_constraint::PlacementConstraint;
 
 pub use crate::types::_placement_strategy::PlacementStrategy;
@@ -368,6 +370,8 @@ pub use crate::types::_advanced_configuration::AdvancedConfiguration;
 pub use crate::types::_threshold_configuration::ThresholdConfiguration;
 
 pub use crate::types::_deployment_lifecycle_hook::DeploymentLifecycleHook;
+
+pub use crate::types::_service_revision_cleanup::ServiceRevisionCleanup;
 
 pub use crate::types::_placement_constraint_type::PlacementConstraintType;
 
@@ -783,6 +787,8 @@ mod _deployment_controller;
 
 mod _deployment_controller_type;
 
+mod _deployment_early_success_criteria;
+
 mod _deployment_ephemeral_storage;
 
 mod _deployment_lifecycle_hook;
@@ -1104,6 +1110,8 @@ mod _service_managed_ebs_volume_configuration;
 mod _service_registry;
 
 mod _service_revision;
+
+mod _service_revision_cleanup;
 
 mod _service_revision_load_balancer;
 

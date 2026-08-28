@@ -253,4 +253,18 @@ impl CreateFHIRDatastoreFluentBuilder {
     pub fn get_profile_configuration(&self) -> &::std::option::Option<crate::types::ProfileConfiguration> {
         self.inner.get_profile_configuration()
     }
+    /// The backup configuration for the data store.
+    pub fn backup_configuration(mut self, input: crate::types::BackupConfiguration) -> Self {
+        self.inner = self.inner.backup_configuration(input);
+        self
+    }
+    /// The backup configuration for the data store.
+    pub fn set_backup_configuration(mut self, input: ::std::option::Option<crate::types::BackupConfiguration>) -> Self {
+        self.inner = self.inner.set_backup_configuration(input);
+        self
+    }
+    /// The backup configuration for the data store.
+    pub fn get_backup_configuration(&self) -> &::std::option::Option<crate::types::BackupConfiguration> {
+        self.inner.get_backup_configuration()
+    }
 }

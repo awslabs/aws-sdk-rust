@@ -52,6 +52,9 @@ pub mod list_tags_for_resource;
 /// Types for the `PublishDataTransformationProfile` operation.
 pub mod publish_data_transformation_profile;
 
+/// Types for the `RestoreFHIRDatastore` operation.
+pub mod restore_fhir_datastore;
+
 /// Types for the `StartDataTransformationJob` operation.
 pub mod start_data_transformation_job;
 

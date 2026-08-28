@@ -218,6 +218,24 @@ pub(crate) fn publish_data_transformation_profile_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn restore_fhir_datastore_output_output_correct_errors(
+    mut builder: crate::operation::restore_fhir_datastore::builders::RestoreFhirDatastoreOutputBuilder,
+) -> crate::operation::restore_fhir_datastore::builders::RestoreFhirDatastoreOutputBuilder {
+    if builder.datastore_id.is_none() {
+        builder.datastore_id = Some(Default::default())
+    }
+    if builder.datastore_arn.is_none() {
+        builder.datastore_arn = Some(Default::default())
+    }
+    if builder.datastore_status.is_none() {
+        builder.datastore_status = "no value was set".parse::<crate::types::DatastoreStatus>().ok()
+    }
+    if builder.datastore_endpoint.is_none() {
+        builder.datastore_endpoint = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_data_transformation_job_output_output_correct_errors(
     mut builder: crate::operation::start_data_transformation_job::builders::StartDataTransformationJobOutputBuilder,
 ) -> crate::operation::start_data_transformation_job::builders::StartDataTransformationJobOutputBuilder {

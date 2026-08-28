@@ -64,6 +64,8 @@ pub struct DeploymentConfiguration {
     pub linear_configuration: ::std::option::Option<crate::types::LinearConfiguration>,
     /// <p>Configuration for canary deployment strategy. Only valid when the deployment strategy is <code>CANARY</code>. This configuration enables shifting a fixed percentage of traffic for testing, followed by shifting the remaining traffic after a bake period.</p>
     pub canary_configuration: ::std::option::Option<crate::types::CanaryConfiguration>,
+    /// <p>The early success criteria configuration for a rolling deployment. With early success criteria, you can configure an Amazon ECS deployment to complete faster. Amazon ECS declares a deployment successful once a target percentage of tasks are healthy, instead of waiting for the service to fully stabilize.</p>
+    pub early_success_criteria: ::std::option::Option<crate::types::DeploymentEarlySuccessCriteria>,
 }
 impl DeploymentConfiguration {
     /// <note>
@@ -146,6 +148,10 @@ impl DeploymentConfiguration {
     pub fn canary_configuration(&self) -> ::std::option::Option<&crate::types::CanaryConfiguration> {
         self.canary_configuration.as_ref()
     }
+    /// <p>The early success criteria configuration for a rolling deployment. With early success criteria, you can configure an Amazon ECS deployment to complete faster. Amazon ECS declares a deployment successful once a target percentage of tasks are healthy, instead of waiting for the service to fully stabilize.</p>
+    pub fn early_success_criteria(&self) -> ::std::option::Option<&crate::types::DeploymentEarlySuccessCriteria> {
+        self.early_success_criteria.as_ref()
+    }
 }
 impl DeploymentConfiguration {
     /// Creates a new builder-style object to manufacture [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
@@ -167,6 +173,7 @@ pub struct DeploymentConfigurationBuilder {
     pub(crate) lifecycle_hooks: ::std::option::Option<::std::vec::Vec<crate::types::DeploymentLifecycleHook>>,
     pub(crate) linear_configuration: ::std::option::Option<crate::types::LinearConfiguration>,
     pub(crate) canary_configuration: ::std::option::Option<crate::types::CanaryConfiguration>,
+    pub(crate) early_success_criteria: ::std::option::Option<crate::types::DeploymentEarlySuccessCriteria>,
 }
 impl DeploymentConfigurationBuilder {
     /// <note>
@@ -427,6 +434,20 @@ impl DeploymentConfigurationBuilder {
     pub fn get_canary_configuration(&self) -> &::std::option::Option<crate::types::CanaryConfiguration> {
         &self.canary_configuration
     }
+    /// <p>The early success criteria configuration for a rolling deployment. With early success criteria, you can configure an Amazon ECS deployment to complete faster. Amazon ECS declares a deployment successful once a target percentage of tasks are healthy, instead of waiting for the service to fully stabilize.</p>
+    pub fn early_success_criteria(mut self, input: crate::types::DeploymentEarlySuccessCriteria) -> Self {
+        self.early_success_criteria = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The early success criteria configuration for a rolling deployment. With early success criteria, you can configure an Amazon ECS deployment to complete faster. Amazon ECS declares a deployment successful once a target percentage of tasks are healthy, instead of waiting for the service to fully stabilize.</p>
+    pub fn set_early_success_criteria(mut self, input: ::std::option::Option<crate::types::DeploymentEarlySuccessCriteria>) -> Self {
+        self.early_success_criteria = input;
+        self
+    }
+    /// <p>The early success criteria configuration for a rolling deployment. With early success criteria, you can configure an Amazon ECS deployment to complete faster. Amazon ECS declares a deployment successful once a target percentage of tasks are healthy, instead of waiting for the service to fully stabilize.</p>
+    pub fn get_early_success_criteria(&self) -> &::std::option::Option<crate::types::DeploymentEarlySuccessCriteria> {
+        &self.early_success_criteria
+    }
     /// Consumes the builder and constructs a [`DeploymentConfiguration`](crate::types::DeploymentConfiguration).
     pub fn build(self) -> crate::types::DeploymentConfiguration {
         crate::types::DeploymentConfiguration {
@@ -439,6 +460,7 @@ impl DeploymentConfigurationBuilder {
             lifecycle_hooks: self.lifecycle_hooks,
             linear_configuration: self.linear_configuration,
             canary_configuration: self.canary_configuration,
+            early_success_criteria: self.early_success_criteria,
         }
     }
 }

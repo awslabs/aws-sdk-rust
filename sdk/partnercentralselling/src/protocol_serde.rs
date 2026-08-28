@@ -241,6 +241,8 @@ pub(crate) mod shape_aws_opportunity_related_entities;
 
 pub(crate) mod shape_aws_opportunity_team_members_list;
 
+pub(crate) mod shape_aws_software_revenue;
+
 pub(crate) mod shape_aws_submission;
 
 pub(crate) mod shape_contact;

@@ -43,6 +43,8 @@ pub use crate::types::_aws_opportunity_customer::AwsOpportunityCustomerBuilder;
 
 pub use crate::types::_aws_opportunity_project::AwsOpportunityProjectBuilder;
 
+pub use crate::types::_aws_software_revenue::AwsSoftwareRevenueBuilder;
+
 pub use crate::types::_prospecting_from_engagement_task_sort::ProspectingFromEngagementTaskSortBuilder;
 
 pub use crate::types::_sort_object::SortObjectBuilder;

@@ -175,6 +175,8 @@ pub use crate::types::_memory_record_delete_input::MemoryRecordDeleteInputBuilde
 
 pub use crate::types::_memory_record_update_input::MemoryRecordUpdateInputBuilder;
 
+pub use crate::types::_inline_memory_content::InlineMemoryContentBuilder;
+
 pub use crate::types::_actor_summary::ActorSummaryBuilder;
 
 pub use crate::types::_branch_filter::BranchFilterBuilder;

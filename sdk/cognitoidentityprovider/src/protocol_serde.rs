@@ -153,6 +153,8 @@ pub(crate) mod shape_describe_risk_configuration;
 
 pub(crate) mod shape_describe_terms;
 
+pub(crate) mod shape_describe_terms_by_client;
+
 pub(crate) mod shape_describe_user_import_job;
 
 pub(crate) mod shape_describe_user_pool;
@@ -164,6 +166,8 @@ pub(crate) mod shape_describe_user_pool_domain;
 pub(crate) mod shape_forget_device;
 
 pub(crate) mod shape_forgot_password;
+
+pub(crate) mod shape_get_client_token;
 
 pub(crate) mod shape_get_csv_header;
 
@@ -429,6 +433,8 @@ pub(crate) mod shape_describe_resource_server_input;
 
 pub(crate) mod shape_describe_risk_configuration_input;
 
+pub(crate) mod shape_describe_terms_by_client_input;
+
 pub(crate) mod shape_describe_terms_input;
 
 pub(crate) mod shape_describe_user_import_job_input;
@@ -454,6 +460,8 @@ pub(crate) mod shape_forbidden_exception;
 pub(crate) mod shape_forget_device_input;
 
 pub(crate) mod shape_forgot_password_input;
+
+pub(crate) mod shape_get_client_token_input;
 
 pub(crate) mod shape_get_csv_header_input;
 
@@ -692,6 +700,8 @@ pub(crate) mod shape_authentication_result_type;
 pub(crate) mod shape_available_challenge_list_type;
 
 pub(crate) mod shape_challenge_parameters_type;
+
+pub(crate) mod shape_client_authentication_result_type;
 
 pub(crate) mod shape_client_secret_descriptor_list_type;
 

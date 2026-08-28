@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransformationOutputDataConfig {
-    /// <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption configuration.</p>
+    /// <p>The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon Web Services KMS) encryption configuration.</p>
     pub s3_configuration: ::std::option::Option<crate::types::DataTransformationS3Configuration>,
 }
 impl TransformationOutputDataConfig {
-    /// <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption configuration.</p>
+    /// <p>The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon Web Services KMS) encryption configuration.</p>
     pub fn s3_configuration(&self) -> ::std::option::Option<&crate::types::DataTransformationS3Configuration> {
         self.s3_configuration.as_ref()
     }
@@ -27,18 +27,18 @@ pub struct TransformationOutputDataConfigBuilder {
     pub(crate) s3_configuration: ::std::option::Option<crate::types::DataTransformationS3Configuration>,
 }
 impl TransformationOutputDataConfigBuilder {
-    /// <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption configuration.</p>
+    /// <p>The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon Web Services KMS) encryption configuration.</p>
     /// This field is required.
     pub fn s3_configuration(mut self, input: crate::types::DataTransformationS3Configuration) -> Self {
         self.s3_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption configuration.</p>
+    /// <p>The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon Web Services KMS) encryption configuration.</p>
     pub fn set_s3_configuration(mut self, input: ::std::option::Option<crate::types::DataTransformationS3Configuration>) -> Self {
         self.s3_configuration = input;
         self
     }
-    /// <p>The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption configuration.</p>
+    /// <p>The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon Web Services KMS) encryption configuration.</p>
     pub fn get_s3_configuration(&self) -> &::std::option::Option<crate::types::DataTransformationS3Configuration> {
         &self.s3_configuration
     }

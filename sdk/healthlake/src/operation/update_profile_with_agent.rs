@@ -339,7 +339,7 @@ pub enum UpdateProfileWithAgentError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The user has exceeded their maximum number of allowed calls to the given API.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>You are not authorized to make this request. Verify that your AWS credentials are valid and that you have the required permissions.</p>
+    /// <p>You are not authorized to make this request. Verify that your Amazon Web Services credentials are valid and that you have the required permissions.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>The content type in your request is not supported. Use a supported content type for this operation.</p>
     UnsupportedMimeTypeException(crate::types::error::UnsupportedMimeTypeException),

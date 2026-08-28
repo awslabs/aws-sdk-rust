@@ -15,6 +15,8 @@ pub struct UpdateFhirDatastoreInput {
     pub profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
     /// <p>The identity provider configuration for the data store.</p>
     pub identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    /// The backup configuration for the data store.
+    pub backup_configuration: ::std::option::Option<crate::types::BackupConfiguration>,
 }
 impl UpdateFhirDatastoreInput {
     /// <p>The data store identifier.</p>
@@ -41,6 +43,10 @@ impl UpdateFhirDatastoreInput {
     pub fn identity_provider_configuration(&self) -> ::std::option::Option<&crate::types::IdentityProviderConfiguration> {
         self.identity_provider_configuration.as_ref()
     }
+    /// The backup configuration for the data store.
+    pub fn backup_configuration(&self) -> ::std::option::Option<&crate::types::BackupConfiguration> {
+        self.backup_configuration.as_ref()
+    }
 }
 impl UpdateFhirDatastoreInput {
     /// Creates a new builder-style object to manufacture [`UpdateFhirDatastoreInput`](crate::operation::update_fhir_datastore::UpdateFhirDatastoreInput).
@@ -59,6 +65,7 @@ pub struct UpdateFhirDatastoreInputBuilder {
     pub(crate) nlp_configuration: ::std::option::Option<crate::types::NlpConfiguration>,
     pub(crate) profile_configuration: ::std::option::Option<crate::types::ProfileConfiguration>,
     pub(crate) identity_provider_configuration: ::std::option::Option<crate::types::IdentityProviderConfiguration>,
+    pub(crate) backup_configuration: ::std::option::Option<crate::types::BackupConfiguration>,
 }
 impl UpdateFhirDatastoreInputBuilder {
     /// <p>The data store identifier.</p>
@@ -146,6 +153,20 @@ impl UpdateFhirDatastoreInputBuilder {
     pub fn get_identity_provider_configuration(&self) -> &::std::option::Option<crate::types::IdentityProviderConfiguration> {
         &self.identity_provider_configuration
     }
+    /// The backup configuration for the data store.
+    pub fn backup_configuration(mut self, input: crate::types::BackupConfiguration) -> Self {
+        self.backup_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// The backup configuration for the data store.
+    pub fn set_backup_configuration(mut self, input: ::std::option::Option<crate::types::BackupConfiguration>) -> Self {
+        self.backup_configuration = input;
+        self
+    }
+    /// The backup configuration for the data store.
+    pub fn get_backup_configuration(&self) -> &::std::option::Option<crate::types::BackupConfiguration> {
+        &self.backup_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateFhirDatastoreInput`](crate::operation::update_fhir_datastore::UpdateFhirDatastoreInput).
     pub fn build(
         self,
@@ -158,6 +179,7 @@ impl UpdateFhirDatastoreInputBuilder {
             nlp_configuration: self.nlp_configuration,
             profile_configuration: self.profile_configuration,
             identity_provider_configuration: self.identity_provider_configuration,
+            backup_configuration: self.backup_configuration,
         })
     }
 }

@@ -18,6 +18,12 @@ pub fn ser_managed_knowledge_base_connector_configuration(
     if let Some(var_5) = &input.connector_parameters {
         object.key("connectorParameters").document(var_5);
     }
+    if let Some(var_6) = &input.sync_schedule {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("syncSchedule").start_object();
+        crate::protocol_serde::shape_sync_schedule::ser_sync_schedule(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -63,6 +69,10 @@ where
                         }
                         "connectorParameters" => {
                             builder = builder.set_connector_parameters(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
+                        }
+                        "syncSchedule" => {
+                            builder =
+                                builder.set_sync_schedule(crate::protocol_serde::shape_sync_schedule::de_sync_schedule(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

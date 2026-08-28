@@ -96,6 +96,15 @@ pub(crate) fn deployment_circuit_breaker_correct_errors(
     builder
 }
 
+pub(crate) fn deployment_early_success_criteria_correct_errors(
+    mut builder: crate::types::builders::DeploymentEarlySuccessCriteriaBuilder,
+) -> crate::types::builders::DeploymentEarlySuccessCriteriaBuilder {
+    if builder.enable.is_none() {
+        builder.enable = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn express_gateway_container_correct_errors(
     mut builder: crate::types::builders::ExpressGatewayContainerBuilder,
 ) -> crate::types::builders::ExpressGatewayContainerBuilder {

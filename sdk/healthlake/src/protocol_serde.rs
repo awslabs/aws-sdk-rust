@@ -57,6 +57,8 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_publish_data_transformation_profile;
 
+pub(crate) mod shape_restore_fhir_datastore;
+
 pub(crate) mod shape_start_data_transformation_job;
 
 pub(crate) mod shape_start_fhir_export_job;
@@ -131,6 +133,8 @@ pub(crate) mod shape_publish_data_transformation_profile_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_restore_fhir_datastore_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_data_transformation_job_input;
@@ -162,6 +166,8 @@ pub(crate) mod shape_agent_input_message;
 pub(crate) mod shape_agent_output_message;
 
 pub(crate) mod shape_analytics_configuration;
+
+pub(crate) mod shape_backup_configuration;
 
 pub(crate) mod shape_create_data_transformation_profile_source;
 
@@ -197,6 +203,8 @@ pub(crate) mod shape_profile_configuration;
 
 pub(crate) mod shape_profile_mapping;
 
+pub(crate) mod shape_restore_configuration;
+
 pub(crate) mod shape_sse_configuration;
 
 pub(crate) mod shape_tag;
@@ -211,6 +219,8 @@ pub(crate) mod shape_transformation_job_summary_list;
 
 pub(crate) mod shape_transformation_output_data_config;
 
+pub(crate) mod shape_continuous_backup_restore_configuration;
+
 pub(crate) mod shape_data_transformation_chat_options_list;
 
 pub(crate) mod shape_data_transformation_profile_summary;
@@ -218,6 +228,8 @@ pub(crate) mod shape_data_transformation_profile_summary;
 pub(crate) mod shape_data_transformation_profile_version_summary;
 
 pub(crate) mod shape_data_transformation_s3_configuration;
+
+pub(crate) mod shape_datastore_backup_status;
 
 pub(crate) mod shape_error_cause;
 

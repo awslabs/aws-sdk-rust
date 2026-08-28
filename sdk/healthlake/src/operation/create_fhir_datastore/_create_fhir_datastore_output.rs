@@ -9,7 +9,7 @@ pub struct CreateFhirDatastoreOutput {
     pub datastore_arn: ::std::string::String,
     /// <p>The data store status.</p>
     pub datastore_status: crate::types::DatastoreStatus,
-    /// <p>The AWS endpoint created for the data store.</p>
+    /// <p>The Amazon Web Services endpoint created for the data store.</p>
     pub datastore_endpoint: ::std::string::String,
     _request_id: Option<String>,
 }
@@ -28,7 +28,7 @@ impl CreateFhirDatastoreOutput {
     pub fn datastore_status(&self) -> &crate::types::DatastoreStatus {
         &self.datastore_status
     }
-    /// <p>The AWS endpoint created for the data store.</p>
+    /// <p>The Amazon Web Services endpoint created for the data store.</p>
     pub fn datastore_endpoint(&self) -> &str {
         use std::ops::Deref;
         self.datastore_endpoint.deref()
@@ -102,18 +102,18 @@ impl CreateFhirDatastoreOutputBuilder {
     pub fn get_datastore_status(&self) -> &::std::option::Option<crate::types::DatastoreStatus> {
         &self.datastore_status
     }
-    /// <p>The AWS endpoint created for the data store.</p>
+    /// <p>The Amazon Web Services endpoint created for the data store.</p>
     /// This field is required.
     pub fn datastore_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.datastore_endpoint = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS endpoint created for the data store.</p>
+    /// <p>The Amazon Web Services endpoint created for the data store.</p>
     pub fn set_datastore_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.datastore_endpoint = input;
         self
     }
-    /// <p>The AWS endpoint created for the data store.</p>
+    /// <p>The Amazon Web Services endpoint created for the data store.</p>
     pub fn get_datastore_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.datastore_endpoint
     }

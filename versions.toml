@@ -300,15 +300,15 @@ model_hash = 'e9d9538c0390005134083d6fc40897fb6dfa3d2f85139c08e08bc25783bea1a4'
 
 [crates.aws-sdk-bedrockagent]
 category = 'AwsSdk'
-version = '1.142.0'
-source_hash = '8549d34241356536fb0c573088013735f5bfb1c4bfda5b5ca5057d05b98506f0'
-model_hash = '4b508781453bce8e891ef0839336c5ba097c6ca616ea0cf6a539b6e6a4347c7a'
+version = '1.143.0'
+source_hash = 'bb8681f1a3bae5270dca49e3a66c41641b007050fa955d47291796812c5f373d'
+model_hash = 'a452f4f746c7672fcace8b7a9517918adb93c01c1c92f8825c65200465465842'
 
 [crates.aws-sdk-bedrockagentcore]
 category = 'AwsSdk'
-version = '1.64.0'
-source_hash = 'ee134626e26e4c383e112d27f329ce9c3f7bd3666e314ea2403146ef220f9769'
-model_hash = 'f7456d3826085919187c8daabe2654334098084ee909c3d2d21381269c648124'
+version = '1.65.0'
+source_hash = '5ecece5d4e0a53b50fe2b0098c2066ca2d21d73d7f3a5aec0a57609406d60f95'
+model_hash = '4969ca08e09c1d05fde46e79d518017b6636b8b73d62f4b07d56fc6548571c71'
 
 [crates.aws-sdk-bedrockagentcorecontrol]
 category = 'AwsSdk'
@@ -588,9 +588,9 @@ model_hash = 'c6566278d609af1b8d6aba0e21fa605be8c2edbba986f68bcce37fcb3978f608'
 
 [crates.aws-sdk-cognitoidentityprovider]
 category = 'AwsSdk'
-version = '1.131.0'
-source_hash = 'ae2c181bdc4adad7c03330fa99ace30beabdb448265c1d3c318b2cedcbdad9b7'
-model_hash = 'da952d542d3775c7c0e92cb465620a0b182bfad5284bf211f7c5407c7d89a5a8'
+version = '1.132.0'
+source_hash = 'fcbeb9ef83ee43742c62d78e5dca98684d5dc4aa9274b4fb394158a94a06dcf8'
+model_hash = '646b8e6e1ea44758f462d29d6aa754e1ab23bef544289b1ad8aac7c4d5f4e5d3'
 
 [crates.aws-sdk-cognitosync]
 category = 'AwsSdk'
@@ -870,9 +870,9 @@ model_hash = 'b29e549a934f5aa4a8bdadbd92da2618d0370d16e8e8701c270b67b091c6e0c9'
 
 [crates.aws-sdk-ecs]
 category = 'AwsSdk'
-version = '1.140.0'
-source_hash = 'e745e62340c37f58b9debd4830c919d357ee91243eae9fe241c6f597623513ee'
-model_hash = 'e5833b933709153f9eb9438b168838e99a80ba00ba5026d71b7e52bf7cf01397'
+version = '1.141.0'
+source_hash = '64a3fc0eba2957addd042234873fb7e11a1b3ffa4880de6afcf38604dec545cf'
+model_hash = '1b29c128cc25c764cd383874e9b7fe6835ec342b7fb1cbafb4d4e28ecb40822f'
 
 [crates.aws-sdk-efs]
 category = 'AwsSdk'
@@ -1116,9 +1116,9 @@ model_hash = '8a29658709e8f5487a31245e93a7f975e65eaa2ddeb0935eb73f12fe2bf9a998'
 
 [crates.aws-sdk-healthlake]
 category = 'AwsSdk'
-version = '1.115.0'
-source_hash = '6d425b2a40d79b3e073f27a06898819da7e21fa4f90094a82e5ea53f1c9bb5bf'
-model_hash = '3563623aef33a3c1e472a2b27619de15cd29f83907d16e5deba3a36cfa949695'
+version = '1.116.0'
+source_hash = 'd14eb64a59c58dd350fe2f8c60731977e102d38b23dd00c8c08c15be5ffdaa1d'
+model_hash = '129b6040c6072f27d1dafa1519c1f807da07355c04e40ef3cdf664ee967f85bc'
 
 [crates.aws-sdk-iam]
 category = 'AwsSdk'
@@ -1800,9 +1800,9 @@ model_hash = '155600d5e909e083fb27a0b1b8cf000e8705732f8a2b3a480a16ee36068533c4'
 
 [crates.aws-sdk-partnercentralselling]
 category = 'AwsSdk'
-version = '1.72.0'
-source_hash = 'b39a78c2df0604ae72ed478326991f83301211e1b4ccbad403119d1b8ecf776c'
-model_hash = '29ad31c3067b58c83dbb80d658da98460527ece86db63d49dede54d458bb6a66'
+version = '1.73.0'
+source_hash = 'b483ab026debddc7e37218f73de31fc9dbc8325ce10de233849b233e0e0ef49f'
+model_hash = '97c3b188258967f8f4ee270c3371602df28e4c3fe4b41c513c0e079fb3765232'
 
 [crates.aws-sdk-paymentcryptography]
 category = 'AwsSdk'
@@ -2677,7 +2677,7 @@ source_hash = 'e57b67272b75cedc24411319e5180db785b0d0929c6c0f7b3ff9be3ee66bda81'
 [crates.aws-smithy-http-fuzz]
 category = 'SmithyRuntime'
 version = '0.0.0'
-source_hash = 'bf6fb9cae7e504b91d17007d4991f757e490cf055755853f1511d2be76679e45'
+source_hash = 'ca262a364754a8f33f8050043a83b6885eda82de9e22d9e87c405e4fd13c8bf5'
 
 [crates.aws-smithy-json]
 category = 'SmithyRuntime'
@@ -2783,16 +2783,10 @@ source_hash = '4fffc0f0fc1792a0b118211ac00556d30fd2b55c83d68115c1c18b04c2bc82e4'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'a8f1b2a455177901ffed9a70663e388ea2567d785ec1eaa08e9e7264dcf36bcd'
-
-[release]
-tag = 'release-2026-08-27'
-
 [release.crates]
-aws-sdk-cloudwatchlogs = '1.149.0'
-aws-sdk-codedeploy = '1.112.0'
-aws-sdk-cognitoidentityprovider = '1.131.0'
-aws-sdk-datazone = '1.151.0'
-aws-sdk-ec2 = '1.251.0'
-aws-sdk-lambdamicrovms = '1.7.0'
-aws-sdk-opensearch = '1.142.1'
-aws-sdk-rds = '1.147.0'
+aws-sdk-bedrockagent = '1.143.0'
+aws-sdk-bedrockagentcore = '1.65.0'
+aws-sdk-cognitoidentityprovider = '1.132.0'
+aws-sdk-ecs = '1.141.0'
+aws-sdk-healthlake = '1.116.0'
+aws-sdk-partnercentralselling = '1.73.0'

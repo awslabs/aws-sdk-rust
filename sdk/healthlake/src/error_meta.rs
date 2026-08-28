@@ -11,7 +11,7 @@ pub enum Error {
     ConflictException(crate::types::error::ConflictException),
     /// <p>The specified conversation identifier does not exist. Verify the conversation ID or omit it to start a new conversation.</p>
     ConversationNotFoundException(crate::types::error::ConversationNotFoundException),
-    /// A dependent service failed to fulfill the request.
+    /// <p>A dependent service failed to fulfill the request.</p>
     FailedDependencyException(crate::types::error::FailedDependencyException),
     /// <p>An unknown internal error occurred in the service.</p>
     InternalServerException(crate::types::error::InternalServerException),
@@ -19,11 +19,11 @@ pub enum Error {
     NotImplementedOperationException(crate::types::error::NotImplementedOperationException),
     /// <p>The requested data store was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// The request exceeds the service quota.
+    /// <p>The request exceeds the service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The user has exceeded their maximum number of allowed calls to the given API.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>You are not authorized to make this request. Verify that your AWS credentials are valid and that you have the required permissions.</p>
+    /// <p>You are not authorized to make this request. Verify that your Amazon Web Services credentials are valid and that you have the required permissions.</p>
     UnauthorizedException(crate::types::error::UnauthorizedException),
     /// <p>The content type in your request is not supported. Use a supported content type for this operation.</p>
     UnsupportedMimeTypeException(crate::types::error::UnsupportedMimeTypeException),
@@ -711,6 +711,37 @@ impl From<crate::operation::publish_data_transformation_profile::PublishDataTran
                 Error::ValidationException(inner)
             }
             crate::operation::publish_data_transformation_profile::PublishDataTransformationProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError> for Error {
+    fn from(err: crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError) -> Self {
+        match err {
+            crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::restore_fhir_datastore::RestoreFHIRDatastoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

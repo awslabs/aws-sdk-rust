@@ -1282,6 +1282,33 @@ impl From<crate::operation::get_workload_access_token_for_user_id::GetWorkloadAc
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::ingest_data::IngestDataError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::ingest_data::IngestDataError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::ingest_data::IngestDataError> for Error {
+    fn from(err: crate::operation::ingest_data::IngestDataError) -> Self {
+        match err {
+            crate::operation::ingest_data::IngestDataError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::ingest_data::IngestDataError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::ingest_data::IngestDataError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::ingest_data::IngestDataError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::ingest_data::IngestDataError::ThrottledException(inner) => Error::ThrottledException(inner),
+            crate::operation::ingest_data::IngestDataError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::ingest_data::IngestDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::invoke_agent_runtime::InvokeAgentRuntimeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

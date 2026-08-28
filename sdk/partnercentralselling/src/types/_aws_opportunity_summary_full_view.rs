@@ -28,6 +28,8 @@ pub struct AwsOpportunitySummaryFullView {
     pub project: ::std::option::Option<crate::types::AwsOpportunityProject>,
     /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
     pub cosell_motion: ::std::option::Option<::std::string::String>,
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub software_revenue: ::std::option::Option<crate::types::AwsSoftwareRevenue>,
 }
 impl AwsOpportunitySummaryFullView {
     /// <p>Identifier of the related partner opportunity.</p>
@@ -80,6 +82,10 @@ impl AwsOpportunitySummaryFullView {
     pub fn cosell_motion(&self) -> ::std::option::Option<&str> {
         self.cosell_motion.as_deref()
     }
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub fn software_revenue(&self) -> ::std::option::Option<&crate::types::AwsSoftwareRevenue> {
+        self.software_revenue.as_ref()
+    }
 }
 impl AwsOpportunitySummaryFullView {
     /// Creates a new builder-style object to manufacture [`AwsOpportunitySummaryFullView`](crate::types::AwsOpportunitySummaryFullView).
@@ -104,6 +110,7 @@ pub struct AwsOpportunitySummaryFullViewBuilder {
     pub(crate) customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
     pub(crate) project: ::std::option::Option<crate::types::AwsOpportunityProject>,
     pub(crate) cosell_motion: ::std::option::Option<::std::string::String>,
+    pub(crate) software_revenue: ::std::option::Option<crate::types::AwsSoftwareRevenue>,
 }
 impl AwsOpportunitySummaryFullViewBuilder {
     /// <p>Identifier of the related partner opportunity.</p>
@@ -280,6 +287,20 @@ impl AwsOpportunitySummaryFullViewBuilder {
     pub fn get_cosell_motion(&self) -> &::std::option::Option<::std::string::String> {
         &self.cosell_motion
     }
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub fn software_revenue(mut self, input: crate::types::AwsSoftwareRevenue) -> Self {
+        self.software_revenue = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub fn set_software_revenue(mut self, input: ::std::option::Option<crate::types::AwsSoftwareRevenue>) -> Self {
+        self.software_revenue = input;
+        self
+    }
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub fn get_software_revenue(&self) -> &::std::option::Option<crate::types::AwsSoftwareRevenue> {
+        &self.software_revenue
+    }
     /// Consumes the builder and constructs a [`AwsOpportunitySummaryFullView`](crate::types::AwsOpportunitySummaryFullView).
     pub fn build(self) -> crate::types::AwsOpportunitySummaryFullView {
         crate::types::AwsOpportunitySummaryFullView {
@@ -295,6 +316,7 @@ impl AwsOpportunitySummaryFullViewBuilder {
             customer: self.customer,
             project: self.project,
             cosell_motion: self.cosell_motion,
+            software_revenue: self.software_revenue,
         }
     }
 }

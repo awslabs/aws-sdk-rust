@@ -21,7 +21,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! This is the _AWS HealthLake API Reference_. For an introduction to the service, see [What is AWS HealthLake?](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html) in the _AWS HealthLake Developer Guide_.
+//! This is the _HealthLake API Reference_. For an introduction to the service, see [What is HealthLake?](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html) in the _HealthLake Developer Guide_.
 //!
 //! ## Getting Started
 //!
@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-healthlake = "1.115.0"
+//! aws-sdk-healthlake = "1.116.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

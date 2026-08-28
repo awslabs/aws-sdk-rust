@@ -26,7 +26,7 @@ pub struct PortMapping {
     /// <p>The default ephemeral port range for Docker version 1.6.0 and later is listed on the instance under <code>/proc/sys/net/ipv4/ip_local_port_range</code>. If this kernel parameter is unavailable, the default ephemeral port range from 49153 through 65535 (Linux) or 49152 through 65535 (Windows) is used. Do not attempt to specify a host port in the ephemeral port range as these are reserved for automatic assignment. In general, ports below 32768 are outside of the ephemeral port range.</p>
     /// <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376, and the Amazon ECS container agent ports 51678-51680. Any host port that was previously specified in a running task is also reserved while the task is running. That is, after a task stops, the host port is released. The current reserved ports are displayed in the <code>remainingResources</code> of <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a> output. A container instance can have up to 100 reserved ports at a time. This number includes the default reserved ports. Automatically assigned ports aren't included in the 100 reserved ports quota.</p>
     pub host_port: ::std::option::Option<i32>,
-    /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. Updating this field requires a service deletion and redeployment.</p>
+    /// <p>The protocol that's used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code> (case-sensitive). The default is <code>tcp</code>. Amazon ECS treats any other specified value as <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. To update this field, you must delete and redeploy the service.</p>
     pub protocol: ::std::option::Option<crate::types::TransportProtocol>,
     /// <p>The name that's used for the port mapping. This parameter is the name that you use in the <code>serviceConnectConfiguration</code> and the <code>vpcLatticeConfigurations</code> of a service. The name can include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -94,7 +94,7 @@ impl PortMapping {
     pub fn host_port(&self) -> ::std::option::Option<i32> {
         self.host_port
     }
-    /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. Updating this field requires a service deletion and redeployment.</p>
+    /// <p>The protocol that's used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code> (case-sensitive). The default is <code>tcp</code>. Amazon ECS treats any other specified value as <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. To update this field, you must delete and redeploy the service.</p>
     pub fn protocol(&self) -> ::std::option::Option<&crate::types::TransportProtocol> {
         self.protocol.as_ref()
     }
@@ -234,17 +234,17 @@ impl PortMappingBuilder {
     pub fn get_host_port(&self) -> &::std::option::Option<i32> {
         &self.host_port
     }
-    /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. Updating this field requires a service deletion and redeployment.</p>
+    /// <p>The protocol that's used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code> (case-sensitive). The default is <code>tcp</code>. Amazon ECS treats any other specified value as <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. To update this field, you must delete and redeploy the service.</p>
     pub fn protocol(mut self, input: crate::types::TransportProtocol) -> Self {
         self.protocol = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. Updating this field requires a service deletion and redeployment.</p>
+    /// <p>The protocol that's used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code> (case-sensitive). The default is <code>tcp</code>. Amazon ECS treats any other specified value as <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. To update this field, you must delete and redeploy the service.</p>
     pub fn set_protocol(mut self, input: ::std::option::Option<crate::types::TransportProtocol>) -> Self {
         self.protocol = input;
         self
     }
-    /// <p>The protocol used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code>. The default is <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. Updating this field requires a service deletion and redeployment.</p>
+    /// <p>The protocol that's used for the port mapping. Valid values are <code>tcp</code> and <code>udp</code> (case-sensitive). The default is <code>tcp</code>. Amazon ECS treats any other specified value as <code>tcp</code>. <code>protocol</code> is immutable in a Service Connect service. To update this field, you must delete and redeploy the service.</p>
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::TransportProtocol> {
         &self.protocol
     }

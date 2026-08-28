@@ -613,6 +613,8 @@ pub(crate) mod shape_deployment_alarms;
 
 pub(crate) mod shape_deployment_circuit_breaker;
 
+pub(crate) mod shape_deployment_early_success_criteria;
+
 pub(crate) mod shape_deployment_ephemeral_storage;
 
 pub(crate) mod shape_deployment_lifecycle_hook;

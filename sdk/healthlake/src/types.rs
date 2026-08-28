@@ -19,6 +19,8 @@ pub use crate::types::_nlp_configuration::NlpConfiguration;
 
 pub use crate::types::_profile_configuration::ProfileConfiguration;
 
+pub use crate::types::_backup_configuration::BackupConfiguration;
+
 pub use crate::types::_datastore_status::DatastoreStatus;
 
 pub use crate::types::_transformation_job_properties::TransformationJobProperties;
@@ -34,6 +36,8 @@ pub use crate::types::_transformation_job_status::TransformationJobStatus;
 pub use crate::types::_datastore_filter::DatastoreFilter;
 
 pub use crate::types::_job_status::JobStatus;
+
+pub use crate::types::_restore_configuration::RestoreConfiguration;
 
 pub use crate::types::_transformation_input_data_config::TransformationInputDataConfig;
 
@@ -69,9 +73,15 @@ pub use crate::types::_analytics_status::AnalyticsStatus;
 
 pub use crate::types::_nlp_status::NlpStatus;
 
+pub use crate::types::_backup_status::BackupStatus;
+
+pub use crate::types::_backup_type::BackupType;
+
 pub use crate::types::_transformation_job_progress_report::TransformationJobProgressReport;
 
 pub use crate::types::_error_cause::ErrorCause;
+
+pub use crate::types::_datastore_backup_status::DatastoreBackupStatus;
 
 pub use crate::types::_job_progress_report::JobProgressReport;
 
@@ -80,6 +90,8 @@ pub use crate::types::_transformation_job_summary::TransformationJobSummary;
 pub use crate::types::_data_transformation_profile_summary::DataTransformationProfileSummary;
 
 pub use crate::types::_data_transformation_profile_version_summary::DataTransformationProfileVersionSummary;
+
+pub use crate::types::_continuous_backup_restore_configuration::ContinuousBackupRestoreConfiguration;
 
 pub use crate::types::_data_transformation_s3_configuration::DataTransformationS3Configuration;
 
@@ -107,7 +119,15 @@ mod _analytics_status;
 
 mod _authorization_strategy;
 
+mod _backup_configuration;
+
+mod _backup_status;
+
+mod _backup_type;
+
 mod _cmk_type;
+
+mod _continuous_backup_restore_configuration;
 
 mod _create_data_transformation_profile_source;
 
@@ -116,6 +136,8 @@ mod _data_transformation_profile_summary;
 mod _data_transformation_profile_version_summary;
 
 mod _data_transformation_s3_configuration;
+
+mod _datastore_backup_status;
 
 mod _datastore_filter;
 
@@ -158,6 +180,8 @@ mod _preload_data_type;
 mod _profile_configuration;
 
 mod _profile_mapping_source;
+
+mod _restore_configuration;
 
 mod _s3_configuration;
 

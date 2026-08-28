@@ -22,7 +22,7 @@ impl crate::operation::list_data_transformation_jobs::builders::ListDataTransfor
 }
 /// Fluent builder constructing a request to `ListDataTransformationJobs`.
 ///
-/// <p>Lists data transformation jobs for your AWS account. Results can be filtered by status, job name, and submit time window. Results are paginated. Use the <code>NextToken</code> parameter to retrieve additional results.</p>
+/// <p>Lists data transformation jobs for your Amazon Web Services account. Results can be filtered by status, job name, and submit time window. Results are paginated. Use the <code>NextToken</code> parameter to retrieve additional results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDataTransformationJobsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

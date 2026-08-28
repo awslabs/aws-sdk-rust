@@ -250,6 +250,8 @@ mod list_tags_for_resource;
 
 mod publish_data_transformation_profile;
 
+mod restore_fhir_datastore;
+
 mod start_data_transformation_job;
 
 mod start_fhir_export_job;

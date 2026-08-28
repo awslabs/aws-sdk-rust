@@ -27,6 +27,8 @@ pub struct GetAwsOpportunitySummaryOutput {
     pub project: ::std::option::Option<crate::types::AwsOpportunityProject>,
     /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
     pub cosell_motion: ::std::option::Option<::std::string::String>,
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub software_revenue: ::std::option::Option<crate::types::AwsSoftwareRevenue>,
     /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
     pub catalog: ::std::string::String,
     _request_id: Option<String>,
@@ -82,6 +84,10 @@ impl GetAwsOpportunitySummaryOutput {
     pub fn cosell_motion(&self) -> ::std::option::Option<&str> {
         self.cosell_motion.as_deref()
     }
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub fn software_revenue(&self) -> ::std::option::Option<&crate::types::AwsSoftwareRevenue> {
+        self.software_revenue.as_ref()
+    }
     /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
     pub fn catalog(&self) -> &str {
         use std::ops::Deref;
@@ -116,6 +122,7 @@ pub struct GetAwsOpportunitySummaryOutputBuilder {
     pub(crate) customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
     pub(crate) project: ::std::option::Option<crate::types::AwsOpportunityProject>,
     pub(crate) cosell_motion: ::std::option::Option<::std::string::String>,
+    pub(crate) software_revenue: ::std::option::Option<crate::types::AwsSoftwareRevenue>,
     pub(crate) catalog: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -294,6 +301,20 @@ impl GetAwsOpportunitySummaryOutputBuilder {
     pub fn get_cosell_motion(&self) -> &::std::option::Option<::std::string::String> {
         &self.cosell_motion
     }
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub fn software_revenue(mut self, input: crate::types::AwsSoftwareRevenue) -> Self {
+        self.software_revenue = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub fn set_software_revenue(mut self, input: ::std::option::Option<crate::types::AwsSoftwareRevenue>) -> Self {
+        self.software_revenue = input;
+        self
+    }
+    /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
+    pub fn get_software_revenue(&self) -> &::std::option::Option<crate::types::AwsSoftwareRevenue> {
+        &self.software_revenue
+    }
     /// <p>Specifies the catalog in which the AWS Opportunity exists. This is the environment (e.g., <code>AWS</code> or <code>Sandbox</code>) where the opportunity is being managed.</p>
     /// This field is required.
     pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -340,6 +361,7 @@ impl GetAwsOpportunitySummaryOutputBuilder {
             customer: self.customer,
             project: self.project,
             cosell_motion: self.cosell_motion,
+            software_revenue: self.software_revenue,
             catalog: self.catalog.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "catalog",

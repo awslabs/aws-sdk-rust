@@ -8,7 +8,7 @@ pub struct CreateDataTransformationProfileInput {
     pub source_format: ::std::option::Option<crate::types::SourceFormat>,
     /// <p>The source for the initial profile content. Specify a built-in starter profile, an existing profile version to clone, raw profile content for CI/CD workflows, or a sample data file in Amazon S3.</p>
     pub source: ::std::option::Option<crate::types::CreateDataTransformationProfileSource>,
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile content at rest.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the profile content at rest.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable description of the profile's purpose.</p>
     pub profile_description: ::std::option::Option<::std::string::String>,
@@ -28,7 +28,7 @@ impl CreateDataTransformationProfileInput {
     pub fn source(&self) -> ::std::option::Option<&crate::types::CreateDataTransformationProfileSource> {
         self.source.as_ref()
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile content at rest.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the profile content at rest.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
@@ -99,17 +99,17 @@ impl CreateDataTransformationProfileInputBuilder {
     pub fn get_source(&self) -> &::std::option::Option<crate::types::CreateDataTransformationProfileSource> {
         &self.source
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile content at rest.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the profile content at rest.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile content at rest.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the profile content at rest.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile content at rest.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the profile content at rest.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_id
     }

@@ -237,6 +237,13 @@ pub(crate) fn de_get_aws_opportunity_summary(
                             .transpose()?,
                     );
                 }
+                "SoftwareRevenue" => {
+                    builder = builder.set_software_revenue(crate::protocol_serde::shape_aws_software_revenue::de_aws_software_revenue(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "Catalog" => {
                     builder = builder.set_catalog(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

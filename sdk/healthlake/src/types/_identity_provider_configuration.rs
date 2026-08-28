@@ -12,7 +12,7 @@ pub struct IdentityProviderConfiguration {
     /// <li>
     /// <p><code>SMART_ON_FHIR</code> – Support for both SMART on FHIR V1 and V2, which includes <code>create</code>, <code>read</code>, <code>update</code>, <code>delete</code>, and <code>search</code> permissions.</p></li>
     /// <li>
-    /// <p><code>AWS_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
+    /// <p><code>Amazon Web Services_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
     /// </ul>
     /// </note>
     pub authorization_strategy: crate::types::AuthorizationStrategy,
@@ -37,7 +37,7 @@ impl IdentityProviderConfiguration {
     /// <li>
     /// <p><code>SMART_ON_FHIR</code> – Support for both SMART on FHIR V1 and V2, which includes <code>create</code>, <code>read</code>, <code>update</code>, <code>delete</code>, and <code>search</code> permissions.</p></li>
     /// <li>
-    /// <p><code>AWS_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
+    /// <p><code>Amazon Web Services_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
     /// </ul>
     /// </note>
     pub fn authorization_strategy(&self) -> &crate::types::AuthorizationStrategy {
@@ -86,7 +86,7 @@ impl IdentityProviderConfigurationBuilder {
     /// <li>
     /// <p><code>SMART_ON_FHIR</code> – Support for both SMART on FHIR V1 and V2, which includes <code>create</code>, <code>read</code>, <code>update</code>, <code>delete</code>, and <code>search</code> permissions.</p></li>
     /// <li>
-    /// <p><code>AWS_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
+    /// <p><code>Amazon Web Services_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
     /// </ul>
     /// </note>
     /// This field is required.
@@ -102,7 +102,7 @@ impl IdentityProviderConfigurationBuilder {
     /// <li>
     /// <p><code>SMART_ON_FHIR</code> – Support for both SMART on FHIR V1 and V2, which includes <code>create</code>, <code>read</code>, <code>update</code>, <code>delete</code>, and <code>search</code> permissions.</p></li>
     /// <li>
-    /// <p><code>AWS_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
+    /// <p><code>Amazon Web Services_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
     /// </ul>
     /// </note>
     pub fn set_authorization_strategy(mut self, input: ::std::option::Option<crate::types::AuthorizationStrategy>) -> Self {
@@ -117,7 +117,7 @@ impl IdentityProviderConfigurationBuilder {
     /// <li>
     /// <p><code>SMART_ON_FHIR</code> – Support for both SMART on FHIR V1 and V2, which includes <code>create</code>, <code>read</code>, <code>update</code>, <code>delete</code>, and <code>search</code> permissions.</p></li>
     /// <li>
-    /// <p><code>AWS_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
+    /// <p><code>Amazon Web Services_AUTH</code> – The default HealthLake authorization strategy; not affiliated with SMART on FHIR.</p></li>
     /// </ul>
     /// </note>
     pub fn get_authorization_strategy(&self) -> &::std::option::Option<crate::types::AuthorizationStrategy> {

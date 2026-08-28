@@ -85,6 +85,8 @@ pub use crate::types::_domain_description_type::DomainDescriptionTypeBuilder;
 
 pub use crate::types::_code_delivery_details_type::CodeDeliveryDetailsTypeBuilder;
 
+pub use crate::types::_client_authentication_result_type::ClientAuthenticationResultTypeBuilder;
+
 pub use crate::types::_log_delivery_configuration_type::LogDeliveryConfigurationTypeBuilder;
 
 pub use crate::types::_limit_definition_type::LimitDefinitionTypeBuilder;

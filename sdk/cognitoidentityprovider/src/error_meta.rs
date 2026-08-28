@@ -3170,6 +3170,47 @@ impl From<crate::operation::describe_terms::DescribeTermsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_terms_by_client::DescribeTermsByClientError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_terms_by_client::DescribeTermsByClientError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_terms_by_client::DescribeTermsByClientError> for Error {
+    fn from(err: crate::operation::describe_terms_by_client::DescribeTermsByClientError) -> Self {
+        match err {
+            crate::operation::describe_terms_by_client::DescribeTermsByClientError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_terms_by_client::DescribeTermsByClientError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_terms_by_client::DescribeTermsByClientError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::describe_terms_by_client::DescribeTermsByClientError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::describe_terms_by_client::DescribeTermsByClientError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_terms_by_client::DescribeTermsByClientError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_terms_by_client::DescribeTermsByClientError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_user_import_job::DescribeUserImportJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3400,6 +3441,36 @@ impl From<crate::operation::forgot_password::ForgotPasswordError> for Error {
             }
             crate::operation::forgot_password::ForgotPasswordError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
             crate::operation::forgot_password::ForgotPasswordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_client_token::GetClientTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_client_token::GetClientTokenError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_client_token::GetClientTokenError> for Error {
+    fn from(err: crate::operation::get_client_token::GetClientTokenError) -> Self {
+        match err {
+            crate::operation::get_client_token::GetClientTokenError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_client_token::GetClientTokenError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_client_token::GetClientTokenError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_client_token::GetClientTokenError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_client_token::GetClientTokenError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::get_client_token::GetClientTokenError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_client_token::GetClientTokenError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_client_token::GetClientTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

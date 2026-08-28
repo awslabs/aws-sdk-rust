@@ -283,6 +283,12 @@ pub use crate::types::_audio_extraction_configuration::AudioExtractionConfigurat
 
 pub use crate::types::_video_extraction_configuration::VideoExtractionConfigurationBuilder;
 
+pub use crate::types::_daily_schedule::DailyScheduleBuilder;
+
+pub use crate::types::_weekly_schedule::WeeklyScheduleBuilder;
+
+pub use crate::types::_monthly_schedule::MonthlyScheduleBuilder;
+
 pub use crate::types::_url_configuration::UrlConfigurationBuilder;
 
 pub use crate::types::_web_crawler_limits::WebCrawlerLimitsBuilder;
@@ -392,6 +398,8 @@ pub use crate::types::_vector_search_reranking_configuration::VectorSearchRerank
 pub use crate::types::_knowledge_base_orchestration_configuration::KnowledgeBaseOrchestrationConfigurationBuilder;
 
 pub use crate::types::_flow_condition::FlowConditionBuilder;
+
+pub use crate::types::_last_day_of_month::LastDayOfMonthBuilder;
 
 pub use crate::types::_seed_url::SeedUrlBuilder;
 

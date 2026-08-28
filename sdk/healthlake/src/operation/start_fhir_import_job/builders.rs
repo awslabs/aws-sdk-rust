@@ -164,17 +164,17 @@ impl StartFHIRImportJobFluentBuilder {
     pub fn get_datastore_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_datastore_id()
     }
-    /// <p>The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants access permission to HealthLake.</p>
     pub fn data_access_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.data_access_role_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants access permission to HealthLake.</p>
     pub fn set_data_access_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.</p>
+    /// <p>The Amazon Resource Name (ARN) that grants access permission to HealthLake.</p>
     pub fn get_data_access_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_data_access_role_arn()
     }
@@ -206,45 +206,45 @@ impl StartFHIRImportJobFluentBuilder {
     pub fn get_validation_level(&self) -> &::std::option::Option<crate::types::ValidationLevel> {
         self.inner.get_validation_level()
     }
-    /// A bounded-length string value.
+    /// <p>The data transformation profile identifier to use for the import job.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_id(input.into());
         self
     }
-    /// A bounded-length string value.
+    /// <p>The data transformation profile identifier to use for the import job.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_id(input);
         self
     }
-    /// A bounded-length string value.
+    /// <p>The data transformation profile identifier to use for the import job.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_id()
     }
-    /// A bounded-length string value.
+    /// <p>The input format of the data to be imported.</p>
     pub fn input_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.input_format(input.into());
         self
     }
-    /// A bounded-length string value.
+    /// <p>The input format of the data to be imported.</p>
     pub fn set_input_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_input_format(input);
         self
     }
-    /// A bounded-length string value.
+    /// <p>The input format of the data to be imported.</p>
     pub fn get_input_format(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_input_format()
     }
-    /// A boolean value.
+    /// <p>Specifies whether to enable drift detection for the import job.</p>
     pub fn drift_detection_enabled(mut self, input: bool) -> Self {
         self.inner = self.inner.drift_detection_enabled(input);
         self
     }
-    /// A boolean value.
+    /// <p>Specifies whether to enable drift detection for the import job.</p>
     pub fn set_drift_detection_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_drift_detection_enabled(input);
         self
     }
-    /// A boolean value.
+    /// <p>Specifies whether to enable drift detection for the import job.</p>
     pub fn get_drift_detection_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_drift_detection_enabled()
     }

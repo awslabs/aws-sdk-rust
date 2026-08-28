@@ -112,6 +112,11 @@ where
                                 crate::protocol_serde::shape_profile_configuration::de_profile_configuration(tokens, _value, depth + 1)?,
                             );
                         }
+                        "BackupStatusInfo" => {
+                            builder = builder.set_backup_status_info(
+                                crate::protocol_serde::shape_datastore_backup_status::de_datastore_backup_status(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

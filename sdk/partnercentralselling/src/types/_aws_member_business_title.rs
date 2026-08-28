@@ -17,6 +17,7 @@
 ///     AwsMemberBusinessTitle::Isvsm => { /* ... */ },
 ///     AwsMemberBusinessTitle::Pdm => { /* ... */ },
 ///     AwsMemberBusinessTitle::Psm => { /* ... */ },
+///     AwsMemberBusinessTitle::Signatory => { /* ... */ },
 ///     AwsMemberBusinessTitle::Wwpspdm => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum AwsMemberBusinessTitle {
     #[allow(missing_docs)] // documentation missing in model
     Psm,
     #[allow(missing_docs)] // documentation missing in model
+    Signatory,
+    #[allow(missing_docs)] // documentation missing in model
     Wwpspdm,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -70,6 +73,7 @@ impl ::std::convert::From<&str> for AwsMemberBusinessTitle {
             "ISVSM" => AwsMemberBusinessTitle::Isvsm,
             "PDM" => AwsMemberBusinessTitle::Pdm,
             "PSM" => AwsMemberBusinessTitle::Psm,
+            "Signatory" => AwsMemberBusinessTitle::Signatory,
             "WWPSPDM" => AwsMemberBusinessTitle::Wwpspdm,
             other => AwsMemberBusinessTitle::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -91,13 +95,14 @@ impl AwsMemberBusinessTitle {
             AwsMemberBusinessTitle::Isvsm => "ISVSM",
             AwsMemberBusinessTitle::Pdm => "PDM",
             AwsMemberBusinessTitle::Psm => "PSM",
+            AwsMemberBusinessTitle::Signatory => "Signatory",
             AwsMemberBusinessTitle::Wwpspdm => "WWPSPDM",
             AwsMemberBusinessTitle::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWSAccountOwner", "AWSSalesRep", "ISVSM", "PDM", "PSM", "WWPSPDM"]
+        &["AWSAccountOwner", "AWSSalesRep", "ISVSM", "PDM", "PSM", "Signatory", "WWPSPDM"]
     }
 }
 impl ::std::convert::AsRef<str> for AwsMemberBusinessTitle {
@@ -125,6 +130,7 @@ impl ::std::fmt::Display for AwsMemberBusinessTitle {
             AwsMemberBusinessTitle::Isvsm => write!(f, "ISVSM"),
             AwsMemberBusinessTitle::Pdm => write!(f, "PDM"),
             AwsMemberBusinessTitle::Psm => write!(f, "PSM"),
+            AwsMemberBusinessTitle::Signatory => write!(f, "Signatory"),
             AwsMemberBusinessTitle::Wwpspdm => write!(f, "WWPSPDM"),
             AwsMemberBusinessTitle::Unknown(value) => write!(f, "{value}"),
         }

@@ -93,6 +93,8 @@ pub use crate::types::_event::Event;
 
 pub use crate::types::_memory_record::MemoryRecord;
 
+pub use crate::types::_content_source::ContentSource;
+
 pub use crate::types::_filter_input::FilterInput;
 
 pub use crate::types::_extraction_job_filter_input::ExtractionJobFilterInput;
@@ -272,6 +274,8 @@ pub use crate::types::_payload_type::PayloadType;
 pub use crate::types::_metadata_value::MetadataValue;
 
 pub use crate::types::_memory_content::MemoryContent;
+
+pub use crate::types::_inline_memory_content::InlineMemoryContent;
 
 pub use crate::types::_actor_summary::ActorSummary;
 
@@ -498,6 +502,8 @@ pub use crate::types::_ground_truth_source::GroundTruthSource;
 pub use crate::types::_content::Content;
 
 pub use crate::types::_role::Role;
+
+pub use crate::types::_ingest_payload_type::IngestPayloadType;
 
 pub use crate::types::_left_expression::LeftExpression;
 
@@ -727,6 +733,8 @@ mod _content_block_type;
 
 mod _content_delta_event;
 
+mod _content_source;
+
 mod _content_start_event;
 
 mod _content_stop_event;
@@ -927,7 +935,11 @@ mod _harness_tool_use_status;
 
 mod _harness_tool_use_type;
 
+mod _ingest_payload_type;
+
 mod _inline_ground_truth;
+
+mod _inline_memory_content;
 
 mod _input_content_block;
 

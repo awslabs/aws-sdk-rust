@@ -33,5 +33,11 @@ pub fn ser_update_fhir_datastore_input_input(
         crate::protocol_serde::shape_identity_provider_configuration::ser_identity_provider_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
+    if let Some(var_11) = &input.backup_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("BackupConfiguration").start_object();
+        crate::protocol_serde::shape_backup_configuration::ser_backup_configuration(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

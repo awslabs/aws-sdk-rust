@@ -2753,6 +2753,15 @@ pub(crate) fn loop_flow_node_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn monthly_schedule_correct_errors(
+    mut builder: crate::types::builders::MonthlyScheduleBuilder,
+) -> crate::types::builders::MonthlyScheduleBuilder {
+    if builder.day_of_month.is_none() {
+        builder.day_of_month = Some(crate::types::DayOfMonth::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn parsing_prompt_correct_errors(
     mut builder: crate::types::builders::ParsingPromptBuilder,
 ) -> crate::types::builders::ParsingPromptBuilder {
@@ -2827,6 +2836,15 @@ pub(crate) fn video_extraction_configuration_correct_errors(
 ) -> crate::types::builders::VideoExtractionConfigurationBuilder {
     if builder.video_extraction_status.is_none() {
         builder.video_extraction_status = "no value was set".parse::<crate::types::EnabledOrDisabledState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn weekly_schedule_correct_errors(
+    mut builder: crate::types::builders::WeeklyScheduleBuilder,
+) -> crate::types::builders::WeeklyScheduleBuilder {
+    if builder.day_of_week.is_none() {
+        builder.day_of_week = "no value was set".parse::<crate::types::DayOfWeek>().ok()
     }
     builder
 }

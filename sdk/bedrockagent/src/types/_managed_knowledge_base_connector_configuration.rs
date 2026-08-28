@@ -10,6 +10,8 @@ pub struct ManagedKnowledgeBaseConnectorConfiguration {
     pub media_extraction_configuration: ::std::option::Option<crate::types::MediaExtractionConfiguration>,
     /// <p>Connector-specific parameters. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-connect-ds.html">Connect a data source</a>.</p>
     pub connector_parameters: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>The recurring schedule on which the connector automatically syncs this data source. If not specified, the data source is not synced automatically and you start each sync yourself. Not supported for the Custom connector.</p>
+    pub sync_schedule: ::std::option::Option<crate::types::SyncSchedule>,
 }
 impl ManagedKnowledgeBaseConnectorConfiguration {
     /// <p>A safeguard against accidental bulk deletion of indexed content.</p>
@@ -23,6 +25,10 @@ impl ManagedKnowledgeBaseConnectorConfiguration {
     /// <p>Connector-specific parameters. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-connect-ds.html">Connect a data source</a>.</p>
     pub fn connector_parameters(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.connector_parameters.as_ref()
+    }
+    /// <p>The recurring schedule on which the connector automatically syncs this data source. If not specified, the data source is not synced automatically and you start each sync yourself. Not supported for the Custom connector.</p>
+    pub fn sync_schedule(&self) -> ::std::option::Option<&crate::types::SyncSchedule> {
+        self.sync_schedule.as_ref()
     }
 }
 impl ManagedKnowledgeBaseConnectorConfiguration {
@@ -39,6 +45,7 @@ pub struct ManagedKnowledgeBaseConnectorConfigurationBuilder {
     pub(crate) deletion_protection_configuration: ::std::option::Option<crate::types::DeletionProtectionConfiguration>,
     pub(crate) media_extraction_configuration: ::std::option::Option<crate::types::MediaExtractionConfiguration>,
     pub(crate) connector_parameters: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) sync_schedule: ::std::option::Option<crate::types::SyncSchedule>,
 }
 impl ManagedKnowledgeBaseConnectorConfigurationBuilder {
     /// <p>A safeguard against accidental bulk deletion of indexed content.</p>
@@ -83,12 +90,27 @@ impl ManagedKnowledgeBaseConnectorConfigurationBuilder {
     pub fn get_connector_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.connector_parameters
     }
+    /// <p>The recurring schedule on which the connector automatically syncs this data source. If not specified, the data source is not synced automatically and you start each sync yourself. Not supported for the Custom connector.</p>
+    pub fn sync_schedule(mut self, input: crate::types::SyncSchedule) -> Self {
+        self.sync_schedule = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The recurring schedule on which the connector automatically syncs this data source. If not specified, the data source is not synced automatically and you start each sync yourself. Not supported for the Custom connector.</p>
+    pub fn set_sync_schedule(mut self, input: ::std::option::Option<crate::types::SyncSchedule>) -> Self {
+        self.sync_schedule = input;
+        self
+    }
+    /// <p>The recurring schedule on which the connector automatically syncs this data source. If not specified, the data source is not synced automatically and you start each sync yourself. Not supported for the Custom connector.</p>
+    pub fn get_sync_schedule(&self) -> &::std::option::Option<crate::types::SyncSchedule> {
+        &self.sync_schedule
+    }
     /// Consumes the builder and constructs a [`ManagedKnowledgeBaseConnectorConfiguration`](crate::types::ManagedKnowledgeBaseConnectorConfiguration).
     pub fn build(self) -> crate::types::ManagedKnowledgeBaseConnectorConfiguration {
         crate::types::ManagedKnowledgeBaseConnectorConfiguration {
             deletion_protection_configuration: self.deletion_protection_configuration,
             media_extraction_configuration: self.media_extraction_configuration,
             connector_parameters: self.connector_parameters,
+            sync_schedule: self.sync_schedule,
         }
     }
 }

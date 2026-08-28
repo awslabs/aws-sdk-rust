@@ -60,6 +60,12 @@ pub fn ser_deployment_configuration(
         crate::protocol_serde::shape_canary_configuration::ser_canary_configuration(&mut object_16, var_15)?;
         object_16.finish();
     }
+    if let Some(var_17) = &input.early_success_criteria {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("earlySuccessCriteria").start_object();
+        crate::protocol_serde::shape_deployment_early_success_criteria::ser_deployment_early_success_criteria(&mut object_18, var_17)?;
+        object_18.finish();
+    }
     Ok(())
 }
 
@@ -147,6 +153,15 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "earlySuccessCriteria" => {
+                            builder = builder.set_early_success_criteria(
+                                crate::protocol_serde::shape_deployment_early_success_criteria::de_deployment_early_success_criteria(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

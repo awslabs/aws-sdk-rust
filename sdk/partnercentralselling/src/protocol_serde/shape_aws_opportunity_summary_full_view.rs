@@ -109,6 +109,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "SoftwareRevenue" => {
+                            builder = builder.set_software_revenue(crate::protocol_serde::shape_aws_software_revenue::de_aws_software_revenue(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

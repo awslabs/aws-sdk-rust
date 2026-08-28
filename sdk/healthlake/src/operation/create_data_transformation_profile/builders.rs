@@ -136,17 +136,17 @@ impl CreateDataTransformationProfileFluentBuilder {
     pub fn get_source(&self) -> &::std::option::Option<crate::types::CreateDataTransformationProfileSource> {
         self.inner.get_source()
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile content at rest.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the profile content at rest.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile content at rest.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the profile content at rest.</p>
     pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile content at rest.</p>
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier used to encrypt the profile content at rest.</p>
     pub fn get_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_kms_key_id()
     }

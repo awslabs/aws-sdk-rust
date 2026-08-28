@@ -4,47 +4,47 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobProgressReport {
-    /// <p>The number of files scanned from the S3 input bucket.</p>
+    /// <p>The number of files scanned from the Amazon S3 input bucket.</p>
     pub total_number_of_scanned_files: ::std::option::Option<i64>,
-    /// <p>The size (in MB) of files scanned from the S3 input bucket.</p>
+    /// <p>The size (in MB) of files scanned from the Amazon S3 input bucket.</p>
     pub total_size_of_scanned_files_in_mb: ::std::option::Option<f64>,
     /// <p>The number of files imported.</p>
     pub total_number_of_imported_files: ::std::option::Option<i64>,
-    /// <p>The number of resources scanned from the S3 input bucket.</p>
+    /// <p>The number of resources scanned from the Amazon S3 input bucket.</p>
     pub total_number_of_resources_scanned: ::std::option::Option<i64>,
     /// <p>The number of resources imported.</p>
     pub total_number_of_resources_imported: ::std::option::Option<i64>,
     /// <p>The number of resources that failed due to customer error.</p>
     pub total_number_of_resources_with_customer_error: ::std::option::Option<i64>,
-    /// <p>The number of files that failed to be read from the S3 input bucket due to customer error.</p>
+    /// <p>The number of files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub total_number_of_files_read_with_customer_error: ::std::option::Option<i64>,
-    /// The number of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub total_number_of_scanned_non_fhir_files: ::std::option::Option<i64>,
-    /// The size (in MB) of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The size (in MB) of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub total_size_of_scanned_non_fhir_files_in_mb: ::std::option::Option<f64>,
-    /// The number of non-FHIR files imported.
+    /// <p>The number of non-FHIR files imported.</p>
     pub total_number_of_imported_non_fhir_files: ::std::option::Option<i64>,
-    /// The number of non-FHIR resources scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR resources scanned from the Amazon S3 input bucket.</p>
     pub total_number_of_non_fhir_resources_scanned: ::std::option::Option<i64>,
-    /// The number of non-FHIR resources imported.
+    /// <p>The number of non-FHIR resources imported.</p>
     pub total_number_of_non_fhir_resources_imported: ::std::option::Option<i64>,
-    /// The number of non-FHIR resources that failed due to customer error.
+    /// <p>The number of non-FHIR resources that failed due to customer error.</p>
     pub total_number_of_non_fhir_resources_with_customer_error: ::std::option::Option<i64>,
-    /// The number of non-FHIR files that failed to be read from the S3 input bucket due to customer error.
+    /// <p>The number of non-FHIR files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub total_number_of_non_fhir_files_read_with_customer_error: ::std::option::Option<i64>,
     /// <p>The transaction rate the import job is processed at.</p>
     pub throughput: ::std::option::Option<f64>,
-    /// Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.
+    /// <p>Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.</p>
     pub total_files_converted: ::std::option::Option<i64>,
-    /// Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.
+    /// <p>Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.</p>
     pub total_resources_generated: ::std::option::Option<i64>,
 }
 impl JobProgressReport {
-    /// <p>The number of files scanned from the S3 input bucket.</p>
+    /// <p>The number of files scanned from the Amazon S3 input bucket.</p>
     pub fn total_number_of_scanned_files(&self) -> ::std::option::Option<i64> {
         self.total_number_of_scanned_files
     }
-    /// <p>The size (in MB) of files scanned from the S3 input bucket.</p>
+    /// <p>The size (in MB) of files scanned from the Amazon S3 input bucket.</p>
     pub fn total_size_of_scanned_files_in_mb(&self) -> ::std::option::Option<f64> {
         self.total_size_of_scanned_files_in_mb
     }
@@ -52,7 +52,7 @@ impl JobProgressReport {
     pub fn total_number_of_imported_files(&self) -> ::std::option::Option<i64> {
         self.total_number_of_imported_files
     }
-    /// <p>The number of resources scanned from the S3 input bucket.</p>
+    /// <p>The number of resources scanned from the Amazon S3 input bucket.</p>
     pub fn total_number_of_resources_scanned(&self) -> ::std::option::Option<i64> {
         self.total_number_of_resources_scanned
     }
@@ -64,35 +64,35 @@ impl JobProgressReport {
     pub fn total_number_of_resources_with_customer_error(&self) -> ::std::option::Option<i64> {
         self.total_number_of_resources_with_customer_error
     }
-    /// <p>The number of files that failed to be read from the S3 input bucket due to customer error.</p>
+    /// <p>The number of files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub fn total_number_of_files_read_with_customer_error(&self) -> ::std::option::Option<i64> {
         self.total_number_of_files_read_with_customer_error
     }
-    /// The number of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub fn total_number_of_scanned_non_fhir_files(&self) -> ::std::option::Option<i64> {
         self.total_number_of_scanned_non_fhir_files
     }
-    /// The size (in MB) of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The size (in MB) of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub fn total_size_of_scanned_non_fhir_files_in_mb(&self) -> ::std::option::Option<f64> {
         self.total_size_of_scanned_non_fhir_files_in_mb
     }
-    /// The number of non-FHIR files imported.
+    /// <p>The number of non-FHIR files imported.</p>
     pub fn total_number_of_imported_non_fhir_files(&self) -> ::std::option::Option<i64> {
         self.total_number_of_imported_non_fhir_files
     }
-    /// The number of non-FHIR resources scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR resources scanned from the Amazon S3 input bucket.</p>
     pub fn total_number_of_non_fhir_resources_scanned(&self) -> ::std::option::Option<i64> {
         self.total_number_of_non_fhir_resources_scanned
     }
-    /// The number of non-FHIR resources imported.
+    /// <p>The number of non-FHIR resources imported.</p>
     pub fn total_number_of_non_fhir_resources_imported(&self) -> ::std::option::Option<i64> {
         self.total_number_of_non_fhir_resources_imported
     }
-    /// The number of non-FHIR resources that failed due to customer error.
+    /// <p>The number of non-FHIR resources that failed due to customer error.</p>
     pub fn total_number_of_non_fhir_resources_with_customer_error(&self) -> ::std::option::Option<i64> {
         self.total_number_of_non_fhir_resources_with_customer_error
     }
-    /// The number of non-FHIR files that failed to be read from the S3 input bucket due to customer error.
+    /// <p>The number of non-FHIR files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub fn total_number_of_non_fhir_files_read_with_customer_error(&self) -> ::std::option::Option<i64> {
         self.total_number_of_non_fhir_files_read_with_customer_error
     }
@@ -100,11 +100,11 @@ impl JobProgressReport {
     pub fn throughput(&self) -> ::std::option::Option<f64> {
         self.throughput
     }
-    /// Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.
+    /// <p>Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.</p>
     pub fn total_files_converted(&self) -> ::std::option::Option<i64> {
         self.total_files_converted
     }
-    /// Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.
+    /// <p>Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.</p>
     pub fn total_resources_generated(&self) -> ::std::option::Option<i64> {
         self.total_resources_generated
     }
@@ -139,31 +139,31 @@ pub struct JobProgressReportBuilder {
     pub(crate) total_resources_generated: ::std::option::Option<i64>,
 }
 impl JobProgressReportBuilder {
-    /// <p>The number of files scanned from the S3 input bucket.</p>
+    /// <p>The number of files scanned from the Amazon S3 input bucket.</p>
     pub fn total_number_of_scanned_files(mut self, input: i64) -> Self {
         self.total_number_of_scanned_files = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of files scanned from the S3 input bucket.</p>
+    /// <p>The number of files scanned from the Amazon S3 input bucket.</p>
     pub fn set_total_number_of_scanned_files(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_scanned_files = input;
         self
     }
-    /// <p>The number of files scanned from the S3 input bucket.</p>
+    /// <p>The number of files scanned from the Amazon S3 input bucket.</p>
     pub fn get_total_number_of_scanned_files(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_scanned_files
     }
-    /// <p>The size (in MB) of files scanned from the S3 input bucket.</p>
+    /// <p>The size (in MB) of files scanned from the Amazon S3 input bucket.</p>
     pub fn total_size_of_scanned_files_in_mb(mut self, input: f64) -> Self {
         self.total_size_of_scanned_files_in_mb = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size (in MB) of files scanned from the S3 input bucket.</p>
+    /// <p>The size (in MB) of files scanned from the Amazon S3 input bucket.</p>
     pub fn set_total_size_of_scanned_files_in_mb(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_size_of_scanned_files_in_mb = input;
         self
     }
-    /// <p>The size (in MB) of files scanned from the S3 input bucket.</p>
+    /// <p>The size (in MB) of files scanned from the Amazon S3 input bucket.</p>
     pub fn get_total_size_of_scanned_files_in_mb(&self) -> &::std::option::Option<f64> {
         &self.total_size_of_scanned_files_in_mb
     }
@@ -181,17 +181,17 @@ impl JobProgressReportBuilder {
     pub fn get_total_number_of_imported_files(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_imported_files
     }
-    /// <p>The number of resources scanned from the S3 input bucket.</p>
+    /// <p>The number of resources scanned from the Amazon S3 input bucket.</p>
     pub fn total_number_of_resources_scanned(mut self, input: i64) -> Self {
         self.total_number_of_resources_scanned = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of resources scanned from the S3 input bucket.</p>
+    /// <p>The number of resources scanned from the Amazon S3 input bucket.</p>
     pub fn set_total_number_of_resources_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_resources_scanned = input;
         self
     }
-    /// <p>The number of resources scanned from the S3 input bucket.</p>
+    /// <p>The number of resources scanned from the Amazon S3 input bucket.</p>
     pub fn get_total_number_of_resources_scanned(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_resources_scanned
     }
@@ -223,115 +223,115 @@ impl JobProgressReportBuilder {
     pub fn get_total_number_of_resources_with_customer_error(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_resources_with_customer_error
     }
-    /// <p>The number of files that failed to be read from the S3 input bucket due to customer error.</p>
+    /// <p>The number of files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub fn total_number_of_files_read_with_customer_error(mut self, input: i64) -> Self {
         self.total_number_of_files_read_with_customer_error = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of files that failed to be read from the S3 input bucket due to customer error.</p>
+    /// <p>The number of files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub fn set_total_number_of_files_read_with_customer_error(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_files_read_with_customer_error = input;
         self
     }
-    /// <p>The number of files that failed to be read from the S3 input bucket due to customer error.</p>
+    /// <p>The number of files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub fn get_total_number_of_files_read_with_customer_error(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_files_read_with_customer_error
     }
-    /// The number of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub fn total_number_of_scanned_non_fhir_files(mut self, input: i64) -> Self {
         self.total_number_of_scanned_non_fhir_files = ::std::option::Option::Some(input);
         self
     }
-    /// The number of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub fn set_total_number_of_scanned_non_fhir_files(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_scanned_non_fhir_files = input;
         self
     }
-    /// The number of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub fn get_total_number_of_scanned_non_fhir_files(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_scanned_non_fhir_files
     }
-    /// The size (in MB) of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The size (in MB) of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub fn total_size_of_scanned_non_fhir_files_in_mb(mut self, input: f64) -> Self {
         self.total_size_of_scanned_non_fhir_files_in_mb = ::std::option::Option::Some(input);
         self
     }
-    /// The size (in MB) of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The size (in MB) of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub fn set_total_size_of_scanned_non_fhir_files_in_mb(mut self, input: ::std::option::Option<f64>) -> Self {
         self.total_size_of_scanned_non_fhir_files_in_mb = input;
         self
     }
-    /// The size (in MB) of non-FHIR files scanned from the S3 input bucket.
+    /// <p>The size (in MB) of non-FHIR files scanned from the Amazon S3 input bucket.</p>
     pub fn get_total_size_of_scanned_non_fhir_files_in_mb(&self) -> &::std::option::Option<f64> {
         &self.total_size_of_scanned_non_fhir_files_in_mb
     }
-    /// The number of non-FHIR files imported.
+    /// <p>The number of non-FHIR files imported.</p>
     pub fn total_number_of_imported_non_fhir_files(mut self, input: i64) -> Self {
         self.total_number_of_imported_non_fhir_files = ::std::option::Option::Some(input);
         self
     }
-    /// The number of non-FHIR files imported.
+    /// <p>The number of non-FHIR files imported.</p>
     pub fn set_total_number_of_imported_non_fhir_files(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_imported_non_fhir_files = input;
         self
     }
-    /// The number of non-FHIR files imported.
+    /// <p>The number of non-FHIR files imported.</p>
     pub fn get_total_number_of_imported_non_fhir_files(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_imported_non_fhir_files
     }
-    /// The number of non-FHIR resources scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR resources scanned from the Amazon S3 input bucket.</p>
     pub fn total_number_of_non_fhir_resources_scanned(mut self, input: i64) -> Self {
         self.total_number_of_non_fhir_resources_scanned = ::std::option::Option::Some(input);
         self
     }
-    /// The number of non-FHIR resources scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR resources scanned from the Amazon S3 input bucket.</p>
     pub fn set_total_number_of_non_fhir_resources_scanned(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_non_fhir_resources_scanned = input;
         self
     }
-    /// The number of non-FHIR resources scanned from the S3 input bucket.
+    /// <p>The number of non-FHIR resources scanned from the Amazon S3 input bucket.</p>
     pub fn get_total_number_of_non_fhir_resources_scanned(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_non_fhir_resources_scanned
     }
-    /// The number of non-FHIR resources imported.
+    /// <p>The number of non-FHIR resources imported.</p>
     pub fn total_number_of_non_fhir_resources_imported(mut self, input: i64) -> Self {
         self.total_number_of_non_fhir_resources_imported = ::std::option::Option::Some(input);
         self
     }
-    /// The number of non-FHIR resources imported.
+    /// <p>The number of non-FHIR resources imported.</p>
     pub fn set_total_number_of_non_fhir_resources_imported(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_non_fhir_resources_imported = input;
         self
     }
-    /// The number of non-FHIR resources imported.
+    /// <p>The number of non-FHIR resources imported.</p>
     pub fn get_total_number_of_non_fhir_resources_imported(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_non_fhir_resources_imported
     }
-    /// The number of non-FHIR resources that failed due to customer error.
+    /// <p>The number of non-FHIR resources that failed due to customer error.</p>
     pub fn total_number_of_non_fhir_resources_with_customer_error(mut self, input: i64) -> Self {
         self.total_number_of_non_fhir_resources_with_customer_error = ::std::option::Option::Some(input);
         self
     }
-    /// The number of non-FHIR resources that failed due to customer error.
+    /// <p>The number of non-FHIR resources that failed due to customer error.</p>
     pub fn set_total_number_of_non_fhir_resources_with_customer_error(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_non_fhir_resources_with_customer_error = input;
         self
     }
-    /// The number of non-FHIR resources that failed due to customer error.
+    /// <p>The number of non-FHIR resources that failed due to customer error.</p>
     pub fn get_total_number_of_non_fhir_resources_with_customer_error(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_non_fhir_resources_with_customer_error
     }
-    /// The number of non-FHIR files that failed to be read from the S3 input bucket due to customer error.
+    /// <p>The number of non-FHIR files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub fn total_number_of_non_fhir_files_read_with_customer_error(mut self, input: i64) -> Self {
         self.total_number_of_non_fhir_files_read_with_customer_error = ::std::option::Option::Some(input);
         self
     }
-    /// The number of non-FHIR files that failed to be read from the S3 input bucket due to customer error.
+    /// <p>The number of non-FHIR files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub fn set_total_number_of_non_fhir_files_read_with_customer_error(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_number_of_non_fhir_files_read_with_customer_error = input;
         self
     }
-    /// The number of non-FHIR files that failed to be read from the S3 input bucket due to customer error.
+    /// <p>The number of non-FHIR files that failed to be read from the Amazon S3 input bucket due to customer error.</p>
     pub fn get_total_number_of_non_fhir_files_read_with_customer_error(&self) -> &::std::option::Option<i64> {
         &self.total_number_of_non_fhir_files_read_with_customer_error
     }
@@ -349,31 +349,31 @@ impl JobProgressReportBuilder {
     pub fn get_throughput(&self) -> &::std::option::Option<f64> {
         &self.throughput
     }
-    /// Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.
+    /// <p>Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.</p>
     pub fn total_files_converted(mut self, input: i64) -> Self {
         self.total_files_converted = ::std::option::Option::Some(input);
         self
     }
-    /// Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.
+    /// <p>Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.</p>
     pub fn set_total_files_converted(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_files_converted = input;
         self
     }
-    /// Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.
+    /// <p>Number of CCDA files successfully transformed during the import's transformation phase. Populated only for import jobs that use the two-Step-Function (transformation + ingestion) flow; null for legacy single-SF imports and for pure FHIR imports that skip transformation.</p>
     pub fn get_total_files_converted(&self) -> &::std::option::Option<i64> {
         &self.total_files_converted
     }
-    /// Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.
+    /// <p>Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.</p>
     pub fn total_resources_generated(mut self, input: i64) -> Self {
         self.total_resources_generated = ::std::option::Option::Some(input);
         self
     }
-    /// Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.
+    /// <p>Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.</p>
     pub fn set_total_resources_generated(mut self, input: ::std::option::Option<i64>) -> Self {
         self.total_resources_generated = input;
         self
     }
-    /// Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.
+    /// <p>Number of FHIR resources produced by the transformation phase. Populated only for import jobs that use the two-Step-Function flow; null for legacy single-SF imports and for pure FHIR imports.</p>
     pub fn get_total_resources_generated(&self) -> &::std::option::Option<i64> {
         &self.total_resources_generated
     }
