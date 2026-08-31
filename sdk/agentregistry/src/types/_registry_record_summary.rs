@@ -4,61 +4,61 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RegistryRecordSummary {
-    /// <p>Registry Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     pub registry_arn: ::std::string::String,
-    /// <p>Registry Record Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     pub record_arn: ::std::string::String,
-    /// <p>Registry Record unique identifier - 12-character alphanumeric string</p>
+    /// <p>The unique identifier of the registry record.</p>
     pub record_id: ::std::string::String,
-    /// <p>Registry Record name</p>
+    /// <p>The name of the registry record. Names are unique within a registry.</p>
     pub name: ::std::string::String,
-    /// <p>Description of the Resource</p>
+    /// <p>A human-readable description of the registry record. Use this field to explain the record's purpose or content to consumers discovering it in the registry.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Display name for a registry record</p>
+    /// <p>The human-readable display name of the registry record.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>Record type enum for registry record classification</p>
+    /// <p>The type of the registry record. <code>MCP</code> is a Model Context Protocol server record, <code>AGENT</code> is an Agent-to-Agent (A2A) agent card record, <code>SKILL</code> is an agent skills definition record, and <code>CUSTOM</code> is a record with a custom descriptor.</p>
     pub record_type: crate::types::RecordType,
     /// <p>The protocol-specific descriptors that describe how to connect to and use the record.</p>
     pub descriptors: ::std::option::Option<crate::types::Descriptors>,
-    /// <p>Version of the registry record</p>
+    /// <p>The version identifier of the registry record.</p>
     pub record_version: ::std::string::String,
-    /// <p>Registry record status</p>
+    /// <p>The lifecycle status of the registry record. A record is <code>DRAFT</code> before it is submitted, <code>PENDING_APPROVAL</code> while awaiting curator review, and <code>APPROVED</code> once it is approved and discoverable. <code>REJECTED</code> and <code>DEPRECATED</code> records are not discoverable. The <code>CREATING</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, and <code>UPDATE_FAILED</code> values reflect the state of an in-progress or failed asynchronous change.</p>
     pub status: crate::types::RegistryRecordStatus,
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
 }
 impl RegistryRecordSummary {
-    /// <p>Registry Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     pub fn registry_arn(&self) -> &str {
         use std::ops::Deref;
         self.registry_arn.deref()
     }
-    /// <p>Registry Record Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     pub fn record_arn(&self) -> &str {
         use std::ops::Deref;
         self.record_arn.deref()
     }
-    /// <p>Registry Record unique identifier - 12-character alphanumeric string</p>
+    /// <p>The unique identifier of the registry record.</p>
     pub fn record_id(&self) -> &str {
         use std::ops::Deref;
         self.record_id.deref()
     }
-    /// <p>Registry Record name</p>
+    /// <p>The name of the registry record. Names are unique within a registry.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>Description of the Resource</p>
+    /// <p>A human-readable description of the registry record. Use this field to explain the record's purpose or content to consumers discovering it in the registry.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Display name for a registry record</p>
+    /// <p>The human-readable display name of the registry record.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>Record type enum for registry record classification</p>
+    /// <p>The type of the registry record. <code>MCP</code> is a Model Context Protocol server record, <code>AGENT</code> is an Agent-to-Agent (A2A) agent card record, <code>SKILL</code> is an agent skills definition record, and <code>CUSTOM</code> is a record with a custom descriptor.</p>
     pub fn record_type(&self) -> &crate::types::RecordType {
         &self.record_type
     }
@@ -66,20 +66,20 @@ impl RegistryRecordSummary {
     pub fn descriptors(&self) -> ::std::option::Option<&crate::types::Descriptors> {
         self.descriptors.as_ref()
     }
-    /// <p>Version of the registry record</p>
+    /// <p>The version identifier of the registry record.</p>
     pub fn record_version(&self) -> &str {
         use std::ops::Deref;
         self.record_version.deref()
     }
-    /// <p>Registry record status</p>
+    /// <p>The lifecycle status of the registry record. A record is <code>DRAFT</code> before it is submitted, <code>PENDING_APPROVAL</code> while awaiting curator review, and <code>APPROVED</code> once it is approved and discoverable. <code>REJECTED</code> and <code>DEPRECATED</code> records are not discoverable. The <code>CREATING</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, and <code>UPDATE_FAILED</code> values reflect the state of an in-progress or failed asynchronous change.</p>
     pub fn status(&self) -> &crate::types::RegistryRecordStatus {
         &self.status
     }
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
     }
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
@@ -127,106 +127,106 @@ pub struct RegistryRecordSummaryBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RegistryRecordSummaryBuilder {
-    /// <p>Registry Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     /// This field is required.
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Registry Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_arn = input;
         self
     }
-    /// <p>Registry Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_arn
     }
-    /// <p>Registry Record Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     /// This field is required.
     pub fn record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Registry Record Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     pub fn set_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_arn = input;
         self
     }
-    /// <p>Registry Record Amazon Resource Name</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     pub fn get_record_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_arn
     }
-    /// <p>Registry Record unique identifier - 12-character alphanumeric string</p>
+    /// <p>The unique identifier of the registry record.</p>
     /// This field is required.
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Registry Record unique identifier - 12-character alphanumeric string</p>
+    /// <p>The unique identifier of the registry record.</p>
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_id = input;
         self
     }
-    /// <p>Registry Record unique identifier - 12-character alphanumeric string</p>
+    /// <p>The unique identifier of the registry record.</p>
     pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_id
     }
-    /// <p>Registry Record name</p>
+    /// <p>The name of the registry record. Names are unique within a registry.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Registry Record name</p>
+    /// <p>The name of the registry record. Names are unique within a registry.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>Registry Record name</p>
+    /// <p>The name of the registry record. Names are unique within a registry.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>Description of the Resource</p>
+    /// <p>A human-readable description of the registry record. Use this field to explain the record's purpose or content to consumers discovering it in the registry.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Description of the Resource</p>
+    /// <p>A human-readable description of the registry record. Use this field to explain the record's purpose or content to consumers discovering it in the registry.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// <p>Description of the Resource</p>
+    /// <p>A human-readable description of the registry record. Use this field to explain the record's purpose or content to consumers discovering it in the registry.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>Display name for a registry record</p>
+    /// <p>The human-readable display name of the registry record.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.display_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Display name for a registry record</p>
+    /// <p>The human-readable display name of the registry record.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
-    /// <p>Display name for a registry record</p>
+    /// <p>The human-readable display name of the registry record.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>Record type enum for registry record classification</p>
+    /// <p>The type of the registry record. <code>MCP</code> is a Model Context Protocol server record, <code>AGENT</code> is an Agent-to-Agent (A2A) agent card record, <code>SKILL</code> is an agent skills definition record, and <code>CUSTOM</code> is a record with a custom descriptor.</p>
     /// This field is required.
     pub fn record_type(mut self, input: crate::types::RecordType) -> Self {
         self.record_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Record type enum for registry record classification</p>
+    /// <p>The type of the registry record. <code>MCP</code> is a Model Context Protocol server record, <code>AGENT</code> is an Agent-to-Agent (A2A) agent card record, <code>SKILL</code> is an agent skills definition record, and <code>CUSTOM</code> is a record with a custom descriptor.</p>
     pub fn set_record_type(mut self, input: ::std::option::Option<crate::types::RecordType>) -> Self {
         self.record_type = input;
         self
     }
-    /// <p>Record type enum for registry record classification</p>
+    /// <p>The type of the registry record. <code>MCP</code> is a Model Context Protocol server record, <code>AGENT</code> is an Agent-to-Agent (A2A) agent card record, <code>SKILL</code> is an agent skills definition record, and <code>CUSTOM</code> is a record with a custom descriptor.</p>
     pub fn get_record_type(&self) -> &::std::option::Option<crate::types::RecordType> {
         &self.record_type
     }
@@ -245,63 +245,63 @@ impl RegistryRecordSummaryBuilder {
     pub fn get_descriptors(&self) -> &::std::option::Option<crate::types::Descriptors> {
         &self.descriptors
     }
-    /// <p>Version of the registry record</p>
+    /// <p>The version identifier of the registry record.</p>
     /// This field is required.
     pub fn record_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Version of the registry record</p>
+    /// <p>The version identifier of the registry record.</p>
     pub fn set_record_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_version = input;
         self
     }
-    /// <p>Version of the registry record</p>
+    /// <p>The version identifier of the registry record.</p>
     pub fn get_record_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_version
     }
-    /// <p>Registry record status</p>
+    /// <p>The lifecycle status of the registry record. A record is <code>DRAFT</code> before it is submitted, <code>PENDING_APPROVAL</code> while awaiting curator review, and <code>APPROVED</code> once it is approved and discoverable. <code>REJECTED</code> and <code>DEPRECATED</code> records are not discoverable. The <code>CREATING</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, and <code>UPDATE_FAILED</code> values reflect the state of an in-progress or failed asynchronous change.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::RegistryRecordStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Registry record status</p>
+    /// <p>The lifecycle status of the registry record. A record is <code>DRAFT</code> before it is submitted, <code>PENDING_APPROVAL</code> while awaiting curator review, and <code>APPROVED</code> once it is approved and discoverable. <code>REJECTED</code> and <code>DEPRECATED</code> records are not discoverable. The <code>CREATING</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, and <code>UPDATE_FAILED</code> values reflect the state of an in-progress or failed asynchronous change.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistryRecordStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>Registry record status</p>
+    /// <p>The lifecycle status of the registry record. A record is <code>DRAFT</code> before it is submitted, <code>PENDING_APPROVAL</code> while awaiting curator review, and <code>APPROVED</code> once it is approved and discoverable. <code>REJECTED</code> and <code>DEPRECATED</code> records are not discoverable. The <code>CREATING</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, and <code>UPDATE_FAILED</code> values reflect the state of an in-progress or failed asynchronous change.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryRecordStatus> {
         &self.status
     }
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was created.</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was created.</p>
     pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_at = input;
         self
     }
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was created.</p>
     pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_at
     }
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was last updated.</p>
     /// This field is required.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was last updated.</p>
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// <p>Timestamp in ISO 8601 date-time format</p>
+    /// <p>The timestamp when the registry record was last updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }

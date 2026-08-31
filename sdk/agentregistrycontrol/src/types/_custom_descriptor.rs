@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CustomDescriptor {
-    /// <p>Descriptor payload data</p>
+    /// <p>The custom descriptor content, serialized as descriptor payload data.</p>
     pub data: ::std::option::Option<::std::string::String>,
 }
 impl CustomDescriptor {
-    /// <p>Descriptor payload data</p>
+    /// <p>The custom descriptor content, serialized as descriptor payload data.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct CustomDescriptorBuilder {
     pub(crate) data: ::std::option::Option<::std::string::String>,
 }
 impl CustomDescriptorBuilder {
-    /// <p>Descriptor payload data</p>
+    /// <p>The custom descriptor content, serialized as descriptor payload data.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Descriptor payload data</p>
+    /// <p>The custom descriptor content, serialized as descriptor payload data.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }
-    /// <p>Descriptor payload data</p>
+    /// <p>The custom descriptor content, serialized as descriptor payload data.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.data
     }

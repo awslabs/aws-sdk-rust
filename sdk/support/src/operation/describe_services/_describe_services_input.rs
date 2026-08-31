@@ -5,8 +5,10 @@
 pub struct DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
     pub service_code_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub language: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to validate the request without actually returning the list of services. When set to <code>true</code>, the request is validated but no services are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeServicesInput {
     /// <p>A JSON-formatted list of service codes available for Amazon Web Services services.</p>
@@ -15,9 +17,13 @@ impl DescribeServicesInput {
     pub fn service_code_list(&self) -> &[::std::string::String] {
         self.service_code_list.as_deref().unwrap_or_default()
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
+    }
+    /// <p>Specifies whether to validate the request without actually returning the list of services. When set to <code>true</code>, the request is validated but no services are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl DescribeServicesInput {
@@ -33,6 +39,7 @@ impl DescribeServicesInput {
 pub struct DescribeServicesInputBuilder {
     pub(crate) service_code_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeServicesInputBuilder {
     /// Appends an item to `service_code_list`.
@@ -55,19 +62,33 @@ impl DescribeServicesInputBuilder {
     pub fn get_service_code_list(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.service_code_list
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
+    }
+    /// <p>Specifies whether to validate the request without actually returning the list of services. When set to <code>true</code>, the request is validated but no services are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning the list of services. When set to <code>true</code>, the request is validated but no services are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning the list of services. When set to <code>true</code>, the request is validated but no services are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeServicesInput`](crate::operation::describe_services::DescribeServicesInput).
     pub fn build(
@@ -76,6 +97,7 @@ impl DescribeServicesInputBuilder {
         ::std::result::Result::Ok(crate::operation::describe_services::DescribeServicesInput {
             service_code_list: self.service_code_list,
             language: self.language,
+            dry_run: self.dry_run,
         })
     }
 }

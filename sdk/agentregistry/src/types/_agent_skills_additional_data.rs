@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentSkillsAdditionalData {
-    /// <p>Base mixin for agent skills markdown descriptor content</p>
+    /// <p>The agent skills markdown descriptor associated with the agent skills definition.</p>
     pub skill_md: ::std::option::Option<crate::types::AgentSkillsMdDescriptor>,
 }
 impl AgentSkillsAdditionalData {
-    /// <p>Base mixin for agent skills markdown descriptor content</p>
+    /// <p>The agent skills markdown descriptor associated with the agent skills definition.</p>
     pub fn skill_md(&self) -> ::std::option::Option<&crate::types::AgentSkillsMdDescriptor> {
         self.skill_md.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct AgentSkillsAdditionalDataBuilder {
     pub(crate) skill_md: ::std::option::Option<crate::types::AgentSkillsMdDescriptor>,
 }
 impl AgentSkillsAdditionalDataBuilder {
-    /// <p>Base mixin for agent skills markdown descriptor content</p>
+    /// <p>The agent skills markdown descriptor associated with the agent skills definition.</p>
     pub fn skill_md(mut self, input: crate::types::AgentSkillsMdDescriptor) -> Self {
         self.skill_md = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Base mixin for agent skills markdown descriptor content</p>
+    /// <p>The agent skills markdown descriptor associated with the agent skills definition.</p>
     pub fn set_skill_md(mut self, input: ::std::option::Option<crate::types::AgentSkillsMdDescriptor>) -> Self {
         self.skill_md = input;
         self
     }
-    /// <p>Base mixin for agent skills markdown descriptor content</p>
+    /// <p>The agent skills markdown descriptor associated with the agent skills definition.</p>
     pub fn get_skill_md(&self) -> &::std::option::Option<crate::types::AgentSkillsMdDescriptor> {
         &self.skill_md
     }

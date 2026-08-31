@@ -22,7 +22,7 @@ impl crate::operation::create_registration_attachment::builders::CreateRegistrat
 }
 /// Fluent builder constructing a request to `CreateRegistrationAttachment`.
 ///
-/// <p>Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed “letter of authorization” (LOA) to be submitted.</p>
+/// <p>Create a new registration attachment to use for uploading a file or a URL to a file. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG. For example, many sender ID registrations require a signed “letter of authorization” (LOA) to be submitted.</p>
 /// <p>Use either <code>AttachmentUrl</code> or <code>AttachmentBody</code> to upload your attachment. If both are specified then an exception is returned.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRegistrationAttachmentFluentBuilder {
@@ -109,17 +109,17 @@ impl CreateRegistrationAttachmentFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn attachment_body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.attachment_body(input);
         self
     }
-    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn set_attachment_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.inner = self.inner.set_attachment_body(input);
         self
     }
-    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn get_attachment_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         self.inner.get_attachment_body()
     }

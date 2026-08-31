@@ -24,14 +24,26 @@ pub fn ser_update_registry_record_input_input(
     if let Some(var_7) = &input.name {
         object.key("name").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.record_type {
-        object.key("recordType").string(var_8.as_str());
+    if let Some(var_8) = &input.provenance {
+        let mut array_9 = object.key("provenance").start_array();
+        for item_10 in var_8 {
+            {
+                #[allow(unused_mut)]
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_provenance::ser_provenance(&mut object_11, item_10)?;
+                object_11.finish();
+            }
+        }
+        array_9.finish();
     }
-    if let Some(var_9) = &input.record_version {
-        object.key("recordVersion").string(var_9.as_str());
+    if let Some(var_12) = &input.record_type {
+        object.key("recordType").string(var_12.as_str());
     }
-    if let Some(var_10) = &input.trigger_synchronization {
-        object.key("triggerSynchronization").boolean(*var_10);
+    if let Some(var_13) = &input.record_version {
+        object.key("recordVersion").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.trigger_synchronization {
+        object.key("triggerSynchronization").boolean(*var_14);
     }
     Ok(())
 }

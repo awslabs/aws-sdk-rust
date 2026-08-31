@@ -8,6 +8,8 @@ pub struct AddAttachmentsToSetInput {
     /// <p>One or more attachments to add to the set. You can add up to three attachments per set. The size limit is 5 MB per attachment.</p>
     /// <p>In the <code>Attachment</code> object, use the <code>data</code> parameter to specify the contents of the attachment file. In the previous request syntax, the value for <code>data</code> appear as <code>blob</code>, which is represented as a base64-encoded string. The value for <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
     pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
+    /// <p>Specifies whether to validate the request without actually adding the attachments. When set to <code>true</code>, the request is validated but no attachments are stored, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl AddAttachmentsToSetInput {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
@@ -20,6 +22,10 @@ impl AddAttachmentsToSetInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
     pub fn attachments(&self) -> &[crate::types::Attachment] {
         self.attachments.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether to validate the request without actually adding the attachments. When set to <code>true</code>, the request is validated but no attachments are stored, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl AddAttachmentsToSetInput {
@@ -35,6 +41,7 @@ impl AddAttachmentsToSetInput {
 pub struct AddAttachmentsToSetInputBuilder {
     pub(crate) attachment_set_id: ::std::option::Option<::std::string::String>,
     pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::Attachment>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl AddAttachmentsToSetInputBuilder {
     /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> is not specified, a new attachment set is created, and the ID of the set is returned in the response. If an <code>attachmentSetId</code> is specified, the attachments are added to the specified set, if it exists.</p>
@@ -74,6 +81,20 @@ impl AddAttachmentsToSetInputBuilder {
     pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Attachment>> {
         &self.attachments
     }
+    /// <p>Specifies whether to validate the request without actually adding the attachments. When set to <code>true</code>, the request is validated but no attachments are stored, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually adding the attachments. When set to <code>true</code>, the request is validated but no attachments are stored, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually adding the attachments. When set to <code>true</code>, the request is validated but no attachments are stored, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`AddAttachmentsToSetInput`](crate::operation::add_attachments_to_set::AddAttachmentsToSetInput).
     pub fn build(
         self,
@@ -82,6 +103,7 @@ impl AddAttachmentsToSetInputBuilder {
         ::std::result::Result::Ok(crate::operation::add_attachments_to_set::AddAttachmentsToSetInput {
             attachment_set_id: self.attachment_set_id,
             attachments: self.attachments,
+            dry_run: self.dry_run,
         })
     }
 }

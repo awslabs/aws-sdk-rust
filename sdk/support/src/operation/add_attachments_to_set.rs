@@ -322,6 +322,8 @@ pub enum AddAttachmentsToSetError {
     AttachmentSetIdNotFound(crate::types::error::AttachmentSetIdNotFound),
     /// <p>A limit for the size of an attachment set has been exceeded. The limits are three attachments and 5 MB per attachment.</p>
     AttachmentSetSizeLimitExceeded(crate::types::error::AttachmentSetSizeLimitExceeded),
+    /// <p>The request was valid, but the operation wasn't performed because <code>dryRun</code> was set to <code>true</code>.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::types::error::InternalServerError),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -361,6 +363,7 @@ impl AddAttachmentsToSetError {
             Self::AttachmentSetExpired(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AttachmentSetIdNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AttachmentSetSizeLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DryRunOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -381,6 +384,10 @@ impl AddAttachmentsToSetError {
     pub fn is_attachment_set_size_limit_exceeded(&self) -> bool {
         matches!(self, Self::AttachmentSetSizeLimitExceeded(_))
     }
+    /// Returns `true` if the error kind is `AddAttachmentsToSetError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
+    }
     /// Returns `true` if the error kind is `AddAttachmentsToSetError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
         matches!(self, Self::InternalServerError(_))
@@ -393,6 +400,7 @@ impl ::std::error::Error for AddAttachmentsToSetError {
             Self::AttachmentSetExpired(_inner) => ::std::option::Option::Some(_inner),
             Self::AttachmentSetIdNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::AttachmentSetSizeLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -405,6 +413,7 @@ impl ::std::fmt::Display for AddAttachmentsToSetError {
             Self::AttachmentSetExpired(_inner) => _inner.fmt(f),
             Self::AttachmentSetIdNotFound(_inner) => _inner.fmt(f),
             Self::AttachmentSetSizeLimitExceeded(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -431,6 +440,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AddAttachment
             Self::AttachmentSetExpired(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AttachmentSetIdNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AttachmentSetSizeLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DryRunOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

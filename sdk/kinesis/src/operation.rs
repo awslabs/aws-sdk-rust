@@ -4,11 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddTagsToStream` operation.
 pub mod add_tags_to_stream;
 
+/// Types for the `CreateChannel` operation.
+pub mod create_channel;
+
 /// Types for the `CreateStream` operation.
 pub mod create_stream;
 
 /// Types for the `DecreaseStreamRetentionPeriod` operation.
 pub mod decrease_stream_retention_period;
+
+/// Types for the `DeleteChannel` operation.
+pub mod delete_channel;
 
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
@@ -21,6 +27,9 @@ pub mod deregister_stream_consumer;
 
 /// Types for the `DescribeAccountSettings` operation.
 pub mod describe_account_settings;
+
+/// Types for the `DescribeChannel` operation.
+pub mod describe_channel;
 
 /// Types for the `DescribeLimits` operation.
 pub mod describe_limits;
@@ -51,6 +60,9 @@ pub mod get_shard_iterator;
 
 /// Types for the `IncreaseStreamRetentionPeriod` operation.
 pub mod increase_stream_retention_period;
+
+/// Types for the `ListChannels` operation.
+pub mod list_channels;
 
 /// Types for the `ListShards` operation.
 pub mod list_shards;
@@ -105,6 +117,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAccountSettings` operation.
 pub mod update_account_settings;
+
+/// Types for the `UpdateChannel` operation.
+pub mod update_channel;
 
 /// Types for the `UpdateMaxRecordSize` operation.
 pub mod update_max_record_size;

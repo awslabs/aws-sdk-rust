@@ -25,6 +25,8 @@
 ///     AttributeDimensionType::Inclusive => { /* ... */ },
 ///     AttributeDimensionType::LessThan => { /* ... */ },
 ///     AttributeDimensionType::LessThanOrEqual => { /* ... */ },
+///     AttributeDimensionType::ListContains => { /* ... */ },
+///     AttributeDimensionType::ListContainsAll => { /* ... */ },
 ///     AttributeDimensionType::NotBetween => { /* ... */ },
 ///     AttributeDimensionType::On => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -82,6 +84,10 @@ pub enum AttributeDimensionType {
     #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqual,
     #[allow(missing_docs)] // documentation missing in model
+    ListContains,
+    #[allow(missing_docs)] // documentation missing in model
+    ListContainsAll,
+    #[allow(missing_docs)] // documentation missing in model
     NotBetween,
     #[allow(missing_docs)] // documentation missing in model
     On,
@@ -105,6 +111,8 @@ impl ::std::convert::From<&str> for AttributeDimensionType {
             "INCLUSIVE" => AttributeDimensionType::Inclusive,
             "LESS_THAN" => AttributeDimensionType::LessThan,
             "LESS_THAN_OR_EQUAL" => AttributeDimensionType::LessThanOrEqual,
+            "LIST_CONTAINS" => AttributeDimensionType::ListContains,
+            "LIST_CONTAINS_ALL" => AttributeDimensionType::ListContainsAll,
             "NOT_BETWEEN" => AttributeDimensionType::NotBetween,
             "ON" => AttributeDimensionType::On,
             other => AttributeDimensionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -135,6 +143,8 @@ impl AttributeDimensionType {
             AttributeDimensionType::Inclusive => "INCLUSIVE",
             AttributeDimensionType::LessThan => "LESS_THAN",
             AttributeDimensionType::LessThanOrEqual => "LESS_THAN_OR_EQUAL",
+            AttributeDimensionType::ListContains => "LIST_CONTAINS",
+            AttributeDimensionType::ListContainsAll => "LIST_CONTAINS_ALL",
             AttributeDimensionType::NotBetween => "NOT_BETWEEN",
             AttributeDimensionType::On => "ON",
             AttributeDimensionType::Unknown(value) => value.as_str(),
@@ -156,6 +166,8 @@ impl AttributeDimensionType {
             "INCLUSIVE",
             "LESS_THAN",
             "LESS_THAN_OR_EQUAL",
+            "LIST_CONTAINS",
+            "LIST_CONTAINS_ALL",
             "NOT_BETWEEN",
             "ON",
         ]
@@ -194,6 +206,8 @@ impl ::std::fmt::Display for AttributeDimensionType {
             AttributeDimensionType::Inclusive => write!(f, "INCLUSIVE"),
             AttributeDimensionType::LessThan => write!(f, "LESS_THAN"),
             AttributeDimensionType::LessThanOrEqual => write!(f, "LESS_THAN_OR_EQUAL"),
+            AttributeDimensionType::ListContains => write!(f, "LIST_CONTAINS"),
+            AttributeDimensionType::ListContainsAll => write!(f, "LIST_CONTAINS_ALL"),
             AttributeDimensionType::NotBetween => write!(f, "NOT_BETWEEN"),
             AttributeDimensionType::On => write!(f, "ON"),
             AttributeDimensionType::Unknown(value) => write!(f, "{value}"),

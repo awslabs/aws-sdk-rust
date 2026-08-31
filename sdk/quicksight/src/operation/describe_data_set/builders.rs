@@ -22,7 +22,7 @@ impl crate::operation::describe_data_set::builders::DescribeDataSetInputBuilder 
 }
 /// Fluent builder constructing a request to `DescribeDataSet`.
 ///
-/// <p>Describes a dataset. This operation doesn't support datasets that include uploaded files as a source.</p>
+/// <p>Describes a dataset.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeDataSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

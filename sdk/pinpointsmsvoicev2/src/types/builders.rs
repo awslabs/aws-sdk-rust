@@ -121,6 +121,8 @@ pub use crate::types::_text_validation::TextValidationBuilder;
 
 pub use crate::types::_registration_field_display_hints::RegistrationFieldDisplayHintsBuilder;
 
+pub use crate::types::_conditional_behavior::ConditionalBehaviorBuilder;
+
 pub use crate::types::_registration_section_display_hints::RegistrationSectionDisplayHintsBuilder;
 
 pub use crate::types::_registration_type_display_hints::RegistrationTypeDisplayHintsBuilder;
@@ -157,8 +159,14 @@ pub use crate::types::_rcs_create_calendar_event_action::RcsCreateCalendarEventA
 
 pub use crate::types::_select_option_description::SelectOptionDescriptionBuilder;
 
+pub use crate::types::_conditional_rule::ConditionalRuleBuilder;
+
 pub use crate::types::_rcs_card_media::RcsCardMediaBuilder;
 
 pub use crate::types::_rcs_carousel_card_content::RcsCarouselCardContentBuilder;
 
+pub use crate::types::_conditional_validation::ConditionalValidationBuilder;
+
 pub use crate::types::_rcs_carousel_card_media::RcsCarouselCardMediaBuilder;
+
+pub use crate::types::_field_condition::FieldConditionBuilder;

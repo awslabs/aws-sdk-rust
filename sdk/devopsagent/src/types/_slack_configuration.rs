@@ -10,6 +10,8 @@ pub struct SlackConfiguration {
     pub workspace_name: ::std::string::String,
     /// <p>Transmission targets for agent notifications</p>
     pub transmission_target: ::std::option::Option<crate::types::SlackTransmissionTarget>,
+    /// <p>Optional bidirectional communication configuration. Supply this configuration and set enabled to true so you can interact with the agent directly from Slack.</p>
+    pub bidirectional: ::std::option::Option<crate::types::SlackBidirectionalConfiguration>,
 }
 impl SlackConfiguration {
     /// <p>Associated Slack workspace ID</p>
@@ -26,6 +28,10 @@ impl SlackConfiguration {
     pub fn transmission_target(&self) -> ::std::option::Option<&crate::types::SlackTransmissionTarget> {
         self.transmission_target.as_ref()
     }
+    /// <p>Optional bidirectional communication configuration. Supply this configuration and set enabled to true so you can interact with the agent directly from Slack.</p>
+    pub fn bidirectional(&self) -> ::std::option::Option<&crate::types::SlackBidirectionalConfiguration> {
+        self.bidirectional.as_ref()
+    }
 }
 impl SlackConfiguration {
     /// Creates a new builder-style object to manufacture [`SlackConfiguration`](crate::types::SlackConfiguration).
@@ -41,6 +47,7 @@ pub struct SlackConfigurationBuilder {
     pub(crate) workspace_id: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) transmission_target: ::std::option::Option<crate::types::SlackTransmissionTarget>,
+    pub(crate) bidirectional: ::std::option::Option<crate::types::SlackBidirectionalConfiguration>,
 }
 impl SlackConfigurationBuilder {
     /// <p>Associated Slack workspace ID</p>
@@ -88,6 +95,20 @@ impl SlackConfigurationBuilder {
     pub fn get_transmission_target(&self) -> &::std::option::Option<crate::types::SlackTransmissionTarget> {
         &self.transmission_target
     }
+    /// <p>Optional bidirectional communication configuration. Supply this configuration and set enabled to true so you can interact with the agent directly from Slack.</p>
+    pub fn bidirectional(mut self, input: crate::types::SlackBidirectionalConfiguration) -> Self {
+        self.bidirectional = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Optional bidirectional communication configuration. Supply this configuration and set enabled to true so you can interact with the agent directly from Slack.</p>
+    pub fn set_bidirectional(mut self, input: ::std::option::Option<crate::types::SlackBidirectionalConfiguration>) -> Self {
+        self.bidirectional = input;
+        self
+    }
+    /// <p>Optional bidirectional communication configuration. Supply this configuration and set enabled to true so you can interact with the agent directly from Slack.</p>
+    pub fn get_bidirectional(&self) -> &::std::option::Option<crate::types::SlackBidirectionalConfiguration> {
+        &self.bidirectional
+    }
     /// Consumes the builder and constructs a [`SlackConfiguration`](crate::types::SlackConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`workspace_id`](crate::types::builders::SlackConfigurationBuilder::workspace_id)
@@ -107,6 +128,7 @@ impl SlackConfigurationBuilder {
                 )
             })?,
             transmission_target: self.transmission_target,
+            bidirectional: self.bidirectional,
         })
     }
 }

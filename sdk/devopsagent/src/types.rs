@@ -301,6 +301,8 @@ pub use crate::types::_github_repo_owner_type::GithubRepoOwnerType;
 
 pub use crate::types::_slack_transmission_target::SlackTransmissionTarget;
 
+pub use crate::types::_slack_bidirectional_configuration::SlackBidirectionalConfiguration;
+
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfig;
 
 pub use crate::types::_service_now_o_auth_client_credentials_config::ServiceNowOAuthClientCredentialsConfig;
@@ -646,6 +648,8 @@ mod _service_now_o_auth_client_credentials_config;
 mod _service_now_service_authorization_config;
 
 mod _service_now_service_details;
+
+mod _slack_bidirectional_configuration;
 
 mod _slack_channel;
 

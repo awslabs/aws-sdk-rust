@@ -4,12 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAttachmentInput {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    /// <p>If the specified attachment is larger than 5 MB, this operation returns <code>InvalidParameterValueException</code>. To download attachments larger than 5 MB, use <code>GetAttachmentDownloadLink</code>.</p>
     pub attachment_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to validate the request without actually retrieving the attachment. When set to <code>true</code>, the request is validated but no attachment content is returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAttachmentInput {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    /// <p>If the specified attachment is larger than 5 MB, this operation returns <code>InvalidParameterValueException</code>. To download attachments larger than 5 MB, use <code>GetAttachmentDownloadLink</code>.</p>
     pub fn attachment_id(&self) -> ::std::option::Option<&str> {
         self.attachment_id.as_deref()
+    }
+    /// <p>Specifies whether to validate the request without actually retrieving the attachment. When set to <code>true</code>, the request is validated but no attachment content is returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl DescribeAttachmentInput {
@@ -24,22 +32,40 @@ impl DescribeAttachmentInput {
 #[non_exhaustive]
 pub struct DescribeAttachmentInputBuilder {
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeAttachmentInputBuilder {
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    /// <p>If the specified attachment is larger than 5 MB, this operation returns <code>InvalidParameterValueException</code>. To download attachments larger than 5 MB, use <code>GetAttachmentDownloadLink</code>.</p>
     /// This field is required.
     pub fn attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    /// <p>If the specified attachment is larger than 5 MB, this operation returns <code>InvalidParameterValueException</code>. To download attachments larger than 5 MB, use <code>GetAttachmentDownloadLink</code>.</p>
     pub fn set_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_id = input;
         self
     }
     /// <p>The ID of the attachment to return. Attachment IDs are returned by the <code>DescribeCommunications</code> operation.</p>
+    /// <p>If the specified attachment is larger than 5 MB, this operation returns <code>InvalidParameterValueException</code>. To download attachments larger than 5 MB, use <code>GetAttachmentDownloadLink</code>.</p>
     pub fn get_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_id
+    }
+    /// <p>Specifies whether to validate the request without actually retrieving the attachment. When set to <code>true</code>, the request is validated but no attachment content is returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually retrieving the attachment. When set to <code>true</code>, the request is validated but no attachment content is returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually retrieving the attachment. When set to <code>true</code>, the request is validated but no attachment content is returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`DescribeAttachmentInput`](crate::operation::describe_attachment::DescribeAttachmentInput).
     pub fn build(
@@ -47,6 +73,7 @@ impl DescribeAttachmentInputBuilder {
     ) -> ::std::result::Result<crate::operation::describe_attachment::DescribeAttachmentInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_attachment::DescribeAttachmentInput {
             attachment_id: self.attachment_id,
+            dry_run: self.dry_run,
         })
     }
 }

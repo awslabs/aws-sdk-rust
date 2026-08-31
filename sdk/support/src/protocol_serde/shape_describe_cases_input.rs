@@ -39,5 +39,8 @@ pub fn ser_describe_cases_input_input(
     if let Some(var_11) = &input.include_communications {
         object.key("includeCommunications").boolean(*var_11);
     }
+    if let Some(var_12) = &input.dry_run {
+        object.key("dryRun").boolean(*var_12);
+    }
     Ok(())
 }

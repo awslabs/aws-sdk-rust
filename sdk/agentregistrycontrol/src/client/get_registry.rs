@@ -10,9 +10,11 @@ impl super::Client {
     ///   - [`registry_id(String)`](crate::operation::get_registry::GetRegistryOutput::registry_id): <p>The unique identifier of the registry</p>
     ///   - [`registry_arn(String)`](crate::operation::get_registry::GetRegistryOutput::registry_arn): <p>The ARN of the registry</p>
     ///   - [`discovery_configuration(Option<DiscoveryConfiguration>)`](crate::operation::get_registry::GetRegistryOutput::discovery_configuration): <p>Discovery configuration for the registry</p>
+    ///   - [`encryption_configuration(Option<EncryptionConfiguration>)`](crate::operation::get_registry::GetRegistryOutput::encryption_configuration): <p>The server-side encryption configuration for the registry. Appears only when a customer-managed Amazon Web Services KMS key encrypts the registry.</p>
     ///   - [`approval_configuration(Option<ApprovalConfiguration>)`](crate::operation::get_registry::GetRegistryOutput::approval_configuration): <p>Approval configuration for registry records</p>
     ///   - [`status(RegistryStatus)`](crate::operation::get_registry::GetRegistryOutput::status): <p>Current status of the registry</p>
     ///   - [`status_reason(Option<String>)`](crate::operation::get_registry::GetRegistryOutput::status_reason): <p>The reason for the current status. Typically populated when the status indicates a failure state.</p>
+    ///   - [`auto_detection(Option<AutoDetection>)`](crate::operation::get_registry::GetRegistryOutput::auto_detection): <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_registry::GetRegistryOutput::created_at): <p>The timestamp when the registry was created</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_registry::GetRegistryOutput::updated_at): <p>The timestamp when the registry was last updated</p>
     /// - On failure, responds with [`SdkError<GetRegistryError>`](crate::operation::get_registry::GetRegistryError)

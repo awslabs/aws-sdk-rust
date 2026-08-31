@@ -49,6 +49,10 @@ where
                                     .transpose()?,
                             );
                         }
+                        "attachments" => {
+                            builder =
+                                builder.set_attachments(crate::protocol_serde::shape_attachment_set::de_attachment_set(tokens, _value, depth + 1)?);
+                        }
                         "attachmentSet" => {
                             builder = builder.set_attachment_set(crate::protocol_serde::shape_attachment_set::de_attachment_set(
                                 tokens,

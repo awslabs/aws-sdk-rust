@@ -560,6 +560,15 @@ pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterB
     builder
 }
 
+pub(crate) fn schedule_configuration_correct_errors(
+    mut builder: crate::types::builders::ScheduleConfigurationBuilder,
+) -> crate::types::builders::ScheduleConfigurationBuilder {
+    if builder.interval.is_none() {
+        builder.interval = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn segment_sort_correct_errors(mut builder: crate::types::builders::SegmentSortBuilder) -> crate::types::builders::SegmentSortBuilder {
     if builder.attributes.is_none() {
         builder.attributes = Some(Default::default())

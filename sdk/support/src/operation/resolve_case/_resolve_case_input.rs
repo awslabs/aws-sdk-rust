@@ -3,13 +3,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResolveCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub case_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to validate the request without actually resolving the case. When set to <code>true</code>, the request is validated but the case isn't resolved, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl ResolveCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
+    }
+    /// <p>Specifies whether to validate the request without actually resolving the case. When set to <code>true</code>, the request is validated but the case isn't resolved, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl ResolveCaseInput {
@@ -24,24 +30,42 @@ impl ResolveCaseInput {
 #[non_exhaustive]
 pub struct ResolveCaseInputBuilder {
     pub(crate) case_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl ResolveCaseInputBuilder {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
+    /// <p>Specifies whether to validate the request without actually resolving the case. When set to <code>true</code>, the request is validated but the case isn't resolved, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually resolving the case. When set to <code>true</code>, the request is validated but the case isn't resolved, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually resolving the case. When set to <code>true</code>, the request is validated but the case isn't resolved, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`ResolveCaseInput`](crate::operation::resolve_case::ResolveCaseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::resolve_case::ResolveCaseInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::resolve_case::ResolveCaseInput { case_id: self.case_id })
+        ::std::result::Result::Ok(crate::operation::resolve_case::ResolveCaseInput {
+            case_id: self.case_id,
+            dry_run: self.dry_run,
+        })
     }
 }

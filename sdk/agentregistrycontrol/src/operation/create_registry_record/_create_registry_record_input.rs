@@ -19,6 +19,8 @@ pub struct CreateRegistryRecordInput {
     pub record_version: ::std::option::Option<::std::string::String>,
     /// <p>Client token for idempotency</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
     /// <p>Tags to associate with the registry record</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -55,6 +57,12 @@ impl CreateRegistryRecordInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provenance.is_none()`.
+    pub fn provenance(&self) -> &[crate::types::Provenance] {
+        self.provenance.as_deref().unwrap_or_default()
+    }
     /// <p>Tags to associate with the registry record</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -71,6 +79,7 @@ impl ::std::fmt::Debug for CreateRegistryRecordInput {
         formatter.field("descriptors", &self.descriptors);
         formatter.field("record_version", &self.record_version);
         formatter.field("client_token", &self.client_token);
+        formatter.field("provenance", &self.provenance);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -94,6 +103,7 @@ pub struct CreateRegistryRecordInputBuilder {
     pub(crate) descriptors: ::std::option::Option<crate::types::Descriptors>,
     pub(crate) record_version: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRegistryRecordInputBuilder {
@@ -213,6 +223,26 @@ impl CreateRegistryRecordInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// Appends an item to `provenance`.
+    ///
+    /// To override the contents of this collection use [`set_provenance`](Self::set_provenance).
+    ///
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn provenance(mut self, input: crate::types::Provenance) -> Self {
+        let mut v = self.provenance.unwrap_or_default();
+        v.push(input);
+        self.provenance = ::std::option::Option::Some(v);
+        self
+    }
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn set_provenance(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>) -> Self {
+        self.provenance = input;
+        self
+    }
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn get_provenance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Provenance>> {
+        &self.provenance
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -247,6 +277,7 @@ impl CreateRegistryRecordInputBuilder {
             descriptors: self.descriptors,
             record_version: self.record_version,
             client_token: self.client_token,
+            provenance: self.provenance,
             tags: self.tags,
         })
     }
@@ -262,6 +293,7 @@ impl ::std::fmt::Debug for CreateRegistryRecordInputBuilder {
         formatter.field("descriptors", &self.descriptors);
         formatter.field("record_version", &self.record_version);
         formatter.field("client_token", &self.client_token);
+        formatter.field("provenance", &self.provenance);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }

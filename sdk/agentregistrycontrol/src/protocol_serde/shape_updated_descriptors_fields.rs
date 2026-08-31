@@ -30,5 +30,17 @@ pub fn ser_updated_descriptors_fields(
         crate::protocol_serde::shape_updated_custom_descriptor::ser_updated_custom_descriptor(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.http {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("http").start_object();
+        crate::protocol_serde::shape_updated_http_descriptor::ser_updated_http_descriptor(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.agui {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("agui").start_object();
+        crate::protocol_serde::shape_updated_ag_ui_descriptor::ser_updated_ag_ui_descriptor(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }

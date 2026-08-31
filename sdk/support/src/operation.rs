@@ -7,11 +7,17 @@ pub mod add_attachments_to_set;
 /// Types for the `AddCommunicationToCase` operation.
 pub mod add_communication_to_case;
 
+/// Types for the `CompleteAttachmentUpload` operation.
+pub mod complete_attachment_upload;
+
 /// Types for the `CreateCase` operation.
 pub mod create_case;
 
 /// Types for the `DescribeAttachment` operation.
 pub mod describe_attachment;
+
+/// Types for the `DescribeAttachmentUploadStatus` operation.
+pub mod describe_attachment_upload_status;
 
 /// Types for the `DescribeCases` operation.
 pub mod describe_cases;
@@ -42,6 +48,12 @@ pub mod describe_trusted_advisor_check_summaries;
 
 /// Types for the `DescribeTrustedAdvisorChecks` operation.
 pub mod describe_trusted_advisor_checks;
+
+/// Types for the `GetAttachmentDownloadLink` operation.
+pub mod get_attachment_download_link;
+
+/// Types for the `GetAttachmentUploadLinks` operation.
+pub mod get_attachment_upload_links;
 
 /// Types for the `RefreshTrustedAdvisorCheck` operation.
 pub mod refresh_trusted_advisor_check;

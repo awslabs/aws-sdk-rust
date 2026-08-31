@@ -49,6 +49,16 @@ pub(crate) fn reflens_list_approval_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_apps_output_output_next_token(
+    input: &crate::operation::list_apps::ListAppsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_asset_bundle_export_jobs_output_output_next_token(
     input: &crate::operation::list_asset_bundle_export_jobs::ListAssetBundleExportJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -399,6 +409,16 @@ pub(crate) fn reflens_search_analyses_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_apps_output_output_next_token(
+    input: &crate::operation::search_apps::SearchAppsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_search_dashboards_output_output_next_token(
     input: &crate::operation::search_dashboards::SearchDashboardsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -521,6 +541,13 @@ pub(crate) fn lens_list_approval_policies_output_output_policies(
     input: crate::operation::list_approval_policies::ListApprovalPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ApprovalPolicy>> {
     let input = input.policies;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_apps_output_output_app_summary_list(
+    input: crate::operation::list_apps::ListAppsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>> {
+    let input = input.app_summary_list;
     ::std::option::Option::Some(input)
 }
 
@@ -752,6 +779,13 @@ pub(crate) fn lens_search_analyses_output_output_analysis_summary_list(
     input: crate::operation::search_analyses::SearchAnalysesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AnalysisSummary>> {
     let input = input.analysis_summary_list?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_apps_output_output_app_summary_list(
+    input: crate::operation::search_apps::SearchAppsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AppSummary>> {
+    let input = input.app_summary_list;
     ::std::option::Option::Some(input)
 }
 

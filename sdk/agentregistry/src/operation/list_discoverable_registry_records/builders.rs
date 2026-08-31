@@ -114,17 +114,17 @@ impl ListDiscoverableRegistryRecordsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_discoverable_registry_records::paginator::ListDiscoverableRegistryRecordsPaginator {
         crate::operation::list_discoverable_registry_records::paginator::ListDiscoverableRegistryRecordsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry whose discoverable records are listed. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.registry_id(input.into());
         self
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry whose discoverable records are listed. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_registry_id(input);
         self
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry whose discoverable records are listed. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_registry_id()
     }

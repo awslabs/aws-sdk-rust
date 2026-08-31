@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescriptorSource {
-    /// <p>Base mixin for descriptor source from URL</p>
+    /// <p>The URL-based descriptor source, populated when descriptor content is synchronized from a URL.</p>
     pub from_url: ::std::option::Option<crate::types::DescriptorSourceFromUrl>,
 }
 impl DescriptorSource {
-    /// <p>Base mixin for descriptor source from URL</p>
+    /// <p>The URL-based descriptor source, populated when descriptor content is synchronized from a URL.</p>
     pub fn from_url(&self) -> ::std::option::Option<&crate::types::DescriptorSourceFromUrl> {
         self.from_url.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct DescriptorSourceBuilder {
     pub(crate) from_url: ::std::option::Option<crate::types::DescriptorSourceFromUrl>,
 }
 impl DescriptorSourceBuilder {
-    /// <p>Base mixin for descriptor source from URL</p>
+    /// <p>The URL-based descriptor source, populated when descriptor content is synchronized from a URL.</p>
     pub fn from_url(mut self, input: crate::types::DescriptorSourceFromUrl) -> Self {
         self.from_url = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Base mixin for descriptor source from URL</p>
+    /// <p>The URL-based descriptor source, populated when descriptor content is synchronized from a URL.</p>
     pub fn set_from_url(mut self, input: ::std::option::Option<crate::types::DescriptorSourceFromUrl>) -> Self {
         self.from_url = input;
         self
     }
-    /// <p>Base mixin for descriptor source from URL</p>
+    /// <p>The URL-based descriptor source, populated when descriptor content is synchronized from a URL.</p>
     pub fn get_from_url(&self) -> &::std::option::Option<crate::types::DescriptorSourceFromUrl> {
         &self.from_url
     }

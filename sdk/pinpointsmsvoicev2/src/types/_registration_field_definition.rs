@@ -18,6 +18,8 @@ pub struct RegistrationFieldDefinition {
     pub text_validation: ::std::option::Option<crate::types::TextValidation>,
     /// <p>An array of RegistrationFieldDisplayHints objects for the field.</p>
     pub display_hints: ::std::option::Option<crate::types::RegistrationFieldDisplayHints>,
+    /// <p>The conditional behavior rules for this field. Only present when <b>FieldRequirement</b> is <b>CONDITIONAL</b>. Rules are evaluated in order and the first matching rule determines the field's resolved requirement. If no rule matches, the <b>DefaultBehavior</b> applies.</p>
+    pub conditional_behavior: ::std::option::Option<crate::types::ConditionalBehavior>,
 }
 impl RegistrationFieldDefinition {
     /// <p>The section path of the field.</p>
@@ -50,6 +52,10 @@ impl RegistrationFieldDefinition {
     pub fn display_hints(&self) -> ::std::option::Option<&crate::types::RegistrationFieldDisplayHints> {
         self.display_hints.as_ref()
     }
+    /// <p>The conditional behavior rules for this field. Only present when <b>FieldRequirement</b> is <b>CONDITIONAL</b>. Rules are evaluated in order and the first matching rule determines the field's resolved requirement. If no rule matches, the <b>DefaultBehavior</b> applies.</p>
+    pub fn conditional_behavior(&self) -> ::std::option::Option<&crate::types::ConditionalBehavior> {
+        self.conditional_behavior.as_ref()
+    }
 }
 impl RegistrationFieldDefinition {
     /// Creates a new builder-style object to manufacture [`RegistrationFieldDefinition`](crate::types::RegistrationFieldDefinition).
@@ -69,6 +75,7 @@ pub struct RegistrationFieldDefinitionBuilder {
     pub(crate) select_validation: ::std::option::Option<crate::types::SelectValidation>,
     pub(crate) text_validation: ::std::option::Option<crate::types::TextValidation>,
     pub(crate) display_hints: ::std::option::Option<crate::types::RegistrationFieldDisplayHints>,
+    pub(crate) conditional_behavior: ::std::option::Option<crate::types::ConditionalBehavior>,
 }
 impl RegistrationFieldDefinitionBuilder {
     /// <p>The section path of the field.</p>
@@ -174,6 +181,20 @@ impl RegistrationFieldDefinitionBuilder {
     pub fn get_display_hints(&self) -> &::std::option::Option<crate::types::RegistrationFieldDisplayHints> {
         &self.display_hints
     }
+    /// <p>The conditional behavior rules for this field. Only present when <b>FieldRequirement</b> is <b>CONDITIONAL</b>. Rules are evaluated in order and the first matching rule determines the field's resolved requirement. If no rule matches, the <b>DefaultBehavior</b> applies.</p>
+    pub fn conditional_behavior(mut self, input: crate::types::ConditionalBehavior) -> Self {
+        self.conditional_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The conditional behavior rules for this field. Only present when <b>FieldRequirement</b> is <b>CONDITIONAL</b>. Rules are evaluated in order and the first matching rule determines the field's resolved requirement. If no rule matches, the <b>DefaultBehavior</b> applies.</p>
+    pub fn set_conditional_behavior(mut self, input: ::std::option::Option<crate::types::ConditionalBehavior>) -> Self {
+        self.conditional_behavior = input;
+        self
+    }
+    /// <p>The conditional behavior rules for this field. Only present when <b>FieldRequirement</b> is <b>CONDITIONAL</b>. Rules are evaluated in order and the first matching rule determines the field's resolved requirement. If no rule matches, the <b>DefaultBehavior</b> applies.</p>
+    pub fn get_conditional_behavior(&self) -> &::std::option::Option<crate::types::ConditionalBehavior> {
+        &self.conditional_behavior
+    }
     /// Consumes the builder and constructs a [`RegistrationFieldDefinition`](crate::types::RegistrationFieldDefinition).
     /// This method will fail if any of the following fields are not set:
     /// - [`section_path`](crate::types::builders::RegistrationFieldDefinitionBuilder::section_path)
@@ -209,6 +230,7 @@ impl RegistrationFieldDefinitionBuilder {
             select_validation: self.select_validation,
             text_validation: self.text_validation,
             display_hints: self.display_hints,
+            conditional_behavior: self.conditional_behavior,
         })
     }
 }

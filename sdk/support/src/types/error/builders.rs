@@ -7,9 +7,13 @@ pub use crate::types::error::_attachment_set_id_not_found::AttachmentSetIdNotFou
 
 pub use crate::types::error::_attachment_set_size_limit_exceeded::AttachmentSetSizeLimitExceededBuilder;
 
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationExceptionBuilder;
+
 pub use crate::types::error::_internal_server_error::InternalServerErrorBuilder;
 
 pub use crate::types::error::_case_id_not_found::CaseIdNotFoundBuilder;
+
+pub use crate::types::error::_upload_id_not_found::UploadIdNotFoundBuilder;
 
 pub use crate::types::error::_case_creation_limit_exceeded::CaseCreationLimitExceededBuilder;
 

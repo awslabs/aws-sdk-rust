@@ -21,6 +21,8 @@ pub struct UpdateRegistryRecordInput {
     pub record_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether to trigger synchronization of the record's descriptor content from its source</p>
     pub trigger_synchronization: ::std::option::Option<bool>,
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
 }
 impl UpdateRegistryRecordInput {
     /// <p>The identifier of the registry containing the record (ARN or ID)</p>
@@ -59,6 +61,12 @@ impl UpdateRegistryRecordInput {
     pub fn trigger_synchronization(&self) -> ::std::option::Option<bool> {
         self.trigger_synchronization
     }
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provenance.is_none()`.
+    pub fn provenance(&self) -> &[crate::types::Provenance] {
+        self.provenance.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateRegistryRecordInput {
     /// Creates a new builder-style object to manufacture [`UpdateRegistryRecordInput`](crate::operation::update_registry_record::UpdateRegistryRecordInput).
@@ -80,6 +88,7 @@ pub struct UpdateRegistryRecordInputBuilder {
     pub(crate) descriptors: ::std::option::Option<crate::types::UpdatedDescriptors>,
     pub(crate) record_version: ::std::option::Option<::std::string::String>,
     pub(crate) trigger_synchronization: ::std::option::Option<bool>,
+    pub(crate) provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
 }
 impl UpdateRegistryRecordInputBuilder {
     /// <p>The identifier of the registry containing the record (ARN or ID)</p>
@@ -210,6 +219,26 @@ impl UpdateRegistryRecordInputBuilder {
     pub fn get_trigger_synchronization(&self) -> &::std::option::Option<bool> {
         &self.trigger_synchronization
     }
+    /// Appends an item to `provenance`.
+    ///
+    /// To override the contents of this collection use [`set_provenance`](Self::set_provenance).
+    ///
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn provenance(mut self, input: crate::types::Provenance) -> Self {
+        let mut v = self.provenance.unwrap_or_default();
+        v.push(input);
+        self.provenance = ::std::option::Option::Some(v);
+        self
+    }
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn set_provenance(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>) -> Self {
+        self.provenance = input;
+        self
+    }
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn get_provenance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Provenance>> {
+        &self.provenance
+    }
     /// Consumes the builder and constructs a [`UpdateRegistryRecordInput`](crate::operation::update_registry_record::UpdateRegistryRecordInput).
     pub fn build(
         self,
@@ -225,6 +254,7 @@ impl UpdateRegistryRecordInputBuilder {
             descriptors: self.descriptors,
             record_version: self.record_version,
             trigger_synchronization: self.trigger_synchronization,
+            provenance: self.provenance,
         })
     }
 }

@@ -667,6 +667,8 @@ pub(crate) mod shape_verified_destination_number_information;
 
 pub(crate) mod shape_carrier_status_information_list;
 
+pub(crate) mod shape_conditional_behavior;
+
 pub(crate) mod shape_notify_configuration_tier_list;
 
 pub(crate) mod shape_notify_tier_list;
@@ -715,6 +717,8 @@ pub(crate) mod shape_voice_id_list;
 
 pub(crate) mod shape_carrier_status_information;
 
+pub(crate) mod shape_conditional_rule_list;
+
 pub(crate) mod shape_rcs_card_content;
 
 pub(crate) mod shape_rcs_carousel_card_content;
@@ -729,8 +733,18 @@ pub(crate) mod shape_supported_association;
 
 pub(crate) mod shape_template_variable_metadata;
 
+pub(crate) mod shape_conditional_rule;
+
 pub(crate) mod shape_rcs_card_media;
 
 pub(crate) mod shape_rcs_carousel_card_media;
 
 pub(crate) mod shape_select_option_description;
+
+pub(crate) mod shape_conditional_validation;
+
+pub(crate) mod shape_field_condition_list;
+
+pub(crate) mod shape_field_condition;
+
+pub(crate) mod shape_condition_value_list;

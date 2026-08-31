@@ -138,6 +138,8 @@ impl Client {
 
 mod add_profile_key;
 
+mod associate_stream_for_segments;
+
 mod batch_get_calculated_attribute_for_profile;
 
 mod batch_get_profile;
@@ -229,9 +231,13 @@ mod delete_recommender_schema;
 
 mod delete_segment_definition;
 
+mod delete_segment_subscription;
+
 mod delete_workflow;
 
 mod detect_profile_object_type;
+
+mod disassociate_stream_for_segments;
 
 mod get_auto_merging_preview;
 
@@ -279,7 +285,11 @@ mod get_segment_membership;
 
 mod get_segment_snapshot;
 
+mod get_segment_subscription;
+
 mod get_similar_profiles;
+
+mod get_stream_for_segments;
 
 mod get_upload_job;
 
@@ -335,6 +345,8 @@ mod list_rule_based_matches;
 
 mod list_segment_definitions;
 
+mod list_segment_subscription_events;
+
 mod list_tags_for_resource;
 
 mod list_upload_jobs;
@@ -350,6 +362,8 @@ mod put_integration;
 mod put_profile_object;
 
 mod put_profile_object_type;
+
+mod put_segment_subscription;
 
 mod search_profiles;
 

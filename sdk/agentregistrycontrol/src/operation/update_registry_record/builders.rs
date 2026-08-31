@@ -234,4 +234,23 @@ impl UpdateRegistryRecordFluentBuilder {
     pub fn get_trigger_synchronization(&self) -> &::std::option::Option<bool> {
         self.inner.get_trigger_synchronization()
     }
+    ///
+    /// Appends an item to `provenance`.
+    ///
+    /// To override the contents of this collection use [`set_provenance`](Self::set_provenance).
+    ///
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn provenance(mut self, input: crate::types::Provenance) -> Self {
+        self.inner = self.inner.provenance(input);
+        self
+    }
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn set_provenance(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>) -> Self {
+        self.inner = self.inner.set_provenance(input);
+        self
+    }
+    /// List of provenance entries on a registry record. Capped at one entry today: a record carries a single DETECTED_FROM lineage. Modeled as a list so additional relations can be unlocked post-GA by raising this bound without a breaking shape change.
+    pub fn get_provenance(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Provenance>> {
+        self.inner.get_provenance()
+    }
 }

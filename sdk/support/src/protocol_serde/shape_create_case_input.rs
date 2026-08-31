@@ -36,5 +36,17 @@ pub fn ser_create_case_input_input(
     if let Some(var_11) = &input.attachment_set_id {
         object.key("attachmentSetId").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.upload_ids {
+        let mut array_13 = object.key("uploadIds").start_array();
+        for item_14 in var_12 {
+            {
+                array_13.value().string(item_14.as_str());
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_15) = &input.dry_run {
+        object.key("dryRun").boolean(*var_15);
+    }
     Ok(())
 }

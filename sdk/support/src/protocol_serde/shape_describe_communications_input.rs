@@ -21,5 +21,8 @@ pub fn ser_describe_communications_input_input(
             ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
+    if let Some(var_6) = &input.dry_run {
+        object.key("dryRun").boolean(*var_6);
+    }
     Ok(())
 }

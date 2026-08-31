@@ -27,9 +27,13 @@ pub(crate) mod shape_add_attachments_to_set;
 
 pub(crate) mod shape_add_communication_to_case;
 
+pub(crate) mod shape_complete_attachment_upload;
+
 pub(crate) mod shape_create_case;
 
 pub(crate) mod shape_describe_attachment;
+
+pub(crate) mod shape_describe_attachment_upload_status;
 
 pub(crate) mod shape_describe_cases;
 
@@ -50,6 +54,10 @@ pub(crate) mod shape_describe_trusted_advisor_check_result;
 pub(crate) mod shape_describe_trusted_advisor_check_summaries;
 
 pub(crate) mod shape_describe_trusted_advisor_checks;
+
+pub(crate) mod shape_get_attachment_download_link;
+
+pub(crate) mod shape_get_attachment_upload_links;
 
 pub(crate) mod shape_refresh_trusted_advisor_check;
 
@@ -81,11 +89,15 @@ pub(crate) mod shape_case_creation_limit_exceeded;
 
 pub(crate) mod shape_case_id_not_found;
 
+pub(crate) mod shape_complete_attachment_upload_input;
+
 pub(crate) mod shape_create_case_input;
 
 pub(crate) mod shape_describe_attachment_input;
 
 pub(crate) mod shape_describe_attachment_limit_exceeded;
+
+pub(crate) mod shape_describe_attachment_upload_status_input;
 
 pub(crate) mod shape_describe_cases_input;
 
@@ -107,6 +119,12 @@ pub(crate) mod shape_describe_trusted_advisor_check_summaries_input;
 
 pub(crate) mod shape_describe_trusted_advisor_checks_input;
 
+pub(crate) mod shape_dry_run_operation_exception;
+
+pub(crate) mod shape_get_attachment_download_link_input;
+
+pub(crate) mod shape_get_attachment_upload_links_input;
+
 pub(crate) mod shape_internal_server_error;
 
 pub(crate) mod shape_refresh_trusted_advisor_check_input;
@@ -114,6 +132,8 @@ pub(crate) mod shape_refresh_trusted_advisor_check_input;
 pub(crate) mod shape_resolve_case_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_upload_id_not_found;
 
 pub(crate) mod shape_attachment;
 
@@ -123,11 +143,17 @@ pub(crate) mod shape_communication_list;
 
 pub(crate) mod shape_communication_type_options_list;
 
+pub(crate) mod shape_completed_upload;
+
+pub(crate) mod shape_download_url;
+
 pub(crate) mod shape_service_list;
 
 pub(crate) mod shape_severity_levels_list;
 
 pub(crate) mod shape_supported_languages_list;
+
+pub(crate) mod shape_throttling_reason_list;
 
 pub(crate) mod shape_trusted_advisor_check_list;
 
@@ -138,6 +164,12 @@ pub(crate) mod shape_trusted_advisor_check_refresh_status_list;
 pub(crate) mod shape_trusted_advisor_check_result;
 
 pub(crate) mod shape_trusted_advisor_check_summary_list;
+
+pub(crate) mod shape_upload_progress;
+
+pub(crate) mod shape_upload_range;
+
+pub(crate) mod shape_upload_url_list;
 
 pub(crate) mod shape_case_details;
 
@@ -151,6 +183,8 @@ pub(crate) mod shape_severity_level;
 
 pub(crate) mod shape_supported_language;
 
+pub(crate) mod shape_throttling_reason;
+
 pub(crate) mod shape_trusted_advisor_category_specific_summary;
 
 pub(crate) mod shape_trusted_advisor_check_description;
@@ -160,6 +194,8 @@ pub(crate) mod shape_trusted_advisor_check_summary;
 pub(crate) mod shape_trusted_advisor_resource_detail_list;
 
 pub(crate) mod shape_trusted_advisor_resources_summary;
+
+pub(crate) mod shape_upload_url;
 
 pub(crate) mod shape_attachment_set;
 

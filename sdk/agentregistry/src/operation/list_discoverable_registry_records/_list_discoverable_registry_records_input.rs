@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDiscoverableRegistryRecordsInput {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry whose discoverable records are listed. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub registry_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of records to return in a single page. Valid values are 1 through 100.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,7 +13,7 @@ pub struct ListDiscoverableRegistryRecordsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordFilter>>,
 }
 impl ListDiscoverableRegistryRecordsInput {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry whose discoverable records are listed. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn registry_id(&self) -> ::std::option::Option<&str> {
         self.registry_id.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct ListDiscoverableRegistryRecordsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordFilter>>,
 }
 impl ListDiscoverableRegistryRecordsInputBuilder {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry whose discoverable records are listed. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     /// This field is required.
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry whose discoverable records are listed. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry whose discoverable records are listed. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_id
     }

@@ -14,6 +14,7 @@
 /// match recordtype {
 ///     RecordType::Agent => { /* ... */ },
 ///     RecordType::Custom => { /* ... */ },
+///     RecordType::Gateway => { /* ... */ },
 ///     RecordType::Mcp => { /* ... */ },
 ///     RecordType::Skill => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum RecordType {
     #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
+    Gateway,
+    #[allow(missing_docs)] // documentation missing in model
     Mcp,
     #[allow(missing_docs)] // documentation missing in model
     Skill,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for RecordType {
         match s {
             "AGENT" => RecordType::Agent,
             "CUSTOM" => RecordType::Custom,
+            "GATEWAY" => RecordType::Gateway,
             "MCP" => RecordType::Mcp,
             "SKILL" => RecordType::Skill,
             other => RecordType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl RecordType {
         match self {
             RecordType::Agent => "AGENT",
             RecordType::Custom => "CUSTOM",
+            RecordType::Gateway => "GATEWAY",
             RecordType::Mcp => "MCP",
             RecordType::Skill => "SKILL",
             RecordType::Unknown(value) => value.as_str(),
@@ -87,7 +92,7 @@ impl RecordType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT", "CUSTOM", "MCP", "SKILL"]
+        &["AGENT", "CUSTOM", "GATEWAY", "MCP", "SKILL"]
     }
 }
 impl ::std::convert::AsRef<str> for RecordType {
@@ -112,6 +117,7 @@ impl ::std::fmt::Display for RecordType {
         match self {
             RecordType::Agent => write!(f, "AGENT"),
             RecordType::Custom => write!(f, "CUSTOM"),
+            RecordType::Gateway => write!(f, "GATEWAY"),
             RecordType::Mcp => write!(f, "MCP"),
             RecordType::Skill => write!(f, "SKILL"),
             RecordType::Unknown(value) => write!(f, "{value}"),

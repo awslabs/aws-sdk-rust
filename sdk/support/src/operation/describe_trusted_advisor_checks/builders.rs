@@ -26,9 +26,9 @@ impl crate::operation::describe_trusted_advisor_checks::builders::DescribeTruste
 /// <p>The response contains a <code>TrustedAdvisorCheckDescription</code> object for each check. You must set the Amazon Web Services Region to us-east-1.</p><note>
 /// <ul>
 /// <li>
-/// <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API.</p></li>
+/// <p>You must have a Amazon Web Services Business Support+, Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services Support API.</p></li>
 /// <li>
-/// <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
+/// <p>If you call the Amazon Web Services Support API from an account that doesn't have a Amazon Web Services Business Support+, Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
 /// <li>
 /// <p>The names and descriptions for Trusted Advisor checks are subject to change. We recommend that you specify the check ID in your code to uniquely identify a check.</p></li>
 /// </ul>

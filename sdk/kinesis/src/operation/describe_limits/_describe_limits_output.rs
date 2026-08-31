@@ -11,6 +11,10 @@ pub struct DescribeLimitsOutput {
     pub on_demand_stream_count: i32,
     /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     pub on_demand_stream_count_limit: i32,
+    /// <p>The number of channels in the account.</p>
+    pub channel_count: ::std::option::Option<i32>,
+    /// <p>The maximum number of channels allowed in the account.</p>
+    pub channel_count_limit: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl DescribeLimitsOutput {
@@ -29,6 +33,14 @@ impl DescribeLimitsOutput {
     /// <p>The maximum number of data streams with the on-demand capacity mode.</p>
     pub fn on_demand_stream_count_limit(&self) -> i32 {
         self.on_demand_stream_count_limit
+    }
+    /// <p>The number of channels in the account.</p>
+    pub fn channel_count(&self) -> ::std::option::Option<i32> {
+        self.channel_count
+    }
+    /// <p>The maximum number of channels allowed in the account.</p>
+    pub fn channel_count_limit(&self) -> ::std::option::Option<i32> {
+        self.channel_count_limit
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeLimitsOutput {
@@ -51,6 +63,8 @@ pub struct DescribeLimitsOutputBuilder {
     pub(crate) open_shard_count: ::std::option::Option<i32>,
     pub(crate) on_demand_stream_count: ::std::option::Option<i32>,
     pub(crate) on_demand_stream_count_limit: ::std::option::Option<i32>,
+    pub(crate) channel_count: ::std::option::Option<i32>,
+    pub(crate) channel_count_limit: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl DescribeLimitsOutputBuilder {
@@ -114,6 +128,34 @@ impl DescribeLimitsOutputBuilder {
     pub fn get_on_demand_stream_count_limit(&self) -> &::std::option::Option<i32> {
         &self.on_demand_stream_count_limit
     }
+    /// <p>The number of channels in the account.</p>
+    pub fn channel_count(mut self, input: i32) -> Self {
+        self.channel_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of channels in the account.</p>
+    pub fn set_channel_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.channel_count = input;
+        self
+    }
+    /// <p>The number of channels in the account.</p>
+    pub fn get_channel_count(&self) -> &::std::option::Option<i32> {
+        &self.channel_count
+    }
+    /// <p>The maximum number of channels allowed in the account.</p>
+    pub fn channel_count_limit(mut self, input: i32) -> Self {
+        self.channel_count_limit = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of channels allowed in the account.</p>
+    pub fn set_channel_count_limit(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.channel_count_limit = input;
+        self
+    }
+    /// <p>The maximum number of channels allowed in the account.</p>
+    pub fn get_channel_count_limit(&self) -> &::std::option::Option<i32> {
+        &self.channel_count_limit
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -157,6 +199,8 @@ impl DescribeLimitsOutputBuilder {
                     "on_demand_stream_count_limit was not specified but it is required when building DescribeLimitsOutput",
                 )
             })?,
+            channel_count: self.channel_count,
+            channel_count_limit: self.channel_count_limit,
             _request_id: self._request_id,
         })
     }

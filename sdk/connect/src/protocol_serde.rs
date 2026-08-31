@@ -369,6 +369,8 @@ pub(crate) mod shape_get_contact_attributes;
 
 pub(crate) mod shape_get_contact_metrics;
 
+pub(crate) mod shape_get_cross_region_routing;
+
 pub(crate) mod shape_get_current_metric_data;
 
 pub(crate) mod shape_get_current_user_data;
@@ -702,6 +704,8 @@ pub(crate) mod shape_update_contact_routing_data;
 pub(crate) mod shape_update_contact_schedule;
 
 pub(crate) mod shape_update_contact_task_template;
+
+pub(crate) mod shape_update_cross_region_routing;
 
 pub(crate) mod shape_update_data_table_attribute;
 
@@ -1231,6 +1235,8 @@ pub(crate) mod shape_update_contact_schedule_input;
 
 pub(crate) mod shape_update_contact_task_template_input;
 
+pub(crate) mod shape_update_cross_region_routing_input;
+
 pub(crate) mod shape_update_data_table_attribute_input;
 
 pub(crate) mod shape_update_data_table_metadata_input;
@@ -1664,6 +1670,8 @@ pub(crate) mod shape_integration_association_summary_list;
 pub(crate) mod shape_interval_details;
 
 pub(crate) mod shape_invalid_request_exception_reason;
+
+pub(crate) mod shape_isolated_regions_list;
 
 pub(crate) mod shape_lex_bot;
 

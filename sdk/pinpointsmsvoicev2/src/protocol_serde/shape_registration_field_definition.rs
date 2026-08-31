@@ -20,60 +20,67 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "SectionPath" => {
-                            builder = builder.set_section_path(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "FieldPath" => {
-                            builder = builder.set_field_path(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "FieldType" => {
-                            builder = builder.set_field_type(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::FieldType::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "FieldRequirement" => {
-                            builder = builder.set_field_requirement(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::FieldRequirement::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        "SelectValidation" => {
-                            builder = builder.set_select_validation(crate::protocol_serde::shape_select_validation::de_select_validation(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "TextValidation" => {
-                            builder = builder.set_text_validation(crate::protocol_serde::shape_text_validation::de_text_validation(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "DisplayHints" => {
-                            builder = builder.set_display_hints(
-                                crate::protocol_serde::shape_registration_field_display_hints::de_registration_field_display_hints(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "SectionPath" => {
+                                builder = builder.set_section_path(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "FieldPath" => {
+                                builder = builder.set_field_path(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "FieldType" => {
+                                builder = builder.set_field_type(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::FieldType::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "FieldRequirement" => {
+                                builder = builder.set_field_requirement(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::FieldRequirement::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "SelectValidation" => {
+                                builder = builder.set_select_validation(crate::protocol_serde::shape_select_validation::de_select_validation(
                                     tokens,
                                     _value,
                                     depth + 1,
-                                )?,
-                            );
+                                )?);
+                            }
+                            "TextValidation" => {
+                                builder = builder.set_text_validation(crate::protocol_serde::shape_text_validation::de_text_validation(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "DisplayHints" => {
+                                builder = builder.set_display_hints(
+                                    crate::protocol_serde::shape_registration_field_display_hints::de_registration_field_display_hints(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "ConditionalBehavior" => {
+                                builder = builder.set_conditional_behavior(
+                                    crate::protocol_serde::shape_conditional_behavior::de_conditional_behavior(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

@@ -19,10 +19,14 @@ pub enum Error {
     CaseIdNotFound(crate::types::error::CaseIdNotFound),
     /// <p>The limit for the number of <code>DescribeAttachment</code> requests in a short period of time has been exceeded.</p>
     DescribeAttachmentLimitExceeded(crate::types::error::DescribeAttachmentLimitExceeded),
+    /// <p>The request was valid, but the operation wasn't performed because <code>dryRun</code> was set to <code>true</code>.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::types::error::InternalServerError),
     /// <p>You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
+    /// <p>The specified <code>uploadId</code> couldn't be located.</p>
+    UploadIdNotFound(crate::types::error::UploadIdNotFound),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -43,8 +47,10 @@ impl ::std::fmt::Display for Error {
             Error::CaseCreationLimitExceeded(inner) => inner.fmt(f),
             Error::CaseIdNotFound(inner) => inner.fmt(f),
             Error::DescribeAttachmentLimitExceeded(inner) => inner.fmt(f),
+            Error::DryRunOperationException(inner) => inner.fmt(f),
             Error::InternalServerError(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::UploadIdNotFound(inner) => inner.fmt(f),
             Error::Unhandled(_) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -74,8 +80,10 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::CaseCreationLimitExceeded(inner) => inner.meta(),
             Self::CaseIdNotFound(inner) => inner.meta(),
             Self::DescribeAttachmentLimitExceeded(inner) => inner.meta(),
+            Self::DryRunOperationException(inner) => inner.meta(),
             Self::InternalServerError(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
+            Self::UploadIdNotFound(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
         }
     }
@@ -106,6 +114,9 @@ impl From<crate::operation::add_attachments_to_set::AddAttachmentsToSetError> fo
             }
             crate::operation::add_attachments_to_set::AddAttachmentsToSetError::AttachmentSetSizeLimitExceeded(inner) => {
                 Error::AttachmentSetSizeLimitExceeded(inner)
+            }
+            crate::operation::add_attachments_to_set::AddAttachmentsToSetError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
             }
             crate::operation::add_attachments_to_set::AddAttachmentsToSetError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::add_attachments_to_set::AddAttachmentsToSetError::Unhandled(inner) => Error::Unhandled(inner),
@@ -139,8 +150,42 @@ impl From<crate::operation::add_communication_to_case::AddCommunicationToCaseErr
                 Error::AttachmentSetIdNotFound(inner)
             }
             crate::operation::add_communication_to_case::AddCommunicationToCaseError::CaseIdNotFound(inner) => Error::CaseIdNotFound(inner),
+            crate::operation::add_communication_to_case::AddCommunicationToCaseError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::add_communication_to_case::AddCommunicationToCaseError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::add_communication_to_case::AddCommunicationToCaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError> for Error {
+    fn from(err: crate::operation::complete_attachment_upload::CompleteAttachmentUploadError) -> Self {
+        match err {
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::UploadIdNotFound(inner) => Error::UploadIdNotFound(inner),
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -164,6 +209,7 @@ impl From<crate::operation::create_case::CreateCaseError> for Error {
             crate::operation::create_case::CreateCaseError::AttachmentSetExpired(inner) => Error::AttachmentSetExpired(inner),
             crate::operation::create_case::CreateCaseError::AttachmentSetIdNotFound(inner) => Error::AttachmentSetIdNotFound(inner),
             crate::operation::create_case::CreateCaseError::CaseCreationLimitExceeded(inner) => Error::CaseCreationLimitExceeded(inner),
+            crate::operation::create_case::CreateCaseError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::create_case::CreateCaseError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::create_case::CreateCaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -190,8 +236,50 @@ impl From<crate::operation::describe_attachment::DescribeAttachmentError> for Er
             crate::operation::describe_attachment::DescribeAttachmentError::DescribeAttachmentLimitExceeded(inner) => {
                 Error::DescribeAttachmentLimitExceeded(inner)
             }
+            crate::operation::describe_attachment::DescribeAttachmentError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::describe_attachment::DescribeAttachmentError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_attachment::DescribeAttachmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_attachment_upload_status::DescribeAttachmentUploadStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_attachment_upload_status::DescribeAttachmentUploadStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_attachment_upload_status::DescribeAttachmentUploadStatusError> for Error {
+    fn from(err: crate::operation::describe_attachment_upload_status::DescribeAttachmentUploadStatusError) -> Self {
+        match err {
+            crate::operation::describe_attachment_upload_status::DescribeAttachmentUploadStatusError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
+            crate::operation::describe_attachment_upload_status::DescribeAttachmentUploadStatusError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::describe_attachment_upload_status::DescribeAttachmentUploadStatusError::UploadIdNotFound(inner) => {
+                Error::UploadIdNotFound(inner)
+            }
+            crate::operation::describe_attachment_upload_status::DescribeAttachmentUploadStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -213,6 +301,7 @@ impl From<crate::operation::describe_cases::DescribeCasesError> for Error {
     fn from(err: crate::operation::describe_cases::DescribeCasesError) -> Self {
         match err {
             crate::operation::describe_cases::DescribeCasesError::CaseIdNotFound(inner) => Error::CaseIdNotFound(inner),
+            crate::operation::describe_cases::DescribeCasesError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::describe_cases::DescribeCasesError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_cases::DescribeCasesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -238,6 +327,9 @@ impl From<crate::operation::describe_communications::DescribeCommunicationsError
     fn from(err: crate::operation::describe_communications::DescribeCommunicationsError) -> Self {
         match err {
             crate::operation::describe_communications::DescribeCommunicationsError::CaseIdNotFound(inner) => Error::CaseIdNotFound(inner),
+            crate::operation::describe_communications::DescribeCommunicationsError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::describe_communications::DescribeCommunicationsError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_communications::DescribeCommunicationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -263,6 +355,9 @@ where
 impl From<crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError> for Error {
     fn from(err: crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError) -> Self {
         match err {
+            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
@@ -290,6 +385,7 @@ where
 impl From<crate::operation::describe_services::DescribeServicesError> for Error {
     fn from(err: crate::operation::describe_services::DescribeServicesError) -> Self {
         match err {
+            crate::operation::describe_services::DescribeServicesError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::describe_services::DescribeServicesError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_services::DescribeServicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -314,6 +410,9 @@ where
 impl From<crate::operation::describe_severity_levels::DescribeSeverityLevelsError> for Error {
     fn from(err: crate::operation::describe_severity_levels::DescribeSeverityLevelsError) -> Self {
         match err {
+            crate::operation::describe_severity_levels::DescribeSeverityLevelsError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::describe_severity_levels::DescribeSeverityLevelsError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::describe_severity_levels::DescribeSeverityLevelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -339,6 +438,9 @@ where
 impl From<crate::operation::describe_supported_languages::DescribeSupportedLanguagesError> for Error {
     fn from(err: crate::operation::describe_supported_languages::DescribeSupportedLanguagesError) -> Self {
         match err {
+            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::describe_supported_languages::DescribeSupportedLanguagesError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
@@ -497,6 +599,70 @@ impl From<crate::operation::describe_trusted_advisor_check_summaries::DescribeTr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_attachment_download_link::GetAttachmentDownloadLinkError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_attachment_download_link::GetAttachmentDownloadLinkError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_attachment_download_link::GetAttachmentDownloadLinkError> for Error {
+    fn from(err: crate::operation::get_attachment_download_link::GetAttachmentDownloadLinkError) -> Self {
+        match err {
+            crate::operation::get_attachment_download_link::GetAttachmentDownloadLinkError::AttachmentIdNotFound(inner) => {
+                Error::AttachmentIdNotFound(inner)
+            }
+            crate::operation::get_attachment_download_link::GetAttachmentDownloadLinkError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
+            crate::operation::get_attachment_download_link::GetAttachmentDownloadLinkError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::get_attachment_download_link::GetAttachmentDownloadLinkError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_attachment_upload_links::GetAttachmentUploadLinksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_attachment_upload_links::GetAttachmentUploadLinksError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_attachment_upload_links::GetAttachmentUploadLinksError> for Error {
+    fn from(err: crate::operation::get_attachment_upload_links::GetAttachmentUploadLinksError) -> Self {
+        match err {
+            crate::operation::get_attachment_upload_links::GetAttachmentUploadLinksError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
+            crate::operation::get_attachment_upload_links::GetAttachmentUploadLinksError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::get_attachment_upload_links::GetAttachmentUploadLinksError::UploadIdNotFound(inner) => Error::UploadIdNotFound(inner),
+            crate::operation::get_attachment_upload_links::GetAttachmentUploadLinksError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError, R>>
     for Error
 where
@@ -542,6 +708,7 @@ impl From<crate::operation::resolve_case::ResolveCaseError> for Error {
     fn from(err: crate::operation::resolve_case::ResolveCaseError) -> Self {
         match err {
             crate::operation::resolve_case::ResolveCaseError::CaseIdNotFound(inner) => Error::CaseIdNotFound(inner),
+            crate::operation::resolve_case::ResolveCaseError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::resolve_case::ResolveCaseError::InternalServerError(inner) => Error::InternalServerError(inner),
             crate::operation::resolve_case::ResolveCaseError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -558,8 +725,10 @@ impl ::std::error::Error for Error {
             Error::CaseCreationLimitExceeded(inner) => inner.source(),
             Error::CaseIdNotFound(inner) => inner.source(),
             Error::DescribeAttachmentLimitExceeded(inner) => inner.source(),
+            Error::DryRunOperationException(inner) => inner.source(),
             Error::InternalServerError(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
+            Error::UploadIdNotFound(inner) => inner.source(),
             Error::Unhandled(inner) => ::std::option::Option::Some(&*inner.source),
         }
     }
@@ -575,8 +744,10 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::CaseCreationLimitExceeded(e) => e.request_id(),
             Self::CaseIdNotFound(e) => e.request_id(),
             Self::DescribeAttachmentLimitExceeded(e) => e.request_id(),
+            Self::DryRunOperationException(e) => e.request_id(),
             Self::InternalServerError(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
+            Self::UploadIdNotFound(e) => e.request_id(),
             Self::Unhandled(e) => e.meta.request_id(),
         }
     }

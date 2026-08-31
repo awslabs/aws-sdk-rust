@@ -23,15 +23,24 @@ impl crate::operation::describe_communications::builders::DescribeCommunications
 /// Fluent builder constructing a request to `DescribeCommunications`.
 ///
 /// <p>Returns communications and attachments for one or more support cases. Use the <code>afterTime</code> and <code>beforeTime</code> parameters to filter by date. You can use the <code>caseId</code> parameter to restrict the results to a specific case.</p>
-/// <p>Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request for data might cause an error.</p>
+/// <p>Case data is available for 24 months after creation. If a case was created more than 24 months ago, a request for data might cause an error.</p>
 /// <p>You can use the <code>maxResults</code> and <code>nextToken</code> parameters to control the pagination of the results. Set <code>maxResults</code> to the number of cases that you want to display on each page, and use <code>nextToken</code> to specify the resumption of pagination.</p><note>
 /// <ul>
 /// <li>
-/// <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API.</p></li>
+/// <p>You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services Support API. If you're in an Amazon Web Services Region that doesn't offer one of these Amazon Web Services Support plans, or if you haven't transitioned to one of these plans, you can use the Amazon Web Services Support API with a Business, Enterprise On-Ramp, or Enterprise Support plan.</p></li>
 /// <li>
-/// <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
+/// <p>If you call the Amazon Web Services Support API from an account that doesn't have an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
 /// </ul>
-/// </note>
+/// </note> <important>
+/// <p>Each <code>Communication</code> returned by this operation includes attachment information in two fields:</p>
+/// <ul>
+/// <li>
+/// <p><code>attachmentSet</code>: returns only attachments that are 5 MB or smaller. Attachments larger than 5 MB are not included in this field.</p></li>
+/// <li>
+/// <p><code>attachments</code>: returns all attachments regardless of size.</p></li>
+/// </ul>
+/// <p>Amazon Web Services recommends that you use the <code>attachments</code> field and download each attachment with <code>GetAttachmentDownloadLink</code>, which supports attachments of any size. The <code>attachmentSet</code> field and <code>DescribeAttachment</code> return only attachments that are 5 MB or smaller.</p>
+/// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeCommunicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -123,45 +132,45 @@ impl DescribeCommunicationsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator {
         crate::operation::describe_communications::paginator::DescribeCommunicationsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.case_id(input.into());
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_case_id(input);
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_case_id()
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn before_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.before_time(input.into());
         self
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn set_before_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_before_time(input);
         self
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn get_before_time(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_before_time()
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn after_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.after_time(input.into());
         self
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn set_after_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_after_time(input);
         self
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn get_after_time(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_after_time()
     }
@@ -192,5 +201,19 @@ impl DescribeCommunicationsFluentBuilder {
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
+    }
+    /// <p>Specifies whether to validate the request without actually returning communications. When set to <code>true</code>, the request is validated but no communications are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning communications. When set to <code>true</code>, the request is validated but no communications are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning communications. When set to <code>true</code>, the request is validated but no communications are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

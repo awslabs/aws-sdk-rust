@@ -178,4 +178,18 @@ impl UpdateRegistryFluentBuilder {
     pub fn get_approval_configuration(&self) -> &::std::option::Option<crate::types::UpdatedApprovalConfiguration> {
         self.inner.get_approval_configuration()
     }
+    /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
+    pub fn auto_detection_configuration(mut self, input: crate::types::UpdatedAutoDetectionConfiguration) -> Self {
+        self.inner = self.inner.auto_detection_configuration(input);
+        self
+    }
+    /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
+    pub fn set_auto_detection_configuration(mut self, input: ::std::option::Option<crate::types::UpdatedAutoDetectionConfiguration>) -> Self {
+        self.inner = self.inner.set_auto_detection_configuration(input);
+        self
+    }
+    /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
+    pub fn get_auto_detection_configuration(&self) -> &::std::option::Option<crate::types::UpdatedAutoDetectionConfiguration> {
+        self.inner.get_auto_detection_configuration()
+    }
 }

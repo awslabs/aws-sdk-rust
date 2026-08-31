@@ -1561,6 +1561,18 @@ pub(crate) fn verified_destination_number_information_correct_errors(
     builder
 }
 
+pub(crate) fn conditional_behavior_correct_errors(
+    mut builder: crate::types::builders::ConditionalBehaviorBuilder,
+) -> crate::types::builders::ConditionalBehaviorBuilder {
+    if builder.rules.is_none() {
+        builder.rules = Some(Default::default())
+    }
+    if builder.default_behavior.is_none() {
+        builder.default_behavior = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn registration_field_display_hints_correct_errors(
     mut builder: crate::types::builders::RegistrationFieldDisplayHintsBuilder,
 ) -> crate::types::builders::RegistrationFieldDisplayHintsBuilder {
@@ -1687,11 +1699,35 @@ pub(crate) fn template_variable_metadata_correct_errors(
     builder
 }
 
+pub(crate) fn conditional_rule_correct_errors(
+    mut builder: crate::types::builders::ConditionalRuleBuilder,
+) -> crate::types::builders::ConditionalRuleBuilder {
+    if builder.conditions.is_none() {
+        builder.conditions = Some(Default::default())
+    }
+    if builder.rule_behavior.is_none() {
+        builder.rule_behavior = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn select_option_description_correct_errors(
     mut builder: crate::types::builders::SelectOptionDescriptionBuilder,
 ) -> crate::types::builders::SelectOptionDescriptionBuilder {
     if builder.option.is_none() {
         builder.option = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn field_condition_correct_errors(
+    mut builder: crate::types::builders::FieldConditionBuilder,
+) -> crate::types::builders::FieldConditionBuilder {
+    if builder.depends_on_field_path.is_none() {
+        builder.depends_on_field_path = Some(Default::default())
+    }
+    if builder.operator.is_none() {
+        builder.operator = Some(Default::default())
     }
     builder
 }

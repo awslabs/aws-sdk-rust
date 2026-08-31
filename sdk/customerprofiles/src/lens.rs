@@ -119,6 +119,16 @@ pub(crate) fn reflens_list_segment_definitions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_segment_subscription_events_output_output_next_token(
+    input: &crate::operation::list_segment_subscription_events::ListSegmentSubscriptionEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_upload_jobs_output_output_next_token(
     input: &crate::operation::list_upload_jobs::ListUploadJobsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -210,6 +220,13 @@ pub(crate) fn lens_list_segment_definitions_output_output_items(
     input: crate::operation::list_segment_definitions::ListSegmentDefinitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::SegmentDefinitionItem>> {
     let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_segment_subscription_events_output_output_events(
+    input: crate::operation::list_segment_subscription_events::ListSegmentSubscriptionEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::SubscriptionEventItem>> {
+    let input = input.events?;
     ::std::option::Option::Some(input)
 }
 

@@ -29,14 +29,25 @@ impl crate::operation::create_case::builders::CreateCaseInputBuilder {
 /// <p>Submit a request from the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p></li>
 /// <li>
 /// <p>Use the Service Quotas <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a> operation.</p></li>
+/// </ul><important>
+/// <p>Amazon Web Services Support automatically redacts sensitive information from support cases to protect your data. The following information is replaced with <code>\[REDACTED_BY_Amazon Web Services\]</code> and is not stored:</p>
+/// <ul>
+/// <li>
+/// <p>Amazon Web Services secret keys - The complete key is replaced. Example: <code>\[REDACTED_BY_Amazon Web Services\]</code></p></li>
+/// <li>
+/// <p>Private keys - The complete key is replaced. Example: <code>\[REDACTED_BY_Amazon Web Services\]</code></p></li>
+/// <li>
+/// <p>Credit card numbers - The number is redacted, but the last 4 digits remain. Example: <code>\[REDACTED_BY_Amazon Web Services\]-7016</code></p></li>
 /// </ul>
-/// <p>A successful <code>CreateCase</code> request returns an Amazon Web Services Support case number. You can use the <code>DescribeCases</code> operation and specify the case number to get existing Amazon Web Services Support cases. After you create a case, use the <code>AddCommunicationToCase</code> operation to add additional communication or attachments to an existing case.</p>
+/// <p>This sensitive information is never required by Amazon Web Services Support.</p>
+/// </important>
+/// <p>A successful <code>CreateCase</code> request returns a Amazon Web Services Support case number. You can use the <code>DescribeCases</code> operation and specify the case number to get existing Amazon Web Services Support cases. After you create a case, use the <code>AddCommunicationToCase</code> operation to add additional communication or attachments to an existing case.</p>
 /// <p>The <code>caseId</code> is separate from the <code>displayId</code> that appears in the <a href="https://console.aws.amazon.com/support">Amazon Web Services Support Center</a>. Use the <code>DescribeCases</code> operation to get the <code>displayId</code>.</p><note>
 /// <ul>
 /// <li>
-/// <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API.</p></li>
+/// <p>You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services Support API. If you're in an Amazon Web Services Region that doesn't offer one of these Amazon Web Services Support plans, or if you haven't transitioned to one of these plans, you can use the Amazon Web Services Support API with a Business, Enterprise On-Ramp, or Enterprise Support plan.</p></li>
 /// <li>
-/// <p>If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
+/// <p>If you call the Amazon Web Services Support API from an account that doesn't have an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support, or Amazon Web Services Unified Operations plan, the <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon Web Services Support</a>.</p></li>
 /// </ul>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -222,17 +233,17 @@ impl CreateCaseFluentBuilder {
     pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_cc_email_addresses()
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.language(input.into());
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_language(input);
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_language()
     }
@@ -250,18 +261,51 @@ impl CreateCaseFluentBuilder {
     pub fn get_issue_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_issue_type()
     }
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.attachment_set_id(input.into());
         self
     }
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_attachment_set_id(input);
         self
     }
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn get_attachment_set_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_attachment_set_id()
+    }
+    ///
+    /// Appends an item to `uploadIds`.
+    ///
+    /// To override the contents of this collection use [`set_upload_ids`](Self::set_upload_ids).
+    ///
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn upload_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.upload_ids(input.into());
+        self
+    }
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn set_upload_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_upload_ids(input);
+        self
+    }
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn get_upload_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_upload_ids()
+    }
+    /// <p>Specifies whether to validate the request without actually creating the case. When set to <code>true</code>, the request is validated but no case is created, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually creating the case. When set to <code>true</code>, the request is validated but no case is created, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually creating the case. When set to <code>true</code>, the request is validated but no case is created, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

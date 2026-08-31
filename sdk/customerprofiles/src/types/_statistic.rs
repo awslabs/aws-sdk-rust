@@ -19,6 +19,7 @@
 ///     Statistic::Maximum => { /* ... */ },
 ///     Statistic::MaxOccurrence => { /* ... */ },
 ///     Statistic::Minimum => { /* ... */ },
+///     Statistic::RecentOccurrences => { /* ... */ },
 ///     Statistic::Sum => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum Statistic {
     #[allow(missing_docs)] // documentation missing in model
     Minimum,
     #[allow(missing_docs)] // documentation missing in model
+    RecentOccurrences,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for Statistic {
             "MAXIMUM" => Statistic::Maximum,
             "MAX_OCCURRENCE" => Statistic::MaxOccurrence,
             "MINIMUM" => Statistic::Minimum,
+            "RECENT_OCCURRENCES" => Statistic::RecentOccurrences,
             "SUM" => Statistic::Sum,
             other => Statistic::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -99,6 +103,7 @@ impl Statistic {
             Statistic::Maximum => "MAXIMUM",
             Statistic::MaxOccurrence => "MAX_OCCURRENCE",
             Statistic::Minimum => "MINIMUM",
+            Statistic::RecentOccurrences => "RECENT_OCCURRENCES",
             Statistic::Sum => "SUM",
             Statistic::Unknown(value) => value.as_str(),
         }
@@ -113,6 +118,7 @@ impl Statistic {
             "MAXIMUM",
             "MAX_OCCURRENCE",
             "MINIMUM",
+            "RECENT_OCCURRENCES",
             "SUM",
         ]
     }
@@ -144,6 +150,7 @@ impl ::std::fmt::Display for Statistic {
             Statistic::Maximum => write!(f, "MAXIMUM"),
             Statistic::MaxOccurrence => write!(f, "MAX_OCCURRENCE"),
             Statistic::Minimum => write!(f, "MINIMUM"),
+            Statistic::RecentOccurrences => write!(f, "RECENT_OCCURRENCES"),
             Statistic::Sum => write!(f, "SUM"),
             Statistic::Unknown(value) => write!(f, "{value}"),
         }

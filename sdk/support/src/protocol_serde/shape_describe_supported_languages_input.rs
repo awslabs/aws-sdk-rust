@@ -12,5 +12,8 @@ pub fn ser_describe_supported_languages_input_input(
     if let Some(var_3) = &input.category_code {
         object.key("categoryCode").string(var_3.as_str());
     }
+    if let Some(var_4) = &input.dry_run {
+        object.key("dryRun").boolean(*var_4);
+    }
     Ok(())
 }

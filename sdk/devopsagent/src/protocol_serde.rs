@@ -515,6 +515,8 @@ pub(crate) mod shape_remote_agent_sigv4_authorization_config;
 
 pub(crate) mod shape_service_now_service_authorization_config;
 
+pub(crate) mod shape_slack_bidirectional_configuration;
+
 pub(crate) mod shape_slack_transmission_target;
 
 pub(crate) mod shape_user_reference;

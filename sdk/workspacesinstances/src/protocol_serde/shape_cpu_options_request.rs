@@ -13,6 +13,9 @@ pub fn ser_cpu_options_request(
     if let Some(var_3) = &input.threads_per_core {
         encoder.str("ThreadsPerCore").integer(*var_3);
     }
+    if let Some(var_4) = &input.nested_virtualization {
+        encoder.str("NestedVirtualization").str(var_4.as_str());
+    }
     encoder.end();
     Ok(())
 }

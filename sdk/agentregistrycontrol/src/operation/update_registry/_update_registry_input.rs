@@ -14,6 +14,8 @@ pub struct UpdateRegistryInput {
     pub discovery_configuration: ::std::option::Option<crate::types::UpdatedDiscoveryConfiguration>,
     /// <p>The updated approval configuration. The change applies only to records that move to PENDING_APPROVAL after the update; records already in PENDING_APPROVAL are unaffected.</p>
     pub approval_configuration: ::std::option::Option<crate::types::UpdatedApprovalConfiguration>,
+    /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
+    pub auto_detection_configuration: ::std::option::Option<crate::types::UpdatedAutoDetectionConfiguration>,
 }
 impl UpdateRegistryInput {
     /// <p>The identifier of the registry to update (ARN or ID)</p>
@@ -36,6 +38,10 @@ impl UpdateRegistryInput {
     pub fn approval_configuration(&self) -> ::std::option::Option<&crate::types::UpdatedApprovalConfiguration> {
         self.approval_configuration.as_ref()
     }
+    /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
+    pub fn auto_detection_configuration(&self) -> ::std::option::Option<&crate::types::UpdatedAutoDetectionConfiguration> {
+        self.auto_detection_configuration.as_ref()
+    }
 }
 impl UpdateRegistryInput {
     /// Creates a new builder-style object to manufacture [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
@@ -53,6 +59,7 @@ pub struct UpdateRegistryInputBuilder {
     pub(crate) description: ::std::option::Option<crate::types::UpdatedDescription>,
     pub(crate) discovery_configuration: ::std::option::Option<crate::types::UpdatedDiscoveryConfiguration>,
     pub(crate) approval_configuration: ::std::option::Option<crate::types::UpdatedApprovalConfiguration>,
+    pub(crate) auto_detection_configuration: ::std::option::Option<crate::types::UpdatedAutoDetectionConfiguration>,
 }
 impl UpdateRegistryInputBuilder {
     /// <p>The identifier of the registry to update (ARN or ID)</p>
@@ -126,6 +133,20 @@ impl UpdateRegistryInputBuilder {
     pub fn get_approval_configuration(&self) -> &::std::option::Option<crate::types::UpdatedApprovalConfiguration> {
         &self.approval_configuration
     }
+    /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
+    pub fn auto_detection_configuration(mut self, input: crate::types::UpdatedAutoDetectionConfiguration) -> Self {
+        self.auto_detection_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
+    pub fn set_auto_detection_configuration(mut self, input: ::std::option::Option<crate::types::UpdatedAutoDetectionConfiguration>) -> Self {
+        self.auto_detection_configuration = input;
+        self
+    }
+    /// <p>The updated auto-detection configuration for the registry, with PATCH semantics. Omit this field to leave the current configuration unchanged. Supply an empty wrapper to unset it. Supply <code>optionalValue</code> to replace it.</p>
+    pub fn get_auto_detection_configuration(&self) -> &::std::option::Option<crate::types::UpdatedAutoDetectionConfiguration> {
+        &self.auto_detection_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateRegistryInput`](crate::operation::update_registry::UpdateRegistryInput).
     pub fn build(
         self,
@@ -136,6 +157,7 @@ impl UpdateRegistryInputBuilder {
             description: self.description,
             discovery_configuration: self.discovery_configuration,
             approval_configuration: self.approval_configuration,
+            auto_detection_configuration: self.auto_detection_configuration,
         })
     }
 }

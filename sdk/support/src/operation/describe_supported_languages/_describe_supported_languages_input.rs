@@ -9,6 +9,8 @@ pub struct DescribeSupportedLanguagesInput {
     pub service_code: ::std::option::Option<::std::string::String>,
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     pub category_code: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to validate the request without actually returning supported languages. When set to <code>true</code>, the request is validated but no languages are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeSupportedLanguagesInput {
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.</p>
@@ -22,6 +24,10 @@ impl DescribeSupportedLanguagesInput {
     /// <p>The category of problem for the support case. You also use the <code>DescribeServices</code> operation to get the category code for a service. Each Amazon Web Services service defines its own set of category codes.</p>
     pub fn category_code(&self) -> ::std::option::Option<&str> {
         self.category_code.as_deref()
+    }
+    /// <p>Specifies whether to validate the request without actually returning supported languages. When set to <code>true</code>, the request is validated but no languages are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl DescribeSupportedLanguagesInput {
@@ -38,6 +44,7 @@ pub struct DescribeSupportedLanguagesInputBuilder {
     pub(crate) issue_type: ::std::option::Option<::std::string::String>,
     pub(crate) service_code: ::std::option::Option<::std::string::String>,
     pub(crate) category_code: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeSupportedLanguagesInputBuilder {
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.</p>
@@ -85,6 +92,20 @@ impl DescribeSupportedLanguagesInputBuilder {
     pub fn get_category_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.category_code
     }
+    /// <p>Specifies whether to validate the request without actually returning supported languages. When set to <code>true</code>, the request is validated but no languages are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning supported languages. When set to <code>true</code>, the request is validated but no languages are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning supported languages. When set to <code>true</code>, the request is validated but no languages are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`DescribeSupportedLanguagesInput`](crate::operation::describe_supported_languages::DescribeSupportedLanguagesInput).
     pub fn build(
         self,
@@ -96,6 +117,7 @@ impl DescribeSupportedLanguagesInputBuilder {
             issue_type: self.issue_type,
             service_code: self.service_code,
             category_code: self.category_code,
+            dry_run: self.dry_run,
         })
     }
 }

@@ -6,5 +6,8 @@ pub fn ser_describe_attachment_input_input(
     if let Some(var_1) = &input.attachment_id {
         object.key("attachmentId").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.dry_run {
+        object.key("dryRun").boolean(*var_2);
+    }
     Ok(())
 }

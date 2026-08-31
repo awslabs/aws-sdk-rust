@@ -97,7 +97,15 @@ pub use crate::types::_estimate_status::EstimateStatus;
 
 pub use crate::types::_segment_snapshot_status::SegmentSnapshotStatus;
 
+pub use crate::types::_segment_subscription_status::SegmentSubscriptionStatus;
+
+pub use crate::types::_schedule_configuration::ScheduleConfiguration;
+
+pub use crate::types::_scheduled_executions::ScheduledExecutions;
+
 pub use crate::types::_match_type::MatchType;
+
+pub use crate::types::_event_subscription_state::EventSubscriptionState;
 
 pub use crate::types::_upload_job_status::UploadJobStatus;
 
@@ -191,6 +199,10 @@ pub use crate::types::_profile_query_result::ProfileQueryResult;
 
 pub use crate::types::_profile_query_failures::ProfileQueryFailures;
 
+pub use crate::types::_schedule_configuration_unit::ScheduleConfigurationUnit;
+
+pub use crate::types::_associated_segment::AssociatedSegment;
+
 pub use crate::types::_appflow_integration_workflow_attributes::AppflowIntegrationWorkflowAttributes;
 
 pub use crate::types::_appflow_integration_workflow_metrics::AppflowIntegrationWorkflowMetrics;
@@ -238,6 +250,8 @@ pub use crate::types::_recommender_summary::RecommenderSummary;
 pub use crate::types::_recommender_schema_summary::RecommenderSchemaSummary;
 
 pub use crate::types::_segment_definition_item::SegmentDefinitionItem;
+
+pub use crate::types::_subscription_event_item::SubscriptionEventItem;
 
 pub use crate::types::_upload_job_item::UploadJobItem;
 
@@ -293,11 +307,17 @@ pub use crate::types::_catalog_item::CatalogItem;
 
 pub use crate::types::_query_result::QueryResult;
 
+pub use crate::types::_event_subscription_segment_status::EventSubscriptionSegmentStatus;
+
 pub use crate::types::_source_connector_type::SourceConnectorType;
 
 pub use crate::types::_appflow_integration_workflow_step::AppflowIntegrationWorkflowStep;
 
 pub use crate::types::_destination_summary::DestinationSummary;
+
+pub use crate::types::_subscription_event_type::SubscriptionEventType;
+
+pub use crate::types::_subscription_event::SubscriptionEvent;
 
 pub use crate::types::_incremental_pull_config::IncrementalPullConfig;
 
@@ -421,6 +441,8 @@ mod _appflow_integration_workflow_metrics;
 
 mod _appflow_integration_workflow_step;
 
+mod _associated_segment;
+
 mod _attribute_details;
 
 mod _attribute_dimension;
@@ -518,6 +540,10 @@ mod _event_stream_destination_status;
 mod _event_stream_state;
 
 mod _event_stream_summary;
+
+mod _event_subscription_segment_status;
+
+mod _event_subscription_state;
 
 mod _event_trigger_condition;
 
@@ -725,6 +751,12 @@ mod _salesforce_connector_operator;
 
 mod _salesforce_source_properties;
 
+mod _schedule_configuration;
+
+mod _schedule_configuration_unit;
+
+mod _scheduled_executions;
+
 mod _scheduled_trigger_properties;
 
 mod _scope;
@@ -742,6 +774,8 @@ mod _segment_sort;
 mod _segment_sort_data_type;
 
 mod _segment_sort_order;
+
+mod _segment_subscription_status;
 
 mod _segment_type;
 
@@ -770,6 +804,12 @@ mod _status;
 mod _status_reason;
 
 mod _string_dimension_type;
+
+mod _subscription_event;
+
+mod _subscription_event_item;
+
+mod _subscription_event_type;
 
 mod _task;
 

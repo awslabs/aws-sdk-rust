@@ -18,6 +18,8 @@ pub struct RegistrySummary {
     pub status: crate::types::RegistryStatus,
     /// <p>The reason for the current status. Typically populated when the status indicates a failure state.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub auto_detection: ::std::option::Option<crate::types::AutoDetection>,
     /// <p>The timestamp when the registry was created</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the registry was last updated</p>
@@ -55,6 +57,10 @@ impl RegistrySummary {
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub fn auto_detection(&self) -> ::std::option::Option<&crate::types::AutoDetection> {
+        self.auto_detection.as_ref()
+    }
     /// <p>The timestamp when the registry was created</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -74,6 +80,7 @@ impl ::std::fmt::Debug for RegistrySummary {
         formatter.field("discovery_configuration", &self.discovery_configuration);
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
+        formatter.field("auto_detection", &self.auto_detection);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.finish()
@@ -97,6 +104,7 @@ pub struct RegistrySummaryBuilder {
     pub(crate) discovery_configuration: ::std::option::Option<crate::types::DiscoveryConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::RegistryStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_detection: ::std::option::Option<crate::types::AutoDetection>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -203,6 +211,20 @@ impl RegistrySummaryBuilder {
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub fn auto_detection(mut self, input: crate::types::AutoDetection) -> Self {
+        self.auto_detection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub fn set_auto_detection(mut self, input: ::std::option::Option<crate::types::AutoDetection>) -> Self {
+        self.auto_detection = input;
+        self
+    }
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub fn get_auto_detection(&self) -> &::std::option::Option<crate::types::AutoDetection> {
+        &self.auto_detection
+    }
     /// <p>The timestamp when the registry was created</p>
     /// This field is required.
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -270,6 +292,7 @@ impl RegistrySummaryBuilder {
                 )
             })?,
             status_reason: self.status_reason,
+            auto_detection: self.auto_detection,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -295,6 +318,7 @@ impl ::std::fmt::Debug for RegistrySummaryBuilder {
         formatter.field("discovery_configuration", &self.discovery_configuration);
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
+        formatter.field("auto_detection", &self.auto_detection);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.finish()

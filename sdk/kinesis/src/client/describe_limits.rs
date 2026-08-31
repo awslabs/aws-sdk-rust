@@ -8,6 +8,8 @@ impl super::Client {
     ///   - [`open_shard_count(i32)`](crate::operation::describe_limits::DescribeLimitsOutput::open_shard_count): <p>The number of open shards.</p>
     ///   - [`on_demand_stream_count(i32)`](crate::operation::describe_limits::DescribeLimitsOutput::on_demand_stream_count): <p>Indicates the number of data streams with the on-demand capacity mode.</p>
     ///   - [`on_demand_stream_count_limit(i32)`](crate::operation::describe_limits::DescribeLimitsOutput::on_demand_stream_count_limit): <p>The maximum number of data streams with the on-demand capacity mode.</p>
+    ///   - [`channel_count(Option<i32>)`](crate::operation::describe_limits::DescribeLimitsOutput::channel_count): <p>The number of channels in the account.</p>
+    ///   - [`channel_count_limit(Option<i32>)`](crate::operation::describe_limits::DescribeLimitsOutput::channel_count_limit): <p>The maximum number of channels allowed in the account.</p>
     /// - On failure, responds with [`SdkError<DescribeLimitsError>`](crate::operation::describe_limits::DescribeLimitsError)
     pub fn describe_limits(&self) -> crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder {
         crate::operation::describe_limits::builders::DescribeLimitsFluentBuilder::new(self.handle.clone())

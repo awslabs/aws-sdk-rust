@@ -10,6 +10,8 @@ pub struct CpuOptionsRequest {
     pub core_count: ::std::option::Option<i32>,
     /// <p>Number of threads per CPU core.</p>
     pub threads_per_core: ::std::option::Option<i32>,
+    /// <p>Specifies whether to enable or disable nested virtualization.</p>
+    pub nested_virtualization: ::std::option::Option<crate::types::NestedVirtualizationEnum>,
 }
 impl CpuOptionsRequest {
     /// <p>AMD Secure Encrypted Virtualization configuration.</p>
@@ -23,6 +25,10 @@ impl CpuOptionsRequest {
     /// <p>Number of threads per CPU core.</p>
     pub fn threads_per_core(&self) -> ::std::option::Option<i32> {
         self.threads_per_core
+    }
+    /// <p>Specifies whether to enable or disable nested virtualization.</p>
+    pub fn nested_virtualization(&self) -> ::std::option::Option<&crate::types::NestedVirtualizationEnum> {
+        self.nested_virtualization.as_ref()
     }
 }
 impl CpuOptionsRequest {
@@ -39,6 +45,7 @@ pub struct CpuOptionsRequestBuilder {
     pub(crate) amd_sev_snp: ::std::option::Option<crate::types::AmdSevSnpEnum>,
     pub(crate) core_count: ::std::option::Option<i32>,
     pub(crate) threads_per_core: ::std::option::Option<i32>,
+    pub(crate) nested_virtualization: ::std::option::Option<crate::types::NestedVirtualizationEnum>,
 }
 impl CpuOptionsRequestBuilder {
     /// <p>AMD Secure Encrypted Virtualization configuration.</p>
@@ -83,12 +90,27 @@ impl CpuOptionsRequestBuilder {
     pub fn get_threads_per_core(&self) -> &::std::option::Option<i32> {
         &self.threads_per_core
     }
+    /// <p>Specifies whether to enable or disable nested virtualization.</p>
+    pub fn nested_virtualization(mut self, input: crate::types::NestedVirtualizationEnum) -> Self {
+        self.nested_virtualization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable or disable nested virtualization.</p>
+    pub fn set_nested_virtualization(mut self, input: ::std::option::Option<crate::types::NestedVirtualizationEnum>) -> Self {
+        self.nested_virtualization = input;
+        self
+    }
+    /// <p>Specifies whether to enable or disable nested virtualization.</p>
+    pub fn get_nested_virtualization(&self) -> &::std::option::Option<crate::types::NestedVirtualizationEnum> {
+        &self.nested_virtualization
+    }
     /// Consumes the builder and constructs a [`CpuOptionsRequest`](crate::types::CpuOptionsRequest).
     pub fn build(self) -> crate::types::CpuOptionsRequest {
         crate::types::CpuOptionsRequest {
             amd_sev_snp: self.amd_sev_snp,
             core_count: self.core_count,
             threads_per_core: self.threads_per_core,
+            nested_virtualization: self.nested_virtualization,
         }
     }
 }

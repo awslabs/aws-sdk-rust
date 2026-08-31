@@ -629,6 +629,38 @@ impl From<crate::operation::list_worker_configurations::ListWorkerConfigurations
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_connector::RestartConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::restart_connector::RestartConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::restart_connector::RestartConnectorError> for Error {
+    fn from(err: crate::operation::restart_connector::RestartConnectorError) -> Self {
+        match err {
+            crate::operation::restart_connector::RestartConnectorError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::restart_connector::RestartConnectorError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::restart_connector::RestartConnectorError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::restart_connector::RestartConnectorError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::restart_connector::RestartConnectorError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::restart_connector::RestartConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::restart_connector::RestartConnectorError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::restart_connector::RestartConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

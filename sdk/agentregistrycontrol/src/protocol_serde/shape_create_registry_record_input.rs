@@ -21,21 +21,33 @@ pub fn ser_create_registry_record_input_input(
     if let Some(var_6) = &input.name {
         object.key("name").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.record_type {
-        object.key("recordType").string(var_7.as_str());
-    }
-    if let Some(var_8) = &input.record_version {
-        object.key("recordVersion").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+    if let Some(var_7) = &input.provenance {
+        let mut array_8 = object.key("provenance").start_array();
+        for item_9 in var_7 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                #[allow(unused_mut)]
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_provenance::ser_provenance(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        object_10.finish();
+        array_8.finish();
+    }
+    if let Some(var_11) = &input.record_type {
+        object.key("recordType").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.record_version {
+        object.key("recordVersion").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("tags").start_object();
+        for (key_15, value_16) in var_13 {
+            {
+                object_14.key(key_15.as_str()).string(value_16.as_str());
+            }
+        }
+        object_14.finish();
     }
     Ok(())
 }

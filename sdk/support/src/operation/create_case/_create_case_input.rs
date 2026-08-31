@@ -18,12 +18,16 @@ pub struct CreateCaseInput {
     pub communication_body: ::std::option::Option<::std::string::String>,
     /// <p>A list of email addresses that Amazon Web Services Support copies on case correspondence. Amazon Web Services Support identifies the account that creates the case when you specify your Amazon Web Services credentials in an HTTP POST method or use the <a href="http://aws.amazon.com/tools/">Amazon Web Services SDKs</a>.</p>
     pub cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>. If you don't specify a value, the default is <code>technical</code>.</p>
     pub issue_type: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub attachment_set_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub upload_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to validate the request without actually creating the case. When set to <code>true</code>, the request is validated but no case is created, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl CreateCaseInput {
     /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
@@ -55,7 +59,7 @@ impl CreateCaseInput {
     pub fn cc_email_addresses(&self) -> &[::std::string::String] {
         self.cc_email_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
@@ -63,9 +67,19 @@ impl CreateCaseInput {
     pub fn issue_type(&self) -> ::std::option::Option<&str> {
         self.issue_type.as_deref()
     }
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn attachment_set_id(&self) -> ::std::option::Option<&str> {
         self.attachment_set_id.as_deref()
+    }
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upload_ids.is_none()`.
+    pub fn upload_ids(&self) -> &[::std::string::String] {
+        self.upload_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether to validate the request without actually creating the case. When set to <code>true</code>, the request is validated but no case is created, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl CreateCaseInput {
@@ -88,6 +102,8 @@ pub struct CreateCaseInputBuilder {
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) issue_type: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) upload_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl CreateCaseInputBuilder {
     /// <p>The title of the support case. The title appears in the <b>Subject</b> field on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
@@ -191,17 +207,17 @@ impl CreateCaseInputBuilder {
     pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cc_email_addresses
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }
@@ -219,19 +235,53 @@ impl CreateCaseInputBuilder {
     pub fn get_issue_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.issue_type
     }
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_set_id = input;
         self
     }
-    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation.</p>
+    /// <p>The ID of a set of one or more attachments for the case. Create the set by using the <code>AddAttachmentsToSet</code> operation. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn get_attachment_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_set_id
+    }
+    /// Appends an item to `upload_ids`.
+    ///
+    /// To override the contents of this collection use [`set_upload_ids`](Self::set_upload_ids).
+    ///
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn upload_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.upload_ids.unwrap_or_default();
+        v.push(input.into());
+        self.upload_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn set_upload_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.upload_ids = input;
+        self
+    }
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn get_upload_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.upload_ids
+    }
+    /// <p>Specifies whether to validate the request without actually creating the case. When set to <code>true</code>, the request is validated but no case is created, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually creating the case. When set to <code>true</code>, the request is validated but no case is created, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually creating the case. When set to <code>true</code>, the request is validated but no case is created, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`CreateCaseInput`](crate::operation::create_case::CreateCaseInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_case::CreateCaseInput, ::aws_smithy_types::error::operation::BuildError> {
@@ -245,6 +295,8 @@ impl CreateCaseInputBuilder {
             language: self.language,
             issue_type: self.issue_type,
             attachment_set_id: self.attachment_set_id,
+            upload_ids: self.upload_ids,
+            dry_run: self.dry_run,
         })
     }
 }

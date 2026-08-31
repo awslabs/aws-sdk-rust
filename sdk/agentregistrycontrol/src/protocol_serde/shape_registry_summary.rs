@@ -68,6 +68,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "autoDetection" => {
+                            builder = builder.set_auto_detection(crate::protocol_serde::shape_auto_detection::de_auto_detection(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

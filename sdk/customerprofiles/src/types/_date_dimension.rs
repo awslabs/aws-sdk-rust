@@ -6,7 +6,7 @@
 pub struct DateDimension {
     /// <p>The action to segment with.</p>
     pub dimension_type: crate::types::DateDimensionType,
-    /// <p>The values to apply the DimensionType on.</p>
+    /// <p>The values to apply the DimensionType on. To reference a calculated attribute or profile attribute as a dynamic value, use handlebar notation: <code>{{_profile.ProfileAttributeName}}</code> or <code>{{_calculated_attribute.CalculatedAttributeName}}</code>.</p>
     pub values: ::std::vec::Vec<::std::string::String>,
 }
 impl DateDimension {
@@ -14,7 +14,7 @@ impl DateDimension {
     pub fn dimension_type(&self) -> &crate::types::DateDimensionType {
         &self.dimension_type
     }
-    /// <p>The values to apply the DimensionType on.</p>
+    /// <p>The values to apply the DimensionType on. To reference a calculated attribute or profile attribute as a dynamic value, use handlebar notation: <code>{{_profile.ProfileAttributeName}}</code> or <code>{{_calculated_attribute.CalculatedAttributeName}}</code>.</p>
     pub fn values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.values.deref()
@@ -54,19 +54,19 @@ impl DateDimensionBuilder {
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>The values to apply the DimensionType on.</p>
+    /// <p>The values to apply the DimensionType on. To reference a calculated attribute or profile attribute as a dynamic value, use handlebar notation: <code>{{_profile.ProfileAttributeName}}</code> or <code>{{_calculated_attribute.CalculatedAttributeName}}</code>.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
         self.values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The values to apply the DimensionType on.</p>
+    /// <p>The values to apply the DimensionType on. To reference a calculated attribute or profile attribute as a dynamic value, use handlebar notation: <code>{{_profile.ProfileAttributeName}}</code> or <code>{{_calculated_attribute.CalculatedAttributeName}}</code>.</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
-    /// <p>The values to apply the DimensionType on.</p>
+    /// <p>The values to apply the DimensionType on. To reference a calculated attribute or profile attribute as a dynamic value, use handlebar notation: <code>{{_profile.ProfileAttributeName}}</code> or <code>{{_calculated_attribute.CalculatedAttributeName}}</code>.</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }

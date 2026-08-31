@@ -15,6 +15,7 @@
 ///     ConnectorState::Creating => { /* ... */ },
 ///     ConnectorState::Deleting => { /* ... */ },
 ///     ConnectorState::Failed => { /* ... */ },
+///     ConnectorState::Restarting => { /* ... */ },
 ///     ConnectorState::Running => { /* ... */ },
 ///     ConnectorState::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,8 @@ pub enum ConnectorState {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
+    Restarting,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
     Updating,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for ConnectorState {
             "CREATING" => ConnectorState::Creating,
             "DELETING" => ConnectorState::Deleting,
             "FAILED" => ConnectorState::Failed,
+            "RESTARTING" => ConnectorState::Restarting,
             "RUNNING" => ConnectorState::Running,
             "UPDATING" => ConnectorState::Updating,
             other => ConnectorState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +89,7 @@ impl ConnectorState {
             ConnectorState::Creating => "CREATING",
             ConnectorState::Deleting => "DELETING",
             ConnectorState::Failed => "FAILED",
+            ConnectorState::Restarting => "RESTARTING",
             ConnectorState::Running => "RUNNING",
             ConnectorState::Updating => "UPDATING",
             ConnectorState::Unknown(value) => value.as_str(),
@@ -92,7 +97,7 @@ impl ConnectorState {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATING", "DELETING", "FAILED", "RUNNING", "UPDATING"]
+        &["CREATING", "DELETING", "FAILED", "RESTARTING", "RUNNING", "UPDATING"]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectorState {
@@ -118,6 +123,7 @@ impl ::std::fmt::Display for ConnectorState {
             ConnectorState::Creating => write!(f, "CREATING"),
             ConnectorState::Deleting => write!(f, "DELETING"),
             ConnectorState::Failed => write!(f, "FAILED"),
+            ConnectorState::Restarting => write!(f, "RESTARTING"),
             ConnectorState::Running => write!(f, "RUNNING"),
             ConnectorState::Updating => write!(f, "UPDATING"),
             ConnectorState::Unknown(value) => write!(f, "{value}"),

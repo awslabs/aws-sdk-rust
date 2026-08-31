@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RegistryRecordSummary {
-    /// <p>The &amp;ARN; of the parent registry that owns the record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     pub registry_arn: ::std::string::String,
-    /// <p>The &amp;ARN; of the registry record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     pub record_arn: ::std::string::String,
     /// <p>The unique identifier of the registry record.</p>
     pub record_id: ::std::string::String,
@@ -26,14 +26,20 @@ pub struct RegistryRecordSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the registry record was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>Specifies whether the registry record was created by auto-detection. <code>true</code> indicates the record was automatically created by the service based on the registry's auto-detection configuration; <code>false</code> indicates the record was created through a control-plane API call.</p>
+    pub created_by_auto_detection: ::std::option::Option<bool>,
+    /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
+    pub created_by: ::std::option::Option<::std::string::String>,
+    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    pub provenance_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvenanceSummary>>,
 }
 impl RegistryRecordSummary {
-    /// <p>The &amp;ARN; of the parent registry that owns the record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     pub fn registry_arn(&self) -> &str {
         use std::ops::Deref;
         self.registry_arn.deref()
     }
-    /// <p>The &amp;ARN; of the registry record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     pub fn record_arn(&self) -> &str {
         use std::ops::Deref;
         self.record_arn.deref()
@@ -77,6 +83,20 @@ impl RegistryRecordSummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>Specifies whether the registry record was created by auto-detection. <code>true</code> indicates the record was automatically created by the service based on the registry's auto-detection configuration; <code>false</code> indicates the record was created through a control-plane API call.</p>
+    pub fn created_by_auto_detection(&self) -> ::std::option::Option<bool> {
+        self.created_by_auto_detection
+    }
+    /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
+    pub fn created_by(&self) -> ::std::option::Option<&str> {
+        self.created_by.as_deref()
+    }
+    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provenance_summary_list.is_none()`.
+    pub fn provenance_summary_list(&self) -> &[crate::types::ProvenanceSummary] {
+        self.provenance_summary_list.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for RegistryRecordSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -92,6 +112,9 @@ impl ::std::fmt::Debug for RegistryRecordSummary {
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("created_by_auto_detection", &self.created_by_auto_detection);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("provenance_summary_list", &self.provenance_summary_list);
         formatter.finish()
     }
 }
@@ -117,35 +140,38 @@ pub struct RegistryRecordSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RegistryRecordStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by_auto_detection: ::std::option::Option<bool>,
+    pub(crate) created_by: ::std::option::Option<::std::string::String>,
+    pub(crate) provenance_summary_list: ::std::option::Option<::std::vec::Vec<crate::types::ProvenanceSummary>>,
 }
 impl RegistryRecordSummaryBuilder {
-    /// <p>The &amp;ARN; of the parent registry that owns the record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     /// This field is required.
     pub fn registry_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The &amp;ARN; of the parent registry that owns the record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     pub fn set_registry_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_arn = input;
         self
     }
-    /// <p>The &amp;ARN; of the parent registry that owns the record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
     pub fn get_registry_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_arn
     }
-    /// <p>The &amp;ARN; of the registry record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     /// This field is required.
     pub fn record_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The &amp;ARN; of the registry record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     pub fn set_record_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_arn = input;
         self
     }
-    /// <p>The &amp;ARN; of the registry record.</p>
+    /// <p>The Amazon Resource Name (ARN) of the registry record.</p>
     pub fn get_record_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_arn
     }
@@ -282,6 +308,54 @@ impl RegistryRecordSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>Specifies whether the registry record was created by auto-detection. <code>true</code> indicates the record was automatically created by the service based on the registry's auto-detection configuration; <code>false</code> indicates the record was created through a control-plane API call.</p>
+    pub fn created_by_auto_detection(mut self, input: bool) -> Self {
+        self.created_by_auto_detection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the registry record was created by auto-detection. <code>true</code> indicates the record was automatically created by the service based on the registry's auto-detection configuration; <code>false</code> indicates the record was created through a control-plane API call.</p>
+    pub fn set_created_by_auto_detection(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.created_by_auto_detection = input;
+        self
+    }
+    /// <p>Specifies whether the registry record was created by auto-detection. <code>true</code> indicates the record was automatically created by the service based on the registry's auto-detection configuration; <code>false</code> indicates the record was created through a control-plane API call.</p>
+    pub fn get_created_by_auto_detection(&self) -> &::std::option::Option<bool> {
+        &self.created_by_auto_detection
+    }
+    /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
+    pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.created_by = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
+    pub fn set_created_by(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.created_by = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that created the registry record.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
+        &self.created_by
+    }
+    /// Appends an item to `provenance_summary_list`.
+    ///
+    /// To override the contents of this collection use [`set_provenance_summary_list`](Self::set_provenance_summary_list).
+    ///
+    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    pub fn provenance_summary_list(mut self, input: crate::types::ProvenanceSummary) -> Self {
+        let mut v = self.provenance_summary_list.unwrap_or_default();
+        v.push(input);
+        self.provenance_summary_list = ::std::option::Option::Some(v);
+        self
+    }
+    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    pub fn set_provenance_summary_list(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProvenanceSummary>>) -> Self {
+        self.provenance_summary_list = input;
+        self
+    }
+    /// List of condensed provenance entries surfaced on RegistryRecordSummary. Mirrors ProvenanceList's cardinality (one entry today); modeled as a list for forward-compatibility.
+    pub fn get_provenance_summary_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvenanceSummary>> {
+        &self.provenance_summary_list
+    }
     /// Consumes the builder and constructs a [`RegistryRecordSummary`](crate::types::RegistryRecordSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`registry_arn`](crate::types::builders::RegistryRecordSummaryBuilder::registry_arn)
@@ -351,6 +425,9 @@ impl RegistryRecordSummaryBuilder {
                     "updated_at was not specified but it is required when building RegistryRecordSummary",
                 )
             })?,
+            created_by_auto_detection: self.created_by_auto_detection,
+            created_by: self.created_by,
+            provenance_summary_list: self.provenance_summary_list,
         })
     }
 }
@@ -368,6 +445,9 @@ impl ::std::fmt::Debug for RegistryRecordSummaryBuilder {
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
+        formatter.field("created_by_auto_detection", &self.created_by_auto_detection);
+        formatter.field("created_by", &self.created_by);
+        formatter.field("provenance_summary_list", &self.provenance_summary_list);
         formatter.finish()
     }
 }

@@ -7,9 +7,9 @@ pub struct DescribeCasesInput {
     pub case_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID displayed for a case in the Amazon Web Services Support Center user interface.</p>
     pub display_id: ::std::option::Option<::std::string::String>,
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub after_time: ::std::option::Option<::std::string::String>,
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub before_time: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default, resolved cases aren't included.</p>
     pub include_resolved_cases: ::std::option::Option<bool>,
@@ -17,10 +17,12 @@ pub struct DescribeCasesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return before paginating.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub language: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     pub include_communications: ::std::option::Option<bool>,
+    /// <p>Specifies whether to validate the request without actually returning case data. When set to <code>true</code>, the request is validated but no cases are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeCasesInput {
     /// <p>A list of ID numbers of the support cases you want returned. The maximum number of cases is 100.</p>
@@ -33,11 +35,11 @@ impl DescribeCasesInput {
     pub fn display_id(&self) -> ::std::option::Option<&str> {
         self.display_id.as_deref()
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn after_time(&self) -> ::std::option::Option<&str> {
         self.after_time.as_deref()
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn before_time(&self) -> ::std::option::Option<&str> {
         self.before_time.as_deref()
     }
@@ -53,13 +55,17 @@ impl DescribeCasesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(&self) -> ::std::option::Option<&str> {
         self.language.as_deref()
     }
     /// <p>Specifies whether to include communications in the <code>DescribeCases</code> response. By default, communications are included.</p>
     pub fn include_communications(&self) -> ::std::option::Option<bool> {
         self.include_communications
+    }
+    /// <p>Specifies whether to validate the request without actually returning case data. When set to <code>true</code>, the request is validated but no cases are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl DescribeCasesInput {
@@ -82,6 +88,7 @@ pub struct DescribeCasesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) language: ::std::option::Option<::std::string::String>,
     pub(crate) include_communications: ::std::option::Option<bool>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeCasesInputBuilder {
     /// Appends an item to `case_id_list`.
@@ -118,31 +125,31 @@ impl DescribeCasesInputBuilder {
     pub fn get_display_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_id
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn after_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn set_after_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_time = input;
         self
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn get_after_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_time
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn before_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn set_before_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_time = input;
         self
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn get_before_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.before_time
     }
@@ -188,17 +195,17 @@ impl DescribeCasesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.language = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.language = input;
         self
     }
-    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
+    /// <p>The language in which Amazon Web Services Support handles the case. Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <code>language</code> parameter if you want support in that language.</p>
     pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
         &self.language
     }
@@ -216,6 +223,20 @@ impl DescribeCasesInputBuilder {
     pub fn get_include_communications(&self) -> &::std::option::Option<bool> {
         &self.include_communications
     }
+    /// <p>Specifies whether to validate the request without actually returning case data. When set to <code>true</code>, the request is validated but no cases are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning case data. When set to <code>true</code>, the request is validated but no cases are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning case data. When set to <code>true</code>, the request is validated but no cases are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`DescribeCasesInput`](crate::operation::describe_cases::DescribeCasesInput).
     pub fn build(
         self,
@@ -230,6 +251,7 @@ impl DescribeCasesInputBuilder {
             max_results: self.max_results,
             language: self.language,
             include_communications: self.include_communications,
+            dry_run: self.dry_run,
         })
     }
 }

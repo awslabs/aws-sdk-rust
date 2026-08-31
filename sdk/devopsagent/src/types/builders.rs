@@ -203,6 +203,8 @@ pub use crate::types::_send_message_json_delta::SendMessageJsonDeltaBuilder;
 
 pub use crate::types::_slack_transmission_target::SlackTransmissionTargetBuilder;
 
+pub use crate::types::_slack_bidirectional_configuration::SlackBidirectionalConfigurationBuilder;
+
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfigBuilder;
 
 pub use crate::types::_service_now_o_auth_client_credentials_config::ServiceNowOAuthClientCredentialsConfigBuilder;

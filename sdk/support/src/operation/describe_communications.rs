@@ -331,6 +331,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeCommu
 pub enum DescribeCommunicationsError {
     /// <p>The requested <code>caseId</code> couldn't be located.</p>
     CaseIdNotFound(crate::types::error::CaseIdNotFound),
+    /// <p>The request was valid, but the operation wasn't performed because <code>dryRun</code> was set to <code>true</code>.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>An internal server error occurred.</p>
     InternalServerError(crate::types::error::InternalServerError),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -367,6 +369,7 @@ impl DescribeCommunicationsError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CaseIdNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DryRunOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerError(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -374,6 +377,10 @@ impl DescribeCommunicationsError {
     /// Returns `true` if the error kind is `DescribeCommunicationsError::CaseIdNotFound`.
     pub fn is_case_id_not_found(&self) -> bool {
         matches!(self, Self::CaseIdNotFound(_))
+    }
+    /// Returns `true` if the error kind is `DescribeCommunicationsError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
     }
     /// Returns `true` if the error kind is `DescribeCommunicationsError::InternalServerError`.
     pub fn is_internal_server_error(&self) -> bool {
@@ -384,6 +391,7 @@ impl ::std::error::Error for DescribeCommunicationsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::CaseIdNotFound(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerError(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -393,6 +401,7 @@ impl ::std::fmt::Display for DescribeCommunicationsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::CaseIdNotFound(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::InternalServerError(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -416,6 +425,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for DescribeCommu
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::CaseIdNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DryRunOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerError(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }

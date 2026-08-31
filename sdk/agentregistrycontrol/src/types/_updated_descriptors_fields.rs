@@ -12,6 +12,10 @@ pub struct UpdatedDescriptorsFields {
     pub agent_skills_definition: ::std::option::Option<crate::types::UpdatedAgentSkillsDefinitionDescriptor>,
     /// <p>The patch for the custom descriptor.</p>
     pub custom: ::std::option::Option<crate::types::UpdatedCustomDescriptor>,
+    /// <p>The patch for the HTTP descriptor.</p>
+    pub http: ::std::option::Option<crate::types::UpdatedHttpDescriptor>,
+    /// <p>The patch for the AG-UI descriptor.</p>
+    pub agui: ::std::option::Option<crate::types::UpdatedAgUiDescriptor>,
 }
 impl UpdatedDescriptorsFields {
     /// <p>The patch for the MCP server descriptor.</p>
@@ -30,6 +34,14 @@ impl UpdatedDescriptorsFields {
     pub fn custom(&self) -> ::std::option::Option<&crate::types::UpdatedCustomDescriptor> {
         self.custom.as_ref()
     }
+    /// <p>The patch for the HTTP descriptor.</p>
+    pub fn http(&self) -> ::std::option::Option<&crate::types::UpdatedHttpDescriptor> {
+        self.http.as_ref()
+    }
+    /// <p>The patch for the AG-UI descriptor.</p>
+    pub fn agui(&self) -> ::std::option::Option<&crate::types::UpdatedAgUiDescriptor> {
+        self.agui.as_ref()
+    }
 }
 impl UpdatedDescriptorsFields {
     /// Creates a new builder-style object to manufacture [`UpdatedDescriptorsFields`](crate::types::UpdatedDescriptorsFields).
@@ -46,6 +58,8 @@ pub struct UpdatedDescriptorsFieldsBuilder {
     pub(crate) a2a_agent_card: ::std::option::Option<crate::types::UpdatedA2aAgentCardDescriptor>,
     pub(crate) agent_skills_definition: ::std::option::Option<crate::types::UpdatedAgentSkillsDefinitionDescriptor>,
     pub(crate) custom: ::std::option::Option<crate::types::UpdatedCustomDescriptor>,
+    pub(crate) http: ::std::option::Option<crate::types::UpdatedHttpDescriptor>,
+    pub(crate) agui: ::std::option::Option<crate::types::UpdatedAgUiDescriptor>,
 }
 impl UpdatedDescriptorsFieldsBuilder {
     /// <p>The patch for the MCP server descriptor.</p>
@@ -104,6 +118,34 @@ impl UpdatedDescriptorsFieldsBuilder {
     pub fn get_custom(&self) -> &::std::option::Option<crate::types::UpdatedCustomDescriptor> {
         &self.custom
     }
+    /// <p>The patch for the HTTP descriptor.</p>
+    pub fn http(mut self, input: crate::types::UpdatedHttpDescriptor) -> Self {
+        self.http = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The patch for the HTTP descriptor.</p>
+    pub fn set_http(mut self, input: ::std::option::Option<crate::types::UpdatedHttpDescriptor>) -> Self {
+        self.http = input;
+        self
+    }
+    /// <p>The patch for the HTTP descriptor.</p>
+    pub fn get_http(&self) -> &::std::option::Option<crate::types::UpdatedHttpDescriptor> {
+        &self.http
+    }
+    /// <p>The patch for the AG-UI descriptor.</p>
+    pub fn agui(mut self, input: crate::types::UpdatedAgUiDescriptor) -> Self {
+        self.agui = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The patch for the AG-UI descriptor.</p>
+    pub fn set_agui(mut self, input: ::std::option::Option<crate::types::UpdatedAgUiDescriptor>) -> Self {
+        self.agui = input;
+        self
+    }
+    /// <p>The patch for the AG-UI descriptor.</p>
+    pub fn get_agui(&self) -> &::std::option::Option<crate::types::UpdatedAgUiDescriptor> {
+        &self.agui
+    }
     /// Consumes the builder and constructs a [`UpdatedDescriptorsFields`](crate::types::UpdatedDescriptorsFields).
     pub fn build(self) -> crate::types::UpdatedDescriptorsFields {
         crate::types::UpdatedDescriptorsFields {
@@ -111,6 +153,8 @@ impl UpdatedDescriptorsFieldsBuilder {
             a2a_agent_card: self.a2a_agent_card,
             agent_skills_definition: self.agent_skills_definition,
             custom: self.custom,
+            http: self.http,
+            agui: self.agui,
         }
     }
 }

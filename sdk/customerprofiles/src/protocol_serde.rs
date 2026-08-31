@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_profile_key;
 
+pub(crate) mod shape_associate_stream_for_segments;
+
 pub(crate) mod shape_batch_get_calculated_attribute_for_profile;
 
 pub(crate) mod shape_batch_get_profile;
@@ -89,9 +91,13 @@ pub(crate) mod shape_delete_recommender_schema;
 
 pub(crate) mod shape_delete_segment_definition;
 
+pub(crate) mod shape_delete_segment_subscription;
+
 pub(crate) mod shape_delete_workflow;
 
 pub(crate) mod shape_detect_profile_object_type;
+
+pub(crate) mod shape_disassociate_stream_for_segments;
 
 pub(crate) mod shape_get_auto_merging_preview;
 
@@ -139,7 +145,11 @@ pub(crate) mod shape_get_segment_membership;
 
 pub(crate) mod shape_get_segment_snapshot;
 
+pub(crate) mod shape_get_segment_subscription;
+
 pub(crate) mod shape_get_similar_profiles;
+
+pub(crate) mod shape_get_stream_for_segments;
 
 pub(crate) mod shape_get_upload_job;
 
@@ -195,6 +205,8 @@ pub(crate) mod shape_list_rule_based_matches;
 
 pub(crate) mod shape_list_segment_definitions;
 
+pub(crate) mod shape_list_segment_subscription_events;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_upload_jobs;
@@ -210,6 +222,8 @@ pub(crate) mod shape_put_integration;
 pub(crate) mod shape_put_profile_object;
 
 pub(crate) mod shape_put_profile_object_type;
+
+pub(crate) mod shape_put_segment_subscription;
 
 pub(crate) mod shape_search_profiles;
 
@@ -248,6 +262,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_add_profile_key_input;
+
+pub(crate) mod shape_associate_stream_for_segments_input;
 
 pub(crate) mod shape_bad_request_exception;
 
@@ -325,6 +341,8 @@ pub(crate) mod shape_put_profile_object_input;
 
 pub(crate) mod shape_put_profile_object_type_input;
 
+pub(crate) mod shape_put_segment_subscription_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_search_profiles_input;
@@ -348,6 +366,8 @@ pub(crate) mod shape_update_recommender_input;
 pub(crate) mod shape_additional_search_key;
 
 pub(crate) mod shape_address;
+
+pub(crate) mod shape_associated_segments_list;
 
 pub(crate) mod shape_attribute_details;
 
@@ -507,6 +527,10 @@ pub(crate) mod shape_rule_based_matching_request;
 
 pub(crate) mod shape_rule_based_matching_response;
 
+pub(crate) mod shape_schedule_configuration;
+
+pub(crate) mod shape_scheduled_executions;
+
 pub(crate) mod shape_segment_definitions_list;
 
 pub(crate) mod shape_segment_group;
@@ -514,6 +538,8 @@ pub(crate) mod shape_segment_group;
 pub(crate) mod shape_segment_group_structure;
 
 pub(crate) mod shape_segment_sort;
+
+pub(crate) mod shape_subscription_events_list;
 
 pub(crate) mod shape_tag_map;
 
@@ -536,6 +562,8 @@ pub(crate) mod shape_appflow_integration;
 pub(crate) mod shape_appflow_integration_workflow_attributes;
 
 pub(crate) mod shape_appflow_integration_workflow_metrics;
+
+pub(crate) mod shape_associated_segment;
 
 pub(crate) mod shape_attribute_item;
 
@@ -658,6 +686,8 @@ pub(crate) mod shape_sort_attribute;
 pub(crate) mod shape_sort_attribute_list;
 
 pub(crate) mod shape_source_flow_config;
+
+pub(crate) mod shape_subscription_event_item;
 
 pub(crate) mod shape_task;
 

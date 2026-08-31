@@ -3,27 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCommunicationsInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub case_id: ::std::option::Option<::std::string::String>,
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub before_time: ::std::option::Option<::std::string::String>,
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub after_time: ::std::option::Option<::std::string::String>,
     /// <p>A resumption point for pagination.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return before paginating.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Specifies whether to validate the request without actually returning communications. When set to <code>true</code>, the request is validated but no communications are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl DescribeCommunicationsInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn before_time(&self) -> ::std::option::Option<&str> {
         self.before_time.as_deref()
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn after_time(&self) -> ::std::option::Option<&str> {
         self.after_time.as_deref()
     }
@@ -34,6 +36,10 @@ impl DescribeCommunicationsInput {
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
+    }
+    /// <p>Specifies whether to validate the request without actually returning communications. When set to <code>true</code>, the request is validated but no communications are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl DescribeCommunicationsInput {
@@ -52,48 +58,49 @@ pub struct DescribeCommunicationsInputBuilder {
     pub(crate) after_time: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl DescribeCommunicationsInputBuilder {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     /// This field is required.
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn before_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.before_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn set_before_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.before_time = input;
         self
     }
-    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The end date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn get_before_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.before_time
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn after_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.after_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn set_after_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.after_time = input;
         self
     }
-    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
+    /// <p>The start date for a filtered date search on support case communications. Case communications are available for 24 months after creation.</p>
     pub fn get_after_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.after_time
     }
@@ -125,6 +132,20 @@ impl DescribeCommunicationsInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Specifies whether to validate the request without actually returning communications. When set to <code>true</code>, the request is validated but no communications are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning communications. When set to <code>true</code>, the request is validated but no communications are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually returning communications. When set to <code>true</code>, the request is validated but no communications are returned, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`DescribeCommunicationsInput`](crate::operation::describe_communications::DescribeCommunicationsInput).
     pub fn build(
         self,
@@ -136,6 +157,7 @@ impl DescribeCommunicationsInputBuilder {
             after_time: self.after_time,
             next_token: self.next_token,
             max_results: self.max_results,
+            dry_run: self.dry_run,
         })
     }
 }

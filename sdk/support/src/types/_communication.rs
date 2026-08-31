@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Communication {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The text of the communication between the customer and Amazon Web Services Support.</p>
     pub body: ::std::option::Option<::std::string::String>,
@@ -14,11 +14,14 @@ pub struct Communication {
     pub submitted_by: ::std::option::Option<::std::string::String>,
     /// <p>The time the communication was created.</p>
     pub time_created: ::std::option::Option<::std::string::String>,
-    /// <p>Information about the attachments to the case communication.</p>
+    /// <p>Information about all attachments on the case communication. This includes attachments added through <code>AddAttachmentsToSet</code> and attachments uploaded through <code>GetAttachmentUploadLinks</code>.</p>
+    /// <p>Use this field to enumerate every attachment on the communication. To download an attachment listed in this field, use <code>GetAttachmentDownloadLink</code>. <code>GetAttachmentDownloadLink</code> returns a presigned URL that works for attachments of any size.</p>
+    pub attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
+    /// <p>Information about the attachments to the case communication that are 5 MB or smaller. This field doesn't include attachments larger than 5 MB. To enumerate every attachment on the communication, including attachments larger than 5 MB, use the <code>attachments</code> field instead.</p>
     pub attachment_set: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
 }
 impl Communication {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
@@ -36,7 +39,14 @@ impl Communication {
     pub fn time_created(&self) -> ::std::option::Option<&str> {
         self.time_created.as_deref()
     }
-    /// <p>Information about the attachments to the case communication.</p>
+    /// <p>Information about all attachments on the case communication. This includes attachments added through <code>AddAttachmentsToSet</code> and attachments uploaded through <code>GetAttachmentUploadLinks</code>.</p>
+    /// <p>Use this field to enumerate every attachment on the communication. To download an attachment listed in this field, use <code>GetAttachmentDownloadLink</code>. <code>GetAttachmentDownloadLink</code> returns a presigned URL that works for attachments of any size.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachments.is_none()`.
+    pub fn attachments(&self) -> &[crate::types::AttachmentDetails] {
+        self.attachments.as_deref().unwrap_or_default()
+    }
+    /// <p>Information about the attachments to the case communication that are 5 MB or smaller. This field doesn't include attachments larger than 5 MB. To enumerate every attachment on the communication, including attachments larger than 5 MB, use the <code>attachments</code> field instead.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attachment_set.is_none()`.
     pub fn attachment_set(&self) -> &[crate::types::AttachmentDetails] {
@@ -58,20 +68,21 @@ pub struct CommunicationBuilder {
     pub(crate) body: ::std::option::Option<::std::string::String>,
     pub(crate) submitted_by: ::std::option::Option<::std::string::String>,
     pub(crate) time_created: ::std::option::Option<::std::string::String>,
+    pub(crate) attachments: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
     pub(crate) attachment_set: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>,
 }
 impl CommunicationBuilder {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
@@ -123,23 +134,46 @@ impl CommunicationBuilder {
     pub fn get_time_created(&self) -> &::std::option::Option<::std::string::String> {
         &self.time_created
     }
+    /// Appends an item to `attachments`.
+    ///
+    /// To override the contents of this collection use [`set_attachments`](Self::set_attachments).
+    ///
+    /// <p>Information about all attachments on the case communication. This includes attachments added through <code>AddAttachmentsToSet</code> and attachments uploaded through <code>GetAttachmentUploadLinks</code>.</p>
+    /// <p>Use this field to enumerate every attachment on the communication. To download an attachment listed in this field, use <code>GetAttachmentDownloadLink</code>. <code>GetAttachmentDownloadLink</code> returns a presigned URL that works for attachments of any size.</p>
+    pub fn attachments(mut self, input: crate::types::AttachmentDetails) -> Self {
+        let mut v = self.attachments.unwrap_or_default();
+        v.push(input);
+        self.attachments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about all attachments on the case communication. This includes attachments added through <code>AddAttachmentsToSet</code> and attachments uploaded through <code>GetAttachmentUploadLinks</code>.</p>
+    /// <p>Use this field to enumerate every attachment on the communication. To download an attachment listed in this field, use <code>GetAttachmentDownloadLink</code>. <code>GetAttachmentDownloadLink</code> returns a presigned URL that works for attachments of any size.</p>
+    pub fn set_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>) -> Self {
+        self.attachments = input;
+        self
+    }
+    /// <p>Information about all attachments on the case communication. This includes attachments added through <code>AddAttachmentsToSet</code> and attachments uploaded through <code>GetAttachmentUploadLinks</code>.</p>
+    /// <p>Use this field to enumerate every attachment on the communication. To download an attachment listed in this field, use <code>GetAttachmentDownloadLink</code>. <code>GetAttachmentDownloadLink</code> returns a presigned URL that works for attachments of any size.</p>
+    pub fn get_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>> {
+        &self.attachments
+    }
     /// Appends an item to `attachment_set`.
     ///
     /// To override the contents of this collection use [`set_attachment_set`](Self::set_attachment_set).
     ///
-    /// <p>Information about the attachments to the case communication.</p>
+    /// <p>Information about the attachments to the case communication that are 5 MB or smaller. This field doesn't include attachments larger than 5 MB. To enumerate every attachment on the communication, including attachments larger than 5 MB, use the <code>attachments</code> field instead.</p>
     pub fn attachment_set(mut self, input: crate::types::AttachmentDetails) -> Self {
         let mut v = self.attachment_set.unwrap_or_default();
         v.push(input);
         self.attachment_set = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Information about the attachments to the case communication.</p>
+    /// <p>Information about the attachments to the case communication that are 5 MB or smaller. This field doesn't include attachments larger than 5 MB. To enumerate every attachment on the communication, including attachments larger than 5 MB, use the <code>attachments</code> field instead.</p>
     pub fn set_attachment_set(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>>) -> Self {
         self.attachment_set = input;
         self
     }
-    /// <p>Information about the attachments to the case communication.</p>
+    /// <p>Information about the attachments to the case communication that are 5 MB or smaller. This field doesn't include attachments larger than 5 MB. To enumerate every attachment on the communication, including attachments larger than 5 MB, use the <code>attachments</code> field instead.</p>
     pub fn get_attachment_set(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttachmentDetails>> {
         &self.attachment_set
     }
@@ -150,6 +184,7 @@ impl CommunicationBuilder {
             body: self.body,
             submitted_by: self.submitted_by,
             time_created: self.time_created,
+            attachments: self.attachments,
             attachment_set: self.attachment_set,
         }
     }

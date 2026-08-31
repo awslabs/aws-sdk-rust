@@ -32,6 +32,8 @@ pub struct AgentInfo {
     pub state_transitions: ::std::option::Option<::std::vec::Vec<crate::types::StateTransition>>,
     /// <p>The voice enhancement mode used by the agent as the call is ending. Valid values: VOICE_ISOLATION | NOISE_SUPPRESSION | NONE. A value of null indicates this mode has not yet been set for this user.</p>
     pub voice_enhancement_mode: ::std::option::Option<crate::types::VoiceEnhancementMode>,
+    /// <p>The Region where the agent was active when they handled the contact. For Amazon Connect Global Resiliency instances enabled for global routing, this indicates the Region in which the agent's session was established at the time of the contact.</p>
+    pub active_region: ::std::option::Option<::std::string::String>,
 }
 impl AgentInfo {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -92,6 +94,10 @@ impl AgentInfo {
     pub fn voice_enhancement_mode(&self) -> ::std::option::Option<&crate::types::VoiceEnhancementMode> {
         self.voice_enhancement_mode.as_ref()
     }
+    /// <p>The Region where the agent was active when they handled the contact. For Amazon Connect Global Resiliency instances enabled for global routing, this indicates the Region in which the agent's session was established at the time of the contact.</p>
+    pub fn active_region(&self) -> ::std::option::Option<&str> {
+        self.active_region.as_deref()
+    }
 }
 impl AgentInfo {
     /// Creates a new builder-style object to manufacture [`AgentInfo`](crate::types::AgentInfo).
@@ -118,6 +124,7 @@ pub struct AgentInfoBuilder {
     pub(crate) agent_initiated_hold_duration: ::std::option::Option<i32>,
     pub(crate) state_transitions: ::std::option::Option<::std::vec::Vec<crate::types::StateTransition>>,
     pub(crate) voice_enhancement_mode: ::std::option::Option<crate::types::VoiceEnhancementMode>,
+    pub(crate) active_region: ::std::option::Option<::std::string::String>,
 }
 impl AgentInfoBuilder {
     /// <p>The identifier of the agent who accepted the contact.</p>
@@ -322,6 +329,20 @@ impl AgentInfoBuilder {
     pub fn get_voice_enhancement_mode(&self) -> &::std::option::Option<crate::types::VoiceEnhancementMode> {
         &self.voice_enhancement_mode
     }
+    /// <p>The Region where the agent was active when they handled the contact. For Amazon Connect Global Resiliency instances enabled for global routing, this indicates the Region in which the agent's session was established at the time of the contact.</p>
+    pub fn active_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.active_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Region where the agent was active when they handled the contact. For Amazon Connect Global Resiliency instances enabled for global routing, this indicates the Region in which the agent's session was established at the time of the contact.</p>
+    pub fn set_active_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.active_region = input;
+        self
+    }
+    /// <p>The Region where the agent was active when they handled the contact. For Amazon Connect Global Resiliency instances enabled for global routing, this indicates the Region in which the agent's session was established at the time of the contact.</p>
+    pub fn get_active_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.active_region
+    }
     /// Consumes the builder and constructs a [`AgentInfo`](crate::types::AgentInfo).
     pub fn build(self) -> crate::types::AgentInfo {
         crate::types::AgentInfo {
@@ -339,6 +360,7 @@ impl AgentInfoBuilder {
             agent_initiated_hold_duration: self.agent_initiated_hold_duration,
             state_transitions: self.state_transitions,
             voice_enhancement_mode: self.voice_enhancement_mode,
+            active_region: self.active_region,
         }
     }
 }

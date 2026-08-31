@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryRecordOAuthCredentialProvider {
-    /// <p>The &amp;ARN; of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
     pub provider_arn: ::std::string::String,
     /// <p>The OAuth 2.0 grant type used to obtain access tokens.</p>
     pub grant_type: ::std::option::Option<crate::types::RegistryRecordOAuthGrantType>,
@@ -14,7 +14,7 @@ pub struct RegistryRecordOAuthCredentialProvider {
     pub custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RegistryRecordOAuthCredentialProvider {
-    /// <p>The &amp;ARN; of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
     pub fn provider_arn(&self) -> &str {
         use std::ops::Deref;
         self.provider_arn.deref()
@@ -51,18 +51,18 @@ pub struct RegistryRecordOAuthCredentialProviderBuilder {
     pub(crate) custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl RegistryRecordOAuthCredentialProviderBuilder {
-    /// <p>The &amp;ARN; of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
     /// This field is required.
     pub fn provider_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The &amp;ARN; of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
     pub fn set_provider_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_arn = input;
         self
     }
-    /// <p>The &amp;ARN; of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
+    /// <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
     pub fn get_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_arn
     }

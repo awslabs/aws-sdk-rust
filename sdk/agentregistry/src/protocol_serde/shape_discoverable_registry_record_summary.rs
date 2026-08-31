@@ -96,6 +96,13 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "descriptorTypes" => {
+                            builder = builder.set_descriptor_types(crate::protocol_serde::shape_descriptor_type_list::de_descriptor_type_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -253,6 +253,8 @@ mod delete_agent;
 
 mod delete_analysis;
 
+mod delete_app;
+
 mod delete_approval_policy;
 
 mod delete_brand;
@@ -346,6 +348,10 @@ mod describe_analysis;
 mod describe_analysis_definition;
 
 mod describe_analysis_permissions;
+
+mod describe_app;
+
+mod describe_app_permissions;
 
 mod describe_approval_policy;
 
@@ -487,6 +493,8 @@ mod list_analyses;
 
 mod list_approval_policies;
 
+mod list_apps;
+
 mod list_asset_bundle_export_jobs;
 
 mod list_asset_bundle_import_jobs;
@@ -587,6 +595,8 @@ mod search_agents;
 
 mod search_analyses;
 
+mod search_apps;
+
 mod search_dashboards;
 
 mod search_data_sets;
@@ -638,6 +648,8 @@ mod update_agent_permissions;
 mod update_analysis;
 
 mod update_analysis_permissions;
+
+mod update_app_permissions;
 
 mod update_application_with_token_exchange_grant;
 

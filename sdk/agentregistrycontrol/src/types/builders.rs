@@ -7,13 +7,21 @@ pub use crate::types::_updated_description::UpdatedDescriptionBuilder;
 
 pub use crate::types::_updated_descriptors::UpdatedDescriptorsBuilder;
 
+pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
+
 pub use crate::types::_discovery_configuration::DiscoveryConfigurationBuilder;
 
 pub use crate::types::_approval_configuration::ApprovalConfigurationBuilder;
 
+pub use crate::types::_auto_detection_configuration::AutoDetectionConfigurationBuilder;
+
+pub use crate::types::_auto_detection::AutoDetectionBuilder;
+
 pub use crate::types::_updated_discovery_configuration::UpdatedDiscoveryConfigurationBuilder;
 
 pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfigurationBuilder;
+
+pub use crate::types::_updated_auto_detection_configuration::UpdatedAutoDetectionConfigurationBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
@@ -28,6 +36,12 @@ pub use crate::types::_a2a_agent_card_descriptor::A2aAgentCardDescriptorBuilder;
 pub use crate::types::_agent_skills_definition_descriptor::AgentSkillsDefinitionDescriptorBuilder;
 
 pub use crate::types::_custom_descriptor::CustomDescriptorBuilder;
+
+pub use crate::types::_http_descriptor::HttpDescriptorBuilder;
+
+pub use crate::types::_ag_ui_descriptor::AgUiDescriptorBuilder;
+
+pub use crate::types::_provenance::ProvenanceBuilder;
 
 pub use crate::types::_updated_descriptors_fields::UpdatedDescriptorsFieldsBuilder;
 
@@ -51,13 +65,23 @@ pub use crate::types::_updated_agent_skills_definition_descriptor::UpdatedAgentS
 
 pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptorBuilder;
 
+pub use crate::types::_updated_http_descriptor::UpdatedHttpDescriptorBuilder;
+
+pub use crate::types::_updated_ag_ui_descriptor::UpdatedAgUiDescriptorBuilder;
+
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfigurationBuilder;
+
+pub use crate::types::_provenance_summary::ProvenanceSummaryBuilder;
 
 pub use crate::types::_mcp_tools_descriptor::McpToolsDescriptorBuilder;
 
 pub use crate::types::_descriptor_source_from_url::DescriptorSourceFromUrlBuilder;
 
 pub use crate::types::_agent_skills_md_descriptor::AgentSkillsMdDescriptorBuilder;
+
+pub use crate::types::_agent_core_runtime_source_details::AgentCoreRuntimeSourceDetailsBuilder;
+
+pub use crate::types::_agent_core_gateway_source_details::AgentCoreGatewaySourceDetailsBuilder;
 
 pub use crate::types::_updated_mcp_server_descriptor_fields::UpdatedMcpServerDescriptorFieldsBuilder;
 
@@ -66,6 +90,14 @@ pub use crate::types::_updated_a2a_agent_card_descriptor_fields::UpdatedA2aAgent
 pub use crate::types::_updated_agent_skills_definition_descriptor_fields::UpdatedAgentSkillsDefinitionDescriptorFieldsBuilder;
 
 pub use crate::types::_updated_custom_descriptor_fields::UpdatedCustomDescriptorFieldsBuilder;
+
+pub use crate::types::_updated_http_descriptor_fields::UpdatedHttpDescriptorFieldsBuilder;
+
+pub use crate::types::_updated_ag_ui_descriptor_fields::UpdatedAgUiDescriptorFieldsBuilder;
+
+pub use crate::types::_agent_core_runtime_protocol_configuration::AgentCoreRuntimeProtocolConfigurationBuilder;
+
+pub use crate::types::_workload_identity_details::WorkloadIdentityDetailsBuilder;
 
 pub use crate::types::_updated_descriptor_data::UpdatedDescriptorDataBuilder;
 

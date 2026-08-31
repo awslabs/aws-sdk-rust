@@ -13,6 +13,9 @@
 /// # let connectoroperationstate = unimplemented!();
 /// match connectoroperationstate {
 ///     ConnectorOperationState::Pending => { /* ... */ },
+///     ConnectorOperationState::RestartComplete => { /* ... */ },
+///     ConnectorOperationState::RestartFailed => { /* ... */ },
+///     ConnectorOperationState::RestartInProgress => { /* ... */ },
 ///     ConnectorOperationState::RollbackComplete => { /* ... */ },
 ///     ConnectorOperationState::RollbackFailed => { /* ... */ },
 ///     ConnectorOperationState::RollbackInProgress => { /* ... */ },
@@ -50,6 +53,12 @@ pub enum ConnectorOperationState {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     #[allow(missing_docs)] // documentation missing in model
+    RestartComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    RestartFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    RestartInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     RollbackComplete,
     #[allow(missing_docs)] // documentation missing in model
     RollbackFailed,
@@ -69,6 +78,9 @@ impl ::std::convert::From<&str> for ConnectorOperationState {
     fn from(s: &str) -> Self {
         match s {
             "PENDING" => ConnectorOperationState::Pending,
+            "RESTART_COMPLETE" => ConnectorOperationState::RestartComplete,
+            "RESTART_FAILED" => ConnectorOperationState::RestartFailed,
+            "RESTART_IN_PROGRESS" => ConnectorOperationState::RestartInProgress,
             "ROLLBACK_COMPLETE" => ConnectorOperationState::RollbackComplete,
             "ROLLBACK_FAILED" => ConnectorOperationState::RollbackFailed,
             "ROLLBACK_IN_PROGRESS" => ConnectorOperationState::RollbackInProgress,
@@ -91,6 +103,9 @@ impl ConnectorOperationState {
     pub fn as_str(&self) -> &str {
         match self {
             ConnectorOperationState::Pending => "PENDING",
+            ConnectorOperationState::RestartComplete => "RESTART_COMPLETE",
+            ConnectorOperationState::RestartFailed => "RESTART_FAILED",
+            ConnectorOperationState::RestartInProgress => "RESTART_IN_PROGRESS",
             ConnectorOperationState::RollbackComplete => "ROLLBACK_COMPLETE",
             ConnectorOperationState::RollbackFailed => "ROLLBACK_FAILED",
             ConnectorOperationState::RollbackInProgress => "ROLLBACK_IN_PROGRESS",
@@ -104,6 +119,9 @@ impl ConnectorOperationState {
     pub const fn values() -> &'static [&'static str] {
         &[
             "PENDING",
+            "RESTART_COMPLETE",
+            "RESTART_FAILED",
+            "RESTART_IN_PROGRESS",
             "ROLLBACK_COMPLETE",
             "ROLLBACK_FAILED",
             "ROLLBACK_IN_PROGRESS",
@@ -134,6 +152,9 @@ impl ::std::fmt::Display for ConnectorOperationState {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConnectorOperationState::Pending => write!(f, "PENDING"),
+            ConnectorOperationState::RestartComplete => write!(f, "RESTART_COMPLETE"),
+            ConnectorOperationState::RestartFailed => write!(f, "RESTART_FAILED"),
+            ConnectorOperationState::RestartInProgress => write!(f, "RESTART_IN_PROGRESS"),
             ConnectorOperationState::RollbackComplete => write!(f, "ROLLBACK_COMPLETE"),
             ConnectorOperationState::RollbackFailed => write!(f, "ROLLBACK_FAILED"),
             ConnectorOperationState::RollbackInProgress => write!(f, "ROLLBACK_IN_PROGRESS"),

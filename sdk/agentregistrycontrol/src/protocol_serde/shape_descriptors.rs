@@ -27,6 +27,18 @@ pub fn ser_descriptors(
         crate::protocol_serde::shape_custom_descriptor::ser_custom_descriptor(&mut object_8, var_7)?;
         object_8.finish();
     }
+    if let Some(var_9) = &input.http {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("http").start_object();
+        crate::protocol_serde::shape_http_descriptor::ser_http_descriptor(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.agui {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("agui").start_object();
+        crate::protocol_serde::shape_ag_ui_descriptor::ser_ag_ui_descriptor(&mut object_12, var_11)?;
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -75,6 +87,20 @@ where
                         }
                         "custom" => {
                             builder = builder.set_custom(crate::protocol_serde::shape_custom_descriptor::de_custom_descriptor(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "http" => {
+                            builder = builder.set_http(crate::protocol_serde::shape_http_descriptor::de_http_descriptor(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "agui" => {
+                            builder = builder.set_agui(crate::protocol_serde::shape_ag_ui_descriptor::de_ag_ui_descriptor(
                                 tokens,
                                 _value,
                                 depth + 1,

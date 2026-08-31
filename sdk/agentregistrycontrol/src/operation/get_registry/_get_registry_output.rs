@@ -14,12 +14,16 @@ pub struct GetRegistryOutput {
     pub registry_arn: ::std::string::String,
     /// <p>Discovery configuration for the registry</p>
     pub discovery_configuration: ::std::option::Option<crate::types::DiscoveryConfiguration>,
+    /// <p>The server-side encryption configuration for the registry. Appears only when a customer-managed Amazon Web Services KMS key encrypts the registry.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>Approval configuration for registry records</p>
     pub approval_configuration: ::std::option::Option<crate::types::ApprovalConfiguration>,
     /// <p>Current status of the registry</p>
     pub status: crate::types::RegistryStatus,
     /// <p>The reason for the current status. Typically populated when the status indicates a failure state.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub auto_detection: ::std::option::Option<crate::types::AutoDetection>,
     /// <p>The timestamp when the registry was created</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the registry was last updated</p>
@@ -50,6 +54,10 @@ impl GetRegistryOutput {
     pub fn discovery_configuration(&self) -> ::std::option::Option<&crate::types::DiscoveryConfiguration> {
         self.discovery_configuration.as_ref()
     }
+    /// <p>The server-side encryption configuration for the registry. Appears only when a customer-managed Amazon Web Services KMS key encrypts the registry.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
     /// <p>Approval configuration for registry records</p>
     pub fn approval_configuration(&self) -> ::std::option::Option<&crate::types::ApprovalConfiguration> {
         self.approval_configuration.as_ref()
@@ -61,6 +69,10 @@ impl GetRegistryOutput {
     /// <p>The reason for the current status. Typically populated when the status indicates a failure state.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
+    }
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub fn auto_detection(&self) -> ::std::option::Option<&crate::types::AutoDetection> {
+        self.auto_detection.as_ref()
     }
     /// <p>The timestamp when the registry was created</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -79,9 +91,11 @@ impl ::std::fmt::Debug for GetRegistryOutput {
         formatter.field("registry_id", &self.registry_id);
         formatter.field("registry_arn", &self.registry_arn);
         formatter.field("discovery_configuration", &self.discovery_configuration);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("approval_configuration", &self.approval_configuration);
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
+        formatter.field("auto_detection", &self.auto_detection);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("_request_id", &self._request_id);
@@ -109,9 +123,11 @@ pub struct GetRegistryOutputBuilder {
     pub(crate) registry_id: ::std::option::Option<::std::string::String>,
     pub(crate) registry_arn: ::std::option::Option<::std::string::String>,
     pub(crate) discovery_configuration: ::std::option::Option<crate::types::DiscoveryConfiguration>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) approval_configuration: ::std::option::Option<crate::types::ApprovalConfiguration>,
     pub(crate) status: ::std::option::Option<crate::types::RegistryStatus>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_detection: ::std::option::Option<crate::types::AutoDetection>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -190,6 +206,20 @@ impl GetRegistryOutputBuilder {
     pub fn get_discovery_configuration(&self) -> &::std::option::Option<crate::types::DiscoveryConfiguration> {
         &self.discovery_configuration
     }
+    /// <p>The server-side encryption configuration for the registry. Appears only when a customer-managed Amazon Web Services KMS key encrypts the registry.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The server-side encryption configuration for the registry. Appears only when a customer-managed Amazon Web Services KMS key encrypts the registry.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>The server-side encryption configuration for the registry. Appears only when a customer-managed Amazon Web Services KMS key encrypts the registry.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// <p>Approval configuration for registry records</p>
     pub fn approval_configuration(mut self, input: crate::types::ApprovalConfiguration) -> Self {
         self.approval_configuration = ::std::option::Option::Some(input);
@@ -232,6 +262,20 @@ impl GetRegistryOutputBuilder {
     /// <p>The reason for the current status. Typically populated when the status indicates a failure state.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
+    }
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub fn auto_detection(mut self, input: crate::types::AutoDetection) -> Self {
+        self.auto_detection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub fn set_auto_detection(mut self, input: ::std::option::Option<crate::types::AutoDetection>) -> Self {
+        self.auto_detection = input;
+        self
+    }
+    /// <p>The registry's auto-detection properties, including the requested configuration and the current detection status. Present only when auto-detection was configured for the registry.</p>
+    pub fn get_auto_detection(&self) -> &::std::option::Option<crate::types::AutoDetection> {
+        &self.auto_detection
     }
     /// <p>The timestamp when the registry was created</p>
     /// This field is required.
@@ -302,6 +346,7 @@ impl GetRegistryOutputBuilder {
                 )
             })?,
             discovery_configuration: self.discovery_configuration,
+            encryption_configuration: self.encryption_configuration,
             approval_configuration: self.approval_configuration,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -310,6 +355,7 @@ impl GetRegistryOutputBuilder {
                 )
             })?,
             status_reason: self.status_reason,
+            auto_detection: self.auto_detection,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -334,9 +380,11 @@ impl ::std::fmt::Debug for GetRegistryOutputBuilder {
         formatter.field("registry_id", &self.registry_id);
         formatter.field("registry_arn", &self.registry_arn);
         formatter.field("discovery_configuration", &self.discovery_configuration);
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("approval_configuration", &self.approval_configuration);
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
+        formatter.field("auto_detection", &self.auto_detection);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("_request_id", &self._request_id);

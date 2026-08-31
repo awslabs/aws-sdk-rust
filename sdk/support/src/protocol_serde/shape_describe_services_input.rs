@@ -15,5 +15,8 @@ pub fn ser_describe_services_input_input(
     if let Some(var_4) = &input.language {
         object.key("language").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.dry_run {
+        object.key("dryRun").boolean(*var_5);
+    }
     Ok(())
 }

@@ -6696,6 +6696,42 @@ impl From<crate::operation::get_contact_metrics::GetContactMetricsError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cross_region_routing::GetCrossRegionRoutingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_cross_region_routing::GetCrossRegionRoutingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_cross_region_routing::GetCrossRegionRoutingError> for Error {
+    fn from(err: crate::operation::get_cross_region_routing::GetCrossRegionRoutingError) -> Self {
+        match err {
+            crate::operation::get_cross_region_routing::GetCrossRegionRoutingError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_cross_region_routing::GetCrossRegionRoutingError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_cross_region_routing::GetCrossRegionRoutingError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::get_cross_region_routing::GetCrossRegionRoutingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_cross_region_routing::GetCrossRegionRoutingError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_cross_region_routing::GetCrossRegionRoutingError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_current_metric_data::GetCurrentMetricDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -12649,6 +12685,48 @@ impl From<crate::operation::update_contact_task_template::UpdateContactTaskTempl
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_contact_task_template::UpdateContactTaskTemplateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError> for Error {
+    fn from(err: crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError) -> Self {
+        match err {
+            crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_cross_region_routing::UpdateCrossRegionRoutingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

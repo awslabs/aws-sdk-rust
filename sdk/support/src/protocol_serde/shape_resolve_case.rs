@@ -32,6 +32,21 @@ pub fn de_resolve_case_http_error(
             }
             tmp
         }),
+        "DryRunOperationException" => crate::operation::resolve_case::ResolveCaseError::DryRunOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DryRunOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dry_run_operation_exception::de_dry_run_operation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::resolve_case::ResolveCaseError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServerError" => crate::operation::resolve_case::ResolveCaseError::InternalServerError({
             #[allow(unused_mut)]
             let mut tmp = {

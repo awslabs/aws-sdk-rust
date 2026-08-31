@@ -96,6 +96,22 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "createdByAutoDetection" => {
+                            builder =
+                                builder.set_created_by_auto_detection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "createdBy" => {
+                            builder = builder.set_created_by(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "provenanceSummaryList" => {
+                            builder = builder.set_provenance_summary_list(
+                                crate::protocol_serde::shape_provenance_summary_list::de_provenance_summary_list(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

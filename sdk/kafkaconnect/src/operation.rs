@@ -46,6 +46,9 @@ pub mod list_tags_for_resource;
 /// Types for the `ListWorkerConfigurations` operation.
 pub mod list_worker_configurations;
 
+/// Types for the `RestartConnector` operation.
+pub mod restart_connector;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

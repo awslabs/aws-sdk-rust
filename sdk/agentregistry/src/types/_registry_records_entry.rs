@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RegistryRecordsEntry {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry to retrieve the records from. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub registry_id: ::std::string::String,
     /// <p>The record IDs to retrieve from the registry. You can specify 1 through 100 record IDs.</p>
     pub record_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl RegistryRecordsEntry {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry to retrieve the records from. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn registry_id(&self) -> &str {
         use std::ops::Deref;
         self.registry_id.deref()
@@ -36,18 +36,18 @@ pub struct RegistryRecordsEntryBuilder {
     pub(crate) record_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RegistryRecordsEntryBuilder {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry to retrieve the records from. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     /// This field is required.
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry to retrieve the records from. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry to retrieve the records from. You can provide either the full Amazon Resource Name (ARN) or the registry ID.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_id
     }

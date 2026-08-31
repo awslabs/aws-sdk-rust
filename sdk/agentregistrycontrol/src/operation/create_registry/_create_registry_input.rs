@@ -8,14 +8,18 @@ pub struct CreateRegistryInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the registry</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The optional server-side encryption configuration for the registry. When you provide this field, the specified customer-managed Amazon Web Services KMS key encrypts the registry's content. Omit this field to use an Amazon Web Services-owned encryption key. You cannot change the encryption configuration after registry creation.</p>
+    pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     /// <p>Discovery configuration for the registry</p>
     pub discovery_configuration: ::std::option::Option<crate::types::DiscoveryConfiguration>,
-    /// <p>Client token for idempotency</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associate with the registry</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Approval configuration for registry records</p>
     pub approval_configuration: ::std::option::Option<crate::types::ApprovalConfiguration>,
+    /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
+    pub auto_detection_configuration: ::std::option::Option<crate::types::AutoDetectionConfiguration>,
 }
 impl CreateRegistryInput {
     /// <p>The name of the registry</p>
@@ -26,11 +30,15 @@ impl CreateRegistryInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>The optional server-side encryption configuration for the registry. When you provide this field, the specified customer-managed Amazon Web Services KMS key encrypts the registry's content. Omit this field to use an Amazon Web Services-owned encryption key. You cannot change the encryption configuration after registry creation.</p>
+    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
+        self.encryption_configuration.as_ref()
+    }
     /// <p>Discovery configuration for the registry</p>
     pub fn discovery_configuration(&self) -> ::std::option::Option<&crate::types::DiscoveryConfiguration> {
         self.discovery_configuration.as_ref()
     }
-    /// <p>Client token for idempotency</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -42,16 +50,22 @@ impl CreateRegistryInput {
     pub fn approval_configuration(&self) -> ::std::option::Option<&crate::types::ApprovalConfiguration> {
         self.approval_configuration.as_ref()
     }
+    /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
+    pub fn auto_detection_configuration(&self) -> ::std::option::Option<&crate::types::AutoDetectionConfiguration> {
+        self.auto_detection_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateRegistryInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateRegistryInput");
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("discovery_configuration", &self.discovery_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.field("approval_configuration", &self.approval_configuration);
+        formatter.field("auto_detection_configuration", &self.auto_detection_configuration);
         formatter.finish()
     }
 }
@@ -68,10 +82,12 @@ impl CreateRegistryInput {
 pub struct CreateRegistryInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
     pub(crate) discovery_configuration: ::std::option::Option<crate::types::DiscoveryConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) approval_configuration: ::std::option::Option<crate::types::ApprovalConfiguration>,
+    pub(crate) auto_detection_configuration: ::std::option::Option<crate::types::AutoDetectionConfiguration>,
 }
 impl CreateRegistryInputBuilder {
     /// <p>The name of the registry</p>
@@ -103,6 +119,20 @@ impl CreateRegistryInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>The optional server-side encryption configuration for the registry. When you provide this field, the specified customer-managed Amazon Web Services KMS key encrypts the registry's content. Omit this field to use an Amazon Web Services-owned encryption key. You cannot change the encryption configuration after registry creation.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.encryption_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional server-side encryption configuration for the registry. When you provide this field, the specified customer-managed Amazon Web Services KMS key encrypts the registry's content. Omit this field to use an Amazon Web Services-owned encryption key. You cannot change the encryption configuration after registry creation.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.encryption_configuration = input;
+        self
+    }
+    /// <p>The optional server-side encryption configuration for the registry. When you provide this field, the specified customer-managed Amazon Web Services KMS key encrypts the registry's content. Omit this field to use an Amazon Web Services-owned encryption key. You cannot change the encryption configuration after registry creation.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        &self.encryption_configuration
+    }
     /// <p>Discovery configuration for the registry</p>
     pub fn discovery_configuration(mut self, input: crate::types::DiscoveryConfiguration) -> Self {
         self.discovery_configuration = ::std::option::Option::Some(input);
@@ -117,17 +147,17 @@ impl CreateRegistryInputBuilder {
     pub fn get_discovery_configuration(&self) -> &::std::option::Option<crate::types::DiscoveryConfiguration> {
         &self.discovery_configuration
     }
-    /// <p>Client token for idempotency</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Client token for idempotency</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Client token for idempotency</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
@@ -165,6 +195,20 @@ impl CreateRegistryInputBuilder {
     pub fn get_approval_configuration(&self) -> &::std::option::Option<crate::types::ApprovalConfiguration> {
         &self.approval_configuration
     }
+    /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
+    pub fn auto_detection_configuration(mut self, input: crate::types::AutoDetectionConfiguration) -> Self {
+        self.auto_detection_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
+    pub fn set_auto_detection_configuration(mut self, input: ::std::option::Option<crate::types::AutoDetectionConfiguration>) -> Self {
+        self.auto_detection_configuration = input;
+        self
+    }
+    /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
+    pub fn get_auto_detection_configuration(&self) -> &::std::option::Option<crate::types::AutoDetectionConfiguration> {
+        &self.auto_detection_configuration
+    }
     /// Consumes the builder and constructs a [`CreateRegistryInput`](crate::operation::create_registry::CreateRegistryInput).
     pub fn build(
         self,
@@ -172,10 +216,12 @@ impl CreateRegistryInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_registry::CreateRegistryInput {
             name: self.name,
             description: self.description,
+            encryption_configuration: self.encryption_configuration,
             discovery_configuration: self.discovery_configuration,
             client_token: self.client_token,
             tags: self.tags,
             approval_configuration: self.approval_configuration,
+            auto_detection_configuration: self.auto_detection_configuration,
         })
     }
 }
@@ -184,10 +230,12 @@ impl ::std::fmt::Debug for CreateRegistryInputBuilder {
         let mut formatter = f.debug_struct("CreateRegistryInputBuilder");
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field("encryption_configuration", &self.encryption_configuration);
         formatter.field("discovery_configuration", &self.discovery_configuration);
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.field("approval_configuration", &self.approval_configuration);
+        formatter.field("auto_detection_configuration", &self.auto_detection_configuration);
         formatter.finish()
     }
 }

@@ -9,20 +9,26 @@ pub fn ser_update_registry_input_input(
         crate::protocol_serde::shape_updated_approval_configuration::ser_updated_approval_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.description {
+    if let Some(var_3) = &input.auto_detection_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("description").start_object();
-        crate::protocol_serde::shape_updated_description::ser_updated_description(&mut object_4, var_3)?;
+        let mut object_4 = object.key("autoDetectionConfiguration").start_object();
+        crate::protocol_serde::shape_updated_auto_detection_configuration::ser_updated_auto_detection_configuration(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.discovery_configuration {
+    if let Some(var_5) = &input.description {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("discoveryConfiguration").start_object();
-        crate::protocol_serde::shape_updated_discovery_configuration::ser_updated_discovery_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("description").start_object();
+        crate::protocol_serde::shape_updated_description::ser_updated_description(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_7) = &input.discovery_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("discoveryConfiguration").start_object();
+        crate::protocol_serde::shape_updated_discovery_configuration::ser_updated_discovery_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
     }
     Ok(())
 }

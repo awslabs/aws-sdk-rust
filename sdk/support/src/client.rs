@@ -140,6 +140,8 @@ mod add_attachments_to_set;
 
 mod add_communication_to_case;
 
+mod complete_attachment_upload;
+
 mod create_case;
 
 /// Operation customization and supporting types.
@@ -171,6 +173,8 @@ pub mod customize;
 
 mod describe_attachment;
 
+mod describe_attachment_upload_status;
+
 mod describe_cases;
 
 mod describe_communications;
@@ -190,6 +194,10 @@ mod describe_trusted_advisor_check_result;
 mod describe_trusted_advisor_check_summaries;
 
 mod describe_trusted_advisor_checks;
+
+mod get_attachment_download_link;
+
+mod get_attachment_upload_links;
 
 mod refresh_trusted_advisor_check;
 

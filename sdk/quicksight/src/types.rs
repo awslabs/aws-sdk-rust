@@ -151,6 +151,8 @@ pub use crate::types::_agent::Agent;
 
 pub use crate::types::_analysis::Analysis;
 
+pub use crate::types::_app_summary::AppSummary;
+
 pub use crate::types::_asset_bundle_export_job_status::AssetBundleExportJobStatus;
 
 pub use crate::types::_asset_bundle_export_format::AssetBundleExportFormat;
@@ -270,6 +272,8 @@ pub use crate::types::_knowledge_base_sort_by::KnowledgeBaseSortBy;
 pub use crate::types::_asset_bundle_import_source::AssetBundleImportSource;
 
 pub use crate::types::_snapshot_user_configuration::SnapshotUserConfiguration;
+
+pub use crate::types::_app_visibility::AppVisibility;
 
 pub use crate::types::_self_upgrade_admin_action::SelfUpgradeAdminAction;
 
@@ -663,6 +667,8 @@ pub use crate::types::_agent_search_filter::AgentSearchFilter;
 
 pub use crate::types::_analysis_search_filter::AnalysisSearchFilter;
 
+pub use crate::types::_search_apps_filter::SearchAppsFilter;
+
 pub use crate::types::_dashboard_search_filter::DashboardSearchFilter;
 
 pub use crate::types::_data_set_search_filter::DataSetSearchFilter;
@@ -1000,6 +1006,8 @@ pub use crate::types::_agent_ownership_filter_attribute::AgentOwnershipFilterAtt
 pub use crate::types::_comparison_operator::ComparisonOperator;
 
 pub use crate::types::_analysis_filter_attribute::AnalysisFilterAttribute;
+
+pub use crate::types::_search_apps_filter_name::SearchAppsFilterName;
 
 pub use crate::types::_dashboard_filter_attribute::DashboardFilterAttribute;
 
@@ -3012,6 +3020,10 @@ mod _anonymous_user_q_search_bar_embedding_configuration;
 mod _anonymous_user_snapshot_job_result;
 
 mod _api_key_connection_metadata;
+
+mod _app_summary;
+
+mod _app_visibility;
 
 mod _append_operation;
 
@@ -5048,6 +5060,10 @@ mod _schedule_refresh_on_entity;
 mod _schedules_configurations;
 
 mod _scroll_bar_options;
+
+mod _search_apps_filter;
+
+mod _search_apps_filter_name;
 
 mod _search_filter_operator;
 

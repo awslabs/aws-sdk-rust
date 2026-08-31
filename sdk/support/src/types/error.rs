@@ -7,9 +7,13 @@ pub use crate::types::error::_attachment_set_id_not_found::AttachmentSetIdNotFou
 
 pub use crate::types::error::_attachment_set_size_limit_exceeded::AttachmentSetSizeLimitExceeded;
 
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationException;
+
 pub use crate::types::error::_internal_server_error::InternalServerError;
 
 pub use crate::types::error::_case_id_not_found::CaseIdNotFound;
+
+pub use crate::types::error::_upload_id_not_found::UploadIdNotFound;
 
 pub use crate::types::error::_case_creation_limit_exceeded::CaseCreationLimitExceeded;
 
@@ -35,9 +39,13 @@ mod _case_id_not_found;
 
 mod _describe_attachment_limit_exceeded;
 
+mod _dry_run_operation_exception;
+
 mod _internal_server_error;
 
 mod _throttling_exception;
+
+mod _upload_id_not_found;
 
 /// Builders
 pub mod builders;

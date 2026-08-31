@@ -130,6 +130,39 @@ impl From<crate::operation::add_tags_to_stream::AddTagsToStreamError> for Error 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel::CreateChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel::CreateChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_channel::CreateChannelError> for Error {
+    fn from(err: crate::operation::create_channel::CreateChannelError) -> Self {
+        match err {
+            crate::operation::create_channel::CreateChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_channel::CreateChannelError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::create_channel::CreateChannelError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
+            crate::operation::create_channel::CreateChannelError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
+            crate::operation::create_channel::CreateChannelError::KmsInvalidStateException(inner) => Error::KmsInvalidStateException(inner),
+            crate::operation::create_channel::CreateChannelError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
+            crate::operation::create_channel::CreateChannelError::KmsOptInRequired(inner) => Error::KmsOptInRequired(inner),
+            crate::operation::create_channel::CreateChannelError::KmsThrottlingException(inner) => Error::KmsThrottlingException(inner),
+            crate::operation::create_channel::CreateChannelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_channel::CreateChannelError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_channel::CreateChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_channel::CreateChannelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_channel::CreateChannelError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_stream::CreateStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -196,6 +229,32 @@ impl From<crate::operation::decrease_stream_retention_period::DecreaseStreamRete
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_channel::DeleteChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_channel::DeleteChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_channel::DeleteChannelError> for Error {
+    fn from(err: crate::operation::delete_channel::DeleteChannelError) -> Self {
+        match err {
+            crate::operation::delete_channel::DeleteChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_channel::DeleteChannelError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::delete_channel::DeleteChannelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::delete_channel::DeleteChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_channel::DeleteChannelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_channel::DeleteChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -316,6 +375,32 @@ impl From<crate::operation::describe_account_settings::DescribeAccountSettingsEr
                 Error::LimitExceededException(inner)
             }
             crate::operation::describe_account_settings::DescribeAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_channel::DescribeChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_channel::DescribeChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_channel::DescribeChannelError> for Error {
+    fn from(err: crate::operation::describe_channel::DescribeChannelError) -> Self {
+        match err {
+            crate::operation::describe_channel::DescribeChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::describe_channel::DescribeChannelError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::describe_channel::DescribeChannelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::describe_channel::DescribeChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_channel::DescribeChannelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::describe_channel::DescribeChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -643,6 +728,32 @@ impl From<crate::operation::increase_stream_retention_period::IncreaseStreamRete
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channels::ListChannelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channels::ListChannelsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_channels::ListChannelsError> for Error {
+    fn from(err: crate::operation::list_channels::ListChannelsError) -> Self {
+        match err {
+            crate::operation::list_channels::ListChannelsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_channels::ListChannelsError::ExpiredNextTokenException(inner) => Error::ExpiredNextTokenException(inner),
+            crate::operation::list_channels::ListChannelsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_channels::ListChannelsError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::list_channels::ListChannelsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_channels::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1203,6 +1314,33 @@ impl From<crate::operation::update_account_settings::UpdateAccountSettingsError>
             }
             crate::operation::update_account_settings::UpdateAccountSettingsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_account_settings::UpdateAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_channel::UpdateChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_channel::UpdateChannelError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_channel::UpdateChannelError> for Error {
+    fn from(err: crate::operation::update_channel::UpdateChannelError) -> Self {
+        match err {
+            crate::operation::update_channel::UpdateChannelError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_channel::UpdateChannelError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::update_channel::UpdateChannelError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_channel::UpdateChannelError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::update_channel::UpdateChannelError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_channel::UpdateChannelError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_channel::UpdateChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

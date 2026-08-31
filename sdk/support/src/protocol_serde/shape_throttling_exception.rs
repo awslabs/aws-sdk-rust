@@ -19,6 +19,13 @@ pub(crate) fn de_throttling_exception_json_err(
                             .transpose()?,
                     );
                 }
+                "throttlingReasons" => {
+                    builder = builder.set_throttling_reasons(crate::protocol_serde::shape_throttling_reason_list::de_throttling_reason_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

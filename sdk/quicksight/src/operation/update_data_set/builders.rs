@@ -22,7 +22,7 @@ impl crate::operation::update_data_set::builders::UpdateDataSetInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateDataSet`.
 ///
-/// <p>Updates a dataset. This operation doesn't support datasets that include uploaded files as a source. Partial updates are not supported by this operation.</p>
+/// <p>Updates a dataset. Partial updates are not supported by this operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDataSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

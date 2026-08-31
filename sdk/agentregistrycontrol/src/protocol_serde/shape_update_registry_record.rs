@@ -166,6 +166,16 @@ pub(crate) fn de_update_registry_record(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "createdBy" => {
+                    builder = builder.set_created_by(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "createdByAutoDetection" => {
+                    builder = builder.set_created_by_auto_detection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -189,6 +199,13 @@ pub(crate) fn de_update_registry_record(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "provenance" => {
+                    builder = builder.set_provenance(crate::protocol_serde::shape_provenance_list::de_provenance_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
                 }
                 "recordArn" => {
                     builder = builder.set_record_arn(

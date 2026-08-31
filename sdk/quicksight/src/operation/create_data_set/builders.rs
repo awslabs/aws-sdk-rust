@@ -22,7 +22,7 @@ impl crate::operation::create_data_set::builders::CreateDataSetInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateDataSet`.
 ///
-/// <p>Creates a dataset. This operation doesn't support datasets that include uploaded files as a source.</p>
+/// <p>Creates a dataset.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDataSetFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

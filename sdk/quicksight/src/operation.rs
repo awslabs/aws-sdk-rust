@@ -136,6 +136,9 @@ pub mod delete_agent;
 /// Types for the `DeleteAnalysis` operation.
 pub mod delete_analysis;
 
+/// Types for the `DeleteApp` operation.
+pub mod delete_app;
+
 /// Types for the `DeleteApprovalPolicy` operation.
 pub mod delete_approval_policy;
 
@@ -276,6 +279,12 @@ pub mod describe_analysis_definition;
 
 /// Types for the `DescribeAnalysisPermissions` operation.
 pub mod describe_analysis_permissions;
+
+/// Types for the `DescribeApp` operation.
+pub mod describe_app;
+
+/// Types for the `DescribeAppPermissions` operation.
+pub mod describe_app_permissions;
 
 /// Types for the `DescribeApprovalPolicy` operation.
 pub mod describe_approval_policy;
@@ -487,6 +496,9 @@ pub mod list_analyses;
 /// Types for the `ListApprovalPolicies` operation.
 pub mod list_approval_policies;
 
+/// Types for the `ListApps` operation.
+pub mod list_apps;
+
 /// Types for the `ListAssetBundleExportJobs` operation.
 pub mod list_asset_bundle_export_jobs;
 
@@ -637,6 +649,9 @@ pub mod search_agents;
 /// Types for the `SearchAnalyses` operation.
 pub mod search_analyses;
 
+/// Types for the `SearchApps` operation.
+pub mod search_apps;
+
 /// Types for the `SearchDashboards` operation.
 pub mod search_dashboards;
 
@@ -714,6 +729,9 @@ pub mod update_analysis;
 
 /// Types for the `UpdateAnalysisPermissions` operation.
 pub mod update_analysis_permissions;
+
+/// Types for the `UpdateAppPermissions` operation.
+pub mod update_app_permissions;
 
 /// Types for the `UpdateApplicationWithTokenExchangeGrant` operation.
 pub mod update_application_with_token_exchange_grant;

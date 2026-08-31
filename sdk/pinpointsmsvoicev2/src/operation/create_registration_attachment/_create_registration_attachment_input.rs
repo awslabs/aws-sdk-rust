@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRegistrationAttachmentInput {
-    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG.</p>
     pub attachment_body: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p>Registration files have to be stored in an Amazon S3 bucket. The URI to use when sending is in the format <code>s3://BucketName/FileName</code>.</p>
     pub attachment_url: ::std::option::Option<::std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateRegistrationAttachmentInput {
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateRegistrationAttachmentInput {
-    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn attachment_body(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
         self.attachment_body.as_ref()
     }
@@ -49,17 +49,17 @@ pub struct CreateRegistrationAttachmentInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateRegistrationAttachmentInputBuilder {
-    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn attachment_body(mut self, input: ::aws_smithy_types::Blob) -> Self {
         self.attachment_body = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn set_attachment_body(mut self, input: ::std::option::Option<::aws_smithy_types::Blob>) -> Self {
         self.attachment_body = input;
         self
     }
-    /// <p>The registration file to upload. The maximum file size is 500KB and valid file extensions are PDF, JPEG and PNG.</p>
+    /// <p>The registration file to upload. The maximum file size is 5MB and valid file extensions are PDF, JPEG and PNG.</p>
     pub fn get_attachment_body(&self) -> &::std::option::Option<::aws_smithy_types::Blob> {
         &self.attachment_body
     }

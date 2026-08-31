@@ -73,6 +73,8 @@ pub use crate::types::_capacity_reservation_target::CapacityReservationTarget;
 
 pub use crate::types::_amd_sev_snp_enum::AmdSevSnpEnum;
 
+pub use crate::types::_nested_virtualization_enum::NestedVirtualizationEnum;
+
 pub use crate::types::_cpu_credits_enum::CpuCreditsEnum;
 
 pub use crate::types::_market_type_enum::MarketTypeEnum;
@@ -208,6 +210,8 @@ mod _license_configuration_request;
 mod _managed_instance_request;
 
 mod _market_type_enum;
+
+mod _nested_virtualization_enum;
 
 mod _placement;
 

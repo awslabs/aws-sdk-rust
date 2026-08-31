@@ -4,17 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct McpToolsDescriptor {
-    /// <p>Descriptor payload data</p>
+    /// <p>The MCP tools descriptor content, serialized as descriptor payload data.</p>
     pub data: ::std::option::Option<::std::string::String>,
-    /// <p>Version of the descriptor type schema</p>
+    /// <p>The schema version of the descriptor payload.</p>
     pub data_schema_version: ::std::option::Option<::std::string::String>,
 }
 impl McpToolsDescriptor {
-    /// <p>Descriptor payload data</p>
+    /// <p>The MCP tools descriptor content, serialized as descriptor payload data.</p>
     pub fn data(&self) -> ::std::option::Option<&str> {
         self.data.as_deref()
     }
-    /// <p>Version of the descriptor type schema</p>
+    /// <p>The schema version of the descriptor payload.</p>
     pub fn data_schema_version(&self) -> ::std::option::Option<&str> {
         self.data_schema_version.as_deref()
     }
@@ -42,31 +42,31 @@ pub struct McpToolsDescriptorBuilder {
     pub(crate) data_schema_version: ::std::option::Option<::std::string::String>,
 }
 impl McpToolsDescriptorBuilder {
-    /// <p>Descriptor payload data</p>
+    /// <p>The MCP tools descriptor content, serialized as descriptor payload data.</p>
     pub fn data(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Descriptor payload data</p>
+    /// <p>The MCP tools descriptor content, serialized as descriptor payload data.</p>
     pub fn set_data(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data = input;
         self
     }
-    /// <p>Descriptor payload data</p>
+    /// <p>The MCP tools descriptor content, serialized as descriptor payload data.</p>
     pub fn get_data(&self) -> &::std::option::Option<::std::string::String> {
         &self.data
     }
-    /// <p>Version of the descriptor type schema</p>
+    /// <p>The schema version of the descriptor payload.</p>
     pub fn data_schema_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_schema_version = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Version of the descriptor type schema</p>
+    /// <p>The schema version of the descriptor payload.</p>
     pub fn set_data_schema_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_schema_version = input;
         self
     }
-    /// <p>Version of the descriptor type schema</p>
+    /// <p>The schema version of the descriptor payload.</p>
     pub fn get_data_schema_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_schema_version
     }

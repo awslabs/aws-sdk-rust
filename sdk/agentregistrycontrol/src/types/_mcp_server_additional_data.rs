@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct McpServerAdditionalData {
-    /// <p>MCP tools descriptor containing tool definitions</p>
+    /// <p>The MCP tools descriptor that defines the tools exposed by the MCP server.</p>
     pub tools: ::std::option::Option<crate::types::McpToolsDescriptor>,
 }
 impl McpServerAdditionalData {
-    /// <p>MCP tools descriptor containing tool definitions</p>
+    /// <p>The MCP tools descriptor that defines the tools exposed by the MCP server.</p>
     pub fn tools(&self) -> ::std::option::Option<&crate::types::McpToolsDescriptor> {
         self.tools.as_ref()
     }
@@ -27,17 +27,17 @@ pub struct McpServerAdditionalDataBuilder {
     pub(crate) tools: ::std::option::Option<crate::types::McpToolsDescriptor>,
 }
 impl McpServerAdditionalDataBuilder {
-    /// <p>MCP tools descriptor containing tool definitions</p>
+    /// <p>The MCP tools descriptor that defines the tools exposed by the MCP server.</p>
     pub fn tools(mut self, input: crate::types::McpToolsDescriptor) -> Self {
         self.tools = ::std::option::Option::Some(input);
         self
     }
-    /// <p>MCP tools descriptor containing tool definitions</p>
+    /// <p>The MCP tools descriptor that defines the tools exposed by the MCP server.</p>
     pub fn set_tools(mut self, input: ::std::option::Option<crate::types::McpToolsDescriptor>) -> Self {
         self.tools = input;
         self
     }
-    /// <p>MCP tools descriptor containing tool definitions</p>
+    /// <p>The MCP tools descriptor that defines the tools exposed by the MCP server.</p>
     pub fn get_tools(&self) -> &::std::option::Option<crate::types::McpToolsDescriptor> {
         &self.tools
     }

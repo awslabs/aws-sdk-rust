@@ -194,6 +194,18 @@ pub(crate) fn describe_agent_permissions_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_app_output_output_correct_errors(
+    mut builder: crate::operation::describe_app::builders::DescribeAppOutputBuilder,
+) -> crate::operation::describe_app::builders::DescribeAppOutputBuilder {
+    if builder.app.is_none() {
+        builder.app = {
+            let builder = crate::types::builders::AppSummaryBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn describe_approval_policy_output_output_correct_errors(
     mut builder: crate::operation::describe_approval_policy::builders::DescribeApprovalPolicyOutputBuilder,
 ) -> crate::operation::describe_approval_policy::builders::DescribeApprovalPolicyOutputBuilder {
@@ -422,6 +434,15 @@ pub(crate) fn list_approval_policies_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_apps_output_output_correct_errors(
+    mut builder: crate::operation::list_apps::builders::ListAppsOutputBuilder,
+) -> crate::operation::list_apps::builders::ListAppsOutputBuilder {
+    if builder.app_summary_list.is_none() {
+        builder.app_summary_list = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_dlp_settings_output_output_correct_errors(
     mut builder: crate::operation::list_dlp_settings::builders::ListDlpSettingsOutputBuilder,
 ) -> crate::operation::list_dlp_settings::builders::ListDlpSettingsOutputBuilder {
@@ -469,6 +490,15 @@ pub(crate) fn list_spaces_output_output_correct_errors(
     }
     if builder.space_summaries.is_none() {
         builder.space_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn search_apps_output_output_correct_errors(
+    mut builder: crate::operation::search_apps::builders::SearchAppsOutputBuilder,
+) -> crate::operation::search_apps::builders::SearchAppsOutputBuilder {
+    if builder.app_summary_list.is_none() {
+        builder.app_summary_list = Some(Default::default())
     }
     builder
 }

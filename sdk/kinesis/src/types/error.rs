@@ -9,12 +9,6 @@ pub use crate::types::error::_resource_in_use_exception::ResourceInUseException;
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
-pub use crate::types::error::_validation_exception::ValidationException;
-
-pub use crate::types::error::_expired_iterator_exception::ExpiredIteratorException;
-
-pub use crate::types::error::_internal_failure_exception::InternalFailureException;
-
 pub use crate::types::error::_kms_access_denied_exception::KmsAccessDeniedException;
 
 pub use crate::types::error::_kms_disabled_exception::KmsDisabledException;
@@ -26,6 +20,12 @@ pub use crate::types::error::_kms_not_found_exception::KmsNotFoundException;
 pub use crate::types::error::_kms_opt_in_required::KmsOptInRequired;
 
 pub use crate::types::error::_kms_throttling_exception::KmsThrottlingException;
+
+pub use crate::types::error::_validation_exception::ValidationException;
+
+pub use crate::types::error::_expired_iterator_exception::ExpiredIteratorException;
+
+pub use crate::types::error::_internal_failure_exception::InternalFailureException;
 
 pub use crate::types::error::_provisioned_throughput_exceeded_exception::ProvisionedThroughputExceededException;
 

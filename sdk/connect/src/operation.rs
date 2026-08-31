@@ -520,6 +520,9 @@ pub mod get_contact_attributes;
 /// Types for the `GetContactMetrics` operation.
 pub mod get_contact_metrics;
 
+/// Types for the `GetCrossRegionRouting` operation.
+pub mod get_cross_region_routing;
+
 /// Types for the `GetCurrentMetricData` operation.
 pub mod get_current_metric_data;
 
@@ -1020,6 +1023,9 @@ pub mod update_contact_schedule;
 
 /// Types for the `UpdateContactTaskTemplate` operation.
 pub mod update_contact_task_template;
+
+/// Types for the `UpdateCrossRegionRouting` operation.
+pub mod update_cross_region_routing;
 
 /// Types for the `UpdateDataTableAttribute` operation.
 pub mod update_data_table_attribute;

@@ -4,29 +4,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Descriptors {
-    /// <p>Base mixin for MCP server descriptor content</p>
+    /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
     pub mcp_server: ::std::option::Option<crate::types::McpServerDescriptor>,
-    /// <p>Base mixin for A2A agent card descriptor content</p>
+    /// <p>The A2A agent card descriptor, populated when the record type is AGENT.</p>
     pub a2a_agent_card: ::std::option::Option<crate::types::A2aAgentCardDescriptor>,
-    /// <p>Base mixin for agent skills definition descriptor content</p>
+    /// <p>The agent skills definition descriptor, populated when the record type is SKILL.</p>
     pub agent_skills_definition: ::std::option::Option<crate::types::AgentSkillsDefinitionDescriptor>,
-    /// <p>Custom descriptor for user-defined content</p>
+    /// <p>The custom descriptor, populated when the record type is CUSTOM.</p>
     pub custom: ::std::option::Option<crate::types::CustomDescriptor>,
 }
 impl Descriptors {
-    /// <p>Base mixin for MCP server descriptor content</p>
+    /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
     pub fn mcp_server(&self) -> ::std::option::Option<&crate::types::McpServerDescriptor> {
         self.mcp_server.as_ref()
     }
-    /// <p>Base mixin for A2A agent card descriptor content</p>
+    /// <p>The A2A agent card descriptor, populated when the record type is AGENT.</p>
     pub fn a2a_agent_card(&self) -> ::std::option::Option<&crate::types::A2aAgentCardDescriptor> {
         self.a2a_agent_card.as_ref()
     }
-    /// <p>Base mixin for agent skills definition descriptor content</p>
+    /// <p>The agent skills definition descriptor, populated when the record type is SKILL.</p>
     pub fn agent_skills_definition(&self) -> ::std::option::Option<&crate::types::AgentSkillsDefinitionDescriptor> {
         self.agent_skills_definition.as_ref()
     }
-    /// <p>Custom descriptor for user-defined content</p>
+    /// <p>The custom descriptor, populated when the record type is CUSTOM.</p>
     pub fn custom(&self) -> ::std::option::Option<&crate::types::CustomDescriptor> {
         self.custom.as_ref()
     }
@@ -48,59 +48,59 @@ pub struct DescriptorsBuilder {
     pub(crate) custom: ::std::option::Option<crate::types::CustomDescriptor>,
 }
 impl DescriptorsBuilder {
-    /// <p>Base mixin for MCP server descriptor content</p>
+    /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
     pub fn mcp_server(mut self, input: crate::types::McpServerDescriptor) -> Self {
         self.mcp_server = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Base mixin for MCP server descriptor content</p>
+    /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
     pub fn set_mcp_server(mut self, input: ::std::option::Option<crate::types::McpServerDescriptor>) -> Self {
         self.mcp_server = input;
         self
     }
-    /// <p>Base mixin for MCP server descriptor content</p>
+    /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
     pub fn get_mcp_server(&self) -> &::std::option::Option<crate::types::McpServerDescriptor> {
         &self.mcp_server
     }
-    /// <p>Base mixin for A2A agent card descriptor content</p>
+    /// <p>The A2A agent card descriptor, populated when the record type is AGENT.</p>
     pub fn a2a_agent_card(mut self, input: crate::types::A2aAgentCardDescriptor) -> Self {
         self.a2a_agent_card = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Base mixin for A2A agent card descriptor content</p>
+    /// <p>The A2A agent card descriptor, populated when the record type is AGENT.</p>
     pub fn set_a2a_agent_card(mut self, input: ::std::option::Option<crate::types::A2aAgentCardDescriptor>) -> Self {
         self.a2a_agent_card = input;
         self
     }
-    /// <p>Base mixin for A2A agent card descriptor content</p>
+    /// <p>The A2A agent card descriptor, populated when the record type is AGENT.</p>
     pub fn get_a2a_agent_card(&self) -> &::std::option::Option<crate::types::A2aAgentCardDescriptor> {
         &self.a2a_agent_card
     }
-    /// <p>Base mixin for agent skills definition descriptor content</p>
+    /// <p>The agent skills definition descriptor, populated when the record type is SKILL.</p>
     pub fn agent_skills_definition(mut self, input: crate::types::AgentSkillsDefinitionDescriptor) -> Self {
         self.agent_skills_definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Base mixin for agent skills definition descriptor content</p>
+    /// <p>The agent skills definition descriptor, populated when the record type is SKILL.</p>
     pub fn set_agent_skills_definition(mut self, input: ::std::option::Option<crate::types::AgentSkillsDefinitionDescriptor>) -> Self {
         self.agent_skills_definition = input;
         self
     }
-    /// <p>Base mixin for agent skills definition descriptor content</p>
+    /// <p>The agent skills definition descriptor, populated when the record type is SKILL.</p>
     pub fn get_agent_skills_definition(&self) -> &::std::option::Option<crate::types::AgentSkillsDefinitionDescriptor> {
         &self.agent_skills_definition
     }
-    /// <p>Custom descriptor for user-defined content</p>
+    /// <p>The custom descriptor, populated when the record type is CUSTOM.</p>
     pub fn custom(mut self, input: crate::types::CustomDescriptor) -> Self {
         self.custom = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Custom descriptor for user-defined content</p>
+    /// <p>The custom descriptor, populated when the record type is CUSTOM.</p>
     pub fn set_custom(mut self, input: ::std::option::Option<crate::types::CustomDescriptor>) -> Self {
         self.custom = input;
         self
     }
-    /// <p>Custom descriptor for user-defined content</p>
+    /// <p>The custom descriptor, populated when the record type is CUSTOM.</p>
     pub fn get_custom(&self) -> &::std::option::Option<crate::types::CustomDescriptor> {
         &self.custom
     }

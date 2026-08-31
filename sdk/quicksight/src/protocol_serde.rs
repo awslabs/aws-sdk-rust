@@ -113,6 +113,8 @@ pub(crate) mod shape_delete_agent;
 
 pub(crate) mod shape_delete_analysis;
 
+pub(crate) mod shape_delete_app;
+
 pub(crate) mod shape_delete_approval_policy;
 
 pub(crate) mod shape_delete_brand;
@@ -206,6 +208,10 @@ pub(crate) mod shape_describe_analysis;
 pub(crate) mod shape_describe_analysis_definition;
 
 pub(crate) mod shape_describe_analysis_permissions;
+
+pub(crate) mod shape_describe_app;
+
+pub(crate) mod shape_describe_app_permissions;
 
 pub(crate) mod shape_describe_approval_policy;
 
@@ -347,6 +353,8 @@ pub(crate) mod shape_list_analyses;
 
 pub(crate) mod shape_list_approval_policies;
 
+pub(crate) mod shape_list_apps;
+
 pub(crate) mod shape_list_asset_bundle_export_jobs;
 
 pub(crate) mod shape_list_asset_bundle_import_jobs;
@@ -447,6 +455,8 @@ pub(crate) mod shape_search_agents;
 
 pub(crate) mod shape_search_analyses;
 
+pub(crate) mod shape_search_apps;
+
 pub(crate) mod shape_search_dashboards;
 
 pub(crate) mod shape_search_data_sets;
@@ -498,6 +508,8 @@ pub(crate) mod shape_update_agent_permissions;
 pub(crate) mod shape_update_analysis;
 
 pub(crate) mod shape_update_analysis_permissions;
+
+pub(crate) mod shape_update_app_permissions;
 
 pub(crate) mod shape_update_application_with_token_exchange_grant;
 
@@ -747,6 +759,8 @@ pub(crate) mod shape_search_agents_input;
 
 pub(crate) mod shape_search_analyses_input;
 
+pub(crate) mod shape_search_apps_input;
+
 pub(crate) mod shape_search_dashboards_input;
 
 pub(crate) mod shape_search_data_sets_input;
@@ -802,6 +816,8 @@ pub(crate) mod shape_update_agent_permissions_input;
 pub(crate) mod shape_update_analysis_input;
 
 pub(crate) mod shape_update_analysis_permissions_input;
+
+pub(crate) mod shape_update_app_permissions_input;
 
 pub(crate) mod shape_update_approval_policy_input;
 
@@ -946,6 +962,10 @@ pub(crate) mod shape_analysis_source_entity;
 pub(crate) mod shape_analysis_summary_list;
 
 pub(crate) mod shape_anonymous_user_embedding_experience_configuration;
+
+pub(crate) mod shape_app_summary;
+
+pub(crate) mod shape_app_summary_list;
 
 pub(crate) mod shape_applicable_to;
 
@@ -1182,6 +1202,8 @@ pub(crate) mod shape_resource_permission_list;
 pub(crate) mod shape_row_level_permission_data_set;
 
 pub(crate) mod shape_row_level_permission_tag_configuration;
+
+pub(crate) mod shape_search_apps_filter;
 
 pub(crate) mod shape_search_flows_filter;
 

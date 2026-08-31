@@ -59,6 +59,10 @@ pub use crate::types::_recommendation_diversity_config::RecommendationDiversityC
 
 pub use crate::types::_recommender_update::RecommenderUpdateBuilder;
 
+pub use crate::types::_schedule_configuration::ScheduleConfigurationBuilder;
+
+pub use crate::types::_scheduled_executions::ScheduledExecutionsBuilder;
+
 pub use crate::types::_results_summary::ResultsSummaryBuilder;
 
 pub use crate::types::_workflow_attributes::WorkflowAttributesBuilder;
@@ -133,6 +137,8 @@ pub use crate::types::_profile_query_result::ProfileQueryResultBuilder;
 
 pub use crate::types::_profile_query_failures::ProfileQueryFailuresBuilder;
 
+pub use crate::types::_associated_segment::AssociatedSegmentBuilder;
+
 pub use crate::types::_appflow_integration_workflow_attributes::AppflowIntegrationWorkflowAttributesBuilder;
 
 pub use crate::types::_appflow_integration_workflow_metrics::AppflowIntegrationWorkflowMetricsBuilder;
@@ -180,6 +186,8 @@ pub use crate::types::_recommender_summary::RecommenderSummaryBuilder;
 pub use crate::types::_recommender_schema_summary::RecommenderSchemaSummaryBuilder;
 
 pub use crate::types::_segment_definition_item::SegmentDefinitionItemBuilder;
+
+pub use crate::types::_subscription_event_item::SubscriptionEventItemBuilder;
 
 pub use crate::types::_upload_job_item::UploadJobItemBuilder;
 

@@ -225,6 +225,8 @@ pub use crate::types::_text_validation::TextValidation;
 
 pub use crate::types::_registration_field_display_hints::RegistrationFieldDisplayHints;
 
+pub use crate::types::_conditional_behavior::ConditionalBehavior;
+
 pub use crate::types::_registration_filter_name::RegistrationFilterName;
 
 pub use crate::types::_registration_section_display_hints::RegistrationSectionDisplayHints;
@@ -291,6 +293,8 @@ pub use crate::types::_carrier_status::CarrierStatus;
 
 pub use crate::types::_select_option_description::SelectOptionDescription;
 
+pub use crate::types::_conditional_rule::ConditionalRule;
+
 pub use crate::types::_registration_association_behavior::RegistrationAssociationBehavior;
 
 pub use crate::types::_registration_disassociation_behavior::RegistrationDisassociationBehavior;
@@ -299,7 +303,11 @@ pub use crate::types::_rcs_card_media::RcsCardMedia;
 
 pub use crate::types::_rcs_carousel_card_content::RcsCarouselCardContent;
 
+pub use crate::types::_conditional_validation::ConditionalValidation;
+
 pub use crate::types::_rcs_carousel_card_media::RcsCarouselCardMedia;
+
+pub use crate::types::_field_condition::FieldCondition;
 
 mod _access_denied_exception_reason;
 
@@ -320,6 +328,12 @@ mod _carrier_status;
 mod _carrier_status_information;
 
 mod _cloud_watch_logs_destination;
+
+mod _conditional_behavior;
+
+mod _conditional_rule;
+
+mod _conditional_validation;
 
 mod _configuration_set_filter;
 
@@ -342,6 +356,8 @@ mod _destination_country_parameter_key;
 mod _event_destination;
 
 mod _event_type;
+
+mod _field_condition;
 
 mod _field_requirement;
 

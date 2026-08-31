@@ -114,17 +114,38 @@ impl ListEnabledControlsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator {
         crate::operation::list_enabled_controls::paginator::ListEnabledControlsPaginator::new(self.handle, self.inner)
     }
-    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the target. The value depends on the target type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Organizational unit (OU) – Specify the ARN of the OU.</p></li>
+    /// <li>
+    /// <p>Account – Specify the ARN of the account.</p></li>
+    /// </ul>
+    /// <p>For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn target_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.target_identifier(input.into());
         self
     }
-    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the target. The value depends on the target type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Organizational unit (OU) – Specify the ARN of the OU.</p></li>
+    /// <li>
+    /// <p>Account – Specify the ARN of the account.</p></li>
+    /// </ul>
+    /// <p>For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn set_target_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_target_identifier(input);
         self
     }
-    /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
+    /// <p>The ARN of the target. The value depends on the target type:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Organizational unit (OU) – Specify the ARN of the OU.</p></li>
+    /// <li>
+    /// <p>Account – Specify the ARN of the account.</p></li>
+    /// </ul>
+    /// <p>For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
     pub fn get_target_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_target_identifier()
     }
@@ -170,17 +191,17 @@ impl ListEnabledControlsFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::EnabledControlFilter> {
         self.inner.get_filter()
     }
-    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    /// <p>Specifies whether to include enabled controls from child organizational units and child accounts in the response.</p>
     pub fn include_children(mut self, input: bool) -> Self {
         self.inner = self.inner.include_children(input);
         self
     }
-    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    /// <p>Specifies whether to include enabled controls from child organizational units and child accounts in the response.</p>
     pub fn set_include_children(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_children(input);
         self
     }
-    /// <p>A boolean value that determines whether to include enabled controls from child organizational units in the response.</p>
+    /// <p>Specifies whether to include enabled controls from child organizational units and child accounts in the response.</p>
     pub fn get_include_children(&self) -> &::std::option::Option<bool> {
         self.inner.get_include_children()
     }

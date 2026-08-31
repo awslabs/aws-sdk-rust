@@ -193,6 +193,8 @@ mod list_tags_for_resource;
 
 mod list_worker_configurations;
 
+mod restart_connector;
+
 mod tag_resource;
 
 mod untag_resource;

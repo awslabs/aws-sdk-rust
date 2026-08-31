@@ -13,15 +13,23 @@ pub use crate::types::_updated_description::UpdatedDescription;
 
 pub use crate::types::_updated_descriptors::UpdatedDescriptors;
 
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
 pub use crate::types::_discovery_configuration::DiscoveryConfiguration;
 
 pub use crate::types::_approval_configuration::ApprovalConfiguration;
 
+pub use crate::types::_auto_detection_configuration::AutoDetectionConfiguration;
+
 pub use crate::types::_registry_status::RegistryStatus;
+
+pub use crate::types::_auto_detection::AutoDetection;
 
 pub use crate::types::_updated_discovery_configuration::UpdatedDiscoveryConfiguration;
 
 pub use crate::types::_updated_approval_configuration::UpdatedApprovalConfiguration;
+
+pub use crate::types::_updated_auto_detection_configuration::UpdatedAutoDetectionConfiguration;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
@@ -37,6 +45,12 @@ pub use crate::types::_agent_skills_definition_descriptor::AgentSkillsDefinition
 
 pub use crate::types::_custom_descriptor::CustomDescriptor;
 
+pub use crate::types::_http_descriptor::HttpDescriptor;
+
+pub use crate::types::_ag_ui_descriptor::AgUiDescriptor;
+
+pub use crate::types::_provenance::Provenance;
+
 pub use crate::types::_updated_descriptors_fields::UpdatedDescriptorsFields;
 
 pub use crate::types::_registry_filter::RegistryFilter;
@@ -46,6 +60,10 @@ pub use crate::types::_registry_summary::RegistrySummary;
 pub use crate::types::_authorizer_configuration::AuthorizerConfiguration;
 
 pub use crate::types::_registry_authorizer_type::RegistryAuthorizerType;
+
+pub use crate::types::_auto_detection_scope::AutoDetectionScope;
+
+pub use crate::types::_auto_detection_status::AutoDetectionStatus;
 
 pub use crate::types::_updated_authorizer_configuration::UpdatedAuthorizerConfiguration;
 
@@ -57,6 +75,12 @@ pub use crate::types::_descriptor_source::DescriptorSource;
 
 pub use crate::types::_agent_skills_additional_data::AgentSkillsAdditionalData;
 
+pub use crate::types::_provenance_relation::ProvenanceRelation;
+
+pub use crate::types::_source_type::SourceType;
+
+pub use crate::types::_source_details::SourceDetails;
+
 pub use crate::types::_updated_mcp_server_descriptor::UpdatedMcpServerDescriptor;
 
 pub use crate::types::_updated_a2a_agent_card_descriptor::UpdatedA2aAgentCardDescriptor;
@@ -65,17 +89,27 @@ pub use crate::types::_updated_agent_skills_definition_descriptor::UpdatedAgentS
 
 pub use crate::types::_updated_custom_descriptor::UpdatedCustomDescriptor;
 
+pub use crate::types::_updated_http_descriptor::UpdatedHttpDescriptor;
+
+pub use crate::types::_updated_ag_ui_descriptor::UpdatedAgUiDescriptor;
+
 pub use crate::types::_registry_filter_name::RegistryFilterName;
 
 pub use crate::types::_custom_jwt_authorizer_configuration::CustomJwtAuthorizerConfiguration;
 
 pub use crate::types::_auto_approval_rule::AutoApprovalRule;
 
+pub use crate::types::_provenance_summary::ProvenanceSummary;
+
 pub use crate::types::_mcp_tools_descriptor::McpToolsDescriptor;
 
 pub use crate::types::_descriptor_source_from_url::DescriptorSourceFromUrl;
 
 pub use crate::types::_agent_skills_md_descriptor::AgentSkillsMdDescriptor;
+
+pub use crate::types::_agent_core_runtime_source_details::AgentCoreRuntimeSourceDetails;
+
+pub use crate::types::_agent_core_gateway_source_details::AgentCoreGatewaySourceDetails;
 
 pub use crate::types::_updated_mcp_server_descriptor_fields::UpdatedMcpServerDescriptorFields;
 
@@ -85,7 +119,17 @@ pub use crate::types::_updated_agent_skills_definition_descriptor_fields::Update
 
 pub use crate::types::_updated_custom_descriptor_fields::UpdatedCustomDescriptorFields;
 
+pub use crate::types::_updated_http_descriptor_fields::UpdatedHttpDescriptorFields;
+
+pub use crate::types::_updated_ag_ui_descriptor_fields::UpdatedAgUiDescriptorFields;
+
 pub use crate::types::_private_endpoint::PrivateEndpoint;
+
+pub use crate::types::_agent_core_runtime_protocol_configuration::AgentCoreRuntimeProtocolConfiguration;
+
+pub use crate::types::_workload_identity_details::WorkloadIdentityDetails;
+
+pub use crate::types::_agent_core_gateway_protocol_type::AgentCoreGatewayProtocolType;
 
 pub use crate::types::_updated_descriptor_data::UpdatedDescriptorData;
 
@@ -106,6 +150,8 @@ pub use crate::types::_managed_vpc_resource::ManagedVpcResource;
 pub use crate::types::_private_endpoint_override::PrivateEndpointOverride;
 
 pub use crate::types::_registry_record_credential_provider_configuration::RegistryRecordCredentialProviderConfiguration;
+
+pub use crate::types::_agent_core_runtime_server_protocol::AgentCoreRuntimeServerProtocol;
 
 pub use crate::types::_updated_mcp_server_additional_data_fields::UpdatedMcpServerAdditionalDataFields;
 
@@ -141,6 +187,18 @@ pub use crate::types::_registry_record_o_auth_grant_type::RegistryRecordOAuthGra
 
 mod _a2a_agent_card_descriptor;
 
+mod _ag_ui_descriptor;
+
+mod _agent_core_gateway_protocol_type;
+
+mod _agent_core_gateway_source_details;
+
+mod _agent_core_runtime_protocol_configuration;
+
+mod _agent_core_runtime_server_protocol;
+
+mod _agent_core_runtime_source_details;
+
 mod _agent_skills_additional_data;
 
 mod _agent_skills_definition_descriptor;
@@ -154,6 +212,14 @@ mod _authorizer_configuration;
 mod _authorizing_claim_match_value_type;
 
 mod _auto_approval_rule;
+
+mod _auto_detection;
+
+mod _auto_detection_configuration;
+
+mod _auto_detection_scope;
+
+mod _auto_detection_status;
 
 mod _claim_match_operator_type;
 
@@ -173,7 +239,11 @@ mod _descriptors;
 
 mod _discovery_configuration;
 
+mod _encryption_configuration;
+
 mod _endpoint_ip_address_type;
+
+mod _http_descriptor;
 
 mod _inbound_token_claim_value_type;
 
@@ -188,6 +258,12 @@ mod _mcp_tools_descriptor;
 mod _private_endpoint;
 
 mod _private_endpoint_override;
+
+mod _provenance;
+
+mod _provenance_relation;
+
+mod _provenance_summary;
 
 mod _record_type;
 
@@ -223,9 +299,17 @@ mod _registry_summary;
 
 mod _self_managed_lattice_resource;
 
+mod _source_details;
+
+mod _source_type;
+
 mod _updated_a2a_agent_card_descriptor;
 
 mod _updated_a2a_agent_card_descriptor_fields;
+
+mod _updated_ag_ui_descriptor;
+
+mod _updated_ag_ui_descriptor_fields;
 
 mod _updated_agent_skills_additional_data;
 
@@ -242,6 +326,8 @@ mod _updated_agent_skills_md_descriptor_fields;
 mod _updated_approval_configuration;
 
 mod _updated_authorizer_configuration;
+
+mod _updated_auto_detection_configuration;
 
 mod _updated_custom_descriptor;
 
@@ -263,6 +349,10 @@ mod _updated_discovery_configuration;
 
 mod _updated_display_name;
 
+mod _updated_http_descriptor;
+
+mod _updated_http_descriptor_fields;
+
 mod _updated_mcp_server_additional_data;
 
 mod _updated_mcp_server_additional_data_fields;
@@ -278,6 +368,8 @@ mod _updated_mcp_tools_descriptor_fields;
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _workload_identity_details;
 
 /// Builders
 pub mod builders;

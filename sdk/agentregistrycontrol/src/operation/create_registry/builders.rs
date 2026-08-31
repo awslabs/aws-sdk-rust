@@ -136,6 +136,20 @@ impl CreateRegistryFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
+    /// <p>The optional server-side encryption configuration for the registry. When you provide this field, the specified customer-managed Amazon Web Services KMS key encrypts the registry's content. Omit this field to use an Amazon Web Services-owned encryption key. You cannot change the encryption configuration after registry creation.</p>
+    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+        self.inner = self.inner.encryption_configuration(input);
+        self
+    }
+    /// <p>The optional server-side encryption configuration for the registry. When you provide this field, the specified customer-managed Amazon Web Services KMS key encrypts the registry's content. Omit this field to use an Amazon Web Services-owned encryption key. You cannot change the encryption configuration after registry creation.</p>
+    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+        self.inner = self.inner.set_encryption_configuration(input);
+        self
+    }
+    /// <p>The optional server-side encryption configuration for the registry. When you provide this field, the specified customer-managed Amazon Web Services KMS key encrypts the registry's content. Omit this field to use an Amazon Web Services-owned encryption key. You cannot change the encryption configuration after registry creation.</p>
+    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
+        self.inner.get_encryption_configuration()
+    }
     /// <p>Discovery configuration for the registry</p>
     pub fn discovery_configuration(mut self, input: crate::types::DiscoveryConfiguration) -> Self {
         self.inner = self.inner.discovery_configuration(input);
@@ -150,17 +164,17 @@ impl CreateRegistryFluentBuilder {
     pub fn get_discovery_configuration(&self) -> &::std::option::Option<crate::types::DiscoveryConfiguration> {
         self.inner.get_discovery_configuration()
     }
-    /// <p>Client token for idempotency</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>Client token for idempotency</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>Client token for idempotency</p>
+    /// <p>A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
@@ -196,5 +210,19 @@ impl CreateRegistryFluentBuilder {
     /// <p>Approval configuration for registry records</p>
     pub fn get_approval_configuration(&self) -> &::std::option::Option<crate::types::ApprovalConfiguration> {
         self.inner.get_approval_configuration()
+    }
+    /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
+    pub fn auto_detection_configuration(mut self, input: crate::types::AutoDetectionConfiguration) -> Self {
+        self.inner = self.inner.auto_detection_configuration(input);
+        self
+    }
+    /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
+    pub fn set_auto_detection_configuration(mut self, input: ::std::option::Option<crate::types::AutoDetectionConfiguration>) -> Self {
+        self.inner = self.inner.set_auto_detection_configuration(input);
+        self
+    }
+    /// <p>The optional auto-detection configuration for the registry. When provided, the registry is automatically populated with resources discovered according to the configuration. Omit this field for registries whose records are managed exclusively through the Agent Registry Control API.</p>
+    pub fn get_auto_detection_configuration(&self) -> &::std::option::Option<crate::types::AutoDetectionConfiguration> {
+        self.inner.get_auto_detection_configuration()
     }
 }

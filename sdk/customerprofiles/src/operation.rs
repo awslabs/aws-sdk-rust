@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddProfileKey` operation.
 pub mod add_profile_key;
 
+/// Types for the `AssociateStreamForSegments` operation.
+pub mod associate_stream_for_segments;
+
 /// Types for the `BatchGetCalculatedAttributeForProfile` operation.
 pub mod batch_get_calculated_attribute_for_profile;
 
@@ -100,11 +103,17 @@ pub mod delete_recommender_schema;
 /// Types for the `DeleteSegmentDefinition` operation.
 pub mod delete_segment_definition;
 
+/// Types for the `DeleteSegmentSubscription` operation.
+pub mod delete_segment_subscription;
+
 /// Types for the `DeleteWorkflow` operation.
 pub mod delete_workflow;
 
 /// Types for the `DetectProfileObjectType` operation.
 pub mod detect_profile_object_type;
+
+/// Types for the `DisassociateStreamForSegments` operation.
+pub mod disassociate_stream_for_segments;
 
 /// Types for the `GetAutoMergingPreview` operation.
 pub mod get_auto_merging_preview;
@@ -175,8 +184,14 @@ pub mod get_segment_membership;
 /// Types for the `GetSegmentSnapshot` operation.
 pub mod get_segment_snapshot;
 
+/// Types for the `GetSegmentSubscription` operation.
+pub mod get_segment_subscription;
+
 /// Types for the `GetSimilarProfiles` operation.
 pub mod get_similar_profiles;
+
+/// Types for the `GetStreamForSegments` operation.
+pub mod get_stream_for_segments;
 
 /// Types for the `GetUploadJob` operation.
 pub mod get_upload_job;
@@ -259,6 +274,9 @@ pub mod list_rule_based_matches;
 /// Types for the `ListSegmentDefinitions` operation.
 pub mod list_segment_definitions;
 
+/// Types for the `ListSegmentSubscriptionEvents` operation.
+pub mod list_segment_subscription_events;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
@@ -282,6 +300,9 @@ pub mod put_profile_object;
 
 /// Types for the `PutProfileObjectType` operation.
 pub mod put_profile_object_type;
+
+/// Types for the `PutSegmentSubscription` operation.
+pub mod put_segment_subscription;
 
 /// Types for the `SearchProfiles` operation.
 pub mod search_profiles;

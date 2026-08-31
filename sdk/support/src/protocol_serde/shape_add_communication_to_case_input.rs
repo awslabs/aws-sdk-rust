@@ -21,5 +21,17 @@ pub fn ser_add_communication_to_case_input_input(
     if let Some(var_6) = &input.attachment_set_id {
         object.key("attachmentSetId").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.upload_ids {
+        let mut array_8 = object.key("uploadIds").start_array();
+        for item_9 in var_7 {
+            {
+                array_8.value().string(item_9.as_str());
+            }
+        }
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.dry_run {
+        object.key("dryRun").boolean(*var_10);
+    }
     Ok(())
 }

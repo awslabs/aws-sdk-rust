@@ -9,30 +9,42 @@ pub fn ser_create_registry_input_input(
         crate::protocol_serde::shape_approval_configuration::ser_approval_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.client_token {
-        object.key("clientToken").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
-    }
-    if let Some(var_5) = &input.discovery_configuration {
+    if let Some(var_3) = &input.auto_detection_configuration {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("discoveryConfiguration").start_object();
-        crate::protocol_serde::shape_discovery_configuration::ser_discovery_configuration(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_4 = object.key("autoDetectionConfiguration").start_object();
+        crate::protocol_serde::shape_auto_detection_configuration::ser_auto_detection_configuration(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_5) = &input.client_token {
+        object.key("clientToken").string(var_5.as_str());
     }
-    if let Some(var_8) = &input.tags {
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.discovery_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("tags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_8 = object.key("discoveryConfiguration").start_object();
+        crate::protocol_serde::shape_discovery_configuration::ser_discovery_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
+    if let Some(var_9) = &input.encryption_configuration {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("encryptionConfiguration").start_object();
+        crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.name {
+        object.key("name").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_9.finish();
+        object_13.finish();
     }
     Ok(())
 }

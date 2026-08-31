@@ -25,9 +25,13 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_add_tags_to_stream;
 
+pub(crate) mod shape_create_channel;
+
 pub(crate) mod shape_create_stream;
 
 pub(crate) mod shape_decrease_stream_retention_period;
+
+pub(crate) mod shape_delete_channel;
 
 pub(crate) mod shape_delete_resource_policy;
 
@@ -36,6 +40,8 @@ pub(crate) mod shape_delete_stream;
 pub(crate) mod shape_deregister_stream_consumer;
 
 pub(crate) mod shape_describe_account_settings;
+
+pub(crate) mod shape_describe_channel;
 
 pub(crate) mod shape_describe_limits;
 
@@ -56,6 +62,8 @@ pub(crate) mod shape_get_resource_policy;
 pub(crate) mod shape_get_shard_iterator;
 
 pub(crate) mod shape_increase_stream_retention_period;
+
+pub(crate) mod shape_list_channels;
 
 pub(crate) mod shape_list_shards;
 
@@ -93,6 +101,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_account_settings;
 
+pub(crate) mod shape_update_channel;
+
 pub(crate) mod shape_update_max_record_size;
 
 pub(crate) mod shape_update_shard_count;
@@ -113,15 +123,21 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_add_tags_to_stream_input;
 
+pub(crate) mod shape_create_channel_input;
+
 pub(crate) mod shape_create_stream_input;
 
 pub(crate) mod shape_decrease_stream_retention_period_input;
+
+pub(crate) mod shape_delete_channel_input;
 
 pub(crate) mod shape_delete_resource_policy_input;
 
 pub(crate) mod shape_delete_stream_input;
 
 pub(crate) mod shape_deregister_stream_consumer_input;
+
+pub(crate) mod shape_describe_channel_input;
 
 pub(crate) mod shape_describe_stream_consumer_input;
 
@@ -162,6 +178,8 @@ pub(crate) mod shape_kms_opt_in_required;
 pub(crate) mod shape_kms_throttling_exception;
 
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_list_channels_input;
 
 pub(crate) mod shape_list_shards_input;
 
@@ -207,6 +225,8 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_account_settings_input;
 
+pub(crate) mod shape_update_channel_input;
+
 pub(crate) mod shape_update_max_record_size_input;
 
 pub(crate) mod shape_update_shard_count_input;
@@ -222,6 +242,18 @@ pub fn parse_event_stream_error_metadata(
 ) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
     crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
 }
+
+pub(crate) mod shape_channel_description;
+
+pub(crate) mod shape_channel_encryption_configuration;
+
+pub(crate) mod shape_channel_logging_configuration;
+
+pub(crate) mod shape_channel_logging_update_input;
+
+pub(crate) mod shape_channel_stream_configuration;
+
+pub(crate) mod shape_channel_summary_list;
 
 pub(crate) mod shape_child_shard_list;
 
@@ -243,6 +275,14 @@ pub(crate) mod shape_put_records_result_entry_list;
 
 pub(crate) mod shape_record_list;
 
+pub(crate) mod shape_s3_destination_configuration;
+
+pub(crate) mod shape_s3_destination_update_input;
+
+pub(crate) mod shape_s3_tables_destination_configuration;
+
+pub(crate) mod shape_s3_tables_destination_update_input;
+
 pub(crate) mod shape_shard_filter;
 
 pub(crate) mod shape_shard_list;
@@ -252,6 +292,8 @@ pub(crate) mod shape_starting_position;
 pub(crate) mod shape_stream_description;
 
 pub(crate) mod shape_stream_description_summary;
+
+pub(crate) mod shape_stream_filter;
 
 pub(crate) mod shape_stream_mode_details;
 
@@ -263,13 +305,33 @@ pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_warm_throughput_object;
 
+pub(crate) mod shape_channel_stream_description_list;
+
+pub(crate) mod shape_channel_summary;
+
 pub(crate) mod shape_child_shard;
+
+pub(crate) mod shape_cloud_watch_logs;
+
+pub(crate) mod shape_cloud_watch_logs_update_input;
+
+pub(crate) mod shape_dead_letter_queue_s3_configuration;
 
 pub(crate) mod shape_enhanced_monitoring_list;
 
 pub(crate) mod shape_put_records_result_entry;
 
 pub(crate) mod shape_record;
+
+pub(crate) mod shape_record_configuration;
+
+pub(crate) mod shape_s3_destination_description;
+
+pub(crate) mod shape_s3_storage_configuration;
+
+pub(crate) mod shape_s3_tables_configuration;
+
+pub(crate) mod shape_s3_tables_destination_description;
 
 pub(crate) mod shape_shard;
 
@@ -279,10 +341,24 @@ pub(crate) mod shape_subscribe_to_shard_event;
 
 pub(crate) mod shape_tag;
 
+pub(crate) mod shape_channel_stream_description;
+
+pub(crate) mod shape_channel_stream_identifier_list;
+
 pub(crate) mod shape_enhanced_metrics;
 
 pub(crate) mod shape_hash_key_range;
 
+pub(crate) mod shape_partition_spec;
+
+pub(crate) mod shape_s3_tables_configuration_list;
+
 pub(crate) mod shape_sequence_number_range;
 
 pub(crate) mod shape_shard_id_list;
+
+pub(crate) mod shape_channel_stream_identifier;
+
+pub(crate) mod shape_partition_field;
+
+pub(crate) mod shape_partition_field_list;

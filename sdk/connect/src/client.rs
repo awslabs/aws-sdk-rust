@@ -509,6 +509,8 @@ mod get_contact_attributes;
 
 mod get_contact_metrics;
 
+mod get_cross_region_routing;
+
 mod get_current_metric_data;
 
 mod get_current_user_data;
@@ -842,6 +844,8 @@ mod update_contact_routing_data;
 mod update_contact_schedule;
 
 mod update_contact_task_template;
+
+mod update_cross_region_routing;
 
 mod update_data_table_attribute;
 

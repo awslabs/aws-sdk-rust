@@ -93,9 +93,19 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_approval_configuration;
 
+pub(crate) mod shape_auto_detection;
+
+pub(crate) mod shape_auto_detection_configuration;
+
 pub(crate) mod shape_descriptors;
 
 pub(crate) mod shape_discovery_configuration;
+
+pub(crate) mod shape_encryption_configuration;
+
+pub(crate) mod shape_provenance;
+
+pub(crate) mod shape_provenance_list;
 
 pub(crate) mod shape_registry_filter;
 
@@ -109,6 +119,8 @@ pub(crate) mod shape_resource_tags_map;
 
 pub(crate) mod shape_updated_approval_configuration;
 
+pub(crate) mod shape_updated_auto_detection_configuration;
+
 pub(crate) mod shape_updated_description;
 
 pub(crate) mod shape_updated_descriptors;
@@ -121,6 +133,8 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_a2a_agent_card_descriptor;
 
+pub(crate) mod shape_ag_ui_descriptor;
+
 pub(crate) mod shape_agent_skills_definition_descriptor;
 
 pub(crate) mod shape_authorizer_configuration;
@@ -129,17 +143,25 @@ pub(crate) mod shape_auto_approval_rule_list;
 
 pub(crate) mod shape_custom_descriptor;
 
+pub(crate) mod shape_http_descriptor;
+
 pub(crate) mod shape_mcp_server_descriptor;
 
 pub(crate) mod shape_registry_record_summary;
 
 pub(crate) mod shape_registry_summary;
 
+pub(crate) mod shape_source_details;
+
 pub(crate) mod shape_updated_authorizer_configuration;
 
 pub(crate) mod shape_updated_descriptors_fields;
 
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_agent_core_gateway_source_details;
+
+pub(crate) mod shape_agent_core_runtime_source_details;
 
 pub(crate) mod shape_agent_skills_additional_data;
 
@@ -149,13 +171,21 @@ pub(crate) mod shape_descriptor_source;
 
 pub(crate) mod shape_mcp_server_additional_data;
 
+pub(crate) mod shape_provenance_summary_list;
+
 pub(crate) mod shape_updated_a2a_agent_card_descriptor;
+
+pub(crate) mod shape_updated_ag_ui_descriptor;
 
 pub(crate) mod shape_updated_agent_skills_definition_descriptor;
 
 pub(crate) mod shape_updated_custom_descriptor;
 
+pub(crate) mod shape_updated_http_descriptor;
+
 pub(crate) mod shape_updated_mcp_server_descriptor;
+
+pub(crate) mod shape_agent_core_runtime_protocol_configuration;
 
 pub(crate) mod shape_agent_skills_md_descriptor;
 
@@ -179,13 +209,21 @@ pub(crate) mod shape_private_endpoint_override;
 
 pub(crate) mod shape_private_endpoint_overrides;
 
+pub(crate) mod shape_provenance_summary;
+
 pub(crate) mod shape_updated_a2a_agent_card_descriptor_fields;
+
+pub(crate) mod shape_updated_ag_ui_descriptor_fields;
 
 pub(crate) mod shape_updated_agent_skills_definition_descriptor_fields;
 
 pub(crate) mod shape_updated_custom_descriptor_fields;
 
+pub(crate) mod shape_updated_http_descriptor_fields;
+
 pub(crate) mod shape_updated_mcp_server_descriptor_fields;
+
+pub(crate) mod shape_workload_identity_details;
 
 pub(crate) mod shape_authorizing_claim_match_value_type;
 

@@ -93,6 +93,8 @@ pub use crate::types::_agent::AgentBuilder;
 
 pub use crate::types::_analysis::AnalysisBuilder;
 
+pub use crate::types::_app_summary::AppSummaryBuilder;
+
 pub use crate::types::_asset_bundle_cloud_formation_override_property_configuration::AssetBundleCloudFormationOverridePropertyConfigurationBuilder;
 
 pub use crate::types::_asset_bundle_export_job_validation_strategy::AssetBundleExportJobValidationStrategyBuilder;
@@ -508,6 +510,8 @@ pub use crate::types::_action_connector_search_filter::ActionConnectorSearchFilt
 pub use crate::types::_agent_search_filter::AgentSearchFilterBuilder;
 
 pub use crate::types::_analysis_search_filter::AnalysisSearchFilterBuilder;
+
+pub use crate::types::_search_apps_filter::SearchAppsFilterBuilder;
 
 pub use crate::types::_dashboard_search_filter::DashboardSearchFilterBuilder;
 

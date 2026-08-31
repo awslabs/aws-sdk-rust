@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetDiscoverableRegistryRecordError {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry the record was requested from, echoed from the request.</p>
     pub registry_id: ::std::string::String,
-    /// <p>Record identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the record that could not be retrieved, echoed from the request in the same format that you supplied (ARN or record ID).</p>
     pub record_id: ::std::string::String,
     /// <p>The machine-readable reason that the record could not be retrieved.</p>
     pub error_code: crate::types::BatchGetDiscoverableRegistryRecordErrorCode,
@@ -14,12 +14,12 @@ pub struct BatchGetDiscoverableRegistryRecordError {
     pub message: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetDiscoverableRegistryRecordError {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry the record was requested from, echoed from the request.</p>
     pub fn registry_id(&self) -> &str {
         use std::ops::Deref;
         self.registry_id.deref()
     }
-    /// <p>Record identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the record that could not be retrieved, echoed from the request in the same format that you supplied (ARN or record ID).</p>
     pub fn record_id(&self) -> &str {
         use std::ops::Deref;
         self.record_id.deref()
@@ -50,33 +50,33 @@ pub struct BatchGetDiscoverableRegistryRecordErrorBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl BatchGetDiscoverableRegistryRecordErrorBuilder {
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry the record was requested from, echoed from the request.</p>
     /// This field is required.
     pub fn registry_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.registry_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry the record was requested from, echoed from the request.</p>
     pub fn set_registry_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.registry_id = input;
         self
     }
-    /// <p>Registry identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the registry the record was requested from, echoed from the request.</p>
     pub fn get_registry_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.registry_id
     }
-    /// <p>Record identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the record that could not be retrieved, echoed from the request in the same format that you supplied (ARN or record ID).</p>
     /// This field is required.
     pub fn record_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Record identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the record that could not be retrieved, echoed from the request in the same format that you supplied (ARN or record ID).</p>
     pub fn set_record_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.record_id = input;
         self
     }
-    /// <p>Record identifier that accepts either ARN or ID format</p>
+    /// <p>The identifier of the record that could not be retrieved, echoed from the request in the same format that you supplied (ARN or record ID).</p>
     pub fn get_record_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_id
     }

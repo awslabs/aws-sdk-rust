@@ -60,6 +60,8 @@ pub struct StreamDescriptionSummary {
     pub warm_throughput: ::std::option::Option<crate::types::WarmThroughputObject>,
     /// <p>The maximum record size of a single record in kibibyte (KiB) that you can write to, and read from a stream.</p>
     pub max_record_size_in_kib: ::std::option::Option<i32>,
+    /// <p>The number of channels associated with the stream.</p>
+    pub channel_count: ::std::option::Option<i32>,
 }
 impl StreamDescriptionSummary {
     /// <p>The name of the stream being described.</p>
@@ -149,6 +151,10 @@ impl StreamDescriptionSummary {
     pub fn max_record_size_in_kib(&self) -> ::std::option::Option<i32> {
         self.max_record_size_in_kib
     }
+    /// <p>The number of channels associated with the stream.</p>
+    pub fn channel_count(&self) -> ::std::option::Option<i32> {
+        self.channel_count
+    }
 }
 impl StreamDescriptionSummary {
     /// Creates a new builder-style object to manufacture [`StreamDescriptionSummary`](crate::types::StreamDescriptionSummary).
@@ -175,6 +181,7 @@ pub struct StreamDescriptionSummaryBuilder {
     pub(crate) consumer_count: ::std::option::Option<i32>,
     pub(crate) warm_throughput: ::std::option::Option<crate::types::WarmThroughputObject>,
     pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
+    pub(crate) channel_count: ::std::option::Option<i32>,
 }
 impl StreamDescriptionSummaryBuilder {
     /// <p>The name of the stream being described.</p>
@@ -469,6 +476,20 @@ impl StreamDescriptionSummaryBuilder {
     pub fn get_max_record_size_in_kib(&self) -> &::std::option::Option<i32> {
         &self.max_record_size_in_kib
     }
+    /// <p>The number of channels associated with the stream.</p>
+    pub fn channel_count(mut self, input: i32) -> Self {
+        self.channel_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of channels associated with the stream.</p>
+    pub fn set_channel_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.channel_count = input;
+        self
+    }
+    /// <p>The number of channels associated with the stream.</p>
+    pub fn get_channel_count(&self) -> &::std::option::Option<i32> {
+        &self.channel_count
+    }
     /// Consumes the builder and constructs a [`StreamDescriptionSummary`](crate::types::StreamDescriptionSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`stream_name`](crate::types::builders::StreamDescriptionSummaryBuilder::stream_name)
@@ -529,6 +550,7 @@ impl StreamDescriptionSummaryBuilder {
             consumer_count: self.consumer_count,
             warm_throughput: self.warm_throughput,
             max_record_size_in_kib: self.max_record_size_in_kib,
+            channel_count: self.channel_count,
         })
     }
 }

@@ -18,5 +18,8 @@ pub fn ser_add_attachments_to_set_input_input(
         }
         array_3.finish();
     }
+    if let Some(var_6) = &input.dry_run {
+        object.key("dryRun").boolean(*var_6);
+    }
     Ok(())
 }

@@ -15,6 +15,12 @@ pub fn ser_slack_configuration(
         crate::protocol_serde::shape_slack_transmission_target::ser_slack_transmission_target(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.bidirectional {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("bidirectional").start_object();
+        crate::protocol_serde::shape_slack_bidirectional_configuration::ser_slack_bidirectional_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +63,15 @@ where
                         "transmissionTarget" => {
                             builder = builder.set_transmission_target(
                                 crate::protocol_serde::shape_slack_transmission_target::de_slack_transmission_target(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "bidirectional" => {
+                            builder = builder.set_bidirectional(
+                                crate::protocol_serde::shape_slack_bidirectional_configuration::de_slack_bidirectional_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

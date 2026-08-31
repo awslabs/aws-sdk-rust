@@ -140,12 +140,17 @@ impl Client {
 /// Import this trait to get `wait_until` methods on the client.
 ///
 pub trait Waiters {
+    /// Wait for `channel_active`
+    fn wait_until_channel_active(&self) -> crate::waiters::channel_active::ChannelActiveFluentBuilder;
     /// Wait for `stream_exists`
     fn wait_until_stream_exists(&self) -> crate::waiters::stream_exists::StreamExistsFluentBuilder;
     /// Wait for `stream_not_exists`
     fn wait_until_stream_not_exists(&self) -> crate::waiters::stream_not_exists::StreamNotExistsFluentBuilder;
 }
 impl Waiters for Client {
+    fn wait_until_channel_active(&self) -> crate::waiters::channel_active::ChannelActiveFluentBuilder {
+        crate::waiters::channel_active::ChannelActiveFluentBuilder::new(self.handle.clone())
+    }
     fn wait_until_stream_exists(&self) -> crate::waiters::stream_exists::StreamExistsFluentBuilder {
         crate::waiters::stream_exists::StreamExistsFluentBuilder::new(self.handle.clone())
     }
@@ -171,6 +176,8 @@ impl Client {
 }
 
 mod add_tags_to_stream;
+
+mod create_channel;
 
 mod create_stream;
 
@@ -203,6 +210,8 @@ pub mod customize;
 
 mod decrease_stream_retention_period;
 
+mod delete_channel;
+
 mod delete_resource_policy;
 
 mod delete_stream;
@@ -210,6 +219,8 @@ mod delete_stream;
 mod deregister_stream_consumer;
 
 mod describe_account_settings;
+
+mod describe_channel;
 
 mod describe_limits;
 
@@ -230,6 +241,8 @@ mod get_resource_policy;
 mod get_shard_iterator;
 
 mod increase_stream_retention_period;
+
+mod list_channels;
 
 mod list_shards;
 
@@ -266,6 +279,8 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_account_settings;
+
+mod update_channel;
 
 mod update_max_record_size;
 

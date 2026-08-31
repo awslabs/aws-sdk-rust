@@ -10,7 +10,7 @@ pub struct TrafficDistributionGroupSummary {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the traffic distribution group.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of the traffic distribution group.</p>
     /// <ul>
@@ -44,7 +44,7 @@ impl TrafficDistributionGroupSummary {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_arn(&self) -> ::std::option::Option<&str> {
         self.instance_arn.as_deref()
     }
@@ -132,17 +132,17 @@ impl TrafficDistributionGroupSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.instance_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.instance_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the traffic distribution group.</p>
+    /// <p>The Amazon Resource Name (ARN) of the instance.</p>
     pub fn get_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_arn
     }

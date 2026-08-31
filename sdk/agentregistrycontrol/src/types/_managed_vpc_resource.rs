@@ -12,7 +12,7 @@ pub struct ManagedVpcResource {
     pub endpoint_ip_address_type: crate::types::EndpointIpAddressType,
     /// <p>The identifiers of the security groups associated with the private endpoint network interfaces.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// A map of tag keys to tag values.
+    /// <p>The tags applied to the service-managed VPC resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The routing domain used to resolve traffic through the private endpoint.</p>
     pub routing_domain: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl ManagedVpcResource {
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
     }
-    /// A map of tag keys to tag values.
+    /// <p>The tags applied to the service-managed VPC resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -140,19 +140,19 @@ impl ManagedVpcResourceBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// A map of tag keys to tag values.
+    /// <p>The tags applied to the service-managed VPC resource.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// A map of tag keys to tag values.
+    /// <p>The tags applied to the service-managed VPC resource.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// A map of tag keys to tag values.
+    /// <p>The tags applied to the service-managed VPC resource.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

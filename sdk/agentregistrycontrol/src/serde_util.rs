@@ -212,6 +212,52 @@ pub(crate) fn update_registry_record_status_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn auto_detection_correct_errors(
+    mut builder: crate::types::builders::AutoDetectionBuilder,
+) -> crate::types::builders::AutoDetectionBuilder {
+    if builder.configuration.is_none() {
+        builder.configuration = {
+            let builder = crate::types::builders::AutoDetectionConfigurationBuilder::default();
+            crate::serde_util::auto_detection_configuration_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AutoDetectionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::EncryptionConfigurationBuilder,
+) -> crate::types::builders::EncryptionConfigurationBuilder {
+    if builder.kms_key_arn.is_none() {
+        builder.kms_key_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn auto_detection_configuration_correct_errors(
+    mut builder: crate::types::builders::AutoDetectionConfigurationBuilder,
+) -> crate::types::builders::AutoDetectionConfigurationBuilder {
+    if builder.scope.is_none() {
+        builder.scope = "no value was set".parse::<crate::types::AutoDetectionScope>().ok()
+    }
+    if builder.enabled.is_none() {
+        builder.enabled = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn provenance_correct_errors(mut builder: crate::types::builders::ProvenanceBuilder) -> crate::types::builders::ProvenanceBuilder {
+    if builder.relation.is_none() {
+        builder.relation = "no value was set".parse::<crate::types::ProvenanceRelation>().ok()
+    }
+    if builder.source_id.is_none() {
+        builder.source_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn registry_record_summary_correct_errors(
     mut builder: crate::types::builders::RegistryRecordSummaryBuilder,
 ) -> crate::types::builders::RegistryRecordSummaryBuilder {
@@ -299,6 +345,18 @@ pub(crate) fn descriptor_source_from_url_correct_errors(
     builder
 }
 
+pub(crate) fn provenance_summary_correct_errors(
+    mut builder: crate::types::builders::ProvenanceSummaryBuilder,
+) -> crate::types::builders::ProvenanceSummaryBuilder {
+    if builder.relation.is_none() {
+        builder.relation = "no value was set".parse::<crate::types::ProvenanceRelation>().ok()
+    }
+    if builder.source_id.is_none() {
+        builder.source_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn custom_claim_validation_type_correct_errors(
     mut builder: crate::types::builders::CustomClaimValidationTypeBuilder,
 ) -> crate::types::builders::CustomClaimValidationTypeBuilder {
@@ -340,6 +398,15 @@ pub(crate) fn private_endpoint_override_correct_errors(
     }
     if builder.private_endpoint.is_none() {
         builder.private_endpoint = Some(crate::types::PrivateEndpoint::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn workload_identity_details_correct_errors(
+    mut builder: crate::types::builders::WorkloadIdentityDetailsBuilder,
+) -> crate::types::builders::WorkloadIdentityDetailsBuilder {
+    if builder.workload_identity_arn.is_none() {
+        builder.workload_identity_arn = Some(Default::default())
     }
     builder
 }

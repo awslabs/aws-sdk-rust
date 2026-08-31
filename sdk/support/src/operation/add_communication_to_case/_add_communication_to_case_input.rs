@@ -3,17 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AddCommunicationToCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The body of an email communication to add to the support case.</p>
     pub communication_body: ::std::option::Option<::std::string::String>,
     /// <p>The email addresses in the CC line of an email to be added to the support case.</p>
     pub cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code>. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub attachment_set_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub upload_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Specifies whether to validate the request without actually adding the communication to the case. When set to <code>true</code>, the request is validated but the communication isn't added, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl AddCommunicationToCaseInput {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(&self) -> ::std::option::Option<&str> {
         self.case_id.as_deref()
     }
@@ -27,9 +31,19 @@ impl AddCommunicationToCaseInput {
     pub fn cc_email_addresses(&self) -> &[::std::string::String] {
         self.cc_email_addresses.as_deref().unwrap_or_default()
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code>. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn attachment_set_id(&self) -> ::std::option::Option<&str> {
         self.attachment_set_id.as_deref()
+    }
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.upload_ids.is_none()`.
+    pub fn upload_ids(&self) -> &[::std::string::String] {
+        self.upload_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies whether to validate the request without actually adding the communication to the case. When set to <code>true</code>, the request is validated but the communication isn't added, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
     }
 }
 impl AddCommunicationToCaseInput {
@@ -47,19 +61,21 @@ pub struct AddCommunicationToCaseInputBuilder {
     pub(crate) communication_body: ::std::option::Option<::std::string::String>,
     pub(crate) cc_email_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attachment_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) upload_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl AddCommunicationToCaseInputBuilder {
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn case_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.case_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn set_case_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.case_id = input;
         self
     }
-    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i></p>
+    /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i></p>
     pub fn get_case_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.case_id
     }
@@ -98,19 +114,53 @@ impl AddCommunicationToCaseInputBuilder {
     pub fn get_cc_email_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cc_email_addresses
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code>. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn attachment_set_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.attachment_set_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code>. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn set_attachment_set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attachment_set_id = input;
         self
     }
-    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code></p>
+    /// <p>The ID of a set of one or more attachments for the communication to add to the case. Create the set by calling <code>AddAttachmentsToSet</code>. Each attachment in the set must be 5 MB or smaller. To attach files larger than 5 MB, use <code>uploadIds</code>.</p>
     pub fn get_attachment_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.attachment_set_id
+    }
+    /// Appends an item to `upload_ids`.
+    ///
+    /// To override the contents of this collection use [`set_upload_ids`](Self::set_upload_ids).
+    ///
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn upload_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.upload_ids.unwrap_or_default();
+        v.push(input.into());
+        self.upload_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn set_upload_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.upload_ids = input;
+        self
+    }
+    /// <p>A list of upload IDs that identify attachments to add to the case. Each <code>uploadId</code> is returned by the <code>GetAttachmentUploadLinks</code> operation. The upload must reach the <code>attachment-ready</code> state by calling <code>CompleteAttachmentUpload</code> before it can be passed here. Use <code>uploadIds</code> to attach files of any supported size, including files larger than 5 MB.</p>
+    pub fn get_upload_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.upload_ids
+    }
+    /// <p>Specifies whether to validate the request without actually adding the communication to the case. When set to <code>true</code>, the request is validated but the communication isn't added, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually adding the communication to the case. When set to <code>true</code>, the request is validated but the communication isn't added, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Specifies whether to validate the request without actually adding the communication to the case. When set to <code>true</code>, the request is validated but the communication isn't added, and the operation returns a <code>DryRunOperationException</code>. When omitted or set to <code>false</code>, the request runs normally.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
     }
     /// Consumes the builder and constructs a [`AddCommunicationToCaseInput`](crate::operation::add_communication_to_case::AddCommunicationToCaseInput).
     pub fn build(
@@ -124,6 +174,8 @@ impl AddCommunicationToCaseInputBuilder {
             communication_body: self.communication_body,
             cc_email_addresses: self.cc_email_addresses,
             attachment_set_id: self.attachment_set_id,
+            upload_ids: self.upload_ids,
+            dry_run: self.dry_run,
         })
     }
 }

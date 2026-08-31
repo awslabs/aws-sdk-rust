@@ -31,9 +31,9 @@ pub use crate::types::error::_customer_managed_key_unavailable_exception::Custom
 
 pub use crate::types::error::_concurrent_updating_exception::ConcurrentUpdatingExceptionBuilder;
 
-pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
-
 pub use crate::types::error::_invalid_parameter_exception::InvalidParameterExceptionBuilder;
+
+pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
 
 pub use crate::types::error::_session_lifetime_in_minutes_invalid_exception::SessionLifetimeInMinutesInvalidExceptionBuilder;
 

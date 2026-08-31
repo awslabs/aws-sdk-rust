@@ -6,7 +6,17 @@
 pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     pub message: ::std::option::Option<::std::string::String>,
+    /// <p>A list of one or more reasons that the request was throttled.</p>
+    pub throttling_reasons: ::std::option::Option<::std::vec::Vec<crate::types::ThrottlingReason>>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ThrottlingException {
+    /// <p>A list of one or more reasons that the request was throttled.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.throttling_reasons.is_none()`.
+    pub fn throttling_reasons(&self) -> &[crate::types::ThrottlingReason] {
+        self.throttling_reasons.as_deref().unwrap_or_default()
+    }
 }
 impl ThrottlingException {
     /// Returns the error message.
@@ -49,6 +59,7 @@ impl ThrottlingException {
 #[non_exhaustive]
 pub struct ThrottlingExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) throttling_reasons: ::std::option::Option<::std::vec::Vec<crate::types::ThrottlingReason>>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ThrottlingExceptionBuilder {
@@ -66,6 +77,26 @@ impl ThrottlingExceptionBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
+    /// Appends an item to `throttling_reasons`.
+    ///
+    /// To override the contents of this collection use [`set_throttling_reasons`](Self::set_throttling_reasons).
+    ///
+    /// <p>A list of one or more reasons that the request was throttled.</p>
+    pub fn throttling_reasons(mut self, input: crate::types::ThrottlingReason) -> Self {
+        let mut v = self.throttling_reasons.unwrap_or_default();
+        v.push(input);
+        self.throttling_reasons = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of one or more reasons that the request was throttled.</p>
+    pub fn set_throttling_reasons(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ThrottlingReason>>) -> Self {
+        self.throttling_reasons = input;
+        self
+    }
+    /// <p>A list of one or more reasons that the request was throttled.</p>
+    pub fn get_throttling_reasons(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ThrottlingReason>> {
+        &self.throttling_reasons
+    }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
@@ -81,6 +112,7 @@ impl ThrottlingExceptionBuilder {
     pub fn build(self) -> crate::types::error::ThrottlingException {
         crate::types::error::ThrottlingException {
             message: self.message,
+            throttling_reasons: self.throttling_reasons,
             meta: self.meta.unwrap_or_default(),
         }
     }

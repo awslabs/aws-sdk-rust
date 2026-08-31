@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatedDescription {
-    /// <p>Description of the Resource</p>
+    /// <p>The value to set for this field. Omit the wrapper to leave the field unchanged.</p>
     pub optional_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdatedDescription {
-    /// <p>Description of the Resource</p>
+    /// <p>The value to set for this field. Omit the wrapper to leave the field unchanged.</p>
     pub fn optional_value(&self) -> ::std::option::Option<&str> {
         self.optional_value.as_deref()
     }
@@ -34,17 +34,17 @@ pub struct UpdatedDescriptionBuilder {
     pub(crate) optional_value: ::std::option::Option<::std::string::String>,
 }
 impl UpdatedDescriptionBuilder {
-    /// <p>Description of the Resource</p>
+    /// <p>The value to set for this field. Omit the wrapper to leave the field unchanged.</p>
     pub fn optional_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.optional_value = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Description of the Resource</p>
+    /// <p>The value to set for this field. Omit the wrapper to leave the field unchanged.</p>
     pub fn set_optional_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.optional_value = input;
         self
     }
-    /// <p>Description of the Resource</p>
+    /// <p>The value to set for this field. Omit the wrapper to leave the field unchanged.</p>
     pub fn get_optional_value(&self) -> &::std::option::Option<::std::string::String> {
         &self.optional_value
     }
