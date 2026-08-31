@@ -31,6 +31,10 @@ pub use crate::types::_agent_skills_definition_descriptor::AgentSkillsDefinition
 
 pub use crate::types::_custom_descriptor::CustomDescriptor;
 
+pub use crate::types::_http_descriptor::HttpDescriptor;
+
+pub use crate::types::_ag_ui_descriptor::AgUiDescriptor;
+
 pub use crate::types::_mcp_server_additional_data::McpServerAdditionalData;
 
 pub use crate::types::_descriptor_source::DescriptorSource;
@@ -44,6 +48,8 @@ pub use crate::types::_descriptor_source_from_url::DescriptorSourceFromUrl;
 pub use crate::types::_agent_skills_md_descriptor::AgentSkillsMdDescriptor;
 
 mod _a2a_agent_card_descriptor;
+
+mod _ag_ui_descriptor;
 
 mod _agent_skills_additional_data;
 
@@ -64,6 +70,8 @@ mod _descriptor_source_from_url;
 mod _descriptors;
 
 mod _discoverable_registry_record_summary;
+
+mod _http_descriptor;
 
 mod _mcp_server_additional_data;
 

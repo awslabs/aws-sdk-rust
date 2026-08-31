@@ -21,6 +21,10 @@ pub use crate::types::_agent_skills_definition_descriptor::AgentSkillsDefinition
 
 pub use crate::types::_custom_descriptor::CustomDescriptorBuilder;
 
+pub use crate::types::_http_descriptor::HttpDescriptorBuilder;
+
+pub use crate::types::_ag_ui_descriptor::AgUiDescriptorBuilder;
+
 pub use crate::types::_mcp_server_additional_data::McpServerAdditionalDataBuilder;
 
 pub use crate::types::_descriptor_source::DescriptorSourceBuilder;

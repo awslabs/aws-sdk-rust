@@ -81,9 +81,13 @@ pub(crate) mod shape_descriptors;
 
 pub(crate) mod shape_a2a_agent_card_descriptor;
 
+pub(crate) mod shape_ag_ui_descriptor;
+
 pub(crate) mod shape_agent_skills_definition_descriptor;
 
 pub(crate) mod shape_custom_descriptor;
+
+pub(crate) mod shape_http_descriptor;
 
 pub(crate) mod shape_mcp_server_descriptor;
 

@@ -49,6 +49,20 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "http" => {
+                            builder = builder.set_http(crate::protocol_serde::shape_http_descriptor::de_http_descriptor(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "agui" => {
+                            builder = builder.set_agui(crate::protocol_serde::shape_ag_ui_descriptor::de_ag_ui_descriptor(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -12,6 +12,10 @@ pub struct Descriptors {
     pub agent_skills_definition: ::std::option::Option<crate::types::AgentSkillsDefinitionDescriptor>,
     /// <p>The custom descriptor, populated when the record type is CUSTOM.</p>
     pub custom: ::std::option::Option<crate::types::CustomDescriptor>,
+    /// <p>The HTTP descriptor, populated when the record exposes an HTTP endpoint.</p>
+    pub http: ::std::option::Option<crate::types::HttpDescriptor>,
+    /// <p>The AG-UI descriptor, populated when the record exposes an AG-UI protocol endpoint.</p>
+    pub agui: ::std::option::Option<crate::types::AgUiDescriptor>,
 }
 impl Descriptors {
     /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
@@ -30,6 +34,14 @@ impl Descriptors {
     pub fn custom(&self) -> ::std::option::Option<&crate::types::CustomDescriptor> {
         self.custom.as_ref()
     }
+    /// <p>The HTTP descriptor, populated when the record exposes an HTTP endpoint.</p>
+    pub fn http(&self) -> ::std::option::Option<&crate::types::HttpDescriptor> {
+        self.http.as_ref()
+    }
+    /// <p>The AG-UI descriptor, populated when the record exposes an AG-UI protocol endpoint.</p>
+    pub fn agui(&self) -> ::std::option::Option<&crate::types::AgUiDescriptor> {
+        self.agui.as_ref()
+    }
 }
 impl Descriptors {
     /// Creates a new builder-style object to manufacture [`Descriptors`](crate::types::Descriptors).
@@ -46,6 +58,8 @@ pub struct DescriptorsBuilder {
     pub(crate) a2a_agent_card: ::std::option::Option<crate::types::A2aAgentCardDescriptor>,
     pub(crate) agent_skills_definition: ::std::option::Option<crate::types::AgentSkillsDefinitionDescriptor>,
     pub(crate) custom: ::std::option::Option<crate::types::CustomDescriptor>,
+    pub(crate) http: ::std::option::Option<crate::types::HttpDescriptor>,
+    pub(crate) agui: ::std::option::Option<crate::types::AgUiDescriptor>,
 }
 impl DescriptorsBuilder {
     /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
@@ -104,6 +118,34 @@ impl DescriptorsBuilder {
     pub fn get_custom(&self) -> &::std::option::Option<crate::types::CustomDescriptor> {
         &self.custom
     }
+    /// <p>The HTTP descriptor, populated when the record exposes an HTTP endpoint.</p>
+    pub fn http(mut self, input: crate::types::HttpDescriptor) -> Self {
+        self.http = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The HTTP descriptor, populated when the record exposes an HTTP endpoint.</p>
+    pub fn set_http(mut self, input: ::std::option::Option<crate::types::HttpDescriptor>) -> Self {
+        self.http = input;
+        self
+    }
+    /// <p>The HTTP descriptor, populated when the record exposes an HTTP endpoint.</p>
+    pub fn get_http(&self) -> &::std::option::Option<crate::types::HttpDescriptor> {
+        &self.http
+    }
+    /// <p>The AG-UI descriptor, populated when the record exposes an AG-UI protocol endpoint.</p>
+    pub fn agui(mut self, input: crate::types::AgUiDescriptor) -> Self {
+        self.agui = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The AG-UI descriptor, populated when the record exposes an AG-UI protocol endpoint.</p>
+    pub fn set_agui(mut self, input: ::std::option::Option<crate::types::AgUiDescriptor>) -> Self {
+        self.agui = input;
+        self
+    }
+    /// <p>The AG-UI descriptor, populated when the record exposes an AG-UI protocol endpoint.</p>
+    pub fn get_agui(&self) -> &::std::option::Option<crate::types::AgUiDescriptor> {
+        &self.agui
+    }
     /// Consumes the builder and constructs a [`Descriptors`](crate::types::Descriptors).
     pub fn build(self) -> crate::types::Descriptors {
         crate::types::Descriptors {
@@ -111,6 +153,8 @@ impl DescriptorsBuilder {
             a2a_agent_card: self.a2a_agent_card,
             agent_skills_definition: self.agent_skills_definition,
             custom: self.custom,
+            http: self.http,
+            agui: self.agui,
         }
     }
 }
