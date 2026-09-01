@@ -16,8 +16,10 @@
 ///     RelationalDatabaseMetricName::DatabaseConnections => { /* ... */ },
 ///     RelationalDatabaseMetricName::DiskQueueDepth => { /* ... */ },
 ///     RelationalDatabaseMetricName::FreeStorageSpace => { /* ... */ },
+///     RelationalDatabaseMetricName::FreeableMemory => { /* ... */ },
 ///     RelationalDatabaseMetricName::NetworkReceiveThroughput => { /* ... */ },
 ///     RelationalDatabaseMetricName::NetworkTransmitThroughput => { /* ... */ },
+///     RelationalDatabaseMetricName::SwapUsage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,9 +57,13 @@ pub enum RelationalDatabaseMetricName {
     #[allow(missing_docs)] // documentation missing in model
     FreeStorageSpace,
     #[allow(missing_docs)] // documentation missing in model
+    FreeableMemory,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkReceiveThroughput,
     #[allow(missing_docs)] // documentation missing in model
     NetworkTransmitThroughput,
+    #[allow(missing_docs)] // documentation missing in model
+    SwapUsage,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -69,8 +75,10 @@ impl ::std::convert::From<&str> for RelationalDatabaseMetricName {
             "DatabaseConnections" => RelationalDatabaseMetricName::DatabaseConnections,
             "DiskQueueDepth" => RelationalDatabaseMetricName::DiskQueueDepth,
             "FreeStorageSpace" => RelationalDatabaseMetricName::FreeStorageSpace,
+            "FreeableMemory" => RelationalDatabaseMetricName::FreeableMemory,
             "NetworkReceiveThroughput" => RelationalDatabaseMetricName::NetworkReceiveThroughput,
             "NetworkTransmitThroughput" => RelationalDatabaseMetricName::NetworkTransmitThroughput,
+            "SwapUsage" => RelationalDatabaseMetricName::SwapUsage,
             other => RelationalDatabaseMetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -90,8 +98,10 @@ impl RelationalDatabaseMetricName {
             RelationalDatabaseMetricName::DatabaseConnections => "DatabaseConnections",
             RelationalDatabaseMetricName::DiskQueueDepth => "DiskQueueDepth",
             RelationalDatabaseMetricName::FreeStorageSpace => "FreeStorageSpace",
+            RelationalDatabaseMetricName::FreeableMemory => "FreeableMemory",
             RelationalDatabaseMetricName::NetworkReceiveThroughput => "NetworkReceiveThroughput",
             RelationalDatabaseMetricName::NetworkTransmitThroughput => "NetworkTransmitThroughput",
+            RelationalDatabaseMetricName::SwapUsage => "SwapUsage",
             RelationalDatabaseMetricName::Unknown(value) => value.as_str(),
         }
     }
@@ -102,8 +112,10 @@ impl RelationalDatabaseMetricName {
             "DatabaseConnections",
             "DiskQueueDepth",
             "FreeStorageSpace",
+            "FreeableMemory",
             "NetworkReceiveThroughput",
             "NetworkTransmitThroughput",
+            "SwapUsage",
         ]
     }
 }
@@ -131,8 +143,10 @@ impl ::std::fmt::Display for RelationalDatabaseMetricName {
             RelationalDatabaseMetricName::DatabaseConnections => write!(f, "DatabaseConnections"),
             RelationalDatabaseMetricName::DiskQueueDepth => write!(f, "DiskQueueDepth"),
             RelationalDatabaseMetricName::FreeStorageSpace => write!(f, "FreeStorageSpace"),
+            RelationalDatabaseMetricName::FreeableMemory => write!(f, "FreeableMemory"),
             RelationalDatabaseMetricName::NetworkReceiveThroughput => write!(f, "NetworkReceiveThroughput"),
             RelationalDatabaseMetricName::NetworkTransmitThroughput => write!(f, "NetworkTransmitThroughput"),
+            RelationalDatabaseMetricName::SwapUsage => write!(f, "SwapUsage"),
             RelationalDatabaseMetricName::Unknown(value) => write!(f, "{value}"),
         }
     }

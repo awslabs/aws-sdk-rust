@@ -29,8 +29,6 @@ pub struct DescribeAgreementOutput {
     /// <li>
     /// <p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
     /// <li>
-    /// <p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
-    /// <li>
     /// <p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
@@ -42,6 +40,11 @@ pub struct DescribeAgreementOutput {
     /// <p><code>TERMINATED</code> – The agreement ended before the defined end date because of an AWS termination (for example, a payment failure).</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::AgreementStatus>,
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. When an agreement isn't derived from another agreement, its <code>InitialAgreementId</code> is its own <code>AgreementId</code>.</p>
+    pub initial_agreement_id: ::std::option::Option<::std::string::String>,
+    /// <p>The behavior of the agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
+    /// <p>This field is present for every active agreement that has an end date. It is not present for an agreement that has no end date, because such an agreement never reaches an end time. Pay-as-you-go agreements are the most common example. It is also not present for an agreement that is no longer active.</p>
+    pub end_time_behavior: ::std::option::Option<crate::types::EndTimeBehavior>,
     _request_id: Option<String>,
 }
 impl DescribeAgreementOutput {
@@ -89,8 +92,6 @@ impl DescribeAgreementOutput {
     /// <li>
     /// <p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
     /// <li>
-    /// <p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
-    /// <li>
     /// <p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
@@ -103,6 +104,15 @@ impl DescribeAgreementOutput {
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementStatus> {
         self.status.as_ref()
+    }
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. When an agreement isn't derived from another agreement, its <code>InitialAgreementId</code> is its own <code>AgreementId</code>.</p>
+    pub fn initial_agreement_id(&self) -> ::std::option::Option<&str> {
+        self.initial_agreement_id.as_deref()
+    }
+    /// <p>The behavior of the agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
+    /// <p>This field is present for every active agreement that has an end date. It is not present for an agreement that has no end date, because such an agreement never reaches an end time. Pay-as-you-go agreements are the most common example. It is also not present for an agreement that is no longer active.</p>
+    pub fn end_time_behavior(&self) -> ::std::option::Option<&crate::types::EndTimeBehavior> {
+        self.end_time_behavior.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeAgreementOutput {
@@ -131,6 +141,8 @@ pub struct DescribeAgreementOutputBuilder {
     pub(crate) estimated_charges: ::std::option::Option<crate::types::EstimatedCharges>,
     pub(crate) proposal_summary: ::std::option::Option<crate::types::ProposalSummary>,
     pub(crate) status: ::std::option::Option<crate::types::AgreementStatus>,
+    pub(crate) initial_agreement_id: ::std::option::Option<::std::string::String>,
+    pub(crate) end_time_behavior: ::std::option::Option<crate::types::EndTimeBehavior>,
     _request_id: Option<String>,
 }
 impl DescribeAgreementOutputBuilder {
@@ -272,8 +284,6 @@ impl DescribeAgreementOutputBuilder {
     /// <li>
     /// <p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
     /// <li>
-    /// <p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
-    /// <li>
     /// <p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
@@ -293,8 +303,6 @@ impl DescribeAgreementOutputBuilder {
     /// <ul>
     /// <li>
     /// <p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
-    /// <li>
-    /// <p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
     /// <li>
     /// <p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
     /// <li>
@@ -316,8 +324,6 @@ impl DescribeAgreementOutputBuilder {
     /// <li>
     /// <p><code>ACTIVE</code> – The terms of the agreement are active.</p></li>
     /// <li>
-    /// <p><code>ARCHIVED</code> – The agreement ended without a specified reason.</p></li>
-    /// <li>
     /// <p><code>CANCELLED</code> – The acceptor ended the agreement before the defined end date.</p></li>
     /// <li>
     /// <p><code>EXPIRED</code> – The agreement ended on the defined end date.</p></li>
@@ -330,6 +336,37 @@ impl DescribeAgreementOutputBuilder {
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementStatus> {
         &self.status
+    }
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. When an agreement isn't derived from another agreement, its <code>InitialAgreementId</code> is its own <code>AgreementId</code>.</p>
+    pub fn initial_agreement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.initial_agreement_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. When an agreement isn't derived from another agreement, its <code>InitialAgreementId</code> is its own <code>AgreementId</code>.</p>
+    pub fn set_initial_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.initial_agreement_id = input;
+        self
+    }
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. When an agreement isn't derived from another agreement, its <code>InitialAgreementId</code> is its own <code>AgreementId</code>.</p>
+    pub fn get_initial_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_agreement_id
+    }
+    /// <p>The behavior of the agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
+    /// <p>This field is present for every active agreement that has an end date. It is not present for an agreement that has no end date, because such an agreement never reaches an end time. Pay-as-you-go agreements are the most common example. It is also not present for an agreement that is no longer active.</p>
+    pub fn end_time_behavior(mut self, input: crate::types::EndTimeBehavior) -> Self {
+        self.end_time_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The behavior of the agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
+    /// <p>This field is present for every active agreement that has an end date. It is not present for an agreement that has no end date, because such an agreement never reaches an end time. Pay-as-you-go agreements are the most common example. It is also not present for an agreement that is no longer active.</p>
+    pub fn set_end_time_behavior(mut self, input: ::std::option::Option<crate::types::EndTimeBehavior>) -> Self {
+        self.end_time_behavior = input;
+        self
+    }
+    /// <p>The behavior of the agreement when it reaches its end date. For example, whether the agreement renews, and if it doesn't, the reason why.</p>
+    /// <p>This field is present for every active agreement that has an end date. It is not present for an agreement that has no end date, because such an agreement never reaches an end time. Pay-as-you-go agreements are the most common example. It is also not present for an agreement that is no longer active.</p>
+    pub fn get_end_time_behavior(&self) -> &::std::option::Option<crate::types::EndTimeBehavior> {
+        &self.end_time_behavior
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -353,6 +390,8 @@ impl DescribeAgreementOutputBuilder {
             estimated_charges: self.estimated_charges,
             proposal_summary: self.proposal_summary,
             status: self.status,
+            initial_agreement_id: self.initial_agreement_id,
+            end_time_behavior: self.end_time_behavior,
             _request_id: self._request_id,
         }
     }

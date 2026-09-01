@@ -11,6 +11,8 @@ pub struct SubscribeToShardInput {
     pub shard_id: ::std::option::Option<::std::string::String>,
     /// <p>The starting position in the data stream from which to start streaming.</p>
     pub starting_position: ::std::option::Option<crate::types::StartingPosition>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl SubscribeToShardInput {
     /// <p>For this parameter, use the value you obtained when you called <code>RegisterStreamConsumer</code>.</p>
@@ -29,6 +31,10 @@ impl SubscribeToShardInput {
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::StartingPosition> {
         self.starting_position.as_ref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl SubscribeToShardInput {
     /// Creates a new builder-style object to manufacture [`SubscribeToShardInput`](crate::operation::subscribe_to_shard::SubscribeToShardInput).
@@ -45,6 +51,7 @@ pub struct SubscribeToShardInputBuilder {
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
     pub(crate) shard_id: ::std::option::Option<::std::string::String>,
     pub(crate) starting_position: ::std::option::Option<crate::types::StartingPosition>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl SubscribeToShardInputBuilder {
     /// <p>For this parameter, use the value you obtained when you called <code>RegisterStreamConsumer</code>.</p>
@@ -106,6 +113,20 @@ impl SubscribeToShardInputBuilder {
     pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::StartingPosition> {
         &self.starting_position
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`SubscribeToShardInput`](crate::operation::subscribe_to_shard::SubscribeToShardInput).
     pub fn build(
         self,
@@ -115,6 +136,7 @@ impl SubscribeToShardInputBuilder {
             stream_id: self.stream_id,
             shard_id: self.shard_id,
             starting_position: self.starting_position,
+            dry_run: self.dry_run,
         })
     }
 }

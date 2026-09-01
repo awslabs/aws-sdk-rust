@@ -711,6 +711,8 @@ pub(crate) mod shape_logging_options;
 
 pub(crate) mod shape_metadata;
 
+pub(crate) mod shape_mount_overrides;
+
 pub(crate) mod shape_multi_layer_storage;
 
 pub(crate) mod shape_pipeline_execution_status;
@@ -877,6 +879,8 @@ pub(crate) mod shape_compute_node_environment_variables_map;
 
 pub(crate) mod shape_compute_node_execution_details;
 
+pub(crate) mod shape_compute_node_mounts_map;
+
 pub(crate) mod shape_configuration_error_details;
 
 pub(crate) mod shape_container_task_configuration;
@@ -940,6 +944,8 @@ pub(crate) mod shape_invocation_output;
 pub(crate) mod shape_job_summary;
 
 pub(crate) mod shape_monitor_error_details;
+
+pub(crate) mod shape_mount;
 
 pub(crate) mod shape_pipeline_execution_state_details;
 
@@ -1045,6 +1051,8 @@ pub(crate) mod shape_detailed_errors;
 
 pub(crate) mod shape_enrichment_trim_settings;
 
+pub(crate) mod shape_ephemeral_storage_configuration;
+
 pub(crate) mod shape_execution_environment_variables_map;
 
 pub(crate) mod shape_export_data_type_list;
@@ -1058,6 +1066,10 @@ pub(crate) mod shape_matched_data_binding;
 pub(crate) mod shape_measurement;
 
 pub(crate) mod shape_metric;
+
+pub(crate) mod shape_mount_list;
+
+pub(crate) mod shape_mount_source;
 
 pub(crate) mod shape_mp4;
 
@@ -1098,6 +1110,8 @@ pub(crate) mod shape_measurement_processing_config;
 pub(crate) mod shape_metric_processing_config;
 
 pub(crate) mod shape_metric_window;
+
+pub(crate) mod shape_s3_access_point_source;
 
 pub(crate) mod shape_transform_processing_config;
 

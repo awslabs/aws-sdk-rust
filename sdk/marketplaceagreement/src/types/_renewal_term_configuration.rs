@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RenewalTermConfiguration {
-    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
+    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement when it reaches its end date. Can be set to <code>True</code> or <code>False</code>. The acceptor can change this value within the limits set by <code>LockoutPeriod</code> and <code>MaxRenewals</code>.</p>
     pub enable_auto_renew: bool,
 }
 impl RenewalTermConfiguration {
-    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
+    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement when it reaches its end date. Can be set to <code>True</code> or <code>False</code>. The acceptor can change this value within the limits set by <code>LockoutPeriod</code> and <code>MaxRenewals</code>.</p>
     pub fn enable_auto_renew(&self) -> bool {
         self.enable_auto_renew
     }
@@ -27,18 +27,18 @@ pub struct RenewalTermConfigurationBuilder {
     pub(crate) enable_auto_renew: ::std::option::Option<bool>,
 }
 impl RenewalTermConfigurationBuilder {
-    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
+    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement when it reaches its end date. Can be set to <code>True</code> or <code>False</code>. The acceptor can change this value within the limits set by <code>LockoutPeriod</code> and <code>MaxRenewals</code>.</p>
     /// This field is required.
     pub fn enable_auto_renew(mut self, input: bool) -> Self {
         self.enable_auto_renew = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
+    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement when it reaches its end date. Can be set to <code>True</code> or <code>False</code>. The acceptor can change this value within the limits set by <code>LockoutPeriod</code> and <code>MaxRenewals</code>.</p>
     pub fn set_enable_auto_renew(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enable_auto_renew = input;
         self
     }
-    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement at the end of its lifecycle. Can be set to <code>True</code> or <code>False</code>.</p>
+    /// <p>Defines whether the acceptor has chosen to auto-renew the agreement when it reaches its end date. Can be set to <code>True</code> or <code>False</code>. The acceptor can change this value within the limits set by <code>LockoutPeriod</code> and <code>MaxRenewals</code>.</p>
     pub fn get_enable_auto_renew(&self) -> &::std::option::Option<bool> {
         &self.enable_auto_renew
     }

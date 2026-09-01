@@ -253,6 +253,8 @@ pub(crate) mod shape_helm_operating_system_list;
 
 pub(crate) mod shape_listing_summary_associated_entity;
 
+pub(crate) mod shape_price_increase;
+
 pub(crate) mod shape_purchase_option_associated_entity;
 
 pub(crate) mod shape_sage_maker_algorithm_recommendation;
@@ -260,6 +262,8 @@ pub(crate) mod shape_sage_maker_algorithm_recommendation;
 pub(crate) mod shape_sage_maker_model_recommendation;
 
 pub(crate) mod shape_schedule_list;
+
+pub(crate) mod shape_term_template_list;
 
 pub(crate) mod shape_usage_based_rate_card_list;
 
@@ -277,11 +281,17 @@ pub(crate) mod shape_document_item;
 
 pub(crate) mod shape_eks_add_on_operating_system;
 
+pub(crate) mod shape_fixed_percentage;
+
 pub(crate) mod shape_grant_item;
 
 pub(crate) mod shape_helm_operating_system;
 
+pub(crate) mod shape_percentage_range;
+
 pub(crate) mod shape_schedule_item;
+
+pub(crate) mod shape_term_template;
 
 pub(crate) mod shape_usage_based_rate_card_item;
 
@@ -289,10 +299,16 @@ pub(crate) mod shape_constraints;
 
 pub(crate) mod shape_dimension_label_list;
 
+pub(crate) mod shape_payment_schedule_term_template;
+
 pub(crate) mod shape_rate_card_list;
 
 pub(crate) mod shape_selector;
 
 pub(crate) mod shape_dimension_label;
 
+pub(crate) mod shape_payment_schedule_entry_list;
+
 pub(crate) mod shape_rate_card_item;
+
+pub(crate) mod shape_payment_schedule_entry;

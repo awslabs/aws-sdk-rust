@@ -32,6 +32,21 @@ pub fn de_get_records_http_error(
             }
             tmp
         }),
+        "DryRunOperationException" => crate::operation::get_records::GetRecordsError::DryRunOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::DryRunOperationExceptionBuilder::default();
+                output = crate::protocol_serde::shape_dry_run_operation_exception::de_dry_run_operation_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_records::GetRecordsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ExpiredIteratorException" => crate::operation::get_records::GetRecordsError::ExpiredIteratorException({
             #[allow(unused_mut)]
             let mut tmp = {

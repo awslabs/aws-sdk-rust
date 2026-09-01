@@ -331,6 +331,9 @@ pub mod get_operations;
 /// Types for the `GetOperationsForResource` operation.
 pub mod get_operations_for_resource;
 
+/// Types for the `GetProfile` operation.
+pub mod get_profile;
+
 /// Types for the `GetRegions` operation.
 pub mod get_regions;
 

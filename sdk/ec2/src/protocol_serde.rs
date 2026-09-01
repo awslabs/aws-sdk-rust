@@ -3243,8 +3243,6 @@ pub(crate) mod shape_attribute_value;
 
 pub(crate) mod shape_availability_zone_address;
 
-pub(crate) mod shape_blob_attribute_value;
-
 pub(crate) mod shape_block_device_mapping;
 
 pub(crate) mod shape_capacity_manager_condition;
@@ -3490,6 +3488,8 @@ pub(crate) mod shape_s3_object_tag;
 pub(crate) mod shape_scheduled_instance_recurrence_request;
 
 pub(crate) mod shape_scheduled_instances_launch_specification;
+
+pub(crate) mod shape_secure_blob_attribute_value;
 
 pub(crate) mod shape_security_group_rule_description;
 

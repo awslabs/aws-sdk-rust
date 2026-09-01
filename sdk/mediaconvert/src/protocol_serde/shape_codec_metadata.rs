@@ -60,6 +60,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "hdr10PlusPresence" => {
+                            builder = builder.set_hdr10_plus_presence(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::Hdr10PlusPresence::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "height" => {
                             builder = builder.set_height(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

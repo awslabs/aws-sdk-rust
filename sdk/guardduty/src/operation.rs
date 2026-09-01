@@ -10,6 +10,12 @@ pub mod accept_invitation;
 /// Types for the `ArchiveFindings` operation.
 pub mod archive_findings;
 
+/// Types for the `CreateCustomDetectionRuleAssociation` operation.
+pub mod create_custom_detection_rule_association;
+
+/// Types for the `CreateCustomDetectionRuleOrgConfiguration` operation.
+pub mod create_custom_detection_rule_org_configuration;
+
 /// Types for the `CreateDetector` operation.
 pub mod create_detector;
 
@@ -45,6 +51,12 @@ pub mod create_trusted_entity_set;
 
 /// Types for the `DeclineInvitations` operation.
 pub mod decline_invitations;
+
+/// Types for the `DeleteCustomDetectionRuleAssociation` operation.
+pub mod delete_custom_detection_rule_association;
+
+/// Types for the `DeleteCustomDetectionRuleOrgConfiguration` operation.
+pub mod delete_custom_detection_rule_org_configuration;
 
 /// Types for the `DeleteDetector` operation.
 pub mod delete_detector;
@@ -105,6 +117,15 @@ pub mod get_administrator_account;
 
 /// Types for the `GetCoverageStatistics` operation.
 pub mod get_coverage_statistics;
+
+/// Types for the `GetCustomDetectionRule` operation.
+pub mod get_custom_detection_rule;
+
+/// Types for the `GetCustomDetectionRuleAssociation` operation.
+pub mod get_custom_detection_rule_association;
+
+/// Types for the `GetCustomDetectionRuleOrgConfiguration` operation.
+pub mod get_custom_detection_rule_org_configuration;
 
 /// Types for the `GetDetector` operation.
 pub mod get_detector;
@@ -168,6 +189,15 @@ pub mod invite_members;
 
 /// Types for the `ListCoverage` operation.
 pub mod list_coverage;
+
+/// Types for the `ListCustomDetectionRuleAssociations` operation.
+pub mod list_custom_detection_rule_associations;
+
+/// Types for the `ListCustomDetectionRuleOrgConfigurations` operation.
+pub mod list_custom_detection_rule_org_configurations;
+
+/// Types for the `ListCustomDetectionRules` operation.
+pub mod list_custom_detection_rules;
 
 /// Types for the `ListDetectors` operation.
 pub mod list_detectors;
@@ -234,6 +264,12 @@ pub mod unarchive_findings;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateCustomDetectionRuleAssociation` operation.
+pub mod update_custom_detection_rule_association;
+
+/// Types for the `UpdateCustomDetectionRuleOrgConfiguration` operation.
+pub mod update_custom_detection_rule_org_configuration;
 
 /// Types for the `UpdateDetector` operation.
 pub mod update_detector;

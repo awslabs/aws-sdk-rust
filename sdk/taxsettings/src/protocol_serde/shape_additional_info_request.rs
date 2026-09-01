@@ -141,5 +141,11 @@ pub fn ser_additional_info_request(
         crate::protocol_serde::shape_france_additional_info::ser_france_additional_info(&mut object_46, var_45)?;
         object_46.finish();
     }
+    if let Some(var_47) = &input.monaco_additional_info {
+        #[allow(unused_mut)]
+        let mut object_48 = object.key("monacoAdditionalInfo").start_object();
+        crate::protocol_serde::shape_monaco_additional_info::ser_monaco_additional_info(&mut object_48, var_47)?;
+        object_48.finish();
+    }
     Ok(())
 }

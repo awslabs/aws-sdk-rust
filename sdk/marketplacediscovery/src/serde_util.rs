@@ -1105,6 +1105,15 @@ pub(crate) fn eks_add_on_operating_system_correct_errors(
     builder
 }
 
+pub(crate) fn fixed_percentage_correct_errors(
+    mut builder: crate::types::builders::FixedPercentageBuilder,
+) -> crate::types::builders::FixedPercentageBuilder {
+    if builder.percentage_value.is_none() {
+        builder.percentage_value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn grant_item_correct_errors(mut builder: crate::types::builders::GrantItemBuilder) -> crate::types::builders::GrantItemBuilder {
     if builder.dimension_key.is_none() {
         builder.dimension_key = Some(Default::default())
@@ -1126,6 +1135,21 @@ pub(crate) fn helm_operating_system_correct_errors(
     }
     if builder.operating_system_name.is_none() {
         builder.operating_system_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn percentage_range_correct_errors(
+    mut builder: crate::types::builders::PercentageRangeBuilder,
+) -> crate::types::builders::PercentageRangeBuilder {
+    if builder.minimum_value.is_none() {
+        builder.minimum_value = Some(Default::default())
+    }
+    if builder.maximum_value.is_none() {
+        builder.maximum_value = Some(Default::default())
+    }
+    if builder.default_value.is_none() {
+        builder.default_value = Some(Default::default())
     }
     builder
 }
@@ -1155,6 +1179,15 @@ pub(crate) fn constraints_correct_errors(mut builder: crate::types::builders::Co
     }
     if builder.quantity_configuration.is_none() {
         builder.quantity_configuration = "no value was set".parse::<crate::types::RateCardConstraintType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn payment_schedule_term_template_correct_errors(
+    mut builder: crate::types::builders::PaymentScheduleTermTemplateBuilder,
+) -> crate::types::builders::PaymentScheduleTermTemplateBuilder {
+    if builder.schedule.is_none() {
+        builder.schedule = Some(Default::default())
     }
     builder
 }
@@ -1193,6 +1226,18 @@ pub(crate) fn rate_card_item_correct_errors(mut builder: crate::types::builders:
     }
     if builder.price.is_none() {
         builder.price = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn payment_schedule_entry_correct_errors(
+    mut builder: crate::types::builders::PaymentScheduleEntryBuilder,
+) -> crate::types::builders::PaymentScheduleEntryBuilder {
+    if builder.charge_date_offset.is_none() {
+        builder.charge_date_offset = Some(Default::default())
+    }
+    if builder.charge_percentage.is_none() {
+        builder.charge_percentage = Some(Default::default())
     }
     builder
 }

@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_email_identity_certificate;
+
 pub(crate) mod shape_batch_get_metric_data;
 
 pub(crate) mod shape_cancel_export_job;
@@ -82,6 +84,8 @@ pub(crate) mod shape_delete_suppressed_destination;
 pub(crate) mod shape_delete_tenant;
 
 pub(crate) mod shape_delete_tenant_resource_association;
+
+pub(crate) mod shape_disassociate_email_identity_certificate;
 
 pub(crate) mod shape_get_account;
 
@@ -148,6 +152,8 @@ pub(crate) mod shape_list_deliverability_test_reports;
 pub(crate) mod shape_list_domain_deliverability_campaigns;
 
 pub(crate) mod shape_list_email_identities;
+
+pub(crate) mod shape_list_email_identity_certificates;
 
 pub(crate) mod shape_list_email_templates;
 
@@ -231,6 +237,8 @@ pub(crate) mod shape_test_render_email_template;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_configuration_set;
+
 pub(crate) mod shape_update_configuration_set_event_destination;
 
 pub(crate) mod shape_update_contact;
@@ -258,6 +266,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_account_suspended_exception;
 
 pub(crate) mod shape_already_exists_exception;
+
+pub(crate) mod shape_associate_email_identity_certificate_input;
 
 pub(crate) mod shape_bad_request_exception;
 
@@ -301,6 +311,8 @@ pub(crate) mod shape_delete_tenant_input;
 
 pub(crate) mod shape_delete_tenant_resource_association_input;
 
+pub(crate) mod shape_disassociate_email_identity_certificate_input;
+
 pub(crate) mod shape_get_email_address_insights_input;
 
 pub(crate) mod shape_get_tenant_input;
@@ -312,6 +324,8 @@ pub(crate) mod shape_invalid_next_token_exception;
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_list_contacts_input;
+
+pub(crate) mod shape_list_email_identity_certificates_input;
 
 pub(crate) mod shape_list_export_jobs_input;
 
@@ -396,6 +410,8 @@ pub(crate) mod shape_test_render_email_template_input;
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_update_configuration_set_event_destination_input;
+
+pub(crate) mod shape_update_configuration_set_input;
 
 pub(crate) mod shape_update_contact_input;
 
@@ -485,6 +501,8 @@ pub(crate) mod shape_export_statistics;
 
 pub(crate) mod shape_failure_info;
 
+pub(crate) mod shape_identity_certificate_list;
+
 pub(crate) mod shape_identity_info_list;
 
 pub(crate) mod shape_import_data_source;
@@ -508,6 +526,8 @@ pub(crate) mod shape_list_of_dedicated_ip_pools;
 pub(crate) mod shape_mail_from_attributes;
 
 pub(crate) mod shape_mailbox_validation;
+
+pub(crate) mod shape_message_security_options;
 
 pub(crate) mod shape_message_tag;
 
@@ -627,6 +647,8 @@ pub(crate) mod shape_guardian_attributes;
 
 pub(crate) mod shape_guardian_options;
 
+pub(crate) mod shape_identity_certificate;
+
 pub(crate) mod shape_identity_info;
 
 pub(crate) mod shape_import_job_summary;
@@ -669,6 +691,8 @@ pub(crate) mod shape_route;
 
 pub(crate) mod shape_route_details;
 
+pub(crate) mod shape_signing_scheme;
+
 pub(crate) mod shape_sns_destination;
 
 pub(crate) mod shape_soa_record;
@@ -707,6 +731,8 @@ pub(crate) mod shape_cloud_watch_dimension_configuration;
 
 pub(crate) mod shape_content;
 
+pub(crate) mod shape_default_signing_scheme;
+
 pub(crate) mod shape_domain_isp_placement;
 
 pub(crate) mod shape_event_types;
@@ -726,6 +752,8 @@ pub(crate) mod shape_metric_value_list;
 pub(crate) mod shape_regions;
 
 pub(crate) mod shape_replacement_template;
+
+pub(crate) mod shape_smime_signing_scheme;
 
 pub(crate) mod shape_suppression_confidence_threshold;
 

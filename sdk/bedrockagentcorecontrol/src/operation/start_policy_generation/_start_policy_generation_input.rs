@@ -7,7 +7,7 @@ pub struct StartPolicyGenerationInput {
     pub policy_engine_id: ::std::option::Option<::std::string::String>,
     /// <p>The resource information that provides context for policy generation. This helps the AI understand the target resources and generate appropriate access control rules.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
-    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Cedar policy statements that match the described intent.</p>
+    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Dogwood policy statements that match the described intent.</p>
     pub content: ::std::option::Option<crate::types::Content>,
     /// <p>A customer-assigned name for the policy generation request. This helps track and identify generation operations, especially when running multiple generations simultaneously.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl StartPolicyGenerationInput {
     pub fn resource(&self) -> ::std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
     }
-    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Cedar policy statements that match the described intent.</p>
+    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Dogwood policy statements that match the described intent.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::Content> {
         self.content.as_ref()
     }
@@ -84,18 +84,18 @@ impl StartPolicyGenerationInputBuilder {
     pub fn get_resource(&self) -> &::std::option::Option<crate::types::Resource> {
         &self.resource
     }
-    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Cedar policy statements that match the described intent.</p>
+    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Dogwood policy statements that match the described intent.</p>
     /// This field is required.
     pub fn content(mut self, input: crate::types::Content) -> Self {
         self.content = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Cedar policy statements that match the described intent.</p>
+    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Dogwood policy statements that match the described intent.</p>
     pub fn set_content(mut self, input: ::std::option::Option<crate::types::Content>) -> Self {
         self.content = input;
         self
     }
-    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Cedar policy statements that match the described intent.</p>
+    /// <p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Dogwood policy statements that match the described intent.</p>
     pub fn get_content(&self) -> &::std::option::Option<crate::types::Content> {
         &self.content
     }

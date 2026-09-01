@@ -6,7 +6,7 @@
 pub struct ChileAdditionalInfo {
     /// <p>The type of tax document. For Chile, this can be <code>Invoice</code> or <code>Receipt</code>.</p>
     pub document_type: ::std::option::Option<crate::types::ChileDocumentType>,
-    /// <p>The business activity of the taxpayer in Chile.</p>
+    /// <p>The business activity code of the taxpayer in Chile. This must be the activity code shown on your SII (Servicio de Impuestos Internos) tax profile. For the list of valid activity codes, see <a href="https://www.sii.cl/ayudas/ayudas_por_servicios/1956-codigos-1959.html">SII activity codes</a>.</p>
     pub business_activity: ::std::option::Option<::std::string::String>,
 }
 impl ChileAdditionalInfo {
@@ -14,7 +14,7 @@ impl ChileAdditionalInfo {
     pub fn document_type(&self) -> ::std::option::Option<&crate::types::ChileDocumentType> {
         self.document_type.as_ref()
     }
-    /// <p>The business activity of the taxpayer in Chile.</p>
+    /// <p>The business activity code of the taxpayer in Chile. This must be the activity code shown on your SII (Servicio de Impuestos Internos) tax profile. For the list of valid activity codes, see <a href="https://www.sii.cl/ayudas/ayudas_por_servicios/1956-codigos-1959.html">SII activity codes</a>.</p>
     pub fn business_activity(&self) -> ::std::option::Option<&str> {
         self.business_activity.as_deref()
     }
@@ -48,17 +48,17 @@ impl ChileAdditionalInfoBuilder {
     pub fn get_document_type(&self) -> &::std::option::Option<crate::types::ChileDocumentType> {
         &self.document_type
     }
-    /// <p>The business activity of the taxpayer in Chile.</p>
+    /// <p>The business activity code of the taxpayer in Chile. This must be the activity code shown on your SII (Servicio de Impuestos Internos) tax profile. For the list of valid activity codes, see <a href="https://www.sii.cl/ayudas/ayudas_por_servicios/1956-codigos-1959.html">SII activity codes</a>.</p>
     pub fn business_activity(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.business_activity = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The business activity of the taxpayer in Chile.</p>
+    /// <p>The business activity code of the taxpayer in Chile. This must be the activity code shown on your SII (Servicio de Impuestos Internos) tax profile. For the list of valid activity codes, see <a href="https://www.sii.cl/ayudas/ayudas_por_servicios/1956-codigos-1959.html">SII activity codes</a>.</p>
     pub fn set_business_activity(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.business_activity = input;
         self
     }
-    /// <p>The business activity of the taxpayer in Chile.</p>
+    /// <p>The business activity code of the taxpayer in Chile. This must be the activity code shown on your SII (Servicio de Impuestos Internos) tax profile. For the list of valid activity codes, see <a href="https://www.sii.cl/ayudas/ayudas_por_servicios/1956-codigos-1959.html">SII activity codes</a>.</p>
     pub fn get_business_activity(&self) -> &::std::option::Option<::std::string::String> {
         &self.business_activity
     }

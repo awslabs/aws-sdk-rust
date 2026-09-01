@@ -19,6 +19,7 @@
 ///     MetricName::DatabaseConnections => { /* ... */ },
 ///     MetricName::DiskQueueDepth => { /* ... */ },
 ///     MetricName::FreeStorageSpace => { /* ... */ },
+///     MetricName::FreeableMemory => { /* ... */ },
 ///     MetricName::HttpCodeInstance2XxCount => { /* ... */ },
 ///     MetricName::HttpCodeInstance3XxCount => { /* ... */ },
 ///     MetricName::HttpCodeInstance4XxCount => { /* ... */ },
@@ -36,6 +37,7 @@
 ///     MetricName::StatusCheckFailed => { /* ... */ },
 ///     MetricName::StatusCheckFailedInstance => { /* ... */ },
 ///     MetricName::StatusCheckFailedSystem => { /* ... */ },
+///     MetricName::SwapUsage => { /* ... */ },
 ///     MetricName::UnhealthyHostCount => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -80,6 +82,8 @@ pub enum MetricName {
     #[allow(missing_docs)] // documentation missing in model
     FreeStorageSpace,
     #[allow(missing_docs)] // documentation missing in model
+    FreeableMemory,
+    #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance2XxCount,
     #[allow(missing_docs)] // documentation missing in model
     HttpCodeInstance3XxCount,
@@ -114,6 +118,8 @@ pub enum MetricName {
     #[allow(missing_docs)] // documentation missing in model
     StatusCheckFailedSystem,
     #[allow(missing_docs)] // documentation missing in model
+    SwapUsage,
+    #[allow(missing_docs)] // documentation missing in model
     UnhealthyHostCount,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -129,6 +135,7 @@ impl ::std::convert::From<&str> for MetricName {
             "DatabaseConnections" => MetricName::DatabaseConnections,
             "DiskQueueDepth" => MetricName::DiskQueueDepth,
             "FreeStorageSpace" => MetricName::FreeStorageSpace,
+            "FreeableMemory" => MetricName::FreeableMemory,
             "HTTPCode_Instance_2XX_Count" => MetricName::HttpCodeInstance2XxCount,
             "HTTPCode_Instance_3XX_Count" => MetricName::HttpCodeInstance3XxCount,
             "HTTPCode_Instance_4XX_Count" => MetricName::HttpCodeInstance4XxCount,
@@ -146,6 +153,7 @@ impl ::std::convert::From<&str> for MetricName {
             "StatusCheckFailed" => MetricName::StatusCheckFailed,
             "StatusCheckFailed_Instance" => MetricName::StatusCheckFailedInstance,
             "StatusCheckFailed_System" => MetricName::StatusCheckFailedSystem,
+            "SwapUsage" => MetricName::SwapUsage,
             "UnhealthyHostCount" => MetricName::UnhealthyHostCount,
             other => MetricName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -169,6 +177,7 @@ impl MetricName {
             MetricName::DatabaseConnections => "DatabaseConnections",
             MetricName::DiskQueueDepth => "DiskQueueDepth",
             MetricName::FreeStorageSpace => "FreeStorageSpace",
+            MetricName::FreeableMemory => "FreeableMemory",
             MetricName::HttpCodeInstance2XxCount => "HTTPCode_Instance_2XX_Count",
             MetricName::HttpCodeInstance3XxCount => "HTTPCode_Instance_3XX_Count",
             MetricName::HttpCodeInstance4XxCount => "HTTPCode_Instance_4XX_Count",
@@ -186,6 +195,7 @@ impl MetricName {
             MetricName::StatusCheckFailed => "StatusCheckFailed",
             MetricName::StatusCheckFailedInstance => "StatusCheckFailed_Instance",
             MetricName::StatusCheckFailedSystem => "StatusCheckFailed_System",
+            MetricName::SwapUsage => "SwapUsage",
             MetricName::UnhealthyHostCount => "UnhealthyHostCount",
             MetricName::Unknown(value) => value.as_str(),
         }
@@ -200,6 +210,7 @@ impl MetricName {
             "DatabaseConnections",
             "DiskQueueDepth",
             "FreeStorageSpace",
+            "FreeableMemory",
             "HTTPCode_Instance_2XX_Count",
             "HTTPCode_Instance_3XX_Count",
             "HTTPCode_Instance_4XX_Count",
@@ -217,6 +228,7 @@ impl MetricName {
             "StatusCheckFailed",
             "StatusCheckFailed_Instance",
             "StatusCheckFailed_System",
+            "SwapUsage",
             "UnhealthyHostCount",
         ]
     }
@@ -248,6 +260,7 @@ impl ::std::fmt::Display for MetricName {
             MetricName::DatabaseConnections => write!(f, "DatabaseConnections"),
             MetricName::DiskQueueDepth => write!(f, "DiskQueueDepth"),
             MetricName::FreeStorageSpace => write!(f, "FreeStorageSpace"),
+            MetricName::FreeableMemory => write!(f, "FreeableMemory"),
             MetricName::HttpCodeInstance2XxCount => write!(f, "HTTPCode_Instance_2XX_Count"),
             MetricName::HttpCodeInstance3XxCount => write!(f, "HTTPCode_Instance_3XX_Count"),
             MetricName::HttpCodeInstance4XxCount => write!(f, "HTTPCode_Instance_4XX_Count"),
@@ -265,6 +278,7 @@ impl ::std::fmt::Display for MetricName {
             MetricName::StatusCheckFailed => write!(f, "StatusCheckFailed"),
             MetricName::StatusCheckFailedInstance => write!(f, "StatusCheckFailed_Instance"),
             MetricName::StatusCheckFailedSystem => write!(f, "StatusCheckFailed_System"),
+            MetricName::SwapUsage => write!(f, "SwapUsage"),
             MetricName::UnhealthyHostCount => write!(f, "UnhealthyHostCount"),
             MetricName::Unknown(value) => write!(f, "{value}"),
         }

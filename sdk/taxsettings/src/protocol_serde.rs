@@ -193,6 +193,8 @@ pub(crate) mod shape_kenya_additional_info;
 
 pub(crate) mod shape_malaysia_additional_info;
 
+pub(crate) mod shape_monaco_additional_info;
+
 pub(crate) mod shape_philippines_additional_info;
 
 pub(crate) mod shape_poland_additional_info;

@@ -29,6 +29,10 @@ pub(crate) mod shape_accept_invitation;
 
 pub(crate) mod shape_archive_findings;
 
+pub(crate) mod shape_create_custom_detection_rule_association;
+
+pub(crate) mod shape_create_custom_detection_rule_org_configuration;
+
 pub(crate) mod shape_create_detector;
 
 pub(crate) mod shape_create_filter;
@@ -52,6 +56,10 @@ pub(crate) mod shape_create_threat_intel_set;
 pub(crate) mod shape_create_trusted_entity_set;
 
 pub(crate) mod shape_decline_invitations;
+
+pub(crate) mod shape_delete_custom_detection_rule_association;
+
+pub(crate) mod shape_delete_custom_detection_rule_org_configuration;
 
 pub(crate) mod shape_delete_detector;
 
@@ -92,6 +100,12 @@ pub(crate) mod shape_enable_organization_admin_account;
 pub(crate) mod shape_get_administrator_account;
 
 pub(crate) mod shape_get_coverage_statistics;
+
+pub(crate) mod shape_get_custom_detection_rule;
+
+pub(crate) mod shape_get_custom_detection_rule_association;
+
+pub(crate) mod shape_get_custom_detection_rule_org_configuration;
 
 pub(crate) mod shape_get_detector;
 
@@ -134,6 +148,12 @@ pub(crate) mod shape_get_usage_statistics;
 pub(crate) mod shape_invite_members;
 
 pub(crate) mod shape_list_coverage;
+
+pub(crate) mod shape_list_custom_detection_rule_associations;
+
+pub(crate) mod shape_list_custom_detection_rule_org_configurations;
+
+pub(crate) mod shape_list_custom_detection_rules;
 
 pub(crate) mod shape_list_detectors;
 
@@ -179,6 +199,10 @@ pub(crate) mod shape_unarchive_findings;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_custom_detection_rule_association;
+
+pub(crate) mod shape_update_custom_detection_rule_org_configuration;
+
 pub(crate) mod shape_update_detector;
 
 pub(crate) mod shape_update_filter;
@@ -222,6 +246,10 @@ pub(crate) mod shape_archive_findings_input;
 pub(crate) mod shape_bad_request_exception;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_custom_detection_rule_association_input;
+
+pub(crate) mod shape_create_custom_detection_rule_org_configuration_input;
 
 pub(crate) mod shape_create_detector_input;
 
@@ -279,6 +307,8 @@ pub(crate) mod shape_invite_members_input;
 
 pub(crate) mod shape_list_coverage_input;
 
+pub(crate) mod shape_list_custom_detection_rules_input;
+
 pub(crate) mod shape_list_findings_input;
 
 pub(crate) mod shape_list_investigations_input;
@@ -298,6 +328,10 @@ pub(crate) mod shape_stop_monitoring_members_input;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_unarchive_findings_input;
+
+pub(crate) mod shape_update_custom_detection_rule_association_input;
+
+pub(crate) mod shape_update_custom_detection_rule_org_configuration_input;
 
 pub(crate) mod shape_update_detector_input;
 
@@ -331,6 +365,10 @@ pub(crate) mod shape_admin_accounts;
 
 pub(crate) mod shape_administrator;
 
+pub(crate) mod shape_association_detail;
+
+pub(crate) mod shape_association_summary_list;
+
 pub(crate) mod shape_coverage_filter_criteria;
 
 pub(crate) mod shape_coverage_resources;
@@ -348,6 +386,12 @@ pub(crate) mod shape_data_source_configurations_result;
 pub(crate) mod shape_destination_properties;
 
 pub(crate) mod shape_destinations;
+
+pub(crate) mod shape_detection_rule_filter;
+
+pub(crate) mod shape_detection_rule_org_configuration;
+
+pub(crate) mod shape_detection_rule_org_configuration_summary_list;
 
 pub(crate) mod shape_detector_feature_configuration;
 
@@ -407,6 +451,10 @@ pub(crate) mod shape_organization_feature_configuration;
 
 pub(crate) mod shape_organization_features_configurations_results;
 
+pub(crate) mod shape_rule_detail;
+
+pub(crate) mod shape_rule_summary_list;
+
 pub(crate) mod shape_s3_object_for_send_object_malware_scan;
 
 pub(crate) mod shape_scan_configuration;
@@ -443,6 +491,8 @@ pub(crate) mod shape_account_free_trial_info;
 
 pub(crate) mod shape_admin_account;
 
+pub(crate) mod shape_association_summary;
+
 pub(crate) mod shape_cloud_details;
 
 pub(crate) mod shape_cloud_trail_configuration_result;
@@ -464,6 +514,10 @@ pub(crate) mod shape_create_s3_bucket_resource;
 pub(crate) mod shape_criterion;
 
 pub(crate) mod shape_destination;
+
+pub(crate) mod shape_detection_rule_account_ids;
+
+pub(crate) mod shape_detection_rule_org_configuration_summary;
 
 pub(crate) mod shape_detector_additional_configuration;
 
@@ -538,6 +592,10 @@ pub(crate) mod shape_organization_s3_logs_configuration_result;
 pub(crate) mod shape_organization_statistics;
 
 pub(crate) mod shape_recovery_point;
+
+pub(crate) mod shape_rule_definition;
+
+pub(crate) mod shape_rule_summary;
 
 pub(crate) mod shape_s3_logs_configuration;
 

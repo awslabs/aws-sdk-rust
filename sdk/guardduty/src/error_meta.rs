@@ -144,6 +144,92 @@ impl From<crate::operation::archive_findings::ArchiveFindingsError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError> for Error {
+    fn from(err: crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError) -> Self {
+        match err {
+            crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_custom_detection_rule_association::CreateCustomDetectionRuleAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError> for Error {
+    fn from(err: crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError) -> Self {
+        match err {
+            crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_custom_detection_rule_org_configuration::CreateCustomDetectionRuleOrgConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_detector::CreateDetectorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -463,6 +549,89 @@ impl From<crate::operation::decline_invitations::DeclineInvitationsError> for Er
                 Error::InternalServerErrorException(inner)
             }
             crate::operation::decline_invitations::DeclineInvitationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError> for Error {
+    fn from(err: crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError) -> Self {
+        match err {
+            crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_custom_detection_rule_association::DeleteCustomDetectionRuleAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError> for Error {
+    fn from(err: crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_custom_detection_rule_org_configuration::DeleteCustomDetectionRuleOrgConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1067,6 +1236,122 @@ impl From<crate::operation::get_coverage_statistics::GetCoverageStatisticsError>
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError> for Error {
+    fn from(err: crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError) -> Self {
+        match err {
+            crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_custom_detection_rule::GetCustomDetectionRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError> for Error {
+    fn from(err: crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError) -> Self {
+        match err {
+            crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_custom_detection_rule_association::GetCustomDetectionRuleAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError> for Error {
+    fn from(err: crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError) -> Self {
+        match err {
+            crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_custom_detection_rule_org_configuration::GetCustomDetectionRuleOrgConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_detector::GetDetectorError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1604,6 +1889,117 @@ impl From<crate::operation::list_coverage::ListCoverageError> for Error {
             crate::operation::list_coverage::ListCoverageError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::list_coverage::ListCoverageError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::list_coverage::ListCoverageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsError> for Error {
+    fn from(err: crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsError) -> Self {
+        match err {
+            crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsError> for Error {
+    fn from(err: crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_detection_rules::ListCustomDetectionRulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_custom_detection_rules::ListCustomDetectionRulesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_custom_detection_rules::ListCustomDetectionRulesError> for Error {
+    fn from(err: crate::operation::list_custom_detection_rules::ListCustomDetectionRulesError) -> Self {
+        match err {
+            crate::operation::list_custom_detection_rules::ListCustomDetectionRulesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_custom_detection_rules::ListCustomDetectionRulesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_custom_detection_rules::ListCustomDetectionRulesError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_custom_detection_rules::ListCustomDetectionRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2181,6 +2577,92 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::BadRequestException(inner) => Error::BadRequestException(inner),
             crate::operation::untag_resource::UntagResourceError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError> for Error {
+    fn from(err: crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError) -> Self {
+        match err {
+            crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError::ResourceNotFoundException(
+                inner,
+            ) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_custom_detection_rule_association::UpdateCustomDetectionRuleAssociationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError> for Error {
+    fn from(err: crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError) -> Self {
+        match err {
+            crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_custom_detection_rule_org_configuration::UpdateCustomDetectionRuleOrgConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

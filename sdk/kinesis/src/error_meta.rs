@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request was rejected because the DryRun parameter was specified.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The provided iterator exceeds the maximum age allowed.</p>
     ExpiredIteratorException(crate::types::error::ExpiredIteratorException),
     /// <p>The pagination token passed to the operation is expired.</p>
@@ -48,6 +50,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::DryRunOperationException(inner) => inner.fmt(f),
             Error::ExpiredIteratorException(inner) => inner.fmt(f),
             Error::ExpiredNextTokenException(inner) => inner.fmt(f),
             Error::InternalFailureException(inner) => inner.fmt(f),
@@ -85,6 +88,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::DryRunOperationException(inner) => inner.meta(),
             Self::ExpiredIteratorException(inner) => inner.meta(),
             Self::ExpiredNextTokenException(inner) => inner.meta(),
             Self::InternalFailureException(inner) => inner.meta(),
@@ -614,6 +618,7 @@ impl From<crate::operation::get_records::GetRecordsError> for Error {
     fn from(err: crate::operation::get_records::GetRecordsError) -> Self {
         match err {
             crate::operation::get_records::GetRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_records::GetRecordsError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::get_records::GetRecordsError::ExpiredIteratorException(inner) => Error::ExpiredIteratorException(inner),
             crate::operation::get_records::GetRecordsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::get_records::GetRecordsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
@@ -677,6 +682,7 @@ impl From<crate::operation::get_shard_iterator::GetShardIteratorError> for Error
     fn from(err: crate::operation::get_shard_iterator::GetShardIteratorError) -> Self {
         match err {
             crate::operation::get_shard_iterator::GetShardIteratorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_shard_iterator::GetShardIteratorError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::get_shard_iterator::GetShardIteratorError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::get_shard_iterator::GetShardIteratorError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::get_shard_iterator::GetShardIteratorError::ProvisionedThroughputExceededException(inner) => {
@@ -942,6 +948,7 @@ impl From<crate::operation::put_record::PutRecordError> for Error {
     fn from(err: crate::operation::put_record::PutRecordError) -> Self {
         match err {
             crate::operation::put_record::PutRecordError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_record::PutRecordError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::put_record::PutRecordError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::put_record::PutRecordError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::put_record::PutRecordError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
@@ -976,6 +983,7 @@ impl From<crate::operation::put_records::PutRecordsError> for Error {
     fn from(err: crate::operation::put_records::PutRecordsError) -> Self {
         match err {
             crate::operation::put_records::PutRecordsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_records::PutRecordsError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::put_records::PutRecordsError::InternalFailureException(inner) => Error::InternalFailureException(inner),
             crate::operation::put_records::PutRecordsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::put_records::PutRecordsError::KmsAccessDeniedException(inner) => Error::KmsAccessDeniedException(inner),
@@ -1220,6 +1228,7 @@ impl From<crate::operation::subscribe_to_shard::SubscribeToShardError> for Error
     fn from(err: crate::operation::subscribe_to_shard::SubscribeToShardError) -> Self {
         match err {
             crate::operation::subscribe_to_shard::SubscribeToShardError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::subscribe_to_shard::SubscribeToShardError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::subscribe_to_shard::SubscribeToShardError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
             crate::operation::subscribe_to_shard::SubscribeToShardError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::subscribe_to_shard::SubscribeToShardError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
@@ -1516,6 +1525,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::DryRunOperationException(inner) => inner.source(),
             Error::ExpiredIteratorException(inner) => inner.source(),
             Error::ExpiredNextTokenException(inner) => inner.source(),
             Error::InternalFailureException(inner) => inner.source(),
@@ -1539,6 +1549,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::DryRunOperationException(e) => e.request_id(),
             Self::ExpiredIteratorException(e) => e.request_id(),
             Self::ExpiredNextTokenException(e) => e.request_id(),
             Self::InternalFailureException(e) => e.request_id(),

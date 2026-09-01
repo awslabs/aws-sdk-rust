@@ -43,7 +43,7 @@ impl ::std::fmt::Debug for S3Storage {
         formatter.field("aws_access_key_id", &self.aws_access_key_id);
         formatter.field("bucket", &self.bucket);
         formatter.field("prefix", &self.prefix);
-        formatter.field("upload_policy", &self.upload_policy);
+        formatter.field("upload_policy", &"*** Sensitive Data Redacted ***");
         formatter.field("upload_policy_signature", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -153,7 +153,7 @@ impl ::std::fmt::Debug for S3StorageBuilder {
         formatter.field("aws_access_key_id", &self.aws_access_key_id);
         formatter.field("bucket", &self.bucket);
         formatter.field("prefix", &self.prefix);
-        formatter.field("upload_policy", &self.upload_policy);
+        formatter.field("upload_policy", &"*** Sensitive Data Redacted ***");
         formatter.field("upload_policy_signature", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }

@@ -321,6 +321,8 @@ pub use crate::types::_end_point_type::EndPointType;
 
 pub use crate::types::_schema_registry_event_record_format::SchemaRegistryEventRecordFormat;
 
+pub use crate::types::_s3_files_config::S3FilesConfig;
+
 pub use crate::types::_capacity_provider_predefined_metric_type::CapacityProviderPredefinedMetricType;
 
 pub use crate::types::_event_input::EventInput;
@@ -334,6 +336,8 @@ pub use crate::types::_retry_details::RetryDetails;
 pub use crate::types::_kafka_schema_registry_access_config::KafkaSchemaRegistryAccessConfig;
 
 pub use crate::types::_kafka_schema_validation_config::KafkaSchemaValidationConfig;
+
+pub use crate::types::_direct_s3_read::DirectS3Read;
 
 pub use crate::types::_kafka_schema_registry_auth_type::KafkaSchemaRegistryAuthType;
 
@@ -426,6 +430,8 @@ mod _cors;
 mod _dead_letter_config;
 
 mod _destination_config;
+
+mod _direct_s3_read;
 
 mod _document_db_event_source_config;
 
@@ -606,6 +612,8 @@ mod _runtime;
 mod _runtime_version_config;
 
 mod _runtime_version_error;
+
+mod _s3_files_config;
 
 mod _s3_object_storage_mode;
 

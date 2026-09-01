@@ -343,6 +343,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetShardItera
 pub enum GetShardIteratorError {
     /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request was rejected because the DryRun parameter was specified.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The processing of the request failed because of an unknown error, exception, or failure.</p>
     InternalFailureException(crate::types::error::InternalFailureException),
     /// <p>A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message.</p>
@@ -385,6 +387,7 @@ impl GetShardIteratorError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DryRunOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ProvisionedThroughputExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -395,6 +398,10 @@ impl GetShardIteratorError {
     /// Returns `true` if the error kind is `GetShardIteratorError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetShardIteratorError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
     }
     /// Returns `true` if the error kind is `GetShardIteratorError::InternalFailureException`.
     pub fn is_internal_failure_exception(&self) -> bool {
@@ -417,6 +424,7 @@ impl ::std::error::Error for GetShardIteratorError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -429,6 +437,7 @@ impl ::std::fmt::Display for GetShardIteratorError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::InvalidArgumentException(_inner) => _inner.fmt(f),
             Self::ProvisionedThroughputExceededException(_inner) => _inner.fmt(f),
@@ -455,6 +464,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetShardItera
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DryRunOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ProvisionedThroughputExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

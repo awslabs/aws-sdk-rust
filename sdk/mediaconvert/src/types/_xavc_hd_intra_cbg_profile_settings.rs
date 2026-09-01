@@ -4,10 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct XavcHdIntraCbgProfileSettings {
+    /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub interlace_mode: ::std::option::Option<crate::types::XavcInterlaceMode>,
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub xavc_class: ::std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
 }
 impl XavcHdIntraCbgProfileSettings {
+    /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn interlace_mode(&self) -> ::std::option::Option<&crate::types::XavcInterlaceMode> {
+        self.interlace_mode.as_ref()
+    }
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub fn xavc_class(&self) -> ::std::option::Option<&crate::types::XavcHdIntraCbgProfileClass> {
         self.xavc_class.as_ref()
@@ -24,9 +30,24 @@ impl XavcHdIntraCbgProfileSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct XavcHdIntraCbgProfileSettingsBuilder {
+    pub(crate) interlace_mode: ::std::option::Option<crate::types::XavcInterlaceMode>,
     pub(crate) xavc_class: ::std::option::Option<crate::types::XavcHdIntraCbgProfileClass>,
 }
 impl XavcHdIntraCbgProfileSettingsBuilder {
+    /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn interlace_mode(mut self, input: crate::types::XavcInterlaceMode) -> Self {
+        self.interlace_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn set_interlace_mode(mut self, input: ::std::option::Option<crate::types::XavcInterlaceMode>) -> Self {
+        self.interlace_mode = input;
+        self
+    }
+    /// Choose the scan line type for the output. Keep the default value, Progressive to create a progressive output, regardless of the scan type of your input. Use Top field first or Bottom field first to create an output that's interlaced with the same field polarity throughout. Use Follow, default top or Follow, default bottom to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+    pub fn get_interlace_mode(&self) -> &::std::option::Option<crate::types::XavcInterlaceMode> {
+        &self.interlace_mode
+    }
     /// Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
     pub fn xavc_class(mut self, input: crate::types::XavcHdIntraCbgProfileClass) -> Self {
         self.xavc_class = ::std::option::Option::Some(input);
@@ -43,6 +64,9 @@ impl XavcHdIntraCbgProfileSettingsBuilder {
     }
     /// Consumes the builder and constructs a [`XavcHdIntraCbgProfileSettings`](crate::types::XavcHdIntraCbgProfileSettings).
     pub fn build(self) -> crate::types::XavcHdIntraCbgProfileSettings {
-        crate::types::XavcHdIntraCbgProfileSettings { xavc_class: self.xavc_class }
+        crate::types::XavcHdIntraCbgProfileSettings {
+            interlace_mode: self.interlace_mode,
+            xavc_class: self.xavc_class,
+        }
     }
 }

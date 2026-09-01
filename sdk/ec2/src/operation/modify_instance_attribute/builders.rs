@@ -305,17 +305,17 @@ impl ModifyInstanceAttributeFluentBuilder {
         self.inner.get_ramdisk()
     }
     /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn user_data(mut self, input: crate::types::BlobAttributeValue) -> Self {
+    pub fn user_data(mut self, input: crate::types::SecureBlobAttributeValue) -> Self {
         self.inner = self.inner.user_data(input);
         self
     }
     /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::BlobAttributeValue>) -> Self {
+    pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::SecureBlobAttributeValue>) -> Self {
         self.inner = self.inner.set_user_data(input);
         self
     }
     /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn get_user_data(&self) -> &::std::option::Option<crate::types::BlobAttributeValue> {
+    pub fn get_user_data(&self) -> &::std::option::Option<crate::types::SecureBlobAttributeValue> {
         self.inner.get_user_data()
     }
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>

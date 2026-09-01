@@ -22,6 +22,8 @@ pub struct GetConfigurationSetOutput {
     pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
     /// <p>An object that defines the MailManager archive where sent emails are archived that you send using the configuration set.</p>
     pub archiving_options: ::std::option::Option<crate::types::ArchivingOptions>,
+    /// <p>The message security options that are applied to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub message_security_options: ::std::option::Option<crate::types::MessageSecurityOptions>,
     _request_id: Option<String>,
 }
 impl GetConfigurationSetOutput {
@@ -63,6 +65,10 @@ impl GetConfigurationSetOutput {
     pub fn archiving_options(&self) -> ::std::option::Option<&crate::types::ArchivingOptions> {
         self.archiving_options.as_ref()
     }
+    /// <p>The message security options that are applied to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn message_security_options(&self) -> ::std::option::Option<&crate::types::MessageSecurityOptions> {
+        self.message_security_options.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetConfigurationSetOutput {
     fn request_id(&self) -> Option<&str> {
@@ -89,6 +95,7 @@ pub struct GetConfigurationSetOutputBuilder {
     pub(crate) suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     pub(crate) vdm_options: ::std::option::Option<crate::types::VdmOptions>,
     pub(crate) archiving_options: ::std::option::Option<crate::types::ArchivingOptions>,
+    pub(crate) message_security_options: ::std::option::Option<crate::types::MessageSecurityOptions>,
     _request_id: Option<String>,
 }
 impl GetConfigurationSetOutputBuilder {
@@ -224,6 +231,20 @@ impl GetConfigurationSetOutputBuilder {
     pub fn get_archiving_options(&self) -> &::std::option::Option<crate::types::ArchivingOptions> {
         &self.archiving_options
     }
+    /// <p>The message security options that are applied to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn message_security_options(mut self, input: crate::types::MessageSecurityOptions) -> Self {
+        self.message_security_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The message security options that are applied to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn set_message_security_options(mut self, input: ::std::option::Option<crate::types::MessageSecurityOptions>) -> Self {
+        self.message_security_options = input;
+        self
+    }
+    /// <p>The message security options that are applied to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn get_message_security_options(&self) -> &::std::option::Option<crate::types::MessageSecurityOptions> {
+        &self.message_security_options
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -245,6 +266,7 @@ impl GetConfigurationSetOutputBuilder {
             suppression_options: self.suppression_options,
             vdm_options: self.vdm_options,
             archiving_options: self.archiving_options,
+            message_security_options: self.message_security_options,
             _request_id: self._request_id,
         }
     }

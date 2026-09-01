@@ -23,6 +23,8 @@ pub use crate::types::error::_kms_throttling_exception::KmsThrottlingException;
 
 pub use crate::types::error::_validation_exception::ValidationException;
 
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationException;
+
 pub use crate::types::error::_expired_iterator_exception::ExpiredIteratorException;
 
 pub use crate::types::error::_internal_failure_exception::InternalFailureException;
@@ -215,6 +217,8 @@ impl ::aws_types::request_id::RequestId for crate::types::error::SubscribeToShar
 }
 
 mod _access_denied_exception;
+
+mod _dry_run_operation_exception;
 
 mod _expired_iterator_exception;
 

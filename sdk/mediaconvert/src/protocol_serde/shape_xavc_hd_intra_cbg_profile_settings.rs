@@ -3,8 +3,11 @@ pub fn ser_xavc_hd_intra_cbg_profile_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::XavcHdIntraCbgProfileSettings,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.xavc_class {
-        object.key("xavcClass").string(var_1.as_str());
+    if let Some(var_1) = &input.interlace_mode {
+        object.key("interlaceMode").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.xavc_class {
+        object.key("xavcClass").string(var_2.as_str());
     }
     Ok(())
 }
@@ -31,6 +34,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "interlaceMode" => {
+                            builder = builder.set_interlace_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::XavcInterlaceMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "xavcClass" => {
                             builder = builder.set_xavc_class(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

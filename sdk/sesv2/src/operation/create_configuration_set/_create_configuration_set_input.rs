@@ -22,6 +22,8 @@ pub struct CreateConfigurationSetInput {
     pub vdm_options: ::std::option::Option<crate::types::VdmOptions>,
     /// <p>An object that defines the MailManager archiving options for emails that you send using the configuration set.</p>
     pub archiving_options: ::std::option::Option<crate::types::ArchivingOptions>,
+    /// <p>The message security options to apply to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub message_security_options: ::std::option::Option<crate::types::MessageSecurityOptions>,
 }
 impl CreateConfigurationSetInput {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
@@ -62,6 +64,10 @@ impl CreateConfigurationSetInput {
     pub fn archiving_options(&self) -> ::std::option::Option<&crate::types::ArchivingOptions> {
         self.archiving_options.as_ref()
     }
+    /// <p>The message security options to apply to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn message_security_options(&self) -> ::std::option::Option<&crate::types::MessageSecurityOptions> {
+        self.message_security_options.as_ref()
+    }
 }
 impl CreateConfigurationSetInput {
     /// Creates a new builder-style object to manufacture [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
@@ -83,6 +89,7 @@ pub struct CreateConfigurationSetInputBuilder {
     pub(crate) suppression_options: ::std::option::Option<crate::types::SuppressionOptions>,
     pub(crate) vdm_options: ::std::option::Option<crate::types::VdmOptions>,
     pub(crate) archiving_options: ::std::option::Option<crate::types::ArchivingOptions>,
+    pub(crate) message_security_options: ::std::option::Option<crate::types::MessageSecurityOptions>,
 }
 impl CreateConfigurationSetInputBuilder {
     /// <p>The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.</p>
@@ -218,6 +225,20 @@ impl CreateConfigurationSetInputBuilder {
     pub fn get_archiving_options(&self) -> &::std::option::Option<crate::types::ArchivingOptions> {
         &self.archiving_options
     }
+    /// <p>The message security options to apply to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn message_security_options(mut self, input: crate::types::MessageSecurityOptions) -> Self {
+        self.message_security_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The message security options to apply to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn set_message_security_options(mut self, input: ::std::option::Option<crate::types::MessageSecurityOptions>) -> Self {
+        self.message_security_options = input;
+        self
+    }
+    /// <p>The message security options to apply to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn get_message_security_options(&self) -> &::std::option::Option<crate::types::MessageSecurityOptions> {
+        &self.message_security_options
+    }
     /// Consumes the builder and constructs a [`CreateConfigurationSetInput`](crate::operation::create_configuration_set::CreateConfigurationSetInput).
     pub fn build(
         self,
@@ -235,6 +256,7 @@ impl CreateConfigurationSetInputBuilder {
             suppression_options: self.suppression_options,
             vdm_options: self.vdm_options,
             archiving_options: self.archiving_options,
+            message_security_options: self.message_security_options,
         })
     }
 }

@@ -10,6 +10,8 @@ pub struct StartPipelineExecutionInput {
     pub pipeline_name: ::std::option::Option<::std::string::String>,
     /// <p>Runtime environment variable overrides for the execution. Includes global variables that apply to all compute nodes and computeNodes for per-node overrides. These take the highest priority in the environment variable hierarchy.</p>
     pub execution_environment_variable_overrides: ::std::option::Option<crate::types::ExecutionEnvironmentVariables>,
+    /// <p>Runtime mount overrides for the execution. Overrides are merged by mount name into each listed compute node's task-defined mounts: a matching name replaces the task-defined mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged. Compute nodes not listed use their task-defined mounts as-is.</p>
+    pub execution_mount_overrides: ::std::option::Option<crate::types::MountOverrides>,
     /// <p>Scheduling priority for the execution. Lower values indicate higher priority. Defaults to 2 when not specified.</p>
     pub execution_priority: ::std::option::Option<i32>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token, the server returns the cached result from the original successful request without performing the operation again.</p>
@@ -28,6 +30,10 @@ impl StartPipelineExecutionInput {
     pub fn execution_environment_variable_overrides(&self) -> ::std::option::Option<&crate::types::ExecutionEnvironmentVariables> {
         self.execution_environment_variable_overrides.as_ref()
     }
+    /// <p>Runtime mount overrides for the execution. Overrides are merged by mount name into each listed compute node's task-defined mounts: a matching name replaces the task-defined mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged. Compute nodes not listed use their task-defined mounts as-is.</p>
+    pub fn execution_mount_overrides(&self) -> ::std::option::Option<&crate::types::MountOverrides> {
+        self.execution_mount_overrides.as_ref()
+    }
     /// <p>Scheduling priority for the execution. Lower values indicate higher priority. Defaults to 2 when not specified.</p>
     pub fn execution_priority(&self) -> ::std::option::Option<i32> {
         self.execution_priority
@@ -43,6 +49,7 @@ impl ::std::fmt::Debug for StartPipelineExecutionInput {
         formatter.field("workspace_name", &self.workspace_name);
         formatter.field("pipeline_name", &self.pipeline_name);
         formatter.field("execution_environment_variable_overrides", &"*** Sensitive Data Redacted ***");
+        formatter.field("execution_mount_overrides", &self.execution_mount_overrides);
         formatter.field("execution_priority", &self.execution_priority);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
@@ -62,6 +69,7 @@ pub struct StartPipelineExecutionInputBuilder {
     pub(crate) workspace_name: ::std::option::Option<::std::string::String>,
     pub(crate) pipeline_name: ::std::option::Option<::std::string::String>,
     pub(crate) execution_environment_variable_overrides: ::std::option::Option<crate::types::ExecutionEnvironmentVariables>,
+    pub(crate) execution_mount_overrides: ::std::option::Option<crate::types::MountOverrides>,
     pub(crate) execution_priority: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
@@ -110,6 +118,20 @@ impl StartPipelineExecutionInputBuilder {
     pub fn get_execution_environment_variable_overrides(&self) -> &::std::option::Option<crate::types::ExecutionEnvironmentVariables> {
         &self.execution_environment_variable_overrides
     }
+    /// <p>Runtime mount overrides for the execution. Overrides are merged by mount name into each listed compute node's task-defined mounts: a matching name replaces the task-defined mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged. Compute nodes not listed use their task-defined mounts as-is.</p>
+    pub fn execution_mount_overrides(mut self, input: crate::types::MountOverrides) -> Self {
+        self.execution_mount_overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Runtime mount overrides for the execution. Overrides are merged by mount name into each listed compute node's task-defined mounts: a matching name replaces the task-defined mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged. Compute nodes not listed use their task-defined mounts as-is.</p>
+    pub fn set_execution_mount_overrides(mut self, input: ::std::option::Option<crate::types::MountOverrides>) -> Self {
+        self.execution_mount_overrides = input;
+        self
+    }
+    /// <p>Runtime mount overrides for the execution. Overrides are merged by mount name into each listed compute node's task-defined mounts: a matching name replaces the task-defined mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged. Compute nodes not listed use their task-defined mounts as-is.</p>
+    pub fn get_execution_mount_overrides(&self) -> &::std::option::Option<crate::types::MountOverrides> {
+        &self.execution_mount_overrides
+    }
     /// <p>Scheduling priority for the execution. Lower values indicate higher priority. Defaults to 2 when not specified.</p>
     pub fn execution_priority(mut self, input: i32) -> Self {
         self.execution_priority = ::std::option::Option::Some(input);
@@ -149,6 +171,7 @@ impl StartPipelineExecutionInputBuilder {
             workspace_name: self.workspace_name,
             pipeline_name: self.pipeline_name,
             execution_environment_variable_overrides: self.execution_environment_variable_overrides,
+            execution_mount_overrides: self.execution_mount_overrides,
             execution_priority: self.execution_priority,
             client_token: self.client_token,
         })
@@ -160,6 +183,7 @@ impl ::std::fmt::Debug for StartPipelineExecutionInputBuilder {
         formatter.field("workspace_name", &self.workspace_name);
         formatter.field("pipeline_name", &self.pipeline_name);
         formatter.field("execution_environment_variable_overrides", &"*** Sensitive Data Redacted ***");
+        formatter.field("execution_mount_overrides", &self.execution_mount_overrides);
         formatter.field("execution_priority", &self.execution_priority);
         formatter.field("client_token", &self.client_token);
         formatter.finish()

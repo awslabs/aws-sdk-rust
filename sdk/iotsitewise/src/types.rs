@@ -99,6 +99,8 @@ pub use crate::types::_pipeline_execution_status::PipelineExecutionStatus;
 
 pub use crate::types::_execution_environment_variables::ExecutionEnvironmentVariables;
 
+pub use crate::types::_mount_overrides::MountOverrides;
+
 pub use crate::types::_image_location::ImageLocation;
 
 pub use crate::types::_query_statistics::QueryStatistics;
@@ -481,6 +483,8 @@ pub use crate::types::_processing_type::ProcessingType;
 
 pub use crate::types::_processing_unit::ProcessingUnit;
 
+pub use crate::types::_ephemeral_storage_configuration::EphemeralStorageConfiguration;
+
 pub use crate::types::_composition_relationship_item::CompositionRelationshipItem;
 
 pub use crate::types::_attribute::Attribute;
@@ -521,6 +525,10 @@ pub use crate::types::_detailed_error::DetailedError;
 
 pub use crate::types::_export_data_type::ExportDataType;
 
+pub use crate::types::_storage_class::StorageClass;
+
+pub use crate::types::_mount::Mount;
+
 pub use crate::types::_asset_model_property_path_segment::AssetModelPropertyPathSegment;
 
 pub use crate::types::_measurement_processing_config::MeasurementProcessingConfig;
@@ -557,6 +565,10 @@ pub use crate::types::_detailed_error_code::DetailedErrorCode;
 
 pub use crate::types::_column_name::ColumnName;
 
+pub use crate::types::_mount_source::MountSource;
+
+pub use crate::types::_mount_storage_type::MountStorageType;
+
 pub use crate::types::_forwarding_config::ForwardingConfig;
 
 pub use crate::types::_expression_variable::ExpressionVariable;
@@ -572,6 +584,8 @@ pub use crate::types::_compute_node_error_code::ComputeNodeErrorCode;
 pub use crate::types::_reference::Reference;
 
 pub use crate::types::_content::Content;
+
+pub use crate::types::_s3_access_point_source::S3AccessPointSource;
 
 pub use crate::types::_forwarding_config_state::ForwardingConfigState;
 
@@ -871,6 +885,8 @@ mod _enrichment_status;
 
 mod _enrichment_trim_settings;
 
+mod _ephemeral_storage_configuration;
+
 mod _error_code;
 
 mod _error_details;
@@ -995,6 +1011,14 @@ mod _monitor_error_code;
 
 mod _monitor_error_details;
 
+mod _mount;
+
+mod _mount_overrides;
+
+mod _mount_source;
+
+mod _mount_storage_type;
+
 mod _mp4;
 
 mod _multi_layer_storage;
@@ -1089,6 +1113,8 @@ mod _retention_period;
 
 mod _row;
 
+mod _s3_access_point_source;
+
 mod _scalar_type;
 
 mod _search_filters;
@@ -1108,6 +1134,8 @@ mod _siemens_ie;
 mod _source;
 
 mod _source_detail;
+
+mod _storage_class;
 
 mod _storage_type;
 

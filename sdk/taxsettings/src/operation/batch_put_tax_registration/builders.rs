@@ -164,6 +164,13 @@ impl crate::operation::batch_put_tax_registration::builders::BatchPutTaxRegistra
 /// <ul>
 /// <li>
 /// <p>You must specify the <code>sirenNumber</code> in the <code>franceAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
+/// <li>
+/// <p>You can optionally specify the <code>eInvoiceRoutingCode</code> in the <code>franceAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
+/// </ul>
+/// <p><b>Monaco</b></p>
+/// <ul>
+/// <li>
+/// <p>You must specify the <code>businessNumber</code> in the <code>monacoAdditionalInfo</code> field of the <code>additionalTaxInformation</code> object.</p></li>
 /// </ul>
 /// <p><b>Poland</b></p>
 /// <ul>

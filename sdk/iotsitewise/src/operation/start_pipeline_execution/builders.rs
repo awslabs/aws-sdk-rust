@@ -151,6 +151,20 @@ impl StartPipelineExecutionFluentBuilder {
     pub fn get_execution_environment_variable_overrides(&self) -> &::std::option::Option<crate::types::ExecutionEnvironmentVariables> {
         self.inner.get_execution_environment_variable_overrides()
     }
+    /// <p>Runtime mount overrides for the execution. Overrides are merged by mount name into each listed compute node's task-defined mounts: a matching name replaces the task-defined mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged. Compute nodes not listed use their task-defined mounts as-is.</p>
+    pub fn execution_mount_overrides(mut self, input: crate::types::MountOverrides) -> Self {
+        self.inner = self.inner.execution_mount_overrides(input);
+        self
+    }
+    /// <p>Runtime mount overrides for the execution. Overrides are merged by mount name into each listed compute node's task-defined mounts: a matching name replaces the task-defined mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged. Compute nodes not listed use their task-defined mounts as-is.</p>
+    pub fn set_execution_mount_overrides(mut self, input: ::std::option::Option<crate::types::MountOverrides>) -> Self {
+        self.inner = self.inner.set_execution_mount_overrides(input);
+        self
+    }
+    /// <p>Runtime mount overrides for the execution. Overrides are merged by mount name into each listed compute node's task-defined mounts: a matching name replaces the task-defined mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged. Compute nodes not listed use their task-defined mounts as-is.</p>
+    pub fn get_execution_mount_overrides(&self) -> &::std::option::Option<crate::types::MountOverrides> {
+        self.inner.get_execution_mount_overrides()
+    }
     /// <p>Scheduling priority for the execution. Lower values indicate higher priority. Defaults to 2 when not specified.</p>
     pub fn execution_priority(mut self, input: i32) -> Self {
         self.inner = self.inner.execution_priority(input);

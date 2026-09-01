@@ -8,6 +8,16 @@ pub struct RenewalTerm {
     pub id: ::std::string::String,
     /// <p>The category of the term.</p>
     pub r#type: crate::types::TermType,
+    /// <p>The maximum number of renewals allowed on this offer. Absent means unlimited renewals.</p>
+    pub max_renewals: ::std::option::Option<i32>,
+    /// <p>The duration before the agreement end date when the lockout window begins, in ISO 8601 format (for example, P30D). Absent means no lockout.</p>
+    pub lockout_period: ::std::option::Option<::std::string::String>,
+    /// <p>The duration before the agreement end date by which the renewal price is finalized, represented in ISO 8601 format (for example, P30D). Only applicable with <code>PercentageRange</code>.</p>
+    pub adjustment_deadline: ::std::option::Option<::std::string::String>,
+    /// <p>The price increase applied at each renewal cycle. Absent means identical pricing on renewal.</p>
+    pub price_increase: ::std::option::Option<crate::types::PriceIncrease>,
+    /// <p>Structural templates defining how specific terms are reshaped on each renewal cycle. Absent for upfront-only offers.</p>
+    pub term_templates: ::std::option::Option<::std::vec::Vec<crate::types::TermTemplate>>,
 }
 impl RenewalTerm {
     /// <p>The unique identifier of the term.</p>
@@ -18,6 +28,28 @@ impl RenewalTerm {
     /// <p>The category of the term.</p>
     pub fn r#type(&self) -> &crate::types::TermType {
         &self.r#type
+    }
+    /// <p>The maximum number of renewals allowed on this offer. Absent means unlimited renewals.</p>
+    pub fn max_renewals(&self) -> ::std::option::Option<i32> {
+        self.max_renewals
+    }
+    /// <p>The duration before the agreement end date when the lockout window begins, in ISO 8601 format (for example, P30D). Absent means no lockout.</p>
+    pub fn lockout_period(&self) -> ::std::option::Option<&str> {
+        self.lockout_period.as_deref()
+    }
+    /// <p>The duration before the agreement end date by which the renewal price is finalized, represented in ISO 8601 format (for example, P30D). Only applicable with <code>PercentageRange</code>.</p>
+    pub fn adjustment_deadline(&self) -> ::std::option::Option<&str> {
+        self.adjustment_deadline.as_deref()
+    }
+    /// <p>The price increase applied at each renewal cycle. Absent means identical pricing on renewal.</p>
+    pub fn price_increase(&self) -> ::std::option::Option<&crate::types::PriceIncrease> {
+        self.price_increase.as_ref()
+    }
+    /// <p>Structural templates defining how specific terms are reshaped on each renewal cycle. Absent for upfront-only offers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.term_templates.is_none()`.
+    pub fn term_templates(&self) -> &[crate::types::TermTemplate] {
+        self.term_templates.as_deref().unwrap_or_default()
     }
 }
 impl RenewalTerm {
@@ -33,6 +65,11 @@ impl RenewalTerm {
 pub struct RenewalTermBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::TermType>,
+    pub(crate) max_renewals: ::std::option::Option<i32>,
+    pub(crate) lockout_period: ::std::option::Option<::std::string::String>,
+    pub(crate) adjustment_deadline: ::std::option::Option<::std::string::String>,
+    pub(crate) price_increase: ::std::option::Option<crate::types::PriceIncrease>,
+    pub(crate) term_templates: ::std::option::Option<::std::vec::Vec<crate::types::TermTemplate>>,
 }
 impl RenewalTermBuilder {
     /// <p>The unique identifier of the term.</p>
@@ -65,6 +102,82 @@ impl RenewalTermBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::TermType> {
         &self.r#type
     }
+    /// <p>The maximum number of renewals allowed on this offer. Absent means unlimited renewals.</p>
+    pub fn max_renewals(mut self, input: i32) -> Self {
+        self.max_renewals = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of renewals allowed on this offer. Absent means unlimited renewals.</p>
+    pub fn set_max_renewals(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_renewals = input;
+        self
+    }
+    /// <p>The maximum number of renewals allowed on this offer. Absent means unlimited renewals.</p>
+    pub fn get_max_renewals(&self) -> &::std::option::Option<i32> {
+        &self.max_renewals
+    }
+    /// <p>The duration before the agreement end date when the lockout window begins, in ISO 8601 format (for example, P30D). Absent means no lockout.</p>
+    pub fn lockout_period(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lockout_period = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The duration before the agreement end date when the lockout window begins, in ISO 8601 format (for example, P30D). Absent means no lockout.</p>
+    pub fn set_lockout_period(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lockout_period = input;
+        self
+    }
+    /// <p>The duration before the agreement end date when the lockout window begins, in ISO 8601 format (for example, P30D). Absent means no lockout.</p>
+    pub fn get_lockout_period(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lockout_period
+    }
+    /// <p>The duration before the agreement end date by which the renewal price is finalized, represented in ISO 8601 format (for example, P30D). Only applicable with <code>PercentageRange</code>.</p>
+    pub fn adjustment_deadline(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.adjustment_deadline = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The duration before the agreement end date by which the renewal price is finalized, represented in ISO 8601 format (for example, P30D). Only applicable with <code>PercentageRange</code>.</p>
+    pub fn set_adjustment_deadline(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.adjustment_deadline = input;
+        self
+    }
+    /// <p>The duration before the agreement end date by which the renewal price is finalized, represented in ISO 8601 format (for example, P30D). Only applicable with <code>PercentageRange</code>.</p>
+    pub fn get_adjustment_deadline(&self) -> &::std::option::Option<::std::string::String> {
+        &self.adjustment_deadline
+    }
+    /// <p>The price increase applied at each renewal cycle. Absent means identical pricing on renewal.</p>
+    pub fn price_increase(mut self, input: crate::types::PriceIncrease) -> Self {
+        self.price_increase = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The price increase applied at each renewal cycle. Absent means identical pricing on renewal.</p>
+    pub fn set_price_increase(mut self, input: ::std::option::Option<crate::types::PriceIncrease>) -> Self {
+        self.price_increase = input;
+        self
+    }
+    /// <p>The price increase applied at each renewal cycle. Absent means identical pricing on renewal.</p>
+    pub fn get_price_increase(&self) -> &::std::option::Option<crate::types::PriceIncrease> {
+        &self.price_increase
+    }
+    /// Appends an item to `term_templates`.
+    ///
+    /// To override the contents of this collection use [`set_term_templates`](Self::set_term_templates).
+    ///
+    /// <p>Structural templates defining how specific terms are reshaped on each renewal cycle. Absent for upfront-only offers.</p>
+    pub fn term_templates(mut self, input: crate::types::TermTemplate) -> Self {
+        let mut v = self.term_templates.unwrap_or_default();
+        v.push(input);
+        self.term_templates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Structural templates defining how specific terms are reshaped on each renewal cycle. Absent for upfront-only offers.</p>
+    pub fn set_term_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TermTemplate>>) -> Self {
+        self.term_templates = input;
+        self
+    }
+    /// <p>Structural templates defining how specific terms are reshaped on each renewal cycle. Absent for upfront-only offers.</p>
+    pub fn get_term_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TermTemplate>> {
+        &self.term_templates
+    }
     /// Consumes the builder and constructs a [`RenewalTerm`](crate::types::RenewalTerm).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::RenewalTermBuilder::id)
@@ -83,6 +196,11 @@ impl RenewalTermBuilder {
                     "r#type was not specified but it is required when building RenewalTerm",
                 )
             })?,
+            max_renewals: self.max_renewals,
+            lockout_period: self.lockout_period,
+            adjustment_deadline: self.adjustment_deadline,
+            price_increase: self.price_increase,
+            term_templates: self.term_templates,
         })
     }
 }

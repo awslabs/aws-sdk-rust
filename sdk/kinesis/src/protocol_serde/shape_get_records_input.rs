@@ -18,5 +18,8 @@ pub fn ser_get_records_input_input(
     if let Some(var_4) = &input.stream_id {
         object.key("StreamId").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.dry_run {
+        object.key("DryRun").boolean(*var_5);
+    }
     Ok(())
 }

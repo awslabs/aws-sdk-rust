@@ -191,6 +191,13 @@ pub(crate) fn de_describe_pipeline_execution(
                         crate::protocol_serde::shape_execution_environment_variables::de_execution_environment_variables(tokens, _value, depth + 1)?,
                     );
                 }
+                "requestMountOverrides" => {
+                    builder = builder.set_request_mount_overrides(crate::protocol_serde::shape_mount_overrides::de_mount_overrides(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "startTime" => {
                     builder = builder.set_start_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

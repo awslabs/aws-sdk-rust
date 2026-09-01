@@ -27,6 +27,8 @@ pub use crate::types::_proposal_summary::ProposalSummary;
 
 pub use crate::types::_agreement_status::AgreementStatus;
 
+pub use crate::types::_end_time_behavior::EndTimeBehavior;
+
 pub use crate::types::_billing_adjustment_reason_code::BillingAdjustmentReasonCode;
 
 pub use crate::types::_billing_adjustment_status::BillingAdjustmentStatus;
@@ -56,6 +58,12 @@ pub use crate::types::_tax_estimation::TaxEstimation;
 pub use crate::types::_estimated_taxes::EstimatedTaxes;
 
 pub use crate::types::_invoicing_entity::InvoicingEntity;
+
+pub use crate::types::_end_time_behavior_type::EndTimeBehaviorType;
+
+pub use crate::types::_end_time_behavior_reason_code::EndTimeBehaviorReasonCode;
+
+pub use crate::types::_renewal_summary::RenewalSummary;
 
 pub use crate::types::_agreement_entitlement::AgreementEntitlement;
 
@@ -129,11 +137,19 @@ pub use crate::types::_timing::Timing;
 
 pub use crate::types::_tax_breakdown_item::TaxBreakdownItem;
 
+pub use crate::types::_price_increase::PriceIncrease;
+
 pub use crate::types::_entitlement::Entitlement;
 
 pub use crate::types::_payment_request_approval_strategy::PaymentRequestApprovalStrategy;
 
 pub use crate::types::_document_item::DocumentItem;
+
+pub use crate::types::_fixed_percentage::FixedPercentage;
+
+pub use crate::types::_percentage_range::PercentageRange;
+
+pub use crate::types::_term_template::TermTemplate;
 
 pub use crate::types::_usage_based_rate_card_item::UsageBasedRateCardItem;
 
@@ -145,11 +161,15 @@ pub use crate::types::_grant_item::GrantItem;
 
 pub use crate::types::_dimension::Dimension;
 
+pub use crate::types::_payment_schedule_term_template::PaymentScheduleTermTemplate;
+
 pub use crate::types::_selector::Selector;
 
 pub use crate::types::_constraints::Constraints;
 
 pub use crate::types::_rate_card_item::RateCardItem;
+
+pub use crate::types::_payment_schedule_entry::PaymentScheduleEntry;
 
 mod _accepted_term;
 
@@ -207,6 +227,12 @@ mod _dimension;
 
 mod _document_item;
 
+mod _end_time_behavior;
+
+mod _end_time_behavior_reason_code;
+
+mod _end_time_behavior_type;
+
 mod _entitlement;
 
 mod _estimated_charges;
@@ -216,6 +242,8 @@ mod _estimated_taxes;
 mod _expected_charge;
 
 mod _filter;
+
+mod _fixed_percentage;
 
 mod _fixed_upfront_pricing_term;
 
@@ -245,7 +273,15 @@ mod _payment_request_status;
 
 mod _payment_request_summary;
 
+mod _payment_schedule_entry;
+
 mod _payment_schedule_term;
+
+mod _payment_schedule_term_template;
+
+mod _percentage_range;
+
+mod _price_increase;
 
 mod _pricing_currency_amount;
 
@@ -258,6 +294,8 @@ mod _purchase_order;
 mod _rate_card_item;
 
 mod _recurring_payment_term;
+
+mod _renewal_summary;
 
 mod _renewal_term;
 
@@ -286,6 +324,8 @@ mod _tax_breakdown_item;
 mod _tax_configuration;
 
 mod _tax_estimation;
+
+mod _term_template;
 
 mod _timing;
 

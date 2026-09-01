@@ -12,12 +12,16 @@ pub struct ContainerTaskConfiguration {
     pub processing_type: crate::types::ProcessingType,
     /// <p>The processing unit allocation that determines the vCPU, memory, and GPU resources.</p>
     pub processing_unit: crate::types::ProcessingUnit,
+    /// <p>Ephemeral storage configuration for the container task.</p>
+    pub ephemeral_storage_configuration: ::std::option::Option<crate::types::EphemeralStorageConfiguration>,
     /// <p>The command to execute in the container.</p>
     pub command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The timeout in seconds for task execution. Default: 3600 (1 hour).</p>
     pub timeout_seconds: ::std::option::Option<i64>,
     /// <p>Environment variables passed to the container at runtime.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>Mounts attached to the container filesystem. Each mount exposes an external data source as a local directory inside the container. The service assigns each mount a container path based on the mount name. The container reads files through that path as if the data were on the local filesystem.</p>
+    pub mounts: ::std::option::Option<::std::vec::Vec<crate::types::Mount>>,
 }
 impl ContainerTaskConfiguration {
     /// <p>The Amazon ECR image URI for the task container.</p>
@@ -38,6 +42,10 @@ impl ContainerTaskConfiguration {
     pub fn processing_unit(&self) -> &crate::types::ProcessingUnit {
         &self.processing_unit
     }
+    /// <p>Ephemeral storage configuration for the container task.</p>
+    pub fn ephemeral_storage_configuration(&self) -> ::std::option::Option<&crate::types::EphemeralStorageConfiguration> {
+        self.ephemeral_storage_configuration.as_ref()
+    }
     /// <p>The command to execute in the container.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.command.is_none()`.
@@ -52,6 +60,12 @@ impl ContainerTaskConfiguration {
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
+    /// <p>Mounts attached to the container filesystem. Each mount exposes an external data source as a local directory inside the container. The service assigns each mount a container path based on the mount name. The container reads files through that path as if the data were on the local filesystem.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.mounts.is_none()`.
+    pub fn mounts(&self) -> &[crate::types::Mount] {
+        self.mounts.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for ContainerTaskConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -60,9 +74,11 @@ impl ::std::fmt::Debug for ContainerTaskConfiguration {
         formatter.field("task_execution_role", &"*** Sensitive Data Redacted ***");
         formatter.field("processing_type", &self.processing_type);
         formatter.field("processing_unit", &self.processing_unit);
+        formatter.field("ephemeral_storage_configuration", &self.ephemeral_storage_configuration);
         formatter.field("command", &"*** Sensitive Data Redacted ***");
         formatter.field("timeout_seconds", &self.timeout_seconds);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("mounts", &self.mounts);
         formatter.finish()
     }
 }
@@ -81,9 +97,11 @@ pub struct ContainerTaskConfigurationBuilder {
     pub(crate) task_execution_role: ::std::option::Option<::std::string::String>,
     pub(crate) processing_type: ::std::option::Option<crate::types::ProcessingType>,
     pub(crate) processing_unit: ::std::option::Option<crate::types::ProcessingUnit>,
+    pub(crate) ephemeral_storage_configuration: ::std::option::Option<crate::types::EphemeralStorageConfiguration>,
     pub(crate) command: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) timeout_seconds: ::std::option::Option<i64>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) mounts: ::std::option::Option<::std::vec::Vec<crate::types::Mount>>,
 }
 impl ContainerTaskConfigurationBuilder {
     /// <p>The Amazon ECR image URI for the task container.</p>
@@ -146,6 +164,20 @@ impl ContainerTaskConfigurationBuilder {
     pub fn get_processing_unit(&self) -> &::std::option::Option<crate::types::ProcessingUnit> {
         &self.processing_unit
     }
+    /// <p>Ephemeral storage configuration for the container task.</p>
+    pub fn ephemeral_storage_configuration(mut self, input: crate::types::EphemeralStorageConfiguration) -> Self {
+        self.ephemeral_storage_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Ephemeral storage configuration for the container task.</p>
+    pub fn set_ephemeral_storage_configuration(mut self, input: ::std::option::Option<crate::types::EphemeralStorageConfiguration>) -> Self {
+        self.ephemeral_storage_configuration = input;
+        self
+    }
+    /// <p>Ephemeral storage configuration for the container task.</p>
+    pub fn get_ephemeral_storage_configuration(&self) -> &::std::option::Option<crate::types::EphemeralStorageConfiguration> {
+        &self.ephemeral_storage_configuration
+    }
     /// Appends an item to `command`.
     ///
     /// To override the contents of this collection use [`set_command`](Self::set_command).
@@ -207,6 +239,26 @@ impl ContainerTaskConfigurationBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
+    /// Appends an item to `mounts`.
+    ///
+    /// To override the contents of this collection use [`set_mounts`](Self::set_mounts).
+    ///
+    /// <p>Mounts attached to the container filesystem. Each mount exposes an external data source as a local directory inside the container. The service assigns each mount a container path based on the mount name. The container reads files through that path as if the data were on the local filesystem.</p>
+    pub fn mounts(mut self, input: crate::types::Mount) -> Self {
+        let mut v = self.mounts.unwrap_or_default();
+        v.push(input);
+        self.mounts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Mounts attached to the container filesystem. Each mount exposes an external data source as a local directory inside the container. The service assigns each mount a container path based on the mount name. The container reads files through that path as if the data were on the local filesystem.</p>
+    pub fn set_mounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Mount>>) -> Self {
+        self.mounts = input;
+        self
+    }
+    /// <p>Mounts attached to the container filesystem. Each mount exposes an external data source as a local directory inside the container. The service assigns each mount a container path based on the mount name. The container reads files through that path as if the data were on the local filesystem.</p>
+    pub fn get_mounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Mount>> {
+        &self.mounts
+    }
     /// Consumes the builder and constructs a [`ContainerTaskConfiguration`](crate::types::ContainerTaskConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`ecr_uri`](crate::types::builders::ContainerTaskConfigurationBuilder::ecr_uri)
@@ -239,9 +291,11 @@ impl ContainerTaskConfigurationBuilder {
                     "processing_unit was not specified but it is required when building ContainerTaskConfiguration",
                 )
             })?,
+            ephemeral_storage_configuration: self.ephemeral_storage_configuration,
             command: self.command,
             timeout_seconds: self.timeout_seconds,
             environment_variables: self.environment_variables,
+            mounts: self.mounts,
         })
     }
 }
@@ -252,9 +306,11 @@ impl ::std::fmt::Debug for ContainerTaskConfigurationBuilder {
         formatter.field("task_execution_role", &"*** Sensitive Data Redacted ***");
         formatter.field("processing_type", &self.processing_type);
         formatter.field("processing_unit", &self.processing_unit);
+        formatter.field("ephemeral_storage_configuration", &self.ephemeral_storage_configuration);
         formatter.field("command", &"*** Sensitive Data Redacted ***");
         formatter.field("timeout_seconds", &self.timeout_seconds);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("mounts", &self.mounts);
         formatter.finish()
     }
 }

@@ -13,6 +13,8 @@ pub use crate::types::_vdm_options::VdmOptions;
 
 pub use crate::types::_archiving_options::ArchivingOptions;
 
+pub use crate::types::_message_security_options::MessageSecurityOptions;
+
 pub use crate::types::_event_destination_definition::EventDestinationDefinition;
 
 pub use crate::types::_scaling_mode::ScalingMode;
@@ -141,6 +143,8 @@ pub use crate::types::_dashboard_options::DashboardOptions;
 
 pub use crate::types::_guardian_options::GuardianOptions;
 
+pub use crate::types::_signing_scheme::SigningScheme;
+
 pub use crate::types::_kinesis_firehose_destination::KinesisFirehoseDestination;
 
 pub use crate::types::_cloud_watch_destination::CloudWatchDestination;
@@ -227,6 +231,8 @@ pub use crate::types::_custom_verification_email_template_metadata::CustomVerifi
 
 pub use crate::types::_identity_info::IdentityInfo;
 
+pub use crate::types::_identity_certificate::IdentityCertificate;
+
 pub use crate::types::_email_template_metadata::EmailTemplateMetadata;
 
 pub use crate::types::_export_job_summary::ExportJobSummary;
@@ -265,6 +271,10 @@ pub use crate::types::_metric::Metric;
 
 pub use crate::types::_query_error_code::QueryErrorCode;
 
+pub use crate::types::_default_signing_scheme::DefaultSigningScheme;
+
+pub use crate::types::_smime_signing_scheme::SmimeSigningScheme;
+
 pub use crate::types::_event_type::EventType;
 
 pub use crate::types::_content::Content;
@@ -289,6 +299,8 @@ pub use crate::types::_domain_isp_placement::DomainIspPlacement;
 
 pub use crate::types::_email_address_insights_confidence_verdict::EmailAddressInsightsConfidenceVerdict;
 
+pub use crate::types::_identity_certificate_status::IdentityCertificateStatus;
+
 pub use crate::types::_recommendation_type::RecommendationType;
 
 pub use crate::types::_recommendation_status::RecommendationStatus;
@@ -302,6 +314,8 @@ pub use crate::types::_replacement_email_content::ReplacementEmailContent;
 pub use crate::types::_bulk_email_status::BulkEmailStatus;
 
 pub use crate::types::_metric_dimension_name::MetricDimensionName;
+
+pub use crate::types::_signature_format::SignatureFormat;
 
 pub use crate::types::_cloud_watch_dimension_configuration::CloudWatchDimensionConfiguration;
 
@@ -401,6 +415,8 @@ mod _dedicated_ip;
 
 mod _dedicated_ip_pool;
 
+mod _default_signing_scheme;
+
 mod _deliverability_dashboard_account_status;
 
 mod _deliverability_test_report;
@@ -481,6 +497,10 @@ mod _guardian_options;
 
 mod _https_policy;
 
+mod _identity_certificate;
+
+mod _identity_certificate_status;
+
 mod _identity_info;
 
 mod _identity_type;
@@ -526,6 +546,8 @@ mod _message_header;
 mod _message_insights_data_source;
 
 mod _message_insights_filters;
+
+mod _message_security_options;
 
 mod _message_tag;
 
@@ -598,6 +620,12 @@ mod _send_quota;
 mod _sending_options;
 
 mod _sending_status;
+
+mod _signature_format;
+
+mod _signing_scheme;
+
+mod _smime_signing_scheme;
 
 mod _sns_destination;
 

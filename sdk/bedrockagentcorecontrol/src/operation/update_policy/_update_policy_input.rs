@@ -9,7 +9,7 @@ pub struct UpdatePolicyInput {
     pub policy_id: ::std::option::Option<::std::string::String>,
     /// <p>The new human-readable description for the policy. This optional field allows updating the policy's documentation while keeping the same policy logic.</p>
     pub description: ::std::option::Option<crate::types::UpdatedDescription>,
-    /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
+    /// <p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
     pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
     /// <p>The validation mode for the policy update. Determines how Cedar analyzer validation results are handled during policy updates. FAIL_ON_ANY_FINDINGS runs the Cedar analyzer and fails the update if validation issues are detected, ensuring the policy conforms to the Cedar schema and tool context. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows updates despite validation warnings. Use FAIL_ON_ANY_FINDINGS to ensure policy correctness during updates, especially when modifying policy logic or conditions.</p>
     pub validation_mode: ::std::option::Option<crate::types::PolicyValidationMode>,
@@ -29,7 +29,7 @@ impl UpdatePolicyInput {
     pub fn description(&self) -> ::std::option::Option<&crate::types::UpdatedDescription> {
         self.description.as_ref()
     }
-    /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
+    /// <p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
         self.definition.as_ref()
     }
@@ -105,17 +105,17 @@ impl UpdatePolicyInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<crate::types::UpdatedDescription> {
         &self.description
     }
-    /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
+    /// <p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
     pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
+    /// <p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
         self.definition = input;
         self
     }
-    /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
+    /// <p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
         &self.definition
     }

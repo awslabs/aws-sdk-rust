@@ -92,6 +92,52 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError> for Error {
+    fn from(err: crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError) -> Self {
+        match err {
+            crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError::AlreadyExistsException(inner) => {
+                Error::AlreadyExistsException(inner)
+            }
+            crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::associate_email_identity_certificate::AssociateEmailIdentityCertificateError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_metric_data::BatchGetMetricDataError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1097,6 +1143,49 @@ impl From<crate::operation::delete_tenant_resource_association::DeleteTenantReso
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_email_identity_certificate::DisassociateEmailIdentityCertificateError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_email_identity_certificate::DisassociateEmailIdentityCertificateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_email_identity_certificate::DisassociateEmailIdentityCertificateError> for Error {
+    fn from(err: crate::operation::disassociate_email_identity_certificate::DisassociateEmailIdentityCertificateError) -> Self {
+        match err {
+            crate::operation::disassociate_email_identity_certificate::DisassociateEmailIdentityCertificateError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::disassociate_email_identity_certificate::DisassociateEmailIdentityCertificateError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::disassociate_email_identity_certificate::DisassociateEmailIdentityCertificateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::disassociate_email_identity_certificate::DisassociateEmailIdentityCertificateError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account::GetAccountError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2071,6 +2160,44 @@ impl From<crate::operation::list_email_identities::ListEmailIdentitiesError> for
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_email_identities::ListEmailIdentitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_email_identity_certificates::ListEmailIdentityCertificatesError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_email_identity_certificates::ListEmailIdentityCertificatesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_email_identity_certificates::ListEmailIdentityCertificatesError> for Error {
+    fn from(err: crate::operation::list_email_identity_certificates::ListEmailIdentityCertificatesError) -> Self {
+        match err {
+            crate::operation::list_email_identity_certificates::ListEmailIdentityCertificatesError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_email_identity_certificates::ListEmailIdentityCertificatesError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::list_email_identity_certificates::ListEmailIdentityCertificatesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_email_identity_certificates::ListEmailIdentityCertificatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3497,6 +3624,34 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::untag_resource::UntagResourceError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_configuration_set::UpdateConfigurationSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_configuration_set::UpdateConfigurationSetError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_configuration_set::UpdateConfigurationSetError> for Error {
+    fn from(err: crate::operation::update_configuration_set::UpdateConfigurationSetError) -> Self {
+        match err {
+            crate::operation::update_configuration_set::UpdateConfigurationSetError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::update_configuration_set::UpdateConfigurationSetError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::update_configuration_set::UpdateConfigurationSetError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_configuration_set::UpdateConfigurationSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

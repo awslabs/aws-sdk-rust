@@ -383,6 +383,8 @@ mod get_operations;
 
 mod get_operations_for_resource;
 
+mod get_profile;
+
 mod get_regions;
 
 mod get_relational_database;

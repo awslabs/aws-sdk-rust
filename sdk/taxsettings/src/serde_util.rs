@@ -264,6 +264,15 @@ pub(crate) fn kenya_additional_info_correct_errors(
     builder
 }
 
+pub(crate) fn monaco_additional_info_correct_errors(
+    mut builder: crate::types::builders::MonacoAdditionalInfoBuilder,
+) -> crate::types::builders::MonacoAdditionalInfoBuilder {
+    if builder.business_number.is_none() {
+        builder.business_number = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn romania_additional_info_correct_errors(
     mut builder: crate::types::builders::RomaniaAdditionalInfoBuilder,
 ) -> crate::types::builders::RomaniaAdditionalInfoBuilder {

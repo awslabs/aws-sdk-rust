@@ -6,6 +6,9 @@ pub fn ser_france_additional_info(
     {
         object.key("sirenNumber").string(input.siren_number.as_str());
     }
+    if let Some(var_1) = &input.e_invoice_routing_code {
+        object.key("eInvoiceRoutingCode").string(var_1.as_str());
+    }
     Ok(())
 }
 
@@ -33,6 +36,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sirenNumber" => {
                             builder = builder.set_siren_number(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "eInvoiceRoutingCode" => {
+                            builder = builder.set_e_invoice_routing_code(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

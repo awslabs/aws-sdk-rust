@@ -22,6 +22,8 @@ pub struct ComputeNodeExecutionDetails {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The fully resolved environment variables used for this compute node execution.</p>
     pub execution_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The fully resolved mounts used for this compute node execution, after merging task-defined mounts with any execution-level mount overrides. Each mount attaches an external data source to the container filesystem at a relative path under the service-owned mount root.</p>
+    pub execution_mounts: ::std::option::Option<::std::vec::Vec<crate::types::Mount>>,
 }
 impl ComputeNodeExecutionDetails {
     /// <p>The name of the compute node.</p>
@@ -67,6 +69,12 @@ impl ComputeNodeExecutionDetails {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.execution_environment_variables.as_ref()
     }
+    /// <p>The fully resolved mounts used for this compute node execution, after merging task-defined mounts with any execution-level mount overrides. Each mount attaches an external data source to the container filesystem at a relative path under the service-owned mount root.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.execution_mounts.is_none()`.
+    pub fn execution_mounts(&self) -> &[crate::types::Mount] {
+        self.execution_mounts.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for ComputeNodeExecutionDetails {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -80,6 +88,7 @@ impl ::std::fmt::Debug for ComputeNodeExecutionDetails {
         formatter.field("start_time", &self.start_time);
         formatter.field("end_time", &self.end_time);
         formatter.field("execution_environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("execution_mounts", &self.execution_mounts);
         formatter.finish()
     }
 }
@@ -103,6 +112,7 @@ pub struct ComputeNodeExecutionDetailsBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) execution_environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) execution_mounts: ::std::option::Option<::std::vec::Vec<crate::types::Mount>>,
 }
 impl ComputeNodeExecutionDetailsBuilder {
     /// <p>The name of the compute node.</p>
@@ -257,6 +267,26 @@ impl ComputeNodeExecutionDetailsBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.execution_environment_variables
     }
+    /// Appends an item to `execution_mounts`.
+    ///
+    /// To override the contents of this collection use [`set_execution_mounts`](Self::set_execution_mounts).
+    ///
+    /// <p>The fully resolved mounts used for this compute node execution, after merging task-defined mounts with any execution-level mount overrides. Each mount attaches an external data source to the container filesystem at a relative path under the service-owned mount root.</p>
+    pub fn execution_mounts(mut self, input: crate::types::Mount) -> Self {
+        let mut v = self.execution_mounts.unwrap_or_default();
+        v.push(input);
+        self.execution_mounts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The fully resolved mounts used for this compute node execution, after merging task-defined mounts with any execution-level mount overrides. Each mount attaches an external data source to the container filesystem at a relative path under the service-owned mount root.</p>
+    pub fn set_execution_mounts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Mount>>) -> Self {
+        self.execution_mounts = input;
+        self
+    }
+    /// <p>The fully resolved mounts used for this compute node execution, after merging task-defined mounts with any execution-level mount overrides. Each mount attaches an external data source to the container filesystem at a relative path under the service-owned mount root.</p>
+    pub fn get_execution_mounts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Mount>> {
+        &self.execution_mounts
+    }
     /// Consumes the builder and constructs a [`ComputeNodeExecutionDetails`](crate::types::ComputeNodeExecutionDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`compute_node_name`](crate::types::builders::ComputeNodeExecutionDetailsBuilder::compute_node_name)
@@ -300,6 +330,7 @@ impl ComputeNodeExecutionDetailsBuilder {
             start_time: self.start_time,
             end_time: self.end_time,
             execution_environment_variables: self.execution_environment_variables,
+            execution_mounts: self.execution_mounts,
         })
     }
 }
@@ -315,6 +346,7 @@ impl ::std::fmt::Debug for ComputeNodeExecutionDetailsBuilder {
         formatter.field("start_time", &self.start_time);
         formatter.field("end_time", &self.end_time);
         formatter.field("execution_environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("execution_mounts", &self.execution_mounts);
         formatter.finish()
     }
 }

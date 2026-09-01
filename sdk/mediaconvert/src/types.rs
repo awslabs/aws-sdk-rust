@@ -1029,6 +1029,8 @@ pub use crate::types::_aac_coding_mode::AacCodingMode;
 
 pub use crate::types::_aac_loudness_measurement_mode::AacLoudnessMeasurementMode;
 
+pub use crate::types::_aac_passthrough_control::AacPassthroughControl;
+
 pub use crate::types::_aac_rate_control_mode::AacRateControlMode;
 
 pub use crate::types::_aac_raw_format::AacRawFormat;
@@ -1165,7 +1167,17 @@ pub use crate::types::_scc_destination_framerate::SccDestinationFramerate;
 
 pub use crate::types::_srt_style_passthrough::SrtStylePassthrough;
 
+pub use crate::types::_ttml_background_color::TtmlBackgroundColor;
+
+pub use crate::types::_ttml_font_color::TtmlFontColor;
+
+pub use crate::types::_ttml_font_style::TtmlFontStyle;
+
+pub use crate::types::_ttml_font_weight::TtmlFontWeight;
+
 pub use crate::types::_ttml_style_passthrough::TtmlStylePassthrough;
+
+pub use crate::types::_ttml_text_decoration::TtmlTextDecoration;
 
 pub use crate::types::_webvtt_accessibility_subs::WebvttAccessibilitySubs;
 
@@ -1191,11 +1203,11 @@ pub use crate::types::_xavc_gop_b_reference::XavcGopBReference;
 
 pub use crate::types::_xavc4k_profile_quality_tuning_level::Xavc4kProfileQualityTuningLevel;
 
+pub use crate::types::_xavc_interlace_mode::XavcInterlaceMode;
+
 pub use crate::types::_xavc_hd_intra_cbg_profile_class::XavcHdIntraCbgProfileClass;
 
 pub use crate::types::_xavc_hd_profile_bitrate_class::XavcHdProfileBitrateClass;
-
-pub use crate::types::_xavc_interlace_mode::XavcInterlaceMode;
 
 pub use crate::types::_xavc_hd_profile_quality_tuning_level::XavcHdProfileQualityTuningLevel;
 
@@ -1301,6 +1313,8 @@ pub use crate::types::_codec_metadata::CodecMetadata;
 
 pub use crate::types::_color_primaries::ColorPrimaries;
 
+pub use crate::types::_aspect_ratio::AspectRatio;
+
 pub use crate::types::_hdr_metadata::HdrMetadata;
 
 pub use crate::types::_matrix_coefficients::MatrixCoefficients;
@@ -1353,6 +1367,8 @@ pub use crate::types::_hls_i_frame_only_manifest::HlsIFrameOnlyManifest;
 
 pub use crate::types::_content_light_level::ContentLightLevel;
 
+pub use crate::types::_hdr10_plus_presence::Hdr10PlusPresence;
+
 pub use crate::types::_mastering_display_color_volume::MasteringDisplayColorVolume;
 
 pub use crate::types::_allowed_rendition_size::AllowedRenditionSize;
@@ -1376,6 +1392,8 @@ mod _aac_codec_profile;
 mod _aac_coding_mode;
 
 mod _aac_loudness_measurement_mode;
+
+mod _aac_passthrough_control;
 
 mod _aac_rate_control_mode;
 
@@ -1442,6 +1460,8 @@ mod _ancillary_source_settings;
 mod _ancillary_terminate_captions;
 
 mod _anti_alias;
+
+mod _aspect_ratio;
 
 mod _audio_channel_tag;
 
@@ -2037,6 +2057,8 @@ mod _hdr10_metadata;
 
 mod _hdr10_plus;
 
+mod _hdr10_plus_presence;
+
 mod _hdr_metadata;
 
 mod _hdr_to_sdr_tone_mapper;
@@ -2569,9 +2591,19 @@ mod _transfer_characteristics;
 
 mod _ts_pts_offset;
 
+mod _ttml_background_color;
+
 mod _ttml_destination_settings;
 
+mod _ttml_font_color;
+
+mod _ttml_font_style;
+
+mod _ttml_font_weight;
+
 mod _ttml_style_passthrough;
+
+mod _ttml_text_decoration;
 
 mod _type_;
 

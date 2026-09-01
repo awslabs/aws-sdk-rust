@@ -23,6 +23,8 @@ pub use crate::types::error::_kms_throttling_exception::KmsThrottlingExceptionBu
 
 pub use crate::types::error::_validation_exception::ValidationExceptionBuilder;
 
+pub use crate::types::error::_dry_run_operation_exception::DryRunOperationExceptionBuilder;
+
 pub use crate::types::error::_expired_iterator_exception::ExpiredIteratorExceptionBuilder;
 
 pub use crate::types::error::_internal_failure_exception::InternalFailureExceptionBuilder;

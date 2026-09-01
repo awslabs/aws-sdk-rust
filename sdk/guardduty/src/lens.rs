@@ -39,6 +39,36 @@ pub(crate) fn reflens_list_coverage_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_custom_detection_rule_associations_output_output_next_token(
+    input: &crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_custom_detection_rule_org_configurations_output_output_next_token(
+    input: &crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_custom_detection_rules_output_output_next_token(
+    input: &crate::operation::list_custom_detection_rules::ListCustomDetectionRulesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_detectors_output_output_next_token(
     input: &crate::operation::list_detectors::ListDetectorsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -180,6 +210,27 @@ pub(crate) fn lens_list_coverage_output_output_resources(
     input: crate::operation::list_coverage::ListCoverageOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CoverageResource>> {
     let input = input.resources?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_custom_detection_rule_associations_output_output_rule_associations(
+    input: crate::operation::list_custom_detection_rule_associations::ListCustomDetectionRuleAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssociationSummary>> {
+    let input = input.rule_associations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_custom_detection_rule_org_configurations_output_output_configurations(
+    input: crate::operation::list_custom_detection_rule_org_configurations::ListCustomDetectionRuleOrgConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DetectionRuleOrgConfigurationSummary>> {
+    let input = input.configurations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_custom_detection_rules_output_output_rules(
+    input: crate::operation::list_custom_detection_rules::ListCustomDetectionRulesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RuleSummary>> {
+    let input = input.rules?;
     ::std::option::Option::Some(input)
 }
 

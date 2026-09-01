@@ -13,6 +13,7 @@
 /// # let dashisoplaybackdevicecompatibility = unimplemented!();
 /// match dashisoplaybackdevicecompatibility {
 ///     DashIsoPlaybackDeviceCompatibility::CencV1 => { /* ... */ },
+///     DashIsoPlaybackDeviceCompatibility::CencV1UnencryptedHeaders => { /* ... */ },
 ///     DashIsoPlaybackDeviceCompatibility::UnencryptedSei => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -36,7 +37,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1. If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted.
+/// This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH outputs with DRM encryption. Choose Unencrypted SEI only to correct problems with playback on older H.264 devices. Choose CENC v1 unencrypted headers to leave NAL unit headers and slice headers unencrypted for H.265 outputs, improving compatibility with strict HEVC decoders. Otherwise, keep the default setting CENC v1.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -44,6 +45,8 @@
 pub enum DashIsoPlaybackDeviceCompatibility {
     #[allow(missing_docs)] // documentation missing in model
     CencV1,
+    #[allow(missing_docs)] // documentation missing in model
+    CencV1UnencryptedHeaders,
     #[allow(missing_docs)] // documentation missing in model
     UnencryptedSei,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for DashIsoPlaybackDeviceCompatibility {
     fn from(s: &str) -> Self {
         match s {
             "CENC_V1" => DashIsoPlaybackDeviceCompatibility::CencV1,
+            "CENC_V1_UNENCRYPTED_HEADERS" => DashIsoPlaybackDeviceCompatibility::CencV1UnencryptedHeaders,
             "UNENCRYPTED_SEI" => DashIsoPlaybackDeviceCompatibility::UnencryptedSei,
             other => DashIsoPlaybackDeviceCompatibility::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl DashIsoPlaybackDeviceCompatibility {
     pub fn as_str(&self) -> &str {
         match self {
             DashIsoPlaybackDeviceCompatibility::CencV1 => "CENC_V1",
+            DashIsoPlaybackDeviceCompatibility::CencV1UnencryptedHeaders => "CENC_V1_UNENCRYPTED_HEADERS",
             DashIsoPlaybackDeviceCompatibility::UnencryptedSei => "UNENCRYPTED_SEI",
             DashIsoPlaybackDeviceCompatibility::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CENC_V1", "UNENCRYPTED_SEI"]
+        &["CENC_V1", "CENC_V1_UNENCRYPTED_HEADERS", "UNENCRYPTED_SEI"]
     }
 }
 impl ::std::convert::AsRef<str> for DashIsoPlaybackDeviceCompatibility {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for DashIsoPlaybackDeviceCompatibility {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             DashIsoPlaybackDeviceCompatibility::CencV1 => write!(f, "CENC_V1"),
+            DashIsoPlaybackDeviceCompatibility::CencV1UnencryptedHeaders => write!(f, "CENC_V1_UNENCRYPTED_HEADERS"),
             DashIsoPlaybackDeviceCompatibility::UnencryptedSei => write!(f, "UNENCRYPTED_SEI"),
             DashIsoPlaybackDeviceCompatibility::Unknown(value) => write!(f, "{value}"),
         }

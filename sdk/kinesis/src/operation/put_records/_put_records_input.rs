@@ -12,6 +12,8 @@ pub struct PutRecordsInput {
     pub stream_arn: ::std::option::Option<::std::string::String>,
     /// <p>Not Implemented. Reserved for future use.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl PutRecordsInput {
     /// <p>The records associated with the request.</p>
@@ -32,6 +34,10 @@ impl PutRecordsInput {
     pub fn stream_id(&self) -> ::std::option::Option<&str> {
         self.stream_id.as_deref()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
+        self.dry_run
+    }
 }
 impl PutRecordsInput {
     /// Creates a new builder-style object to manufacture [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
@@ -48,6 +54,7 @@ pub struct PutRecordsInputBuilder {
     pub(crate) stream_name: ::std::option::Option<::std::string::String>,
     pub(crate) stream_arn: ::std::option::Option<::std::string::String>,
     pub(crate) stream_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl PutRecordsInputBuilder {
     /// Appends an item to `records`.
@@ -112,6 +119,20 @@ impl PutRecordsInputBuilder {
     pub fn get_stream_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_id
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.dry_run = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.dry_run = input;
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        &self.dry_run
+    }
     /// Consumes the builder and constructs a [`PutRecordsInput`](crate::operation::put_records::PutRecordsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_records::PutRecordsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_records::PutRecordsInput {
@@ -119,6 +140,7 @@ impl PutRecordsInputBuilder {
             stream_name: self.stream_name,
             stream_arn: self.stream_arn,
             stream_id: self.stream_id,
+            dry_run: self.dry_run,
         })
     }
 }

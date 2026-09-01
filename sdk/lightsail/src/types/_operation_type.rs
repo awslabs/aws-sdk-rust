@@ -66,6 +66,7 @@
 ///     OperationType::EnableAddOn => { /* ... */ },
 ///     OperationType::GetAlarms => { /* ... */ },
 ///     OperationType::GetContactMethods => { /* ... */ },
+///     OperationType::GetProfile => { /* ... */ },
 ///     OperationType::OpenInstancePublicPorts => { /* ... */ },
 ///     OperationType::PutAlarm => { /* ... */ },
 ///     OperationType::PutInstancePublicPorts => { /* ... */ },
@@ -232,6 +233,8 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     GetContactMethods,
     #[allow(missing_docs)] // documentation missing in model
+    GetProfile,
+    #[allow(missing_docs)] // documentation missing in model
     OpenInstancePublicPorts,
     #[allow(missing_docs)] // documentation missing in model
     PutAlarm,
@@ -350,6 +353,7 @@ impl ::std::convert::From<&str> for OperationType {
             "EnableAddOn" => OperationType::EnableAddOn,
             "GetAlarms" => OperationType::GetAlarms,
             "GetContactMethods" => OperationType::GetContactMethods,
+            "GetProfile" => OperationType::GetProfile,
             "OpenInstancePublicPorts" => OperationType::OpenInstancePublicPorts,
             "PutAlarm" => OperationType::PutAlarm,
             "PutInstancePublicPorts" => OperationType::PutInstancePublicPorts,
@@ -448,6 +452,7 @@ impl OperationType {
             OperationType::EnableAddOn => "EnableAddOn",
             OperationType::GetAlarms => "GetAlarms",
             OperationType::GetContactMethods => "GetContactMethods",
+            OperationType::GetProfile => "GetProfile",
             OperationType::OpenInstancePublicPorts => "OpenInstancePublicPorts",
             OperationType::PutAlarm => "PutAlarm",
             OperationType::PutInstancePublicPorts => "PutInstancePublicPorts",
@@ -537,6 +542,7 @@ impl OperationType {
             "EnableAddOn",
             "GetAlarms",
             "GetContactMethods",
+            "GetProfile",
             "OpenInstancePublicPorts",
             "PutAlarm",
             "PutInstancePublicPorts",
@@ -643,6 +649,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::EnableAddOn => write!(f, "EnableAddOn"),
             OperationType::GetAlarms => write!(f, "GetAlarms"),
             OperationType::GetContactMethods => write!(f, "GetContactMethods"),
+            OperationType::GetProfile => write!(f, "GetProfile"),
             OperationType::OpenInstancePublicPorts => write!(f, "OpenInstancePublicPorts"),
             OperationType::PutAlarm => write!(f, "PutAlarm"),
             OperationType::PutInstancePublicPorts => write!(f, "PutInstancePublicPorts"),

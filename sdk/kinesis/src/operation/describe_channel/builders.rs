@@ -24,7 +24,7 @@ impl crate::operation::describe_channel::builders::DescribeChannelInputBuilder {
 ///
 /// <p>Describes the specified channel, including its configuration and current status.</p>
 /// <p>Use this operation to verify that a channel reached the <code>ACTIVE</code> state after creation, or to diagnose a channel in the <code>FAILED</code> state by reading the <code>ChannelStatusReason</code>.</p>
-/// <p>This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services account. Exceeding 5 TPS results in a <code>LimitExceededException</code>.</p>
+/// <p>This operation has a call limit of 5 transactions per second (TPS) for each Amazon Web Services account. Exceeding 5 TPS results in a <code>LimitExceededException</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeChannelFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

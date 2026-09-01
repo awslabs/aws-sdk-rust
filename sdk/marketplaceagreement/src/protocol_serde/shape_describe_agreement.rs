@@ -199,6 +199,20 @@ pub(crate) fn de_describe_agreement(
                             .transpose()?,
                     );
                 }
+                "initialAgreementId" => {
+                    builder = builder.set_initial_agreement_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "endTimeBehavior" => {
+                    builder = builder.set_end_time_behavior(crate::protocol_serde::shape_end_time_behavior::de_end_time_behavior(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

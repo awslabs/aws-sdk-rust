@@ -46,6 +46,12 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "lastUpdateTime" => {
+                            builder = builder.set_last_update_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
+                        }
                         "agreementType" => {
                             builder = builder.set_agreement_type(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -79,6 +85,27 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "initialAgreementId" => {
+                            builder = builder.set_initial_agreement_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "endTimeBehaviorType" => {
+                            builder = builder.set_end_time_behavior_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EndTimeBehaviorType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "endTimeBehaviorReasonCode" => {
+                            builder = builder.set_end_time_behavior_reason_code(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::EndTimeBehaviorReasonCode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

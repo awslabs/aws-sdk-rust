@@ -13,6 +13,8 @@ pub use crate::types::_vdm_options::VdmOptionsBuilder;
 
 pub use crate::types::_archiving_options::ArchivingOptionsBuilder;
 
+pub use crate::types::_message_security_options::MessageSecurityOptionsBuilder;
+
 pub use crate::types::_event_destination_definition::EventDestinationDefinitionBuilder;
 
 pub use crate::types::_email_content::EmailContentBuilder;
@@ -169,6 +171,8 @@ pub use crate::types::_custom_verification_email_template_metadata::CustomVerifi
 
 pub use crate::types::_identity_info::IdentityInfoBuilder;
 
+pub use crate::types::_identity_certificate::IdentityCertificateBuilder;
+
 pub use crate::types::_email_template_metadata::EmailTemplateMetadataBuilder;
 
 pub use crate::types::_export_job_summary::ExportJobSummaryBuilder;
@@ -194,6 +198,10 @@ pub use crate::types::_bulk_email_entry::BulkEmailEntryBuilder;
 pub use crate::types::_tracking_configuration_overrides::TrackingConfigurationOverridesBuilder;
 
 pub use crate::types::_bulk_email_entry_result::BulkEmailEntryResultBuilder;
+
+pub use crate::types::_default_signing_scheme::DefaultSigningSchemeBuilder;
+
+pub use crate::types::_smime_signing_scheme::SmimeSigningSchemeBuilder;
 
 pub use crate::types::_content::ContentBuilder;
 

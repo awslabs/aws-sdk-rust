@@ -61,6 +61,8 @@ pub use crate::types::_pipeline_execution_status::PipelineExecutionStatusBuilder
 
 pub use crate::types::_execution_environment_variables::ExecutionEnvironmentVariablesBuilder;
 
+pub use crate::types::_mount_overrides::MountOverridesBuilder;
+
 pub use crate::types::_image_location::ImageLocationBuilder;
 
 pub use crate::types::_query_statistics::QueryStatisticsBuilder;
@@ -345,6 +347,8 @@ pub use crate::types::_trim_settings::TrimSettingsBuilder;
 
 pub use crate::types::_enrichment_trim_settings::EnrichmentTrimSettingsBuilder;
 
+pub use crate::types::_ephemeral_storage_configuration::EphemeralStorageConfigurationBuilder;
+
 pub use crate::types::_composition_relationship_item::CompositionRelationshipItemBuilder;
 
 pub use crate::types::_attribute::AttributeBuilder;
@@ -377,6 +381,8 @@ pub use crate::types::_batch_put_asset_property_error::BatchPutAssetPropertyErro
 
 pub use crate::types::_detailed_error::DetailedErrorBuilder;
 
+pub use crate::types::_mount::MountBuilder;
+
 pub use crate::types::_asset_model_property_path_segment::AssetModelPropertyPathSegmentBuilder;
 
 pub use crate::types::_measurement_processing_config::MeasurementProcessingConfigBuilder;
@@ -408,6 +414,8 @@ pub use crate::types::_tumbling_window::TumblingWindowBuilder;
 pub use crate::types::_reference::ReferenceBuilder;
 
 pub use crate::types::_content::ContentBuilder;
+
+pub use crate::types::_s3_access_point_source::S3AccessPointSourceBuilder;
 
 pub use crate::types::_variable_value::VariableValueBuilder;
 

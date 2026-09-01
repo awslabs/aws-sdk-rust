@@ -13,13 +13,13 @@ pub struct ChannelSummary {
     /// <p>The current status of the channel. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code></p></li>
+    /// <p><code>CREATING</code> - The channel is being created.</p></li>
     /// <li>
-    /// <p><code>ACTIVE</code></p></li>
+    /// <p><code>ACTIVE</code> - The channel is ready to deliver records.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <p><code>UPDATING</code> - The channel configuration is being updated.</p></li>
     /// <li>
-    /// <p><code>DELETING</code></p></li>
+    /// <p><code>DELETING</code> - The channel is being deleted.</p></li>
     /// <li>
     /// <p><code>FAILED</code> - See <code>ChannelStatusReason</code> for the failure cause.</p></li>
     /// </ul>
@@ -58,13 +58,13 @@ impl ChannelSummary {
     /// <p>The current status of the channel. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code></p></li>
+    /// <p><code>CREATING</code> - The channel is being created.</p></li>
     /// <li>
-    /// <p><code>ACTIVE</code></p></li>
+    /// <p><code>ACTIVE</code> - The channel is ready to deliver records.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <p><code>UPDATING</code> - The channel configuration is being updated.</p></li>
     /// <li>
-    /// <p><code>DELETING</code></p></li>
+    /// <p><code>DELETING</code> - The channel is being deleted.</p></li>
     /// <li>
     /// <p><code>FAILED</code> - See <code>ChannelStatusReason</code> for the failure cause.</p></li>
     /// </ul>
@@ -164,13 +164,13 @@ impl ChannelSummaryBuilder {
     /// <p>The current status of the channel. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code></p></li>
+    /// <p><code>CREATING</code> - The channel is being created.</p></li>
     /// <li>
-    /// <p><code>ACTIVE</code></p></li>
+    /// <p><code>ACTIVE</code> - The channel is ready to deliver records.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <p><code>UPDATING</code> - The channel configuration is being updated.</p></li>
     /// <li>
-    /// <p><code>DELETING</code></p></li>
+    /// <p><code>DELETING</code> - The channel is being deleted.</p></li>
     /// <li>
     /// <p><code>FAILED</code> - See <code>ChannelStatusReason</code> for the failure cause.</p></li>
     /// </ul>
@@ -182,13 +182,13 @@ impl ChannelSummaryBuilder {
     /// <p>The current status of the channel. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code></p></li>
+    /// <p><code>CREATING</code> - The channel is being created.</p></li>
     /// <li>
-    /// <p><code>ACTIVE</code></p></li>
+    /// <p><code>ACTIVE</code> - The channel is ready to deliver records.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <p><code>UPDATING</code> - The channel configuration is being updated.</p></li>
     /// <li>
-    /// <p><code>DELETING</code></p></li>
+    /// <p><code>DELETING</code> - The channel is being deleted.</p></li>
     /// <li>
     /// <p><code>FAILED</code> - See <code>ChannelStatusReason</code> for the failure cause.</p></li>
     /// </ul>
@@ -199,13 +199,13 @@ impl ChannelSummaryBuilder {
     /// <p>The current status of the channel. Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code></p></li>
+    /// <p><code>CREATING</code> - The channel is being created.</p></li>
     /// <li>
-    /// <p><code>ACTIVE</code></p></li>
+    /// <p><code>ACTIVE</code> - The channel is ready to deliver records.</p></li>
     /// <li>
-    /// <p><code>UPDATING</code></p></li>
+    /// <p><code>UPDATING</code> - The channel configuration is being updated.</p></li>
     /// <li>
-    /// <p><code>DELETING</code></p></li>
+    /// <p><code>DELETING</code> - The channel is being deleted.</p></li>
     /// <li>
     /// <p><code>FAILED</code> - See <code>ChannelStatusReason</code> for the failure cause.</p></li>
     /// </ul>

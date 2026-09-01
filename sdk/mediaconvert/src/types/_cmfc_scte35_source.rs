@@ -12,6 +12,7 @@
 /// ```text
 /// # let cmfcscte35source = unimplemented!();
 /// match cmfcscte35source {
+///     CmfcScte35Source::ManifestCues => { /* ... */ },
 ///     CmfcScte35Source::None => { /* ... */ },
 ///     CmfcScte35Source::Passthrough => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -36,12 +37,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
+/// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output. When your input is an HLS manifest, choose Manifest cues to pass through CUE markers in your HLS manifest as segment boundaries and SCTE-35 markers in this output at each EXT-X-CUE-OUT splice point in the input manifest.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CmfcScte35Source {
+    #[allow(missing_docs)] // documentation missing in model
+    ManifestCues,
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
@@ -53,6 +56,7 @@ pub enum CmfcScte35Source {
 impl ::std::convert::From<&str> for CmfcScte35Source {
     fn from(s: &str) -> Self {
         match s {
+            "MANIFEST_CUES" => CmfcScte35Source::ManifestCues,
             "NONE" => CmfcScte35Source::None,
             "PASSTHROUGH" => CmfcScte35Source::Passthrough,
             other => CmfcScte35Source::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl CmfcScte35Source {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CmfcScte35Source::ManifestCues => "MANIFEST_CUES",
             CmfcScte35Source::None => "NONE",
             CmfcScte35Source::Passthrough => "PASSTHROUGH",
             CmfcScte35Source::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl CmfcScte35Source {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE", "PASSTHROUGH"]
+        &["MANIFEST_CUES", "NONE", "PASSTHROUGH"]
     }
 }
 impl ::std::convert::AsRef<str> for CmfcScte35Source {
@@ -100,6 +105,7 @@ impl CmfcScte35Source {
 impl ::std::fmt::Display for CmfcScte35Source {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CmfcScte35Source::ManifestCues => write!(f, "MANIFEST_CUES"),
             CmfcScte35Source::None => write!(f, "NONE"),
             CmfcScte35Source::Passthrough => write!(f, "PASSTHROUGH"),
             CmfcScte35Source::Unknown(value) => write!(f, "{value}"),

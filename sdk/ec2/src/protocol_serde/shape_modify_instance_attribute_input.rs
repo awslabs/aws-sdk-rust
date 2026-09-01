@@ -78,7 +78,7 @@ pub fn ser_modify_instance_attribute_input_input_input(
     #[allow(unused_mut)]
     let mut scope_28 = writer.prefix("UserData");
     if let Some(var_29) = &input.user_data {
-        crate::protocol_serde::shape_blob_attribute_value::ser_blob_attribute_value(scope_28, var_29)?;
+        crate::protocol_serde::shape_secure_blob_attribute_value::ser_secure_blob_attribute_value(scope_28, var_29)?;
     }
     #[allow(unused_mut)]
     let mut scope_30 = writer.prefix("InstanceInitiatedShutdownBehavior");

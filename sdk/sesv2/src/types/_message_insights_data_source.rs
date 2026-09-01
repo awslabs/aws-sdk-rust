@@ -12,7 +12,9 @@ pub struct MessageInsightsDataSource {
     pub include: ::std::option::Option<crate::types::MessageInsightsFilters>,
     /// <p>Filters for results to be excluded from the export file.</p>
     pub exclude: ::std::option::Option<crate::types::MessageInsightsFilters>,
-    /// <p>The maximum number of results.</p>
+    /// <p>The maximum number of results.</p><note>
+    /// <p>If you don't specify <code>MaxResults</code>, the export returns a maximum of 1,000 results.</p>
+    /// </note>
     pub max_results: ::std::option::Option<i32>,
 }
 impl MessageInsightsDataSource {
@@ -32,7 +34,9 @@ impl MessageInsightsDataSource {
     pub fn exclude(&self) -> ::std::option::Option<&crate::types::MessageInsightsFilters> {
         self.exclude.as_ref()
     }
-    /// <p>The maximum number of results.</p>
+    /// <p>The maximum number of results.</p><note>
+    /// <p>If you don't specify <code>MaxResults</code>, the export returns a maximum of 1,000 results.</p>
+    /// </note>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -113,17 +117,23 @@ impl MessageInsightsDataSourceBuilder {
     pub fn get_exclude(&self) -> &::std::option::Option<crate::types::MessageInsightsFilters> {
         &self.exclude
     }
-    /// <p>The maximum number of results.</p>
+    /// <p>The maximum number of results.</p><note>
+    /// <p>If you don't specify <code>MaxResults</code>, the export returns a maximum of 1,000 results.</p>
+    /// </note>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results.</p>
+    /// <p>The maximum number of results.</p><note>
+    /// <p>If you don't specify <code>MaxResults</code>, the export returns a maximum of 1,000 results.</p>
+    /// </note>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results.</p>
+    /// <p>The maximum number of results.</p><note>
+    /// <p>If you don't specify <code>MaxResults</code>, the export returns a maximum of 1,000 results.</p>
+    /// </note>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

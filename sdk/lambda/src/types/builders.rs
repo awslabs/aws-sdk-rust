@@ -233,6 +233,8 @@ pub use crate::types::_chained_invoke_details::ChainedInvokeDetailsBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
 
+pub use crate::types::_s3_files_config::S3FilesConfigBuilder;
+
 pub use crate::types::_event_input::EventInputBuilder;
 
 pub use crate::types::_event_result::EventResultBuilder;

@@ -328,6 +328,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetRecordsEnd
 pub enum GetRecordsError {
     /// <p>Specifies that you do not have the permissions required to perform this operation.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request was rejected because the DryRun parameter was specified.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>The provided iterator exceeds the maximum age allowed.</p>
     ExpiredIteratorException(crate::types::error::ExpiredIteratorException),
     /// <p>The processing of the request failed because of an unknown error, exception, or failure.</p>
@@ -384,6 +386,7 @@ impl GetRecordsError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DryRunOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ExpiredIteratorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -401,6 +404,10 @@ impl GetRecordsError {
     /// Returns `true` if the error kind is `GetRecordsError::AccessDeniedException`.
     pub fn is_access_denied_exception(&self) -> bool {
         matches!(self, Self::AccessDeniedException(_))
+    }
+    /// Returns `true` if the error kind is `GetRecordsError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
     }
     /// Returns `true` if the error kind is `GetRecordsError::ExpiredIteratorException`.
     pub fn is_expired_iterator_exception(&self) -> bool {
@@ -451,6 +458,7 @@ impl ::std::error::Error for GetRecordsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::ExpiredIteratorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgumentException(_inner) => ::std::option::Option::Some(_inner),
@@ -470,6 +478,7 @@ impl ::std::fmt::Display for GetRecordsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::ExpiredIteratorException(_inner) => _inner.fmt(f),
             Self::InternalFailureException(_inner) => _inner.fmt(f),
             Self::InvalidArgumentException(_inner) => _inner.fmt(f),
@@ -503,6 +512,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetRecordsErr
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DryRunOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ExpiredIteratorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

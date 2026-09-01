@@ -62,6 +62,15 @@ pub(crate) fn list_billing_adjustment_requests_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn end_time_behavior_correct_errors(
+    mut builder: crate::types::builders::EndTimeBehaviorBuilder,
+) -> crate::types::builders::EndTimeBehaviorBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::EndTimeBehaviorType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn batch_create_billing_adjustment_error_correct_errors(
     mut builder: crate::types::builders::BatchCreateBillingAdjustmentErrorBuilder,
 ) -> crate::types::builders::BatchCreateBillingAdjustmentErrorBuilder {

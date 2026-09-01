@@ -21,35 +21,38 @@ pub fn ser_aac_settings(
     if let Some(var_5) = &input.loudness_measurement_mode {
         object.key("loudnessMeasurementMode").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.rap_interval {
+    if let Some(var_6) = &input.passthrough_control {
+        object.key("passthroughControl").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.rap_interval {
         object.key("rapInterval").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_7) = &input.rate_control_mode {
-        object.key("rateControlMode").string(var_7.as_str());
+    if let Some(var_8) = &input.rate_control_mode {
+        object.key("rateControlMode").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.raw_format {
-        object.key("rawFormat").string(var_8.as_str());
+    if let Some(var_9) = &input.raw_format {
+        object.key("rawFormat").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.sample_rate {
+    if let Some(var_10) = &input.sample_rate {
         object.key("sampleRate").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_9).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_10) = &input.specification {
-        object.key("specification").string(var_10.as_str());
+    if let Some(var_11) = &input.specification {
+        object.key("specification").string(var_11.as_str());
     }
-    if let Some(var_11) = &input.target_loudness_range {
+    if let Some(var_12) = &input.target_loudness_range {
         object.key("targetLoudnessRange").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
         );
     }
-    if let Some(var_12) = &input.vbr_quality {
-        object.key("vbrQuality").string(var_12.as_str());
+    if let Some(var_13) = &input.vbr_quality {
+        object.key("vbrQuality").string(var_13.as_str());
     }
     Ok(())
 }
@@ -111,6 +114,13 @@ where
                             builder = builder.set_loudness_measurement_mode(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::AacLoudnessMeasurementMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "passthroughControl" => {
+                            builder = builder.set_passthrough_control(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AacPassthroughControl::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

@@ -147,6 +147,8 @@ pub use crate::types::_term_type::TermType;
 
 pub use crate::types::_billing_period_type::BillingPeriodType;
 
+pub use crate::types::_price_increase::PriceIncrease;
+
 pub use crate::types::_amazon_machine_image_recommendation::AmazonMachineImageRecommendation;
 
 pub use crate::types::_sage_maker_algorithm_recommendation::SageMakerAlgorithmRecommendation;
@@ -164,6 +166,12 @@ pub use crate::types::_grant_item::GrantItem;
 pub use crate::types::_document_item::DocumentItem;
 
 pub use crate::types::_schedule_item::ScheduleItem;
+
+pub use crate::types::_fixed_percentage::FixedPercentage;
+
+pub use crate::types::_percentage_range::PercentageRange;
+
+pub use crate::types::_term_template::TermTemplate;
 
 pub use crate::types::_usage_based_rate_card_item::UsageBasedRateCardItem;
 
@@ -185,6 +193,8 @@ pub use crate::types::_constraints::Constraints;
 
 pub use crate::types::_legal_document_type::LegalDocumentType;
 
+pub use crate::types::_payment_schedule_term_template::PaymentScheduleTermTemplate;
+
 pub use crate::types::_selector_type::SelectorType;
 
 pub use crate::types::_rate_card_constraint_type::RateCardConstraintType;
@@ -194,6 +204,8 @@ pub use crate::types::_rate_card_item::RateCardItem;
 pub use crate::types::_dimension_label::DimensionLabel;
 
 pub use crate::types::_dimension_label_type::DimensionLabelType;
+
+pub use crate::types::_payment_schedule_entry::PaymentScheduleEntry;
 
 mod _amazon_machine_image_fulfillment_option;
 
@@ -241,6 +253,8 @@ mod _eks_add_on_fulfillment_option;
 
 mod _eks_add_on_operating_system;
 
+mod _fixed_percentage;
+
 mod _fixed_upfront_pricing_term;
 
 mod _free_trial_pricing_term;
@@ -285,7 +299,15 @@ mod _offer_set_information;
 
 mod _offer_term;
 
+mod _payment_schedule_entry;
+
 mod _payment_schedule_term;
+
+mod _payment_schedule_term_template;
+
+mod _percentage_range;
+
+mod _price_increase;
 
 mod _pricing_model;
 
@@ -374,6 +396,8 @@ mod _seller_engagement_type;
 mod _seller_information;
 
 mod _support_term;
+
+mod _term_template;
 
 mod _term_type;
 

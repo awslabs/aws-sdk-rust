@@ -641,6 +641,8 @@ pub(crate) mod shape_video_detail;
 
 pub(crate) mod shape_video_properties;
 
+pub(crate) mod shape_aspect_ratio;
+
 pub(crate) mod shape_codec_metadata;
 
 pub(crate) mod shape_encryption_contract_configuration;

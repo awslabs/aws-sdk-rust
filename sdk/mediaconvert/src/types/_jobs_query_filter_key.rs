@@ -13,6 +13,7 @@
 /// # let jobsqueryfilterkey = unimplemented!();
 /// match jobsqueryfilterkey {
 ///     JobsQueryFilterKey::AudioCodec => { /* ... */ },
+///     JobsQueryFilterKey::ErrorCode => { /* ... */ },
 ///     JobsQueryFilterKey::FileInput => { /* ... */ },
 ///     JobsQueryFilterKey::JobEngineVersionRequested => { /* ... */ },
 ///     JobsQueryFilterKey::JobEngineVersionUsed => { /* ... */ },
@@ -41,7 +42,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Specify job details to filter for while performing a jobs query. You specify these filters as part of a key-value pair within the JobsQueryFilter array. The following list describes which keys are available and their possible values: * queue - Your Queue's name or ARN. * status - Your job's status. (SUBMITTED | PROGRESSING | COMPLETE | CANCELED | ERROR) * fileInput - Your input file URL, or partial input file name. * jobEngineVersionRequested - The Job engine version that you requested for your job. Valid versions are in a YYYY-MM-DD format. * jobEngineVersionUsed - The Job engine version that your job used. This may differ from the version that you requested. Valid versions are in a YYYY-MM-DD format. * audioCodec - Your output's audio codec. (AAC | MP2 | MP3 | WAV | AIFF | AC3| EAC3 | EAC3_ATMOS | VORBIS | OPUS | PASSTHROUGH | FLAC) * videoCodec - Your output's video codec. (AV1 | AVC_INTRA | FRAME_CAPTURE | H_264 | H_265 | MPEG2 | PASSTHROUGH | PRORES | UNCOMPRESSED | VC3 | VP8 | VP9 | XAVC)
+/// Specify job details to filter for while performing a jobs query. You specify these filters as part of a key-value pair within the JobsQueryFilter array. The following list describes which keys are available and their possible values: * queue - Your Queue's name or ARN. * status - Your job's status. (SUBMITTED | PROGRESSING | COMPLETE | CANCELED | ERROR) * fileInput - Your input file URL, or partial input file name. * jobEngineVersionRequested - The Job engine version that you requested for your job. Valid versions are in a YYYY-MM-DD format. * jobEngineVersionUsed - The Job engine version that your job used. This may differ from the version that you requested. Valid versions are in a YYYY-MM-DD format. * audioCodec - Your output's audio codec. (AAC | MP2 | MP3 | WAV | AIFF | AC3| EAC3 | EAC3_ATMOS | VORBIS | OPUS | PASSTHROUGH | FLAC) * videoCodec - Your output's video codec. (AV1 | AVC_INTRA | FRAME_CAPTURE | H_264 | H_265 | MPEG2 | PASSTHROUGH | PRORES | UNCOMPRESSED | VC3 | VP8 | VP9 | XAVC) * errorCode - The error code that your job failed with. For example, 1010. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/mediaconvert_error_codes.html
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -49,6 +50,8 @@
 pub enum JobsQueryFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     AudioCodec,
+    #[allow(missing_docs)] // documentation missing in model
+    ErrorCode,
     #[allow(missing_docs)] // documentation missing in model
     FileInput,
     #[allow(missing_docs)] // documentation missing in model
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for JobsQueryFilterKey {
     fn from(s: &str) -> Self {
         match s {
             "audioCodec" => JobsQueryFilterKey::AudioCodec,
+            "errorCode" => JobsQueryFilterKey::ErrorCode,
             "fileInput" => JobsQueryFilterKey::FileInput,
             "jobEngineVersionRequested" => JobsQueryFilterKey::JobEngineVersionRequested,
             "jobEngineVersionUsed" => JobsQueryFilterKey::JobEngineVersionUsed,
@@ -91,6 +95,7 @@ impl JobsQueryFilterKey {
     pub fn as_str(&self) -> &str {
         match self {
             JobsQueryFilterKey::AudioCodec => "audioCodec",
+            JobsQueryFilterKey::ErrorCode => "errorCode",
             JobsQueryFilterKey::FileInput => "fileInput",
             JobsQueryFilterKey::JobEngineVersionRequested => "jobEngineVersionRequested",
             JobsQueryFilterKey::JobEngineVersionUsed => "jobEngineVersionUsed",
@@ -104,6 +109,7 @@ impl JobsQueryFilterKey {
     pub const fn values() -> &'static [&'static str] {
         &[
             "audioCodec",
+            "errorCode",
             "fileInput",
             "jobEngineVersionRequested",
             "jobEngineVersionUsed",
@@ -134,6 +140,7 @@ impl ::std::fmt::Display for JobsQueryFilterKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             JobsQueryFilterKey::AudioCodec => write!(f, "audioCodec"),
+            JobsQueryFilterKey::ErrorCode => write!(f, "errorCode"),
             JobsQueryFilterKey::FileInput => write!(f, "fileInput"),
             JobsQueryFilterKey::JobEngineVersionRequested => write!(f, "jobEngineVersionRequested"),
             JobsQueryFilterKey::JobEngineVersionUsed => write!(f, "jobEngineVersionUsed"),

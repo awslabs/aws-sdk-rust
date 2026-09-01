@@ -204,4 +204,18 @@ impl SubscribeToShardFluentBuilder {
     pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::StartingPosition> {
         self.inner.get_starting_position()
     }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Checks if your request will succeed. <code>DryRun</code> is an optional parameter.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
+    }
 }

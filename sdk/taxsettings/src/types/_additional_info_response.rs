@@ -54,6 +54,8 @@ pub struct AdditionalInfoResponse {
     pub chile_additional_info: ::std::option::Option<crate::types::ChileAdditionalInfo>,
     /// <p>Additional tax information associated with your TRN in France.</p>
     pub france_additional_info: ::std::option::Option<crate::types::FranceAdditionalInfo>,
+    /// <p>Additional tax information associated with your TRN in Monaco.</p>
+    pub monaco_additional_info: ::std::option::Option<crate::types::MonacoAdditionalInfo>,
 }
 impl AdditionalInfoResponse {
     /// <p>Additional tax information associated with your TRN in Malaysia.</p>
@@ -156,6 +158,10 @@ impl AdditionalInfoResponse {
     pub fn france_additional_info(&self) -> ::std::option::Option<&crate::types::FranceAdditionalInfo> {
         self.france_additional_info.as_ref()
     }
+    /// <p>Additional tax information associated with your TRN in Monaco.</p>
+    pub fn monaco_additional_info(&self) -> ::std::option::Option<&crate::types::MonacoAdditionalInfo> {
+        self.monaco_additional_info.as_ref()
+    }
 }
 impl AdditionalInfoResponse {
     /// Creates a new builder-style object to manufacture [`AdditionalInfoResponse`](crate::types::AdditionalInfoResponse).
@@ -193,6 +199,7 @@ pub struct AdditionalInfoResponseBuilder {
     pub(crate) belgium_additional_info: ::std::option::Option<crate::types::BelgiumAdditionalInfo>,
     pub(crate) chile_additional_info: ::std::option::Option<crate::types::ChileAdditionalInfo>,
     pub(crate) france_additional_info: ::std::option::Option<crate::types::FranceAdditionalInfo>,
+    pub(crate) monaco_additional_info: ::std::option::Option<crate::types::MonacoAdditionalInfo>,
 }
 impl AdditionalInfoResponseBuilder {
     /// <p>Additional tax information associated with your TRN in Malaysia.</p>
@@ -545,6 +552,20 @@ impl AdditionalInfoResponseBuilder {
     pub fn get_france_additional_info(&self) -> &::std::option::Option<crate::types::FranceAdditionalInfo> {
         &self.france_additional_info
     }
+    /// <p>Additional tax information associated with your TRN in Monaco.</p>
+    pub fn monaco_additional_info(mut self, input: crate::types::MonacoAdditionalInfo) -> Self {
+        self.monaco_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information associated with your TRN in Monaco.</p>
+    pub fn set_monaco_additional_info(mut self, input: ::std::option::Option<crate::types::MonacoAdditionalInfo>) -> Self {
+        self.monaco_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information associated with your TRN in Monaco.</p>
+    pub fn get_monaco_additional_info(&self) -> &::std::option::Option<crate::types::MonacoAdditionalInfo> {
+        &self.monaco_additional_info
+    }
     /// Consumes the builder and constructs a [`AdditionalInfoResponse`](crate::types::AdditionalInfoResponse).
     pub fn build(self) -> crate::types::AdditionalInfoResponse {
         crate::types::AdditionalInfoResponse {
@@ -573,6 +594,7 @@ impl AdditionalInfoResponseBuilder {
             belgium_additional_info: self.belgium_additional_info,
             chile_additional_info: self.chile_additional_info,
             france_additional_info: self.france_additional_info,
+            monaco_additional_info: self.monaco_additional_info,
         }
     }
 }

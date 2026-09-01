@@ -665,7 +665,7 @@ pub use crate::types::_launch_permission_modifications::LaunchPermissionModifica
 
 pub use crate::types::_enclave_options_request::EnclaveOptionsRequest;
 
-pub use crate::types::_blob_attribute_value::BlobAttributeValue;
+pub use crate::types::_secure_blob_attribute_value::SecureBlobAttributeValue;
 
 pub use crate::types::_capacity_reservation_specification::CapacityReservationSpecification;
 
@@ -3089,8 +3089,6 @@ mod _batch_state;
 
 mod _bgp_status;
 
-mod _blob_attribute_value;
-
 mod _block_device_mapping;
 
 mod _block_device_mapping_response;
@@ -5094,6 +5092,8 @@ mod _secondary_subnet_cidr_block_association_state;
 mod _secondary_subnet_ipv4_cidr_block_association;
 
 mod _secondary_subnet_state;
+
+mod _secure_blob_attribute_value;
 
 mod _security_group;
 

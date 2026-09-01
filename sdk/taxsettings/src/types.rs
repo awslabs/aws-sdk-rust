@@ -93,6 +93,8 @@ pub use crate::types::_chile_additional_info::ChileAdditionalInfo;
 
 pub use crate::types::_france_additional_info::FranceAdditionalInfo;
 
+pub use crate::types::_monaco_additional_info::MonacoAdditionalInfo;
+
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfo;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfo;
@@ -216,6 +218,8 @@ mod _kenya_additional_info;
 mod _malaysia_additional_info;
 
 mod _malaysia_service_tax_code;
+
+mod _monaco_additional_info;
 
 mod _person_type;
 

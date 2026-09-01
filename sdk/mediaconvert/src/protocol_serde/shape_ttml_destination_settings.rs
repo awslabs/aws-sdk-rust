@@ -3,8 +3,41 @@ pub fn ser_ttml_destination_settings(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::TtmlDestinationSettings,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.style_passthrough {
-        object.key("stylePassthrough").string(var_1.as_str());
+    if let Some(var_1) = &input.background_color {
+        object.key("backgroundColor").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.background_opacity {
+        object.key("backgroundOpacity").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+        );
+    }
+    if let Some(var_3) = &input.font_color {
+        object.key("fontColor").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.font_opacity {
+        object.key("fontOpacity").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+        );
+    }
+    if let Some(var_5) = &input.font_size {
+        object.key("fontSize").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
+        );
+    }
+    if let Some(var_6) = &input.font_style {
+        object.key("fontStyle").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.font_weight {
+        object.key("fontWeight").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.style_passthrough {
+        object.key("stylePassthrough").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.text_decoration {
+        object.key("textDecoration").string(var_9.as_str());
     }
     Ok(())
 }
@@ -31,10 +64,66 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "backgroundColor" => {
+                            builder = builder.set_background_color(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TtmlBackgroundColor::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "backgroundOpacity" => {
+                            builder = builder.set_background_opacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "fontColor" => {
+                            builder = builder.set_font_color(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TtmlFontColor::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "fontOpacity" => {
+                            builder = builder.set_font_opacity(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "fontSize" => {
+                            builder = builder.set_font_size(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "fontStyle" => {
+                            builder = builder.set_font_style(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TtmlFontStyle::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "fontWeight" => {
+                            builder = builder.set_font_weight(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TtmlFontWeight::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "stylePassthrough" => {
                             builder = builder.set_style_passthrough(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::TtmlStylePassthrough::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "textDecoration" => {
+                            builder = builder.set_text_decoration(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TtmlTextDecoration::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

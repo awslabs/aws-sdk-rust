@@ -14,6 +14,8 @@ pub struct AacSettings {
     pub coding_mode: ::std::option::Option<crate::types::AacCodingMode>,
     /// Choose the loudness measurement mode for your audio content. For music or advertisements: We recommend that you keep the default value, Program. For speech or other content: We recommend that you choose Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify by applying speech gates.
     pub loudness_measurement_mode: ::std::option::Option<crate::types::AacLoudnessMeasurementMode>,
+    /// When set to WHEN_POSSIBLE, input AAC audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between AAC and non-AAC content will have a consistent AAC output as the system alternates between passthrough and encoding.
+    pub passthrough_control: ::std::option::Option<crate::types::AacPassthroughControl>,
     /// Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream, without the need to reference previous audio frames, and perform adaptive audio bitrate switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds. Smaller values allow for better seeking and more frequent stream switching, while large values improve compression efficiency. To have MediaConvert automatically determine the RAP interval: Leave blank.
     pub rap_interval: ::std::option::Option<i32>,
     /// Specify the AAC rate control mode. For a constant bitrate: Choose CBR. Your AAC output bitrate will be equal to the value that you choose for Bitrate. For a variable bitrate: Choose VBR. Your AAC output bitrate will vary according to your audio content and the value that you choose for Bitrate quality.
@@ -49,6 +51,10 @@ impl AacSettings {
     /// Choose the loudness measurement mode for your audio content. For music or advertisements: We recommend that you keep the default value, Program. For speech or other content: We recommend that you choose Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify by applying speech gates.
     pub fn loudness_measurement_mode(&self) -> ::std::option::Option<&crate::types::AacLoudnessMeasurementMode> {
         self.loudness_measurement_mode.as_ref()
+    }
+    /// When set to WHEN_POSSIBLE, input AAC audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between AAC and non-AAC content will have a consistent AAC output as the system alternates between passthrough and encoding.
+    pub fn passthrough_control(&self) -> ::std::option::Option<&crate::types::AacPassthroughControl> {
+        self.passthrough_control.as_ref()
     }
     /// Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream, without the need to reference previous audio frames, and perform adaptive audio bitrate switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds. Smaller values allow for better seeking and more frequent stream switching, while large values improve compression efficiency. To have MediaConvert automatically determine the RAP interval: Leave blank.
     pub fn rap_interval(&self) -> ::std::option::Option<i32> {
@@ -95,6 +101,7 @@ pub struct AacSettingsBuilder {
     pub(crate) codec_profile: ::std::option::Option<crate::types::AacCodecProfile>,
     pub(crate) coding_mode: ::std::option::Option<crate::types::AacCodingMode>,
     pub(crate) loudness_measurement_mode: ::std::option::Option<crate::types::AacLoudnessMeasurementMode>,
+    pub(crate) passthrough_control: ::std::option::Option<crate::types::AacPassthroughControl>,
     pub(crate) rap_interval: ::std::option::Option<i32>,
     pub(crate) rate_control_mode: ::std::option::Option<crate::types::AacRateControlMode>,
     pub(crate) raw_format: ::std::option::Option<crate::types::AacRawFormat>,
@@ -173,6 +180,20 @@ impl AacSettingsBuilder {
     /// Choose the loudness measurement mode for your audio content. For music or advertisements: We recommend that you keep the default value, Program. For speech or other content: We recommend that you choose Anchor. When you do, MediaConvert optimizes the loudness of your output for clarify by applying speech gates.
     pub fn get_loudness_measurement_mode(&self) -> &::std::option::Option<crate::types::AacLoudnessMeasurementMode> {
         &self.loudness_measurement_mode
+    }
+    /// When set to WHEN_POSSIBLE, input AAC audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between AAC and non-AAC content will have a consistent AAC output as the system alternates between passthrough and encoding.
+    pub fn passthrough_control(mut self, input: crate::types::AacPassthroughControl) -> Self {
+        self.passthrough_control = ::std::option::Option::Some(input);
+        self
+    }
+    /// When set to WHEN_POSSIBLE, input AAC audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between AAC and non-AAC content will have a consistent AAC output as the system alternates between passthrough and encoding.
+    pub fn set_passthrough_control(mut self, input: ::std::option::Option<crate::types::AacPassthroughControl>) -> Self {
+        self.passthrough_control = input;
+        self
+    }
+    /// When set to WHEN_POSSIBLE, input AAC audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between AAC and non-AAC content will have a consistent AAC output as the system alternates between passthrough and encoding.
+    pub fn get_passthrough_control(&self) -> &::std::option::Option<crate::types::AacPassthroughControl> {
+        &self.passthrough_control
     }
     /// Specify the RAP (Random Access Point) interval for your xHE-AAC audio output. A RAP allows a decoder to decode audio data mid-stream, without the need to reference previous audio frames, and perform adaptive audio bitrate switching. To specify the RAP interval: Enter an integer from 2000 to 30000, in milliseconds. Smaller values allow for better seeking and more frequent stream switching, while large values improve compression efficiency. To have MediaConvert automatically determine the RAP interval: Leave blank.
     pub fn rap_interval(mut self, input: i32) -> Self {
@@ -280,6 +301,7 @@ impl AacSettingsBuilder {
             codec_profile: self.codec_profile,
             coding_mode: self.coding_mode,
             loudness_measurement_mode: self.loudness_measurement_mode,
+            passthrough_control: self.passthrough_control,
             rap_interval: self.rap_interval,
             rate_control_mode: self.rate_control_mode,
             raw_format: self.raw_format,

@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelExportJob`](crate::operation::cancel_export_job) operation has
-/// a [`Client::cancel_export_job`], function which returns a builder for that operation.
+/// For example, the [`AssociateEmailIdentityCertificate`](crate::operation::associate_email_identity_certificate) operation has
+/// a [`Client::associate_email_identity_certificate`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_export_job()
-///     .job_id("example")
+/// let result = client.associate_email_identity_certificate()
+///     .email_identity("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod associate_email_identity_certificate;
+
 mod batch_get_metric_data;
 
 mod cancel_export_job;
@@ -181,7 +183,7 @@ mod create_tenant_resource_association;
 /// # let client: aws_sdk_sesv2::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_get_metric_data()
+/// let result = client.associate_email_identity_certificate()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -222,6 +224,8 @@ mod delete_suppressed_destination;
 mod delete_tenant;
 
 mod delete_tenant_resource_association;
+
+mod disassociate_email_identity_certificate;
 
 mod get_account;
 
@@ -288,6 +292,8 @@ mod list_deliverability_test_reports;
 mod list_domain_deliverability_campaigns;
 
 mod list_email_identities;
+
+mod list_email_identity_certificates;
 
 mod list_email_templates;
 
@@ -370,6 +376,8 @@ mod tag_resource;
 mod test_render_email_template;
 
 mod untag_resource;
+
+mod update_configuration_set;
 
 mod update_configuration_set_event_destination;
 

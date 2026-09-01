@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`suppression_options(Option<SuppressionOptions>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::suppression_options): <p>An object that contains information about the suppression list preferences for your account or for a specific tenant.</p>
     ///   - [`vdm_options(Option<VdmOptions>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::vdm_options): <p>An object that contains information about the VDM preferences for your configuration set.</p>
     ///   - [`archiving_options(Option<ArchivingOptions>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::archiving_options): <p>An object that defines the MailManager archive where sent emails are archived that you send using the configuration set.</p>
+    ///   - [`message_security_options(Option<MessageSecurityOptions>)`](crate::operation::get_configuration_set::GetConfigurationSetOutput::message_security_options): <p>The message security options that are applied to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
     /// - On failure, responds with [`SdkError<GetConfigurationSetError>`](crate::operation::get_configuration_set::GetConfigurationSetError)
     pub fn get_configuration_set(&self) -> crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder {
         crate::operation::get_configuration_set::builders::GetConfigurationSetFluentBuilder::new(self.handle.clone())

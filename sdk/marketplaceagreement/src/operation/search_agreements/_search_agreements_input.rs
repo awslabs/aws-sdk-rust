@@ -19,18 +19,76 @@ pub struct SearchAgreementsInput {
     /// <li>
     /// <p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
     /// <li>
-    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
+    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
     /// <li>
     /// <p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
+    /// <p><code>BeforeStartTime</code> – A date used to filter agreements with a date before the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterStartTime</code> – A date used to filter agreements with a date after the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>BeforeLastUpdateTime</code> – A date used to filter agreements with a date before the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterLastUpdateTime</code> – A date used to filter agreements with a date after the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
     /// <li>
     /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorType</code> – What happens to the agreement when it reaches its end date. Values include <code>RENEW</code>, <code>REPLACE</code>, and <code>EXPIRE</code>.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorReasonCode</code> – The reason why the agreement doesn't renew at its end date. Values include <code>PROPOSER_RENEW_OPTED_OUT</code>, <code>ACCEPTOR_RENEW_OPTED_OUT</code>, <code>NO_RENEWAL_TERM</code>, and <code>RENEWAL_LIMIT_EXHAUSTED</code>.</p></li>
+    /// <li>
+    /// <p><code>InitialAgreementId</code> – The unique identifier of the very first agreement in a chain of related agreements. Use this filter to return every agreement in the same chain.</p></li>
+    /// <li>
+    /// <p><code>LicenseArn</code> – The Amazon Resource Name (ARN) of the AWS License Manager license associated with an entitlement granted by the agreement.</p></li>
     /// </ul>
+    /// <p>A proposer can use any combination of the preceding filters along with <code>AgreementType</code>, which is required.</p>
+    /// <p>The following filter combinations are supported when the <code>PartyType</code> is <code>Acceptor</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AgreementType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// </ul><note>
+    /// <p>To filter by <code>EndTime</code>, you can use <code>BeforeEndTime</code>, <code>AfterEndTime</code>, or both.</p>
+    /// </note>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. For <code>SearchAgreements</code>, <code>SortBy</code> supports <code>EndTime</code> for both party types, and <code>StartTime</code> and <code>LastUpdateTime</code> only when <code>PartyType</code> is <code>Proposer</code>. The default <code>SortBy</code> value is <code>EndTime</code>.</p>
     pub sort: ::std::option::Option<crate::types::Sort>,
     /// <p>The maximum number of agreements to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -56,22 +114,80 @@ impl SearchAgreementsInput {
     /// <li>
     /// <p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
     /// <li>
-    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
+    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
     /// <li>
     /// <p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
+    /// <p><code>BeforeStartTime</code> – A date used to filter agreements with a date before the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterStartTime</code> – A date used to filter agreements with a date after the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>BeforeLastUpdateTime</code> – A date used to filter agreements with a date before the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterLastUpdateTime</code> – A date used to filter agreements with a date after the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
     /// <li>
     /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorType</code> – What happens to the agreement when it reaches its end date. Values include <code>RENEW</code>, <code>REPLACE</code>, and <code>EXPIRE</code>.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorReasonCode</code> – The reason why the agreement doesn't renew at its end date. Values include <code>PROPOSER_RENEW_OPTED_OUT</code>, <code>ACCEPTOR_RENEW_OPTED_OUT</code>, <code>NO_RENEWAL_TERM</code>, and <code>RENEWAL_LIMIT_EXHAUSTED</code>.</p></li>
+    /// <li>
+    /// <p><code>InitialAgreementId</code> – The unique identifier of the very first agreement in a chain of related agreements. Use this filter to return every agreement in the same chain.</p></li>
+    /// <li>
+    /// <p><code>LicenseArn</code> – The Amazon Resource Name (ARN) of the AWS License Manager license associated with an entitlement granted by the agreement.</p></li>
     /// </ul>
+    /// <p>A proposer can use any combination of the preceding filters along with <code>AgreementType</code>, which is required.</p>
+    /// <p>The following filter combinations are supported when the <code>PartyType</code> is <code>Acceptor</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AgreementType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// </ul><note>
+    /// <p>To filter by <code>EndTime</code>, you can use <code>BeforeEndTime</code>, <code>AfterEndTime</code>, or both.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. For <code>SearchAgreements</code>, <code>SortBy</code> supports <code>EndTime</code> for both party types, and <code>StartTime</code> and <code>LastUpdateTime</code> only when <code>PartyType</code> is <code>Proposer</code>. The default <code>SortBy</code> value is <code>EndTime</code>.</p>
     pub fn sort(&self) -> ::std::option::Option<&crate::types::Sort> {
         self.sort.as_ref()
     }
@@ -134,16 +250,74 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
     /// <li>
-    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
+    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
     /// <li>
     /// <p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
+    /// <p><code>BeforeStartTime</code> – A date used to filter agreements with a date before the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterStartTime</code> – A date used to filter agreements with a date after the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>BeforeLastUpdateTime</code> – A date used to filter agreements with a date before the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterLastUpdateTime</code> – A date used to filter agreements with a date after the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
     /// <li>
     /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorType</code> – What happens to the agreement when it reaches its end date. Values include <code>RENEW</code>, <code>REPLACE</code>, and <code>EXPIRE</code>.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorReasonCode</code> – The reason why the agreement doesn't renew at its end date. Values include <code>PROPOSER_RENEW_OPTED_OUT</code>, <code>ACCEPTOR_RENEW_OPTED_OUT</code>, <code>NO_RENEWAL_TERM</code>, and <code>RENEWAL_LIMIT_EXHAUSTED</code>.</p></li>
+    /// <li>
+    /// <p><code>InitialAgreementId</code> – The unique identifier of the very first agreement in a chain of related agreements. Use this filter to return every agreement in the same chain.</p></li>
+    /// <li>
+    /// <p><code>LicenseArn</code> – The Amazon Resource Name (ARN) of the AWS License Manager license associated with an entitlement granted by the agreement.</p></li>
     /// </ul>
+    /// <p>A proposer can use any combination of the preceding filters along with <code>AgreementType</code>, which is required.</p>
+    /// <p>The following filter combinations are supported when the <code>PartyType</code> is <code>Acceptor</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AgreementType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// </ul><note>
+    /// <p>To filter by <code>EndTime</code>, you can use <code>BeforeEndTime</code>, <code>AfterEndTime</code>, or both.</p>
+    /// </note>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
@@ -164,16 +338,74 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
     /// <li>
-    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
+    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
     /// <li>
     /// <p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
+    /// <p><code>BeforeStartTime</code> – A date used to filter agreements with a date before the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterStartTime</code> – A date used to filter agreements with a date after the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>BeforeLastUpdateTime</code> – A date used to filter agreements with a date before the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterLastUpdateTime</code> – A date used to filter agreements with a date after the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
     /// <li>
     /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorType</code> – What happens to the agreement when it reaches its end date. Values include <code>RENEW</code>, <code>REPLACE</code>, and <code>EXPIRE</code>.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorReasonCode</code> – The reason why the agreement doesn't renew at its end date. Values include <code>PROPOSER_RENEW_OPTED_OUT</code>, <code>ACCEPTOR_RENEW_OPTED_OUT</code>, <code>NO_RENEWAL_TERM</code>, and <code>RENEWAL_LIMIT_EXHAUSTED</code>.</p></li>
+    /// <li>
+    /// <p><code>InitialAgreementId</code> – The unique identifier of the very first agreement in a chain of related agreements. Use this filter to return every agreement in the same chain.</p></li>
+    /// <li>
+    /// <p><code>LicenseArn</code> – The Amazon Resource Name (ARN) of the AWS License Manager license associated with an entitlement granted by the agreement.</p></li>
     /// </ul>
+    /// <p>A proposer can use any combination of the preceding filters along with <code>AgreementType</code>, which is required.</p>
+    /// <p>The following filter combinations are supported when the <code>PartyType</code> is <code>Acceptor</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AgreementType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// </ul><note>
+    /// <p>To filter by <code>EndTime</code>, you can use <code>BeforeEndTime</code>, <code>AfterEndTime</code>, or both.</p>
+    /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>) -> Self {
         self.filters = input;
         self
@@ -192,30 +424,88 @@ impl SearchAgreementsInputBuilder {
     /// <li>
     /// <p><code>OfferId</code> – The unique identifier of the offer in which the terms are registered in the agreement token.</p></li>
     /// <li>
-    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
+    /// <p><code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>, <code>REPLACED</code>, and <code>TERMINATED</code>.</p></li>
     /// <li>
     /// <p><code>BeforeEndTime</code> – A date used to filter agreements with a date before the <code>endTime</code> of an agreement.</p></li>
     /// <li>
     /// <p><code>AfterEndTime</code> – A date used to filter agreements with a date after the <code>endTime</code> of an agreement.</p></li>
     /// <li>
+    /// <p><code>BeforeStartTime</code> – A date used to filter agreements with a date before the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterStartTime</code> – A date used to filter agreements with a date after the <code>startTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>BeforeLastUpdateTime</code> – A date used to filter agreements with a date before the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
+    /// <p><code>AfterLastUpdateTime</code> – A date used to filter agreements with a date after the <code>lastUpdateTime</code> of an agreement.</p></li>
+    /// <li>
     /// <p><code>AgreementType</code> – The type of agreement. Supported value includes <code>PurchaseAgreement</code>.</p></li>
     /// <li>
     /// <p><code>OfferSetId</code> – A unique identifier for the offer set containing this offer. All agreements created from offers in this set include this identifier as context.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorType</code> – What happens to the agreement when it reaches its end date. Values include <code>RENEW</code>, <code>REPLACE</code>, and <code>EXPIRE</code>.</p></li>
+    /// <li>
+    /// <p><code>EndTimeBehaviorReasonCode</code> – The reason why the agreement doesn't renew at its end date. Values include <code>PROPOSER_RENEW_OPTED_OUT</code>, <code>ACCEPTOR_RENEW_OPTED_OUT</code>, <code>NO_RENEWAL_TERM</code>, and <code>RENEWAL_LIMIT_EXHAUSTED</code>.</p></li>
+    /// <li>
+    /// <p><code>InitialAgreementId</code> – The unique identifier of the very first agreement in a chain of related agreements. Use this filter to return every agreement in the same chain.</p></li>
+    /// <li>
+    /// <p><code>LicenseArn</code> – The Amazon Resource Name (ARN) of the AWS License Manager license associated with an entitlement granted by the agreement.</p></li>
     /// </ul>
+    /// <p>A proposer can use any combination of the preceding filters along with <code>AgreementType</code>, which is required.</p>
+    /// <p>The following filter combinations are supported when the <code>PartyType</code> is <code>Acceptor</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AgreementType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceIdentifier</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>ResourceType</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>EndTime</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code></p></li>
+    /// <li>
+    /// <p><code>AgreementType</code> + <code>OfferSetId</code> + <code>Status</code> + <code>EndTime</code></p></li>
+    /// </ul><note>
+    /// <p>To filter by <code>EndTime</code>, you can use <code>BeforeEndTime</code>, <code>AfterEndTime</code>, or both.</p>
+    /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. For <code>SearchAgreements</code>, <code>SortBy</code> supports <code>EndTime</code> for both party types, and <code>StartTime</code> and <code>LastUpdateTime</code> only when <code>PartyType</code> is <code>Proposer</code>. The default <code>SortBy</code> value is <code>EndTime</code>.</p>
     pub fn sort(mut self, input: crate::types::Sort) -> Self {
         self.sort = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. For <code>SearchAgreements</code>, <code>SortBy</code> supports <code>EndTime</code> for both party types, and <code>StartTime</code> and <code>LastUpdateTime</code> only when <code>PartyType</code> is <code>Proposer</code>. The default <code>SortBy</code> value is <code>EndTime</code>.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::Sort>) -> Self {
         self.sort = input;
         self
     }
-    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. Only <code>EndTime</code> is supported for <code>SearchAgreements</code>. The default sort is <code>EndTime</code> descending.</p>
+    /// <p>An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes. For <code>SearchAgreements</code>, <code>SortBy</code> supports <code>EndTime</code> for both party types, and <code>StartTime</code> and <code>LastUpdateTime</code> only when <code>PartyType</code> is <code>Proposer</code>. The default <code>SortBy</code> value is <code>EndTime</code>.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::Sort> {
         &self.sort
     }

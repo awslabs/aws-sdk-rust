@@ -12,10 +12,16 @@ pub fn ser_start_pipeline_execution_input_input(
         crate::protocol_serde::shape_execution_environment_variables::ser_execution_environment_variables(&mut object_3, var_2)?;
         object_3.finish();
     }
-    if let Some(var_4) = &input.execution_priority {
+    if let Some(var_4) = &input.execution_mount_overrides {
+        #[allow(unused_mut)]
+        let mut object_5 = object.key("executionMountOverrides").start_object();
+        crate::protocol_serde::shape_mount_overrides::ser_mount_overrides(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.execution_priority {
         object.key("executionPriority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
     Ok(())

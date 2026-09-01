@@ -3,14 +3,14 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPolicyGenerationAssetsOutput {
-    /// <p>An array of generated policy assets including Cedar policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
+    /// <p>An array of generated policy assets including Dogwood policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
     pub policy_generation_assets: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGenerationAsset>>,
     /// <p>A pagination token that can be used in subsequent <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_ListPolicyGenerationAssets.html">ListPolicyGenerationAssets</a> calls to retrieve additional assets. This token is only present when there are more generated policy assets available beyond the current response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPolicyGenerationAssetsOutput {
-    /// <p>An array of generated policy assets including Cedar policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
+    /// <p>An array of generated policy assets including Dogwood policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_generation_assets.is_none()`.
     pub fn policy_generation_assets(&self) -> &[crate::types::PolicyGenerationAsset] {
@@ -46,19 +46,19 @@ impl ListPolicyGenerationAssetsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_policy_generation_assets`](Self::set_policy_generation_assets).
     ///
-    /// <p>An array of generated policy assets including Cedar policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
+    /// <p>An array of generated policy assets including Dogwood policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
     pub fn policy_generation_assets(mut self, input: crate::types::PolicyGenerationAsset) -> Self {
         let mut v = self.policy_generation_assets.unwrap_or_default();
         v.push(input);
         self.policy_generation_assets = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of generated policy assets including Cedar policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
+    /// <p>An array of generated policy assets including Dogwood policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
     pub fn set_policy_generation_assets(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PolicyGenerationAsset>>) -> Self {
         self.policy_generation_assets = input;
         self
     }
-    /// <p>An array of generated policy assets including Cedar policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
+    /// <p>An array of generated policy assets including Dogwood policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>
     pub fn get_policy_generation_assets(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PolicyGenerationAsset>> {
         &self.policy_generation_assets
     }

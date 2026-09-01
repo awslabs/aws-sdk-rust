@@ -169,6 +169,8 @@ pub(crate) mod shape_charge_summary;
 
 pub(crate) mod shape_charges;
 
+pub(crate) mod shape_end_time_behavior;
+
 pub(crate) mod shape_estimated_charges;
 
 pub(crate) mod shape_filter;
@@ -218,6 +220,8 @@ pub(crate) mod shape_invoicing_entity;
 pub(crate) mod shape_itemized_charge_list;
 
 pub(crate) mod shape_payment_request_summary;
+
+pub(crate) mod shape_renewal_summary;
 
 pub(crate) mod shape_requested_term_configuration;
 
@@ -279,9 +283,13 @@ pub(crate) mod shape_entitlement;
 
 pub(crate) mod shape_grant_list;
 
+pub(crate) mod shape_price_increase;
+
 pub(crate) mod shape_schedule_list;
 
 pub(crate) mod shape_tax_breakdown_item;
+
+pub(crate) mod shape_term_template_list;
 
 pub(crate) mod shape_usage_based_rate_card_list;
 
@@ -291,16 +299,28 @@ pub(crate) mod shape_dimension_list;
 
 pub(crate) mod shape_document_item;
 
+pub(crate) mod shape_fixed_percentage;
+
 pub(crate) mod shape_grant_item;
 
+pub(crate) mod shape_percentage_range;
+
 pub(crate) mod shape_schedule_item;
+
+pub(crate) mod shape_term_template;
 
 pub(crate) mod shape_usage_based_rate_card_item;
 
 pub(crate) mod shape_constraints;
 
+pub(crate) mod shape_payment_schedule_term_template;
+
 pub(crate) mod shape_rate_card_list;
 
 pub(crate) mod shape_selector;
 
+pub(crate) mod shape_payment_schedule_entry_list;
+
 pub(crate) mod shape_rate_card_item;
+
+pub(crate) mod shape_payment_schedule_entry;

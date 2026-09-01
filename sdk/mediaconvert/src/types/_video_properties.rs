@@ -12,6 +12,8 @@ pub struct VideoProperties {
     pub codec_metadata: ::std::option::Option<crate::types::CodecMetadata>,
     /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub display_aspect_ratio: ::std::option::Option<crate::types::AspectRatio>,
     /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub frame_rate: ::std::option::Option<crate::types::FrameRate>,
     /// HDR (High Dynamic Range) metadata extracted from the container, including mastering display color volume and content light level information. This metadata is present in HDR10 and similar HDR content.
@@ -22,6 +24,8 @@ pub struct VideoProperties {
     pub matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
     /// The clockwise rotation angle of the video track, in degrees, as derived from container-level metadata (e.g. the MP4 tkhd transformation matrix or the Matroska ProjectionPoseRoll element). Common values are 90, 180, and 270. This field is null when no rotation metadata is present or when the rotation is 0 degrees. For MP4, non-standard transformation matrices also yield null.
     pub rotation: ::std::option::Option<i32>,
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub sample_aspect_ratio: ::std::option::Option<crate::types::AspectRatio>,
     /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub transfer_characteristics: ::std::option::Option<crate::types::TransferCharacteristics>,
     /// The width of the video track, in pixels.
@@ -44,6 +48,10 @@ impl VideoProperties {
     pub fn color_primaries(&self) -> ::std::option::Option<&crate::types::ColorPrimaries> {
         self.color_primaries.as_ref()
     }
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub fn display_aspect_ratio(&self) -> ::std::option::Option<&crate::types::AspectRatio> {
+        self.display_aspect_ratio.as_ref()
+    }
     /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn frame_rate(&self) -> ::std::option::Option<&crate::types::FrameRate> {
         self.frame_rate.as_ref()
@@ -63,6 +71,10 @@ impl VideoProperties {
     /// The clockwise rotation angle of the video track, in degrees, as derived from container-level metadata (e.g. the MP4 tkhd transformation matrix or the Matroska ProjectionPoseRoll element). Common values are 90, 180, and 270. This field is null when no rotation metadata is present or when the rotation is 0 degrees. For MP4, non-standard transformation matrices also yield null.
     pub fn rotation(&self) -> ::std::option::Option<i32> {
         self.rotation
+    }
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub fn sample_aspect_ratio(&self) -> ::std::option::Option<&crate::types::AspectRatio> {
+        self.sample_aspect_ratio.as_ref()
     }
     /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub fn transfer_characteristics(&self) -> ::std::option::Option<&crate::types::TransferCharacteristics> {
@@ -88,11 +100,13 @@ pub struct VideoPropertiesBuilder {
     pub(crate) bit_rate: ::std::option::Option<i64>,
     pub(crate) codec_metadata: ::std::option::Option<crate::types::CodecMetadata>,
     pub(crate) color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
+    pub(crate) display_aspect_ratio: ::std::option::Option<crate::types::AspectRatio>,
     pub(crate) frame_rate: ::std::option::Option<crate::types::FrameRate>,
     pub(crate) hdr_metadata: ::std::option::Option<crate::types::HdrMetadata>,
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
     pub(crate) rotation: ::std::option::Option<i32>,
+    pub(crate) sample_aspect_ratio: ::std::option::Option<crate::types::AspectRatio>,
     pub(crate) transfer_characteristics: ::std::option::Option<crate::types::TransferCharacteristics>,
     pub(crate) width: ::std::option::Option<i32>,
 }
@@ -152,6 +166,20 @@ impl VideoPropertiesBuilder {
     /// The color space primaries of the video track, defining the red, green, and blue color coordinates used for the video. This information helps ensure accurate color reproduction during playback and transcoding.
     pub fn get_color_primaries(&self) -> &::std::option::Option<crate::types::ColorPrimaries> {
         &self.color_primaries
+    }
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub fn display_aspect_ratio(mut self, input: crate::types::AspectRatio) -> Self {
+        self.display_aspect_ratio = ::std::option::Option::Some(input);
+        self
+    }
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub fn set_display_aspect_ratio(mut self, input: ::std::option::Option<crate::types::AspectRatio>) -> Self {
+        self.display_aspect_ratio = input;
+        self
+    }
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub fn get_display_aspect_ratio(&self) -> &::std::option::Option<crate::types::AspectRatio> {
+        &self.display_aspect_ratio
     }
     /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
     pub fn frame_rate(mut self, input: crate::types::FrameRate) -> Self {
@@ -223,6 +251,20 @@ impl VideoPropertiesBuilder {
     pub fn get_rotation(&self) -> &::std::option::Option<i32> {
         &self.rotation
     }
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub fn sample_aspect_ratio(mut self, input: crate::types::AspectRatio) -> Self {
+        self.sample_aspect_ratio = ::std::option::Option::Some(input);
+        self
+    }
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub fn set_sample_aspect_ratio(mut self, input: ::std::option::Option<crate::types::AspectRatio>) -> Self {
+        self.sample_aspect_ratio = input;
+        self
+    }
+    /// An aspect ratio expressed as a fraction with numerator and denominator values, reduced to lowest terms. Used for the sample (pixel) aspect ratio and the display aspect ratio of a video track. For example, a 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect ratio of 16 / 9.
+    pub fn get_sample_aspect_ratio(&self) -> &::std::option::Option<crate::types::AspectRatio> {
+        &self.sample_aspect_ratio
+    }
     /// The color space transfer characteristics of the video track, defining the relationship between linear light values and the encoded signal values. This affects brightness and contrast reproduction.
     pub fn transfer_characteristics(mut self, input: crate::types::TransferCharacteristics) -> Self {
         self.transfer_characteristics = ::std::option::Option::Some(input);
@@ -258,11 +300,13 @@ impl VideoPropertiesBuilder {
             bit_rate: self.bit_rate,
             codec_metadata: self.codec_metadata,
             color_primaries: self.color_primaries,
+            display_aspect_ratio: self.display_aspect_ratio,
             frame_rate: self.frame_rate,
             hdr_metadata: self.hdr_metadata,
             height: self.height,
             matrix_coefficients: self.matrix_coefficients,
             rotation: self.rotation,
+            sample_aspect_ratio: self.sample_aspect_ratio,
             transfer_characteristics: self.transfer_characteristics,
             width: self.width,
         }

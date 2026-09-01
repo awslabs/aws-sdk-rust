@@ -6,12 +6,18 @@
 pub struct FranceAdditionalInfo {
     /// <p>The SIREN number for the company in France. Must be a 9-digit number.</p>
     pub siren_number: ::std::string::String,
+    /// <p>The routing code used for electronic invoicing (e-invoicing) for the company in France.</p>
+    pub e_invoice_routing_code: ::std::option::Option<::std::string::String>,
 }
 impl FranceAdditionalInfo {
     /// <p>The SIREN number for the company in France. Must be a 9-digit number.</p>
     pub fn siren_number(&self) -> &str {
         use std::ops::Deref;
         self.siren_number.deref()
+    }
+    /// <p>The routing code used for electronic invoicing (e-invoicing) for the company in France.</p>
+    pub fn e_invoice_routing_code(&self) -> ::std::option::Option<&str> {
+        self.e_invoice_routing_code.as_deref()
     }
 }
 impl FranceAdditionalInfo {
@@ -26,6 +32,7 @@ impl FranceAdditionalInfo {
 #[non_exhaustive]
 pub struct FranceAdditionalInfoBuilder {
     pub(crate) siren_number: ::std::option::Option<::std::string::String>,
+    pub(crate) e_invoice_routing_code: ::std::option::Option<::std::string::String>,
 }
 impl FranceAdditionalInfoBuilder {
     /// <p>The SIREN number for the company in France. Must be a 9-digit number.</p>
@@ -43,6 +50,20 @@ impl FranceAdditionalInfoBuilder {
     pub fn get_siren_number(&self) -> &::std::option::Option<::std::string::String> {
         &self.siren_number
     }
+    /// <p>The routing code used for electronic invoicing (e-invoicing) for the company in France.</p>
+    pub fn e_invoice_routing_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.e_invoice_routing_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The routing code used for electronic invoicing (e-invoicing) for the company in France.</p>
+    pub fn set_e_invoice_routing_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.e_invoice_routing_code = input;
+        self
+    }
+    /// <p>The routing code used for electronic invoicing (e-invoicing) for the company in France.</p>
+    pub fn get_e_invoice_routing_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.e_invoice_routing_code
+    }
     /// Consumes the builder and constructs a [`FranceAdditionalInfo`](crate::types::FranceAdditionalInfo).
     /// This method will fail if any of the following fields are not set:
     /// - [`siren_number`](crate::types::builders::FranceAdditionalInfoBuilder::siren_number)
@@ -54,6 +75,7 @@ impl FranceAdditionalInfoBuilder {
                     "siren_number was not specified but it is required when building FranceAdditionalInfo",
                 )
             })?,
+            e_invoice_routing_code: self.e_invoice_routing_code,
         })
     }
 }

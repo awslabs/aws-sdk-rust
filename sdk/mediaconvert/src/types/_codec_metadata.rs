@@ -16,6 +16,8 @@ pub struct CodecMetadata {
     pub content_light_level: ::std::option::Option<crate::types::ContentLightLevel>,
     /// The field order of interlaced video, which indicates whether the top or bottom field is displayed first. Use this to select the correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for interlaced video; it is omitted for progressive video and when the field order is not indicated by the source.
     pub field_order: ::std::option::Option<::std::string::String>,
+    /// Indicates that HDR10+ (SMPTE ST 2094-40) dynamic metadata was detected in the HEVC bitstream. Present only when detected.
+    pub hdr10_plus_presence: ::std::option::Option<crate::types::Hdr10PlusPresence>,
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub height: ::std::option::Option<i32>,
     /// The codec level or tier that specifies the maximum processing requirements and capabilities. Levels define constraints such as maximum bit rate, frame rate, and resolution.
@@ -57,6 +59,10 @@ impl CodecMetadata {
     /// The field order of interlaced video, which indicates whether the top or bottom field is displayed first. Use this to select the correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for interlaced video; it is omitted for progressive video and when the field order is not indicated by the source.
     pub fn field_order(&self) -> ::std::option::Option<&str> {
         self.field_order.as_deref()
+    }
+    /// Indicates that HDR10+ (SMPTE ST 2094-40) dynamic metadata was detected in the HEVC bitstream. Present only when detected.
+    pub fn hdr10_plus_presence(&self) -> ::std::option::Option<&crate::types::Hdr10PlusPresence> {
+        self.hdr10_plus_presence.as_ref()
     }
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub fn height(&self) -> ::std::option::Option<i32> {
@@ -108,6 +114,7 @@ pub struct CodecMetadataBuilder {
     pub(crate) color_primaries: ::std::option::Option<crate::types::ColorPrimaries>,
     pub(crate) content_light_level: ::std::option::Option<crate::types::ContentLightLevel>,
     pub(crate) field_order: ::std::option::Option<::std::string::String>,
+    pub(crate) hdr10_plus_presence: ::std::option::Option<crate::types::Hdr10PlusPresence>,
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) level: ::std::option::Option<::std::string::String>,
     pub(crate) matrix_coefficients: ::std::option::Option<crate::types::MatrixCoefficients>,
@@ -201,6 +208,20 @@ impl CodecMetadataBuilder {
     /// The field order of interlaced video, which indicates whether the top or bottom field is displayed first. Use this to select the correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This field is present only for interlaced video; it is omitted for progressive video and when the field order is not indicated by the source.
     pub fn get_field_order(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_order
+    }
+    /// Indicates that HDR10+ (SMPTE ST 2094-40) dynamic metadata was detected in the HEVC bitstream. Present only when detected.
+    pub fn hdr10_plus_presence(mut self, input: crate::types::Hdr10PlusPresence) -> Self {
+        self.hdr10_plus_presence = ::std::option::Option::Some(input);
+        self
+    }
+    /// Indicates that HDR10+ (SMPTE ST 2094-40) dynamic metadata was detected in the HEVC bitstream. Present only when detected.
+    pub fn set_hdr10_plus_presence(mut self, input: ::std::option::Option<crate::types::Hdr10PlusPresence>) -> Self {
+        self.hdr10_plus_presence = input;
+        self
+    }
+    /// Indicates that HDR10+ (SMPTE ST 2094-40) dynamic metadata was detected in the HEVC bitstream. Present only when detected.
+    pub fn get_hdr10_plus_presence(&self) -> &::std::option::Option<crate::types::Hdr10PlusPresence> {
+        &self.hdr10_plus_presence
     }
     /// The height in pixels as coded by the codec. This represents the actual encoded video height as specified in the video stream headers.
     pub fn height(mut self, input: i32) -> Self {
@@ -323,6 +344,7 @@ impl CodecMetadataBuilder {
             color_primaries: self.color_primaries,
             content_light_level: self.content_light_level,
             field_order: self.field_order,
+            hdr10_plus_presence: self.hdr10_plus_presence,
             height: self.height,
             level: self.level,
             matrix_coefficients: self.matrix_coefficients,

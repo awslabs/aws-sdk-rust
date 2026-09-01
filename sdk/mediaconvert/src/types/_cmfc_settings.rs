@@ -26,7 +26,7 @@ pub struct CmfcSettings {
     pub manifest_metadata_signaling: ::std::option::Option<crate::types::CmfcManifestMetadataSignaling>,
     /// Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML.
     pub scte35_esam: ::std::option::Option<crate::types::CmfcScte35Esam>,
-    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
+    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output. When your input is an HLS manifest, choose Manifest cues to pass through CUE markers in your HLS manifest as segment boundaries and SCTE-35 markers in this output at each EXT-X-CUE-OUT splice point in the input manifest.
     pub scte35_source: ::std::option::Option<crate::types::CmfcScte35Source>,
     /// Specify the ID or ARN of the AWS KMS key used to sign the C2PA manifest in your MP4 output. Provide a valid KMS key ARN. Note that your MediaConvert service role must allow access to this key.
     pub signing_kms_key: ::std::option::Option<::std::string::String>,
@@ -84,7 +84,7 @@ impl CmfcSettings {
     pub fn scte35_esam(&self) -> ::std::option::Option<&crate::types::CmfcScte35Esam> {
         self.scte35_esam.as_ref()
     }
-    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
+    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output. When your input is an HLS manifest, choose Manifest cues to pass through CUE markers in your HLS manifest as segment boundaries and SCTE-35 markers in this output at each EXT-X-CUE-OUT splice point in the input manifest.
     pub fn scte35_source(&self) -> ::std::option::Option<&crate::types::CmfcScte35Source> {
         self.scte35_source.as_ref()
     }
@@ -293,17 +293,17 @@ impl CmfcSettingsBuilder {
     pub fn get_scte35_esam(&self) -> &::std::option::Option<crate::types::CmfcScte35Esam> {
         &self.scte35_esam
     }
-    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
+    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output. When your input is an HLS manifest, choose Manifest cues to pass through CUE markers in your HLS manifest as segment boundaries and SCTE-35 markers in this output at each EXT-X-CUE-OUT splice point in the input manifest.
     pub fn scte35_source(mut self, input: crate::types::CmfcScte35Source) -> Self {
         self.scte35_source = ::std::option::Option::Some(input);
         self
     }
-    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
+    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output. When your input is an HLS manifest, choose Manifest cues to pass through CUE markers in your HLS manifest as segment boundaries and SCTE-35 markers in this output at each EXT-X-CUE-OUT splice point in the input manifest.
     pub fn set_scte35_source(mut self, input: ::std::option::Option<crate::types::CmfcScte35Source>) -> Self {
         self.scte35_source = input;
         self
     }
-    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output.
+    /// Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want those SCTE-35 markers in this output. When your input is an HLS manifest, choose Manifest cues to pass through CUE markers in your HLS manifest as segment boundaries and SCTE-35 markers in this output at each EXT-X-CUE-OUT splice point in the input manifest.
     pub fn get_scte35_source(&self) -> &::std::option::Option<crate::types::CmfcScte35Source> {
         &self.scte35_source
     }

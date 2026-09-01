@@ -14,12 +14,15 @@
 /// match codec {
 ///     Codec::Aac => { /* ... */ },
 ///     Codec::Ac3 => { /* ... */ },
+///     Codec::Amr => { /* ... */ },
 ///     Codec::Av1 => { /* ... */ },
 ///     Codec::Avc => { /* ... */ },
 ///     Codec::C608 => { /* ... */ },
 ///     Codec::C708 => { /* ... */ },
+///     Codec::Dv => { /* ... */ },
 ///     Codec::Eac3 => { /* ... */ },
 ///     Codec::Flac => { /* ... */ },
+///     Codec::H263 => { /* ... */ },
 ///     Codec::Hevc => { /* ... */ },
 ///     Codec::Jpeg2000 => { /* ... */ },
 ///     Codec::Mjpeg => { /* ... */ },
@@ -35,11 +38,16 @@
 ///     Codec::Theora => { /* ... */ },
 ///     Codec::Uncompressed => { /* ... */ },
 ///     Codec::UnknownValue => { /* ... */ },
+///     Codec::Vc1 => { /* ... */ },
+///     Codec::Vc3 => { /* ... */ },
 ///     Codec::Vfw => { /* ... */ },
 ///     Codec::Vorbis => { /* ... */ },
 ///     Codec::Vp8 => { /* ... */ },
 ///     Codec::Vp9 => { /* ... */ },
 ///     Codec::Webvtt => { /* ... */ },
+///     Codec::Wma => { /* ... */ },
+///     Codec::Wma2 => { /* ... */ },
+///     Codec::Wmapro => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -74,6 +82,8 @@ pub enum Codec {
     #[allow(missing_docs)] // documentation missing in model
     Ac3,
     #[allow(missing_docs)] // documentation missing in model
+    Amr,
+    #[allow(missing_docs)] // documentation missing in model
     Av1,
     #[allow(missing_docs)] // documentation missing in model
     Avc,
@@ -82,9 +92,13 @@ pub enum Codec {
     #[allow(missing_docs)] // documentation missing in model
     C708,
     #[allow(missing_docs)] // documentation missing in model
+    Dv,
+    #[allow(missing_docs)] // documentation missing in model
     Eac3,
     #[allow(missing_docs)] // documentation missing in model
     Flac,
+    #[allow(missing_docs)] // documentation missing in model
+    H263,
     #[allow(missing_docs)] // documentation missing in model
     Hevc,
     #[allow(missing_docs)] // documentation missing in model
@@ -117,6 +131,10 @@ pub enum Codec {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     #[allow(missing_docs)] // documentation missing in model
+    Vc1,
+    #[allow(missing_docs)] // documentation missing in model
+    Vc3,
+    #[allow(missing_docs)] // documentation missing in model
     Vfw,
     #[allow(missing_docs)] // documentation missing in model
     Vorbis,
@@ -126,6 +144,12 @@ pub enum Codec {
     Vp9,
     #[allow(missing_docs)] // documentation missing in model
     Webvtt,
+    #[allow(missing_docs)] // documentation missing in model
+    Wma,
+    #[allow(missing_docs)] // documentation missing in model
+    Wma2,
+    #[allow(missing_docs)] // documentation missing in model
+    Wmapro,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -135,12 +159,15 @@ impl ::std::convert::From<&str> for Codec {
         match s {
             "AAC" => Codec::Aac,
             "AC3" => Codec::Ac3,
+            "AMR" => Codec::Amr,
             "AV1" => Codec::Av1,
             "AVC" => Codec::Avc,
             "C608" => Codec::C608,
             "C708" => Codec::C708,
+            "DV" => Codec::Dv,
             "EAC3" => Codec::Eac3,
             "FLAC" => Codec::Flac,
+            "H263" => Codec::H263,
             "HEVC" => Codec::Hevc,
             "JPEG2000" => Codec::Jpeg2000,
             "MJPEG" => Codec::Mjpeg,
@@ -156,11 +183,16 @@ impl ::std::convert::From<&str> for Codec {
             "THEORA" => Codec::Theora,
             "UNCOMPRESSED" => Codec::Uncompressed,
             "UNKNOWN" => Codec::UnknownValue,
+            "VC1" => Codec::Vc1,
+            "VC3" => Codec::Vc3,
             "VFW" => Codec::Vfw,
             "VORBIS" => Codec::Vorbis,
             "VP8" => Codec::Vp8,
             "VP9" => Codec::Vp9,
             "WEBVTT" => Codec::Webvtt,
+            "WMA" => Codec::Wma,
+            "WMA2" => Codec::Wma2,
+            "WMAPRO" => Codec::Wmapro,
             other => Codec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -178,12 +210,15 @@ impl Codec {
         match self {
             Codec::Aac => "AAC",
             Codec::Ac3 => "AC3",
+            Codec::Amr => "AMR",
             Codec::Av1 => "AV1",
             Codec::Avc => "AVC",
             Codec::C608 => "C608",
             Codec::C708 => "C708",
+            Codec::Dv => "DV",
             Codec::Eac3 => "EAC3",
             Codec::Flac => "FLAC",
+            Codec::H263 => "H263",
             Codec::Hevc => "HEVC",
             Codec::Jpeg2000 => "JPEG2000",
             Codec::Mjpeg => "MJPEG",
@@ -199,11 +234,16 @@ impl Codec {
             Codec::Theora => "THEORA",
             Codec::Uncompressed => "UNCOMPRESSED",
             Codec::UnknownValue => "UNKNOWN",
+            Codec::Vc1 => "VC1",
+            Codec::Vc3 => "VC3",
             Codec::Vfw => "VFW",
             Codec::Vorbis => "VORBIS",
             Codec::Vp8 => "VP8",
             Codec::Vp9 => "VP9",
             Codec::Webvtt => "WEBVTT",
+            Codec::Wma => "WMA",
+            Codec::Wma2 => "WMA2",
+            Codec::Wmapro => "WMAPRO",
             Codec::Unknown(value) => value.as_str(),
         }
     }
@@ -212,12 +252,15 @@ impl Codec {
         &[
             "AAC",
             "AC3",
+            "AMR",
             "AV1",
             "AVC",
             "C608",
             "C708",
+            "DV",
             "EAC3",
             "FLAC",
+            "H263",
             "HEVC",
             "JPEG2000",
             "MJPEG",
@@ -233,11 +276,16 @@ impl Codec {
             "THEORA",
             "UNCOMPRESSED",
             "UNKNOWN",
+            "VC1",
+            "VC3",
             "VFW",
             "VORBIS",
             "VP8",
             "VP9",
             "WEBVTT",
+            "WMA",
+            "WMA2",
+            "WMAPRO",
         ]
     }
 }
@@ -263,12 +311,15 @@ impl ::std::fmt::Display for Codec {
         match self {
             Codec::Aac => write!(f, "AAC"),
             Codec::Ac3 => write!(f, "AC3"),
+            Codec::Amr => write!(f, "AMR"),
             Codec::Av1 => write!(f, "AV1"),
             Codec::Avc => write!(f, "AVC"),
             Codec::C608 => write!(f, "C608"),
             Codec::C708 => write!(f, "C708"),
+            Codec::Dv => write!(f, "DV"),
             Codec::Eac3 => write!(f, "EAC3"),
             Codec::Flac => write!(f, "FLAC"),
+            Codec::H263 => write!(f, "H263"),
             Codec::Hevc => write!(f, "HEVC"),
             Codec::Jpeg2000 => write!(f, "JPEG2000"),
             Codec::Mjpeg => write!(f, "MJPEG"),
@@ -284,11 +335,16 @@ impl ::std::fmt::Display for Codec {
             Codec::Theora => write!(f, "THEORA"),
             Codec::Uncompressed => write!(f, "UNCOMPRESSED"),
             Codec::UnknownValue => write!(f, "UNKNOWN"),
+            Codec::Vc1 => write!(f, "VC1"),
+            Codec::Vc3 => write!(f, "VC3"),
             Codec::Vfw => write!(f, "VFW"),
             Codec::Vorbis => write!(f, "VORBIS"),
             Codec::Vp8 => write!(f, "VP8"),
             Codec::Vp9 => write!(f, "VP9"),
             Codec::Webvtt => write!(f, "WEBVTT"),
+            Codec::Wma => write!(f, "WMA"),
+            Codec::Wma2 => write!(f, "WMA2"),
+            Codec::Wmapro => write!(f, "WMAPRO"),
             Codec::Unknown(value) => write!(f, "{value}"),
         }
     }

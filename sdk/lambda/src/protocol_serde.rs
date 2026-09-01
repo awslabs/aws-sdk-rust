@@ -633,6 +633,8 @@ pub(crate) mod shape_resolved_s3_object;
 
 pub(crate) mod shape_runtime_version_error;
 
+pub(crate) mod shape_s3_files_config;
+
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_stack_trace_entries;

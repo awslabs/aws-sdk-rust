@@ -243,6 +243,8 @@ pub(crate) mod shape_get_operations;
 
 pub(crate) mod shape_get_operations_for_resource;
 
+pub(crate) mod shape_get_profile;
+
 pub(crate) mod shape_get_regions;
 
 pub(crate) mod shape_get_relational_database;
@@ -802,6 +804,8 @@ pub(crate) mod shape_metric_datapoint_list;
 pub(crate) mod shape_operation;
 
 pub(crate) mod shape_operation_list;
+
+pub(crate) mod shape_partner_info;
 
 pub(crate) mod shape_port_info;
 

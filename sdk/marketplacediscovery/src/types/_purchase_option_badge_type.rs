@@ -12,6 +12,7 @@
 /// ```text
 /// # let purchaseoptionbadgetype = unimplemented!();
 /// match purchaseoptionbadgetype {
+///     PurchaseOptionBadgeType::AutoRenew => { /* ... */ },
 ///     PurchaseOptionBadgeType::FutureDated => { /* ... */ },
 ///     PurchaseOptionBadgeType::PrivatePricing => { /* ... */ },
 ///     PurchaseOptionBadgeType::ReplacementOffer => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum PurchaseOptionBadgeType {
     #[allow(missing_docs)] // documentation missing in model
+    AutoRenew,
+    #[allow(missing_docs)] // documentation missing in model
     FutureDated,
     #[allow(missing_docs)] // documentation missing in model
     PrivatePricing,
@@ -56,6 +59,7 @@ pub enum PurchaseOptionBadgeType {
 impl ::std::convert::From<&str> for PurchaseOptionBadgeType {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO_RENEW" => PurchaseOptionBadgeType::AutoRenew,
             "FUTURE_DATED" => PurchaseOptionBadgeType::FutureDated,
             "PRIVATE_PRICING" => PurchaseOptionBadgeType::PrivatePricing,
             "REPLACEMENT_OFFER" => PurchaseOptionBadgeType::ReplacementOffer,
@@ -74,6 +78,7 @@ impl PurchaseOptionBadgeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PurchaseOptionBadgeType::AutoRenew => "AUTO_RENEW",
             PurchaseOptionBadgeType::FutureDated => "FUTURE_DATED",
             PurchaseOptionBadgeType::PrivatePricing => "PRIVATE_PRICING",
             PurchaseOptionBadgeType::ReplacementOffer => "REPLACEMENT_OFFER",
@@ -82,7 +87,7 @@ impl PurchaseOptionBadgeType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FUTURE_DATED", "PRIVATE_PRICING", "REPLACEMENT_OFFER"]
+        &["AUTO_RENEW", "FUTURE_DATED", "PRIVATE_PRICING", "REPLACEMENT_OFFER"]
     }
 }
 impl ::std::convert::AsRef<str> for PurchaseOptionBadgeType {
@@ -105,6 +110,7 @@ impl PurchaseOptionBadgeType {
 impl ::std::fmt::Display for PurchaseOptionBadgeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PurchaseOptionBadgeType::AutoRenew => write!(f, "AUTO_RENEW"),
             PurchaseOptionBadgeType::FutureDated => write!(f, "FUTURE_DATED"),
             PurchaseOptionBadgeType::PrivatePricing => write!(f, "PRIVATE_PRICING"),
             PurchaseOptionBadgeType::ReplacementOffer => write!(f, "REPLACEMENT_OFFER"),

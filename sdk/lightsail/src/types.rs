@@ -83,6 +83,10 @@ pub use crate::types::_load_balancer::LoadBalancer;
 
 pub use crate::types::_load_balancer_metric_name::LoadBalancerMetricName;
 
+pub use crate::types::_profile_type::ProfileType;
+
+pub use crate::types::_partner_info::PartnerInfo;
+
 pub use crate::types::_relational_database::RelationalDatabase;
 
 pub use crate::types::_relational_database_password_version::RelationalDatabasePasswordVersion;
@@ -240,6 +244,10 @@ pub use crate::types::_load_balancer_protocol::LoadBalancerProtocol;
 pub use crate::types::_load_balancer_tls_certificate::LoadBalancerTlsCertificate;
 
 pub use crate::types::_load_balancer_tls_policy::LoadBalancerTlsPolicy;
+
+pub use crate::types::_tier_name::TierName;
+
+pub use crate::types::_partner_status::PartnerStatus;
 
 pub use crate::types::_region::Region;
 
@@ -711,6 +719,10 @@ mod _origin_ip_address_type_enum;
 
 mod _origin_protocol_policy_enum;
 
+mod _partner_info;
+
+mod _partner_status;
+
 mod _password_data;
 
 mod _pending_maintenance_action;
@@ -730,6 +742,8 @@ mod _pricing_unit;
 mod _private_registry_access;
 
 mod _private_registry_access_request;
+
+mod _profile_type;
 
 mod _query_string_object;
 
@@ -804,6 +818,8 @@ mod _status_type;
 mod _stop_instance_on_idle_request;
 
 mod _tag;
+
+mod _tier_name;
 
 mod _time_period;
 

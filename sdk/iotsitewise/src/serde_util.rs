@@ -2238,6 +2238,15 @@ pub(crate) fn image_location_correct_errors(
     builder
 }
 
+pub(crate) fn mount_overrides_correct_errors(
+    mut builder: crate::types::builders::MountOverridesBuilder,
+) -> crate::types::builders::MountOverridesBuilder {
+    if builder.compute_nodes.is_none() {
+        builder.compute_nodes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn multi_layer_storage_correct_errors(
     mut builder: crate::types::builders::MultiLayerStorageBuilder,
 ) -> crate::types::builders::MultiLayerStorageBuilder {
@@ -3792,6 +3801,18 @@ pub(crate) fn enrichment_trim_settings_correct_errors(
     builder
 }
 
+pub(crate) fn ephemeral_storage_configuration_correct_errors(
+    mut builder: crate::types::builders::EphemeralStorageConfigurationBuilder,
+) -> crate::types::builders::EphemeralStorageConfigurationBuilder {
+    if builder.storage_class.is_none() {
+        builder.storage_class = "no value was set".parse::<crate::types::StorageClass>().ok()
+    }
+    if builder.storage_size_in_gib.is_none() {
+        builder.storage_size_in_gib = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn kendra_source_detail_correct_errors(
     mut builder: crate::types::builders::KendraSourceDetailBuilder,
 ) -> crate::types::builders::KendraSourceDetailBuilder {
@@ -3945,6 +3966,22 @@ pub(crate) fn metric_processing_config_correct_errors(
     builder
 }
 
+pub(crate) fn mount_correct_errors(mut builder: crate::types::builders::MountBuilder) -> crate::types::builders::MountBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.relative_path.is_none() {
+        builder.relative_path = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = Some(crate::types::MountSource::Unknown)
+    }
+    if builder.storage_type.is_none() {
+        builder.storage_type = "no value was set".parse::<crate::types::MountStorageType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn transform_processing_config_correct_errors(
     mut builder: crate::types::builders::TransformProcessingConfigBuilder,
 ) -> crate::types::builders::TransformProcessingConfigBuilder {
@@ -3983,6 +4020,15 @@ pub(crate) fn tumbling_window_correct_errors(
 ) -> crate::types::builders::TumblingWindowBuilder {
     if builder.interval.is_none() {
         builder.interval = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn s3_access_point_source_correct_errors(
+    mut builder: crate::types::builders::S3AccessPointSourceBuilder,
+) -> crate::types::builders::S3AccessPointSourceBuilder {
+    if builder.access_point_arn.is_none() {
+        builder.access_point_arn = Some(Default::default())
     }
     builder
 }

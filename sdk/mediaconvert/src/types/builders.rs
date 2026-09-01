@@ -407,6 +407,8 @@ pub use crate::types::_frame_rate::FrameRateBuilder;
 
 pub use crate::types::_codec_metadata::CodecMetadataBuilder;
 
+pub use crate::types::_aspect_ratio::AspectRatioBuilder;
+
 pub use crate::types::_hdr_metadata::HdrMetadataBuilder;
 
 pub use crate::types::_caption_source_framerate::CaptionSourceFramerateBuilder;

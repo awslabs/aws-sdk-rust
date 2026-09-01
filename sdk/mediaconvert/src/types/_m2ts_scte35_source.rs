@@ -12,6 +12,7 @@
 /// ```text
 /// # let m2tsscte35source = unimplemented!();
 /// match m2tsscte35source {
+///     M2tsScte35Source::ManifestCues => { /* ... */ },
 ///     M2tsScte35Source::None => { /* ... */ },
 ///     M2tsScte35Source::Passthrough => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -36,12 +37,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
+/// For SCTE-35 markers from your input-- Choose Passthrough if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None if you don't want SCTE-35 markers in this output. When your input is an HLS manifest, choose Manifest cues to pass through CUE markers in your HLS manifest as segment boundaries and SCTE-35 markers in this output at each EXT-X-CUE-OUT splice point in the input manifest. For SCTE-35 markers from an ESAM XML document-- Choose None. Also provide the ESAM XML as a string in the setting Signal processing notification XML. Also enable ESAM SCTE-35 (include the property scte35Esam).
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum M2tsScte35Source {
+    #[allow(missing_docs)] // documentation missing in model
+    ManifestCues,
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
@@ -53,6 +56,7 @@ pub enum M2tsScte35Source {
 impl ::std::convert::From<&str> for M2tsScte35Source {
     fn from(s: &str) -> Self {
         match s {
+            "MANIFEST_CUES" => M2tsScte35Source::ManifestCues,
             "NONE" => M2tsScte35Source::None,
             "PASSTHROUGH" => M2tsScte35Source::Passthrough,
             other => M2tsScte35Source::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl M2tsScte35Source {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            M2tsScte35Source::ManifestCues => "MANIFEST_CUES",
             M2tsScte35Source::None => "NONE",
             M2tsScte35Source::Passthrough => "PASSTHROUGH",
             M2tsScte35Source::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl M2tsScte35Source {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["NONE", "PASSTHROUGH"]
+        &["MANIFEST_CUES", "NONE", "PASSTHROUGH"]
     }
 }
 impl ::std::convert::AsRef<str> for M2tsScte35Source {
@@ -100,6 +105,7 @@ impl M2tsScte35Source {
 impl ::std::fmt::Display for M2tsScte35Source {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            M2tsScte35Source::ManifestCues => write!(f, "MANIFEST_CUES"),
             M2tsScte35Source::None => write!(f, "NONE"),
             M2tsScte35Source::Passthrough => write!(f, "PASSTHROUGH"),
             M2tsScte35Source::Unknown(value) => write!(f, "{value}"),

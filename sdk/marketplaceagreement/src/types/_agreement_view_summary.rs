@@ -12,6 +12,9 @@ pub struct AgreementViewSummary {
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The date and time when the agreement was last updated. An agreement is updated when any of its attributes or accepted terms change. Amendments, renewals, and a party changing whether the agreement renews are all examples.</p>
+    /// <p>Use the <code>BeforeLastUpdateTime</code> and <code>AfterLastUpdateTime</code> filters to search on this value, and <code>LastUpdateTime</code> as the <code>SortBy</code> value to sort by it. Sorting by <code>LastUpdateTime</code> is supported only when <code>PartyType</code> is <code>Proposer</code>.</p>
+    pub last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of agreement.</p>
     pub agreement_type: ::std::option::Option<::std::string::String>,
     /// <p>Details of the party accepting the agreement terms. This is commonly the buyer for <code>PurchaseAgreement.</code></p>
@@ -24,6 +27,34 @@ pub struct AgreementViewSummary {
     pub status: ::std::option::Option<crate::types::AgreementStatus>,
     /// <p>A list of entitlements associated with the agreement.</p>
     pub entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. You can also use it as the <code>InitialAgreementId</code> filter value to return every agreement in the same chain.</p>
+    pub initial_agreement_id: ::std::option::Option<::std::string::String>,
+    /// <p>The behavior of the agreement when it reaches its end date. The field is <code>null</code> for agreements that have no end date, because those agreements never reach an end time.</p>
+    /// <p>Types include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RENEW</code> – A new agreement is created from the accepted terms of this agreement.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – A new agreement is created from a different offer than the one this agreement was created from. This happens, for example, when a private offer reaches its end date and the acceptor transitions to the public offer for the product.</p></li>
+    /// <li>
+    /// <p><code>EXPIRE</code> – The agreement ends and isn't renewed or replaced.</p></li>
+    /// </ul>
+    pub end_time_behavior_type: ::std::option::Option<crate::types::EndTimeBehaviorType>,
+    /// <p>The reason why the agreement doesn't renew at its end date. The field is <code>null</code> when the agreement renews.</p>
+    /// <p>More than one reason can apply to the same agreement. When that happens, the operation returns only one reason code, and <code>PROPOSER_RENEW_OPTED_OUT</code> takes precedence over all others.</p>
+    /// <p>The <code>EnableAutoRenew</code> field reflects only the acceptor's preference, and doesn't reflect the other reasons an agreement might not renew.</p>
+    /// <p>Reason codes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PROPOSER_RENEW_OPTED_OUT</code> – The proposer opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTOR_RENEW_OPTED_OUT</code> – The acceptor opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>NO_RENEWAL_TERM</code> – The accepted terms of the agreement don't include a renewal term, which is required for an agreement to renew.</p></li>
+    /// <li>
+    /// <p><code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the maximum number of renewals allowed by its renewal term.</p></li>
+    /// </ul>
+    pub end_time_behavior_reason_code: ::std::option::Option<crate::types::EndTimeBehaviorReasonCode>,
 }
 impl AgreementViewSummary {
     /// <p>The unique identifier of the agreement.</p>
@@ -41,6 +72,11 @@ impl AgreementViewSummary {
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
+    }
+    /// <p>The date and time when the agreement was last updated. An agreement is updated when any of its attributes or accepted terms change. Amendments, renewals, and a party changing whether the agreement renews are all examples.</p>
+    /// <p>Use the <code>BeforeLastUpdateTime</code> and <code>AfterLastUpdateTime</code> filters to search on this value, and <code>LastUpdateTime</code> as the <code>SortBy</code> value to sort by it. Sorting by <code>LastUpdateTime</code> is supported only when <code>PartyType</code> is <code>Proposer</code>.</p>
+    pub fn last_update_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_update_time.as_ref()
     }
     /// <p>The type of agreement.</p>
     pub fn agreement_type(&self) -> ::std::option::Option<&str> {
@@ -68,6 +104,40 @@ impl AgreementViewSummary {
     pub fn entitlements(&self) -> &[crate::types::Entitlement] {
         self.entitlements.as_deref().unwrap_or_default()
     }
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. You can also use it as the <code>InitialAgreementId</code> filter value to return every agreement in the same chain.</p>
+    pub fn initial_agreement_id(&self) -> ::std::option::Option<&str> {
+        self.initial_agreement_id.as_deref()
+    }
+    /// <p>The behavior of the agreement when it reaches its end date. The field is <code>null</code> for agreements that have no end date, because those agreements never reach an end time.</p>
+    /// <p>Types include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RENEW</code> – A new agreement is created from the accepted terms of this agreement.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – A new agreement is created from a different offer than the one this agreement was created from. This happens, for example, when a private offer reaches its end date and the acceptor transitions to the public offer for the product.</p></li>
+    /// <li>
+    /// <p><code>EXPIRE</code> – The agreement ends and isn't renewed or replaced.</p></li>
+    /// </ul>
+    pub fn end_time_behavior_type(&self) -> ::std::option::Option<&crate::types::EndTimeBehaviorType> {
+        self.end_time_behavior_type.as_ref()
+    }
+    /// <p>The reason why the agreement doesn't renew at its end date. The field is <code>null</code> when the agreement renews.</p>
+    /// <p>More than one reason can apply to the same agreement. When that happens, the operation returns only one reason code, and <code>PROPOSER_RENEW_OPTED_OUT</code> takes precedence over all others.</p>
+    /// <p>The <code>EnableAutoRenew</code> field reflects only the acceptor's preference, and doesn't reflect the other reasons an agreement might not renew.</p>
+    /// <p>Reason codes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PROPOSER_RENEW_OPTED_OUT</code> – The proposer opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTOR_RENEW_OPTED_OUT</code> – The acceptor opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>NO_RENEWAL_TERM</code> – The accepted terms of the agreement don't include a renewal term, which is required for an agreement to renew.</p></li>
+    /// <li>
+    /// <p><code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the maximum number of renewals allowed by its renewal term.</p></li>
+    /// </ul>
+    pub fn end_time_behavior_reason_code(&self) -> ::std::option::Option<&crate::types::EndTimeBehaviorReasonCode> {
+        self.end_time_behavior_reason_code.as_ref()
+    }
 }
 impl AgreementViewSummary {
     /// Creates a new builder-style object to manufacture [`AgreementViewSummary`](crate::types::AgreementViewSummary).
@@ -84,12 +154,16 @@ pub struct AgreementViewSummaryBuilder {
     pub(crate) acceptance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_update_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) agreement_type: ::std::option::Option<::std::string::String>,
     pub(crate) acceptor: ::std::option::Option<crate::types::Acceptor>,
     pub(crate) proposer: ::std::option::Option<crate::types::Proposer>,
     pub(crate) proposal_summary: ::std::option::Option<crate::types::ProposalSummary>,
     pub(crate) status: ::std::option::Option<crate::types::AgreementStatus>,
     pub(crate) entitlements: ::std::option::Option<::std::vec::Vec<crate::types::Entitlement>>,
+    pub(crate) initial_agreement_id: ::std::option::Option<::std::string::String>,
+    pub(crate) end_time_behavior_type: ::std::option::Option<crate::types::EndTimeBehaviorType>,
+    pub(crate) end_time_behavior_reason_code: ::std::option::Option<crate::types::EndTimeBehaviorReasonCode>,
 }
 impl AgreementViewSummaryBuilder {
     /// <p>The unique identifier of the agreement.</p>
@@ -147,6 +221,23 @@ impl AgreementViewSummaryBuilder {
     /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
+    }
+    /// <p>The date and time when the agreement was last updated. An agreement is updated when any of its attributes or accepted terms change. Amendments, renewals, and a party changing whether the agreement renews are all examples.</p>
+    /// <p>Use the <code>BeforeLastUpdateTime</code> and <code>AfterLastUpdateTime</code> filters to search on this value, and <code>LastUpdateTime</code> as the <code>SortBy</code> value to sort by it. Sorting by <code>LastUpdateTime</code> is supported only when <code>PartyType</code> is <code>Proposer</code>.</p>
+    pub fn last_update_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_update_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the agreement was last updated. An agreement is updated when any of its attributes or accepted terms change. Amendments, renewals, and a party changing whether the agreement renews are all examples.</p>
+    /// <p>Use the <code>BeforeLastUpdateTime</code> and <code>AfterLastUpdateTime</code> filters to search on this value, and <code>LastUpdateTime</code> as the <code>SortBy</code> value to sort by it. Sorting by <code>LastUpdateTime</code> is supported only when <code>PartyType</code> is <code>Proposer</code>.</p>
+    pub fn set_last_update_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_update_time = input;
+        self
+    }
+    /// <p>The date and time when the agreement was last updated. An agreement is updated when any of its attributes or accepted terms change. Amendments, renewals, and a party changing whether the agreement renews are all examples.</p>
+    /// <p>Use the <code>BeforeLastUpdateTime</code> and <code>AfterLastUpdateTime</code> filters to search on this value, and <code>LastUpdateTime</code> as the <code>SortBy</code> value to sort by it. Sorting by <code>LastUpdateTime</code> is supported only when <code>PartyType</code> is <code>Proposer</code>.</p>
+    pub fn get_last_update_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_update_time
     }
     /// <p>The type of agreement.</p>
     pub fn agreement_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -238,6 +329,114 @@ impl AgreementViewSummaryBuilder {
     pub fn get_entitlements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Entitlement>> {
         &self.entitlements
     }
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. You can also use it as the <code>InitialAgreementId</code> filter value to return every agreement in the same chain.</p>
+    pub fn initial_agreement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.initial_agreement_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. You can also use it as the <code>InitialAgreementId</code> filter value to return every agreement in the same chain.</p>
+    pub fn set_initial_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.initial_agreement_id = input;
+        self
+    }
+    /// <p>The unique identifier of the very first agreement in a chain of related agreements, such as renewals or replacements. It stays the same across all agreements in that chain, which lets you trace an agreement back to the original. You can also use it as the <code>InitialAgreementId</code> filter value to return every agreement in the same chain.</p>
+    pub fn get_initial_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.initial_agreement_id
+    }
+    /// <p>The behavior of the agreement when it reaches its end date. The field is <code>null</code> for agreements that have no end date, because those agreements never reach an end time.</p>
+    /// <p>Types include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RENEW</code> – A new agreement is created from the accepted terms of this agreement.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – A new agreement is created from a different offer than the one this agreement was created from. This happens, for example, when a private offer reaches its end date and the acceptor transitions to the public offer for the product.</p></li>
+    /// <li>
+    /// <p><code>EXPIRE</code> – The agreement ends and isn't renewed or replaced.</p></li>
+    /// </ul>
+    pub fn end_time_behavior_type(mut self, input: crate::types::EndTimeBehaviorType) -> Self {
+        self.end_time_behavior_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The behavior of the agreement when it reaches its end date. The field is <code>null</code> for agreements that have no end date, because those agreements never reach an end time.</p>
+    /// <p>Types include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RENEW</code> – A new agreement is created from the accepted terms of this agreement.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – A new agreement is created from a different offer than the one this agreement was created from. This happens, for example, when a private offer reaches its end date and the acceptor transitions to the public offer for the product.</p></li>
+    /// <li>
+    /// <p><code>EXPIRE</code> – The agreement ends and isn't renewed or replaced.</p></li>
+    /// </ul>
+    pub fn set_end_time_behavior_type(mut self, input: ::std::option::Option<crate::types::EndTimeBehaviorType>) -> Self {
+        self.end_time_behavior_type = input;
+        self
+    }
+    /// <p>The behavior of the agreement when it reaches its end date. The field is <code>null</code> for agreements that have no end date, because those agreements never reach an end time.</p>
+    /// <p>Types include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RENEW</code> – A new agreement is created from the accepted terms of this agreement.</p></li>
+    /// <li>
+    /// <p><code>REPLACE</code> – A new agreement is created from a different offer than the one this agreement was created from. This happens, for example, when a private offer reaches its end date and the acceptor transitions to the public offer for the product.</p></li>
+    /// <li>
+    /// <p><code>EXPIRE</code> – The agreement ends and isn't renewed or replaced.</p></li>
+    /// </ul>
+    pub fn get_end_time_behavior_type(&self) -> &::std::option::Option<crate::types::EndTimeBehaviorType> {
+        &self.end_time_behavior_type
+    }
+    /// <p>The reason why the agreement doesn't renew at its end date. The field is <code>null</code> when the agreement renews.</p>
+    /// <p>More than one reason can apply to the same agreement. When that happens, the operation returns only one reason code, and <code>PROPOSER_RENEW_OPTED_OUT</code> takes precedence over all others.</p>
+    /// <p>The <code>EnableAutoRenew</code> field reflects only the acceptor's preference, and doesn't reflect the other reasons an agreement might not renew.</p>
+    /// <p>Reason codes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PROPOSER_RENEW_OPTED_OUT</code> – The proposer opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTOR_RENEW_OPTED_OUT</code> – The acceptor opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>NO_RENEWAL_TERM</code> – The accepted terms of the agreement don't include a renewal term, which is required for an agreement to renew.</p></li>
+    /// <li>
+    /// <p><code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the maximum number of renewals allowed by its renewal term.</p></li>
+    /// </ul>
+    pub fn end_time_behavior_reason_code(mut self, input: crate::types::EndTimeBehaviorReasonCode) -> Self {
+        self.end_time_behavior_reason_code = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason why the agreement doesn't renew at its end date. The field is <code>null</code> when the agreement renews.</p>
+    /// <p>More than one reason can apply to the same agreement. When that happens, the operation returns only one reason code, and <code>PROPOSER_RENEW_OPTED_OUT</code> takes precedence over all others.</p>
+    /// <p>The <code>EnableAutoRenew</code> field reflects only the acceptor's preference, and doesn't reflect the other reasons an agreement might not renew.</p>
+    /// <p>Reason codes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PROPOSER_RENEW_OPTED_OUT</code> – The proposer opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTOR_RENEW_OPTED_OUT</code> – The acceptor opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>NO_RENEWAL_TERM</code> – The accepted terms of the agreement don't include a renewal term, which is required for an agreement to renew.</p></li>
+    /// <li>
+    /// <p><code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the maximum number of renewals allowed by its renewal term.</p></li>
+    /// </ul>
+    pub fn set_end_time_behavior_reason_code(mut self, input: ::std::option::Option<crate::types::EndTimeBehaviorReasonCode>) -> Self {
+        self.end_time_behavior_reason_code = input;
+        self
+    }
+    /// <p>The reason why the agreement doesn't renew at its end date. The field is <code>null</code> when the agreement renews.</p>
+    /// <p>More than one reason can apply to the same agreement. When that happens, the operation returns only one reason code, and <code>PROPOSER_RENEW_OPTED_OUT</code> takes precedence over all others.</p>
+    /// <p>The <code>EnableAutoRenew</code> field reflects only the acceptor's preference, and doesn't reflect the other reasons an agreement might not renew.</p>
+    /// <p>Reason codes include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PROPOSER_RENEW_OPTED_OUT</code> – The proposer opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTOR_RENEW_OPTED_OUT</code> – The acceptor opted out of renewing the agreement.</p></li>
+    /// <li>
+    /// <p><code>NO_RENEWAL_TERM</code> – The accepted terms of the agreement don't include a renewal term, which is required for an agreement to renew.</p></li>
+    /// <li>
+    /// <p><code>RENEWAL_LIMIT_EXHAUSTED</code> – The agreement reached the maximum number of renewals allowed by its renewal term.</p></li>
+    /// </ul>
+    pub fn get_end_time_behavior_reason_code(&self) -> &::std::option::Option<crate::types::EndTimeBehaviorReasonCode> {
+        &self.end_time_behavior_reason_code
+    }
     /// Consumes the builder and constructs a [`AgreementViewSummary`](crate::types::AgreementViewSummary).
     pub fn build(self) -> crate::types::AgreementViewSummary {
         crate::types::AgreementViewSummary {
@@ -245,12 +444,16 @@ impl AgreementViewSummaryBuilder {
             acceptance_time: self.acceptance_time,
             start_time: self.start_time,
             end_time: self.end_time,
+            last_update_time: self.last_update_time,
             agreement_type: self.agreement_type,
             acceptor: self.acceptor,
             proposer: self.proposer,
             proposal_summary: self.proposal_summary,
             status: self.status,
             entitlements: self.entitlements,
+            initial_agreement_id: self.initial_agreement_id,
+            end_time_behavior_type: self.end_time_behavior_type,
+            end_time_behavior_reason_code: self.end_time_behavior_reason_code,
         }
     }
 }

@@ -142,6 +142,10 @@ mod accept_invitation;
 
 mod archive_findings;
 
+mod create_custom_detection_rule_association;
+
+mod create_custom_detection_rule_org_configuration;
+
 mod create_detector;
 
 mod create_filter;
@@ -193,6 +197,10 @@ pub mod customize;
 
 mod decline_invitations;
 
+mod delete_custom_detection_rule_association;
+
+mod delete_custom_detection_rule_org_configuration;
+
 mod delete_detector;
 
 mod delete_filter;
@@ -232,6 +240,12 @@ mod enable_organization_admin_account;
 mod get_administrator_account;
 
 mod get_coverage_statistics;
+
+mod get_custom_detection_rule;
+
+mod get_custom_detection_rule_association;
+
+mod get_custom_detection_rule_org_configuration;
 
 mod get_detector;
 
@@ -274,6 +288,12 @@ mod get_usage_statistics;
 mod invite_members;
 
 mod list_coverage;
+
+mod list_custom_detection_rule_associations;
+
+mod list_custom_detection_rule_org_configurations;
+
+mod list_custom_detection_rules;
 
 mod list_detectors;
 
@@ -318,6 +338,10 @@ mod tag_resource;
 mod unarchive_findings;
 
 mod untag_resource;
+
+mod update_custom_detection_rule_association;
+
+mod update_custom_detection_rule_org_configuration;
 
 mod update_detector;
 

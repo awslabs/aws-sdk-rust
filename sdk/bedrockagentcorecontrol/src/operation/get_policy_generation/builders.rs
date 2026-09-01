@@ -22,7 +22,7 @@ impl crate::operation::get_policy_generation::builders::GetPolicyGenerationInput
 }
 /// Fluent builder constructing a request to `GetPolicyGeneration`.
 ///
-/// <p>Retrieves information about a policy generation request within the AgentCore Policy system. Policy generation converts natural language descriptions into Cedar policy statements using AI-powered translation, enabling non-technical users to create policies.</p>
+/// <p>Retrieves information about a policy generation request within the AgentCore Policy system. Policy generation converts natural language descriptions into Dogwood policy statements using AI-powered translation, enabling non-technical users to create policies.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetPolicyGenerationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

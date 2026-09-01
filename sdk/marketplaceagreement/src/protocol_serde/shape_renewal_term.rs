@@ -40,6 +40,41 @@ where
                                 crate::protocol_serde::shape_renewal_term_configuration::de_renewal_term_configuration(tokens, _value, depth + 1)?,
                             );
                         }
+                        "lockoutPeriod" => {
+                            builder = builder.set_lockout_period(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "maxRenewals" => {
+                            builder = builder.set_max_renewals(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "adjustmentDeadline" => {
+                            builder = builder.set_adjustment_deadline(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "priceIncrease" => {
+                            builder = builder.set_price_increase(crate::protocol_serde::shape_price_increase::de_price_increase(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "termTemplates" => {
+                            builder = builder.set_term_templates(crate::protocol_serde::shape_term_template_list::de_term_template_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -9,6 +9,12 @@ pub fn ser_file_system_config(
     {
         object.key("LocalMountPath").string(input.local_mount_path.as_str());
     }
+    if let Some(var_1) = &input.s3_files_config {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("S3FilesConfig").start_object();
+        crate::protocol_serde::shape_s3_files_config::ser_s3_files_config(&mut object_2, var_1)?;
+        object_2.finish();
+    }
     Ok(())
 }
 
@@ -47,6 +53,13 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "S3FilesConfig" => {
+                            builder = builder.set_s3_files_config(crate::protocol_serde::shape_s3_files_config::de_s3_files_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

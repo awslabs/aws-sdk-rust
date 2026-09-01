@@ -125,6 +125,11 @@ pub(crate) fn de_get_configuration_set(
                         depth + 1,
                     )?);
                 }
+                "MessageSecurityOptions" => {
+                    builder = builder.set_message_security_options(
+                        crate::protocol_serde::shape_message_security_options::de_message_security_options(tokens, _value, depth + 1)?,
+                    );
+                }
                 "ReputationOptions" => {
                     builder = builder.set_reputation_options(crate::protocol_serde::shape_reputation_options::de_reputation_options(
                         tokens,

@@ -11,6 +11,8 @@ pub use crate::types::_estimated_charges::EstimatedChargesBuilder;
 
 pub use crate::types::_proposal_summary::ProposalSummaryBuilder;
 
+pub use crate::types::_end_time_behavior::EndTimeBehaviorBuilder;
+
 pub use crate::types::_invoice_billing_period::InvoiceBillingPeriodBuilder;
 
 pub use crate::types::_sort::SortBuilder;
@@ -30,6 +32,8 @@ pub use crate::types::_requested_term::RequestedTermBuilder;
 pub use crate::types::_estimated_taxes::EstimatedTaxesBuilder;
 
 pub use crate::types::_invoicing_entity::InvoicingEntityBuilder;
+
+pub use crate::types::_renewal_summary::RenewalSummaryBuilder;
 
 pub use crate::types::_agreement_entitlement::AgreementEntitlementBuilder;
 
@@ -93,6 +97,10 @@ pub use crate::types::_entitlement::EntitlementBuilder;
 
 pub use crate::types::_document_item::DocumentItemBuilder;
 
+pub use crate::types::_fixed_percentage::FixedPercentageBuilder;
+
+pub use crate::types::_percentage_range::PercentageRangeBuilder;
+
 pub use crate::types::_usage_based_rate_card_item::UsageBasedRateCardItemBuilder;
 
 pub use crate::types::_configurable_upfront_rate_card_item::ConfigurableUpfrontRateCardItemBuilder;
@@ -103,8 +111,12 @@ pub use crate::types::_grant_item::GrantItemBuilder;
 
 pub use crate::types::_dimension::DimensionBuilder;
 
+pub use crate::types::_payment_schedule_term_template::PaymentScheduleTermTemplateBuilder;
+
 pub use crate::types::_selector::SelectorBuilder;
 
 pub use crate::types::_constraints::ConstraintsBuilder;
 
 pub use crate::types::_rate_card_item::RateCardItemBuilder;
+
+pub use crate::types::_payment_schedule_entry::PaymentScheduleEntryBuilder;

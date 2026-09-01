@@ -51,6 +51,8 @@ pub use crate::types::_instance_state::InstanceStateBuilder;
 
 pub use crate::types::_load_balancer::LoadBalancerBuilder;
 
+pub use crate::types::_partner_info::PartnerInfoBuilder;
+
 pub use crate::types::_relational_database::RelationalDatabaseBuilder;
 
 pub use crate::types::_relational_database_snapshot::RelationalDatabaseSnapshotBuilder;

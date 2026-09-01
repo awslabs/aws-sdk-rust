@@ -49,6 +49,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "displayAspectRatio" => {
+                            builder = builder.set_display_aspect_ratio(crate::protocol_serde::shape_aspect_ratio::de_aspect_ratio(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "frameRate" => {
                             builder = builder.set_frame_rate(crate::protocol_serde::shape_frame_rate::de_frame_rate(tokens, _value, depth + 1)?);
                         }
@@ -76,6 +83,13 @@ where
                                     .map(i32::try_from)
                                     .transpose()?,
                             );
+                        }
+                        "sampleAspectRatio" => {
+                            builder = builder.set_sample_aspect_ratio(crate::protocol_serde::shape_aspect_ratio::de_aspect_ratio(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
                         "transferCharacteristics" => {
                             builder = builder.set_transfer_characteristics(

@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-sesv2 = "1.131.0"
+//! aws-sdk-sesv2 = "1.132.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -154,14 +154,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelExportJob`](crate::operation::cancel_export_job) operation has
-/// a [`Client::cancel_export_job`], function which returns a builder for that operation.
+/// For example, the [`AssociateEmailIdentityCertificate`](crate::operation::associate_email_identity_certificate) operation has
+/// a [`Client::associate_email_identity_certificate`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_export_job()
-///     .job_id("example")
+/// let result = client.associate_email_identity_certificate()
+///     .email_identity("example")
 ///     .send()
 ///     .await;
 /// ```

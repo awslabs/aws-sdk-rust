@@ -119,6 +119,10 @@ pub use crate::types::_document_item::DocumentItemBuilder;
 
 pub use crate::types::_schedule_item::ScheduleItemBuilder;
 
+pub use crate::types::_fixed_percentage::FixedPercentageBuilder;
+
+pub use crate::types::_percentage_range::PercentageRangeBuilder;
+
 pub use crate::types::_usage_based_rate_card_item::UsageBasedRateCardItemBuilder;
 
 pub use crate::types::_amazon_machine_image_operating_system::AmazonMachineImageOperatingSystemBuilder;
@@ -137,6 +141,10 @@ pub use crate::types::_selector::SelectorBuilder;
 
 pub use crate::types::_constraints::ConstraintsBuilder;
 
+pub use crate::types::_payment_schedule_term_template::PaymentScheduleTermTemplateBuilder;
+
 pub use crate::types::_rate_card_item::RateCardItemBuilder;
 
 pub use crate::types::_dimension_label::DimensionLabelBuilder;
+
+pub use crate::types::_payment_schedule_entry::PaymentScheduleEntryBuilder;

@@ -18,5 +18,8 @@ pub fn ser_subscribe_to_shard_input_input(
         crate::protocol_serde::shape_starting_position::ser_starting_position(&mut object_5, var_4)?;
         object_5.finish();
     }
+    if let Some(var_6) = &input.dry_run {
+        object.key("DryRun").boolean(*var_6);
+    }
     Ok(())
 }

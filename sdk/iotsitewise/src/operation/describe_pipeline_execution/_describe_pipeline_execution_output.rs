@@ -20,6 +20,8 @@ pub struct DescribePipelineExecutionOutput {
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The environment variables provided as input for the pipeline execution.</p>
     pub request_environment_variables: ::std::option::Option<crate::types::ExecutionEnvironmentVariables>,
+    /// <p>The mount overrides provided as input for the pipeline execution. Present when mount overrides were supplied at execution time.</p>
+    pub request_mount_overrides: ::std::option::Option<crate::types::MountOverrides>,
     /// <p>Scheduling priority for the execution. When not specified, defaults to lowest priority.</p>
     pub execution_priority: ::std::option::Option<i32>,
     /// <p>A list of compute node execution details within this pipeline execution.</p>
@@ -65,6 +67,10 @@ impl DescribePipelineExecutionOutput {
     pub fn request_environment_variables(&self) -> ::std::option::Option<&crate::types::ExecutionEnvironmentVariables> {
         self.request_environment_variables.as_ref()
     }
+    /// <p>The mount overrides provided as input for the pipeline execution. Present when mount overrides were supplied at execution time.</p>
+    pub fn request_mount_overrides(&self) -> ::std::option::Option<&crate::types::MountOverrides> {
+        self.request_mount_overrides.as_ref()
+    }
     /// <p>Scheduling priority for the execution. When not specified, defaults to lowest priority.</p>
     pub fn execution_priority(&self) -> ::std::option::Option<i32> {
         self.execution_priority
@@ -90,6 +96,7 @@ impl ::std::fmt::Debug for DescribePipelineExecutionOutput {
         formatter.field("start_time", &self.start_time);
         formatter.field("end_time", &self.end_time);
         formatter.field("request_environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("request_mount_overrides", &self.request_mount_overrides);
         formatter.field("execution_priority", &self.execution_priority);
         formatter.field("compute_node_execution_details", &self.compute_node_execution_details);
         formatter.field("next_token", &self.next_token);
@@ -121,6 +128,7 @@ pub struct DescribePipelineExecutionOutputBuilder {
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) request_environment_variables: ::std::option::Option<crate::types::ExecutionEnvironmentVariables>,
+    pub(crate) request_mount_overrides: ::std::option::Option<crate::types::MountOverrides>,
     pub(crate) execution_priority: ::std::option::Option<i32>,
     pub(crate) compute_node_execution_details: ::std::option::Option<::std::vec::Vec<crate::types::ComputeNodeExecutionDetails>>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -245,6 +253,20 @@ impl DescribePipelineExecutionOutputBuilder {
     pub fn get_request_environment_variables(&self) -> &::std::option::Option<crate::types::ExecutionEnvironmentVariables> {
         &self.request_environment_variables
     }
+    /// <p>The mount overrides provided as input for the pipeline execution. Present when mount overrides were supplied at execution time.</p>
+    pub fn request_mount_overrides(mut self, input: crate::types::MountOverrides) -> Self {
+        self.request_mount_overrides = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The mount overrides provided as input for the pipeline execution. Present when mount overrides were supplied at execution time.</p>
+    pub fn set_request_mount_overrides(mut self, input: ::std::option::Option<crate::types::MountOverrides>) -> Self {
+        self.request_mount_overrides = input;
+        self
+    }
+    /// <p>The mount overrides provided as input for the pipeline execution. Present when mount overrides were supplied at execution time.</p>
+    pub fn get_request_mount_overrides(&self) -> &::std::option::Option<crate::types::MountOverrides> {
+        &self.request_mount_overrides
+    }
     /// <p>Scheduling priority for the execution. When not specified, defaults to lowest priority.</p>
     pub fn execution_priority(mut self, input: i32) -> Self {
         self.execution_priority = ::std::option::Option::Some(input);
@@ -347,6 +369,7 @@ impl DescribePipelineExecutionOutputBuilder {
             start_time: self.start_time,
             end_time: self.end_time,
             request_environment_variables: self.request_environment_variables,
+            request_mount_overrides: self.request_mount_overrides,
             execution_priority: self.execution_priority,
             compute_node_execution_details: self.compute_node_execution_details.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -370,6 +393,7 @@ impl ::std::fmt::Debug for DescribePipelineExecutionOutputBuilder {
         formatter.field("start_time", &self.start_time);
         formatter.field("end_time", &self.end_time);
         formatter.field("request_environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("request_mount_overrides", &self.request_mount_overrides);
         formatter.field("execution_priority", &self.execution_priority);
         formatter.field("compute_node_execution_details", &self.compute_node_execution_details);
         formatter.field("next_token", &self.next_token);

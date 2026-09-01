@@ -415,7 +415,7 @@ pub use crate::types::_launch_permission_modifications::LaunchPermissionModifica
 
 pub use crate::types::_enclave_options_request::EnclaveOptionsRequestBuilder;
 
-pub use crate::types::_blob_attribute_value::BlobAttributeValueBuilder;
+pub use crate::types::_secure_blob_attribute_value::SecureBlobAttributeValueBuilder;
 
 pub use crate::types::_capacity_reservation_specification::CapacityReservationSpecificationBuilder;
 

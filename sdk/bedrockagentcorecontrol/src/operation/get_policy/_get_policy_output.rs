@@ -19,7 +19,7 @@ pub struct GetPolicyOutput {
     pub status: crate::types::PolicyStatus,
     /// <p>The current enforcement mode of the policy.</p>
     pub enforcement_mode: crate::types::EnforcementMode,
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    /// <p>The Cedar or Dogwood policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
     pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
     /// <p>The human-readable description of the policy's purpose and functionality. This helps administrators understand and manage the policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -64,7 +64,7 @@ impl GetPolicyOutput {
     pub fn enforcement_mode(&self) -> &crate::types::EnforcementMode {
         &self.enforcement_mode
     }
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    /// <p>The Cedar or Dogwood policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
         self.definition.as_ref()
     }
@@ -245,18 +245,18 @@ impl GetPolicyOutputBuilder {
     pub fn get_enforcement_mode(&self) -> &::std::option::Option<crate::types::EnforcementMode> {
         &self.enforcement_mode
     }
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    /// <p>The Cedar or Dogwood policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
     /// This field is required.
     pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    /// <p>The Cedar or Dogwood policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
         self.definition = input;
         self
     }
-    /// <p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
+    /// <p>The Cedar or Dogwood policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
         &self.definition
     }

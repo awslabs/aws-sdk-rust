@@ -4,13 +4,61 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TtmlDestinationSettings {
+    /// Specify the color of the rectangle behind the captions. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the background color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default black.
+    pub background_color: ::std::option::Option<crate::types::TtmlBackgroundColor>,
+    /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled and backgroundColor is set, leave blank to use a value of 255 (opaque).
+    pub background_opacity: ::std::option::Option<i32>,
+    /// Specify the color of the captions text. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the font color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default white.
+    pub font_color: ::std::option::Option<crate::types::TtmlFontColor>,
+    /// Specify the opacity of the captions. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the font opacity information in your input captions to your output captions. If Style passthrough is set to disabled and fontColor is set, leave blank to use a value of 255 (opaque).
+    pub font_opacity: ::std::option::Option<i32>,
+    /// Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
+    pub font_size: ::std::option::Option<i32>,
+    /// Specify the font style of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font style from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal style.
+    pub font_style: ::std::option::Option<crate::types::TtmlFontStyle>,
+    /// Specify the font weight of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font weight from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal weight.
+    pub font_weight: ::std::option::Option<crate::types::TtmlFontWeight>,
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
     pub style_passthrough: ::std::option::Option<crate::types::TtmlStylePassthrough>,
+    /// Specify the text decoration of the caption text. If Style passthrough is set to enabled, leave blank to pass through the text decoration from your input captions. If Style passthrough is set to disabled, leave blank to use the default of none.
+    pub text_decoration: ::std::option::Option<crate::types::TtmlTextDecoration>,
 }
 impl TtmlDestinationSettings {
+    /// Specify the color of the rectangle behind the captions. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the background color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default black.
+    pub fn background_color(&self) -> ::std::option::Option<&crate::types::TtmlBackgroundColor> {
+        self.background_color.as_ref()
+    }
+    /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled and backgroundColor is set, leave blank to use a value of 255 (opaque).
+    pub fn background_opacity(&self) -> ::std::option::Option<i32> {
+        self.background_opacity
+    }
+    /// Specify the color of the captions text. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the font color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default white.
+    pub fn font_color(&self) -> ::std::option::Option<&crate::types::TtmlFontColor> {
+        self.font_color.as_ref()
+    }
+    /// Specify the opacity of the captions. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the font opacity information in your input captions to your output captions. If Style passthrough is set to disabled and fontColor is set, leave blank to use a value of 255 (opaque).
+    pub fn font_opacity(&self) -> ::std::option::Option<i32> {
+        self.font_opacity
+    }
+    /// Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
+    pub fn font_size(&self) -> ::std::option::Option<i32> {
+        self.font_size
+    }
+    /// Specify the font style of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font style from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal style.
+    pub fn font_style(&self) -> ::std::option::Option<&crate::types::TtmlFontStyle> {
+        self.font_style.as_ref()
+    }
+    /// Specify the font weight of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font weight from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal weight.
+    pub fn font_weight(&self) -> ::std::option::Option<&crate::types::TtmlFontWeight> {
+        self.font_weight.as_ref()
+    }
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
     pub fn style_passthrough(&self) -> ::std::option::Option<&crate::types::TtmlStylePassthrough> {
         self.style_passthrough.as_ref()
+    }
+    /// Specify the text decoration of the caption text. If Style passthrough is set to enabled, leave blank to pass through the text decoration from your input captions. If Style passthrough is set to disabled, leave blank to use the default of none.
+    pub fn text_decoration(&self) -> ::std::option::Option<&crate::types::TtmlTextDecoration> {
+        self.text_decoration.as_ref()
     }
 }
 impl TtmlDestinationSettings {
@@ -24,9 +72,115 @@ impl TtmlDestinationSettings {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct TtmlDestinationSettingsBuilder {
+    pub(crate) background_color: ::std::option::Option<crate::types::TtmlBackgroundColor>,
+    pub(crate) background_opacity: ::std::option::Option<i32>,
+    pub(crate) font_color: ::std::option::Option<crate::types::TtmlFontColor>,
+    pub(crate) font_opacity: ::std::option::Option<i32>,
+    pub(crate) font_size: ::std::option::Option<i32>,
+    pub(crate) font_style: ::std::option::Option<crate::types::TtmlFontStyle>,
+    pub(crate) font_weight: ::std::option::Option<crate::types::TtmlFontWeight>,
     pub(crate) style_passthrough: ::std::option::Option<crate::types::TtmlStylePassthrough>,
+    pub(crate) text_decoration: ::std::option::Option<crate::types::TtmlTextDecoration>,
 }
 impl TtmlDestinationSettingsBuilder {
+    /// Specify the color of the rectangle behind the captions. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the background color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default black.
+    pub fn background_color(mut self, input: crate::types::TtmlBackgroundColor) -> Self {
+        self.background_color = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the color of the rectangle behind the captions. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the background color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default black.
+    pub fn set_background_color(mut self, input: ::std::option::Option<crate::types::TtmlBackgroundColor>) -> Self {
+        self.background_color = input;
+        self
+    }
+    /// Specify the color of the rectangle behind the captions. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the background color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default black.
+    pub fn get_background_color(&self) -> &::std::option::Option<crate::types::TtmlBackgroundColor> {
+        &self.background_color
+    }
+    /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled and backgroundColor is set, leave blank to use a value of 255 (opaque).
+    pub fn background_opacity(mut self, input: i32) -> Self {
+        self.background_opacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled and backgroundColor is set, leave blank to use a value of 255 (opaque).
+    pub fn set_background_opacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.background_opacity = input;
+        self
+    }
+    /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled and backgroundColor is set, leave blank to use a value of 255 (opaque).
+    pub fn get_background_opacity(&self) -> &::std::option::Option<i32> {
+        &self.background_opacity
+    }
+    /// Specify the color of the captions text. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the font color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default white.
+    pub fn font_color(mut self, input: crate::types::TtmlFontColor) -> Self {
+        self.font_color = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the color of the captions text. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the font color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default white.
+    pub fn set_font_color(mut self, input: ::std::option::Option<crate::types::TtmlFontColor>) -> Self {
+        self.font_color = input;
+        self
+    }
+    /// Specify the color of the captions text. If Style passthrough is set to enabled, leave blank or set to Auto to pass through the font color from your input captions. If Style passthrough is set to disabled, leave blank or set to Auto to use the default white.
+    pub fn get_font_color(&self) -> &::std::option::Option<crate::types::TtmlFontColor> {
+        &self.font_color
+    }
+    /// Specify the opacity of the captions. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the font opacity information in your input captions to your output captions. If Style passthrough is set to disabled and fontColor is set, leave blank to use a value of 255 (opaque).
+    pub fn font_opacity(mut self, input: i32) -> Self {
+        self.font_opacity = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the opacity of the captions. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the font opacity information in your input captions to your output captions. If Style passthrough is set to disabled and fontColor is set, leave blank to use a value of 255 (opaque).
+    pub fn set_font_opacity(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.font_opacity = input;
+        self
+    }
+    /// Specify the opacity of the captions. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough is set to enabled, leave blank to pass through the font opacity information in your input captions to your output captions. If Style passthrough is set to disabled and fontColor is set, leave blank to use a value of 255 (opaque).
+    pub fn get_font_opacity(&self) -> &::std::option::Option<i32> {
+        &self.font_opacity
+    }
+    /// Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
+    pub fn font_size(mut self, input: i32) -> Self {
+        self.font_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
+    pub fn set_font_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.font_size = input;
+        self
+    }
+    /// Specify the Font size in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size.
+    pub fn get_font_size(&self) -> &::std::option::Option<i32> {
+        &self.font_size
+    }
+    /// Specify the font style of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font style from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal style.
+    pub fn font_style(mut self, input: crate::types::TtmlFontStyle) -> Self {
+        self.font_style = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the font style of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font style from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal style.
+    pub fn set_font_style(mut self, input: ::std::option::Option<crate::types::TtmlFontStyle>) -> Self {
+        self.font_style = input;
+        self
+    }
+    /// Specify the font style of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font style from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal style.
+    pub fn get_font_style(&self) -> &::std::option::Option<crate::types::TtmlFontStyle> {
+        &self.font_style
+    }
+    /// Specify the font weight of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font weight from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal weight.
+    pub fn font_weight(mut self, input: crate::types::TtmlFontWeight) -> Self {
+        self.font_weight = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the font weight of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font weight from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal weight.
+    pub fn set_font_weight(mut self, input: ::std::option::Option<crate::types::TtmlFontWeight>) -> Self {
+        self.font_weight = input;
+        self
+    }
+    /// Specify the font weight of the caption text. If Style passthrough is set to enabled, leave blank to pass through the font weight from your input captions. If Style passthrough is set to disabled, leave blank to use the default normal weight.
+    pub fn get_font_weight(&self) -> &::std::option::Option<crate::types::TtmlFontWeight> {
+        &self.font_weight
+    }
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
     pub fn style_passthrough(mut self, input: crate::types::TtmlStylePassthrough) -> Self {
         self.style_passthrough = ::std::option::Option::Some(input);
@@ -41,10 +195,32 @@ impl TtmlDestinationSettingsBuilder {
     pub fn get_style_passthrough(&self) -> &::std::option::Option<crate::types::TtmlStylePassthrough> {
         &self.style_passthrough
     }
+    /// Specify the text decoration of the caption text. If Style passthrough is set to enabled, leave blank to pass through the text decoration from your input captions. If Style passthrough is set to disabled, leave blank to use the default of none.
+    pub fn text_decoration(mut self, input: crate::types::TtmlTextDecoration) -> Self {
+        self.text_decoration = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specify the text decoration of the caption text. If Style passthrough is set to enabled, leave blank to pass through the text decoration from your input captions. If Style passthrough is set to disabled, leave blank to use the default of none.
+    pub fn set_text_decoration(mut self, input: ::std::option::Option<crate::types::TtmlTextDecoration>) -> Self {
+        self.text_decoration = input;
+        self
+    }
+    /// Specify the text decoration of the caption text. If Style passthrough is set to enabled, leave blank to pass through the text decoration from your input captions. If Style passthrough is set to disabled, leave blank to use the default of none.
+    pub fn get_text_decoration(&self) -> &::std::option::Option<crate::types::TtmlTextDecoration> {
+        &self.text_decoration
+    }
     /// Consumes the builder and constructs a [`TtmlDestinationSettings`](crate::types::TtmlDestinationSettings).
     pub fn build(self) -> crate::types::TtmlDestinationSettings {
         crate::types::TtmlDestinationSettings {
+            background_color: self.background_color,
+            background_opacity: self.background_opacity,
+            font_color: self.font_color,
+            font_opacity: self.font_opacity,
+            font_size: self.font_size,
+            font_style: self.font_style,
+            font_weight: self.font_weight,
             style_passthrough: self.style_passthrough,
+            text_decoration: self.text_decoration,
         }
     }
 }

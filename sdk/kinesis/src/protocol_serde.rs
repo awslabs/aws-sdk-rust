@@ -147,6 +147,8 @@ pub(crate) mod shape_describe_stream_summary_input;
 
 pub(crate) mod shape_disable_enhanced_monitoring_input;
 
+pub(crate) mod shape_dry_run_operation_exception;
+
 pub(crate) mod shape_enable_enhanced_monitoring_input;
 
 pub(crate) mod shape_expired_iterator_exception;

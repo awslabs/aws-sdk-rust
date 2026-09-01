@@ -34,7 +34,7 @@ pub struct ModifyInstanceAttributeInput {
     /// <p>Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of kernels and RAM disks. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
     pub ramdisk: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub user_data: ::std::option::Option<crate::types::BlobAttributeValue>,
+    pub user_data: ::std::option::Option<crate::types::SecureBlobAttributeValue>,
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
     pub instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::AttributeValue>,
     /// <p>Replaces the security groups of the instance with the specified security groups. You must specify the ID of at least one security group, even if it's just the default security group for the VPC.</p>
@@ -107,7 +107,7 @@ impl ModifyInstanceAttributeInput {
         self.ramdisk.as_ref()
     }
     /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn user_data(&self) -> ::std::option::Option<&crate::types::BlobAttributeValue> {
+    pub fn user_data(&self) -> ::std::option::Option<&crate::types::SecureBlobAttributeValue> {
         self.user_data.as_ref()
     }
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>
@@ -183,7 +183,7 @@ pub struct ModifyInstanceAttributeInputBuilder {
     pub(crate) instance_type: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) kernel: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) ramdisk: ::std::option::Option<crate::types::AttributeValue>,
-    pub(crate) user_data: ::std::option::Option<crate::types::BlobAttributeValue>,
+    pub(crate) user_data: ::std::option::Option<crate::types::SecureBlobAttributeValue>,
     pub(crate) instance_initiated_shutdown_behavior: ::std::option::Option<crate::types::AttributeValue>,
     pub(crate) groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ebs_optimized: ::std::option::Option<crate::types::AttributeBooleanValue>,
@@ -388,17 +388,17 @@ impl ModifyInstanceAttributeInputBuilder {
         &self.ramdisk
     }
     /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn user_data(mut self, input: crate::types::BlobAttributeValue) -> Self {
+    pub fn user_data(mut self, input: crate::types::SecureBlobAttributeValue) -> Self {
         self.user_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::BlobAttributeValue>) -> Self {
+    pub fn set_user_data(mut self, input: ::std::option::Option<crate::types::SecureBlobAttributeValue>) -> Self {
         self.user_data = input;
         self
     }
     /// <p>Changes the instance's user data to the specified value. User data must be base64-encoded. Depending on the tool or SDK that you're using, the base64-encoding might be performed for you. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work with instance user data</a>.</p>
-    pub fn get_user_data(&self) -> &::std::option::Option<crate::types::BlobAttributeValue> {
+    pub fn get_user_data(&self) -> &::std::option::Option<crate::types::SecureBlobAttributeValue> {
         &self.user_data
     }
     /// <p>Specifies whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</p>

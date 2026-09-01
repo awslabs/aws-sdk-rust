@@ -15,30 +15,48 @@ pub fn ser_container_task_configuration(
     {
         object.key("processingUnit").string(input.processing_unit.as_str());
     }
-    if let Some(var_1) = &input.command {
-        let mut array_2 = object.key("command").start_array();
-        for item_3 in var_1 {
+    if let Some(var_1) = &input.ephemeral_storage_configuration {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("ephemeralStorageConfiguration").start_object();
+        crate::protocol_serde::shape_ephemeral_storage_configuration::ser_ephemeral_storage_configuration(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    if let Some(var_3) = &input.command {
+        let mut array_4 = object.key("command").start_array();
+        for item_5 in var_3 {
             {
-                array_2.value().string(item_3.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
-    if let Some(var_4) = &input.timeout_seconds {
+    if let Some(var_6) = &input.timeout_seconds {
         object.key("timeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_5) = &input.environment_variables {
+    if let Some(var_7) = &input.environment_variables {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("environmentVariables").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_8 = object.key("environmentVariables").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_6.finish();
+        object_8.finish();
+    }
+    if let Some(var_11) = &input.mounts {
+        let mut array_12 = object.key("mounts").start_array();
+        for item_13 in var_11 {
+            {
+                #[allow(unused_mut)]
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_mount::ser_mount(&mut object_14, item_13)?;
+                object_14.finish();
+            }
+        }
+        array_12.finish();
     }
     Ok(())
 }
@@ -93,6 +111,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ephemeralStorageConfiguration" => {
+                            builder = builder.set_ephemeral_storage_configuration(
+                                crate::protocol_serde::shape_ephemeral_storage_configuration::de_ephemeral_storage_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "command" => {
                             builder = builder.set_command(crate::protocol_serde::shape_command_list::de_command_list(tokens, _value, depth + 1)?);
                         }
@@ -107,6 +134,9 @@ where
                             builder = builder.set_environment_variables(
                                 crate::protocol_serde::shape_environment_variables_map::de_environment_variables_map(tokens, _value, depth + 1)?,
                             );
+                        }
+                        "mounts" => {
+                            builder = builder.set_mounts(crate::protocol_serde::shape_mount_list::de_mount_list(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

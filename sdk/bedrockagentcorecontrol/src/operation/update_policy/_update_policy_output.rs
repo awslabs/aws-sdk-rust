@@ -19,7 +19,7 @@ pub struct UpdatePolicyOutput {
     pub status: crate::types::PolicyStatus,
     /// <p>The current enforcement mode of the updated policy.</p>
     pub enforcement_mode: crate::types::EnforcementMode,
-    /// <p>The updated Cedar policy statement.</p>
+    /// <p>The updated Cedar or Dogwood policy statement.</p>
     pub definition: ::std::option::Option<crate::types::PolicyDefinition>,
     /// <p>The updated description of the policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
@@ -64,7 +64,7 @@ impl UpdatePolicyOutput {
     pub fn enforcement_mode(&self) -> &crate::types::EnforcementMode {
         &self.enforcement_mode
     }
-    /// <p>The updated Cedar policy statement.</p>
+    /// <p>The updated Cedar or Dogwood policy statement.</p>
     pub fn definition(&self) -> ::std::option::Option<&crate::types::PolicyDefinition> {
         self.definition.as_ref()
     }
@@ -245,18 +245,18 @@ impl UpdatePolicyOutputBuilder {
     pub fn get_enforcement_mode(&self) -> &::std::option::Option<crate::types::EnforcementMode> {
         &self.enforcement_mode
     }
-    /// <p>The updated Cedar policy statement.</p>
+    /// <p>The updated Cedar or Dogwood policy statement.</p>
     /// This field is required.
     pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
         self.definition = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated Cedar policy statement.</p>
+    /// <p>The updated Cedar or Dogwood policy statement.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
         self.definition = input;
         self
     }
-    /// <p>The updated Cedar policy statement.</p>
+    /// <p>The updated Cedar or Dogwood policy statement.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
         &self.definition
     }

@@ -8,6 +8,8 @@ pub struct AudioProperties {
     pub bit_depth: ::std::option::Option<i32>,
     /// The bit rate of the audio track, in bits per second.
     pub bit_rate: ::std::option::Option<i64>,
+    /// The audio channel layout of the track, such as "mono", "stereo", "5.1", or "7.1". Object-based or immersive audio is reported as "5.1.4" or "7.1.4".
+    pub channel_layout: ::std::option::Option<::std::string::String>,
     /// The number of audio channels in the audio track.
     pub channels: ::std::option::Option<i32>,
     /// The frame rate of the video or audio track, expressed as a fraction with numerator and denominator values.
@@ -27,6 +29,10 @@ impl AudioProperties {
     /// The bit rate of the audio track, in bits per second.
     pub fn bit_rate(&self) -> ::std::option::Option<i64> {
         self.bit_rate
+    }
+    /// The audio channel layout of the track, such as "mono", "stereo", "5.1", or "7.1". Object-based or immersive audio is reported as "5.1.4" or "7.1.4".
+    pub fn channel_layout(&self) -> ::std::option::Option<&str> {
+        self.channel_layout.as_deref()
     }
     /// The number of audio channels in the audio track.
     pub fn channels(&self) -> ::std::option::Option<i32> {
@@ -62,6 +68,7 @@ impl AudioProperties {
 pub struct AudioPropertiesBuilder {
     pub(crate) bit_depth: ::std::option::Option<i32>,
     pub(crate) bit_rate: ::std::option::Option<i64>,
+    pub(crate) channel_layout: ::std::option::Option<::std::string::String>,
     pub(crate) channels: ::std::option::Option<i32>,
     pub(crate) frame_rate: ::std::option::Option<crate::types::FrameRate>,
     pub(crate) language_code: ::std::option::Option<::std::string::String>,
@@ -96,6 +103,20 @@ impl AudioPropertiesBuilder {
     /// The bit rate of the audio track, in bits per second.
     pub fn get_bit_rate(&self) -> &::std::option::Option<i64> {
         &self.bit_rate
+    }
+    /// The audio channel layout of the track, such as "mono", "stereo", "5.1", or "7.1". Object-based or immersive audio is reported as "5.1.4" or "7.1.4".
+    pub fn channel_layout(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_layout = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// The audio channel layout of the track, such as "mono", "stereo", "5.1", or "7.1". Object-based or immersive audio is reported as "5.1.4" or "7.1.4".
+    pub fn set_channel_layout(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel_layout = input;
+        self
+    }
+    /// The audio channel layout of the track, such as "mono", "stereo", "5.1", or "7.1". Object-based or immersive audio is reported as "5.1.4" or "7.1.4".
+    pub fn get_channel_layout(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_layout
     }
     /// The number of audio channels in the audio track.
     pub fn channels(mut self, input: i32) -> Self {
@@ -172,6 +193,7 @@ impl AudioPropertiesBuilder {
         crate::types::AudioProperties {
             bit_depth: self.bit_depth,
             bit_rate: self.bit_rate,
+            channel_layout: self.channel_layout,
             channels: self.channels,
             frame_rate: self.frame_rate,
             language_code: self.language_code,

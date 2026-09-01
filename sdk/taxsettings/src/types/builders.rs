@@ -81,6 +81,8 @@ pub use crate::types::_chile_additional_info::ChileAdditionalInfoBuilder;
 
 pub use crate::types::_france_additional_info::FranceAdditionalInfoBuilder;
 
+pub use crate::types::_monaco_additional_info::MonacoAdditionalInfoBuilder;
+
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfoBuilder;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfoBuilder;

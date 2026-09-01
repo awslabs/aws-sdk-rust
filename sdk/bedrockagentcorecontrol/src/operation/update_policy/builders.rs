@@ -151,17 +151,17 @@ impl UpdatePolicyFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<crate::types::UpdatedDescription> {
         self.inner.get_description()
     }
-    /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
+    /// <p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
     pub fn definition(mut self, input: crate::types::PolicyDefinition) -> Self {
         self.inner = self.inner.definition(input);
         self
     }
-    /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
+    /// <p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
     pub fn set_definition(mut self, input: ::std::option::Option<crate::types::PolicyDefinition>) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
-    /// <p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
+    /// <p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>
     pub fn get_definition(&self) -> &::std::option::Option<crate::types::PolicyDefinition> {
         self.inner.get_definition()
     }

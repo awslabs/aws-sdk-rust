@@ -239,4 +239,18 @@ impl CreateConfigurationSetFluentBuilder {
     pub fn get_archiving_options(&self) -> &::std::option::Option<crate::types::ArchivingOptions> {
         self.inner.get_archiving_options()
     }
+    /// <p>The message security options to apply to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn message_security_options(mut self, input: crate::types::MessageSecurityOptions) -> Self {
+        self.inner = self.inner.message_security_options(input);
+        self
+    }
+    /// <p>The message security options to apply to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn set_message_security_options(mut self, input: ::std::option::Option<crate::types::MessageSecurityOptions>) -> Self {
+        self.inner = self.inner.set_message_security_options(input);
+        self
+    }
+    /// <p>The message security options to apply to the configuration set, such as the signing scheme used for messages that you send with the configuration set.</p>
+    pub fn get_message_security_options(&self) -> &::std::option::Option<crate::types::MessageSecurityOptions> {
+        self.inner.get_message_security_options()
+    }
 }
