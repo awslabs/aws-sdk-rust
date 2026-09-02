@@ -309,31 +309,31 @@ impl CreateExadbVmClusterFluentBuilder {
     pub fn get_license_model(&self) -> &::std::option::Option<crate::types::LicenseModel> {
         self.inner.get_license_model()
     }
-    /// <p>The port number for TCP connections to the single client access name (SCAN) listener.</p>
+    /// <p>The port number for TCP connections to the Single Client Access Name (SCAN) listener.</p>
     pub fn scan_listener_port_tcp(mut self, input: i32) -> Self {
         self.inner = self.inner.scan_listener_port_tcp(input);
         self
     }
-    /// <p>The port number for TCP connections to the single client access name (SCAN) listener.</p>
+    /// <p>The port number for TCP connections to the Single Client Access Name (SCAN) listener.</p>
     pub fn set_scan_listener_port_tcp(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scan_listener_port_tcp(input);
         self
     }
-    /// <p>The port number for TCP connections to the single client access name (SCAN) listener.</p>
+    /// <p>The port number for TCP connections to the Single Client Access Name (SCAN) listener.</p>
     pub fn get_scan_listener_port_tcp(&self) -> &::std::option::Option<i32> {
         self.inner.get_scan_listener_port_tcp()
     }
-    /// <p>The port number for TCP connections with SSL to the single client access name (SCAN) listener.</p>
+    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
     pub fn scan_listener_port_tcp_ssl(mut self, input: i32) -> Self {
         self.inner = self.inner.scan_listener_port_tcp_ssl(input);
         self
     }
-    /// <p>The port number for TCP connections with SSL to the single client access name (SCAN) listener.</p>
+    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
     pub fn set_scan_listener_port_tcp_ssl(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_scan_listener_port_tcp_ssl(input);
         self
     }
-    /// <p>The port number for TCP connections with SSL to the single client access name (SCAN) listener.</p>
+    /// <p>The port number for TCP connections with SSL to the Single Client Access Name (SCAN) listener.</p>
     pub fn get_scan_listener_port_tcp_ssl(&self) -> &::std::option::Option<i32> {
         self.inner.get_scan_listener_port_tcp_ssl()
     }
@@ -398,17 +398,17 @@ impl CreateExadbVmClusterFluentBuilder {
     pub fn get_time_zone(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_time_zone()
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, the Amazon Web Services SDK automatically generates one and uses it for the request to ensure idempotency. The client token is valid for up to 24 hours after it's first used.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure that the operation completes no more than one time. If you submit the same request twice with the same client token, the service ignores the second request and returns the result of the first. If you don't specify a client token, the AWS SDK automatically generates one. The client token is valid for up to 24 hours after it's first used.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, the Amazon Web Services SDK automatically generates one and uses it for the request to ensure idempotency. The client token is valid for up to 24 hours after it's first used.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure that the operation completes no more than one time. If you submit the same request twice with the same client token, the service ignores the second request and returns the result of the first. If you don't specify a client token, the AWS SDK automatically generates one. The client token is valid for up to 24 hours after it's first used.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, the Amazon Web Services SDK automatically generates one and uses it for the request to ensure idempotency. The client token is valid for up to 24 hours after it's first used.</p>
+    /// <p>A unique, case-sensitive identifier that you provide to ensure that the operation completes no more than one time. If you submit the same request twice with the same client token, the service ignores the second request and returns the result of the first. If you don't specify a client token, the AWS SDK automatically generates one. The client token is valid for up to 24 hours after it's first used.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

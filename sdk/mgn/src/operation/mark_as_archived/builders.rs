@@ -22,7 +22,7 @@ impl crate::operation::mark_as_archived::builders::MarkAsArchivedInputBuilder {
 }
 /// Fluent builder constructing a request to `MarkAsArchived`.
 ///
-/// <p>Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified SourceServers by ID. This command only works for SourceServers with a lifecycle. state which equals DISCONNECTED or CUTOVER.</p>
+/// <p>Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified SourceServers by ID. This command only works for SourceServers with a lifecycle state that equals DISCONNECTED or CUTOVER.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct MarkAsArchivedFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

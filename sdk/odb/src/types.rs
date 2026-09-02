@@ -107,6 +107,8 @@ pub use crate::types::_autonomous_database_version_summary::AutonomousDatabaseVe
 
 pub use crate::types::_db_system_shape_summary::DbSystemShapeSummary;
 
+pub use crate::types::_flex_component_summary::FlexComponentSummary;
+
 pub use crate::types::_gi_minor_version_summary::GiMinorVersionSummary;
 
 pub use crate::types::_gi_version_summary::GiVersionSummary;
@@ -224,6 +226,8 @@ pub use crate::types::_oci_aws_integration::OciAwsIntegration;
 pub use crate::types::_oci_iam_role_status::OciIamRoleStatus;
 
 pub use crate::types::_shape_type::ShapeType;
+
+pub use crate::types::_hardware_type::HardwareType;
 
 pub use crate::types::_day_of_week::DayOfWeek;
 
@@ -451,11 +455,15 @@ mod _exascale_db_storage_vault_summary;
 
 mod _external_id_type;
 
+mod _flex_component_summary;
+
 mod _gi_minor_version_summary;
 
 mod _gi_version_summary;
 
 mod _grid_image_type;
+
+mod _hardware_type;
 
 mod _iam_role;
 

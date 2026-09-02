@@ -314,13 +314,13 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartNetworkM
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartNetworkMigrationAnalysisError {
-    /// <p>Operating denied due to a file permission or access check error.</p>
+    /// <p>Operation denied due to a file permission or access check error.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request could not be completed because its exceeded the service quota.</p>
+    /// <p>The request could not be completed because it exceeded the service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Reached throttling quota exception.</p>
     ThrottlingException(crate::types::error::ThrottlingException),

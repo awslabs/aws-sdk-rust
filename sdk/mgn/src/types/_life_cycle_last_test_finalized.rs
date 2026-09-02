@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycleLastTestFinalized {
-    /// <p>Lifecycle Test failed API call date and time.</p>
+    /// <p>Lifecycle Test finalized API call date and time.</p>
     pub api_call_date_time: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastTestFinalized {
-    /// <p>Lifecycle Test failed API call date and time.</p>
+    /// <p>Lifecycle Test finalized API call date and time.</p>
     pub fn api_call_date_time(&self) -> ::std::option::Option<&str> {
         self.api_call_date_time.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct LifeCycleLastTestFinalizedBuilder {
     pub(crate) api_call_date_time: ::std::option::Option<::std::string::String>,
 }
 impl LifeCycleLastTestFinalizedBuilder {
-    /// <p>Lifecycle Test failed API call date and time.</p>
+    /// <p>Lifecycle Test finalized API call date and time.</p>
     pub fn api_call_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.api_call_date_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Lifecycle Test failed API call date and time.</p>
+    /// <p>Lifecycle Test finalized API call date and time.</p>
     pub fn set_api_call_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.api_call_date_time = input;
         self
     }
-    /// <p>Lifecycle Test failed API call date and time.</p>
+    /// <p>Lifecycle Test finalized API call date and time.</p>
     pub fn get_api_call_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.api_call_date_time
     }

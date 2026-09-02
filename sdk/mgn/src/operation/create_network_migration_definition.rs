@@ -323,7 +323,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateNetwork
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateNetworkMigrationDefinitionError {
-    /// <p>The request could not be completed because its exceeded the service quota.</p>
+    /// <p>The request could not be completed because it exceeded the service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Validate exception.</p>
     ValidationException(crate::types::error::ValidationException),

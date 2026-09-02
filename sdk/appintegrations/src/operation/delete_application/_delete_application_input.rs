@@ -5,11 +5,21 @@
 pub struct DeleteApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>
+    /// <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p>
+    /// </important>
+    pub force: ::std::option::Option<bool>,
 }
 impl DeleteApplicationInput {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>
+    /// <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p>
+    /// </important>
+    pub fn force(&self) -> ::std::option::Option<bool> {
+        self.force
     }
 }
 impl DeleteApplicationInput {
@@ -24,6 +34,7 @@ impl DeleteApplicationInput {
 #[non_exhaustive]
 pub struct DeleteApplicationInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) force: ::std::option::Option<bool>,
 }
 impl DeleteApplicationInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
@@ -41,10 +52,33 @@ impl DeleteApplicationInputBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>
+    /// <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p>
+    /// </important>
+    pub fn force(mut self, input: bool) -> Self {
+        self.force = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>
+    /// <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p>
+    /// </important>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.force = input;
+        self
+    }
+    /// <p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>
+    /// <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p>
+    /// </important>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        &self.force
+    }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_application::DeleteApplicationInput, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_application::DeleteApplicationInput { arn: self.arn })
+        ::std::result::Result::Ok(crate::operation::delete_application::DeleteApplicationInput {
+            arn: self.arn,
+            force: self.force,
+        })
     }
 }

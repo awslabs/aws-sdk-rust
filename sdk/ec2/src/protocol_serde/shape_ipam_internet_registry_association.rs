@@ -130,7 +130,7 @@ pub fn de_ipam_internet_registry_association(
                 builder = builder.set_state(var_9);
             }
             ,
-            s if s.matches("childRequestXml") /* ChildRequestXml com.amazonaws.ec2#IpamInternetRegistryAssociation$ChildRequestXml */ =>  {
+            s if s.matches("stateMessage") /* StateMessage com.amazonaws.ec2#IpamInternetRegistryAssociation$StateMessage */ =>  {
                 let var_10 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -140,17 +140,30 @@ pub fn de_ipam_internet_registry_association(
                         ?
                     )
                 ;
-                builder = builder.set_child_request_xml(var_10);
+                builder = builder.set_state_message(var_10);
+            }
+            ,
+            s if s.matches("childRequestXml") /* ChildRequestXml com.amazonaws.ec2#IpamInternetRegistryAssociation$ChildRequestXml */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_child_request_xml(var_11);
             }
             ,
             s if s.matches("tagSet") /* Tags com.amazonaws.ec2#IpamInternetRegistryAssociation$Tags */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_tag_list::de_tag_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_11);
+                builder = builder.set_tags(var_12);
             }
             ,
             _ => {}

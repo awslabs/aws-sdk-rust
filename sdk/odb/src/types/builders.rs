@@ -49,6 +49,8 @@ pub use crate::types::_autonomous_database_version_summary::AutonomousDatabaseVe
 
 pub use crate::types::_db_system_shape_summary::DbSystemShapeSummaryBuilder;
 
+pub use crate::types::_flex_component_summary::FlexComponentSummaryBuilder;
+
 pub use crate::types::_gi_minor_version_summary::GiMinorVersionSummaryBuilder;
 
 pub use crate::types::_gi_version_summary::GiVersionSummaryBuilder;

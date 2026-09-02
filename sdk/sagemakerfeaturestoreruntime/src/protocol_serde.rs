@@ -35,6 +35,8 @@ pub(crate) mod shape_list_records;
 
 pub(crate) mod shape_put_record;
 
+pub(crate) mod shape_update_record;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -49,6 +51,8 @@ pub(crate) mod shape_batch_get_record_input;
 
 pub(crate) mod shape_batch_write_record_input;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_internal_failure;
 
 pub(crate) mod shape_list_records_input;
@@ -58,6 +62,8 @@ pub(crate) mod shape_put_record_input;
 pub(crate) mod shape_resource_not_found;
 
 pub(crate) mod shape_service_unavailable;
+
+pub(crate) mod shape_update_record_input;
 
 pub(crate) mod shape_validation_error;
 

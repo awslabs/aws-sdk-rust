@@ -10,7 +10,7 @@ pub struct StartExportInput {
     pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>Start export request s3 bucket owner.</p>
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
-    /// <p>Start import request tags.</p>
+    /// <p>Start export request tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartExportInput {
@@ -26,7 +26,7 @@ impl StartExportInput {
     pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_owner.as_deref()
     }
-    /// <p>Start import request tags.</p>
+    /// <p>Start export request tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
@@ -106,19 +106,19 @@ impl StartExportInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Start import request tags.</p>
+    /// <p>Start export request tags.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>Start import request tags.</p>
+    /// <p>Start export request tags.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>Start import request tags.</p>
+    /// <p>Start export request tags.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }

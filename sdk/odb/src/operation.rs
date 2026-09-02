@@ -166,6 +166,9 @@ pub mod list_exadb_vm_clusters;
 /// Types for the `ListExascaleDbStorageVaults` operation.
 pub mod list_exascale_db_storage_vaults;
 
+/// Types for the `ListFlexComponents` operation.
+pub mod list_flex_components;
+
 /// Types for the `ListGiMinorVersions` operation.
 pub mod list_gi_minor_versions;
 

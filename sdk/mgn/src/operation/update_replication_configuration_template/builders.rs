@@ -22,7 +22,7 @@ impl crate::operation::update_replication_configuration_template::builders::Upda
 }
 /// Fluent builder constructing a request to `UpdateReplicationConfigurationTemplate`.
 ///
-/// <p>Updates multiple ReplicationConfigurationTemplates by ID.</p>
+/// <p>Updates a ReplicationConfigurationTemplate by ID.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateReplicationConfigurationTemplateFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

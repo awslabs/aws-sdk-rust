@@ -330,7 +330,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateNetwork
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateNetworkMigrationMapperSegmentError {
-    /// <p>Operating denied due to a file permission or access check error.</p>
+    /// <p>Operation denied due to a file permission or access check error.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

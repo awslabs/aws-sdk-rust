@@ -22,7 +22,7 @@ impl crate::operation::describe_replication_configuration_templates::builders::D
 }
 /// Fluent builder constructing a request to `DescribeReplicationConfigurationTemplates`.
 ///
-/// <p>Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.</p>
+/// <p>Lists all ReplicationConfigurationTemplates, filtered by replication configuration template IDs.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -33,6 +33,21 @@ pub fn de_update_application_http_error(
             }
             tmp
         }),
+        "ConflictException" => crate::operation::update_application::UpdateApplicationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::update_application::UpdateApplicationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "InternalServiceError" => crate::operation::update_application::UpdateApplicationError::InternalServiceError({
             #[allow(unused_mut)]
             let mut tmp = {

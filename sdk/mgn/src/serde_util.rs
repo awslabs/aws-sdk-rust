@@ -111,6 +111,16 @@ pub(crate) fn target_s3_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn cidr_mapping_correct_errors(mut builder: crate::types::builders::CidrMappingBuilder) -> crate::types::builders::CidrMappingBuilder {
+    if builder.original_cidr.is_none() {
+        builder.original_cidr = Some(Default::default())
+    }
+    if builder.updated_cidr.is_none() {
+        builder.updated_cidr = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn fsx_ontap_configuration_correct_errors(
     mut builder: crate::types::builders::FsxOntapConfigurationBuilder,
 ) -> crate::types::builders::FsxOntapConfigurationBuilder {

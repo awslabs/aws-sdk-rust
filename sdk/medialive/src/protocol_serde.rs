@@ -1095,6 +1095,8 @@ pub(crate) mod shape_cmaf_ingest_caption_language_mapping;
 
 pub(crate) mod shape_cmaf_ingest_output_settings;
 
+pub(crate) mod shape_cmaf_ingest_watermarking_settings;
+
 pub(crate) mod shape_dvb_sub_source_settings;
 
 pub(crate) mod shape_embedded_source_settings;
@@ -1193,6 +1195,8 @@ pub(crate) mod shape_bandwidth_reduction_filter_settings;
 
 pub(crate) mod shape_caption_rectangle;
 
+pub(crate) mod shape_cmaf_ingest_ab_watermarker_irdeto_settings;
+
 pub(crate) mod shape_color_space_passthrough_settings;
 
 pub(crate) mod shape_dolby_vision81_settings;
@@ -1233,6 +1237,8 @@ pub(crate) mod shape_media_package_additional_destinations;
 
 pub(crate) mod shape_media_package_v2_destination_settings;
 
+pub(crate) mod shape_media_package_v2_watermarking_settings;
+
 pub(crate) mod shape_multiplex_container_settings;
 
 pub(crate) mod shape_rec601_settings;
@@ -1251,6 +1257,8 @@ pub(crate) mod shape_temporal_filter_settings;
 
 pub(crate) mod shape_udp_container_settings;
 
+pub(crate) mod shape_ab_watermarking_custom_profile;
+
 pub(crate) mod shape_audio_only_hls_settings;
 
 pub(crate) mod shape_audio_pre_mixer_settings;
@@ -1264,6 +1272,8 @@ pub(crate) mod shape_list_of_input_channel_level;
 pub(crate) mod shape_list_of_media_package_additional_destinations;
 
 pub(crate) mod shape_m2ts_settings;
+
+pub(crate) mod shape_media_package_v2_ab_watermarker_irdeto_settings;
 
 pub(crate) mod shape_multiplex_m2ts_settings;
 
@@ -1282,6 +1292,8 @@ pub(crate) mod shape_dvb_tdt_settings;
 pub(crate) mod shape_list_of_audio_pid;
 
 pub(crate) mod shape_list_of_audio_track;
+
+pub(crate) mod shape_list_of_output_location_ref;
 
 pub(crate) mod shape_m3u8_settings;
 

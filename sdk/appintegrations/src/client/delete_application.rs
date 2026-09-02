@@ -4,6 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`arn(impl Into<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the Application.</p><br>
+    ///   - [`force(bool)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::force) / [`set_force(Option<bool>)`](crate::operation::delete_application::builders::DeleteApplicationFluentBuilder::set_force):<br>required: **false**<br><p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>  <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p> </important><br>
     /// - On success, responds with [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput)
     /// - On failure, responds with [`SdkError<DeleteApplicationError>`](crate::operation::delete_application::DeleteApplicationError)
     pub fn delete_application(&self) -> crate::operation::delete_application::builders::DeleteApplicationFluentBuilder {

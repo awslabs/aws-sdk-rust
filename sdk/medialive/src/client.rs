@@ -146,7 +146,7 @@ pub trait Waiters {
     fn wait_until_channel_deleted(&self) -> crate::waiters::channel_deleted::ChannelDeletedFluentBuilder;
     /// Wait until a channel is running
     fn wait_until_channel_running(&self) -> crate::waiters::channel_running::ChannelRunningFluentBuilder;
-    /// Wait until a channel has is stopped
+    /// Wait until a channel is not running
     fn wait_until_channel_stopped(&self) -> crate::waiters::channel_stopped::ChannelStoppedFluentBuilder;
     /// Wait until the channel placement group has been assigned
     fn wait_until_channel_placement_group_assigned(

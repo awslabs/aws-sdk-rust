@@ -19,6 +19,10 @@ pub struct GetNetworkMigrationDefinitionOutput {
     pub target_network: ::std::option::Option<crate::types::TargetNetwork>,
     /// <p>The target deployment configuration for the migrated network.</p>
     pub target_deployment: ::std::option::Option<crate::types::TargetDeployment>,
+    /// <p>Indicates whether the migration creates new target VPCs or uses existing ones. <code>CREATE_NEW</code> provisions new target VPCs; <code>USE_EXISTING</code> migrates into existing VPCs in the target account.</p>
+    pub vpc_provisioning_strategy: ::std::option::Option<crate::types::VpcProvisioningStrategy>,
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings apply only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub cidr_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>,
     /// <p>The timestamp when the network migration definition was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the network migration definition was last updated.</p>
@@ -64,6 +68,16 @@ impl GetNetworkMigrationDefinitionOutput {
     pub fn target_deployment(&self) -> ::std::option::Option<&crate::types::TargetDeployment> {
         self.target_deployment.as_ref()
     }
+    /// <p>Indicates whether the migration creates new target VPCs or uses existing ones. <code>CREATE_NEW</code> provisions new target VPCs; <code>USE_EXISTING</code> migrates into existing VPCs in the target account.</p>
+    pub fn vpc_provisioning_strategy(&self) -> ::std::option::Option<&crate::types::VpcProvisioningStrategy> {
+        self.vpc_provisioning_strategy.as_ref()
+    }
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings apply only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_mappings.is_none()`.
+    pub fn cidr_mappings(&self) -> &[crate::types::CidrMapping] {
+        self.cidr_mappings.as_deref().unwrap_or_default()
+    }
     /// <p>The timestamp when the network migration definition was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -92,6 +106,8 @@ impl ::std::fmt::Debug for GetNetworkMigrationDefinitionOutput {
         formatter.field("target_s3_configuration", &self.target_s3_configuration);
         formatter.field("target_network", &self.target_network);
         formatter.field("target_deployment", &self.target_deployment);
+        formatter.field("vpc_provisioning_strategy", &self.vpc_provisioning_strategy);
+        formatter.field("cidr_mappings", &self.cidr_mappings);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
@@ -124,6 +140,8 @@ pub struct GetNetworkMigrationDefinitionOutputBuilder {
     pub(crate) target_s3_configuration: ::std::option::Option<crate::types::TargetS3Configuration>,
     pub(crate) target_network: ::std::option::Option<crate::types::TargetNetwork>,
     pub(crate) target_deployment: ::std::option::Option<crate::types::TargetDeployment>,
+    pub(crate) vpc_provisioning_strategy: ::std::option::Option<crate::types::VpcProvisioningStrategy>,
+    pub(crate) cidr_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -249,6 +267,40 @@ impl GetNetworkMigrationDefinitionOutputBuilder {
     pub fn get_target_deployment(&self) -> &::std::option::Option<crate::types::TargetDeployment> {
         &self.target_deployment
     }
+    /// <p>Indicates whether the migration creates new target VPCs or uses existing ones. <code>CREATE_NEW</code> provisions new target VPCs; <code>USE_EXISTING</code> migrates into existing VPCs in the target account.</p>
+    pub fn vpc_provisioning_strategy(mut self, input: crate::types::VpcProvisioningStrategy) -> Self {
+        self.vpc_provisioning_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the migration creates new target VPCs or uses existing ones. <code>CREATE_NEW</code> provisions new target VPCs; <code>USE_EXISTING</code> migrates into existing VPCs in the target account.</p>
+    pub fn set_vpc_provisioning_strategy(mut self, input: ::std::option::Option<crate::types::VpcProvisioningStrategy>) -> Self {
+        self.vpc_provisioning_strategy = input;
+        self
+    }
+    /// <p>Indicates whether the migration creates new target VPCs or uses existing ones. <code>CREATE_NEW</code> provisions new target VPCs; <code>USE_EXISTING</code> migrates into existing VPCs in the target account.</p>
+    pub fn get_vpc_provisioning_strategy(&self) -> &::std::option::Option<crate::types::VpcProvisioningStrategy> {
+        &self.vpc_provisioning_strategy
+    }
+    /// Appends an item to `cidr_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_cidr_mappings`](Self::set_cidr_mappings).
+    ///
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings apply only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn cidr_mappings(mut self, input: crate::types::CidrMapping) -> Self {
+        let mut v = self.cidr_mappings.unwrap_or_default();
+        v.push(input);
+        self.cidr_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings apply only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn set_cidr_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>) -> Self {
+        self.cidr_mappings = input;
+        self
+    }
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings apply only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn get_cidr_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>> {
+        &self.cidr_mappings
+    }
     /// <p>The timestamp when the network migration definition was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -337,6 +389,8 @@ impl GetNetworkMigrationDefinitionOutputBuilder {
             target_s3_configuration: self.target_s3_configuration,
             target_network: self.target_network,
             target_deployment: self.target_deployment,
+            vpc_provisioning_strategy: self.vpc_provisioning_strategy,
+            cidr_mappings: self.cidr_mappings,
             created_at: self.created_at,
             updated_at: self.updated_at,
             tags: self.tags,
@@ -356,6 +410,8 @@ impl ::std::fmt::Debug for GetNetworkMigrationDefinitionOutputBuilder {
         formatter.field("target_s3_configuration", &self.target_s3_configuration);
         formatter.field("target_network", &self.target_network);
         formatter.field("target_deployment", &self.target_deployment);
+        formatter.field("vpc_provisioning_strategy", &self.vpc_provisioning_strategy);
+        formatter.field("cidr_mappings", &self.cidr_mappings);
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");

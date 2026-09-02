@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You do not have sufficient access to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request conflicts with the current state of the resource. Verify the application's current state and retry the request.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>A resource with the specified name already exists.</p>
     DuplicateResourceException(crate::types::error::DuplicateResourceException),
     /// <p>Request processing failed due to an error or failure with the service.</p>
@@ -32,6 +34,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::DuplicateResourceException(inner) => inner.fmt(f),
             Error::InternalServiceError(inner) => inner.fmt(f),
             Error::InvalidRequestException(inner) => inner.fmt(f),
@@ -61,6 +64,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::DuplicateResourceException(inner) => inner.meta(),
             Self::InternalServiceError(inner) => inner.meta(),
             Self::InvalidRequestException(inner) => inner.meta(),
@@ -725,6 +729,7 @@ impl From<crate::operation::update_application::UpdateApplicationError> for Erro
     fn from(err: crate::operation::update_application::UpdateApplicationError) -> Self {
         match err {
             crate::operation::update_application::UpdateApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_application::UpdateApplicationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_application::UpdateApplicationError::InternalServiceError(inner) => Error::InternalServiceError(inner),
             crate::operation::update_application::UpdateApplicationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::update_application::UpdateApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
@@ -857,6 +862,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::DuplicateResourceException(inner) => inner.source(),
             Error::InternalServiceError(inner) => inner.source(),
             Error::InvalidRequestException(inner) => inner.source(),
@@ -872,6 +878,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::DuplicateResourceException(e) => e.request_id(),
             Self::InternalServiceError(e) => e.request_id(),
             Self::InvalidRequestException(e) => e.request_id(),

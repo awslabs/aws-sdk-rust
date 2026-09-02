@@ -317,7 +317,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteNetwork
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteNetworkMigrationDefinitionError {
-    /// <p>Operating denied due to a file permission or access check error.</p>
+    /// <p>Operation denied due to a file permission or access check error.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
     ConflictException(crate::types::error::ConflictException),

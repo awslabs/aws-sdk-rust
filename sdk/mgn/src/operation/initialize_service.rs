@@ -254,7 +254,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InitializeSer
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum InitializeServiceError {
-    /// <p>Operating denied due to a file permission or access check error.</p>
+    /// <p>Operation denied due to a file permission or access check error.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Validate exception.</p>
     ValidationException(crate::types::error::ValidationException),

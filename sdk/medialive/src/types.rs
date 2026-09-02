@@ -957,6 +957,8 @@ pub use crate::types::_cmaf_timed_metadata_id3_frame::CmafTimedMetadataId3Frame;
 
 pub use crate::types::_cmaf_timed_metadata_passthrough::CmafTimedMetadataPassthrough;
 
+pub use crate::types::_cmaf_ingest_watermarking_settings::CmafIngestWatermarkingSettings;
+
 pub use crate::types::_output_settings::OutputSettings;
 
 pub use crate::types::_frame_capture_interval_unit::FrameCaptureIntervalUnit;
@@ -1143,11 +1145,15 @@ pub use crate::types::_hls_webdav_settings::HlsWebdavSettings;
 
 pub use crate::types::_static_key_settings::StaticKeySettings;
 
+pub use crate::types::_media_package_v2_watermarking_settings::MediaPackageV2WatermarkingSettings;
+
 pub use crate::types::_rtmp_ad_markers::RtmpAdMarkers;
 
 pub use crate::types::_cmaf_ingest_caption_language_mapping::CmafIngestCaptionLanguageMapping;
 
 pub use crate::types::_additional_destinations::AdditionalDestinations;
+
+pub use crate::types::_cmaf_ingest_ab_watermarker_irdeto_settings::CmafIngestAbWatermarkerIrdetoSettings;
 
 pub use crate::types::_archive_output_settings::ArchiveOutputSettings;
 
@@ -1236,6 +1242,14 @@ pub use crate::types::_hls_media_store_storage_class::HlsMediaStoreStorageClass;
 pub use crate::types::_hls_webdav_http_transfer_mode::HlsWebdavHttpTransferMode;
 
 pub use crate::types::_media_package_additional_destinations::MediaPackageAdditionalDestinations;
+
+pub use crate::types::_media_package_v2_ab_watermarker_irdeto_settings::MediaPackageV2AbWatermarkerIrdetoSettings;
+
+pub use crate::types::_ab_watermarking_custom_profile::AbWatermarkingCustomProfile;
+
+pub use crate::types::_ab_watermarking_profile::AbWatermarkingProfile;
+
+pub use crate::types::_ab_watermarker_id_length::AbWatermarkerIdLength;
 
 pub use crate::types::_archive_container_settings::ArchiveContainerSettings;
 
@@ -1410,6 +1424,12 @@ mod _aac_settings;
 mod _aac_spec;
 
 mod _aac_vbr_quality;
+
+mod _ab_watermarker_id_length;
+
+mod _ab_watermarking_custom_profile;
+
+mod _ab_watermarking_profile;
 
 mod _ac3_attenuation_control;
 
@@ -1651,6 +1671,8 @@ mod _cluster_type;
 
 mod _cmaf_id3_behavior;
 
+mod _cmaf_ingest_ab_watermarker_irdeto_settings;
+
 mod _cmaf_ingest_caption_language_mapping;
 
 mod _cmaf_ingest_group_settings;
@@ -1658,6 +1680,8 @@ mod _cmaf_ingest_group_settings;
 mod _cmaf_ingest_output_settings;
 
 mod _cmaf_ingest_segment_length_units;
+
+mod _cmaf_ingest_watermarking_settings;
 
 mod _cmaf_klv_behavior;
 
@@ -2295,9 +2319,13 @@ mod _media_package_output_destination_settings;
 
 mod _media_package_output_settings;
 
+mod _media_package_v2_ab_watermarker_irdeto_settings;
+
 mod _media_package_v2_destination_settings;
 
 mod _media_package_v2_group_settings;
+
+mod _media_package_v2_watermarking_settings;
 
 mod _media_resource;
 

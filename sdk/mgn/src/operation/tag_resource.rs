@@ -315,7 +315,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagResourceEn
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum TagResourceError {
-    /// <p>Operating denied due to a file permission or access check error.</p>
+    /// <p>Operation denied due to a file permission or access check error.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The server encountered an unexpected condition that prevented it from fulfilling the request.</p>
     InternalServerException(crate::types::error::InternalServerException),

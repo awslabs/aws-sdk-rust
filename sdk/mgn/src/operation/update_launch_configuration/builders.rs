@@ -23,7 +23,7 @@ impl crate::operation::update_launch_configuration::builders::UpdateLaunchConfig
 /// Fluent builder constructing a request to `UpdateLaunchConfiguration`.
 ///
 /// <p>Updates multiple LaunchConfigurations by Source Server ID.</p><note>
-/// <p>bootMode valid values are <code>LEGACY_BIOS | UEFI</code></p>
+/// <p>bootMode valid values are <code>LEGACY_BIOS | UEFI | USE_SOURCE</code></p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationFluentBuilder {
@@ -225,17 +225,17 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootMode> {
         self.inner.get_boot_mode()
     }
-    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    /// <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     pub fn post_launch_actions(mut self, input: crate::types::PostLaunchActions) -> Self {
         self.inner = self.inner.post_launch_actions(input);
         self
     }
-    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    /// <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     pub fn set_post_launch_actions(mut self, input: ::std::option::Option<crate::types::PostLaunchActions>) -> Self {
         self.inner = self.inner.set_post_launch_actions(input);
         self
     }
-    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    /// <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     pub fn get_post_launch_actions(&self) -> &::std::option::Option<crate::types::PostLaunchActions> {
         self.inner.get_post_launch_actions()
     }

@@ -24,7 +24,7 @@ pub struct InstanceStatus {
     pub system_status: ::std::option::Option<crate::types::InstanceStatusSummary>,
     /// <p>Reports impaired functionality that stems from an attached Amazon EBS volume that is unreachable and unable to complete I/O operations.</p>
     pub attached_ebs_status: ::std::option::Option<crate::types::EbsStatusSummary>,
-    /// <p>Reports impaired functionality that stems from issues with applications running on the instance.</p>
+    /// <p>Reports the application-level health status for the instance.</p>
     pub application_status: ::std::option::Option<crate::types::ApplicationStatusSummary>,
 }
 impl InstanceStatus {
@@ -70,7 +70,7 @@ impl InstanceStatus {
     pub fn attached_ebs_status(&self) -> ::std::option::Option<&crate::types::EbsStatusSummary> {
         self.attached_ebs_status.as_ref()
     }
-    /// <p>Reports impaired functionality that stems from issues with applications running on the instance.</p>
+    /// <p>Reports the application-level health status for the instance.</p>
     pub fn application_status(&self) -> ::std::option::Option<&crate::types::ApplicationStatusSummary> {
         self.application_status.as_ref()
     }
@@ -245,17 +245,17 @@ impl InstanceStatusBuilder {
     pub fn get_attached_ebs_status(&self) -> &::std::option::Option<crate::types::EbsStatusSummary> {
         &self.attached_ebs_status
     }
-    /// <p>Reports impaired functionality that stems from issues with applications running on the instance.</p>
+    /// <p>Reports the application-level health status for the instance.</p>
     pub fn application_status(mut self, input: crate::types::ApplicationStatusSummary) -> Self {
         self.application_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Reports impaired functionality that stems from issues with applications running on the instance.</p>
+    /// <p>Reports the application-level health status for the instance.</p>
     pub fn set_application_status(mut self, input: ::std::option::Option<crate::types::ApplicationStatusSummary>) -> Self {
         self.application_status = input;
         self
     }
-    /// <p>Reports impaired functionality that stems from issues with applications running on the instance.</p>
+    /// <p>Reports the application-level health status for the instance.</p>
     pub fn get_application_status(&self) -> &::std::option::Option<crate::types::ApplicationStatusSummary> {
         &self.application_status
     }

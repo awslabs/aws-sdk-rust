@@ -6,11 +6,17 @@
 pub struct OnlineStoreConfigUpdate {
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub ttl_duration: ::std::option::Option<crate::types::TtlDuration>,
+    /// <p>The online store storage type to migrate the feature group to. Use this parameter to migrate an existing feature group from <code>Standard</code> to <code>Standard_V2</code> storage format, enabling support for the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Migration is a one-way operation and cannot be reversed.</p>
+    pub storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl OnlineStoreConfigUpdate {
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
     pub fn ttl_duration(&self) -> ::std::option::Option<&crate::types::TtlDuration> {
         self.ttl_duration.as_ref()
+    }
+    /// <p>The online store storage type to migrate the feature group to. Use this parameter to migrate an existing feature group from <code>Standard</code> to <code>Standard_V2</code> storage format, enabling support for the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Migration is a one-way operation and cannot be reversed.</p>
+    pub fn storage_type(&self) -> ::std::option::Option<&crate::types::StorageType> {
+        self.storage_type.as_ref()
     }
 }
 impl OnlineStoreConfigUpdate {
@@ -25,6 +31,7 @@ impl OnlineStoreConfigUpdate {
 #[non_exhaustive]
 pub struct OnlineStoreConfigUpdateBuilder {
     pub(crate) ttl_duration: ::std::option::Option<crate::types::TtlDuration>,
+    pub(crate) storage_type: ::std::option::Option<crate::types::StorageType>,
 }
 impl OnlineStoreConfigUpdateBuilder {
     /// <p>Time to live duration, where the record is hard deleted after the expiration time is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>. For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a> API in the Amazon SageMaker API Reference guide.</p>
@@ -41,10 +48,25 @@ impl OnlineStoreConfigUpdateBuilder {
     pub fn get_ttl_duration(&self) -> &::std::option::Option<crate::types::TtlDuration> {
         &self.ttl_duration
     }
+    /// <p>The online store storage type to migrate the feature group to. Use this parameter to migrate an existing feature group from <code>Standard</code> to <code>Standard_V2</code> storage format, enabling support for the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Migration is a one-way operation and cannot be reversed.</p>
+    pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
+        self.storage_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The online store storage type to migrate the feature group to. Use this parameter to migrate an existing feature group from <code>Standard</code> to <code>Standard_V2</code> storage format, enabling support for the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Migration is a one-way operation and cannot be reversed.</p>
+    pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
+        self.storage_type = input;
+        self
+    }
+    /// <p>The online store storage type to migrate the feature group to. Use this parameter to migrate an existing feature group from <code>Standard</code> to <code>Standard_V2</code> storage format, enabling support for the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Migration is a one-way operation and cannot be reversed.</p>
+    pub fn get_storage_type(&self) -> &::std::option::Option<crate::types::StorageType> {
+        &self.storage_type
+    }
     /// Consumes the builder and constructs a [`OnlineStoreConfigUpdate`](crate::types::OnlineStoreConfigUpdate).
     pub fn build(self) -> crate::types::OnlineStoreConfigUpdate {
         crate::types::OnlineStoreConfigUpdate {
             ttl_duration: self.ttl_duration,
+            storage_type: self.storage_type,
         }
     }
 }

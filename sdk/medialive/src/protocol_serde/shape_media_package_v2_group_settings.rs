@@ -63,6 +63,12 @@ pub fn ser_media_package_v2_group_settings(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.watermarking_settings {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("watermarkingSettings").start_object();
+        crate::protocol_serde::shape_media_package_v2_watermarking_settings::ser_media_package_v2_watermarking_settings(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }
 
@@ -164,6 +170,15 @@ where
                             builder = builder.set_additional_destinations(
                                     crate::protocol_serde::shape_list_of_media_package_additional_destinations::de_list_of_media_package_additional_destinations(tokens, _value, depth + 1)?
                                 );
+                        }
+                        "watermarkingSettings" => {
+                            builder = builder.set_watermarking_settings(
+                                crate::protocol_serde::shape_media_package_v2_watermarking_settings::de_media_package_v2_watermarking_settings(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

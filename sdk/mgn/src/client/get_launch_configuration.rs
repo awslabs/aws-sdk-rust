@@ -15,7 +15,7 @@ impl super::Client {
     ///   - [`copy_tags(Option<bool>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::copy_tags): <p>Copy Tags during Launch Configuration.</p>
     ///   - [`licensing(Option<Licensing>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::licensing): <p>Launch configuration OS licensing.</p>
     ///   - [`boot_mode(Option<BootMode>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::boot_mode): <p>Launch configuration boot mode.</p>
-    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::post_launch_actions): <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::post_launch_actions): <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
     ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::map_auto_tagging_mpe_id): <p>Map auto tagging MPE ID.</p>
     /// - On failure, responds with [`SdkError<GetLaunchConfigurationError>`](crate::operation::get_launch_configuration::GetLaunchConfigurationError)

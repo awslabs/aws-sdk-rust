@@ -875,6 +875,24 @@ pub(crate) fn caption_language_mapping_correct_errors(
     builder
 }
 
+pub(crate) fn cmaf_ingest_ab_watermarker_irdeto_settings_correct_errors(
+    mut builder: crate::types::builders::CmafIngestAbWatermarkerIrdetoSettingsBuilder,
+) -> crate::types::builders::CmafIngestAbWatermarkerIrdetoSettingsBuilder {
+    if builder.alternate_destination.is_none() {
+        builder.alternate_destination = {
+            let builder = crate::types::builders::OutputLocationRefBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.operator_id.is_none() {
+        builder.operator_id = Some(Default::default())
+    }
+    if builder.profile.is_none() {
+        builder.profile = "no value was set".parse::<crate::types::AbWatermarkingProfile>().ok()
+    }
+    builder
+}
+
 pub(crate) fn cmaf_ingest_caption_language_mapping_correct_errors(
     mut builder: crate::types::builders::CmafIngestCaptionLanguageMappingBuilder,
 ) -> crate::types::builders::CmafIngestCaptionLanguageMappingBuilder {
@@ -998,6 +1016,21 @@ pub(crate) fn udp_output_settings_correct_errors(
     builder
 }
 
+pub(crate) fn ab_watermarking_custom_profile_correct_errors(
+    mut builder: crate::types::builders::AbWatermarkingCustomProfileBuilder,
+) -> crate::types::builders::AbWatermarkingCustomProfileBuilder {
+    if builder.embedding_frequency.is_none() {
+        builder.embedding_frequency = Some(Default::default())
+    }
+    if builder.scene_cut.is_none() {
+        builder.scene_cut = Some(Default::default())
+    }
+    if builder.target_psnr.is_none() {
+        builder.target_psnr = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn audio_dolby_e_decode_correct_errors(
     mut builder: crate::types::builders::AudioDolbyEDecodeBuilder,
 ) -> crate::types::builders::AudioDolbyEDecodeBuilder {
@@ -1045,6 +1078,24 @@ pub(crate) fn media_package_additional_destinations_correct_errors(
             let builder = crate::types::builders::OutputLocationRefBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn media_package_v2_ab_watermarker_irdeto_settings_correct_errors(
+    mut builder: crate::types::builders::MediaPackageV2AbWatermarkerIrdetoSettingsBuilder,
+) -> crate::types::builders::MediaPackageV2AbWatermarkerIrdetoSettingsBuilder {
+    if builder.alternate_destination.is_none() {
+        builder.alternate_destination = {
+            let builder = crate::types::builders::OutputLocationRefBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.operator_id.is_none() {
+        builder.operator_id = Some(Default::default())
+    }
+    if builder.profile.is_none() {
+        builder.profile = "no value was set".parse::<crate::types::AbWatermarkingProfile>().ok()
     }
     builder
 }

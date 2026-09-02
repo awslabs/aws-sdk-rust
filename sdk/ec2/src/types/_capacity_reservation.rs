@@ -110,6 +110,8 @@ pub struct CapacityReservation {
     pub interruptible_capacity_allocation: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>,
     /// <p>Information about the interruption configuration and association with the source reservation for interruptible Capacity Reservations.</p>
     pub interruption_info: ::std::option::Option<crate::types::InterruptionInfo>,
+    /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
+    pub zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
 }
 impl CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -284,6 +286,10 @@ impl CapacityReservation {
     pub fn interruption_info(&self) -> ::std::option::Option<&crate::types::InterruptionInfo> {
         self.interruption_info.as_ref()
     }
+    /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
+    pub fn zero_size_preference(&self) -> ::std::option::Option<&crate::types::ZeroSizePreference> {
+        self.zero_size_preference.as_ref()
+    }
 }
 impl CapacityReservation {
     /// Creates a new builder-style object to manufacture [`CapacityReservation`](crate::types::CapacityReservation).
@@ -327,6 +333,7 @@ pub struct CapacityReservationBuilder {
     pub(crate) interruptible: ::std::option::Option<bool>,
     pub(crate) interruptible_capacity_allocation: ::std::option::Option<crate::types::InterruptibleCapacityAllocation>,
     pub(crate) interruption_info: ::std::option::Option<crate::types::InterruptionInfo>,
+    pub(crate) zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
 }
 impl CapacityReservationBuilder {
     /// <p>The ID of the Capacity Reservation.</p>
@@ -907,6 +914,20 @@ impl CapacityReservationBuilder {
     pub fn get_interruption_info(&self) -> &::std::option::Option<crate::types::InterruptionInfo> {
         &self.interruption_info
     }
+    /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
+    pub fn zero_size_preference(mut self, input: crate::types::ZeroSizePreference) -> Self {
+        self.zero_size_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
+    pub fn set_zero_size_preference(mut self, input: ::std::option::Option<crate::types::ZeroSizePreference>) -> Self {
+        self.zero_size_preference = input;
+        self
+    }
+    /// <p>The zero-size preference configured for the interruptible Capacity Reservation. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity when you reduce its allocation to zero. A value of <code>default</code> cancels the interruptible Capacity Reservation when you reduce its allocation to zero.</p>
+    pub fn get_zero_size_preference(&self) -> &::std::option::Option<crate::types::ZeroSizePreference> {
+        &self.zero_size_preference
+    }
     /// Consumes the builder and constructs a [`CapacityReservation`](crate::types::CapacityReservation).
     pub fn build(self) -> crate::types::CapacityReservation {
         crate::types::CapacityReservation {
@@ -941,6 +962,7 @@ impl CapacityReservationBuilder {
             interruptible: self.interruptible,
             interruptible_capacity_allocation: self.interruptible_capacity_allocation,
             interruption_info: self.interruption_info,
+            zero_size_preference: self.zero_size_preference,
         }
     }
 }

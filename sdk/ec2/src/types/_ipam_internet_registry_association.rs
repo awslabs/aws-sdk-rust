@@ -32,6 +32,8 @@ pub struct IpamInternetRegistryAssociation {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The state of the internet registry association. Valid values: <code>pending-activation</code> | <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
     pub state: ::std::option::Option<crate::types::IpamInternetRegistryAssociationState>,
+    /// <p>A message describing the current state of the internet registry association, including additional details such as the reason for a failure.</p>
+    pub state_message: ::std::option::Option<::std::string::String>,
     /// <p>The XML content for the child request to be submitted to the internet registry to complete the BPKI setup.</p>
     pub child_request_xml: ::std::option::Option<::std::string::String>,
     /// <p>The tags assigned to the internet registry association.</p>
@@ -84,6 +86,10 @@ impl IpamInternetRegistryAssociation {
     pub fn state(&self) -> ::std::option::Option<&crate::types::IpamInternetRegistryAssociationState> {
         self.state.as_ref()
     }
+    /// <p>A message describing the current state of the internet registry association, including additional details such as the reason for a failure.</p>
+    pub fn state_message(&self) -> ::std::option::Option<&str> {
+        self.state_message.as_deref()
+    }
     /// <p>The XML content for the child request to be submitted to the internet registry to complete the BPKI setup.</p>
     pub fn child_request_xml(&self) -> ::std::option::Option<&str> {
         self.child_request_xml.as_deref()
@@ -115,6 +121,7 @@ pub struct IpamInternetRegistryAssociationBuilder {
     pub(crate) organization_handle: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::IpamInternetRegistryAssociationState>,
+    pub(crate) state_message: ::std::option::Option<::std::string::String>,
     pub(crate) child_request_xml: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -275,6 +282,20 @@ impl IpamInternetRegistryAssociationBuilder {
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamInternetRegistryAssociationState> {
         &self.state
     }
+    /// <p>A message describing the current state of the internet registry association, including additional details such as the reason for a failure.</p>
+    pub fn state_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_message = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A message describing the current state of the internet registry association, including additional details such as the reason for a failure.</p>
+    pub fn set_state_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_message = input;
+        self
+    }
+    /// <p>A message describing the current state of the internet registry association, including additional details such as the reason for a failure.</p>
+    pub fn get_state_message(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_message
+    }
     /// <p>The XML content for the child request to be submitted to the internet registry to complete the BPKI setup.</p>
     pub fn child_request_xml(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.child_request_xml = ::std::option::Option::Some(input.into());
@@ -321,6 +342,7 @@ impl IpamInternetRegistryAssociationBuilder {
             organization_handle: self.organization_handle,
             description: self.description,
             state: self.state,
+            state_message: self.state_message,
             child_request_xml: self.child_request_xml,
             tags: self.tags,
         }

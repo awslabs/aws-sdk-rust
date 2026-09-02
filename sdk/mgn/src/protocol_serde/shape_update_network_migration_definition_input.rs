@@ -3,51 +3,66 @@ pub fn ser_update_network_migration_definition_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
-    }
-    if let Some(var_3) = &input.network_migration_definition_id {
-        object.key("networkMigrationDefinitionID").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.scope_tags {
-        #[allow(unused_mut)]
-        let mut object_5 = object.key("scopeTags").start_object();
-        for (key_6, value_7) in var_4 {
-            {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
-            }
-        }
-        object_5.finish();
-    }
-    if let Some(var_8) = &input.source_configurations {
-        let mut array_9 = object.key("sourceConfigurations").start_array();
-        for item_10 in var_8 {
+    if let Some(var_1) = &input.cidr_mappings {
+        let mut array_2 = object.key("cidrMappings").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_cidr_mapping::ser_cidr_mapping(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_9.finish();
+        array_2.finish();
     }
-    if let Some(var_12) = &input.target_deployment {
-        object.key("targetDeployment").string(var_12.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("description").string(var_5.as_str());
     }
-    if let Some(var_13) = &input.target_network {
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.network_migration_definition_id {
+        object.key("networkMigrationDefinitionID").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.scope_tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("targetNetwork").start_object();
-        crate::protocol_serde::shape_target_network_update::ser_target_network_update(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_9 = object.key("scopeTags").start_object();
+        for (key_10, value_11) in var_8 {
+            {
+                object_9.key(key_10.as_str()).string(value_11.as_str());
+            }
+        }
+        object_9.finish();
     }
-    if let Some(var_15) = &input.target_s3_configuration {
+    if let Some(var_12) = &input.source_configurations {
+        let mut array_13 = object.key("sourceConfigurations").start_array();
+        for item_14 in var_12 {
+            {
+                #[allow(unused_mut)]
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_15, item_14)?;
+                object_15.finish();
+            }
+        }
+        array_13.finish();
+    }
+    if let Some(var_16) = &input.target_deployment {
+        object.key("targetDeployment").string(var_16.as_str());
+    }
+    if let Some(var_17) = &input.target_network {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("targetS3Configuration").start_object();
-        crate::protocol_serde::shape_target_s3_configuration_update::ser_target_s3_configuration_update(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("targetNetwork").start_object();
+        crate::protocol_serde::shape_target_network_update::ser_target_network_update(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.target_s3_configuration {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("targetS3Configuration").start_object();
+        crate::protocol_serde::shape_target_s3_configuration_update::ser_target_s3_configuration_update(&mut object_20, var_19)?;
+        object_20.finish();
+    }
+    if let Some(var_21) = &input.vpc_provisioning_strategy {
+        object.key("vpcProvisioningStrategy").string(var_21.as_str());
     }
     Ok(())
 }

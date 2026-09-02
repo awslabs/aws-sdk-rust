@@ -6,7 +6,7 @@
 pub struct NetworkMigrationCodeGenerationArtifact {
     /// <p>The unique identifier of the artifact.</p>
     pub artifact_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the artifact, such as CLOUDFORMATION_TEMPLATE or TERRAFORM_MODULE.</p>
+    /// <p>The type of the generated artifact.</p>
     pub artifact_type: ::std::option::Option<crate::types::NetworkMigrationCodeGenerationArtifactType>,
     /// <p>The sub-type of the artifact for further classification.</p>
     pub artifact_sub_type: ::std::option::Option<crate::types::NetworkMigrationCodeGenerationArtifactSubType>,
@@ -24,7 +24,7 @@ impl NetworkMigrationCodeGenerationArtifact {
     pub fn artifact_id(&self) -> ::std::option::Option<&str> {
         self.artifact_id.as_deref()
     }
-    /// <p>The type of the artifact, such as CLOUDFORMATION_TEMPLATE or TERRAFORM_MODULE.</p>
+    /// <p>The type of the generated artifact.</p>
     pub fn artifact_type(&self) -> ::std::option::Option<&crate::types::NetworkMigrationCodeGenerationArtifactType> {
         self.artifact_type.as_ref()
     }
@@ -83,17 +83,17 @@ impl NetworkMigrationCodeGenerationArtifactBuilder {
     pub fn get_artifact_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.artifact_id
     }
-    /// <p>The type of the artifact, such as CLOUDFORMATION_TEMPLATE or TERRAFORM_MODULE.</p>
+    /// <p>The type of the generated artifact.</p>
     pub fn artifact_type(mut self, input: crate::types::NetworkMigrationCodeGenerationArtifactType) -> Self {
         self.artifact_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the artifact, such as CLOUDFORMATION_TEMPLATE or TERRAFORM_MODULE.</p>
+    /// <p>The type of the generated artifact.</p>
     pub fn set_artifact_type(mut self, input: ::std::option::Option<crate::types::NetworkMigrationCodeGenerationArtifactType>) -> Self {
         self.artifact_type = input;
         self
     }
-    /// <p>The type of the artifact, such as CLOUDFORMATION_TEMPLATE or TERRAFORM_MODULE.</p>
+    /// <p>The type of the generated artifact.</p>
     pub fn get_artifact_type(&self) -> &::std::option::Option<crate::types::NetworkMigrationCodeGenerationArtifactType> {
         &self.artifact_type
     }

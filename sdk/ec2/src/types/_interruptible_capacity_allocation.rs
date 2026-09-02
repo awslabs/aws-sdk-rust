@@ -14,6 +14,8 @@ pub struct InterruptibleCapacityAllocation {
     pub interruptible_capacity_reservation_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of interruption policy applied to the interruptible reservation.</p>
     pub interruption_type: ::std::option::Option<crate::types::InterruptionType>,
+    /// <p>Specifies how Amazon EC2 handles the interruptible Capacity Reservation when you reduce its allocation to zero instances. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. A value of <code>default</code> cancels the interruptible Capacity Reservation and returns the capacity to your source Capacity Reservation.</p>
+    pub zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
 }
 impl InterruptibleCapacityAllocation {
     /// <p>The current number of instances allocated to the interruptible reservation.</p>
@@ -36,6 +38,10 @@ impl InterruptibleCapacityAllocation {
     pub fn interruption_type(&self) -> ::std::option::Option<&crate::types::InterruptionType> {
         self.interruption_type.as_ref()
     }
+    /// <p>Specifies how Amazon EC2 handles the interruptible Capacity Reservation when you reduce its allocation to zero instances. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. A value of <code>default</code> cancels the interruptible Capacity Reservation and returns the capacity to your source Capacity Reservation.</p>
+    pub fn zero_size_preference(&self) -> ::std::option::Option<&crate::types::ZeroSizePreference> {
+        self.zero_size_preference.as_ref()
+    }
 }
 impl InterruptibleCapacityAllocation {
     /// Creates a new builder-style object to manufacture [`InterruptibleCapacityAllocation`](crate::types::InterruptibleCapacityAllocation).
@@ -53,6 +59,7 @@ pub struct InterruptibleCapacityAllocationBuilder {
     pub(crate) status: ::std::option::Option<crate::types::InterruptibleCapacityReservationAllocationStatus>,
     pub(crate) interruptible_capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) interruption_type: ::std::option::Option<crate::types::InterruptionType>,
+    pub(crate) zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
 }
 impl InterruptibleCapacityAllocationBuilder {
     /// <p>The current number of instances allocated to the interruptible reservation.</p>
@@ -125,6 +132,20 @@ impl InterruptibleCapacityAllocationBuilder {
     pub fn get_interruption_type(&self) -> &::std::option::Option<crate::types::InterruptionType> {
         &self.interruption_type
     }
+    /// <p>Specifies how Amazon EC2 handles the interruptible Capacity Reservation when you reduce its allocation to zero instances. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. A value of <code>default</code> cancels the interruptible Capacity Reservation and returns the capacity to your source Capacity Reservation.</p>
+    pub fn zero_size_preference(mut self, input: crate::types::ZeroSizePreference) -> Self {
+        self.zero_size_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how Amazon EC2 handles the interruptible Capacity Reservation when you reduce its allocation to zero instances. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. A value of <code>default</code> cancels the interruptible Capacity Reservation and returns the capacity to your source Capacity Reservation.</p>
+    pub fn set_zero_size_preference(mut self, input: ::std::option::Option<crate::types::ZeroSizePreference>) -> Self {
+        self.zero_size_preference = input;
+        self
+    }
+    /// <p>Specifies how Amazon EC2 handles the interruptible Capacity Reservation when you reduce its allocation to zero instances. A value of <code>retain</code> keeps the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. A value of <code>default</code> cancels the interruptible Capacity Reservation and returns the capacity to your source Capacity Reservation.</p>
+    pub fn get_zero_size_preference(&self) -> &::std::option::Option<crate::types::ZeroSizePreference> {
+        &self.zero_size_preference
+    }
     /// Consumes the builder and constructs a [`InterruptibleCapacityAllocation`](crate::types::InterruptibleCapacityAllocation).
     pub fn build(self) -> crate::types::InterruptibleCapacityAllocation {
         crate::types::InterruptibleCapacityAllocation {
@@ -133,6 +154,7 @@ impl InterruptibleCapacityAllocationBuilder {
             status: self.status,
             interruptible_capacity_reservation_id: self.interruptible_capacity_reservation_id,
             interruption_type: self.interruption_type,
+            zero_size_preference: self.zero_size_preference,
         }
     }
 }

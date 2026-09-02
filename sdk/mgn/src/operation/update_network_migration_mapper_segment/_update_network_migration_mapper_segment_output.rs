@@ -11,7 +11,7 @@ pub struct UpdateNetworkMigrationMapperSegmentOutput {
     pub network_migration_definition_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the segment.</p>
     pub segment_id: ::std::option::Option<::std::string::String>,
-    /// <p>The type of the segment, such as VPC, subnet, or security group.</p>
+    /// <p>The category of the network migration segment. A segment groups the network constructs (such as VPCs, subnets, and security groups) that are migrated together. Valid values: <code>WORKLOAD</code>, <code>APPLIANCE</code>.</p>
     pub segment_type: ::std::option::Option<crate::types::NetworkMigrationMapperSegmentType>,
     /// <p>The name of the segment.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -52,7 +52,7 @@ impl UpdateNetworkMigrationMapperSegmentOutput {
     pub fn segment_id(&self) -> ::std::option::Option<&str> {
         self.segment_id.as_deref()
     }
-    /// <p>The type of the segment, such as VPC, subnet, or security group.</p>
+    /// <p>The category of the network migration segment. A segment groups the network constructs (such as VPCs, subnets, and security groups) that are migrated together. Valid values: <code>WORKLOAD</code>, <code>APPLIANCE</code>.</p>
     pub fn segment_type(&self) -> ::std::option::Option<&crate::types::NetworkMigrationMapperSegmentType> {
         self.segment_type.as_ref()
     }
@@ -211,17 +211,17 @@ impl UpdateNetworkMigrationMapperSegmentOutputBuilder {
     pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_id
     }
-    /// <p>The type of the segment, such as VPC, subnet, or security group.</p>
+    /// <p>The category of the network migration segment. A segment groups the network constructs (such as VPCs, subnets, and security groups) that are migrated together. Valid values: <code>WORKLOAD</code>, <code>APPLIANCE</code>.</p>
     pub fn segment_type(mut self, input: crate::types::NetworkMigrationMapperSegmentType) -> Self {
         self.segment_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the segment, such as VPC, subnet, or security group.</p>
+    /// <p>The category of the network migration segment. A segment groups the network constructs (such as VPCs, subnets, and security groups) that are migrated together. Valid values: <code>WORKLOAD</code>, <code>APPLIANCE</code>.</p>
     pub fn set_segment_type(mut self, input: ::std::option::Option<crate::types::NetworkMigrationMapperSegmentType>) -> Self {
         self.segment_type = input;
         self
     }
-    /// <p>The type of the segment, such as VPC, subnet, or security group.</p>
+    /// <p>The category of the network migration segment. A segment groups the network constructs (such as VPCs, subnets, and security groups) that are migrated together. Valid values: <code>WORKLOAD</code>, <code>APPLIANCE</code>.</p>
     pub fn get_segment_type(&self) -> &::std::option::Option<crate::types::NetworkMigrationMapperSegmentType> {
         &self.segment_type
     }

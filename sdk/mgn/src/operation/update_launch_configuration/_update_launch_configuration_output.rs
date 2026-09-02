@@ -21,7 +21,7 @@ pub struct UpdateLaunchConfigurationOutput {
     pub licensing: ::std::option::Option<crate::types::Licensing>,
     /// <p>Launch configuration boot mode.</p>
     pub boot_mode: ::std::option::Option<crate::types::BootMode>,
-    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    /// <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     pub post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     /// <p>Enable map auto tagging.</p>
     pub enable_map_auto_tagging: ::std::option::Option<bool>,
@@ -66,7 +66,7 @@ impl UpdateLaunchConfigurationOutput {
     pub fn boot_mode(&self) -> ::std::option::Option<&crate::types::BootMode> {
         self.boot_mode.as_ref()
     }
-    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    /// <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     pub fn post_launch_actions(&self) -> ::std::option::Option<&crate::types::PostLaunchActions> {
         self.post_launch_actions.as_ref()
     }
@@ -239,17 +239,17 @@ impl UpdateLaunchConfigurationOutputBuilder {
     pub fn get_boot_mode(&self) -> &::std::option::Option<crate::types::BootMode> {
         &self.boot_mode
     }
-    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    /// <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     pub fn post_launch_actions(mut self, input: crate::types::PostLaunchActions) -> Self {
         self.post_launch_actions = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    /// <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     pub fn set_post_launch_actions(mut self, input: ::std::option::Option<crate::types::PostLaunchActions>) -> Self {
         self.post_launch_actions = input;
         self
     }
-    /// <p>Post Launch Actions to executed on the Test or Cutover instance.</p>
+    /// <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     pub fn get_post_launch_actions(&self) -> &::std::option::Option<crate::types::PostLaunchActions> {
         &self.post_launch_actions
     }

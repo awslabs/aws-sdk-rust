@@ -26,6 +26,8 @@ pub struct MediaPackageV2GroupSettings {
     pub timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
     /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
     pub additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>>,
+    /// Specifies the type of watermarking technology to use.
+    pub watermarking_settings: ::std::option::Option<crate::types::MediaPackageV2WatermarkingSettings>,
 }
 impl MediaPackageV2GroupSettings {
     /// Mapping of up to 4 caption channels to caption languages.
@@ -76,6 +78,10 @@ impl MediaPackageV2GroupSettings {
     pub fn additional_destinations(&self) -> &[crate::types::MediaPackageAdditionalDestinations] {
         self.additional_destinations.as_deref().unwrap_or_default()
     }
+    /// Specifies the type of watermarking technology to use.
+    pub fn watermarking_settings(&self) -> ::std::option::Option<&crate::types::MediaPackageV2WatermarkingSettings> {
+        self.watermarking_settings.as_ref()
+    }
 }
 impl MediaPackageV2GroupSettings {
     /// Creates a new builder-style object to manufacture [`MediaPackageV2GroupSettings`](crate::types::MediaPackageV2GroupSettings).
@@ -99,6 +105,7 @@ pub struct MediaPackageV2GroupSettingsBuilder {
     pub(crate) timed_metadata_id3_period: ::std::option::Option<i32>,
     pub(crate) timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
     pub(crate) additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>>,
+    pub(crate) watermarking_settings: ::std::option::Option<crate::types::MediaPackageV2WatermarkingSettings>,
 }
 impl MediaPackageV2GroupSettingsBuilder {
     /// Appends an item to `caption_language_mappings`.
@@ -270,6 +277,20 @@ impl MediaPackageV2GroupSettingsBuilder {
     pub fn get_additional_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>> {
         &self.additional_destinations
     }
+    /// Specifies the type of watermarking technology to use.
+    pub fn watermarking_settings(mut self, input: crate::types::MediaPackageV2WatermarkingSettings) -> Self {
+        self.watermarking_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specifies the type of watermarking technology to use.
+    pub fn set_watermarking_settings(mut self, input: ::std::option::Option<crate::types::MediaPackageV2WatermarkingSettings>) -> Self {
+        self.watermarking_settings = input;
+        self
+    }
+    /// Specifies the type of watermarking technology to use.
+    pub fn get_watermarking_settings(&self) -> &::std::option::Option<crate::types::MediaPackageV2WatermarkingSettings> {
+        &self.watermarking_settings
+    }
     /// Consumes the builder and constructs a [`MediaPackageV2GroupSettings`](crate::types::MediaPackageV2GroupSettings).
     pub fn build(self) -> crate::types::MediaPackageV2GroupSettings {
         crate::types::MediaPackageV2GroupSettings {
@@ -284,6 +305,7 @@ impl MediaPackageV2GroupSettingsBuilder {
             timed_metadata_id3_period: self.timed_metadata_id3_period,
             timed_metadata_passthrough: self.timed_metadata_passthrough,
             additional_destinations: self.additional_destinations,
+            watermarking_settings: self.watermarking_settings,
         }
     }
 }

@@ -15,6 +15,10 @@ pub struct CreateNetworkMigrationDefinitionInput {
     pub target_network: ::std::option::Option<crate::types::TargetNetwork>,
     /// <p>The target deployment configuration for the migrated network.</p>
     pub target_deployment: ::std::option::Option<crate::types::TargetDeployment>,
+    /// <p>Specifies whether to create new target VPCs or use existing ones. Set to <code>CREATE_NEW</code> to provision new target VPCs as part of the migration, or <code>USE_EXISTING</code> to migrate into existing VPCs in the target account.</p>
+    pub vpc_provisioning_strategy: ::std::option::Option<crate::types::VpcProvisioningStrategy>,
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings can be provided only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub cidr_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>,
     /// <p>Tags to assign to the network migration definition.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Scope tags for the network migration definition to control access and organization.</p>
@@ -47,6 +51,16 @@ impl CreateNetworkMigrationDefinitionInput {
     pub fn target_deployment(&self) -> ::std::option::Option<&crate::types::TargetDeployment> {
         self.target_deployment.as_ref()
     }
+    /// <p>Specifies whether to create new target VPCs or use existing ones. Set to <code>CREATE_NEW</code> to provision new target VPCs as part of the migration, or <code>USE_EXISTING</code> to migrate into existing VPCs in the target account.</p>
+    pub fn vpc_provisioning_strategy(&self) -> ::std::option::Option<&crate::types::VpcProvisioningStrategy> {
+        self.vpc_provisioning_strategy.as_ref()
+    }
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings can be provided only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cidr_mappings.is_none()`.
+    pub fn cidr_mappings(&self) -> &[crate::types::CidrMapping] {
+        self.cidr_mappings.as_deref().unwrap_or_default()
+    }
     /// <p>Tags to assign to the network migration definition.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -65,6 +79,8 @@ impl ::std::fmt::Debug for CreateNetworkMigrationDefinitionInput {
         formatter.field("target_s3_configuration", &self.target_s3_configuration);
         formatter.field("target_network", &self.target_network);
         formatter.field("target_deployment", &self.target_deployment);
+        formatter.field("vpc_provisioning_strategy", &self.vpc_provisioning_strategy);
+        formatter.field("cidr_mappings", &self.cidr_mappings);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("scope_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -87,6 +103,8 @@ pub struct CreateNetworkMigrationDefinitionInputBuilder {
     pub(crate) target_s3_configuration: ::std::option::Option<crate::types::TargetS3Configuration>,
     pub(crate) target_network: ::std::option::Option<crate::types::TargetNetwork>,
     pub(crate) target_deployment: ::std::option::Option<crate::types::TargetDeployment>,
+    pub(crate) vpc_provisioning_strategy: ::std::option::Option<crate::types::VpcProvisioningStrategy>,
+    pub(crate) cidr_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) scope_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -184,6 +202,40 @@ impl CreateNetworkMigrationDefinitionInputBuilder {
     pub fn get_target_deployment(&self) -> &::std::option::Option<crate::types::TargetDeployment> {
         &self.target_deployment
     }
+    /// <p>Specifies whether to create new target VPCs or use existing ones. Set to <code>CREATE_NEW</code> to provision new target VPCs as part of the migration, or <code>USE_EXISTING</code> to migrate into existing VPCs in the target account.</p>
+    pub fn vpc_provisioning_strategy(mut self, input: crate::types::VpcProvisioningStrategy) -> Self {
+        self.vpc_provisioning_strategy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to create new target VPCs or use existing ones. Set to <code>CREATE_NEW</code> to provision new target VPCs as part of the migration, or <code>USE_EXISTING</code> to migrate into existing VPCs in the target account.</p>
+    pub fn set_vpc_provisioning_strategy(mut self, input: ::std::option::Option<crate::types::VpcProvisioningStrategy>) -> Self {
+        self.vpc_provisioning_strategy = input;
+        self
+    }
+    /// <p>Specifies whether to create new target VPCs or use existing ones. Set to <code>CREATE_NEW</code> to provision new target VPCs as part of the migration, or <code>USE_EXISTING</code> to migrate into existing VPCs in the target account.</p>
+    pub fn get_vpc_provisioning_strategy(&self) -> &::std::option::Option<crate::types::VpcProvisioningStrategy> {
+        &self.vpc_provisioning_strategy
+    }
+    /// Appends an item to `cidr_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_cidr_mappings`](Self::set_cidr_mappings).
+    ///
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings can be provided only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn cidr_mappings(mut self, input: crate::types::CidrMapping) -> Self {
+        let mut v = self.cidr_mappings.unwrap_or_default();
+        v.push(input);
+        self.cidr_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings can be provided only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn set_cidr_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>) -> Self {
+        self.cidr_mappings = input;
+        self
+    }
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings can be provided only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn get_cidr_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>> {
+        &self.cidr_mappings
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -239,6 +291,8 @@ impl CreateNetworkMigrationDefinitionInputBuilder {
                 target_s3_configuration: self.target_s3_configuration,
                 target_network: self.target_network,
                 target_deployment: self.target_deployment,
+                vpc_provisioning_strategy: self.vpc_provisioning_strategy,
+                cidr_mappings: self.cidr_mappings,
                 tags: self.tags,
                 scope_tags: self.scope_tags,
             },
@@ -254,6 +308,8 @@ impl ::std::fmt::Debug for CreateNetworkMigrationDefinitionInputBuilder {
         formatter.field("target_s3_configuration", &self.target_s3_configuration);
         formatter.field("target_network", &self.target_network);
         formatter.field("target_deployment", &self.target_deployment);
+        formatter.field("vpc_provisioning_strategy", &self.vpc_provisioning_strategy);
+        formatter.field("cidr_mappings", &self.cidr_mappings);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("scope_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()

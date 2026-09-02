@@ -197,6 +197,39 @@ impl CreateNetworkMigrationDefinitionFluentBuilder {
     pub fn get_target_deployment(&self) -> &::std::option::Option<crate::types::TargetDeployment> {
         self.inner.get_target_deployment()
     }
+    /// <p>Specifies whether to create new target VPCs or use existing ones. Set to <code>CREATE_NEW</code> to provision new target VPCs as part of the migration, or <code>USE_EXISTING</code> to migrate into existing VPCs in the target account.</p>
+    pub fn vpc_provisioning_strategy(mut self, input: crate::types::VpcProvisioningStrategy) -> Self {
+        self.inner = self.inner.vpc_provisioning_strategy(input);
+        self
+    }
+    /// <p>Specifies whether to create new target VPCs or use existing ones. Set to <code>CREATE_NEW</code> to provision new target VPCs as part of the migration, or <code>USE_EXISTING</code> to migrate into existing VPCs in the target account.</p>
+    pub fn set_vpc_provisioning_strategy(mut self, input: ::std::option::Option<crate::types::VpcProvisioningStrategy>) -> Self {
+        self.inner = self.inner.set_vpc_provisioning_strategy(input);
+        self
+    }
+    /// <p>Specifies whether to create new target VPCs or use existing ones. Set to <code>CREATE_NEW</code> to provision new target VPCs as part of the migration, or <code>USE_EXISTING</code> to migrate into existing VPCs in the target account.</p>
+    pub fn get_vpc_provisioning_strategy(&self) -> &::std::option::Option<crate::types::VpcProvisioningStrategy> {
+        self.inner.get_vpc_provisioning_strategy()
+    }
+    ///
+    /// Appends an item to `cidrMappings`.
+    ///
+    /// To override the contents of this collection use [`set_cidr_mappings`](Self::set_cidr_mappings).
+    ///
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings can be provided only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn cidr_mappings(mut self, input: crate::types::CidrMapping) -> Self {
+        self.inner = self.inner.cidr_mappings(input);
+        self
+    }
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings can be provided only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn set_cidr_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>) -> Self {
+        self.inner = self.inner.set_cidr_mappings(input);
+        self
+    }
+    /// <p>A list of CIDR mappings that map original source CIDR ranges to updated target CIDR ranges. CIDR mappings can be provided only when <code>vpcProvisioningStrategy</code> is set to <code>USE_EXISTING</code>.</p>
+    pub fn get_cidr_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>> {
+        self.inner.get_cidr_mappings()
+    }
     ///
     /// Adds a key-value pair to `tags`.
     ///

@@ -18,3 +18,6 @@ pub mod list_records;
 
 /// Types for the `PutRecord` operation.
 pub mod put_record;
+
+/// Types for the `UpdateRecord` operation.
+pub mod update_record;

@@ -317,7 +317,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UnarchiveAppl
 pub enum UnarchiveApplicationError {
     /// <p>Resource not found exception.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request could not be completed because its exceeded the service quota.</p>
+    /// <p>The request could not be completed because it exceeded the service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::types::error::UninitializedAccountException),

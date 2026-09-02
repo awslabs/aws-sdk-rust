@@ -8,3 +8,5 @@ pub use crate::types::error::_service_unavailable::ServiceUnavailableBuilder;
 pub use crate::types::error::_validation_error::ValidationErrorBuilder;
 
 pub use crate::types::error::_resource_not_found::ResourceNotFoundBuilder;
+
+pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;

@@ -82,6 +82,20 @@ pub fn de_interruptible_capacity_allocation(
                 builder = builder.set_interruption_type(var_5);
             }
             ,
+            s if s.matches("zeroSizePreference") /* ZeroSizePreference com.amazonaws.ec2#InterruptibleCapacityAllocation$ZeroSizePreference */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<crate::types::ZeroSizePreference, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ZeroSizePreference::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_zero_size_preference(var_6);
+            }
+            ,
             _ => {}
         }
     }

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LifeCycle {
-    /// <p>Lifecycle added to service data and time.</p>
+    /// <p>Lifecycle added to service date and time.</p>
     pub added_to_service_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Lifecycle replication initiation date and time.</p>
     pub first_byte_date_time: ::std::option::Option<::std::string::String>,
@@ -20,7 +20,7 @@ pub struct LifeCycle {
     pub state: ::std::option::Option<crate::types::LifeCycleState>,
 }
 impl LifeCycle {
-    /// <p>Lifecycle added to service data and time.</p>
+    /// <p>Lifecycle added to service date and time.</p>
     pub fn added_to_service_date_time(&self) -> ::std::option::Option<&str> {
         self.added_to_service_date_time.as_deref()
     }
@@ -69,17 +69,17 @@ pub struct LifeCycleBuilder {
     pub(crate) state: ::std::option::Option<crate::types::LifeCycleState>,
 }
 impl LifeCycleBuilder {
-    /// <p>Lifecycle added to service data and time.</p>
+    /// <p>Lifecycle added to service date and time.</p>
     pub fn added_to_service_date_time(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.added_to_service_date_time = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Lifecycle added to service data and time.</p>
+    /// <p>Lifecycle added to service date and time.</p>
     pub fn set_added_to_service_date_time(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.added_to_service_date_time = input;
         self
     }
-    /// <p>Lifecycle added to service data and time.</p>
+    /// <p>Lifecycle added to service date and time.</p>
     pub fn get_added_to_service_date_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.added_to_service_date_time
     }

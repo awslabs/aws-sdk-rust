@@ -325,7 +325,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateLaunchC
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateLaunchConfigurationTemplateError {
-    /// <p>Operating denied due to a file permission or access check error.</p>
+    /// <p>Operation denied due to a file permission or access check error.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::types::error::UninitializedAccountException),

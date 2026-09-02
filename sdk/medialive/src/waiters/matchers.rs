@@ -394,6 +394,21 @@ pub(crate) fn match_describe_channel_b656d56ada3218574(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"errorType":"NotFoundException"}
+pub(crate) fn match_describe_channel_bcffe71d9077ffaa1(
+    _result: ::std::result::Result<
+        &crate::operation::describe_channel::DescribeChannelOutput,
+        &crate::operation::describe_channel::DescribeChannelError,
+    >,
+) -> bool {
+    if let ::std::result::Result::Err(err) = _result {
+        if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(err) {
+            return code == "NotFoundException";
+        }
+    }
+    false
+}
+
 /// Matcher union: {"output":{"path":"State","expected":"ACTIVE","comparator":"stringEquals"}}
 pub(crate) fn match_describe_cluster_a84ba26c6d32fa04e(
     _result: ::std::result::Result<

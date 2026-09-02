@@ -38,6 +38,8 @@ pub struct CmafIngestGroupSettings {
     pub timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
     /// Optional an array of additional destinational HTTP destinations for the OutputGroup outputs
     pub additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDestinations>>,
+    /// Specifies the type of watermarking technology to use.
+    pub watermarking_settings: ::std::option::Option<crate::types::CmafIngestWatermarkingSettings>,
 }
 impl CmafIngestGroupSettings {
     /// A HTTP destination for the tracks
@@ -112,6 +114,10 @@ impl CmafIngestGroupSettings {
     pub fn additional_destinations(&self) -> &[crate::types::AdditionalDestinations] {
         self.additional_destinations.as_deref().unwrap_or_default()
     }
+    /// Specifies the type of watermarking technology to use.
+    pub fn watermarking_settings(&self) -> ::std::option::Option<&crate::types::CmafIngestWatermarkingSettings> {
+        self.watermarking_settings.as_ref()
+    }
 }
 impl CmafIngestGroupSettings {
     /// Creates a new builder-style object to manufacture [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
@@ -141,6 +147,7 @@ pub struct CmafIngestGroupSettingsBuilder {
     pub(crate) timed_metadata_id3_period: ::std::option::Option<i32>,
     pub(crate) timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
     pub(crate) additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::AdditionalDestinations>>,
+    pub(crate) watermarking_settings: ::std::option::Option<crate::types::CmafIngestWatermarkingSettings>,
 }
 impl CmafIngestGroupSettingsBuilder {
     /// A HTTP destination for the tracks
@@ -397,6 +404,20 @@ impl CmafIngestGroupSettingsBuilder {
     pub fn get_additional_destinations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdditionalDestinations>> {
         &self.additional_destinations
     }
+    /// Specifies the type of watermarking technology to use.
+    pub fn watermarking_settings(mut self, input: crate::types::CmafIngestWatermarkingSettings) -> Self {
+        self.watermarking_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specifies the type of watermarking technology to use.
+    pub fn set_watermarking_settings(mut self, input: ::std::option::Option<crate::types::CmafIngestWatermarkingSettings>) -> Self {
+        self.watermarking_settings = input;
+        self
+    }
+    /// Specifies the type of watermarking technology to use.
+    pub fn get_watermarking_settings(&self) -> &::std::option::Option<crate::types::CmafIngestWatermarkingSettings> {
+        &self.watermarking_settings
+    }
     /// Consumes the builder and constructs a [`CmafIngestGroupSettings`](crate::types::CmafIngestGroupSettings).
     pub fn build(self) -> crate::types::CmafIngestGroupSettings {
         crate::types::CmafIngestGroupSettings {
@@ -417,6 +438,7 @@ impl CmafIngestGroupSettingsBuilder {
             timed_metadata_id3_period: self.timed_metadata_id3_period,
             timed_metadata_passthrough: self.timed_metadata_passthrough,
             additional_destinations: self.additional_destinations,
+            watermarking_settings: self.watermarking_settings,
         }
     }
 }

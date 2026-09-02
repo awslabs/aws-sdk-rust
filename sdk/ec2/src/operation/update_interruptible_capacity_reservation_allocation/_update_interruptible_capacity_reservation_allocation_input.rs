@@ -9,6 +9,8 @@ pub struct UpdateInterruptibleCapacityReservationAllocationInput {
     pub target_instance_count: ::std::option::Option<i32>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response.</p>
     pub dry_run: ::std::option::Option<bool>,
+    /// <p>Specifies the updated behavior for the interruptible Capacity Reservation when you reduce its allocation to zero instances. Specify <code>retain</code> to keep the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. Specify <code>default</code> to cancel the interruptible Capacity Reservation and return the capacity to your source Capacity Reservation.</p>
+    pub zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
 }
 impl UpdateInterruptibleCapacityReservationAllocationInput {
     /// <p>The ID of the source Capacity Reservation containing the interruptible allocation to modify.</p>
@@ -22,6 +24,10 @@ impl UpdateInterruptibleCapacityReservationAllocationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
+    }
+    /// <p>Specifies the updated behavior for the interruptible Capacity Reservation when you reduce its allocation to zero instances. Specify <code>retain</code> to keep the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. Specify <code>default</code> to cancel the interruptible Capacity Reservation and return the capacity to your source Capacity Reservation.</p>
+    pub fn zero_size_preference(&self) -> ::std::option::Option<&crate::types::ZeroSizePreference> {
+        self.zero_size_preference.as_ref()
     }
 }
 impl UpdateInterruptibleCapacityReservationAllocationInput {
@@ -40,6 +46,7 @@ pub struct UpdateInterruptibleCapacityReservationAllocationInputBuilder {
     pub(crate) capacity_reservation_id: ::std::option::Option<::std::string::String>,
     pub(crate) target_instance_count: ::std::option::Option<i32>,
     pub(crate) dry_run: ::std::option::Option<bool>,
+    pub(crate) zero_size_preference: ::std::option::Option<crate::types::ZeroSizePreference>,
 }
 impl UpdateInterruptibleCapacityReservationAllocationInputBuilder {
     /// <p>The ID of the source Capacity Reservation containing the interruptible allocation to modify.</p>
@@ -58,7 +65,6 @@ impl UpdateInterruptibleCapacityReservationAllocationInputBuilder {
         &self.capacity_reservation_id
     }
     /// <p>The new number of instances to allocate. Enter a higher number to add more capacity to share, or a lower number to reclaim capacity to your source Capacity Reservation.</p>
-    /// This field is required.
     pub fn target_instance_count(mut self, input: i32) -> Self {
         self.target_instance_count = ::std::option::Option::Some(input);
         self
@@ -86,6 +92,20 @@ impl UpdateInterruptibleCapacityReservationAllocationInputBuilder {
     pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
         &self.dry_run
     }
+    /// <p>Specifies the updated behavior for the interruptible Capacity Reservation when you reduce its allocation to zero instances. Specify <code>retain</code> to keep the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. Specify <code>default</code> to cancel the interruptible Capacity Reservation and return the capacity to your source Capacity Reservation.</p>
+    pub fn zero_size_preference(mut self, input: crate::types::ZeroSizePreference) -> Self {
+        self.zero_size_preference = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the updated behavior for the interruptible Capacity Reservation when you reduce its allocation to zero instances. Specify <code>retain</code> to keep the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. Specify <code>default</code> to cancel the interruptible Capacity Reservation and return the capacity to your source Capacity Reservation.</p>
+    pub fn set_zero_size_preference(mut self, input: ::std::option::Option<crate::types::ZeroSizePreference>) -> Self {
+        self.zero_size_preference = input;
+        self
+    }
+    /// <p>Specifies the updated behavior for the interruptible Capacity Reservation when you reduce its allocation to zero instances. Specify <code>retain</code> to keep the interruptible Capacity Reservation active at zero capacity so that you can allocate instances to it again later. Specify <code>default</code> to cancel the interruptible Capacity Reservation and return the capacity to your source Capacity Reservation.</p>
+    pub fn get_zero_size_preference(&self) -> &::std::option::Option<crate::types::ZeroSizePreference> {
+        &self.zero_size_preference
+    }
     /// Consumes the builder and constructs a [`UpdateInterruptibleCapacityReservationAllocationInput`](crate::operation::update_interruptible_capacity_reservation_allocation::UpdateInterruptibleCapacityReservationAllocationInput).
     pub fn build(
         self,
@@ -98,6 +118,7 @@ impl UpdateInterruptibleCapacityReservationAllocationInputBuilder {
                 capacity_reservation_id: self.capacity_reservation_id,
                 target_instance_count: self.target_instance_count,
                 dry_run: self.dry_run,
+                zero_size_preference: self.zero_size_preference,
             },
         )
     }

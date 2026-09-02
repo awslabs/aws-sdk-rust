@@ -9,5 +9,8 @@ pub fn ser_online_store_config_update(
         crate::protocol_serde::shape_ttl_duration::ser_ttl_duration(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.storage_type {
+        object.key("StorageType").string(var_3.as_str());
+    }
     Ok(())
 }

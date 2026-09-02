@@ -111,6 +111,13 @@ pub(crate) fn de_create_network_migration_definition(
                             .transpose()?,
                     );
                 }
+                "cidrMappings" => {
+                    builder = builder.set_cidr_mappings(crate::protocol_serde::shape_cidr_mappings_list::de_cidr_mappings_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -171,6 +178,13 @@ pub(crate) fn de_create_network_migration_definition(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
+                }
+                "vpcProvisioningStrategy" => {
+                    builder = builder.set_vpc_provisioning_strategy(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::VpcProvisioningStrategy::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

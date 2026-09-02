@@ -317,7 +317,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateApplica
 pub enum CreateApplicationError {
     /// <p>The request could not be completed due to a conflict with the current state of the target resource.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// <p>The request could not be completed because its exceeded the service quota.</p>
+    /// <p>The request could not be completed because it exceeded the service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>Uninitialized account exception.</p>
     UninitializedAccountException(crate::types::error::UninitializedAccountException),

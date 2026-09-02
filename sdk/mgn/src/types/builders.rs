@@ -123,6 +123,8 @@ pub use crate::types::_network_migration_definition_summary::NetworkMigrationDef
 
 pub use crate::types::_source_configuration::SourceConfigurationBuilder;
 
+pub use crate::types::_cidr_mapping::CidrMappingBuilder;
+
 pub use crate::types::_network_migration_analysis_job_details::NetworkMigrationAnalysisJobDetailsBuilder;
 
 pub use crate::types::_network_migration_analysis_result::NetworkMigrationAnalysisResultBuilder;

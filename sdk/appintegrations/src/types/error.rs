@@ -15,7 +15,11 @@ pub use crate::types::error::_unsupported_operation_exception::UnsupportedOperat
 
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _duplicate_resource_exception;
 

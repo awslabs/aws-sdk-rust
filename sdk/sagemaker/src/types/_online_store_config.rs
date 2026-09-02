@@ -17,6 +17,8 @@ pub struct OnlineStoreConfig {
     /// <li>
     /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
     /// <li>
+    /// <p><code>Standard_V2</code>: A managed low latency data store for feature groups that supports partial updates to individual features using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Choose this storage type at feature group creation time if your use case requires updating specific feature values without rewriting the entire record.</p></li>
+    /// <li>
     /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub storage_type: ::std::option::Option<crate::types::StorageType>,
@@ -39,6 +41,8 @@ impl OnlineStoreConfig {
     /// <ul>
     /// <li>
     /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li>
+    /// <p><code>Standard_V2</code>: A managed low latency data store for feature groups that supports partial updates to individual features using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Choose this storage type at feature group creation time if your use case requires updating specific feature values without rewriting the entire record.</p></li>
     /// <li>
     /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
@@ -113,6 +117,8 @@ impl OnlineStoreConfigBuilder {
     /// <li>
     /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
     /// <li>
+    /// <p><code>Standard_V2</code>: A managed low latency data store for feature groups that supports partial updates to individual features using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Choose this storage type at feature group creation time if your use case requires updating specific feature values without rewriting the entire record.</p></li>
+    /// <li>
     /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn storage_type(mut self, input: crate::types::StorageType) -> Self {
@@ -124,6 +130,8 @@ impl OnlineStoreConfigBuilder {
     /// <li>
     /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
     /// <li>
+    /// <p><code>Standard_V2</code>: A managed low latency data store for feature groups that supports partial updates to individual features using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Choose this storage type at feature group creation time if your use case requires updating specific feature values without rewriting the entire record.</p></li>
+    /// <li>
     /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>
     pub fn set_storage_type(mut self, input: ::std::option::Option<crate::types::StorageType>) -> Self {
@@ -134,6 +142,8 @@ impl OnlineStoreConfigBuilder {
     /// <ul>
     /// <li>
     /// <p><code>Standard</code>: A managed low latency data store for feature groups.</p></li>
+    /// <li>
+    /// <p><code>Standard_V2</code>: A managed low latency data store for feature groups that supports partial updates to individual features using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a> operation. Choose this storage type at feature group creation time if your use case requires updating specific feature values without rewriting the entire record.</p></li>
     /// <li>
     /// <p><code>InMemory</code>: A managed data store for feature groups that supports very low latency retrieval.</p></li>
     /// </ul>

@@ -149,6 +149,16 @@ pub(crate) fn reflens_list_exascale_db_storage_vaults_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_flex_components_output_output_next_token(
+    input: &crate::operation::list_flex_components::ListFlexComponentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_gi_minor_versions_output_output_next_token(
     input: &crate::operation::list_gi_minor_versions::ListGiMinorVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -301,6 +311,13 @@ pub(crate) fn lens_list_exascale_db_storage_vaults_output_output_exascale_db_sto
     input: crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExascaleDbStorageVaultSummary>> {
     let input = input.exascale_db_storage_vaults;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_flex_components_output_output_flex_components(
+    input: crate::operation::list_flex_components::ListFlexComponentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlexComponentSummary>> {
+    let input = input.flex_components;
     ::std::option::Option::Some(input)
 }
 

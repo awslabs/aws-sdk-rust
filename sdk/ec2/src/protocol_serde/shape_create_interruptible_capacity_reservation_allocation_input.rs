@@ -41,6 +41,11 @@ pub fn ser_create_interruptible_capacity_reservation_allocation_input_input_inpu
             list_12.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("ZeroSizePreference");
+    if let Some(var_15) = &input.zero_size_preference {
+        scope_14.string(var_15.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

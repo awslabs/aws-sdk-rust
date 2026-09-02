@@ -191,6 +191,8 @@ pub use crate::types::_export_task::ExportTask;
 
 pub use crate::types::_internet_gateway::InternetGateway;
 
+pub use crate::types::_zero_size_preference::ZeroSizePreference;
+
 pub use crate::types::_interruptible_capacity_reservation_allocation_status::InterruptibleCapacityReservationAllocationStatus;
 
 pub use crate::types::_interruption_type::InterruptionType;
@@ -5754,6 +5756,8 @@ mod _vpn_tunnel_options_specification;
 mod _vpn_tunnel_provisioning_status;
 
 mod _week_day;
+
+mod _zero_size_preference;
 
 /// Builders
 pub mod builders;

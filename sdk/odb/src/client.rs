@@ -273,6 +273,8 @@ mod list_exadb_vm_clusters;
 
 mod list_exascale_db_storage_vaults;
 
+mod list_flex_components;
+
 mod list_gi_minor_versions;
 
 mod list_gi_versions;

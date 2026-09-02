@@ -22,7 +22,7 @@ impl crate::operation::delete_application::builders::DeleteApplicationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteApplication`.
 ///
-/// <p>Deletes the Application. Only Applications that don't have any Application Associations can be deleted.</p>
+/// <p>Deletes an application. If the application has associations, you must delete them first. Alternatively, use the <code>force</code> option to delete the application and remove its associations.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteApplicationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -121,5 +121,25 @@ impl DeleteApplicationFluentBuilder {
     /// <p>The Amazon Resource Name (ARN) of the Application.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
+    }
+    /// <p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>
+    /// <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p>
+    /// </important>
+    pub fn force(mut self, input: bool) -> Self {
+        self.inner = self.inner.force(input);
+        self
+    }
+    /// <p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>
+    /// <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p>
+    /// </important>
+    pub fn set_force(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force(input);
+        self
+    }
+    /// <p>Specifies whether to delete the application even if it still has application associations. If <code>true</code>, the operation removes the application and its associations. If <code>false</code> or absent, the delete fails when associations exist.</p><important>
+    /// <p>Setting this parameter to <code>true</code> permanently removes all of the application's associations. Doing so might impact other resources that rely on and reference the application. This action can't be undone.</p>
+    /// </important>
+    pub fn get_force(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force()
     }
 }

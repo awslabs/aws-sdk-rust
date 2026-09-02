@@ -28,7 +28,7 @@ impl ChannelStoppedFluentBuilder {
     pub fn as_input(&self) -> &crate::operation::describe_channel::builders::DescribeChannelInputBuilder {
         &self.inner
     }
-    /// Wait until a channel has is stopped
+    /// Wait until a channel is not running
     pub async fn wait(
         self,
         max_wait: ::std::time::Duration,
@@ -67,6 +67,18 @@ impl ChannelStoppedFluentBuilder {
             // Matches: {"errorType":"InternalServerErrorException"}
             if crate::waiters::matchers::match_describe_channel_23a4ee68df28eed70(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Retry;
+            }
+            // Matches: {"output":{"path":"State","expected":"DELETING","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_describe_channel_788667cd7ad1cc1c2(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;
+            }
+            // Matches: {"output":{"path":"State","expected":"DELETED","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_describe_channel_dae4612b5507a5589(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;
+            }
+            // Matches: {"errorType":"NotFoundException"}
+            if crate::waiters::matchers::match_describe_channel_bcffe71d9077ffaa1(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
             }
             ::aws_smithy_runtime::client::waiters::AcceptorState::NoAcceptorsMatched
         };

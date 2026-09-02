@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You do not have permission to perform an action.</p>
     AccessForbidden(crate::types::error::AccessForbidden),
+    /// <p>The service rejected the update because the provided <code>EventTime</code> is older than the record's current <code>EventTime</code>. To persist the update, retrieve the record's latest <code>EventTime</code> and resubmit the request with an <code>EventTime</code> that is equal to or newer than the current value.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web Services customer support.</p>
     InternalFailure(crate::types::error::InternalFailure),
     /// <p>A resource that is required to perform an action was not found.</p>
@@ -26,6 +28,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessForbidden(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::InternalFailure(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
             Error::ServiceUnavailable(inner) => inner.fmt(f),
@@ -52,6 +55,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessForbidden(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::InternalFailure(inner) => inner.meta(),
             Self::ResourceNotFound(inner) => inner.meta(),
             Self::ServiceUnavailable(inner) => inner.meta(),
@@ -213,10 +217,38 @@ impl From<crate::operation::put_record::PutRecordError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_record::UpdateRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_record::UpdateRecordError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_record::UpdateRecordError> for Error {
+    fn from(err: crate::operation::update_record::UpdateRecordError) -> Self {
+        match err {
+            crate::operation::update_record::UpdateRecordError::AccessForbidden(inner) => Error::AccessForbidden(inner),
+            crate::operation::update_record::UpdateRecordError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_record::UpdateRecordError::InternalFailure(inner) => Error::InternalFailure(inner),
+            crate::operation::update_record::UpdateRecordError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::update_record::UpdateRecordError::ServiceUnavailable(inner) => Error::ServiceUnavailable(inner),
+            crate::operation::update_record::UpdateRecordError::ValidationError(inner) => Error::ValidationError(inner),
+            crate::operation::update_record::UpdateRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessForbidden(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::InternalFailure(inner) => inner.source(),
             Error::ResourceNotFound(inner) => inner.source(),
             Error::ServiceUnavailable(inner) => inner.source(),
@@ -229,6 +261,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessForbidden(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::InternalFailure(e) => e.request_id(),
             Self::ResourceNotFound(e) => e.request_id(),
             Self::ServiceUnavailable(e) => e.request_id(),

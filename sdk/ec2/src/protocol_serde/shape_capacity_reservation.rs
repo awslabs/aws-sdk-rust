@@ -419,6 +419,20 @@ pub fn de_capacity_reservation(
                 builder = builder.set_interruption_info(var_31);
             }
             ,
+            s if s.matches("zeroSizePreference") /* ZeroSizePreference com.amazonaws.ec2#CapacityReservation$ZeroSizePreference */ =>  {
+                let var_32 =
+                    Some(
+                        Result::<crate::types::ZeroSizePreference, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::ZeroSizePreference::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_zero_size_preference(var_32);
+            }
+            ,
             _ => {}
         }
     }

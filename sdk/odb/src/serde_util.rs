@@ -386,6 +386,15 @@ pub(crate) fn list_exascale_db_storage_vaults_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_flex_components_output_output_correct_errors(
+    mut builder: crate::operation::list_flex_components::builders::ListFlexComponentsOutputBuilder,
+) -> crate::operation::list_flex_components::builders::ListFlexComponentsOutputBuilder {
+    if builder.flex_components.is_none() {
+        builder.flex_components = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_gi_minor_versions_output_output_correct_errors(
     mut builder: crate::operation::list_gi_minor_versions::builders::ListGiMinorVersionsOutputBuilder,
 ) -> crate::operation::list_gi_minor_versions::builders::ListGiMinorVersionsOutputBuilder {

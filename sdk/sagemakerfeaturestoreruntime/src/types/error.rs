@@ -9,7 +9,11 @@ pub use crate::types::error::_validation_error::ValidationError;
 
 pub use crate::types::error::_resource_not_found::ResourceNotFound;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 mod _access_forbidden;
+
+mod _conflict_exception;
 
 mod _internal_failure;
 

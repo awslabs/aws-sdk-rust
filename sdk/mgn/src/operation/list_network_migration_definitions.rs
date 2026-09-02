@@ -318,7 +318,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListNetworkMi
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListNetworkMigrationDefinitionsError {
-    /// <p>Operating denied due to a file permission or access check error.</p>
+    /// <p>Operation denied due to a file permission or access check error.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

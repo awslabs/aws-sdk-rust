@@ -529,6 +529,8 @@ pub use crate::types::_key_provider_settings::KeyProviderSettingsBuilder;
 
 pub use crate::types::_media_package_v2_group_settings::MediaPackageV2GroupSettingsBuilder;
 
+pub use crate::types::_cmaf_ingest_watermarking_settings::CmafIngestWatermarkingSettingsBuilder;
+
 pub use crate::types::_output_settings::OutputSettingsBuilder;
 
 pub use crate::types::_timecode_burnin_settings::TimecodeBurninSettingsBuilder;
@@ -583,9 +585,13 @@ pub use crate::types::_hls_webdav_settings::HlsWebdavSettingsBuilder;
 
 pub use crate::types::_static_key_settings::StaticKeySettingsBuilder;
 
+pub use crate::types::_media_package_v2_watermarking_settings::MediaPackageV2WatermarkingSettingsBuilder;
+
 pub use crate::types::_cmaf_ingest_caption_language_mapping::CmafIngestCaptionLanguageMappingBuilder;
 
 pub use crate::types::_additional_destinations::AdditionalDestinationsBuilder;
+
+pub use crate::types::_cmaf_ingest_ab_watermarker_irdeto_settings::CmafIngestAbWatermarkerIrdetoSettingsBuilder;
 
 pub use crate::types::_archive_output_settings::ArchiveOutputSettingsBuilder;
 
@@ -658,6 +664,10 @@ pub use crate::types::_scte35_descriptor_settings::Scte35DescriptorSettingsBuild
 pub use crate::types::_input_channel_level::InputChannelLevelBuilder;
 
 pub use crate::types::_media_package_additional_destinations::MediaPackageAdditionalDestinationsBuilder;
+
+pub use crate::types::_media_package_v2_ab_watermarker_irdeto_settings::MediaPackageV2AbWatermarkerIrdetoSettingsBuilder;
+
+pub use crate::types::_ab_watermarking_custom_profile::AbWatermarkingCustomProfileBuilder;
 
 pub use crate::types::_archive_container_settings::ArchiveContainerSettingsBuilder;
 

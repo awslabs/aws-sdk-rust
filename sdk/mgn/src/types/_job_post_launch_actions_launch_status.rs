@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobPostLaunchActionsLaunchStatus {
-    /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager's Document of the Job Post Launch Actions.</p>
     pub ssm_document: ::std::option::Option<crate::types::SsmDocument>,
     /// <p>AWS Systems Manager Document type.</p>
     pub ssm_document_type: ::std::option::Option<crate::types::SsmDocumentType>,
-    /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager Document's execution ID of the Job Post Launch Actions.</p>
     pub execution_id: ::std::option::Option<::std::string::String>,
     /// <p>AWS Systems Manager Document's execution status.</p>
     pub execution_status: ::std::option::Option<crate::types::PostLaunchActionExecutionStatus>,
@@ -16,7 +16,7 @@ pub struct JobPostLaunchActionsLaunchStatus {
     pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl JobPostLaunchActionsLaunchStatus {
-    /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager's Document of the Job Post Launch Actions.</p>
     pub fn ssm_document(&self) -> ::std::option::Option<&crate::types::SsmDocument> {
         self.ssm_document.as_ref()
     }
@@ -24,7 +24,7 @@ impl JobPostLaunchActionsLaunchStatus {
     pub fn ssm_document_type(&self) -> ::std::option::Option<&crate::types::SsmDocumentType> {
         self.ssm_document_type.as_ref()
     }
-    /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager Document's execution ID of the Job Post Launch Actions.</p>
     pub fn execution_id(&self) -> ::std::option::Option<&str> {
         self.execution_id.as_deref()
     }
@@ -55,17 +55,17 @@ pub struct JobPostLaunchActionsLaunchStatusBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl JobPostLaunchActionsLaunchStatusBuilder {
-    /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager's Document of the Job Post Launch Actions.</p>
     pub fn ssm_document(mut self, input: crate::types::SsmDocument) -> Self {
         self.ssm_document = ::std::option::Option::Some(input);
         self
     }
-    /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager's Document of the Job Post Launch Actions.</p>
     pub fn set_ssm_document(mut self, input: ::std::option::Option<crate::types::SsmDocument>) -> Self {
         self.ssm_document = input;
         self
     }
-    /// <p>AWS Systems Manager's Document of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager's Document of the Job Post Launch Actions.</p>
     pub fn get_ssm_document(&self) -> &::std::option::Option<crate::types::SsmDocument> {
         &self.ssm_document
     }
@@ -83,17 +83,17 @@ impl JobPostLaunchActionsLaunchStatusBuilder {
     pub fn get_ssm_document_type(&self) -> &::std::option::Option<crate::types::SsmDocumentType> {
         &self.ssm_document_type
     }
-    /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager Document's execution ID of the Job Post Launch Actions.</p>
     pub fn execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager Document's execution ID of the Job Post Launch Actions.</p>
     pub fn set_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_id = input;
         self
     }
-    /// <p>AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.</p>
+    /// <p>AWS Systems Manager Document's execution ID of the Job Post Launch Actions.</p>
     pub fn get_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_id
     }

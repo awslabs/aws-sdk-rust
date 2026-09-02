@@ -174,3 +174,5 @@ mod get_record;
 mod list_records;
 
 mod put_record;
+
+mod update_record;

@@ -427,6 +427,10 @@ pub(crate) mod shape_change_server_life_cycle_state_source_server_lifecycle;
 
 pub(crate) mod shape_checksum;
 
+pub(crate) mod shape_cidr_mapping;
+
+pub(crate) mod shape_cidr_mappings_list;
+
 pub(crate) mod shape_conflict_exception_errors;
 
 pub(crate) mod shape_connector_ssm_command_config;

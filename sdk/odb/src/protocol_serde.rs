@@ -133,6 +133,8 @@ pub(crate) mod shape_list_exadb_vm_clusters;
 
 pub(crate) mod shape_list_exascale_db_storage_vaults;
 
+pub(crate) mod shape_list_flex_components;
+
 pub(crate) mod shape_list_gi_minor_versions;
 
 pub(crate) mod shape_list_gi_versions;
@@ -303,6 +305,8 @@ pub(crate) mod shape_list_exadb_vm_clusters_input;
 
 pub(crate) mod shape_list_exascale_db_storage_vaults_input;
 
+pub(crate) mod shape_list_flex_components_input;
+
 pub(crate) mod shape_list_gi_minor_versions_input;
 
 pub(crate) mod shape_list_gi_versions_input;
@@ -419,6 +423,8 @@ pub(crate) mod shape_exascale_db_storage_vault;
 
 pub(crate) mod shape_exascale_db_storage_vault_list;
 
+pub(crate) mod shape_flex_component_list;
+
 pub(crate) mod shape_gi_minor_version_list;
 
 pub(crate) mod shape_gi_version_list;
@@ -526,6 +532,8 @@ pub(crate) mod shape_exadb_vm_cluster_summary;
 pub(crate) mod shape_exascale_db_storage_details;
 
 pub(crate) mod shape_exascale_db_storage_vault_summary;
+
+pub(crate) mod shape_flex_component_summary;
 
 pub(crate) mod shape_gi_minor_version_summary;
 

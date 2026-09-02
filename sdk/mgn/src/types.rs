@@ -53,6 +53,8 @@ pub use crate::types::_target_network::TargetNetwork;
 
 pub use crate::types::_target_deployment::TargetDeployment;
 
+pub use crate::types::_vpc_provisioning_strategy::VpcProvisioningStrategy;
+
 pub use crate::types::_target_s3_configuration_update::TargetS3ConfigurationUpdate;
 
 pub use crate::types::_target_network_update::TargetNetworkUpdate;
@@ -166,6 +168,8 @@ pub use crate::types::_network_migration_definition_summary::NetworkMigrationDef
 pub use crate::types::_source_configuration::SourceConfiguration;
 
 pub use crate::types::_target_network_topology::TargetNetworkTopology;
+
+pub use crate::types::_cidr_mapping::CidrMapping;
 
 pub use crate::types::_network_migration_analysis_job_details::NetworkMigrationAnalysisJobDetails;
 
@@ -384,6 +388,8 @@ mod _change_server_life_cycle_state_source_server_lifecycle;
 mod _change_server_life_cycle_state_source_server_lifecycle_state;
 
 mod _checksum;
+
+mod _cidr_mapping;
 
 mod _code_generation_output_format_status;
 
@@ -722,6 +728,8 @@ mod _validation_exception_reason;
 mod _vcenter_client;
 
 mod _volume_type;
+
+mod _vpc_provisioning_strategy;
 
 mod _wave;
 
