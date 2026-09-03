@@ -12,14 +12,23 @@ pub fn ser_cloud_watch_logs_input_config(
         }
         array_1.finish();
     }
-    {
-        let mut array_3 = object.key("serviceNames").start_array();
-        for item_4 in &input.service_names {
+    if let Some(var_3) = &input.log_group_name_prefixes {
+        let mut array_4 = object.key("logGroupNamePrefixes").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
+    }
+    {
+        let mut array_6 = object.key("serviceNames").start_array();
+        for item_7 in &input.service_names {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
     }
     Ok(())
 }
@@ -52,6 +61,11 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "logGroupNamePrefixes" => {
+                            builder = builder.set_log_group_name_prefixes(
+                                crate::protocol_serde::shape_log_group_name_prefix_list::de_log_group_name_prefix_list(tokens, _value, depth + 1)?,
+                            );
                         }
                         "serviceNames" => {
                             builder = builder.set_service_names(crate::protocol_serde::shape_service_names_list::de_service_names_list(

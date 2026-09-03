@@ -51,5 +51,8 @@ pub fn ser_create_daemon_input_input(
     if let Some(var_16) = &input.client_token {
         object.key("clientToken").string(var_16.as_str());
     }
+    if let Some(var_17) = &input.critical {
+        object.key("critical").boolean(*var_17);
+    }
     Ok(())
 }

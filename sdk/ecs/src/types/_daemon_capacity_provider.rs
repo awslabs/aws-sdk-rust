@@ -8,6 +8,8 @@ pub struct DaemonCapacityProvider {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of daemon tasks running on this capacity provider.</p>
     pub running_count: i32,
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningCount</code>.</p>
+    pub without_daemon_count: i32,
 }
 impl DaemonCapacityProvider {
     /// <p>The Amazon Resource Name (ARN) of the capacity provider.</p>
@@ -17,6 +19,10 @@ impl DaemonCapacityProvider {
     /// <p>The number of daemon tasks running on this capacity provider.</p>
     pub fn running_count(&self) -> i32 {
         self.running_count
+    }
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningCount</code>.</p>
+    pub fn without_daemon_count(&self) -> i32 {
+        self.without_daemon_count
     }
 }
 impl DaemonCapacityProvider {
@@ -32,6 +38,7 @@ impl DaemonCapacityProvider {
 pub struct DaemonCapacityProviderBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) running_count: ::std::option::Option<i32>,
+    pub(crate) without_daemon_count: ::std::option::Option<i32>,
 }
 impl DaemonCapacityProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the capacity provider.</p>
@@ -62,11 +69,26 @@ impl DaemonCapacityProviderBuilder {
     pub fn get_running_count(&self) -> &::std::option::Option<i32> {
         &self.running_count
     }
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningCount</code>.</p>
+    pub fn without_daemon_count(mut self, input: i32) -> Self {
+        self.without_daemon_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningCount</code>.</p>
+    pub fn set_without_daemon_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.without_daemon_count = input;
+        self
+    }
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningCount</code>.</p>
+    pub fn get_without_daemon_count(&self) -> &::std::option::Option<i32> {
+        &self.without_daemon_count
+    }
     /// Consumes the builder and constructs a [`DaemonCapacityProvider`](crate::types::DaemonCapacityProvider).
     pub fn build(self) -> crate::types::DaemonCapacityProvider {
         crate::types::DaemonCapacityProvider {
             arn: self.arn,
             running_count: self.running_count.unwrap_or_default(),
+            without_daemon_count: self.without_daemon_count.unwrap_or_default(),
         }
     }
 }

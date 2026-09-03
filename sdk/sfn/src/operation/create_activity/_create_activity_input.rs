@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateActivityInput {
-    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li>
@@ -31,7 +31,7 @@ pub struct CreateActivityInput {
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateActivityInput {
-    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li>
@@ -82,7 +82,7 @@ pub struct CreateActivityInputBuilder {
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl CreateActivityInputBuilder {
-    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li>
@@ -106,7 +106,7 @@ impl CreateActivityInputBuilder {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li>
@@ -129,7 +129,7 @@ impl CreateActivityInputBuilder {
         self.name = input;
         self
     }
-    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li>

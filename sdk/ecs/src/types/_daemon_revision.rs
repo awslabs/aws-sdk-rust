@@ -22,6 +22,8 @@ pub struct DaemonRevision {
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>Specifies whether the execute command functionality is turned on for the daemon tasks.</p>
     pub enable_execute_command: ::std::option::Option<bool>,
+    /// <p>If the <code>critical</code> parameter of this daemon revision is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance, and doesn't block instance registration. The default value is <code>true</code>.</p>
+    pub critical: ::std::option::Option<bool>,
 }
 impl DaemonRevision {
     /// <p>The Amazon Resource Name (ARN) of the daemon revision.</p>
@@ -62,6 +64,10 @@ impl DaemonRevision {
     pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
         self.enable_execute_command
     }
+    /// <p>If the <code>critical</code> parameter of this daemon revision is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance, and doesn't block instance registration. The default value is <code>true</code>.</p>
+    pub fn critical(&self) -> ::std::option::Option<bool> {
+        self.critical
+    }
 }
 impl DaemonRevision {
     /// Creates a new builder-style object to manufacture [`DaemonRevision`](crate::types::DaemonRevision).
@@ -83,6 +89,7 @@ pub struct DaemonRevisionBuilder {
     pub(crate) propagate_tags: ::std::option::Option<crate::types::DaemonPropagateTags>,
     pub(crate) enable_ecs_managed_tags: ::std::option::Option<bool>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
+    pub(crate) critical: ::std::option::Option<bool>,
 }
 impl DaemonRevisionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the daemon revision.</p>
@@ -217,6 +224,20 @@ impl DaemonRevisionBuilder {
     pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
         &self.enable_execute_command
     }
+    /// <p>If the <code>critical</code> parameter of this daemon revision is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance, and doesn't block instance registration. The default value is <code>true</code>.</p>
+    pub fn critical(mut self, input: bool) -> Self {
+        self.critical = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If the <code>critical</code> parameter of this daemon revision is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance, and doesn't block instance registration. The default value is <code>true</code>.</p>
+    pub fn set_critical(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.critical = input;
+        self
+    }
+    /// <p>If the <code>critical</code> parameter of this daemon revision is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance, and doesn't block instance registration. The default value is <code>true</code>.</p>
+    pub fn get_critical(&self) -> &::std::option::Option<bool> {
+        &self.critical
+    }
     /// Consumes the builder and constructs a [`DaemonRevision`](crate::types::DaemonRevision).
     pub fn build(self) -> crate::types::DaemonRevision {
         crate::types::DaemonRevision {
@@ -229,6 +250,7 @@ impl DaemonRevisionBuilder {
             propagate_tags: self.propagate_tags,
             enable_ecs_managed_tags: self.enable_ecs_managed_tags,
             enable_execute_command: self.enable_execute_command,
+            critical: self.critical,
         }
     }
 }

@@ -35,6 +35,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "metricsNamespace" => {
+                            builder = builder.set_metrics_namespace(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "resultDestination" => {
+                            builder = builder.set_result_destination(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResultDestination::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -44,14 +58,29 @@ where
                     }
                 }
             }
-            Ok(Some(
-                crate::serde_util::cloud_watch_output_config_correct_errors(builder)
-                    .build()
-                    .map_err(|err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err))?,
-            ))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
         )),
     }
+}
+
+pub fn ser_cloud_watch_output_config(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::CloudWatchOutputConfig,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    {
+        object.key("logGroupName").string(input.log_group_name.as_str());
+    }
+    {
+        object.key("logStreamName").string(input.log_stream_name.as_str());
+    }
+    if let Some(var_1) = &input.metrics_namespace {
+        object.key("metricsNamespace").string(var_1.as_str());
+    }
+    {
+        object.key("resultDestination").string(input.result_destination.as_str());
+    }
+    Ok(())
 }

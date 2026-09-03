@@ -198,4 +198,18 @@ impl UpdateRuleFluentBuilder {
     pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
         self.inner.get_publish_status()
     }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn pre_evaluation_filters(mut self, input: crate::types::PreEvaluationFilters) -> Self {
+        self.inner = self.inner.pre_evaluation_filters(input);
+        self
+    }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn set_pre_evaluation_filters(mut self, input: ::std::option::Option<crate::types::PreEvaluationFilters>) -> Self {
+        self.inner = self.inner.set_pre_evaluation_filters(input);
+        self
+    }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn get_pre_evaluation_filters(&self) -> &::std::option::Option<crate::types::PreEvaluationFilters> {
+        self.inner.get_pre_evaluation_filters()
+    }
 }

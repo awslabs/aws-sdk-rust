@@ -10,6 +10,8 @@ pub struct DaemonDeploymentRevisionDetail {
     pub capacity_providers: ::std::option::Option<::std::vec::Vec<crate::types::DaemonDeploymentCapacityProvider>>,
     /// <p>The total number of instances running daemon tasks for this revision.</p>
     pub total_running_instance_count: ::std::option::Option<i32>,
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningInstanceCount</code>.</p>
+    pub total_without_daemon_instance_count: ::std::option::Option<i32>,
     /// <p>The total number of instances being drained for this revision during the deployment.</p>
     pub total_draining_instance_count: ::std::option::Option<i32>,
 }
@@ -27,6 +29,10 @@ impl DaemonDeploymentRevisionDetail {
     /// <p>The total number of instances running daemon tasks for this revision.</p>
     pub fn total_running_instance_count(&self) -> ::std::option::Option<i32> {
         self.total_running_instance_count
+    }
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningInstanceCount</code>.</p>
+    pub fn total_without_daemon_instance_count(&self) -> ::std::option::Option<i32> {
+        self.total_without_daemon_instance_count
     }
     /// <p>The total number of instances being drained for this revision during the deployment.</p>
     pub fn total_draining_instance_count(&self) -> ::std::option::Option<i32> {
@@ -47,6 +53,7 @@ pub struct DaemonDeploymentRevisionDetailBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<crate::types::DaemonDeploymentCapacityProvider>>,
     pub(crate) total_running_instance_count: ::std::option::Option<i32>,
+    pub(crate) total_without_daemon_instance_count: ::std::option::Option<i32>,
     pub(crate) total_draining_instance_count: ::std::option::Option<i32>,
 }
 impl DaemonDeploymentRevisionDetailBuilder {
@@ -98,6 +105,20 @@ impl DaemonDeploymentRevisionDetailBuilder {
     pub fn get_total_running_instance_count(&self) -> &::std::option::Option<i32> {
         &self.total_running_instance_count
     }
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningInstanceCount</code>.</p>
+    pub fn total_without_daemon_instance_count(mut self, input: i32) -> Self {
+        self.total_without_daemon_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningInstanceCount</code>.</p>
+    pub fn set_total_without_daemon_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_without_daemon_instance_count = input;
+        self
+    }
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningInstanceCount</code>.</p>
+    pub fn get_total_without_daemon_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.total_without_daemon_instance_count
+    }
     /// <p>The total number of instances being drained for this revision during the deployment.</p>
     pub fn total_draining_instance_count(mut self, input: i32) -> Self {
         self.total_draining_instance_count = ::std::option::Option::Some(input);
@@ -118,6 +139,7 @@ impl DaemonDeploymentRevisionDetailBuilder {
             arn: self.arn,
             capacity_providers: self.capacity_providers,
             total_running_instance_count: self.total_running_instance_count,
+            total_without_daemon_instance_count: self.total_without_daemon_instance_count,
             total_draining_instance_count: self.total_draining_instance_count,
         }
     }

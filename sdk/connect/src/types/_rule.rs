@@ -20,6 +20,8 @@ pub struct Rule {
     pub actions: ::std::vec::Vec<crate::types::RuleAction>,
     /// <p>The publish status of the rule.</p>
     pub publish_status: crate::types::RulePublishStatus,
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub pre_evaluation_filters: ::std::option::Option<crate::types::PreEvaluationFilters>,
     /// <p>The timestamp for when the rule was created.</p>
     pub created_time: ::aws_smithy_types::DateTime,
     /// <p>The timestamp for the when the rule was last updated.</p>
@@ -69,6 +71,10 @@ impl Rule {
     pub fn publish_status(&self) -> &crate::types::RulePublishStatus {
         &self.publish_status
     }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn pre_evaluation_filters(&self) -> ::std::option::Option<&crate::types::PreEvaluationFilters> {
+        self.pre_evaluation_filters.as_ref()
+    }
     /// <p>The timestamp for when the rule was created.</p>
     pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
         &self.created_time
@@ -106,6 +112,7 @@ pub struct RuleBuilder {
     pub(crate) function: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
     pub(crate) publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
+    pub(crate) pre_evaluation_filters: ::std::option::Option<crate::types::PreEvaluationFilters>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_by: ::std::option::Option<::std::string::String>,
@@ -242,6 +249,20 @@ impl RuleBuilder {
     pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
         &self.publish_status
     }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn pre_evaluation_filters(mut self, input: crate::types::PreEvaluationFilters) -> Self {
+        self.pre_evaluation_filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn set_pre_evaluation_filters(mut self, input: ::std::option::Option<crate::types::PreEvaluationFilters>) -> Self {
+        self.pre_evaluation_filters = input;
+        self
+    }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn get_pre_evaluation_filters(&self) -> &::std::option::Option<crate::types::PreEvaluationFilters> {
+        &self.pre_evaluation_filters
+    }
     /// <p>The timestamp for when the rule was created.</p>
     /// This field is required.
     pub fn created_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -358,6 +379,7 @@ impl RuleBuilder {
                     "publish_status was not specified but it is required when building Rule",
                 )
             })?,
+            pre_evaluation_filters: self.pre_evaluation_filters,
             created_time: self.created_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",

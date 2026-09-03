@@ -31,6 +31,9 @@ pub mod create_code_interpreter;
 /// Types for the `CreateConfigurationBundle` operation.
 pub mod create_configuration_bundle;
 
+/// Types for the `CreateConsentPortal` operation.
+pub mod create_consent_portal;
+
 /// Types for the `CreateDataset` operation.
 pub mod create_dataset;
 
@@ -114,6 +117,9 @@ pub mod delete_code_interpreter;
 
 /// Types for the `DeleteConfigurationBundle` operation.
 pub mod delete_configuration_bundle;
+
+/// Types for the `DeleteConsentPortal` operation.
+pub mod delete_consent_portal;
 
 /// Types for the `DeleteDataset` operation.
 pub mod delete_dataset;
@@ -204,6 +210,9 @@ pub mod get_configuration_bundle;
 
 /// Types for the `GetConfigurationBundleVersion` operation.
 pub mod get_configuration_bundle_version;
+
+/// Types for the `GetConsentPortal` operation.
+pub mod get_consent_portal;
 
 /// Types for the `GetDataset` operation.
 pub mod get_dataset;
@@ -312,6 +321,9 @@ pub mod list_configuration_bundle_versions;
 
 /// Types for the `ListConfigurationBundles` operation.
 pub mod list_configuration_bundles;
+
+/// Types for the `ListConsentPortals` operation.
+pub mod list_consent_portals;
 
 /// Types for the `ListDatasetExamples` operation.
 pub mod list_dataset_examples;
@@ -432,6 +444,9 @@ pub mod update_capacity_provider;
 
 /// Types for the `UpdateConfigurationBundle` operation.
 pub mod update_configuration_bundle;
+
+/// Types for the `UpdateConsentPortal` operation.
+pub mod update_consent_portal;
 
 /// Types for the `UpdateDataset` operation.
 pub mod update_dataset;

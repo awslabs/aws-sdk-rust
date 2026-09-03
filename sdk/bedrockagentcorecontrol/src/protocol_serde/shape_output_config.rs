@@ -42,3 +42,16 @@ where
         )),
     }
 }
+
+pub fn ser_output_config(
+    object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::OutputConfig,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    if let Some(var_1) = &input.cloud_watch_config {
+        #[allow(unused_mut)]
+        let mut object_2 = object.key("cloudWatchConfig").start_object();
+        crate::protocol_serde::shape_cloud_watch_output_config::ser_cloud_watch_output_config(&mut object_2, var_1)?;
+        object_2.finish();
+    }
+    Ok(())
+}

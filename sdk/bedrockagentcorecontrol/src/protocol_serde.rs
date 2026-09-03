@@ -43,6 +43,8 @@ pub(crate) mod shape_create_code_interpreter;
 
 pub(crate) mod shape_create_configuration_bundle;
 
+pub(crate) mod shape_create_consent_portal;
+
 pub(crate) mod shape_create_dataset;
 
 pub(crate) mod shape_create_dataset_version;
@@ -98,6 +100,8 @@ pub(crate) mod shape_delete_capacity_provider;
 pub(crate) mod shape_delete_code_interpreter;
 
 pub(crate) mod shape_delete_configuration_bundle;
+
+pub(crate) mod shape_delete_consent_portal;
 
 pub(crate) mod shape_delete_dataset;
 
@@ -158,6 +162,8 @@ pub(crate) mod shape_get_code_interpreter;
 pub(crate) mod shape_get_configuration_bundle;
 
 pub(crate) mod shape_get_configuration_bundle_version;
+
+pub(crate) mod shape_get_consent_portal;
 
 pub(crate) mod shape_get_dataset;
 
@@ -230,6 +236,8 @@ pub(crate) mod shape_list_code_interpreters;
 pub(crate) mod shape_list_configuration_bundle_versions;
 
 pub(crate) mod shape_list_configuration_bundles;
+
+pub(crate) mod shape_list_consent_portals;
 
 pub(crate) mod shape_list_dataset_examples;
 
@@ -311,6 +319,8 @@ pub(crate) mod shape_update_capacity_provider;
 
 pub(crate) mod shape_update_configuration_bundle;
 
+pub(crate) mod shape_update_consent_portal;
+
 pub(crate) mod shape_update_dataset;
 
 pub(crate) mod shape_update_dataset_examples;
@@ -387,6 +397,8 @@ pub(crate) mod shape_create_code_interpreter_input;
 
 pub(crate) mod shape_create_configuration_bundle_input;
 
+pub(crate) mod shape_create_consent_portal_input;
+
 pub(crate) mod shape_create_dataset_input;
 
 pub(crate) mod shape_create_dataset_version_input;
@@ -431,6 +443,8 @@ pub(crate) mod shape_decryption_failure;
 
 pub(crate) mod shape_delete_api_key_credential_provider_input;
 
+pub(crate) mod shape_delete_consent_portal_input;
+
 pub(crate) mod shape_delete_dataset_examples_input;
 
 pub(crate) mod shape_delete_oauth2_credential_provider_input;
@@ -442,6 +456,8 @@ pub(crate) mod shape_delete_workload_identity_input;
 pub(crate) mod shape_encryption_failure;
 
 pub(crate) mod shape_get_api_key_credential_provider_input;
+
+pub(crate) mod shape_get_consent_portal_input;
 
 pub(crate) mod shape_get_oauth2_credential_provider_input;
 
@@ -458,6 +474,8 @@ pub(crate) mod shape_list_api_key_credential_providers_input;
 pub(crate) mod shape_list_browser_profiles_input;
 
 pub(crate) mod shape_list_configuration_bundle_versions_input;
+
+pub(crate) mod shape_list_consent_portals_input;
 
 pub(crate) mod shape_list_memories_input;
 
@@ -504,6 +522,8 @@ pub(crate) mod shape_update_api_key_credential_provider_input;
 pub(crate) mod shape_update_capacity_provider_input;
 
 pub(crate) mod shape_update_configuration_bundle_input;
+
+pub(crate) mod shape_update_consent_portal_input;
 
 pub(crate) mod shape_update_dataset_examples_input;
 
@@ -612,6 +632,14 @@ pub(crate) mod shape_conditions;
 pub(crate) mod shape_configuration_bundle_summary_list;
 
 pub(crate) mod shape_configuration_bundle_version_summary_list;
+
+pub(crate) mod shape_consent_portal_idp_config;
+
+pub(crate) mod shape_consent_portal_source;
+
+pub(crate) mod shape_consent_portal_sources;
+
+pub(crate) mod shape_consent_portal_summaries;
 
 pub(crate) mod shape_content;
 
@@ -855,6 +883,8 @@ pub(crate) mod shape_allowed_request_headers;
 
 pub(crate) mod shape_allowed_response_headers;
 
+pub(crate) mod shape_allowed_scopes_type;
+
 pub(crate) mod shape_api_key_credential_provider_item;
 
 pub(crate) mod shape_atlassian_oauth2_provider_config_input;
@@ -896,6 +926,8 @@ pub(crate) mod shape_configuration_bundle_summary;
 pub(crate) mod shape_configuration_bundle_version_list;
 
 pub(crate) mod shape_configuration_bundle_version_summary;
+
+pub(crate) mod shape_consent_portal_summary;
 
 pub(crate) mod shape_container_configuration;
 
@@ -1141,8 +1173,6 @@ pub(crate) mod shape_allowed_audience_list;
 
 pub(crate) mod shape_allowed_clients_list;
 
-pub(crate) mod shape_allowed_scopes_type;
-
 pub(crate) mod shape_allowed_workload_configuration;
 
 pub(crate) mod shape_api_gateway_target_configuration;
@@ -1214,6 +1244,8 @@ pub(crate) mod shape_lambda_evaluator_config;
 pub(crate) mod shape_lambda_interceptor_configuration;
 
 pub(crate) mod shape_launch_template_source;
+
+pub(crate) mod shape_log_group_name_prefix_list;
 
 pub(crate) mod shape_log_group_names_list;
 

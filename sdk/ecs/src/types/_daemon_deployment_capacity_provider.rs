@@ -8,6 +8,8 @@ pub struct DaemonDeploymentCapacityProvider {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of instances running daemon tasks on this capacity provider.</p>
     pub running_instance_count: ::std::option::Option<i32>,
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningInstanceCount</code>.</p>
+    pub without_daemon_instance_count: ::std::option::Option<i32>,
     /// <p>The number of instances being drained on this capacity provider during the deployment.</p>
     pub draining_instance_count: ::std::option::Option<i32>,
 }
@@ -19,6 +21,10 @@ impl DaemonDeploymentCapacityProvider {
     /// <p>The number of instances running daemon tasks on this capacity provider.</p>
     pub fn running_instance_count(&self) -> ::std::option::Option<i32> {
         self.running_instance_count
+    }
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningInstanceCount</code>.</p>
+    pub fn without_daemon_instance_count(&self) -> ::std::option::Option<i32> {
+        self.without_daemon_instance_count
     }
     /// <p>The number of instances being drained on this capacity provider during the deployment.</p>
     pub fn draining_instance_count(&self) -> ::std::option::Option<i32> {
@@ -38,6 +44,7 @@ impl DaemonDeploymentCapacityProvider {
 pub struct DaemonDeploymentCapacityProviderBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) running_instance_count: ::std::option::Option<i32>,
+    pub(crate) without_daemon_instance_count: ::std::option::Option<i32>,
     pub(crate) draining_instance_count: ::std::option::Option<i32>,
 }
 impl DaemonDeploymentCapacityProviderBuilder {
@@ -69,6 +76,20 @@ impl DaemonDeploymentCapacityProviderBuilder {
     pub fn get_running_instance_count(&self) -> &::std::option::Option<i32> {
         &self.running_instance_count
     }
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningInstanceCount</code>.</p>
+    pub fn without_daemon_instance_count(mut self, input: i32) -> Self {
+        self.without_daemon_instance_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningInstanceCount</code>.</p>
+    pub fn set_without_daemon_instance_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.without_daemon_instance_count = input;
+        self
+    }
+    /// <p>The number of instances on this capacity provider that are running without the daemon task. This applies to daemons that aren't critical, where the instance remains available for your other tasks even if the daemon task can't start or stops. These instances aren't included in <code>runningInstanceCount</code>.</p>
+    pub fn get_without_daemon_instance_count(&self) -> &::std::option::Option<i32> {
+        &self.without_daemon_instance_count
+    }
     /// <p>The number of instances being drained on this capacity provider during the deployment.</p>
     pub fn draining_instance_count(mut self, input: i32) -> Self {
         self.draining_instance_count = ::std::option::Option::Some(input);
@@ -88,6 +109,7 @@ impl DaemonDeploymentCapacityProviderBuilder {
         crate::types::DaemonDeploymentCapacityProvider {
             arn: self.arn,
             running_instance_count: self.running_instance_count,
+            without_daemon_instance_count: self.without_daemon_instance_count,
             draining_instance_count: self.draining_instance_count,
         }
     }

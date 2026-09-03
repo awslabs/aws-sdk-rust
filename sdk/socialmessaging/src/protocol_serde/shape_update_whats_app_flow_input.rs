@@ -12,14 +12,20 @@ pub fn ser_update_whats_app_flow_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.flow_id {
-        object.key("flowId").string(var_4.as_str());
+    if let Some(var_4) = &input.endpoint_uri {
+        object.key("endpointUri").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.flow_name {
-        object.key("flowName").string(var_5.as_str());
+    if let Some(var_5) = &input.flow_id {
+        object.key("flowId").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.id {
-        object.key("id").string(var_6.as_str());
+    if let Some(var_6) = &input.flow_name {
+        object.key("flowName").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.id {
+        object.key("id").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.meta_app_id {
+        object.key("metaAppId").string(var_8.as_str());
     }
     Ok(())
 }

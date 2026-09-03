@@ -51,11 +51,17 @@ pub fn ser_update_online_evaluation_config_input_input(
         }
         array_14.finish();
     }
-    if let Some(var_17) = &input.rule {
+    if let Some(var_17) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("rule").start_object();
-        crate::protocol_serde::shape_rule::ser_rule(&mut object_18, var_17)?;
+        let mut object_18 = object.key("outputConfig").start_object();
+        crate::protocol_serde::shape_output_config::ser_output_config(&mut object_18, var_17)?;
         object_18.finish();
+    }
+    if let Some(var_19) = &input.rule {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("rule").start_object();
+        crate::protocol_serde::shape_rule::ser_rule(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

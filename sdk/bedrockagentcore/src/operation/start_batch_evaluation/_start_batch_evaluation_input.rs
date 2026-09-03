@@ -21,6 +21,8 @@ pub struct StartBatchEvaluationInput {
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The description of the batch evaluation.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>Output destination configuration.</p>
+    pub output_config: ::std::option::Option<crate::types::OutputConfig>,
 }
 impl StartBatchEvaluationInput {
     /// <p>The name of the batch evaluation. Must be unique within your account.</p>
@@ -63,6 +65,10 @@ impl StartBatchEvaluationInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
+    /// <p>Output destination configuration.</p>
+    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
+        self.output_config.as_ref()
+    }
 }
 impl StartBatchEvaluationInput {
     /// Creates a new builder-style object to manufacture [`StartBatchEvaluationInput`](crate::operation::start_batch_evaluation::StartBatchEvaluationInput).
@@ -84,6 +90,7 @@ pub struct StartBatchEvaluationInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
 }
 impl StartBatchEvaluationInputBuilder {
     /// <p>The name of the batch evaluation. Must be unique within your account.</p>
@@ -232,6 +239,20 @@ impl StartBatchEvaluationInputBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
+    /// <p>Output destination configuration.</p>
+    pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
+        self.output_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Output destination configuration.</p>
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
+        self.output_config = input;
+        self
+    }
+    /// <p>Output destination configuration.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        &self.output_config
+    }
     /// Consumes the builder and constructs a [`StartBatchEvaluationInput`](crate::operation::start_batch_evaluation::StartBatchEvaluationInput).
     pub fn build(
         self,
@@ -247,6 +268,7 @@ impl StartBatchEvaluationInputBuilder {
             tags: self.tags,
             kms_key_arn: self.kms_key_arn,
             description: self.description,
+            output_config: self.output_config,
         })
     }
 }

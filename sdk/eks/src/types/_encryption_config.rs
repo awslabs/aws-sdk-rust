@@ -4,15 +4,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EncryptionConfig {
+    /// <important>
+    /// <p>Amazon EKS encrypts all Kubernetes API data with envelope encryption by default for clusters running Kubernetes version 1.28 or higher, so this field no longer affects which resources are encrypted.</p>
+    /// </important>
     /// <p>Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Amazon EKS encrypts all Kubernetes API data by default, so this value no longer determines which resources are encrypted.",
+        since = "2025-03-05"
+    )]
     pub resources: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
     pub provider: ::std::option::Option<crate::types::Provider>,
 }
 impl EncryptionConfig {
+    /// <important>
+    /// <p>Amazon EKS encrypts all Kubernetes API data with envelope encryption by default for clusters running Kubernetes version 1.28 or higher, so this field no longer affects which resources are encrypted.</p>
+    /// </important>
     /// <p>Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resources.is_none()`.
+    #[deprecated(
+        note = "Deprecated. Amazon EKS encrypts all Kubernetes API data by default, so this value no longer determines which resources are encrypted.",
+        since = "2025-03-05"
+    )]
     pub fn resources(&self) -> &[::std::string::String] {
         self.resources.as_deref().unwrap_or_default()
     }
@@ -40,19 +54,40 @@ impl EncryptionConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_resources`](Self::set_resources).
     ///
+    /// <important>
+    /// <p>Amazon EKS encrypts all Kubernetes API data with envelope encryption by default for clusters running Kubernetes version 1.28 or higher, so this field no longer affects which resources are encrypted.</p>
+    /// </important>
     /// <p>Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Amazon EKS encrypts all Kubernetes API data by default, so this value no longer determines which resources are encrypted.",
+        since = "2025-03-05"
+    )]
     pub fn resources(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
         v.push(input.into());
         self.resources = ::std::option::Option::Some(v);
         self
     }
+    /// <important>
+    /// <p>Amazon EKS encrypts all Kubernetes API data with envelope encryption by default for clusters running Kubernetes version 1.28 or higher, so this field no longer affects which resources are encrypted.</p>
+    /// </important>
     /// <p>Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Amazon EKS encrypts all Kubernetes API data by default, so this value no longer determines which resources are encrypted.",
+        since = "2025-03-05"
+    )]
     pub fn set_resources(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.resources = input;
         self
     }
+    /// <important>
+    /// <p>Amazon EKS encrypts all Kubernetes API data with envelope encryption by default for clusters running Kubernetes version 1.28 or higher, so this field no longer affects which resources are encrypted.</p>
+    /// </important>
     /// <p>Specifies the resources to be encrypted. The only supported value is <code>secrets</code>.</p>
+    #[deprecated(
+        note = "Deprecated. Amazon EKS encrypts all Kubernetes API data by default, so this value no longer determines which resources are encrypted.",
+        since = "2025-03-05"
+    )]
     pub fn get_resources(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.resources
     }

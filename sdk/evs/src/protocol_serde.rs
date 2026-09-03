@@ -43,6 +43,8 @@ pub(crate) mod shape_delete_environment_host;
 
 pub(crate) mod shape_disassociate_eip_from_vlan;
 
+pub(crate) mod shape_get_account_settings;
+
 pub(crate) mod shape_get_depot_url;
 
 pub(crate) mod shape_get_environment;
@@ -60,6 +62,8 @@ pub(crate) mod shape_list_environments;
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_list_vm_entitlements;
+
+pub(crate) mod shape_put_account_settings;
 
 pub(crate) mod shape_tag_resource;
 
@@ -113,6 +117,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_list_vm_entitlements_input;
 
+pub(crate) mod shape_put_account_settings_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -130,6 +136,10 @@ pub(crate) mod shape_untag_resource_input;
 pub(crate) mod shape_update_environment_connector_input;
 
 pub(crate) mod shape_validation_exception;
+
+pub(crate) mod shape_account_setting;
+
+pub(crate) mod shape_account_setting_list;
 
 pub(crate) mod shape_connectivity_info;
 

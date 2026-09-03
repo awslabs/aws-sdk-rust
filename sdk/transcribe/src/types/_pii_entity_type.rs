@@ -13,17 +13,35 @@
 /// # let piientitytype = unimplemented!();
 /// match piientitytype {
 ///     PiiEntityType::Address => { /* ... */ },
+///     PiiEntityType::Age => { /* ... */ },
 ///     PiiEntityType::All => { /* ... */ },
+///     PiiEntityType::AwsAccessKey => { /* ... */ },
+///     PiiEntityType::AwsSecretKey => { /* ... */ },
 ///     PiiEntityType::BankAccountNumber => { /* ... */ },
 ///     PiiEntityType::BankRouting => { /* ... */ },
+///     PiiEntityType::CaHealthNumber => { /* ... */ },
+///     PiiEntityType::CaSocialInsuranceNumber => { /* ... */ },
 ///     PiiEntityType::CreditDebitCvv => { /* ... */ },
 ///     PiiEntityType::CreditDebitExpiry => { /* ... */ },
 ///     PiiEntityType::CreditDebitNumber => { /* ... */ },
+///     PiiEntityType::DateTime => { /* ... */ },
+///     PiiEntityType::DriverId => { /* ... */ },
 ///     PiiEntityType::Email => { /* ... */ },
+///     PiiEntityType::InternationalBankAccountNumber => { /* ... */ },
+///     PiiEntityType::IpAddress => { /* ... */ },
+///     PiiEntityType::LicensePlate => { /* ... */ },
+///     PiiEntityType::MacAddress => { /* ... */ },
 ///     PiiEntityType::Name => { /* ... */ },
+///     PiiEntityType::PassportNumber => { /* ... */ },
+///     PiiEntityType::Password => { /* ... */ },
 ///     PiiEntityType::Phone => { /* ... */ },
 ///     PiiEntityType::Pin => { /* ... */ },
 ///     PiiEntityType::Ssn => { /* ... */ },
+///     PiiEntityType::SwiftCode => { /* ... */ },
+///     PiiEntityType::Url => { /* ... */ },
+///     PiiEntityType::Username => { /* ... */ },
+///     PiiEntityType::UsIndividualTaxIdentificationNumber => { /* ... */ },
+///     PiiEntityType::VehicleIdentificationNumber => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,11 +73,21 @@ pub enum PiiEntityType {
     #[allow(missing_docs)] // documentation missing in model
     Address,
     #[allow(missing_docs)] // documentation missing in model
+    Age,
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsAccessKey,
+    #[allow(missing_docs)] // documentation missing in model
+    AwsSecretKey,
     #[allow(missing_docs)] // documentation missing in model
     BankAccountNumber,
     #[allow(missing_docs)] // documentation missing in model
     BankRouting,
+    #[allow(missing_docs)] // documentation missing in model
+    CaHealthNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    CaSocialInsuranceNumber,
     #[allow(missing_docs)] // documentation missing in model
     CreditDebitCvv,
     #[allow(missing_docs)] // documentation missing in model
@@ -67,15 +95,41 @@ pub enum PiiEntityType {
     #[allow(missing_docs)] // documentation missing in model
     CreditDebitNumber,
     #[allow(missing_docs)] // documentation missing in model
+    DateTime,
+    #[allow(missing_docs)] // documentation missing in model
+    DriverId,
+    #[allow(missing_docs)] // documentation missing in model
     Email,
     #[allow(missing_docs)] // documentation missing in model
+    InternationalBankAccountNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    IpAddress,
+    #[allow(missing_docs)] // documentation missing in model
+    LicensePlate,
+    #[allow(missing_docs)] // documentation missing in model
+    MacAddress,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
+    PassportNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    Password,
     #[allow(missing_docs)] // documentation missing in model
     Phone,
     #[allow(missing_docs)] // documentation missing in model
     Pin,
     #[allow(missing_docs)] // documentation missing in model
     Ssn,
+    #[allow(missing_docs)] // documentation missing in model
+    SwiftCode,
+    #[allow(missing_docs)] // documentation missing in model
+    Url,
+    #[allow(missing_docs)] // documentation missing in model
+    Username,
+    #[allow(missing_docs)] // documentation missing in model
+    UsIndividualTaxIdentificationNumber,
+    #[allow(missing_docs)] // documentation missing in model
+    VehicleIdentificationNumber,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -84,17 +138,35 @@ impl ::std::convert::From<&str> for PiiEntityType {
     fn from(s: &str) -> Self {
         match s {
             "ADDRESS" => PiiEntityType::Address,
+            "AGE" => PiiEntityType::Age,
             "ALL" => PiiEntityType::All,
+            "AWS_ACCESS_KEY" => PiiEntityType::AwsAccessKey,
+            "AWS_SECRET_KEY" => PiiEntityType::AwsSecretKey,
             "BANK_ACCOUNT_NUMBER" => PiiEntityType::BankAccountNumber,
             "BANK_ROUTING" => PiiEntityType::BankRouting,
+            "CA_HEALTH_NUMBER" => PiiEntityType::CaHealthNumber,
+            "CA_SOCIAL_INSURANCE_NUMBER" => PiiEntityType::CaSocialInsuranceNumber,
             "CREDIT_DEBIT_CVV" => PiiEntityType::CreditDebitCvv,
             "CREDIT_DEBIT_EXPIRY" => PiiEntityType::CreditDebitExpiry,
             "CREDIT_DEBIT_NUMBER" => PiiEntityType::CreditDebitNumber,
+            "DATE_TIME" => PiiEntityType::DateTime,
+            "DRIVER_ID" => PiiEntityType::DriverId,
             "EMAIL" => PiiEntityType::Email,
+            "INTERNATIONAL_BANK_ACCOUNT_NUMBER" => PiiEntityType::InternationalBankAccountNumber,
+            "IP_ADDRESS" => PiiEntityType::IpAddress,
+            "LICENSE_PLATE" => PiiEntityType::LicensePlate,
+            "MAC_ADDRESS" => PiiEntityType::MacAddress,
             "NAME" => PiiEntityType::Name,
+            "PASSPORT_NUMBER" => PiiEntityType::PassportNumber,
+            "PASSWORD" => PiiEntityType::Password,
             "PHONE" => PiiEntityType::Phone,
             "PIN" => PiiEntityType::Pin,
             "SSN" => PiiEntityType::Ssn,
+            "SWIFT_CODE" => PiiEntityType::SwiftCode,
+            "URL" => PiiEntityType::Url,
+            "USERNAME" => PiiEntityType::Username,
+            "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER" => PiiEntityType::UsIndividualTaxIdentificationNumber,
+            "VEHICLE_IDENTIFICATION_NUMBER" => PiiEntityType::VehicleIdentificationNumber,
             other => PiiEntityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -111,17 +183,35 @@ impl PiiEntityType {
     pub fn as_str(&self) -> &str {
         match self {
             PiiEntityType::Address => "ADDRESS",
+            PiiEntityType::Age => "AGE",
             PiiEntityType::All => "ALL",
+            PiiEntityType::AwsAccessKey => "AWS_ACCESS_KEY",
+            PiiEntityType::AwsSecretKey => "AWS_SECRET_KEY",
             PiiEntityType::BankAccountNumber => "BANK_ACCOUNT_NUMBER",
             PiiEntityType::BankRouting => "BANK_ROUTING",
+            PiiEntityType::CaHealthNumber => "CA_HEALTH_NUMBER",
+            PiiEntityType::CaSocialInsuranceNumber => "CA_SOCIAL_INSURANCE_NUMBER",
             PiiEntityType::CreditDebitCvv => "CREDIT_DEBIT_CVV",
             PiiEntityType::CreditDebitExpiry => "CREDIT_DEBIT_EXPIRY",
             PiiEntityType::CreditDebitNumber => "CREDIT_DEBIT_NUMBER",
+            PiiEntityType::DateTime => "DATE_TIME",
+            PiiEntityType::DriverId => "DRIVER_ID",
             PiiEntityType::Email => "EMAIL",
+            PiiEntityType::InternationalBankAccountNumber => "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
+            PiiEntityType::IpAddress => "IP_ADDRESS",
+            PiiEntityType::LicensePlate => "LICENSE_PLATE",
+            PiiEntityType::MacAddress => "MAC_ADDRESS",
             PiiEntityType::Name => "NAME",
+            PiiEntityType::PassportNumber => "PASSPORT_NUMBER",
+            PiiEntityType::Password => "PASSWORD",
             PiiEntityType::Phone => "PHONE",
             PiiEntityType::Pin => "PIN",
             PiiEntityType::Ssn => "SSN",
+            PiiEntityType::SwiftCode => "SWIFT_CODE",
+            PiiEntityType::Url => "URL",
+            PiiEntityType::Username => "USERNAME",
+            PiiEntityType::UsIndividualTaxIdentificationNumber => "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER",
+            PiiEntityType::VehicleIdentificationNumber => "VEHICLE_IDENTIFICATION_NUMBER",
             PiiEntityType::Unknown(value) => value.as_str(),
         }
     }
@@ -129,17 +219,35 @@ impl PiiEntityType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ADDRESS",
+            "AGE",
             "ALL",
+            "AWS_ACCESS_KEY",
+            "AWS_SECRET_KEY",
             "BANK_ACCOUNT_NUMBER",
             "BANK_ROUTING",
+            "CA_HEALTH_NUMBER",
+            "CA_SOCIAL_INSURANCE_NUMBER",
             "CREDIT_DEBIT_CVV",
             "CREDIT_DEBIT_EXPIRY",
             "CREDIT_DEBIT_NUMBER",
+            "DATE_TIME",
+            "DRIVER_ID",
             "EMAIL",
+            "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
+            "IP_ADDRESS",
+            "LICENSE_PLATE",
+            "MAC_ADDRESS",
             "NAME",
+            "PASSPORT_NUMBER",
+            "PASSWORD",
             "PHONE",
             "PIN",
             "SSN",
+            "SWIFT_CODE",
+            "URL",
+            "USERNAME",
+            "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER",
+            "VEHICLE_IDENTIFICATION_NUMBER",
         ]
     }
 }
@@ -164,17 +272,35 @@ impl ::std::fmt::Display for PiiEntityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             PiiEntityType::Address => write!(f, "ADDRESS"),
+            PiiEntityType::Age => write!(f, "AGE"),
             PiiEntityType::All => write!(f, "ALL"),
+            PiiEntityType::AwsAccessKey => write!(f, "AWS_ACCESS_KEY"),
+            PiiEntityType::AwsSecretKey => write!(f, "AWS_SECRET_KEY"),
             PiiEntityType::BankAccountNumber => write!(f, "BANK_ACCOUNT_NUMBER"),
             PiiEntityType::BankRouting => write!(f, "BANK_ROUTING"),
+            PiiEntityType::CaHealthNumber => write!(f, "CA_HEALTH_NUMBER"),
+            PiiEntityType::CaSocialInsuranceNumber => write!(f, "CA_SOCIAL_INSURANCE_NUMBER"),
             PiiEntityType::CreditDebitCvv => write!(f, "CREDIT_DEBIT_CVV"),
             PiiEntityType::CreditDebitExpiry => write!(f, "CREDIT_DEBIT_EXPIRY"),
             PiiEntityType::CreditDebitNumber => write!(f, "CREDIT_DEBIT_NUMBER"),
+            PiiEntityType::DateTime => write!(f, "DATE_TIME"),
+            PiiEntityType::DriverId => write!(f, "DRIVER_ID"),
             PiiEntityType::Email => write!(f, "EMAIL"),
+            PiiEntityType::InternationalBankAccountNumber => write!(f, "INTERNATIONAL_BANK_ACCOUNT_NUMBER"),
+            PiiEntityType::IpAddress => write!(f, "IP_ADDRESS"),
+            PiiEntityType::LicensePlate => write!(f, "LICENSE_PLATE"),
+            PiiEntityType::MacAddress => write!(f, "MAC_ADDRESS"),
             PiiEntityType::Name => write!(f, "NAME"),
+            PiiEntityType::PassportNumber => write!(f, "PASSPORT_NUMBER"),
+            PiiEntityType::Password => write!(f, "PASSWORD"),
             PiiEntityType::Phone => write!(f, "PHONE"),
             PiiEntityType::Pin => write!(f, "PIN"),
             PiiEntityType::Ssn => write!(f, "SSN"),
+            PiiEntityType::SwiftCode => write!(f, "SWIFT_CODE"),
+            PiiEntityType::Url => write!(f, "URL"),
+            PiiEntityType::Username => write!(f, "USERNAME"),
+            PiiEntityType::UsIndividualTaxIdentificationNumber => write!(f, "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"),
+            PiiEntityType::VehicleIdentificationNumber => write!(f, "VEHICLE_IDENTIFICATION_NUMBER"),
             PiiEntityType::Unknown(value) => write!(f, "{value}"),
         }
     }

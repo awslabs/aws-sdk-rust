@@ -141,6 +141,8 @@ pub use crate::types::_identification_hints::IdentificationHints;
 
 pub use crate::types::_os::Os;
 
+pub use crate::types::_source_server_architecture::SourceServerArchitecture;
+
 pub use crate::types::_extension_status::ExtensionStatus;
 
 pub use crate::types::_replication_configuration_replicated_disk::ReplicationConfigurationReplicatedDisk;
@@ -468,6 +470,8 @@ mod _source_network_data;
 mod _source_properties;
 
 mod _source_server;
+
+mod _source_server_architecture;
 
 mod _staging_area;
 

@@ -42,6 +42,8 @@ pub struct Signal {
     pub endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Contains information about the indicators associated with the signals.</p>
     pub signal_indicators: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>,
+    /// <p>Contains information about the activities, such as API calls, that were observed for this signal.</p>
+    pub activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
 }
 impl Signal {
     /// <p>The unique identifier of the signal.</p>
@@ -118,6 +120,12 @@ impl Signal {
     pub fn signal_indicators(&self) -> &[crate::types::Indicator] {
         self.signal_indicators.as_deref().unwrap_or_default()
     }
+    /// <p>Contains information about the activities, such as API calls, that were observed for this signal.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.activities.is_none()`.
+    pub fn activities(&self) -> &[crate::types::Activity] {
+        self.activities.as_deref().unwrap_or_default()
+    }
 }
 impl Signal {
     /// Creates a new builder-style object to manufacture [`Signal`](crate::types::Signal).
@@ -144,6 +152,7 @@ pub struct SignalBuilder {
     pub(crate) actor_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) signal_indicators: ::std::option::Option<::std::vec::Vec<crate::types::Indicator>>,
+    pub(crate) activities: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>,
 }
 impl SignalBuilder {
     /// <p>The unique identifier of the signal.</p>
@@ -404,6 +413,26 @@ impl SignalBuilder {
     pub fn get_signal_indicators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Indicator>> {
         &self.signal_indicators
     }
+    /// Appends an item to `activities`.
+    ///
+    /// To override the contents of this collection use [`set_activities`](Self::set_activities).
+    ///
+    /// <p>Contains information about the activities, such as API calls, that were observed for this signal.</p>
+    pub fn activities(mut self, input: crate::types::Activity) -> Self {
+        let mut v = self.activities.unwrap_or_default();
+        v.push(input);
+        self.activities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Contains information about the activities, such as API calls, that were observed for this signal.</p>
+    pub fn set_activities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Activity>>) -> Self {
+        self.activities = input;
+        self
+    }
+    /// <p>Contains information about the activities, such as API calls, that were observed for this signal.</p>
+    pub fn get_activities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Activity>> {
+        &self.activities
+    }
     /// Consumes the builder and constructs a [`Signal`](crate::types::Signal).
     pub fn build(self) -> crate::types::Signal {
         crate::types::Signal {
@@ -421,6 +450,7 @@ impl SignalBuilder {
             actor_ids: self.actor_ids,
             endpoint_ids: self.endpoint_ids,
             signal_indicators: self.signal_indicators,
+            activities: self.activities,
         }
     }
 }

@@ -5,6 +5,10 @@ pub use crate::types::_secret_reference::SecretReference;
 
 pub use crate::types::_secret_source_type::SecretSourceType;
 
+pub use crate::types::_consent_portal_idp_config::ConsentPortalIdpConfig;
+
+pub use crate::types::_consent_portal_status::ConsentPortalStatus;
+
 pub use crate::types::_credential_provider_vendor_type::CredentialProviderVendorType;
 
 pub use crate::types::_oauth2_provider_config_input::Oauth2ProviderConfigInput;
@@ -18,6 +22,8 @@ pub use crate::types::_payment_provider_configuration_output::PaymentProviderCon
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_kms_configuration::KmsConfiguration;
+
+pub use crate::types::_consent_portal_source::ConsentPortalSource;
 
 pub use crate::types::_custom_oauth2_provider_config_input::CustomOauth2ProviderConfigInput;
 
@@ -247,6 +253,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_key_type::KeyType;
 
+pub use crate::types::_consent_portal_source_type::ConsentPortalSourceType;
+
 pub use crate::types::_oauth2_discovery::Oauth2Discovery;
 
 pub use crate::types::_on_behalf_of_token_exchange_config_type::OnBehalfOfTokenExchangeConfigType;
@@ -310,6 +318,8 @@ pub use crate::types::_configuration_bundle_summary::ConfigurationBundleSummary;
 pub use crate::types::_component_configuration::ComponentConfiguration;
 
 pub use crate::types::_configuration_bundle_version_summary::ConfigurationBundleVersionSummary;
+
+pub use crate::types::_consent_portal_summary::ConsentPortalSummary;
 
 pub use crate::types::_dataset_summary::DatasetSummary;
 
@@ -642,6 +652,8 @@ pub use crate::types::_delete_memory_strategy_input::DeleteMemoryStrategyInput;
 pub use crate::types::_filter::Filter;
 
 pub use crate::types::_clustering_frequency::ClusteringFrequency;
+
+pub use crate::types::_result_destination::ResultDestination;
 
 pub use crate::types::_server_definition::ServerDefinition;
 
@@ -1152,6 +1164,16 @@ mod _connector_parameter_override;
 mod _connector_source;
 
 mod _connector_target_configuration;
+
+mod _consent_portal_idp_config;
+
+mod _consent_portal_source;
+
+mod _consent_portal_source_type;
+
+mod _consent_portal_status;
+
+mod _consent_portal_summary;
 
 mod _consolidation_configuration;
 
@@ -1754,6 +1776,8 @@ mod _resource_location;
 mod _resource_type;
 
 mod _rest_api_method;
+
+mod _result_destination;
 
 mod _root_volume_configuration;
 

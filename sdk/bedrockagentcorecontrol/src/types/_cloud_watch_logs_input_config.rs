@@ -6,6 +6,8 @@
 pub struct CloudWatchLogsInputConfig {
     /// <p>The list of CloudWatch log group names to monitor for agent traces.</p>
     pub log_group_names: ::std::vec::Vec<::std::string::String>,
+    /// <p>The list of CloudWatch log group name prefixes to monitor for agent traces. Specify this instead of <code>logGroupNames</code> to match log groups by prefix. Specify either <code>logGroupNames</code> or <code>logGroupNamePrefixes</code>, not both. One of the two is required.</p>
+    pub log_group_name_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of service names to filter traces within the specified log groups. Used to identify relevant agent sessions.</p>
     pub service_names: ::std::vec::Vec<::std::string::String>,
 }
@@ -14,6 +16,12 @@ impl CloudWatchLogsInputConfig {
     pub fn log_group_names(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.log_group_names.deref()
+    }
+    /// <p>The list of CloudWatch log group name prefixes to monitor for agent traces. Specify this instead of <code>logGroupNames</code> to match log groups by prefix. Specify either <code>logGroupNames</code> or <code>logGroupNamePrefixes</code>, not both. One of the two is required.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_group_name_prefixes.is_none()`.
+    pub fn log_group_name_prefixes(&self) -> &[::std::string::String] {
+        self.log_group_name_prefixes.as_deref().unwrap_or_default()
     }
     /// <p>The list of service names to filter traces within the specified log groups. Used to identify relevant agent sessions.</p>
     pub fn service_names(&self) -> &[::std::string::String] {
@@ -33,6 +41,7 @@ impl CloudWatchLogsInputConfig {
 #[non_exhaustive]
 pub struct CloudWatchLogsInputConfigBuilder {
     pub(crate) log_group_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) log_group_name_prefixes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) service_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudWatchLogsInputConfigBuilder {
@@ -56,6 +65,26 @@ impl CloudWatchLogsInputConfigBuilder {
     pub fn get_log_group_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.log_group_names
     }
+    /// Appends an item to `log_group_name_prefixes`.
+    ///
+    /// To override the contents of this collection use [`set_log_group_name_prefixes`](Self::set_log_group_name_prefixes).
+    ///
+    /// <p>The list of CloudWatch log group name prefixes to monitor for agent traces. Specify this instead of <code>logGroupNames</code> to match log groups by prefix. Specify either <code>logGroupNames</code> or <code>logGroupNamePrefixes</code>, not both. One of the two is required.</p>
+    pub fn log_group_name_prefixes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.log_group_name_prefixes.unwrap_or_default();
+        v.push(input.into());
+        self.log_group_name_prefixes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of CloudWatch log group name prefixes to monitor for agent traces. Specify this instead of <code>logGroupNames</code> to match log groups by prefix. Specify either <code>logGroupNames</code> or <code>logGroupNamePrefixes</code>, not both. One of the two is required.</p>
+    pub fn set_log_group_name_prefixes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.log_group_name_prefixes = input;
+        self
+    }
+    /// <p>The list of CloudWatch log group name prefixes to monitor for agent traces. Specify this instead of <code>logGroupNames</code> to match log groups by prefix. Specify either <code>logGroupNames</code> or <code>logGroupNamePrefixes</code>, not both. One of the two is required.</p>
+    pub fn get_log_group_name_prefixes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.log_group_name_prefixes
+    }
     /// Appends an item to `service_names`.
     ///
     /// To override the contents of this collection use [`set_service_names`](Self::set_service_names).
@@ -78,16 +107,11 @@ impl CloudWatchLogsInputConfigBuilder {
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsInputConfig`](crate::types::CloudWatchLogsInputConfig).
     /// This method will fail if any of the following fields are not set:
-    /// - [`log_group_names`](crate::types::builders::CloudWatchLogsInputConfigBuilder::log_group_names)
     /// - [`service_names`](crate::types::builders::CloudWatchLogsInputConfigBuilder::service_names)
     pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchLogsInputConfig, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::CloudWatchLogsInputConfig {
-            log_group_names: self.log_group_names.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_group_names",
-                    "log_group_names was not specified but it is required when building CloudWatchLogsInputConfig",
-                )
-            })?,
+            log_group_names: self.log_group_names.unwrap_or_default(),
+            log_group_name_prefixes: self.log_group_name_prefixes,
             service_names: self.service_names.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "service_names",

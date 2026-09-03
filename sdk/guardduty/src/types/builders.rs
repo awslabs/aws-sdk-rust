@@ -533,8 +533,12 @@ pub use crate::types::_ec2_image::Ec2ImageBuilder;
 
 pub use crate::types::_cloudformation_stack::CloudformationStackBuilder;
 
+pub use crate::types::_activity::ActivityBuilder;
+
 pub use crate::types::_scan_file_path::ScanFilePathBuilder;
 
 pub use crate::types::_observations::ObservationsBuilder;
 
 pub use crate::types::_public_access_configuration::PublicAccessConfigurationBuilder;
+
+pub use crate::types::_api_call::ApiCallBuilder;

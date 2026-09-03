@@ -696,6 +696,59 @@ impl From<crate::operation::get_linked_whats_app_business_account_phone_number::
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError> for Error {
+    fn from(err: crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError) -> Self {
+        match err {
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::AccessDeniedByMetaException(inner) => {
+                Error::AccessDeniedByMetaException(inner)
+            }
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_whats_app_business_public_key::GetWhatsAppBusinessPublicKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_whats_app_flow::GetWhatsAppFlowError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1265,6 +1318,59 @@ impl From<crate::operation::put_whats_app_business_account_event_destinations::P
             crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError> for Error {
+    fn from(err: crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError) -> Self {
+        match err {
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::AccessDeniedByMetaException(inner) => {
+                Error::AccessDeniedByMetaException(inner)
+            }
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::DependencyException(inner) => {
+                Error::DependencyException(inner)
+            }
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::InvalidParametersException(inner) => {
+                Error::InvalidParametersException(inner)
+            }
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::ThrottledRequestException(inner) => {
+                Error::ThrottledRequestException(inner)
+            }
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_whats_app_business_public_key::PutWhatsAppBusinessPublicKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

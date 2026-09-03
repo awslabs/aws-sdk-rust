@@ -15,6 +15,8 @@ pub struct UpdateRuleInput {
     pub actions: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
     /// <p>The publish status of the rule.</p>
     pub publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub pre_evaluation_filters: ::std::option::Option<crate::types::PreEvaluationFilters>,
 }
 impl UpdateRuleInput {
     /// <p>A unique identifier for the rule.</p>
@@ -43,6 +45,10 @@ impl UpdateRuleInput {
     pub fn publish_status(&self) -> ::std::option::Option<&crate::types::RulePublishStatus> {
         self.publish_status.as_ref()
     }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn pre_evaluation_filters(&self) -> ::std::option::Option<&crate::types::PreEvaluationFilters> {
+        self.pre_evaluation_filters.as_ref()
+    }
 }
 impl UpdateRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
@@ -61,6 +67,7 @@ pub struct UpdateRuleInputBuilder {
     pub(crate) function: ::std::option::Option<::std::string::String>,
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<crate::types::RuleAction>>,
     pub(crate) publish_status: ::std::option::Option<crate::types::RulePublishStatus>,
+    pub(crate) pre_evaluation_filters: ::std::option::Option<crate::types::PreEvaluationFilters>,
 }
 impl UpdateRuleInputBuilder {
     /// <p>A unique identifier for the rule.</p>
@@ -158,6 +165,20 @@ impl UpdateRuleInputBuilder {
     pub fn get_publish_status(&self) -> &::std::option::Option<crate::types::RulePublishStatus> {
         &self.publish_status
     }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn pre_evaluation_filters(mut self, input: crate::types::PreEvaluationFilters) -> Self {
+        self.pre_evaluation_filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn set_pre_evaluation_filters(mut self, input: ::std::option::Option<crate::types::PreEvaluationFilters>) -> Self {
+        self.pre_evaluation_filters = input;
+        self
+    }
+    /// <p>The pre-evaluation filters for the rule, that restrict the rule to be applied to only certain resources based on the resource's attributes, such as tags assigned to a contact. The pre-evaluation filters are applied even before rule conditions are evaluated and are used to enforce tag-based-access-control while applying rules.</p>
+    pub fn get_pre_evaluation_filters(&self) -> &::std::option::Option<crate::types::PreEvaluationFilters> {
+        &self.pre_evaluation_filters
+    }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
@@ -167,6 +188,7 @@ impl UpdateRuleInputBuilder {
             function: self.function,
             actions: self.actions,
             publish_status: self.publish_status,
+            pre_evaluation_filters: self.pre_evaluation_filters,
         })
     }
 }

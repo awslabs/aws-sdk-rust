@@ -17,6 +17,11 @@ pub struct UpdateDaemonInput {
     pub enable_ecs_managed_tags: ::std::option::Option<bool>,
     /// <p>If <code>true</code>, the execute command functionality is turned on for all tasks in the daemon. If <code>false</code>, the execute command functionality is turned off.</p>
     pub enable_execute_command: ::std::option::Option<bool>,
+    /// <p>If the <code>critical</code> parameter of a daemon is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the <code>critical</code> parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance. The default value is <code>true</code>.</p>
+    /// <p>A non-critical daemon doesn't block instance registration. The container instance becomes active and continues to run your other tasks, whether the daemon task fails during scale-out or during a deployment.</p>
+    /// <p>Amazon ECS emits an EventBridge event when a daemon task fails to start, for both critical and non-critical daemons.</p>
+    /// <p>Daemon task launch failures during a deployment are still counted by the deployment circuit breaker. The circuit breaker can roll back an unstable target revision.</p>
+    pub critical: ::std::option::Option<bool>,
 }
 impl UpdateDaemonInput {
     /// <p>The Amazon Resource Name (ARN) of the daemon to update.</p>
@@ -49,6 +54,13 @@ impl UpdateDaemonInput {
     pub fn enable_execute_command(&self) -> ::std::option::Option<bool> {
         self.enable_execute_command
     }
+    /// <p>If the <code>critical</code> parameter of a daemon is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the <code>critical</code> parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance. The default value is <code>true</code>.</p>
+    /// <p>A non-critical daemon doesn't block instance registration. The container instance becomes active and continues to run your other tasks, whether the daemon task fails during scale-out or during a deployment.</p>
+    /// <p>Amazon ECS emits an EventBridge event when a daemon task fails to start, for both critical and non-critical daemons.</p>
+    /// <p>Daemon task launch failures during a deployment are still counted by the deployment circuit breaker. The circuit breaker can roll back an unstable target revision.</p>
+    pub fn critical(&self) -> ::std::option::Option<bool> {
+        self.critical
+    }
 }
 impl UpdateDaemonInput {
     /// Creates a new builder-style object to manufacture [`UpdateDaemonInput`](crate::operation::update_daemon::UpdateDaemonInput).
@@ -68,6 +80,7 @@ pub struct UpdateDaemonInputBuilder {
     pub(crate) propagate_tags: ::std::option::Option<crate::types::DaemonPropagateTags>,
     pub(crate) enable_ecs_managed_tags: ::std::option::Option<bool>,
     pub(crate) enable_execute_command: ::std::option::Option<bool>,
+    pub(crate) critical: ::std::option::Option<bool>,
 }
 impl UpdateDaemonInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the daemon to update.</p>
@@ -176,6 +189,29 @@ impl UpdateDaemonInputBuilder {
     pub fn get_enable_execute_command(&self) -> &::std::option::Option<bool> {
         &self.enable_execute_command
     }
+    /// <p>If the <code>critical</code> parameter of a daemon is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the <code>critical</code> parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance. The default value is <code>true</code>.</p>
+    /// <p>A non-critical daemon doesn't block instance registration. The container instance becomes active and continues to run your other tasks, whether the daemon task fails during scale-out or during a deployment.</p>
+    /// <p>Amazon ECS emits an EventBridge event when a daemon task fails to start, for both critical and non-critical daemons.</p>
+    /// <p>Daemon task launch failures during a deployment are still counted by the deployment circuit breaker. The circuit breaker can roll back an unstable target revision.</p>
+    pub fn critical(mut self, input: bool) -> Self {
+        self.critical = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If the <code>critical</code> parameter of a daemon is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the <code>critical</code> parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance. The default value is <code>true</code>.</p>
+    /// <p>A non-critical daemon doesn't block instance registration. The container instance becomes active and continues to run your other tasks, whether the daemon task fails during scale-out or during a deployment.</p>
+    /// <p>Amazon ECS emits an EventBridge event when a daemon task fails to start, for both critical and non-critical daemons.</p>
+    /// <p>Daemon task launch failures during a deployment are still counted by the deployment circuit breaker. The circuit breaker can roll back an unstable target revision.</p>
+    pub fn set_critical(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.critical = input;
+        self
+    }
+    /// <p>If the <code>critical</code> parameter of a daemon is <code>true</code>, and the daemon task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the other tasks running on it. If the <code>critical</code> parameter is <code>false</code>, the daemon task failure doesn't affect the other tasks on the instance. The default value is <code>true</code>.</p>
+    /// <p>A non-critical daemon doesn't block instance registration. The container instance becomes active and continues to run your other tasks, whether the daemon task fails during scale-out or during a deployment.</p>
+    /// <p>Amazon ECS emits an EventBridge event when a daemon task fails to start, for both critical and non-critical daemons.</p>
+    /// <p>Daemon task launch failures during a deployment are still counted by the deployment circuit breaker. The circuit breaker can roll back an unstable target revision.</p>
+    pub fn get_critical(&self) -> &::std::option::Option<bool> {
+        &self.critical
+    }
     /// Consumes the builder and constructs a [`UpdateDaemonInput`](crate::operation::update_daemon::UpdateDaemonInput).
     pub fn build(
         self,
@@ -188,6 +224,7 @@ impl UpdateDaemonInputBuilder {
             propagate_tags: self.propagate_tags,
             enable_ecs_managed_tags: self.enable_ecs_managed_tags,
             enable_execute_command: self.enable_execute_command,
+            critical: self.critical,
         })
     }
 }

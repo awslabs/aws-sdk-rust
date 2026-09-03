@@ -1033,6 +1033,8 @@ pub(crate) mod shape_volume;
 
 pub(crate) mod shape_account_level_permissions;
 
+pub(crate) mod shape_activities;
+
 pub(crate) mod shape_actor_ids;
 
 pub(crate) mod shape_actor_process;
@@ -1075,6 +1077,8 @@ pub(crate) mod shape_access_key;
 
 pub(crate) mod shape_account;
 
+pub(crate) mod shape_activity;
+
 pub(crate) mod shape_anomaly_object;
 
 pub(crate) mod shape_autoscaling_auto_scaling_group;
@@ -1112,6 +1116,8 @@ pub(crate) mod shape_kubernetes_workload;
 pub(crate) mod shape_s3_bucket;
 
 pub(crate) mod shape_s3_object;
+
+pub(crate) mod shape_api_call;
 
 pub(crate) mod shape_container_uids;
 

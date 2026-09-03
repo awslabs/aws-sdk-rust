@@ -391,6 +391,8 @@ pub use crate::types::_cloud_watch_filter_config::CloudWatchFilterConfig;
 
 pub use crate::types::_session_filter_config::SessionFilterConfig;
 
+pub use crate::types::_result_destination::ResultDestination;
+
 pub use crate::types::_evaluator_summary::EvaluatorSummary;
 
 pub use crate::types::_failure_category_cluster::FailureCategoryCluster;
@@ -1128,6 +1130,8 @@ mod _resource_content_type;
 mod _resource_location;
 
 mod _response_chunk;
+
+mod _result_destination;
 
 mod _right_expression;
 

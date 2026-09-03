@@ -1190,6 +1190,13 @@ pub(crate) fn account_correct_errors(mut builder: crate::types::builders::Accoun
     builder
 }
 
+pub(crate) fn activity_correct_errors(mut builder: crate::types::builders::ActivityBuilder) -> crate::types::builders::ActivityBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ActivityType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn container_finding_resource_correct_errors(
     mut builder: crate::types::builders::ContainerFindingResourceBuilder,
 ) -> crate::types::builders::ContainerFindingResourceBuilder {
