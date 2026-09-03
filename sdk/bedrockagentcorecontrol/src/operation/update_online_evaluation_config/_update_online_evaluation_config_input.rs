@@ -19,6 +19,8 @@ pub struct UpdateOnlineEvaluationConfigInput {
     pub insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
     /// <p>The updated clustering configuration for periodic batch evaluation.</p>
     pub clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
     pub evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated execution status to enable or disable the online evaluation.</p>
@@ -61,6 +63,10 @@ impl UpdateOnlineEvaluationConfigInput {
     pub fn clustering_config(&self) -> ::std::option::Option<&crate::types::ClusteringConfig> {
         self.clustering_config.as_ref()
     }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
+        self.output_config.as_ref()
+    }
     /// <p>The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
     pub fn evaluation_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.evaluation_execution_role_arn.as_deref()
@@ -81,6 +87,7 @@ impl ::std::fmt::Debug for UpdateOnlineEvaluationConfigInput {
         formatter.field("evaluators", &self.evaluators);
         formatter.field("insights", &self.insights);
         formatter.field("clustering_config", &self.clustering_config);
+        formatter.field("output_config", &self.output_config);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("execution_status", &self.execution_status);
         formatter.finish()
@@ -105,6 +112,7 @@ pub struct UpdateOnlineEvaluationConfigInputBuilder {
     pub(crate) evaluators: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>>,
     pub(crate) insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
     pub(crate) clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
+    pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
     pub(crate) evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) execution_status: ::std::option::Option<crate::types::OnlineEvaluationExecutionStatus>,
 }
@@ -234,6 +242,20 @@ impl UpdateOnlineEvaluationConfigInputBuilder {
     pub fn get_clustering_config(&self) -> &::std::option::Option<crate::types::ClusteringConfig> {
         &self.clustering_config
     }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
+        self.output_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
+        self.output_config = input;
+        self
+    }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        &self.output_config
+    }
     /// <p>The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
     pub fn evaluation_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.evaluation_execution_role_arn = ::std::option::Option::Some(input.into());
@@ -278,6 +300,7 @@ impl UpdateOnlineEvaluationConfigInputBuilder {
             evaluators: self.evaluators,
             insights: self.insights,
             clustering_config: self.clustering_config,
+            output_config: self.output_config,
             evaluation_execution_role_arn: self.evaluation_execution_role_arn,
             execution_status: self.execution_status,
         })
@@ -294,6 +317,7 @@ impl ::std::fmt::Debug for UpdateOnlineEvaluationConfigInputBuilder {
         formatter.field("evaluators", &self.evaluators);
         formatter.field("insights", &self.insights);
         formatter.field("clustering_config", &self.clustering_config);
+        formatter.field("output_config", &self.output_config);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("execution_status", &self.execution_status);
         formatter.finish()

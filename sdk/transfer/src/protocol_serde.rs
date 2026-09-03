@@ -537,6 +537,8 @@ pub(crate) mod shape_s3_tag;
 
 pub(crate) mod shape_secondary_gids;
 
+pub(crate) mod shape_secret_version_stage_list;
+
 pub(crate) mod shape_security_group_ids;
 
 pub(crate) mod shape_sftp_connector_trusted_host_key_list;

@@ -4,13 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchOutputConfig {
-    /// <p>The name of the CloudWatch log group where evaluation results will be written.</p>
+    /// <p>The name of the CloudWatch log group where evaluation results will be written. This value doesn't apply when <code>resultDestination</code> is <code>SOURCE_LOG_GROUP</code>, because results are written back to the trace source log group. The name can't be under the service-reserved <code>/aws/bedrock-agentcore/evaluations/</code> namespace, apart from the service-managed default group.</p>
     pub log_group_name: ::std::string::String,
     /// <p>The name of the CloudWatch log stream where evaluation results will be written.</p>
     pub log_stream_name: ::std::string::String,
+    /// <p>The CloudWatch metrics namespace where evaluation result metrics are published. If you omit this value, the service publishes metrics to <code>Bedrock-AgentCore/Evaluations</code>. This value can't begin with <code>AWS/</code>.</p>
+    pub metrics_namespace: ::std::option::Option<::std::string::String>,
+    /// <p>The destination where evaluation results are written. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEDICATED_LOG_GROUP</code> (default) – Writes results to a dedicated result log group.</p></li>
+    /// <li>
+    /// <p><code>SOURCE_LOG_GROUP</code> – Writes results back to the log group that the agent traces were read from. If you use this value, don't specify <code>logGroupName</code>.</p></li>
+    /// </ul>
+    pub result_destination: crate::types::ResultDestination,
 }
 impl CloudWatchOutputConfig {
-    /// <p>The name of the CloudWatch log group where evaluation results will be written.</p>
+    /// <p>The name of the CloudWatch log group where evaluation results will be written. This value doesn't apply when <code>resultDestination</code> is <code>SOURCE_LOG_GROUP</code>, because results are written back to the trace source log group. The name can't be under the service-reserved <code>/aws/bedrock-agentcore/evaluations/</code> namespace, apart from the service-managed default group.</p>
     pub fn log_group_name(&self) -> &str {
         use std::ops::Deref;
         self.log_group_name.deref()
@@ -19,6 +29,20 @@ impl CloudWatchOutputConfig {
     pub fn log_stream_name(&self) -> &str {
         use std::ops::Deref;
         self.log_stream_name.deref()
+    }
+    /// <p>The CloudWatch metrics namespace where evaluation result metrics are published. If you omit this value, the service publishes metrics to <code>Bedrock-AgentCore/Evaluations</code>. This value can't begin with <code>AWS/</code>.</p>
+    pub fn metrics_namespace(&self) -> ::std::option::Option<&str> {
+        self.metrics_namespace.as_deref()
+    }
+    /// <p>The destination where evaluation results are written. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEDICATED_LOG_GROUP</code> (default) – Writes results to a dedicated result log group.</p></li>
+    /// <li>
+    /// <p><code>SOURCE_LOG_GROUP</code> – Writes results back to the log group that the agent traces were read from. If you use this value, don't specify <code>logGroupName</code>.</p></li>
+    /// </ul>
+    pub fn result_destination(&self) -> &crate::types::ResultDestination {
+        &self.result_destination
     }
 }
 impl CloudWatchOutputConfig {
@@ -34,25 +58,25 @@ impl CloudWatchOutputConfig {
 pub struct CloudWatchOutputConfigBuilder {
     pub(crate) log_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) log_stream_name: ::std::option::Option<::std::string::String>,
+    pub(crate) metrics_namespace: ::std::option::Option<::std::string::String>,
+    pub(crate) result_destination: ::std::option::Option<crate::types::ResultDestination>,
 }
 impl CloudWatchOutputConfigBuilder {
-    /// <p>The name of the CloudWatch log group where evaluation results will be written.</p>
-    /// This field is required.
+    /// <p>The name of the CloudWatch log group where evaluation results will be written. This value doesn't apply when <code>resultDestination</code> is <code>SOURCE_LOG_GROUP</code>, because results are written back to the trace source log group. The name can't be under the service-reserved <code>/aws/bedrock-agentcore/evaluations/</code> namespace, apart from the service-managed default group.</p>
     pub fn log_group_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_group_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the CloudWatch log group where evaluation results will be written.</p>
+    /// <p>The name of the CloudWatch log group where evaluation results will be written. This value doesn't apply when <code>resultDestination</code> is <code>SOURCE_LOG_GROUP</code>, because results are written back to the trace source log group. The name can't be under the service-reserved <code>/aws/bedrock-agentcore/evaluations/</code> namespace, apart from the service-managed default group.</p>
     pub fn set_log_group_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_group_name = input;
         self
     }
-    /// <p>The name of the CloudWatch log group where evaluation results will be written.</p>
+    /// <p>The name of the CloudWatch log group where evaluation results will be written. This value doesn't apply when <code>resultDestination</code> is <code>SOURCE_LOG_GROUP</code>, because results are written back to the trace source log group. The name can't be under the service-reserved <code>/aws/bedrock-agentcore/evaluations/</code> namespace, apart from the service-managed default group.</p>
     pub fn get_log_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_group_name
     }
     /// <p>The name of the CloudWatch log stream where evaluation results will be written.</p>
-    /// This field is required.
     pub fn log_stream_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_stream_name = ::std::option::Option::Some(input.into());
         self
@@ -66,24 +90,63 @@ impl CloudWatchOutputConfigBuilder {
     pub fn get_log_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_stream_name
     }
+    /// <p>The CloudWatch metrics namespace where evaluation result metrics are published. If you omit this value, the service publishes metrics to <code>Bedrock-AgentCore/Evaluations</code>. This value can't begin with <code>AWS/</code>.</p>
+    pub fn metrics_namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.metrics_namespace = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The CloudWatch metrics namespace where evaluation result metrics are published. If you omit this value, the service publishes metrics to <code>Bedrock-AgentCore/Evaluations</code>. This value can't begin with <code>AWS/</code>.</p>
+    pub fn set_metrics_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.metrics_namespace = input;
+        self
+    }
+    /// <p>The CloudWatch metrics namespace where evaluation result metrics are published. If you omit this value, the service publishes metrics to <code>Bedrock-AgentCore/Evaluations</code>. This value can't begin with <code>AWS/</code>.</p>
+    pub fn get_metrics_namespace(&self) -> &::std::option::Option<::std::string::String> {
+        &self.metrics_namespace
+    }
+    /// <p>The destination where evaluation results are written. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEDICATED_LOG_GROUP</code> (default) – Writes results to a dedicated result log group.</p></li>
+    /// <li>
+    /// <p><code>SOURCE_LOG_GROUP</code> – Writes results back to the log group that the agent traces were read from. If you use this value, don't specify <code>logGroupName</code>.</p></li>
+    /// </ul>
+    pub fn result_destination(mut self, input: crate::types::ResultDestination) -> Self {
+        self.result_destination = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The destination where evaluation results are written. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEDICATED_LOG_GROUP</code> (default) – Writes results to a dedicated result log group.</p></li>
+    /// <li>
+    /// <p><code>SOURCE_LOG_GROUP</code> – Writes results back to the log group that the agent traces were read from. If you use this value, don't specify <code>logGroupName</code>.</p></li>
+    /// </ul>
+    pub fn set_result_destination(mut self, input: ::std::option::Option<crate::types::ResultDestination>) -> Self {
+        self.result_destination = input;
+        self
+    }
+    /// <p>The destination where evaluation results are written. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DEDICATED_LOG_GROUP</code> (default) – Writes results to a dedicated result log group.</p></li>
+    /// <li>
+    /// <p><code>SOURCE_LOG_GROUP</code> – Writes results back to the log group that the agent traces were read from. If you use this value, don't specify <code>logGroupName</code>.</p></li>
+    /// </ul>
+    pub fn get_result_destination(&self) -> &::std::option::Option<crate::types::ResultDestination> {
+        &self.result_destination
+    }
     /// Consumes the builder and constructs a [`CloudWatchOutputConfig`](crate::types::CloudWatchOutputConfig).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`log_group_name`](crate::types::builders::CloudWatchOutputConfigBuilder::log_group_name)
-    /// - [`log_stream_name`](crate::types::builders::CloudWatchOutputConfigBuilder::log_stream_name)
-    pub fn build(self) -> ::std::result::Result<crate::types::CloudWatchOutputConfig, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::CloudWatchOutputConfig {
-            log_group_name: self.log_group_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_group_name",
-                    "log_group_name was not specified but it is required when building CloudWatchOutputConfig",
-                )
-            })?,
-            log_stream_name: self.log_stream_name.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "log_stream_name",
-                    "log_stream_name was not specified but it is required when building CloudWatchOutputConfig",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::CloudWatchOutputConfig {
+        crate::types::CloudWatchOutputConfig {
+            log_group_name: self.log_group_name.unwrap_or_default(),
+            log_stream_name: self.log_stream_name.unwrap_or_default(),
+            metrics_namespace: self.metrics_namespace,
+            result_destination: self.result_destination.unwrap_or(
+                "DEDICATED_LOG_GROUP"
+                    .parse::<crate::types::ResultDestination>()
+                    .expect("static value validated to member"),
+            ),
+        }
     }
 }

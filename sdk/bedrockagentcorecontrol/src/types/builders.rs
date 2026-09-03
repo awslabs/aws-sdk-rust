@@ -3,7 +3,11 @@ pub use crate::types::_secret::SecretBuilder;
 
 pub use crate::types::_secret_reference::SecretReferenceBuilder;
 
+pub use crate::types::_consent_portal_idp_config::ConsentPortalIdpConfigBuilder;
+
 pub use crate::types::_kms_configuration::KmsConfigurationBuilder;
+
+pub use crate::types::_consent_portal_source::ConsentPortalSourceBuilder;
 
 pub use crate::types::_custom_oauth2_provider_config_input::CustomOauth2ProviderConfigInputBuilder;
 
@@ -150,6 +154,8 @@ pub use crate::types::_configuration_bundle_summary::ConfigurationBundleSummaryB
 pub use crate::types::_component_configuration::ComponentConfigurationBuilder;
 
 pub use crate::types::_configuration_bundle_version_summary::ConfigurationBundleVersionSummaryBuilder;
+
+pub use crate::types::_consent_portal_summary::ConsentPortalSummaryBuilder;
 
 pub use crate::types::_dataset_summary::DatasetSummaryBuilder;
 

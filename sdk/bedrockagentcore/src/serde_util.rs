@@ -1194,21 +1194,6 @@ pub(crate) fn cloud_watch_logs_source_correct_errors(
     if builder.service_names.is_none() {
         builder.service_names = Some(Default::default())
     }
-    if builder.log_group_names.is_none() {
-        builder.log_group_names = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn cloud_watch_output_config_correct_errors(
-    mut builder: crate::types::builders::CloudWatchOutputConfigBuilder,
-) -> crate::types::builders::CloudWatchOutputConfigBuilder {
-    if builder.log_group_name.is_none() {
-        builder.log_group_name = Some(Default::default())
-    }
-    if builder.log_stream_name.is_none() {
-        builder.log_stream_name = Some(Default::default())
-    }
     builder
 }
 

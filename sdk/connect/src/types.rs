@@ -115,6 +115,8 @@ pub use crate::types::_rule_trigger_event_source::RuleTriggerEventSource;
 
 pub use crate::types::_rule_publish_status::RulePublishStatus;
 
+pub use crate::types::_pre_evaluation_filters::PreEvaluationFilters;
+
 pub use crate::types::_granular_access_control_configuration::GranularAccessControlConfiguration;
 
 pub use crate::types::_task_template_constraints::TaskTemplateConstraints;
@@ -1013,6 +1015,8 @@ pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvalu
 
 pub use crate::types::_extract_information_action_definition::ExtractInformationActionDefinition;
 
+pub use crate::types::_pre_evaluation_filter::PreEvaluationFilter;
+
 pub use crate::types::_application_type::ApplicationType;
 
 pub use crate::types::_flow_module_type::FlowModuleType;
@@ -1244,6 +1248,12 @@ pub use crate::types::_notification_recipient_type::NotificationRecipientType;
 pub use crate::types::_sla_assignment_type::SlaAssignmentType;
 
 pub use crate::types::_case_sla_configuration::CaseSlaConfiguration;
+
+pub use crate::types::_pre_evaluation_filter_resource_type::PreEvaluationFilterResourceType;
+
+pub use crate::types::_pre_evaluation_filter_type::PreEvaluationFilterType;
+
+pub use crate::types::_pre_evaluation_filter_operator::PreEvaluationFilterOperator;
 
 pub use crate::types::_palette_header::PaletteHeader;
 
@@ -2568,6 +2578,16 @@ mod _phone_type;
 mod _policy;
 
 mod _post_accept_timeout_config;
+
+mod _pre_evaluation_filter;
+
+mod _pre_evaluation_filter_operator;
+
+mod _pre_evaluation_filter_resource_type;
+
+mod _pre_evaluation_filter_type;
+
+mod _pre_evaluation_filters;
 
 mod _predefined_attribute;
 

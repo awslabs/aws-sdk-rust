@@ -35,6 +35,15 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn internal_server_exception_correct_errors(
+    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
+) -> crate::types::error::builders::InternalServerExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_depot_url_output_output_correct_errors(
     mut builder: crate::operation::get_depot_url::builders::GetDepotUrlOutputBuilder,
 ) -> crate::operation::get_depot_url::builders::GetDepotUrlOutputBuilder {
@@ -43,15 +52,6 @@ pub(crate) fn get_depot_url_output_output_correct_errors(
     }
     if builder.token.is_none() {
         builder.token = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn internal_server_exception_correct_errors(
-    mut builder: crate::types::error::builders::InternalServerExceptionBuilder,
-) -> crate::types::error::builders::InternalServerExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
     }
     builder
 }
@@ -91,6 +91,18 @@ pub(crate) fn too_many_tags_exception_correct_errors(
 ) -> crate::types::error::builders::TooManyTagsExceptionBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn account_setting_correct_errors(
+    mut builder: crate::types::builders::AccountSettingBuilder,
+) -> crate::types::builders::AccountSettingBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
     }
     builder
 }

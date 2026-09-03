@@ -31,6 +31,9 @@ pub mod delete_environment_host;
 /// Types for the `DisassociateEipFromVlan` operation.
 pub mod disassociate_eip_from_vlan;
 
+/// Types for the `GetAccountSettings` operation.
+pub mod get_account_settings;
+
 /// Types for the `GetDepotUrl` operation.
 pub mod get_depot_url;
 
@@ -57,6 +60,9 @@ pub mod list_tags_for_resource;
 
 /// Types for the `ListVmEntitlements` operation.
 pub mod list_vm_entitlements;
+
+/// Types for the `PutAccountSettings` operation.
+pub mod put_account_settings;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

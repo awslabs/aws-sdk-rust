@@ -1749,6 +1749,8 @@ pub(crate) mod shape_phone_number_config;
 
 pub(crate) mod shape_phone_number_summary_list;
 
+pub(crate) mod shape_pre_evaluation_filters;
+
 pub(crate) mod shape_predefined_attribute;
 
 pub(crate) mod shape_predefined_attribute_search_criteria;
@@ -2323,6 +2325,8 @@ pub(crate) mod shape_phone_number_status;
 
 pub(crate) mod shape_phone_number_summary;
 
+pub(crate) mod shape_pre_evaluation_filter;
+
 pub(crate) mod shape_predefined_attribute_configuration;
 
 pub(crate) mod shape_predefined_attribute_purpose_name_list;
@@ -2642,6 +2646,8 @@ pub(crate) mod shape_override_hours;
 pub(crate) mod shape_participant_metrics;
 
 pub(crate) mod shape_participant_timer_configuration;
+
+pub(crate) mod shape_pre_evaluation_filter_list;
 
 pub(crate) mod shape_predefined_attribute_string_values_list;
 

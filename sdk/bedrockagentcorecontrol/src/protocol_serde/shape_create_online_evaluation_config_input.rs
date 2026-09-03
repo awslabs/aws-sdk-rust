@@ -54,21 +54,27 @@ pub fn ser_create_online_evaluation_config_input_input(
     if let Some(var_17) = &input.online_evaluation_config_name {
         object.key("onlineEvaluationConfigName").string(var_17.as_str());
     }
-    if let Some(var_18) = &input.rule {
+    if let Some(var_18) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("rule").start_object();
-        crate::protocol_serde::shape_rule::ser_rule(&mut object_19, var_18)?;
+        let mut object_19 = object.key("outputConfig").start_object();
+        crate::protocol_serde::shape_output_config::ser_output_config(&mut object_19, var_18)?;
         object_19.finish();
     }
-    if let Some(var_20) = &input.tags {
+    if let Some(var_20) = &input.rule {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("tags").start_object();
-        for (key_22, value_23) in var_20 {
+        let mut object_21 = object.key("rule").start_object();
+        crate::protocol_serde::shape_rule::ser_rule(&mut object_21, var_20)?;
+        object_21.finish();
+    }
+    if let Some(var_22) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("tags").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_21.key(key_22.as_str()).string(value_23.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_21.finish();
+        object_23.finish();
     }
     Ok(())
 }

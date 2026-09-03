@@ -210,6 +210,8 @@ mod create_code_interpreter;
 
 mod create_configuration_bundle;
 
+mod create_consent_portal;
+
 mod create_dataset;
 
 mod create_dataset_version;
@@ -293,6 +295,8 @@ mod delete_code_interpreter;
 
 mod delete_configuration_bundle;
 
+mod delete_consent_portal;
+
 mod delete_dataset;
 
 mod delete_dataset_examples;
@@ -352,6 +356,8 @@ mod get_code_interpreter;
 mod get_configuration_bundle;
 
 mod get_configuration_bundle_version;
+
+mod get_consent_portal;
 
 mod get_dataset;
 
@@ -424,6 +430,8 @@ mod list_code_interpreters;
 mod list_configuration_bundle_versions;
 
 mod list_configuration_bundles;
+
+mod list_consent_portals;
 
 mod list_dataset_examples;
 
@@ -504,6 +512,8 @@ mod update_api_key_credential_provider;
 mod update_capacity_provider;
 
 mod update_configuration_bundle;
+
+mod update_consent_portal;
 
 mod update_dataset;
 

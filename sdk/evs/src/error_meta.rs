@@ -344,6 +344,30 @@ impl From<crate::operation::disassociate_eip_from_vlan::DisassociateEipFromVlanE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_settings::GetAccountSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_account_settings::GetAccountSettingsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_account_settings::GetAccountSettingsError> for Error {
+    fn from(err: crate::operation::get_account_settings::GetAccountSettingsError) -> Self {
+        match err {
+            crate::operation::get_account_settings::GetAccountSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_account_settings::GetAccountSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_account_settings::GetAccountSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_account_settings::GetAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_depot_url::GetDepotUrlError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -562,6 +586,30 @@ impl From<crate::operation::list_vm_entitlements::ListVmEntitlementsError> for E
             }
             crate::operation::list_vm_entitlements::ListVmEntitlementsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_vm_entitlements::ListVmEntitlementsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_settings::PutAccountSettingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_settings::PutAccountSettingsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_account_settings::PutAccountSettingsError> for Error {
+    fn from(err: crate::operation::put_account_settings::PutAccountSettingsError) -> Self {
+        match err {
+            crate::operation::put_account_settings::PutAccountSettingsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_account_settings::PutAccountSettingsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_account_settings::PutAccountSettingsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_account_settings::PutAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

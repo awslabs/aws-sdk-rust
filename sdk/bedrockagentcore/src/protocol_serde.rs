@@ -753,6 +753,10 @@ pub(crate) mod shape_left_expression;
 
 pub(crate) mod shape_linked_account;
 
+pub(crate) mod shape_log_group_name_list;
+
+pub(crate) mod shape_log_group_name_prefix_list;
+
 pub(crate) mod shape_recommendation_evaluation_config;
 
 pub(crate) mod shape_recommendation_result_configuration_bundle;

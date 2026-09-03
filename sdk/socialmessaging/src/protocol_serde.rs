@@ -49,6 +49,8 @@ pub(crate) mod shape_get_linked_whats_app_business_account;
 
 pub(crate) mod shape_get_linked_whats_app_business_account_phone_number;
 
+pub(crate) mod shape_get_whats_app_business_public_key;
+
 pub(crate) mod shape_get_whats_app_flow;
 
 pub(crate) mod shape_get_whats_app_flow_preview;
@@ -74,6 +76,8 @@ pub(crate) mod shape_post_whats_app_message_media;
 pub(crate) mod shape_publish_whats_app_flow;
 
 pub(crate) mod shape_put_whats_app_business_account_event_destinations;
+
+pub(crate) mod shape_put_whats_app_business_public_key;
 
 pub(crate) mod shape_send_whats_app_conversion_event;
 
@@ -132,6 +136,8 @@ pub(crate) mod shape_post_whats_app_message_media_input;
 pub(crate) mod shape_publish_whats_app_flow_input;
 
 pub(crate) mod shape_put_whats_app_business_account_event_destinations_input;
+
+pub(crate) mod shape_put_whats_app_business_public_key_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 

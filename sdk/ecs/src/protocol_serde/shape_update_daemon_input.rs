@@ -33,5 +33,8 @@ pub fn ser_update_daemon_input_input(
     if let Some(var_10) = &input.enable_execute_command {
         object.key("enableExecuteCommand").boolean(*var_10);
     }
+    if let Some(var_11) = &input.critical {
+        object.key("critical").boolean(*var_11);
+    }
     Ok(())
 }

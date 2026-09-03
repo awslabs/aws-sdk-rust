@@ -203,6 +203,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateWhatsAp
                 captured.insert("flowName", value);
             }
         }
+        if requested.should_capture("endpointUri") {
+            if let ::std::option::Option::Some(value) = input.endpoint_uri.as_deref() {
+                captured.insert("endpointUri", value);
+            }
+        }
+        if requested.should_capture("metaAppId") {
+            if let ::std::option::Option::Some(value) = input.meta_app_id.as_deref() {
+                captured.insert("metaAppId", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

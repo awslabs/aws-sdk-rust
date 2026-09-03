@@ -109,6 +109,16 @@ pub(crate) fn reflens_list_configuration_bundles_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_consent_portals_output_output_next_token(
+    input: &crate::operation::list_consent_portals::ListConsentPortalsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_dataset_examples_output_output_next_token(
     input: &crate::operation::list_dataset_examples::ListDatasetExamplesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -453,6 +463,13 @@ pub(crate) fn lens_list_configuration_bundles_output_output_bundles(
     input: crate::operation::list_configuration_bundles::ListConfigurationBundlesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationBundleSummary>> {
     let input = input.bundles;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_consent_portals_output_output_consent_portals(
+    input: crate::operation::list_consent_portals::ListConsentPortalsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ConsentPortalSummary>> {
+    let input = input.consent_portals;
     ::std::option::Option::Some(input)
 }
 

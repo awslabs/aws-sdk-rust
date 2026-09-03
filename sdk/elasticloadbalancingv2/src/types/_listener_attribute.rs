@@ -10,6 +10,11 @@ pub struct ListenerAttribute {
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
     /// </ul>
+    /// <p>The following attribute is only supported by Gateway Load Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>send_tcp_reset.on_idle_timeout.enabled</code> – Specifies whether the Gateway Load Balancer sends a TCP Reset to the sender of traffic when a TCP flow's idle timeout expires. This attribute also applies to non-SYN TCP packets received for flows that are not in the flow table. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
+    /// </ul>
     /// <p>The following attributes are only supported by Application Load Balancers.</p>
     /// <ul>
     /// <li>
@@ -61,6 +66,11 @@ impl ListenerAttribute {
     /// <ul>
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
+    /// </ul>
+    /// <p>The following attribute is only supported by Gateway Load Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>send_tcp_reset.on_idle_timeout.enabled</code> – Specifies whether the Gateway Load Balancer sends a TCP Reset to the sender of traffic when a TCP flow's idle timeout expires. This attribute also applies to non-SYN TCP packets received for flows that are not in the flow table. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     /// <p>The following attributes are only supported by Application Load Balancers.</p>
     /// <ul>
@@ -132,6 +142,11 @@ impl ListenerAttributeBuilder {
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
     /// </ul>
+    /// <p>The following attribute is only supported by Gateway Load Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>send_tcp_reset.on_idle_timeout.enabled</code> – Specifies whether the Gateway Load Balancer sends a TCP Reset to the sender of traffic when a TCP flow's idle timeout expires. This attribute also applies to non-SYN TCP packets received for flows that are not in the flow table. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
+    /// </ul>
     /// <p>The following attributes are only supported by Application Load Balancers.</p>
     /// <ul>
     /// <li>
@@ -183,6 +198,11 @@ impl ListenerAttributeBuilder {
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
     /// </ul>
+    /// <p>The following attribute is only supported by Gateway Load Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>send_tcp_reset.on_idle_timeout.enabled</code> – Specifies whether the Gateway Load Balancer sends a TCP Reset to the sender of traffic when a TCP flow's idle timeout expires. This attribute also applies to non-SYN TCP packets received for flows that are not in the flow table. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
+    /// </ul>
     /// <p>The following attributes are only supported by Application Load Balancers.</p>
     /// <ul>
     /// <li>
@@ -233,6 +253,11 @@ impl ListenerAttributeBuilder {
     /// <ul>
     /// <li>
     /// <p><code>tcp.idle_timeout.seconds</code> - The tcp idle timeout value, in seconds. The valid range is 60-6000 seconds. The default is 350 seconds.</p></li>
+    /// </ul>
+    /// <p>The following attribute is only supported by Gateway Load Balancers:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>send_tcp_reset.on_idle_timeout.enabled</code> – Specifies whether the Gateway Load Balancer sends a TCP Reset to the sender of traffic when a TCP flow's idle timeout expires. This attribute also applies to non-SYN TCP packets received for flows that are not in the flow table. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.</p></li>
     /// </ul>
     /// <p>The following attributes are only supported by Application Load Balancers.</p>
     /// <ul>

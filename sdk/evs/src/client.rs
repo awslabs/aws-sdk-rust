@@ -183,6 +183,8 @@ mod delete_environment_host;
 
 mod disassociate_eip_from_vlan;
 
+mod get_account_settings;
+
 mod get_depot_url;
 
 mod get_environment;
@@ -200,6 +202,8 @@ mod list_environments;
 mod list_tags_for_resource;
 
 mod list_vm_entitlements;
+
+mod put_account_settings;
 
 mod tag_resource;
 

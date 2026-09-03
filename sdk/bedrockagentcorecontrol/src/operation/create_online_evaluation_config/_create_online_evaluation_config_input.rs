@@ -19,6 +19,8 @@ pub struct CreateOnlineEvaluationConfigInput {
     pub insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
     /// <p>Configuration for periodic batch evaluation clustering of insight results.</p>
     pub clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub output_config: ::std::option::Option<crate::types::OutputConfig>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
     pub evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Whether to enable the online evaluation configuration immediately upon creation. If true, evaluation begins automatically.</p>
@@ -63,6 +65,10 @@ impl CreateOnlineEvaluationConfigInput {
     pub fn clustering_config(&self) -> ::std::option::Option<&crate::types::ClusteringConfig> {
         self.clustering_config.as_ref()
     }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn output_config(&self) -> ::std::option::Option<&crate::types::OutputConfig> {
+        self.output_config.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
     pub fn evaluation_execution_role_arn(&self) -> ::std::option::Option<&str> {
         self.evaluation_execution_role_arn.as_deref()
@@ -87,6 +93,7 @@ impl ::std::fmt::Debug for CreateOnlineEvaluationConfigInput {
         formatter.field("evaluators", &self.evaluators);
         formatter.field("insights", &self.insights);
         formatter.field("clustering_config", &self.clustering_config);
+        formatter.field("output_config", &self.output_config);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("enable_on_create", &self.enable_on_create);
         formatter.field("tags", &self.tags);
@@ -112,6 +119,7 @@ pub struct CreateOnlineEvaluationConfigInputBuilder {
     pub(crate) evaluators: ::std::option::Option<::std::vec::Vec<crate::types::EvaluatorReference>>,
     pub(crate) insights: ::std::option::Option<::std::vec::Vec<crate::types::Insight>>,
     pub(crate) clustering_config: ::std::option::Option<crate::types::ClusteringConfig>,
+    pub(crate) output_config: ::std::option::Option<crate::types::OutputConfig>,
     pub(crate) evaluation_execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) enable_on_create: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -244,6 +252,20 @@ impl CreateOnlineEvaluationConfigInputBuilder {
     pub fn get_clustering_config(&self) -> &::std::option::Option<crate::types::ClusteringConfig> {
         &self.clustering_config
     }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
+        self.output_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
+        self.output_config = input;
+        self
+    }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        &self.output_config
+    }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption at rest for AgentCore Evaluations</a>.</p>
     /// This field is required.
     pub fn evaluation_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -310,6 +332,7 @@ impl CreateOnlineEvaluationConfigInputBuilder {
             evaluators: self.evaluators,
             insights: self.insights,
             clustering_config: self.clustering_config,
+            output_config: self.output_config,
             evaluation_execution_role_arn: self.evaluation_execution_role_arn,
             enable_on_create: self.enable_on_create,
             tags: self.tags,
@@ -327,6 +350,7 @@ impl ::std::fmt::Debug for CreateOnlineEvaluationConfigInputBuilder {
         formatter.field("evaluators", &self.evaluators);
         formatter.field("insights", &self.insights);
         formatter.field("clustering_config", &self.clustering_config);
+        formatter.field("output_config", &self.output_config);
         formatter.field("evaluation_execution_role_arn", &self.evaluation_execution_role_arn);
         formatter.field("enable_on_create", &self.enable_on_create);
         formatter.field("tags", &self.tags);

@@ -22,6 +22,8 @@ pub struct SourceProperties {
     pub os: ::std::option::Option<crate::types::Os>,
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
     pub supports_nitro_instances: ::std::option::Option<bool>,
+    /// <p>The architecture of the Source Server.</p>
+    pub architecture: ::std::option::Option<crate::types::SourceServerArchitecture>,
 }
 impl SourceProperties {
     /// <p>The date and time the Source Properties were last updated on.</p>
@@ -66,6 +68,10 @@ impl SourceProperties {
     pub fn supports_nitro_instances(&self) -> ::std::option::Option<bool> {
         self.supports_nitro_instances
     }
+    /// <p>The architecture of the Source Server.</p>
+    pub fn architecture(&self) -> ::std::option::Option<&crate::types::SourceServerArchitecture> {
+        self.architecture.as_ref()
+    }
 }
 impl SourceProperties {
     /// Creates a new builder-style object to manufacture [`SourceProperties`](crate::types::SourceProperties).
@@ -87,6 +93,7 @@ pub struct SourcePropertiesBuilder {
     pub(crate) ram_bytes: ::std::option::Option<i64>,
     pub(crate) os: ::std::option::Option<crate::types::Os>,
     pub(crate) supports_nitro_instances: ::std::option::Option<bool>,
+    pub(crate) architecture: ::std::option::Option<crate::types::SourceServerArchitecture>,
 }
 impl SourcePropertiesBuilder {
     /// <p>The date and time the Source Properties were last updated on.</p>
@@ -233,6 +240,20 @@ impl SourcePropertiesBuilder {
     pub fn get_supports_nitro_instances(&self) -> &::std::option::Option<bool> {
         &self.supports_nitro_instances
     }
+    /// <p>The architecture of the Source Server.</p>
+    pub fn architecture(mut self, input: crate::types::SourceServerArchitecture) -> Self {
+        self.architecture = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The architecture of the Source Server.</p>
+    pub fn set_architecture(mut self, input: ::std::option::Option<crate::types::SourceServerArchitecture>) -> Self {
+        self.architecture = input;
+        self
+    }
+    /// <p>The architecture of the Source Server.</p>
+    pub fn get_architecture(&self) -> &::std::option::Option<crate::types::SourceServerArchitecture> {
+        &self.architecture
+    }
     /// Consumes the builder and constructs a [`SourceProperties`](crate::types::SourceProperties).
     pub fn build(self) -> crate::types::SourceProperties {
         crate::types::SourceProperties {
@@ -245,6 +266,7 @@ impl SourcePropertiesBuilder {
             ram_bytes: self.ram_bytes.unwrap_or_default(),
             os: self.os,
             supports_nitro_instances: self.supports_nitro_instances,
+            architecture: self.architecture,
         }
     }
 }

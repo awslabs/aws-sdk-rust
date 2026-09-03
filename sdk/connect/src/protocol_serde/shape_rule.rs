@@ -69,6 +69,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "PreEvaluationFilters" => {
+                            builder = builder.set_pre_evaluation_filters(
+                                crate::protocol_serde::shape_pre_evaluation_filters::de_pre_evaluation_filters(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "CreatedTime" => {
                             builder = builder.set_created_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

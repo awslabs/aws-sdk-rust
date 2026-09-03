@@ -24,14 +24,30 @@ pub fn ser_create_rule_input_input(
     if let Some(var_7) = &input.name {
         object.key("Name").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.publish_status {
-        object.key("PublishStatus").string(var_8.as_str());
-    }
-    if let Some(var_9) = &input.trigger_event_source {
+    if let Some(var_8) = &input.pre_evaluation_filters {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("TriggerEventSource").start_object();
-        crate::protocol_serde::shape_rule_trigger_event_source::ser_rule_trigger_event_source(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_9 = object.key("PreEvaluationFilters").start_object();
+        crate::protocol_serde::shape_pre_evaluation_filters::ser_pre_evaluation_filters(&mut object_9, var_8)?;
+        object_9.finish();
+    }
+    if let Some(var_10) = &input.publish_status {
+        object.key("PublishStatus").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("Tags").start_object();
+        for (key_13, value_14) in var_11 {
+            {
+                object_12.key(key_13.as_str()).string(value_14.as_str());
+            }
+        }
+        object_12.finish();
+    }
+    if let Some(var_15) = &input.trigger_event_source {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("TriggerEventSource").start_object();
+        crate::protocol_serde::shape_rule_trigger_event_source::ser_rule_trigger_event_source(&mut object_16, var_15)?;
+        object_16.finish();
     }
     Ok(())
 }

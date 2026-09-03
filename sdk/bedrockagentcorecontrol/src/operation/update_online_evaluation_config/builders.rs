@@ -230,6 +230,20 @@ impl UpdateOnlineEvaluationConfigFluentBuilder {
     pub fn get_clustering_config(&self) -> &::std::option::Option<crate::types::ClusteringConfig> {
         self.inner.get_clustering_config()
     }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn output_config(mut self, input: crate::types::OutputConfig) -> Self {
+        self.inner = self.inner.output_config(input);
+        self
+    }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn set_output_config(mut self, input: ::std::option::Option<crate::types::OutputConfig>) -> Self {
+        self.inner = self.inner.set_output_config(input);
+        self
+    }
+    /// <p>The configuration that specifies where evaluation results should be written for monitoring and analysis.</p>
+    pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
+        self.inner.get_output_config()
+    }
     /// <p>The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.</p>
     pub fn evaluation_execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.evaluation_execution_role_arn(input.into());

@@ -496,6 +496,41 @@ impl From<crate::operation::create_configuration_bundle::CreateConfigurationBund
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_consent_portal::CreateConsentPortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_consent_portal::CreateConsentPortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_consent_portal::CreateConsentPortalError> for Error {
+    fn from(err: crate::operation::create_consent_portal::CreateConsentPortalError) -> Self {
+        match err {
+            crate::operation::create_consent_portal::CreateConsentPortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_consent_portal::CreateConsentPortalError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_consent_portal::CreateConsentPortalError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_consent_portal::CreateConsentPortalError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_consent_portal::CreateConsentPortalError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_consent_portal::CreateConsentPortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_consent_portal::CreateConsentPortalError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_consent_portal::CreateConsentPortalError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_consent_portal::CreateConsentPortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dataset::CreateDatasetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1510,6 +1545,38 @@ impl From<crate::operation::delete_configuration_bundle::DeleteConfigurationBund
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_consent_portal::DeleteConsentPortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_consent_portal::DeleteConsentPortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_consent_portal::DeleteConsentPortalError> for Error {
+    fn from(err: crate::operation::delete_consent_portal::DeleteConsentPortalError) -> Self {
+        match err {
+            crate::operation::delete_consent_portal::DeleteConsentPortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_consent_portal::DeleteConsentPortalError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_consent_portal::DeleteConsentPortalError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_consent_portal::DeleteConsentPortalError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_consent_portal::DeleteConsentPortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_consent_portal::DeleteConsentPortalError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_consent_portal::DeleteConsentPortalError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_consent_portal::DeleteConsentPortalError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dataset::DeleteDatasetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2508,6 +2575,33 @@ impl From<crate::operation::get_configuration_bundle_version::GetConfigurationBu
                 Error::ValidationException(inner)
             }
             crate::operation::get_configuration_bundle_version::GetConfigurationBundleVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_consent_portal::GetConsentPortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_consent_portal::GetConsentPortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_consent_portal::GetConsentPortalError> for Error {
+    fn from(err: crate::operation::get_consent_portal::GetConsentPortalError) -> Self {
+        match err {
+            crate::operation::get_consent_portal::GetConsentPortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_consent_portal::GetConsentPortalError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_consent_portal::GetConsentPortalError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_consent_portal::GetConsentPortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_consent_portal::GetConsentPortalError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_consent_portal::GetConsentPortalError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_consent_portal::GetConsentPortalError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3646,6 +3740,32 @@ impl From<crate::operation::list_configuration_bundle_versions::ListConfiguratio
                 Error::ValidationException(inner)
             }
             crate::operation::list_configuration_bundle_versions::ListConfigurationBundleVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_consent_portals::ListConsentPortalsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_consent_portals::ListConsentPortalsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_consent_portals::ListConsentPortalsError> for Error {
+    fn from(err: crate::operation::list_consent_portals::ListConsentPortalsError) -> Self {
+        match err {
+            crate::operation::list_consent_portals::ListConsentPortalsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_consent_portals::ListConsentPortalsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_consent_portals::ListConsentPortalsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_consent_portals::ListConsentPortalsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_consent_portals::ListConsentPortalsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_consent_portals::ListConsentPortalsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4996,6 +5116,38 @@ impl From<crate::operation::update_configuration_bundle::UpdateConfigurationBund
                 Error::ValidationException(inner)
             }
             crate::operation::update_configuration_bundle::UpdateConfigurationBundleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_consent_portal::UpdateConsentPortalError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_consent_portal::UpdateConsentPortalError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_consent_portal::UpdateConsentPortalError> for Error {
+    fn from(err: crate::operation::update_consent_portal::UpdateConsentPortalError) -> Self {
+        match err {
+            crate::operation::update_consent_portal::UpdateConsentPortalError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_consent_portal::UpdateConsentPortalError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_consent_portal::UpdateConsentPortalError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_consent_portal::UpdateConsentPortalError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_consent_portal::UpdateConsentPortalError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_consent_portal::UpdateConsentPortalError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_consent_portal::UpdateConsentPortalError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_consent_portal::UpdateConsentPortalError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

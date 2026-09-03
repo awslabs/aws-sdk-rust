@@ -21,6 +21,15 @@ pub fn ser_sftp_connector_config(
             ::aws_smithy_types::Number::NegInt((input.max_concurrent_connections).into()),
         );
     }
+    if let Some(var_5) = &input.ordered_user_secret_version_stages {
+        let mut array_6 = object.key("OrderedUserSecretVersionStages").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
     Ok(())
 }
 
@@ -67,6 +76,11 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,
+                            );
+                        }
+                        "OrderedUserSecretVersionStages" => {
+                            builder = builder.set_ordered_user_secret_version_stages(
+                                crate::protocol_serde::shape_secret_version_stage_list::de_secret_version_stage_list(tokens, _value, depth + 1)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -41,6 +41,13 @@ where
                                         .transpose()?,
                                 );
                             }
+                            "totalWithoutDaemonInstanceCount" => {
+                                builder = builder.set_total_without_daemon_instance_count(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
                             "totalDrainingInstanceCount" => {
                                 builder = builder.set_total_draining_instance_count(
                                     ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

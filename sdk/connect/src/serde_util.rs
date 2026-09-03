@@ -2376,6 +2376,27 @@ pub(crate) fn override_time_slice_correct_errors(
     builder
 }
 
+pub(crate) fn pre_evaluation_filter_correct_errors(
+    mut builder: crate::types::builders::PreEvaluationFilterBuilder,
+) -> crate::types::builders::PreEvaluationFilterBuilder {
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::PreEvaluationFilterResourceType>().ok()
+    }
+    if builder.filter_type.is_none() {
+        builder.filter_type = "no value was set".parse::<crate::types::PreEvaluationFilterType>().ok()
+    }
+    if builder.filter_key.is_none() {
+        builder.filter_key = Some(Default::default())
+    }
+    if builder.filter_value.is_none() {
+        builder.filter_value = Some(Default::default())
+    }
+    if builder.operator.is_none() {
+        builder.operator = "no value was set".parse::<crate::types::PreEvaluationFilterOperator>().ok()
+    }
+    builder
+}
+
 pub(crate) fn primary_value_correct_errors(mut builder: crate::types::builders::PrimaryValueBuilder) -> crate::types::builders::PrimaryValueBuilder {
     if builder.attribute_name.is_none() {
         builder.attribute_name = Some(Default::default())

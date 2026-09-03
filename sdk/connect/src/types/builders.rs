@@ -51,6 +51,8 @@ pub use crate::types::_quick_connect_config::QuickConnectConfigBuilder;
 
 pub use crate::types::_rule_trigger_event_source::RuleTriggerEventSourceBuilder;
 
+pub use crate::types::_pre_evaluation_filters::PreEvaluationFiltersBuilder;
+
 pub use crate::types::_granular_access_control_configuration::GranularAccessControlConfigurationBuilder;
 
 pub use crate::types::_task_template_constraints::TaskTemplateConstraintsBuilder;
@@ -774,6 +776,8 @@ pub use crate::types::_end_associated_tasks_action_definition::EndAssociatedTask
 pub use crate::types::_submit_auto_evaluation_action_definition::SubmitAutoEvaluationActionDefinitionBuilder;
 
 pub use crate::types::_extract_information_action_definition::ExtractInformationActionDefinitionBuilder;
+
+pub use crate::types::_pre_evaluation_filter::PreEvaluationFilterBuilder;
 
 pub use crate::types::_primary_attribute_access_control_configuration_item::PrimaryAttributeAccessControlConfigurationItemBuilder;
 

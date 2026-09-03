@@ -687,6 +687,8 @@ pub use crate::types::_cloudformation_stack::CloudformationStack;
 
 pub use crate::types::_network_direction::NetworkDirection;
 
+pub use crate::types::_activity::Activity;
+
 pub use crate::types::_scan_file_path::ScanFilePath;
 
 pub use crate::types::_profile_type::ProfileType;
@@ -706,6 +708,10 @@ pub use crate::types::_kubernetes_resources_types::KubernetesResourcesTypes;
 pub use crate::types::_ecs_cluster_status::EcsClusterStatus;
 
 pub use crate::types::_ecs_launch_type::EcsLaunchType;
+
+pub use crate::types::_activity_type::ActivityType;
+
+pub use crate::types::_api_call::ApiCall;
 
 pub use crate::types::_public_acl_ignore_behavior::PublicAclIgnoreBehavior;
 
@@ -729,6 +735,10 @@ mod _account_statistics;
 
 mod _action;
 
+mod _activity;
+
+mod _activity_type;
+
 mod _actor;
 
 mod _actor_process;
@@ -750,6 +760,8 @@ mod _anomaly;
 mod _anomaly_object;
 
 mod _anomaly_unusual;
+
+mod _api_call;
 
 mod _association_detail;
 

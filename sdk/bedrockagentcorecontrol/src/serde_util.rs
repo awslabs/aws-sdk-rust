@@ -221,6 +221,42 @@ pub(crate) fn create_configuration_bundle_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_consent_portal_output_output_correct_errors(
+    mut builder: crate::operation::create_consent_portal::builders::CreateConsentPortalOutputBuilder,
+) -> crate::operation::create_consent_portal::builders::CreateConsentPortalOutputBuilder {
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    if builder.consent_portal_arn.is_none() {
+        builder.consent_portal_arn = Some(Default::default())
+    }
+    if builder.consent_portal_id.is_none() {
+        builder.consent_portal_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
+    }
+    if builder.idp_config.is_none() {
+        builder.idp_config = {
+            let builder = crate::types::builders::ConsentPortalIdpConfigBuilder::default();
+            crate::serde_util::consent_portal_idp_config_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConsentPortalStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_dataset_output_output_correct_errors(
     mut builder: crate::operation::create_dataset::builders::CreateDatasetOutputBuilder,
 ) -> crate::operation::create_dataset::builders::CreateDatasetOutputBuilder {
@@ -1202,6 +1238,42 @@ pub(crate) fn get_configuration_bundle_version_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_consent_portal_output_output_correct_errors(
+    mut builder: crate::operation::get_consent_portal::builders::GetConsentPortalOutputBuilder,
+) -> crate::operation::get_consent_portal::builders::GetConsentPortalOutputBuilder {
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    if builder.consent_portal_arn.is_none() {
+        builder.consent_portal_arn = Some(Default::default())
+    }
+    if builder.consent_portal_id.is_none() {
+        builder.consent_portal_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
+    }
+    if builder.idp_config.is_none() {
+        builder.idp_config = {
+            let builder = crate::types::builders::ConsentPortalIdpConfigBuilder::default();
+            crate::serde_util::consent_portal_idp_config_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConsentPortalStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_dataset_output_output_correct_errors(
     mut builder: crate::operation::get_dataset::builders::GetDatasetOutputBuilder,
 ) -> crate::operation::get_dataset::builders::GetDatasetOutputBuilder {
@@ -1925,6 +1997,15 @@ pub(crate) fn list_configuration_bundles_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_consent_portals_output_output_correct_errors(
+    mut builder: crate::operation::list_consent_portals::builders::ListConsentPortalsOutputBuilder,
+) -> crate::operation::list_consent_portals::builders::ListConsentPortalsOutputBuilder {
+    if builder.consent_portals.is_none() {
+        builder.consent_portals = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_dataset_examples_output_output_correct_errors(
     mut builder: crate::operation::list_dataset_examples::builders::ListDatasetExamplesOutputBuilder,
 ) -> crate::operation::list_dataset_examples::builders::ListDatasetExamplesOutputBuilder {
@@ -2362,6 +2443,42 @@ pub(crate) fn update_configuration_bundle_output_output_correct_errors(
     }
     if builder.version_id.is_none() {
         builder.version_id = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_consent_portal_output_output_correct_errors(
+    mut builder: crate::operation::update_consent_portal::builders::UpdateConsentPortalOutputBuilder,
+) -> crate::operation::update_consent_portal::builders::UpdateConsentPortalOutputBuilder {
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    if builder.consent_portal_arn.is_none() {
+        builder.consent_portal_arn = Some(Default::default())
+    }
+    if builder.consent_portal_id.is_none() {
+        builder.consent_portal_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_role_arn.is_none() {
+        builder.execution_role_arn = Some(Default::default())
+    }
+    if builder.idp_config.is_none() {
+        builder.idp_config = {
+            let builder = crate::types::builders::ConsentPortalIdpConfigBuilder::default();
+            crate::serde_util::consent_portal_idp_config_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConsentPortalStatus>().ok()
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -2853,6 +2970,18 @@ pub(crate) fn secret_correct_errors(mut builder: crate::types::builders::SecretB
     builder
 }
 
+pub(crate) fn consent_portal_idp_config_correct_errors(
+    mut builder: crate::types::builders::ConsentPortalIdpConfigBuilder,
+) -> crate::types::builders::ConsentPortalIdpConfigBuilder {
+    if builder.credential_provider_arn.is_none() {
+        builder.credential_provider_arn = Some(Default::default())
+    }
+    if builder.scopes.is_none() {
+        builder.scopes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn harness_correct_errors(mut builder: crate::types::builders::HarnessBuilder) -> crate::types::builders::HarnessBuilder {
     if builder.harness_id.is_none() {
         builder.harness_id = Some(Default::default())
@@ -3052,7 +3181,7 @@ pub(crate) fn output_config_correct_errors(mut builder: crate::types::builders::
     if builder.cloud_watch_config.is_none() {
         builder.cloud_watch_config = {
             let builder = crate::types::builders::CloudWatchOutputConfigBuilder::default();
-            crate::serde_util::cloud_watch_output_config_correct_errors(builder).build().ok()
+            Some(builder.build())
         }
     }
     builder
@@ -3295,20 +3424,8 @@ pub(crate) fn certificate_correct_errors(mut builder: crate::types::builders::Ce
 pub(crate) fn cloud_watch_logs_input_config_correct_errors(
     mut builder: crate::types::builders::CloudWatchLogsInputConfigBuilder,
 ) -> crate::types::builders::CloudWatchLogsInputConfigBuilder {
-    if builder.log_group_names.is_none() {
-        builder.log_group_names = Some(Default::default())
-    }
     if builder.service_names.is_none() {
         builder.service_names = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn cloud_watch_output_config_correct_errors(
-    mut builder: crate::types::builders::CloudWatchOutputConfigBuilder,
-) -> crate::types::builders::CloudWatchOutputConfigBuilder {
-    if builder.log_group_name.is_none() {
-        builder.log_group_name = Some(Default::default())
     }
     builder
 }
@@ -3405,6 +3522,45 @@ pub(crate) fn configuration_bundle_version_summary_correct_errors(
     }
     if builder.version_created_at.is_none() {
         builder.version_created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn consent_portal_source_correct_errors(
+    mut builder: crate::types::builders::ConsentPortalSourceBuilder,
+) -> crate::types::builders::ConsentPortalSourceBuilder {
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ConsentPortalSourceType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn consent_portal_summary_correct_errors(
+    mut builder: crate::types::builders::ConsentPortalSummaryBuilder,
+) -> crate::types::builders::ConsentPortalSummaryBuilder {
+    if builder.sources.is_none() {
+        builder.sources = Some(Default::default())
+    }
+    if builder.consent_portal_arn.is_none() {
+        builder.consent_portal_arn = Some(Default::default())
+    }
+    if builder.consent_portal_id.is_none() {
+        builder.consent_portal_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ConsentPortalStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

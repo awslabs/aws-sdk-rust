@@ -37,6 +37,8 @@ pub struct SftpConnectorConfig {
     /// </note>
     /// <p>This parameter specifies the number of active connections that your connector can establish with the remote server at the same time. Increasing this value can enhance connector performance when transferring large file batches by enabling parallel operations.</p>
     pub max_concurrent_connections: i32,
+    /// <p>An ordered list of Amazon Web Services Secrets Manager version stages (staging labels, such as <code>AWSCURRENT</code> and <code>AWSPREVIOUS</code>) for the secret identified by <code>UserSecretId</code>. When establishing a connection, the connector attempts to retrieve the SFTP user's credentials from each version stage in the order listed, and uses the first version it can successfully retrieve. This lets you rotate the user secret without interrupting connector operations.</p>
+    pub ordered_user_secret_version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SftpConnectorConfig {
     /// <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that contains the SFTP user's private key, password, or both. The identifier must be the Amazon Resource Name (ARN) of the secret.</p><note>
@@ -80,6 +82,12 @@ impl SftpConnectorConfig {
     pub fn max_concurrent_connections(&self) -> i32 {
         self.max_concurrent_connections
     }
+    /// <p>An ordered list of Amazon Web Services Secrets Manager version stages (staging labels, such as <code>AWSCURRENT</code> and <code>AWSPREVIOUS</code>) for the secret identified by <code>UserSecretId</code>. When establishing a connection, the connector attempts to retrieve the SFTP user's credentials from each version stage in the order listed, and uses the first version it can successfully retrieve. This lets you rotate the user secret without interrupting connector operations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ordered_user_secret_version_stages.is_none()`.
+    pub fn ordered_user_secret_version_stages(&self) -> &[::std::string::String] {
+        self.ordered_user_secret_version_stages.as_deref().unwrap_or_default()
+    }
 }
 impl SftpConnectorConfig {
     /// Creates a new builder-style object to manufacture [`SftpConnectorConfig`](crate::types::SftpConnectorConfig).
@@ -95,6 +103,7 @@ pub struct SftpConnectorConfigBuilder {
     pub(crate) user_secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) trusted_host_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_concurrent_connections: ::std::option::Option<i32>,
+    pub(crate) ordered_user_secret_version_stages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SftpConnectorConfigBuilder {
     /// <p>The identifier for the secret (in Amazon Web Services Secrets Manager) that contains the SFTP user's private key, password, or both. The identifier must be the Amazon Resource Name (ARN) of the secret.</p><note>
@@ -226,12 +235,33 @@ impl SftpConnectorConfigBuilder {
     pub fn get_max_concurrent_connections(&self) -> &::std::option::Option<i32> {
         &self.max_concurrent_connections
     }
+    /// Appends an item to `ordered_user_secret_version_stages`.
+    ///
+    /// To override the contents of this collection use [`set_ordered_user_secret_version_stages`](Self::set_ordered_user_secret_version_stages).
+    ///
+    /// <p>An ordered list of Amazon Web Services Secrets Manager version stages (staging labels, such as <code>AWSCURRENT</code> and <code>AWSPREVIOUS</code>) for the secret identified by <code>UserSecretId</code>. When establishing a connection, the connector attempts to retrieve the SFTP user's credentials from each version stage in the order listed, and uses the first version it can successfully retrieve. This lets you rotate the user secret without interrupting connector operations.</p>
+    pub fn ordered_user_secret_version_stages(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ordered_user_secret_version_stages.unwrap_or_default();
+        v.push(input.into());
+        self.ordered_user_secret_version_stages = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>An ordered list of Amazon Web Services Secrets Manager version stages (staging labels, such as <code>AWSCURRENT</code> and <code>AWSPREVIOUS</code>) for the secret identified by <code>UserSecretId</code>. When establishing a connection, the connector attempts to retrieve the SFTP user's credentials from each version stage in the order listed, and uses the first version it can successfully retrieve. This lets you rotate the user secret without interrupting connector operations.</p>
+    pub fn set_ordered_user_secret_version_stages(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ordered_user_secret_version_stages = input;
+        self
+    }
+    /// <p>An ordered list of Amazon Web Services Secrets Manager version stages (staging labels, such as <code>AWSCURRENT</code> and <code>AWSPREVIOUS</code>) for the secret identified by <code>UserSecretId</code>. When establishing a connection, the connector attempts to retrieve the SFTP user's credentials from each version stage in the order listed, and uses the first version it can successfully retrieve. This lets you rotate the user secret without interrupting connector operations.</p>
+    pub fn get_ordered_user_secret_version_stages(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ordered_user_secret_version_stages
+    }
     /// Consumes the builder and constructs a [`SftpConnectorConfig`](crate::types::SftpConnectorConfig).
     pub fn build(self) -> crate::types::SftpConnectorConfig {
         crate::types::SftpConnectorConfig {
             user_secret_id: self.user_secret_id,
             trusted_host_keys: self.trusted_host_keys,
             max_concurrent_connections: self.max_concurrent_connections.unwrap_or(1),
+            ordered_user_secret_version_stages: self.ordered_user_secret_version_stages,
         }
     }
 }

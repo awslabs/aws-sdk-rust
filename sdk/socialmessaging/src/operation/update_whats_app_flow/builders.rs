@@ -169,4 +169,32 @@ impl UpdateWhatsAppFlowFluentBuilder {
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetaFlowCategory>> {
         self.inner.get_categories()
     }
+    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+    pub fn endpoint_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.endpoint_uri(input.into());
+        self
+    }
+    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+    pub fn set_endpoint_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_endpoint_uri(input);
+        self
+    }
+    /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+    pub fn get_endpoint_uri(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_endpoint_uri()
+    }
+    /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256 and flow_token_signature verification at your endpoint. Meta requires the app to be owned by the same business that owns the WABA. Attaching your own app is one-way: the service's app cannot be re-attached afterwards. When omitted, the attached app is unchanged. (Set via update because Meta ignores application_id at creation time.)
+    pub fn meta_app_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.meta_app_id(input.into());
+        self
+    }
+    /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256 and flow_token_signature verification at your endpoint. Meta requires the app to be owned by the same business that owns the WABA. Attaching your own app is one-way: the service's app cannot be re-attached afterwards. When omitted, the attached app is unchanged. (Set via update because Meta ignores application_id at creation time.)
+    pub fn set_meta_app_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_meta_app_id(input);
+        self
+    }
+    /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256 and flow_token_signature verification at your endpoint. Meta requires the app to be owned by the same business that owns the WABA. Attaching your own app is one-way: the service's app cannot be re-attached afterwards. When omitted, the attached app is unchanged. (Set via update because Meta ignores application_id at creation time.)
+    pub fn get_meta_app_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_meta_app_id()
+    }
 }

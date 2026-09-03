@@ -10,6 +10,8 @@ pub struct DaemonRevisionDetail {
     pub capacity_providers: ::std::option::Option<::std::vec::Vec<crate::types::DaemonCapacityProvider>>,
     /// <p>The total number of daemon tasks running for this revision.</p>
     pub total_running_count: i32,
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningCount</code>.</p>
+    pub total_without_daemon_count: i32,
 }
 impl DaemonRevisionDetail {
     /// <p>The Amazon Resource Name (ARN) of the daemon revision.</p>
@@ -26,6 +28,10 @@ impl DaemonRevisionDetail {
     pub fn total_running_count(&self) -> i32 {
         self.total_running_count
     }
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningCount</code>.</p>
+    pub fn total_without_daemon_count(&self) -> i32 {
+        self.total_without_daemon_count
+    }
 }
 impl DaemonRevisionDetail {
     /// Creates a new builder-style object to manufacture [`DaemonRevisionDetail`](crate::types::DaemonRevisionDetail).
@@ -41,6 +47,7 @@ pub struct DaemonRevisionDetailBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) capacity_providers: ::std::option::Option<::std::vec::Vec<crate::types::DaemonCapacityProvider>>,
     pub(crate) total_running_count: ::std::option::Option<i32>,
+    pub(crate) total_without_daemon_count: ::std::option::Option<i32>,
 }
 impl DaemonRevisionDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of the daemon revision.</p>
@@ -91,12 +98,27 @@ impl DaemonRevisionDetailBuilder {
     pub fn get_total_running_count(&self) -> &::std::option::Option<i32> {
         &self.total_running_count
     }
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningCount</code>.</p>
+    pub fn total_without_daemon_count(mut self, input: i32) -> Self {
+        self.total_without_daemon_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningCount</code>.</p>
+    pub fn set_total_without_daemon_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_without_daemon_count = input;
+        self
+    }
+    /// <p>The total number of instances running without the daemon task for this revision, across all capacity providers. These instances aren't included in <code>totalRunningCount</code>.</p>
+    pub fn get_total_without_daemon_count(&self) -> &::std::option::Option<i32> {
+        &self.total_without_daemon_count
+    }
     /// Consumes the builder and constructs a [`DaemonRevisionDetail`](crate::types::DaemonRevisionDetail).
     pub fn build(self) -> crate::types::DaemonRevisionDetail {
         crate::types::DaemonRevisionDetail {
             arn: self.arn,
             capacity_providers: self.capacity_providers,
             total_running_count: self.total_running_count.unwrap_or_default(),
+            total_without_daemon_count: self.total_without_daemon_count.unwrap_or_default(),
         }
     }
 }

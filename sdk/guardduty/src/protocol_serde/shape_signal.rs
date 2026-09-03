@@ -99,6 +99,9 @@ where
                             builder =
                                 builder.set_signal_indicators(crate::protocol_serde::shape_indicators::de_indicators(tokens, _value, depth + 1)?);
                         }
+                        "activities" => {
+                            builder = builder.set_activities(crate::protocol_serde::shape_activities::de_activities(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

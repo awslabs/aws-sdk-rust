@@ -112,7 +112,7 @@ impl CreateActivityFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li>
@@ -135,7 +135,7 @@ impl CreateActivityFluentBuilder {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li>
@@ -158,7 +158,7 @@ impl CreateActivityFluentBuilder {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"> Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
+    /// <p>The name of the activity to create. This name must be unique for your Amazon Web Services account and region.</p>
     /// <p>A name must <i>not</i> contain:</p>
     /// <ul>
     /// <li>

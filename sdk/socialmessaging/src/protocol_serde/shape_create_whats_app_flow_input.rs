@@ -15,17 +15,20 @@ pub fn ser_create_whats_app_flow_input_input(
     if let Some(var_4) = &input.clone_flow_id {
         object.key("cloneFlowId").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.flow_json {
-        object.key("flowJson").string_unchecked(&::aws_smithy_types::base64::encode(var_5));
+    if let Some(var_5) = &input.endpoint_uri {
+        object.key("endpointUri").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.flow_name {
-        object.key("flowName").string(var_6.as_str());
+    if let Some(var_6) = &input.flow_json {
+        object.key("flowJson").string_unchecked(&::aws_smithy_types::base64::encode(var_6));
     }
-    if let Some(var_7) = &input.id {
-        object.key("id").string(var_7.as_str());
+    if let Some(var_7) = &input.flow_name {
+        object.key("flowName").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.publish {
-        object.key("publish").boolean(*var_8);
+    if let Some(var_8) = &input.id {
+        object.key("id").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.publish {
+        object.key("publish").boolean(*var_9);
     }
     Ok(())
 }

@@ -51,15 +51,21 @@ pub fn ser_start_batch_evaluation_input_input(
     if let Some(var_16) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_16.as_str());
     }
-    if let Some(var_17) = &input.tags {
+    if let Some(var_17) = &input.output_config {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("tags").start_object();
-        for (key_19, value_20) in var_17 {
+        let mut object_18 = object.key("outputConfig").start_object();
+        crate::protocol_serde::shape_output_config::ser_output_config(&mut object_18, var_17)?;
+        object_18.finish();
+    }
+    if let Some(var_19) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("tags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_18.key(key_19.as_str()).string(value_20.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_18.finish();
+        object_20.finish();
     }
     Ok(())
 }

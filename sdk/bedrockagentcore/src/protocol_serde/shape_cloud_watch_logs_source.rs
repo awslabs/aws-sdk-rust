@@ -20,28 +20,33 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "serviceNames" => {
-                                builder = builder.set_service_names(crate::protocol_serde::shape_evaluation_string_list::de_evaluation_string_list(
-                                    tokens,
-                                    _value,
-                                    depth + 1,
-                                )?);
-                            }
-                            "logGroupNames" => {
-                                builder = builder.set_log_group_names(
-                                    crate::protocol_serde::shape_evaluation_string_list::de_evaluation_string_list(tokens, _value, depth + 1)?,
-                                );
-                            }
-                            "filterConfig" => {
-                                builder = builder.set_filter_config(
-                                    crate::protocol_serde::shape_cloud_watch_filter_config::de_cloud_watch_filter_config(tokens, _value, depth + 1)?,
-                                );
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "serviceNames" => {
+                            builder = builder.set_service_names(crate::protocol_serde::shape_evaluation_string_list::de_evaluation_string_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
                         }
-                    }
+                        "logGroupNames" => {
+                            builder = builder.set_log_group_names(crate::protocol_serde::shape_log_group_name_list::de_log_group_name_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "logGroupNamePrefixes" => {
+                            builder = builder.set_log_group_name_prefixes(
+                                crate::protocol_serde::shape_log_group_name_prefix_list::de_log_group_name_prefix_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "filterConfig" => {
+                            builder = builder.set_filter_config(
+                                crate::protocol_serde::shape_cloud_watch_filter_config::de_cloud_watch_filter_config(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"
@@ -81,11 +86,20 @@ pub fn ser_cloud_watch_logs_source(
         }
         array_3.finish();
     }
-    if let Some(var_5) = &input.filter_config {
+    if let Some(var_5) = &input.log_group_name_prefixes {
+        let mut array_6 = object.key("logGroupNamePrefixes").start_array();
+        for item_7 in var_5 {
+            {
+                array_6.value().string(item_7.as_str());
+            }
+        }
+        array_6.finish();
+    }
+    if let Some(var_8) = &input.filter_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("filterConfig").start_object();
-        crate::protocol_serde::shape_cloud_watch_filter_config::ser_cloud_watch_filter_config(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_9 = object.key("filterConfig").start_object();
+        crate::protocol_serde::shape_cloud_watch_filter_config::ser_cloud_watch_filter_config(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

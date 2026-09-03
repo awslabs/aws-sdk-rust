@@ -68,3 +68,19 @@ where
     }
     Ok(variant)
 }
+
+pub fn ser_output_config(
+    object_18: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    input: &crate::types::OutputConfig,
+) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
+    match input {
+        crate::types::OutputConfig::CloudWatchConfig(inner) => {
+            #[allow(unused_mut)]
+            let mut object_1 = object_18.key("cloudWatchConfig").start_object();
+            crate::protocol_serde::shape_cloud_watch_output_config::ser_cloud_watch_output_config(&mut object_1, inner)?;
+            object_1.finish();
+        }
+        crate::types::OutputConfig::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("OutputConfig")),
+    }
+    Ok(())
+}
