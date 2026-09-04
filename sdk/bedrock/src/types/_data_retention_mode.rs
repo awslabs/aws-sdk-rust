@@ -12,6 +12,7 @@
 /// ```text
 /// # let dataretentionmode = unimplemented!();
 /// match dataretentionmode {
+///     DataRetentionMode::AwsReview => { /* ... */ },
 ///     DataRetentionMode::Default => { /* ... */ },
 ///     DataRetentionMode::Inherit => { /* ... */ },
 ///     DataRetentionMode::None => { /* ... */ },
@@ -38,12 +39,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>The data retention mode for the account. Valid values are:</p> <ul> <li> <p> <code>default</code> – The standard data handling for the model applies.</p> </li> <li> <p> <code>none</code> – Zero data retention.</p> </li> <li> <p> <code>provider_data_share</code> – Data may be shared with the model provider.</p> </li> <li> <p> <code>inherit</code> – No data retention mode is set at this scope.</p> </li> </ul>
+/// <p>The data retention mode for the account. Valid values are:</p> <ul> <li> <p> <code>default</code> – The standard data handling for the model applies.</p> </li> <li> <p> <code>none</code> – Zero data retention.</p> </li> <li> <p> <code>aws_review</code> – Amazon Web Services may review the request data. The data is not shared with the model provider. A model must support this mode to be invoked under it.</p> </li> <li> <p> <code>provider_data_share</code> – Data may be shared with the model provider.</p> </li> <li> <p> <code>inherit</code> – No data retention mode is set at this scope.</p> </li> </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum DataRetentionMode {
+    #[allow(missing_docs)] // documentation missing in model
+    AwsReview,
     #[allow(missing_docs)] // documentation missing in model
     Default,
     #[allow(missing_docs)] // documentation missing in model
@@ -59,6 +62,7 @@ pub enum DataRetentionMode {
 impl ::std::convert::From<&str> for DataRetentionMode {
     fn from(s: &str) -> Self {
         match s {
+            "aws_review" => DataRetentionMode::AwsReview,
             "default" => DataRetentionMode::Default,
             "inherit" => DataRetentionMode::Inherit,
             "none" => DataRetentionMode::None,
@@ -78,6 +82,7 @@ impl DataRetentionMode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DataRetentionMode::AwsReview => "aws_review",
             DataRetentionMode::Default => "default",
             DataRetentionMode::Inherit => "inherit",
             DataRetentionMode::None => "none",
@@ -87,7 +92,7 @@ impl DataRetentionMode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["default", "inherit", "none", "provider_data_share"]
+        &["aws_review", "default", "inherit", "none", "provider_data_share"]
     }
 }
 impl ::std::convert::AsRef<str> for DataRetentionMode {
@@ -110,6 +115,7 @@ impl DataRetentionMode {
 impl ::std::fmt::Display for DataRetentionMode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DataRetentionMode::AwsReview => write!(f, "aws_review"),
             DataRetentionMode::Default => write!(f, "default"),
             DataRetentionMode::Inherit => write!(f, "inherit"),
             DataRetentionMode::None => write!(f, "none"),

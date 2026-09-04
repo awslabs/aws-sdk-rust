@@ -145,6 +145,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartQu
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::start_query_workload_insights_top_contributors_data::StartQueryWorkloadInsightsTopContributorsDataError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::start_query_workload_insights_top_contributors_data::StartQueryWorkloadInsightsTopContributorsDataError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

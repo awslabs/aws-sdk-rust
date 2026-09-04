@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SearchF
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::search_flow_templates::SearchFlowTemplatesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::search_flow_templates::SearchFlowTemplatesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

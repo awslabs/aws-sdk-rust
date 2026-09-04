@@ -146,6 +146,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AttachC
         >::new())
         .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
             crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError,
+        >::new())
+        .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+            crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError,
         >::new());
 
         ::std::borrow::Cow::Owned(rcb)

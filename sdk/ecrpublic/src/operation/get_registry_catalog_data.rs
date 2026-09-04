@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRegi
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartVo
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutFile
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::put_file_system_policy::PutFileSystemPolicyError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::put_file_system_policy::PutFileSystemPolicyError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

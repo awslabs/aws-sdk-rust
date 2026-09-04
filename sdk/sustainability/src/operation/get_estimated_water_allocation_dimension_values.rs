@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEsti
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::get_estimated_water_allocation_dimension_values::GetEstimatedWaterAllocationDimensionValuesError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::get_estimated_water_allocation_dimension_values::GetEstimatedWaterAllocationDimensionValuesError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

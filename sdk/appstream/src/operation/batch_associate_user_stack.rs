@@ -141,6 +141,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchAs
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

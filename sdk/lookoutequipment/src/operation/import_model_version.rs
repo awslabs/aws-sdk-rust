@@ -156,6 +156,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ImportM
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::import_model_version::ImportModelVersionError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::import_model_version::ImportModelVersionError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

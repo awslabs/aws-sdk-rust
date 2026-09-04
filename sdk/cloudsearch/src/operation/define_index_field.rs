@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DefineI
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::define_index_field::DefineIndexFieldError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::define_index_field::DefineIndexFieldError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

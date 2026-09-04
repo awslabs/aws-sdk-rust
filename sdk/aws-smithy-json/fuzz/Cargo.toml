@@ -52,7 +52,7 @@ version = "0.2.0"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.6.2"
+version = "1.6.3"
 
 [dependencies.arbitrary]
 version = "1"

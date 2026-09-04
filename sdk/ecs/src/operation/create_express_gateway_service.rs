@@ -144,6 +144,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateE
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::create_express_gateway_service::CreateExpressGatewayServiceError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

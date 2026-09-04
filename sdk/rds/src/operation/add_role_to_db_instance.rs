@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AddRole
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

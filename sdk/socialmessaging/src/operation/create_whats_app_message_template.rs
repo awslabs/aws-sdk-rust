@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateW
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::create_whats_app_message_template::CreateWhatsAppMessageTemplateError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

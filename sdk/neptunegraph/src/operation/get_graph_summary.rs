@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetGrap
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_graph_summary::GetGraphSummaryError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_graph_summary::GetGraphSummaryError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

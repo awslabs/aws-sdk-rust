@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartTo
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_topics_detection_job::StartTopicsDetectionJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_topics_detection_job::StartTopicsDetectionJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

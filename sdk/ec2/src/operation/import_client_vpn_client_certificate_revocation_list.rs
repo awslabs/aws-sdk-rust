@@ -145,6 +145,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ImportC
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

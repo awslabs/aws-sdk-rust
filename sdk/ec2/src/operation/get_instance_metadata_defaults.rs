@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetInst
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_instance_metadata_defaults::GetInstanceMetadataDefaultsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_instance_metadata_defaults::GetInstanceMetadataDefaultsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

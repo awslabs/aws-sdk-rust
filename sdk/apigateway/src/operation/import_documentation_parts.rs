@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ImportD
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::import_documentation_parts::ImportDocumentationPartsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::import_documentation_parts::ImportDocumentationPartsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

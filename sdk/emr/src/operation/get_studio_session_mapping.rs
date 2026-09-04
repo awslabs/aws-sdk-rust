@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetStud
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_studio_session_mapping::GetStudioSessionMappingError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_studio_session_mapping::GetStudioSessionMappingError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

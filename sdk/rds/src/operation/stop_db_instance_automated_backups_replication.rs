@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StopDBI
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::stop_db_instance_automated_backups_replication::StopDBInstanceAutomatedBackupsReplicationError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -13,6 +13,7 @@ use http_1x::Uri;
 use s3::config::{Credentials, Region};
 use s3::operation::get_object::builders::GetObjectFluentBuilder;
 use s3::operation::head_object::builders::HeadObjectFluentBuilder;
+use s3::operation::list_object_versions::builders::ListObjectVersionsFluentBuilder;
 use s3::operation::put_object::builders::PutObjectFluentBuilder;
 use s3::operation::upload_part::builders::UploadPartFluentBuilder;
 use s3::presigning::{PresignedRequest, PresigningConfig};
@@ -43,6 +44,7 @@ rig_operation!(GetObjectFluentBuilder);
 rig_operation!(PutObjectFluentBuilder);
 rig_operation!(UploadPartFluentBuilder);
 rig_operation!(HeadObjectFluentBuilder);
+rig_operation!(ListObjectVersionsFluentBuilder);
 
 /// Generates a `PresignedRequest` from the given input.
 /// Assumes that that input has a `presigned` method on it.

@@ -40,12 +40,12 @@ version = "0.64.0"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-02x"]
-version = "1.15.0"
+version = "1.16.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["byte-stream-poll-next", "http-body-0-4-x"]
-version = "1.6.2"
+version = "1.6.3"
 
 [dependencies.http-02x]
 package = "http"

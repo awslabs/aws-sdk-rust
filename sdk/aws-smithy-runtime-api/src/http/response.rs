@@ -193,6 +193,11 @@ impl<B> Response<B> {
     pub fn add_extension<T: Send + Sync + Clone + 'static>(&mut self, extension: T) {
         self.extensions.insert(extension);
     }
+
+    /// Returns a reference to a previously [attached](Self::add_extension) extension of type `T`, if present.
+    pub fn extension<T: Send + Sync + 'static>(&self) -> Option<&T> {
+        self.extensions.get::<T>()
+    }
 }
 
 impl Response<SdkBody> {
@@ -265,6 +270,21 @@ mod test {
         assert_eq!("b", rsp.headers().get("a").unwrap());
         let http0 = rsp.try_into_http02x().unwrap();
         assert_eq!(200, http0.status().as_u16());
+    }
+
+    #[test]
+    fn add_and_get_extension() {
+        #[derive(Clone, Debug, PartialEq)]
+        struct Marker(u32);
+
+        let mut rsp = super::Response::new(StatusCode::try_from(200).unwrap(), SdkBody::empty());
+        // Absent before insertion.
+        assert_eq!(rsp.extension::<Marker>(), None);
+        rsp.add_extension(Marker(7));
+        // Round-trips the value.
+        assert_eq!(rsp.extension::<Marker>(), Some(&Marker(7)));
+        // A type that was never inserted returns None.
+        assert_eq!(rsp.extension::<u64>(), None);
     }
 
     macro_rules! resp_eq {

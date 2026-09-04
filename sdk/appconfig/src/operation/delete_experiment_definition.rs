@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteE
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::delete_experiment_definition::DeleteExperimentDefinitionError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::delete_experiment_definition::DeleteExperimentDefinitionError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

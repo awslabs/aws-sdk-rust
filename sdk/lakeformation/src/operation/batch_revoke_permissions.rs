@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchRe
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::batch_revoke_permissions::BatchRevokePermissionsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::batch_revoke_permissions::BatchRevokePermissionsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

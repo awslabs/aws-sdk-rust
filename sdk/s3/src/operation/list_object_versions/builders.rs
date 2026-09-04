@@ -129,6 +129,58 @@ impl ListObjectVersionsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    ///
+    /// Creates a presigned request for this operation.
+    ///
+    /// The `presigning_config` provides additional presigning-specific config values, such as the
+    /// amount of time the request should be valid for after creation.
+    ///
+    /// Presigned requests can be given to other users or applications to access a resource or perform
+    /// an operation without having access to the AWS security credentials.
+    ///
+    /// _Important:_ If you're using credentials that can expire, such as those from STS AssumeRole or SSO, then
+    /// the presigned request can only be valid for as long as the credentials used to create it are.
+    ///
+    #[allow(unused_mut)]
+    pub async fn presigned(
+        mut self,
+        presigning_config: crate::presigning::PresigningConfig,
+    ) -> ::std::result::Result<
+        crate::presigning::PresignedRequest,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_object_versions::ListObjectVersionsError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
+    > {
+        let runtime_plugins = crate::operation::list_object_versions::ListObjectVersions::operation_runtime_plugins(
+            self.handle.runtime_plugins.clone(),
+            &self.handle.conf,
+            self.config_override,
+        )
+        .with_client_plugin(crate::presigning_interceptors::SigV4PresigningRuntimePlugin::new(
+            presigning_config,
+            ::aws_sigv4::http_request::SignableBody::UnsignedPayload,
+        ));
+
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
+        let mut context = crate::operation::list_object_versions::ListObjectVersions::orchestrate_with_stop_point(
+            &runtime_plugins,
+            input,
+            ::aws_smithy_runtime::client::orchestrator::StopPoint::BeforeTransmit,
+        )
+        .await
+        .map_err(|err| {
+            err.map_service_error(|err| {
+                err.downcast::<crate::operation::list_object_versions::ListObjectVersionsError>()
+                    .expect("correct error type")
+            })
+        })?;
+        let request = context.take_request().expect("request set before transmit");
+        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
+    }
     /// <p>The bucket name that contains the objects.</p>
     pub fn bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
@@ -294,5 +346,22 @@ impl ListObjectVersionsFluentBuilder {
     /// <p>Specifies the optional fields that you want returned in the response. Fields that you do not specify are not returned.</p>
     pub fn get_optional_object_attributes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionalObjectAttributes>> {
         self.inner.get_optional_object_attributes()
+    }
+}
+
+impl crate::client::customize::internal::CustomizablePresigned<crate::operation::list_object_versions::ListObjectVersionsError>
+    for ListObjectVersionsFluentBuilder
+{
+    fn presign(
+        self,
+        config_override: crate::config::Builder,
+        presigning_config: crate::presigning::PresigningConfig,
+    ) -> crate::client::customize::internal::BoxFuture<
+        crate::client::customize::internal::SendResult<
+            crate::presigning::PresignedRequest,
+            crate::operation::list_object_versions::ListObjectVersionsError,
+        >,
+    > {
+        ::std::boxed::Box::pin(async move { self.config_override(config_override).presigned(presigning_config).await })
     }
 }

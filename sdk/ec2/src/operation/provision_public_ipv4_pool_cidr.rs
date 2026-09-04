@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Provisi
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::provision_public_ipv4_pool_cidr::ProvisionPublicIpv4PoolCidrError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

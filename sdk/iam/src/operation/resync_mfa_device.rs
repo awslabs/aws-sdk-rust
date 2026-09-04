@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ResyncM
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::resync_mfa_device::ResyncMFADeviceError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::resync_mfa_device::ResyncMFADeviceError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

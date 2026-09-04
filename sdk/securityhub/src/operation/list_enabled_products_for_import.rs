@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListEna
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

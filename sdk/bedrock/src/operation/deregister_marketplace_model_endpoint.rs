@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deregis
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::deregister_marketplace_model_endpoint::DeregisterMarketplaceModelEndpointError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutVoic
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

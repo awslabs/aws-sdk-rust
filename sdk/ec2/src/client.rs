@@ -2030,4 +2030,6 @@ mod update_security_group_rule_descriptions_egress;
 
 mod update_security_group_rule_descriptions_ingress;
 
+mod validate_security_group_quotas_for_interface;
+
 mod withdraw_byoip_cidr;

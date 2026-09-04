@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListInb
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_inbound_responsibility_transfers::ListInboundResponsibilityTransfersError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

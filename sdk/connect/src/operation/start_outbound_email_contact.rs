@@ -151,6 +151,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartOu
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_outbound_email_contact::StartOutboundEmailContactError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_outbound_email_contact::StartOutboundEmailContactError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

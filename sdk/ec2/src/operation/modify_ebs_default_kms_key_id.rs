@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyE
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

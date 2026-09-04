@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetQual
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_qualifications_disassociation_task::GetQualificationsDisassociationTaskError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_qualifications_disassociation_task::GetQualificationsDisassociationTaskError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

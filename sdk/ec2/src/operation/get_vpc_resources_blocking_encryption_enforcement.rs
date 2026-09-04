@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetVpcR
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::get_vpc_resources_blocking_encryption_enforcement::GetVpcResourcesBlockingEncryptionEnforcementError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::get_vpc_resources_blocking_encryption_enforcement::GetVpcResourcesBlockingEncryptionEnforcementError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

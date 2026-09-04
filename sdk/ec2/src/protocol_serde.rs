@@ -3223,6 +3223,10 @@ pub(crate) mod shape_update_security_group_rule_descriptions_ingress;
 
 pub(crate) mod shape_update_security_group_rule_descriptions_ingress_input;
 
+pub(crate) mod shape_validate_security_group_quotas_for_interface;
+
+pub(crate) mod shape_validate_security_group_quotas_for_interface_input;
+
 pub(crate) mod shape_withdraw_byoip_cidr;
 
 pub(crate) mod shape_withdraw_byoip_cidr_input;

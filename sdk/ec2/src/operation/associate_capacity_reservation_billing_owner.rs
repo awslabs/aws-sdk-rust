@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::associate_capacity_reservation_billing_owner::AssociateCapacityReservationBillingOwnerError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::associate_capacity_reservation_billing_owner::AssociateCapacityReservationBillingOwnerError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

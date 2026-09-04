@@ -144,6 +144,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RotateE
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::rotate_encryption_key::RotateEncryptionKeyError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::rotate_encryption_key::RotateEncryptionKeyError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

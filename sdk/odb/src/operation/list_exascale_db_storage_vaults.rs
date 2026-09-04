@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListExa
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_exascale_db_storage_vaults::ListExascaleDbStorageVaultsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Rollbac
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

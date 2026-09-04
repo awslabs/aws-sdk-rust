@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ResendO
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::resend_operation_authorization::ResendOperationAuthorizationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::resend_operation_authorization::ResendOperationAuthorizationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

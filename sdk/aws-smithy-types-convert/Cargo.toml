@@ -22,7 +22,7 @@ convert-streams = ["aws-smithy-async", "futures-core"]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
 optional = true
-version = "1.6.2"
+version = "1.6.3"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

@@ -185,6 +185,42 @@ pub(crate) fn time_shift_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn vast_request_configuration_correct_errors(
+    mut builder: crate::types::builders::VastRequestConfigurationBuilder,
+) -> crate::types::builders::VastRequestConfigurationBuilder {
+    if builder.runtime.is_none() {
+        builder.runtime = "no value was set".parse::<crate::types::RuntimeType>().ok()
+    }
+    if builder.method_type.is_none() {
+        builder.method_type = "no value was set".parse::<crate::types::MethodType>().ok()
+    }
+    if builder.request_timeout_milliseconds.is_none() {
+        builder.request_timeout_milliseconds = Some(Default::default())
+    }
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn yield_optimization_configuration_correct_errors(
+    mut builder: crate::types::builders::YieldOptimizationConfigurationBuilder,
+) -> crate::types::builders::YieldOptimizationConfigurationBuilder {
+    if builder.minimum_unfilled_duration.is_none() {
+        builder.minimum_unfilled_duration = Some(Default::default())
+    }
+    if builder.publisher_id.is_none() {
+        builder.publisher_id = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = "no value was set".parse::<crate::types::ApsRegion>().ok()
+    }
+    if builder.open_rtb_template.is_none() {
+        builder.open_rtb_template = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ad_break_correct_errors(mut builder: crate::types::builders::AdBreakBuilder) -> crate::types::builders::AdBreakBuilder {
     if builder.offset_millis.is_none() {
         builder.offset_millis = Some(Default::default())

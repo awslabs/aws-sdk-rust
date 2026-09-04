@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetUsag
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_usage_plan_keys::GetUsagePlanKeysError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_usage_plan_keys::GetUsagePlanKeysError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

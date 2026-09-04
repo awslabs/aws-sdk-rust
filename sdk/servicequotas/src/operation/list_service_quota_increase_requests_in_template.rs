@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListSer
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

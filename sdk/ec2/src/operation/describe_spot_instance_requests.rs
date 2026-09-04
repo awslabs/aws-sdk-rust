@@ -144,6 +144,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

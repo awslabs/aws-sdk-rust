@@ -158,6 +158,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateD
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::update_data_protection_settings::UpdateDataProtectionSettingsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

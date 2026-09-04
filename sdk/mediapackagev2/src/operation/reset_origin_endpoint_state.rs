@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ResetOr
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::reset_origin_endpoint_state::ResetOriginEndpointStateError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

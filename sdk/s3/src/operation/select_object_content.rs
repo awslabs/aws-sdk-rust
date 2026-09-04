@@ -131,7 +131,8 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SelectO
                                             let mut transient_errors: Vec<&'static str> = ::aws_runtime::retries::classifiers::TRANSIENT_ERRORS.into();
                                             transient_errors.push("InternalError");
                                             ::std::borrow::Cow::Owned(transient_errors)
-                                            }).build());
+                                            }).build())
+.with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<crate::operation::select_object_content::SelectObjectContentError>::new());
 
         ::std::borrow::Cow::Owned(rcb)
     }

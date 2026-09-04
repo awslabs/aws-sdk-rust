@@ -156,6 +156,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Channel
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::channel_flow_callback::ChannelFlowCallbackError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::channel_flow_callback::ChannelFlowCallbackError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

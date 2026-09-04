@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCus
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_custom_line_item_versions::ListCustomLineItemVersionsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

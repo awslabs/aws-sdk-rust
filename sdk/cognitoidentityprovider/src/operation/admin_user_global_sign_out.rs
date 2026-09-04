@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AdminUs
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

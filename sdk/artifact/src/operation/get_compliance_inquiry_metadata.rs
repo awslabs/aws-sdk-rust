@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetComp
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_compliance_inquiry_metadata::GetComplianceInquiryMetadataError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_compliance_inquiry_metadata::GetComplianceInquiryMetadataError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

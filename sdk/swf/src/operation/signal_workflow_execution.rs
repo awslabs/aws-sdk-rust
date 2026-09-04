@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SignalW
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::signal_workflow_execution::SignalWorkflowExecutionError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::signal_workflow_execution::SignalWorkflowExecutionError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListWir
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_wireless_gateway_task_definitions::ListWirelessGatewayTaskDefinitionsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

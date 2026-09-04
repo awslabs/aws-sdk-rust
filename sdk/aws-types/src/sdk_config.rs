@@ -65,6 +65,13 @@ This only needs to be required for creating deterministic tests or platforms whe
 **Only some services support request compression.** For services
 that don't support request compression, this setting does nothing.
 " };
+        (disable_clock_skew_correction) => {
+"When `true`, disable clock skew correction. Defaults to `false`.
+
+Clock skew correction adjusts the request signing timestamp to compensate for drift between
+the client and service clocks. When disabled, the SDK signs with the local clock and does not
+retry clock-skew errors.
+" };
         (request_min_compression_size_bytes) => {
 "The minimum size of request that should be compressed. Defaults to `10240` bytes.
 
@@ -130,6 +137,7 @@ pub struct SdkConfig {
     service_config: Option<Arc<dyn LoadServiceConfig>>,
     config_origins: HashMap<&'static str, Origin>,
     disable_request_compression: Option<bool>,
+    disable_clock_skew_correction: Option<bool>,
     request_min_compression_size_bytes: Option<u32>,
     request_checksum_calculation: Option<RequestChecksumCalculation>,
     response_checksum_validation: Option<ResponseChecksumValidation>,
@@ -165,6 +173,7 @@ pub struct Builder {
     service_config: Option<Arc<dyn LoadServiceConfig>>,
     config_origins: HashMap<&'static str, Origin>,
     disable_request_compression: Option<bool>,
+    disable_clock_skew_correction: Option<bool>,
     request_min_compression_size_bytes: Option<u32>,
     request_checksum_calculation: Option<RequestChecksumCalculation>,
     response_checksum_validation: Option<ResponseChecksumValidation>,
@@ -815,6 +824,21 @@ impl Builder {
         self
     }
 
+    #[doc = docs_for!(disable_clock_skew_correction)]
+    pub fn disable_clock_skew_correction(mut self, disable_clock_skew_correction: bool) -> Self {
+        self.set_disable_clock_skew_correction(Some(disable_clock_skew_correction));
+        self
+    }
+
+    #[doc = docs_for!(disable_clock_skew_correction)]
+    pub fn set_disable_clock_skew_correction(
+        &mut self,
+        disable_clock_skew_correction: Option<bool>,
+    ) -> &mut Self {
+        self.disable_clock_skew_correction = disable_clock_skew_correction;
+        self
+    }
+
     #[doc = docs_for!(request_min_compression_size_bytes)]
     pub fn request_min_compression_size_bytes(
         mut self,
@@ -937,6 +961,7 @@ impl Builder {
             service_config: self.service_config,
             config_origins: self.config_origins,
             disable_request_compression: self.disable_request_compression,
+            disable_clock_skew_correction: self.disable_clock_skew_correction,
             request_min_compression_size_bytes: self.request_min_compression_size_bytes,
             request_checksum_calculation: self.request_checksum_calculation,
             response_checksum_validation: self.response_checksum_validation,
@@ -1112,6 +1137,11 @@ impl SdkConfig {
         self.disable_request_compression
     }
 
+    /// When true, clock skew correction is disabled.
+    pub fn disable_clock_skew_correction(&self) -> Option<bool> {
+        self.disable_clock_skew_correction
+    }
+
     /// Configured checksum request behavior.
     pub fn request_checksum_calculation(&self) -> Option<RequestChecksumCalculation> {
         self.request_checksum_calculation
@@ -1192,6 +1222,7 @@ impl SdkConfig {
             service_config: self.service_config,
             config_origins: self.config_origins,
             disable_request_compression: self.disable_request_compression,
+            disable_clock_skew_correction: self.disable_clock_skew_correction,
             request_min_compression_size_bytes: self.request_min_compression_size_bytes,
             request_checksum_calculation: self.request_checksum_calculation,
             response_checksum_validation: self.response_checksum_validation,

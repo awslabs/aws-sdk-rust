@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelE
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

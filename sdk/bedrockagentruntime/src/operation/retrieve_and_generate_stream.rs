@@ -147,6 +147,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Retriev
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::retrieve_and_generate_stream::RetrieveAndGenerateStreamError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Preview
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::preview_privacy_impact::PreviewPrivacyImpactError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::preview_privacy_impact::PreviewPrivacyImpactError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RevokeI
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::revoke_ip_rules::RevokeIpRulesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::revoke_ip_rules::RevokeIpRulesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

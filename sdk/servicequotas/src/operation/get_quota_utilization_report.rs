@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetQuot
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)
@@ -329,6 +332,8 @@ pub enum GetQuotaUtilizationReportError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Invalid input was provided.</p>
     IllegalArgumentException(crate::types::error::IllegalArgumentException),
+    /// <p>Invalid input was provided.</p>
+    InvalidPaginationTokenException(crate::types::error::InvalidPaginationTokenException),
     /// <p>The specified resource does not exist.</p>
     NoSuchResourceException(crate::types::error::NoSuchResourceException),
     /// <p>Something went wrong.</p>
@@ -370,6 +375,7 @@ impl GetQuotaUtilizationReportError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IllegalArgumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidPaginationTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchResourceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -383,6 +389,10 @@ impl GetQuotaUtilizationReportError {
     /// Returns `true` if the error kind is `GetQuotaUtilizationReportError::IllegalArgumentException`.
     pub fn is_illegal_argument_exception(&self) -> bool {
         matches!(self, Self::IllegalArgumentException(_))
+    }
+    /// Returns `true` if the error kind is `GetQuotaUtilizationReportError::InvalidPaginationTokenException`.
+    pub fn is_invalid_pagination_token_exception(&self) -> bool {
+        matches!(self, Self::InvalidPaginationTokenException(_))
     }
     /// Returns `true` if the error kind is `GetQuotaUtilizationReportError::NoSuchResourceException`.
     pub fn is_no_such_resource_exception(&self) -> bool {
@@ -402,6 +412,7 @@ impl ::std::error::Error for GetQuotaUtilizationReportError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalArgumentException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidPaginationTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchResourceException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -414,6 +425,7 @@ impl ::std::fmt::Display for GetQuotaUtilizationReportError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::IllegalArgumentException(_inner) => _inner.fmt(f),
+            Self::InvalidPaginationTokenException(_inner) => _inner.fmt(f),
             Self::NoSuchResourceException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -440,6 +452,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetQuotaUtili
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IllegalArgumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidPaginationTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchResourceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

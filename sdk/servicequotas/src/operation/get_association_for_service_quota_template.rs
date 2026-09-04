@@ -146,6 +146,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAsso
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_association_for_service_quota_template::GetAssociationForServiceQuotaTemplateError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

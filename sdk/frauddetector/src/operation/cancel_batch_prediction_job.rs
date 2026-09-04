@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelB
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

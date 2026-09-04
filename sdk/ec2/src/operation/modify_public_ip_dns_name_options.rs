@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyP
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::modify_public_ip_dns_name_options::ModifyPublicIpDnsNameOptionsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::modify_public_ip_dns_name_options::ModifyPublicIpDnsNameOptionsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

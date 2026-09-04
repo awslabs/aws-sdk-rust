@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::associate_source_to_s3_table_integration::AssociateSourceToS3TableIntegrationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

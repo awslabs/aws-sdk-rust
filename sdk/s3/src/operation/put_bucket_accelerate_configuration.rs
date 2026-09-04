@@ -218,7 +218,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBuck
                     ::std::borrow::Cow::Owned(transient_errors)
                 })
                 .build(),
-            );
+            )
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::put_bucket_accelerate_configuration::PutBucketAccelerateConfigurationError,
+            >::new());
 
         ::std::borrow::Cow::Owned(rcb)
     }

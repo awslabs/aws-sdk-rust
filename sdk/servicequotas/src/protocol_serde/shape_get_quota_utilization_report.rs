@@ -54,6 +54,26 @@ pub fn de_get_quota_utilization_report_http_error(
             }
             tmp
         }),
+        "InvalidPaginationTokenException" => {
+            crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::InvalidPaginationTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::InvalidPaginationTokenExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_invalid_pagination_token_exception::de_invalid_pagination_token_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "NoSuchResourceException" => crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::NoSuchResourceException({
             #[allow(unused_mut)]
             let mut tmp = {

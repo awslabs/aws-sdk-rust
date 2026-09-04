@@ -279,6 +279,10 @@ pub(crate) mod shape_time_shift_configuration;
 
 pub(crate) mod shape_update_program_schedule_configuration;
 
+pub(crate) mod shape_vast_request_configuration;
+
+pub(crate) mod shape_yield_optimization_configuration;
+
 pub(crate) mod shape_ad_break_opportunity;
 
 pub(crate) mod shape_ad_marker_passthrough;

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Increas
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

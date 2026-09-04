@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartWi
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

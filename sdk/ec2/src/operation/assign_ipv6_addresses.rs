@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AssignI
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::assign_ipv6_addresses::AssignIpv6AddressesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::assign_ipv6_addresses::AssignIpv6AddressesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -24,7 +24,7 @@ urlencoding = "2.1"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-1x"]
-version = "1.15.0"
+version = "1.16.0"
 
 [dependencies.aws-smithy-schema]
 path = "../aws-smithy-schema"
@@ -33,7 +33,7 @@ version = "0.2.0"
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.6.2"
+version = "1.6.3"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"

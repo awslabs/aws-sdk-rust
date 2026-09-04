@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateL
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::create_logically_air_gapped_backup_vault::CreateLogicallyAirGappedBackupVaultError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

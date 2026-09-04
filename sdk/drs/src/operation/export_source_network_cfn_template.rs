@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ExportS
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::export_source_network_cfn_template::ExportSourceNetworkCfnTemplateError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

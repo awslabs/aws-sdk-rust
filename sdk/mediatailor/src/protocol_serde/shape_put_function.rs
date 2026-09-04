@@ -114,6 +114,11 @@ pub(crate) fn de_put_function(
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                 }
+                "VastRequestConfiguration" => {
+                    builder = builder.set_vast_request_configuration(
+                        crate::protocol_serde::shape_vast_request_configuration::de_vast_request_configuration(tokens, _value, depth + 1)?,
+                    );
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

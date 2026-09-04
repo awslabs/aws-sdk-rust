@@ -183,6 +183,15 @@ where
                                 )?,
                             );
                         }
+                        "YieldOptimizationConfiguration" => {
+                            builder = builder.set_yield_optimization_configuration(
+                                crate::protocol_serde::shape_yield_optimization_configuration::de_yield_optimization_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "FunctionMapping" => {
                             builder = builder.set_function_mapping(crate::protocol_serde::shape_function_mapping::de_function_mapping(
                                 tokens,

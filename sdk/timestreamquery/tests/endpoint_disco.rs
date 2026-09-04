@@ -36,6 +36,12 @@ async fn do_endpoint_discovery() {
         .build();
     let conf = query::config::Builder::from(&config)
         .idempotency_token_provider("0000-0000-0000")
+        // The replay fixture's recorded responses carry real-world `Date` headers, while the test
+        // clock is frozen in the past. Disable clock skew correction so those `Date`s don't shift
+        // the signing timestamp of subsequent requests; this test covers endpoint discovery, not
+        // clock skew. As an added benefit, this exercises `disable_clock_skew_correction` and
+        // confirms it works as expected: signing timestamps stay on the frozen clock.
+        .disable_clock_skew_correction(true)
         .build();
     let (client, reloader) = query::Client::from_conf(conf)
         .with_endpoint_discovery_enabled()

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Associa
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

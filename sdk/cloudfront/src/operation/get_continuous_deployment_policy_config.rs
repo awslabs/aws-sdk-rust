@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetCont
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_continuous_deployment_policy_config::GetContinuousDeploymentPolicyConfigError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

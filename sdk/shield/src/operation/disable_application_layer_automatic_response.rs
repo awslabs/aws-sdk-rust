@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disable
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

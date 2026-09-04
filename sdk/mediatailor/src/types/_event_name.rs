@@ -12,7 +12,9 @@
 /// ```text
 /// # let eventname = unimplemented!();
 /// match eventname {
+///     EventName::PostAdsResponse => { /* ... */ },
 ///     EventName::PreAdsRequest => { /* ... */ },
+///     EventName::PreManifestInsertion => { /* ... */ },
 ///     EventName::PreSessionInitialization => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -43,7 +45,11 @@
 )]
 pub enum EventName {
     #[allow(missing_docs)] // documentation missing in model
+    PostAdsResponse,
+    #[allow(missing_docs)] // documentation missing in model
     PreAdsRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    PreManifestInsertion,
     #[allow(missing_docs)] // documentation missing in model
     PreSessionInitialization,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -53,7 +59,9 @@ pub enum EventName {
 impl ::std::convert::From<&str> for EventName {
     fn from(s: &str) -> Self {
         match s {
+            "POST_ADS_RESPONSE" => EventName::PostAdsResponse,
             "PRE_ADS_REQUEST" => EventName::PreAdsRequest,
+            "PRE_MANIFEST_INSERTION" => EventName::PreManifestInsertion,
             "PRE_SESSION_INITIALIZATION" => EventName::PreSessionInitialization,
             other => EventName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -70,14 +78,21 @@ impl EventName {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EventName::PostAdsResponse => "POST_ADS_RESPONSE",
             EventName::PreAdsRequest => "PRE_ADS_REQUEST",
+            EventName::PreManifestInsertion => "PRE_MANIFEST_INSERTION",
             EventName::PreSessionInitialization => "PRE_SESSION_INITIALIZATION",
             EventName::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRE_ADS_REQUEST", "PRE_SESSION_INITIALIZATION"]
+        &[
+            "POST_ADS_RESPONSE",
+            "PRE_ADS_REQUEST",
+            "PRE_MANIFEST_INSERTION",
+            "PRE_SESSION_INITIALIZATION",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for EventName {
@@ -100,7 +115,9 @@ impl EventName {
 impl ::std::fmt::Display for EventName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EventName::PostAdsResponse => write!(f, "POST_ADS_RESPONSE"),
             EventName::PreAdsRequest => write!(f, "PRE_ADS_REQUEST"),
+            EventName::PreManifestInsertion => write!(f, "PRE_MANIFEST_INSERTION"),
             EventName::PreSessionInitialization => write!(f, "PRE_SESSION_INITIALIZATION"),
             EventName::Unknown(value) => write!(f, "{value}"),
         }

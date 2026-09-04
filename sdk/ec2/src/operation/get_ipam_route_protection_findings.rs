@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetIpam
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_ipam_route_protection_findings::GetIpamRouteProtectionFindingsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_ipam_route_protection_findings::GetIpamRouteProtectionFindingsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

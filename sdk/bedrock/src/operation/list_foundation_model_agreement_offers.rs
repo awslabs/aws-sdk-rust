@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListFou
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_foundation_model_agreement_offers::ListFoundationModelAgreementOffersError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

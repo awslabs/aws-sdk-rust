@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAva
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

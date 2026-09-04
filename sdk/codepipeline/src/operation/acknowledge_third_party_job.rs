@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Acknowl
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

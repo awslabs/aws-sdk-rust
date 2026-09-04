@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ExportQ
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::export_q_app_session_data::ExportQAppSessionDataError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::export_q_app_session_data::ExportQAppSessionDataError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

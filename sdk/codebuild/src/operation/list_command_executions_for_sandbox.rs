@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListCom
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_command_executions_for_sandbox::ListCommandExecutionsForSandboxError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListInf
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

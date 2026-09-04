@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AddAppl
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

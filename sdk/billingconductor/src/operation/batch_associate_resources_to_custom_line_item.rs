@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchAs
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

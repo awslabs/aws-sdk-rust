@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetPull
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

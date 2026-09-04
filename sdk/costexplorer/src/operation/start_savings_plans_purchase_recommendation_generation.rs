@@ -142,6 +142,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartSa
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

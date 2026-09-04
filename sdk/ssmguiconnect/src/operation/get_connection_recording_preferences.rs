@@ -146,6 +146,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetConn
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_connection_recording_preferences::GetConnectionRecordingPreferencesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_connection_recording_preferences::GetConnectionRecordingPreferencesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

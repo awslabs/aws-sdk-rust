@@ -146,6 +146,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PollFor
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

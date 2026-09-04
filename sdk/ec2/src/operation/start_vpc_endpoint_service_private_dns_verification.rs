@@ -145,6 +145,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartVp
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::start_vpc_endpoint_service_private_dns_verification::StartVpcEndpointServicePrivateDnsVerificationError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

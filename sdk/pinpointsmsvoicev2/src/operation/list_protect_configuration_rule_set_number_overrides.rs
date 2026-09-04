@@ -145,6 +145,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPro
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::list_protect_configuration_rule_set_number_overrides::ListProtectConfigurationRuleSetNumberOverridesError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

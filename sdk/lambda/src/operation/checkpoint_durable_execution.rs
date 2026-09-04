@@ -152,6 +152,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Checkpo
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::checkpoint_durable_execution::CheckpointDurableExecutionError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

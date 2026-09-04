@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendNot
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::send_notify_text_message::SendNotifyTextMessageError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::send_notify_text_message::SendNotifyTextMessageError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -369,17 +369,31 @@ impl PutPlaybackConfigurationFluentBuilder {
     pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::AdDecisionServerConfiguration> {
         self.inner.get_ad_decision_server_configuration()
     }
+    /// <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+    pub fn yield_optimization_configuration(mut self, input: crate::types::YieldOptimizationConfiguration) -> Self {
+        self.inner = self.inner.yield_optimization_configuration(input);
+        self
+    }
+    /// <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+    pub fn set_yield_optimization_configuration(mut self, input: ::std::option::Option<crate::types::YieldOptimizationConfiguration>) -> Self {
+        self.inner = self.inner.set_yield_optimization_configuration(input);
+        self
+    }
+    /// <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+    pub fn get_yield_optimization_configuration(&self) -> &::std::option::Option<crate::types::YieldOptimizationConfiguration> {
+        self.inner.get_yield_optimization_configuration()
+    }
     ///
     /// Adds a key-value pair to `FunctionMapping`.
     ///
     /// To override the contents of this collection use [`set_function_mapping`](Self::set_function_mapping).
     ///
-    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>, <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub fn function_mapping(mut self, k: crate::types::EventName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.function_mapping(k, v.into());
         self
     }
-    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>, <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub fn set_function_mapping(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
@@ -387,7 +401,7 @@ impl PutPlaybackConfigurationFluentBuilder {
         self.inner = self.inner.set_function_mapping(input);
         self
     }
-    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>, <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub fn get_function_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
         self.inner.get_function_mapping()
     }

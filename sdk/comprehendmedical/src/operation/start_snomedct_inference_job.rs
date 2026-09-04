@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartSN
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

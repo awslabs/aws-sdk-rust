@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Validat
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::validate_pull_through_cache_rule::ValidatePullThroughCacheRuleError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

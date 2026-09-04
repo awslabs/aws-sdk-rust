@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateM
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

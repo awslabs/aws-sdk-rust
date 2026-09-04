@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CountCl
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -54,7 +54,9 @@ pub struct PlaybackConfiguration {
     pub ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
     /// <p>Configuration parameters for customizing HTTP requests sent to the ad decision server (ADS). This allows you to specify the HTTP method, headers, request body, and compression settings for ADS requests.</p>
     pub ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
-    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+    pub yield_optimization_configuration: ::std::option::Option<crate::types::YieldOptimizationConfiguration>,
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>, <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
     /// <p>The timeout settings for ad decision server interactions. These settings control how long MediaTailor waits for ADS responses and the total time budget for ad personalization across live, VOD, and prefetch workflows.</p>
     pub ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
@@ -162,7 +164,11 @@ impl PlaybackConfiguration {
     pub fn ad_decision_server_configuration(&self) -> ::std::option::Option<&crate::types::AdDecisionServerConfiguration> {
         self.ad_decision_server_configuration.as_ref()
     }
-    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+    pub fn yield_optimization_configuration(&self) -> ::std::option::Option<&crate::types::YieldOptimizationConfiguration> {
+        self.yield_optimization_configuration.as_ref()
+    }
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>, <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub fn function_mapping(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
         self.function_mapping.as_ref()
     }
@@ -212,6 +218,7 @@ pub struct PlaybackConfigurationBuilder {
     pub(crate) video_content_source_url: ::std::option::Option<::std::string::String>,
     pub(crate) ad_conditioning_configuration: ::std::option::Option<crate::types::AdConditioningConfiguration>,
     pub(crate) ad_decision_server_configuration: ::std::option::Option<crate::types::AdDecisionServerConfiguration>,
+    pub(crate) yield_optimization_configuration: ::std::option::Option<crate::types::YieldOptimizationConfiguration>,
     pub(crate) function_mapping: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
     pub(crate) ads_personalization_timeouts: ::std::option::Option<crate::types::AdsPersonalizationTimeouts>,
     pub(crate) ads_personalization_concurrency: ::std::option::Option<crate::types::AdsPersonalizationConcurrency>,
@@ -578,18 +585,32 @@ impl PlaybackConfigurationBuilder {
     pub fn get_ad_decision_server_configuration(&self) -> &::std::option::Option<crate::types::AdDecisionServerConfiguration> {
         &self.ad_decision_server_configuration
     }
+    /// <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+    pub fn yield_optimization_configuration(mut self, input: crate::types::YieldOptimizationConfiguration) -> Self {
+        self.yield_optimization_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+    pub fn set_yield_optimization_configuration(mut self, input: ::std::option::Option<crate::types::YieldOptimizationConfiguration>) -> Self {
+        self.yield_optimization_configuration = input;
+        self
+    }
+    /// <p>Configuration for Yield Optimization, which fills unsold ad inventory in ad breaks with programmatic ads from Amazon Publisher Services (APS).</p>
+    pub fn get_yield_optimization_configuration(&self) -> &::std::option::Option<crate::types::YieldOptimizationConfiguration> {
+        &self.yield_optimization_configuration
+    }
     /// Adds a key-value pair to `function_mapping`.
     ///
     /// To override the contents of this collection use [`set_function_mapping`](Self::set_function_mapping).
     ///
-    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>, <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub fn function_mapping(mut self, k: crate::types::EventName, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.function_mapping.unwrap_or_default();
         hash_map.insert(k, v.into());
         self.function_mapping = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>, <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub fn set_function_mapping(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>>,
@@ -597,7 +618,7 @@ impl PlaybackConfigurationBuilder {
         self.function_mapping = input;
         self
     }
-    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code> and <code>PRE_ADS_REQUEST</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
+    /// <p>A map of lifecycle hook event names to function identifiers. The function mapping specifies which function MediaTailor executes at each lifecycle hook during ad insertion. Valid keys are <code>PRE_SESSION_INITIALIZATION</code>, <code>PRE_ADS_REQUEST</code>, <code>POST_ADS_RESPONSE</code>, and <code>PRE_MANIFEST_INSERTION</code>. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-hooks.html">Functions lifecycle hooks</a> in the <i>MediaTailor User Guide</i>.</p>
     pub fn get_function_mapping(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::EventName, ::std::string::String>> {
         &self.function_mapping
     }
@@ -660,6 +681,7 @@ impl PlaybackConfigurationBuilder {
             video_content_source_url: self.video_content_source_url,
             ad_conditioning_configuration: self.ad_conditioning_configuration,
             ad_decision_server_configuration: self.ad_decision_server_configuration,
+            yield_optimization_configuration: self.yield_optimization_configuration,
             function_mapping: self.function_mapping,
             ads_personalization_timeouts: self.ads_personalization_timeouts,
             ads_personalization_concurrency: self.ads_personalization_concurrency,

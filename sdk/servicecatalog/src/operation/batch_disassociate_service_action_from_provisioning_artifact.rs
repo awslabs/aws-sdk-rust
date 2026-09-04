@@ -126,7 +126,8 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchDi
 .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(BatchDisassociateServiceActionFromProvisioningArtifactEndpointParamsInterceptor))
                             .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError>::new())
 .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError>::new())
-.with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError>::new());
+.with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError>::new())
+.with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError>::new());
 
         ::std::borrow::Cow::Owned(rcb)
     }

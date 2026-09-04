@@ -5,13 +5,40 @@
 
 use bytes::Bytes;
 use std::any::Any;
+use std::fmt;
 
 /// Binary Blob Type
 ///
 /// Blobs represent protocol-agnostic binary content.
-#[derive(Debug, Default, PartialEq, Eq, Hash, Clone)]
+///
+/// The [`fmt::Debug`] and [`fmt::Display`] implementations render the contents
+/// as a lowercase hex-encoded string. This avoids noisy byte-array output
+/// in service logs while still preserving the underlying data.
+#[derive(Default, PartialEq, Eq, Hash, Clone)]
 pub struct Blob {
     inner: Bytes,
+}
+
+struct B<'b>(&'b [u8]);
+
+impl std::fmt::Debug for B<'_> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        self.0.iter().try_for_each(|b| write!(f, "{b:02x}"))
+    }
+}
+
+impl fmt::Debug for Blob {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_struct("Blob")
+            .field("inner", &format_args!("{:?}", B(&self.inner)))
+            .finish()
+    }
+}
+
+impl fmt::Display for Blob {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{:?}", B(&self.inner))
+    }
 }
 
 impl Blob {
@@ -177,6 +204,25 @@ mod test {
         let blob = Blob::new(bytes.as_slice());
 
         assert_eq!(bytes, blob.as_ref());
+    }
+
+    #[test]
+    fn blob_display_is_hex_encoded() {
+        let blob = Blob::new(vec![0xDE, 0xAD, 0xBE, 0xEF]);
+        assert_eq!(format!("{blob}"), "deadbeef");
+    }
+
+    #[test]
+    fn blob_debug_is_hex_encoded() {
+        let blob = Blob::new(vec![0x00, 0x01, 0x02, 0xFF]);
+        assert_eq!(format!("{blob:?}"), "Blob { inner: 000102ff }");
+    }
+
+    #[test]
+    fn empty_blob_display_and_debug() {
+        let blob = Blob::new(Vec::<u8>::new());
+        assert_eq!(format!("{blob}"), "");
+        assert_eq!(format!("{blob:?}"), "Blob { inner:  }");
     }
 }
 

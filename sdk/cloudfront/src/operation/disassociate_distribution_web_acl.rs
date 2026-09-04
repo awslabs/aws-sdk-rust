@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::disassociate_distribution_web_acl::DisassociateDistributionWebACLError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

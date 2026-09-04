@@ -17,6 +17,8 @@ pub use crate::types::_concurrent_executor_configuration::ConcurrentExecutorConf
 
 pub use crate::types::_sequential_executor_configuration::SequentialExecutorConfigurationBuilder;
 
+pub use crate::types::_vast_request_configuration::VastRequestConfigurationBuilder;
+
 pub use crate::types::_avail_suppression::AvailSuppressionBuilder;
 
 pub use crate::types::_bumper::BumperBuilder;
@@ -32,6 +34,8 @@ pub use crate::types::_manifest_processing_rules::ManifestProcessingRulesBuilder
 pub use crate::types::_ad_conditioning_configuration::AdConditioningConfigurationBuilder;
 
 pub use crate::types::_ad_decision_server_configuration::AdDecisionServerConfigurationBuilder;
+
+pub use crate::types::_yield_optimization_configuration::YieldOptimizationConfigurationBuilder;
 
 pub use crate::types::_ads_personalization_timeouts::AdsPersonalizationTimeoutsBuilder;
 

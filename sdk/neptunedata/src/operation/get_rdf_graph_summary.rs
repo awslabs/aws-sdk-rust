@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRDFG
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_rdf_graph_summary::GetRDFGraphSummaryError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

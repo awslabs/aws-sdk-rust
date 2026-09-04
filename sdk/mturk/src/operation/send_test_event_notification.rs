@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SendTes
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::send_test_event_notification::SendTestEventNotificationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::send_test_event_notification::SendTestEventNotificationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

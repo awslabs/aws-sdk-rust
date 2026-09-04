@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAcce
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::get_access_point_configuration_for_object_lambda::GetAccessPointConfigurationForObjectLambdaError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

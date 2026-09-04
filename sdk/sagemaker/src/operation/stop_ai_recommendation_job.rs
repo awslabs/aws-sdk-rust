@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StopAIR
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::stop_ai_recommendation_job::StopAIRecommendationJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::stop_ai_recommendation_job::StopAIRecommendationJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

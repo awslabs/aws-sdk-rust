@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateE
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::update_exascale_db_storage_vault::UpdateExascaleDbStorageVaultError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

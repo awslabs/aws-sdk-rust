@@ -445,6 +445,9 @@ impl From<crate::operation::get_quota_utilization_report::GetQuotaUtilizationRep
             crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::IllegalArgumentException(inner) => {
                 Error::IllegalArgumentException(inner)
             }
+            crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::InvalidPaginationTokenException(inner) => {
+                Error::InvalidPaginationTokenException(inner)
+            }
             crate::operation::get_quota_utilization_report::GetQuotaUtilizationReportError::NoSuchResourceException(inner) => {
                 Error::NoSuchResourceException(inner)
             }

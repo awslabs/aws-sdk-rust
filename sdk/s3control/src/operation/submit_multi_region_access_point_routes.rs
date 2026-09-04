@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SubmitM
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

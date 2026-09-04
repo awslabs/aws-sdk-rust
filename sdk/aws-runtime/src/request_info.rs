@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::service_clock_skew::ServiceClockSkew;
+use crate::service_clock_skew::AttemptSkew;
 use aws_smithy_async::time::TimeSource;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
@@ -17,7 +17,6 @@ use aws_smithy_types::timeout::TimeoutConfig;
 use aws_smithy_types::DateTime;
 use http_1x::{HeaderName, HeaderValue};
 use std::borrow::Cow;
-use std::time::Duration;
 
 #[allow(clippy::declare_interior_mutable_const)] // we will never mutate this
 const AMZ_SDK_REQUEST: HeaderName = HeaderName::from_static("amz-sdk-request");
@@ -71,9 +70,18 @@ impl RequestInfoInterceptor {
     ) -> Option<(Cow<'static, str>, Cow<'static, str>)> {
         let timeout_config = cfg.load::<TimeoutConfig>()?;
         let socket_read = timeout_config.read_timeout()?;
-        let estimated_skew: Duration = cfg.load::<ServiceClockSkew>().cloned()?.into();
-        let current_time = timesource.now();
-        let ttl = current_time.checked_add(socket_read + estimated_skew)?;
+        // Preserve prior behavior: emit `ttl` only on retries, not the initial attempt.
+        if cfg
+            .load::<RequestAttempts>()
+            .map(|a| a.attempts())
+            .unwrap_or(0)
+            < 2
+        {
+            return None;
+        }
+        // Zero skew when correction is disabled/unknown: keep the TTL hint, just unadjusted.
+        let skew = cfg.load::<AttemptSkew>().map(|s| s.0).unwrap_or_default();
+        let ttl = skew.apply(timesource.now()).checked_add(socket_read)?;
         let mut timestamp = DateTime::from(ttl);
         // Set subsec_nanos to 0 so that the formatted `DateTime` won't have fractional seconds.
         timestamp.set_subsec_nanos(0);

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AssignP
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

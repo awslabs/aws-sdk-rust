@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableI
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::enable_image_deprecation::EnableImageDeprecationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::enable_image_deprecation::EnableImageDeprecationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

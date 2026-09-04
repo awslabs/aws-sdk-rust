@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetProg
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_programmatic_access_credentials::GetProgrammaticAccessCredentialsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

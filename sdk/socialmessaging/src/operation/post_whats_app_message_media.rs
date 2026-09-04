@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PostWha
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::post_whats_app_message_media::PostWhatsAppMessageMediaError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::post_whats_app_message_media::PostWhatsAppMessageMediaError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

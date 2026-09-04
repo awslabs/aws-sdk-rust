@@ -124,5 +124,11 @@ pub fn ser_put_playback_configuration_input_input(
     if let Some(var_42) = &input.video_content_source_url {
         object.key("VideoContentSourceUrl").string(var_42.as_str());
     }
+    if let Some(var_43) = &input.yield_optimization_configuration {
+        #[allow(unused_mut)]
+        let mut object_44 = object.key("YieldOptimizationConfiguration").start_object();
+        crate::protocol_serde::shape_yield_optimization_configuration::ser_yield_optimization_configuration(&mut object_44, var_43)?;
+        object_44.finish();
+    }
     Ok(())
 }

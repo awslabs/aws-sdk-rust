@@ -25,6 +25,8 @@ pub use crate::types::_concurrent_executor_configuration::ConcurrentExecutorConf
 
 pub use crate::types::_sequential_executor_configuration::SequentialExecutorConfiguration;
 
+pub use crate::types::_vast_request_configuration::VastRequestConfiguration;
+
 pub use crate::types::_avail_suppression::AvailSuppression;
 
 pub use crate::types::_bumper::Bumper;
@@ -42,6 +44,8 @@ pub use crate::types::_manifest_processing_rules::ManifestProcessingRules;
 pub use crate::types::_ad_conditioning_configuration::AdConditioningConfiguration;
 
 pub use crate::types::_ad_decision_server_configuration::AdDecisionServerConfiguration;
+
+pub use crate::types::_yield_optimization_configuration::YieldOptimizationConfiguration;
 
 pub use crate::types::_ads_personalization_timeouts::AdsPersonalizationTimeouts;
 
@@ -116,6 +120,8 @@ pub use crate::types::_streaming_media_file_conditioning::StreamingMediaFileCond
 pub use crate::types::_http_request::HttpRequest;
 
 pub use crate::types::_vast_response::VastResponse;
+
+pub use crate::types::_aps_region::ApsRegion;
 
 pub use crate::types::_event_name::EventName;
 
@@ -236,6 +242,8 @@ mod _alert;
 mod _alert_category;
 
 mod _alternate_media;
+
+mod _aps_region;
 
 mod _audience_media;
 
@@ -403,9 +411,13 @@ mod _update_program_schedule_configuration;
 
 mod _update_program_transition;
 
+mod _vast_request_configuration;
+
 mod _vast_response;
 
 mod _vod_source;
+
+mod _yield_optimization_configuration;
 
 /// Builders
 pub mod builders;

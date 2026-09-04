@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Replace
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

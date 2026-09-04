@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableV
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::enable_vpc_classic_link_dns_support::EnableVpcClassicLinkDnsSupportError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

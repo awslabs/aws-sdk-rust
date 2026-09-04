@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableE
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

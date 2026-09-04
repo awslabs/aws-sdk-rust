@@ -144,6 +144,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AssumeQ
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::assume_queue_role_for_worker::AssumeQueueRoleForWorkerError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::assume_queue_role_for_worker::AssumeQueueRoleForWorkerError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

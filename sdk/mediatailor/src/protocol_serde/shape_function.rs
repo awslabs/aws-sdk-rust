@@ -70,6 +70,11 @@ where
                                 )?,
                             );
                         }
+                        "VastRequestConfiguration" => {
+                            builder = builder.set_vast_request_configuration(
+                                crate::protocol_serde::shape_vast_request_configuration::de_vast_request_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                         }

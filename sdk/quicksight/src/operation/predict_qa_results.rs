@@ -144,6 +144,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Predict
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::predict_qa_results::PredictQAResultsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::predict_qa_results::PredictQAResultsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

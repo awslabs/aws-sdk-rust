@@ -49,7 +49,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-transfer = "1.127.0"
+//! aws-sdk-transfer = "1.128.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

@@ -130,6 +130,12 @@ impl Config {
         entries.reverse();
         entries
     }
+    /// Returns the `disable clock skew correction` setting, if it was provided.
+    pub fn disable_clock_skew_correction(&self) -> ::std::option::Option<bool> {
+        self.config
+            .load::<::aws_runtime::service_clock_skew::DisableClockSkewCorrection>()
+            .map(|it| it.is_disabled())
+    }
     /// Returns the invocation ID generator if one was given in config.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -202,6 +208,11 @@ impl Builder {
         for framework_metadata in config_bag.load::<::aws_types::sdk_ua_metadata::FrameworkMetadata>() {
             builder.push_framework_metadata(framework_metadata.clone());
         }
+        builder.set_disable_clock_skew_correction(
+            config_bag
+                .load::<::aws_runtime::service_clock_skew::DisableClockSkewCorrection>()
+                .map(|it| it.is_disabled()),
+        );
         builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
         builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
         builder.set_region(config_bag.load::<crate::config::Region>().cloned());
@@ -1156,6 +1167,18 @@ impl Builder {
         self.config.store_append(framework_metadata);
         self
     }
+    /// Sets whether clock skew correction is disabled when making requests.
+    pub fn disable_clock_skew_correction(mut self, disable_clock_skew_correction: impl ::std::convert::Into<::std::option::Option<bool>>) -> Self {
+        self.set_disable_clock_skew_correction(disable_clock_skew_correction.into());
+        self
+    }
+
+    /// Sets whether clock skew correction is disabled when making requests.
+    pub fn set_disable_clock_skew_correction(&mut self, disable_clock_skew_correction: ::std::option::Option<bool>) -> &mut Self {
+        self.config
+            .store_or_unset::<::aws_runtime::service_clock_skew::DisableClockSkewCorrection>(disable_clock_skew_correction.map(Into::into));
+        self
+    }
     /// Overrides the default invocation ID generator.
     ///
     /// The invocation ID generator generates ID values for the `amz-sdk-invocation-id` header. By default, this will be a random UUID. Overriding it may be useful in tests that examine the HTTP request and need to be deterministic.
@@ -1419,9 +1442,7 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
             crate::sdk_feature_tracker::retry_mode::RetryModeFeatureTrackerInterceptor::new(),
         ));
-        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
-            ::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new(),
-        ));
+        runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::request_info::RequestInfoInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::invocation_id::InvocationIdInterceptor::new());
@@ -1568,6 +1589,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         if let Some(cache) = input.identity_cache() {
             builder.set_identity_cache(cache);
         }
+        builder = builder.disable_clock_skew_correction(input.disable_clock_skew_correction());
         builder.set_app_name(input.app_name().cloned());
         for framework_metadata in input.framework_metadata() {
             builder.push_framework_metadata(framework_metadata.clone());

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableI
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

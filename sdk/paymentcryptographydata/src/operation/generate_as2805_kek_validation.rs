@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Generat
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::generate_as2805_kek_validation::GenerateAs2805KekValidationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::generate_as2805_kek_validation::GenerateAs2805KekValidationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

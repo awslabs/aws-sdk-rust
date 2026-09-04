@@ -44,8 +44,12 @@
 ///     AdsInteractionExcludeEventType::MakingAdsRequest => { /* ... */ },
 ///     AdsInteractionExcludeEventType::ModifiedTargetUrl => { /* ... */ },
 ///     AdsInteractionExcludeEventType::NonAdMarkerFound => { /* ... */ },
+///     AdsInteractionExcludeEventType::PostAdsResponseFunctionError => { /* ... */ },
+///     AdsInteractionExcludeEventType::PostAdsResponseHookError => { /* ... */ },
 ///     AdsInteractionExcludeEventType::PreAdsRequestFunctionError => { /* ... */ },
 ///     AdsInteractionExcludeEventType::PreAdsRequestHookError => { /* ... */ },
+///     AdsInteractionExcludeEventType::PreManifestInsertionFunctionError => { /* ... */ },
+///     AdsInteractionExcludeEventType::PreManifestInsertionHookError => { /* ... */ },
 ///     AdsInteractionExcludeEventType::RedirectedVastResponse => { /* ... */ },
 ///     AdsInteractionExcludeEventType::VastRedirect => { /* ... */ },
 ///     AdsInteractionExcludeEventType::VastResponse => { /* ... */ },
@@ -77,7 +81,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>An ADS interaction log event type that MediaTailor emits by default and that you can suppress. For descriptions of each event type, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor ADS logs description and event types</a> in Elemental MediaTailor User Guide.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -148,9 +152,17 @@ pub enum AdsInteractionExcludeEventType {
     #[allow(missing_docs)] // documentation missing in model
     NonAdMarkerFound,
     #[allow(missing_docs)] // documentation missing in model
+    PostAdsResponseFunctionError,
+    #[allow(missing_docs)] // documentation missing in model
+    PostAdsResponseHookError,
+    #[allow(missing_docs)] // documentation missing in model
     PreAdsRequestFunctionError,
     #[allow(missing_docs)] // documentation missing in model
     PreAdsRequestHookError,
+    #[allow(missing_docs)] // documentation missing in model
+    PreManifestInsertionFunctionError,
+    #[allow(missing_docs)] // documentation missing in model
+    PreManifestInsertionHookError,
     #[allow(missing_docs)] // documentation missing in model
     RedirectedVastResponse,
     #[allow(missing_docs)] // documentation missing in model
@@ -208,8 +220,12 @@ impl ::std::convert::From<&str> for AdsInteractionExcludeEventType {
             "MAKING_ADS_REQUEST" => AdsInteractionExcludeEventType::MakingAdsRequest,
             "MODIFIED_TARGET_URL" => AdsInteractionExcludeEventType::ModifiedTargetUrl,
             "NON_AD_MARKER_FOUND" => AdsInteractionExcludeEventType::NonAdMarkerFound,
+            "POST_ADS_RESPONSE_FUNCTION_ERROR" => AdsInteractionExcludeEventType::PostAdsResponseFunctionError,
+            "POST_ADS_RESPONSE_HOOK_ERROR" => AdsInteractionExcludeEventType::PostAdsResponseHookError,
             "PRE_ADS_REQUEST_FUNCTION_ERROR" => AdsInteractionExcludeEventType::PreAdsRequestFunctionError,
             "PRE_ADS_REQUEST_HOOK_ERROR" => AdsInteractionExcludeEventType::PreAdsRequestHookError,
+            "PRE_MANIFEST_INSERTION_FUNCTION_ERROR" => AdsInteractionExcludeEventType::PreManifestInsertionFunctionError,
+            "PRE_MANIFEST_INSERTION_HOOK_ERROR" => AdsInteractionExcludeEventType::PreManifestInsertionHookError,
             "REDIRECTED_VAST_RESPONSE" => AdsInteractionExcludeEventType::RedirectedVastResponse,
             "VAST_REDIRECT" => AdsInteractionExcludeEventType::VastRedirect,
             "VAST_RESPONSE" => AdsInteractionExcludeEventType::VastResponse,
@@ -266,8 +282,12 @@ impl AdsInteractionExcludeEventType {
             AdsInteractionExcludeEventType::MakingAdsRequest => "MAKING_ADS_REQUEST",
             AdsInteractionExcludeEventType::ModifiedTargetUrl => "MODIFIED_TARGET_URL",
             AdsInteractionExcludeEventType::NonAdMarkerFound => "NON_AD_MARKER_FOUND",
+            AdsInteractionExcludeEventType::PostAdsResponseFunctionError => "POST_ADS_RESPONSE_FUNCTION_ERROR",
+            AdsInteractionExcludeEventType::PostAdsResponseHookError => "POST_ADS_RESPONSE_HOOK_ERROR",
             AdsInteractionExcludeEventType::PreAdsRequestFunctionError => "PRE_ADS_REQUEST_FUNCTION_ERROR",
             AdsInteractionExcludeEventType::PreAdsRequestHookError => "PRE_ADS_REQUEST_HOOK_ERROR",
+            AdsInteractionExcludeEventType::PreManifestInsertionFunctionError => "PRE_MANIFEST_INSERTION_FUNCTION_ERROR",
+            AdsInteractionExcludeEventType::PreManifestInsertionHookError => "PRE_MANIFEST_INSERTION_HOOK_ERROR",
             AdsInteractionExcludeEventType::RedirectedVastResponse => "REDIRECTED_VAST_RESPONSE",
             AdsInteractionExcludeEventType::VastRedirect => "VAST_REDIRECT",
             AdsInteractionExcludeEventType::VastResponse => "VAST_RESPONSE",
@@ -315,8 +335,12 @@ impl AdsInteractionExcludeEventType {
             "MAKING_ADS_REQUEST",
             "MODIFIED_TARGET_URL",
             "NON_AD_MARKER_FOUND",
+            "POST_ADS_RESPONSE_FUNCTION_ERROR",
+            "POST_ADS_RESPONSE_HOOK_ERROR",
             "PRE_ADS_REQUEST_FUNCTION_ERROR",
             "PRE_ADS_REQUEST_HOOK_ERROR",
+            "PRE_MANIFEST_INSERTION_FUNCTION_ERROR",
+            "PRE_MANIFEST_INSERTION_HOOK_ERROR",
             "REDIRECTED_VAST_RESPONSE",
             "VAST_REDIRECT",
             "VAST_RESPONSE",
@@ -381,8 +405,12 @@ impl ::std::fmt::Display for AdsInteractionExcludeEventType {
             AdsInteractionExcludeEventType::MakingAdsRequest => write!(f, "MAKING_ADS_REQUEST"),
             AdsInteractionExcludeEventType::ModifiedTargetUrl => write!(f, "MODIFIED_TARGET_URL"),
             AdsInteractionExcludeEventType::NonAdMarkerFound => write!(f, "NON_AD_MARKER_FOUND"),
+            AdsInteractionExcludeEventType::PostAdsResponseFunctionError => write!(f, "POST_ADS_RESPONSE_FUNCTION_ERROR"),
+            AdsInteractionExcludeEventType::PostAdsResponseHookError => write!(f, "POST_ADS_RESPONSE_HOOK_ERROR"),
             AdsInteractionExcludeEventType::PreAdsRequestFunctionError => write!(f, "PRE_ADS_REQUEST_FUNCTION_ERROR"),
             AdsInteractionExcludeEventType::PreAdsRequestHookError => write!(f, "PRE_ADS_REQUEST_HOOK_ERROR"),
+            AdsInteractionExcludeEventType::PreManifestInsertionFunctionError => write!(f, "PRE_MANIFEST_INSERTION_FUNCTION_ERROR"),
+            AdsInteractionExcludeEventType::PreManifestInsertionHookError => write!(f, "PRE_MANIFEST_INSERTION_HOOK_ERROR"),
             AdsInteractionExcludeEventType::RedirectedVastResponse => write!(f, "REDIRECTED_VAST_RESPONSE"),
             AdsInteractionExcludeEventType::VastRedirect => write!(f, "VAST_REDIRECT"),
             AdsInteractionExcludeEventType::VastResponse => write!(f, "VAST_RESPONSE"),

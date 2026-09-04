@@ -16,6 +16,7 @@
 ///     FunctionType::CustomOutput => { /* ... */ },
 ///     FunctionType::HttpRequest => { /* ... */ },
 ///     FunctionType::SequentialExecutor => { /* ... */ },
+///     FunctionType::VastRequest => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -38,7 +39,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// -- Define Enums
+/// <p>The type of a function, which determines what the function can do at runtime. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types.html">Function types and composition</a> in the <i>MediaTailor User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -52,6 +53,8 @@ pub enum FunctionType {
     HttpRequest,
     #[allow(missing_docs)] // documentation missing in model
     SequentialExecutor,
+    #[allow(missing_docs)] // documentation missing in model
+    VastRequest,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for FunctionType {
             "CUSTOM_OUTPUT" => FunctionType::CustomOutput,
             "HTTP_REQUEST" => FunctionType::HttpRequest,
             "SEQUENTIAL_EXECUTOR" => FunctionType::SequentialExecutor,
+            "VAST_REQUEST" => FunctionType::VastRequest,
             other => FunctionType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,19 @@ impl FunctionType {
             FunctionType::CustomOutput => "CUSTOM_OUTPUT",
             FunctionType::HttpRequest => "HTTP_REQUEST",
             FunctionType::SequentialExecutor => "SEQUENTIAL_EXECUTOR",
+            FunctionType::VastRequest => "VAST_REQUEST",
             FunctionType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONCURRENT_EXECUTOR", "CUSTOM_OUTPUT", "HTTP_REQUEST", "SEQUENTIAL_EXECUTOR"]
+        &[
+            "CONCURRENT_EXECUTOR",
+            "CUSTOM_OUTPUT",
+            "HTTP_REQUEST",
+            "SEQUENTIAL_EXECUTOR",
+            "VAST_REQUEST",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for FunctionType {
@@ -114,6 +125,7 @@ impl ::std::fmt::Display for FunctionType {
             FunctionType::CustomOutput => write!(f, "CUSTOM_OUTPUT"),
             FunctionType::HttpRequest => write!(f, "HTTP_REQUEST"),
             FunctionType::SequentialExecutor => write!(f, "SEQUENTIAL_EXECUTOR"),
+            FunctionType::VastRequest => write!(f, "VAST_REQUEST"),
             FunctionType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RetryWo
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::retry_workflow_step::RetryWorkflowStepError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::retry_workflow_step::RetryWorkflowStepError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

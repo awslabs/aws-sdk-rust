@@ -5,13 +5,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AdsInteractionLog {
-    /// <p>Indicates that MediaTailor emits <code>RAW_ADS_RESPONSE</code> logs for playback sessions that are initialized with this configuration.</p>
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in. For descriptions of each event type, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor ADS logs description and event types</a> in Elemental MediaTailor User Guide.</p>
     pub publish_opt_in_event_types: ::std::option::Option<::std::vec::Vec<crate::types::AdsInteractionPublishOptInEventType>>,
     /// <p>Indicates that MediaTailor won't emit the selected events in the logs for playback sessions that are initialized with this configuration.</p>
     pub exclude_event_types: ::std::option::Option<::std::vec::Vec<crate::types::AdsInteractionExcludeEventType>>,
 }
 impl AdsInteractionLog {
-    /// <p>Indicates that MediaTailor emits <code>RAW_ADS_RESPONSE</code> logs for playback sessions that are initialized with this configuration.</p>
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in. For descriptions of each event type, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor ADS logs description and event types</a> in Elemental MediaTailor User Guide.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.publish_opt_in_event_types.is_none()`.
     pub fn publish_opt_in_event_types(&self) -> &[crate::types::AdsInteractionPublishOptInEventType] {
@@ -43,14 +43,14 @@ impl AdsInteractionLogBuilder {
     ///
     /// To override the contents of this collection use [`set_publish_opt_in_event_types`](Self::set_publish_opt_in_event_types).
     ///
-    /// <p>Indicates that MediaTailor emits <code>RAW_ADS_RESPONSE</code> logs for playback sessions that are initialized with this configuration.</p>
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in. For descriptions of each event type, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor ADS logs description and event types</a> in Elemental MediaTailor User Guide.</p>
     pub fn publish_opt_in_event_types(mut self, input: crate::types::AdsInteractionPublishOptInEventType) -> Self {
         let mut v = self.publish_opt_in_event_types.unwrap_or_default();
         v.push(input);
         self.publish_opt_in_event_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Indicates that MediaTailor emits <code>RAW_ADS_RESPONSE</code> logs for playback sessions that are initialized with this configuration.</p>
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in. For descriptions of each event type, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor ADS logs description and event types</a> in Elemental MediaTailor User Guide.</p>
     pub fn set_publish_opt_in_event_types(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AdsInteractionPublishOptInEventType>>,
@@ -58,7 +58,7 @@ impl AdsInteractionLogBuilder {
         self.publish_opt_in_event_types = input;
         self
     }
-    /// <p>Indicates that MediaTailor emits <code>RAW_ADS_RESPONSE</code> logs for playback sessions that are initialized with this configuration.</p>
+    /// <p>Indicates that MediaTailor will emit the selected events in the logs for playback sessions that are initialized with this configuration. These events are not emitted by default and must be explicitly opted in. For descriptions of each event type, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor ADS logs description and event types</a> in Elemental MediaTailor User Guide.</p>
     pub fn get_publish_opt_in_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AdsInteractionPublishOptInEventType>> {
         &self.publish_opt_in_event_types
     }

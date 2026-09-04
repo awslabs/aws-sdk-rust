@@ -12,10 +12,16 @@
 /// ```text
 /// # let adsinteractionpublishoptineventtype = unimplemented!();
 /// match adsinteractionpublishoptineventtype {
+///     AdsInteractionPublishOptInEventType::PostAdsResponseFunctionCompleted => { /* ... */ },
+///     AdsInteractionPublishOptInEventType::PostAdsResponseHookSummary => { /* ... */ },
 ///     AdsInteractionPublishOptInEventType::PreAdsRequestFunctionCompleted => { /* ... */ },
 ///     AdsInteractionPublishOptInEventType::PreAdsRequestHookSummary => { /* ... */ },
+///     AdsInteractionPublishOptInEventType::PreManifestInsertionFunctionCompleted => { /* ... */ },
+///     AdsInteractionPublishOptInEventType::PreManifestInsertionHookSummary => { /* ... */ },
 ///     AdsInteractionPublishOptInEventType::RawAdsRequest => { /* ... */ },
 ///     AdsInteractionPublishOptInEventType::RawAdsResponse => { /* ... */ },
+///     AdsInteractionPublishOptInEventType::RawBidRequest => { /* ... */ },
+///     AdsInteractionPublishOptInEventType::RawBidResponse => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -38,20 +44,32 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>An ADS interaction log event type that MediaTailor emits only when you opt in to it. For descriptions of each event type, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ads-log-format.html">MediaTailor ADS logs description and event types</a> in Elemental MediaTailor User Guide.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum AdsInteractionPublishOptInEventType {
     #[allow(missing_docs)] // documentation missing in model
+    PostAdsResponseFunctionCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    PostAdsResponseHookSummary,
+    #[allow(missing_docs)] // documentation missing in model
     PreAdsRequestFunctionCompleted,
     #[allow(missing_docs)] // documentation missing in model
     PreAdsRequestHookSummary,
     #[allow(missing_docs)] // documentation missing in model
+    PreManifestInsertionFunctionCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    PreManifestInsertionHookSummary,
+    #[allow(missing_docs)] // documentation missing in model
     RawAdsRequest,
     #[allow(missing_docs)] // documentation missing in model
     RawAdsResponse,
+    #[allow(missing_docs)] // documentation missing in model
+    RawBidRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    RawBidResponse,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,10 +77,16 @@ pub enum AdsInteractionPublishOptInEventType {
 impl ::std::convert::From<&str> for AdsInteractionPublishOptInEventType {
     fn from(s: &str) -> Self {
         match s {
+            "POST_ADS_RESPONSE_FUNCTION_COMPLETED" => AdsInteractionPublishOptInEventType::PostAdsResponseFunctionCompleted,
+            "POST_ADS_RESPONSE_HOOK_SUMMARY" => AdsInteractionPublishOptInEventType::PostAdsResponseHookSummary,
             "PRE_ADS_REQUEST_FUNCTION_COMPLETED" => AdsInteractionPublishOptInEventType::PreAdsRequestFunctionCompleted,
             "PRE_ADS_REQUEST_HOOK_SUMMARY" => AdsInteractionPublishOptInEventType::PreAdsRequestHookSummary,
+            "PRE_MANIFEST_INSERTION_FUNCTION_COMPLETED" => AdsInteractionPublishOptInEventType::PreManifestInsertionFunctionCompleted,
+            "PRE_MANIFEST_INSERTION_HOOK_SUMMARY" => AdsInteractionPublishOptInEventType::PreManifestInsertionHookSummary,
             "RAW_ADS_REQUEST" => AdsInteractionPublishOptInEventType::RawAdsRequest,
             "RAW_ADS_RESPONSE" => AdsInteractionPublishOptInEventType::RawAdsResponse,
+            "RAW_BID_REQUEST" => AdsInteractionPublishOptInEventType::RawBidRequest,
+            "RAW_BID_RESPONSE" => AdsInteractionPublishOptInEventType::RawBidResponse,
             other => AdsInteractionPublishOptInEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -78,20 +102,32 @@ impl AdsInteractionPublishOptInEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            AdsInteractionPublishOptInEventType::PostAdsResponseFunctionCompleted => "POST_ADS_RESPONSE_FUNCTION_COMPLETED",
+            AdsInteractionPublishOptInEventType::PostAdsResponseHookSummary => "POST_ADS_RESPONSE_HOOK_SUMMARY",
             AdsInteractionPublishOptInEventType::PreAdsRequestFunctionCompleted => "PRE_ADS_REQUEST_FUNCTION_COMPLETED",
             AdsInteractionPublishOptInEventType::PreAdsRequestHookSummary => "PRE_ADS_REQUEST_HOOK_SUMMARY",
+            AdsInteractionPublishOptInEventType::PreManifestInsertionFunctionCompleted => "PRE_MANIFEST_INSERTION_FUNCTION_COMPLETED",
+            AdsInteractionPublishOptInEventType::PreManifestInsertionHookSummary => "PRE_MANIFEST_INSERTION_HOOK_SUMMARY",
             AdsInteractionPublishOptInEventType::RawAdsRequest => "RAW_ADS_REQUEST",
             AdsInteractionPublishOptInEventType::RawAdsResponse => "RAW_ADS_RESPONSE",
+            AdsInteractionPublishOptInEventType::RawBidRequest => "RAW_BID_REQUEST",
+            AdsInteractionPublishOptInEventType::RawBidResponse => "RAW_BID_RESPONSE",
             AdsInteractionPublishOptInEventType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "POST_ADS_RESPONSE_FUNCTION_COMPLETED",
+            "POST_ADS_RESPONSE_HOOK_SUMMARY",
             "PRE_ADS_REQUEST_FUNCTION_COMPLETED",
             "PRE_ADS_REQUEST_HOOK_SUMMARY",
+            "PRE_MANIFEST_INSERTION_FUNCTION_COMPLETED",
+            "PRE_MANIFEST_INSERTION_HOOK_SUMMARY",
             "RAW_ADS_REQUEST",
             "RAW_ADS_RESPONSE",
+            "RAW_BID_REQUEST",
+            "RAW_BID_RESPONSE",
         ]
     }
 }
@@ -115,10 +151,16 @@ impl AdsInteractionPublishOptInEventType {
 impl ::std::fmt::Display for AdsInteractionPublishOptInEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            AdsInteractionPublishOptInEventType::PostAdsResponseFunctionCompleted => write!(f, "POST_ADS_RESPONSE_FUNCTION_COMPLETED"),
+            AdsInteractionPublishOptInEventType::PostAdsResponseHookSummary => write!(f, "POST_ADS_RESPONSE_HOOK_SUMMARY"),
             AdsInteractionPublishOptInEventType::PreAdsRequestFunctionCompleted => write!(f, "PRE_ADS_REQUEST_FUNCTION_COMPLETED"),
             AdsInteractionPublishOptInEventType::PreAdsRequestHookSummary => write!(f, "PRE_ADS_REQUEST_HOOK_SUMMARY"),
+            AdsInteractionPublishOptInEventType::PreManifestInsertionFunctionCompleted => write!(f, "PRE_MANIFEST_INSERTION_FUNCTION_COMPLETED"),
+            AdsInteractionPublishOptInEventType::PreManifestInsertionHookSummary => write!(f, "PRE_MANIFEST_INSERTION_HOOK_SUMMARY"),
             AdsInteractionPublishOptInEventType::RawAdsRequest => write!(f, "RAW_ADS_REQUEST"),
             AdsInteractionPublishOptInEventType::RawAdsResponse => write!(f, "RAW_ADS_RESPONSE"),
+            AdsInteractionPublishOptInEventType::RawBidRequest => write!(f, "RAW_BID_REQUEST"),
+            AdsInteractionPublishOptInEventType::RawBidResponse => write!(f, "RAW_BID_RESPONSE"),
             AdsInteractionPublishOptInEventType::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListApi
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_api_key_credential_providers::ListApiKeyCredentialProvidersError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_api_key_credential_providers::ListApiKeyCredentialProvidersError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

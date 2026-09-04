@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetMLDa
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_ml_data_processing_job::GetMLDataProcessingJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutProv
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

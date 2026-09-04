@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SearchR
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

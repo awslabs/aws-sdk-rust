@@ -146,6 +146,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for InvokeC
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::invoke_code_interpreter::InvokeCodeInterpreterError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

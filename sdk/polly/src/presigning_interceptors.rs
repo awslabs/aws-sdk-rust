@@ -11,6 +11,7 @@ use crate::serialization_settings::HeaderSerializationSettings;
 use aws_runtime::auth::{HttpSignatureType, SigV4OperationSigningConfig};
 use aws_runtime::invocation_id::InvocationIdInterceptor;
 use aws_runtime::request_info::RequestInfoInterceptor;
+use aws_runtime::service_clock_skew::ServiceClockSkewInterceptor;
 use aws_runtime::user_agent::UserAgentInterceptor;
 use aws_sigv4::http_request::SignableBody;
 use aws_smithy_async::time::{SharedTimeSource, StaticTimeSource};
@@ -112,6 +113,7 @@ impl RuntimePlugin for SigV4PresigningRuntimePlugin {
         layer.store_put(disable_interceptor::<InvocationIdInterceptor>("presigning"));
         layer.store_put(disable_interceptor::<RequestInfoInterceptor>("presigning"));
         layer.store_put(disable_interceptor::<UserAgentInterceptor>("presigning"));
+        layer.store_put(disable_interceptor::<ServiceClockSkewInterceptor>("presigning"));
         Some(layer.freeze())
     }
 

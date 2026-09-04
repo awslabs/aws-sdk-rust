@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Simulat
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

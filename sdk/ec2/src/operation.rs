@@ -2401,5 +2401,8 @@ pub mod update_security_group_rule_descriptions_egress;
 /// Types for the `UpdateSecurityGroupRuleDescriptionsIngress` operation.
 pub mod update_security_group_rule_descriptions_ingress;
 
+/// Types for the `ValidateSecurityGroupQuotasForInterface` operation.
+pub mod validate_security_group_quotas_for_interface;
+
 /// Types for the `WithdrawByoipCidr` operation.
 pub mod withdraw_byoip_cidr;

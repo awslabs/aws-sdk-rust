@@ -156,6 +156,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::create_collection_group::CreateCollectionGroupError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::create_collection_group::CreateCollectionGroupError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

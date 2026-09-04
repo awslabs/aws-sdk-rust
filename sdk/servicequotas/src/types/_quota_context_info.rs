@@ -10,6 +10,16 @@ pub struct QuotaContextInfo {
     pub context_scope_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the resource, or resources, to which the quota applies. The value for this field is either an Amazon Resource Name (ARN) or *. If the value is an ARN, the quota value applies to that resource. If the value is *, then the quota value applies to all resources listed in the <code>ContextScopeType</code> field. The quota value applies to all resources for which you haven’t previously applied a quota value, and any new resources you create in your Amazon Web Services account.</p>
     pub context_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the level at which you can request an increase for this quota:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – You can request an increase only at the account level.</p></li>
+    /// <li>
+    /// <p><code>PER_RESOURCE</code> – You can request an increase only for an individual resource.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – You can request an increase at either the account level or for an individual resource.</p></li>
+    /// </ul>
+    pub adjustable_at_level: ::std::option::Option<crate::types::AdjustableAtLevelEnum>,
 }
 impl QuotaContextInfo {
     /// <p>Specifies the scope to which the quota value is applied. If the scope is <code>RESOURCE</code>, the quota value is applied to each resource in the Amazon Web Services account. If the scope is <code>ACCOUNT</code>, the quota value is applied to the Amazon Web Services account.</p>
@@ -23,6 +33,18 @@ impl QuotaContextInfo {
     /// <p>Specifies the resource, or resources, to which the quota applies. The value for this field is either an Amazon Resource Name (ARN) or *. If the value is an ARN, the quota value applies to that resource. If the value is *, then the quota value applies to all resources listed in the <code>ContextScopeType</code> field. The quota value applies to all resources for which you haven’t previously applied a quota value, and any new resources you create in your Amazon Web Services account.</p>
     pub fn context_id(&self) -> ::std::option::Option<&str> {
         self.context_id.as_deref()
+    }
+    /// <p>Specifies the level at which you can request an increase for this quota:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – You can request an increase only at the account level.</p></li>
+    /// <li>
+    /// <p><code>PER_RESOURCE</code> – You can request an increase only for an individual resource.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – You can request an increase at either the account level or for an individual resource.</p></li>
+    /// </ul>
+    pub fn adjustable_at_level(&self) -> ::std::option::Option<&crate::types::AdjustableAtLevelEnum> {
+        self.adjustable_at_level.as_ref()
     }
 }
 impl QuotaContextInfo {
@@ -39,6 +61,7 @@ pub struct QuotaContextInfoBuilder {
     pub(crate) context_scope: ::std::option::Option<crate::types::QuotaContextScope>,
     pub(crate) context_scope_type: ::std::option::Option<::std::string::String>,
     pub(crate) context_id: ::std::option::Option<::std::string::String>,
+    pub(crate) adjustable_at_level: ::std::option::Option<crate::types::AdjustableAtLevelEnum>,
 }
 impl QuotaContextInfoBuilder {
     /// <p>Specifies the scope to which the quota value is applied. If the scope is <code>RESOURCE</code>, the quota value is applied to each resource in the Amazon Web Services account. If the scope is <code>ACCOUNT</code>, the quota value is applied to the Amazon Web Services account.</p>
@@ -83,12 +106,51 @@ impl QuotaContextInfoBuilder {
     pub fn get_context_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.context_id
     }
+    /// <p>Specifies the level at which you can request an increase for this quota:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – You can request an increase only at the account level.</p></li>
+    /// <li>
+    /// <p><code>PER_RESOURCE</code> – You can request an increase only for an individual resource.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – You can request an increase at either the account level or for an individual resource.</p></li>
+    /// </ul>
+    pub fn adjustable_at_level(mut self, input: crate::types::AdjustableAtLevelEnum) -> Self {
+        self.adjustable_at_level = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the level at which you can request an increase for this quota:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – You can request an increase only at the account level.</p></li>
+    /// <li>
+    /// <p><code>PER_RESOURCE</code> – You can request an increase only for an individual resource.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – You can request an increase at either the account level or for an individual resource.</p></li>
+    /// </ul>
+    pub fn set_adjustable_at_level(mut self, input: ::std::option::Option<crate::types::AdjustableAtLevelEnum>) -> Self {
+        self.adjustable_at_level = input;
+        self
+    }
+    /// <p>Specifies the level at which you can request an increase for this quota:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – You can request an increase only at the account level.</p></li>
+    /// <li>
+    /// <p><code>PER_RESOURCE</code> – You can request an increase only for an individual resource.</p></li>
+    /// <li>
+    /// <p><code>ALL</code> – You can request an increase at either the account level or for an individual resource.</p></li>
+    /// </ul>
+    pub fn get_adjustable_at_level(&self) -> &::std::option::Option<crate::types::AdjustableAtLevelEnum> {
+        &self.adjustable_at_level
+    }
     /// Consumes the builder and constructs a [`QuotaContextInfo`](crate::types::QuotaContextInfo).
     pub fn build(self) -> crate::types::QuotaContextInfo {
         crate::types::QuotaContextInfo {
             context_scope: self.context_scope,
             context_scope_type: self.context_scope_type,
             context_id: self.context_id,
+            adjustable_at_level: self.adjustable_at_level,
         }
     }
 }

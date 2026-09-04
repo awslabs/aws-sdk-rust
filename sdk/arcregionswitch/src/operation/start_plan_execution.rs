@@ -156,6 +156,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartPl
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_plan_execution::StartPlanExecutionError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_plan_execution::StartPlanExecutionError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

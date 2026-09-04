@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRela
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_relational_database_log_events::GetRelationalDatabaseLogEventsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

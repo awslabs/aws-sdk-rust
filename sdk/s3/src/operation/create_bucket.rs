@@ -146,7 +146,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateB
                         ::std::borrow::Cow::Owned(transient_errors)
                     })
                     .build(),
-            );
+            )
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::create_bucket::CreateBucketError,
+            >::new());
 
         ::std::borrow::Cow::Owned(rcb)
     }

@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchAd
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::batch_add_cluster_nodes::BatchAddClusterNodesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::batch_add_cluster_nodes::BatchAddClusterNodesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

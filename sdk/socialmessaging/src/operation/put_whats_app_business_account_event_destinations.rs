@@ -151,6 +151,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutWhat
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::put_whats_app_business_account_event_destinations::PutWhatsAppBusinessAccountEventDestinationsError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Confirm
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::confirm_transit_virtual_interface::ConfirmTransitVirtualInterfaceError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

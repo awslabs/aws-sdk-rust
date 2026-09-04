@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CountPe
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

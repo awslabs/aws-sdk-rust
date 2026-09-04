@@ -171,7 +171,12 @@ impl Sign for SigV4Signer {
 
         let operation_config =
             Self::extract_operation_config(auth_scheme_endpoint_config, config_bag)?;
-        let request_time = runtime_components.time_source().unwrap_or_default().now();
+        // Clock skew correction: sign at now() + AttemptSkew (no-op when zero, disabled, or presigning).
+        let request_time = crate::service_clock_skew::signing_time(
+            runtime_components.time_source().unwrap_or_default().now(),
+            operation_config.signing_options.signature_type,
+            config_bag,
+        );
 
         let settings = if let Some(session_token_name_override) =
             config_bag.load::<SigV4SessionTokenNameOverride>()

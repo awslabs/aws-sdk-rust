@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SearchT
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAll
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::list_allowed_multi_region_cluster_updates::ListAllowedMultiRegionClusterUpdatesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

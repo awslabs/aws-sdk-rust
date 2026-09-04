@@ -18,6 +18,8 @@ pub struct GetFunctionOutput {
     pub concurrent_executor_configuration: ::std::option::Option<crate::types::ConcurrentExecutorConfiguration>,
     /// <p>The configuration for a <code>SEQUENTIAL_EXECUTOR</code> function.</p>
     pub sequential_executor_configuration: ::std::option::Option<crate::types::SequentialExecutorConfiguration>,
+    /// <p>The configuration for a <code>VAST_REQUEST</code> function.</p>
+    pub vast_request_configuration: ::std::option::Option<crate::types::VastRequestConfiguration>,
     /// <p>The tags assigned to the function. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
@@ -54,6 +56,10 @@ impl GetFunctionOutput {
     pub fn sequential_executor_configuration(&self) -> ::std::option::Option<&crate::types::SequentialExecutorConfiguration> {
         self.sequential_executor_configuration.as_ref()
     }
+    /// <p>The configuration for a <code>VAST_REQUEST</code> function.</p>
+    pub fn vast_request_configuration(&self) -> ::std::option::Option<&crate::types::VastRequestConfiguration> {
+        self.vast_request_configuration.as_ref()
+    }
     /// <p>The tags assigned to the function. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -86,6 +92,7 @@ pub struct GetFunctionOutputBuilder {
     pub(crate) custom_output_configuration: ::std::option::Option<crate::types::CustomOutputConfiguration>,
     pub(crate) concurrent_executor_configuration: ::std::option::Option<crate::types::ConcurrentExecutorConfiguration>,
     pub(crate) sequential_executor_configuration: ::std::option::Option<crate::types::SequentialExecutorConfiguration>,
+    pub(crate) vast_request_configuration: ::std::option::Option<crate::types::VastRequestConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -191,6 +198,20 @@ impl GetFunctionOutputBuilder {
     pub fn get_sequential_executor_configuration(&self) -> &::std::option::Option<crate::types::SequentialExecutorConfiguration> {
         &self.sequential_executor_configuration
     }
+    /// <p>The configuration for a <code>VAST_REQUEST</code> function.</p>
+    pub fn vast_request_configuration(mut self, input: crate::types::VastRequestConfiguration) -> Self {
+        self.vast_request_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for a <code>VAST_REQUEST</code> function.</p>
+    pub fn set_vast_request_configuration(mut self, input: ::std::option::Option<crate::types::VastRequestConfiguration>) -> Self {
+        self.vast_request_configuration = input;
+        self
+    }
+    /// <p>The configuration for a <code>VAST_REQUEST</code> function.</p>
+    pub fn get_vast_request_configuration(&self) -> &::std::option::Option<crate::types::VastRequestConfiguration> {
+        &self.vast_request_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -257,6 +278,7 @@ impl GetFunctionOutputBuilder {
             custom_output_configuration: self.custom_output_configuration,
             concurrent_executor_configuration: self.concurrent_executor_configuration,
             sequential_executor_configuration: self.sequential_executor_configuration,
+            vast_request_configuration: self.vast_request_configuration,
             tags: self.tags,
             arn: self.arn,
             _request_id: self._request_id,

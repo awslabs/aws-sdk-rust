@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RevokeF
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

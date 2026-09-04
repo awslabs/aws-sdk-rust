@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateG
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::update_gateway_rate_limit::UpdateGatewayRateLimitError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

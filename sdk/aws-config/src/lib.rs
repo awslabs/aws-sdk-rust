@@ -250,9 +250,9 @@ mod loader {
 
     use crate::default_provider::{
         account_id_endpoint_mode, app_name, auth_scheme_preference, checksums, credentials,
-        disable_request_compression, endpoint_url, ignore_configured_endpoint_urls as ignore_ep,
-        region, request_min_compression_size_bytes, retry_config, sigv4a_signing_region_set,
-        timeout_config, use_dual_stack, use_fips,
+        disable_clock_skew_correction, disable_request_compression, endpoint_url,
+        ignore_configured_endpoint_urls as ignore_ep, region, request_min_compression_size_bytes,
+        retry_config, sigv4a_signing_region_set, timeout_config, use_dual_stack, use_fips,
     };
     use crate::meta::region::ProvideRegion;
     #[allow(deprecated)]
@@ -300,6 +300,7 @@ mod loader {
         use_dual_stack: Option<bool>,
         time_source: Option<SharedTimeSource>,
         disable_request_compression: Option<bool>,
+        disable_clock_skew_correction: Option<bool>,
         request_min_compression_size_bytes: Option<u32>,
         stalled_stream_protection_config: Option<StalledStreamProtectionConfig>,
         env: Option<Env>,
@@ -770,6 +771,15 @@ mod loader {
             self
         }
 
+        #[doc = docs_for!(disable_clock_skew_correction)]
+        pub fn disable_clock_skew_correction(
+            mut self,
+            disable_clock_skew_correction: bool,
+        ) -> Self {
+            self.disable_clock_skew_correction = Some(disable_clock_skew_correction);
+            self
+        }
+
         #[doc = docs_for!(request_min_compression_size_bytes)]
         pub fn request_min_compression_size_bytes(mut self, size: u32) -> Self {
             self.request_min_compression_size_bytes = Some(size);
@@ -920,6 +930,12 @@ mod loader {
                 self.disable_request_compression
             } else {
                 disable_request_compression::disable_request_compression_provider(&conf).await
+            };
+
+            let disable_clock_skew_correction = if self.disable_clock_skew_correction.is_some() {
+                self.disable_clock_skew_correction
+            } else {
+                disable_clock_skew_correction::disable_clock_skew_correction_provider(&conf).await
             };
 
             let request_min_compression_size_bytes =
@@ -1099,6 +1115,7 @@ mod loader {
             builder.set_use_fips(use_fips);
             builder.set_use_dual_stack(use_dual_stack);
             builder.set_disable_request_compression(disable_request_compression);
+            builder.set_disable_clock_skew_correction(disable_clock_skew_correction);
             builder.set_request_min_compression_size_bytes(request_min_compression_size_bytes);
             builder.set_stalled_stream_protection(self.stalled_stream_protection_config);
             builder.set_account_id_endpoint_mode(account_id_endpoint_mode);

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AdminAd
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

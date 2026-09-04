@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::describe_icd10_cm_inference_job::DescribeICD10CMInferenceJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

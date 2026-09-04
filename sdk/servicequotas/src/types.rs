@@ -43,6 +43,10 @@ pub use crate::types::_error_code::ErrorCode;
 
 pub use crate::types::_quota_context_scope::QuotaContextScope;
 
+pub use crate::types::_adjustable_at_level_enum::AdjustableAtLevelEnum;
+
+mod _adjustable_at_level_enum;
+
 mod _applied_level_enum;
 
 mod _error_code;

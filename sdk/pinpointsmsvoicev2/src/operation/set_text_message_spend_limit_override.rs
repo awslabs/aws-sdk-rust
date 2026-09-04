@@ -146,6 +146,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetText
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

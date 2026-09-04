@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartDo
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_dominant_language_detection_job::StartDominantLanguageDetectionJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RebootD
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::reboot_db_shard_group::RebootDBShardGroupError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::reboot_db_shard_group::RebootDBShardGroupError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

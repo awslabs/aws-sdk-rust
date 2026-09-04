@@ -146,6 +146,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutRegi
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

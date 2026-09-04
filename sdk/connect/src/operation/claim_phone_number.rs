@@ -150,6 +150,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ClaimPh
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::claim_phone_number::ClaimPhoneNumberError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::claim_phone_number::ClaimPhoneNumberError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for NotifyR
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

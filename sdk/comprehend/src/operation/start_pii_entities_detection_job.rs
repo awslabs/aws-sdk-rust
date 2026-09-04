@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartPi
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

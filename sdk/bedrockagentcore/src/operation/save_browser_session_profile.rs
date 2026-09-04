@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SaveBro
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::save_browser_session_profile::SaveBrowserSessionProfileError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::save_browser_session_profile::SaveBrowserSessionProfileError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

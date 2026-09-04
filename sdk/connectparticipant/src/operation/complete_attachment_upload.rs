@@ -157,6 +157,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Complet
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

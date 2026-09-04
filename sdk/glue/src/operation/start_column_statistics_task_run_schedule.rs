@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartCo
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::start_column_statistics_task_run_schedule::StartColumnStatisticsTaskRunScheduleError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::start_column_statistics_task_run_schedule::StartColumnStatisticsTaskRunScheduleError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

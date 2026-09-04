@@ -146,6 +146,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetMedi
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::set_media_message_spend_limit_override::SetMediaMessageSpendLimitOverrideError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::set_media_message_spend_limit_override::SetMediaMessageSpendLimitOverrideError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

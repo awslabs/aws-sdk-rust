@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetSamp
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

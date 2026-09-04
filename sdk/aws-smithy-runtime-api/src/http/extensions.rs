@@ -21,6 +21,11 @@ impl Extensions {
         self.extensions_1x.insert(extension.clone());
         self.extensions_02x.insert(extension);
     }
+
+    // Reads a previously-inserted extension of type `T`, if present.
+    pub(crate) fn get<T: Send + Sync + 'static>(&self) -> Option<&T> {
+        self.extensions_1x.get::<T>()
+    }
 }
 
 impl From<http_02x::Extensions> for Extensions {

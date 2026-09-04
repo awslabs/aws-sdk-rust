@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutS3Ac
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::put_s3_access_policy::PutS3AccessPolicyError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::put_s3_access_policy::PutS3AccessPolicyError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

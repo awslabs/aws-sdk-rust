@@ -140,6 +140,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StopOTe
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::stop_o_tel_enrichment::StopOTelEnrichmentError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::stop_o_tel_enrichment::StopOTelEnrichmentError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

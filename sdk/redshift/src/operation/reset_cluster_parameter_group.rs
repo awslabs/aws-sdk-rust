@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ResetCl
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

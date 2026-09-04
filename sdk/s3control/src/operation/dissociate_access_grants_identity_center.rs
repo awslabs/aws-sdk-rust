@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Dissoci
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::dissociate_access_grants_identity_center::DissociateAccessGrantsIdentityCenterError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

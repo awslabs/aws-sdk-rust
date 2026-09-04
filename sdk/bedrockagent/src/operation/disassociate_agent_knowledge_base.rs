@@ -149,6 +149,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::disassociate_agent_knowledge_base::DisassociateAgentKnowledgeBaseError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::disassociate_agent_knowledge_base::DisassociateAgentKnowledgeBaseError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

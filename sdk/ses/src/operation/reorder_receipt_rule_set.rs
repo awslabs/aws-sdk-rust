@@ -143,6 +143,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Reorder
             >::new())
             .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                 crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
+            >::new())
+            .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
             >::new());
 
         ::std::borrow::Cow::Owned(rcb)

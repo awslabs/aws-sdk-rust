@@ -147,6 +147,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetTele
                 >::new())
                 .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
                     crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::service_clock_skew::ServiceClockSkewClassifier::<
+                    crate::operation::get_telemetry_evaluation_status_for_organization::GetTelemetryEvaluationStatusForOrganizationError,
                 >::new());
 
         ::std::borrow::Cow::Owned(rcb)
