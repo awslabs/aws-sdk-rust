@@ -2783,6 +2783,10 @@ source_hash = '8b640108e6a32179c67c34982fae8c9d035a392fab688b1b2dcce08ef64af6ad'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '24f072acb98fb818444b17a88cbfea13cf8e541558872ae8daf899b2034e2037'
+
+[release]
+tag = 'release-2026-09-04'
+
 [release.crates]
 aws-config = '1.12.0'
 aws-runtime = '1.9.2'
