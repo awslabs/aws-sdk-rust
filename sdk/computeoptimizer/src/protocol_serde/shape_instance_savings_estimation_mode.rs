@@ -20,7 +20,7 @@ pub(crate) fn de_instance_savings_estimation_mode(
                 Ok(builder.set_source(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::InstanceSavingsEstimationModeSource::from(s.as_ref()))?,
+                        .map(|s| crate::types::InstanceSavingsEstimationModeSource::from(s.as_str()))?,
                 )))
             })?,
             _ => {

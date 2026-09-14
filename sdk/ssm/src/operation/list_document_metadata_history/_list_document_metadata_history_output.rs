@@ -37,9 +37,225 @@ impl ListDocumentMetadataHistoryOutput {
         self.next_token.as_deref()
     }
 }
+static LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListDocumentMetadataHistoryOutput$Name",
+        "com.amazonaws.ssm.synthetic",
+        "ListDocumentMetadataHistoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListDocumentMetadataHistoryOutput$DocumentVersion",
+        "com.amazonaws.ssm.synthetic",
+        "ListDocumentMetadataHistoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    1,
+);
+static LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_AUTHOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListDocumentMetadataHistoryOutput$Author",
+        "com.amazonaws.ssm.synthetic",
+        "ListDocumentMetadataHistoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Author",
+    2,
+);
+static LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListDocumentMetadataHistoryOutput$Metadata",
+        "com.amazonaws.ssm.synthetic",
+        "ListDocumentMetadataHistoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Metadata",
+    3,
+);
+static LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListDocumentMetadataHistoryOutput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "ListDocumentMetadataHistoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    4,
+);
+static LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    5,
+)
+.with_http_header("x-amzn-requestid");
+static LISTDOCUMENTMETADATAHISTORYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListDocumentMetadataHistoryOutput",
+        "com.amazonaws.ssm.synthetic",
+        "ListDocumentMetadataHistoryOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_NAME,
+        &LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_DOCUMENT_VERSION,
+        &LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_AUTHOR,
+        &LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_METADATA,
+        &LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("ListDocumentMetadataHistoryResponse");
+impl ListDocumentMetadataHistoryOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTDOCUMENTMETADATAHISTORYOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListDocumentMetadataHistoryOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.author {
+            ser.write_string(&LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_AUTHOR, val)?;
+        }
+        if let Some(ref val) = self.metadata {
+            ser.write_struct(&LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_METADATA, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTDOCUMENTMETADATAHISTORYOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl ListDocumentMetadataHistoryOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&LISTDOCUMENTMETADATAHISTORYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.author = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.metadata = Some(crate::types::DocumentMetadataResponseInfo::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl ListDocumentMetadataHistoryOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&LISTDOCUMENTMETADATAHISTORYOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.document_version = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    builder.author = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    builder.metadata = Some(crate::types::DocumentMetadataResponseInfo::deserialize(deser)?);
+                }
+                Some(4) => {
+                    builder.next_token = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListDocumentMetadataHistoryOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl ListDocumentMetadataHistoryOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl ListDocumentMetadataHistoryOutput {

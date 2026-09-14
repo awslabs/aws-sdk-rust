@@ -17,7 +17,7 @@ pub(crate) fn de_lambda_estimated_monthly_savings(
     ) -> ::std::result::Result<crate::types::builders::LambdaEstimatedMonthlySavingsBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "currency" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_currency(Some(decoder.string().map(|s| crate::types::Currency::from(s.as_ref()))?)))
+                Ok(builder.set_currency(Some(decoder.string().map(|s| crate::types::Currency::from(s.as_str()))?)))
             })?,
             "value" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_value(Some(decoder.double()?))))?,
             _ => {

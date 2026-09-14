@@ -21,7 +21,7 @@ pub(crate) fn de_workload_configuration(
                     Ok(builder.set_workload_name(Some(decoder.string()?)))
                 })?,
                 "Tier" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_tier(Some(decoder.string().map(|s| crate::types::Tier::from(s.as_ref()))?)))
+                    Ok(builder.set_tier(Some(decoder.string().map(|s| crate::types::Tier::from(s.as_str()))?)))
                 })?,
                 "Configuration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_configuration(Some(decoder.string()?)))

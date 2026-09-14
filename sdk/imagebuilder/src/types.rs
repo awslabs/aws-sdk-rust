@@ -199,6 +199,8 @@ pub use crate::types::_component_parameter_detail::ComponentParameterDetail;
 
 pub use crate::types::_product_code_list_item::ProductCodeListItem;
 
+pub use crate::types::_image_failure_context::ImageFailureContext;
+
 pub use crate::types::_image_scan_status::ImageScanStatus;
 
 pub use crate::types::_workflow_status::WorkflowStatus;
@@ -251,6 +253,10 @@ pub use crate::types::_lifecycle_policy_time_unit::LifecyclePolicyTimeUnit;
 
 pub use crate::types::_product_code_type::ProductCodeType;
 
+pub use crate::types::_component_failure_context::ComponentFailureContext;
+
+pub use crate::types::_distribution_failure_context::DistributionFailureContext;
+
 pub use crate::types::_ami::Ami;
 
 pub use crate::types::_container::Container;
@@ -277,7 +283,13 @@ pub use crate::types::_vulnerable_package::VulnerablePackage;
 
 pub use crate::types::_cvss_score::CvssScore;
 
+pub use crate::types::_region_failure::RegionFailure;
+
 pub use crate::types::_cvss_score_adjustment::CvssScoreAdjustment;
+
+pub use crate::types::_region_failure_status::RegionFailureStatus;
+
+pub use crate::types::_image_configuration_step::ImageConfigurationStep;
 
 mod _account_aggregation;
 
@@ -294,6 +306,8 @@ mod _build_type;
 mod _component;
 
 mod _component_configuration;
+
+mod _component_failure_context;
 
 mod _component_format;
 
@@ -337,6 +351,8 @@ mod _distribution_configuration;
 
 mod _distribution_configuration_summary;
 
+mod _distribution_failure_context;
+
 mod _ebs_instance_block_device_specification;
 
 mod _ebs_volume_type;
@@ -354,6 +370,10 @@ mod _filter;
 mod _image;
 
 mod _image_aggregation;
+
+mod _image_configuration_step;
+
+mod _image_failure_context;
 
 mod _image_logging_configuration;
 
@@ -488,6 +508,10 @@ mod _platform;
 mod _product_code_list_item;
 
 mod _product_code_type;
+
+mod _region_failure;
+
+mod _region_failure_status;
 
 mod _register_image_options;
 

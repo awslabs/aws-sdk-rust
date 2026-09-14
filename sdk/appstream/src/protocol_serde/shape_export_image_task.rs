@@ -24,7 +24,7 @@ pub(crate) fn de_export_image_task(
                 Ok(builder.set_ami_description(Some(decoder.string()?)))
             })?,
             "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::ExportImageTaskState::from(s.as_ref()))?)))
+                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::ExportImageTaskState::from(s.as_str()))?)))
             })?,
             "AmiId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_ami_id(Some(decoder.string()?))))?,
             "TagSpecifications" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

@@ -17,9 +17,17 @@ pub use serializer::CborSerializer;
 #[derive(Debug, Clone)]
 pub struct CborCodecSettings {
     max_depth: u32,
+    enforce_strictness: bool,
 }
 
 impl CborCodecSettings {
+    /// Rejects trailing bytes after top-level containers and truncated nested structures.
+    /// Disabled by default to preserve client deserialization behavior.
+    pub fn enforce_strictness(mut self, value: bool) -> Self {
+        self.enforce_strictness = value;
+        self
+    }
+
     /// Maximum aggregate nesting depth the deserializer will accept.
     pub fn max_depth(&self) -> u32 {
         self.max_depth
@@ -28,7 +36,10 @@ impl CborCodecSettings {
 
 impl Default for CborCodecSettings {
     fn default() -> Self {
-        Self { max_depth: 128 }
+        Self {
+            max_depth: 128,
+            enforce_strictness: false,
+        }
     }
 }
 
@@ -61,5 +72,6 @@ impl Codec for CborCodec {
 
     fn create_deserializer<'a>(&self, input: &'a [u8]) -> Self::Deserializer<'a> {
         CborDeserializer::new(input, self.settings.max_depth)
+            .with_strictness(self.settings.enforce_strictness)
     }
 }

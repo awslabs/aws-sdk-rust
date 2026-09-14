@@ -24,6 +24,129 @@ impl StartExecutionPreviewInput {
         self.execution_inputs.as_ref()
     }
 }
+static STARTEXECUTIONPREVIEWINPUT_MEMBER_DOCUMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartExecutionPreviewInput$DocumentName",
+        "com.amazonaws.ssm.synthetic",
+        "StartExecutionPreviewInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentName",
+    0,
+);
+static STARTEXECUTIONPREVIEWINPUT_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartExecutionPreviewInput$DocumentVersion",
+        "com.amazonaws.ssm.synthetic",
+        "StartExecutionPreviewInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    1,
+);
+static STARTEXECUTIONPREVIEWINPUT_MEMBER_EXECUTION_INPUTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartExecutionPreviewInput$ExecutionInputs",
+        "com.amazonaws.ssm.synthetic",
+        "StartExecutionPreviewInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "ExecutionInputs",
+    2,
+);
+static STARTEXECUTIONPREVIEWINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartExecutionPreviewInput",
+        "com.amazonaws.ssm.synthetic",
+        "StartExecutionPreviewInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTEXECUTIONPREVIEWINPUT_MEMBER_DOCUMENT_NAME,
+        &STARTEXECUTIONPREVIEWINPUT_MEMBER_DOCUMENT_VERSION,
+        &STARTEXECUTIONPREVIEWINPUT_MEMBER_EXECUTION_INPUTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartExecutionPreviewRequest");
+impl StartExecutionPreviewInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTEXECUTIONPREVIEWINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartExecutionPreviewInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.document_name {
+            ser.write_string(&STARTEXECUTIONPREVIEWINPUT_MEMBER_DOCUMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&STARTEXECUTIONPREVIEWINPUT_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.execution_inputs {
+            ser.write_struct(&STARTEXECUTIONPREVIEWINPUT_MEMBER_EXECUTION_INPUTS, val)?;
+        }
+        Ok(())
+    }
+}
+impl StartExecutionPreviewInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STARTEXECUTIONPREVIEWINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.execution_inputs = Some(crate::types::ExecutionInputs::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.document_name = builder.document_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl StartExecutionPreviewInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl StartExecutionPreviewInput {
     /// Creates a new builder-style object to manufacture [`StartExecutionPreviewInput`](crate::operation::start_execution_preview::StartExecutionPreviewInput).
     pub fn builder() -> crate::operation::start_execution_preview::builders::StartExecutionPreviewInputBuilder {

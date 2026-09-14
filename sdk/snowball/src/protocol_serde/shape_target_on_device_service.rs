@@ -32,10 +32,10 @@ pub(crate) fn de_target_on_device_service(
     ) -> ::std::result::Result<crate::types::builders::TargetOnDeviceServiceBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ServiceName" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_service_name(Some(decoder.string().map(|s| crate::types::DeviceServiceName::from(s.as_ref()))?)))
+                Ok(builder.set_service_name(Some(decoder.string().map(|s| crate::types::DeviceServiceName::from(s.as_str()))?)))
             })?,
             "TransferOption" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_transfer_option(Some(decoder.string().map(|s| crate::types::TransferOption::from(s.as_ref()))?)))
+                Ok(builder.set_transfer_option(Some(decoder.string().map(|s| crate::types::TransferOption::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

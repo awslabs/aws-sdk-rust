@@ -7,7 +7,9 @@ pub fn ser_create_data_source_input_input(
         object.key("clientToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.configuration {
-        object.key("configuration").document(var_2);
+        object
+            .key("configuration")
+            .document(var_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_3) = &input.description {
         object.key("description").string(var_3.as_str());

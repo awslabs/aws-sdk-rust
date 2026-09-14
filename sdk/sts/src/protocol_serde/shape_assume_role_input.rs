@@ -92,6 +92,14 @@ pub fn ser_assume_role_input_input_input(
         }
         list_35.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_37 = writer.prefix("MinimumSessionTokenSize");
+    if let Some(var_38) = &input.minimum_session_token_size {
+        scope_37.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_38).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

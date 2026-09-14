@@ -41,7 +41,7 @@ pub(crate) fn de_metric_alarm(
                 Ok(builder.set_insufficient_data_actions(Some(crate::protocol_serde::shape_resource_list::de_resource_list(decoder, depth + 1)?)))
             })?,
             "StateValue" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state_value(Some(decoder.string().map(|s| crate::types::StateValue::from(s.as_ref()))?)))
+                Ok(builder.set_state_value(Some(decoder.string().map(|s| crate::types::StateValue::from(s.as_str()))?)))
             })?,
             "StateReason" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_state_reason(Some(decoder.string()?))))?
@@ -59,7 +59,7 @@ pub(crate) fn de_metric_alarm(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_namespace(Some(decoder.string()?))))?
             }
             "Statistic" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_statistic(Some(decoder.string().map(|s| crate::types::Statistic::from(s.as_ref()))?)))
+                Ok(builder.set_statistic(Some(decoder.string().map(|s| crate::types::Statistic::from(s.as_str()))?)))
             })?,
             "ExtendedStatistic" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_extended_statistic(Some(decoder.string()?)))
@@ -71,7 +71,7 @@ pub(crate) fn de_metric_alarm(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_period(Some(decoder.integer()?))))?
             }
             "Unit" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_unit(Some(decoder.string().map(|s| crate::types::StandardUnit::from(s.as_ref()))?)))
+                Ok(builder.set_unit(Some(decoder.string().map(|s| crate::types::StandardUnit::from(s.as_str()))?)))
             })?,
             "EvaluationPeriods" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_evaluation_periods(Some(decoder.integer()?)))
@@ -83,7 +83,7 @@ pub(crate) fn de_metric_alarm(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_threshold(Some(decoder.double()?))))?
             }
             "ComparisonOperator" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_comparison_operator(Some(decoder.string().map(|s| crate::types::ComparisonOperator::from(s.as_ref()))?)))
+                Ok(builder.set_comparison_operator(Some(decoder.string().map(|s| crate::types::ComparisonOperator::from(s.as_str()))?)))
             })?,
             "TreatMissingData" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_treat_missing_data(Some(decoder.string()?)))
@@ -103,7 +103,7 @@ pub(crate) fn de_metric_alarm(
                 Ok(builder.set_threshold_metric_id(Some(decoder.string()?)))
             })?,
             "EvaluationState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_evaluation_state(Some(decoder.string().map(|s| crate::types::EvaluationState::from(s.as_ref()))?)))
+                Ok(builder.set_evaluation_state(Some(decoder.string().map(|s| crate::types::EvaluationState::from(s.as_str()))?)))
             })?,
             "StateTransitionedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_state_transitioned_timestamp(Some(decoder.timestamp()?)))

@@ -112,7 +112,7 @@ pub(crate) fn de_get_traffic_policy(
                 Ok(builder.set_max_message_size_bytes(Some(decoder.integer()?)))
             })?,
             "DefaultAction" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_default_action(Some(decoder.string().map(|s| crate::types::AcceptAction::from(s.as_ref()))?)))
+                Ok(builder.set_default_action(Some(decoder.string().map(|s| crate::types::AcceptAction::from(s.as_str()))?)))
             })?,
             "CreatedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_created_timestamp(Some(decoder.timestamp()?)))

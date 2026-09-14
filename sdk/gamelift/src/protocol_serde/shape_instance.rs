@@ -32,13 +32,13 @@ pub(crate) fn de_instance(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_dns_name(Some(decoder.string()?))))?
             }
             "OperatingSystem" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_ref()))?)))
+                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_str()))?)))
             })?,
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::Ec2InstanceType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::Ec2InstanceType::from(s.as_str()))?)))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::InstanceStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::InstanceStatus::from(s.as_str()))?)))
             })?,
             "CreationTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_creation_time(Some(decoder.timestamp()?)))

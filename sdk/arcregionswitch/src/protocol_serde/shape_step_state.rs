@@ -18,7 +18,7 @@ pub(crate) fn de_step_state(
         builder = match decoder.str()?.as_ref() {
             "name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
             "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::StepStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::StepStatus::from(s.as_str()))?)))
             })?,
             "startTime" => {
                 ::aws_smithy_cbor::decode::set_optional(
@@ -31,7 +31,7 @@ pub(crate) fn de_step_state(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_end_time(Some(decoder.timestamp()?))))?
             }
             "stepMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_step_mode(Some(decoder.string().map(|s| crate::types::ExecutionMode::from(s.as_ref()))?)))
+                Ok(builder.set_step_mode(Some(decoder.string().map(|s| crate::types::ExecutionMode::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

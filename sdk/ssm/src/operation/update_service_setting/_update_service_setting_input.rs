@@ -107,6 +107,109 @@ impl UpdateServiceSettingInput {
         self.setting_value.as_deref()
     }
 }
+static UPDATESERVICESETTINGINPUT_MEMBER_SETTING_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateServiceSettingInput$SettingId",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateServiceSettingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SettingId",
+    0,
+);
+static UPDATESERVICESETTINGINPUT_MEMBER_SETTING_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateServiceSettingInput$SettingValue",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateServiceSettingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SettingValue",
+    1,
+);
+static UPDATESERVICESETTINGINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateServiceSettingInput",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateServiceSettingInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATESERVICESETTINGINPUT_MEMBER_SETTING_ID,
+        &UPDATESERVICESETTINGINPUT_MEMBER_SETTING_VALUE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateServiceSettingRequest");
+impl UpdateServiceSettingInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATESERVICESETTINGINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateServiceSettingInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.setting_id {
+            ser.write_string(&UPDATESERVICESETTINGINPUT_MEMBER_SETTING_ID, val)?;
+        }
+        if let Some(ref val) = self.setting_value {
+            ser.write_string(&UPDATESERVICESETTINGINPUT_MEMBER_SETTING_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl UpdateServiceSettingInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UPDATESERVICESETTINGINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.setting_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.setting_value = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.setting_id = builder.setting_id.or(Some(String::new()));
+        builder.setting_value = builder.setting_value.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl UpdateServiceSettingInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl UpdateServiceSettingInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSettingInput`](crate::operation::update_service_setting::UpdateServiceSettingInput).
     pub fn builder() -> crate::operation::update_service_setting::builders::UpdateServiceSettingInputBuilder {

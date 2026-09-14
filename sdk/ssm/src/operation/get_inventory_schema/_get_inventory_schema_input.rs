@@ -36,6 +36,170 @@ impl GetInventorySchemaInput {
         self.sub_type
     }
 }
+static GETINVENTORYSCHEMAINPUT_MEMBER_TYPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetInventorySchemaInput$TypeName",
+        "com.amazonaws.ssm.synthetic",
+        "GetInventorySchemaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TypeName",
+    0,
+);
+static GETINVENTORYSCHEMAINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetInventorySchemaInput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "GetInventorySchemaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    1,
+);
+static GETINVENTORYSCHEMAINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetInventorySchemaInput$MaxResults",
+        "com.amazonaws.ssm.synthetic",
+        "GetInventorySchemaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static GETINVENTORYSCHEMAINPUT_MEMBER_AGGREGATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetInventorySchemaInput$Aggregator",
+        "com.amazonaws.ssm.synthetic",
+        "GetInventorySchemaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Aggregator",
+    3,
+);
+static GETINVENTORYSCHEMAINPUT_MEMBER_SUB_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetInventorySchemaInput$SubType",
+        "com.amazonaws.ssm.synthetic",
+        "GetInventorySchemaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "SubType",
+    4,
+);
+static GETINVENTORYSCHEMAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetInventorySchemaInput",
+        "com.amazonaws.ssm.synthetic",
+        "GetInventorySchemaInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETINVENTORYSCHEMAINPUT_MEMBER_TYPE_NAME,
+        &GETINVENTORYSCHEMAINPUT_MEMBER_NEXT_TOKEN,
+        &GETINVENTORYSCHEMAINPUT_MEMBER_MAX_RESULTS,
+        &GETINVENTORYSCHEMAINPUT_MEMBER_AGGREGATOR,
+        &GETINVENTORYSCHEMAINPUT_MEMBER_SUB_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetInventorySchemaRequest");
+impl GetInventorySchemaInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETINVENTORYSCHEMAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetInventorySchemaInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.type_name {
+            ser.write_string(&GETINVENTORYSCHEMAINPUT_MEMBER_TYPE_NAME, val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETINVENTORYSCHEMAINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&GETINVENTORYSCHEMAINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.aggregator {
+            ser.write_boolean(&GETINVENTORYSCHEMAINPUT_MEMBER_AGGREGATOR, *val)?;
+        }
+        if let Some(ref val) = self.sub_type {
+            ser.write_boolean(&GETINVENTORYSCHEMAINPUT_MEMBER_SUB_TYPE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl GetInventorySchemaInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&GETINVENTORYSCHEMAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.type_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.aggregator = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sub_type = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl GetInventorySchemaInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl GetInventorySchemaInput {
     /// Creates a new builder-style object to manufacture [`GetInventorySchemaInput`](crate::operation::get_inventory_schema::GetInventorySchemaInput).
     pub fn builder() -> crate::operation::get_inventory_schema::builders::GetInventorySchemaInputBuilder {

@@ -31,6 +31,143 @@ impl InstanceAssociation {
         self.association_version.as_deref()
     }
 }
+static INSTANCEASSOCIATION_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstanceAssociation$AssociationId",
+        "com.amazonaws.ssm",
+        "InstanceAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    0,
+);
+static INSTANCEASSOCIATION_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstanceAssociation$InstanceId",
+        "com.amazonaws.ssm",
+        "InstanceAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    1,
+);
+static INSTANCEASSOCIATION_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstanceAssociation$Content",
+        "com.amazonaws.ssm",
+        "InstanceAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Content",
+    2,
+);
+static INSTANCEASSOCIATION_MEMBER_ASSOCIATION_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstanceAssociation$AssociationVersion",
+        "com.amazonaws.ssm",
+        "InstanceAssociation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationVersion",
+    3,
+);
+static INSTANCEASSOCIATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#InstanceAssociation", "com.amazonaws.ssm", "InstanceAssociation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEASSOCIATION_MEMBER_ASSOCIATION_ID,
+        &INSTANCEASSOCIATION_MEMBER_INSTANCE_ID,
+        &INSTANCEASSOCIATION_MEMBER_CONTENT,
+        &INSTANCEASSOCIATION_MEMBER_ASSOCIATION_VERSION,
+    ],
+);
+impl InstanceAssociation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEASSOCIATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceAssociation {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&INSTANCEASSOCIATION_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&INSTANCEASSOCIATION_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_string(&INSTANCEASSOCIATION_MEMBER_CONTENT, val)?;
+        }
+        if let Some(ref val) = self.association_version {
+            ser.write_string(&INSTANCEASSOCIATION_MEMBER_ASSOCIATION_VERSION, val)?;
+        }
+        Ok(())
+    }
+}
+impl InstanceAssociation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&INSTANCEASSOCIATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.content = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_version = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl InstanceAssociation {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl InstanceAssociation {
     /// Creates a new builder-style object to manufacture [`InstanceAssociation`](crate::types::InstanceAssociation).
     pub fn builder() -> crate::types::builders::InstanceAssociationBuilder {

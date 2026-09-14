@@ -35,7 +35,7 @@ pub(crate) fn de_ingress_ip_to_evaluate(
     ) -> ::std::result::Result<crate::types::IngressIpToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => {
-                crate::types::IngressIpToEvaluate::Attribute(decoder.string().map(|s| crate::types::IngressIpv4Attribute::from(s.as_ref()))?)
+                crate::types::IngressIpToEvaluate::Attribute(decoder.string().map(|s| crate::types::IngressIpv4Attribute::from(s.as_str()))?)
             }
             _ => {
                 decoder.skip()?;

@@ -23,7 +23,7 @@ pub(crate) fn de_container_port_mapping(
                 Ok(builder.set_connection_port(Some(decoder.integer()?)))
             })?,
             "Protocol" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_protocol(Some(decoder.string().map(|s| crate::types::IpProtocol::from(s.as_ref()))?)))
+                Ok(builder.set_protocol(Some(decoder.string().map(|s| crate::types::IpProtocol::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

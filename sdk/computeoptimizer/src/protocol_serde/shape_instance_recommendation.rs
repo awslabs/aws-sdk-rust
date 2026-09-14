@@ -30,7 +30,7 @@ pub(crate) fn de_instance_recommendation(
                     Ok(builder.set_current_instance_type(Some(decoder.string()?)))
                 })?,
                 "finding" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_finding(Some(decoder.string().map(|s| crate::types::Finding::from(s.as_ref()))?)))
+                    Ok(builder.set_finding(Some(decoder.string().map(|s| crate::types::Finding::from(s.as_str()))?)))
                 })?,
                 "findingReasonCodes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_finding_reason_codes(Some(
@@ -71,7 +71,7 @@ pub(crate) fn de_instance_recommendation(
                     Ok(builder.set_last_refresh_timestamp(Some(decoder.timestamp()?)))
                 })?,
                 "currentPerformanceRisk" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_current_performance_risk(Some(decoder.string().map(|s| crate::types::CurrentPerformanceRisk::from(s.as_ref()))?)))
+                    Ok(builder.set_current_performance_risk(Some(decoder.string().map(|s| crate::types::CurrentPerformanceRisk::from(s.as_str()))?)))
                 })?,
                 "effectiveRecommendationPreferences" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_effective_recommendation_preferences(Some(
@@ -89,7 +89,7 @@ pub(crate) fn de_instance_recommendation(
                     })?
                 }
                 "instanceState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_instance_state(Some(decoder.string().map(|s| crate::types::InstanceState::from(s.as_ref()))?)))
+                    Ok(builder.set_instance_state(Some(decoder.string().map(|s| crate::types::InstanceState::from(s.as_str()))?)))
                 })?,
                 "tags" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_tags(Some(crate::protocol_serde::shape_tags::de_tags(decoder, depth + 1)?)))
@@ -106,7 +106,7 @@ pub(crate) fn de_instance_recommendation(
                     Ok(builder.set_current_instance_gpu_info(Some(crate::protocol_serde::shape_gpu_info::de_gpu_info(decoder, depth + 1)?)))
                 })?,
                 "idle" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_idle(Some(decoder.string().map(|s| crate::types::InstanceIdle::from(s.as_ref()))?)))
+                    Ok(builder.set_idle(Some(decoder.string().map(|s| crate::types::InstanceIdle::from(s.as_str()))?)))
                 })?,
                 _ => {
                     decoder.skip()?;

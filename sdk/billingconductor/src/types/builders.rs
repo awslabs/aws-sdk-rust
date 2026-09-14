@@ -89,6 +89,8 @@ pub use crate::types::_associate_resource_error::AssociateResourceErrorBuilder;
 
 pub use crate::types::_tiering::TieringBuilder;
 
+pub use crate::types::_custom_tier::CustomTierBuilder;
+
 pub use crate::types::_attribute::AttributeBuilder;
 
 pub use crate::types::_free_tier_config::FreeTierConfigBuilder;

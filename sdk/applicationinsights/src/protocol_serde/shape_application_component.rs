@@ -27,10 +27,10 @@ pub(crate) fn de_application_component(
                     Ok(builder.set_resource_type(Some(decoder.string()?)))
                 })?,
                 "OsType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_os_type(Some(decoder.string().map(|s| crate::types::OsType::from(s.as_ref()))?)))
+                    Ok(builder.set_os_type(Some(decoder.string().map(|s| crate::types::OsType::from(s.as_str()))?)))
                 })?,
                 "Tier" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_tier(Some(decoder.string().map(|s| crate::types::Tier::from(s.as_ref()))?)))
+                    Ok(builder.set_tier(Some(decoder.string().map(|s| crate::types::Tier::from(s.as_str()))?)))
                 })?,
                 "Monitor" => {
                     ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_monitor(Some(decoder.boolean()?))))?

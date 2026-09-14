@@ -45,6 +45,14 @@ pub fn ser_get_federation_token_input_input_input(
         }
         list_15.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("MinimumSessionTokenSize");
+    if let Some(var_18) = &input.minimum_session_token_size {
+        scope_17.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_18).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

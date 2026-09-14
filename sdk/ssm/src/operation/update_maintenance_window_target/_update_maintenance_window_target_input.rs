@@ -63,6 +63,236 @@ impl ::std::fmt::Debug for UpdateMaintenanceWindowTargetInput {
         formatter.finish()
     }
 }
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_WINDOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowTargetInput$WindowId",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowTargetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WindowId",
+    0,
+);
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_WINDOW_TARGET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowTargetInput$WindowTargetId",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowTargetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WindowTargetId",
+    1,
+);
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Targets$member", "com.amazonaws.ssm", "Targets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowTargetInput$Targets",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowTargetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    2,
+)
+.with_list_member(&UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_TARGETS_MEMBER);
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_OWNER_INFORMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowTargetInput$OwnerInformation",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowTargetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerInformation",
+    3,
+);
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowTargetInput$Name",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowTargetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    4,
+);
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowTargetInput$Description",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowTargetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    5,
+);
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_REPLACE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowTargetInput$Replace",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowTargetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Replace",
+    6,
+);
+static UPDATEMAINTENANCEWINDOWTARGETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateMaintenanceWindowTargetInput",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateMaintenanceWindowTargetInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_WINDOW_ID,
+        &UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_WINDOW_TARGET_ID,
+        &UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_TARGETS,
+        &UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_OWNER_INFORMATION,
+        &UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_NAME,
+        &UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_DESCRIPTION,
+        &UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_REPLACE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateMaintenanceWindowTargetRequest");
+impl UpdateMaintenanceWindowTargetInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEMAINTENANCEWINDOWTARGETINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateMaintenanceWindowTargetInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.window_id {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_WINDOW_ID, val)?;
+        }
+        if let Some(ref val) = self.window_target_id {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_WINDOW_TARGET_ID, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.owner_information {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_OWNER_INFORMATION, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.replace {
+            ser.write_boolean(&UPDATEMAINTENANCEWINDOWTARGETINPUT_MEMBER_REPLACE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl UpdateMaintenanceWindowTargetInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UPDATEMAINTENANCEWINDOWTARGETINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_target_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.owner_information = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.replace = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.window_id = builder.window_id.or(Some(String::new()));
+        builder.window_target_id = builder.window_target_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl UpdateMaintenanceWindowTargetInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl UpdateMaintenanceWindowTargetInput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowTargetInput`](crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetInput).
     pub fn builder() -> crate::operation::update_maintenance_window_target::builders::UpdateMaintenanceWindowTargetInputBuilder {

@@ -25,10 +25,10 @@ pub(crate) fn de_image(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_display_name(Some(decoder.string()?))))?
             }
             "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::ImageState::from(s.as_ref()))?)))
+                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::ImageState::from(s.as_str()))?)))
             })?,
             "Visibility" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_visibility(Some(decoder.string().map(|s| crate::types::VisibilityType::from(s.as_ref()))?)))
+                Ok(builder.set_visibility(Some(decoder.string().map(|s| crate::types::VisibilityType::from(s.as_str()))?)))
             })?,
             "ImageBuilderSupported" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_image_builder_supported(Some(decoder.boolean()?)))
@@ -37,7 +37,7 @@ pub(crate) fn de_image(
                 Ok(builder.set_image_builder_name(Some(decoder.string()?)))
             })?,
             "Platform" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_platform(Some(decoder.string().map(|s| crate::types::PlatformType::from(s.as_ref()))?)))
+                Ok(builder.set_platform(Some(decoder.string().map(|s| crate::types::PlatformType::from(s.as_str()))?)))
             })?,
             "Description" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
@@ -77,7 +77,7 @@ pub(crate) fn de_image(
             })?,
             "LatestAppstreamAgentVersion" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_latest_appstream_agent_version(Some(
-                    decoder.string().map(|s| crate::types::LatestAppstreamAgentVersion::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::LatestAppstreamAgentVersion::from(s.as_str()))?,
                 )))
             })?,
             "SupportedInstanceFamilies" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -85,17 +85,17 @@ pub(crate) fn de_image(
             })?,
             "DynamicAppProvidersEnabled" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_dynamic_app_providers_enabled(Some(
-                    decoder.string().map(|s| crate::types::DynamicAppProvidersEnabled::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::DynamicAppProvidersEnabled::from(s.as_str()))?,
                 )))
             })?,
             "ImageSharedWithOthers" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_image_shared_with_others(Some(decoder.string().map(|s| crate::types::ImageSharedWithOthers::from(s.as_ref()))?)))
+                Ok(builder.set_image_shared_with_others(Some(decoder.string().map(|s| crate::types::ImageSharedWithOthers::from(s.as_str()))?)))
             })?,
             "ManagedSoftwareIncluded" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_managed_software_included(Some(decoder.boolean()?)))
             })?,
             "ImageType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_image_type(Some(decoder.string().map(|s| crate::types::ImageType::from(s.as_ref()))?)))
+                Ok(builder.set_image_type(Some(decoder.string().map(|s| crate::types::ImageType::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

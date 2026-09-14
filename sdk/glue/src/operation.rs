@@ -628,6 +628,9 @@ pub mod list_glossary_terms;
 /// Types for the `ListIntegrationResourceProperties` operation.
 pub mod list_integration_resource_properties;
 
+/// Types for the `ListIntegrationTableProperties` operation.
+pub mod list_integration_table_properties;
+
 /// Types for the `ListIterableForms` operation.
 pub mod list_iterable_forms;
 

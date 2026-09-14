@@ -111,6 +111,8 @@ pub use crate::types::_associate_resource_error::AssociateResourceError;
 
 pub use crate::types::_tiering::Tiering;
 
+pub use crate::types::_custom_tier::CustomTier;
+
 pub use crate::types::_attribute::Attribute;
 
 pub use crate::types::_search_option::SearchOption;
@@ -176,6 +178,8 @@ mod _custom_line_item_relationship;
 mod _custom_line_item_type;
 
 mod _custom_line_item_version_list_element;
+
+mod _custom_tier;
 
 mod _disassociate_resource_response_element;
 

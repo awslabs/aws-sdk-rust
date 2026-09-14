@@ -191,9 +191,10 @@ impl Encoder {
     /// Writes a blob from a byte slice. Collapses header+data into a single reserve+write.
     ///
     /// Mirrors [`Self::str`]'s slice-input style. Prefer this over [`Self::blob`]
-    /// when the caller already holds a `&[u8]` (e.g. from a schema-serde
-    /// `ShapeSerializer::write_blob(_, &[u8])` call) — it avoids needing to
-    /// wrap the bytes in a [`Blob`] just to satisfy the API.
+    /// when the caller holds a byte slice rather than an owned [`Blob`] — for
+    /// example a schema-serde `ShapeSerializer::write_blob` implementation, which
+    /// receives an owned `Blob` and passes `value.as_ref()` because it has no
+    /// reason to consume it.
     pub fn blob_bytes(&mut self, data: &[u8]) -> &mut Self {
         let writer = self.encoder.writer_mut();
         let len = data.len();

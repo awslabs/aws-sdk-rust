@@ -517,6 +517,18 @@ pub(crate) fn integration_resource_property_correct_errors(
     builder
 }
 
+pub(crate) fn integration_table_properties_correct_errors(
+    mut builder: crate::types::builders::IntegrationTablePropertiesBuilder,
+) -> crate::types::builders::IntegrationTablePropertiesBuilder {
+    if builder.resource_arn.is_none() {
+        builder.resource_arn = Some(Default::default())
+    }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn json_classifier_correct_errors(
     mut builder: crate::types::builders::JsonClassifierBuilder,
 ) -> crate::types::builders::JsonClassifierBuilder {

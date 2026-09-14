@@ -10,10 +10,14 @@ pub fn ser_tool_use_result_data(
         object.key("toolName").string(input.tool_name.as_str());
     }
     {
-        object.key("toolResult").document(&input.tool_result);
+        object
+            .key("toolResult")
+            .document(&input.tool_result, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_1) = &input.input_schema {
-        object.key("inputSchema").document(var_1);
+        object
+            .key("inputSchema")
+            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

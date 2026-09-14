@@ -28,6 +28,174 @@ impl StartAccessRequestInput {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static STARTACCESSREQUESTINPUT_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAccessRequestInput$Reason",
+        "com.amazonaws.ssm.synthetic",
+        "StartAccessRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Reason",
+    0,
+);
+static STARTACCESSREQUESTINPUT_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Targets$member", "com.amazonaws.ssm", "Targets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTACCESSREQUESTINPUT_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAccessRequestInput$Targets",
+        "com.amazonaws.ssm.synthetic",
+        "StartAccessRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    1,
+)
+.with_list_member(&STARTACCESSREQUESTINPUT_MEMBER_TARGETS_MEMBER);
+static STARTACCESSREQUESTINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TagList$member", "com.amazonaws.ssm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTACCESSREQUESTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAccessRequestInput$Tags",
+        "com.amazonaws.ssm.synthetic",
+        "StartAccessRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    2,
+)
+.with_list_member(&STARTACCESSREQUESTINPUT_MEMBER_TAGS_MEMBER);
+static STARTACCESSREQUESTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAccessRequestInput",
+        "com.amazonaws.ssm.synthetic",
+        "StartAccessRequestInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTACCESSREQUESTINPUT_MEMBER_REASON,
+        &STARTACCESSREQUESTINPUT_MEMBER_TARGETS,
+        &STARTACCESSREQUESTINPUT_MEMBER_TAGS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartAccessRequestRequest");
+impl StartAccessRequestInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTACCESSREQUESTINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartAccessRequestInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.reason {
+            ser.write_string(&STARTACCESSREQUESTINPUT_MEMBER_REASON, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &STARTACCESSREQUESTINPUT_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTACCESSREQUESTINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl StartAccessRequestInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STARTACCESSREQUESTINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.reason = builder.reason.or(Some(String::new()));
+        builder.targets = builder.targets.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl StartAccessRequestInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl StartAccessRequestInput {
     /// Creates a new builder-style object to manufacture [`StartAccessRequestInput`](crate::operation::start_access_request::StartAccessRequestInput).
     pub fn builder() -> crate::operation::start_access_request::builders::StartAccessRequestInputBuilder {

@@ -10,7 +10,9 @@ pub fn ser_update_flow_input_input(
         object.key("Description").string(var_2.as_str());
     }
     if let Some(var_3) = &input.flow_definition {
-        object.key("FlowDefinition").document(var_3);
+        object
+            .key("FlowDefinition")
+            .document(var_3, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_4) = &input.name {
         object.key("Name").string(var_4.as_str());

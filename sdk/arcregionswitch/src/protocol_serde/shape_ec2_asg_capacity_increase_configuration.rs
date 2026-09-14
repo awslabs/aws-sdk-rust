@@ -61,7 +61,7 @@ pub(crate) fn de_ec2_asg_capacity_increase_configuration(
                 Ok(builder.set_capacity_monitoring_approach(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::Ec2AsgCapacityMonitoringApproach::from(s.as_ref()))?,
+                        .map(|s| crate::types::Ec2AsgCapacityMonitoringApproach::from(s.as_str()))?,
                 )))
             })?,
             _ => {

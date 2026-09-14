@@ -713,7 +713,7 @@ mod tests {
                     Document::Object({
                         let mut out = HashMap::new();
                         out.insert("name".to_string(), "wrong-scheme-id".to_string().into());
-                        out
+                        out.into()
                     }),
                     Document::Object({
                         let mut out = HashMap::new();
@@ -721,7 +721,7 @@ mod tests {
                             "name".to_string(),
                             "another-wrong-scheme-id".to_string().into(),
                         );
-                        out
+                        out.into()
                     }),
                 ],
             )
@@ -740,7 +740,7 @@ mod tests {
                     Document::Object({
                         let mut out = HashMap::new();
                         out.insert("name".to_string(), "wrong-scheme-id".to_string().into());
-                        out
+                        out.into()
                     }),
                     Document::Object({
                         let mut out = HashMap::new();
@@ -749,7 +749,7 @@ mod tests {
                             "magicString".to_string(),
                             "magic string value".to_string().into(),
                         );
-                        out
+                        out.into()
                     }),
                 ],
             )

@@ -38,6 +38,204 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
         self.next_token.as_deref()
     }
 }
+static DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_WINDOW_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribeMaintenanceWindowExecutionTaskInvocationsInput$WindowExecutionId",
+            "com.amazonaws.ssm.synthetic",
+            "DescribeMaintenanceWindowExecutionTaskInvocationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "WindowExecutionId",
+        0,
+    );
+static DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_TASK_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribeMaintenanceWindowExecutionTaskInvocationsInput$TaskId",
+            "com.amazonaws.ssm.synthetic",
+            "DescribeMaintenanceWindowExecutionTaskInvocationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "TaskId",
+        1,
+    );
+static DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#MaintenanceWindowFilterList$member",
+            "com.amazonaws.ssm",
+            "MaintenanceWindowFilterList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribeMaintenanceWindowExecutionTaskInvocationsInput$Filters",
+            "com.amazonaws.ssm.synthetic",
+            "DescribeMaintenanceWindowExecutionTaskInvocationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "Filters",
+        2,
+    )
+    .with_list_member(&DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_FILTERS_MEMBER);
+static DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribeMaintenanceWindowExecutionTaskInvocationsInput$MaxResults",
+            "com.amazonaws.ssm.synthetic",
+            "DescribeMaintenanceWindowExecutionTaskInvocationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Integer,
+        "MaxResults",
+        3,
+    );
+static DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DescribeMaintenanceWindowExecutionTaskInvocationsInput$NextToken",
+            "com.amazonaws.ssm.synthetic",
+            "DescribeMaintenanceWindowExecutionTaskInvocationsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "NextToken",
+        4,
+    );
+static DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DescribeMaintenanceWindowExecutionTaskInvocationsInput",
+        "com.amazonaws.ssm.synthetic",
+        "DescribeMaintenanceWindowExecutionTaskInvocationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_WINDOW_EXECUTION_ID,
+        &DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_TASK_ID,
+        &DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_FILTERS,
+        &DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_MAX_RESULTS,
+        &DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DescribeMaintenanceWindowExecutionTaskInvocationsRequest");
+impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DescribeMaintenanceWindowExecutionTaskInvocationsInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.window_execution_id {
+            ser.write_string(&DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_WINDOW_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.task_id {
+            ser.write_string(&DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_TASK_ID, val)?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::MaintenanceWindowFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DESCRIBEMAINTENANCEWINDOWEXECUTIONTASKINVOCATIONSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.task_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::MaintenanceWindowFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.window_execution_id = builder.window_execution_id.or(Some(String::new()));
+        builder.task_id = builder.task_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMaintenanceWindowExecutionTaskInvocationsInput`](crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsInput).
     pub fn builder() -> crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsInputBuilder{

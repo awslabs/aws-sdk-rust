@@ -23,10 +23,10 @@ pub(crate) fn de_automation_event(
                 Ok(builder.set_event_description(Some(decoder.string()?)))
             })?,
             "eventType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_event_type(Some(decoder.string().map(|s| crate::types::EventType::from(s.as_ref()))?)))
+                Ok(builder.set_event_type(Some(decoder.string().map(|s| crate::types::EventType::from(s.as_str()))?)))
             })?,
             "eventStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_event_status(Some(decoder.string().map(|s| crate::types::EventStatus::from(s.as_ref()))?)))
+                Ok(builder.set_event_status(Some(decoder.string().map(|s| crate::types::EventStatus::from(s.as_str()))?)))
             })?,
             "eventStatusReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_event_status_reason(Some(decoder.string()?)))
@@ -50,7 +50,7 @@ pub(crate) fn de_automation_event(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_rule_id(Some(decoder.string()?))))?
             }
             "resourceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_resource_type(Some(decoder.string().map(|s| crate::types::ResourceType::from(s.as_ref()))?)))
+                Ok(builder.set_resource_type(Some(decoder.string().map(|s| crate::types::ResourceType::from(s.as_str()))?)))
             })?,
             "createdTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_created_timestamp(Some(decoder.timestamp()?)))

@@ -18,7 +18,7 @@ pub(crate) fn de_validation_exception_field(
         builder = match decoder.str()?.as_ref() {
             "Name" => builder.set_name(Some(decoder.string()?)),
             "Message" => builder.set_message(Some(decoder.string()?)),
-            "Code" => builder.set_code(Some(decoder.string().map(|s| crate::types::FieldValidationCode::from(s.as_ref()))?)),
+            "Code" => builder.set_code(Some(decoder.string().map(|s| crate::types::FieldValidationCode::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

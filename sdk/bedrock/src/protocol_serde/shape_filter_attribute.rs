@@ -7,7 +7,9 @@ pub fn ser_filter_attribute(
         object.key("key").string(input.key.as_str());
     }
     {
-        object.key("value").document(&input.value);
+        object
+            .key("value")
+            .document(&input.value, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

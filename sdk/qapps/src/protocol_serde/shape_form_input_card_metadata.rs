@@ -4,7 +4,9 @@ pub fn ser_form_input_card_metadata(
     input: &crate::types::FormInputCardMetadata,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
-        object.key("schema").document(&input.schema);
+        object
+            .key("schema")
+            .document(&input.schema, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

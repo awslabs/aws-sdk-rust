@@ -21,9 +21,186 @@ impl ListOpsItemRelatedItemsOutput {
         self.summaries.as_deref().unwrap_or_default()
     }
 }
+static LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListOpsItemRelatedItemsOutput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "ListOpsItemRelatedItemsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    0,
+);
+static LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER_SUMMARIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemSummaries$member",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemSummaries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER_SUMMARIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListOpsItemRelatedItemsOutput$Summaries",
+        "com.amazonaws.ssm.synthetic",
+        "ListOpsItemRelatedItemsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Summaries",
+    1,
+)
+.with_list_member(&LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER_SUMMARIES_MEMBER);
+static LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    2,
+)
+.with_http_header("x-amzn-requestid");
+static LISTOPSITEMRELATEDITEMSOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListOpsItemRelatedItemsOutput",
+        "com.amazonaws.ssm.synthetic",
+        "ListOpsItemRelatedItemsOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER_NEXT_TOKEN,
+        &LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER_SUMMARIES,
+        &LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("ListOpsItemRelatedItemsResponse");
+impl ListOpsItemRelatedItemsOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTOPSITEMRELATEDITEMSOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListOpsItemRelatedItemsOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.summaries {
+            ser.write_list(
+                &LISTOPSITEMRELATEDITEMSOUTPUT_MEMBER_SUMMARIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::OpsItemRelatedItemSummary::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl ListOpsItemRelatedItemsOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&LISTOPSITEMRELATEDITEMSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.summaries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OpsItemRelatedItemSummary::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl ListOpsItemRelatedItemsOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&LISTOPSITEMRELATEDITEMSOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.next_token = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.summaries = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::OpsItemRelatedItemSummary::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for ListOpsItemRelatedItemsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl ListOpsItemRelatedItemsOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl ListOpsItemRelatedItemsOutput {

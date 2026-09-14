@@ -35,18 +35,18 @@ pub(crate) fn de_game_server_group(
                     )
                 })?,
                 "BalancingStrategy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_balancing_strategy(Some(decoder.string().map(|s| crate::types::BalancingStrategy::from(s.as_ref()))?)))
+                    Ok(builder.set_balancing_strategy(Some(decoder.string().map(|s| crate::types::BalancingStrategy::from(s.as_str()))?)))
                 })?,
                 "GameServerProtectionPolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_game_server_protection_policy(Some(
-                        decoder.string().map(|s| crate::types::GameServerProtectionPolicy::from(s.as_ref()))?,
+                        decoder.string().map(|s| crate::types::GameServerProtectionPolicy::from(s.as_str()))?,
                     )))
                 })?,
                 "AutoScalingGroupArn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_auto_scaling_group_arn(Some(decoder.string()?)))
                 })?,
                 "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::GameServerGroupStatus::from(s.as_ref()))?)))
+                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::GameServerGroupStatus::from(s.as_str()))?)))
                 })?,
                 "StatusReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_status_reason(Some(decoder.string()?)))

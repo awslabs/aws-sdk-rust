@@ -155,7 +155,7 @@ pub(crate) fn de_get_workspace_instance(
                 )
             })?,
             "ProvisionState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_provision_state(Some(decoder.string().map(|s| crate::types::ProvisionStateEnum::from(s.as_ref()))?)))
+                Ok(builder.set_provision_state(Some(decoder.string().map(|s| crate::types::ProvisionStateEnum::from(s.as_str()))?)))
             })?,
             "WorkspaceInstanceId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_workspace_instance_id(Some(decoder.string()?)))

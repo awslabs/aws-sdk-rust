@@ -24,6 +24,131 @@ impl DeregisterTargetFromMaintenanceWindowInput {
         self.safe
     }
 }
+static DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeregisterTargetFromMaintenanceWindowInput$WindowId",
+        "com.amazonaws.ssm.synthetic",
+        "DeregisterTargetFromMaintenanceWindowInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WindowId",
+    0,
+);
+static DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_TARGET_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#DeregisterTargetFromMaintenanceWindowInput$WindowTargetId",
+            "com.amazonaws.ssm.synthetic",
+            "DeregisterTargetFromMaintenanceWindowInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "WindowTargetId",
+        1,
+    );
+static DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_SAFE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeregisterTargetFromMaintenanceWindowInput$Safe",
+        "com.amazonaws.ssm.synthetic",
+        "DeregisterTargetFromMaintenanceWindowInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Safe",
+    2,
+);
+static DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeregisterTargetFromMaintenanceWindowInput",
+        "com.amazonaws.ssm.synthetic",
+        "DeregisterTargetFromMaintenanceWindowInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_ID,
+        &DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_TARGET_ID,
+        &DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_SAFE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeregisterTargetFromMaintenanceWindowRequest");
+impl DeregisterTargetFromMaintenanceWindowInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeregisterTargetFromMaintenanceWindowInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.window_id {
+            ser.write_string(&DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_ID, val)?;
+        }
+        if let Some(ref val) = self.window_target_id {
+            ser.write_string(&DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_TARGET_ID, val)?;
+        }
+        if let Some(ref val) = self.safe {
+            ser.write_boolean(&DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_MEMBER_SAFE, *val)?;
+        }
+        Ok(())
+    }
+}
+impl DeregisterTargetFromMaintenanceWindowInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DEREGISTERTARGETFROMMAINTENANCEWINDOWINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_target_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.safe = Some(deser.read_boolean(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.window_id = builder.window_id.or(Some(String::new()));
+        builder.window_target_id = builder.window_target_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl DeregisterTargetFromMaintenanceWindowInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl DeregisterTargetFromMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`DeregisterTargetFromMaintenanceWindowInput`](crate::operation::deregister_target_from_maintenance_window::DeregisterTargetFromMaintenanceWindowInput).
     pub fn builder() -> crate::operation::deregister_target_from_maintenance_window::builders::DeregisterTargetFromMaintenanceWindowInputBuilder {

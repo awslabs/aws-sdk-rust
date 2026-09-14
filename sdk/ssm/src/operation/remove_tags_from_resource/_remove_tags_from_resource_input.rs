@@ -46,6 +46,145 @@ impl RemoveTagsFromResourceInput {
         self.tag_keys.as_deref().unwrap_or_default()
     }
 }
+static REMOVETAGSFROMRESOURCEINPUT_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#RemoveTagsFromResourceInput$ResourceType",
+        "com.amazonaws.ssm.synthetic",
+        "RemoveTagsFromResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    0,
+);
+static REMOVETAGSFROMRESOURCEINPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#RemoveTagsFromResourceInput$ResourceId",
+        "com.amazonaws.ssm.synthetic",
+        "RemoveTagsFromResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    1,
+);
+static REMOVETAGSFROMRESOURCEINPUT_MEMBER_TAG_KEYS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#KeyList$member", "com.amazonaws.ssm", "KeyList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static REMOVETAGSFROMRESOURCEINPUT_MEMBER_TAG_KEYS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#RemoveTagsFromResourceInput$TagKeys",
+        "com.amazonaws.ssm.synthetic",
+        "RemoveTagsFromResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TagKeys",
+    2,
+)
+.with_list_member(&REMOVETAGSFROMRESOURCEINPUT_MEMBER_TAG_KEYS_MEMBER);
+static REMOVETAGSFROMRESOURCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#RemoveTagsFromResourceInput",
+        "com.amazonaws.ssm.synthetic",
+        "RemoveTagsFromResourceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REMOVETAGSFROMRESOURCEINPUT_MEMBER_RESOURCE_TYPE,
+        &REMOVETAGSFROMRESOURCEINPUT_MEMBER_RESOURCE_ID,
+        &REMOVETAGSFROMRESOURCEINPUT_MEMBER_TAG_KEYS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("RemoveTagsFromResourceRequest");
+impl RemoveTagsFromResourceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REMOVETAGSFROMRESOURCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RemoveTagsFromResourceInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&REMOVETAGSFROMRESOURCEINPUT_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&REMOVETAGSFROMRESOURCEINPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.tag_keys {
+            ser.write_list(
+                &REMOVETAGSFROMRESOURCEINPUT_MEMBER_TAG_KEYS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl RemoveTagsFromResourceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&REMOVETAGSFROMRESOURCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.resource_type = Some(crate::types::ResourceTypeForTagging::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.tag_keys = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.resource_id = builder.resource_id.or(Some(String::new()));
+        builder.tag_keys = builder.tag_keys.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl RemoveTagsFromResourceInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl RemoveTagsFromResourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
     pub fn builder() -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder {

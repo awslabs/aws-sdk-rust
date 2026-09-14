@@ -40,7 +40,7 @@ pub(crate) fn de_container_mount_point(
             })?,
             "AccessLevel" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_access_level(Some(
-                    decoder.string().map(|s| crate::types::ContainerMountPointAccessLevel::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::ContainerMountPointAccessLevel::from(s.as_str()))?,
                 )))
             })?,
             _ => {

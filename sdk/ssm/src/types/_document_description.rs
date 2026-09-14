@@ -211,6 +211,845 @@ impl DocumentDescription {
         self.category_enum.as_deref().unwrap_or_default()
     }
 }
+static DOCUMENTDESCRIPTION_MEMBER_SHA1: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription$Sha1", "com.amazonaws.ssm", "DocumentDescription"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Sha1",
+    0,
+);
+static DOCUMENTDESCRIPTION_MEMBER_HASH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription$Hash", "com.amazonaws.ssm", "DocumentDescription"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Hash",
+    1,
+);
+static DOCUMENTDESCRIPTION_MEMBER_HASH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$HashType",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "HashType",
+    2,
+);
+static DOCUMENTDESCRIPTION_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription$Name", "com.amazonaws.ssm", "DocumentDescription"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    3,
+);
+static DOCUMENTDESCRIPTION_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$DisplayName",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    4,
+);
+static DOCUMENTDESCRIPTION_MEMBER_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$VersionName",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionName",
+    5,
+);
+static DOCUMENTDESCRIPTION_MEMBER_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription$Owner", "com.amazonaws.ssm", "DocumentDescription"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Owner",
+    6,
+);
+static DOCUMENTDESCRIPTION_MEMBER_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$CreatedDate",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedDate",
+    7,
+);
+static DOCUMENTDESCRIPTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription$Status", "com.amazonaws.ssm", "DocumentDescription"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    8,
+);
+static DOCUMENTDESCRIPTION_MEMBER_STATUS_INFORMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$StatusInformation",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusInformation",
+    9,
+);
+static DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$DocumentVersion",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    10,
+);
+static DOCUMENTDESCRIPTION_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$Description",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    11,
+);
+static DOCUMENTDESCRIPTION_MEMBER_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentParameterList$member",
+        "com.amazonaws.ssm",
+        "DocumentParameterList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+)
+.with_xml_name("DocumentParameter");
+static DOCUMENTDESCRIPTION_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$Parameters",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Parameters",
+    12,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_PARAMETERS_MEMBER);
+static DOCUMENTDESCRIPTION_MEMBER_PLATFORM_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PlatformTypeList$member", "com.amazonaws.ssm", "PlatformTypeList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("PlatformType");
+static DOCUMENTDESCRIPTION_MEMBER_PLATFORM_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$PlatformTypes",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PlatformTypes",
+    13,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_PLATFORM_TYPES_MEMBER);
+static DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$DocumentType",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentType",
+    14,
+);
+static DOCUMENTDESCRIPTION_MEMBER_SCHEMA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$SchemaVersion",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SchemaVersion",
+    15,
+);
+static DOCUMENTDESCRIPTION_MEMBER_LATEST_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$LatestVersion",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LatestVersion",
+    16,
+);
+static DOCUMENTDESCRIPTION_MEMBER_DEFAULT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$DefaultVersion",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultVersion",
+    17,
+);
+static DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$DocumentFormat",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentFormat",
+    18,
+);
+static DOCUMENTDESCRIPTION_MEMBER_TARGET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$TargetType",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetType",
+    19,
+);
+static DOCUMENTDESCRIPTION_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TagList$member", "com.amazonaws.ssm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DOCUMENTDESCRIPTION_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription$Tags", "com.amazonaws.ssm", "DocumentDescription"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    20,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_TAGS_MEMBER);
+static DOCUMENTDESCRIPTION_MEMBER_ATTACHMENTS_INFORMATION_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AttachmentInformationList$member",
+        "com.amazonaws.ssm",
+        "AttachmentInformationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+)
+.with_xml_name("AttachmentInformation");
+static DOCUMENTDESCRIPTION_MEMBER_ATTACHMENTS_INFORMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$AttachmentsInformation",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AttachmentsInformation",
+    21,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_ATTACHMENTS_INFORMATION_MEMBER);
+static DOCUMENTDESCRIPTION_MEMBER_REQUIRES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentRequiresList$member",
+        "com.amazonaws.ssm",
+        "DocumentRequiresList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DOCUMENTDESCRIPTION_MEMBER_REQUIRES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$Requires",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Requires",
+    22,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_REQUIRES_MEMBER);
+static DOCUMENTDESCRIPTION_MEMBER_AUTHOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription$Author", "com.amazonaws.ssm", "DocumentDescription"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Author",
+    23,
+);
+static DOCUMENTDESCRIPTION_MEMBER_REVIEW_INFORMATION_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ReviewInformationList$member",
+        "com.amazonaws.ssm",
+        "ReviewInformationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+)
+.with_xml_name("ReviewInformation");
+static DOCUMENTDESCRIPTION_MEMBER_REVIEW_INFORMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$ReviewInformation",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ReviewInformation",
+    24,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_REVIEW_INFORMATION_MEMBER);
+static DOCUMENTDESCRIPTION_MEMBER_APPROVED_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$ApprovedVersion",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ApprovedVersion",
+    25,
+);
+static DOCUMENTDESCRIPTION_MEMBER_PENDING_REVIEW_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$PendingReviewVersion",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PendingReviewVersion",
+    26,
+);
+static DOCUMENTDESCRIPTION_MEMBER_REVIEW_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$ReviewStatus",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReviewStatus",
+    27,
+);
+static DOCUMENTDESCRIPTION_MEMBER_CATEGORY_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CategoryList$member", "com.amazonaws.ssm", "CategoryList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DOCUMENTDESCRIPTION_MEMBER_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$Category",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Category",
+    28,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_CATEGORY_MEMBER);
+static DOCUMENTDESCRIPTION_MEMBER_CATEGORY_ENUM_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CategoryEnumList$member", "com.amazonaws.ssm", "CategoryEnumList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DOCUMENTDESCRIPTION_MEMBER_CATEGORY_ENUM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$CategoryEnum",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CategoryEnum",
+    29,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_CATEGORY_ENUM_MEMBER);
+static DOCUMENTDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription", "com.amazonaws.ssm", "DocumentDescription"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOCUMENTDESCRIPTION_MEMBER_SHA1,
+        &DOCUMENTDESCRIPTION_MEMBER_HASH,
+        &DOCUMENTDESCRIPTION_MEMBER_HASH_TYPE,
+        &DOCUMENTDESCRIPTION_MEMBER_NAME,
+        &DOCUMENTDESCRIPTION_MEMBER_DISPLAY_NAME,
+        &DOCUMENTDESCRIPTION_MEMBER_VERSION_NAME,
+        &DOCUMENTDESCRIPTION_MEMBER_OWNER,
+        &DOCUMENTDESCRIPTION_MEMBER_CREATED_DATE,
+        &DOCUMENTDESCRIPTION_MEMBER_STATUS,
+        &DOCUMENTDESCRIPTION_MEMBER_STATUS_INFORMATION,
+        &DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_VERSION,
+        &DOCUMENTDESCRIPTION_MEMBER_DESCRIPTION,
+        &DOCUMENTDESCRIPTION_MEMBER_PARAMETERS,
+        &DOCUMENTDESCRIPTION_MEMBER_PLATFORM_TYPES,
+        &DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_TYPE,
+        &DOCUMENTDESCRIPTION_MEMBER_SCHEMA_VERSION,
+        &DOCUMENTDESCRIPTION_MEMBER_LATEST_VERSION,
+        &DOCUMENTDESCRIPTION_MEMBER_DEFAULT_VERSION,
+        &DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_FORMAT,
+        &DOCUMENTDESCRIPTION_MEMBER_TARGET_TYPE,
+        &DOCUMENTDESCRIPTION_MEMBER_TAGS,
+        &DOCUMENTDESCRIPTION_MEMBER_ATTACHMENTS_INFORMATION,
+        &DOCUMENTDESCRIPTION_MEMBER_REQUIRES,
+        &DOCUMENTDESCRIPTION_MEMBER_AUTHOR,
+        &DOCUMENTDESCRIPTION_MEMBER_REVIEW_INFORMATION,
+        &DOCUMENTDESCRIPTION_MEMBER_APPROVED_VERSION,
+        &DOCUMENTDESCRIPTION_MEMBER_PENDING_REVIEW_VERSION,
+        &DOCUMENTDESCRIPTION_MEMBER_REVIEW_STATUS,
+        &DOCUMENTDESCRIPTION_MEMBER_CATEGORY,
+        &DOCUMENTDESCRIPTION_MEMBER_CATEGORY_ENUM,
+    ],
+);
+impl DocumentDescription {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTDESCRIPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentDescription {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sha1 {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_SHA1, val)?;
+        }
+        if let Some(ref val) = self.hash {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_HASH, val)?;
+        }
+        if let Some(ref val) = self.hash_type {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_HASH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.version_name {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.owner {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_OWNER, val)?;
+        }
+        if let Some(ref val) = self.created_date {
+            ser.write_timestamp(&DOCUMENTDESCRIPTION_MEMBER_CREATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_information {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_STATUS_INFORMATION, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DocumentParameter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.platform_types {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_PLATFORM_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.document_type {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.schema_version {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_SCHEMA_VERSION, val)?;
+        }
+        if let Some(ref val) = self.latest_version {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_LATEST_VERSION, val)?;
+        }
+        if let Some(ref val) = self.default_version {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_DEFAULT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.document_format {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_DOCUMENT_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.target_type {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_TARGET_TYPE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.attachments_information {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_ATTACHMENTS_INFORMATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AttachmentInformation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.requires {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_REQUIRES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DocumentRequires::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.author {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_AUTHOR, val)?;
+        }
+        if let Some(ref val) = self.review_information {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_REVIEW_INFORMATION,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::ReviewInformation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.approved_version {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_APPROVED_VERSION, val)?;
+        }
+        if let Some(ref val) = self.pending_review_version {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_PENDING_REVIEW_VERSION, val)?;
+        }
+        if let Some(ref val) = self.review_status {
+            ser.write_string(&DOCUMENTDESCRIPTION_MEMBER_REVIEW_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.category {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_CATEGORY,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.category_enum {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_CATEGORY_ENUM,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl DocumentDescription {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DOCUMENTDESCRIPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sha1 = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.hash = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.hash_type = Some(crate::types::DocumentHashType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.owner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status = Some(crate::types::DocumentStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status_information = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentParameter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.platform_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PlatformType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_type = Some(crate::types::DocumentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.schema_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.latest_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.default_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_format = Some(crate::types::DocumentFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.attachments_information = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AttachmentInformation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.requires = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentRequires::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.author = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.review_information = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ReviewInformation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.approved_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.pending_review_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.review_status = Some(crate::types::ReviewStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.category = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.category_enum = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl DocumentDescription {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl DocumentDescription {
     /// Creates a new builder-style object to manufacture [`DocumentDescription`](crate::types::DocumentDescription).
     pub fn builder() -> crate::types::builders::DocumentDescriptionBuilder {

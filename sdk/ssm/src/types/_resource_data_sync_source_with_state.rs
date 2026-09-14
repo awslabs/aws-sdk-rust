@@ -57,6 +57,204 @@ impl ResourceDataSyncSourceWithState {
         self.enable_all_ops_data_sources
     }
 }
+static RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_SOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncSourceWithState$SourceType",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncSourceWithState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceType",
+    0,
+);
+static RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_AWS_ORGANIZATIONS_SOURCE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#ResourceDataSyncSourceWithState$AwsOrganizationsSource",
+            "com.amazonaws.ssm",
+            "ResourceDataSyncSourceWithState",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AwsOrganizationsSource",
+        1,
+    );
+static RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_SOURCE_REGIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncSourceRegionList$member",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncSourceRegionList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_SOURCE_REGIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncSourceWithState$SourceRegions",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncSourceWithState",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SourceRegions",
+    2,
+)
+.with_list_member(&RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_SOURCE_REGIONS_MEMBER);
+static RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_INCLUDE_FUTURE_REGIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncSourceWithState$IncludeFutureRegions",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncSourceWithState",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IncludeFutureRegions",
+    3,
+);
+static RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncSourceWithState$State",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncSourceWithState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "State",
+    4,
+);
+static RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_ENABLE_ALL_OPS_DATA_SOURCES: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#ResourceDataSyncSourceWithState$EnableAllOpsDataSources",
+            "com.amazonaws.ssm",
+            "ResourceDataSyncSourceWithState",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "EnableAllOpsDataSources",
+        5,
+    );
+static RESOURCEDATASYNCSOURCEWITHSTATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncSourceWithState",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncSourceWithState",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_SOURCE_TYPE,
+        &RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_AWS_ORGANIZATIONS_SOURCE,
+        &RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_SOURCE_REGIONS,
+        &RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_INCLUDE_FUTURE_REGIONS,
+        &RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_STATE,
+        &RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_ENABLE_ALL_OPS_DATA_SOURCES,
+    ],
+);
+impl ResourceDataSyncSourceWithState {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEDATASYNCSOURCEWITHSTATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceDataSyncSourceWithState {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.source_type {
+            ser.write_string(&RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_SOURCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.aws_organizations_source {
+            ser.write_struct(&RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_AWS_ORGANIZATIONS_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.source_regions {
+            ser.write_list(
+                &RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_SOURCE_REGIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.include_future_regions;
+            ser.write_boolean(&RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_INCLUDE_FUTURE_REGIONS, *val)?;
+        }
+        if let Some(ref val) = self.state {
+            ser.write_string(&RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_STATE, val)?;
+        }
+        {
+            let val = &self.enable_all_ops_data_sources;
+            ser.write_boolean(&RESOURCEDATASYNCSOURCEWITHSTATE_MEMBER_ENABLE_ALL_OPS_DATA_SOURCES, *val)?;
+        }
+        Ok(())
+    }
+}
+impl ResourceDataSyncSourceWithState {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&RESOURCEDATASYNCSOURCEWITHSTATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.source_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.aws_organizations_source = Some(crate::types::ResourceDataSyncAwsOrganizationsSource::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.source_regions = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    builder.include_future_regions = Some(deser.read_boolean(member)?);
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.state = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    builder.enable_all_ops_data_sources = Some(deser.read_boolean(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl ResourceDataSyncSourceWithState {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl ResourceDataSyncSourceWithState {
     /// Creates a new builder-style object to manufacture [`ResourceDataSyncSourceWithState`](crate::types::ResourceDataSyncSourceWithState).
     pub fn builder() -> crate::types::builders::ResourceDataSyncSourceWithStateBuilder {

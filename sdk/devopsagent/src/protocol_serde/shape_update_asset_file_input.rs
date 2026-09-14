@@ -13,7 +13,9 @@ pub fn ser_update_asset_file_input_input(
         object_3.finish();
     }
     if let Some(var_4) = &input.metadata {
-        object.key("metadata").document(var_4);
+        object
+            .key("metadata")
+            .document(var_4, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

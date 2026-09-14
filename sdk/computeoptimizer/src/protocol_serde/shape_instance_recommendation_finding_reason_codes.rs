@@ -26,7 +26,7 @@ pub(crate) fn de_instance_recommendation_finding_reason_codes(
             }
             _ => decoder
                 .string()
-                .map(|s| crate::types::InstanceRecommendationFindingReasonCode::from(s.as_ref()))?,
+                .map(|s| crate::types::InstanceRecommendationFindingReasonCode::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

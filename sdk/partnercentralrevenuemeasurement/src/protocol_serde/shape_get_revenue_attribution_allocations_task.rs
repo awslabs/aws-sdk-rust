@@ -168,9 +168,9 @@ pub(crate) fn de_get_revenue_attribution_allocations_task(
             "Status" => builder.set_status(Some(
                 decoder
                     .string()
-                    .map(|s| crate::types::RevenueAttributionAllocationTaskStatus::from(s.as_ref()))?,
+                    .map(|s| crate::types::RevenueAttributionAllocationTaskStatus::from(s.as_str()))?,
             )),
-            "Catalog" => builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_ref()))?)),
+            "Catalog" => builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_str()))?)),
             "RevenueAttributionArn" => builder.set_revenue_attribution_arn(Some(decoder.string()?)),
             "StartedAt" => builder.set_started_at(Some(decoder.timestamp()?)),
             "EndedAt" => {

@@ -6,11 +6,19 @@
 pub struct CreateTieringInput {
     /// <p>The possible Amazon Web Services Free Tier configurations.</p>
     pub free_tier: ::std::option::Option<crate::types::CreateFreeTierConfig>,
+    /// <p>The set of custom tiers for the pricing rule.</p>
+    pub custom_tiers: ::std::option::Option<::std::vec::Vec<crate::types::CustomTier>>,
 }
 impl CreateTieringInput {
     /// <p>The possible Amazon Web Services Free Tier configurations.</p>
     pub fn free_tier(&self) -> ::std::option::Option<&crate::types::CreateFreeTierConfig> {
         self.free_tier.as_ref()
+    }
+    /// <p>The set of custom tiers for the pricing rule.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_tiers.is_none()`.
+    pub fn custom_tiers(&self) -> &[crate::types::CustomTier] {
+        self.custom_tiers.as_deref().unwrap_or_default()
     }
 }
 impl CreateTieringInput {
@@ -25,10 +33,10 @@ impl CreateTieringInput {
 #[non_exhaustive]
 pub struct CreateTieringInputBuilder {
     pub(crate) free_tier: ::std::option::Option<crate::types::CreateFreeTierConfig>,
+    pub(crate) custom_tiers: ::std::option::Option<::std::vec::Vec<crate::types::CustomTier>>,
 }
 impl CreateTieringInputBuilder {
     /// <p>The possible Amazon Web Services Free Tier configurations.</p>
-    /// This field is required.
     pub fn free_tier(mut self, input: crate::types::CreateFreeTierConfig) -> Self {
         self.free_tier = ::std::option::Option::Some(input);
         self
@@ -42,8 +50,31 @@ impl CreateTieringInputBuilder {
     pub fn get_free_tier(&self) -> &::std::option::Option<crate::types::CreateFreeTierConfig> {
         &self.free_tier
     }
+    /// Appends an item to `custom_tiers`.
+    ///
+    /// To override the contents of this collection use [`set_custom_tiers`](Self::set_custom_tiers).
+    ///
+    /// <p>The set of custom tiers for the pricing rule.</p>
+    pub fn custom_tiers(mut self, input: crate::types::CustomTier) -> Self {
+        let mut v = self.custom_tiers.unwrap_or_default();
+        v.push(input);
+        self.custom_tiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The set of custom tiers for the pricing rule.</p>
+    pub fn set_custom_tiers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CustomTier>>) -> Self {
+        self.custom_tiers = input;
+        self
+    }
+    /// <p>The set of custom tiers for the pricing rule.</p>
+    pub fn get_custom_tiers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CustomTier>> {
+        &self.custom_tiers
+    }
     /// Consumes the builder and constructs a [`CreateTieringInput`](crate::types::CreateTieringInput).
     pub fn build(self) -> crate::types::CreateTieringInput {
-        crate::types::CreateTieringInput { free_tier: self.free_tier }
+        crate::types::CreateTieringInput {
+            free_tier: self.free_tier,
+            custom_tiers: self.custom_tiers,
+        }
     }
 }

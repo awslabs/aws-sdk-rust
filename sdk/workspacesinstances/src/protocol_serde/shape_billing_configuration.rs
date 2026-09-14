@@ -28,7 +28,7 @@ pub(crate) fn de_billing_configuration(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::BillingConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "BillingMode" => builder.set_billing_mode(Some(decoder.string().map(|s| crate::types::BillingMode::from(s.as_ref()))?)),
+            "BillingMode" => builder.set_billing_mode(Some(decoder.string().map(|s| crate::types::BillingMode::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

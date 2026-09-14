@@ -21,11 +21,11 @@ pub(crate) fn de_container_fleet_location_attributes(
             }
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_status(Some(
-                    decoder.string().map(|s| crate::types::ContainerFleetLocationStatus::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::ContainerFleetLocationStatus::from(s.as_str()))?,
                 )))
             })?,
             "PlayerGatewayStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_player_gateway_status(Some(decoder.string().map(|s| crate::types::PlayerGatewayStatus::from(s.as_ref()))?)))
+                Ok(builder.set_player_gateway_status(Some(decoder.string().map(|s| crate::types::PlayerGatewayStatus::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

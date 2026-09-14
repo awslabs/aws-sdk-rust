@@ -37,7 +37,9 @@ pub fn ser_prompt_variant(
         array_7.finish();
     }
     if let Some(var_10) = &input.additional_model_request_fields {
-        object.key("additionalModelRequestFields").document(var_10);
+        object
+            .key("additionalModelRequestFields")
+            .document(var_10, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_11) = &input.gen_ai_resource {
         #[allow(unused_mut)]

@@ -43,7 +43,7 @@ pub(crate) fn de_rule_boolean_to_evaluate(
     ) -> ::std::result::Result<crate::types::RuleBooleanToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => {
-                crate::types::RuleBooleanToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleBooleanEmailAttribute::from(s.as_ref()))?)
+                crate::types::RuleBooleanToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleBooleanEmailAttribute::from(s.as_str()))?)
             }
             "Analysis" => crate::types::RuleBooleanToEvaluate::Analysis(crate::protocol_serde::shape_analysis::de_analysis(decoder, depth + 1)?),
             "IsInAddressList" => crate::types::RuleBooleanToEvaluate::IsInAddressList(

@@ -42,7 +42,7 @@ pub(crate) fn de_metric_stat(
             "Period" => builder.set_period(Some(decoder.integer()?)),
             "Stat" => builder.set_stat(Some(decoder.string()?)),
             "Unit" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_unit(Some(decoder.string().map(|s| crate::types::StandardUnit::from(s.as_ref()))?)))
+                Ok(builder.set_unit(Some(decoder.string().map(|s| crate::types::StandardUnit::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

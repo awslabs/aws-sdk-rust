@@ -5,6 +5,7 @@
 //! Smithy Endpoint Types
 
 use crate::config_bag::{Storable, StoreReplace};
+use crate::document::DocumentObject;
 use crate::Document;
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -14,9 +15,9 @@ type MaybeStatic = Cow<'static, str>;
 /// An authentication scheme configuration for an endpoint.
 ///
 /// This is a lightweight alternative to storing auth schemes as
-/// `Document::Object(HashMap<String, Document>)` in endpoint properties.
+/// `Document::Object` (a map) in endpoint properties.
 /// Properties are stored in a flat `Vec` and looked up via linear scan,
-/// which is faster than HashMap for the typical 3-4 entries.
+/// which is faster than a hash map for the typical 3-4 entries.
 #[derive(Debug, Clone, PartialEq)]
 pub struct EndpointAuthScheme {
     name: MaybeStatic,
@@ -53,7 +54,7 @@ impl EndpointAuthScheme {
 
     /// Converts this auth scheme into a `Document` for backward compatibility.
     pub fn as_document(&self) -> Document {
-        let mut map = HashMap::with_capacity(self.properties.len() + 1);
+        let mut map = DocumentObject::with_capacity(self.properties.len() + 1);
         map.insert("name".to_string(), Document::String(self.name.to_string()));
         for (k, v) in &self.properties {
             map.insert(k.to_string(), v.clone());

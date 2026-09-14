@@ -22,7 +22,7 @@ impl crate::operation::list_image_packages::builders::ListImagePackagesInputBuil
 }
 /// Fluent builder constructing a request to `ListImagePackages`.
 ///
-/// <p>List the Packages that are associated with an Image Build Version, as determined by Amazon Web Services Systems Manager Inventory at build time.</p>
+/// <p>Lists the packages that are associated with an image build version, as determined by Amazon Web Services Systems Manager Inventory at build time.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListImagePackagesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,31 +128,31 @@ impl ListImagePackagesFluentBuilder {
     pub fn get_image_build_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_build_version_arn()
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

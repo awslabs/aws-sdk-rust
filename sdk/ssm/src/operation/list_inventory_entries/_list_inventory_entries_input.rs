@@ -38,6 +38,195 @@ impl ListInventoryEntriesInput {
         self.max_results
     }
 }
+static LISTINVENTORYENTRIESINPUT_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesInput$InstanceId",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    0,
+);
+static LISTINVENTORYENTRIESINPUT_MEMBER_TYPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesInput$TypeName",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TypeName",
+    1,
+);
+static LISTINVENTORYENTRIESINPUT_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#InventoryFilterList$member", "com.amazonaws.ssm", "InventoryFilterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+)
+.with_xml_name("InventoryFilter");
+static LISTINVENTORYENTRIESINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesInput$Filters",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Filters",
+    2,
+)
+.with_list_member(&LISTINVENTORYENTRIESINPUT_MEMBER_FILTERS_MEMBER);
+static LISTINVENTORYENTRIESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesInput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static LISTINVENTORYENTRIESINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesInput$MaxResults",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    4,
+);
+static LISTINVENTORYENTRIESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListInventoryEntriesInput",
+        "com.amazonaws.ssm.synthetic",
+        "ListInventoryEntriesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTINVENTORYENTRIESINPUT_MEMBER_INSTANCE_ID,
+        &LISTINVENTORYENTRIESINPUT_MEMBER_TYPE_NAME,
+        &LISTINVENTORYENTRIESINPUT_MEMBER_FILTERS,
+        &LISTINVENTORYENTRIESINPUT_MEMBER_NEXT_TOKEN,
+        &LISTINVENTORYENTRIESINPUT_MEMBER_MAX_RESULTS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListInventoryEntriesRequest");
+impl ListInventoryEntriesInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTINVENTORYENTRIESINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListInventoryEntriesInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&LISTINVENTORYENTRIESINPUT_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.type_name {
+            ser.write_string(&LISTINVENTORYENTRIESINPUT_MEMBER_TYPE_NAME, val)?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &LISTINVENTORYENTRIESINPUT_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InventoryFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTINVENTORYENTRIESINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTINVENTORYENTRIESINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        Ok(())
+    }
+}
+impl ListInventoryEntriesInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&LISTINVENTORYENTRIESINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.type_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InventoryFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.instance_id = builder.instance_id.or(Some(String::new()));
+        builder.type_name = builder.type_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl ListInventoryEntriesInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl ListInventoryEntriesInput {
     /// Creates a new builder-style object to manufacture [`ListInventoryEntriesInput`](crate::operation::list_inventory_entries::ListInventoryEntriesInput).
     pub fn builder() -> crate::operation::list_inventory_entries::builders::ListInventoryEntriesInputBuilder {

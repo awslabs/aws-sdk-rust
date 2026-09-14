@@ -28,7 +28,9 @@ pub fn ser_device(
         array_5.finish();
     }
     if let Some(var_8) = &input.device_metadata {
-        object.key("DeviceMetadata").document(var_8);
+        object
+            .key("DeviceMetadata")
+            .document(var_8, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

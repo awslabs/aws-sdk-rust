@@ -25,9 +25,213 @@ impl GetOpsMetadataOutput {
         self.next_token.as_deref()
     }
 }
+static GETOPSMETADATAOUTPUT_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetOpsMetadataOutput$ResourceId",
+        "com.amazonaws.ssm.synthetic",
+        "GetOpsMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    0,
+);
+static GETOPSMETADATAOUTPUT_MEMBER_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#MetadataMap$key", "com.amazonaws.ssm", "MetadataMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static GETOPSMETADATAOUTPUT_MEMBER_METADATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#MetadataMap$value", "com.amazonaws.ssm", "MetadataMap"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static GETOPSMETADATAOUTPUT_MEMBER_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetOpsMetadataOutput$Metadata",
+        "com.amazonaws.ssm.synthetic",
+        "GetOpsMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Metadata",
+    1,
+)
+.with_map_members(&GETOPSMETADATAOUTPUT_MEMBER_METADATA_KEY, &GETOPSMETADATAOUTPUT_MEMBER_METADATA_VALUE);
+static GETOPSMETADATAOUTPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetOpsMetadataOutput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "GetOpsMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    2,
+);
+static GETOPSMETADATAOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    3,
+)
+.with_http_header("x-amzn-requestid");
+static GETOPSMETADATAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetOpsMetadataOutput",
+        "com.amazonaws.ssm.synthetic",
+        "GetOpsMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETOPSMETADATAOUTPUT_MEMBER_RESOURCE_ID,
+        &GETOPSMETADATAOUTPUT_MEMBER_METADATA,
+        &GETOPSMETADATAOUTPUT_MEMBER_NEXT_TOKEN,
+        &GETOPSMETADATAOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("GetOpsMetadataResult");
+impl GetOpsMetadataOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETOPSMETADATAOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetOpsMetadataOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&GETOPSMETADATAOUTPUT_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.metadata {
+            ser.write_map(
+                &GETOPSMETADATAOUTPUT_MEMBER_METADATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::MetadataValue::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETOPSMETADATAOUTPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl GetOpsMetadataOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&GETOPSMETADATAOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.metadata = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::MetadataValue::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl GetOpsMetadataOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&GETOPSMETADATAOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.resource_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.metadata = Some({
+                        let mut container = std::collections::HashMap::new();
+                        deser.read_map(member, &mut |key, deser| {
+                            container.insert(key, crate::types::MetadataValue::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(2) => {
+                    builder.next_token = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetOpsMetadataOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl GetOpsMetadataOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl GetOpsMetadataOutput {

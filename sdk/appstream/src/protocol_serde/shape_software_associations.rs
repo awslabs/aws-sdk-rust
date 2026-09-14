@@ -21,7 +21,7 @@ pub(crate) fn de_software_associations(
                     Ok(builder.set_software_name(Some(decoder.string()?)))
                 })?,
                 "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::SoftwareDeploymentStatus::from(s.as_ref()))?)))
+                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::SoftwareDeploymentStatus::from(s.as_str()))?)))
                 })?,
                 "DeploymentError" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(

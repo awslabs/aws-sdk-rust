@@ -30,6 +30,150 @@ impl CreateResourceDataSyncInput {
         self.sync_source.as_ref()
     }
 }
+static CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateResourceDataSyncInput$SyncName",
+        "com.amazonaws.ssm.synthetic",
+        "CreateResourceDataSyncInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SyncName",
+    0,
+);
+static CREATERESOURCEDATASYNCINPUT_MEMBER_S3_DESTINATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateResourceDataSyncInput$S3Destination",
+        "com.amazonaws.ssm.synthetic",
+        "CreateResourceDataSyncInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Destination",
+    1,
+);
+static CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateResourceDataSyncInput$SyncType",
+        "com.amazonaws.ssm.synthetic",
+        "CreateResourceDataSyncInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SyncType",
+    2,
+);
+static CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateResourceDataSyncInput$SyncSource",
+        "com.amazonaws.ssm.synthetic",
+        "CreateResourceDataSyncInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SyncSource",
+    3,
+);
+static CREATERESOURCEDATASYNCINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateResourceDataSyncInput",
+        "com.amazonaws.ssm.synthetic",
+        "CreateResourceDataSyncInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_NAME,
+        &CREATERESOURCEDATASYNCINPUT_MEMBER_S3_DESTINATION,
+        &CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_TYPE,
+        &CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_SOURCE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateResourceDataSyncRequest");
+impl CreateResourceDataSyncInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATERESOURCEDATASYNCINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateResourceDataSyncInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sync_name {
+            ser.write_string(&CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_NAME, val)?;
+        }
+        if let Some(ref val) = self.s3_destination {
+            ser.write_struct(&CREATERESOURCEDATASYNCINPUT_MEMBER_S3_DESTINATION, val)?;
+        }
+        if let Some(ref val) = self.sync_type {
+            ser.write_string(&CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_TYPE, val)?;
+        }
+        if let Some(ref val) = self.sync_source {
+            ser.write_struct(&CREATERESOURCEDATASYNCINPUT_MEMBER_SYNC_SOURCE, val)?;
+        }
+        Ok(())
+    }
+}
+impl CreateResourceDataSyncInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&CREATERESOURCEDATASYNCINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.s3_destination = Some(crate::types::ResourceDataSyncS3Destination::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_source = Some(crate::types::ResourceDataSyncSource::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.sync_name = builder.sync_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl CreateResourceDataSyncInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl CreateResourceDataSyncInput {
     /// Creates a new builder-style object to manufacture [`CreateResourceDataSyncInput`](crate::operation::create_resource_data_sync::CreateResourceDataSyncInput).
     pub fn builder() -> crate::operation::create_resource_data_sync::builders::CreateResourceDataSyncInputBuilder {

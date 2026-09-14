@@ -35,7 +35,7 @@ pub(crate) fn de_archive_string_to_evaluate(
     ) -> ::std::result::Result<crate::types::ArchiveStringToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => crate::types::ArchiveStringToEvaluate::Attribute(
-                decoder.string().map(|s| crate::types::ArchiveStringEmailAttribute::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::ArchiveStringEmailAttribute::from(s.as_str()))?,
             ),
             _ => {
                 decoder.skip()?;

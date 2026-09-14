@@ -21,7 +21,7 @@ pub(crate) fn de_entitlement(
             "Description" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
             }
-            "AppVisibility" => builder.set_app_visibility(Some(decoder.string().map(|s| crate::types::AppVisibility::from(s.as_ref()))?)),
+            "AppVisibility" => builder.set_app_visibility(Some(decoder.string().map(|s| crate::types::AppVisibility::from(s.as_str()))?)),
             "Attributes" => builder.set_attributes(Some(
                 crate::protocol_serde::shape_entitlement_attribute_list::de_entitlement_attribute_list(decoder, depth + 1)?,
             )),

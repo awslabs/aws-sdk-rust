@@ -59,7 +59,7 @@ pub(crate) fn de_ecs_capacity_increase_configuration(
             })?,
             "capacityMonitoringApproach" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_capacity_monitoring_approach(Some(
-                    decoder.string().map(|s| crate::types::EcsCapacityMonitoringApproach::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::EcsCapacityMonitoringApproach::from(s.as_str()))?,
                 )))
             })?,
             _ => {

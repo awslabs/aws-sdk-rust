@@ -16,68 +16,68 @@ use aws_smithy_schema::{shape_id, Schema, ShapeType};
 // Static schemas covering all shape types
 // ---------------------------------------------------------------------------
 
-static MEMBER_BOOL: Schema = Schema::new_member(
+static MEMBER_BOOL: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "boolField"),
     ShapeType::Boolean,
     "boolField",
     0,
 );
-static MEMBER_INT: Schema = Schema::new_member(
+static MEMBER_INT: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "intField"),
     ShapeType::Integer,
     "intField",
     1,
 );
-static MEMBER_STR: Schema = Schema::new_member(
+static MEMBER_STR: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "strField"),
     ShapeType::String,
     "strField",
     2,
 );
-static MEMBER_FLOAT: Schema = Schema::new_member(
+static MEMBER_FLOAT: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "floatField"),
     ShapeType::Float,
     "floatField",
     3,
 );
-static MEMBER_DOUBLE: Schema = Schema::new_member(
+static MEMBER_DOUBLE: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "doubleField"),
     ShapeType::Double,
     "doubleField",
     4,
 );
-static MEMBER_LONG: Schema = Schema::new_member(
+static MEMBER_LONG: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "longField"),
     ShapeType::Long,
     "longField",
     5,
 );
-static MEMBER_BYTE: Schema = Schema::new_member(
+static MEMBER_BYTE: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "byteField"),
     ShapeType::Byte,
     "byteField",
     6,
 );
-static MEMBER_SHORT: Schema = Schema::new_member(
+static MEMBER_SHORT: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "shortField"),
     ShapeType::Short,
     "shortField",
     7,
 );
-static MEMBER_BLOB: Schema = Schema::new_member(
+static MEMBER_BLOB: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "blobField"),
     ShapeType::Blob,
     "blobField",
     8,
 );
-static MEMBER_DOC: Schema = Schema::new_member(
+static MEMBER_DOC: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes", "documentField"),
     ShapeType::Document,
     "documentField",
     9,
 );
 
-pub static ALL_TYPES_SCHEMA: Schema = Schema::new_struct(
+pub static ALL_TYPES_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "AllTypes"),
     ShapeType::Structure,
     &[
@@ -94,46 +94,46 @@ pub static ALL_TYPES_SCHEMA: Schema = Schema::new_struct(
     ],
 );
 
-pub static STRING_LIST_SCHEMA: Schema = Schema::new_list(
+pub static STRING_LIST_SCHEMA: Schema<'static> = Schema::new_list(
     shape_id!("test", "StringList"),
     &aws_smithy_schema::prelude::STRING,
 );
 
-pub static INTEGER_LIST_SCHEMA: Schema = Schema::new_list(
+pub static INTEGER_LIST_SCHEMA: Schema<'static> = Schema::new_list(
     shape_id!("test", "IntegerList"),
     &aws_smithy_schema::prelude::INTEGER,
 );
 
-pub static LONG_LIST_SCHEMA: Schema = Schema::new_list(
+pub static LONG_LIST_SCHEMA: Schema<'static> = Schema::new_list(
     shape_id!("test", "LongList"),
     &aws_smithy_schema::prelude::LONG,
 );
 
-pub static BLOB_LIST_SCHEMA: Schema = Schema::new_list(
+pub static BLOB_LIST_SCHEMA: Schema<'static> = Schema::new_list(
     shape_id!("test", "BlobList"),
     &aws_smithy_schema::prelude::BLOB,
 );
 
-pub static STRING_MAP_SCHEMA: Schema = Schema::new_map(
+pub static STRING_MAP_SCHEMA: Schema<'static> = Schema::new_map(
     shape_id!("test", "StringMap"),
     &aws_smithy_schema::prelude::STRING,
     &aws_smithy_schema::prelude::STRING,
 );
 
-pub static INTEGER_MAP_SCHEMA: Schema = Schema::new_map(
+pub static INTEGER_MAP_SCHEMA: Schema<'static> = Schema::new_map(
     shape_id!("test", "IntegerMap"),
     &aws_smithy_schema::prelude::STRING,
     &aws_smithy_schema::prelude::INTEGER,
 );
 
-pub static LONG_MAP_SCHEMA: Schema = Schema::new_map(
+pub static LONG_MAP_SCHEMA: Schema<'static> = Schema::new_map(
     shape_id!("test", "LongMap"),
     &aws_smithy_schema::prelude::STRING,
     &aws_smithy_schema::prelude::LONG,
 );
 
 // Schema with @jsonName for field mapping coverage
-static MEMBER_RENAMED: Schema = Schema::new_member(
+static MEMBER_RENAMED: Schema<'static> = Schema::new_member(
     shape_id!("test", "Renamed", "originalName"),
     ShapeType::String,
     "originalName",
@@ -141,7 +141,7 @@ static MEMBER_RENAMED: Schema = Schema::new_member(
 )
 .with_json_name("RenamedField");
 
-pub static RENAMED_SCHEMA: Schema = Schema::new_struct(
+pub static RENAMED_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "Renamed"),
     ShapeType::Structure,
     &[&MEMBER_RENAMED],
@@ -218,7 +218,7 @@ pub fn serialize_fuzz_value(value: &FuzzValue, ser: &mut dyn ShapeSerializer) {
             let _ = ser.write_string(&STRING, v);
         }
         FuzzValue::Blob(v) => {
-            let _ = ser.write_blob(&BLOB, v);
+            let _ = ser.write_blob(&BLOB, aws_smithy_types::Blob::new(v.clone()));
         }
         FuzzValue::StringList(items) => {
             let _ = ser.write_list(&STRING_LIST_SCHEMA, &|ser| {
@@ -247,7 +247,7 @@ pub fn serialize_fuzz_value(value: &FuzzValue, ser: &mut dyn ShapeSerializer) {
         FuzzValue::BlobList(items) => {
             let _ = ser.write_list(&BLOB_LIST_SCHEMA, &|ser| {
                 for item in items {
-                    ser.write_blob(&BLOB, item)?;
+                    ser.write_blob(&BLOB, aws_smithy_types::Blob::new(item.clone()))?;
                 }
                 Ok(())
             });
@@ -437,6 +437,32 @@ pub fn document_to_serde_value(doc: &aws_smithy_types::Document) -> serde_json::
                 .collect();
             serde_json::Value::Object(m)
         }
+        // Blob → base64-encoded JSON string. JSON has no native bytes type;
+        // base64 is the standard convention used in restJson1 and matches
+        // how the JsonSerializer emits Blob documents.
+        aws_smithy_types::Document::Blob(bytes) => {
+            serde_json::Value::String(aws_smithy_types::base64::encode(bytes))
+        }
+        // Timestamp → RFC-3339 date-time string. JSON has no native
+        // timestamp type; the date-time format is the most widely-supported
+        // textual form in JSON-based protocols.
+        aws_smithy_types::Document::Timestamp(ts) => serde_json::Value::String(
+            ts.fmt(aws_smithy_types::date_time::Format::DateTime)
+                .expect("DateTime format failure during fuzz differential check"),
+        ),
+        // BigInteger / BigDecimal → string. Both types wrap a validated
+        // decimal-string representation; the serde_json::Value::String form
+        // preserves all digits without going through f64 rounding.
+        aws_smithy_types::Document::BigInteger(bi) => {
+            serde_json::Value::String(bi.as_ref().to_string())
+        }
+        aws_smithy_types::Document::BigDecimal(bd) => {
+            serde_json::Value::String(bd.as_ref().to_string())
+        }
+        // `aws_smithy_types::Document` is `#[non_exhaustive]`. Future
+        // variants surface here as JSON null until a follow-up adds a
+        // dedicated arm.
+        _ => serde_json::Value::Null,
     }
 }
 

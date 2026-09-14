@@ -11,7 +11,9 @@ pub fn ser_payload_type(
             object_1.finish();
         }
         crate::types::PayloadType::Blob(inner) => {
-            object_17.key("blob").document(inner);
+            object_17
+                .key("blob")
+                .document(inner, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
         }
         crate::types::PayloadType::Json(inner) => {
             #[allow(unused_mut)]

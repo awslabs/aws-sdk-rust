@@ -41,55 +41,55 @@ use aws_smithy_xml::codec::XmlCodec;
 // member targets the right type. Members carry positional indexes per the SEP
 // recommendation; codegen-driven deserialization dispatches on them.
 
-static MEMBER_BOOL: Schema = Schema::new_member(
+static MEMBER_BOOL: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$boolField"),
     ShapeType::Boolean,
     "boolField",
     0,
 );
-static MEMBER_BYTE: Schema = Schema::new_member(
+static MEMBER_BYTE: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$byteField"),
     ShapeType::Byte,
     "byteField",
     0,
 );
-static MEMBER_SHORT: Schema = Schema::new_member(
+static MEMBER_SHORT: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$shortField"),
     ShapeType::Short,
     "shortField",
     0,
 );
-static MEMBER_INT: Schema = Schema::new_member(
+static MEMBER_INT: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$intField"),
     ShapeType::Integer,
     "intField",
     0,
 );
-static MEMBER_LONG: Schema = Schema::new_member(
+static MEMBER_LONG: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$longField"),
     ShapeType::Long,
     "longField",
     0,
 );
-static MEMBER_FLOAT: Schema = Schema::new_member(
+static MEMBER_FLOAT: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$floatField"),
     ShapeType::Float,
     "floatField",
     0,
 );
-static MEMBER_DOUBLE: Schema = Schema::new_member(
+static MEMBER_DOUBLE: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$doubleField"),
     ShapeType::Double,
     "doubleField",
     0,
 );
-static MEMBER_STR: Schema = Schema::new_member(
+static MEMBER_STR: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$strField"),
     ShapeType::String,
     "strField",
     0,
 );
-static MEMBER_BLOB: Schema = Schema::new_member(
+static MEMBER_BLOB: Schema<'static> = Schema::new_member(
     shape_id!("test", "Wrapper$blobField"),
     ShapeType::Blob,
     "blobField",
@@ -100,47 +100,47 @@ static MEMBER_BLOB: Schema = Schema::new_member(
 // Wrapper schemas — one per scalar variant
 // ---------------------------------------------------------------------------
 
-pub static WRAPPER_BOOL_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_BOOL_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperBool"),
     ShapeType::Structure,
     &[&MEMBER_BOOL],
 );
-pub static WRAPPER_BYTE_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_BYTE_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperByte"),
     ShapeType::Structure,
     &[&MEMBER_BYTE],
 );
-pub static WRAPPER_SHORT_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_SHORT_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperShort"),
     ShapeType::Structure,
     &[&MEMBER_SHORT],
 );
-pub static WRAPPER_INT_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_INT_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperInt"),
     ShapeType::Structure,
     &[&MEMBER_INT],
 );
-pub static WRAPPER_LONG_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_LONG_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperLong"),
     ShapeType::Structure,
     &[&MEMBER_LONG],
 );
-pub static WRAPPER_FLOAT_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_FLOAT_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperFloat"),
     ShapeType::Structure,
     &[&MEMBER_FLOAT],
 );
-pub static WRAPPER_DOUBLE_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_DOUBLE_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperDouble"),
     ShapeType::Structure,
     &[&MEMBER_DOUBLE],
 );
-pub static WRAPPER_STRING_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_STRING_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperString"),
     ShapeType::Structure,
     &[&MEMBER_STR],
 );
-pub static WRAPPER_BLOB_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_BLOB_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperBlob"),
     ShapeType::Structure,
     &[&MEMBER_BLOB],
@@ -155,112 +155,112 @@ pub static WRAPPER_BLOB_SCHEMA: Schema = Schema::new_struct(
 // hold ONE list/map member each so the value can serve as a complete XML
 // document during round-trip.
 
-pub static STRING_LIST_SCHEMA: Schema = Schema::new_list(
+pub static STRING_LIST_SCHEMA: Schema<'static> = Schema::new_list(
     shape_id!("test", "StringList"),
     &aws_smithy_schema::prelude::STRING,
 );
-pub static INTEGER_LIST_SCHEMA: Schema = Schema::new_list(
+pub static INTEGER_LIST_SCHEMA: Schema<'static> = Schema::new_list(
     shape_id!("test", "IntegerList"),
     &aws_smithy_schema::prelude::INTEGER,
 );
-pub static LONG_LIST_SCHEMA: Schema = Schema::new_list(
+pub static LONG_LIST_SCHEMA: Schema<'static> = Schema::new_list(
     shape_id!("test", "LongList"),
     &aws_smithy_schema::prelude::LONG,
 );
-pub static BLOB_LIST_SCHEMA: Schema = Schema::new_list(
+pub static BLOB_LIST_SCHEMA: Schema<'static> = Schema::new_list(
     shape_id!("test", "BlobList"),
     &aws_smithy_schema::prelude::BLOB,
 );
-pub static STRING_STRING_MAP_SCHEMA: Schema = Schema::new_map(
+pub static STRING_STRING_MAP_SCHEMA: Schema<'static> = Schema::new_map(
     shape_id!("test", "StringStringMap"),
     &aws_smithy_schema::prelude::STRING,
     &aws_smithy_schema::prelude::STRING,
 );
-pub static STRING_INTEGER_MAP_SCHEMA: Schema = Schema::new_map(
+pub static STRING_INTEGER_MAP_SCHEMA: Schema<'static> = Schema::new_map(
     shape_id!("test", "StringIntegerMap"),
     &aws_smithy_schema::prelude::STRING,
     &aws_smithy_schema::prelude::INTEGER,
 );
-pub static STRING_LONG_MAP_SCHEMA: Schema = Schema::new_map(
+pub static STRING_LONG_MAP_SCHEMA: Schema<'static> = Schema::new_map(
     shape_id!("test", "StringLongMap"),
     &aws_smithy_schema::prelude::STRING,
     &aws_smithy_schema::prelude::LONG,
 );
 
-static MEMBER_STRING_LIST: Schema = Schema::new_member(
+static MEMBER_STRING_LIST: Schema<'static> = Schema::new_member(
     shape_id!("test", "WrapperStringList$items"),
     ShapeType::List,
     "items",
     0,
 );
-static MEMBER_INTEGER_LIST: Schema = Schema::new_member(
+static MEMBER_INTEGER_LIST: Schema<'static> = Schema::new_member(
     shape_id!("test", "WrapperIntegerList$items"),
     ShapeType::List,
     "items",
     0,
 );
-static MEMBER_LONG_LIST: Schema = Schema::new_member(
+static MEMBER_LONG_LIST: Schema<'static> = Schema::new_member(
     shape_id!("test", "WrapperLongList$items"),
     ShapeType::List,
     "items",
     0,
 );
-static MEMBER_BLOB_LIST: Schema = Schema::new_member(
+static MEMBER_BLOB_LIST: Schema<'static> = Schema::new_member(
     shape_id!("test", "WrapperBlobList$items"),
     ShapeType::List,
     "items",
     0,
 );
-static MEMBER_STRING_STRING_MAP: Schema = Schema::new_member(
+static MEMBER_STRING_STRING_MAP: Schema<'static> = Schema::new_member(
     shape_id!("test", "WrapperStringStringMap$entries"),
     ShapeType::Map,
     "entries",
     0,
 );
-static MEMBER_STRING_INTEGER_MAP: Schema = Schema::new_member(
+static MEMBER_STRING_INTEGER_MAP: Schema<'static> = Schema::new_member(
     shape_id!("test", "WrapperStringIntegerMap$entries"),
     ShapeType::Map,
     "entries",
     0,
 );
-static MEMBER_STRING_LONG_MAP: Schema = Schema::new_member(
+static MEMBER_STRING_LONG_MAP: Schema<'static> = Schema::new_member(
     shape_id!("test", "WrapperStringLongMap$entries"),
     ShapeType::Map,
     "entries",
     0,
 );
 
-pub static WRAPPER_STRING_LIST_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_STRING_LIST_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperStringList"),
     ShapeType::Structure,
     &[&MEMBER_STRING_LIST],
 );
-pub static WRAPPER_INTEGER_LIST_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_INTEGER_LIST_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperIntegerList"),
     ShapeType::Structure,
     &[&MEMBER_INTEGER_LIST],
 );
-pub static WRAPPER_LONG_LIST_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_LONG_LIST_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperLongList"),
     ShapeType::Structure,
     &[&MEMBER_LONG_LIST],
 );
-pub static WRAPPER_BLOB_LIST_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_BLOB_LIST_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperBlobList"),
     ShapeType::Structure,
     &[&MEMBER_BLOB_LIST],
 );
-pub static WRAPPER_STRING_STRING_MAP_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_STRING_STRING_MAP_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperStringStringMap"),
     ShapeType::Structure,
     &[&MEMBER_STRING_STRING_MAP],
 );
-pub static WRAPPER_STRING_INTEGER_MAP_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_STRING_INTEGER_MAP_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperStringIntegerMap"),
     ShapeType::Structure,
     &[&MEMBER_STRING_INTEGER_MAP],
 );
-pub static WRAPPER_STRING_LONG_MAP_SCHEMA: Schema = Schema::new_struct(
+pub static WRAPPER_STRING_LONG_MAP_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "WrapperStringLongMap"),
     ShapeType::Structure,
     &[&MEMBER_STRING_LONG_MAP],
@@ -275,68 +275,68 @@ pub static WRAPPER_STRING_LONG_MAP_SCHEMA: Schema = Schema::new_struct(
 // names. Member indices distinct so the consumer (which we leave empty)
 // could distinguish them.
 
-static AT_BOOL: Schema = Schema::new_member(
+static AT_BOOL: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$boolField"),
     ShapeType::Boolean,
     "boolField",
     0,
 );
-static AT_BYTE: Schema = Schema::new_member(
+static AT_BYTE: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$byteField"),
     ShapeType::Byte,
     "byteField",
     1,
 );
-static AT_SHORT: Schema = Schema::new_member(
+static AT_SHORT: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$shortField"),
     ShapeType::Short,
     "shortField",
     2,
 );
-static AT_INT: Schema = Schema::new_member(
+static AT_INT: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$intField"),
     ShapeType::Integer,
     "intField",
     3,
 );
-static AT_LONG: Schema = Schema::new_member(
+static AT_LONG: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$longField"),
     ShapeType::Long,
     "longField",
     4,
 );
-static AT_FLOAT: Schema = Schema::new_member(
+static AT_FLOAT: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$floatField"),
     ShapeType::Float,
     "floatField",
     5,
 );
-static AT_DOUBLE: Schema = Schema::new_member(
+static AT_DOUBLE: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$doubleField"),
     ShapeType::Double,
     "doubleField",
     6,
 );
-static AT_STR: Schema = Schema::new_member(
+static AT_STR: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$strField"),
     ShapeType::String,
     "strField",
     7,
 );
-static AT_BLOB: Schema = Schema::new_member(
+static AT_BLOB: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$blobField"),
     ShapeType::Blob,
     "blobField",
     8,
 );
-static AT_TS: Schema = Schema::new_member(
+static AT_TS: Schema<'static> = Schema::new_member(
     shape_id!("test", "AllTypes$timestampField"),
     ShapeType::Timestamp,
     "timestampField",
     9,
 );
 
-pub static ALL_TYPES_SCHEMA: Schema = Schema::new_struct(
+pub static ALL_TYPES_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "AllTypes"),
     ShapeType::Structure,
     &[
@@ -353,22 +353,22 @@ pub static ALL_TYPES_SCHEMA: Schema = Schema::new_struct(
 // generated code: codegen emits attribute writes before non-attribute writes
 // to keep the start tag open while attributes accumulate.
 
-static ATTR_ID: Schema =
+static ATTR_ID: Schema<'static> =
     Schema::new_member(shape_id!("test", "Attr$id"), ShapeType::String, "id", 0)
         .with_xml_attribute();
-static ATTR_TYPE: Schema = Schema::new_member(
+static ATTR_TYPE: Schema<'static> = Schema::new_member(
     shape_id!("test", "Attr$type"),
     ShapeType::Integer,
     "type",
     1,
 )
 .with_xml_attribute();
-static ATTR_NAME: Schema =
+static ATTR_NAME: Schema<'static> =
     Schema::new_member(shape_id!("test", "Attr$name"), ShapeType::String, "name", 2);
-static ATTR_AGE: Schema =
+static ATTR_AGE: Schema<'static> =
     Schema::new_member(shape_id!("test", "Attr$age"), ShapeType::Integer, "age", 3);
 
-pub static ATTR_SCHEMA: Schema = Schema::new_struct(
+pub static ATTR_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "Attr"),
     ShapeType::Structure,
     &[&ATTR_ID, &ATTR_TYPE, &ATTR_NAME, &ATTR_AGE],
@@ -378,7 +378,7 @@ pub static ATTR_SCHEMA: Schema = Schema::new_struct(
 // xmlName / xmlNamespace schemas
 // ---------------------------------------------------------------------------
 
-static RENAMED_MEMBER: Schema = Schema::new_member(
+static RENAMED_MEMBER: Schema<'static> = Schema::new_member(
     shape_id!("test", "Renamed$originalName"),
     ShapeType::String,
     "originalName",
@@ -386,21 +386,21 @@ static RENAMED_MEMBER: Schema = Schema::new_member(
 )
 .with_xml_name("RenamedField");
 
-pub static RENAMED_SCHEMA: Schema = Schema::new_struct(
+pub static RENAMED_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "Renamed"),
     ShapeType::Structure,
     &[&RENAMED_MEMBER],
 )
 .with_xml_name("RenamedRoot");
 
-static NS_MEMBER: Schema = Schema::new_member(
+static NS_MEMBER: Schema<'static> = Schema::new_member(
     shape_id!("test", "Namespaced$content"),
     ShapeType::String,
     "content",
     0,
 );
 
-pub static NAMESPACED_SCHEMA: Schema = Schema::new_struct(
+pub static NAMESPACED_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "Namespaced"),
     ShapeType::Structure,
     &[&NS_MEMBER],
@@ -412,7 +412,7 @@ pub static NAMESPACED_SCHEMA: Schema = Schema::new_struct(
 // in the deserializer and the wrapper-elision branch in the serializer.
 // ---------------------------------------------------------------------------
 
-static FLAT_LIST_MEMBER: Schema = Schema::new_member(
+static FLAT_LIST_MEMBER: Schema<'static> = Schema::new_member(
     shape_id!("test", "FlatList$items"),
     ShapeType::List,
     "items",
@@ -420,13 +420,13 @@ static FLAT_LIST_MEMBER: Schema = Schema::new_member(
 )
 .with_xml_flattened();
 
-pub static FLAT_LIST_SCHEMA: Schema = Schema::new_struct(
+pub static FLAT_LIST_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "FlatList"),
     ShapeType::Structure,
     &[&FLAT_LIST_MEMBER],
 );
 
-static FLAT_MAP_MEMBER: Schema = Schema::new_member(
+static FLAT_MAP_MEMBER: Schema<'static> = Schema::new_member(
     shape_id!("test", "FlatMap$entries"),
     ShapeType::Map,
     "entries",
@@ -434,7 +434,7 @@ static FLAT_MAP_MEMBER: Schema = Schema::new_member(
 )
 .with_xml_flattened();
 
-pub static FLAT_MAP_SCHEMA: Schema = Schema::new_struct(
+pub static FLAT_MAP_SCHEMA: Schema<'static> = Schema::new_struct(
     shape_id!("test", "FlatMap"),
     ShapeType::Structure,
     &[&FLAT_MAP_MEMBER],
@@ -476,7 +476,7 @@ pub enum FuzzValue {
 ///
 /// Used by both [`serialize_value`] and [`deserialize_value`] so that the
 /// schema used to read back the value matches the one used to write it.
-pub fn wrapper_schema_for(value: &FuzzValue) -> &'static Schema {
+pub fn wrapper_schema_for(value: &FuzzValue) -> &'static Schema<'static> {
     match value {
         FuzzValue::Boolean(_) => &WRAPPER_BOOL_SCHEMA,
         FuzzValue::Byte(_) => &WRAPPER_BYTE_SCHEMA,
@@ -544,7 +544,7 @@ fn write_member(
         FuzzValue::Float(v) => ser.write_float(&MEMBER_FLOAT, *v),
         FuzzValue::Double(v) => ser.write_double(&MEMBER_DOUBLE, *v),
         FuzzValue::String(v) => ser.write_string(&MEMBER_STR, v),
-        FuzzValue::Blob(v) => ser.write_blob(&MEMBER_BLOB, v),
+        FuzzValue::Blob(v) => ser.write_blob(&MEMBER_BLOB, aws_smithy_types::Blob::new(v.clone())),
         FuzzValue::StringList(items) => ser.write_list(&MEMBER_STRING_LIST, &|ser| {
             for item in items {
                 ser.write_string(&STRING, item)?;
@@ -565,7 +565,7 @@ fn write_member(
         }),
         FuzzValue::BlobList(items) => ser.write_list(&MEMBER_BLOB_LIST, &|ser| {
             for item in items {
-                ser.write_blob(&BLOB, item)?;
+                ser.write_blob(&BLOB, aws_smithy_types::Blob::new(item.clone()))?;
             }
             Ok(())
         }),

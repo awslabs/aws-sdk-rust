@@ -30,10 +30,10 @@ pub(crate) fn de_entity(
             "Score" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_score(Some(decoder.float()?))))?,
             "Text" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_text(Some(decoder.string()?))))?,
             "Category" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_category(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_ref()))?)))
+                Ok(builder.set_category(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_str()))?)))
             })?,
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::EntitySubType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::EntitySubType::from(s.as_str()))?)))
             })?,
             "Traits" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_traits(Some(crate::protocol_serde::shape_trait_list::de_trait_list(decoder, depth + 1)?)))

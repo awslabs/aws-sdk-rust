@@ -31,7 +31,7 @@ pub(crate) fn de_volume_recommendation(
                 )
             })?,
             "finding" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_finding(Some(decoder.string().map(|s| crate::types::EbsFinding::from(s.as_ref()))?)))
+                Ok(builder.set_finding(Some(decoder.string().map(|s| crate::types::EbsFinding::from(s.as_str()))?)))
             })?,
             "utilizationMetrics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
@@ -53,7 +53,7 @@ pub(crate) fn de_volume_recommendation(
                 Ok(builder.set_last_refresh_timestamp(Some(decoder.timestamp()?)))
             })?,
             "currentPerformanceRisk" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_current_performance_risk(Some(decoder.string().map(|s| crate::types::CurrentPerformanceRisk::from(s.as_ref()))?)))
+                Ok(builder.set_current_performance_risk(Some(decoder.string().map(|s| crate::types::CurrentPerformanceRisk::from(s.as_str()))?)))
             })?,
             "effectiveRecommendationPreferences" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_effective_recommendation_preferences(Some(

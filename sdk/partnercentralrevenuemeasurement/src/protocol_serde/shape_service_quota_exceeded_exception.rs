@@ -14,7 +14,7 @@ pub(crate) fn de_service_quota_exceeded_exception_cbor_err(
             "Reason" => builder.set_reason(Some(
                 decoder
                     .string()
-                    .map(|s| crate::types::ServiceQuotaExceededExceptionReason::from(s.as_ref()))?,
+                    .map(|s| crate::types::ServiceQuotaExceededExceptionReason::from(s.as_str()))?,
             )),
             _ => {
                 decoder.skip()?;

@@ -149,6 +149,8 @@ pub use crate::types::_component_parameter_detail::ComponentParameterDetailBuild
 
 pub use crate::types::_product_code_list_item::ProductCodeListItemBuilder;
 
+pub use crate::types::_image_failure_context::ImageFailureContextBuilder;
+
 pub use crate::types::_workflow_parameter_detail::WorkflowParameterDetailBuilder;
 
 pub use crate::types::_account_aggregation::AccountAggregationBuilder;
@@ -185,6 +187,10 @@ pub use crate::types::_workflow_parameter::WorkflowParameterBuilder;
 
 pub use crate::types::_lifecycle_policy_detail_action_include_resources::LifecyclePolicyDetailActionIncludeResourcesBuilder;
 
+pub use crate::types::_component_failure_context::ComponentFailureContextBuilder;
+
+pub use crate::types::_distribution_failure_context::DistributionFailureContextBuilder;
+
 pub use crate::types::_ami::AmiBuilder;
 
 pub use crate::types::_container::ContainerBuilder;
@@ -204,5 +210,7 @@ pub use crate::types::_fast_launch_launch_template_specification::FastLaunchLaun
 pub use crate::types::_vulnerable_package::VulnerablePackageBuilder;
 
 pub use crate::types::_cvss_score::CvssScoreBuilder;
+
+pub use crate::types::_region_failure::RegionFailureBuilder;
 
 pub use crate::types::_cvss_score_adjustment::CvssScoreAdjustmentBuilder;

@@ -21,6 +21,106 @@ impl OpsMetadataFilter {
         self.values.deref()
     }
 }
+static OPSMETADATAFILTER_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsMetadataFilter$Key", "com.amazonaws.ssm", "OpsMetadataFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Key",
+    0,
+);
+static OPSMETADATAFILTER_MEMBER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsMetadataFilterValueList$member",
+        "com.amazonaws.ssm",
+        "OpsMetadataFilterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static OPSMETADATAFILTER_MEMBER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsMetadataFilter$Values", "com.amazonaws.ssm", "OpsMetadataFilter"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Values",
+    1,
+)
+.with_list_member(&OPSMETADATAFILTER_MEMBER_VALUES_MEMBER);
+static OPSMETADATAFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsMetadataFilter", "com.amazonaws.ssm", "OpsMetadataFilter"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&OPSMETADATAFILTER_MEMBER_KEY, &OPSMETADATAFILTER_MEMBER_VALUES],
+);
+impl OpsMetadataFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPSMETADATAFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpsMetadataFilter {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key;
+            ser.write_string(&OPSMETADATAFILTER_MEMBER_KEY, val)?;
+        }
+        {
+            let val = &self.values;
+
+            ser.write_list(
+                &OPSMETADATAFILTER_MEMBER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl OpsMetadataFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&OPSMETADATAFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.key = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.values = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.key = builder.key.or(Some(String::new()));
+        builder.values = builder.values.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl OpsMetadataFilter {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl OpsMetadataFilter {
     /// Creates a new builder-style object to manufacture [`OpsMetadataFilter`](crate::types::OpsMetadataFilter).
     pub fn builder() -> crate::types::builders::OpsMetadataFilterBuilder {

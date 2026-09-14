@@ -76,6 +76,15 @@ pub struct DeploymentInfo {
     /// <p><code>RETAIN</code>: The version of the file already on the instance is kept and used as part of the new deployment.</p></li>
     /// </ul>
     pub file_exists_behavior: ::std::option::Option<crate::types::FileExistsBehavior>,
+    /// <p>The deployment's type. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code>: The deployment installed the specified revision.</p></li>
+    /// <li>
+    /// <p><code>RESTART</code>: The deployment restarted the application on the target instances using the revision from the deployment group's last successful deployment, without downloading a new revision.</p></li>
+    /// </ul>
+    /// <p>This field is absent for deployments created before <code>deploymentMode</code> existed, and for <code>STANDARD</code> deployments. An absent value must not be interpreted as <code>STANDARD</code>; it simply means no value was recorded either way.</p>
+    pub deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     /// <p>Messages that contain information about the status of a deployment.</p>
     pub deployment_status_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>, or <code>ECS</code>).</p>
@@ -210,6 +219,17 @@ impl DeploymentInfo {
     pub fn file_exists_behavior(&self) -> ::std::option::Option<&crate::types::FileExistsBehavior> {
         self.file_exists_behavior.as_ref()
     }
+    /// <p>The deployment's type. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code>: The deployment installed the specified revision.</p></li>
+    /// <li>
+    /// <p><code>RESTART</code>: The deployment restarted the application on the target instances using the revision from the deployment group's last successful deployment, without downloading a new revision.</p></li>
+    /// </ul>
+    /// <p>This field is absent for deployments created before <code>deploymentMode</code> existed, and for <code>STANDARD</code> deployments. An absent value must not be interpreted as <code>STANDARD</code>; it simply means no value was recorded either way.</p>
+    pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::DeploymentMode> {
+        self.deployment_mode.as_ref()
+    }
     /// <p>Messages that contain information about the status of a deployment.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.deployment_status_messages.is_none()`.
@@ -269,6 +289,7 @@ pub struct DeploymentInfoBuilder {
     pub(crate) load_balancer_info: ::std::option::Option<crate::types::LoadBalancerInfo>,
     pub(crate) additional_deployment_status_info: ::std::option::Option<::std::string::String>,
     pub(crate) file_exists_behavior: ::std::option::Option<crate::types::FileExistsBehavior>,
+    pub(crate) deployment_mode: ::std::option::Option<crate::types::DeploymentMode>,
     pub(crate) deployment_status_messages: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) compute_platform: ::std::option::Option<crate::types::ComputePlatform>,
     pub(crate) external_id: ::std::option::Option<::std::string::String>,
@@ -692,6 +713,41 @@ impl DeploymentInfoBuilder {
     pub fn get_file_exists_behavior(&self) -> &::std::option::Option<crate::types::FileExistsBehavior> {
         &self.file_exists_behavior
     }
+    /// <p>The deployment's type. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code>: The deployment installed the specified revision.</p></li>
+    /// <li>
+    /// <p><code>RESTART</code>: The deployment restarted the application on the target instances using the revision from the deployment group's last successful deployment, without downloading a new revision.</p></li>
+    /// </ul>
+    /// <p>This field is absent for deployments created before <code>deploymentMode</code> existed, and for <code>STANDARD</code> deployments. An absent value must not be interpreted as <code>STANDARD</code>; it simply means no value was recorded either way.</p>
+    pub fn deployment_mode(mut self, input: crate::types::DeploymentMode) -> Self {
+        self.deployment_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deployment's type. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code>: The deployment installed the specified revision.</p></li>
+    /// <li>
+    /// <p><code>RESTART</code>: The deployment restarted the application on the target instances using the revision from the deployment group's last successful deployment, without downloading a new revision.</p></li>
+    /// </ul>
+    /// <p>This field is absent for deployments created before <code>deploymentMode</code> existed, and for <code>STANDARD</code> deployments. An absent value must not be interpreted as <code>STANDARD</code>; it simply means no value was recorded either way.</p>
+    pub fn set_deployment_mode(mut self, input: ::std::option::Option<crate::types::DeploymentMode>) -> Self {
+        self.deployment_mode = input;
+        self
+    }
+    /// <p>The deployment's type. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STANDARD</code>: The deployment installed the specified revision.</p></li>
+    /// <li>
+    /// <p><code>RESTART</code>: The deployment restarted the application on the target instances using the revision from the deployment group's last successful deployment, without downloading a new revision.</p></li>
+    /// </ul>
+    /// <p>This field is absent for deployments created before <code>deploymentMode</code> existed, and for <code>STANDARD</code> deployments. An absent value must not be interpreted as <code>STANDARD</code>; it simply means no value was recorded either way.</p>
+    pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::DeploymentMode> {
+        &self.deployment_mode
+    }
     /// Appends an item to `deployment_status_messages`.
     ///
     /// To override the contents of this collection use [`set_deployment_status_messages`](Self::set_deployment_status_messages).
@@ -796,6 +852,7 @@ impl DeploymentInfoBuilder {
             load_balancer_info: self.load_balancer_info,
             additional_deployment_status_info: self.additional_deployment_status_info,
             file_exists_behavior: self.file_exists_behavior,
+            deployment_mode: self.deployment_mode,
             deployment_status_messages: self.deployment_status_messages,
             compute_platform: self.compute_platform,
             external_id: self.external_id,

@@ -29,6 +29,173 @@ impl MaintenanceWindowAutomationParameters {
         self.parameters.as_ref()
     }
 }
+static MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowAutomationParameters$DocumentVersion",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowAutomationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    0,
+);
+static MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#AutomationParameterValueList$member",
+            "com.amazonaws.ssm",
+            "AutomationParameterValueList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$key",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$value",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS_VALUE_MEMBER);
+static MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowAutomationParameters$Parameters",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowAutomationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    1,
+)
+.with_map_members(
+    &MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS_KEY,
+    &MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS_VALUE,
+);
+static MAINTENANCEWINDOWAUTOMATIONPARAMETERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowAutomationParameters",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowAutomationParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_DOCUMENT_VERSION,
+        &MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS,
+    ],
+);
+impl MaintenanceWindowAutomationParameters {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MAINTENANCEWINDOWAUTOMATIONPARAMETERS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MaintenanceWindowAutomationParameters {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl MaintenanceWindowAutomationParameters {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&MAINTENANCEWINDOWAUTOMATIONPARAMETERS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&MAINTENANCEWINDOWAUTOMATIONPARAMETERS_MEMBER_PARAMETERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl MaintenanceWindowAutomationParameters {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl MaintenanceWindowAutomationParameters {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowAutomationParameters`](crate::types::MaintenanceWindowAutomationParameters).
     pub fn builder() -> crate::types::builders::MaintenanceWindowAutomationParametersBuilder {

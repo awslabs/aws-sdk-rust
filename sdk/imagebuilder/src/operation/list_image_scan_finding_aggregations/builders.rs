@@ -139,17 +139,17 @@ impl ListImageScanFindingAggregationsFluentBuilder {
     pub fn get_filter(&self) -> &::std::option::Option<crate::types::Filter> {
         self.inner.get_filter()
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

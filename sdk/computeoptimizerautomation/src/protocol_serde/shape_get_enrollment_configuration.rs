@@ -202,12 +202,12 @@ pub(crate) fn de_get_enrollment_configuration(
     > {
         builder =
             match decoder.str()?.as_ref() {
-                "status" => builder.set_status(Some(decoder.string().map(|s| crate::types::EnrollmentStatus::from(s.as_ref()))?)),
+                "status" => builder.set_status(Some(decoder.string().map(|s| crate::types::EnrollmentStatus::from(s.as_str()))?)),
                 "statusReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_status_reason(Some(decoder.string()?)))
                 })?,
                 "organizationRuleMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_organization_rule_mode(Some(decoder.string().map(|s| crate::types::OrganizationRuleMode::from(s.as_ref()))?)))
+                    Ok(builder.set_organization_rule_mode(Some(decoder.string().map(|s| crate::types::OrganizationRuleMode::from(s.as_str()))?)))
                 })?,
                 "lastUpdatedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_last_updated_timestamp(Some(decoder.timestamp()?)))

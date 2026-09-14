@@ -34,7 +34,9 @@ pub fn ser_converse_tokens_request(
         object_10.finish();
     }
     if let Some(var_11) = &input.additional_model_request_fields {
-        object.key("additionalModelRequestFields").document(var_11);
+        object
+            .key("additionalModelRequestFields")
+            .document(var_11, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

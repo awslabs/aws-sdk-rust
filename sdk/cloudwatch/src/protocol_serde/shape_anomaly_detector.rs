@@ -35,7 +35,7 @@ pub(crate) fn de_anomaly_detector(
                 )))
             })?,
             "StateValue" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state_value(Some(decoder.string().map(|s| crate::types::AnomalyDetectorStateValue::from(s.as_ref()))?)))
+                Ok(builder.set_state_value(Some(decoder.string().map(|s| crate::types::AnomalyDetectorStateValue::from(s.as_str()))?)))
             })?,
             "MetricCharacteristics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

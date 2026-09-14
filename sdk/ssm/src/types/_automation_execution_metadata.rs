@@ -212,6 +212,953 @@ impl AutomationExecutionMetadata {
         self.change_request_name.as_deref()
     }
 }
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$AutomationExecutionId",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutomationExecutionId",
+    0,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_DOCUMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$DocumentName",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentName",
+    1,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$DocumentVersion",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    2,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_EXECUTION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$AutomationExecutionStatus",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutomationExecutionStatus",
+    3,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTION_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$ExecutionStartTime",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExecutionStartTime",
+    4,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTION_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$ExecutionEndTime",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExecutionEndTime",
+    5,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$ExecutedBy",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutedBy",
+    6,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_LOG_FILE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$LogFile",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LogFile",
+    7,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterValueList$member",
+        "com.amazonaws.ssm",
+        "AutomationParameterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$key",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$value",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS_VALUE_MEMBER);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$Outputs",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Outputs",
+    8,
+)
+.with_map_members(
+    &AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS_KEY,
+    &AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS_VALUE,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$Mode",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    9,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_PARENT_AUTOMATION_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#AutomationExecutionMetadata$ParentAutomationExecutionId",
+            "com.amazonaws.ssm",
+            "AutomationExecutionMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ParentAutomationExecutionId",
+        10,
+    );
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_CURRENT_STEP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$CurrentStepName",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CurrentStepName",
+    11,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_CURRENT_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$CurrentAction",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CurrentAction",
+    12,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_FAILURE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$FailureMessage",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureMessage",
+    13,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_WARNING_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$WarningMessage",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WarningMessage",
+    14,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_PARAMETER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$TargetParameterName",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetParameterName",
+    15,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Targets$member", "com.amazonaws.ssm", "Targets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$Targets",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    16,
+)
+.with_list_member(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGETS_MEMBER);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMapValueList$member", "com.amazonaws.ssm", "TargetMapValueList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$key", "com.amazonaws.ssm", "TargetMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$value", "com.amazonaws.ssm", "TargetMap"),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMaps$member", "com.amazonaws.ssm", "TargetMaps"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "member",
+    0,
+)
+.with_map_members(
+    &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER_KEY,
+    &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$TargetMaps",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetMaps",
+    17,
+)
+.with_list_member(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_RESOLVED_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$ResolvedTargets",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ResolvedTargets",
+    18,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_MAX_CONCURRENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$MaxConcurrency",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxConcurrency",
+    19,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_MAX_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$MaxErrors",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxErrors",
+    20,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$Target",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Target",
+    21,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$AutomationType",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutomationType",
+    22,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$AlarmConfiguration",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlarmConfiguration",
+    23,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TRIGGERED_ALARMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AlarmStateInformationList$member",
+        "com.amazonaws.ssm",
+        "AlarmStateInformationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TRIGGERED_ALARMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$TriggeredAlarms",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TriggeredAlarms",
+    24,
+)
+.with_list_member(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TRIGGERED_ALARMS_MEMBER);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_LOCATIONS_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$TargetLocationsURL",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetLocationsURL",
+    25,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_SUBTYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$AutomationSubtype",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutomationSubtype",
+    26,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_SCHEDULED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$ScheduledTime",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ScheduledTime",
+    27,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_RUNBOOKS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbooks$member", "com.amazonaws.ssm", "Runbooks"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_RUNBOOKS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$Runbooks",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Runbooks",
+    28,
+)
+.with_list_member(&AUTOMATIONEXECUTIONMETADATA_MEMBER_RUNBOOKS_MEMBER);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_OPS_ITEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$OpsItemId",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemId",
+    29,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$AssociationId",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    30,
+);
+static AUTOMATIONEXECUTIONMETADATA_MEMBER_CHANGE_REQUEST_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata$ChangeRequestName",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ChangeRequestName",
+    31,
+);
+static AUTOMATIONEXECUTIONMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecutionMetadata",
+        "com.amazonaws.ssm",
+        "AutomationExecutionMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_EXECUTION_ID,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_DOCUMENT_NAME,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_DOCUMENT_VERSION,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_EXECUTION_STATUS,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTION_START_TIME,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTION_END_TIME,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTED_BY,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_LOG_FILE,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_MODE,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_PARENT_AUTOMATION_EXECUTION_ID,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_CURRENT_STEP_NAME,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_CURRENT_ACTION,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_FAILURE_MESSAGE,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_WARNING_MESSAGE,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_PARAMETER_NAME,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGETS,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_RESOLVED_TARGETS,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_MAX_CONCURRENCY,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_MAX_ERRORS,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_TYPE,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_ALARM_CONFIGURATION,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_TRIGGERED_ALARMS,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_LOCATIONS_URL,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_SUBTYPE,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_SCHEDULED_TIME,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_RUNBOOKS,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_OPS_ITEM_ID,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_ASSOCIATION_ID,
+        &AUTOMATIONEXECUTIONMETADATA_MEMBER_CHANGE_REQUEST_NAME,
+    ],
+);
+impl AutomationExecutionMetadata {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &AUTOMATIONEXECUTIONMETADATA_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AutomationExecutionMetadata {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.automation_execution_id {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.document_name {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_DOCUMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.automation_execution_status {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_EXECUTION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.execution_start_time {
+            ser.write_timestamp(&AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTION_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.execution_end_time {
+            ser.write_timestamp(&AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTION_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.executed_by {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_EXECUTED_BY, val)?;
+        }
+        if let Some(ref val) = self.log_file {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_LOG_FILE, val)?;
+        }
+        if let Some(ref val) = self.outputs {
+            ser.write_map(
+                &AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.parent_automation_execution_id {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_PARENT_AUTOMATION_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.current_step_name {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_CURRENT_STEP_NAME, val)?;
+        }
+        if let Some(ref val) = self.current_action {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_CURRENT_ACTION, val)?;
+        }
+        if let Some(ref val) = self.failure_message {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_FAILURE_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.warning_message {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_WARNING_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.target_parameter_name {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_PARAMETER_NAME, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.target_maps {
+            ser.write_list(
+                &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                                    ser.write_list(
+                                        &AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+                                        &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                            for item in value {
+                                                ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                            }
+                                            Ok(())
+                                        },
+                                    )?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resolved_targets {
+            ser.write_struct(&AUTOMATIONEXECUTIONMETADATA_MEMBER_RESOLVED_TARGETS, val)?;
+        }
+        if let Some(ref val) = self.max_concurrency {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_MAX_CONCURRENCY, val)?;
+        }
+        if let Some(ref val) = self.max_errors {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_MAX_ERRORS, val)?;
+        }
+        if let Some(ref val) = self.target {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET, val)?;
+        }
+        if let Some(ref val) = self.automation_type {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.alarm_configuration {
+            ser.write_struct(&AUTOMATIONEXECUTIONMETADATA_MEMBER_ALARM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.triggered_alarms {
+            ser.write_list(
+                &AUTOMATIONEXECUTIONMETADATA_MEMBER_TRIGGERED_ALARMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AlarmStateInformation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.target_locations_url {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_LOCATIONS_URL, val)?;
+        }
+        if let Some(ref val) = self.automation_subtype {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_AUTOMATION_SUBTYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.scheduled_time {
+            ser.write_timestamp(&AUTOMATIONEXECUTIONMETADATA_MEMBER_SCHEDULED_TIME, val)?;
+        }
+        if let Some(ref val) = self.runbooks {
+            ser.write_list(
+                &AUTOMATIONEXECUTIONMETADATA_MEMBER_RUNBOOKS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Runbook::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.ops_item_id {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_OPS_ITEM_ID, val)?;
+        }
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.change_request_name {
+            ser.write_string(&AUTOMATIONEXECUTIONMETADATA_MEMBER_CHANGE_REQUEST_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl AutomationExecutionMetadata {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&AUTOMATIONEXECUTIONMETADATA_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.automation_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.automation_execution_status =
+                            Some(crate::types::AutomationExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.execution_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.execution_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.executed_by = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.log_file = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.outputs = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&AUTOMATIONEXECUTIONMETADATA_MEMBER_OUTPUTS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.mode = Some(crate::types::ExecutionMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parent_automation_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.current_step_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.current_action = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.failure_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.warning_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_parameter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_maps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER, &mut |key, deser| {
+                                        let value = {
+                                            let mut list = Vec::new();
+                                            deser.read_list(&AUTOMATIONEXECUTIONMETADATA_MEMBER_TARGET_MAPS_MEMBER_VALUE, &mut |deser| {
+                                                list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                                Ok(())
+                                            })?;
+                                            list
+                                        };
+                                        map.insert(key, value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.resolved_targets = Some(crate::types::ResolvedTargets::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_concurrency = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_errors = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.automation_type = Some(crate::types::AutomationType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.triggered_alarms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AlarmStateInformation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(25) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_locations_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.automation_subtype = Some(crate::types::AutomationSubtype::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(27) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.scheduled_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.runbooks = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Runbook::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(29) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.ops_item_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(31) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.change_request_name = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl AutomationExecutionMetadata {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl AutomationExecutionMetadata {
     /// Creates a new builder-style object to manufacture [`AutomationExecutionMetadata`](crate::types::AutomationExecutionMetadata).
     pub fn builder() -> crate::types::builders::AutomationExecutionMetadataBuilder {

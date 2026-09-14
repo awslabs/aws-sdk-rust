@@ -340,6 +340,8 @@ pub enum CreateDistributionConfigurationError {
     CallRateLimitExceededException(crate::types::error::CallRateLimitExceededException),
     /// <p>These errors are usually caused by a client action, such as using an action or resource on behalf of a user that doesn't have permissions to use the action or resource, or specifying an invalid resource identifier.</p>
     ClientException(crate::types::error::ClientException),
+    /// <p>The dry run operation of the resource was successful, and no resources or mutations were actually performed due to the dry run flag in the request.</p>
+    DryRunOperationException(crate::types::error::DryRunOperationException),
     /// <p>You are not authorized to perform the requested operation.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>You have specified a client token for an operation using parameter values that differ from a previous request that used the same client token.</p>
@@ -393,6 +395,7 @@ impl CreateDistributionConfigurationError {
         match self {
             Self::CallRateLimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ClientException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::DryRunOperationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ForbiddenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IdempotentParameterMismatchException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterCombinationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -412,6 +415,10 @@ impl CreateDistributionConfigurationError {
     /// Returns `true` if the error kind is `CreateDistributionConfigurationError::ClientException`.
     pub fn is_client_exception(&self) -> bool {
         matches!(self, Self::ClientException(_))
+    }
+    /// Returns `true` if the error kind is `CreateDistributionConfigurationError::DryRunOperationException`.
+    pub fn is_dry_run_operation_exception(&self) -> bool {
+        matches!(self, Self::DryRunOperationException(_))
     }
     /// Returns `true` if the error kind is `CreateDistributionConfigurationError::ForbiddenException`.
     pub fn is_forbidden_exception(&self) -> bool {
@@ -455,6 +462,7 @@ impl ::std::error::Error for CreateDistributionConfigurationError {
         match self {
             Self::CallRateLimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ClientException(_inner) => ::std::option::Option::Some(_inner),
+            Self::DryRunOperationException(_inner) => ::std::option::Option::Some(_inner),
             Self::ForbiddenException(_inner) => ::std::option::Option::Some(_inner),
             Self::IdempotentParameterMismatchException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterCombinationException(_inner) => ::std::option::Option::Some(_inner),
@@ -473,6 +481,7 @@ impl ::std::fmt::Display for CreateDistributionConfigurationError {
         match self {
             Self::CallRateLimitExceededException(_inner) => _inner.fmt(f),
             Self::ClientException(_inner) => _inner.fmt(f),
+            Self::DryRunOperationException(_inner) => _inner.fmt(f),
             Self::ForbiddenException(_inner) => _inner.fmt(f),
             Self::IdempotentParameterMismatchException(_inner) => _inner.fmt(f),
             Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
@@ -505,6 +514,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateDistrib
         match self {
             Self::CallRateLimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ClientException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::DryRunOperationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ForbiddenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IdempotentParameterMismatchException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterCombinationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

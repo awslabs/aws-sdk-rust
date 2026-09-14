@@ -28,7 +28,7 @@ pub(crate) fn de_certificate_configuration(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::CertificateConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "CertificateType" => builder.set_certificate_type(Some(decoder.string().map(|s| crate::types::CertificateType::from(s.as_ref()))?)),
+            "CertificateType" => builder.set_certificate_type(Some(decoder.string().map(|s| crate::types::CertificateType::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

@@ -26,6 +26,136 @@ impl CreateAssociationBatchInput {
         self.association_dispatch_assume_role.as_deref()
     }
 }
+static CREATEASSOCIATIONBATCHINPUT_MEMBER_ENTRIES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntries$member",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntries",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+)
+.with_xml_name("entries");
+static CREATEASSOCIATIONBATCHINPUT_MEMBER_ENTRIES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateAssociationBatchInput$Entries",
+        "com.amazonaws.ssm.synthetic",
+        "CreateAssociationBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Entries",
+    0,
+)
+.with_list_member(&CREATEASSOCIATIONBATCHINPUT_MEMBER_ENTRIES_MEMBER);
+static CREATEASSOCIATIONBATCHINPUT_MEMBER_ASSOCIATION_DISPATCH_ASSUME_ROLE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#CreateAssociationBatchInput$AssociationDispatchAssumeRole",
+            "com.amazonaws.ssm.synthetic",
+            "CreateAssociationBatchInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AssociationDispatchAssumeRole",
+        1,
+    );
+static CREATEASSOCIATIONBATCHINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateAssociationBatchInput",
+        "com.amazonaws.ssm.synthetic",
+        "CreateAssociationBatchInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEASSOCIATIONBATCHINPUT_MEMBER_ENTRIES,
+        &CREATEASSOCIATIONBATCHINPUT_MEMBER_ASSOCIATION_DISPATCH_ASSUME_ROLE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("CreateAssociationBatchRequest");
+impl CreateAssociationBatchInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEASSOCIATIONBATCHINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAssociationBatchInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.entries {
+            ser.write_list(
+                &CREATEASSOCIATIONBATCHINPUT_MEMBER_ENTRIES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CreateAssociationBatchRequestEntry::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.association_dispatch_assume_role {
+            ser.write_string(&CREATEASSOCIATIONBATCHINPUT_MEMBER_ASSOCIATION_DISPATCH_ASSUME_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl CreateAssociationBatchInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&CREATEASSOCIATIONBATCHINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.entries = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CreateAssociationBatchRequestEntry::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_dispatch_assume_role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.entries = builder.entries.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl CreateAssociationBatchInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl CreateAssociationBatchInput {
     /// Creates a new builder-style object to manufacture [`CreateAssociationBatchInput`](crate::operation::create_association_batch::CreateAssociationBatchInput).
     pub fn builder() -> crate::operation::create_association_batch::builders::CreateAssociationBatchInputBuilder {

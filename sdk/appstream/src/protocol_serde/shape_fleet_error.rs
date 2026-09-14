@@ -18,7 +18,7 @@ pub(crate) fn de_fleet_error(
         builder =
             match decoder.str()?.as_ref() {
                 "ErrorCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_error_code(Some(decoder.string().map(|s| crate::types::FleetErrorCode::from(s.as_ref()))?)))
+                    Ok(builder.set_error_code(Some(decoder.string().map(|s| crate::types::FleetErrorCode::from(s.as_str()))?)))
                 })?,
                 "ErrorMessage" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_error_message(Some(decoder.string()?)))

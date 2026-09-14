@@ -37,7 +37,7 @@ pub(crate) fn de_license_recommendation(
                 Ok(builder.set_last_refresh_timestamp(Some(decoder.timestamp()?)))
             })?,
             "finding" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_finding(Some(decoder.string().map(|s| crate::types::LicenseFinding::from(s.as_ref()))?)))
+                Ok(builder.set_finding(Some(decoder.string().map(|s| crate::types::LicenseFinding::from(s.as_str()))?)))
             })?,
             "findingReasonCodes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_finding_reason_codes(Some(

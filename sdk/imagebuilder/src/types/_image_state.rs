@@ -8,6 +8,8 @@ pub struct ImageState {
     pub status: ::std::option::Option<crate::types::ImageStatus>,
     /// <p>The reason for the status of the image.</p>
     pub reason: ::std::option::Option<::std::string::String>,
+    /// <p>The details about the failure, for images that failed to complete. Image Builder only sets this property when the image status is <code>FAILED</code>.</p>
+    pub failure_context: ::std::option::Option<crate::types::ImageFailureContext>,
 }
 impl ImageState {
     /// <p>The status of the image.</p>
@@ -17,6 +19,10 @@ impl ImageState {
     /// <p>The reason for the status of the image.</p>
     pub fn reason(&self) -> ::std::option::Option<&str> {
         self.reason.as_deref()
+    }
+    /// <p>The details about the failure, for images that failed to complete. Image Builder only sets this property when the image status is <code>FAILED</code>.</p>
+    pub fn failure_context(&self) -> ::std::option::Option<&crate::types::ImageFailureContext> {
+        self.failure_context.as_ref()
     }
 }
 impl ImageState {
@@ -32,6 +38,7 @@ impl ImageState {
 pub struct ImageStateBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ImageStatus>,
     pub(crate) reason: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_context: ::std::option::Option<crate::types::ImageFailureContext>,
 }
 impl ImageStateBuilder {
     /// <p>The status of the image.</p>
@@ -62,11 +69,26 @@ impl ImageStateBuilder {
     pub fn get_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.reason
     }
+    /// <p>The details about the failure, for images that failed to complete. Image Builder only sets this property when the image status is <code>FAILED</code>.</p>
+    pub fn failure_context(mut self, input: crate::types::ImageFailureContext) -> Self {
+        self.failure_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details about the failure, for images that failed to complete. Image Builder only sets this property when the image status is <code>FAILED</code>.</p>
+    pub fn set_failure_context(mut self, input: ::std::option::Option<crate::types::ImageFailureContext>) -> Self {
+        self.failure_context = input;
+        self
+    }
+    /// <p>The details about the failure, for images that failed to complete. Image Builder only sets this property when the image status is <code>FAILED</code>.</p>
+    pub fn get_failure_context(&self) -> &::std::option::Option<crate::types::ImageFailureContext> {
+        &self.failure_context
+    }
     /// Consumes the builder and constructs a [`ImageState`](crate::types::ImageState).
     pub fn build(self) -> crate::types::ImageState {
         crate::types::ImageState {
             status: self.status,
             reason: self.reason,
+            failure_context: self.failure_context,
         }
     }
 }

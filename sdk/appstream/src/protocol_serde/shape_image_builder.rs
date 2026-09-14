@@ -38,13 +38,13 @@ pub(crate) fn de_image_builder(
                 )?
             }
             "Platform" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_platform(Some(decoder.string().map(|s| crate::types::PlatformType::from(s.as_ref()))?)))
+                Ok(builder.set_platform(Some(decoder.string().map(|s| crate::types::PlatformType::from(s.as_str()))?)))
             })?,
             "IamRoleArn" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_iam_role_arn(Some(decoder.string()?))))?
             }
             "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::ImageBuilderState::from(s.as_ref()))?)))
+                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::ImageBuilderState::from(s.as_str()))?)))
             })?,
             "StateChangeReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_state_change_reason(Some(
@@ -94,7 +94,7 @@ pub(crate) fn de_image_builder(
             })?,
             "LatestAppstreamAgentVersion" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_latest_appstream_agent_version(Some(
-                    decoder.string().map(|s| crate::types::LatestAppstreamAgentVersion::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::LatestAppstreamAgentVersion::from(s.as_str()))?,
                 )))
             })?,
             "DisableIMDSV1" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

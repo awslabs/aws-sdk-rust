@@ -25,7 +25,7 @@ pub(crate) fn de_app_block_builder(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
             }
             "Platform" => builder.set_platform(Some(
-                decoder.string().map(|s| crate::types::AppBlockBuilderPlatformType::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::AppBlockBuilderPlatformType::from(s.as_str()))?,
             )),
             "InstanceType" => builder.set_instance_type(Some(decoder.string()?)),
             "EnableDefaultInternetAccess" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -35,7 +35,7 @@ pub(crate) fn de_app_block_builder(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_iam_role_arn(Some(decoder.string()?))))?
             }
             "VpcConfig" => builder.set_vpc_config(Some(crate::protocol_serde::shape_vpc_config::de_vpc_config(decoder, depth + 1)?)),
-            "State" => builder.set_state(Some(decoder.string().map(|s| crate::types::AppBlockBuilderState::from(s.as_ref()))?)),
+            "State" => builder.set_state(Some(decoder.string().map(|s| crate::types::AppBlockBuilderState::from(s.as_str()))?)),
             "CreatedTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_created_time(Some(decoder.timestamp()?)))
             })?,

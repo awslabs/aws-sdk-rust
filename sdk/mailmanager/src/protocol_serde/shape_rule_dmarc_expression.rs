@@ -37,7 +37,7 @@ pub(crate) fn de_rule_dmarc_expression(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::RuleDmarcExpressionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleDmarcOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleDmarcOperator::from(s.as_str()))?)),
             "Values" => builder.set_values(Some(crate::protocol_serde::shape_rule_dmarc_value_list::de_rule_dmarc_value_list(
                 decoder,
                 depth + 1,

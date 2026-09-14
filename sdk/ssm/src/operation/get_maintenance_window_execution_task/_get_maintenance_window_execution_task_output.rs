@@ -145,9 +145,592 @@ impl ::std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {
         formatter.finish()
     }
 }
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_WINDOW_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$WindowExecutionId",
+            "com.amazonaws.ssm.synthetic",
+            "GetMaintenanceWindowExecutionTaskOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "WindowExecutionId",
+        0,
+    );
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$TaskExecutionId",
+            "com.amazonaws.ssm.synthetic",
+            "GetMaintenanceWindowExecutionTaskOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "TaskExecutionId",
+        1,
+    );
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$TaskArn",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TaskArn",
+    2,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_SERVICE_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$ServiceRole",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceRole",
+    3,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$Type",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    4,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#MaintenanceWindowTaskParameters$key",
+            "com.amazonaws.ssm",
+            "MaintenanceWindowTaskParameters",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#MaintenanceWindowTaskParameters$value",
+            "com.amazonaws.ssm",
+            "MaintenanceWindowTaskParameters",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "value",
+        1,
+    );
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#MaintenanceWindowTaskParametersList$member",
+            "com.amazonaws.ssm",
+            "MaintenanceWindowTaskParametersList",
+        ),
+        ::aws_smithy_schema::ShapeType::Map,
+        "member",
+        0,
+    )
+    .with_map_members(
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER_KEY,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER_VALUE,
+    );
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$TaskParameters",
+            "com.amazonaws.ssm.synthetic",
+            "GetMaintenanceWindowExecutionTaskOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "TaskParameters",
+        5,
+    )
+    .with_list_member(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$Priority",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Priority",
+    6,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_MAX_CONCURRENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$MaxConcurrency",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxConcurrency",
+    7,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_MAX_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$MaxErrors",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxErrors",
+    8,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$Status",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    9,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_STATUS_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$StatusDetails",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusDetails",
+    10,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$StartTime",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    11,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$EndTime",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    12,
+);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$AlarmConfiguration",
+            "com.amazonaws.ssm.synthetic",
+            "GetMaintenanceWindowExecutionTaskOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AlarmConfiguration",
+        13,
+    );
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TRIGGERED_ALARMS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#AlarmStateInformationList$member",
+            "com.amazonaws.ssm",
+            "AlarmStateInformationList",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TRIGGERED_ALARMS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput$TriggeredAlarms",
+            "com.amazonaws.ssm.synthetic",
+            "GetMaintenanceWindowExecutionTaskOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::List,
+        "TriggeredAlarms",
+        14,
+    )
+    .with_list_member(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TRIGGERED_ALARMS_MEMBER);
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    15,
+)
+.with_http_header("x-amzn-requestid");
+static GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetMaintenanceWindowExecutionTaskOutput",
+        "com.amazonaws.ssm.synthetic",
+        "GetMaintenanceWindowExecutionTaskOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_WINDOW_EXECUTION_ID,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_EXECUTION_ID,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_ARN,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_SERVICE_ROLE,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TYPE,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_PRIORITY,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_MAX_CONCURRENCY,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_MAX_ERRORS,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_STATUS,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_STATUS_DETAILS,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_START_TIME,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_END_TIME,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_ALARM_CONFIGURATION,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TRIGGERED_ALARMS,
+        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("GetMaintenanceWindowExecutionTaskResult");
+impl GetMaintenanceWindowExecutionTaskOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetMaintenanceWindowExecutionTaskOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.window_execution_id {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_WINDOW_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.task_execution_id {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.task_arn {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_ARN, val)?;
+        }
+        if let Some(ref val) = self.service_role {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_SERVICE_ROLE, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.task_parameters {
+            ser.write_list(
+                &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                                    ser.write_struct(crate::types::MaintenanceWindowTaskParameterValueExpression::SCHEMA, value)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.priority;
+            ser.write_integer(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_PRIORITY, *val)?;
+        }
+        if let Some(ref val) = self.max_concurrency {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_MAX_CONCURRENCY, val)?;
+        }
+        if let Some(ref val) = self.max_errors {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_MAX_ERRORS, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_details {
+            ser.write_string(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_STATUS_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.alarm_configuration {
+            ser.write_struct(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_ALARM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.triggered_alarms {
+            ser.write_list(
+                &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TRIGGERED_ALARMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AlarmStateInformation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl GetMaintenanceWindowExecutionTaskOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.task_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.task_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.service_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.r#type = Some(crate::types::MaintenanceWindowTaskType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.task_parameters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(
+                                        &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER,
+                                        &mut |key, deser| {
+                                            let value = crate::types::MaintenanceWindowTaskParameterValueExpression::deserialize(deser)?;
+                                            map.insert(key, value);
+                                            Ok(())
+                                        },
+                                    )?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    builder.priority = Some(deser.read_integer(member)?);
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_concurrency = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_errors = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status = Some(crate::types::MaintenanceWindowExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status_details = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.triggered_alarms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AlarmStateInformation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(15) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl GetMaintenanceWindowExecutionTaskOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.window_execution_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.task_execution_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    builder.task_arn = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    builder.service_role = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    builder.r#type = Some(crate::types::MaintenanceWindowTaskType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(5) => {
+                    builder.task_parameters = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push({
+                                let mut map = ::std::collections::HashMap::new();
+                                deser.read_map(
+                                    &GETMAINTENANCEWINDOWEXECUTIONTASKOUTPUT_MEMBER_TASK_PARAMETERS_MEMBER,
+                                    &mut |key, deser| {
+                                        let value = crate::types::MaintenanceWindowTaskParameterValueExpression::deserialize(deser)?;
+                                        map.insert(key, value);
+                                        Ok(())
+                                    },
+                                )?;
+                                map
+                            });
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(6) => {
+                    builder.priority = Some(deser.read_integer(member)?);
+                }
+                Some(7) => {
+                    builder.max_concurrency = Some(deser.read_string(member)?);
+                }
+                Some(8) => {
+                    builder.max_errors = Some(deser.read_string(member)?);
+                }
+                Some(9) => {
+                    builder.status = Some(crate::types::MaintenanceWindowExecutionStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(10) => {
+                    builder.status_details = Some(deser.read_string(member)?);
+                }
+                Some(11) => {
+                    builder.start_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(12) => {
+                    builder.end_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(13) => {
+                    builder.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                }
+                Some(14) => {
+                    builder.triggered_alarms = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::AlarmStateInformation::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetMaintenanceWindowExecutionTaskOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl GetMaintenanceWindowExecutionTaskOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl GetMaintenanceWindowExecutionTaskOutput {

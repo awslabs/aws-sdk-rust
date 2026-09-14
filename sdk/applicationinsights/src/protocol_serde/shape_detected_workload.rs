@@ -22,7 +22,7 @@ pub(crate) fn de_detected_workload(
         ::std::collections::HashMap<crate::types::Tier, ::std::collections::HashMap<::std::string::String, ::std::string::String>>,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
-        let key = decoder.string().map(|s| crate::types::Tier::from(s.as_ref()))?;
+        let key = decoder.string().map(|s| crate::types::Tier::from(s.as_str()))?;
         let value = match decoder.datatype()? {
             ::aws_smithy_cbor::data::Type::Null => {
                 return ::std::result::Result::Err(::aws_smithy_cbor::decode::DeserializeError::custom(

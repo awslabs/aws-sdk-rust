@@ -19,7 +19,9 @@ pub fn ser_inline_setting(
         );
     }
     if let Some(var_4) = &input.parameters {
-        object.key("parameters").document(var_4);
+        object
+            .key("parameters")
+            .document(var_4, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_5) = &input.output_bucket_owner_id {
         object.key("outputBucketOwnerId").string(var_5.as_str());
@@ -35,7 +37,9 @@ pub fn ser_inline_setting(
         object_7.finish();
     }
     if let Some(var_10) = &input.engine_settings {
-        object.key("engineSettings").document(var_10);
+        object
+            .key("engineSettings")
+            .document(var_10, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

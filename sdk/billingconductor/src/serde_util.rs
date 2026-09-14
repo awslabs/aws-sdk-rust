@@ -89,18 +89,6 @@ pub(crate) fn list_custom_line_item_charge_details_correct_errors(
     builder
 }
 
-pub(crate) fn update_tiering_input_correct_errors(
-    mut builder: crate::types::builders::UpdateTieringInputBuilder,
-) -> crate::types::builders::UpdateTieringInputBuilder {
-    if builder.free_tier.is_none() {
-        builder.free_tier = {
-            let builder = crate::types::builders::UpdateFreeTierConfigBuilder::default();
-            crate::serde_util::update_free_tier_config_correct_errors(builder).build().ok()
-        }
-    }
-    builder
-}
-
 pub(crate) fn list_custom_line_item_flat_charge_details_correct_errors(
     mut builder: crate::types::builders::ListCustomLineItemFlatChargeDetailsBuilder,
 ) -> crate::types::builders::ListCustomLineItemFlatChargeDetailsBuilder {
@@ -149,6 +137,16 @@ pub(crate) fn computation_preference_correct_errors(
     builder
 }
 
+pub(crate) fn custom_tier_correct_errors(mut builder: crate::types::builders::CustomTierBuilder) -> crate::types::builders::CustomTierBuilder {
+    if builder.begin_range_inclusive.is_none() {
+        builder.begin_range_inclusive = Some(Default::default())
+    }
+    if builder.rate_value.is_none() {
+        builder.rate_value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn line_item_filter_correct_errors(
     mut builder: crate::types::builders::LineItemFilterBuilder,
 ) -> crate::types::builders::LineItemFilterBuilder {
@@ -166,16 +164,6 @@ pub(crate) fn presentation_object_correct_errors(
 ) -> crate::types::builders::PresentationObjectBuilder {
     if builder.service.is_none() {
         builder.service = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn tiering_correct_errors(mut builder: crate::types::builders::TieringBuilder) -> crate::types::builders::TieringBuilder {
-    if builder.free_tier.is_none() {
-        builder.free_tier = {
-            let builder = crate::types::builders::FreeTierConfigBuilder::default();
-            crate::serde_util::free_tier_config_correct_errors(builder).build().ok()
-        }
     }
     builder
 }

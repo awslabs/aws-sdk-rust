@@ -28,7 +28,7 @@ pub(crate) fn de_public_network_configuration(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::PublicNetworkConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "IpType" => builder.set_ip_type(Some(decoder.string().map(|s| crate::types::IpType::from(s.as_ref()))?)),
+            "IpType" => builder.set_ip_type(Some(decoder.string().map(|s| crate::types::IpType::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

@@ -23,7 +23,7 @@ pub(crate) fn de_priority_type_list(
                     decoder.position(),
                 ))
             }
-            _ => decoder.string().map(|s| crate::types::PriorityType::from(s.as_ref()))?,
+            _ => decoder.string().map(|s| crate::types::PriorityType::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

@@ -23,7 +23,7 @@ pub(crate) fn de_rule_verdict_value_list(
                     decoder.position(),
                 ))
             }
-            _ => decoder.string().map(|s| crate::types::RuleVerdict::from(s.as_ref()))?,
+            _ => decoder.string().map(|s| crate::types::RuleVerdict::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

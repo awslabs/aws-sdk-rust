@@ -31,8 +31,8 @@ pub(crate) fn de_agent_access_setting(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::AgentAccessSettingBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "AgentAction" => builder.set_agent_action(Some(decoder.string().map(|s| crate::types::AgentAction::from(s.as_ref()))?)),
-            "Permission" => builder.set_permission(Some(decoder.string().map(|s| crate::types::Permission::from(s.as_ref()))?)),
+            "AgentAction" => builder.set_agent_action(Some(decoder.string().map(|s| crate::types::AgentAction::from(s.as_str()))?)),
+            "Permission" => builder.set_permission(Some(decoder.string().map(|s| crate::types::Permission::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

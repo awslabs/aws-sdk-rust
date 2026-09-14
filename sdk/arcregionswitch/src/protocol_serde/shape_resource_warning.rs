@@ -31,7 +31,7 @@ pub(crate) fn de_resource_warning(
             "resourceArn" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_resource_arn(Some(decoder.string()?))))?
             }
-            "warningStatus" => builder.set_warning_status(Some(decoder.string().map(|s| crate::types::ResourceWarningStatus::from(s.as_ref()))?)),
+            "warningStatus" => builder.set_warning_status(Some(decoder.string().map(|s| crate::types::ResourceWarningStatus::from(s.as_str()))?)),
             "warningUpdatedTime" => builder.set_warning_updated_time(Some(decoder.timestamp()?)),
             "warningMessage" => builder.set_warning_message(Some(decoder.string()?)),
             _ => {

@@ -32,6 +32,7 @@ pub use serializer::XmlSerializer;
 pub struct XmlCodecSettings {
     default_timestamp_format: TimestampFormat,
     max_depth: u32,
+    enforce_strictness: bool,
 }
 
 impl XmlCodecSettings {
@@ -59,6 +60,7 @@ impl Default for XmlCodecSettings {
         Self {
             default_timestamp_format: TimestampFormat::DateTime,
             max_depth: crate::codec::deserializer::MAX_DESERIALIZE_DEPTH,
+            enforce_strictness: false,
         }
     }
 }
@@ -68,6 +70,7 @@ impl Default for XmlCodecSettings {
 pub struct XmlCodecSettingsBuilder {
     default_timestamp_format: TimestampFormat,
     max_depth: u32,
+    enforce_strictness: bool,
 }
 
 impl Default for XmlCodecSettingsBuilder {
@@ -75,11 +78,18 @@ impl Default for XmlCodecSettingsBuilder {
         Self {
             default_timestamp_format: TimestampFormat::DateTime,
             max_depth: crate::codec::deserializer::MAX_DESERIALIZE_DEPTH,
+            enforce_strictness: false,
         }
     }
 }
 
 impl XmlCodecSettingsBuilder {
+    /// Validates the document root against the request schema. Disabled by default.
+    pub fn enforce_strictness(mut self, value: bool) -> Self {
+        self.enforce_strictness = value;
+        self
+    }
+
     /// Default timestamp format when not specified by `@timestampFormat` trait.
     pub fn default_timestamp_format(mut self, value: TimestampFormat) -> Self {
         self.default_timestamp_format = value;
@@ -98,6 +108,7 @@ impl XmlCodecSettingsBuilder {
         XmlCodecSettings {
             default_timestamp_format: self.default_timestamp_format,
             max_depth: self.max_depth,
+            enforce_strictness: self.enforce_strictness,
         }
     }
 }
@@ -188,9 +199,9 @@ mod tests {
         use aws_smithy_schema::serde::{SerdeError, SerializableStruct, ShapeSerializer};
         use aws_smithy_schema::{shape_id, Schema, ShapeType};
 
-        static NAME: Schema =
+        static NAME: Schema<'static> =
             Schema::new_member(shape_id!("test", "X$name"), ShapeType::String, "name", 0);
-        static X_SCHEMA: Schema =
+        static X_SCHEMA: Schema<'static> =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[&NAME])
                 .with_xml_namespace("urn:test", None);
 
@@ -216,11 +227,11 @@ mod tests {
         use aws_smithy_schema::serde::ShapeDeserializer;
         use aws_smithy_schema::{shape_id, Schema, ShapeType};
 
-        static NAME: Schema =
+        static NAME: Schema<'static> =
             Schema::new_member(shape_id!("test", "X$name"), ShapeType::String, "name", 0);
-        static AGE: Schema =
+        static AGE: Schema<'static> =
             Schema::new_member(shape_id!("test", "X$age"), ShapeType::Integer, "age", 1);
-        static X_SCHEMA: Schema =
+        static X_SCHEMA: Schema<'static> =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[&NAME, &AGE]);
 
         let codec = XmlCodec::default();

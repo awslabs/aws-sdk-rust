@@ -14,6 +14,82 @@ impl InstanceAssociationOutputLocation {
         self.s3_location.as_ref()
     }
 }
+static INSTANCEASSOCIATIONOUTPUTLOCATION_MEMBER_S3_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstanceAssociationOutputLocation$S3Location",
+        "com.amazonaws.ssm",
+        "InstanceAssociationOutputLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Location",
+    0,
+);
+static INSTANCEASSOCIATIONOUTPUTLOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstanceAssociationOutputLocation",
+        "com.amazonaws.ssm",
+        "InstanceAssociationOutputLocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INSTANCEASSOCIATIONOUTPUTLOCATION_MEMBER_S3_LOCATION],
+);
+impl InstanceAssociationOutputLocation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEASSOCIATIONOUTPUTLOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstanceAssociationOutputLocation {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_location {
+            ser.write_struct(&INSTANCEASSOCIATIONOUTPUTLOCATION_MEMBER_S3_LOCATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl InstanceAssociationOutputLocation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&INSTANCEASSOCIATIONOUTPUTLOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.s3_location = Some(crate::types::S3OutputLocation::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl InstanceAssociationOutputLocation {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl InstanceAssociationOutputLocation {
     /// Creates a new builder-style object to manufacture [`InstanceAssociationOutputLocation`](crate::types::InstanceAssociationOutputLocation).
     pub fn builder() -> crate::types::builders::InstanceAssociationOutputLocationBuilder {

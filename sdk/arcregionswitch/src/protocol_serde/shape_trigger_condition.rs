@@ -32,7 +32,7 @@ pub(crate) fn de_trigger_condition(
     ) -> ::std::result::Result<crate::types::builders::TriggerConditionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "associatedAlarmName" => builder.set_associated_alarm_name(Some(decoder.string()?)),
-            "condition" => builder.set_condition(Some(decoder.string().map(|s| crate::types::AlarmCondition::from(s.as_ref()))?)),
+            "condition" => builder.set_condition(Some(decoder.string().map(|s| crate::types::AlarmCondition::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

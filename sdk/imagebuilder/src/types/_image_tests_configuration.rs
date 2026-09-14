@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageTestsConfiguration {
-    /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
+    /// <p>Specifies whether tests run after building the image. When enabled, tests run after the image build and before image distribution. Defaults to <code>true</code>.</p>
     pub image_tests_enabled: ::std::option::Option<bool>,
     /// <p>The maximum time in minutes that tests are permitted to run.</p><note>
     /// <p>The timeout property is not currently active. This value is ignored.</p>
@@ -12,7 +12,7 @@ pub struct ImageTestsConfiguration {
     pub timeout_minutes: ::std::option::Option<i32>,
 }
 impl ImageTestsConfiguration {
-    /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
+    /// <p>Specifies whether tests run after building the image. When enabled, tests run after the image build and before image distribution. Defaults to <code>true</code>.</p>
     pub fn image_tests_enabled(&self) -> ::std::option::Option<bool> {
         self.image_tests_enabled
     }
@@ -38,17 +38,17 @@ pub struct ImageTestsConfigurationBuilder {
     pub(crate) timeout_minutes: ::std::option::Option<i32>,
 }
 impl ImageTestsConfigurationBuilder {
-    /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
+    /// <p>Specifies whether tests run after building the image. When enabled, tests run after the image build and before image distribution. Defaults to <code>true</code>.</p>
     pub fn image_tests_enabled(mut self, input: bool) -> Self {
         self.image_tests_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
+    /// <p>Specifies whether tests run after building the image. When enabled, tests run after the image build and before image distribution. Defaults to <code>true</code>.</p>
     pub fn set_image_tests_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.image_tests_enabled = input;
         self
     }
-    /// <p>Determines if tests should run after building the image. Image Builder defaults to enable tests to run following the image build, before image distribution.</p>
+    /// <p>Specifies whether tests run after building the image. When enabled, tests run after the image build and before image distribution. Defaults to <code>true</code>.</p>
     pub fn get_image_tests_enabled(&self) -> &::std::option::Option<bool> {
         &self.image_tests_enabled
     }

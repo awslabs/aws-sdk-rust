@@ -22,6 +22,8 @@ impl super::Client {
     ///   - [`end_time(Option<String>)`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput::end_time): <p>The timestamp when the specified runtime instance of the workflow step finished.</p>
     ///   - [`on_failure(Option<String>)`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput::on_failure): <p>The action to perform if the workflow step fails.</p>
     ///   - [`timeout_seconds(Option<i32>)`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput::timeout_seconds): <p>The maximum duration in seconds for this step to complete its action.</p>
+    ///   - [`attempt_number(Option<i32>)`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput::attempt_number): <p>The current attempt number for the specified runtime instance of the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    ///   - [`max_attempts(Option<i32>)`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionOutput::max_attempts): <p>The maximum number of attempts allowed for the specified runtime instance of the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
     /// - On failure, responds with [`SdkError<GetWorkflowStepExecutionError>`](crate::operation::get_workflow_step_execution::GetWorkflowStepExecutionError)
     pub fn get_workflow_step_execution(&self) -> crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionFluentBuilder {
         crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExecutionFluentBuilder::new(self.handle.clone())

@@ -32,6 +32,175 @@ impl ListOpsItemRelatedItemsInput {
         self.next_token.as_deref()
     }
 }
+static LISTOPSITEMRELATEDITEMSINPUT_MEMBER_OPS_ITEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListOpsItemRelatedItemsInput$OpsItemId",
+        "com.amazonaws.ssm.synthetic",
+        "ListOpsItemRelatedItemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemId",
+    0,
+);
+static LISTOPSITEMRELATEDITEMSINPUT_MEMBER_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemsFilters$member",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemsFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static LISTOPSITEMRELATEDITEMSINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListOpsItemRelatedItemsInput$Filters",
+        "com.amazonaws.ssm.synthetic",
+        "ListOpsItemRelatedItemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Filters",
+    1,
+)
+.with_list_member(&LISTOPSITEMRELATEDITEMSINPUT_MEMBER_FILTERS_MEMBER);
+static LISTOPSITEMRELATEDITEMSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListOpsItemRelatedItemsInput$MaxResults",
+        "com.amazonaws.ssm.synthetic",
+        "ListOpsItemRelatedItemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static LISTOPSITEMRELATEDITEMSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListOpsItemRelatedItemsInput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "ListOpsItemRelatedItemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static LISTOPSITEMRELATEDITEMSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#ListOpsItemRelatedItemsInput",
+        "com.amazonaws.ssm.synthetic",
+        "ListOpsItemRelatedItemsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &LISTOPSITEMRELATEDITEMSINPUT_MEMBER_OPS_ITEM_ID,
+        &LISTOPSITEMRELATEDITEMSINPUT_MEMBER_FILTERS,
+        &LISTOPSITEMRELATEDITEMSINPUT_MEMBER_MAX_RESULTS,
+        &LISTOPSITEMRELATEDITEMSINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("ListOpsItemRelatedItemsRequest");
+impl ListOpsItemRelatedItemsInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &LISTOPSITEMRELATEDITEMSINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ListOpsItemRelatedItemsInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ops_item_id {
+            ser.write_string(&LISTOPSITEMRELATEDITEMSINPUT_MEMBER_OPS_ITEM_ID, val)?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_list(
+                &LISTOPSITEMRELATEDITEMSINPUT_MEMBER_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::OpsItemRelatedItemsFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&LISTOPSITEMRELATEDITEMSINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&LISTOPSITEMRELATEDITEMSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl ListOpsItemRelatedItemsInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&LISTOPSITEMRELATEDITEMSINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.ops_item_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.filters = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OpsItemRelatedItemsFilter::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl ListOpsItemRelatedItemsInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl ListOpsItemRelatedItemsInput {
     /// Creates a new builder-style object to manufacture [`ListOpsItemRelatedItemsInput`](crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsInput).
     pub fn builder() -> crate::operation::list_ops_item_related_items::builders::ListOpsItemRelatedItemsInputBuilder {

@@ -29,7 +29,7 @@ pub(crate) fn de_lambda_function_recommendation_finding_reason_codes(
             }
             _ => decoder
                 .string()
-                .map(|s| crate::types::LambdaFunctionRecommendationFindingReasonCode::from(s.as_ref()))?,
+                .map(|s| crate::types::LambdaFunctionRecommendationFindingReasonCode::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

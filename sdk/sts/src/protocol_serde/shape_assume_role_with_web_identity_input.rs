@@ -49,6 +49,14 @@ pub fn ser_assume_role_with_web_identity_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("MinimumSessionTokenSize");
+    if let Some(var_19) = &input.minimum_session_token_size {
+        scope_18.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

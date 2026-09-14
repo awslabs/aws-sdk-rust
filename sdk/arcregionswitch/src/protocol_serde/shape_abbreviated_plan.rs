@@ -20,7 +20,7 @@ pub(crate) fn de_abbreviated_plan(
             "owner" => builder.set_owner(Some(decoder.string()?)),
             "name" => builder.set_name(Some(decoder.string()?)),
             "regions" => builder.set_regions(Some(crate::protocol_serde::shape_region_list::de_region_list(decoder, depth + 1)?)),
-            "recoveryApproach" => builder.set_recovery_approach(Some(decoder.string().map(|s| crate::types::RecoveryApproach::from(s.as_ref()))?)),
+            "recoveryApproach" => builder.set_recovery_approach(Some(decoder.string().map(|s| crate::types::RecoveryApproach::from(s.as_str()))?)),
             "primaryRegion" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_primary_region(Some(decoder.string()?)))
             })?,

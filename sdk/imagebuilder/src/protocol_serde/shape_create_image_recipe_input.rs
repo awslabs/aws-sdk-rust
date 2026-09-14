@@ -58,27 +58,30 @@ pub fn ser_create_image_recipe_input_input(
     if let Some(var_19) = &input.description {
         object.key("description").string(var_19.as_str());
     }
-    if let Some(var_20) = &input.name {
-        object.key("name").string(var_20.as_str());
+    if let Some(var_20) = &input.dry_run {
+        object.key("dryRun").boolean(*var_20);
     }
-    if let Some(var_21) = &input.parent_image {
-        object.key("parentImage").string(var_21.as_str());
+    if let Some(var_21) = &input.name {
+        object.key("name").string(var_21.as_str());
     }
-    if let Some(var_22) = &input.semantic_version {
-        object.key("semanticVersion").string(var_22.as_str());
+    if let Some(var_22) = &input.parent_image {
+        object.key("parentImage").string(var_22.as_str());
     }
-    if let Some(var_23) = &input.tags {
+    if let Some(var_23) = &input.semantic_version {
+        object.key("semanticVersion").string(var_23.as_str());
+    }
+    if let Some(var_24) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("tags").start_object();
-        for (key_25, value_26) in var_23 {
+        let mut object_25 = object.key("tags").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_24.key(key_25.as_str()).string(value_26.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_24.finish();
+        object_25.finish();
     }
-    if let Some(var_27) = &input.working_directory {
-        object.key("workingDirectory").string(var_27.as_str());
+    if let Some(var_28) = &input.working_directory {
+        object.key("workingDirectory").string(var_28.as_str());
     }
     Ok(())
 }

@@ -18,7 +18,7 @@ pub(crate) fn de_ecs_savings_estimation_mode(
         builder = match decoder.str()?.as_ref() {
             "source" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_source(Some(
-                    decoder.string().map(|s| crate::types::EcsSavingsEstimationModeSource::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::EcsSavingsEstimationModeSource::from(s.as_str()))?,
                 )))
             })?,
             _ => {

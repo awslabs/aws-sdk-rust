@@ -38,7 +38,7 @@ pub(crate) fn de_rule_is_in_address_list(
     ) -> ::std::result::Result<crate::types::builders::RuleIsInAddressListBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Attribute" => builder.set_attribute(Some(
-                decoder.string().map(|s| crate::types::RuleAddressListEmailAttribute::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::RuleAddressListEmailAttribute::from(s.as_str()))?,
             )),
             "AddressLists" => builder.set_address_lists(Some(
                 crate::protocol_serde::shape_rule_address_list_arn_list::de_rule_address_list_arn_list(decoder, depth + 1)?,

@@ -21,6 +21,98 @@ impl RegistrationMetadataItem {
         self.value.deref()
     }
 }
+static REGISTRATIONMETADATAITEM_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#RegistrationMetadataItem$Key",
+        "com.amazonaws.ssm",
+        "RegistrationMetadataItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Key",
+    0,
+);
+static REGISTRATIONMETADATAITEM_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#RegistrationMetadataItem$Value",
+        "com.amazonaws.ssm",
+        "RegistrationMetadataItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    1,
+);
+static REGISTRATIONMETADATAITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#RegistrationMetadataItem",
+        "com.amazonaws.ssm",
+        "RegistrationMetadataItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&REGISTRATIONMETADATAITEM_MEMBER_KEY, &REGISTRATIONMETADATAITEM_MEMBER_VALUE],
+);
+impl RegistrationMetadataItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTRATIONMETADATAITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegistrationMetadataItem {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key;
+            ser.write_string(&REGISTRATIONMETADATAITEM_MEMBER_KEY, val)?;
+        }
+        {
+            let val = &self.value;
+            ser.write_string(&REGISTRATIONMETADATAITEM_MEMBER_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl RegistrationMetadataItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&REGISTRATIONMETADATAITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.key = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.value = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.key = builder.key.or(Some(String::new()));
+        builder.value = builder.value.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl RegistrationMetadataItem {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl RegistrationMetadataItem {
     /// Creates a new builder-style object to manufacture [`RegistrationMetadataItem`](crate::types::RegistrationMetadataItem).
     pub fn builder() -> crate::types::builders::RegistrationMetadataItemBuilder {

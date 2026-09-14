@@ -41,7 +41,7 @@ pub(crate) fn de_policy_statement(
                 decoder,
                 depth + 1,
             )?)),
-            "Action" => builder.set_action(Some(decoder.string().map(|s| crate::types::AcceptAction::from(s.as_ref()))?)),
+            "Action" => builder.set_action(Some(decoder.string().map(|s| crate::types::AcceptAction::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

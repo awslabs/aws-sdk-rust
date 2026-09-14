@@ -13,7 +13,9 @@ pub fn ser_create_managed_login_branding_input_input(
         object.key("UseCognitoProvidedValues").boolean(*var_3);
     }
     if let Some(var_4) = &input.settings {
-        object.key("Settings").document(var_4);
+        object
+            .key("Settings")
+            .document(var_4, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_5) = &input.assets {
         let mut array_6 = object.key("Assets").start_array();

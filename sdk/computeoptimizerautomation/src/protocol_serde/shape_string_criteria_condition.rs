@@ -38,7 +38,7 @@ pub(crate) fn de_string_criteria_condition(
     ) -> ::std::result::Result<crate::types::builders::StringCriteriaConditionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "comparison" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_comparison(Some(decoder.string().map(|s| crate::types::ComparisonOperator::from(s.as_ref()))?)))
+                Ok(builder.set_comparison(Some(decoder.string().map(|s| crate::types::ComparisonOperator::from(s.as_str()))?)))
             })?,
             "values" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

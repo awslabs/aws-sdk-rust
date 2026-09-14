@@ -7,7 +7,9 @@ pub fn ser_inline_examples_source(
         let mut array_1 = object.key("examples").start_array();
         for item_2 in &input.examples {
             {
-                array_1.value().document(item_2);
+                array_1
+                    .value()
+                    .document(item_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
             }
         }
         array_1.finish();

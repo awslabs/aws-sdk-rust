@@ -18,16 +18,16 @@ pub(crate) fn de_job_list_entry(
         builder = match decoder.str()?.as_ref() {
             "JobId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_job_id(Some(decoder.string()?))))?,
             "JobState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_job_state(Some(decoder.string().map(|s| crate::types::JobState::from(s.as_ref()))?)))
+                Ok(builder.set_job_state(Some(decoder.string().map(|s| crate::types::JobState::from(s.as_str()))?)))
             })?,
             "IsMaster" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_is_master(Some(decoder.boolean()?))))?
             }
             "JobType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_job_type(Some(decoder.string().map(|s| crate::types::JobType::from(s.as_ref()))?)))
+                Ok(builder.set_job_type(Some(decoder.string().map(|s| crate::types::JobType::from(s.as_str()))?)))
             })?,
             "SnowballType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_snowball_type(Some(decoder.string().map(|s| crate::types::SnowballType::from(s.as_ref()))?)))
+                Ok(builder.set_snowball_type(Some(decoder.string().map(|s| crate::types::SnowballType::from(s.as_str()))?)))
             })?,
             "CreationDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_creation_date(Some(decoder.timestamp()?)))

@@ -26,7 +26,9 @@ pub fn ser_generation_configuration(
         let mut object_8 = object.key("additionalModelRequestFields").start_object();
         for (key_9, value_10) in var_7 {
             {
-                object_8.key(key_9.as_str()).document(value_10);
+                object_8
+                    .key(key_9.as_str())
+                    .document(value_10, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
             }
         }
         object_8.finish();

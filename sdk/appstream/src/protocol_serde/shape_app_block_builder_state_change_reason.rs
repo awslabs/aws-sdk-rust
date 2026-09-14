@@ -20,7 +20,7 @@ pub(crate) fn de_app_block_builder_state_change_reason(
                 Ok(builder.set_code(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::AppBlockBuilderStateChangeReasonCode::from(s.as_ref()))?,
+                        .map(|s| crate::types::AppBlockBuilderStateChangeReasonCode::from(s.as_str()))?,
                 )))
             })?,
             "Message" => {

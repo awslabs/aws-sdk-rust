@@ -8,7 +8,7 @@ pub struct SsmParameterConfiguration {
     pub ami_account_id: ::std::option::Option<::std::string::String>,
     /// <p>This is the name of the Parameter in the target Region or account. The image distribution creates the Parameter if it doesn't already exist. Otherwise, it updates the parameter.</p>
     pub parameter_name: ::std::string::String,
-    /// <p>The data type specifies what type of value the Parameter contains. We recommend that you use data type <code>aws:ec2:image</code>.</p>
+    /// <p>The type of value the parameter contains. We recommend the <code>aws:ec2:image</code> data type.</p>
     pub data_type: ::std::option::Option<crate::types::SsmParameterDataType>,
 }
 impl SsmParameterConfiguration {
@@ -21,7 +21,7 @@ impl SsmParameterConfiguration {
         use std::ops::Deref;
         self.parameter_name.deref()
     }
-    /// <p>The data type specifies what type of value the Parameter contains. We recommend that you use data type <code>aws:ec2:image</code>.</p>
+    /// <p>The type of value the parameter contains. We recommend the <code>aws:ec2:image</code> data type.</p>
     pub fn data_type(&self) -> ::std::option::Option<&crate::types::SsmParameterDataType> {
         self.data_type.as_ref()
     }
@@ -71,17 +71,17 @@ impl SsmParameterConfigurationBuilder {
     pub fn get_parameter_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.parameter_name
     }
-    /// <p>The data type specifies what type of value the Parameter contains. We recommend that you use data type <code>aws:ec2:image</code>.</p>
+    /// <p>The type of value the parameter contains. We recommend the <code>aws:ec2:image</code> data type.</p>
     pub fn data_type(mut self, input: crate::types::SsmParameterDataType) -> Self {
         self.data_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The data type specifies what type of value the Parameter contains. We recommend that you use data type <code>aws:ec2:image</code>.</p>
+    /// <p>The type of value the parameter contains. We recommend the <code>aws:ec2:image</code> data type.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<crate::types::SsmParameterDataType>) -> Self {
         self.data_type = input;
         self
     }
-    /// <p>The data type specifies what type of value the Parameter contains. We recommend that you use data type <code>aws:ec2:image</code>.</p>
+    /// <p>The type of value the parameter contains. We recommend the <code>aws:ec2:image</code> data type.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<crate::types::SsmParameterDataType> {
         &self.data_type
     }

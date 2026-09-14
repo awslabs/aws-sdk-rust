@@ -125,7 +125,7 @@ pub(crate) fn de_describe_component_configuration(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_monitor(Some(decoder.boolean()?))))?
             }
             "Tier" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_tier(Some(decoder.string().map(|s| crate::types::Tier::from(s.as_ref()))?)))
+                Ok(builder.set_tier(Some(decoder.string().map(|s| crate::types::Tier::from(s.as_str()))?)))
             })?,
             "ComponentConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_component_configuration(Some(decoder.string()?)))

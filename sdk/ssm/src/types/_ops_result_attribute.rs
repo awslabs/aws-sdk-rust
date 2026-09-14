@@ -14,6 +14,72 @@ impl OpsResultAttribute {
         self.type_name.deref()
     }
 }
+static OPSRESULTATTRIBUTE_MEMBER_TYPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsResultAttribute$TypeName", "com.amazonaws.ssm", "OpsResultAttribute"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TypeName",
+    0,
+);
+static OPSRESULTATTRIBUTE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsResultAttribute", "com.amazonaws.ssm", "OpsResultAttribute"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&OPSRESULTATTRIBUTE_MEMBER_TYPE_NAME],
+);
+impl OpsResultAttribute {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPSRESULTATTRIBUTE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpsResultAttribute {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.type_name;
+            ser.write_string(&OPSRESULTATTRIBUTE_MEMBER_TYPE_NAME, val)?;
+        }
+        Ok(())
+    }
+}
+impl OpsResultAttribute {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&OPSRESULTATTRIBUTE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.type_name = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.type_name = builder.type_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl OpsResultAttribute {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl OpsResultAttribute {
     /// Creates a new builder-style object to manufacture [`OpsResultAttribute`](crate::types::OpsResultAttribute).
     pub fn builder() -> crate::types::builders::OpsResultAttributeBuilder {

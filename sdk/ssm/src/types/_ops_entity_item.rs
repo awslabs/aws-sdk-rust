@@ -21,6 +21,146 @@ impl OpsEntityItem {
         self.content.as_deref().unwrap_or_default()
     }
 }
+static OPSENTITYITEM_MEMBER_CAPTURE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsEntityItem$CaptureTime", "com.amazonaws.ssm", "OpsEntityItem"),
+    ::aws_smithy_schema::ShapeType::String,
+    "CaptureTime",
+    0,
+);
+static OPSENTITYITEM_MEMBER_CONTENT_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsEntityItemEntry$key", "com.amazonaws.ssm", "OpsEntityItemEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static OPSENTITYITEM_MEMBER_CONTENT_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsEntityItemEntry$value", "com.amazonaws.ssm", "OpsEntityItemEntry"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static OPSENTITYITEM_MEMBER_CONTENT_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsEntityItemEntryList$member",
+        "com.amazonaws.ssm",
+        "OpsEntityItemEntryList",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "member",
+    0,
+)
+.with_map_members(&OPSENTITYITEM_MEMBER_CONTENT_MEMBER_KEY, &OPSENTITYITEM_MEMBER_CONTENT_MEMBER_VALUE);
+static OPSENTITYITEM_MEMBER_CONTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsEntityItem$Content", "com.amazonaws.ssm", "OpsEntityItem"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Content",
+    1,
+)
+.with_list_member(&OPSENTITYITEM_MEMBER_CONTENT_MEMBER);
+static OPSENTITYITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsEntityItem", "com.amazonaws.ssm", "OpsEntityItem"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&OPSENTITYITEM_MEMBER_CAPTURE_TIME, &OPSENTITYITEM_MEMBER_CONTENT],
+);
+impl OpsEntityItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPSENTITYITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpsEntityItem {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.capture_time {
+            ser.write_string(&OPSENTITYITEM_MEMBER_CAPTURE_TIME, val)?;
+        }
+        if let Some(ref val) = self.content {
+            ser.write_list(
+                &OPSENTITYITEM_MEMBER_CONTENT,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &OPSENTITYITEM_MEMBER_CONTENT_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl OpsEntityItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&OPSENTITYITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.capture_time = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.content = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&OPSENTITYITEM_MEMBER_CONTENT_MEMBER, &mut |key, deser| {
+                                        let value = deser.read_string(&::aws_smithy_schema::prelude::STRING)?;
+                                        map.insert(key, value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl OpsEntityItem {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl OpsEntityItem {
     /// Creates a new builder-style object to manufacture [`OpsEntityItem`](crate::types::OpsEntityItem).
     pub fn builder() -> crate::types::builders::OpsEntityItemBuilder {

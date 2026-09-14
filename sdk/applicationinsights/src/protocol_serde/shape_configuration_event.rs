@@ -27,11 +27,11 @@ pub(crate) fn de_configuration_event(
                     Ok(builder.set_monitored_resource_arn(Some(decoder.string()?)))
                 })?,
                 "EventStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_event_status(Some(decoder.string().map(|s| crate::types::ConfigurationEventStatus::from(s.as_ref()))?)))
+                    Ok(builder.set_event_status(Some(decoder.string().map(|s| crate::types::ConfigurationEventStatus::from(s.as_str()))?)))
                 })?,
                 "EventResourceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_event_resource_type(Some(
-                        decoder.string().map(|s| crate::types::ConfigurationEventResourceType::from(s.as_ref()))?,
+                        decoder.string().map(|s| crate::types::ConfigurationEventResourceType::from(s.as_str()))?,
                     )))
                 })?,
                 "EventTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

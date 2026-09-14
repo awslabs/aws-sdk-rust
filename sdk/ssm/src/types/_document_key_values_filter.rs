@@ -84,6 +84,121 @@ impl DocumentKeyValuesFilter {
         self.values.as_deref().unwrap_or_default()
     }
 }
+static DOCUMENTKEYVALUESFILTER_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentKeyValuesFilter$Key",
+        "com.amazonaws.ssm",
+        "DocumentKeyValuesFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Key",
+    0,
+);
+static DOCUMENTKEYVALUESFILTER_MEMBER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentKeyValuesFilterValues$member",
+        "com.amazonaws.ssm",
+        "DocumentKeyValuesFilterValues",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static DOCUMENTKEYVALUESFILTER_MEMBER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentKeyValuesFilter$Values",
+        "com.amazonaws.ssm",
+        "DocumentKeyValuesFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Values",
+    1,
+)
+.with_list_member(&DOCUMENTKEYVALUESFILTER_MEMBER_VALUES_MEMBER);
+static DOCUMENTKEYVALUESFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentKeyValuesFilter",
+        "com.amazonaws.ssm",
+        "DocumentKeyValuesFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&DOCUMENTKEYVALUESFILTER_MEMBER_KEY, &DOCUMENTKEYVALUESFILTER_MEMBER_VALUES],
+);
+impl DocumentKeyValuesFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTKEYVALUESFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentKeyValuesFilter {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.key {
+            ser.write_string(&DOCUMENTKEYVALUESFILTER_MEMBER_KEY, val)?;
+        }
+        if let Some(ref val) = self.values {
+            ser.write_list(
+                &DOCUMENTKEYVALUESFILTER_MEMBER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl DocumentKeyValuesFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DOCUMENTKEYVALUESFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.values = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl DocumentKeyValuesFilter {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl DocumentKeyValuesFilter {
     /// Creates a new builder-style object to manufacture [`DocumentKeyValuesFilter`](crate::types::DocumentKeyValuesFilter).
     pub fn builder() -> crate::types::builders::DocumentKeyValuesFilterBuilder {

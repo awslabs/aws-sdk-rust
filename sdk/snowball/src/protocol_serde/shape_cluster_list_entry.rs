@@ -20,7 +20,7 @@ pub(crate) fn de_cluster_list_entry(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_cluster_id(Some(decoder.string()?))))?
             }
             "ClusterState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_cluster_state(Some(decoder.string().map(|s| crate::types::ClusterState::from(s.as_ref()))?)))
+                Ok(builder.set_cluster_state(Some(decoder.string().map(|s| crate::types::ClusterState::from(s.as_str()))?)))
             })?,
             "CreationDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_creation_date(Some(decoder.timestamp()?)))

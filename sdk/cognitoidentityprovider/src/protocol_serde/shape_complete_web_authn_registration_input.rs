@@ -7,7 +7,9 @@ pub fn ser_complete_web_authn_registration_input_input(
         object.key("AccessToken").string(var_1.as_str());
     }
     if let Some(var_2) = &input.credential {
-        object.key("Credential").document(var_2);
+        object
+            .key("Credential")
+            .document(var_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

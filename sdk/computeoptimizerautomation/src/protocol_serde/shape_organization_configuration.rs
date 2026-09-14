@@ -17,7 +17,7 @@ pub(crate) fn de_organization_configuration(
     ) -> ::std::result::Result<crate::types::builders::OrganizationConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ruleApplyOrder" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_rule_apply_order(Some(decoder.string().map(|s| crate::types::RuleApplyOrder::from(s.as_ref()))?)))
+                Ok(builder.set_rule_apply_order(Some(decoder.string().map(|s| crate::types::RuleApplyOrder::from(s.as_str()))?)))
             })?,
             "accountIds" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_account_ids(Some(

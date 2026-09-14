@@ -170,6 +170,533 @@ impl ::std::fmt::Debug for SendCommandInput {
         formatter.finish()
     }
 }
+static SENDCOMMANDINPUT_MEMBER_INSTANCE_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#InstanceIdList$member", "com.amazonaws.ssm", "InstanceIdList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SENDCOMMANDINPUT_MEMBER_INSTANCE_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$InstanceIds",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InstanceIds",
+    0,
+)
+.with_list_member(&SENDCOMMANDINPUT_MEMBER_INSTANCE_IDS_MEMBER);
+static SENDCOMMANDINPUT_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Targets$member", "com.amazonaws.ssm", "Targets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static SENDCOMMANDINPUT_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$Targets",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    1,
+)
+.with_list_member(&SENDCOMMANDINPUT_MEMBER_TARGETS_MEMBER);
+static SENDCOMMANDINPUT_MEMBER_DOCUMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$DocumentName",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentName",
+    2,
+);
+static SENDCOMMANDINPUT_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$DocumentVersion",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    3,
+);
+static SENDCOMMANDINPUT_MEMBER_DOCUMENT_HASH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$DocumentHash",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentHash",
+    4,
+);
+static SENDCOMMANDINPUT_MEMBER_DOCUMENT_HASH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$DocumentHashType",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentHashType",
+    5,
+);
+static SENDCOMMANDINPUT_MEMBER_TIMEOUT_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$TimeoutSeconds",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TimeoutSeconds",
+    6,
+);
+static SENDCOMMANDINPUT_MEMBER_COMMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$Comment",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Comment",
+    7,
+);
+static SENDCOMMANDINPUT_MEMBER_PARAMETERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ParameterValueList$member", "com.amazonaws.ssm", "ParameterValueList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static SENDCOMMANDINPUT_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Parameters$key", "com.amazonaws.ssm", "Parameters"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static SENDCOMMANDINPUT_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Parameters$value", "com.amazonaws.ssm", "Parameters"),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&SENDCOMMANDINPUT_MEMBER_PARAMETERS_VALUE_MEMBER);
+static SENDCOMMANDINPUT_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$Parameters",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    8,
+)
+.with_map_members(&SENDCOMMANDINPUT_MEMBER_PARAMETERS_KEY, &SENDCOMMANDINPUT_MEMBER_PARAMETERS_VALUE);
+static SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$OutputS3Region",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputS3Region",
+    9,
+);
+static SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_BUCKET_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$OutputS3BucketName",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputS3BucketName",
+    10,
+);
+static SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_KEY_PREFIX: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$OutputS3KeyPrefix",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputS3KeyPrefix",
+    11,
+);
+static SENDCOMMANDINPUT_MEMBER_MAX_CONCURRENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$MaxConcurrency",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxConcurrency",
+    12,
+);
+static SENDCOMMANDINPUT_MEMBER_MAX_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$MaxErrors",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxErrors",
+    13,
+);
+static SENDCOMMANDINPUT_MEMBER_SERVICE_ROLE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$ServiceRoleArn",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceRoleArn",
+    14,
+);
+static SENDCOMMANDINPUT_MEMBER_NOTIFICATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$NotificationConfig",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NotificationConfig",
+    15,
+);
+static SENDCOMMANDINPUT_MEMBER_CLOUD_WATCH_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$CloudWatchOutputConfig",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CloudWatchOutputConfig",
+    16,
+);
+static SENDCOMMANDINPUT_MEMBER_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput$AlarmConfiguration",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlarmConfiguration",
+    17,
+);
+static SENDCOMMANDINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#SendCommandInput",
+        "com.amazonaws.ssm.synthetic",
+        "SendCommandInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SENDCOMMANDINPUT_MEMBER_INSTANCE_IDS,
+        &SENDCOMMANDINPUT_MEMBER_TARGETS,
+        &SENDCOMMANDINPUT_MEMBER_DOCUMENT_NAME,
+        &SENDCOMMANDINPUT_MEMBER_DOCUMENT_VERSION,
+        &SENDCOMMANDINPUT_MEMBER_DOCUMENT_HASH,
+        &SENDCOMMANDINPUT_MEMBER_DOCUMENT_HASH_TYPE,
+        &SENDCOMMANDINPUT_MEMBER_TIMEOUT_SECONDS,
+        &SENDCOMMANDINPUT_MEMBER_COMMENT,
+        &SENDCOMMANDINPUT_MEMBER_PARAMETERS,
+        &SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_REGION,
+        &SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_BUCKET_NAME,
+        &SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_KEY_PREFIX,
+        &SENDCOMMANDINPUT_MEMBER_MAX_CONCURRENCY,
+        &SENDCOMMANDINPUT_MEMBER_MAX_ERRORS,
+        &SENDCOMMANDINPUT_MEMBER_SERVICE_ROLE_ARN,
+        &SENDCOMMANDINPUT_MEMBER_NOTIFICATION_CONFIG,
+        &SENDCOMMANDINPUT_MEMBER_CLOUD_WATCH_OUTPUT_CONFIG,
+        &SENDCOMMANDINPUT_MEMBER_ALARM_CONFIGURATION,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("SendCommandRequest");
+impl SendCommandInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SENDCOMMANDINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SendCommandInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.instance_ids {
+            ser.write_list(
+                &SENDCOMMANDINPUT_MEMBER_INSTANCE_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &SENDCOMMANDINPUT_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.document_name {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_DOCUMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.document_hash {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_DOCUMENT_HASH, val)?;
+        }
+        if let Some(ref val) = self.document_hash_type {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_DOCUMENT_HASH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.timeout_seconds {
+            ser.write_integer(&SENDCOMMANDINPUT_MEMBER_TIMEOUT_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.comment {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_COMMENT, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &SENDCOMMANDINPUT_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &SENDCOMMANDINPUT_MEMBER_PARAMETERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.output_s3_region {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_REGION, val)?;
+        }
+        if let Some(ref val) = self.output_s3_bucket_name {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_BUCKET_NAME, val)?;
+        }
+        if let Some(ref val) = self.output_s3_key_prefix {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_OUTPUT_S3_KEY_PREFIX, val)?;
+        }
+        if let Some(ref val) = self.max_concurrency {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_MAX_CONCURRENCY, val)?;
+        }
+        if let Some(ref val) = self.max_errors {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_MAX_ERRORS, val)?;
+        }
+        if let Some(ref val) = self.service_role_arn {
+            ser.write_string(&SENDCOMMANDINPUT_MEMBER_SERVICE_ROLE_ARN, val)?;
+        }
+        if let Some(ref val) = self.notification_config {
+            ser.write_struct(&SENDCOMMANDINPUT_MEMBER_NOTIFICATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_output_config {
+            ser.write_struct(&SENDCOMMANDINPUT_MEMBER_CLOUD_WATCH_OUTPUT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.alarm_configuration {
+            ser.write_struct(&SENDCOMMANDINPUT_MEMBER_ALARM_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl SendCommandInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&SENDCOMMANDINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.instance_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_hash = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_hash_type = Some(crate::types::DocumentHashType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.timeout_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.comment = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&SENDCOMMANDINPUT_MEMBER_PARAMETERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.output_s3_region = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.output_s3_bucket_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.output_s3_key_prefix = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_concurrency = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_errors = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.service_role_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.notification_config = Some(crate::types::NotificationConfig::deserialize(deser)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.cloud_watch_output_config = Some(crate::types::CloudWatchOutputConfig::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.document_name = builder.document_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl SendCommandInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl SendCommandInput {
     /// Creates a new builder-style object to manufacture [`SendCommandInput`](crate::operation::send_command::SendCommandInput).
     pub fn builder() -> crate::operation::send_command::builders::SendCommandInputBuilder {

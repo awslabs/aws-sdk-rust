@@ -62,7 +62,7 @@ pub(crate) fn de_neptune_global_database_configuration(
             "externalId" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_external_id(Some(decoder.string()?))))?
             }
-            "behavior" => builder.set_behavior(Some(decoder.string().map(|s| crate::types::NeptuneDefaultBehavior::from(s.as_ref()))?)),
+            "behavior" => builder.set_behavior(Some(decoder.string().map(|s| crate::types::NeptuneDefaultBehavior::from(s.as_str()))?)),
             "ungraceful" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_ungraceful(Some(crate::protocol_serde::shape_neptune_ungraceful::de_neptune_ungraceful(

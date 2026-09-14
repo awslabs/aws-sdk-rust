@@ -4,7 +4,9 @@ pub fn ser_invoke_rest_api_input_input(
     input: &crate::operation::invoke_rest_api::InvokeRestApiInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.body {
-        object.key("Body").document(var_1);
+        object
+            .key("Body")
+            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_2) = &input.method {
         object.key("Method").string(var_2.as_str());
@@ -13,7 +15,9 @@ pub fn ser_invoke_rest_api_input_input(
         object.key("Path").string(var_3.as_str());
     }
     if let Some(var_4) = &input.query_parameters {
-        object.key("QueryParameters").document(var_4);
+        object
+            .key("QueryParameters")
+            .document(var_4, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

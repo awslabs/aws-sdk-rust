@@ -36,7 +36,7 @@ pub(crate) fn de_deployment_configuration(
         builder = match decoder.str()?.as_ref() {
             "ProtectionStrategy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_protection_strategy(Some(
-                    decoder.string().map(|s| crate::types::DeploymentProtectionStrategy::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::DeploymentProtectionStrategy::from(s.as_str()))?,
                 )))
             })?,
             "MinimumHealthyPercentage" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -44,7 +44,7 @@ pub(crate) fn de_deployment_configuration(
             })?,
             "ImpairmentStrategy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_impairment_strategy(Some(
-                    decoder.string().map(|s| crate::types::DeploymentImpairmentStrategy::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::DeploymentImpairmentStrategy::from(s.as_str()))?,
                 )))
             })?,
             _ => {

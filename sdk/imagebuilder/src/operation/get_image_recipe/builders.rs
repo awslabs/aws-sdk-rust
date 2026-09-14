@@ -22,7 +22,7 @@ impl crate::operation::get_image_recipe::builders::GetImageRecipeInputBuilder {
 }
 /// Fluent builder constructing a request to `GetImageRecipe`.
 ///
-/// <p>Gets an image recipe.</p>
+/// <p>Retrieves an image recipe.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetImageRecipeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

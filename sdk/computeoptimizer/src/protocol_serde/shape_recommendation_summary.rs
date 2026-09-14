@@ -24,7 +24,7 @@ pub(crate) fn de_recommendation_summary(
             })?,
             "recommendationResourceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder
-                    .set_recommendation_resource_type(Some(decoder.string().map(|s| crate::types::RecommendationSourceType::from(s.as_ref()))?)))
+                    .set_recommendation_resource_type(Some(decoder.string().map(|s| crate::types::RecommendationSourceType::from(s.as_str()))?)))
             })?,
             "accountId" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_account_id(Some(decoder.string()?))))?

@@ -44,7 +44,7 @@ pub(crate) fn de_associated_alarm(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_external_id(Some(decoder.string()?))))?
             }
             "resourceIdentifier" => builder.set_resource_identifier(Some(decoder.string()?)),
-            "alarmType" => builder.set_alarm_type(Some(decoder.string().map(|s| crate::types::AlarmType::from(s.as_ref()))?)),
+            "alarmType" => builder.set_alarm_type(Some(decoder.string().map(|s| crate::types::AlarmType::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

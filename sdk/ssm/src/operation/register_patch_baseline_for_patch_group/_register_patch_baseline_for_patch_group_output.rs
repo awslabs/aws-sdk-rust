@@ -19,9 +19,153 @@ impl RegisterPatchBaselineForPatchGroupOutput {
         self.patch_group.as_deref()
     }
 }
+static REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_MEMBER_BASELINE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#RegisterPatchBaselineForPatchGroupOutput$BaselineId",
+        "com.amazonaws.ssm.synthetic",
+        "RegisterPatchBaselineForPatchGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaselineId",
+    0,
+);
+static REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_MEMBER_PATCH_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#RegisterPatchBaselineForPatchGroupOutput$PatchGroup",
+        "com.amazonaws.ssm.synthetic",
+        "RegisterPatchBaselineForPatchGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PatchGroup",
+    1,
+);
+static REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    2,
+)
+.with_http_header("x-amzn-requestid");
+static REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#RegisterPatchBaselineForPatchGroupOutput",
+        "com.amazonaws.ssm.synthetic",
+        "RegisterPatchBaselineForPatchGroupOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_MEMBER_BASELINE_ID,
+        &REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_MEMBER_PATCH_GROUP,
+        &REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("RegisterPatchBaselineForPatchGroupResult");
+impl RegisterPatchBaselineForPatchGroupOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for RegisterPatchBaselineForPatchGroupOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.baseline_id {
+            ser.write_string(&REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_MEMBER_BASELINE_ID, val)?;
+        }
+        if let Some(ref val) = self.patch_group {
+            ser.write_string(&REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_MEMBER_PATCH_GROUP, val)?;
+        }
+        Ok(())
+    }
+}
+impl RegisterPatchBaselineForPatchGroupOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.baseline_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.patch_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl RegisterPatchBaselineForPatchGroupOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&REGISTERPATCHBASELINEFORPATCHGROUPOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.baseline_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.patch_group = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for RegisterPatchBaselineForPatchGroupOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl RegisterPatchBaselineForPatchGroupOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl RegisterPatchBaselineForPatchGroupOutput {

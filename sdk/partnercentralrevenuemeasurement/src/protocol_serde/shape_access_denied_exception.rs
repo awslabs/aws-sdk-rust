@@ -12,7 +12,7 @@ pub(crate) fn de_access_denied_exception_cbor_err(
         builder = match decoder.str()?.as_ref() {
             "Message" => builder.set_message(Some(decoder.string()?)),
             "Reason" => builder.set_reason(Some(
-                decoder.string().map(|s| crate::types::AccessDeniedExceptionReason::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::AccessDeniedExceptionReason::from(s.as_str()))?,
             )),
             _ => {
                 decoder.skip()?;

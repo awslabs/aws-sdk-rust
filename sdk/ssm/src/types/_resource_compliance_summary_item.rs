@@ -55,6 +55,231 @@ impl ResourceComplianceSummaryItem {
         self.non_compliant_summary.as_ref()
     }
 }
+static RESOURCECOMPLIANCESUMMARYITEM_MEMBER_COMPLIANCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem$ComplianceType",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceType",
+    0,
+);
+static RESOURCECOMPLIANCESUMMARYITEM_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem$ResourceType",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceType",
+    1,
+);
+static RESOURCECOMPLIANCESUMMARYITEM_MEMBER_RESOURCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem$ResourceId",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResourceId",
+    2,
+);
+static RESOURCECOMPLIANCESUMMARYITEM_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem$Status",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    3,
+);
+static RESOURCECOMPLIANCESUMMARYITEM_MEMBER_OVERALL_SEVERITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem$OverallSeverity",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OverallSeverity",
+    4,
+);
+static RESOURCECOMPLIANCESUMMARYITEM_MEMBER_EXECUTION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem$ExecutionSummary",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ExecutionSummary",
+    5,
+);
+static RESOURCECOMPLIANCESUMMARYITEM_MEMBER_COMPLIANT_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem$CompliantSummary",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CompliantSummary",
+    6,
+);
+static RESOURCECOMPLIANCESUMMARYITEM_MEMBER_NON_COMPLIANT_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem$NonCompliantSummary",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NonCompliantSummary",
+    7,
+);
+static RESOURCECOMPLIANCESUMMARYITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceComplianceSummaryItem",
+        "com.amazonaws.ssm",
+        "ResourceComplianceSummaryItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCECOMPLIANCESUMMARYITEM_MEMBER_COMPLIANCE_TYPE,
+        &RESOURCECOMPLIANCESUMMARYITEM_MEMBER_RESOURCE_TYPE,
+        &RESOURCECOMPLIANCESUMMARYITEM_MEMBER_RESOURCE_ID,
+        &RESOURCECOMPLIANCESUMMARYITEM_MEMBER_STATUS,
+        &RESOURCECOMPLIANCESUMMARYITEM_MEMBER_OVERALL_SEVERITY,
+        &RESOURCECOMPLIANCESUMMARYITEM_MEMBER_EXECUTION_SUMMARY,
+        &RESOURCECOMPLIANCESUMMARYITEM_MEMBER_COMPLIANT_SUMMARY,
+        &RESOURCECOMPLIANCESUMMARYITEM_MEMBER_NON_COMPLIANT_SUMMARY,
+    ],
+);
+impl ResourceComplianceSummaryItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCECOMPLIANCESUMMARYITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceComplianceSummaryItem {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.compliance_type {
+            ser.write_string(&RESOURCECOMPLIANCESUMMARYITEM_MEMBER_COMPLIANCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.resource_type {
+            ser.write_string(&RESOURCECOMPLIANCESUMMARYITEM_MEMBER_RESOURCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.resource_id {
+            ser.write_string(&RESOURCECOMPLIANCESUMMARYITEM_MEMBER_RESOURCE_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&RESOURCECOMPLIANCESUMMARYITEM_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.overall_severity {
+            ser.write_string(&RESOURCECOMPLIANCESUMMARYITEM_MEMBER_OVERALL_SEVERITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.execution_summary {
+            ser.write_struct(&RESOURCECOMPLIANCESUMMARYITEM_MEMBER_EXECUTION_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.compliant_summary {
+            ser.write_struct(&RESOURCECOMPLIANCESUMMARYITEM_MEMBER_COMPLIANT_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.non_compliant_summary {
+            ser.write_struct(&RESOURCECOMPLIANCESUMMARYITEM_MEMBER_NON_COMPLIANT_SUMMARY, val)?;
+        }
+        Ok(())
+    }
+}
+impl ResourceComplianceSummaryItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&RESOURCECOMPLIANCESUMMARYITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.compliance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.resource_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.resource_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status = Some(crate::types::ComplianceStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.overall_severity = Some(crate::types::ComplianceSeverity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.execution_summary = Some(crate::types::ComplianceExecutionSummary::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.compliant_summary = Some(crate::types::CompliantSummary::deserialize(deser)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.non_compliant_summary = Some(crate::types::NonCompliantSummary::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl ResourceComplianceSummaryItem {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl ResourceComplianceSummaryItem {
     /// Creates a new builder-style object to manufacture [`ResourceComplianceSummaryItem`](crate::types::ResourceComplianceSummaryItem).
     pub fn builder() -> crate::types::builders::ResourceComplianceSummaryItemBuilder {

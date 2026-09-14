@@ -69,6 +69,245 @@ impl Activation {
         self.tags.as_deref().unwrap_or_default()
     }
 }
+static ACTIVATION_MEMBER_ACTIVATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$ActivationId", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ActivationId",
+    0,
+);
+static ACTIVATION_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$Description", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    1,
+);
+static ACTIVATION_MEMBER_DEFAULT_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$DefaultInstanceName", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DefaultInstanceName",
+    2,
+);
+static ACTIVATION_MEMBER_IAM_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$IamRole", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "IamRole",
+    3,
+);
+static ACTIVATION_MEMBER_REGISTRATION_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$RegistrationLimit", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RegistrationLimit",
+    4,
+);
+static ACTIVATION_MEMBER_REGISTRATIONS_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$RegistrationsCount", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RegistrationsCount",
+    5,
+);
+static ACTIVATION_MEMBER_EXPIRATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$ExpirationDate", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExpirationDate",
+    6,
+);
+static ACTIVATION_MEMBER_EXPIRED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$Expired", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "Expired",
+    7,
+);
+static ACTIVATION_MEMBER_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$CreatedDate", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedDate",
+    8,
+);
+static ACTIVATION_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TagList$member", "com.amazonaws.ssm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static ACTIVATION_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation$Tags", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    9,
+)
+.with_list_member(&ACTIVATION_MEMBER_TAGS_MEMBER);
+static ACTIVATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Activation", "com.amazonaws.ssm", "Activation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ACTIVATION_MEMBER_ACTIVATION_ID,
+        &ACTIVATION_MEMBER_DESCRIPTION,
+        &ACTIVATION_MEMBER_DEFAULT_INSTANCE_NAME,
+        &ACTIVATION_MEMBER_IAM_ROLE,
+        &ACTIVATION_MEMBER_REGISTRATION_LIMIT,
+        &ACTIVATION_MEMBER_REGISTRATIONS_COUNT,
+        &ACTIVATION_MEMBER_EXPIRATION_DATE,
+        &ACTIVATION_MEMBER_EXPIRED,
+        &ACTIVATION_MEMBER_CREATED_DATE,
+        &ACTIVATION_MEMBER_TAGS,
+    ],
+);
+impl Activation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ACTIVATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Activation {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.activation_id {
+            ser.write_string(&ACTIVATION_MEMBER_ACTIVATION_ID, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&ACTIVATION_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.default_instance_name {
+            ser.write_string(&ACTIVATION_MEMBER_DEFAULT_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.iam_role {
+            ser.write_string(&ACTIVATION_MEMBER_IAM_ROLE, val)?;
+        }
+        if let Some(ref val) = self.registration_limit {
+            ser.write_integer(&ACTIVATION_MEMBER_REGISTRATION_LIMIT, *val)?;
+        }
+        if let Some(ref val) = self.registrations_count {
+            ser.write_integer(&ACTIVATION_MEMBER_REGISTRATIONS_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.expiration_date {
+            ser.write_timestamp(&ACTIVATION_MEMBER_EXPIRATION_DATE, val)?;
+        }
+        {
+            let val = &self.expired;
+            ser.write_boolean(&ACTIVATION_MEMBER_EXPIRED, *val)?;
+        }
+        if let Some(ref val) = self.created_date {
+            ser.write_timestamp(&ACTIVATION_MEMBER_CREATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(&ACTIVATION_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        Ok(())
+    }
+}
+impl Activation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&ACTIVATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.activation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.default_instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.iam_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.registration_limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.registrations_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.expiration_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    builder.expired = Some(deser.read_boolean(member)?);
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl Activation {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl Activation {
     /// Creates a new builder-style object to manufacture [`Activation`](crate::types::Activation).
     pub fn builder() -> crate::types::builders::ActivationBuilder {

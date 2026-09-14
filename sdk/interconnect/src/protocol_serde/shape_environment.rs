@@ -19,7 +19,7 @@ pub(crate) fn de_environment(
             "provider" => builder.set_provider(Some(crate::protocol_serde::shape_provider::de_provider(decoder, depth + 1)?)),
             "location" => builder.set_location(Some(decoder.string()?)),
             "environmentId" => builder.set_environment_id(Some(decoder.string()?)),
-            "state" => builder.set_state(Some(decoder.string().map(|s| crate::types::EnvironmentState::from(s.as_ref()))?)),
+            "state" => builder.set_state(Some(decoder.string().map(|s| crate::types::EnvironmentState::from(s.as_str()))?)),
             "bandwidths" => builder.set_bandwidths(Some(crate::protocol_serde::shape_bandwidths::de_bandwidths(decoder, depth + 1)?)),
             "type" => builder.set_type(Some(decoder.string()?)),
             "activationPageUrl" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -27,7 +27,7 @@ pub(crate) fn de_environment(
             })?,
             "remoteIdentifierType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_remote_identifier_type(Some(
-                    decoder.string().map(|s| crate::types::RemoteAccountIdentifierType::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::RemoteAccountIdentifierType::from(s.as_str()))?,
                 )))
             })?,
             _ => {

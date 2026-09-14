@@ -117,6 +117,36 @@ pub fn de_assume_root(
                 builder = builder.set_source_identity(var_2);
             }
             ,
+            s if s.matches("SessionTokenUtilization") /* SessionTokenUtilization com.amazonaws.sts.synthetic#AssumeRootOutput$SessionTokenUtilization */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.sts#sessionTokenUtilizationType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_session_token_utilization(var_3);
+            }
+            ,
+            s if s.matches("SessionTokenSize") /* SessionTokenSize com.amazonaws.sts.synthetic#AssumeRootOutput$SessionTokenSize */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.sts#sessionTokenSizeType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_session_token_size(var_4);
+            }
+            ,
             _ => {}
         }
         }

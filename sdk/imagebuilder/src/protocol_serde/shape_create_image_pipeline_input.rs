@@ -15,79 +15,82 @@ pub fn ser_create_image_pipeline_input_input(
     if let Some(var_4) = &input.distribution_configuration_arn {
         object.key("distributionConfigurationArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.enhanced_image_metadata_enabled {
-        object.key("enhancedImageMetadataEnabled").boolean(*var_5);
+    if let Some(var_5) = &input.dry_run {
+        object.key("dryRun").boolean(*var_5);
     }
-    if let Some(var_6) = &input.execution_role {
-        object.key("executionRole").string(var_6.as_str());
+    if let Some(var_6) = &input.enhanced_image_metadata_enabled {
+        object.key("enhancedImageMetadataEnabled").boolean(*var_6);
     }
-    if let Some(var_7) = &input.image_recipe_arn {
-        object.key("imageRecipeArn").string(var_7.as_str());
+    if let Some(var_7) = &input.execution_role {
+        object.key("executionRole").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.image_scanning_configuration {
+    if let Some(var_8) = &input.image_recipe_arn {
+        object.key("imageRecipeArn").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.image_scanning_configuration {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("imageScanningConfiguration").start_object();
-        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("imageScanningConfiguration").start_object();
+        crate::protocol_serde::shape_image_scanning_configuration::ser_image_scanning_configuration(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.image_tags {
+    if let Some(var_11) = &input.image_tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("imageTags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("imageTags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
-    if let Some(var_14) = &input.image_tests_configuration {
+    if let Some(var_15) = &input.image_tests_configuration {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("imageTestsConfiguration").start_object();
-        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("imageTestsConfiguration").start_object();
+        crate::protocol_serde::shape_image_tests_configuration::ser_image_tests_configuration(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if let Some(var_16) = &input.infrastructure_configuration_arn {
-        object.key("infrastructureConfigurationArn").string(var_16.as_str());
+    if let Some(var_17) = &input.infrastructure_configuration_arn {
+        object.key("infrastructureConfigurationArn").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.logging_configuration {
+    if let Some(var_18) = &input.logging_configuration {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("loggingConfiguration").start_object();
-        crate::protocol_serde::shape_pipeline_logging_configuration::ser_pipeline_logging_configuration(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("loggingConfiguration").start_object();
+        crate::protocol_serde::shape_pipeline_logging_configuration::ser_pipeline_logging_configuration(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.name {
-        object.key("name").string(var_19.as_str());
+    if let Some(var_20) = &input.name {
+        object.key("name").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.schedule {
+    if let Some(var_21) = &input.schedule {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("schedule").start_object();
-        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_22 = object.key("schedule").start_object();
+        crate::protocol_serde::shape_schedule::ser_schedule(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_22) = &input.status {
-        object.key("status").string(var_22.as_str());
+    if let Some(var_23) = &input.status {
+        object.key("status").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.tags {
+    if let Some(var_24) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("tags").start_object();
-        for (key_25, value_26) in var_23 {
+        let mut object_25 = object.key("tags").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_24.key(key_25.as_str()).string(value_26.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_24.finish();
+        object_25.finish();
     }
-    if let Some(var_27) = &input.workflows {
-        let mut array_28 = object.key("workflows").start_array();
-        for item_29 in var_27 {
+    if let Some(var_28) = &input.workflows {
+        let mut array_29 = object.key("workflows").start_array();
+        for item_30 in var_28 {
             {
                 #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_30, item_29)?;
-                object_30.finish();
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_workflow_configuration::ser_workflow_configuration(&mut object_31, item_30)?;
+                object_31.finish();
             }
         }
-        array_28.finish();
+        array_29.finish();
     }
     Ok(())
 }

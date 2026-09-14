@@ -22,7 +22,7 @@ pub(crate) fn de_feedback(
         ::std::collections::HashMap<crate::types::FeedbackKey, crate::types::FeedbackValue>,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
-        let key = decoder.string().map(|s| crate::types::FeedbackKey::from(s.as_ref()))?;
+        let key = decoder.string().map(|s| crate::types::FeedbackKey::from(s.as_str()))?;
         let value = match decoder.datatype()? {
             ::aws_smithy_cbor::data::Type::Null => {
                 return ::std::result::Result::Err(::aws_smithy_cbor::decode::DeserializeError::custom(
@@ -30,7 +30,7 @@ pub(crate) fn de_feedback(
                     decoder.position(),
                 ))
             }
-            _ => decoder.string().map(|s| crate::types::FeedbackValue::from(s.as_ref()))?,
+            _ => decoder.string().map(|s| crate::types::FeedbackValue::from(s.as_str()))?,
         };
         map.insert(key, value);
         Ok(map)

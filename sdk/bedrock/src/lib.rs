@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-bedrock = "1.155.0"
+//! aws-sdk-bedrock = "1.156.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!

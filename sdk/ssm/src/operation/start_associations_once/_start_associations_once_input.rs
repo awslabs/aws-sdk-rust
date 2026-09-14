@@ -14,6 +14,100 @@ impl StartAssociationsOnceInput {
         self.association_ids.as_deref().unwrap_or_default()
     }
 }
+static STARTASSOCIATIONSONCEINPUT_MEMBER_ASSOCIATION_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AssociationIdList$member", "com.amazonaws.ssm", "AssociationIdList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTASSOCIATIONSONCEINPUT_MEMBER_ASSOCIATION_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAssociationsOnceInput$AssociationIds",
+        "com.amazonaws.ssm.synthetic",
+        "StartAssociationsOnceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AssociationIds",
+    0,
+)
+.with_list_member(&STARTASSOCIATIONSONCEINPUT_MEMBER_ASSOCIATION_IDS_MEMBER);
+static STARTASSOCIATIONSONCEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAssociationsOnceInput",
+        "com.amazonaws.ssm.synthetic",
+        "StartAssociationsOnceInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&STARTASSOCIATIONSONCEINPUT_MEMBER_ASSOCIATION_IDS],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartAssociationsOnceRequest");
+impl StartAssociationsOnceInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTASSOCIATIONSONCEINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartAssociationsOnceInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_ids {
+            ser.write_list(
+                &STARTASSOCIATIONSONCEINPUT_MEMBER_ASSOCIATION_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl StartAssociationsOnceInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STARTASSOCIATIONSONCEINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.association_ids = builder.association_ids.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl StartAssociationsOnceInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl StartAssociationsOnceInput {
     /// Creates a new builder-style object to manufacture [`StartAssociationsOnceInput`](crate::operation::start_associations_once::StartAssociationsOnceInput).
     pub fn builder() -> crate::operation::start_associations_once::builders::StartAssociationsOnceInputBuilder {

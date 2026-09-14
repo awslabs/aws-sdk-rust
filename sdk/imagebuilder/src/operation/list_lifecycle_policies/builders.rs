@@ -22,7 +22,7 @@ impl crate::operation::list_lifecycle_policies::builders::ListLifecyclePoliciesI
 }
 /// Fluent builder constructing a request to `ListLifecyclePolicies`.
 ///
-/// <p>Get a list of lifecycle policies in your Amazon Web Services account.</p>
+/// <p>Retrieves a list of lifecycle policies in your Amazon Web Services account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLifecyclePoliciesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -133,31 +133,31 @@ impl ListLifecyclePoliciesFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         self.inner.get_filters()
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

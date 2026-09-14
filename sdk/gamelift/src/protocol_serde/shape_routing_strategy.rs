@@ -35,7 +35,7 @@ pub(crate) fn de_routing_strategy(
     ) -> ::std::result::Result<crate::types::builders::RoutingStrategyBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::RoutingStrategyType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::RoutingStrategyType::from(s.as_str()))?)))
             })?,
             "FleetId" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_fleet_id(Some(decoder.string()?))))?

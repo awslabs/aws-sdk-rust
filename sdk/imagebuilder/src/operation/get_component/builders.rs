@@ -22,7 +22,7 @@ impl crate::operation::get_component::builders::GetComponentInputBuilder {
 }
 /// Fluent builder constructing a request to `GetComponent`.
 ///
-/// <p>Gets a component object.</p>
+/// <p>Retrieves a component object.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComponentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

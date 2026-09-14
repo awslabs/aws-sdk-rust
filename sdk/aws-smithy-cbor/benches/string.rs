@@ -4,9 +4,10 @@
  */
 
 use std::borrow::Cow;
+use std::hint::black_box;
 
 use aws_smithy_cbor::decode::Decoder;
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
+use criterion::{criterion_group, criterion_main, Criterion};
 
 pub fn str_benchmark(c: &mut Criterion) {
     // Definite length key `thisIsAKey`.

@@ -23,10 +23,10 @@ pub(crate) fn de_fleet_attributes(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_fleet_arn(Some(decoder.string()?))))?
             }
             "FleetType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_fleet_type(Some(decoder.string().map(|s| crate::types::FleetType::from(s.as_ref()))?)))
+                Ok(builder.set_fleet_type(Some(decoder.string().map(|s| crate::types::FleetType::from(s.as_str()))?)))
             })?,
             "InstanceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_instance_type(Some(decoder.string().map(|s| crate::types::Ec2InstanceType::from(s.as_ref()))?)))
+                Ok(builder.set_instance_type(Some(decoder.string().map(|s| crate::types::Ec2InstanceType::from(s.as_str()))?)))
             })?,
             "Description" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
@@ -39,7 +39,7 @@ pub(crate) fn de_fleet_attributes(
                 Ok(builder.set_termination_time(Some(decoder.timestamp()?)))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::FleetStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::FleetStatus::from(s.as_str()))?)))
             })?,
             "BuildId" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_build_id(Some(decoder.string()?))))?
@@ -63,10 +63,10 @@ pub(crate) fn de_fleet_attributes(
                 Ok(builder.set_log_paths(Some(crate::protocol_serde::shape_string_list::de_string_list(decoder, depth + 1)?)))
             })?,
             "NewGameSessionProtectionPolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_new_game_session_protection_policy(Some(decoder.string().map(|s| crate::types::ProtectionPolicy::from(s.as_ref()))?)))
+                Ok(builder.set_new_game_session_protection_policy(Some(decoder.string().map(|s| crate::types::ProtectionPolicy::from(s.as_str()))?)))
             })?,
             "OperatingSystem" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_ref()))?)))
+                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_str()))?)))
             })?,
             "ResourceCreationLimitPolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_resource_creation_limit_policy(Some(
@@ -98,7 +98,7 @@ pub(crate) fn de_fleet_attributes(
                 )))
             })?,
             "ComputeType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_compute_type(Some(decoder.string().map(|s| crate::types::ComputeType::from(s.as_ref()))?)))
+                Ok(builder.set_compute_type(Some(decoder.string().map(|s| crate::types::ComputeType::from(s.as_str()))?)))
             })?,
             "AnywhereConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
@@ -112,11 +112,11 @@ pub(crate) fn de_fleet_attributes(
                 Ok(builder.set_instance_role_credentials_provider(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::InstanceRoleCredentialsProvider::from(s.as_ref()))?,
+                        .map(|s| crate::types::InstanceRoleCredentialsProvider::from(s.as_str()))?,
                 )))
             })?,
             "PlayerGatewayMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_player_gateway_mode(Some(decoder.string().map(|s| crate::types::PlayerGatewayMode::from(s.as_ref()))?)))
+                Ok(builder.set_player_gateway_mode(Some(decoder.string().map(|s| crate::types::PlayerGatewayMode::from(s.as_str()))?)))
             })?,
             "PlayerGatewayConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_player_gateway_configuration(Some(

@@ -38,7 +38,7 @@ pub(crate) fn de_player_session(
                 Ok(builder.set_termination_time(Some(decoder.timestamp()?)))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::PlayerSessionStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::PlayerSessionStatus::from(s.as_str()))?)))
             })?,
             "IpAddress" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_ip_address(Some(decoder.string()?))))?

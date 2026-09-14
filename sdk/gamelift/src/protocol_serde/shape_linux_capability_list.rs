@@ -23,7 +23,7 @@ pub(crate) fn de_linux_capability_list(
                     decoder.position(),
                 ))
             }
-            _ => decoder.string().map(|s| crate::types::LinuxCapability::from(s.as_ref()))?,
+            _ => decoder.string().map(|s| crate::types::LinuxCapability::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

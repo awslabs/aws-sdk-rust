@@ -27,6 +27,146 @@ impl InventoryDeletionSummary {
         self.summary_items.as_deref().unwrap_or_default()
     }
 }
+static INVENTORYDELETIONSUMMARY_MEMBER_TOTAL_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionSummary$TotalCount",
+        "com.amazonaws.ssm",
+        "InventoryDeletionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "TotalCount",
+    0,
+);
+static INVENTORYDELETIONSUMMARY_MEMBER_REMAINING_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionSummary$RemainingCount",
+        "com.amazonaws.ssm",
+        "InventoryDeletionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "RemainingCount",
+    1,
+);
+static INVENTORYDELETIONSUMMARY_MEMBER_SUMMARY_ITEMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionSummaryItems$member",
+        "com.amazonaws.ssm",
+        "InventoryDeletionSummaryItems",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static INVENTORYDELETIONSUMMARY_MEMBER_SUMMARY_ITEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionSummary$SummaryItems",
+        "com.amazonaws.ssm",
+        "InventoryDeletionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "SummaryItems",
+    2,
+)
+.with_list_member(&INVENTORYDELETIONSUMMARY_MEMBER_SUMMARY_ITEMS_MEMBER);
+static INVENTORYDELETIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionSummary",
+        "com.amazonaws.ssm",
+        "InventoryDeletionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INVENTORYDELETIONSUMMARY_MEMBER_TOTAL_COUNT,
+        &INVENTORYDELETIONSUMMARY_MEMBER_REMAINING_COUNT,
+        &INVENTORYDELETIONSUMMARY_MEMBER_SUMMARY_ITEMS,
+    ],
+);
+impl InventoryDeletionSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INVENTORYDELETIONSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InventoryDeletionSummary {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.total_count;
+            ser.write_integer(&INVENTORYDELETIONSUMMARY_MEMBER_TOTAL_COUNT, *val)?;
+        }
+        {
+            let val = &self.remaining_count;
+            ser.write_integer(&INVENTORYDELETIONSUMMARY_MEMBER_REMAINING_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.summary_items {
+            ser.write_list(
+                &INVENTORYDELETIONSUMMARY_MEMBER_SUMMARY_ITEMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::InventoryDeletionSummaryItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl InventoryDeletionSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&INVENTORYDELETIONSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.total_count = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    builder.remaining_count = Some(deser.read_integer(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.summary_items = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::InventoryDeletionSummaryItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl InventoryDeletionSummary {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl InventoryDeletionSummary {
     /// Creates a new builder-style object to manufacture [`InventoryDeletionSummary`](crate::types::InventoryDeletionSummary).
     pub fn builder() -> crate::types::builders::InventoryDeletionSummaryBuilder {

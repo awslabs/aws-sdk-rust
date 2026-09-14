@@ -22,7 +22,7 @@ impl crate::operation::get_image_policy::builders::GetImagePolicyInputBuilder {
 }
 /// Fluent builder constructing a request to `GetImagePolicy`.
 ///
-/// <p>Gets an image policy.</p>
+/// <p>Retrieves an image policy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetImagePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

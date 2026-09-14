@@ -22,7 +22,7 @@ impl crate::operation::get_lifecycle_execution::builders::GetLifecycleExecutionI
 }
 /// Fluent builder constructing a request to `GetLifecycleExecution`.
 ///
-/// <p>Get the runtime information that was logged for a specific runtime instance of the lifecycle policy.</p>
+/// <p>Retrieves the runtime information for a specific runtime instance of the lifecycle policy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLifecycleExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl GetLifecycleExecutionFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn lifecycle_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_execution_id(input.into());
         self
     }
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_execution_id(input);
         self
     }
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lifecycle_execution_id()
     }

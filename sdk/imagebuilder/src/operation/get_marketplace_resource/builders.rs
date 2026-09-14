@@ -22,7 +22,7 @@ impl crate::operation::get_marketplace_resource::builders::GetMarketplaceResourc
 }
 /// Fluent builder constructing a request to `GetMarketplaceResource`.
 ///
-/// <p>Verify the subscription and perform resource dependency checks on the requested Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components, the response contains fields to download the components and their artifacts.</p>
+/// <p>Verifies the subscription and performs resource dependency checks on the requested Amazon Web Services Marketplace resource. For Amazon Web Services Marketplace components, the response contains fields to download the components and their artifacts.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetMarketplaceResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

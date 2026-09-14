@@ -19,10 +19,10 @@ pub(crate) fn de_attribution_summary(
             "Arn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_arn(Some(decoder.string()?))))?,
             "Id" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_id(Some(decoder.string()?))))?,
             "Catalog" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_ref()))?)))
+                Ok(builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_str()))?)))
             })?,
             "Name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
-            "TenancyModel" => builder.set_tenancy_model(Some(decoder.string().map(|s| crate::types::TenancyModel::from(s.as_ref()))?)),
+            "TenancyModel" => builder.set_tenancy_model(Some(decoder.string().map(|s| crate::types::TenancyModel::from(s.as_str()))?)),
             "MarketplaceProduct" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_marketplace_product(Some(
                     crate::protocol_serde::shape_marketplace_product_summary::de_marketplace_product_summary(decoder, depth + 1)?,

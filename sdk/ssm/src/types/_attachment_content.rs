@@ -37,6 +37,141 @@ impl AttachmentContent {
         self.url.as_deref()
     }
 }
+static ATTACHMENTCONTENT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AttachmentContent$Name", "com.amazonaws.ssm", "AttachmentContent"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static ATTACHMENTCONTENT_MEMBER_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AttachmentContent$Size", "com.amazonaws.ssm", "AttachmentContent"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "Size",
+    1,
+);
+static ATTACHMENTCONTENT_MEMBER_HASH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AttachmentContent$Hash", "com.amazonaws.ssm", "AttachmentContent"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Hash",
+    2,
+);
+static ATTACHMENTCONTENT_MEMBER_HASH_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AttachmentContent$HashType", "com.amazonaws.ssm", "AttachmentContent"),
+    ::aws_smithy_schema::ShapeType::String,
+    "HashType",
+    3,
+);
+static ATTACHMENTCONTENT_MEMBER_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AttachmentContent$Url", "com.amazonaws.ssm", "AttachmentContent"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Url",
+    4,
+);
+static ATTACHMENTCONTENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AttachmentContent", "com.amazonaws.ssm", "AttachmentContent"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &ATTACHMENTCONTENT_MEMBER_NAME,
+        &ATTACHMENTCONTENT_MEMBER_SIZE,
+        &ATTACHMENTCONTENT_MEMBER_HASH,
+        &ATTACHMENTCONTENT_MEMBER_HASH_TYPE,
+        &ATTACHMENTCONTENT_MEMBER_URL,
+    ],
+);
+impl AttachmentContent {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &ATTACHMENTCONTENT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for AttachmentContent {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&ATTACHMENTCONTENT_MEMBER_NAME, val)?;
+        }
+        {
+            let val = &self.size;
+            ser.write_long(&ATTACHMENTCONTENT_MEMBER_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.hash {
+            ser.write_string(&ATTACHMENTCONTENT_MEMBER_HASH, val)?;
+        }
+        if let Some(ref val) = self.hash_type {
+            ser.write_string(&ATTACHMENTCONTENT_MEMBER_HASH_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.url {
+            ser.write_string(&ATTACHMENTCONTENT_MEMBER_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl AttachmentContent {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&ATTACHMENTCONTENT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    builder.size = Some(deser.read_long(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.hash = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.hash_type = Some(crate::types::AttachmentHashType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl AttachmentContent {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl AttachmentContent {
     /// Creates a new builder-style object to manufacture [`AttachmentContent`](crate::types::AttachmentContent).
     pub fn builder() -> crate::types::builders::AttachmentContentBuilder {

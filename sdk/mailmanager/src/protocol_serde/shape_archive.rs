@@ -21,7 +21,7 @@ pub(crate) fn de_archive(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_archive_name(Some(decoder.string()?))))?
             }
             "ArchiveState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_archive_state(Some(decoder.string().map(|s| crate::types::ArchiveState::from(s.as_ref()))?)))
+                Ok(builder.set_archive_state(Some(decoder.string().map(|s| crate::types::ArchiveState::from(s.as_str()))?)))
             })?,
             "LastUpdatedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_last_updated_timestamp(Some(decoder.timestamp()?)))

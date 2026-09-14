@@ -28,7 +28,7 @@ pub(crate) fn de_problem(
                     ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_insights(Some(decoder.string()?))))?
                 }
                 "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::Status::from(s.as_ref()))?)))
+                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::Status::from(s.as_str()))?)))
                 })?,
                 "AffectedResource" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_affected_resource(Some(decoder.string()?)))
@@ -44,7 +44,7 @@ pub(crate) fn de_problem(
                     )?
                 }
                 "SeverityLevel" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_severity_level(Some(decoder.string().map(|s| crate::types::SeverityLevel::from(s.as_ref()))?)))
+                    Ok(builder.set_severity_level(Some(decoder.string().map(|s| crate::types::SeverityLevel::from(s.as_str()))?)))
                 })?,
                 "AccountId" => {
                     ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_account_id(Some(decoder.string()?))))?
@@ -62,10 +62,10 @@ pub(crate) fn de_problem(
                     Ok(builder.set_last_recurrence_time(Some(decoder.timestamp()?)))
                 })?,
                 "Visibility" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_visibility(Some(decoder.string().map(|s| crate::types::Visibility::from(s.as_ref()))?)))
+                    Ok(builder.set_visibility(Some(decoder.string().map(|s| crate::types::Visibility::from(s.as_str()))?)))
                 })?,
                 "ResolutionMethod" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_resolution_method(Some(decoder.string().map(|s| crate::types::ResolutionMethod::from(s.as_ref()))?)))
+                    Ok(builder.set_resolution_method(Some(decoder.string().map(|s| crate::types::ResolutionMethod::from(s.as_str()))?)))
                 })?,
                 _ => {
                     decoder.skip()?;

@@ -18,8 +18,8 @@ pub(crate) fn de_ingress_point(
         builder = match decoder.str()?.as_ref() {
             "IngressPointName" => builder.set_ingress_point_name(Some(decoder.string()?)),
             "IngressPointId" => builder.set_ingress_point_id(Some(decoder.string()?)),
-            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::IngressPointStatus::from(s.as_ref()))?)),
-            "Type" => builder.set_type(Some(decoder.string().map(|s| crate::types::IngressPointType::from(s.as_ref()))?)),
+            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::IngressPointStatus::from(s.as_str()))?)),
+            "Type" => builder.set_type(Some(decoder.string().map(|s| crate::types::IngressPointType::from(s.as_str()))?)),
             "ARecord" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_a_record(Some(decoder.string()?))))?
             }

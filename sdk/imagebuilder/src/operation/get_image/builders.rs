@@ -22,7 +22,7 @@ impl crate::operation::get_image::builders::GetImageInputBuilder {
 }
 /// Fluent builder constructing a request to `GetImage`.
 ///
-/// <p>Gets an image.</p>
+/// <p>Retrieves an image.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetImageFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -36,7 +36,7 @@ pub(crate) fn de_log_configuration(
         builder =
             match decoder.str()?.as_ref() {
                 "LogDestination" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_log_destination(Some(decoder.string().map(|s| crate::types::LogDestination::from(s.as_ref()))?)))
+                    Ok(builder.set_log_destination(Some(decoder.string().map(|s| crate::types::LogDestination::from(s.as_str()))?)))
                 })?,
                 "S3BucketName" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_s3_bucket_name(Some(decoder.string()?)))

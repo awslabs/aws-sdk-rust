@@ -176,7 +176,7 @@ pub(crate) fn de_get_metric_stream(
                 Ok(builder.set_last_update_date(Some(decoder.timestamp()?)))
             })?,
             "OutputFormat" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_output_format(Some(decoder.string().map(|s| crate::types::MetricStreamOutputFormat::from(s.as_ref()))?)))
+                Ok(builder.set_output_format(Some(decoder.string().map(|s| crate::types::MetricStreamOutputFormat::from(s.as_str()))?)))
             })?,
             "StatisticsConfigurations" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_statistics_configurations(Some(

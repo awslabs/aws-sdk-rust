@@ -23,7 +23,7 @@ pub(crate) fn de_gateway(
                 Ok(builder.set_gateway_display_name(Some(decoder.string()?)))
             })?,
             "GatewayType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_gateway_type(Some(decoder.string().map(|s| crate::types::GatewayType::from(s.as_ref()))?)))
+                Ok(builder.set_gateway_type(Some(decoder.string().map(|s| crate::types::GatewayType::from(s.as_str()))?)))
             })?,
             "HypervisorId" => {
                 ::aws_smithy_cbor::decode::set_optional(

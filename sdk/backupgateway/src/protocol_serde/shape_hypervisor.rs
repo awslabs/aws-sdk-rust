@@ -25,7 +25,7 @@ pub(crate) fn de_hypervisor(
             }
             "Name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
             "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::HypervisorState::from(s.as_ref()))?)))
+                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::HypervisorState::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

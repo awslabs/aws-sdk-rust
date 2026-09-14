@@ -149,6 +149,401 @@ impl CommandInvocation {
         self.cloud_watch_output_config.as_ref()
     }
 }
+static COMMANDINVOCATION_MEMBER_COMMAND_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CommandInvocation$CommandId", "com.amazonaws.ssm", "CommandInvocation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "CommandId",
+    0,
+);
+static COMMANDINVOCATION_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CommandInvocation$InstanceId", "com.amazonaws.ssm", "CommandInvocation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    1,
+);
+static COMMANDINVOCATION_MEMBER_INSTANCE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$InstanceName",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceName",
+    2,
+);
+static COMMANDINVOCATION_MEMBER_COMMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CommandInvocation$Comment", "com.amazonaws.ssm", "CommandInvocation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Comment",
+    3,
+);
+static COMMANDINVOCATION_MEMBER_DOCUMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$DocumentName",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentName",
+    4,
+);
+static COMMANDINVOCATION_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$DocumentVersion",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    5,
+);
+static COMMANDINVOCATION_MEMBER_REQUESTED_DATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$RequestedDateTime",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "RequestedDateTime",
+    6,
+);
+static COMMANDINVOCATION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CommandInvocation$Status", "com.amazonaws.ssm", "CommandInvocation"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    7,
+);
+static COMMANDINVOCATION_MEMBER_STATUS_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$StatusDetails",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusDetails",
+    8,
+);
+static COMMANDINVOCATION_MEMBER_TRACE_OUTPUT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$TraceOutput",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TraceOutput",
+    9,
+);
+static COMMANDINVOCATION_MEMBER_STANDARD_OUTPUT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$StandardOutputUrl",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StandardOutputUrl",
+    10,
+);
+static COMMANDINVOCATION_MEMBER_STANDARD_ERROR_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$StandardErrorUrl",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StandardErrorUrl",
+    11,
+);
+static COMMANDINVOCATION_MEMBER_COMMAND_PLUGINS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CommandPluginList$member", "com.amazonaws.ssm", "CommandPluginList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static COMMANDINVOCATION_MEMBER_COMMAND_PLUGINS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$CommandPlugins",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CommandPlugins",
+    12,
+)
+.with_list_member(&COMMANDINVOCATION_MEMBER_COMMAND_PLUGINS_MEMBER);
+static COMMANDINVOCATION_MEMBER_SERVICE_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$ServiceRole",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceRole",
+    13,
+);
+static COMMANDINVOCATION_MEMBER_NOTIFICATION_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$NotificationConfig",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "NotificationConfig",
+    14,
+);
+static COMMANDINVOCATION_MEMBER_CLOUD_WATCH_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CommandInvocation$CloudWatchOutputConfig",
+        "com.amazonaws.ssm",
+        "CommandInvocation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CloudWatchOutputConfig",
+    15,
+);
+static COMMANDINVOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CommandInvocation", "com.amazonaws.ssm", "CommandInvocation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &COMMANDINVOCATION_MEMBER_COMMAND_ID,
+        &COMMANDINVOCATION_MEMBER_INSTANCE_ID,
+        &COMMANDINVOCATION_MEMBER_INSTANCE_NAME,
+        &COMMANDINVOCATION_MEMBER_COMMENT,
+        &COMMANDINVOCATION_MEMBER_DOCUMENT_NAME,
+        &COMMANDINVOCATION_MEMBER_DOCUMENT_VERSION,
+        &COMMANDINVOCATION_MEMBER_REQUESTED_DATE_TIME,
+        &COMMANDINVOCATION_MEMBER_STATUS,
+        &COMMANDINVOCATION_MEMBER_STATUS_DETAILS,
+        &COMMANDINVOCATION_MEMBER_TRACE_OUTPUT,
+        &COMMANDINVOCATION_MEMBER_STANDARD_OUTPUT_URL,
+        &COMMANDINVOCATION_MEMBER_STANDARD_ERROR_URL,
+        &COMMANDINVOCATION_MEMBER_COMMAND_PLUGINS,
+        &COMMANDINVOCATION_MEMBER_SERVICE_ROLE,
+        &COMMANDINVOCATION_MEMBER_NOTIFICATION_CONFIG,
+        &COMMANDINVOCATION_MEMBER_CLOUD_WATCH_OUTPUT_CONFIG,
+    ],
+);
+impl CommandInvocation {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &COMMANDINVOCATION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CommandInvocation {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.command_id {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_COMMAND_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.instance_name {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_INSTANCE_NAME, val)?;
+        }
+        if let Some(ref val) = self.comment {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_COMMENT, val)?;
+        }
+        if let Some(ref val) = self.document_name {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_DOCUMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.requested_date_time {
+            ser.write_timestamp(&COMMANDINVOCATION_MEMBER_REQUESTED_DATE_TIME, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_details {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_STATUS_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.trace_output {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_TRACE_OUTPUT, val)?;
+        }
+        if let Some(ref val) = self.standard_output_url {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_STANDARD_OUTPUT_URL, val)?;
+        }
+        if let Some(ref val) = self.standard_error_url {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_STANDARD_ERROR_URL, val)?;
+        }
+        if let Some(ref val) = self.command_plugins {
+            ser.write_list(
+                &COMMANDINVOCATION_MEMBER_COMMAND_PLUGINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CommandPlugin::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.service_role {
+            ser.write_string(&COMMANDINVOCATION_MEMBER_SERVICE_ROLE, val)?;
+        }
+        if let Some(ref val) = self.notification_config {
+            ser.write_struct(&COMMANDINVOCATION_MEMBER_NOTIFICATION_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_output_config {
+            ser.write_struct(&COMMANDINVOCATION_MEMBER_CLOUD_WATCH_OUTPUT_CONFIG, val)?;
+        }
+        Ok(())
+    }
+}
+impl CommandInvocation {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&COMMANDINVOCATION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.command_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.instance_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.comment = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.requested_date_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status = Some(crate::types::CommandInvocationStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status_details = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.trace_output = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.standard_output_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.standard_error_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.command_plugins = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CommandPlugin::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.service_role = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.notification_config = Some(crate::types::NotificationConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.cloud_watch_output_config = Some(crate::types::CloudWatchOutputConfig::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl CommandInvocation {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl CommandInvocation {
     /// Creates a new builder-style object to manufacture [`CommandInvocation`](crate::types::CommandInvocation).
     pub fn builder() -> crate::types::builders::CommandInvocationBuilder {

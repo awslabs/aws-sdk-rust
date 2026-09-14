@@ -52,7 +52,7 @@ pub(crate) fn de_custom_action_lambda_configuration(
             })?,
             "lambdas" => builder.set_lambdas(Some(crate::protocol_serde::shape_lambda_list::de_lambda_list(decoder, depth + 1)?)),
             "retryIntervalMinutes" => builder.set_retry_interval_minutes(Some(decoder.float()?)),
-            "regionToRun" => builder.set_region_to_run(Some(decoder.string().map(|s| crate::types::RegionToRunIn::from(s.as_ref()))?)),
+            "regionToRun" => builder.set_region_to_run(Some(decoder.string().map(|s| crate::types::RegionToRunIn::from(s.as_str()))?)),
             "ungraceful" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_ungraceful(Some(crate::protocol_serde::shape_lambda_ungraceful::de_lambda_ungraceful(

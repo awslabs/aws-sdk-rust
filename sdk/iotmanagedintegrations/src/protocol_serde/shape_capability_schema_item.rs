@@ -19,7 +19,9 @@ pub fn ser_capability_schema_item(
         );
     }
     {
-        object.key("Schema").document(&input.schema);
+        object
+            .key("Schema")
+            .document(&input.schema, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

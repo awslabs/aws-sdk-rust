@@ -22,7 +22,7 @@ pub(crate) fn de_route53_health_check(
                 Ok(builder.set_health_check_id(Some(decoder.string()?)))
             })?,
             "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::Route53HealthCheckStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::Route53HealthCheckStatus::from(s.as_str()))?)))
             })?,
             "region" => builder.set_region(Some(decoder.string()?)),
             _ => {

@@ -25,6 +25,110 @@ impl PatchStatus {
         self.approval_date.as_ref()
     }
 }
+static PATCHSTATUS_MEMBER_DEPLOYMENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchStatus$DeploymentStatus", "com.amazonaws.ssm", "PatchStatus"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeploymentStatus",
+    0,
+);
+static PATCHSTATUS_MEMBER_COMPLIANCE_LEVEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchStatus$ComplianceLevel", "com.amazonaws.ssm", "PatchStatus"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceLevel",
+    1,
+);
+static PATCHSTATUS_MEMBER_APPROVAL_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchStatus$ApprovalDate", "com.amazonaws.ssm", "PatchStatus"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ApprovalDate",
+    2,
+);
+static PATCHSTATUS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchStatus", "com.amazonaws.ssm", "PatchStatus"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &PATCHSTATUS_MEMBER_DEPLOYMENT_STATUS,
+        &PATCHSTATUS_MEMBER_COMPLIANCE_LEVEL,
+        &PATCHSTATUS_MEMBER_APPROVAL_DATE,
+    ],
+);
+impl PatchStatus {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PATCHSTATUS_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PatchStatus {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deployment_status {
+            ser.write_string(&PATCHSTATUS_MEMBER_DEPLOYMENT_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.compliance_level {
+            ser.write_string(&PATCHSTATUS_MEMBER_COMPLIANCE_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.approval_date {
+            ser.write_timestamp(&PATCHSTATUS_MEMBER_APPROVAL_DATE, val)?;
+        }
+        Ok(())
+    }
+}
+impl PatchStatus {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&PATCHSTATUS_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.deployment_status = Some(crate::types::PatchDeploymentStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.compliance_level = Some(crate::types::PatchComplianceLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.approval_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl PatchStatus {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl PatchStatus {
     /// Creates a new builder-style object to manufacture [`PatchStatus`](crate::types::PatchStatus).
     pub fn builder() -> crate::types::builders::PatchStatusBuilder {

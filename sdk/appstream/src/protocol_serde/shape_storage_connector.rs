@@ -49,7 +49,7 @@ pub(crate) fn de_storage_connector(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::StorageConnectorBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "ConnectorType" => builder.set_connector_type(Some(decoder.string().map(|s| crate::types::StorageConnectorType::from(s.as_ref()))?)),
+            "ConnectorType" => builder.set_connector_type(Some(decoder.string().map(|s| crate::types::StorageConnectorType::from(s.as_str()))?)),
             "ResourceIdentifier" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_resource_identifier(Some(decoder.string()?)))
             })?,

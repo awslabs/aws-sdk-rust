@@ -24,14 +24,14 @@ pub(crate) fn de_idle_recommendation(
             }
             "resourceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_resource_type(Some(
-                    decoder.string().map(|s| crate::types::IdleRecommendationResourceType::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::IdleRecommendationResourceType::from(s.as_str()))?,
                 )))
             })?,
             "accountId" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_account_id(Some(decoder.string()?))))?
             }
             "finding" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_finding(Some(decoder.string().map(|s| crate::types::IdleFinding::from(s.as_ref()))?)))
+                Ok(builder.set_finding(Some(decoder.string().map(|s| crate::types::IdleFinding::from(s.as_str()))?)))
             })?,
             "findingDescription" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_finding_description(Some(decoder.string()?)))

@@ -11,6 +11,8 @@ pub struct GetSessionTokenInput {
     /// <p>The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an MFA code, specify this value. If MFA authentication is required, the user must provide a code when requesting a set of temporary security credentials. A user who fails to provide the code receives an "access denied" response when requesting resources that require MFA authentication.</p>
     /// <p>The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.</p>
     pub token_code: ::std::option::Option<::std::string::String>,
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl GetSessionTokenInput {
     /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
@@ -27,6 +29,10 @@ impl GetSessionTokenInput {
     pub fn token_code(&self) -> ::std::option::Option<&str> {
         self.token_code.as_deref()
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(&self) -> ::std::option::Option<i32> {
+        self.minimum_session_token_size
+    }
 }
 impl GetSessionTokenInput {
     /// Creates a new builder-style object to manufacture [`GetSessionTokenInput`](crate::operation::get_session_token::GetSessionTokenInput).
@@ -42,6 +48,7 @@ pub struct GetSessionTokenInputBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) serial_number: ::std::option::Option<::std::string::String>,
     pub(crate) token_code: ::std::option::Option<::std::string::String>,
+    pub(crate) minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl GetSessionTokenInputBuilder {
     /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
@@ -92,6 +99,20 @@ impl GetSessionTokenInputBuilder {
     pub fn get_token_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.token_code
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(mut self, input: i32) -> Self {
+        self.minimum_session_token_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn set_minimum_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.minimum_session_token_size = input;
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn get_minimum_session_token_size(&self) -> &::std::option::Option<i32> {
+        &self.minimum_session_token_size
+    }
     /// Consumes the builder and constructs a [`GetSessionTokenInput`](crate::operation::get_session_token::GetSessionTokenInput).
     pub fn build(
         self,
@@ -100,6 +121,7 @@ impl GetSessionTokenInputBuilder {
             duration_seconds: self.duration_seconds,
             serial_number: self.serial_number,
             token_code: self.token_code,
+            minimum_session_token_size: self.minimum_session_token_size,
         })
     }
 }

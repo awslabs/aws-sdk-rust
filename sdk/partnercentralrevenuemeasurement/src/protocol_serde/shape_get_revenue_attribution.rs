@@ -145,12 +145,12 @@ pub(crate) fn de_get_revenue_attribution(
         builder = match decoder.str()?.as_ref() {
             "Arn" => builder.set_arn(Some(decoder.string()?)),
             "Id" => builder.set_id(Some(decoder.string()?)),
-            "Catalog" => builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_ref()))?)),
+            "Catalog" => builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_str()))?)),
             "Name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
             "Description" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
             }
-            "TenancyModel" => builder.set_tenancy_model(Some(decoder.string().map(|s| crate::types::TenancyModel::from(s.as_ref()))?)),
+            "TenancyModel" => builder.set_tenancy_model(Some(decoder.string().map(|s| crate::types::TenancyModel::from(s.as_str()))?)),
             "MarketplaceProduct" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_marketplace_product(Some(
                     crate::protocol_serde::shape_marketplace_product_summary::de_marketplace_product_summary(decoder, depth + 1)?,

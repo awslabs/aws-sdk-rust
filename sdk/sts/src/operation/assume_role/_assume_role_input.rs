@@ -58,6 +58,8 @@ pub struct AssumeRoleInput {
     /// <p>The following is an example of a <code>ProvidedContext</code> value that includes a single trusted context assertion and the ARN of the context provider from which the trusted context assertion was generated.</p>
     /// <p><code>\[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}\]</code></p>
     pub provided_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>,
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl AssumeRoleInput {
     /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
@@ -147,6 +149,10 @@ impl AssumeRoleInput {
     pub fn provided_contexts(&self) -> &[crate::types::ProvidedContext] {
         self.provided_contexts.as_deref().unwrap_or_default()
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(&self) -> ::std::option::Option<i32> {
+        self.minimum_session_token_size
+    }
 }
 impl AssumeRoleInput {
     /// Creates a new builder-style object to manufacture [`AssumeRoleInput`](crate::operation::assume_role::AssumeRoleInput).
@@ -171,6 +177,7 @@ pub struct AssumeRoleInputBuilder {
     pub(crate) token_code: ::std::option::Option<::std::string::String>,
     pub(crate) source_identity: ::std::option::Option<::std::string::String>,
     pub(crate) provided_contexts: ::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>>,
+    pub(crate) minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl AssumeRoleInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role to assume.</p>
@@ -460,6 +467,20 @@ impl AssumeRoleInputBuilder {
     pub fn get_provided_contexts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProvidedContext>> {
         &self.provided_contexts
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(mut self, input: i32) -> Self {
+        self.minimum_session_token_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn set_minimum_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.minimum_session_token_size = input;
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn get_minimum_session_token_size(&self) -> &::std::option::Option<i32> {
+        &self.minimum_session_token_size
+    }
     /// Consumes the builder and constructs a [`AssumeRoleInput`](crate::operation::assume_role::AssumeRoleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::assume_role::AssumeRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::assume_role::AssumeRoleInput {
@@ -475,6 +496,7 @@ impl AssumeRoleInputBuilder {
             token_code: self.token_code,
             source_identity: self.source_identity,
             provided_contexts: self.provided_contexts,
+            minimum_session_token_size: self.minimum_session_token_size,
         })
     }
 }

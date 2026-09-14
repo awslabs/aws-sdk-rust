@@ -17,16 +17,16 @@ pub(crate) fn de_supported_instance_configuration(
     ) -> ::std::result::Result<crate::types::builders::SupportedInstanceConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "BillingMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_billing_mode(Some(decoder.string().map(|s| crate::types::BillingMode::from(s.as_ref()))?)))
+                Ok(builder.set_billing_mode(Some(decoder.string().map(|s| crate::types::BillingMode::from(s.as_str()))?)))
             })?,
             "PlatformType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_platform_type(Some(decoder.string().map(|s| crate::types::PlatformTypeEnum::from(s.as_ref()))?)))
+                Ok(builder.set_platform_type(Some(decoder.string().map(|s| crate::types::PlatformTypeEnum::from(s.as_str()))?)))
             })?,
             "Tenancy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_tenancy(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::InstanceConfigurationTenancyEnum::from(s.as_ref()))?,
+                        .map(|s| crate::types::InstanceConfigurationTenancyEnum::from(s.as_str()))?,
                 )))
             })?,
             _ => {

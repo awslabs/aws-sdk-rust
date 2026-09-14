@@ -40,7 +40,7 @@ pub(crate) fn de_user_stack_association(
             "StackName" => builder.set_stack_name(Some(decoder.string()?)),
             "UserName" => builder.set_user_name(Some(decoder.string()?)),
             "AuthenticationType" => {
-                builder.set_authentication_type(Some(decoder.string().map(|s| crate::types::AuthenticationType::from(s.as_ref()))?))
+                builder.set_authentication_type(Some(decoder.string().map(|s| crate::types::AuthenticationType::from(s.as_str()))?))
             }
             "SendEmailNotification" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_send_email_notification(Some(decoder.boolean()?)))

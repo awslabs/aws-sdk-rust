@@ -29,7 +29,7 @@ pub(crate) fn de_metric_stream_entry(
             }
             "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_state(Some(decoder.string()?))))?,
             "OutputFormat" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_output_format(Some(decoder.string().map(|s| crate::types::MetricStreamOutputFormat::from(s.as_ref()))?)))
+                Ok(builder.set_output_format(Some(decoder.string().map(|s| crate::types::MetricStreamOutputFormat::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

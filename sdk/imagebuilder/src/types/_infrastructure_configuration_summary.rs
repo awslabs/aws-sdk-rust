@@ -22,7 +22,7 @@ pub struct InfrastructureConfigurationSummary {
     pub instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub instance_profile_name: ::std::option::Option<::std::string::String>,
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
 }
 impl InfrastructureConfigurationSummary {
@@ -64,7 +64,7 @@ impl InfrastructureConfigurationSummary {
     pub fn instance_profile_name(&self) -> ::std::option::Option<&str> {
         self.instance_profile_name.as_deref()
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
         self.placement.as_ref()
     }
@@ -239,17 +239,17 @@ impl InfrastructureConfigurationSummaryBuilder {
     pub fn get_instance_profile_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.instance_profile_name
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub fn placement(mut self, input: crate::types::Placement) -> Self {
         self.placement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
         self.placement = input;
         self
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
         &self.placement
     }

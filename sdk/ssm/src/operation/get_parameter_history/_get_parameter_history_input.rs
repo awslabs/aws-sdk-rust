@@ -30,6 +30,150 @@ impl GetParameterHistoryInput {
         self.next_token.as_deref()
     }
 }
+static GETPARAMETERHISTORYINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetParameterHistoryInput$Name",
+        "com.amazonaws.ssm.synthetic",
+        "GetParameterHistoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static GETPARAMETERHISTORYINPUT_MEMBER_WITH_DECRYPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetParameterHistoryInput$WithDecryption",
+        "com.amazonaws.ssm.synthetic",
+        "GetParameterHistoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "WithDecryption",
+    1,
+);
+static GETPARAMETERHISTORYINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetParameterHistoryInput$MaxResults",
+        "com.amazonaws.ssm.synthetic",
+        "GetParameterHistoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxResults",
+    2,
+);
+static GETPARAMETERHISTORYINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetParameterHistoryInput$NextToken",
+        "com.amazonaws.ssm.synthetic",
+        "GetParameterHistoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextToken",
+    3,
+);
+static GETPARAMETERHISTORYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetParameterHistoryInput",
+        "com.amazonaws.ssm.synthetic",
+        "GetParameterHistoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETPARAMETERHISTORYINPUT_MEMBER_NAME,
+        &GETPARAMETERHISTORYINPUT_MEMBER_WITH_DECRYPTION,
+        &GETPARAMETERHISTORYINPUT_MEMBER_MAX_RESULTS,
+        &GETPARAMETERHISTORYINPUT_MEMBER_NEXT_TOKEN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("GetParameterHistoryRequest");
+impl GetParameterHistoryInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETPARAMETERHISTORYINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetParameterHistoryInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&GETPARAMETERHISTORYINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.with_decryption {
+            ser.write_boolean(&GETPARAMETERHISTORYINPUT_MEMBER_WITH_DECRYPTION, *val)?;
+        }
+        if let Some(ref val) = self.max_results {
+            ser.write_integer(&GETPARAMETERHISTORYINPUT_MEMBER_MAX_RESULTS, *val)?;
+        }
+        if let Some(ref val) = self.next_token {
+            ser.write_string(&GETPARAMETERHISTORYINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        Ok(())
+    }
+}
+impl GetParameterHistoryInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&GETPARAMETERHISTORYINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.with_decryption = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl GetParameterHistoryInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl GetParameterHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetParameterHistoryInput`](crate::operation::get_parameter_history::GetParameterHistoryInput).
     pub fn builder() -> crate::operation::get_parameter_history::builders::GetParameterHistoryInputBuilder {

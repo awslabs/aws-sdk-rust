@@ -11,7 +11,7 @@ pub(crate) fn de_validation_exception_cbor_err(
     ) -> ::std::result::Result<crate::types::error::builders::ValidationExceptionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Message" => builder.set_message(Some(decoder.string()?)),
-            "Reason" => builder.set_reason(Some(decoder.string().map(|s| crate::types::ValidationExceptionReason::from(s.as_ref()))?)),
+            "Reason" => builder.set_reason(Some(decoder.string().map(|s| crate::types::ValidationExceptionReason::from(s.as_str()))?)),
             "FieldList" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_field_list(Some(
                     crate::protocol_serde::shape_validation_exception_field_list::de_validation_exception_field_list(decoder, depth + 1)?,

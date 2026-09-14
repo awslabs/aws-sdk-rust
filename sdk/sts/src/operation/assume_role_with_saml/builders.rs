@@ -270,4 +270,18 @@ impl AssumeRoleWithSAMLFluentBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         self.inner.get_duration_seconds()
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(mut self, input: i32) -> Self {
+        self.inner = self.inner.minimum_session_token_size(input);
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn set_minimum_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_minimum_session_token_size(input);
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn get_minimum_session_token_size(&self) -> &::std::option::Option<i32> {
+        self.inner.get_minimum_session_token_size()
+    }
 }

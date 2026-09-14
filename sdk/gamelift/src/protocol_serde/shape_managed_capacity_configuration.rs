@@ -17,7 +17,7 @@ pub(crate) fn de_managed_capacity_configuration(
     ) -> ::std::result::Result<crate::types::builders::ManagedCapacityConfigurationBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ZeroCapacityStrategy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_zero_capacity_strategy(Some(decoder.string().map(|s| crate::types::ZeroCapacityStrategy::from(s.as_ref()))?)))
+                Ok(builder.set_zero_capacity_strategy(Some(decoder.string().map(|s| crate::types::ZeroCapacityStrategy::from(s.as_str()))?)))
             })?,
             "ScaleInAfterInactivityMinutes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_scale_in_after_inactivity_minutes(Some(decoder.integer()?)))

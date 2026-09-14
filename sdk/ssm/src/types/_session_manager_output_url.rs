@@ -19,6 +19,105 @@ impl SessionManagerOutputUrl {
         self.cloud_watch_output_url.as_deref()
     }
 }
+static SESSIONMANAGEROUTPUTURL_MEMBER_S3_OUTPUT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#SessionManagerOutputUrl$S3OutputUrl",
+        "com.amazonaws.ssm",
+        "SessionManagerOutputUrl",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "S3OutputUrl",
+    0,
+);
+static SESSIONMANAGEROUTPUTURL_MEMBER_CLOUD_WATCH_OUTPUT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#SessionManagerOutputUrl$CloudWatchOutputUrl",
+        "com.amazonaws.ssm",
+        "SessionManagerOutputUrl",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudWatchOutputUrl",
+    1,
+);
+static SESSIONMANAGEROUTPUTURL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#SessionManagerOutputUrl",
+        "com.amazonaws.ssm",
+        "SessionManagerOutputUrl",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &SESSIONMANAGEROUTPUTURL_MEMBER_S3_OUTPUT_URL,
+        &SESSIONMANAGEROUTPUTURL_MEMBER_CLOUD_WATCH_OUTPUT_URL,
+    ],
+);
+impl SessionManagerOutputUrl {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SESSIONMANAGEROUTPUTURL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SessionManagerOutputUrl {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.s3_output_url {
+            ser.write_string(&SESSIONMANAGEROUTPUTURL_MEMBER_S3_OUTPUT_URL, val)?;
+        }
+        if let Some(ref val) = self.cloud_watch_output_url {
+            ser.write_string(&SESSIONMANAGEROUTPUTURL_MEMBER_CLOUD_WATCH_OUTPUT_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl SessionManagerOutputUrl {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&SESSIONMANAGEROUTPUTURL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.s3_output_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.cloud_watch_output_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl SessionManagerOutputUrl {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl SessionManagerOutputUrl {
     /// Creates a new builder-style object to manufacture [`SessionManagerOutputUrl`](crate::types::SessionManagerOutputUrl).
     pub fn builder() -> crate::types::builders::SessionManagerOutputUrlBuilder {

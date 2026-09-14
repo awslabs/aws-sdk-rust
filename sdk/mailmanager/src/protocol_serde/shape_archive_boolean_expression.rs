@@ -35,7 +35,7 @@ pub(crate) fn de_archive_boolean_expression(
             "Evaluate" => builder.set_evaluate(Some(
                 crate::protocol_serde::shape_archive_boolean_to_evaluate::de_archive_boolean_to_evaluate(decoder, depth + 1)?,
             )),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::ArchiveBooleanOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::ArchiveBooleanOperator::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

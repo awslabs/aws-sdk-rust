@@ -37,6 +37,10 @@ pub struct GetWorkflowStepExecutionOutput {
     pub on_failure: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration in seconds for this step to complete its action.</p>
     pub timeout_seconds: ::std::option::Option<i32>,
+    /// <p>The current attempt number for the specified runtime instance of the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub attempt_number: ::std::option::Option<i32>,
+    /// <p>The maximum number of attempts allowed for the specified runtime instance of the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub max_attempts: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetWorkflowStepExecutionOutput {
@@ -108,6 +112,14 @@ impl GetWorkflowStepExecutionOutput {
     pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
+    /// <p>The current attempt number for the specified runtime instance of the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub fn attempt_number(&self) -> ::std::option::Option<i32> {
+        self.attempt_number
+    }
+    /// <p>The maximum number of attempts allowed for the specified runtime instance of the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub fn max_attempts(&self) -> ::std::option::Option<i32> {
+        self.max_attempts
+    }
 }
 impl ::aws_types::request_id::RequestId for GetWorkflowStepExecutionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -142,6 +154,8 @@ pub struct GetWorkflowStepExecutionOutputBuilder {
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
     pub(crate) on_failure: ::std::option::Option<::std::string::String>,
     pub(crate) timeout_seconds: ::std::option::Option<i32>,
+    pub(crate) attempt_number: ::std::option::Option<i32>,
+    pub(crate) max_attempts: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetWorkflowStepExecutionOutputBuilder {
@@ -383,6 +397,34 @@ impl GetWorkflowStepExecutionOutputBuilder {
     pub fn get_timeout_seconds(&self) -> &::std::option::Option<i32> {
         &self.timeout_seconds
     }
+    /// <p>The current attempt number for the specified runtime instance of the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub fn attempt_number(mut self, input: i32) -> Self {
+        self.attempt_number = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current attempt number for the specified runtime instance of the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub fn set_attempt_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.attempt_number = input;
+        self
+    }
+    /// <p>The current attempt number for the specified runtime instance of the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub fn get_attempt_number(&self) -> &::std::option::Option<i32> {
+        &self.attempt_number
+    }
+    /// <p>The maximum number of attempts allowed for the specified runtime instance of the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub fn max_attempts(mut self, input: i32) -> Self {
+        self.max_attempts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of attempts allowed for the specified runtime instance of the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub fn set_max_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_attempts = input;
+        self
+    }
+    /// <p>The maximum number of attempts allowed for the specified runtime instance of the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub fn get_max_attempts(&self) -> &::std::option::Option<i32> {
+        &self.max_attempts
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -412,6 +454,8 @@ impl GetWorkflowStepExecutionOutputBuilder {
             end_time: self.end_time,
             on_failure: self.on_failure,
             timeout_seconds: self.timeout_seconds,
+            attempt_number: self.attempt_number,
+            max_attempts: self.max_attempts,
             _request_id: self._request_id,
         }
     }

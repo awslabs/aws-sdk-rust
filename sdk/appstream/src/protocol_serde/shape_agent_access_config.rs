@@ -60,13 +60,13 @@ pub(crate) fn de_agent_access_config(
                     Ok(builder.set_screenshots_upload_enabled(Some(decoder.boolean()?)))
                 })?,
                 "ScreenResolution" => {
-                    builder.set_screen_resolution(Some(decoder.string().map(|s| crate::types::ScreenResolution::from(s.as_ref()))?))
+                    builder.set_screen_resolution(Some(decoder.string().map(|s| crate::types::ScreenResolution::from(s.as_str()))?))
                 }
                 "ScreenImageFormat" => {
-                    builder.set_screen_image_format(Some(decoder.string().map(|s| crate::types::ScreenImageFormat::from(s.as_ref()))?))
+                    builder.set_screen_image_format(Some(decoder.string().map(|s| crate::types::ScreenImageFormat::from(s.as_str()))?))
                 }
                 "UserControlMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_user_control_mode(Some(decoder.string().map(|s| crate::types::UserControlMode::from(s.as_ref()))?)))
+                    Ok(builder.set_user_control_mode(Some(decoder.string().map(|s| crate::types::UserControlMode::from(s.as_str()))?)))
                 })?,
                 _ => {
                     decoder.skip()?;

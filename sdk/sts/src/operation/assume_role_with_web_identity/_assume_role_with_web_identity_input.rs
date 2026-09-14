@@ -35,6 +35,8 @@ pub struct AssumeRoleWithWebIdentityInput {
     /// <p>The <code>DurationSeconds</code> parameter is separate from the duration of a console session that you might request using the returned credentials. The request to the federation endpoint for a console sign-in token takes a <code>SessionDuration</code> parameter that specifies the maximum length of the console session. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL that Enables Federated Users to Access the Amazon Web Services Management Console</a> in the <i>IAM User Guide</i>.</p>
     /// </note>
     pub duration_seconds: ::std::option::Option<i32>,
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl AssumeRoleWithWebIdentityInput {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p><note>
@@ -85,6 +87,10 @@ impl AssumeRoleWithWebIdentityInput {
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(&self) -> ::std::option::Option<i32> {
+        self.minimum_session_token_size
+    }
 }
 impl ::std::fmt::Debug for AssumeRoleWithWebIdentityInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -96,6 +102,7 @@ impl ::std::fmt::Debug for AssumeRoleWithWebIdentityInput {
         formatter.field("policy_arns", &self.policy_arns);
         formatter.field("policy", &self.policy);
         formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("minimum_session_token_size", &self.minimum_session_token_size);
         formatter.finish()
     }
 }
@@ -117,6 +124,7 @@ pub struct AssumeRoleWithWebIdentityInputBuilder {
     pub(crate) policy_arns: ::std::option::Option<::std::vec::Vec<crate::types::PolicyDescriptorType>>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl AssumeRoleWithWebIdentityInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the role that the caller is assuming.</p><note>
@@ -280,6 +288,20 @@ impl AssumeRoleWithWebIdentityInputBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(mut self, input: i32) -> Self {
+        self.minimum_session_token_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn set_minimum_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.minimum_session_token_size = input;
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn get_minimum_session_token_size(&self) -> &::std::option::Option<i32> {
+        &self.minimum_session_token_size
+    }
     /// Consumes the builder and constructs a [`AssumeRoleWithWebIdentityInput`](crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityInput).
     pub fn build(
         self,
@@ -295,6 +317,7 @@ impl AssumeRoleWithWebIdentityInputBuilder {
             policy_arns: self.policy_arns,
             policy: self.policy,
             duration_seconds: self.duration_seconds,
+            minimum_session_token_size: self.minimum_session_token_size,
         })
     }
 }
@@ -308,6 +331,7 @@ impl ::std::fmt::Debug for AssumeRoleWithWebIdentityInputBuilder {
         formatter.field("policy_arns", &self.policy_arns);
         formatter.field("policy", &self.policy);
         formatter.field("duration_seconds", &self.duration_seconds);
+        formatter.field("minimum_session_token_size", &self.minimum_session_token_size);
         formatter.finish()
     }
 }

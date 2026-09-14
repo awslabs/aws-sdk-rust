@@ -34,8 +34,8 @@ pub(crate) fn de_user_setting(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::UserSettingBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "Action" => builder.set_action(Some(decoder.string().map(|s| crate::types::Action::from(s.as_ref()))?)),
-            "Permission" => builder.set_permission(Some(decoder.string().map(|s| crate::types::Permission::from(s.as_ref()))?)),
+            "Action" => builder.set_action(Some(decoder.string().map(|s| crate::types::Action::from(s.as_str()))?)),
+            "Permission" => builder.set_permission(Some(decoder.string().map(|s| crate::types::Permission::from(s.as_str()))?)),
             "MaximumLength" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_maximum_length(Some(decoder.integer()?)))
             })?,

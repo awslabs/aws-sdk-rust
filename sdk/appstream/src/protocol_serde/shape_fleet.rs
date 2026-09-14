@@ -32,7 +32,7 @@ pub(crate) fn de_fleet(
             }
             "InstanceType" => builder.set_instance_type(Some(decoder.string()?)),
             "FleetType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_fleet_type(Some(decoder.string().map(|s| crate::types::FleetType::from(s.as_ref()))?)))
+                Ok(builder.set_fleet_type(Some(decoder.string().map(|s| crate::types::FleetType::from(s.as_str()))?)))
             })?,
             "ComputeCapacityStatus" => builder.set_compute_capacity_status(Some(
                 crate::protocol_serde::shape_compute_capacity_status::de_compute_capacity_status(decoder, depth + 1)?,
@@ -43,7 +43,7 @@ pub(crate) fn de_fleet(
             "DisconnectTimeoutInSeconds" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_disconnect_timeout_in_seconds(Some(decoder.integer()?)))
             })?,
-            "State" => builder.set_state(Some(decoder.string().map(|s| crate::types::FleetState::from(s.as_ref()))?)),
+            "State" => builder.set_state(Some(decoder.string().map(|s| crate::types::FleetState::from(s.as_str()))?)),
             "VpcConfig" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_vpc_config(Some(crate::protocol_serde::shape_vpc_config::de_vpc_config(decoder, depth + 1)?)))
             })?,
@@ -71,10 +71,10 @@ pub(crate) fn de_fleet(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_iam_role_arn(Some(decoder.string()?))))?
             }
             "StreamView" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_stream_view(Some(decoder.string().map(|s| crate::types::StreamView::from(s.as_ref()))?)))
+                Ok(builder.set_stream_view(Some(decoder.string().map(|s| crate::types::StreamView::from(s.as_str()))?)))
             })?,
             "Platform" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_platform(Some(decoder.string().map(|s| crate::types::PlatformType::from(s.as_ref()))?)))
+                Ok(builder.set_platform(Some(decoder.string().map(|s| crate::types::PlatformType::from(s.as_str()))?)))
             })?,
             "MaxConcurrentSessions" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_max_concurrent_sessions(Some(decoder.integer()?)))

@@ -67,6 +67,258 @@ impl DocumentVersionInfo {
         self.review_status.as_ref()
     }
 }
+static DOCUMENTVERSIONINFO_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentVersionInfo$Name", "com.amazonaws.ssm", "DocumentVersionInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static DOCUMENTVERSIONINFO_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$DisplayName",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    1,
+);
+static DOCUMENTVERSIONINFO_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$DocumentVersion",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    2,
+);
+static DOCUMENTVERSIONINFO_MEMBER_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$VersionName",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionName",
+    3,
+);
+static DOCUMENTVERSIONINFO_MEMBER_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$CreatedDate",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedDate",
+    4,
+);
+static DOCUMENTVERSIONINFO_MEMBER_IS_DEFAULT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$IsDefaultVersion",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IsDefaultVersion",
+    5,
+);
+static DOCUMENTVERSIONINFO_MEMBER_DOCUMENT_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$DocumentFormat",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentFormat",
+    6,
+);
+static DOCUMENTVERSIONINFO_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentVersionInfo$Status", "com.amazonaws.ssm", "DocumentVersionInfo"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    7,
+);
+static DOCUMENTVERSIONINFO_MEMBER_STATUS_INFORMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$StatusInformation",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusInformation",
+    8,
+);
+static DOCUMENTVERSIONINFO_MEMBER_REVIEW_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$ReviewStatus",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReviewStatus",
+    9,
+);
+static DOCUMENTVERSIONINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentVersionInfo", "com.amazonaws.ssm", "DocumentVersionInfo"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOCUMENTVERSIONINFO_MEMBER_NAME,
+        &DOCUMENTVERSIONINFO_MEMBER_DISPLAY_NAME,
+        &DOCUMENTVERSIONINFO_MEMBER_DOCUMENT_VERSION,
+        &DOCUMENTVERSIONINFO_MEMBER_VERSION_NAME,
+        &DOCUMENTVERSIONINFO_MEMBER_CREATED_DATE,
+        &DOCUMENTVERSIONINFO_MEMBER_IS_DEFAULT_VERSION,
+        &DOCUMENTVERSIONINFO_MEMBER_DOCUMENT_FORMAT,
+        &DOCUMENTVERSIONINFO_MEMBER_STATUS,
+        &DOCUMENTVERSIONINFO_MEMBER_STATUS_INFORMATION,
+        &DOCUMENTVERSIONINFO_MEMBER_REVIEW_STATUS,
+    ],
+);
+impl DocumentVersionInfo {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTVERSIONINFO_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentVersionInfo {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.version_name {
+            ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.created_date {
+            ser.write_timestamp(&DOCUMENTVERSIONINFO_MEMBER_CREATED_DATE, val)?;
+        }
+        {
+            let val = &self.is_default_version;
+            ser.write_boolean(&DOCUMENTVERSIONINFO_MEMBER_IS_DEFAULT_VERSION, *val)?;
+        }
+        if let Some(ref val) = self.document_format {
+            ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_DOCUMENT_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_information {
+            ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_STATUS_INFORMATION, val)?;
+        }
+        if let Some(ref val) = self.review_status {
+            ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_REVIEW_STATUS, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl DocumentVersionInfo {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DOCUMENTVERSIONINFO_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    builder.is_default_version = Some(deser.read_boolean(member)?);
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_format = Some(crate::types::DocumentFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status = Some(crate::types::DocumentStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status_information = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.review_status = Some(crate::types::ReviewStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl DocumentVersionInfo {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl DocumentVersionInfo {
     /// Creates a new builder-style object to manufacture [`DocumentVersionInfo`](crate::types::DocumentVersionInfo).
     pub fn builder() -> crate::types::builders::DocumentVersionInfoBuilder {

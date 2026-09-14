@@ -17,14 +17,14 @@ pub(crate) fn de_attribute(
     ) -> ::std::result::Result<crate::types::builders::AttributeBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::EntitySubType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::EntitySubType::from(s.as_str()))?)))
             })?,
             "Score" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_score(Some(decoder.float()?))))?,
             "RelationshipScore" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_relationship_score(Some(decoder.float()?)))
             })?,
             "RelationshipType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_relationship_type(Some(decoder.string().map(|s| crate::types::RelationshipType::from(s.as_ref()))?)))
+                Ok(builder.set_relationship_type(Some(decoder.string().map(|s| crate::types::RelationshipType::from(s.as_str()))?)))
             })?,
             "Id" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_id(Some(decoder.integer()?))))?,
             "BeginOffset" => {
@@ -39,7 +39,7 @@ pub(crate) fn de_attribute(
             }
             "Text" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_text(Some(decoder.string()?))))?,
             "Category" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_category(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_ref()))?)))
+                Ok(builder.set_category(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_str()))?)))
             })?,
             "Traits" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_traits(Some(crate::protocol_serde::shape_trait_list::de_trait_list(decoder, depth + 1)?)))

@@ -32,7 +32,7 @@ pub(crate) fn de_arc_routing_control_state(
     ) -> ::std::result::Result<crate::types::builders::ArcRoutingControlStateBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "routingControlArn" => builder.set_routing_control_arn(Some(decoder.string()?)),
-            "state" => builder.set_state(Some(decoder.string().map(|s| crate::types::RoutingControlStateChange::from(s.as_ref()))?)),
+            "state" => builder.set_state(Some(decoder.string().map(|s| crate::types::RoutingControlStateChange::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

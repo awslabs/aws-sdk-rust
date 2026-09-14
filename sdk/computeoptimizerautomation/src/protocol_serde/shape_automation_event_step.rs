@@ -23,10 +23,10 @@ pub(crate) fn de_automation_event_step(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_step_id(Some(decoder.string()?))))?
             }
             "stepType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_step_type(Some(decoder.string().map(|s| crate::types::StepType::from(s.as_ref()))?)))
+                Ok(builder.set_step_type(Some(decoder.string().map(|s| crate::types::StepType::from(s.as_str()))?)))
             })?,
             "stepStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_step_status(Some(decoder.string().map(|s| crate::types::StepStatus::from(s.as_ref()))?)))
+                Ok(builder.set_step_status(Some(decoder.string().map(|s| crate::types::StepStatus::from(s.as_str()))?)))
             })?,
             "resourceId" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_resource_id(Some(decoder.string()?))))?

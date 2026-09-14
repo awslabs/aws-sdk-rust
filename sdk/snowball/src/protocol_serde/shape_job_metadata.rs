@@ -18,13 +18,13 @@ pub(crate) fn de_job_metadata(
         builder = match decoder.str()?.as_ref() {
             "JobId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_job_id(Some(decoder.string()?))))?,
             "JobState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_job_state(Some(decoder.string().map(|s| crate::types::JobState::from(s.as_ref()))?)))
+                Ok(builder.set_job_state(Some(decoder.string().map(|s| crate::types::JobState::from(s.as_str()))?)))
             })?,
             "JobType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_job_type(Some(decoder.string().map(|s| crate::types::JobType::from(s.as_ref()))?)))
+                Ok(builder.set_job_type(Some(decoder.string().map(|s| crate::types::JobType::from(s.as_str()))?)))
             })?,
             "SnowballType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_snowball_type(Some(decoder.string().map(|s| crate::types::SnowballType::from(s.as_ref()))?)))
+                Ok(builder.set_snowball_type(Some(decoder.string().map(|s| crate::types::SnowballType::from(s.as_str()))?)))
             })?,
             "CreationDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_creation_date(Some(decoder.timestamp()?)))
@@ -53,7 +53,7 @@ pub(crate) fn de_job_metadata(
                 )
             })?,
             "SnowballCapacityPreference" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_snowball_capacity_preference(Some(decoder.string().map(|s| crate::types::SnowballCapacity::from(s.as_ref()))?)))
+                Ok(builder.set_snowball_capacity_preference(Some(decoder.string().map(|s| crate::types::SnowballCapacity::from(s.as_str()))?)))
             })?,
             "Notification" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_notification(Some(crate::protocol_serde::shape_notification::de_notification(decoder, depth + 1)?)))
@@ -82,7 +82,7 @@ pub(crate) fn de_job_metadata(
                 )
             })?,
             "RemoteManagement" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_remote_management(Some(decoder.string().map(|s| crate::types::RemoteManagement::from(s.as_ref()))?)))
+                Ok(builder.set_remote_management(Some(decoder.string().map(|s| crate::types::RemoteManagement::from(s.as_str()))?)))
             })?,
             "LongTermPricingId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_long_term_pricing_id(Some(decoder.string()?)))
@@ -93,7 +93,7 @@ pub(crate) fn de_job_metadata(
                 )))
             })?,
             "ImpactLevel" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_impact_level(Some(decoder.string().map(|s| crate::types::ImpactLevel::from(s.as_ref()))?)))
+                Ok(builder.set_impact_level(Some(decoder.string().map(|s| crate::types::ImpactLevel::from(s.as_str()))?)))
             })?,
             "PickupDetails" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_pickup_details(Some(crate::protocol_serde::shape_pickup_details::de_pickup_details(decoder, depth + 1)?)))

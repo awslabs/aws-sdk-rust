@@ -26,7 +26,7 @@ pub(crate) fn de_instance_access(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_ip_address(Some(decoder.string()?))))?
             }
             "OperatingSystem" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_ref()))?)))
+                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_str()))?)))
             })?,
             "Credentials" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

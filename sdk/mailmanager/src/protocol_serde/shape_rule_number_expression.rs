@@ -39,7 +39,7 @@ pub(crate) fn de_rule_number_expression(
                 decoder,
                 depth + 1,
             )?)),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleNumberOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleNumberOperator::from(s.as_str()))?)),
             "Value" => builder.set_value(Some(decoder.double()?)),
             _ => {
                 decoder.skip()?;

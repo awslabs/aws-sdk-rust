@@ -40,7 +40,7 @@ pub(crate) fn de_ip_permission(
             "FromPort" => builder.set_from_port(Some(decoder.integer()?)),
             "ToPort" => builder.set_to_port(Some(decoder.integer()?)),
             "IpRange" => builder.set_ip_range(Some(decoder.string()?)),
-            "Protocol" => builder.set_protocol(Some(decoder.string().map(|s| crate::types::IpProtocol::from(s.as_ref()))?)),
+            "Protocol" => builder.set_protocol(Some(decoder.string().map(|s| crate::types::IpProtocol::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

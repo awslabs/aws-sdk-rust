@@ -13,7 +13,9 @@ pub fn ser_put_input_vector(
         object_2.finish();
     }
     {
-        object.key("metadata").document(&input.metadata);
+        object
+            .key("metadata")
+            .document(&input.metadata, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

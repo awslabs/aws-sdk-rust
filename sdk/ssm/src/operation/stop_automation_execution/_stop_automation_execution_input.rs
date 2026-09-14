@@ -18,6 +18,108 @@ impl StopAutomationExecutionInput {
         self.r#type.as_ref()
     }
 }
+static STOPAUTOMATIONEXECUTIONINPUT_MEMBER_AUTOMATION_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StopAutomationExecutionInput$AutomationExecutionId",
+        "com.amazonaws.ssm.synthetic",
+        "StopAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutomationExecutionId",
+    0,
+);
+static STOPAUTOMATIONEXECUTIONINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StopAutomationExecutionInput$Type",
+        "com.amazonaws.ssm.synthetic",
+        "StopAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    1,
+);
+static STOPAUTOMATIONEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StopAutomationExecutionInput",
+        "com.amazonaws.ssm.synthetic",
+        "StopAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STOPAUTOMATIONEXECUTIONINPUT_MEMBER_AUTOMATION_EXECUTION_ID,
+        &STOPAUTOMATIONEXECUTIONINPUT_MEMBER_TYPE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StopAutomationExecutionRequest");
+impl StopAutomationExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STOPAUTOMATIONEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StopAutomationExecutionInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.automation_execution_id {
+            ser.write_string(&STOPAUTOMATIONEXECUTIONINPUT_MEMBER_AUTOMATION_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&STOPAUTOMATIONEXECUTIONINPUT_MEMBER_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl StopAutomationExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STOPAUTOMATIONEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.automation_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.r#type = Some(crate::types::StopType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.automation_execution_id = builder.automation_execution_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl StopAutomationExecutionInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl StopAutomationExecutionInput {
     /// Creates a new builder-style object to manufacture [`StopAutomationExecutionInput`](crate::operation::stop_automation_execution::StopAutomationExecutionInput).
     pub fn builder() -> crate::operation::stop_automation_execution::builders::StopAutomationExecutionInputBuilder {

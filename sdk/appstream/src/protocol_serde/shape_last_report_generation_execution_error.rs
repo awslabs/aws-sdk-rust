@@ -19,7 +19,7 @@ pub(crate) fn de_last_report_generation_execution_error(
             match decoder.str()?.as_ref() {
                 "ErrorCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_error_code(Some(
-                        decoder.string().map(|s| crate::types::UsageReportExecutionErrorCode::from(s.as_ref()))?,
+                        decoder.string().map(|s| crate::types::UsageReportExecutionErrorCode::from(s.as_str()))?,
                     )))
                 })?,
                 "ErrorMessage" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

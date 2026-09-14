@@ -35,11 +35,11 @@ pub(crate) fn de_game_server(
                 Ok(builder.set_game_server_data(Some(decoder.string()?)))
             })?,
             "ClaimStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_claim_status(Some(decoder.string().map(|s| crate::types::GameServerClaimStatus::from(s.as_ref()))?)))
+                Ok(builder.set_claim_status(Some(decoder.string().map(|s| crate::types::GameServerClaimStatus::from(s.as_str()))?)))
             })?,
             "UtilizationStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_utilization_status(Some(
-                    decoder.string().map(|s| crate::types::GameServerUtilizationStatus::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::GameServerUtilizationStatus::from(s.as_str()))?,
                 )))
             })?,
             "RegistrationTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

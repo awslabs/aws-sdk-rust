@@ -20,7 +20,7 @@ pub(crate) fn de_estimated_monthly_savings(
             "beforeDiscountSavings" => builder.set_before_discount_savings(Some(decoder.double()?)),
             "afterDiscountSavings" => builder.set_after_discount_savings(Some(decoder.double()?)),
             "savingsEstimationMode" => {
-                builder.set_savings_estimation_mode(Some(decoder.string().map(|s| crate::types::SavingsEstimationMode::from(s.as_ref()))?))
+                builder.set_savings_estimation_mode(Some(decoder.string().map(|s| crate::types::SavingsEstimationMode::from(s.as_str()))?))
             }
             _ => {
                 decoder.skip()?;

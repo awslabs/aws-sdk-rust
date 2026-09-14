@@ -632,7 +632,9 @@ pub fn ser_resource_details(
         object_202.finish();
     }
     if let Some(var_203) = &input.azure_resource {
-        object.key("AzureResource").document(var_203);
+        object
+            .key("AzureResource")
+            .document(var_203, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

@@ -118,6 +118,509 @@ impl UpdateOpsItemInput {
         self.ops_item_arn.as_deref()
     }
 }
+static UPDATEOPSITEMINPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$Description",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    0,
+);
+static UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemOperationalData$key",
+        "com.amazonaws.ssm",
+        "OpsItemOperationalData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemOperationalData$value",
+        "com.amazonaws.ssm",
+        "OpsItemOperationalData",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "value",
+    1,
+);
+static UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$OperationalData",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "OperationalData",
+    1,
+)
+.with_map_members(
+    &UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_KEY,
+    &UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_VALUE,
+);
+static UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_TO_DELETE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemOpsDataKeysList$member",
+        "com.amazonaws.ssm",
+        "OpsItemOpsDataKeysList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_TO_DELETE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$OperationalDataToDelete",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "OperationalDataToDelete",
+    2,
+)
+.with_list_member(&UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_TO_DELETE_MEMBER);
+static UPDATEOPSITEMINPUT_MEMBER_NOTIFICATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemNotifications$member",
+        "com.amazonaws.ssm",
+        "OpsItemNotifications",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEOPSITEMINPUT_MEMBER_NOTIFICATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$Notifications",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Notifications",
+    3,
+)
+.with_list_member(&UPDATEOPSITEMINPUT_MEMBER_NOTIFICATIONS_MEMBER);
+static UPDATEOPSITEMINPUT_MEMBER_PRIORITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$Priority",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Priority",
+    4,
+);
+static UPDATEOPSITEMINPUT_MEMBER_RELATED_OPS_ITEMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#RelatedOpsItems$member", "com.amazonaws.ssm", "RelatedOpsItems"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEOPSITEMINPUT_MEMBER_RELATED_OPS_ITEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$RelatedOpsItems",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RelatedOpsItems",
+    5,
+)
+.with_list_member(&UPDATEOPSITEMINPUT_MEMBER_RELATED_OPS_ITEMS_MEMBER);
+static UPDATEOPSITEMINPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$Status",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    6,
+);
+static UPDATEOPSITEMINPUT_MEMBER_OPS_ITEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$OpsItemId",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemId",
+    7,
+);
+static UPDATEOPSITEMINPUT_MEMBER_TITLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$Title",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Title",
+    8,
+);
+static UPDATEOPSITEMINPUT_MEMBER_CATEGORY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$Category",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Category",
+    9,
+);
+static UPDATEOPSITEMINPUT_MEMBER_SEVERITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$Severity",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Severity",
+    10,
+);
+static UPDATEOPSITEMINPUT_MEMBER_ACTUAL_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$ActualStartTime",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ActualStartTime",
+    11,
+);
+static UPDATEOPSITEMINPUT_MEMBER_ACTUAL_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$ActualEndTime",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ActualEndTime",
+    12,
+);
+static UPDATEOPSITEMINPUT_MEMBER_PLANNED_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$PlannedStartTime",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "PlannedStartTime",
+    13,
+);
+static UPDATEOPSITEMINPUT_MEMBER_PLANNED_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$PlannedEndTime",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "PlannedEndTime",
+    14,
+);
+static UPDATEOPSITEMINPUT_MEMBER_OPS_ITEM_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput$OpsItemArn",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemArn",
+    15,
+);
+static UPDATEOPSITEMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateOpsItemInput",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateOpsItemInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEOPSITEMINPUT_MEMBER_DESCRIPTION,
+        &UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA,
+        &UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_TO_DELETE,
+        &UPDATEOPSITEMINPUT_MEMBER_NOTIFICATIONS,
+        &UPDATEOPSITEMINPUT_MEMBER_PRIORITY,
+        &UPDATEOPSITEMINPUT_MEMBER_RELATED_OPS_ITEMS,
+        &UPDATEOPSITEMINPUT_MEMBER_STATUS,
+        &UPDATEOPSITEMINPUT_MEMBER_OPS_ITEM_ID,
+        &UPDATEOPSITEMINPUT_MEMBER_TITLE,
+        &UPDATEOPSITEMINPUT_MEMBER_CATEGORY,
+        &UPDATEOPSITEMINPUT_MEMBER_SEVERITY,
+        &UPDATEOPSITEMINPUT_MEMBER_ACTUAL_START_TIME,
+        &UPDATEOPSITEMINPUT_MEMBER_ACTUAL_END_TIME,
+        &UPDATEOPSITEMINPUT_MEMBER_PLANNED_START_TIME,
+        &UPDATEOPSITEMINPUT_MEMBER_PLANNED_END_TIME,
+        &UPDATEOPSITEMINPUT_MEMBER_OPS_ITEM_ARN,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateOpsItemRequest");
+impl UpdateOpsItemInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEOPSITEMINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateOpsItemInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEOPSITEMINPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.operational_data {
+            ser.write_map(
+                &UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_struct(crate::types::OpsItemDataValue::SCHEMA, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.operational_data_to_delete {
+            ser.write_list(
+                &UPDATEOPSITEMINPUT_MEMBER_OPERATIONAL_DATA_TO_DELETE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.notifications {
+            ser.write_list(
+                &UPDATEOPSITEMINPUT_MEMBER_NOTIFICATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::OpsItemNotification::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.priority {
+            ser.write_integer(&UPDATEOPSITEMINPUT_MEMBER_PRIORITY, *val)?;
+        }
+        if let Some(ref val) = self.related_ops_items {
+            ser.write_list(
+                &UPDATEOPSITEMINPUT_MEMBER_RELATED_OPS_ITEMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::RelatedOpsItem::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&UPDATEOPSITEMINPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.ops_item_id {
+            ser.write_string(&UPDATEOPSITEMINPUT_MEMBER_OPS_ITEM_ID, val)?;
+        }
+        if let Some(ref val) = self.title {
+            ser.write_string(&UPDATEOPSITEMINPUT_MEMBER_TITLE, val)?;
+        }
+        if let Some(ref val) = self.category {
+            ser.write_string(&UPDATEOPSITEMINPUT_MEMBER_CATEGORY, val)?;
+        }
+        if let Some(ref val) = self.severity {
+            ser.write_string(&UPDATEOPSITEMINPUT_MEMBER_SEVERITY, val)?;
+        }
+        if let Some(ref val) = self.actual_start_time {
+            ser.write_timestamp(&UPDATEOPSITEMINPUT_MEMBER_ACTUAL_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.actual_end_time {
+            ser.write_timestamp(&UPDATEOPSITEMINPUT_MEMBER_ACTUAL_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.planned_start_time {
+            ser.write_timestamp(&UPDATEOPSITEMINPUT_MEMBER_PLANNED_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.planned_end_time {
+            ser.write_timestamp(&UPDATEOPSITEMINPUT_MEMBER_PLANNED_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.ops_item_arn {
+            ser.write_string(&UPDATEOPSITEMINPUT_MEMBER_OPS_ITEM_ARN, val)?;
+        }
+        Ok(())
+    }
+}
+impl UpdateOpsItemInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UPDATEOPSITEMINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.operational_data = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, crate::types::OpsItemDataValue::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.operational_data_to_delete = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.notifications = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::OpsItemNotification::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.priority = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.related_ops_items = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RelatedOpsItem::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status = Some(crate::types::OpsItemStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.ops_item_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.title = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.category = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.severity = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.actual_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.actual_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.planned_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.planned_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.ops_item_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.ops_item_id = builder.ops_item_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl UpdateOpsItemInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl UpdateOpsItemInput {
     /// Creates a new builder-style object to manufacture [`UpdateOpsItemInput`](crate::operation::update_ops_item::UpdateOpsItemInput).
     pub fn builder() -> crate::operation::update_ops_item::builders::UpdateOpsItemInputBuilder {

@@ -20,7 +20,7 @@ pub(crate) fn de_game_session_detail(
                 Ok(builder.set_game_session(Some(crate::protocol_serde::shape_game_session::de_game_session(decoder, depth + 1)?)))
             })?,
             "ProtectionPolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_protection_policy(Some(decoder.string().map(|s| crate::types::ProtectionPolicy::from(s.as_ref()))?)))
+                Ok(builder.set_protection_policy(Some(decoder.string().map(|s| crate::types::ProtectionPolicy::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

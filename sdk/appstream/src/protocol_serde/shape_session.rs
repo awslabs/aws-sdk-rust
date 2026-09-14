@@ -20,9 +20,9 @@ pub(crate) fn de_session(
             "UserId" => builder.set_user_id(Some(decoder.string()?)),
             "StackName" => builder.set_stack_name(Some(decoder.string()?)),
             "FleetName" => builder.set_fleet_name(Some(decoder.string()?)),
-            "State" => builder.set_state(Some(decoder.string().map(|s| crate::types::SessionState::from(s.as_ref()))?)),
+            "State" => builder.set_state(Some(decoder.string().map(|s| crate::types::SessionState::from(s.as_str()))?)),
             "ConnectionState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_connection_state(Some(decoder.string().map(|s| crate::types::SessionConnectionState::from(s.as_ref()))?)))
+                Ok(builder.set_connection_state(Some(decoder.string().map(|s| crate::types::SessionConnectionState::from(s.as_str()))?)))
             })?,
             "StartTime" => {
                 ::aws_smithy_cbor::decode::set_optional(
@@ -35,7 +35,7 @@ pub(crate) fn de_session(
                 Ok(builder.set_max_expiration_time(Some(decoder.timestamp()?)))
             })?,
             "AuthenticationType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_authentication_type(Some(decoder.string().map(|s| crate::types::AuthenticationType::from(s.as_ref()))?)))
+                Ok(builder.set_authentication_type(Some(decoder.string().map(|s| crate::types::AuthenticationType::from(s.as_str()))?)))
             })?,
             "NetworkAccessConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_network_access_configuration(Some(
@@ -46,7 +46,7 @@ pub(crate) fn de_session(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_instance_id(Some(decoder.string()?))))?
             }
             "InstanceDrainStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_instance_drain_status(Some(decoder.string().map(|s| crate::types::InstanceDrainStatus::from(s.as_ref()))?)))
+                Ok(builder.set_instance_drain_status(Some(decoder.string().map(|s| crate::types::InstanceDrainStatus::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

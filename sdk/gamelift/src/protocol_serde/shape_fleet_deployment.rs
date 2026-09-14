@@ -36,7 +36,7 @@ pub(crate) fn de_fleet_deployment(
                     Ok(builder.set_rollback_per_instance_binary_arn(Some(decoder.string()?)))
                 })?,
                 "DeploymentStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_deployment_status(Some(decoder.string().map(|s| crate::types::DeploymentStatus::from(s.as_ref()))?)))
+                    Ok(builder.set_deployment_status(Some(decoder.string().map(|s| crate::types::DeploymentStatus::from(s.as_str()))?)))
                 })?,
                 "DeploymentConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_deployment_configuration(Some(

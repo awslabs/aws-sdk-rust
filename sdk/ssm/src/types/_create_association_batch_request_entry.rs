@@ -205,6 +205,682 @@ impl ::std::fmt::Debug for CreateAssociationBatchRequestEntry {
         formatter.finish()
     }
 }
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$Name",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$InstanceId",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    1,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ParameterValueList$member", "com.amazonaws.ssm", "ParameterValueList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Parameters$key", "com.amazonaws.ssm", "Parameters"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Parameters$value", "com.amazonaws.ssm", "Parameters"),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS_VALUE_MEMBER);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$Parameters",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    2,
+)
+.with_map_members(
+    &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS_KEY,
+    &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS_VALUE,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_AUTOMATION_TARGET_PARAMETER_NAME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$AutomationTargetParameterName",
+            "com.amazonaws.ssm",
+            "CreateAssociationBatchRequestEntry",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AutomationTargetParameterName",
+        3,
+    );
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$DocumentVersion",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    4,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Targets$member", "com.amazonaws.ssm", "Targets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$Targets",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    5,
+)
+.with_list_member(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGETS_MEMBER);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SCHEDULE_EXPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$ScheduleExpression",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ScheduleExpression",
+    6,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_OUTPUT_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$OutputLocation",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputLocation",
+    7,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_ASSOCIATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$AssociationName",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationName",
+    8,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_MAX_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$MaxErrors",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxErrors",
+    9,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_MAX_CONCURRENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$MaxConcurrency",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxConcurrency",
+    10,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_COMPLIANCE_SEVERITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$ComplianceSeverity",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceSeverity",
+    11,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SYNC_COMPLIANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$SyncCompliance",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SyncCompliance",
+    12,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_APPLY_ONLY_AT_CRON_INTERVAL: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$ApplyOnlyAtCronInterval",
+            "com.amazonaws.ssm",
+            "CreateAssociationBatchRequestEntry",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "ApplyOnlyAtCronInterval",
+        13,
+    );
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_CALENDAR_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#CalendarNameOrARNList$member",
+            "com.amazonaws.ssm",
+            "CalendarNameOrARNList",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_CALENDAR_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$CalendarNames",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CalendarNames",
+    14,
+)
+.with_list_member(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_CALENDAR_NAMES_MEMBER);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_LOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetLocations$member", "com.amazonaws.ssm", "TargetLocations"),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "member",
+        0,
+    );
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_LOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$TargetLocations",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetLocations",
+    15,
+)
+.with_list_member(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_LOCATIONS_MEMBER);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SCHEDULE_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$ScheduleOffset",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ScheduleOffset",
+    16,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_DURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$Duration",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Duration",
+    17,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMapValueList$member", "com.amazonaws.ssm", "TargetMapValueList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$key", "com.amazonaws.ssm", "TargetMap"),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$value", "com.amazonaws.ssm", "TargetMap"),
+        ::aws_smithy_schema::ShapeType::List,
+        "value",
+        1,
+    )
+    .with_list_member(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMaps$member", "com.amazonaws.ssm", "TargetMaps"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "member",
+    0,
+)
+.with_map_members(
+    &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER_KEY,
+    &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$TargetMaps",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetMaps",
+    18,
+)
+.with_list_member(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry$AlarmConfiguration",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlarmConfiguration",
+    19,
+);
+static CREATEASSOCIATIONBATCHREQUESTENTRY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CreateAssociationBatchRequestEntry",
+        "com.amazonaws.ssm",
+        "CreateAssociationBatchRequestEntry",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_NAME,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_INSTANCE_ID,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_AUTOMATION_TARGET_PARAMETER_NAME,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_DOCUMENT_VERSION,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGETS,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SCHEDULE_EXPRESSION,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_OUTPUT_LOCATION,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_ASSOCIATION_NAME,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_MAX_ERRORS,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_MAX_CONCURRENCY,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_COMPLIANCE_SEVERITY,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SYNC_COMPLIANCE,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_APPLY_ONLY_AT_CRON_INTERVAL,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_CALENDAR_NAMES,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_LOCATIONS,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SCHEDULE_OFFSET,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_DURATION,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS,
+        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_ALARM_CONFIGURATION,
+    ],
+);
+impl CreateAssociationBatchRequestEntry {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &CREATEASSOCIATIONBATCHREQUESTENTRY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for CreateAssociationBatchRequestEntry {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.name;
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.instance_id {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_INSTANCE_ID, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.automation_target_parameter_name {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_AUTOMATION_TARGET_PARAMETER_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.schedule_expression {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SCHEDULE_EXPRESSION, val)?;
+        }
+        if let Some(ref val) = self.output_location {
+            ser.write_struct(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_OUTPUT_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.association_name {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_ASSOCIATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.max_errors {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_MAX_ERRORS, val)?;
+        }
+        if let Some(ref val) = self.max_concurrency {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_MAX_CONCURRENCY, val)?;
+        }
+        if let Some(ref val) = self.compliance_severity {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_COMPLIANCE_SEVERITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sync_compliance {
+            ser.write_string(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SYNC_COMPLIANCE, val.as_str())?;
+        }
+        {
+            let val = &self.apply_only_at_cron_interval;
+            ser.write_boolean(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_APPLY_ONLY_AT_CRON_INTERVAL, *val)?;
+        }
+        if let Some(ref val) = self.calendar_names {
+            ser.write_list(
+                &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_CALENDAR_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.target_locations {
+            ser.write_list(
+                &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_LOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TargetLocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.schedule_offset {
+            ser.write_integer(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_SCHEDULE_OFFSET, *val)?;
+        }
+        if let Some(ref val) = self.duration {
+            ser.write_integer(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_DURATION, *val)?;
+        }
+        if let Some(ref val) = self.target_maps {
+            ser.write_list(
+                &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                                    ser.write_list(
+                                        &CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+                                        &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                            for item in value {
+                                                ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                            }
+                                            Ok(())
+                                        },
+                                    )?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.alarm_configuration {
+            ser.write_struct(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_ALARM_CONFIGURATION, val)?;
+        }
+        Ok(())
+    }
+}
+impl CreateAssociationBatchRequestEntry {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&CREATEASSOCIATIONBATCHREQUESTENTRY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.instance_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_PARAMETERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.automation_target_parameter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.schedule_expression = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.output_location = Some(crate::types::InstanceAssociationOutputLocation::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_errors = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_concurrency = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.compliance_severity = Some(crate::types::AssociationComplianceSeverity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_compliance = Some(crate::types::AssociationSyncCompliance::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    builder.apply_only_at_cron_interval = Some(deser.read_boolean(member)?);
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.calendar_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_locations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TargetLocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.schedule_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.duration = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_maps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER, &mut |key, deser| {
+                                        let value = {
+                                            let mut list = Vec::new();
+                                            deser.read_list(&CREATEASSOCIATIONBATCHREQUESTENTRY_MEMBER_TARGET_MAPS_MEMBER_VALUE, &mut |deser| {
+                                                list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                                Ok(())
+                                            })?;
+                                            list
+                                        };
+                                        map.insert(key, value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl CreateAssociationBatchRequestEntry {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl CreateAssociationBatchRequestEntry {
     /// Creates a new builder-style object to manufacture [`CreateAssociationBatchRequestEntry`](crate::types::CreateAssociationBatchRequestEntry).
     pub fn builder() -> crate::types::builders::CreateAssociationBatchRequestEntryBuilder {

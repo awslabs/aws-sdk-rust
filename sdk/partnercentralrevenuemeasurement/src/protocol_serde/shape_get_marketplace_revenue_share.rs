@@ -159,7 +159,7 @@ pub(crate) fn de_get_marketplace_revenue_share(
         builder = match decoder.str()?.as_ref() {
             "ProductId" => builder.set_product_id(Some(decoder.string()?)),
             "Arn" => builder.set_arn(Some(decoder.string()?)),
-            "Catalog" => builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_ref()))?)),
+            "Catalog" => builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_str()))?)),
             "ProductCode" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_product_code(Some(decoder.string()?))))?
             }

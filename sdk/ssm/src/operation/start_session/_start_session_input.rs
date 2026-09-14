@@ -30,6 +30,214 @@ impl StartSessionInput {
         self.parameters.as_ref()
     }
 }
+static STARTSESSIONINPUT_MEMBER_TARGET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionInput$Target",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Target",
+    0,
+);
+static STARTSESSIONINPUT_MEMBER_DOCUMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionInput$DocumentName",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentName",
+    1,
+);
+static STARTSESSIONINPUT_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionInput$Reason",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Reason",
+    2,
+);
+static STARTSESSIONINPUT_MEMBER_PARAMETERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#SessionManagerParameterValueList$member",
+        "com.amazonaws.ssm",
+        "SessionManagerParameterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTSESSIONINPUT_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#SessionManagerParameters$key",
+        "com.amazonaws.ssm",
+        "SessionManagerParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STARTSESSIONINPUT_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#SessionManagerParameters$value",
+        "com.amazonaws.ssm",
+        "SessionManagerParameters",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&STARTSESSIONINPUT_MEMBER_PARAMETERS_VALUE_MEMBER);
+static STARTSESSIONINPUT_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionInput$Parameters",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    3,
+)
+.with_map_members(&STARTSESSIONINPUT_MEMBER_PARAMETERS_KEY, &STARTSESSIONINPUT_MEMBER_PARAMETERS_VALUE);
+static STARTSESSIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionInput",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTSESSIONINPUT_MEMBER_TARGET,
+        &STARTSESSIONINPUT_MEMBER_DOCUMENT_NAME,
+        &STARTSESSIONINPUT_MEMBER_REASON,
+        &STARTSESSIONINPUT_MEMBER_PARAMETERS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartSessionRequest");
+impl StartSessionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTSESSIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartSessionInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.target {
+            ser.write_string(&STARTSESSIONINPUT_MEMBER_TARGET, val)?;
+        }
+        if let Some(ref val) = self.document_name {
+            ser.write_string(&STARTSESSIONINPUT_MEMBER_DOCUMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.reason {
+            ser.write_string(&STARTSESSIONINPUT_MEMBER_REASON, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &STARTSESSIONINPUT_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &STARTSESSIONINPUT_MEMBER_PARAMETERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl StartSessionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STARTSESSIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.reason = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&STARTSESSIONINPUT_MEMBER_PARAMETERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.target = builder.target.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl StartSessionInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl StartSessionInput {
     /// Creates a new builder-style object to manufacture [`StartSessionInput`](crate::operation::start_session::StartSessionInput).
     pub fn builder() -> crate::operation::start_session::builders::StartSessionInputBuilder {

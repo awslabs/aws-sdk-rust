@@ -7,7 +7,9 @@ pub fn ser_update_sol_network_service_data(
         object.key("nsdInfoId").string(input.nsd_info_id.as_str());
     }
     if let Some(var_1) = &input.additional_params_for_ns {
-        object.key("additionalParamsForNs").document(var_1);
+        object
+            .key("additionalParamsForNs")
+            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

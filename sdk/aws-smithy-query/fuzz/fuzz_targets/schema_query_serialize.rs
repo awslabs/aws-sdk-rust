@@ -76,7 +76,7 @@ impl SerializableStruct for FuzzStruct<'_> {
         }
         // DateTime::from_secs clamps internally; any i64 is a valid input.
         s.write_timestamp(&TS_MEMBER, &DateTime::from_secs(input.ts_secs))?;
-        s.write_blob(&BLOB_MEMBER, Blob::new(input.blob_val.clone()).as_ref())?;
+        s.write_blob(&BLOB_MEMBER, Blob::new(input.blob_val.clone()))?;
         if !input.nested_vals.is_empty() {
             // Outer list whose elements are inner lists — codegen emits the
             // inner `write_list` with `prelude::DOCUMENT`.

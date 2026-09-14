@@ -7,7 +7,9 @@ pub fn ser_scan_sbom_input_input(
         object.key("outputFormat").string(var_1.as_str());
     }
     if let Some(var_2) = &input.sbom {
-        object.key("sbom").document(var_2);
+        object
+            .key("sbom")
+            .document(var_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

@@ -39,10 +39,10 @@ pub(crate) fn de_game_session(
                 Ok(builder.set_maximum_player_session_count(Some(decoder.integer()?)))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::GameSessionStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::GameSessionStatus::from(s.as_str()))?)))
             })?,
             "StatusReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status_reason(Some(decoder.string().map(|s| crate::types::GameSessionStatusReason::from(s.as_ref()))?)))
+                Ok(builder.set_status_reason(Some(decoder.string().map(|s| crate::types::GameSessionStatusReason::from(s.as_str()))?)))
             })?,
             "GameProperties" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
@@ -61,7 +61,7 @@ pub(crate) fn de_game_session(
             "Port" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_port(Some(decoder.integer()?))))?,
             "PlayerSessionCreationPolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_player_session_creation_policy(Some(
-                    decoder.string().map(|s| crate::types::PlayerSessionCreationPolicy::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::PlayerSessionCreationPolicy::from(s.as_str()))?,
                 )))
             })?,
             "CreatorId" => {
@@ -80,7 +80,7 @@ pub(crate) fn de_game_session(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_compute_name(Some(decoder.string()?))))?
             }
             "PlayerGatewayStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_player_gateway_status(Some(decoder.string().map(|s| crate::types::PlayerGatewayStatus::from(s.as_ref()))?)))
+                Ok(builder.set_player_gateway_status(Some(decoder.string().map(|s| crate::types::PlayerGatewayStatus::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

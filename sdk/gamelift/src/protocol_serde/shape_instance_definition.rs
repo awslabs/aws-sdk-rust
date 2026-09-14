@@ -32,7 +32,7 @@ pub(crate) fn de_instance_definition(
     ) -> ::std::result::Result<crate::types::builders::InstanceDefinitionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "InstanceType" => builder.set_instance_type(Some(
-                decoder.string().map(|s| crate::types::GameServerGroupInstanceType::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::GameServerGroupInstanceType::from(s.as_str()))?,
             )),
             "WeightedCapacity" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_weighted_capacity(Some(decoder.string()?)))

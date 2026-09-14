@@ -16,7 +16,9 @@ pub fn ser_managed_knowledge_base_connector_configuration(
         object_4.finish();
     }
     if let Some(var_5) = &input.connector_parameters {
-        object.key("connectorParameters").document(var_5);
+        object
+            .key("connectorParameters")
+            .document(var_5, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_6) = &input.sync_schedule {
         #[allow(unused_mut)]

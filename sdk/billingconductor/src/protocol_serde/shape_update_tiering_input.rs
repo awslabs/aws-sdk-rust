@@ -28,6 +28,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "CustomTiers" => {
+                            builder = builder.set_custom_tiers(crate::protocol_serde::shape_custom_tiers_list::de_custom_tiers_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -37,7 +44,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::update_tiering_input_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",
@@ -54,6 +61,18 @@ pub fn ser_update_tiering_input(
         let mut object_2 = object.key("FreeTier").start_object();
         crate::protocol_serde::shape_update_free_tier_config::ser_update_free_tier_config(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.custom_tiers {
+        let mut array_4 = object.key("CustomTiers").start_array();
+        for item_5 in var_3 {
+            {
+                #[allow(unused_mut)]
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_custom_tier::ser_custom_tier(&mut object_6, item_5)?;
+                object_6.finish();
+            }
+        }
+        array_4.finish();
     }
     Ok(())
 }

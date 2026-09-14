@@ -38,7 +38,7 @@ pub(crate) fn de_deliver_to_q_business_action(
     ) -> ::std::result::Result<crate::types::builders::DeliverToQBusinessActionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ActionFailurePolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_action_failure_policy(Some(decoder.string().map(|s| crate::types::ActionFailurePolicy::from(s.as_ref()))?)))
+                Ok(builder.set_action_failure_policy(Some(decoder.string().map(|s| crate::types::ActionFailurePolicy::from(s.as_str()))?)))
             })?,
             "ApplicationId" => builder.set_application_id(Some(decoder.string()?)),
             "IndexId" => builder.set_index_id(Some(decoder.string()?)),

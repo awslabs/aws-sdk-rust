@@ -18,7 +18,7 @@ pub(crate) fn de_auto_scaling_group_estimated_monthly_savings(
     {
         builder = match decoder.str()?.as_ref() {
             "currency" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_currency(Some(decoder.string().map(|s| crate::types::Currency::from(s.as_ref()))?)))
+                Ok(builder.set_currency(Some(decoder.string().map(|s| crate::types::Currency::from(s.as_str()))?)))
             })?,
             "value" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_value(Some(decoder.double()?))))?,
             _ => {

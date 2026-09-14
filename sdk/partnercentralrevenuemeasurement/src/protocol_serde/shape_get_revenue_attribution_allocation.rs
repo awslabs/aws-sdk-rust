@@ -152,7 +152,7 @@ pub(crate) fn de_get_revenue_attribution_allocation(
         builder = match decoder.str()?.as_ref() {
             "RevenueAttributionAllocationId" => builder.set_revenue_attribution_allocation_id(Some(decoder.string()?)),
             "RevenueAttributionIdentifier" => builder.set_revenue_attribution_identifier(Some(decoder.string()?)),
-            "EntityType" => builder.set_entity_type(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_ref()))?)),
+            "EntityType" => builder.set_entity_type(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_str()))?)),
             "EntityIdentifier" => builder.set_entity_identifier(Some(decoder.string()?)),
             "EntityName" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_entity_name(Some(decoder.string()?))))?
@@ -161,7 +161,7 @@ pub(crate) fn de_get_revenue_attribution_allocation(
             "RevenueSharePercent" => builder.set_revenue_share_percent(Some(decoder.string()?)),
             "EffectiveFrom" => builder.set_effective_from(Some(decoder.string()?)),
             "EffectiveUntil" => builder.set_effective_until(Some(decoder.string()?)),
-            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::AllocationStatus::from(s.as_ref()))?)),
+            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::AllocationStatus::from(s.as_str()))?)),
             "CreatedDate" => builder.set_created_date(Some(decoder.timestamp()?)),
             "LastModifiedDate" => builder.set_last_modified_date(Some(decoder.timestamp()?)),
             "RevenueAttributionRevision" => builder.set_revenue_attribution_revision(Some(decoder.string()?)),

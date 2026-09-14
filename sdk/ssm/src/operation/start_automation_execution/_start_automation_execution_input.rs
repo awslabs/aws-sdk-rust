@@ -123,6 +123,572 @@ impl StartAutomationExecutionInput {
         self.target_locations_url.as_deref()
     }
 }
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_DOCUMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$DocumentName",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentName",
+    0,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$DocumentVersion",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    1,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterValueList$member",
+        "com.amazonaws.ssm",
+        "AutomationParameterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$key",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$value",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS_VALUE_MEMBER);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$Parameters",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    2,
+)
+.with_map_members(
+    &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS_KEY,
+    &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS_VALUE,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$ClientToken",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientToken",
+    3,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$Mode",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Mode",
+    4,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_PARAMETER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$TargetParameterName",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetParameterName",
+    5,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AutomationTargets$member", "com.amazonaws.ssm", "AutomationTargets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$Targets",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    6,
+)
+.with_list_member(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGETS_MEMBER);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMapValueList$member", "com.amazonaws.ssm", "TargetMapValueList"),
+        ::aws_smithy_schema::ShapeType::String,
+        "member",
+        0,
+    );
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$key", "com.amazonaws.ssm", "TargetMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$value", "com.amazonaws.ssm", "TargetMap"),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMaps$member", "com.amazonaws.ssm", "TargetMaps"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "member",
+    0,
+)
+.with_map_members(
+    &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER_KEY,
+    &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$TargetMaps",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetMaps",
+    7,
+)
+.with_list_member(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MAX_CONCURRENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$MaxConcurrency",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxConcurrency",
+    8,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MAX_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$MaxErrors",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxErrors",
+    9,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_LOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetLocations$member", "com.amazonaws.ssm", "TargetLocations"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_LOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$TargetLocations",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetLocations",
+    10,
+)
+.with_list_member(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_LOCATIONS_MEMBER);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TagList$member", "com.amazonaws.ssm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$Tags",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    11,
+)
+.with_list_member(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TAGS_MEMBER);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$AlarmConfiguration",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlarmConfiguration",
+    12,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_LOCATIONS_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput$TargetLocationsURL",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetLocationsURL",
+    13,
+);
+static STARTAUTOMATIONEXECUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartAutomationExecutionInput",
+        "com.amazonaws.ssm.synthetic",
+        "StartAutomationExecutionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_DOCUMENT_NAME,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_DOCUMENT_VERSION,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_CLIENT_TOKEN,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MODE,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_PARAMETER_NAME,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGETS,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MAX_CONCURRENCY,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MAX_ERRORS,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_LOCATIONS,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TAGS,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_ALARM_CONFIGURATION,
+        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_LOCATIONS_URL,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("StartAutomationExecutionRequest");
+impl StartAutomationExecutionInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTAUTOMATIONEXECUTIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartAutomationExecutionInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.document_name {
+            ser.write_string(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_DOCUMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.client_token {
+            ser.write_string(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_CLIENT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.mode {
+            ser.write_string(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.target_parameter_name {
+            ser.write_string(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_PARAMETER_NAME, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.target_maps {
+            ser.write_list(
+                &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                                    ser.write_list(
+                                        &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+                                        &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                            for item in value {
+                                                ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                            }
+                                            Ok(())
+                                        },
+                                    )?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_concurrency {
+            ser.write_string(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MAX_CONCURRENCY, val)?;
+        }
+        if let Some(ref val) = self.max_errors {
+            ser.write_string(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_MAX_ERRORS, val)?;
+        }
+        if let Some(ref val) = self.target_locations {
+            ser.write_list(
+                &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_LOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TargetLocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.alarm_configuration {
+            ser.write_struct(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_ALARM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.target_locations_url {
+            ser.write_string(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_LOCATIONS_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl StartAutomationExecutionInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STARTAUTOMATIONEXECUTIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_PARAMETERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.client_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.mode = Some(crate::types::ExecutionMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_parameter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_maps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER, &mut |key, deser| {
+                                        let value = {
+                                            let mut list = Vec::new();
+                                            deser.read_list(&STARTAUTOMATIONEXECUTIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE, &mut |deser| {
+                                                list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                                Ok(())
+                                            })?;
+                                            list
+                                        };
+                                        map.insert(key, value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_concurrency = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_errors = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_locations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TargetLocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_locations_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.document_name = builder.document_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl StartAutomationExecutionInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl StartAutomationExecutionInput {
     /// Creates a new builder-style object to manufacture [`StartAutomationExecutionInput`](crate::operation::start_automation_execution::StartAutomationExecutionInput).
     pub fn builder() -> crate::operation::start_automation_execution::builders::StartAutomationExecutionInputBuilder {

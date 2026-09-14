@@ -22,7 +22,9 @@ impl crate::operation::get_web_identity_token::builders::GetWebIdentityTokenInpu
 }
 /// Fluent builder constructing a request to `GetWebIdentityToken`.
 ///
-/// <p>Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web Services identity. The returned JWT can be used to authenticate with external services that support OIDC discovery. The token is signed by Amazon Web Services STS and can be publicly verified using the verification keys published at the issuer's JWKS endpoint.</p>
+/// <p>Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web Services identity. The returned JWT can be used to authenticate with external services that support OIDC discovery. The token is signed by Amazon Web Services STS and can be publicly verified using the verification keys published at the issuer's JWKS endpoint.</p><note>
+/// <p>The <code>GetWebIdentityToken</code> API is not available on the STS Global endpoint.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWebIdentityTokenFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -23,7 +23,7 @@ pub(crate) fn de_game_session_placement(
                 Ok(builder.set_game_session_queue_name(Some(decoder.string()?)))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::GameSessionPlacementState::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::GameSessionPlacementState::from(s.as_str()))?)))
             })?,
             "GameProperties" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
@@ -90,7 +90,7 @@ pub(crate) fn de_game_session_placement(
                 )))
             })?,
             "PlayerGatewayStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_player_gateway_status(Some(decoder.string().map(|s| crate::types::PlayerGatewayStatus::from(s.as_ref()))?)))
+                Ok(builder.set_player_gateway_status(Some(decoder.string().map(|s| crate::types::PlayerGatewayStatus::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

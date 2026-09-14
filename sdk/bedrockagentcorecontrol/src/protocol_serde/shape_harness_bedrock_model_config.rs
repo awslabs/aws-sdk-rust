@@ -28,7 +28,9 @@ pub fn ser_harness_bedrock_model_config(
         object.key("apiFormat").string(var_4.as_str());
     }
     if let Some(var_5) = &input.additional_params {
-        object.key("additionalParams").document(var_5);
+        object
+            .key("additionalParams")
+            .document(var_5, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

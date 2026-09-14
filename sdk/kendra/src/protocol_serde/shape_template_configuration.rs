@@ -4,7 +4,9 @@ pub fn ser_template_configuration(
     input: &crate::types::TemplateConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.template {
-        object.key("Template").document(var_1);
+        object
+            .key("Template")
+            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

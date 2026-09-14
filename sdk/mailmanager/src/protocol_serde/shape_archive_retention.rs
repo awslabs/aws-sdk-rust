@@ -35,7 +35,7 @@ pub(crate) fn de_archive_retention(
     ) -> ::std::result::Result<crate::types::ArchiveRetention, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "RetentionPeriod" => {
-                crate::types::ArchiveRetention::RetentionPeriod(decoder.string().map(|s| crate::types::RetentionPeriod::from(s.as_ref()))?)
+                crate::types::ArchiveRetention::RetentionPeriod(decoder.string().map(|s| crate::types::RetentionPeriod::from(s.as_str()))?)
             }
             _ => {
                 decoder.skip()?;

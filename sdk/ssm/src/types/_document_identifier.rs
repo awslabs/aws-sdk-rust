@@ -103,6 +103,427 @@ impl DocumentIdentifier {
         self.author.as_deref()
     }
 }
+static DOCUMENTIDENTIFIER_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentIdentifier$Name", "com.amazonaws.ssm", "DocumentIdentifier"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static DOCUMENTIDENTIFIER_MEMBER_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$CreatedDate",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedDate",
+    1,
+);
+static DOCUMENTIDENTIFIER_MEMBER_DISPLAY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$DisplayName",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DisplayName",
+    2,
+);
+static DOCUMENTIDENTIFIER_MEMBER_OWNER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentIdentifier$Owner", "com.amazonaws.ssm", "DocumentIdentifier"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Owner",
+    3,
+);
+static DOCUMENTIDENTIFIER_MEMBER_VERSION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$VersionName",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VersionName",
+    4,
+);
+static DOCUMENTIDENTIFIER_MEMBER_PLATFORM_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PlatformTypeList$member", "com.amazonaws.ssm", "PlatformTypeList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("PlatformType");
+static DOCUMENTIDENTIFIER_MEMBER_PLATFORM_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$PlatformTypes",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "PlatformTypes",
+    5,
+)
+.with_list_member(&DOCUMENTIDENTIFIER_MEMBER_PLATFORM_TYPES_MEMBER);
+static DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$DocumentVersion",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    6,
+);
+static DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$DocumentType",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentType",
+    7,
+);
+static DOCUMENTIDENTIFIER_MEMBER_SCHEMA_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$SchemaVersion",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SchemaVersion",
+    8,
+);
+static DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$DocumentFormat",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentFormat",
+    9,
+);
+static DOCUMENTIDENTIFIER_MEMBER_TARGET_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$TargetType",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetType",
+    10,
+);
+static DOCUMENTIDENTIFIER_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TagList$member", "com.amazonaws.ssm", "TagList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DOCUMENTIDENTIFIER_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentIdentifier$Tags", "com.amazonaws.ssm", "DocumentIdentifier"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Tags",
+    11,
+)
+.with_list_member(&DOCUMENTIDENTIFIER_MEMBER_TAGS_MEMBER);
+static DOCUMENTIDENTIFIER_MEMBER_REQUIRES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentRequiresList$member",
+        "com.amazonaws.ssm",
+        "DocumentRequiresList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DOCUMENTIDENTIFIER_MEMBER_REQUIRES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentIdentifier$Requires", "com.amazonaws.ssm", "DocumentIdentifier"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Requires",
+    12,
+)
+.with_list_member(&DOCUMENTIDENTIFIER_MEMBER_REQUIRES_MEMBER);
+static DOCUMENTIDENTIFIER_MEMBER_REVIEW_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentIdentifier$ReviewStatus",
+        "com.amazonaws.ssm",
+        "DocumentIdentifier",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ReviewStatus",
+    13,
+);
+static DOCUMENTIDENTIFIER_MEMBER_AUTHOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentIdentifier$Author", "com.amazonaws.ssm", "DocumentIdentifier"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Author",
+    14,
+);
+static DOCUMENTIDENTIFIER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentIdentifier", "com.amazonaws.ssm", "DocumentIdentifier"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DOCUMENTIDENTIFIER_MEMBER_NAME,
+        &DOCUMENTIDENTIFIER_MEMBER_CREATED_DATE,
+        &DOCUMENTIDENTIFIER_MEMBER_DISPLAY_NAME,
+        &DOCUMENTIDENTIFIER_MEMBER_OWNER,
+        &DOCUMENTIDENTIFIER_MEMBER_VERSION_NAME,
+        &DOCUMENTIDENTIFIER_MEMBER_PLATFORM_TYPES,
+        &DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_VERSION,
+        &DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_TYPE,
+        &DOCUMENTIDENTIFIER_MEMBER_SCHEMA_VERSION,
+        &DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_FORMAT,
+        &DOCUMENTIDENTIFIER_MEMBER_TARGET_TYPE,
+        &DOCUMENTIDENTIFIER_MEMBER_TAGS,
+        &DOCUMENTIDENTIFIER_MEMBER_REQUIRES,
+        &DOCUMENTIDENTIFIER_MEMBER_REVIEW_STATUS,
+        &DOCUMENTIDENTIFIER_MEMBER_AUTHOR,
+    ],
+);
+impl DocumentIdentifier {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DOCUMENTIDENTIFIER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DocumentIdentifier {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.created_date {
+            ser.write_timestamp(&DOCUMENTIDENTIFIER_MEMBER_CREATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.display_name {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_DISPLAY_NAME, val)?;
+        }
+        if let Some(ref val) = self.owner {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_OWNER, val)?;
+        }
+        if let Some(ref val) = self.version_name {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_VERSION_NAME, val)?;
+        }
+        if let Some(ref val) = self.platform_types {
+            ser.write_list(
+                &DOCUMENTIDENTIFIER_MEMBER_PLATFORM_TYPES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.document_type {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.schema_version {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_SCHEMA_VERSION, val)?;
+        }
+        if let Some(ref val) = self.document_format {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_DOCUMENT_FORMAT, val.as_str())?;
+        }
+        if let Some(ref val) = self.target_type {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_TARGET_TYPE, val)?;
+        }
+        if let Some(ref val) = self.tags {
+            ser.write_list(
+                &DOCUMENTIDENTIFIER_MEMBER_TAGS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.requires {
+            ser.write_list(
+                &DOCUMENTIDENTIFIER_MEMBER_REQUIRES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::DocumentRequires::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.review_status {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_REVIEW_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.author {
+            ser.write_string(&DOCUMENTIDENTIFIER_MEMBER_AUTHOR, val)?;
+        }
+        Ok(())
+    }
+}
+impl DocumentIdentifier {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DOCUMENTIDENTIFIER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.display_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.owner = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.version_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.platform_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PlatformType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_type = Some(crate::types::DocumentType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.schema_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_format = Some(crate::types::DocumentFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.tags = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.requires = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DocumentRequires::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.review_status = Some(crate::types::ReviewStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.author = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl DocumentIdentifier {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl DocumentIdentifier {
     /// Creates a new builder-style object to manufacture [`DocumentIdentifier`](crate::types::DocumentIdentifier).
     pub fn builder() -> crate::types::builders::DocumentIdentifierBuilder {

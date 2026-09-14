@@ -26,7 +26,7 @@ pub(crate) fn de_game_server_instance(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_instance_id(Some(decoder.string()?))))?
             }
             "InstanceStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_instance_status(Some(decoder.string().map(|s| crate::types::GameServerInstanceStatus::from(s.as_ref()))?)))
+                Ok(builder.set_instance_status(Some(decoder.string().map(|s| crate::types::GameServerInstanceStatus::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

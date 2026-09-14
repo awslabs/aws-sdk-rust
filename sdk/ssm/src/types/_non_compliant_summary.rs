@@ -19,6 +19,98 @@ impl NonCompliantSummary {
         self.severity_summary.as_ref()
     }
 }
+static NONCOMPLIANTSUMMARY_MEMBER_NON_COMPLIANT_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#NonCompliantSummary$NonCompliantCount",
+        "com.amazonaws.ssm",
+        "NonCompliantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "NonCompliantCount",
+    0,
+);
+static NONCOMPLIANTSUMMARY_MEMBER_SEVERITY_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#NonCompliantSummary$SeveritySummary",
+        "com.amazonaws.ssm",
+        "NonCompliantSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SeveritySummary",
+    1,
+);
+static NONCOMPLIANTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#NonCompliantSummary", "com.amazonaws.ssm", "NonCompliantSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &NONCOMPLIANTSUMMARY_MEMBER_NON_COMPLIANT_COUNT,
+        &NONCOMPLIANTSUMMARY_MEMBER_SEVERITY_SUMMARY,
+    ],
+);
+impl NonCompliantSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &NONCOMPLIANTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for NonCompliantSummary {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.non_compliant_count;
+            ser.write_integer(&NONCOMPLIANTSUMMARY_MEMBER_NON_COMPLIANT_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.severity_summary {
+            ser.write_struct(&NONCOMPLIANTSUMMARY_MEMBER_SEVERITY_SUMMARY, val)?;
+        }
+        Ok(())
+    }
+}
+impl NonCompliantSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&NONCOMPLIANTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.non_compliant_count = Some(deser.read_integer(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.severity_summary = Some(crate::types::SeveritySummary::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl NonCompliantSummary {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl NonCompliantSummary {
     /// Creates a new builder-style object to manufacture [`NonCompliantSummary`](crate::types::NonCompliantSummary).
     pub fn builder() -> crate::types::builders::NonCompliantSummaryBuilder {

@@ -11,6 +11,10 @@ pub struct AssumeRootOutput {
     /// <p>You can use the <code>aws:SourceIdentity</code> condition key to control access based on the value of source identity. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     pub source_identity: ::std::option::Option<::std::string::String>,
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub session_token_utilization: ::std::option::Option<i32>,
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl AssumeRootOutput {
@@ -26,12 +30,22 @@ impl AssumeRootOutput {
     pub fn source_identity(&self) -> ::std::option::Option<&str> {
         self.source_identity.as_deref()
     }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn session_token_utilization(&self) -> ::std::option::Option<i32> {
+        self.session_token_utilization
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn session_token_size(&self) -> ::std::option::Option<i32> {
+        self.session_token_size
+    }
 }
 impl ::std::fmt::Debug for AssumeRootOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("AssumeRootOutput");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("source_identity", &self.source_identity);
+        formatter.field("session_token_utilization", &self.session_token_utilization);
+        formatter.field("session_token_size", &self.session_token_size);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -54,6 +68,8 @@ impl AssumeRootOutput {
 pub struct AssumeRootOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
     pub(crate) source_identity: ::std::option::Option<::std::string::String>,
+    pub(crate) session_token_utilization: ::std::option::Option<i32>,
+    pub(crate) session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl AssumeRootOutputBuilder {
@@ -97,6 +113,34 @@ impl AssumeRootOutputBuilder {
     pub fn get_source_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identity
     }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn session_token_utilization(mut self, input: i32) -> Self {
+        self.session_token_utilization = ::std::option::Option::Some(input);
+        self
+    }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn set_session_token_utilization(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_token_utilization = input;
+        self
+    }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn get_session_token_utilization(&self) -> &::std::option::Option<i32> {
+        &self.session_token_utilization
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn session_token_size(mut self, input: i32) -> Self {
+        self.session_token_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn set_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_token_size = input;
+        self
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn get_session_token_size(&self) -> &::std::option::Option<i32> {
+        &self.session_token_size
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -111,6 +155,8 @@ impl AssumeRootOutputBuilder {
         crate::operation::assume_root::AssumeRootOutput {
             credentials: self.credentials,
             source_identity: self.source_identity,
+            session_token_utilization: self.session_token_utilization,
+            session_token_size: self.session_token_size,
             _request_id: self._request_id,
         }
     }
@@ -120,6 +166,8 @@ impl ::std::fmt::Debug for AssumeRootOutputBuilder {
         let mut formatter = f.debug_struct("AssumeRootOutputBuilder");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
         formatter.field("source_identity", &self.source_identity);
+        formatter.field("session_token_utilization", &self.session_token_utilization);
+        formatter.field("session_token_size", &self.session_token_size);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

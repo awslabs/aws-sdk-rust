@@ -581,6 +581,8 @@ mod list_glossary_terms;
 
 mod list_integration_resource_properties;
 
+mod list_integration_table_properties;
+
 mod list_iterable_forms;
 
 mod list_jobs;

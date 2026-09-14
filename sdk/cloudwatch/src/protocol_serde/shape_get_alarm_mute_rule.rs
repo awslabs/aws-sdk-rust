@@ -104,7 +104,7 @@ pub(crate) fn de_get_alarm_mute_rule(
                 Ok(builder.set_expire_date(Some(decoder.timestamp()?)))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::AlarmMuteRuleStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::AlarmMuteRuleStatus::from(s.as_str()))?)))
             })?,
             "LastUpdatedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_last_updated_timestamp(Some(decoder.timestamp()?)))

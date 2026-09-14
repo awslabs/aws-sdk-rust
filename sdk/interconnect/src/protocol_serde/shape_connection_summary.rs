@@ -26,7 +26,7 @@ pub(crate) fn de_connection_summary(
                 "provider" => builder.set_provider(Some(crate::protocol_serde::shape_provider::de_provider(decoder, depth + 1)?)),
                 "location" => builder.set_location(Some(decoder.string()?)),
                 "type" => builder.set_type(Some(decoder.string()?)),
-                "state" => builder.set_state(Some(decoder.string().map(|s| crate::types::ConnectionState::from(s.as_ref()))?)),
+                "state" => builder.set_state(Some(decoder.string().map(|s| crate::types::ConnectionState::from(s.as_str()))?)),
                 "sharedId" => builder.set_shared_id(Some(decoder.string()?)),
                 "billingTier" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_billing_tier(Some(decoder.integer()?)))

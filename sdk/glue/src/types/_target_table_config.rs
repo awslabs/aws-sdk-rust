@@ -10,6 +10,8 @@ pub struct TargetTableConfig {
     pub partition_spec: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationPartition>>,
     /// <p>The optional name of a target table.</p>
     pub target_table_name: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the integration that owns this target table configuration.</p>
+    pub integration_arn: ::std::option::Option<::std::string::String>,
 }
 impl TargetTableConfig {
     /// <p>Specifies how nested objects are flattened to top-level elements. Valid values are: "TOPLEVEL", "FULL", or "NOUNNEST".</p>
@@ -26,6 +28,10 @@ impl TargetTableConfig {
     pub fn target_table_name(&self) -> ::std::option::Option<&str> {
         self.target_table_name.as_deref()
     }
+    /// <p>The ARN of the integration that owns this target table configuration.</p>
+    pub fn integration_arn(&self) -> ::std::option::Option<&str> {
+        self.integration_arn.as_deref()
+    }
 }
 impl TargetTableConfig {
     /// Creates a new builder-style object to manufacture [`TargetTableConfig`](crate::types::TargetTableConfig).
@@ -41,6 +47,7 @@ pub struct TargetTableConfigBuilder {
     pub(crate) unnest_spec: ::std::option::Option<crate::types::UnnestSpec>,
     pub(crate) partition_spec: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationPartition>>,
     pub(crate) target_table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) integration_arn: ::std::option::Option<::std::string::String>,
 }
 impl TargetTableConfigBuilder {
     /// <p>Specifies how nested objects are flattened to top-level elements. Valid values are: "TOPLEVEL", "FULL", or "NOUNNEST".</p>
@@ -91,12 +98,27 @@ impl TargetTableConfigBuilder {
     pub fn get_target_table_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_table_name
     }
+    /// <p>The ARN of the integration that owns this target table configuration.</p>
+    pub fn integration_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.integration_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the integration that owns this target table configuration.</p>
+    pub fn set_integration_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.integration_arn = input;
+        self
+    }
+    /// <p>The ARN of the integration that owns this target table configuration.</p>
+    pub fn get_integration_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.integration_arn
+    }
     /// Consumes the builder and constructs a [`TargetTableConfig`](crate::types::TargetTableConfig).
     pub fn build(self) -> crate::types::TargetTableConfig {
         crate::types::TargetTableConfig {
             unnest_spec: self.unnest_spec,
             partition_spec: self.partition_spec,
             target_table_name: self.target_table_name,
+            integration_arn: self.integration_arn,
         }
     }
 }

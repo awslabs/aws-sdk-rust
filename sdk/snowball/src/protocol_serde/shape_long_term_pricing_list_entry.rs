@@ -26,7 +26,7 @@ pub(crate) fn de_long_term_pricing_list_entry(
                 Ok(builder.set_long_term_pricing_start_date(Some(decoder.timestamp()?)))
             })?,
             "LongTermPricingType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_long_term_pricing_type(Some(decoder.string().map(|s| crate::types::LongTermPricingType::from(s.as_ref()))?)))
+                Ok(builder.set_long_term_pricing_type(Some(decoder.string().map(|s| crate::types::LongTermPricingType::from(s.as_str()))?)))
             })?,
             "CurrentActiveJob" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_current_active_job(Some(decoder.string()?)))
@@ -41,7 +41,7 @@ pub(crate) fn de_long_term_pricing_list_entry(
                 Ok(builder.set_long_term_pricing_status(Some(decoder.string()?)))
             })?,
             "SnowballType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_snowball_type(Some(decoder.string().map(|s| crate::types::SnowballType::from(s.as_ref()))?)))
+                Ok(builder.set_snowball_type(Some(decoder.string().map(|s| crate::types::SnowballType::from(s.as_str()))?)))
             })?,
             "JobIds" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_job_ids(Some(

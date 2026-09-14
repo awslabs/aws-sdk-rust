@@ -45,7 +45,7 @@ pub(crate) fn de_rule_ip_expression(
                 decoder,
                 depth + 1,
             )?)),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleIpOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleIpOperator::from(s.as_str()))?)),
             "Values" => builder.set_values(Some(crate::protocol_serde::shape_rule_ip_value_list::de_rule_ip_value_list(
                 decoder,
                 depth + 1,

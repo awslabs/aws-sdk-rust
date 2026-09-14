@@ -33,7 +33,7 @@ pub(crate) fn de_dependent_service(
     ) -> ::std::result::Result<crate::types::builders::DependentServiceBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ServiceName" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_service_name(Some(decoder.string().map(|s| crate::types::ServiceName::from(s.as_ref()))?)))
+                Ok(builder.set_service_name(Some(decoder.string().map(|s| crate::types::ServiceName::from(s.as_str()))?)))
             })?,
             "ServiceVersion" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

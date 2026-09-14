@@ -37,7 +37,9 @@ pub fn ser_bedrock_embedding_model_configuration(
         array_8.finish();
     }
     if let Some(var_11) = &input.model_configuration {
-        object.key("modelConfiguration").document(var_11);
+        object
+            .key("modelConfiguration")
+            .document(var_11, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

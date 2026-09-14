@@ -191,7 +191,7 @@ pub(crate) fn de_describe_container_group_port_mappings(
                 Ok(builder.set_container_group_definition_arn(Some(decoder.string()?)))
             })?,
             "ContainerGroupType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_container_group_type(Some(decoder.string().map(|s| crate::types::ContainerGroupType::from(s.as_ref()))?)))
+                Ok(builder.set_container_group_type(Some(decoder.string().map(|s| crate::types::ContainerGroupType::from(s.as_str()))?)))
             })?,
             "ComputeName" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_compute_name(Some(decoder.string()?))))?

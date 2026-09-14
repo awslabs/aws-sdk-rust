@@ -22,7 +22,7 @@ impl crate::operation::get_lifecycle_policy::builders::GetLifecyclePolicyInputBu
 }
 /// Fluent builder constructing a request to `GetLifecyclePolicy`.
 ///
-/// <p>Get details for the specified image lifecycle policy.</p>
+/// <p>Retrieves details for the specified image lifecycle policy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetLifecyclePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

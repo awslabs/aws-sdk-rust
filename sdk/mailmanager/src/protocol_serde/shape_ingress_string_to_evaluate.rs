@@ -39,7 +39,7 @@ pub(crate) fn de_ingress_string_to_evaluate(
     ) -> ::std::result::Result<crate::types::IngressStringToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => crate::types::IngressStringToEvaluate::Attribute(
-                decoder.string().map(|s| crate::types::IngressStringEmailAttribute::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::IngressStringEmailAttribute::from(s.as_str()))?,
             ),
             "Analysis" => crate::types::IngressStringToEvaluate::Analysis(crate::protocol_serde::shape_ingress_analysis::de_ingress_analysis(
                 decoder,

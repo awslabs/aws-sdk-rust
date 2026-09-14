@@ -22,7 +22,7 @@ impl crate::operation::get_component_policy::builders::GetComponentPolicyInputBu
 }
 /// Fluent builder constructing a request to `GetComponentPolicy`.
 ///
-/// <p>Gets a component policy.</p>
+/// <p>Retrieves a component policy.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetComponentPolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -22,6 +22,125 @@ impl ThrottlingException {
         self.service_code.as_deref()
     }
 }
+static THROTTLINGEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ThrottlingException$Message",
+        "com.amazonaws.ssm",
+        "ThrottlingException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    0,
+);
+static THROTTLINGEXCEPTION_MEMBER_QUOTA_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ThrottlingException$QuotaCode",
+        "com.amazonaws.ssm",
+        "ThrottlingException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QuotaCode",
+    1,
+);
+static THROTTLINGEXCEPTION_MEMBER_SERVICE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ThrottlingException$ServiceCode",
+        "com.amazonaws.ssm",
+        "ThrottlingException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServiceCode",
+    2,
+);
+static THROTTLINGEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ThrottlingException", "com.amazonaws.ssm", "ThrottlingException"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &THROTTLINGEXCEPTION_MEMBER_MESSAGE,
+        &THROTTLINGEXCEPTION_MEMBER_QUOTA_CODE,
+        &THROTTLINGEXCEPTION_MEMBER_SERVICE_CODE,
+    ],
+);
+impl ThrottlingException {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &THROTTLINGEXCEPTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ThrottlingException {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.message;
+            ser.write_string(&THROTTLINGEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.quota_code {
+            ser.write_string(&THROTTLINGEXCEPTION_MEMBER_QUOTA_CODE, val)?;
+        }
+        if let Some(ref val) = self.service_code {
+            ser.write_string(&THROTTLINGEXCEPTION_MEMBER_SERVICE_CODE, val)?;
+        }
+        Ok(())
+    }
+}
+impl ThrottlingException {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&THROTTLINGEXCEPTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.message = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.quota_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.service_code = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.message = builder.message.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl ThrottlingException {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        if body.is_empty() {
+            return Self::builder()
+                .build()
+                .map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()));
+        }
+        Self::deserialize(deserializer)
+    }
+}
 impl ThrottlingException {
     /// Returns the error message.
     pub fn message(&self) -> &str {

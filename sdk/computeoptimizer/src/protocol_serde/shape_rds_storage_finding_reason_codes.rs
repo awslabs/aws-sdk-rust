@@ -23,7 +23,7 @@ pub(crate) fn de_rds_storage_finding_reason_codes(
                     decoder.position(),
                 ))
             }
-            _ => decoder.string().map(|s| crate::types::RdsStorageFindingReasonCode::from(s.as_ref()))?,
+            _ => decoder.string().map(|s| crate::types::RdsStorageFindingReasonCode::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

@@ -29,9 +29,177 @@ impl StartSessionOutput {
         self.stream_url.as_deref()
     }
 }
+static STARTSESSIONOUTPUT_MEMBER_SESSION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionOutput$SessionId",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SessionId",
+    0,
+);
+static STARTSESSIONOUTPUT_MEMBER_TOKEN_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionOutput$TokenValue",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TokenValue",
+    1,
+);
+static STARTSESSIONOUTPUT_MEMBER_STREAM_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionOutput$StreamUrl",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StreamUrl",
+    2,
+);
+static STARTSESSIONOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    3,
+)
+.with_http_header("x-amzn-requestid");
+static STARTSESSIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#StartSessionOutput",
+        "com.amazonaws.ssm.synthetic",
+        "StartSessionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STARTSESSIONOUTPUT_MEMBER_SESSION_ID,
+        &STARTSESSIONOUTPUT_MEMBER_TOKEN_VALUE,
+        &STARTSESSIONOUTPUT_MEMBER_STREAM_URL,
+        &STARTSESSIONOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("StartSessionResponse");
+impl StartSessionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STARTSESSIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StartSessionOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.session_id {
+            ser.write_string(&STARTSESSIONOUTPUT_MEMBER_SESSION_ID, val)?;
+        }
+        if let Some(ref val) = self.token_value {
+            ser.write_string(&STARTSESSIONOUTPUT_MEMBER_TOKEN_VALUE, val)?;
+        }
+        if let Some(ref val) = self.stream_url {
+            ser.write_string(&STARTSESSIONOUTPUT_MEMBER_STREAM_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl StartSessionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STARTSESSIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.session_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.token_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.stream_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl StartSessionOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STARTSESSIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.session_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.token_value = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    builder.stream_url = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for StartSessionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl StartSessionOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl StartSessionOutput {

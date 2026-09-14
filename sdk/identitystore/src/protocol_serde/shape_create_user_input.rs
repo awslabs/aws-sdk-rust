@@ -110,7 +110,9 @@ pub fn ser_create_user_input_input(
         let mut object_36 = object.key("Extensions").start_object();
         for (key_37, value_38) in var_35 {
             {
-                object_36.key(key_37.as_str()).document(value_38);
+                object_36
+                    .key(key_37.as_str())
+                    .document(value_38, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
             }
         }
         object_36.finish();

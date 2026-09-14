@@ -563,6 +563,8 @@ pub(crate) mod shape_fast_launch_snapshot_configuration;
 
 pub(crate) mod shape_image_aggregation;
 
+pub(crate) mod shape_image_failure_context;
+
 pub(crate) mod shape_image_pipeline_aggregation;
 
 pub(crate) mod shape_inspector_score_details;
@@ -597,6 +599,8 @@ pub(crate) mod shape_workflow_parameter_detail;
 
 pub(crate) mod shape_ami;
 
+pub(crate) mod shape_component_failure_context;
+
 pub(crate) mod shape_component_parameter_list;
 
 pub(crate) mod shape_component_parameter_value_list;
@@ -606,6 +610,8 @@ pub(crate) mod shape_container;
 pub(crate) mod shape_cvss_score_details;
 
 pub(crate) mod shape_cvss_score_list;
+
+pub(crate) mod shape_distribution_failure_context;
 
 pub(crate) mod shape_fast_launch_configuration_list;
 
@@ -637,6 +643,8 @@ pub(crate) mod shape_cvss_score;
 
 pub(crate) mod shape_cvss_score_adjustment_list;
 
+pub(crate) mod shape_region_failure_list;
+
 pub(crate) mod shape_vulnerable_package;
 
 pub(crate) mod shape_cvss_score_adjustment;
@@ -644,3 +652,5 @@ pub(crate) mod shape_cvss_score_adjustment;
 pub(crate) mod shape_organization_arn_list;
 
 pub(crate) mod shape_organizational_unit_arn_list;
+
+pub(crate) mod shape_region_failure;

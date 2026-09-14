@@ -165,6 +165,704 @@ impl StepExecution {
         self.parent_step_details.as_ref()
     }
 }
+static STEPEXECUTION_MEMBER_STEP_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$StepName", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StepName",
+    0,
+);
+static STEPEXECUTION_MEMBER_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$Action", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Action",
+    1,
+);
+static STEPEXECUTION_MEMBER_TIMEOUT_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$TimeoutSeconds", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Long,
+    "TimeoutSeconds",
+    2,
+);
+static STEPEXECUTION_MEMBER_ON_FAILURE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$OnFailure", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "OnFailure",
+    3,
+);
+static STEPEXECUTION_MEMBER_MAX_ATTEMPTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$MaxAttempts", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MaxAttempts",
+    4,
+);
+static STEPEXECUTION_MEMBER_EXECUTION_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$ExecutionStartTime", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExecutionStartTime",
+    5,
+);
+static STEPEXECUTION_MEMBER_EXECUTION_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$ExecutionEndTime", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ExecutionEndTime",
+    6,
+);
+static STEPEXECUTION_MEMBER_STEP_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$StepStatus", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StepStatus",
+    7,
+);
+static STEPEXECUTION_MEMBER_RESPONSE_CODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$ResponseCode", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ResponseCode",
+    8,
+);
+static STEPEXECUTION_MEMBER_INPUTS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#NormalStringMap$key", "com.amazonaws.ssm", "NormalStringMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STEPEXECUTION_MEMBER_INPUTS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#NormalStringMap$value", "com.amazonaws.ssm", "NormalStringMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static STEPEXECUTION_MEMBER_INPUTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$Inputs", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Inputs",
+    9,
+)
+.with_map_members(&STEPEXECUTION_MEMBER_INPUTS_KEY, &STEPEXECUTION_MEMBER_INPUTS_VALUE);
+static STEPEXECUTION_MEMBER_OUTPUTS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterValueList$member",
+        "com.amazonaws.ssm",
+        "AutomationParameterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STEPEXECUTION_MEMBER_OUTPUTS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$key",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STEPEXECUTION_MEMBER_OUTPUTS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$value",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&STEPEXECUTION_MEMBER_OUTPUTS_VALUE_MEMBER);
+static STEPEXECUTION_MEMBER_OUTPUTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$Outputs", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Outputs",
+    10,
+)
+.with_map_members(&STEPEXECUTION_MEMBER_OUTPUTS_KEY, &STEPEXECUTION_MEMBER_OUTPUTS_VALUE);
+static STEPEXECUTION_MEMBER_RESPONSE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$Response", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Response",
+    11,
+);
+static STEPEXECUTION_MEMBER_FAILURE_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$FailureMessage", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "FailureMessage",
+    12,
+);
+static STEPEXECUTION_MEMBER_WARNING_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$WarningMessage", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "WarningMessage",
+    13,
+);
+static STEPEXECUTION_MEMBER_FAILURE_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$FailureDetails", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FailureDetails",
+    14,
+);
+static STEPEXECUTION_MEMBER_STEP_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$StepExecutionId", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "StepExecutionId",
+    15,
+);
+static STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterValueList$member",
+        "com.amazonaws.ssm",
+        "AutomationParameterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$key",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$value",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS_VALUE_MEMBER);
+static STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#StepExecution$OverriddenParameters",
+        "com.amazonaws.ssm",
+        "StepExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "OverriddenParameters",
+    16,
+)
+.with_map_members(
+    &STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS_KEY,
+    &STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS_VALUE,
+);
+static STEPEXECUTION_MEMBER_IS_END: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$IsEnd", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IsEnd",
+    17,
+);
+static STEPEXECUTION_MEMBER_NEXT_STEP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$NextStep", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::String,
+    "NextStep",
+    18,
+);
+static STEPEXECUTION_MEMBER_IS_CRITICAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$IsCritical", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "IsCritical",
+    19,
+);
+static STEPEXECUTION_MEMBER_VALID_NEXT_STEPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ValidNextStepList$member", "com.amazonaws.ssm", "ValidNextStepList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static STEPEXECUTION_MEMBER_VALID_NEXT_STEPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$ValidNextSteps", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::List,
+    "ValidNextSteps",
+    20,
+)
+.with_list_member(&STEPEXECUTION_MEMBER_VALID_NEXT_STEPS_MEMBER);
+static STEPEXECUTION_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Targets$member", "com.amazonaws.ssm", "Targets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STEPEXECUTION_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$Targets", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    21,
+)
+.with_list_member(&STEPEXECUTION_MEMBER_TARGETS_MEMBER);
+static STEPEXECUTION_MEMBER_TARGET_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$TargetLocation", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TargetLocation",
+    22,
+);
+static STEPEXECUTION_MEMBER_TRIGGERED_ALARMS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AlarmStateInformationList$member",
+        "com.amazonaws.ssm",
+        "AlarmStateInformationList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static STEPEXECUTION_MEMBER_TRIGGERED_ALARMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$TriggeredAlarms", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::List,
+    "TriggeredAlarms",
+    23,
+)
+.with_list_member(&STEPEXECUTION_MEMBER_TRIGGERED_ALARMS_MEMBER);
+static STEPEXECUTION_MEMBER_PARENT_STEP_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution$ParentStepDetails", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ParentStepDetails",
+    24,
+);
+static STEPEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#StepExecution", "com.amazonaws.ssm", "StepExecution"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &STEPEXECUTION_MEMBER_STEP_NAME,
+        &STEPEXECUTION_MEMBER_ACTION,
+        &STEPEXECUTION_MEMBER_TIMEOUT_SECONDS,
+        &STEPEXECUTION_MEMBER_ON_FAILURE,
+        &STEPEXECUTION_MEMBER_MAX_ATTEMPTS,
+        &STEPEXECUTION_MEMBER_EXECUTION_START_TIME,
+        &STEPEXECUTION_MEMBER_EXECUTION_END_TIME,
+        &STEPEXECUTION_MEMBER_STEP_STATUS,
+        &STEPEXECUTION_MEMBER_RESPONSE_CODE,
+        &STEPEXECUTION_MEMBER_INPUTS,
+        &STEPEXECUTION_MEMBER_OUTPUTS,
+        &STEPEXECUTION_MEMBER_RESPONSE,
+        &STEPEXECUTION_MEMBER_FAILURE_MESSAGE,
+        &STEPEXECUTION_MEMBER_WARNING_MESSAGE,
+        &STEPEXECUTION_MEMBER_FAILURE_DETAILS,
+        &STEPEXECUTION_MEMBER_STEP_EXECUTION_ID,
+        &STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS,
+        &STEPEXECUTION_MEMBER_IS_END,
+        &STEPEXECUTION_MEMBER_NEXT_STEP,
+        &STEPEXECUTION_MEMBER_IS_CRITICAL,
+        &STEPEXECUTION_MEMBER_VALID_NEXT_STEPS,
+        &STEPEXECUTION_MEMBER_TARGETS,
+        &STEPEXECUTION_MEMBER_TARGET_LOCATION,
+        &STEPEXECUTION_MEMBER_TRIGGERED_ALARMS,
+        &STEPEXECUTION_MEMBER_PARENT_STEP_DETAILS,
+    ],
+);
+impl StepExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &STEPEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for StepExecution {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.step_name {
+            ser.write_string(&STEPEXECUTION_MEMBER_STEP_NAME, val)?;
+        }
+        if let Some(ref val) = self.action {
+            ser.write_string(&STEPEXECUTION_MEMBER_ACTION, val)?;
+        }
+        if let Some(ref val) = self.timeout_seconds {
+            ser.write_long(&STEPEXECUTION_MEMBER_TIMEOUT_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.on_failure {
+            ser.write_string(&STEPEXECUTION_MEMBER_ON_FAILURE, val)?;
+        }
+        if let Some(ref val) = self.max_attempts {
+            ser.write_integer(&STEPEXECUTION_MEMBER_MAX_ATTEMPTS, *val)?;
+        }
+        if let Some(ref val) = self.execution_start_time {
+            ser.write_timestamp(&STEPEXECUTION_MEMBER_EXECUTION_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.execution_end_time {
+            ser.write_timestamp(&STEPEXECUTION_MEMBER_EXECUTION_END_TIME, val)?;
+        }
+        if let Some(ref val) = self.step_status {
+            ser.write_string(&STEPEXECUTION_MEMBER_STEP_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.response_code {
+            ser.write_string(&STEPEXECUTION_MEMBER_RESPONSE_CODE, val)?;
+        }
+        if let Some(ref val) = self.inputs {
+            ser.write_map(
+                &STEPEXECUTION_MEMBER_INPUTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.outputs {
+            ser.write_map(
+                &STEPEXECUTION_MEMBER_OUTPUTS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &STEPEXECUTION_MEMBER_OUTPUTS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.response {
+            ser.write_string(&STEPEXECUTION_MEMBER_RESPONSE, val)?;
+        }
+        if let Some(ref val) = self.failure_message {
+            ser.write_string(&STEPEXECUTION_MEMBER_FAILURE_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.warning_message {
+            ser.write_string(&STEPEXECUTION_MEMBER_WARNING_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.failure_details {
+            ser.write_struct(&STEPEXECUTION_MEMBER_FAILURE_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.step_execution_id {
+            ser.write_string(&STEPEXECUTION_MEMBER_STEP_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.overridden_parameters {
+            ser.write_map(
+                &STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.is_end {
+            ser.write_boolean(&STEPEXECUTION_MEMBER_IS_END, *val)?;
+        }
+        if let Some(ref val) = self.next_step {
+            ser.write_string(&STEPEXECUTION_MEMBER_NEXT_STEP, val)?;
+        }
+        if let Some(ref val) = self.is_critical {
+            ser.write_boolean(&STEPEXECUTION_MEMBER_IS_CRITICAL, *val)?;
+        }
+        if let Some(ref val) = self.valid_next_steps {
+            ser.write_list(
+                &STEPEXECUTION_MEMBER_VALID_NEXT_STEPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &STEPEXECUTION_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.target_location {
+            ser.write_struct(&STEPEXECUTION_MEMBER_TARGET_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.triggered_alarms {
+            ser.write_list(
+                &STEPEXECUTION_MEMBER_TRIGGERED_ALARMS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::AlarmStateInformation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.parent_step_details {
+            ser.write_struct(&STEPEXECUTION_MEMBER_PARENT_STEP_DETAILS, val)?;
+        }
+        Ok(())
+    }
+}
+impl StepExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&STEPEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.step_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.action = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.timeout_seconds = Some(deser.read_long(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.on_failure = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_attempts = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.execution_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.execution_end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.step_status = Some(crate::types::AutomationExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.response_code = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.inputs = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.outputs = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&STEPEXECUTION_MEMBER_OUTPUTS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.response = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.failure_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.warning_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.failure_details = Some(crate::types::FailureDetails::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.step_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.overridden_parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&STEPEXECUTION_MEMBER_OVERRIDDEN_PARAMETERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.is_end = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.next_step = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.is_critical = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.valid_next_steps = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_location = Some(crate::types::TargetLocation::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.triggered_alarms = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::AlarmStateInformation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parent_step_details = Some(crate::types::ParentStepDetails::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl StepExecution {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl StepExecution {
     /// Creates a new builder-style object to manufacture [`StepExecution`](crate::types::StepExecution).
     pub fn builder() -> crate::types::builders::StepExecutionBuilder {

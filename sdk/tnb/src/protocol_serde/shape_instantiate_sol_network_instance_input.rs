@@ -4,7 +4,9 @@ pub fn ser_instantiate_sol_network_instance_input_input(
     input: &crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_params_for_ns {
-        object.key("additionalParamsForNs").document(var_1);
+        object
+            .key("additionalParamsForNs")
+            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_2) = &input.tags {
         #[allow(unused_mut)]

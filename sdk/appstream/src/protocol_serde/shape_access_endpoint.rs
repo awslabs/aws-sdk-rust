@@ -31,7 +31,7 @@ pub(crate) fn de_access_endpoint(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::AccessEndpointBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "EndpointType" => builder.set_endpoint_type(Some(decoder.string().map(|s| crate::types::AccessEndpointType::from(s.as_ref()))?)),
+            "EndpointType" => builder.set_endpoint_type(Some(decoder.string().map(|s| crate::types::AccessEndpointType::from(s.as_str()))?)),
             "VpceId" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_vpce_id(Some(decoder.string()?))))?
             }

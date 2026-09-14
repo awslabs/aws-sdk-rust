@@ -113,9 +113,9 @@ pub(crate) fn de_get_plan_execution(
                         |builder, decoder| Ok(builder.set_end_time(Some(decoder.timestamp()?))),
                     )?
                 }
-                "mode" => builder.set_mode(Some(decoder.string().map(|s| crate::types::ExecutionMode::from(s.as_ref()))?)),
-                "executionState" => builder.set_execution_state(Some(decoder.string().map(|s| crate::types::ExecutionState::from(s.as_ref()))?)),
-                "executionAction" => builder.set_execution_action(Some(decoder.string().map(|s| crate::types::ExecutionAction::from(s.as_ref()))?)),
+                "mode" => builder.set_mode(Some(decoder.string().map(|s| crate::types::ExecutionMode::from(s.as_str()))?)),
+                "executionState" => builder.set_execution_state(Some(decoder.string().map(|s| crate::types::ExecutionState::from(s.as_str()))?)),
+                "executionAction" => builder.set_execution_action(Some(decoder.string().map(|s| crate::types::ExecutionAction::from(s.as_str()))?)),
                 "executionRegion" => builder.set_execution_region(Some(decoder.string()?)),
                 "recoveryExecutionId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_recovery_execution_id(Some(decoder.string()?)))

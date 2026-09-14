@@ -17,7 +17,7 @@ pub(crate) fn de_rds_database_projected_metric(
     ) -> ::std::result::Result<crate::types::builders::RdsDatabaseProjectedMetricBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_name(Some(decoder.string().map(|s| crate::types::RdsdbMetricName::from(s.as_ref()))?)))
+                Ok(builder.set_name(Some(decoder.string().map(|s| crate::types::RdsdbMetricName::from(s.as_str()))?)))
             })?,
             "timestamps" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_timestamps(Some(crate::protocol_serde::shape_timestamps::de_timestamps(decoder, depth + 1)?)))

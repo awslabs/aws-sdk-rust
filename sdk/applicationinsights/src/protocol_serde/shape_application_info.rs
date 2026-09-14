@@ -44,7 +44,7 @@ pub(crate) fn de_application_info(
                 Ok(builder.set_auto_config_enabled(Some(decoder.boolean()?)))
             })?,
             "DiscoveryType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_discovery_type(Some(decoder.string().map(|s| crate::types::DiscoveryType::from(s.as_ref()))?)))
+                Ok(builder.set_discovery_type(Some(decoder.string().map(|s| crate::types::DiscoveryType::from(s.as_str()))?)))
             })?,
             "AttachMissingPermission" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_attach_missing_permission(Some(decoder.boolean()?)))

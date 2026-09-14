@@ -17,7 +17,7 @@ pub(crate) fn de_shipping_details(
     ) -> ::std::result::Result<crate::types::builders::ShippingDetailsBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ShippingOption" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_shipping_option(Some(decoder.string().map(|s| crate::types::ShippingOption::from(s.as_ref()))?)))
+                Ok(builder.set_shipping_option(Some(decoder.string().map(|s| crate::types::ShippingOption::from(s.as_str()))?)))
             })?,
             "InboundShipment" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_inbound_shipment(Some(crate::protocol_serde::shape_shipment::de_shipment(decoder, depth + 1)?)))

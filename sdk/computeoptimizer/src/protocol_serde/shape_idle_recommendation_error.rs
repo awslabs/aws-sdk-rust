@@ -25,7 +25,7 @@ pub(crate) fn de_idle_recommendation_error(
             }
             "resourceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_resource_type(Some(
-                    decoder.string().map(|s| crate::types::IdleRecommendationResourceType::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::IdleRecommendationResourceType::from(s.as_str()))?,
                 )))
             })?,
             _ => {

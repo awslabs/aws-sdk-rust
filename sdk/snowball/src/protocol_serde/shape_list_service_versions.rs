@@ -107,7 +107,7 @@ pub(crate) fn de_list_service_versions(
                 decoder,
                 depth + 1,
             )?)),
-            "ServiceName" => builder.set_service_name(Some(decoder.string().map(|s| crate::types::ServiceName::from(s.as_ref()))?)),
+            "ServiceName" => builder.set_service_name(Some(decoder.string().map(|s| crate::types::ServiceName::from(s.as_str()))?)),
             "DependentServices" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_dependent_services(Some(crate::protocol_serde::shape_dependent_service_list::de_dependent_service_list(

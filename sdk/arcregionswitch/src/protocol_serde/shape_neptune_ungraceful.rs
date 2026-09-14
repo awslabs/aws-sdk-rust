@@ -29,7 +29,7 @@ pub(crate) fn de_neptune_ungraceful(
     ) -> ::std::result::Result<crate::types::builders::NeptuneUngracefulBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ungraceful" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_ungraceful(Some(decoder.string().map(|s| crate::types::NeptuneUngracefulBehavior::from(s.as_ref()))?)))
+                Ok(builder.set_ungraceful(Some(decoder.string().map(|s| crate::types::NeptuneUngracefulBehavior::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

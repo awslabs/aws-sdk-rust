@@ -14,7 +14,7 @@ pub(crate) fn de_resource_not_found_exception_cbor_err(
             "Reason" => builder.set_reason(Some(
                 decoder
                     .string()
-                    .map(|s| crate::types::ResourceNotFoundExceptionReason::from(s.as_ref()))?,
+                    .map(|s| crate::types::ResourceNotFoundExceptionReason::from(s.as_str()))?,
             )),
             _ => {
                 decoder.skip()?;

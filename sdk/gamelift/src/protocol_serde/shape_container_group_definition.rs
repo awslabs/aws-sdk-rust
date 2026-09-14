@@ -24,11 +24,11 @@ pub(crate) fn de_container_group_definition(
                     Ok(builder.set_creation_time(Some(decoder.timestamp()?)))
                 })?,
                 "OperatingSystem" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::ContainerOperatingSystem::from(s.as_ref()))?)))
+                    Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::ContainerOperatingSystem::from(s.as_str()))?)))
                 })?,
                 "Name" => builder.set_name(Some(decoder.string()?)),
                 "ContainerGroupType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_container_group_type(Some(decoder.string().map(|s| crate::types::ContainerGroupType::from(s.as_ref()))?)))
+                    Ok(builder.set_container_group_type(Some(decoder.string().map(|s| crate::types::ContainerGroupType::from(s.as_str()))?)))
                 })?,
                 "TotalMemoryLimitMebibytes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_total_memory_limit_mebibytes(Some(decoder.integer()?)))
@@ -54,7 +54,7 @@ pub(crate) fn de_container_group_definition(
                 })?,
                 "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_status(Some(
-                        decoder.string().map(|s| crate::types::ContainerGroupDefinitionStatus::from(s.as_ref()))?,
+                        decoder.string().map(|s| crate::types::ContainerGroupDefinitionStatus::from(s.as_str()))?,
                     )))
                 })?,
                 "StatusReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

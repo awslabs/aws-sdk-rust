@@ -11,11 +11,16 @@ pub struct AssumeRoleOutput {
     /// <p>The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that you can use to refer to the resulting temporary security credentials. For example, you can reference these credentials as a principal in a resource-based policy by using the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code> that you specified when you called <code>AssumeRole</code>.</p>
     pub assumed_role_user: ::std::option::Option<crate::types::AssumedRoleUser>,
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub packed_policy_size: ::std::option::Option<i32>,
     /// <p>The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.</p>
     /// <p>You can require users to specify a source identity when they assume a role. You do this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code> condition key to further control access to Amazon Web Services resources based on the value of source identity. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     pub source_identity: ::std::option::Option<::std::string::String>,
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub session_token_utilization: ::std::option::Option<i32>,
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl AssumeRoleOutput {
@@ -30,6 +35,7 @@ impl AssumeRoleOutput {
         self.assumed_role_user.as_ref()
     }
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn packed_policy_size(&self) -> ::std::option::Option<i32> {
         self.packed_policy_size
     }
@@ -39,6 +45,14 @@ impl AssumeRoleOutput {
     pub fn source_identity(&self) -> ::std::option::Option<&str> {
         self.source_identity.as_deref()
     }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn session_token_utilization(&self) -> ::std::option::Option<i32> {
+        self.session_token_utilization
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn session_token_size(&self) -> ::std::option::Option<i32> {
+        self.session_token_size
+    }
 }
 impl ::std::fmt::Debug for AssumeRoleOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -47,6 +61,8 @@ impl ::std::fmt::Debug for AssumeRoleOutput {
         formatter.field("assumed_role_user", &self.assumed_role_user);
         formatter.field("packed_policy_size", &self.packed_policy_size);
         formatter.field("source_identity", &self.source_identity);
+        formatter.field("session_token_utilization", &self.session_token_utilization);
+        formatter.field("session_token_size", &self.session_token_size);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -71,6 +87,8 @@ pub struct AssumeRoleOutputBuilder {
     pub(crate) assumed_role_user: ::std::option::Option<crate::types::AssumedRoleUser>,
     pub(crate) packed_policy_size: ::std::option::Option<i32>,
     pub(crate) source_identity: ::std::option::Option<::std::string::String>,
+    pub(crate) session_token_utilization: ::std::option::Option<i32>,
+    pub(crate) session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl AssumeRoleOutputBuilder {
@@ -109,16 +127,19 @@ impl AssumeRoleOutputBuilder {
         &self.assumed_role_user
     }
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn packed_policy_size(mut self, input: i32) -> Self {
         self.packed_policy_size = ::std::option::Option::Some(input);
         self
     }
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn set_packed_policy_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.packed_policy_size = input;
         self
     }
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn get_packed_policy_size(&self) -> &::std::option::Option<i32> {
         &self.packed_policy_size
     }
@@ -142,6 +163,34 @@ impl AssumeRoleOutputBuilder {
     pub fn get_source_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identity
     }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn session_token_utilization(mut self, input: i32) -> Self {
+        self.session_token_utilization = ::std::option::Option::Some(input);
+        self
+    }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn set_session_token_utilization(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_token_utilization = input;
+        self
+    }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn get_session_token_utilization(&self) -> &::std::option::Option<i32> {
+        &self.session_token_utilization
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn session_token_size(mut self, input: i32) -> Self {
+        self.session_token_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn set_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_token_size = input;
+        self
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn get_session_token_size(&self) -> &::std::option::Option<i32> {
+        &self.session_token_size
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -158,6 +207,8 @@ impl AssumeRoleOutputBuilder {
             assumed_role_user: self.assumed_role_user,
             packed_policy_size: self.packed_policy_size,
             source_identity: self.source_identity,
+            session_token_utilization: self.session_token_utilization,
+            session_token_size: self.session_token_size,
             _request_id: self._request_id,
         }
     }
@@ -169,6 +220,8 @@ impl ::std::fmt::Debug for AssumeRoleOutputBuilder {
         formatter.field("assumed_role_user", &self.assumed_role_user);
         formatter.field("packed_policy_size", &self.packed_policy_size);
         formatter.field("source_identity", &self.source_identity);
+        formatter.field("session_token_utilization", &self.session_token_utilization);
+        formatter.field("session_token_size", &self.session_token_size);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -267,6 +267,9 @@ impl From<crate::operation::create_container_recipe::CreateContainerRecipeError>
                 Error::CallRateLimitExceededException(inner)
             }
             crate::operation::create_container_recipe::CreateContainerRecipeError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_container_recipe::CreateContainerRecipeError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::create_container_recipe::CreateContainerRecipeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_container_recipe::CreateContainerRecipeError::IdempotentParameterMismatchException(inner) => {
                 Error::IdempotentParameterMismatchException(inner)
@@ -327,6 +330,9 @@ impl From<crate::operation::create_distribution_configuration::CreateDistributio
             }
             crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ClientException(inner) => {
                 Error::ClientException(inner)
+            }
+            crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
             }
             crate::operation::create_distribution_configuration::CreateDistributionConfigurationError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
@@ -412,6 +418,9 @@ impl From<crate::operation::create_image_pipeline::CreateImagePipelineError> for
                 Error::CallRateLimitExceededException(inner)
             }
             crate::operation::create_image_pipeline::CreateImagePipelineError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_image_pipeline::CreateImagePipelineError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::create_image_pipeline::CreateImagePipelineError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_image_pipeline::CreateImagePipelineError::IdempotentParameterMismatchException(inner) => {
                 Error::IdempotentParameterMismatchException(inner)
@@ -455,6 +464,7 @@ impl From<crate::operation::create_image_recipe::CreateImageRecipeError> for Err
                 Error::CallRateLimitExceededException(inner)
             }
             crate::operation::create_image_recipe::CreateImageRecipeError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_image_recipe::CreateImageRecipeError::DryRunOperationException(inner) => Error::DryRunOperationException(inner),
             crate::operation::create_image_recipe::CreateImageRecipeError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_image_recipe::CreateImageRecipeError::IdempotentParameterMismatchException(inner) => {
                 Error::IdempotentParameterMismatchException(inner)
@@ -512,6 +522,9 @@ impl From<crate::operation::create_infrastructure_configuration::CreateInfrastru
             crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ClientException(inner) => {
                 Error::ClientException(inner)
             }
+            crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::create_infrastructure_configuration::CreateInfrastructureConfigurationError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
@@ -565,6 +578,9 @@ impl From<crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError>
                 Error::CallRateLimitExceededException(inner)
             }
             crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ClientException(inner) => Error::ClientException(inner),
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::DryRunOperationException(inner) => {
+                Error::DryRunOperationException(inner)
+            }
             crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::ForbiddenException(inner) => Error::ForbiddenException(inner),
             crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError::IdempotentParameterMismatchException(inner) => {
                 Error::IdempotentParameterMismatchException(inner)

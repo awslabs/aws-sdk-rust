@@ -221,7 +221,9 @@ pub fn ser_default_run_setting(
         );
     }
     if let Some(var_7) = &input.parameters {
-        object.key("parameters").document(var_7);
+        object
+            .key("parameters")
+            .document(var_7, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_8) = &input.storage_capacity {
         object.key("storageCapacity").number(
@@ -270,7 +272,9 @@ pub fn ser_default_run_setting(
         object.key("sessionPolicy").string(var_22.as_str());
     }
     if let Some(var_23) = &input.engine_settings {
-        object.key("engineSettings").document(var_23);
+        object
+            .key("engineSettings")
+            .document(var_23, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_24) = &input.scratch_storage_mode {
         object.key("scratchStorageMode").string(var_24.as_str());

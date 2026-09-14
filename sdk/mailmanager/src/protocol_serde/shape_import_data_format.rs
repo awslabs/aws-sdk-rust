@@ -28,7 +28,7 @@ pub(crate) fn de_import_data_format(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::ImportDataFormatBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "ImportDataType" => builder.set_import_data_type(Some(decoder.string().map(|s| crate::types::ImportDataType::from(s.as_ref()))?)),
+            "ImportDataType" => builder.set_import_data_type(Some(decoder.string().map(|s| crate::types::ImportDataType::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

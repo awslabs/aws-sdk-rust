@@ -21,6 +21,9 @@ pub fn ser_target_table_config(
     if let Some(var_6) = &input.target_table_name {
         object.key("TargetTableName").string(var_6.as_str());
     }
+    if let Some(var_7) = &input.integration_arn {
+        object.key("IntegrationArn").string(var_7.as_str());
+    }
     Ok(())
 }
 
@@ -64,6 +67,13 @@ where
                         }
                         "TargetTableName" => {
                             builder = builder.set_target_table_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "IntegrationArn" => {
+                            builder = builder.set_integration_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

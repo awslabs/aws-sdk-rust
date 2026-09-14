@@ -8,10 +8,10 @@ use crate::deserialize::must_not_be_finite;
 use crate::escape::unescape_string;
 pub use crate::escape::EscapeError;
 use aws_smithy_types::date_time::Format;
+use aws_smithy_types::document::DocumentObject;
 use aws_smithy_types::primitive::Parse;
 use aws_smithy_types::{base64, Blob, DateTime, Document, Number};
 use std::borrow::Cow;
-use std::collections::HashMap;
 use std::iter::Peekable;
 
 /// New-type around `&str` that indicates the string is an escaped JSON string.
@@ -308,7 +308,7 @@ where
             Ok(Document::String(value.to_unescaped()?.into_owned()))
         }
         Some(Token::StartObject { .. }) => {
-            let mut object = HashMap::new();
+            let mut object = DocumentObject::new();
             loop {
                 match tokens.next().transpose()? {
                     Some(Token::EndObject { .. }) => break,
@@ -795,14 +795,14 @@ pub mod test {
         assert_eq!(Document::Number(Number::Float(3.2)), test(b"3.2"));
         assert_eq!(Document::String("Foo\nBar".into()), test(b"\"Foo\\nBar\""));
         assert_eq!(Document::Array(Vec::new()), test(b"[]"));
-        assert_eq!(Document::Object(HashMap::new()), test(b"{}"));
+        assert_eq!(Document::Object(DocumentObject::new()), test(b"{}"));
         assert_eq!(
             Document::Array(vec![
                 Document::Number(Number::PosInt(1)),
                 Document::Bool(false),
                 Document::String("s".into()),
                 Document::Array(Vec::new()),
-                Document::Object(HashMap::new()),
+                Document::Object(DocumentObject::new()),
             ]),
             test(b"[1,false,\"s\",[],{}]")
         );

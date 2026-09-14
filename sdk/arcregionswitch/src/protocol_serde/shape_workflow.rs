@@ -47,7 +47,7 @@ pub(crate) fn de_workflow(
                 Ok(builder.set_steps(Some(crate::protocol_serde::shape_steps::de_steps(decoder, depth + 1)?)))
             })?,
             "workflowTargetAction" => {
-                builder.set_workflow_target_action(Some(decoder.string().map(|s| crate::types::WorkflowTargetAction::from(s.as_ref()))?))
+                builder.set_workflow_target_action(Some(decoder.string().map(|s| crate::types::WorkflowTargetAction::from(s.as_str()))?))
             }
             "workflowTargetRegion" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_workflow_target_region(Some(decoder.string()?)))

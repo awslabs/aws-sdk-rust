@@ -4,7 +4,9 @@ pub fn ser_start_agent_recommendation_generation_input_input(
     input: &crate::operation::start_agent_recommendation_generation::StartAgentRecommendationGenerationInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_context {
-        object.key("additionalContext").document(var_1);
+        object
+            .key("additionalContext")
+            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_2) = &input.name {
         object.key("name").string(var_2.as_str());

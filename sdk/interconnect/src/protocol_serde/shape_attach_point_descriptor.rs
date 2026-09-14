@@ -16,7 +16,7 @@ pub(crate) fn de_attach_point_descriptor(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::AttachPointDescriptorBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "type" => builder.set_type(Some(decoder.string().map(|s| crate::types::AttachPointType::from(s.as_ref()))?)),
+            "type" => builder.set_type(Some(decoder.string().map(|s| crate::types::AttachPointType::from(s.as_str()))?)),
             "identifier" => builder.set_identifier(Some(decoder.string()?)),
             "name" => builder.set_name(Some(decoder.string()?)),
             _ => {

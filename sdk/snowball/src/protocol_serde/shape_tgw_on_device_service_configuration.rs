@@ -35,7 +35,7 @@ pub(crate) fn de_tgw_on_device_service_configuration(
                 Ok(builder.set_storage_limit(Some(decoder.integer()?)))
             })?,
             "StorageUnit" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_storage_unit(Some(decoder.string().map(|s| crate::types::StorageUnit::from(s.as_ref()))?)))
+                Ok(builder.set_storage_unit(Some(decoder.string().map(|s| crate::types::StorageUnit::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

@@ -74,10 +74,10 @@ pub(crate) fn de_matchmaking_configuration(
                 Ok(builder.set_game_session_data(Some(decoder.string()?)))
             })?,
             "BackfillMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_backfill_mode(Some(decoder.string().map(|s| crate::types::BackfillMode::from(s.as_ref()))?)))
+                Ok(builder.set_backfill_mode(Some(decoder.string().map(|s| crate::types::BackfillMode::from(s.as_str()))?)))
             })?,
             "FlexMatchMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_flex_match_mode(Some(decoder.string().map(|s| crate::types::FlexMatchMode::from(s.as_ref()))?)))
+                Ok(builder.set_flex_match_mode(Some(decoder.string().map(|s| crate::types::FlexMatchMode::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

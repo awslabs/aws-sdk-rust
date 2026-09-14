@@ -24,13 +24,13 @@ pub(crate) fn de_alarm_history_item(
                     Ok(builder.set_alarm_contributor_id(Some(decoder.string()?)))
                 })?,
                 "AlarmType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_alarm_type(Some(decoder.string().map(|s| crate::types::AlarmType::from(s.as_ref()))?)))
+                    Ok(builder.set_alarm_type(Some(decoder.string().map(|s| crate::types::AlarmType::from(s.as_str()))?)))
                 })?,
                 "Timestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_timestamp(Some(decoder.timestamp()?)))
                 })?,
                 "HistoryItemType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_history_item_type(Some(decoder.string().map(|s| crate::types::HistoryItemType::from(s.as_ref()))?)))
+                    Ok(builder.set_history_item_type(Some(decoder.string().map(|s| crate::types::HistoryItemType::from(s.as_str()))?)))
                 })?,
                 "HistorySummary" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_history_summary(Some(decoder.string()?)))

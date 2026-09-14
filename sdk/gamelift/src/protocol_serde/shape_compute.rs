@@ -35,7 +35,7 @@ pub(crate) fn de_compute(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_dns_name(Some(decoder.string()?))))?
             }
             "ComputeStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_compute_status(Some(decoder.string().map(|s| crate::types::ComputeStatus::from(s.as_ref()))?)))
+                Ok(builder.set_compute_status(Some(decoder.string().map(|s| crate::types::ComputeStatus::from(s.as_str()))?)))
             })?,
             "Location" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_location(Some(decoder.string()?))))?
@@ -44,10 +44,10 @@ pub(crate) fn de_compute(
                 Ok(builder.set_creation_time(Some(decoder.timestamp()?)))
             })?,
             "OperatingSystem" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_ref()))?)))
+                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_str()))?)))
             })?,
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::Ec2InstanceType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::Ec2InstanceType::from(s.as_str()))?)))
             })?,
             "GameLiftServiceSdkEndpoint" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_game_lift_service_sdk_endpoint(Some(decoder.string()?)))

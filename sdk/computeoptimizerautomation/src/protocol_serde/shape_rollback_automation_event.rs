@@ -246,7 +246,7 @@ pub(crate) fn de_rollback_automation_event(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_event_id(Some(decoder.string()?))))?
             }
             "eventStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_event_status(Some(decoder.string().map(|s| crate::types::EventStatus::from(s.as_ref()))?)))
+                Ok(builder.set_event_status(Some(decoder.string().map(|s| crate::types::EventStatus::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

@@ -22,6 +22,8 @@ pub struct AssumeRootInput {
     /// <p>The duration, in seconds, of the privileged session. The value can range from 0 seconds up to the maximum session duration of 900 seconds (15 minutes). If you specify a value higher than this setting, the operation fails.</p>
     /// <p>By default, the value is set to <code>900</code> seconds.</p>
     pub duration_seconds: ::std::option::Option<i32>,
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl AssumeRootInput {
     /// <p>The member account principal ARN or account ID.</p>
@@ -49,6 +51,10 @@ impl AssumeRootInput {
     pub fn duration_seconds(&self) -> ::std::option::Option<i32> {
         self.duration_seconds
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(&self) -> ::std::option::Option<i32> {
+        self.minimum_session_token_size
+    }
 }
 impl AssumeRootInput {
     /// Creates a new builder-style object to manufacture [`AssumeRootInput`](crate::operation::assume_root::AssumeRootInput).
@@ -64,6 +70,7 @@ pub struct AssumeRootInputBuilder {
     pub(crate) target_principal: ::std::option::Option<::std::string::String>,
     pub(crate) task_policy_arn: ::std::option::Option<crate::types::PolicyDescriptorType>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
+    pub(crate) minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl AssumeRootInputBuilder {
     /// <p>The member account principal ARN or account ID.</p>
@@ -149,12 +156,27 @@ impl AssumeRootInputBuilder {
     pub fn get_duration_seconds(&self) -> &::std::option::Option<i32> {
         &self.duration_seconds
     }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn minimum_session_token_size(mut self, input: i32) -> Self {
+        self.minimum_session_token_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn set_minimum_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.minimum_session_token_size = input;
+        self
+    }
+    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    pub fn get_minimum_session_token_size(&self) -> &::std::option::Option<i32> {
+        &self.minimum_session_token_size
+    }
     /// Consumes the builder and constructs a [`AssumeRootInput`](crate::operation::assume_root::AssumeRootInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::assume_root::AssumeRootInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::assume_root::AssumeRootInput {
             target_principal: self.target_principal,
             task_policy_arn: self.task_policy_arn,
             duration_seconds: self.duration_seconds,
+            minimum_session_token_size: self.minimum_session_token_size,
         })
     }
 }

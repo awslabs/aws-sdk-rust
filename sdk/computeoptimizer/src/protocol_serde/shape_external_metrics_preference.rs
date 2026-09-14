@@ -17,7 +17,7 @@ pub(crate) fn de_external_metrics_preference(
     ) -> ::std::result::Result<crate::types::builders::ExternalMetricsPreferenceBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "source" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_source(Some(decoder.string().map(|s| crate::types::ExternalMetricsSource::from(s.as_ref()))?)))
+                Ok(builder.set_source(Some(decoder.string().map(|s| crate::types::ExternalMetricsSource::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

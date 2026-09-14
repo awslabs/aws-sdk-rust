@@ -30,7 +30,7 @@ pub(crate) fn de_metric_data_result(
                 )
             })?,
             "StatusCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status_code(Some(decoder.string().map(|s| crate::types::StatusCode::from(s.as_ref()))?)))
+                Ok(builder.set_status_code(Some(decoder.string().map(|s| crate::types::StatusCode::from(s.as_str()))?)))
             })?,
             "Messages" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_messages(Some(

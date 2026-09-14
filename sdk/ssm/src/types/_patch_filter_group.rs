@@ -14,6 +14,95 @@ impl PatchFilterGroup {
         self.patch_filters.deref()
     }
 }
+static PATCHFILTERGROUP_MEMBER_PATCH_FILTERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchFilterList$member", "com.amazonaws.ssm", "PatchFilterList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static PATCHFILTERGROUP_MEMBER_PATCH_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchFilterGroup$PatchFilters", "com.amazonaws.ssm", "PatchFilterGroup"),
+    ::aws_smithy_schema::ShapeType::List,
+    "PatchFilters",
+    0,
+)
+.with_list_member(&PATCHFILTERGROUP_MEMBER_PATCH_FILTERS_MEMBER);
+static PATCHFILTERGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchFilterGroup", "com.amazonaws.ssm", "PatchFilterGroup"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PATCHFILTERGROUP_MEMBER_PATCH_FILTERS],
+);
+impl PatchFilterGroup {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PATCHFILTERGROUP_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PatchFilterGroup {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.patch_filters;
+
+            ser.write_list(
+                &PATCHFILTERGROUP_MEMBER_PATCH_FILTERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PatchFilter::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl PatchFilterGroup {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&PATCHFILTERGROUP_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.patch_filters = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::PatchFilter::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.patch_filters = builder.patch_filters.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl PatchFilterGroup {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl PatchFilterGroup {
     /// Creates a new builder-style object to manufacture [`PatchFilterGroup`](crate::types::PatchFilterGroup).
     pub fn builder() -> crate::types::builders::PatchFilterGroupBuilder {

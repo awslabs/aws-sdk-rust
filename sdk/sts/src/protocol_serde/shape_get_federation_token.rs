@@ -157,6 +157,36 @@ pub fn de_get_federation_token(
                 builder = builder.set_packed_policy_size(var_3);
             }
             ,
+            s if s.matches("SessionTokenUtilization") /* SessionTokenUtilization com.amazonaws.sts.synthetic#GetFederationTokenOutput$SessionTokenUtilization */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.sts#sessionTokenUtilizationType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_session_token_utilization(var_4);
+            }
+            ,
+            s if s.matches("SessionTokenSize") /* SessionTokenSize com.amazonaws.sts.synthetic#GetFederationTokenOutput$SessionTokenSize */ =>  {
+                let var_5 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.sts#sessionTokenSizeType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_session_token_size(var_5);
+            }
+            ,
             _ => {}
         }
         }

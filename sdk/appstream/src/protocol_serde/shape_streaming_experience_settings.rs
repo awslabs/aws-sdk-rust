@@ -29,7 +29,7 @@ pub(crate) fn de_streaming_experience_settings(
     ) -> ::std::result::Result<crate::types::builders::StreamingExperienceSettingsBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "PreferredProtocol" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_preferred_protocol(Some(decoder.string().map(|s| crate::types::PreferredProtocol::from(s.as_ref()))?)))
+                Ok(builder.set_preferred_protocol(Some(decoder.string().map(|s| crate::types::PreferredProtocol::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

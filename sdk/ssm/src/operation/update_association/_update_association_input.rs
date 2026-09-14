@@ -235,6 +235,724 @@ impl ::std::fmt::Debug for UpdateAssociationInput {
         formatter.finish()
     }
 }
+static UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$AssociationId",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationId",
+    0,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ParameterValueList$member", "com.amazonaws.ssm", "ParameterValueList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Parameters$key", "com.amazonaws.ssm", "Parameters"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Parameters$value", "com.amazonaws.ssm", "Parameters"),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS_VALUE_MEMBER);
+static UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$Parameters",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    1,
+)
+.with_map_members(
+    &UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS_KEY,
+    &UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS_VALUE,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$DocumentVersion",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    2,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_SCHEDULE_EXPRESSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$ScheduleExpression",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ScheduleExpression",
+    3,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_OUTPUT_LOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$OutputLocation",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "OutputLocation",
+    4,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$Name",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    5,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Targets$member", "com.amazonaws.ssm", "Targets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$Targets",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    6,
+)
+.with_list_member(&UPDATEASSOCIATIONINPUT_MEMBER_TARGETS_MEMBER);
+static UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$AssociationName",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationName",
+    7,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$AssociationVersion",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationVersion",
+    8,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_AUTOMATION_TARGET_PARAMETER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$AutomationTargetParameterName",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AutomationTargetParameterName",
+    9,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_MAX_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$MaxErrors",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxErrors",
+    10,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_MAX_CONCURRENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$MaxConcurrency",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxConcurrency",
+    11,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_COMPLIANCE_SEVERITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$ComplianceSeverity",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ComplianceSeverity",
+    12,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_SYNC_COMPLIANCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$SyncCompliance",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SyncCompliance",
+    13,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_APPLY_ONLY_AT_CRON_INTERVAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$ApplyOnlyAtCronInterval",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ApplyOnlyAtCronInterval",
+    14,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_CALENDAR_NAMES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CalendarNameOrARNList$member",
+        "com.amazonaws.ssm",
+        "CalendarNameOrARNList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_CALENDAR_NAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$CalendarNames",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CalendarNames",
+    15,
+)
+.with_list_member(&UPDATEASSOCIATIONINPUT_MEMBER_CALENDAR_NAMES_MEMBER);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGET_LOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetLocations$member", "com.amazonaws.ssm", "TargetLocations"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGET_LOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$TargetLocations",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetLocations",
+    16,
+)
+.with_list_member(&UPDATEASSOCIATIONINPUT_MEMBER_TARGET_LOCATIONS_MEMBER);
+static UPDATEASSOCIATIONINPUT_MEMBER_SCHEDULE_OFFSET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$ScheduleOffset",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "ScheduleOffset",
+    17,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_DURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$Duration",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "Duration",
+    18,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMapValueList$member", "com.amazonaws.ssm", "TargetMapValueList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$key", "com.amazonaws.ssm", "TargetMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$value", "com.amazonaws.ssm", "TargetMap"),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMaps$member", "com.amazonaws.ssm", "TargetMaps"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "member",
+    0,
+)
+.with_map_members(
+    &UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER_KEY,
+    &UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$TargetMaps",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetMaps",
+    19,
+)
+.with_list_member(&UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER);
+static UPDATEASSOCIATIONINPUT_MEMBER_ALARM_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$AlarmConfiguration",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AlarmConfiguration",
+    20,
+);
+static UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_DISPATCH_ASSUME_ROLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput$AssociationDispatchAssumeRole",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AssociationDispatchAssumeRole",
+    21,
+);
+static UPDATEASSOCIATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateAssociationInput",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateAssociationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID,
+        &UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS,
+        &UPDATEASSOCIATIONINPUT_MEMBER_DOCUMENT_VERSION,
+        &UPDATEASSOCIATIONINPUT_MEMBER_SCHEDULE_EXPRESSION,
+        &UPDATEASSOCIATIONINPUT_MEMBER_OUTPUT_LOCATION,
+        &UPDATEASSOCIATIONINPUT_MEMBER_NAME,
+        &UPDATEASSOCIATIONINPUT_MEMBER_TARGETS,
+        &UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_NAME,
+        &UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_VERSION,
+        &UPDATEASSOCIATIONINPUT_MEMBER_AUTOMATION_TARGET_PARAMETER_NAME,
+        &UPDATEASSOCIATIONINPUT_MEMBER_MAX_ERRORS,
+        &UPDATEASSOCIATIONINPUT_MEMBER_MAX_CONCURRENCY,
+        &UPDATEASSOCIATIONINPUT_MEMBER_COMPLIANCE_SEVERITY,
+        &UPDATEASSOCIATIONINPUT_MEMBER_SYNC_COMPLIANCE,
+        &UPDATEASSOCIATIONINPUT_MEMBER_APPLY_ONLY_AT_CRON_INTERVAL,
+        &UPDATEASSOCIATIONINPUT_MEMBER_CALENDAR_NAMES,
+        &UPDATEASSOCIATIONINPUT_MEMBER_TARGET_LOCATIONS,
+        &UPDATEASSOCIATIONINPUT_MEMBER_SCHEDULE_OFFSET,
+        &UPDATEASSOCIATIONINPUT_MEMBER_DURATION,
+        &UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS,
+        &UPDATEASSOCIATIONINPUT_MEMBER_ALARM_CONFIGURATION,
+        &UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_DISPATCH_ASSUME_ROLE,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateAssociationRequest");
+impl UpdateAssociationInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEASSOCIATIONINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateAssociationInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.association_id {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_ID, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.schedule_expression {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_SCHEDULE_EXPRESSION, val)?;
+        }
+        if let Some(ref val) = self.output_location {
+            ser.write_struct(&UPDATEASSOCIATIONINPUT_MEMBER_OUTPUT_LOCATION, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(
+                &UPDATEASSOCIATIONINPUT_MEMBER_TARGETS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.association_name {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_NAME, val)?;
+        }
+        if let Some(ref val) = self.association_version {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_VERSION, val)?;
+        }
+        if let Some(ref val) = self.automation_target_parameter_name {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_AUTOMATION_TARGET_PARAMETER_NAME, val)?;
+        }
+        if let Some(ref val) = self.max_errors {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_MAX_ERRORS, val)?;
+        }
+        if let Some(ref val) = self.max_concurrency {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_MAX_CONCURRENCY, val)?;
+        }
+        if let Some(ref val) = self.compliance_severity {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_COMPLIANCE_SEVERITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.sync_compliance {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_SYNC_COMPLIANCE, val.as_str())?;
+        }
+        if let Some(ref val) = self.apply_only_at_cron_interval {
+            ser.write_boolean(&UPDATEASSOCIATIONINPUT_MEMBER_APPLY_ONLY_AT_CRON_INTERVAL, *val)?;
+        }
+        if let Some(ref val) = self.calendar_names {
+            ser.write_list(
+                &UPDATEASSOCIATIONINPUT_MEMBER_CALENDAR_NAMES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.target_locations {
+            ser.write_list(
+                &UPDATEASSOCIATIONINPUT_MEMBER_TARGET_LOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TargetLocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.schedule_offset {
+            ser.write_integer(&UPDATEASSOCIATIONINPUT_MEMBER_SCHEDULE_OFFSET, *val)?;
+        }
+        if let Some(ref val) = self.duration {
+            ser.write_integer(&UPDATEASSOCIATIONINPUT_MEMBER_DURATION, *val)?;
+        }
+        if let Some(ref val) = self.target_maps {
+            ser.write_list(
+                &UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                                    ser.write_list(
+                                        &UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+                                        &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                            for item in value {
+                                                ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                            }
+                                            Ok(())
+                                        },
+                                    )?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.alarm_configuration {
+            ser.write_struct(&UPDATEASSOCIATIONINPUT_MEMBER_ALARM_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.association_dispatch_assume_role {
+            ser.write_string(&UPDATEASSOCIATIONINPUT_MEMBER_ASSOCIATION_DISPATCH_ASSUME_ROLE, val)?;
+        }
+        Ok(())
+    }
+}
+impl UpdateAssociationInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UPDATEASSOCIATIONINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&UPDATEASSOCIATIONINPUT_MEMBER_PARAMETERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.schedule_expression = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.output_location = Some(crate::types::InstanceAssociationOutputLocation::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.automation_target_parameter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_errors = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_concurrency = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.compliance_severity = Some(crate::types::AssociationComplianceSeverity::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_compliance = Some(crate::types::AssociationSyncCompliance::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.apply_only_at_cron_interval = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.calendar_names = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_locations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TargetLocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.schedule_offset = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.duration = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_maps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER, &mut |key, deser| {
+                                        let value = {
+                                            let mut list = Vec::new();
+                                            deser.read_list(&UPDATEASSOCIATIONINPUT_MEMBER_TARGET_MAPS_MEMBER_VALUE, &mut |deser| {
+                                                list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                                Ok(())
+                                            })?;
+                                            list
+                                        };
+                                        map.insert(key, value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.alarm_configuration = Some(crate::types::AlarmConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.association_dispatch_assume_role = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.association_id = builder.association_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl UpdateAssociationInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl UpdateAssociationInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssociationInput`](crate::operation::update_association::UpdateAssociationInput).
     pub fn builder() -> crate::operation::update_association::builders::UpdateAssociationInputBuilder {

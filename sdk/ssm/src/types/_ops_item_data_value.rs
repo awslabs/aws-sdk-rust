@@ -19,6 +19,90 @@ impl OpsItemDataValue {
         self.r#type.as_ref()
     }
 }
+static OPSITEMDATAVALUE_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsItemDataValue$Value", "com.amazonaws.ssm", "OpsItemDataValue"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Value",
+    0,
+);
+static OPSITEMDATAVALUE_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsItemDataValue$Type", "com.amazonaws.ssm", "OpsItemDataValue"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    1,
+);
+static OPSITEMDATAVALUE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsItemDataValue", "com.amazonaws.ssm", "OpsItemDataValue"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&OPSITEMDATAVALUE_MEMBER_VALUE, &OPSITEMDATAVALUE_MEMBER_TYPE],
+);
+impl OpsItemDataValue {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPSITEMDATAVALUE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpsItemDataValue {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.value {
+            ser.write_string(&OPSITEMDATAVALUE_MEMBER_VALUE, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&OPSITEMDATAVALUE_MEMBER_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl OpsItemDataValue {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&OPSITEMDATAVALUE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.r#type = Some(crate::types::OpsItemDataType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl OpsItemDataValue {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl OpsItemDataValue {
     /// Creates a new builder-style object to manufacture [`OpsItemDataValue`](crate::types::OpsItemDataValue).
     pub fn builder() -> crate::types::builders::OpsItemDataValueBuilder {

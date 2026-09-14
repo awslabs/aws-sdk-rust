@@ -17,7 +17,7 @@ pub(crate) fn de_workspace_instance(
     ) -> ::std::result::Result<crate::types::builders::WorkspaceInstanceBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ProvisionState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_provision_state(Some(decoder.string().map(|s| crate::types::ProvisionStateEnum::from(s.as_ref()))?)))
+                Ok(builder.set_provision_state(Some(decoder.string().map(|s| crate::types::ProvisionStateEnum::from(s.as_str()))?)))
             })?,
             "WorkspaceInstanceId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_workspace_instance_id(Some(decoder.string()?)))

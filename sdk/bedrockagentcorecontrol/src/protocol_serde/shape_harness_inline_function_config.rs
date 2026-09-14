@@ -7,7 +7,9 @@ pub fn ser_harness_inline_function_config(
         object.key("description").string(input.description.as_str());
     }
     {
-        object.key("inputSchema").document(&input.input_schema);
+        object
+            .key("inputSchema")
+            .document(&input.input_schema, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

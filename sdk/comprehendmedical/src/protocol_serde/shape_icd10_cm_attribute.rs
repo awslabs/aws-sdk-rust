@@ -17,7 +17,7 @@ pub(crate) fn de_icd10_cm_attribute(
     ) -> ::std::result::Result<crate::types::builders::Icd10CmAttributeBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::Icd10CmAttributeType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::Icd10CmAttributeType::from(s.as_str()))?)))
             })?,
             "Score" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_score(Some(decoder.float()?))))?,
             "RelationshipScore" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -44,10 +44,10 @@ pub(crate) fn de_icd10_cm_attribute(
                 )
             })?,
             "Category" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_category(Some(decoder.string().map(|s| crate::types::Icd10CmEntityType::from(s.as_ref()))?)))
+                Ok(builder.set_category(Some(decoder.string().map(|s| crate::types::Icd10CmEntityType::from(s.as_str()))?)))
             })?,
             "RelationshipType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_relationship_type(Some(decoder.string().map(|s| crate::types::Icd10CmRelationshipType::from(s.as_ref()))?)))
+                Ok(builder.set_relationship_type(Some(decoder.string().map(|s| crate::types::Icd10CmRelationshipType::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

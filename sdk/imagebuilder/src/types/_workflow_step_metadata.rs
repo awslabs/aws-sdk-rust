@@ -26,6 +26,10 @@ pub struct WorkflowStepMetadata {
     pub start_time: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the workflow step finished.</p>
     pub end_time: ::std::option::Option<::std::string::String>,
+    /// <p>The current attempt number for the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub attempt_number: ::std::option::Option<i32>,
+    /// <p>The maximum number of attempts allowed for the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub max_attempts: ::std::option::Option<i32>,
 }
 impl WorkflowStepMetadata {
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
@@ -72,6 +76,14 @@ impl WorkflowStepMetadata {
     pub fn end_time(&self) -> ::std::option::Option<&str> {
         self.end_time.as_deref()
     }
+    /// <p>The current attempt number for the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub fn attempt_number(&self) -> ::std::option::Option<i32> {
+        self.attempt_number
+    }
+    /// <p>The maximum number of attempts allowed for the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub fn max_attempts(&self) -> ::std::option::Option<i32> {
+        self.max_attempts
+    }
 }
 impl WorkflowStepMetadata {
     /// Creates a new builder-style object to manufacture [`WorkflowStepMetadata`](crate::types::WorkflowStepMetadata).
@@ -95,6 +107,8 @@ pub struct WorkflowStepMetadataBuilder {
     pub(crate) outputs: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::std::string::String>,
     pub(crate) end_time: ::std::option::Option<::std::string::String>,
+    pub(crate) attempt_number: ::std::option::Option<i32>,
+    pub(crate) max_attempts: ::std::option::Option<i32>,
 }
 impl WorkflowStepMetadataBuilder {
     /// <p>A unique identifier for the workflow step, assigned at runtime.</p>
@@ -251,6 +265,34 @@ impl WorkflowStepMetadataBuilder {
     pub fn get_end_time(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_time
     }
+    /// <p>The current attempt number for the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub fn attempt_number(mut self, input: i32) -> Self {
+        self.attempt_number = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current attempt number for the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub fn set_attempt_number(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.attempt_number = input;
+        self
+    }
+    /// <p>The current attempt number for the workflow step. The first run is attempt one. The number increases by one for each retry.</p>
+    pub fn get_attempt_number(&self) -> &::std::option::Option<i32> {
+        &self.attempt_number
+    }
+    /// <p>The maximum number of attempts allowed for the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub fn max_attempts(mut self, input: i32) -> Self {
+        self.max_attempts = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum number of attempts allowed for the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub fn set_max_attempts(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_attempts = input;
+        self
+    }
+    /// <p>The maximum number of attempts allowed for the workflow step, based on the retry configuration in the workflow document. If the step doesn't configure retries, the maximum is one attempt.</p>
+    pub fn get_max_attempts(&self) -> &::std::option::Option<i32> {
+        &self.max_attempts
+    }
     /// Consumes the builder and constructs a [`WorkflowStepMetadata`](crate::types::WorkflowStepMetadata).
     pub fn build(self) -> crate::types::WorkflowStepMetadata {
         crate::types::WorkflowStepMetadata {
@@ -265,6 +307,8 @@ impl WorkflowStepMetadataBuilder {
             outputs: self.outputs,
             start_time: self.start_time,
             end_time: self.end_time,
+            attempt_number: self.attempt_number,
+            max_attempts: self.max_attempts,
         }
     }
 }

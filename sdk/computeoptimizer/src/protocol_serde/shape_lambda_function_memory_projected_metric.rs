@@ -18,14 +18,14 @@ pub(crate) fn de_lambda_function_memory_projected_metric(
         builder = match decoder.str()?.as_ref() {
             "name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_name(Some(
-                    decoder.string().map(|s| crate::types::LambdaFunctionMemoryMetricName::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::LambdaFunctionMemoryMetricName::from(s.as_str()))?,
                 )))
             })?,
             "statistic" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_statistic(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::LambdaFunctionMemoryMetricStatistic::from(s.as_ref()))?,
+                        .map(|s| crate::types::LambdaFunctionMemoryMetricStatistic::from(s.as_str()))?,
                 )))
             })?,
             "value" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_value(Some(decoder.double()?))))?,

@@ -17,7 +17,7 @@ pub(crate) fn de_metric_source(
     ) -> ::std::result::Result<crate::types::builders::MetricSourceBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "provider" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_provider(Some(decoder.string().map(|s| crate::types::MetricSourceProvider::from(s.as_ref()))?)))
+                Ok(builder.set_provider(Some(decoder.string().map(|s| crate::types::MetricSourceProvider::from(s.as_str()))?)))
             })?,
             "providerArn" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_provider_arn(Some(decoder.string()?))))?

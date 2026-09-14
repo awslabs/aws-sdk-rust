@@ -245,3 +245,95 @@ async fn swap_to_rest_xml_protocol() {
 }
 */
 // --- END XML protocol swap test (disabled) ---
+
+// --- BEGIN XML protocol swap error-path test (disabled) ---
+// The success-path test above proves request-side decoupling. This test
+// proves the *response-side* (error path) decoupling: a restXml error
+// envelope is parsed, the typed error variant dispatches by shape name,
+// and the inner `<Error>` body is deserialized into the variant's fields.
+//
+// Wire-level proof points:
+//   1. `AwsRestXmlProtocol::parse_error_metadata` walks
+//      `<ErrorResponse><Error><Code>` to extract the dispatch key.
+//   2. `AwsRestXmlProtocol::deserialize_error_response` positions the body
+//      deserializer *inside* `<Error>` so the typed error's
+//      `deserialize_with_response` reads `<Message>` from the right scope.
+//   3. Codegen `match error_code` resolves `"InternalServerError"` to the
+//      `ListTablesError::InternalServerError(_)` variant (shape-name keys
+//      are uniform across all schema-serde-allowlisted protocols).
+
+/*
+use aws_smithy_http_client::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_runtime_api::client::result::SdkError;
+use aws_smithy_types::body::SdkBody;
+
+#[tokio::test]
+async fn swap_to_rest_xml_protocol_error_response() {
+    // Mocked restXml-style error envelope. Code is the shape name (the
+    // dispatch key emitted by `errorCode(shape)` for restXml — same as
+    // every schema-serde-allowlisted protocol).
+    let xml_error_body = r#"<?xml version="1.0" encoding="UTF-8"?>
+<ErrorResponse>
+  <Error>
+    <Type>Receiver</Type>
+    <Code>InternalServerError</Code>
+    <Message>simulated server error</Message>
+  </Error>
+  <RequestId>test-request-id</RequestId>
+</ErrorResponse>"#;
+
+    let placeholder_request = http_1x::Request::builder()
+        .body(SdkBody::from("placeholder"))
+        .unwrap();
+    let error_response = http_1x::Response::builder()
+        .status(500)
+        .header("content-type", "application/xml")
+        .body(SdkBody::from(xml_error_body))
+        .unwrap();
+    let http_client =
+        StaticReplayClient::new(vec![ReplayEvent::new(placeholder_request, error_response)]);
+
+    let xml_protocol = aws_smithy_xml::protocol::aws_rest_xml::AwsRestXmlProtocol::new();
+    let conf = xml_swap_base_config()
+        .http_client(http_client)
+        // Disable retries so a 500 short-circuits to the dispatch path
+        // immediately rather than burning through retry attempts.
+        .retry_config(aws_sdk_dynamodb::config::retry::RetryConfig::disabled())
+        .protocol(xml_protocol)
+        .build();
+    let client = aws_sdk_dynamodb::Client::from_conf(conf);
+
+    let err = client
+        .list_tables()
+        .send()
+        .await
+        .expect_err("mocked 500 must surface as Err");
+
+    let service_err = match err {
+        SdkError::ServiceError(svc) => svc.into_err(),
+        other => panic!("expected SdkError::ServiceError, got {other:?}"),
+    };
+
+    // Proof point: code dispatch landed on the typed variant via the
+    // runtime `parse_error_metadata` path. (`Unhandled` would mean the code
+    // was not extracted or did not match — i.e. the swap was incomplete.)
+    let inner = match service_err {
+        aws_sdk_dynamodb::operation::list_tables::ListTablesError::InternalServerError(e) => e,
+        other => panic!(
+            "expected typed InternalServerError variant via the restXml \
+             swap's parse_error_metadata + dispatch, got {other:?}"
+        ),
+    };
+
+    // Proof point: body deserializer was positioned inside `<Error>` —
+    // otherwise `<Message>` would not be reachable from the error type's
+    // `deserialize_with_response` member-read scope.
+    assert_eq!(
+        inner.message.as_deref(),
+        Some("simulated server error"),
+        "expected Message from inside <Error> to deserialize into the \
+         typed variant's field"
+    );
+}
+*/
+// --- END XML protocol swap error-path test (disabled) ---

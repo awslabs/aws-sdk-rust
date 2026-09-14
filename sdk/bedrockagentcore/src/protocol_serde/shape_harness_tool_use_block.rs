@@ -10,7 +10,9 @@ pub fn ser_harness_tool_use_block(
         object.key("toolUseId").string(input.tool_use_id.as_str());
     }
     {
-        object.key("input").document(&input.input);
+        object
+            .key("input")
+            .document(&input.input, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_1) = &input.r#type {
         object.key("type").string(var_1.as_str());

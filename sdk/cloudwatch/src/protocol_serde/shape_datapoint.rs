@@ -33,7 +33,7 @@ pub(crate) fn de_datapoint(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_maximum(Some(decoder.double()?))))?
             }
             "Unit" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_unit(Some(decoder.string().map(|s| crate::types::StandardUnit::from(s.as_ref()))?)))
+                Ok(builder.set_unit(Some(decoder.string().map(|s| crate::types::StandardUnit::from(s.as_str()))?)))
             })?,
             "ExtendedStatistics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

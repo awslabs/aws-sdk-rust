@@ -63,7 +63,7 @@ pub(crate) fn de_global_aurora_configuration(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_external_id(Some(decoder.string()?))))?
             }
             "behavior" => builder.set_behavior(Some(
-                decoder.string().map(|s| crate::types::GlobalAuroraDefaultBehavior::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::GlobalAuroraDefaultBehavior::from(s.as_str()))?,
             )),
             "ungraceful" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

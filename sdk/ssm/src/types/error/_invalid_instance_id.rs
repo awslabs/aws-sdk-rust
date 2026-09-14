@@ -18,6 +18,94 @@ pub struct InvalidInstanceId {
     pub message: ::std::option::Option<::std::string::String>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
+static INVALIDINSTANCEID_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#InvalidInstanceId$Message", "com.amazonaws.ssm", "InvalidInstanceId"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Message",
+    0,
+);
+static INVALIDINSTANCEID_TRAITS: std::sync::LazyLock<::aws_smithy_schema::TraitMap> = std::sync::LazyLock::new(|| {
+    let mut map = ::aws_smithy_schema::TraitMap::new();
+    map.insert(Box::new(::aws_smithy_schema::DocumentTrait::new(
+        ::aws_smithy_schema::ShapeId::from_parts("aws.protocols#awsQueryError", "aws.protocols", "awsQueryError"),
+        {
+            let mut obj = ::aws_smithy_types::document::DocumentObject::new();
+            obj.insert("code".to_string(), ::aws_smithy_types::Document::String("InvalidInstanceId".to_string()));
+            obj.insert(
+                "httpResponseCode".to_string(),
+                ::aws_smithy_types::Document::Number(::aws_smithy_types::Number::PosInt(404u64)),
+            );
+            ::aws_smithy_types::Document::Object(obj)
+        },
+    )));
+    map
+});
+static INVALIDINSTANCEID_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#InvalidInstanceId", "com.amazonaws.ssm", "InvalidInstanceId"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&INVALIDINSTANCEID_MEMBER_MESSAGE],
+)
+.with_traits(&INVALIDINSTANCEID_TRAITS);
+impl InvalidInstanceId {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INVALIDINSTANCEID_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InvalidInstanceId {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.message {
+            ser.write_string(&INVALIDINSTANCEID_MEMBER_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl InvalidInstanceId {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&INVALIDINSTANCEID_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl InvalidInstanceId {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        if body.is_empty() {
+            return Ok(Self::builder().build());
+        }
+        Self::deserialize(deserializer)
+    }
+}
 impl InvalidInstanceId {
     /// Returns the error message.
     pub fn message(&self) -> ::std::option::Option<&str> {

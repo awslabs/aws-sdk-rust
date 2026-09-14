@@ -157,7 +157,7 @@ pub(crate) fn de_create_return_shipping_label(
     > {
         builder = match decoder.str()?.as_ref() {
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::ShippingLabelStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::ShippingLabelStatus::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

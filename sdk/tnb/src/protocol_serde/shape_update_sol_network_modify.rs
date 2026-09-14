@@ -7,7 +7,10 @@ pub fn ser_update_sol_network_modify(
         object.key("vnfInstanceId").string(input.vnf_instance_id.as_str());
     }
     {
-        object.key("vnfConfigurableProperties").document(&input.vnf_configurable_properties);
+        object.key("vnfConfigurableProperties").document(
+            &input.vnf_configurable_properties,
+            &::aws_smithy_json::codec::JsonCodecSettings::default(),
+        )?;
     }
     Ok(())
 }

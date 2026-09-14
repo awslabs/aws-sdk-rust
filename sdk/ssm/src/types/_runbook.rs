@@ -71,6 +71,390 @@ impl Runbook {
         self.target_locations.as_deref().unwrap_or_default()
     }
 }
+static RUNBOOK_MEMBER_DOCUMENT_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$DocumentName", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentName",
+    0,
+);
+static RUNBOOK_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$DocumentVersion", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    1,
+);
+static RUNBOOK_MEMBER_PARAMETERS_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterValueList$member",
+        "com.amazonaws.ssm",
+        "AutomationParameterValueList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RUNBOOK_MEMBER_PARAMETERS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$key",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static RUNBOOK_MEMBER_PARAMETERS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationParameterMap$value",
+        "com.amazonaws.ssm",
+        "AutomationParameterMap",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&RUNBOOK_MEMBER_PARAMETERS_VALUE_MEMBER);
+static RUNBOOK_MEMBER_PARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$Parameters", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "Parameters",
+    2,
+)
+.with_map_members(&RUNBOOK_MEMBER_PARAMETERS_KEY, &RUNBOOK_MEMBER_PARAMETERS_VALUE);
+static RUNBOOK_MEMBER_TARGET_PARAMETER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$TargetParameterName", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "TargetParameterName",
+    3,
+);
+static RUNBOOK_MEMBER_TARGETS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Targets$member", "com.amazonaws.ssm", "Targets"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RUNBOOK_MEMBER_TARGETS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$Targets", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::List,
+    "Targets",
+    4,
+)
+.with_list_member(&RUNBOOK_MEMBER_TARGETS_MEMBER);
+static RUNBOOK_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMapValueList$member", "com.amazonaws.ssm", "TargetMapValueList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static RUNBOOK_MEMBER_TARGET_MAPS_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$key", "com.amazonaws.ssm", "TargetMap"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static RUNBOOK_MEMBER_TARGET_MAPS_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMap$value", "com.amazonaws.ssm", "TargetMap"),
+    ::aws_smithy_schema::ShapeType::List,
+    "value",
+    1,
+)
+.with_list_member(&RUNBOOK_MEMBER_TARGET_MAPS_MEMBER_VALUE_MEMBER);
+static RUNBOOK_MEMBER_TARGET_MAPS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetMaps$member", "com.amazonaws.ssm", "TargetMaps"),
+    ::aws_smithy_schema::ShapeType::Map,
+    "member",
+    0,
+)
+.with_map_members(&RUNBOOK_MEMBER_TARGET_MAPS_MEMBER_KEY, &RUNBOOK_MEMBER_TARGET_MAPS_MEMBER_VALUE);
+static RUNBOOK_MEMBER_TARGET_MAPS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$TargetMaps", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetMaps",
+    5,
+)
+.with_list_member(&RUNBOOK_MEMBER_TARGET_MAPS_MEMBER);
+static RUNBOOK_MEMBER_MAX_CONCURRENCY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$MaxConcurrency", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxConcurrency",
+    6,
+);
+static RUNBOOK_MEMBER_MAX_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$MaxErrors", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::String,
+    "MaxErrors",
+    7,
+);
+static RUNBOOK_MEMBER_TARGET_LOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#TargetLocations$member", "com.amazonaws.ssm", "TargetLocations"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static RUNBOOK_MEMBER_TARGET_LOCATIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook$TargetLocations", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::List,
+    "TargetLocations",
+    8,
+)
+.with_list_member(&RUNBOOK_MEMBER_TARGET_LOCATIONS_MEMBER);
+static RUNBOOK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#Runbook", "com.amazonaws.ssm", "Runbook"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RUNBOOK_MEMBER_DOCUMENT_NAME,
+        &RUNBOOK_MEMBER_DOCUMENT_VERSION,
+        &RUNBOOK_MEMBER_PARAMETERS,
+        &RUNBOOK_MEMBER_TARGET_PARAMETER_NAME,
+        &RUNBOOK_MEMBER_TARGETS,
+        &RUNBOOK_MEMBER_TARGET_MAPS,
+        &RUNBOOK_MEMBER_MAX_CONCURRENCY,
+        &RUNBOOK_MEMBER_MAX_ERRORS,
+        &RUNBOOK_MEMBER_TARGET_LOCATIONS,
+    ],
+);
+impl Runbook {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RUNBOOK_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for Runbook {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.document_name;
+            ser.write_string(&RUNBOOK_MEMBER_DOCUMENT_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&RUNBOOK_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.parameters {
+            ser.write_map(
+                &RUNBOOK_MEMBER_PARAMETERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                        ser.write_list(
+                            &RUNBOOK_MEMBER_PARAMETERS_VALUE,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for item in value {
+                                    ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.target_parameter_name {
+            ser.write_string(&RUNBOOK_MEMBER_TARGET_PARAMETER_NAME, val)?;
+        }
+        if let Some(ref val) = self.targets {
+            ser.write_list(&RUNBOOK_MEMBER_TARGETS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                for item in val {
+                    ser.write_struct(crate::types::Target::SCHEMA, item)?;
+                }
+                Ok(())
+            })?;
+        }
+        if let Some(ref val) = self.target_maps {
+            ser.write_list(
+                &RUNBOOK_MEMBER_TARGET_MAPS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_map(
+                            &RUNBOOK_MEMBER_TARGET_MAPS_MEMBER,
+                            &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                for (key, value) in item {
+                                    ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+
+                                    ser.write_list(
+                                        &RUNBOOK_MEMBER_TARGET_MAPS_MEMBER_VALUE,
+                                        &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                                            for item in value {
+                                                ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                                            }
+                                            Ok(())
+                                        },
+                                    )?;
+                                }
+                                Ok(())
+                            },
+                        )?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.max_concurrency {
+            ser.write_string(&RUNBOOK_MEMBER_MAX_CONCURRENCY, val)?;
+        }
+        if let Some(ref val) = self.max_errors {
+            ser.write_string(&RUNBOOK_MEMBER_MAX_ERRORS, val)?;
+        }
+        if let Some(ref val) = self.target_locations {
+            ser.write_list(
+                &RUNBOOK_MEMBER_TARGET_LOCATIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::TargetLocation::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl Runbook {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&RUNBOOK_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.document_name = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.parameters = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, {
+                                    let mut list = Vec::new();
+                                    deser.read_list(&RUNBOOK_MEMBER_PARAMETERS_VALUE, &mut |deser| {
+                                        list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                        Ok(())
+                                    })?;
+                                    list
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_parameter_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.targets = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::Target::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_maps = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push({
+                                    let mut map = ::std::collections::HashMap::new();
+                                    deser.read_map(&RUNBOOK_MEMBER_TARGET_MAPS_MEMBER, &mut |key, deser| {
+                                        let value = {
+                                            let mut list = Vec::new();
+                                            deser.read_list(&RUNBOOK_MEMBER_TARGET_MAPS_MEMBER_VALUE, &mut |deser| {
+                                                list.push(deser.read_string(&::aws_smithy_schema::prelude::STRING)?);
+                                                Ok(())
+                                            })?;
+                                            list
+                                        };
+                                        map.insert(key, value);
+                                        Ok(())
+                                    })?;
+                                    map
+                                });
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_concurrency = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.max_errors = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.target_locations = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TargetLocation::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.document_name = builder.document_name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl Runbook {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl Runbook {
     /// Creates a new builder-style object to manufacture [`Runbook`](crate::types::Runbook).
     pub fn builder() -> crate::types::builders::RunbookBuilder {

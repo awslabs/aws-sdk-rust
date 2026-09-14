@@ -43,7 +43,7 @@ pub(crate) fn de_observation(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_log_text(Some(decoder.string()?))))?
             }
             "LogFilter" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_log_filter(Some(decoder.string().map(|s| crate::types::LogFilter::from(s.as_ref()))?)))
+                Ok(builder.set_log_filter(Some(decoder.string().map(|s| crate::types::LogFilter::from(s.as_str()))?)))
             })?,
             "MetricNamespace" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_metric_namespace(Some(decoder.string()?)))
@@ -57,7 +57,7 @@ pub(crate) fn de_observation(
                 Ok(builder.set_cloud_watch_event_id(Some(decoder.string()?)))
             })?,
             "CloudWatchEventSource" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_cloud_watch_event_source(Some(decoder.string().map(|s| crate::types::CloudWatchEventSource::from(s.as_ref()))?)))
+                Ok(builder.set_cloud_watch_event_source(Some(decoder.string().map(|s| crate::types::CloudWatchEventSource::from(s.as_str()))?)))
             })?,
             "CloudWatchEventDetailType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_cloud_watch_event_detail_type(Some(decoder.string()?)))

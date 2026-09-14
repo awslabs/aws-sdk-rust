@@ -67,6 +67,269 @@ impl ResourceDataSyncItem {
         self.last_sync_status_message.as_deref()
     }
 }
+static RESOURCEDATASYNCITEM_MEMBER_SYNC_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$SyncName",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SyncName",
+    0,
+);
+static RESOURCEDATASYNCITEM_MEMBER_SYNC_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$SyncType",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SyncType",
+    1,
+);
+static RESOURCEDATASYNCITEM_MEMBER_SYNC_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$SyncSource",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SyncSource",
+    2,
+);
+static RESOURCEDATASYNCITEM_MEMBER_S3_DESTINATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$S3Destination",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "S3Destination",
+    3,
+);
+static RESOURCEDATASYNCITEM_MEMBER_LAST_SYNC_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$LastSyncTime",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastSyncTime",
+    4,
+);
+static RESOURCEDATASYNCITEM_MEMBER_LAST_SUCCESSFUL_SYNC_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$LastSuccessfulSyncTime",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastSuccessfulSyncTime",
+    5,
+);
+static RESOURCEDATASYNCITEM_MEMBER_SYNC_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$SyncLastModifiedTime",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SyncLastModifiedTime",
+    6,
+);
+static RESOURCEDATASYNCITEM_MEMBER_LAST_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$LastStatus",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastStatus",
+    7,
+);
+static RESOURCEDATASYNCITEM_MEMBER_SYNC_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$SyncCreatedTime",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "SyncCreatedTime",
+    8,
+);
+static RESOURCEDATASYNCITEM_MEMBER_LAST_SYNC_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncItem$LastSyncStatusMessage",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastSyncStatusMessage",
+    9,
+);
+static RESOURCEDATASYNCITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ResourceDataSyncItem", "com.amazonaws.ssm", "ResourceDataSyncItem"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &RESOURCEDATASYNCITEM_MEMBER_SYNC_NAME,
+        &RESOURCEDATASYNCITEM_MEMBER_SYNC_TYPE,
+        &RESOURCEDATASYNCITEM_MEMBER_SYNC_SOURCE,
+        &RESOURCEDATASYNCITEM_MEMBER_S3_DESTINATION,
+        &RESOURCEDATASYNCITEM_MEMBER_LAST_SYNC_TIME,
+        &RESOURCEDATASYNCITEM_MEMBER_LAST_SUCCESSFUL_SYNC_TIME,
+        &RESOURCEDATASYNCITEM_MEMBER_SYNC_LAST_MODIFIED_TIME,
+        &RESOURCEDATASYNCITEM_MEMBER_LAST_STATUS,
+        &RESOURCEDATASYNCITEM_MEMBER_SYNC_CREATED_TIME,
+        &RESOURCEDATASYNCITEM_MEMBER_LAST_SYNC_STATUS_MESSAGE,
+    ],
+);
+impl ResourceDataSyncItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEDATASYNCITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceDataSyncItem {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.sync_name {
+            ser.write_string(&RESOURCEDATASYNCITEM_MEMBER_SYNC_NAME, val)?;
+        }
+        if let Some(ref val) = self.sync_type {
+            ser.write_string(&RESOURCEDATASYNCITEM_MEMBER_SYNC_TYPE, val)?;
+        }
+        if let Some(ref val) = self.sync_source {
+            ser.write_struct(&RESOURCEDATASYNCITEM_MEMBER_SYNC_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.s3_destination {
+            ser.write_struct(&RESOURCEDATASYNCITEM_MEMBER_S3_DESTINATION, val)?;
+        }
+        if let Some(ref val) = self.last_sync_time {
+            ser.write_timestamp(&RESOURCEDATASYNCITEM_MEMBER_LAST_SYNC_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_successful_sync_time {
+            ser.write_timestamp(&RESOURCEDATASYNCITEM_MEMBER_LAST_SUCCESSFUL_SYNC_TIME, val)?;
+        }
+        if let Some(ref val) = self.sync_last_modified_time {
+            ser.write_timestamp(&RESOURCEDATASYNCITEM_MEMBER_SYNC_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_status {
+            ser.write_string(&RESOURCEDATASYNCITEM_MEMBER_LAST_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.sync_created_time {
+            ser.write_timestamp(&RESOURCEDATASYNCITEM_MEMBER_SYNC_CREATED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_sync_status_message {
+            ser.write_string(&RESOURCEDATASYNCITEM_MEMBER_LAST_SYNC_STATUS_MESSAGE, val)?;
+        }
+        Ok(())
+    }
+}
+impl ResourceDataSyncItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&RESOURCEDATASYNCITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_source = Some(crate::types::ResourceDataSyncSourceWithState::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.s3_destination = Some(crate::types::ResourceDataSyncS3Destination::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.last_sync_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.last_successful_sync_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.last_status = Some(crate::types::LastResourceDataSyncStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sync_created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.last_sync_status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl ResourceDataSyncItem {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl ResourceDataSyncItem {
     /// Creates a new builder-style object to manufacture [`ResourceDataSyncItem`](crate::types::ResourceDataSyncItem).
     pub fn builder() -> crate::types::builders::ResourceDataSyncItemBuilder {

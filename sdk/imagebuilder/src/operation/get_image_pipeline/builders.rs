@@ -22,7 +22,7 @@ impl crate::operation::get_image_pipeline::builders::GetImagePipelineInputBuilde
 }
 /// Fluent builder constructing a request to `GetImagePipeline`.
 ///
-/// <p>Gets an image pipeline.</p>
+/// <p>Retrieves an image pipeline.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetImagePipelineFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -18,7 +18,7 @@ pub(crate) fn de_import_job(
         builder = match decoder.str()?.as_ref() {
             "JobId" => builder.set_job_id(Some(decoder.string()?)),
             "Name" => builder.set_name(Some(decoder.string()?)),
-            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::ImportJobStatus::from(s.as_ref()))?)),
+            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::ImportJobStatus::from(s.as_str()))?)),
             "PreSignedUrl" => builder.set_pre_signed_url(Some(decoder.string()?)),
             "ImportedItemsCount" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_imported_items_count(Some(decoder.integer()?)))

@@ -23,7 +23,7 @@ pub(crate) fn de_cpu_vendor_architectures(
                     decoder.position(),
                 ))
             }
-            _ => decoder.string().map(|s| crate::types::CpuVendorArchitecture::from(s.as_ref()))?,
+            _ => decoder.string().map(|s| crate::types::CpuVendorArchitecture::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

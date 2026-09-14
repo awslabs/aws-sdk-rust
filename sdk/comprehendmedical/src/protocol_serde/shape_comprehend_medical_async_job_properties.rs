@@ -21,7 +21,7 @@ pub(crate) fn de_comprehend_medical_async_job_properties(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_job_name(Some(decoder.string()?))))?
             }
             "JobStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_job_status(Some(decoder.string().map(|s| crate::types::JobStatus::from(s.as_ref()))?)))
+                Ok(builder.set_job_status(Some(decoder.string().map(|s| crate::types::JobStatus::from(s.as_str()))?)))
             })?,
             "Message" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_message(Some(decoder.string()?))))?
@@ -52,7 +52,7 @@ pub(crate) fn de_comprehend_medical_async_job_properties(
                 )
             })?,
             "LanguageCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_language_code(Some(decoder.string().map(|s| crate::types::LanguageCode::from(s.as_ref()))?)))
+                Ok(builder.set_language_code(Some(decoder.string().map(|s| crate::types::LanguageCode::from(s.as_str()))?)))
             })?,
             "DataAccessRoleArn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_data_access_role_arn(Some(decoder.string()?)))

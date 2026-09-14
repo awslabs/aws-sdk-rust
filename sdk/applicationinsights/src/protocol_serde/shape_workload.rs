@@ -30,7 +30,7 @@ pub(crate) fn de_workload(
                 )?
             }
             "Tier" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_tier(Some(decoder.string().map(|s| crate::types::Tier::from(s.as_ref()))?)))
+                Ok(builder.set_tier(Some(decoder.string().map(|s| crate::types::Tier::from(s.as_str()))?)))
             })?,
             "WorkloadRemarks" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_workload_remarks(Some(decoder.string()?)))

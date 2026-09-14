@@ -17,10 +17,10 @@ pub(crate) fn de_ecs_service_projected_utilization_metric(
     ) -> ::std::result::Result<crate::types::builders::EcsServiceProjectedUtilizationMetricBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_name(Some(decoder.string().map(|s| crate::types::EcsServiceMetricName::from(s.as_ref()))?)))
+                Ok(builder.set_name(Some(decoder.string().map(|s| crate::types::EcsServiceMetricName::from(s.as_str()))?)))
             })?,
             "statistic" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_statistic(Some(decoder.string().map(|s| crate::types::EcsServiceMetricStatistic::from(s.as_ref()))?)))
+                Ok(builder.set_statistic(Some(decoder.string().map(|s| crate::types::EcsServiceMetricStatistic::from(s.as_str()))?)))
             })?,
             "lowerBoundValue" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_lower_bound_value(Some(decoder.double()?)))

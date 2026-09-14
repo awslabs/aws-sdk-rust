@@ -32,7 +32,7 @@ pub(crate) fn de_send_action(
     ) -> ::std::result::Result<crate::types::builders::SendActionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ActionFailurePolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_action_failure_policy(Some(decoder.string().map(|s| crate::types::ActionFailurePolicy::from(s.as_ref()))?)))
+                Ok(builder.set_action_failure_policy(Some(decoder.string().map(|s| crate::types::ActionFailurePolicy::from(s.as_str()))?)))
             })?,
             "RoleArn" => builder.set_role_arn(Some(decoder.string()?)),
             _ => {

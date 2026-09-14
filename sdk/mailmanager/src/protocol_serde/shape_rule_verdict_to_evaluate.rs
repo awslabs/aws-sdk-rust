@@ -39,7 +39,7 @@ pub(crate) fn de_rule_verdict_to_evaluate(
     ) -> ::std::result::Result<crate::types::RuleVerdictToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => {
-                crate::types::RuleVerdictToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleVerdictAttribute::from(s.as_ref()))?)
+                crate::types::RuleVerdictToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleVerdictAttribute::from(s.as_str()))?)
             }
             "Analysis" => crate::types::RuleVerdictToEvaluate::Analysis(crate::protocol_serde::shape_analysis::de_analysis(decoder, depth + 1)?),
             _ => {

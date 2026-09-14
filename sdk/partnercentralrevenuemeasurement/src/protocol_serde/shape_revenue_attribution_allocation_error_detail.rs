@@ -20,7 +20,7 @@ pub(crate) fn de_revenue_attribution_allocation_error_detail(
             "RevenueAttributionAllocationId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_revenue_attribution_allocation_id(Some(decoder.string()?)))
             })?,
-            "EntityType" => builder.set_entity_type(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_ref()))?)),
+            "EntityType" => builder.set_entity_type(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_str()))?)),
             "EntityId" => builder.set_entity_id(Some(decoder.string()?)),
             "CustomerAwsAccountId" => builder.set_customer_aws_account_id(Some(decoder.string()?)),
             "EffectiveFrom" => builder.set_effective_from(Some(decoder.string()?)),
@@ -28,12 +28,12 @@ pub(crate) fn de_revenue_attribution_allocation_error_detail(
             "Action" => builder.set_action(Some(
                 decoder
                     .string()
-                    .map(|s| crate::types::RevenueAttributionAllocationAction::from(s.as_ref()))?,
+                    .map(|s| crate::types::RevenueAttributionAllocationAction::from(s.as_str()))?,
             )),
             "ErrorCode" => builder.set_error_code(Some(
                 decoder
                     .string()
-                    .map(|s| crate::types::RevenueAttributionAllocationErrorCode::from(s.as_ref()))?,
+                    .map(|s| crate::types::RevenueAttributionAllocationErrorCode::from(s.as_str()))?,
             )),
             "ErrorMessage" => builder.set_error_message(Some(decoder.string()?)),
             _ => {

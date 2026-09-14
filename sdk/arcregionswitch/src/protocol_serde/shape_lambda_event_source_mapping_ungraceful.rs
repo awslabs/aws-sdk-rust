@@ -32,7 +32,7 @@ pub(crate) fn de_lambda_event_source_mapping_ungraceful(
                 Ok(builder.set_behavior(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::LambdaEventSourceMappingUngracefulBehavior::from(s.as_ref()))?,
+                        .map(|s| crate::types::LambdaEventSourceMappingUngracefulBehavior::from(s.as_str()))?,
                 )))
             })?,
             _ => {

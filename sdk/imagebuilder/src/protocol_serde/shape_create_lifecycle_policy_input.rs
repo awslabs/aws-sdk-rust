@@ -9,45 +9,48 @@ pub fn ser_create_lifecycle_policy_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.execution_role {
-        object.key("executionRole").string(var_3.as_str());
+    if let Some(var_3) = &input.dry_run {
+        object.key("dryRun").boolean(*var_3);
     }
-    if let Some(var_4) = &input.name {
-        object.key("name").string(var_4.as_str());
+    if let Some(var_4) = &input.execution_role {
+        object.key("executionRole").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.policy_details {
-        let mut array_6 = object.key("policyDetails").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.policy_details {
+        let mut array_7 = object.key("policyDetails").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_lifecycle_policy_detail::ser_lifecycle_policy_detail(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_lifecycle_policy_detail::ser_lifecycle_policy_detail(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_9) = &input.resource_selection {
+    if let Some(var_10) = &input.resource_selection {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("resourceSelection").start_object();
-        crate::protocol_serde::shape_lifecycle_policy_resource_selection::ser_lifecycle_policy_resource_selection(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("resourceSelection").start_object();
+        crate::protocol_serde::shape_lifecycle_policy_resource_selection::ser_lifecycle_policy_resource_selection(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.resource_type {
-        object.key("resourceType").string(var_11.as_str());
+    if let Some(var_12) = &input.resource_type {
+        object.key("resourceType").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.status {
-        object.key("status").string(var_12.as_str());
+    if let Some(var_13) = &input.status {
+        object.key("status").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_14) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
             {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
+                object_15.key(key_16.as_str()).string(value_17.as_str());
             }
         }
-        object_14.finish();
+        object_15.finish();
     }
     Ok(())
 }

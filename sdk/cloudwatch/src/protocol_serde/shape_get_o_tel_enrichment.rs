@@ -63,7 +63,7 @@ pub(crate) fn de_get_o_tel_enrichment(
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
-            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::OTelEnrichmentStatus::from(s.as_ref()))?)),
+            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::OTelEnrichmentStatus::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

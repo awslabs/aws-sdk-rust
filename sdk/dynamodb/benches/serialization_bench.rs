@@ -5,17 +5,17 @@
 
 use criterion::{criterion_group, criterion_main, Criterion};
 
-// TODO(schema-serde): Re-enable this benchmark when schema-serde codegen is
-// active for DynamoDB (awsJson1_0). The body below exercises the schema-serde
-// request serialization path, which requires a `SharedClientProtocol` in the
-// config bag. With `SchemaSerdeAllowlist` empty on main, DynamoDB falls back
-// to the legacy codegen path that does not consult the protocol. Once
-// awsJson1_0 (or DynamoDB specifically) is re-added to the allowlist, replace
-// the no-op `bench_group` below with the commented-out implementation.
-// See: codegen-client/.../customizations/SchemaDecorator.kt
+// This benchmark exercises the schema-serde request serialization path, which
+// requires a `SharedClientProtocol` in the config bag. It is meaningful only
+// when schema-serde codegen is active for DynamoDB (awsJson1_0) — see
+// `SchemaSerdeAllowlist` in
+// codegen-client/.../customizations/SchemaDecorator.kt. If awsJson1_0 is
+// removed from the allowlist, the generated client falls back to the legacy
+// per-shape codegen path that does not consult the protocol, and this
+// benchmark silently measures that path instead.
 //
-// --- BEGIN schema-serde bench (disabled) ---
-/*
+// NOTE: it measures whatever is in `aws/sdk/build/aws-sdk`, so re-run
+// `./gradlew :aws:sdk:assemble` after changing the allowlist.
 use aws_sdk_dynamodb::operation::put_item::{PutItem, PutItemInput};
 use aws_sdk_dynamodb::types::AttributeValue;
 use aws_smithy_runtime_api::client::interceptors::context::Input;
@@ -57,9 +57,8 @@ fn do_bench(input: &PutItemInput) {
 
     // Create a config bag with the required SharedClientProtocol
     let mut config_bag = ConfigBag::base();
-    let protocol = aws_smithy_json::protocol::aws_json_rpc::AwsJsonRpcProtocol::aws_json_1_0(
-        "DynamoDB_20120810",
-    );
+    let protocol = aws_smithy_json::protocol::aws_json_rpc::AwsJsonRpcProtocol::aws_json_1_0()
+        .with_target_prefix("DynamoDB_20120810");
     let shared_protocol = aws_smithy_schema::protocol::SharedClientProtocol::new(protocol);
     let mut layer = aws_smithy_types::config_bag::Layer::new("bench");
     layer.store_put(shared_protocol);
@@ -99,12 +98,6 @@ fn bench_group(c: &mut Criterion) {
             .expect("valid input");
         b.iter(|| do_bench(&input))
     });
-}
-*/
-// --- END schema-serde bench (disabled) ---
-
-fn bench_group(_c: &mut Criterion) {
-    // no-op while schema-serde is disabled; see module note above.
 }
 
 criterion_group!(benches, bench_group);

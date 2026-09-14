@@ -43,13 +43,13 @@ pub(crate) fn de_rdsdb_recommendation(
                 Ok(builder.set_db_cluster_identifier(Some(decoder.string()?)))
             })?,
             "idle" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_idle(Some(decoder.string().map(|s| crate::types::Idle::from(s.as_ref()))?)))
+                Ok(builder.set_idle(Some(decoder.string().map(|s| crate::types::Idle::from(s.as_str()))?)))
             })?,
             "instanceFinding" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_instance_finding(Some(decoder.string().map(|s| crate::types::RdsInstanceFinding::from(s.as_ref()))?)))
+                Ok(builder.set_instance_finding(Some(decoder.string().map(|s| crate::types::RdsInstanceFinding::from(s.as_str()))?)))
             })?,
             "storageFinding" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_storage_finding(Some(decoder.string().map(|s| crate::types::RdsStorageFinding::from(s.as_ref()))?)))
+                Ok(builder.set_storage_finding(Some(decoder.string().map(|s| crate::types::RdsStorageFinding::from(s.as_str()))?)))
             })?,
             "instanceFindingReasonCodes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_instance_finding_reason_codes(Some(
@@ -60,7 +60,7 @@ pub(crate) fn de_rdsdb_recommendation(
                 Ok(builder.set_current_instance_performance_risk(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::RdsCurrentInstancePerformanceRisk::from(s.as_ref()))?,
+                        .map(|s| crate::types::RdsCurrentInstancePerformanceRisk::from(s.as_str()))?,
                 )))
             })?,
             "currentStorageEstimatedMonthlyVolumeIOPsCostVariation" => {
@@ -68,7 +68,7 @@ pub(crate) fn de_rdsdb_recommendation(
                     Ok(builder.set_current_storage_estimated_monthly_volume_iops_cost_variation(Some(
                         decoder
                             .string()
-                            .map(|s| crate::types::RdsEstimatedMonthlyVolumeIoPsCostVariation::from(s.as_ref()))?,
+                            .map(|s| crate::types::RdsEstimatedMonthlyVolumeIoPsCostVariation::from(s.as_str()))?,
                     )))
                 })?
             }

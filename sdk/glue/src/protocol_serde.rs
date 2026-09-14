@@ -441,6 +441,8 @@ pub(crate) mod shape_list_glossary_terms;
 
 pub(crate) mod shape_list_integration_resource_properties;
 
+pub(crate) mod shape_list_integration_table_properties;
+
 pub(crate) mod shape_list_iterable_forms;
 
 pub(crate) mod shape_list_jobs;
@@ -1101,6 +1103,8 @@ pub(crate) mod shape_list_glossary_terms_input;
 
 pub(crate) mod shape_list_integration_resource_properties_input;
 
+pub(crate) mod shape_list_integration_table_properties_input;
+
 pub(crate) mod shape_list_iterable_forms_input;
 
 pub(crate) mod shape_list_jobs_input;
@@ -1564,6 +1568,10 @@ pub(crate) mod shape_integration_filter;
 pub(crate) mod shape_integration_resource_property_filter;
 
 pub(crate) mod shape_integration_resource_property_list;
+
+pub(crate) mod shape_integration_table_properties_filter;
+
+pub(crate) mod shape_integration_table_properties_list;
 
 pub(crate) mod shape_integration_tags_list;
 
@@ -2048,6 +2056,8 @@ pub(crate) mod shape_integration_partition_spec_list;
 pub(crate) mod shape_integration_resource_property;
 
 pub(crate) mod shape_integration_source_properties_map;
+
+pub(crate) mod shape_integration_table_properties;
 
 pub(crate) mod shape_item_error;
 

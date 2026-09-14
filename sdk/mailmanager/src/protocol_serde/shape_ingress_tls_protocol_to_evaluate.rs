@@ -35,7 +35,7 @@ pub(crate) fn de_ingress_tls_protocol_to_evaluate(
     ) -> ::std::result::Result<crate::types::IngressTlsProtocolToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => {
-                crate::types::IngressTlsProtocolToEvaluate::Attribute(decoder.string().map(|s| crate::types::IngressTlsAttribute::from(s.as_ref()))?)
+                crate::types::IngressTlsProtocolToEvaluate::Attribute(decoder.string().map(|s| crate::types::IngressTlsAttribute::from(s.as_str()))?)
             }
             _ => {
                 decoder.skip()?;

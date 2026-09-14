@@ -45,7 +45,7 @@ pub(crate) fn de_rdsdb_storage_recommendation_option(
                 Ok(builder.set_estimated_monthly_volume_iops_cost_variation(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::RdsEstimatedMonthlyVolumeIoPsCostVariation::from(s.as_ref()))?,
+                        .map(|s| crate::types::RdsEstimatedMonthlyVolumeIoPsCostVariation::from(s.as_str()))?,
                 )))
             })?,
             _ => {

@@ -17,7 +17,7 @@ pub(crate) fn de_rx_norm_attribute(
     ) -> ::std::result::Result<crate::types::builders::RxNormAttributeBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::RxNormAttributeType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::RxNormAttributeType::from(s.as_str()))?)))
             })?,
             "Score" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_score(Some(decoder.float()?))))?,
             "RelationshipScore" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

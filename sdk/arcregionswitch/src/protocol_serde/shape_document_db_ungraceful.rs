@@ -30,7 +30,7 @@ pub(crate) fn de_document_db_ungraceful(
         builder = match decoder.str()?.as_ref() {
             "ungraceful" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_ungraceful(Some(
-                    decoder.string().map(|s| crate::types::DocumentDbUngracefulBehavior::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::DocumentDbUngracefulBehavior::from(s.as_str()))?,
                 )))
             })?,
             _ => {

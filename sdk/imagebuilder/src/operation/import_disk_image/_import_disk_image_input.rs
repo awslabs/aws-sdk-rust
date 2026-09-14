@@ -19,7 +19,7 @@ pub struct ImportDiskImageInput {
     pub infrastructure_configuration_arn: ::std::option::Option<::std::string::String>,
     /// <p>The <code>uri</code> of the ISO disk file that's stored in Amazon S3.</p>
     pub uri: ::std::option::Option<::std::string::String>,
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>The logging configuration for the image build process.</p>
     pub logging_configuration: ::std::option::Option<crate::types::ImageLoggingConfiguration>,
     /// <p>Tags that are attached to image resources created from the import.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -27,7 +27,7 @@ pub struct ImportDiskImageInput {
     pub register_image_options: ::std::option::Option<crate::types::RegisterImageOptions>,
     /// <p>Specifies Windows settings for ISO imports.</p>
     pub windows_configuration: ::std::option::Option<crate::types::WindowsConfiguration>,
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl ImportDiskImageInput {
@@ -63,7 +63,7 @@ impl ImportDiskImageInput {
     pub fn uri(&self) -> ::std::option::Option<&str> {
         self.uri.as_deref()
     }
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>The logging configuration for the image build process.</p>
     pub fn logging_configuration(&self) -> ::std::option::Option<&crate::types::ImageLoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
@@ -79,7 +79,7 @@ impl ImportDiskImageInput {
     pub fn windows_configuration(&self) -> ::std::option::Option<&crate::types::WindowsConfiguration> {
         self.windows_configuration.as_ref()
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -228,17 +228,17 @@ impl ImportDiskImageInputBuilder {
     pub fn get_uri(&self) -> &::std::option::Option<::std::string::String> {
         &self.uri
     }
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>The logging configuration for the image build process.</p>
     pub fn logging_configuration(mut self, input: crate::types::ImageLoggingConfiguration) -> Self {
         self.logging_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>The logging configuration for the image build process.</p>
     pub fn set_logging_configuration(mut self, input: ::std::option::Option<crate::types::ImageLoggingConfiguration>) -> Self {
         self.logging_configuration = input;
         self
     }
-    /// <p>Define logging configuration for the image build process.</p>
+    /// <p>The logging configuration for the image build process.</p>
     pub fn get_logging_configuration(&self) -> &::std::option::Option<crate::types::ImageLoggingConfiguration> {
         &self.logging_configuration
     }
@@ -290,18 +290,18 @@ impl ImportDiskImageInputBuilder {
     pub fn get_windows_configuration(&self) -> &::std::option::Option<crate::types::WindowsConfiguration> {
         &self.windows_configuration
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     /// This field is required.
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
+    /// <p>A unique, case-sensitive identifier you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

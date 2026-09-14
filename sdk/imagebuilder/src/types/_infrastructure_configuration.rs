@@ -24,7 +24,7 @@ pub struct InfrastructureConfiguration {
     pub key_pair: ::std::option::Option<::std::string::String>,
     /// <p>The terminate instance on failure configuration of the infrastructure configuration.</p>
     pub terminate_instance_on_failure: ::std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub sns_topic_arn: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ pub struct InfrastructureConfiguration {
     pub instance_metadata_options: ::std::option::Option<crate::types::InstanceMetadataOptions>,
     /// <p>The tags of the infrastructure configuration.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub placement: ::std::option::Option<crate::types::Placement>,
 }
 impl InfrastructureConfiguration {
@@ -86,7 +86,7 @@ impl InfrastructureConfiguration {
     pub fn terminate_instance_on_failure(&self) -> ::std::option::Option<bool> {
         self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
@@ -112,7 +112,7 @@ impl InfrastructureConfiguration {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub fn placement(&self) -> ::std::option::Option<&crate::types::Placement> {
         self.placement.as_ref()
     }
@@ -299,21 +299,21 @@ impl InfrastructureConfigurationBuilder {
     pub fn get_terminate_instance_on_failure(&self) -> &::std::option::Option<bool> {
         &self.terminate_instance_on_failure
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn sns_topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn set_sns_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.sns_topic_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the SNS topic to which we send image build event notifications.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic to which Image Builder sends image build event notifications.</p><note>
     /// <p>EC2 Image Builder is unable to send notifications to SNS topics that are encrypted using keys from other accounts. The key that is used to encrypt the SNS topic must reside in the account that the Image Builder service runs under.</p>
     /// </note>
     pub fn get_sns_topic_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -404,17 +404,17 @@ impl InfrastructureConfigurationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub fn placement(mut self, input: crate::types::Placement) -> Self {
         self.placement = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub fn set_placement(mut self, input: ::std::option::Option<crate::types::Placement>) -> Self {
         self.placement = input;
         self
     }
-    /// <p>The instance placement settings that define where the instances that are launched from your image will run.</p>
+    /// <p>The instance placement settings that define where the instances that are launched from your image run.</p>
     pub fn get_placement(&self) -> &::std::option::Option<crate::types::Placement> {
         &self.placement
     }

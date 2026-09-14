@@ -186,7 +186,7 @@ pub(crate) fn de_create_revenue_attribution(
             "Description" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
             }
-            "TenancyModel" => builder.set_tenancy_model(Some(decoder.string().map(|s| crate::types::TenancyModel::from(s.as_ref()))?)),
+            "TenancyModel" => builder.set_tenancy_model(Some(decoder.string().map(|s| crate::types::TenancyModel::from(s.as_str()))?)),
             "MarketplaceProduct" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_marketplace_product(Some(
                     crate::protocol_serde::shape_marketplace_product_summary::de_marketplace_product_summary(decoder, depth + 1)?,

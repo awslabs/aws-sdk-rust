@@ -44,7 +44,7 @@ pub(crate) fn de_archive_string_expression(
             "Evaluate" => builder.set_evaluate(Some(
                 crate::protocol_serde::shape_archive_string_to_evaluate::de_archive_string_to_evaluate(decoder, depth + 1)?,
             )),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::ArchiveStringOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::ArchiveStringOperator::from(s.as_str()))?)),
             "Values" => builder.set_values(Some(crate::protocol_serde::shape_string_value_list::de_string_value_list(
                 decoder,
                 depth + 1,

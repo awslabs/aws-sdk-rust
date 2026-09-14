@@ -22,7 +22,7 @@ impl crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyI
 }
 /// Fluent builder constructing a request to `DeleteLifecyclePolicy`.
 ///
-/// <p>Delete the specified lifecycle policy resource.</p>
+/// <p>Deletes the specified lifecycle policy resource.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteLifecyclePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

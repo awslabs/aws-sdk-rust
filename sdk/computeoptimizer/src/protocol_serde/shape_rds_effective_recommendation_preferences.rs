@@ -25,11 +25,11 @@ pub(crate) fn de_rds_effective_recommendation_preferences(
                 })?,
                 "enhancedInfrastructureMetrics" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_enhanced_infrastructure_metrics(Some(
-                        decoder.string().map(|s| crate::types::EnhancedInfrastructureMetrics::from(s.as_ref()))?,
+                        decoder.string().map(|s| crate::types::EnhancedInfrastructureMetrics::from(s.as_str()))?,
                     )))
                 })?,
                 "lookBackPeriod" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_look_back_period(Some(decoder.string().map(|s| crate::types::LookBackPeriodPreference::from(s.as_ref()))?)))
+                    Ok(builder.set_look_back_period(Some(decoder.string().map(|s| crate::types::LookBackPeriodPreference::from(s.as_str()))?)))
                 })?,
                 "savingsEstimationMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_savings_estimation_mode(Some(

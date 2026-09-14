@@ -48,12 +48,12 @@ libfuzzer-sys = "=0.4.7"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.6.3"
+version = "1.7.0"
 
 [dependencies.aws-smithy-eventstream]
 features = ["derive-arbitrary"]
 path = ".."
-version = "0.61.2"
+version = "0.61.3"
 
 [workspace]
 members = ["."]

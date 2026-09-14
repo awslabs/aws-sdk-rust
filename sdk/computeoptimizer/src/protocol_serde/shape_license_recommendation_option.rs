@@ -21,10 +21,10 @@ pub(crate) fn de_license_recommendation_option(
                 Ok(builder.set_operating_system(Some(decoder.string()?)))
             })?,
             "licenseEdition" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_license_edition(Some(decoder.string().map(|s| crate::types::LicenseEdition::from(s.as_ref()))?)))
+                Ok(builder.set_license_edition(Some(decoder.string().map(|s| crate::types::LicenseEdition::from(s.as_str()))?)))
             })?,
             "licenseModel" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_license_model(Some(decoder.string().map(|s| crate::types::LicenseModel::from(s.as_ref()))?)))
+                Ok(builder.set_license_model(Some(decoder.string().map(|s| crate::types::LicenseModel::from(s.as_str()))?)))
             })?,
             "savingsOpportunity" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

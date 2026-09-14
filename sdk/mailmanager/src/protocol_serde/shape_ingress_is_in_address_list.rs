@@ -40,7 +40,7 @@ pub(crate) fn de_ingress_is_in_address_list(
             "Attribute" => builder.set_attribute(Some(
                 decoder
                     .string()
-                    .map(|s| crate::types::IngressAddressListEmailAttribute::from(s.as_ref()))?,
+                    .map(|s| crate::types::IngressAddressListEmailAttribute::from(s.as_str()))?,
             )),
             "AddressLists" => builder.set_address_lists(Some(
                 crate::protocol_serde::shape_ingress_address_list_arn_list::de_ingress_address_list_arn_list(decoder, depth + 1)?,

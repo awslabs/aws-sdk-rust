@@ -10,7 +10,9 @@ pub fn ser_matter_capability_report_attribute(
         object.key("name").string(var_2.as_str());
     }
     if let Some(var_3) = &input.value {
-        object.key("value").document(var_3);
+        object
+            .key("value")
+            .document(var_3, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

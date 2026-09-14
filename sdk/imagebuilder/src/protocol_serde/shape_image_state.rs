@@ -35,6 +35,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "failureContext" => {
+                            builder = builder.set_failure_context(crate::protocol_serde::shape_image_failure_context::de_image_failure_context(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

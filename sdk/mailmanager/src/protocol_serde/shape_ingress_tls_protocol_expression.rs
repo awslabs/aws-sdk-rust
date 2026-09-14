@@ -39,10 +39,10 @@ pub(crate) fn de_ingress_tls_protocol_expression(
                 crate::protocol_serde::shape_ingress_tls_protocol_to_evaluate::de_ingress_tls_protocol_to_evaluate(decoder, depth + 1)?,
             )),
             "Operator" => builder.set_operator(Some(
-                decoder.string().map(|s| crate::types::IngressTlsProtocolOperator::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::IngressTlsProtocolOperator::from(s.as_str()))?,
             )),
             "Value" => builder.set_value(Some(
-                decoder.string().map(|s| crate::types::IngressTlsProtocolAttribute::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::IngressTlsProtocolAttribute::from(s.as_str()))?,
             )),
             _ => {
                 decoder.skip()?;

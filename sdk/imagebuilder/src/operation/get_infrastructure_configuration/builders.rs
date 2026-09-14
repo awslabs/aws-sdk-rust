@@ -22,7 +22,7 @@ impl crate::operation::get_infrastructure_configuration::builders::GetInfrastruc
 }
 /// Fluent builder constructing a request to `GetInfrastructureConfiguration`.
 ///
-/// <p>Gets an infrastructure configuration.</p>
+/// <p>Retrieves an infrastructure configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInfrastructureConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

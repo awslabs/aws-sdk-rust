@@ -35,7 +35,7 @@ pub(crate) fn de_ingress_ipv6_to_evaluate(
     ) -> ::std::result::Result<crate::types::IngressIpv6ToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => {
-                crate::types::IngressIpv6ToEvaluate::Attribute(decoder.string().map(|s| crate::types::IngressIpv6Attribute::from(s.as_ref()))?)
+                crate::types::IngressIpv6ToEvaluate::Attribute(decoder.string().map(|s| crate::types::IngressIpv6Attribute::from(s.as_str()))?)
             }
             _ => {
                 decoder.skip()?;

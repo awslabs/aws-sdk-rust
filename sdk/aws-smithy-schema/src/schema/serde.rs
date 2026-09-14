@@ -32,7 +32,7 @@ mod test {
     impl ShapeSerializer for MockSerializer {
         fn write_struct(
             &mut self,
-            schema: &Schema,
+            schema: &Schema<'_>,
             value: &dyn SerializableStruct,
         ) -> Result<(), SerdeError> {
             self.output
@@ -44,7 +44,7 @@ mod test {
 
         fn write_list(
             &mut self,
-            schema: &Schema,
+            schema: &Schema<'_>,
             write_elements: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
         ) -> Result<(), SerdeError> {
             self.output
@@ -56,7 +56,7 @@ mod test {
 
         fn write_map(
             &mut self,
-            schema: &Schema,
+            schema: &Schema<'_>,
             write_entries: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
         ) -> Result<(), SerdeError> {
             self.output
@@ -66,44 +66,44 @@ mod test {
             Ok(())
         }
 
-        fn write_boolean(&mut self, _schema: &Schema, value: bool) -> Result<(), SerdeError> {
+        fn write_boolean(&mut self, _schema: &Schema<'_>, value: bool) -> Result<(), SerdeError> {
             self.output.push(format!("bool({})", value));
             Ok(())
         }
 
-        fn write_byte(&mut self, _schema: &Schema, value: i8) -> Result<(), SerdeError> {
+        fn write_byte(&mut self, _schema: &Schema<'_>, value: i8) -> Result<(), SerdeError> {
             self.output.push(format!("byte({})", value));
             Ok(())
         }
 
-        fn write_short(&mut self, _schema: &Schema, value: i16) -> Result<(), SerdeError> {
+        fn write_short(&mut self, _schema: &Schema<'_>, value: i16) -> Result<(), SerdeError> {
             self.output.push(format!("short({})", value));
             Ok(())
         }
 
-        fn write_integer(&mut self, _schema: &Schema, value: i32) -> Result<(), SerdeError> {
+        fn write_integer(&mut self, _schema: &Schema<'_>, value: i32) -> Result<(), SerdeError> {
             self.output.push(format!("int({})", value));
             Ok(())
         }
 
-        fn write_long(&mut self, _schema: &Schema, value: i64) -> Result<(), SerdeError> {
+        fn write_long(&mut self, _schema: &Schema<'_>, value: i64) -> Result<(), SerdeError> {
             self.output.push(format!("long({})", value));
             Ok(())
         }
 
-        fn write_float(&mut self, _schema: &Schema, value: f32) -> Result<(), SerdeError> {
+        fn write_float(&mut self, _schema: &Schema<'_>, value: f32) -> Result<(), SerdeError> {
             self.output.push(format!("float({})", value));
             Ok(())
         }
 
-        fn write_double(&mut self, _schema: &Schema, value: f64) -> Result<(), SerdeError> {
+        fn write_double(&mut self, _schema: &Schema<'_>, value: f64) -> Result<(), SerdeError> {
             self.output.push(format!("double({})", value));
             Ok(())
         }
 
         fn write_big_integer(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
             value: &aws_smithy_types::BigInteger,
         ) -> Result<(), SerdeError> {
             self.output.push(format!("bigint({})", value.as_ref()));
@@ -112,26 +112,31 @@ mod test {
 
         fn write_big_decimal(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
             value: &aws_smithy_types::BigDecimal,
         ) -> Result<(), SerdeError> {
             self.output.push(format!("bigdec({})", value.as_ref()));
             Ok(())
         }
 
-        fn write_string(&mut self, _schema: &Schema, value: &str) -> Result<(), SerdeError> {
+        fn write_string(&mut self, _schema: &Schema<'_>, value: &str) -> Result<(), SerdeError> {
             self.output.push(format!("string({})", value));
             Ok(())
         }
 
-        fn write_blob(&mut self, _schema: &Schema, value: &[u8]) -> Result<(), SerdeError> {
-            self.output.push(format!("blob({} bytes)", value.len()));
+        fn write_blob(
+            &mut self,
+            _schema: &Schema<'_>,
+            value: aws_smithy_types::Blob,
+        ) -> Result<(), SerdeError> {
+            self.output
+                .push(format!("blob({} bytes)", value.as_ref().len()));
             Ok(())
         }
 
         fn write_timestamp(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
             value: &aws_smithy_types::DateTime,
         ) -> Result<(), SerdeError> {
             self.output.push(format!("timestamp({})", value));
@@ -140,14 +145,14 @@ mod test {
 
         fn write_document(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
             _value: &aws_smithy_types::Document,
         ) -> Result<(), SerdeError> {
             self.output.push("document".to_string());
             Ok(())
         }
 
-        fn write_null(&mut self, _schema: &Schema) -> Result<(), SerdeError> {
+        fn write_null(&mut self, _schema: &Schema<'_>) -> Result<(), SerdeError> {
             self.output.push("null".to_string());
             Ok(())
         }
@@ -168,8 +173,11 @@ mod test {
     impl ShapeDeserializer for MockDeserializer {
         fn read_struct(
             &mut self,
-            _schema: &Schema,
-            consumer: &mut dyn FnMut(&Schema, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
+            _schema: &Schema<'_>,
+            consumer: &mut dyn FnMut(
+                &Schema<'_>,
+                &mut dyn ShapeDeserializer,
+            ) -> Result<(), SerdeError>,
         ) -> Result<(), SerdeError> {
             // Simulate reading 2 members
             consumer(&STRING, self)?;
@@ -179,7 +187,7 @@ mod test {
 
         fn read_list(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
             consumer: &mut dyn FnMut(&mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
         ) -> Result<(), SerdeError> {
             // Simulate reading 3 elements
@@ -191,7 +199,7 @@ mod test {
 
         fn read_map(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
             consumer: &mut dyn FnMut(String, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
         ) -> Result<(), SerdeError> {
             // Simulate reading 2 entries
@@ -200,37 +208,37 @@ mod test {
             Ok(())
         }
 
-        fn read_boolean(&mut self, _schema: &Schema) -> Result<bool, SerdeError> {
+        fn read_boolean(&mut self, _schema: &Schema<'_>) -> Result<bool, SerdeError> {
             Ok(true)
         }
 
-        fn read_byte(&mut self, _schema: &Schema) -> Result<i8, SerdeError> {
+        fn read_byte(&mut self, _schema: &Schema<'_>) -> Result<i8, SerdeError> {
             Ok(42)
         }
 
-        fn read_short(&mut self, _schema: &Schema) -> Result<i16, SerdeError> {
+        fn read_short(&mut self, _schema: &Schema<'_>) -> Result<i16, SerdeError> {
             Ok(1000)
         }
 
-        fn read_integer(&mut self, _schema: &Schema) -> Result<i32, SerdeError> {
+        fn read_integer(&mut self, _schema: &Schema<'_>) -> Result<i32, SerdeError> {
             Ok(123456)
         }
 
-        fn read_long(&mut self, _schema: &Schema) -> Result<i64, SerdeError> {
+        fn read_long(&mut self, _schema: &Schema<'_>) -> Result<i64, SerdeError> {
             Ok(9876543210)
         }
 
-        fn read_float(&mut self, _schema: &Schema) -> Result<f32, SerdeError> {
+        fn read_float(&mut self, _schema: &Schema<'_>) -> Result<f32, SerdeError> {
             Ok(3.15)
         }
 
-        fn read_double(&mut self, _schema: &Schema) -> Result<f64, SerdeError> {
+        fn read_double(&mut self, _schema: &Schema<'_>) -> Result<f64, SerdeError> {
             Ok(2.72)
         }
 
         fn read_big_integer(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
         ) -> Result<aws_smithy_types::BigInteger, SerdeError> {
             use std::str::FromStr;
             Ok(aws_smithy_types::BigInteger::from_str("12345").unwrap())
@@ -238,13 +246,13 @@ mod test {
 
         fn read_big_decimal(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
         ) -> Result<aws_smithy_types::BigDecimal, SerdeError> {
             use std::str::FromStr;
             Ok(aws_smithy_types::BigDecimal::from_str("123.45").unwrap())
         }
 
-        fn read_string(&mut self, _schema: &Schema) -> Result<String, SerdeError> {
+        fn read_string(&mut self, _schema: &Schema<'_>) -> Result<String, SerdeError> {
             if self.index < self.values.len() {
                 let value = self.values[self.index].clone();
                 self.index += 1;
@@ -254,20 +262,23 @@ mod test {
             }
         }
 
-        fn read_blob(&mut self, _schema: &Schema) -> Result<aws_smithy_types::Blob, SerdeError> {
+        fn read_blob(
+            &mut self,
+            _schema: &Schema<'_>,
+        ) -> Result<aws_smithy_types::Blob, SerdeError> {
             Ok(aws_smithy_types::Blob::new(vec![1, 2, 3, 4]))
         }
 
         fn read_timestamp(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
         ) -> Result<aws_smithy_types::DateTime, SerdeError> {
             Ok(aws_smithy_types::DateTime::from_secs(1234567890))
         }
 
         fn read_document(
             &mut self,
-            _schema: &Schema,
+            _schema: &Schema<'_>,
         ) -> Result<aws_smithy_types::Document, SerdeError> {
             Ok(aws_smithy_types::Document::Null)
         }
@@ -363,6 +374,162 @@ mod test {
             .unwrap();
 
         assert_eq!(elements, vec!["a", "b", "c"]);
+    }
+
+    // Records the shape id of every schema handed to an element/value read,
+    // so the default collection helpers can be checked to pass the *member*
+    // (list element / map value) schema — the carrier of element-level traits
+    // such as `@mediaType` / `@timestampFormat` — rather than the container
+    // schema.
+    #[derive(Default)]
+    struct SchemaRecordingDeserializer {
+        seen: Vec<String>,
+    }
+
+    impl ShapeDeserializer for SchemaRecordingDeserializer {
+        fn read_struct(
+            &mut self,
+            _schema: &Schema<'_>,
+            _consumer: &mut dyn FnMut(
+                &Schema<'_>,
+                &mut dyn ShapeDeserializer,
+            ) -> Result<(), SerdeError>,
+        ) -> Result<(), SerdeError> {
+            Ok(())
+        }
+
+        fn read_list(
+            &mut self,
+            _schema: &Schema<'_>,
+            consumer: &mut dyn FnMut(&mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
+        ) -> Result<(), SerdeError> {
+            consumer(self)
+        }
+
+        fn read_map(
+            &mut self,
+            _schema: &Schema<'_>,
+            consumer: &mut dyn FnMut(String, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
+        ) -> Result<(), SerdeError> {
+            consumer("k".to_string(), self)
+        }
+
+        fn read_boolean(&mut self, _s: &Schema<'_>) -> Result<bool, SerdeError> {
+            Ok(false)
+        }
+        fn read_byte(&mut self, _s: &Schema<'_>) -> Result<i8, SerdeError> {
+            Ok(0)
+        }
+        fn read_short(&mut self, _s: &Schema<'_>) -> Result<i16, SerdeError> {
+            Ok(0)
+        }
+        fn read_integer(&mut self, schema: &Schema<'_>) -> Result<i32, SerdeError> {
+            self.seen.push(schema.shape_id().as_str().to_string());
+            Ok(0)
+        }
+        fn read_long(&mut self, schema: &Schema<'_>) -> Result<i64, SerdeError> {
+            self.seen.push(schema.shape_id().as_str().to_string());
+            Ok(0)
+        }
+        fn read_float(&mut self, _s: &Schema<'_>) -> Result<f32, SerdeError> {
+            Ok(0.0)
+        }
+        fn read_double(&mut self, _s: &Schema<'_>) -> Result<f64, SerdeError> {
+            Ok(0.0)
+        }
+        fn read_big_integer(
+            &mut self,
+            _s: &Schema<'_>,
+        ) -> Result<aws_smithy_types::BigInteger, SerdeError> {
+            use std::str::FromStr;
+            Ok(aws_smithy_types::BigInteger::from_str("0").unwrap())
+        }
+        fn read_big_decimal(
+            &mut self,
+            _s: &Schema<'_>,
+        ) -> Result<aws_smithy_types::BigDecimal, SerdeError> {
+            use std::str::FromStr;
+            Ok(aws_smithy_types::BigDecimal::from_str("0").unwrap())
+        }
+        fn read_string(&mut self, schema: &Schema<'_>) -> Result<String, SerdeError> {
+            self.seen.push(schema.shape_id().as_str().to_string());
+            Ok(String::new())
+        }
+        fn read_blob(&mut self, schema: &Schema<'_>) -> Result<aws_smithy_types::Blob, SerdeError> {
+            self.seen.push(schema.shape_id().as_str().to_string());
+            Ok(aws_smithy_types::Blob::new(Vec::new()))
+        }
+        fn read_timestamp(
+            &mut self,
+            _s: &Schema<'_>,
+        ) -> Result<aws_smithy_types::DateTime, SerdeError> {
+            Ok(aws_smithy_types::DateTime::from_secs(0))
+        }
+        fn read_document(
+            &mut self,
+            _s: &Schema<'_>,
+        ) -> Result<aws_smithy_types::Document, SerdeError> {
+            Ok(aws_smithy_types::Document::Null)
+        }
+        fn is_null(&self) -> bool {
+            false
+        }
+        fn container_size(&self) -> Option<usize> {
+            None
+        }
+    }
+
+    #[test]
+    fn default_string_list_passes_member_schema_to_elements() {
+        let member = Schema::new(
+            crate::shape_id!("test", "ListMember"),
+            crate::ShapeType::String,
+        );
+        let list = Schema::new_list(crate::shape_id!("test", "StringList"), &member);
+
+        let mut deser = SchemaRecordingDeserializer::default();
+        deser.read_string_list(&list).unwrap();
+        // The element read sees the member schema, not the container list.
+        assert_eq!(deser.seen, vec!["test#ListMember".to_string()]);
+    }
+
+    #[test]
+    fn default_integer_list_passes_member_schema_to_elements() {
+        let member = Schema::new(
+            crate::shape_id!("test", "IntMember"),
+            crate::ShapeType::Integer,
+        );
+        let list = Schema::new_list(crate::shape_id!("test", "IntList"), &member);
+
+        let mut deser = SchemaRecordingDeserializer::default();
+        deser.read_integer_list(&list).unwrap();
+        assert_eq!(deser.seen, vec!["test#IntMember".to_string()]);
+    }
+
+    #[test]
+    fn default_string_map_passes_value_schema_to_values() {
+        let key = Schema::new(crate::shape_id!("test", "MapKey"), crate::ShapeType::String);
+        let value = Schema::new(
+            crate::shape_id!("test", "MapValue"),
+            crate::ShapeType::String,
+        );
+        let map = Schema::new_map(crate::shape_id!("test", "StringMap"), &key, &value);
+
+        let mut deser = SchemaRecordingDeserializer::default();
+        deser.read_string_string_map(&map).unwrap();
+        // The value read sees the map value schema, not the container map.
+        assert_eq!(deser.seen, vec!["test#MapValue".to_string()]);
+    }
+
+    #[test]
+    fn default_collection_helper_falls_back_to_prelude_without_member() {
+        // A list schema built without a member set falls back to the prelude
+        // scalar rather than (incorrectly) passing the container schema.
+        let bare_list = Schema::new(crate::shape_id!("test", "BareList"), crate::ShapeType::List);
+
+        let mut deser = SchemaRecordingDeserializer::default();
+        deser.read_string_list(&bare_list).unwrap();
+        assert_eq!(deser.seen, vec!["smithy.api#String".to_string()]);
     }
 
     #[test]

@@ -45,12 +45,12 @@ pub(crate) fn de_rule_string_to_evaluate(
     ) -> ::std::result::Result<crate::types::RuleStringToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => {
-                crate::types::RuleStringToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleStringEmailAttribute::from(s.as_ref()))?)
+                crate::types::RuleStringToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleStringEmailAttribute::from(s.as_str()))?)
             }
             "MimeHeaderAttribute" => crate::types::RuleStringToEvaluate::MimeHeaderAttribute(decoder.string()?),
             "Analysis" => crate::types::RuleStringToEvaluate::Analysis(crate::protocol_serde::shape_analysis::de_analysis(decoder, depth + 1)?),
             "ClientCertificateAttribute" => crate::types::RuleStringToEvaluate::ClientCertificateAttribute(
-                decoder.string().map(|s| crate::types::RuleClientCertificateAttribute::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::RuleClientCertificateAttribute::from(s.as_str()))?,
             ),
             _ => {
                 decoder.skip()?;

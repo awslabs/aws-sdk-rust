@@ -43,6 +43,189 @@ impl MaintenanceWindowExecution {
         self.end_time.as_ref()
     }
 }
+static MAINTENANCEWINDOWEXECUTION_MEMBER_WINDOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowExecution$WindowId",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WindowId",
+    0,
+);
+static MAINTENANCEWINDOWEXECUTION_MEMBER_WINDOW_EXECUTION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowExecution$WindowExecutionId",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WindowExecutionId",
+    1,
+);
+static MAINTENANCEWINDOWEXECUTION_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowExecution$Status",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static MAINTENANCEWINDOWEXECUTION_MEMBER_STATUS_DETAILS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowExecution$StatusDetails",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusDetails",
+    3,
+);
+static MAINTENANCEWINDOWEXECUTION_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowExecution$StartTime",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "StartTime",
+    4,
+);
+static MAINTENANCEWINDOWEXECUTION_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowExecution$EndTime",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndTime",
+    5,
+);
+static MAINTENANCEWINDOWEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#MaintenanceWindowExecution",
+        "com.amazonaws.ssm",
+        "MaintenanceWindowExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &MAINTENANCEWINDOWEXECUTION_MEMBER_WINDOW_ID,
+        &MAINTENANCEWINDOWEXECUTION_MEMBER_WINDOW_EXECUTION_ID,
+        &MAINTENANCEWINDOWEXECUTION_MEMBER_STATUS,
+        &MAINTENANCEWINDOWEXECUTION_MEMBER_STATUS_DETAILS,
+        &MAINTENANCEWINDOWEXECUTION_MEMBER_START_TIME,
+        &MAINTENANCEWINDOWEXECUTION_MEMBER_END_TIME,
+    ],
+);
+impl MaintenanceWindowExecution {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &MAINTENANCEWINDOWEXECUTION_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for MaintenanceWindowExecution {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.window_id {
+            ser.write_string(&MAINTENANCEWINDOWEXECUTION_MEMBER_WINDOW_ID, val)?;
+        }
+        if let Some(ref val) = self.window_execution_id {
+            ser.write_string(&MAINTENANCEWINDOWEXECUTION_MEMBER_WINDOW_EXECUTION_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&MAINTENANCEWINDOWEXECUTION_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_details {
+            ser.write_string(&MAINTENANCEWINDOWEXECUTION_MEMBER_STATUS_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.start_time {
+            ser.write_timestamp(&MAINTENANCEWINDOWEXECUTION_MEMBER_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.end_time {
+            ser.write_timestamp(&MAINTENANCEWINDOWEXECUTION_MEMBER_END_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl MaintenanceWindowExecution {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&MAINTENANCEWINDOWEXECUTION_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_execution_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status = Some(crate::types::MaintenanceWindowExecutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status_details = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl MaintenanceWindowExecution {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl MaintenanceWindowExecution {
     /// Creates a new builder-style object to manufacture [`MaintenanceWindowExecution`](crate::types::MaintenanceWindowExecution).
     pub fn builder() -> crate::types::builders::MaintenanceWindowExecutionBuilder {

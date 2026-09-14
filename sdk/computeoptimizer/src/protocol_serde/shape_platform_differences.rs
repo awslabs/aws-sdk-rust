@@ -23,7 +23,7 @@ pub(crate) fn de_platform_differences(
                     decoder.position(),
                 ))
             }
-            _ => decoder.string().map(|s| crate::types::PlatformDifference::from(s.as_ref()))?,
+            _ => decoder.string().map(|s| crate::types::PlatformDifference::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

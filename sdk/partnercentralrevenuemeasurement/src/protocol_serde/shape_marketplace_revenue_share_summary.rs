@@ -19,7 +19,7 @@ pub(crate) fn de_marketplace_revenue_share_summary(
             "ProductId" => builder.set_product_id(Some(decoder.string()?)),
             "Arn" => builder.set_arn(Some(decoder.string()?)),
             "Catalog" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_ref()))?)))
+                Ok(builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_str()))?)))
             })?,
             "ProductCode" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_product_code(Some(decoder.string()?))))?

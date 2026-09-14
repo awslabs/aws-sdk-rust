@@ -213,6 +213,515 @@ impl ::std::fmt::Debug for InstancePatchState {
         formatter.finish()
     }
 }
+static INSTANCEPATCHSTATE_MEMBER_INSTANCE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$InstanceId",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstanceId",
+    0,
+);
+static INSTANCEPATCHSTATE_MEMBER_PATCH_GROUP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$PatchGroup",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PatchGroup",
+    1,
+);
+static INSTANCEPATCHSTATE_MEMBER_BASELINE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$BaselineId",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaselineId",
+    2,
+);
+static INSTANCEPATCHSTATE_MEMBER_SNAPSHOT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$SnapshotId",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SnapshotId",
+    3,
+);
+static INSTANCEPATCHSTATE_MEMBER_INSTALL_OVERRIDE_LIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$InstallOverrideList",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InstallOverrideList",
+    4,
+);
+static INSTANCEPATCHSTATE_MEMBER_OWNER_INFORMATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$OwnerInformation",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OwnerInformation",
+    5,
+);
+static INSTANCEPATCHSTATE_MEMBER_INSTALLED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$InstalledCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstalledCount",
+    6,
+);
+static INSTANCEPATCHSTATE_MEMBER_INSTALLED_OTHER_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$InstalledOtherCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstalledOtherCount",
+    7,
+);
+static INSTANCEPATCHSTATE_MEMBER_INSTALLED_PENDING_REBOOT_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$InstalledPendingRebootCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstalledPendingRebootCount",
+    8,
+);
+static INSTANCEPATCHSTATE_MEMBER_INSTALLED_REJECTED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$InstalledRejectedCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "InstalledRejectedCount",
+    9,
+);
+static INSTANCEPATCHSTATE_MEMBER_MISSING_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$MissingCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "MissingCount",
+    10,
+);
+static INSTANCEPATCHSTATE_MEMBER_FAILED_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$FailedCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "FailedCount",
+    11,
+);
+static INSTANCEPATCHSTATE_MEMBER_UNREPORTED_NOT_APPLICABLE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$UnreportedNotApplicableCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "UnreportedNotApplicableCount",
+    12,
+);
+static INSTANCEPATCHSTATE_MEMBER_NOT_APPLICABLE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$NotApplicableCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "NotApplicableCount",
+    13,
+);
+static INSTANCEPATCHSTATE_MEMBER_AVAILABLE_SECURITY_UPDATE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$AvailableSecurityUpdateCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "AvailableSecurityUpdateCount",
+    14,
+);
+static INSTANCEPATCHSTATE_MEMBER_OPERATION_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$OperationStartTime",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "OperationStartTime",
+    15,
+);
+static INSTANCEPATCHSTATE_MEMBER_OPERATION_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$OperationEndTime",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "OperationEndTime",
+    16,
+);
+static INSTANCEPATCHSTATE_MEMBER_OPERATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$Operation",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Operation",
+    17,
+);
+static INSTANCEPATCHSTATE_MEMBER_LAST_NO_REBOOT_INSTALL_OPERATION_TIME: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#InstancePatchState$LastNoRebootInstallOperationTime",
+            "com.amazonaws.ssm",
+            "InstancePatchState",
+        ),
+        ::aws_smithy_schema::ShapeType::Timestamp,
+        "LastNoRebootInstallOperationTime",
+        18,
+    );
+static INSTANCEPATCHSTATE_MEMBER_REBOOT_OPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$RebootOption",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RebootOption",
+    19,
+);
+static INSTANCEPATCHSTATE_MEMBER_CRITICAL_NON_COMPLIANT_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$CriticalNonCompliantCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CriticalNonCompliantCount",
+    20,
+);
+static INSTANCEPATCHSTATE_MEMBER_SECURITY_NON_COMPLIANT_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$SecurityNonCompliantCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "SecurityNonCompliantCount",
+    21,
+);
+static INSTANCEPATCHSTATE_MEMBER_OTHER_NON_COMPLIANT_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchState$OtherNonCompliantCount",
+        "com.amazonaws.ssm",
+        "InstancePatchState",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "OtherNonCompliantCount",
+    22,
+);
+static INSTANCEPATCHSTATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#InstancePatchState", "com.amazonaws.ssm", "InstancePatchState"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEPATCHSTATE_MEMBER_INSTANCE_ID,
+        &INSTANCEPATCHSTATE_MEMBER_PATCH_GROUP,
+        &INSTANCEPATCHSTATE_MEMBER_BASELINE_ID,
+        &INSTANCEPATCHSTATE_MEMBER_SNAPSHOT_ID,
+        &INSTANCEPATCHSTATE_MEMBER_INSTALL_OVERRIDE_LIST,
+        &INSTANCEPATCHSTATE_MEMBER_OWNER_INFORMATION,
+        &INSTANCEPATCHSTATE_MEMBER_INSTALLED_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_INSTALLED_OTHER_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_INSTALLED_PENDING_REBOOT_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_INSTALLED_REJECTED_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_MISSING_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_FAILED_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_UNREPORTED_NOT_APPLICABLE_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_NOT_APPLICABLE_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_AVAILABLE_SECURITY_UPDATE_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_OPERATION_START_TIME,
+        &INSTANCEPATCHSTATE_MEMBER_OPERATION_END_TIME,
+        &INSTANCEPATCHSTATE_MEMBER_OPERATION,
+        &INSTANCEPATCHSTATE_MEMBER_LAST_NO_REBOOT_INSTALL_OPERATION_TIME,
+        &INSTANCEPATCHSTATE_MEMBER_REBOOT_OPTION,
+        &INSTANCEPATCHSTATE_MEMBER_CRITICAL_NON_COMPLIANT_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_SECURITY_NON_COMPLIANT_COUNT,
+        &INSTANCEPATCHSTATE_MEMBER_OTHER_NON_COMPLIANT_COUNT,
+    ],
+);
+impl InstancePatchState {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEPATCHSTATE_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstancePatchState {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.instance_id;
+            ser.write_string(&INSTANCEPATCHSTATE_MEMBER_INSTANCE_ID, val)?;
+        }
+        {
+            let val = &self.patch_group;
+            ser.write_string(&INSTANCEPATCHSTATE_MEMBER_PATCH_GROUP, val)?;
+        }
+        {
+            let val = &self.baseline_id;
+            ser.write_string(&INSTANCEPATCHSTATE_MEMBER_BASELINE_ID, val)?;
+        }
+        if let Some(ref val) = self.snapshot_id {
+            ser.write_string(&INSTANCEPATCHSTATE_MEMBER_SNAPSHOT_ID, val)?;
+        }
+        if let Some(ref val) = self.install_override_list {
+            ser.write_string(&INSTANCEPATCHSTATE_MEMBER_INSTALL_OVERRIDE_LIST, val)?;
+        }
+        if let Some(ref val) = self.owner_information {
+            ser.write_string(&INSTANCEPATCHSTATE_MEMBER_OWNER_INFORMATION, val)?;
+        }
+        {
+            let val = &self.installed_count;
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_INSTALLED_COUNT, *val)?;
+        }
+        {
+            let val = &self.installed_other_count;
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_INSTALLED_OTHER_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.installed_pending_reboot_count {
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_INSTALLED_PENDING_REBOOT_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.installed_rejected_count {
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_INSTALLED_REJECTED_COUNT, *val)?;
+        }
+        {
+            let val = &self.missing_count;
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_MISSING_COUNT, *val)?;
+        }
+        {
+            let val = &self.failed_count;
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_FAILED_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.unreported_not_applicable_count {
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_UNREPORTED_NOT_APPLICABLE_COUNT, *val)?;
+        }
+        {
+            let val = &self.not_applicable_count;
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_NOT_APPLICABLE_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.available_security_update_count {
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_AVAILABLE_SECURITY_UPDATE_COUNT, *val)?;
+        }
+        {
+            let val = &self.operation_start_time;
+            ser.write_timestamp(&INSTANCEPATCHSTATE_MEMBER_OPERATION_START_TIME, val)?;
+        }
+        {
+            let val = &self.operation_end_time;
+            ser.write_timestamp(&INSTANCEPATCHSTATE_MEMBER_OPERATION_END_TIME, val)?;
+        }
+        {
+            let val = &self.operation;
+            ser.write_string(&INSTANCEPATCHSTATE_MEMBER_OPERATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_no_reboot_install_operation_time {
+            ser.write_timestamp(&INSTANCEPATCHSTATE_MEMBER_LAST_NO_REBOOT_INSTALL_OPERATION_TIME, val)?;
+        }
+        if let Some(ref val) = self.reboot_option {
+            ser.write_string(&INSTANCEPATCHSTATE_MEMBER_REBOOT_OPTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.critical_non_compliant_count {
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_CRITICAL_NON_COMPLIANT_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.security_non_compliant_count {
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_SECURITY_NON_COMPLIANT_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.other_non_compliant_count {
+            ser.write_integer(&INSTANCEPATCHSTATE_MEMBER_OTHER_NON_COMPLIANT_COUNT, *val)?;
+        }
+        Ok(())
+    }
+}
+impl InstancePatchState {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&INSTANCEPATCHSTATE_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.instance_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.patch_group = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    builder.baseline_id = Some(deser.read_string(member)?);
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.snapshot_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.install_override_list = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.owner_information = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    builder.installed_count = Some(deser.read_integer(member)?);
+                }
+                Some(7) => {
+                    builder.installed_other_count = Some(deser.read_integer(member)?);
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.installed_pending_reboot_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.installed_rejected_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(10) => {
+                    builder.missing_count = Some(deser.read_integer(member)?);
+                }
+                Some(11) => {
+                    builder.failed_count = Some(deser.read_integer(member)?);
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.unreported_not_applicable_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(13) => {
+                    builder.not_applicable_count = Some(deser.read_integer(member)?);
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.available_security_update_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(15) => {
+                    builder.operation_start_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(16) => {
+                    builder.operation_end_time = Some(deser.read_timestamp(member)?);
+                }
+                Some(17) => {
+                    builder.operation = Some(crate::types::PatchOperationType::from(deser.read_string(member)?.as_str()));
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.last_no_reboot_install_operation_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.reboot_option = Some(crate::types::RebootOption::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.critical_non_compliant_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.security_non_compliant_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.other_non_compliant_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.instance_id = builder.instance_id.or(Some(String::new()));
+        builder.patch_group = builder.patch_group.or(Some(String::new()));
+        builder.baseline_id = builder.baseline_id.or(Some(String::new()));
+        builder.operation_start_time = builder.operation_start_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.operation_end_time = builder.operation_end_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl InstancePatchState {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl InstancePatchState {
     /// Creates a new builder-style object to manufacture [`InstancePatchState`](crate::types::InstancePatchState).
     pub fn builder() -> crate::types::builders::InstancePatchStateBuilder {

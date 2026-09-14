@@ -27,13 +27,13 @@ pub(crate) fn de_build(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_version(Some(decoder.string()?))))?
             }
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::BuildStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::BuildStatus::from(s.as_str()))?)))
             })?,
             "SizeOnDisk" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_size_on_disk(Some(decoder.long()?))))?
             }
             "OperatingSystem" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_ref()))?)))
+                Ok(builder.set_operating_system(Some(decoder.string().map(|s| crate::types::OperatingSystem::from(s.as_str()))?)))
             })?,
             "CreationTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_creation_time(Some(decoder.timestamp()?)))

@@ -105,9 +105,533 @@ impl UpdatePatchBaselineOutput {
         self.available_security_updates_compliance_status.as_ref()
     }
 }
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_BASELINE_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$BaselineId",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BaselineId",
+    0,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$Name",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    1,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_OPERATING_SYSTEM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$OperatingSystem",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperatingSystem",
+    2,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_GLOBAL_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$GlobalFilters",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "GlobalFilters",
+    3,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVAL_RULES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$ApprovalRules",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ApprovalRules",
+    4,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchIdList$member", "com.amazonaws.ssm", "PatchIdList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$ApprovedPatches",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ApprovedPatches",
+    5,
+)
+.with_list_member(&UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES_MEMBER);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES_COMPLIANCE_LEVEL: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$ApprovedPatchesComplianceLevel",
+            "com.amazonaws.ssm.synthetic",
+            "UpdatePatchBaselineOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ApprovedPatchesComplianceLevel",
+        6,
+    );
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES_ENABLE_NON_SECURITY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$ApprovedPatchesEnableNonSecurity",
+            "com.amazonaws.ssm.synthetic",
+            "UpdatePatchBaselineOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "ApprovedPatchesEnableNonSecurity",
+        7,
+    );
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_REJECTED_PATCHES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchIdList$member", "com.amazonaws.ssm", "PatchIdList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_REJECTED_PATCHES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$RejectedPatches",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RejectedPatches",
+    8,
+)
+.with_list_member(&UPDATEPATCHBASELINEOUTPUT_MEMBER_REJECTED_PATCHES_MEMBER);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_REJECTED_PATCHES_ACTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$RejectedPatchesAction",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RejectedPatchesAction",
+    9,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_CREATED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$CreatedDate",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedDate",
+    10,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$ModifiedDate",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "ModifiedDate",
+    11,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_DESCRIPTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$Description",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Description",
+    12,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_SOURCES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#PatchSourceList$member", "com.amazonaws.ssm", "PatchSourceList"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_SOURCES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$Sources",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Sources",
+    13,
+)
+.with_list_member(&UPDATEPATCHBASELINEOUTPUT_MEMBER_SOURCES_MEMBER);
+static UPDATEPATCHBASELINEOUTPUT_MEMBER_AVAILABLE_SECURITY_UPDATES_COMPLIANCE_STATUS: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput$AvailableSecurityUpdatesComplianceStatus",
+            "com.amazonaws.ssm.synthetic",
+            "UpdatePatchBaselineOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "AvailableSecurityUpdatesComplianceStatus",
+        14,
+    );
+static UPDATEPATCHBASELINEOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    15,
+)
+.with_http_header("x-amzn-requestid");
+static UPDATEPATCHBASELINEOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdatePatchBaselineOutput",
+        "com.amazonaws.ssm.synthetic",
+        "UpdatePatchBaselineOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_BASELINE_ID,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_NAME,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_OPERATING_SYSTEM,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_GLOBAL_FILTERS,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVAL_RULES,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES_COMPLIANCE_LEVEL,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES_ENABLE_NON_SECURITY,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_REJECTED_PATCHES,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_REJECTED_PATCHES_ACTION,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_CREATED_DATE,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_MODIFIED_DATE,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_DESCRIPTION,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_SOURCES,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER_AVAILABLE_SECURITY_UPDATES_COMPLIANCE_STATUS,
+        &UPDATEPATCHBASELINEOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("UpdatePatchBaselineResult");
+impl UpdatePatchBaselineOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEPATCHBASELINEOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdatePatchBaselineOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.baseline_id {
+            ser.write_string(&UPDATEPATCHBASELINEOUTPUT_MEMBER_BASELINE_ID, val)?;
+        }
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEPATCHBASELINEOUTPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.operating_system {
+            ser.write_string(&UPDATEPATCHBASELINEOUTPUT_MEMBER_OPERATING_SYSTEM, val.as_str())?;
+        }
+        if let Some(ref val) = self.global_filters {
+            ser.write_struct(&UPDATEPATCHBASELINEOUTPUT_MEMBER_GLOBAL_FILTERS, val)?;
+        }
+        if let Some(ref val) = self.approval_rules {
+            ser.write_struct(&UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVAL_RULES, val)?;
+        }
+        if let Some(ref val) = self.approved_patches {
+            ser.write_list(
+                &UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.approved_patches_compliance_level {
+            ser.write_string(&UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES_COMPLIANCE_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.approved_patches_enable_non_security {
+            ser.write_boolean(&UPDATEPATCHBASELINEOUTPUT_MEMBER_APPROVED_PATCHES_ENABLE_NON_SECURITY, *val)?;
+        }
+        if let Some(ref val) = self.rejected_patches {
+            ser.write_list(
+                &UPDATEPATCHBASELINEOUTPUT_MEMBER_REJECTED_PATCHES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.rejected_patches_action {
+            ser.write_string(&UPDATEPATCHBASELINEOUTPUT_MEMBER_REJECTED_PATCHES_ACTION, val.as_str())?;
+        }
+        if let Some(ref val) = self.created_date {
+            ser.write_timestamp(&UPDATEPATCHBASELINEOUTPUT_MEMBER_CREATED_DATE, val)?;
+        }
+        if let Some(ref val) = self.modified_date {
+            ser.write_timestamp(&UPDATEPATCHBASELINEOUTPUT_MEMBER_MODIFIED_DATE, val)?;
+        }
+        if let Some(ref val) = self.description {
+            ser.write_string(&UPDATEPATCHBASELINEOUTPUT_MEMBER_DESCRIPTION, val)?;
+        }
+        if let Some(ref val) = self.sources {
+            ser.write_list(
+                &UPDATEPATCHBASELINEOUTPUT_MEMBER_SOURCES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::PatchSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.available_security_updates_compliance_status {
+            ser.write_string(
+                &UPDATEPATCHBASELINEOUTPUT_MEMBER_AVAILABLE_SECURITY_UPDATES_COMPLIANCE_STATUS,
+                val.as_str(),
+            )?;
+        }
+        Ok(())
+    }
+}
+impl UpdatePatchBaselineOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UPDATEPATCHBASELINEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.baseline_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.operating_system = Some(crate::types::OperatingSystem::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.global_filters = Some(crate::types::PatchFilterGroup::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.approval_rules = Some(crate::types::PatchRuleGroup::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.approved_patches = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.approved_patches_compliance_level =
+                            Some(crate::types::PatchComplianceLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.approved_patches_enable_non_security = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.rejected_patches = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.rejected_patches_action = Some(crate::types::PatchAction::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.created_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.modified_date = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.description = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.sources = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::PatchSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.available_security_updates_compliance_status =
+                            Some(crate::types::PatchComplianceStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(15) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl UpdatePatchBaselineOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UPDATEPATCHBASELINEOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.baseline_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.name = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    builder.operating_system = Some(crate::types::OperatingSystem::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    builder.global_filters = Some(crate::types::PatchFilterGroup::deserialize(deser)?);
+                }
+                Some(4) => {
+                    builder.approval_rules = Some(crate::types::PatchRuleGroup::deserialize(deser)?);
+                }
+                Some(5) => {
+                    builder.approved_patches = Some(deser.read_string_list(member)?);
+                }
+                Some(6) => {
+                    builder.approved_patches_compliance_level = Some(crate::types::PatchComplianceLevel::from(deser.read_string(member)?.as_str()));
+                }
+                Some(7) => {
+                    builder.approved_patches_enable_non_security = Some(deser.read_boolean(member)?);
+                }
+                Some(8) => {
+                    builder.rejected_patches = Some(deser.read_string_list(member)?);
+                }
+                Some(9) => {
+                    builder.rejected_patches_action = Some(crate::types::PatchAction::from(deser.read_string(member)?.as_str()));
+                }
+                Some(10) => {
+                    builder.created_date = Some(deser.read_timestamp(member)?);
+                }
+                Some(11) => {
+                    builder.modified_date = Some(deser.read_timestamp(member)?);
+                }
+                Some(12) => {
+                    builder.description = Some(deser.read_string(member)?);
+                }
+                Some(13) => {
+                    builder.sources = Some({
+                        let mut container = Vec::new();
+                        deser.read_list(member, &mut |deser| {
+                            container.push(crate::types::PatchSource::deserialize(deser)?);
+                            Ok(())
+                        })?;
+                        container
+                    });
+                }
+                Some(14) => {
+                    builder.available_security_updates_compliance_status =
+                        Some(crate::types::PatchComplianceStatus::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UpdatePatchBaselineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl UpdatePatchBaselineOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl UpdatePatchBaselineOutput {

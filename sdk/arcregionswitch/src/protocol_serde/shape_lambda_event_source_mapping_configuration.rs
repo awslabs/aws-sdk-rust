@@ -49,7 +49,7 @@ pub(crate) fn de_lambda_event_source_mapping_configuration(
             "timeoutMinutes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_timeout_minutes(Some(decoder.integer()?)))
             })?,
-            "action" => builder.set_action(Some(decoder.string().map(|s| crate::types::EventSourceMappingAction::from(s.as_ref()))?)),
+            "action" => builder.set_action(Some(decoder.string().map(|s| crate::types::EventSourceMappingAction::from(s.as_str()))?)),
             "regionEventSourceMappings" => builder.set_region_event_source_mappings(Some(
                 crate::protocol_serde::shape_region_event_source_mapping_map::de_region_event_source_mapping_map(decoder, depth + 1)?,
             )),

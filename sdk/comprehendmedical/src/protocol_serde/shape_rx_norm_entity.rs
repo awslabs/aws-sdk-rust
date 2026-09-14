@@ -19,10 +19,10 @@ pub(crate) fn de_rx_norm_entity(
             "Id" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_id(Some(decoder.integer()?))))?,
             "Text" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_text(Some(decoder.string()?))))?,
             "Category" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_category(Some(decoder.string().map(|s| crate::types::RxNormEntityCategory::from(s.as_ref()))?)))
+                Ok(builder.set_category(Some(decoder.string().map(|s| crate::types::RxNormEntityCategory::from(s.as_str()))?)))
             })?,
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::RxNormEntityType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::RxNormEntityType::from(s.as_str()))?)))
             })?,
             "Score" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_score(Some(decoder.float()?))))?,
             "BeginOffset" => {

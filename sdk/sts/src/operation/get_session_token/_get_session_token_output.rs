@@ -8,6 +8,10 @@ pub struct GetSessionTokenOutput {
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub session_token_utilization: ::std::option::Option<i32>,
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetSessionTokenOutput {
@@ -17,11 +21,21 @@ impl GetSessionTokenOutput {
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn session_token_utilization(&self) -> ::std::option::Option<i32> {
+        self.session_token_utilization
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn session_token_size(&self) -> ::std::option::Option<i32> {
+        self.session_token_size
+    }
 }
 impl ::std::fmt::Debug for GetSessionTokenOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionTokenOutput");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_token_utilization", &self.session_token_utilization);
+        formatter.field("session_token_size", &self.session_token_size);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -43,6 +57,8 @@ impl GetSessionTokenOutput {
 #[non_exhaustive]
 pub struct GetSessionTokenOutputBuilder {
     pub(crate) credentials: ::std::option::Option<crate::types::Credentials>,
+    pub(crate) session_token_utilization: ::std::option::Option<i32>,
+    pub(crate) session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetSessionTokenOutputBuilder {
@@ -66,6 +82,34 @@ impl GetSessionTokenOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
         &self.credentials
     }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn session_token_utilization(mut self, input: i32) -> Self {
+        self.session_token_utilization = ::std::option::Option::Some(input);
+        self
+    }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn set_session_token_utilization(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_token_utilization = input;
+        self
+    }
+    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    pub fn get_session_token_utilization(&self) -> &::std::option::Option<i32> {
+        &self.session_token_utilization
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn session_token_size(mut self, input: i32) -> Self {
+        self.session_token_size = ::std::option::Option::Some(input);
+        self
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn set_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.session_token_size = input;
+        self
+    }
+    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    pub fn get_session_token_size(&self) -> &::std::option::Option<i32> {
+        &self.session_token_size
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -79,6 +123,8 @@ impl GetSessionTokenOutputBuilder {
     pub fn build(self) -> crate::operation::get_session_token::GetSessionTokenOutput {
         crate::operation::get_session_token::GetSessionTokenOutput {
             credentials: self.credentials,
+            session_token_utilization: self.session_token_utilization,
+            session_token_size: self.session_token_size,
             _request_id: self._request_id,
         }
     }
@@ -87,6 +133,8 @@ impl ::std::fmt::Debug for GetSessionTokenOutputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("GetSessionTokenOutputBuilder");
         formatter.field("credentials", &"*** Sensitive Data Redacted ***");
+        formatter.field("session_token_utilization", &self.session_token_utilization);
+        formatter.field("session_token_size", &self.session_token_size);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

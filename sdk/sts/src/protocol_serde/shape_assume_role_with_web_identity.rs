@@ -279,6 +279,36 @@ pub fn de_assume_role_with_web_identity(
                 builder = builder.set_source_identity(var_7);
             }
             ,
+            s if s.matches("SessionTokenUtilization") /* SessionTokenUtilization com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$SessionTokenUtilization */ =>  {
+                let var_8 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.sts#sessionTokenUtilizationType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_session_token_utilization(var_8);
+            }
+            ,
+            s if s.matches("SessionTokenSize") /* SessionTokenSize com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$SessionTokenSize */ =>  {
+                let var_9 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.sts#sessionTokenSizeType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_session_token_size(var_9);
+            }
+            ,
             _ => {}
         }
         }

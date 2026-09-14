@@ -36,7 +36,7 @@ pub(crate) fn de_user(
                 Ok(builder.set_created_time(Some(decoder.timestamp()?)))
             })?,
             "AuthenticationType" => {
-                builder.set_authentication_type(Some(decoder.string().map(|s| crate::types::AuthenticationType::from(s.as_ref()))?))
+                builder.set_authentication_type(Some(decoder.string().map(|s| crate::types::AuthenticationType::from(s.as_str()))?))
             }
             _ => {
                 decoder.skip()?;

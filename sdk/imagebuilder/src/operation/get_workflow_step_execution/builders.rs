@@ -22,7 +22,7 @@ impl crate::operation::get_workflow_step_execution::builders::GetWorkflowStepExe
 }
 /// Fluent builder constructing a request to `GetWorkflowStepExecution`.
 ///
-/// <p>Get the runtime information that was logged for a specific runtime instance of the workflow step.</p>
+/// <p>Retrieves runtime information for a specific runtime instance of the workflow step.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkflowStepExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

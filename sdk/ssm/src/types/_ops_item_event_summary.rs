@@ -49,6 +49,198 @@ impl OpsItemEventSummary {
         self.created_time.as_ref()
     }
 }
+static OPSITEMEVENTSUMMARY_MEMBER_OPS_ITEM_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemEventSummary$OpsItemId",
+        "com.amazonaws.ssm",
+        "OpsItemEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OpsItemId",
+    0,
+);
+static OPSITEMEVENTSUMMARY_MEMBER_EVENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemEventSummary$EventId",
+        "com.amazonaws.ssm",
+        "OpsItemEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EventId",
+    1,
+);
+static OPSITEMEVENTSUMMARY_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsItemEventSummary$Source", "com.amazonaws.ssm", "OpsItemEventSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Source",
+    2,
+);
+static OPSITEMEVENTSUMMARY_MEMBER_DETAIL_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemEventSummary$DetailType",
+        "com.amazonaws.ssm",
+        "OpsItemEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DetailType",
+    3,
+);
+static OPSITEMEVENTSUMMARY_MEMBER_DETAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsItemEventSummary$Detail", "com.amazonaws.ssm", "OpsItemEventSummary"),
+    ::aws_smithy_schema::ShapeType::String,
+    "Detail",
+    4,
+);
+static OPSITEMEVENTSUMMARY_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemEventSummary$CreatedBy",
+        "com.amazonaws.ssm",
+        "OpsItemEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    5,
+);
+static OPSITEMEVENTSUMMARY_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemEventSummary$CreatedTime",
+        "com.amazonaws.ssm",
+        "OpsItemEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "CreatedTime",
+    6,
+);
+static OPSITEMEVENTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#OpsItemEventSummary", "com.amazonaws.ssm", "OpsItemEventSummary"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPSITEMEVENTSUMMARY_MEMBER_OPS_ITEM_ID,
+        &OPSITEMEVENTSUMMARY_MEMBER_EVENT_ID,
+        &OPSITEMEVENTSUMMARY_MEMBER_SOURCE,
+        &OPSITEMEVENTSUMMARY_MEMBER_DETAIL_TYPE,
+        &OPSITEMEVENTSUMMARY_MEMBER_DETAIL,
+        &OPSITEMEVENTSUMMARY_MEMBER_CREATED_BY,
+        &OPSITEMEVENTSUMMARY_MEMBER_CREATED_TIME,
+    ],
+);
+impl OpsItemEventSummary {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPSITEMEVENTSUMMARY_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpsItemEventSummary {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.ops_item_id {
+            ser.write_string(&OPSITEMEVENTSUMMARY_MEMBER_OPS_ITEM_ID, val)?;
+        }
+        if let Some(ref val) = self.event_id {
+            ser.write_string(&OPSITEMEVENTSUMMARY_MEMBER_EVENT_ID, val)?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_string(&OPSITEMEVENTSUMMARY_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.detail_type {
+            ser.write_string(&OPSITEMEVENTSUMMARY_MEMBER_DETAIL_TYPE, val)?;
+        }
+        if let Some(ref val) = self.detail {
+            ser.write_string(&OPSITEMEVENTSUMMARY_MEMBER_DETAIL, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&OPSITEMEVENTSUMMARY_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.created_time {
+            ser.write_timestamp(&OPSITEMEVENTSUMMARY_MEMBER_CREATED_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl OpsItemEventSummary {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&OPSITEMEVENTSUMMARY_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.ops_item_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.event_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.source = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.detail_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.detail = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.created_by = Some(crate::types::OpsItemIdentity::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.created_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl OpsItemEventSummary {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl OpsItemEventSummary {
     /// Creates a new builder-style object to manufacture [`OpsItemEventSummary`](crate::types::OpsItemEventSummary).
     pub fn builder() -> crate::types::builders::OpsItemEventSummaryBuilder {

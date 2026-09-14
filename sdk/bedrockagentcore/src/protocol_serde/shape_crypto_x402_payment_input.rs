@@ -7,7 +7,9 @@ pub fn ser_crypto_x402_payment_input(
         object.key("version").string(input.version.as_str());
     }
     {
-        object.key("payload").document(&input.payload);
+        object
+            .key("payload")
+            .document(&input.payload, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_1) = &input.permit2_allowance_limit {
         object.key("permit2AllowanceLimit").string(var_1.as_str());

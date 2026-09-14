@@ -6997,6 +6997,59 @@ impl From<crate::operation::list_integration_resource_properties::ListIntegratio
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError> for Error {
+    fn from(err: crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError) -> Self {
+        match err {
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError::EntityNotFoundException(inner) => {
+                Error::EntityNotFoundException(inner)
+            }
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_integration_table_properties::ListIntegrationTablePropertiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_iterable_forms::ListIterableFormsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

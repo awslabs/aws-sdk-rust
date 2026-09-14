@@ -53,13 +53,13 @@ pub(crate) fn de_composite_alarm(
                 Ok(builder.set_state_updated_timestamp(Some(decoder.timestamp()?)))
             })?,
             "StateValue" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state_value(Some(decoder.string().map(|s| crate::types::StateValue::from(s.as_ref()))?)))
+                Ok(builder.set_state_value(Some(decoder.string().map(|s| crate::types::StateValue::from(s.as_str()))?)))
             })?,
             "StateTransitionedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_state_transitioned_timestamp(Some(decoder.timestamp()?)))
             })?,
             "ActionsSuppressedBy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_actions_suppressed_by(Some(decoder.string().map(|s| crate::types::ActionsSuppressedBy::from(s.as_ref()))?)))
+                Ok(builder.set_actions_suppressed_by(Some(decoder.string().map(|s| crate::types::ActionsSuppressedBy::from(s.as_str()))?)))
             })?,
             "ActionsSuppressedReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_actions_suppressed_reason(Some(decoder.string()?)))

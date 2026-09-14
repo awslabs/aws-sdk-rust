@@ -10,7 +10,9 @@ pub fn ser_update_dataset_examples_input_input(
         let mut array_3 = object.key("examples").start_array();
         for item_4 in var_2 {
             {
-                array_3.value().document(item_4);
+                array_3
+                    .value()
+                    .document(item_4, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
             }
         }
         array_3.finish();

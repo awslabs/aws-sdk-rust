@@ -244,7 +244,6 @@ mod tests {
     use aws_types::region::{Region, SigningRegionSet};
     use aws_types::SigningName;
     use std::borrow::Cow;
-    use std::collections::HashMap;
     use std::time::{Duration, SystemTime};
     use tracing_test::traced_test;
 
@@ -299,7 +298,7 @@ mod tests {
             ..Default::default()
         });
         let config = Document::Object({
-            let mut out = HashMap::new();
+            let mut out = aws_smithy_types::document::DocumentObject::new();
             out.insert("name".to_owned(), "sigv4a".to_owned().into());
             out.insert("signingName".to_owned(), "qldb-override".to_owned().into());
             out.insert(
@@ -342,7 +341,7 @@ mod tests {
         layer.store_put(SigV4OperationSigningConfig::default());
         layer.store_put(SigningRegionSet::from("*"));
         let config = Document::Object({
-            let mut out = HashMap::new();
+            let mut out = aws_smithy_types::document::DocumentObject::new();
             out.insert("name".to_owned(), "sigv4a".to_owned().into());
             out.insert(
                 "signingRegionSet".to_string(),
@@ -363,7 +362,7 @@ mod tests {
         let mut layer = Layer::new("test");
         layer.store_put(SigV4OperationSigningConfig::default());
         let config = Document::Object({
-            let mut out = HashMap::new();
+            let mut out = aws_smithy_types::document::DocumentObject::new();
             out.insert("name".to_owned(), "sigv4a".to_owned().into());
             out.insert(
                 "signingRegionSet".to_string(),
@@ -398,7 +397,7 @@ mod tests {
         layer.store_put(SigV4OperationSigningConfig::default());
         layer.store_put(Region::new("us-west-2"));
         let config = Document::Object({
-            let mut out = HashMap::new();
+            let mut out = aws_smithy_types::document::DocumentObject::new();
             out.insert("name".to_owned(), "sigv4a".to_owned().into());
             out.insert(
                 "signingRegionSet".to_string(),
@@ -421,7 +420,7 @@ mod tests {
         layer.store_put(SigningRegionSet::from("eu-west-1"));
         layer.store_put(Region::new("us-west-2"));
         let config = Document::Object({
-            let mut out = HashMap::new();
+            let mut out = aws_smithy_types::document::DocumentObject::new();
             out.insert("name".to_owned(), "sigv4a".to_owned().into());
             out.insert(
                 "signingRegionSet".to_string(),
@@ -454,7 +453,7 @@ mod tests {
         let mut layer = Layer::new("test");
         layer.store_put(SigV4OperationSigningConfig::default());
         let config = Document::Object({
-            let mut out = HashMap::new();
+            let mut out = aws_smithy_types::document::DocumentObject::new();
             out.insert("name".to_owned(), "sigv4a".to_owned().into());
             out.insert(
                 "signingRegionSet".to_string(),

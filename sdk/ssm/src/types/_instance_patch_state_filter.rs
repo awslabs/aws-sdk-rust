@@ -72,6 +72,139 @@ impl InstancePatchStateFilter {
         &self.r#type
     }
 }
+static INSTANCEPATCHSTATEFILTER_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchStateFilter$Key",
+        "com.amazonaws.ssm",
+        "InstancePatchStateFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Key",
+    0,
+);
+static INSTANCEPATCHSTATEFILTER_MEMBER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchStateFilterValues$member",
+        "com.amazonaws.ssm",
+        "InstancePatchStateFilterValues",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static INSTANCEPATCHSTATEFILTER_MEMBER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchStateFilter$Values",
+        "com.amazonaws.ssm",
+        "InstancePatchStateFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Values",
+    1,
+)
+.with_list_member(&INSTANCEPATCHSTATEFILTER_MEMBER_VALUES_MEMBER);
+static INSTANCEPATCHSTATEFILTER_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchStateFilter$Type",
+        "com.amazonaws.ssm",
+        "InstancePatchStateFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    2,
+);
+static INSTANCEPATCHSTATEFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InstancePatchStateFilter",
+        "com.amazonaws.ssm",
+        "InstancePatchStateFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INSTANCEPATCHSTATEFILTER_MEMBER_KEY,
+        &INSTANCEPATCHSTATEFILTER_MEMBER_VALUES,
+        &INSTANCEPATCHSTATEFILTER_MEMBER_TYPE,
+    ],
+);
+impl InstancePatchStateFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INSTANCEPATCHSTATEFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InstancePatchStateFilter {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key;
+            ser.write_string(&INSTANCEPATCHSTATEFILTER_MEMBER_KEY, val)?;
+        }
+        {
+            let val = &self.values;
+
+            ser.write_list(
+                &INSTANCEPATCHSTATEFILTER_MEMBER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.r#type;
+            ser.write_string(&INSTANCEPATCHSTATEFILTER_MEMBER_TYPE, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl InstancePatchStateFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&INSTANCEPATCHSTATEFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.key = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.values = Some(deser.read_string_list(member)?);
+                }
+                Some(2) => {
+                    builder.r#type = Some(crate::types::InstancePatchStateOperatorType::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.key = builder.key.or(Some(String::new()));
+        builder.values = builder.values.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl InstancePatchStateFilter {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl InstancePatchStateFilter {
     /// Creates a new builder-style object to manufacture [`InstancePatchStateFilter`](crate::types::InstancePatchStateFilter).
     pub fn builder() -> crate::types::builders::InstancePatchStateFilterBuilder {

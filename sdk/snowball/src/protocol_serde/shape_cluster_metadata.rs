@@ -29,13 +29,13 @@ pub(crate) fn de_cluster_metadata(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_role_arn(Some(decoder.string()?))))?
             }
             "ClusterState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_cluster_state(Some(decoder.string().map(|s| crate::types::ClusterState::from(s.as_ref()))?)))
+                Ok(builder.set_cluster_state(Some(decoder.string().map(|s| crate::types::ClusterState::from(s.as_str()))?)))
             })?,
             "JobType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_job_type(Some(decoder.string().map(|s| crate::types::JobType::from(s.as_ref()))?)))
+                Ok(builder.set_job_type(Some(decoder.string().map(|s| crate::types::JobType::from(s.as_str()))?)))
             })?,
             "SnowballType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_snowball_type(Some(decoder.string().map(|s| crate::types::SnowballType::from(s.as_ref()))?)))
+                Ok(builder.set_snowball_type(Some(decoder.string().map(|s| crate::types::SnowballType::from(s.as_str()))?)))
             })?,
             "CreationDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_creation_date(Some(decoder.timestamp()?)))
@@ -47,7 +47,7 @@ pub(crate) fn de_cluster_metadata(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_address_id(Some(decoder.string()?))))?
             }
             "ShippingOption" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_shipping_option(Some(decoder.string().map(|s| crate::types::ShippingOption::from(s.as_ref()))?)))
+                Ok(builder.set_shipping_option(Some(decoder.string().map(|s| crate::types::ShippingOption::from(s.as_str()))?)))
             })?,
             "Notification" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_notification(Some(crate::protocol_serde::shape_notification::de_notification(decoder, depth + 1)?)))

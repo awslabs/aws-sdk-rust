@@ -46,7 +46,7 @@ pub(crate) fn de_lambda_function_recommendation(
                 Ok(builder.set_finding(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::LambdaFunctionRecommendationFinding::from(s.as_ref()))?,
+                        .map(|s| crate::types::LambdaFunctionRecommendationFinding::from(s.as_str()))?,
                 )))
             })?,
             "findingReasonCodes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -65,7 +65,7 @@ pub(crate) fn de_lambda_function_recommendation(
                 )))
             })?,
             "currentPerformanceRisk" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_current_performance_risk(Some(decoder.string().map(|s| crate::types::CurrentPerformanceRisk::from(s.as_ref()))?)))
+                Ok(builder.set_current_performance_risk(Some(decoder.string().map(|s| crate::types::CurrentPerformanceRisk::from(s.as_str()))?)))
             })?,
             "effectiveRecommendationPreferences" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_effective_recommendation_preferences(Some(

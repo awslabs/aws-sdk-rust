@@ -33,7 +33,7 @@ pub(crate) fn de_container_dependency(
         builder = match decoder.str()?.as_ref() {
             "ContainerName" => builder.set_container_name(Some(decoder.string()?)),
             "Condition" => builder.set_condition(Some(
-                decoder.string().map(|s| crate::types::ContainerDependencyCondition::from(s.as_ref()))?,
+                decoder.string().map(|s| crate::types::ContainerDependencyCondition::from(s.as_str()))?,
             )),
             _ => {
                 decoder.skip()?;

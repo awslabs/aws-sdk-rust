@@ -36,7 +36,7 @@ pub(crate) fn de_rule_boolean_expression(
                 decoder,
                 depth + 1,
             )?)),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleBooleanOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleBooleanOperator::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

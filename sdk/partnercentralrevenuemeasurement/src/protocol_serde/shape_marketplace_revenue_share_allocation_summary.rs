@@ -28,7 +28,7 @@ pub(crate) fn de_marketplace_revenue_share_allocation_summary(
                 Ok(builder.set_effective_until(Some(decoder.string()?)))
             })?,
             "RevenueSharePercent" => builder.set_revenue_share_percent(Some(decoder.string()?)),
-            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::AllocationStatus::from(s.as_ref()))?)),
+            "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::AllocationStatus::from(s.as_str()))?)),
             "CreatedDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_created_date(Some(decoder.timestamp()?)))
             })?,

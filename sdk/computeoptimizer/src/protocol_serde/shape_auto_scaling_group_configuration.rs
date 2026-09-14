@@ -30,13 +30,13 @@ pub(crate) fn de_auto_scaling_group_configuration(
                     Ok(builder.set_instance_type(Some(decoder.string()?)))
                 })?,
                 "allocationStrategy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_allocation_strategy(Some(decoder.string().map(|s| crate::types::AllocationStrategy::from(s.as_ref()))?)))
+                    Ok(builder.set_allocation_strategy(Some(decoder.string().map(|s| crate::types::AllocationStrategy::from(s.as_str()))?)))
                 })?,
                 "estimatedInstanceHourReductionPercentage" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_estimated_instance_hour_reduction_percentage(Some(decoder.double()?)))
                 })?,
                 "type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::AsgType::from(s.as_ref()))?)))
+                    Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::AsgType::from(s.as_str()))?)))
                 })?,
                 "mixedInstanceTypes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(

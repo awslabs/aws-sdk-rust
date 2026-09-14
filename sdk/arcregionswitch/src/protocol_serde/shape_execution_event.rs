@@ -20,13 +20,13 @@ pub(crate) fn de_execution_event(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_timestamp(Some(decoder.timestamp()?))))?
             }
             "type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::ExecutionEventType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::ExecutionEventType::from(s.as_str()))?)))
             })?,
             "stepName" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_step_name(Some(decoder.string()?))))?
             }
             "executionBlockType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_execution_block_type(Some(decoder.string().map(|s| crate::types::ExecutionBlockType::from(s.as_ref()))?)))
+                Ok(builder.set_execution_block_type(Some(decoder.string().map(|s| crate::types::ExecutionBlockType::from(s.as_str()))?)))
             })?,
             "resources" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_resources(Some(crate::protocol_serde::shape_resources::de_resources(decoder, depth + 1)?)))

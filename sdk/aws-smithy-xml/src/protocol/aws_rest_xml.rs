@@ -12,12 +12,12 @@ use crate::decode::{try_data, Document};
 use aws_smithy_schema::http_protocol::HttpBindingProtocol;
 use aws_smithy_schema::serde::SerdeError;
 use aws_smithy_schema::Schema;
-use aws_smithy_schema::ShapeId;
+use aws_smithy_schema::{shape_id, ShapeId};
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::date_time::Format as TimestampFormat;
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata};
 
-static PROTOCOL_ID: ShapeId = ShapeId::from_static("aws.protocols", "restXml", "");
+static PROTOCOL_ID: ShapeId<'static> = shape_id!("aws.protocols", "restXml");
 
 /// AWS REST XML protocol (`aws.protocols#restXml`).
 #[derive(Debug)]
@@ -52,7 +52,7 @@ impl AwsRestXmlProtocol {
         let settings = Arc::new(settings);
         let codec = XmlCodec::from_shared_settings(settings.clone());
         Self {
-            inner: HttpBindingProtocol::new(PROTOCOL_ID, codec, "application/xml"),
+            inner: HttpBindingProtocol::new(PROTOCOL_ID.clone(), codec, "application/xml"),
             settings,
             no_error_wrapping: false,
             service_xml_namespace: None,
@@ -63,7 +63,17 @@ impl AwsRestXmlProtocol {
     /// of the `@restXml` trait. When `true`, error response bodies have
     /// `<Error>` as the document root; when `false` (default), they are
     /// wrapped in `<ErrorResponse><Error>...</Error>...</ErrorResponse>`.
-    /// Drives the parsing branch in [`Self::deserialize_error_response`].
+    /// Drives the parsing branch in `parse_error_metadata` and
+    /// `deserialize_error_response`.
+    ///
+    /// Unlike the service XML namespace, this has **no config-bag default and cannot have one**:
+    /// it is read from `@restXml(noErrorWrapping)`, and a model that does not use restXml carries
+    /// no `@restXml` trait for a generated client to store. So when restXml is selected at runtime
+    /// on, say, a CBOR-modeled service, there is nothing to recover — the caller must set it, and
+    /// the documented default of `false` (wrapped envelopes, the spec default) applies otherwise.
+    ///
+    /// This is the general limit of runtime protocol swapping: a protocol's own trait data cannot
+    /// be recovered from a model that does not use that protocol.
     pub fn with_no_error_wrapping(mut self, v: bool) -> Self {
         self.no_error_wrapping = v;
         self
@@ -79,6 +89,12 @@ impl AwsRestXmlProtocol {
     /// service shape. Applied to request/response XML root elements that
     /// don't carry their own `@xmlNamespace` (e.g. S3's
     /// `http://s3.amazonaws.com/doc/2006-03-01/`).
+    ///
+    /// Overrides the default, which is the
+    /// [`ServiceXmlNamespace`](aws_smithy_schema::protocol::ServiceXmlNamespace) config-bag entry
+    /// that generated clients store regardless of which protocol they were generated for. That
+    /// default exists because a customer selecting restXml through
+    /// `Config::builder().protocol(..)` has no way to know the model's namespace.
     pub fn with_service_xml_namespace(
         mut self,
         uri: impl Into<String>,
@@ -88,113 +104,17 @@ impl AwsRestXmlProtocol {
         self
     }
 
-    /// Parses a REST XML error response envelope, extracting error metadata
-    /// (`Code`, `Message`, `Type`, `RequestId`) and returning a deserializer
-    /// positioned inside `<Error>` for per-error-shape member parsing.
-    pub fn deserialize_error_response<'a>(
-        &self,
-        body: &'a [u8],
-    ) -> Result<
-        (
-            ErrorMetadataBuilder,
-            Box<dyn aws_smithy_schema::serde::ShapeDeserializer + 'a>,
-        ),
-        SerdeError,
-    > {
-        let mut builder = ErrorMetadata::builder();
-
-        if self.no_error_wrapping {
-            // <Error><Code>...</Code><Message>...</Message>...members...</Error>
-            let mut doc = Document::new(
-                std::str::from_utf8(body)
-                    .map_err(|e| SerdeError::custom(format!("invalid UTF-8: {e}")))?,
-            );
-            let mut root = doc
-                .root_element()
-                .map_err(|e| SerdeError::custom(format!("{e}")))?;
-            while let Some(mut tag) = root.next_tag() {
-                match tag.start_el().local() {
-                    "Code" => {
-                        builder = builder.code(
-                            try_data(&mut tag).map_err(|e| SerdeError::custom(format!("{e}")))?,
-                        );
-                    }
-                    "Message" => {
-                        builder = builder.message(
-                            try_data(&mut tag).map_err(|e| SerdeError::custom(format!("{e}")))?,
-                        );
-                    }
-                    _ => {}
-                }
-            }
-            // For unwrapped, the body IS the <Error> element — deserializer reads from root
-            let deser = XmlDeserializer::new(body, self.settings.clone());
-            Ok((builder, Box::new(deser)))
-        } else {
-            // <ErrorResponse><Error><Code>...</Code>...</Error><RequestId>...</RequestId></ErrorResponse>
-            let mut doc = Document::new(
-                std::str::from_utf8(body)
-                    .map_err(|e| SerdeError::custom(format!("invalid UTF-8: {e}")))?,
-            );
-            let mut root = doc
-                .root_element()
-                .map_err(|e| SerdeError::custom(format!("{e}")))?;
-            // Captured during the structural walk below — bytes of the
-            // `<Error>...</Error>` sub-element. Replaces a previous
-            // `body_str.find("<Error>")` substring search that would
-            // match `<Error>` literally inside attribute values, CDATA
-            // sections, comments, or text content. The structural walk
-            // already locates the element correctly via the XML parser;
-            // capturing the slice during the walk reuses that work and
-            // matches only an actual `<Error>` element.
-            let mut error_fragment: Option<&'a [u8]> = None;
-            while let Some(mut tag) = root.next_tag() {
-                match tag.start_el().local() {
-                    "Error" => {
-                        // `local()` returns a `&str` borrowed from the
-                        // input bytes — exactly what `find_element_slice`
-                        // expects (its pointer-arithmetic invariant
-                        // requires the name to lie within `body`).
-                        let el_local = tag.start_el().local();
-                        error_fragment = Some(XmlDeserializer::find_element_slice(body, el_local));
-                        while let Some(mut error_field) = tag.next_tag() {
-                            match error_field.start_el().local() {
-                                "Code" => {
-                                    builder = builder.code(
-                                        try_data(&mut error_field)
-                                            .map_err(|e| SerdeError::custom(format!("{e}")))?,
-                                    );
-                                }
-                                "Message" => {
-                                    builder = builder.message(
-                                        try_data(&mut error_field)
-                                            .map_err(|e| SerdeError::custom(format!("{e}")))?,
-                                    );
-                                }
-                                _ => {}
-                            }
-                        }
-                    }
-                    "RequestId" => {
-                        builder = builder.custom(
-                            "request_id",
-                            try_data(&mut tag).map_err(|e| SerdeError::custom(format!("{e}")))?,
-                        );
-                    }
-                    _ => {}
-                }
-            }
-            // The deserializer that downstream error-shape parsing reads
-            // from must see `<Error>` as its root element. If we found
-            // one, point at that fragment; otherwise the body is malformed
-            // and the fallback to the whole body lets downstream parsing
-            // produce an "unknown error" rather than a panic.
-            let deser = match error_fragment {
-                Some(fragment) => XmlDeserializer::new(fragment, self.settings.clone()),
-                None => XmlDeserializer::new(body, self.settings.clone()),
-            };
-            Ok((builder, Box::new(deser)))
+    /// Resolves the service-level `@xmlNamespace`: an explicit configuration wins, otherwise the
+    /// config-bag entry.
+    ///
+    /// Returns owned values because the codec takes ownership; the explicit branch clones exactly
+    /// as it did before this fell back to the bag.
+    fn resolved_service_xml_namespace(&self, cfg: &ConfigBag) -> Option<(String, Option<String>)> {
+        if let Some((uri, prefix)) = &self.service_xml_namespace {
+            return Some((uri.clone(), prefix.clone()));
         }
+        cfg.load::<aws_smithy_schema::protocol::ServiceXmlNamespace>()
+            .map(|ns| (ns.uri().to_owned(), ns.prefix().map(str::to_owned)))
     }
 }
 
@@ -233,14 +153,14 @@ impl aws_smithy_schema::protocol::ClientProtocolInner for AwsRestXmlProtocol {
     type Request = aws_smithy_runtime_api::http::Request;
     type Response = aws_smithy_runtime_api::http::Response;
 
-    fn protocol_id(&self) -> &ShapeId {
+    fn protocol_id(&self) -> &ShapeId<'static> {
         self.inner.protocol_id()
     }
 
     fn serialize_request(
         &self,
         input: &dyn aws_smithy_schema::serde::SerializableStruct,
-        input_schema: &Schema,
+        input_schema: &Schema<'_>,
         endpoint: &str,
         cfg: &ConfigBag,
     ) -> Result<aws_smithy_runtime_api::http::Request, aws_smithy_schema::serde::SerdeError> {
@@ -273,8 +193,8 @@ impl aws_smithy_schema::protocol::ClientProtocolInner for AwsRestXmlProtocol {
         // fallback. Consumed by the codec on the first root-level
         // `write_struct` only if the struct's schema has no own
         // `@xmlNamespace`.
-        if let Some((uri, prefix)) = &self.service_xml_namespace {
-            body.set_next_root_xml_namespace(uri.clone(), prefix.clone());
+        if let Some((uri, prefix)) = self.resolved_service_xml_namespace(cfg) {
+            body.set_next_root_xml_namespace(uri, prefix);
         }
         self.inner
             .serialize_request_with_body(body, input, input_schema, endpoint, cfg)
@@ -283,7 +203,7 @@ impl aws_smithy_schema::protocol::ClientProtocolInner for AwsRestXmlProtocol {
     fn deserialize_response<'a>(
         &self,
         response: &'a aws_smithy_runtime_api::http::Response,
-        output_schema: &Schema,
+        output_schema: &Schema<'_>,
         cfg: &ConfigBag,
     ) -> Result<
         Box<dyn aws_smithy_schema::serde::ShapeDeserializer + 'a>,
@@ -293,8 +213,81 @@ impl aws_smithy_schema::protocol::ClientProtocolInner for AwsRestXmlProtocol {
             .deserialize_response(response, output_schema, cfg)
     }
 
+    /// Extracts canonical error metadata from a REST XML response.
+    ///
+    /// Walks the error envelope structurally to extract `Code` / `Message` /
+    /// `Type` from inside `<Error>` and (for the wrapped variant) `RequestId`
+    /// from the outer `<ErrorResponse>`.
+    ///
+    /// Honors [`Self::with_no_error_wrapping`]:
+    ///
+    /// - **Wrapped** (default): expects
+    ///   `<ErrorResponse><Error><Code>...</Code>...</Error><RequestId>...</RequestId></ErrorResponse>`.
+    /// - **Unwrapped** (`@restXml(noErrorWrapping: true)`): expects
+    ///   `<Error><Code>...</Code>...</Error>` as the document root.
+    ///
+    /// Per the
+    /// [`ClientProtocolInner::parse_error_metadata`](aws_smithy_schema::protocol::ClientProtocolInner::parse_error_metadata)
+    /// contract the request id is **not** populated here — the
+    /// orchestrator's request-id pipeline attaches it separately. The
+    /// `RequestId` element is captured into the builder's `extra` slot
+    /// under the key `request_id` for callers that need it.
+    fn parse_error_metadata(
+        &self,
+        response: &aws_smithy_runtime_api::http::Response,
+        _cfg: &ConfigBag,
+    ) -> Result<ErrorMetadataBuilder, SerdeError> {
+        parse_error_envelope_metadata(
+            response.body().bytes().unwrap_or(&[]),
+            self.no_error_wrapping,
+        )
+    }
+
+    /// Returns a [`ShapeDeserializer`](aws_smithy_schema::serde::ShapeDeserializer)
+    /// positioned inside `<Error>` so generated
+    /// `SpecificError::deserialize` reads land on the right elements.
+    ///
+    /// For the wrapped variant, uses [`find_error_element_slice`] to locate
+    /// the `<Error>` sub-element. For `noErrorWrapping`, the body root IS
+    /// `<Error>`, so the body is used unchanged.
+    fn deserialize_error_response<'a>(
+        &self,
+        response: &'a aws_smithy_runtime_api::http::Response,
+        _cfg: &ConfigBag,
+    ) -> Result<
+        Box<dyn aws_smithy_schema::serde::ShapeDeserializer + 'a>,
+        aws_smithy_schema::serde::SerdeError,
+    > {
+        let body = response.body().bytes().unwrap_or(&[]);
+        let inner = if self.no_error_wrapping {
+            body
+        } else {
+            find_error_element_slice(body)
+        };
+        Ok(Box::new(XmlDeserializer::new(inner, self.settings.clone())))
+    }
+
     fn payload_codec(&self) -> Option<&dyn aws_smithy_schema::codec::DynCodec> {
         self.inner.payload_codec()
+    }
+
+    /// This protocol labels structured event-stream payloads `application/xml`.
+    ///
+    /// Must stay in agreement with the code generator's
+    /// `eventStreamMessageContentType` for this protocol (`RestXml.kt:47`), which supplies
+    /// the fallback when a protocol declares no media type.
+    fn event_stream_media_type(&self) -> Option<&str> {
+        Some("application/xml")
+    }
+
+    /// Parses the same restXml error envelope as
+    /// [`ClientProtocolInner::parse_error_metadata`](aws_smithy_schema::protocol::ClientProtocolInner::parse_error_metadata), from an event-stream
+    /// frame's payload rather than an HTTP response body.
+    fn parse_event_stream_error_metadata(
+        &self,
+        payload: &[u8],
+    ) -> Result<ErrorMetadataBuilder, SerdeError> {
+        parse_error_envelope_metadata(payload, self.no_error_wrapping)
     }
 
     fn update_endpoint(
@@ -307,6 +300,86 @@ impl aws_smithy_schema::protocol::ClientProtocolInner for AwsRestXmlProtocol {
     }
 }
 
+/// Parses a restXml error envelope out of a response or event-stream payload.
+///
+/// Shared by [`ClientProtocolInner::parse_error_metadata`](aws_smithy_schema::protocol::ClientProtocolInner::parse_error_metadata) and
+/// [`ClientProtocolInner::parse_event_stream_error_metadata`](aws_smithy_schema::protocol::ClientProtocolInner::parse_event_stream_error_metadata) so the two cannot
+/// drift. Takes `no_error_wrapping` rather than `&self` because it needs no other
+/// protocol state, and takes the bytes rather than a response because an
+/// event-stream frame is not one.
+fn parse_error_envelope_metadata(
+    body: &[u8],
+    no_error_wrapping: bool,
+) -> Result<ErrorMetadataBuilder, SerdeError> {
+    // An empty body carries no error metadata. Some services signal errors
+    // with a status code and an empty body (e.g. S3 HEAD operations, whose
+    // responses have no body to hold an error code). Return an empty builder
+    // rather than failing to locate a root XML element; the error code for
+    // such responses is derived from the HTTP status by the generated
+    // dispatch's error-metadata customizations.
+    if body.is_empty() {
+        return Ok(ErrorMetadata::builder());
+    }
+    let body_str =
+        std::str::from_utf8(body).map_err(|e| SerdeError::custom(format!("invalid UTF-8: {e}")))?;
+    let mut doc = Document::new(body_str);
+    let mut root = doc
+        .root_element()
+        .map_err(|e| SerdeError::custom(format!("{e}")))?;
+    let mut builder = ErrorMetadata::builder();
+
+    if no_error_wrapping {
+        // <Error><Code>...</Code><Message>...</Message>...members...</Error>
+        while let Some(mut tag) = root.next_tag() {
+            match tag.start_el().local() {
+                "Code" => {
+                    builder = builder
+                        .code(try_data(&mut tag).map_err(|e| SerdeError::custom(format!("{e}")))?);
+                }
+                "Message" => {
+                    builder = builder.message(
+                        try_data(&mut tag).map_err(|e| SerdeError::custom(format!("{e}")))?,
+                    );
+                }
+                _ => {}
+            }
+        }
+    } else {
+        // <ErrorResponse><Error><Code>...</Code>...</Error><RequestId>...</RequestId></ErrorResponse>
+        while let Some(mut tag) = root.next_tag() {
+            match tag.start_el().local() {
+                "Error" => {
+                    while let Some(mut error_field) = tag.next_tag() {
+                        match error_field.start_el().local() {
+                            "Code" => {
+                                builder = builder.code(
+                                    try_data(&mut error_field)
+                                        .map_err(|e| SerdeError::custom(format!("{e}")))?,
+                                );
+                            }
+                            "Message" => {
+                                builder = builder.message(
+                                    try_data(&mut error_field)
+                                        .map_err(|e| SerdeError::custom(format!("{e}")))?,
+                                );
+                            }
+                            _ => {}
+                        }
+                    }
+                }
+                "RequestId" => {
+                    builder = builder.custom(
+                        "request_id",
+                        try_data(&mut tag).map_err(|e| SerdeError::custom(format!("{e}")))?,
+                    );
+                }
+                _ => {}
+            }
+        }
+    }
+    Ok(builder)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -316,9 +389,9 @@ mod tests {
 
     use aws_smithy_schema::traits::HttpTrait;
 
-    static NAME_MEMBER: Schema =
+    static NAME_MEMBER: Schema<'static> =
         Schema::new_member(shape_id!("test", "Op$name"), ShapeType::String, "name", 0);
-    static OP_SCHEMA: Schema = Schema::new_struct(
+    static OP_SCHEMA: Schema<'static> = Schema::new_struct(
         shape_id!("test", "OpRequest"),
         ShapeType::Structure,
         &[&NAME_MEMBER],
@@ -354,6 +427,69 @@ mod tests {
         assert_eq!(body, "<OpRequest><name>Alice</name></OpRequest>");
     }
 
+    /// The service-level `@xmlNamespace` becomes the root `xmlns`, and a customer selecting restXml
+    /// through `Config::builder().protocol(..)` has no way to know it, so it defaults from the
+    /// config-bag entry generated clients store regardless of their protocol.
+    #[test]
+    fn service_xml_namespace_defaults_from_config_bag() {
+        let mut layer = aws_smithy_types::config_bag::Layer::new("test");
+        layer.store_put(aws_smithy_schema::protocol::ServiceXmlNamespace::new(
+            "http://example.com/from-bag/",
+            None,
+        ));
+        let cfg = ConfigBag::of_layers(vec![layer]);
+
+        let request = AwsRestXmlProtocol::new()
+            .serialize_request(&TestInput, &OP_SCHEMA, "", &cfg)
+            .unwrap();
+        let body = std::str::from_utf8(request.body().bytes().unwrap()).unwrap();
+        assert_eq!(
+            body,
+            "<OpRequest xmlns=\"http://example.com/from-bag/\"><name>Alice</name></OpRequest>"
+        );
+    }
+
+    /// A prefix in the bag entry is honored too.
+    #[test]
+    fn service_xml_namespace_from_config_bag_honors_prefix() {
+        let mut layer = aws_smithy_types::config_bag::Layer::new("test");
+        layer.store_put(aws_smithy_schema::protocol::ServiceXmlNamespace::new(
+            "http://example.com/from-bag/",
+            Some("ex".into()),
+        ));
+        let cfg = ConfigBag::of_layers(vec![layer]);
+
+        let request = AwsRestXmlProtocol::new()
+            .serialize_request(&TestInput, &OP_SCHEMA, "", &cfg)
+            .unwrap();
+        let body = std::str::from_utf8(request.body().bytes().unwrap()).unwrap();
+        assert_eq!(
+            body,
+            "<OpRequest xmlns:ex=\"http://example.com/from-bag/\"><name>Alice</name></OpRequest>"
+        );
+    }
+
+    /// An explicitly configured namespace still wins over the bag.
+    #[test]
+    fn with_service_xml_namespace_overrides_config_bag() {
+        let mut layer = aws_smithy_types::config_bag::Layer::new("test");
+        layer.store_put(aws_smithy_schema::protocol::ServiceXmlNamespace::new(
+            "http://example.com/from-bag/",
+            None,
+        ));
+        let cfg = ConfigBag::of_layers(vec![layer]);
+
+        let request = AwsRestXmlProtocol::new()
+            .with_service_xml_namespace("http://example.com/explicit/".to_owned(), None)
+            .serialize_request(&TestInput, &OP_SCHEMA, "", &cfg)
+            .unwrap();
+        let body = std::str::from_utf8(request.body().bytes().unwrap()).unwrap();
+        assert_eq!(
+            body,
+            "<OpRequest xmlns=\"http://example.com/explicit/\"><name>Alice</name></OpRequest>"
+        );
+    }
+
     #[test]
     fn deserialize_response_round_trips() {
         let protocol = AwsRestXmlProtocol::new();
@@ -380,72 +516,135 @@ mod tests {
         assert_eq!(name, "Bob");
     }
 
-    #[test]
-    fn deserialize_error_wrapped() {
-        let protocol = AwsRestXmlProtocol::new();
-        let body = b"<ErrorResponse><Error><Type>Sender</Type><Code>InvalidGreeting</Code><Message>Hi</Message><Greeting>Howdy</Greeting></Error><RequestId>req-1</RequestId></ErrorResponse>";
+    fn http_response(body: &[u8]) -> aws_smithy_runtime_api::http::Response {
+        aws_smithy_runtime_api::http::Response::new(
+            aws_smithy_runtime_api::http::StatusCode::try_from(400).unwrap(),
+            aws_smithy_types::body::SdkBody::from(body),
+        )
+    }
 
-        let (builder, mut deser) = protocol.deserialize_error_response(body).unwrap();
-        let meta = builder.build();
+    #[test]
+    fn protocol_id_is_rest_xml() {
+        assert_eq!(
+            AwsRestXmlProtocol::new().protocol_id().as_str(),
+            "aws.protocols#restXml"
+        );
+    }
+
+    #[test]
+    fn parse_error_metadata_wrapped() {
+        let protocol = AwsRestXmlProtocol::new();
+        let response = http_response(b"<ErrorResponse><Error><Type>Sender</Type><Code>InvalidGreeting</Code><Message>Hi</Message><Greeting>Howdy</Greeting></Error><RequestId>req-1</RequestId></ErrorResponse>");
+        let cfg = ConfigBag::base();
+
+        let meta = protocol
+            .parse_error_metadata(&response, &cfg)
+            .unwrap()
+            .build();
         assert_eq!(meta.code(), Some("InvalidGreeting"));
         assert_eq!(meta.message(), Some("Hi"));
         assert_eq!(meta.extra("request_id"), Some("req-1"));
-
-        // The deserializer should be positioned inside <Error> and able to read members
-        let mut greeting = String::new();
-        deser
-            .read_struct(&OP_SCHEMA, &mut |member, d| {
-                if member.member_name() == Some("name") {
-                    greeting = d.read_string(member)?;
-                }
-                Ok(())
-            })
-            .unwrap();
-        // "Greeting" doesn't match "name" member, so greeting stays empty
-        // But Code/Message/Type are skipped as unknown — this validates no panic
     }
 
     #[test]
-    fn deserialize_error_unwrapped() {
+    fn parse_error_metadata_unwrapped() {
         let protocol = AwsRestXmlProtocol::new().with_no_error_wrapping(true);
-        let body =
-            b"<Error><Code>NotFound</Code><Message>Gone</Message><Detail>extra</Detail></Error>";
+        let response = http_response(
+            b"<Error><Code>NotFound</Code><Message>Gone</Message><Detail>extra</Detail></Error>",
+        );
+        let cfg = ConfigBag::base();
 
-        let (builder, _deser) = protocol.deserialize_error_response(body).unwrap();
-        let meta = builder.build();
+        let meta = protocol
+            .parse_error_metadata(&response, &cfg)
+            .unwrap()
+            .build();
         assert_eq!(meta.code(), Some("NotFound"));
         assert_eq!(meta.message(), Some("Gone"));
+        // No outer envelope means no RequestId on the unwrapped path.
+        assert_eq!(meta.extra("request_id"), None);
     }
 
     #[test]
-    fn deserialize_error_wrapped_ignores_literal_error_in_cdata() {
-        // Regression: the previous implementation used
+    fn parse_error_metadata_wrapped_ignores_literal_error_in_cdata() {
+        // Regression: a previous implementation used
         // `body_str.find("<Error>")` to locate the envelope's `<Error>`
         // sub-element, which would also match the literal bytes of
         // `<Error>` inside an unrelated CDATA section. The new
         // structural walk uses the XML parser, which treats CDATA as
         // opaque text and only matches a real `<Error>` element.
-        //
-        // The body below has the literal bytes `<Error><Code>FAKE</Code></Error>`
-        // INSIDE a CDATA section before the real envelope's `<Error>`.
-        // The substring-search code would slice from the CDATA's
-        // `<Error>`, producing a fragment whose `Code` reads `FAKE`.
-        // The structural walk slices from the real `<Error>` and the
-        // fragment's `Code` reads `RealCode`.
         let protocol = AwsRestXmlProtocol::new();
-        let body = b"<ErrorResponse>\
+        let response = http_response(
+            b"<ErrorResponse>\
             <Description><![CDATA[<Error><Code>FAKE</Code></Error>]]></Description>\
             <Error><Code>RealCode</Code><Message>Real message</Message></Error>\
             <RequestId>req-1</RequestId>\
-            </ErrorResponse>";
+            </ErrorResponse>",
+        );
+        let cfg = ConfigBag::base();
 
-        let (builder, _deser) = protocol.deserialize_error_response(body).unwrap();
-        let meta = builder.build();
+        let meta = protocol
+            .parse_error_metadata(&response, &cfg)
+            .unwrap()
+            .build();
         // The structural walk skips the CDATA content and finds the
         // real <Error>'s <Code>.
         assert_eq!(meta.code(), Some("RealCode"));
         assert_eq!(meta.message(), Some("Real message"));
         assert_eq!(meta.extra("request_id"), Some("req-1"));
+    }
+
+    #[test]
+    fn deserialize_error_response_positions_inside_error_wrapped() {
+        // The deserializer returned by the trait method must be
+        // positioned over the `<Error>` element so generated
+        // `SpecificError::deserialize` reads its members directly.
+        let protocol = AwsRestXmlProtocol::new();
+        let response = http_response(
+            b"<ErrorResponse>\
+                <Error xmlns=\"http://example.com/\"><name>Carol</name></Error>\
+                <RequestId>req-1</RequestId>\
+                </ErrorResponse>",
+        );
+        let cfg = ConfigBag::base();
+
+        let mut deser = protocol
+            .deserialize_error_response(&response, &cfg)
+            .unwrap();
+
+        let mut name = String::new();
+        deser
+            .read_struct(&OP_SCHEMA, &mut |member, d| {
+                if member.member_name() == Some("name") {
+                    name = d.read_string(member)?;
+                }
+                Ok(())
+            })
+            .unwrap();
+        assert_eq!(name, "Carol");
+    }
+
+    #[test]
+    fn deserialize_error_response_positions_inside_error_unwrapped() {
+        // For `noErrorWrapping`, the body root IS `<Error>` so the
+        // deserializer reads from the body unchanged.
+        let protocol = AwsRestXmlProtocol::new().with_no_error_wrapping(true);
+        let response = http_response(b"<Error><name>Dave</name></Error>");
+        let cfg = ConfigBag::base();
+
+        let mut deser = protocol
+            .deserialize_error_response(&response, &cfg)
+            .unwrap();
+
+        let mut name = String::new();
+        deser
+            .read_struct(&OP_SCHEMA, &mut |member, d| {
+                if member.member_name() == Some("name") {
+                    name = d.read_string(member)?;
+                }
+                Ok(())
+            })
+            .unwrap();
+        assert_eq!(name, "Dave");
     }
 
     // Regression tests for `find_error_element_slice` covering the cases

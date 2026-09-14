@@ -41,16 +41,16 @@ pub(crate) fn de_sns_action(
     ) -> ::std::result::Result<crate::types::builders::SnsActionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "ActionFailurePolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_action_failure_policy(Some(decoder.string().map(|s| crate::types::ActionFailurePolicy::from(s.as_ref()))?)))
+                Ok(builder.set_action_failure_policy(Some(decoder.string().map(|s| crate::types::ActionFailurePolicy::from(s.as_str()))?)))
             })?,
             "TopicArn" => builder.set_topic_arn(Some(decoder.string()?)),
             "RoleArn" => builder.set_role_arn(Some(decoder.string()?)),
             "Encoding" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_encoding(Some(decoder.string().map(|s| crate::types::SnsNotificationEncoding::from(s.as_ref()))?)))
+                Ok(builder.set_encoding(Some(decoder.string().map(|s| crate::types::SnsNotificationEncoding::from(s.as_str()))?)))
             })?,
             "PayloadType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_payload_type(Some(
-                    decoder.string().map(|s| crate::types::SnsNotificationPayloadType::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::SnsNotificationPayloadType::from(s.as_str()))?,
                 )))
             })?,
             _ => {

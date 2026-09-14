@@ -124,7 +124,7 @@ pub(crate) fn de_get_archive(
             "ArchiveId" => builder.set_archive_id(Some(decoder.string()?)),
             "ArchiveName" => builder.set_archive_name(Some(decoder.string()?)),
             "ArchiveArn" => builder.set_archive_arn(Some(decoder.string()?)),
-            "ArchiveState" => builder.set_archive_state(Some(decoder.string().map(|s| crate::types::ArchiveState::from(s.as_ref()))?)),
+            "ArchiveState" => builder.set_archive_state(Some(decoder.string().map(|s| crate::types::ArchiveState::from(s.as_str()))?)),
             "Retention" => builder.set_retention(Some(crate::protocol_serde::shape_archive_retention::de_archive_retention(
                 decoder,
                 depth + 1,

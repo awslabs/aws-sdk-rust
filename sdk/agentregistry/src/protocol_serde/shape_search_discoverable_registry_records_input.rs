@@ -4,7 +4,9 @@ pub fn ser_search_discoverable_registry_records_input_input(
     input: &crate::operation::search_discoverable_registry_records::SearchDiscoverableRegistryRecordsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filters {
-        object.key("filters").document(var_1);
+        object
+            .key("filters")
+            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_2) = &input.max_results {
         object.key("maxResults").number(

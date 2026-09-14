@@ -50,6 +50,10 @@ impl Config {
     pub fn stalled_stream_protection(&self) -> ::std::option::Option<&crate::config::StalledStreamProtectionConfig> {
         self.config.load::<crate::config::StalledStreamProtectionConfig>()
     }
+    /// Returns the client protocol used for serialization and deserialization.
+    pub fn protocol(&self) -> ::std::option::Option<&::aws_smithy_schema::protocol::SharedClientProtocol> {
+        self.config.load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
+    }
     /// Return the [`SharedHttpClient`](crate::config::SharedHttpClient) to use when making requests, if any.
     pub fn http_client(&self) -> Option<crate::config::SharedHttpClient> {
         self.runtime_components.http_client()
@@ -200,6 +204,9 @@ impl Builder {
     pub(crate) fn from_config_bag(config_bag: &::aws_smithy_types::config_bag::ConfigBag) -> Self {
         let mut builder = Self::new();
         builder.set_stalled_stream_protection(config_bag.load::<crate::config::StalledStreamProtectionConfig>().cloned());
+        if let ::std::option::Option::Some(protocol) = config_bag.load::<::aws_smithy_schema::protocol::SharedClientProtocol>().cloned() {
+            builder.set_protocol(::std::option::Option::Some(protocol));
+        }
         builder.set_auth_scheme_preference(config_bag.load::<::aws_smithy_runtime_api::client::auth::AuthSchemePreference>().cloned());
         builder.set_retry_config(config_bag.load::<::aws_smithy_types::retry::RetryConfig>().cloned());
         builder.set_timeout_config(config_bag.load::<::aws_smithy_types::timeout::TimeoutConfig>().cloned());
@@ -291,6 +298,32 @@ impl Builder {
         idempotency_token_provider: ::std::option::Option<crate::idempotency_token::IdempotencyTokenProvider>,
     ) -> &mut Self {
         self.config.store_or_unset(idempotency_token_provider);
+        self
+    }
+    /// Sets the client protocol to use for serialization and deserialization.
+    ///
+    /// This overrides the default protocol determined by the service model,
+    /// enabling runtime protocol selection.
+    ///
+    /// # Transport
+    ///
+    /// This setter is HTTP-specific. The config bag stores
+    /// `SharedClientProtocol` (which elides to its HTTP specialization) and
+    /// only `SharedClientProtocol<http::Request, http::Response>` has a
+    /// `Storable` impl. The `impl ClientProtocol + 'static` bound here elides
+    /// to `impl ClientProtocol<http::Request, http::Response>` to match —
+    /// a `ClientProtocol<Other, Other>` impl wouldn't round-trip through
+    /// config-bag storage even though the trait itself is transport-generic.
+    pub fn protocol(mut self, protocol: impl ::aws_smithy_schema::protocol::ClientProtocol + 'static) -> Self {
+        self.set_protocol(::std::option::Option::Some(::aws_smithy_schema::protocol::SharedClientProtocol::new(
+            protocol,
+        )));
+        self
+    }
+
+    /// Sets the client protocol to use for serialization and deserialization.
+    pub fn set_protocol(&mut self, protocol: ::std::option::Option<::aws_smithy_schema::protocol::SharedClientProtocol>) -> &mut Self {
+        self.config.store_or_unset(protocol);
         self
     }
     /// Sets the HTTP client to use when making requests.
@@ -1452,6 +1485,18 @@ impl ServiceRuntimePlugin {
         let config = {
             let mut cfg = ::aws_smithy_types::config_bag::Layer::new("AmazonSSM");
             cfg.store_put(crate::idempotency_token::default_provider());
+            cfg.store_put(::aws_smithy_schema::protocol::ServiceShapeName::new("AmazonSSM"));
+            cfg.store_put(::aws_smithy_schema::protocol::ServiceShapeNamespace::new("com.amazonaws.ssm"));
+            cfg.store_put(::aws_smithy_schema::protocol::ServiceVersion::new("2014-11-06"));
+            cfg.store_put(::aws_smithy_schema::protocol::ServiceXmlNamespace::new(
+                "http://ssm.amazonaws.com/doc/2014-11-06/",
+                None,
+            ));
+            if _service_config.protocol().is_none() {
+                cfg.store_put(::aws_smithy_schema::protocol::SharedClientProtocol::new(
+                    ::aws_smithy_json::protocol::aws_json_rpc::AwsJsonRpcProtocol::aws_json_1_1().with_default_namespace("com.amazonaws.ssm"),
+                ));
+            }
             cfg.store_put(::aws_smithy_runtime::client::orchestrator::AuthSchemeAndEndpointOrchestrationV2);
             ::std::option::Option::Some(cfg.freeze())
         };
@@ -1611,6 +1656,9 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
         builder.set_time_source(input.time_source());
         builder.set_behavior_version(input.behavior_version());
         builder.set_auth_scheme_preference(input.auth_scheme_preference().cloned());
+        if let Some(protocol) = input.protocol() {
+            builder.set_protocol(Some(protocol.clone()));
+        }
         // setting `None` here removes the default
         if let Some(config) = input.stalled_stream_protection() {
             builder.set_stalled_stream_protection(Some(config));

@@ -109,7 +109,7 @@ pub(crate) fn de_address(
                 Ok(builder.set_is_restricted(Some(decoder.boolean()?)))
             })?,
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::AddressType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::AddressType::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

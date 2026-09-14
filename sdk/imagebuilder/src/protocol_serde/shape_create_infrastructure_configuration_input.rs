@@ -9,79 +9,82 @@ pub fn ser_create_infrastructure_configuration_input_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.instance_metadata_options {
+    if let Some(var_3) = &input.dry_run {
+        object.key("dryRun").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.instance_metadata_options {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("instanceMetadataOptions").start_object();
-        crate::protocol_serde::shape_instance_metadata_options::ser_instance_metadata_options(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("instanceMetadataOptions").start_object();
+        crate::protocol_serde::shape_instance_metadata_options::ser_instance_metadata_options(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.instance_profile_name {
-        object.key("instanceProfileName").string(var_5.as_str());
+    if let Some(var_6) = &input.instance_profile_name {
+        object.key("instanceProfileName").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.instance_types {
-        let mut array_7 = object.key("instanceTypes").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.instance_types {
+        let mut array_8 = object.key("instanceTypes").start_array();
+        for item_9 in var_7 {
             {
-                array_7.value().string(item_8.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
-    if let Some(var_9) = &input.key_pair {
-        object.key("keyPair").string(var_9.as_str());
+    if let Some(var_10) = &input.key_pair {
+        object.key("keyPair").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.logging {
+    if let Some(var_11) = &input.logging {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("logging").start_object();
-        crate::protocol_serde::shape_logging::ser_logging(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_12 = object.key("logging").start_object();
+        crate::protocol_serde::shape_logging::ser_logging(&mut object_12, var_11)?;
+        object_12.finish();
     }
-    if let Some(var_12) = &input.name {
-        object.key("name").string(var_12.as_str());
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.placement {
+    if let Some(var_14) = &input.placement {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("placement").start_object();
-        crate::protocol_serde::shape_placement::ser_placement(&mut object_14, var_13)?;
-        object_14.finish();
+        let mut object_15 = object.key("placement").start_object();
+        crate::protocol_serde::shape_placement::ser_placement(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_15) = &input.resource_tags {
+    if let Some(var_16) = &input.resource_tags {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("resourceTags").start_object();
-        for (key_17, value_18) in var_15 {
+        let mut object_17 = object.key("resourceTags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_16.key(key_17.as_str()).string(value_18.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_16.finish();
+        object_17.finish();
     }
-    if let Some(var_19) = &input.security_group_ids {
-        let mut array_20 = object.key("securityGroupIds").start_array();
-        for item_21 in var_19 {
+    if let Some(var_20) = &input.security_group_ids {
+        let mut array_21 = object.key("securityGroupIds").start_array();
+        for item_22 in var_20 {
             {
-                array_20.value().string(item_21.as_str());
+                array_21.value().string(item_22.as_str());
             }
         }
-        array_20.finish();
+        array_21.finish();
     }
-    if let Some(var_22) = &input.sns_topic_arn {
-        object.key("snsTopicArn").string(var_22.as_str());
+    if let Some(var_23) = &input.sns_topic_arn {
+        object.key("snsTopicArn").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.subnet_id {
-        object.key("subnetId").string(var_23.as_str());
+    if let Some(var_24) = &input.subnet_id {
+        object.key("subnetId").string(var_24.as_str());
     }
-    if let Some(var_24) = &input.tags {
+    if let Some(var_25) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("tags").start_object();
-        for (key_26, value_27) in var_24 {
+        let mut object_26 = object.key("tags").start_object();
+        for (key_27, value_28) in var_25 {
             {
-                object_25.key(key_26.as_str()).string(value_27.as_str());
+                object_26.key(key_27.as_str()).string(value_28.as_str());
             }
         }
-        object_25.finish();
+        object_26.finish();
     }
-    if let Some(var_28) = &input.terminate_instance_on_failure {
-        object.key("terminateInstanceOnFailure").boolean(*var_28);
+    if let Some(var_29) = &input.terminate_instance_on_failure {
+        object.key("terminateInstanceOnFailure").boolean(*var_29);
     }
     Ok(())
 }

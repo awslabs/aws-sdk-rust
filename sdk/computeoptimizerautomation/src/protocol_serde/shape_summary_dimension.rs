@@ -16,7 +16,7 @@ pub(crate) fn de_summary_dimension(
         depth: u32,
     ) -> ::std::result::Result<crate::types::builders::SummaryDimensionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
-            "key" => builder.set_key(Some(decoder.string().map(|s| crate::types::SummaryDimensionKey::from(s.as_ref()))?)),
+            "key" => builder.set_key(Some(decoder.string().map(|s| crate::types::SummaryDimensionKey::from(s.as_str()))?)),
             "value" => builder.set_value(Some(decoder.string()?)),
             _ => {
                 decoder.skip()?;

@@ -17,7 +17,7 @@ pub(crate) fn de_minimal_workflow(
     ) -> ::std::result::Result<crate::types::builders::MinimalWorkflowBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "action" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_action(Some(decoder.string().map(|s| crate::types::ExecutionAction::from(s.as_ref()))?)))
+                Ok(builder.set_action(Some(decoder.string().map(|s| crate::types::ExecutionAction::from(s.as_str()))?)))
             })?,
             "name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
             _ => {

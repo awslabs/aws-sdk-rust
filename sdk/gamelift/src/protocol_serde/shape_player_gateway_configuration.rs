@@ -30,7 +30,7 @@ pub(crate) fn de_player_gateway_configuration(
         builder = match decoder.str()?.as_ref() {
             "GameServerIpProtocolSupported" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_game_server_ip_protocol_supported(Some(
-                    decoder.string().map(|s| crate::types::GameServerIpProtocolSupported::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::GameServerIpProtocolSupported::from(s.as_str()))?,
                 )))
             })?,
             _ => {

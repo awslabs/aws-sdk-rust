@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListLifecycleExecutionResourcesInput {
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub lifecycle_execution_id: ::std::option::Option<::std::string::String>,
     /// <p>You can leave this empty to get a list of Image Builder resources that were identified for lifecycle actions.</p>
     /// <p>To get a list of associated resources that are impacted for an individual resource (the parent), specify its Amazon Resource Name (ARN). Associated resources are produced from your image and distributed when you run a build, such as AMIs or container images stored in ECR repositories.</p>
     pub parent_resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLifecycleExecutionResourcesInput {
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn lifecycle_execution_id(&self) -> ::std::option::Option<&str> {
         self.lifecycle_execution_id.as_deref()
     }
@@ -23,11 +23,11 @@ impl ListLifecycleExecutionResourcesInput {
     pub fn parent_resource_id(&self) -> ::std::option::Option<&str> {
         self.parent_resource_id.as_deref()
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -49,18 +49,18 @@ pub struct ListLifecycleExecutionResourcesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListLifecycleExecutionResourcesInputBuilder {
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     /// This field is required.
     pub fn lifecycle_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.lifecycle_execution_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.lifecycle_execution_id = input;
         self
     }
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.lifecycle_execution_id
     }
@@ -81,31 +81,31 @@ impl ListLifecycleExecutionResourcesInputBuilder {
     pub fn get_parent_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.parent_resource_id
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

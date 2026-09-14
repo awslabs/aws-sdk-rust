@@ -37,10 +37,10 @@ pub(crate) fn de_app_block(
                 Ok(builder.set_post_setup_script_details(Some(crate::protocol_serde::shape_script_details::de_script_details(decoder, depth + 1)?)))
             })?,
             "PackagingType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_packaging_type(Some(decoder.string().map(|s| crate::types::PackagingType::from(s.as_ref()))?)))
+                Ok(builder.set_packaging_type(Some(decoder.string().map(|s| crate::types::PackagingType::from(s.as_str()))?)))
             })?,
             "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::AppBlockState::from(s.as_ref()))?)))
+                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::AppBlockState::from(s.as_str()))?)))
             })?,
             "AppBlockErrors" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

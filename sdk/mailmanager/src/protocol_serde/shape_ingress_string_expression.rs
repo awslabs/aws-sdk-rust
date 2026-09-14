@@ -44,7 +44,7 @@ pub(crate) fn de_ingress_string_expression(
             "Evaluate" => builder.set_evaluate(Some(
                 crate::protocol_serde::shape_ingress_string_to_evaluate::de_ingress_string_to_evaluate(decoder, depth + 1)?,
             )),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::IngressStringOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::IngressStringOperator::from(s.as_str()))?)),
             "Values" => builder.set_values(Some(crate::protocol_serde::shape_string_list::de_string_list(decoder, depth + 1)?)),
             _ => {
                 decoder.skip()?;

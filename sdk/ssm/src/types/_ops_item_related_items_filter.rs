@@ -26,6 +26,138 @@ impl OpsItemRelatedItemsFilter {
         &self.operator
     }
 }
+static OPSITEMRELATEDITEMSFILTER_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemsFilter$Key",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemsFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Key",
+    0,
+);
+static OPSITEMRELATEDITEMSFILTER_MEMBER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemsFilterValues$member",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemsFilterValues",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static OPSITEMRELATEDITEMSFILTER_MEMBER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemsFilter$Values",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemsFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Values",
+    1,
+)
+.with_list_member(&OPSITEMRELATEDITEMSFILTER_MEMBER_VALUES_MEMBER);
+static OPSITEMRELATEDITEMSFILTER_MEMBER_OPERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemsFilter$Operator",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemsFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Operator",
+    2,
+);
+static OPSITEMRELATEDITEMSFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#OpsItemRelatedItemsFilter",
+        "com.amazonaws.ssm",
+        "OpsItemRelatedItemsFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &OPSITEMRELATEDITEMSFILTER_MEMBER_KEY,
+        &OPSITEMRELATEDITEMSFILTER_MEMBER_VALUES,
+        &OPSITEMRELATEDITEMSFILTER_MEMBER_OPERATOR,
+    ],
+);
+impl OpsItemRelatedItemsFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &OPSITEMRELATEDITEMSFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for OpsItemRelatedItemsFilter {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key;
+            ser.write_string(&OPSITEMRELATEDITEMSFILTER_MEMBER_KEY, val.as_str())?;
+        }
+        {
+            let val = &self.values;
+
+            ser.write_list(
+                &OPSITEMRELATEDITEMSFILTER_MEMBER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        {
+            let val = &self.operator;
+            ser.write_string(&OPSITEMRELATEDITEMSFILTER_MEMBER_OPERATOR, val.as_str())?;
+        }
+        Ok(())
+    }
+}
+impl OpsItemRelatedItemsFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&OPSITEMRELATEDITEMSFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.key = Some(crate::types::OpsItemRelatedItemsFilterKey::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    builder.values = Some(deser.read_string_list(member)?);
+                }
+                Some(2) => {
+                    builder.operator = Some(crate::types::OpsItemRelatedItemsFilterOperator::from(deser.read_string(member)?.as_str()));
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.values = builder.values.or(Some(Vec::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl OpsItemRelatedItemsFilter {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl OpsItemRelatedItemsFilter {
     /// Creates a new builder-style object to manufacture [`OpsItemRelatedItemsFilter`](crate::types::OpsItemRelatedItemsFilter).
     pub fn builder() -> crate::types::builders::OpsItemRelatedItemsFilterBuilder {

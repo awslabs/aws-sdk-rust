@@ -23,7 +23,7 @@ pub(crate) fn de_ebs_effective_recommendation_preferences(
                 )))
             })?,
             "lookBackPeriod" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_look_back_period(Some(decoder.string().map(|s| crate::types::LookBackPeriodPreference::from(s.as_ref()))?)))
+                Ok(builder.set_look_back_period(Some(decoder.string().map(|s| crate::types::LookBackPeriodPreference::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

@@ -45,7 +45,7 @@ pub(crate) fn de_rule_string_expression(
                 decoder,
                 depth + 1,
             )?)),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleStringOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleStringOperator::from(s.as_str()))?)),
             "Values" => builder.set_values(Some(crate::protocol_serde::shape_rule_string_list::de_rule_string_list(
                 decoder,
                 depth + 1,

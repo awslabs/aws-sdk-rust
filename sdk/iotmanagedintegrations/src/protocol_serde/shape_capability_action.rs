@@ -13,7 +13,9 @@ pub fn ser_capability_action(
         object.key("actionTraceId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.parameters {
-        object.key("parameters").document(var_3);
+        object
+            .key("parameters")
+            .document(var_3, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

@@ -20,13 +20,13 @@ pub(crate) fn de_theme(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_stack_name(Some(decoder.string()?))))?
             }
             "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::ThemeState::from(s.as_ref()))?)))
+                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::ThemeState::from(s.as_str()))?)))
             })?,
             "ThemeTitleText" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_theme_title_text(Some(decoder.string()?)))
             })?,
             "ThemeStyling" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_theme_styling(Some(decoder.string().map(|s| crate::types::ThemeStyling::from(s.as_ref()))?)))
+                Ok(builder.set_theme_styling(Some(decoder.string().map(|s| crate::types::ThemeStyling::from(s.as_str()))?)))
             })?,
             "ThemeFooterLinks" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

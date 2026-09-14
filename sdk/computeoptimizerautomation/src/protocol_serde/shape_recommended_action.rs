@@ -32,13 +32,13 @@ pub(crate) fn de_recommended_action(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_region(Some(decoder.string()?))))?
             }
             "resourceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_resource_type(Some(decoder.string().map(|s| crate::types::ResourceType::from(s.as_ref()))?)))
+                Ok(builder.set_resource_type(Some(decoder.string().map(|s| crate::types::ResourceType::from(s.as_str()))?)))
             })?,
             "lookBackPeriodInDays" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_look_back_period_in_days(Some(decoder.integer()?)))
             })?,
             "recommendedActionType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_recommended_action_type(Some(decoder.string().map(|s| crate::types::RecommendedActionType::from(s.as_ref()))?)))
+                Ok(builder.set_recommended_action_type(Some(decoder.string().map(|s| crate::types::RecommendedActionType::from(s.as_str()))?)))
             })?,
             "currentResourceSummary" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_current_resource_summary(Some(decoder.string()?)))

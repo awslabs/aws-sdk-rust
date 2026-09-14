@@ -24,16 +24,16 @@ pub(crate) fn de_scaling_policy(
             }
             "Name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_name(Some(decoder.string()?))))?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::ScalingStatusType::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::ScalingStatusType::from(s.as_str()))?)))
             })?,
             "ScalingAdjustment" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_scaling_adjustment(Some(decoder.integer()?)))
             })?,
             "ScalingAdjustmentType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_scaling_adjustment_type(Some(decoder.string().map(|s| crate::types::ScalingAdjustmentType::from(s.as_ref()))?)))
+                Ok(builder.set_scaling_adjustment_type(Some(decoder.string().map(|s| crate::types::ScalingAdjustmentType::from(s.as_str()))?)))
             })?,
             "ComparisonOperator" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_comparison_operator(Some(decoder.string().map(|s| crate::types::ComparisonOperatorType::from(s.as_ref()))?)))
+                Ok(builder.set_comparison_operator(Some(decoder.string().map(|s| crate::types::ComparisonOperatorType::from(s.as_str()))?)))
             })?,
             "Threshold" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_threshold(Some(decoder.double()?))))?
@@ -42,10 +42,10 @@ pub(crate) fn de_scaling_policy(
                 Ok(builder.set_evaluation_periods(Some(decoder.integer()?)))
             })?,
             "MetricName" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_metric_name(Some(decoder.string().map(|s| crate::types::MetricName::from(s.as_ref()))?)))
+                Ok(builder.set_metric_name(Some(decoder.string().map(|s| crate::types::MetricName::from(s.as_str()))?)))
             })?,
             "PolicyType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_policy_type(Some(decoder.string().map(|s| crate::types::PolicyType::from(s.as_ref()))?)))
+                Ok(builder.set_policy_type(Some(decoder.string().map(|s| crate::types::PolicyType::from(s.as_str()))?)))
             })?,
             "TargetConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
@@ -56,7 +56,7 @@ pub(crate) fn de_scaling_policy(
                 )
             })?,
             "UpdateStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_update_status(Some(decoder.string().map(|s| crate::types::LocationUpdateStatus::from(s.as_ref()))?)))
+                Ok(builder.set_update_status(Some(decoder.string().map(|s| crate::types::LocationUpdateStatus::from(s.as_str()))?)))
             })?,
             "Location" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_location(Some(decoder.string()?))))?

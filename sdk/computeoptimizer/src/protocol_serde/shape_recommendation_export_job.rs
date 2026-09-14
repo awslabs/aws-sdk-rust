@@ -26,10 +26,10 @@ pub(crate) fn de_recommendation_export_job(
                 )
             })?,
             "resourceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_resource_type(Some(decoder.string().map(|s| crate::types::ResourceType::from(s.as_ref()))?)))
+                Ok(builder.set_resource_type(Some(decoder.string().map(|s| crate::types::ResourceType::from(s.as_str()))?)))
             })?,
             "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::JobStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::JobStatus::from(s.as_str()))?)))
             })?,
             "creationTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_creation_timestamp(Some(decoder.timestamp()?)))

@@ -33,7 +33,7 @@ pub(crate) fn de_certificate_based_auth_properties(
         builder = match decoder.str()?.as_ref() {
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_status(Some(
-                    decoder.string().map(|s| crate::types::CertificateBasedAuthStatus::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::CertificateBasedAuthStatus::from(s.as_str()))?,
                 )))
             })?,
             "CertificateAuthorityArn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

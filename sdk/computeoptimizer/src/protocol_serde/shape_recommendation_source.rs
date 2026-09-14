@@ -20,7 +20,7 @@ pub(crate) fn de_recommendation_source(
                 Ok(builder.set_recommendation_source_arn(Some(decoder.string()?)))
             })?,
             "recommendationSourceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_recommendation_source_type(Some(decoder.string().map(|s| crate::types::RecommendationSourceType::from(s.as_ref()))?)))
+                Ok(builder.set_recommendation_source_type(Some(decoder.string().map(|s| crate::types::RecommendationSourceType::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

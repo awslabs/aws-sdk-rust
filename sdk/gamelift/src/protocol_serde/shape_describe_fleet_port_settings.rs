@@ -165,7 +165,7 @@ pub(crate) fn de_describe_fleet_port_settings(
                 )
             })?,
             "UpdateStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_update_status(Some(decoder.string().map(|s| crate::types::LocationUpdateStatus::from(s.as_ref()))?)))
+                Ok(builder.set_update_status(Some(decoder.string().map(|s| crate::types::LocationUpdateStatus::from(s.as_str()))?)))
             })?,
             "Location" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_location(Some(decoder.string()?))))?

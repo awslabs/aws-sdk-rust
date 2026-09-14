@@ -22,7 +22,7 @@ impl crate::operation::get_distribution_configuration::builders::GetDistribution
 }
 /// Fluent builder constructing a request to `GetDistributionConfiguration`.
 ///
-/// <p>Gets a distribution configuration.</p>
+/// <p>Retrieves a distribution configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDistributionConfigurationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

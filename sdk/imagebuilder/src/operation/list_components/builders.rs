@@ -35,7 +35,7 @@ impl crate::operation::list_components::builders::ListComponentsInputBuilder {
 /// </patch>
 /// </minor>
 /// </major></p>
-/// <p><b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
+/// <p><b>Filtering:</b> You can use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListComponentsFluentBuilder {
@@ -217,31 +217,31 @@ impl ListComponentsFluentBuilder {
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
         self.inner.get_by_name()
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

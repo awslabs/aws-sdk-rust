@@ -37,9 +37,225 @@ impl GetExecutionPreviewOutput {
         self.execution_preview.as_ref()
     }
 }
+static GETEXECUTIONPREVIEWOUTPUT_MEMBER_EXECUTION_PREVIEW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetExecutionPreviewOutput$ExecutionPreviewId",
+        "com.amazonaws.ssm.synthetic",
+        "GetExecutionPreviewOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ExecutionPreviewId",
+    0,
+);
+static GETEXECUTIONPREVIEWOUTPUT_MEMBER_ENDED_AT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetExecutionPreviewOutput$EndedAt",
+        "com.amazonaws.ssm.synthetic",
+        "GetExecutionPreviewOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "EndedAt",
+    1,
+);
+static GETEXECUTIONPREVIEWOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetExecutionPreviewOutput$Status",
+        "com.amazonaws.ssm.synthetic",
+        "GetExecutionPreviewOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    2,
+);
+static GETEXECUTIONPREVIEWOUTPUT_MEMBER_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetExecutionPreviewOutput$StatusMessage",
+        "com.amazonaws.ssm.synthetic",
+        "GetExecutionPreviewOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StatusMessage",
+    3,
+);
+static GETEXECUTIONPREVIEWOUTPUT_MEMBER_EXECUTION_PREVIEW: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetExecutionPreviewOutput$ExecutionPreview",
+        "com.amazonaws.ssm.synthetic",
+        "GetExecutionPreviewOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "ExecutionPreview",
+    4,
+);
+static GETEXECUTIONPREVIEWOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    5,
+)
+.with_http_header("x-amzn-requestid");
+static GETEXECUTIONPREVIEWOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#GetExecutionPreviewOutput",
+        "com.amazonaws.ssm.synthetic",
+        "GetExecutionPreviewOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &GETEXECUTIONPREVIEWOUTPUT_MEMBER_EXECUTION_PREVIEW_ID,
+        &GETEXECUTIONPREVIEWOUTPUT_MEMBER_ENDED_AT,
+        &GETEXECUTIONPREVIEWOUTPUT_MEMBER_STATUS,
+        &GETEXECUTIONPREVIEWOUTPUT_MEMBER_STATUS_MESSAGE,
+        &GETEXECUTIONPREVIEWOUTPUT_MEMBER_EXECUTION_PREVIEW,
+        &GETEXECUTIONPREVIEWOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("GetExecutionPreviewResponse");
+impl GetExecutionPreviewOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &GETEXECUTIONPREVIEWOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for GetExecutionPreviewOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.execution_preview_id {
+            ser.write_string(&GETEXECUTIONPREVIEWOUTPUT_MEMBER_EXECUTION_PREVIEW_ID, val)?;
+        }
+        if let Some(ref val) = self.ended_at {
+            ser.write_timestamp(&GETEXECUTIONPREVIEWOUTPUT_MEMBER_ENDED_AT, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&GETEXECUTIONPREVIEWOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.status_message {
+            ser.write_string(&GETEXECUTIONPREVIEWOUTPUT_MEMBER_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.execution_preview {
+            ser.write_struct(&GETEXECUTIONPREVIEWOUTPUT_MEMBER_EXECUTION_PREVIEW, val)?;
+        }
+        Ok(())
+    }
+}
+impl GetExecutionPreviewOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&GETEXECUTIONPREVIEWOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.execution_preview_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.ended_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status = Some(crate::types::ExecutionPreviewStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.execution_preview = Some(crate::types::ExecutionPreview::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl GetExecutionPreviewOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&GETEXECUTIONPREVIEWOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.execution_preview_id = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    builder.ended_at = Some(deser.read_timestamp(member)?);
+                }
+                Some(2) => {
+                    builder.status = Some(crate::types::ExecutionPreviewStatus::from(deser.read_string(member)?.as_str()));
+                }
+                Some(3) => {
+                    builder.status_message = Some(deser.read_string(member)?);
+                }
+                Some(4) => {
+                    builder.execution_preview = Some(crate::types::ExecutionPreview::deserialize(deser)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for GetExecutionPreviewOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl GetExecutionPreviewOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl GetExecutionPreviewOutput {

@@ -22,7 +22,7 @@ impl crate::operation::get_workflow::builders::GetWorkflowInputBuilder {
 }
 /// Fluent builder constructing a request to `GetWorkflow`.
 ///
-/// <p>Get a workflow resource object.</p>
+/// <p>Retrieves a workflow resource object.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetWorkflowFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

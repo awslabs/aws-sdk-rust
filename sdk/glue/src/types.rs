@@ -597,6 +597,10 @@ pub use crate::types::_integration_resource_property_filter::IntegrationResource
 
 pub use crate::types::_integration_resource_property::IntegrationResourceProperty;
 
+pub use crate::types::_integration_table_properties_filter::IntegrationTablePropertiesFilter;
+
+pub use crate::types::_integration_table_properties::IntegrationTableProperties;
+
 pub use crate::types::_iterable_form_list_item::IterableFormListItem;
 
 pub use crate::types::_registry_list_item::RegistryListItem;
@@ -1820,6 +1824,10 @@ mod _integration_resource_property;
 mod _integration_resource_property_filter;
 
 mod _integration_status;
+
+mod _integration_table_properties;
+
+mod _integration_table_properties_filter;
 
 mod _integration_type;
 

@@ -4,33 +4,33 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EbsInstanceBlockDeviceSpecification {
-    /// <p>Use to configure device encryption.</p>
+    /// <p>Specifies whether to encrypt the device.</p>
     pub encrypted: ::std::option::Option<bool>,
-    /// <p>Use to configure delete on termination of the associated device.</p>
+    /// <p>Specifies whether to delete the associated device on termination.</p>
     pub delete_on_termination: ::std::option::Option<bool>,
-    /// <p>Use to configure device IOPS.</p>
+    /// <p>The IOPS value for the device. Required only when volumeType is io1 or io2.</p>
     pub iops: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the KMS key to use when encrypting the device. This can be either the Key ARN or the Alias ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">Key identifiers (KeyId)</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The snapshot that defines the device contents.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
-    /// <p>Use to override the device's volume size.</p>
+    /// <p>Overrides the volume size for the device.</p>
     pub volume_size: ::std::option::Option<i32>,
-    /// <p>Use to override the device's volume type.</p>
+    /// <p>Overrides the volume type for the device.</p>
     pub volume_type: ::std::option::Option<crate::types::EbsVolumeType>,
     /// <p><b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.</p>
     pub throughput: ::std::option::Option<i32>,
 }
 impl EbsInstanceBlockDeviceSpecification {
-    /// <p>Use to configure device encryption.</p>
+    /// <p>Specifies whether to encrypt the device.</p>
     pub fn encrypted(&self) -> ::std::option::Option<bool> {
         self.encrypted
     }
-    /// <p>Use to configure delete on termination of the associated device.</p>
+    /// <p>Specifies whether to delete the associated device on termination.</p>
     pub fn delete_on_termination(&self) -> ::std::option::Option<bool> {
         self.delete_on_termination
     }
-    /// <p>Use to configure device IOPS.</p>
+    /// <p>The IOPS value for the device. Required only when volumeType is io1 or io2.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
@@ -42,11 +42,11 @@ impl EbsInstanceBlockDeviceSpecification {
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
-    /// <p>Use to override the device's volume size.</p>
+    /// <p>Overrides the volume size for the device.</p>
     pub fn volume_size(&self) -> ::std::option::Option<i32> {
         self.volume_size
     }
-    /// <p>Use to override the device's volume type.</p>
+    /// <p>Overrides the volume type for the device.</p>
     pub fn volume_type(&self) -> ::std::option::Option<&crate::types::EbsVolumeType> {
         self.volume_type.as_ref()
     }
@@ -76,45 +76,45 @@ pub struct EbsInstanceBlockDeviceSpecificationBuilder {
     pub(crate) throughput: ::std::option::Option<i32>,
 }
 impl EbsInstanceBlockDeviceSpecificationBuilder {
-    /// <p>Use to configure device encryption.</p>
+    /// <p>Specifies whether to encrypt the device.</p>
     pub fn encrypted(mut self, input: bool) -> Self {
         self.encrypted = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to configure device encryption.</p>
+    /// <p>Specifies whether to encrypt the device.</p>
     pub fn set_encrypted(mut self, input: ::std::option::Option<bool>) -> Self {
         self.encrypted = input;
         self
     }
-    /// <p>Use to configure device encryption.</p>
+    /// <p>Specifies whether to encrypt the device.</p>
     pub fn get_encrypted(&self) -> &::std::option::Option<bool> {
         &self.encrypted
     }
-    /// <p>Use to configure delete on termination of the associated device.</p>
+    /// <p>Specifies whether to delete the associated device on termination.</p>
     pub fn delete_on_termination(mut self, input: bool) -> Self {
         self.delete_on_termination = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to configure delete on termination of the associated device.</p>
+    /// <p>Specifies whether to delete the associated device on termination.</p>
     pub fn set_delete_on_termination(mut self, input: ::std::option::Option<bool>) -> Self {
         self.delete_on_termination = input;
         self
     }
-    /// <p>Use to configure delete on termination of the associated device.</p>
+    /// <p>Specifies whether to delete the associated device on termination.</p>
     pub fn get_delete_on_termination(&self) -> &::std::option::Option<bool> {
         &self.delete_on_termination
     }
-    /// <p>Use to configure device IOPS.</p>
+    /// <p>The IOPS value for the device. Required only when volumeType is io1 or io2.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to configure device IOPS.</p>
+    /// <p>The IOPS value for the device. Required only when volumeType is io1 or io2.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
-    /// <p>Use to configure device IOPS.</p>
+    /// <p>The IOPS value for the device. Required only when volumeType is io1 or io2.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }
@@ -146,31 +146,31 @@ impl EbsInstanceBlockDeviceSpecificationBuilder {
     pub fn get_snapshot_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_id
     }
-    /// <p>Use to override the device's volume size.</p>
+    /// <p>Overrides the volume size for the device.</p>
     pub fn volume_size(mut self, input: i32) -> Self {
         self.volume_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to override the device's volume size.</p>
+    /// <p>Overrides the volume size for the device.</p>
     pub fn set_volume_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.volume_size = input;
         self
     }
-    /// <p>Use to override the device's volume size.</p>
+    /// <p>Overrides the volume size for the device.</p>
     pub fn get_volume_size(&self) -> &::std::option::Option<i32> {
         &self.volume_size
     }
-    /// <p>Use to override the device's volume type.</p>
+    /// <p>Overrides the volume type for the device.</p>
     pub fn volume_type(mut self, input: crate::types::EbsVolumeType) -> Self {
         self.volume_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to override the device's volume type.</p>
+    /// <p>Overrides the volume type for the device.</p>
     pub fn set_volume_type(mut self, input: ::std::option::Option<crate::types::EbsVolumeType>) -> Self {
         self.volume_type = input;
         self
     }
-    /// <p>Use to override the device's volume type.</p>
+    /// <p>Overrides the volume type for the device.</p>
     pub fn get_volume_type(&self) -> &::std::option::Option<crate::types::EbsVolumeType> {
         &self.volume_type
     }

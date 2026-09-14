@@ -39,7 +39,7 @@ pub(crate) fn de_ecs_service_recommendation(
                 Ok(builder.set_lookback_period_in_days(Some(decoder.double()?)))
             })?,
             "launchType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_launch_type(Some(decoder.string().map(|s| crate::types::EcsServiceLaunchType::from(s.as_ref()))?)))
+                Ok(builder.set_launch_type(Some(decoder.string().map(|s| crate::types::EcsServiceLaunchType::from(s.as_str()))?)))
             })?,
             "lastRefreshTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_last_refresh_timestamp(Some(decoder.timestamp()?)))
@@ -48,7 +48,7 @@ pub(crate) fn de_ecs_service_recommendation(
                 Ok(builder.set_finding(Some(
                     decoder
                         .string()
-                        .map(|s| crate::types::EcsServiceRecommendationFinding::from(s.as_ref()))?,
+                        .map(|s| crate::types::EcsServiceRecommendationFinding::from(s.as_str()))?,
                 )))
             })?,
             "findingReasonCodes" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
@@ -65,7 +65,7 @@ pub(crate) fn de_ecs_service_recommendation(
                 )))
             })?,
             "currentPerformanceRisk" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_current_performance_risk(Some(decoder.string().map(|s| crate::types::CurrentPerformanceRisk::from(s.as_ref()))?)))
+                Ok(builder.set_current_performance_risk(Some(decoder.string().map(|s| crate::types::CurrentPerformanceRisk::from(s.as_str()))?)))
             })?,
             "effectiveRecommendationPreferences" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_effective_recommendation_preferences(Some(

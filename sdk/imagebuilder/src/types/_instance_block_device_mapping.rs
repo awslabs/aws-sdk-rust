@@ -6,11 +6,11 @@
 pub struct InstanceBlockDeviceMapping {
     /// <p>The device to which these mappings apply.</p>
     pub device_name: ::std::option::Option<::std::string::String>,
-    /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+    /// <p>The Amazon EBS-specific configuration for this mapping.</p>
     pub ebs: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>,
-    /// <p>Use to manage instance ephemeral devices.</p>
+    /// <p>The virtual device name for instance ephemeral devices.</p>
     pub virtual_name: ::std::option::Option<::std::string::String>,
-    /// <p>Use to remove a mapping from the base image.</p>
+    /// <p>Specifies a mapping to remove from the base image.</p>
     pub no_device: ::std::option::Option<::std::string::String>,
 }
 impl InstanceBlockDeviceMapping {
@@ -18,15 +18,15 @@ impl InstanceBlockDeviceMapping {
     pub fn device_name(&self) -> ::std::option::Option<&str> {
         self.device_name.as_deref()
     }
-    /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+    /// <p>The Amazon EBS-specific configuration for this mapping.</p>
     pub fn ebs(&self) -> ::std::option::Option<&crate::types::EbsInstanceBlockDeviceSpecification> {
         self.ebs.as_ref()
     }
-    /// <p>Use to manage instance ephemeral devices.</p>
+    /// <p>The virtual device name for instance ephemeral devices.</p>
     pub fn virtual_name(&self) -> ::std::option::Option<&str> {
         self.virtual_name.as_deref()
     }
-    /// <p>Use to remove a mapping from the base image.</p>
+    /// <p>Specifies a mapping to remove from the base image.</p>
     pub fn no_device(&self) -> ::std::option::Option<&str> {
         self.no_device.as_deref()
     }
@@ -62,45 +62,45 @@ impl InstanceBlockDeviceMappingBuilder {
     pub fn get_device_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.device_name
     }
-    /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+    /// <p>The Amazon EBS-specific configuration for this mapping.</p>
     pub fn ebs(mut self, input: crate::types::EbsInstanceBlockDeviceSpecification) -> Self {
         self.ebs = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+    /// <p>The Amazon EBS-specific configuration for this mapping.</p>
     pub fn set_ebs(mut self, input: ::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification>) -> Self {
         self.ebs = input;
         self
     }
-    /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
+    /// <p>The Amazon EBS-specific configuration for this mapping.</p>
     pub fn get_ebs(&self) -> &::std::option::Option<crate::types::EbsInstanceBlockDeviceSpecification> {
         &self.ebs
     }
-    /// <p>Use to manage instance ephemeral devices.</p>
+    /// <p>The virtual device name for instance ephemeral devices.</p>
     pub fn virtual_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.virtual_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Use to manage instance ephemeral devices.</p>
+    /// <p>The virtual device name for instance ephemeral devices.</p>
     pub fn set_virtual_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.virtual_name = input;
         self
     }
-    /// <p>Use to manage instance ephemeral devices.</p>
+    /// <p>The virtual device name for instance ephemeral devices.</p>
     pub fn get_virtual_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.virtual_name
     }
-    /// <p>Use to remove a mapping from the base image.</p>
+    /// <p>Specifies a mapping to remove from the base image.</p>
     pub fn no_device(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.no_device = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Use to remove a mapping from the base image.</p>
+    /// <p>Specifies a mapping to remove from the base image.</p>
     pub fn set_no_device(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.no_device = input;
         self
     }
-    /// <p>Use to remove a mapping from the base image.</p>
+    /// <p>Specifies a mapping to remove from the base image.</p>
     pub fn get_no_device(&self) -> &::std::option::Option<::std::string::String> {
         &self.no_device
     }

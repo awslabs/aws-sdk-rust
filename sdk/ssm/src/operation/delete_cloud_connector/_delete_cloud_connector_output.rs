@@ -13,9 +13,129 @@ impl DeleteCloudConnectorOutput {
         self.cloud_connector_id.as_deref()
     }
 }
+static DELETECLOUDCONNECTOROUTPUT_MEMBER_CLOUD_CONNECTOR_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeleteCloudConnectorOutput$CloudConnectorId",
+        "com.amazonaws.ssm.synthetic",
+        "DeleteCloudConnectorOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CloudConnectorId",
+    0,
+);
+static DELETECLOUDCONNECTOROUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    1,
+)
+.with_http_header("x-amzn-requestid");
+static DELETECLOUDCONNECTOROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeleteCloudConnectorOutput",
+        "com.amazonaws.ssm.synthetic",
+        "DeleteCloudConnectorOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DELETECLOUDCONNECTOROUTPUT_MEMBER_CLOUD_CONNECTOR_ID,
+        &DELETECLOUDCONNECTOROUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("DeleteCloudConnectorResult");
+impl DeleteCloudConnectorOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DELETECLOUDCONNECTOROUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeleteCloudConnectorOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.cloud_connector_id {
+            ser.write_string(&DELETECLOUDCONNECTOROUTPUT_MEMBER_CLOUD_CONNECTOR_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl DeleteCloudConnectorOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DELETECLOUDCONNECTOROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.cloud_connector_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl DeleteCloudConnectorOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DELETECLOUDCONNECTOROUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.cloud_connector_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for DeleteCloudConnectorOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl DeleteCloudConnectorOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl DeleteCloudConnectorOutput {

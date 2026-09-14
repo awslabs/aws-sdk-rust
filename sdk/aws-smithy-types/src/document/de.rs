@@ -88,6 +88,22 @@ impl<'de> de::Deserializer<'de> for Document {
                     )))
                 }
             }
+            // The new Smithy variants. The serde-deserialize feature on
+            // `Document` is the legacy "treat Document like JSON" path;
+            // these variants don't have a clean wire form in untagged
+            // mode (a base64 string can't be distinguished from a
+            // string at runtime). The de path therefore visits them as
+            // their raw inner value: blobs as a byte slice, timestamps
+            // via serialize-style, big numbers as their inner string.
+            Document::Blob(b) => visitor.visit_byte_buf(b),
+            Document::Timestamp(ts) => match ts.fmt(crate::date_time::Format::DateTime) {
+                Ok(s) => visitor.visit_string(s),
+                Err(e) => Err(DocError::custom(format_args!(
+                    "failed to format timestamp: {e}"
+                ))),
+            },
+            Document::BigInteger(bi) => visitor.visit_string(bi.as_ref().to_string()),
+            Document::BigDecimal(bd) => visitor.visit_string(bd.as_ref().to_string()),
         }
     }
 
@@ -183,7 +199,7 @@ impl<'de> SeqAccess<'de> for SeqDeserializer {
 
 /// Deserializer for map (object) values.
 struct MapDeserializer {
-    iter: std::collections::hash_map::IntoIter<String, Document>,
+    iter: super::document_object::IntoIter,
     value: Option<Document>,
 }
 

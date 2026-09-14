@@ -44,6 +44,14 @@ pub fn ser_assume_role_with_saml_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("MinimumSessionTokenSize");
+    if let Some(var_17) = &input.minimum_session_token_size {
+        scope_16.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
+        );
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

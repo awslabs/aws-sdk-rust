@@ -45,7 +45,7 @@ pub(crate) fn de_ingress_ipv6_expression(
                 decoder,
                 depth + 1,
             )?)),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::IngressIpOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::IngressIpOperator::from(s.as_str()))?)),
             "Values" => builder.set_values(Some(crate::protocol_serde::shape_ipv6_cidrs::de_ipv6_cidrs(decoder, depth + 1)?)),
             _ => {
                 decoder.skip()?;

@@ -52,7 +52,7 @@ pub(crate) fn de_trigger(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
             }
             "targetRegion" => builder.set_target_region(Some(decoder.string()?)),
-            "action" => builder.set_action(Some(decoder.string().map(|s| crate::types::WorkflowTargetAction::from(s.as_ref()))?)),
+            "action" => builder.set_action(Some(decoder.string().map(|s| crate::types::WorkflowTargetAction::from(s.as_str()))?)),
             "conditions" => builder.set_conditions(Some(crate::protocol_serde::shape_trigger_condition_list::de_trigger_condition_list(
                 decoder,
                 depth + 1,

@@ -166,7 +166,7 @@ pub(crate) fn de_get_enrollment_status(
         builder =
             match decoder.str()?.as_ref() {
                 "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::Status::from(s.as_ref()))?)))
+                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::Status::from(s.as_str()))?)))
                 })?,
                 "statusReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_status_reason(Some(decoder.string()?)))

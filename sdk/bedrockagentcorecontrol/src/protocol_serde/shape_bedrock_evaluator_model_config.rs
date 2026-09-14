@@ -13,7 +13,9 @@ pub fn ser_bedrock_evaluator_model_config(
         object_2.finish();
     }
     if let Some(var_3) = &input.additional_model_request_fields {
-        object.key("additionalModelRequestFields").document(var_3);
+        object
+            .key("additionalModelRequestFields")
+            .document(var_3, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

@@ -45,7 +45,7 @@ pub(crate) fn de_rule_verdict_expression(
                 decoder,
                 depth + 1,
             )?)),
-            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleVerdictOperator::from(s.as_ref()))?)),
+            "Operator" => builder.set_operator(Some(decoder.string().map(|s| crate::types::RuleVerdictOperator::from(s.as_str()))?)),
             "Values" => builder.set_values(Some(crate::protocol_serde::shape_rule_verdict_value_list::de_rule_verdict_value_list(
                 decoder,
                 depth + 1,

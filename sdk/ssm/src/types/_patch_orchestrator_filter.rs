@@ -31,6 +31,121 @@ impl PatchOrchestratorFilter {
         self.values.as_deref().unwrap_or_default()
     }
 }
+static PATCHORCHESTRATORFILTER_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#PatchOrchestratorFilter$Key",
+        "com.amazonaws.ssm",
+        "PatchOrchestratorFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Key",
+    0,
+);
+static PATCHORCHESTRATORFILTER_MEMBER_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#PatchOrchestratorFilterValues$member",
+        "com.amazonaws.ssm",
+        "PatchOrchestratorFilterValues",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static PATCHORCHESTRATORFILTER_MEMBER_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#PatchOrchestratorFilter$Values",
+        "com.amazonaws.ssm",
+        "PatchOrchestratorFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "Values",
+    1,
+)
+.with_list_member(&PATCHORCHESTRATORFILTER_MEMBER_VALUES_MEMBER);
+static PATCHORCHESTRATORFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#PatchOrchestratorFilter",
+        "com.amazonaws.ssm",
+        "PatchOrchestratorFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&PATCHORCHESTRATORFILTER_MEMBER_KEY, &PATCHORCHESTRATORFILTER_MEMBER_VALUES],
+);
+impl PatchOrchestratorFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &PATCHORCHESTRATORFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for PatchOrchestratorFilter {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.key {
+            ser.write_string(&PATCHORCHESTRATORFILTER_MEMBER_KEY, val)?;
+        }
+        if let Some(ref val) = self.values {
+            ser.write_list(
+                &PATCHORCHESTRATORFILTER_MEMBER_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl PatchOrchestratorFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&PATCHORCHESTRATORFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.values = Some(deser.read_string_list(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl PatchOrchestratorFilter {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl PatchOrchestratorFilter {
     /// Creates a new builder-style object to manufacture [`PatchOrchestratorFilter`](crate::types::PatchOrchestratorFilter).
     pub fn builder() -> crate::types::builders::PatchOrchestratorFilterBuilder {

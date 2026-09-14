@@ -449,6 +449,10 @@ pub use crate::types::_integration_resource_property_filter::IntegrationResource
 
 pub use crate::types::_integration_resource_property::IntegrationResourcePropertyBuilder;
 
+pub use crate::types::_integration_table_properties_filter::IntegrationTablePropertiesFilterBuilder;
+
+pub use crate::types::_integration_table_properties::IntegrationTablePropertiesBuilder;
+
 pub use crate::types::_iterable_form_list_item::IterableFormListItemBuilder;
 
 pub use crate::types::_registry_list_item::RegistryListItemBuilder;

@@ -34,7 +34,7 @@ pub(crate) fn de_rule_ip_to_evaluate(
         depth: u32,
     ) -> ::std::result::Result<crate::types::RuleIpToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
-            "Attribute" => crate::types::RuleIpToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleIpEmailAttribute::from(s.as_ref()))?),
+            "Attribute" => crate::types::RuleIpToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleIpEmailAttribute::from(s.as_str()))?),
             _ => {
                 decoder.skip()?;
                 crate::types::RuleIpToEvaluate::Unknown

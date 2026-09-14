@@ -24,6 +24,129 @@ impl UpdateDocumentMetadataInput {
         self.document_reviews.as_ref()
     }
 }
+static UPDATEDOCUMENTMETADATAINPUT_MEMBER_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateDocumentMetadataInput$Name",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateDocumentMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Name",
+    0,
+);
+static UPDATEDOCUMENTMETADATAINPUT_MEMBER_DOCUMENT_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateDocumentMetadataInput$DocumentVersion",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateDocumentMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DocumentVersion",
+    1,
+);
+static UPDATEDOCUMENTMETADATAINPUT_MEMBER_DOCUMENT_REVIEWS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateDocumentMetadataInput$DocumentReviews",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateDocumentMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DocumentReviews",
+    2,
+);
+static UPDATEDOCUMENTMETADATAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateDocumentMetadataInput",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateDocumentMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UPDATEDOCUMENTMETADATAINPUT_MEMBER_NAME,
+        &UPDATEDOCUMENTMETADATAINPUT_MEMBER_DOCUMENT_VERSION,
+        &UPDATEDOCUMENTMETADATAINPUT_MEMBER_DOCUMENT_REVIEWS,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("UpdateDocumentMetadataRequest");
+impl UpdateDocumentMetadataInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UPDATEDOCUMENTMETADATAINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UpdateDocumentMetadataInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.name {
+            ser.write_string(&UPDATEDOCUMENTMETADATAINPUT_MEMBER_NAME, val)?;
+        }
+        if let Some(ref val) = self.document_version {
+            ser.write_string(&UPDATEDOCUMENTMETADATAINPUT_MEMBER_DOCUMENT_VERSION, val)?;
+        }
+        if let Some(ref val) = self.document_reviews {
+            ser.write_struct(&UPDATEDOCUMENTMETADATAINPUT_MEMBER_DOCUMENT_REVIEWS, val)?;
+        }
+        Ok(())
+    }
+}
+impl UpdateDocumentMetadataInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UPDATEDOCUMENTMETADATAINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_version = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.document_reviews = Some(crate::types::DocumentReviews::deserialize(deser)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.name = builder.name.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl UpdateDocumentMetadataInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl UpdateDocumentMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentMetadataInput`](crate::operation::update_document_metadata::UpdateDocumentMetadataInput).
     pub fn builder() -> crate::operation::update_document_metadata::builders::UpdateDocumentMetadataInputBuilder {

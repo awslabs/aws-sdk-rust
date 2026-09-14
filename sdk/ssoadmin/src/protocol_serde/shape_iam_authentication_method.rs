@@ -50,7 +50,9 @@ pub fn ser_iam_authentication_method(
     input: &crate::types::IamAuthenticationMethod,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
-        object.key("ActorPolicy").document(&input.actor_policy);
+        object
+            .key("ActorPolicy")
+            .document(&input.actor_policy, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

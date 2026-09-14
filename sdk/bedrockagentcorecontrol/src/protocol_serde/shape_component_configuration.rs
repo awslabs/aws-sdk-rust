@@ -4,7 +4,9 @@ pub fn ser_component_configuration(
     input: &crate::types::ComponentConfiguration,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
-        object.key("configuration").document(&input.configuration);
+        object
+            .key("configuration")
+            .document(&input.configuration, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

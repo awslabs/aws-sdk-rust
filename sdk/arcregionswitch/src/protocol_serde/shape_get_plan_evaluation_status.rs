@@ -116,7 +116,7 @@ pub(crate) fn de_get_plan_evaluation_status(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_region(Some(decoder.string()?))))?
             }
             "evaluationState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_evaluation_state(Some(decoder.string().map(|s| crate::types::EvaluationStatus::from(s.as_ref()))?)))
+                Ok(builder.set_evaluation_state(Some(decoder.string().map(|s| crate::types::EvaluationStatus::from(s.as_str()))?)))
             })?,
             "warnings" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_warnings(Some(crate::protocol_serde::shape_plan_warnings::de_plan_warnings(decoder, depth + 1)?)))

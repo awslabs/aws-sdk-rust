@@ -27,7 +27,7 @@ pub(crate) fn de_automation_rule(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
             }
             "ruleType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_rule_type(Some(decoder.string().map(|s| crate::types::RuleType::from(s.as_ref()))?)))
+                Ok(builder.set_rule_type(Some(decoder.string().map(|s| crate::types::RuleType::from(s.as_str()))?)))
             })?,
             "ruleRevision" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_rule_revision(Some(decoder.long()?))))?
@@ -52,7 +52,7 @@ pub(crate) fn de_automation_rule(
                 Ok(builder.set_schedule(Some(crate::protocol_serde::shape_schedule::de_schedule(decoder, depth + 1)?)))
             })?,
             "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::RuleStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::RuleStatus::from(s.as_str()))?)))
             })?,
             "createdTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_created_timestamp(Some(decoder.timestamp()?)))

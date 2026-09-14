@@ -13,6 +13,74 @@ impl S3OutputUrl {
         self.output_url.as_deref()
     }
 }
+static S3OUTPUTURL_MEMBER_OUTPUT_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#S3OutputUrl$OutputUrl", "com.amazonaws.ssm", "S3OutputUrl"),
+    ::aws_smithy_schema::ShapeType::String,
+    "OutputUrl",
+    0,
+);
+static S3OUTPUTURL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#S3OutputUrl", "com.amazonaws.ssm", "S3OutputUrl"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&S3OUTPUTURL_MEMBER_OUTPUT_URL],
+);
+impl S3OutputUrl {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &S3OUTPUTURL_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for S3OutputUrl {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.output_url {
+            ser.write_string(&S3OUTPUTURL_MEMBER_OUTPUT_URL, val)?;
+        }
+        Ok(())
+    }
+}
+impl S3OutputUrl {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&S3OUTPUTURL_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.output_url = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl S3OutputUrl {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl S3OutputUrl {
     /// Creates a new builder-style object to manufacture [`S3OutputUrl`](crate::types::S3OutputUrl).
     pub fn builder() -> crate::types::builders::S3OutputUrlBuilder {

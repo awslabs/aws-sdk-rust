@@ -30,48 +30,51 @@ pub fn ser_create_container_recipe_input_input(
     if let Some(var_9) = &input.dockerfile_template_uri {
         object.key("dockerfileTemplateUri").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.image_os_version_override {
-        object.key("imageOsVersionOverride").string(var_10.as_str());
+    if let Some(var_10) = &input.dry_run {
+        object.key("dryRun").boolean(*var_10);
     }
-    if let Some(var_11) = &input.instance_configuration {
+    if let Some(var_11) = &input.image_os_version_override {
+        object.key("imageOsVersionOverride").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.instance_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("instanceConfiguration").start_object();
-        crate::protocol_serde::shape_instance_configuration::ser_instance_configuration(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("instanceConfiguration").start_object();
+        crate::protocol_serde::shape_instance_configuration::ser_instance_configuration(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_13.as_str());
+    if let Some(var_14) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.name {
-        object.key("name").string(var_14.as_str());
+    if let Some(var_15) = &input.name {
+        object.key("name").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.parent_image {
-        object.key("parentImage").string(var_15.as_str());
+    if let Some(var_16) = &input.parent_image {
+        object.key("parentImage").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.platform_override {
-        object.key("platformOverride").string(var_16.as_str());
+    if let Some(var_17) = &input.platform_override {
+        object.key("platformOverride").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.semantic_version {
-        object.key("semanticVersion").string(var_17.as_str());
+    if let Some(var_18) = &input.semantic_version {
+        object.key("semanticVersion").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.tags {
+    if let Some(var_19) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("tags").start_object();
-        for (key_20, value_21) in var_18 {
+        let mut object_20 = object.key("tags").start_object();
+        for (key_21, value_22) in var_19 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                object_20.key(key_21.as_str()).string(value_22.as_str());
             }
         }
-        object_19.finish();
+        object_20.finish();
     }
-    if let Some(var_22) = &input.target_repository {
+    if let Some(var_23) = &input.target_repository {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("targetRepository").start_object();
-        crate::protocol_serde::shape_target_container_repository::ser_target_container_repository(&mut object_23, var_22)?;
-        object_23.finish();
+        let mut object_24 = object.key("targetRepository").start_object();
+        crate::protocol_serde::shape_target_container_repository::ser_target_container_repository(&mut object_24, var_23)?;
+        object_24.finish();
     }
-    if let Some(var_24) = &input.working_directory {
-        object.key("workingDirectory").string(var_24.as_str());
+    if let Some(var_25) = &input.working_directory {
+        object.key("workingDirectory").string(var_25.as_str());
     }
     Ok(())
 }

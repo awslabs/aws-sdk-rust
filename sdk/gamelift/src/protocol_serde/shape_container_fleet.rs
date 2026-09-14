@@ -66,7 +66,7 @@ pub(crate) fn de_container_fleet(
                 )?
             }
             "BillingType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_billing_type(Some(decoder.string().map(|s| crate::types::ContainerFleetBillingType::from(s.as_ref()))?)))
+                Ok(builder.set_billing_type(Some(decoder.string().map(|s| crate::types::ContainerFleetBillingType::from(s.as_str()))?)))
             })?,
             "Description" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_description(Some(decoder.string()?))))?
@@ -83,7 +83,7 @@ pub(crate) fn de_container_fleet(
                 )
             })?,
             "NewGameSessionProtectionPolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_new_game_session_protection_policy(Some(decoder.string().map(|s| crate::types::ProtectionPolicy::from(s.as_ref()))?)))
+                Ok(builder.set_new_game_session_protection_policy(Some(decoder.string().map(|s| crate::types::ProtectionPolicy::from(s.as_str()))?)))
             })?,
             "GameSessionCreationLimitPolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_game_session_creation_limit_policy(Some(
@@ -91,7 +91,7 @@ pub(crate) fn de_container_fleet(
                 )))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::ContainerFleetStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::ContainerFleetStatus::from(s.as_str()))?)))
             })?,
             "DeploymentDetails" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
@@ -118,7 +118,7 @@ pub(crate) fn de_container_fleet(
                 )))
             })?,
             "PlayerGatewayMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_player_gateway_mode(Some(decoder.string().map(|s| crate::types::PlayerGatewayMode::from(s.as_ref()))?)))
+                Ok(builder.set_player_gateway_mode(Some(decoder.string().map(|s| crate::types::PlayerGatewayMode::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

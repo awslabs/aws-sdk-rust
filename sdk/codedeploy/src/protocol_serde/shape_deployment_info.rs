@@ -182,6 +182,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "deploymentMode" => {
+                            builder = builder.set_deployment_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DeploymentMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "deploymentStatusMessages" => {
                             builder = builder.set_deployment_status_messages(
                                 crate::protocol_serde::shape_deployment_status_message_list::de_deployment_status_message_list(

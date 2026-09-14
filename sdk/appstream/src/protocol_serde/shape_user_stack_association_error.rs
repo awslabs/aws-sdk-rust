@@ -27,7 +27,7 @@ pub(crate) fn de_user_stack_association_error(
                 })?,
                 "ErrorCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_error_code(Some(
-                        decoder.string().map(|s| crate::types::UserStackAssociationErrorCode::from(s.as_ref()))?,
+                        decoder.string().map(|s| crate::types::UserStackAssociationErrorCode::from(s.as_str()))?,
                     )))
                 })?,
                 "ErrorMessage" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {

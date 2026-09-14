@@ -18,6 +18,109 @@ impl DeregisterTaskFromMaintenanceWindowInput {
         self.window_task_id.as_deref()
     }
 }
+static DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeregisterTaskFromMaintenanceWindowInput$WindowId",
+        "com.amazonaws.ssm.synthetic",
+        "DeregisterTaskFromMaintenanceWindowInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WindowId",
+    0,
+);
+static DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_TASK_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeregisterTaskFromMaintenanceWindowInput$WindowTaskId",
+        "com.amazonaws.ssm.synthetic",
+        "DeregisterTaskFromMaintenanceWindowInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WindowTaskId",
+    1,
+);
+static DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#DeregisterTaskFromMaintenanceWindowInput",
+        "com.amazonaws.ssm.synthetic",
+        "DeregisterTaskFromMaintenanceWindowInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_ID,
+        &DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_TASK_ID,
+    ],
+)
+.with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
+.with_original_name("DeregisterTaskFromMaintenanceWindowRequest");
+impl DeregisterTaskFromMaintenanceWindowInput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for DeregisterTaskFromMaintenanceWindowInput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.window_id {
+            ser.write_string(&DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_ID, val)?;
+        }
+        if let Some(ref val) = self.window_task_id {
+            ser.write_string(&DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_MEMBER_WINDOW_TASK_ID, val)?;
+        }
+        Ok(())
+    }
+}
+impl DeregisterTaskFromMaintenanceWindowInput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&DEREGISTERTASKFROMMAINTENANCEWINDOWINPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.window_task_id = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.window_id = builder.window_id.or(Some(String::new()));
+        builder.window_task_id = builder.window_task_id.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl DeregisterTaskFromMaintenanceWindowInput {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl DeregisterTaskFromMaintenanceWindowInput {
     /// Creates a new builder-style object to manufacture [`DeregisterTaskFromMaintenanceWindowInput`](crate::operation::deregister_task_from_maintenance_window::DeregisterTaskFromMaintenanceWindowInput).
     pub fn builder() -> crate::operation::deregister_task_from_maintenance_window::builders::DeregisterTaskFromMaintenanceWindowInputBuilder {

@@ -5,7 +5,7 @@ harness = false
 
 [package]
 name = "aws-smithy-query"
-version = "0.62.0"
+version = "0.63.0"
 authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
 description = "AWSQuery and EC2Query Smithy protocol logic for smithy-rs."
 edition = "2021"
@@ -24,20 +24,20 @@ urlencoding = "2.1"
 [dependencies.aws-smithy-runtime-api]
 path = "../aws-smithy-runtime-api"
 features = ["client", "http-1x"]
-version = "1.16.0"
+version = "1.16.1"
 
 [dependencies.aws-smithy-schema]
 path = "../aws-smithy-schema"
-version = "0.2.0"
+version = "0.3.0"
 
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["http-body-1-x"]
-version = "1.6.3"
+version = "1.7.0"
 
 [dependencies.aws-smithy-xml]
 path = "../aws-smithy-xml"
-version = "0.62.0"
+version = "0.63.0"
 
 [dev-dependencies]
 criterion = "0.5.1"

@@ -76,6 +76,85 @@ impl SessionFilter {
         self.value.deref()
     }
 }
+static SESSIONFILTER_MEMBER_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#SessionFilter$key", "com.amazonaws.ssm", "SessionFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static SESSIONFILTER_MEMBER_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#SessionFilter$value", "com.amazonaws.ssm", "SessionFilter"),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static SESSIONFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#SessionFilter", "com.amazonaws.ssm", "SessionFilter"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&SESSIONFILTER_MEMBER_KEY, &SESSIONFILTER_MEMBER_VALUE],
+);
+impl SessionFilter {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &SESSIONFILTER_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for SessionFilter {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        {
+            let val = &self.key;
+            ser.write_string(&SESSIONFILTER_MEMBER_KEY, val.as_str())?;
+        }
+        {
+            let val = &self.value;
+            ser.write_string(&SESSIONFILTER_MEMBER_VALUE, val)?;
+        }
+        Ok(())
+    }
+}
+impl SessionFilter {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&SESSIONFILTER_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.key = Some(crate::types::SessionFilterKey::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    builder.value = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        builder.value = builder.value.or(Some(String::new()));
+        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+    }
+}
+impl SessionFilter {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl SessionFilter {
     /// Creates a new builder-style object to manufacture [`SessionFilter`](crate::types::SessionFilter).
     pub fn builder() -> crate::types::builders::SessionFilterBuilder {

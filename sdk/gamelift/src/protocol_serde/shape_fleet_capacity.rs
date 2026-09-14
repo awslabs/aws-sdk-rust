@@ -23,7 +23,7 @@ pub(crate) fn de_fleet_capacity(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_fleet_arn(Some(decoder.string()?))))?
             }
             "InstanceType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_instance_type(Some(decoder.string().map(|s| crate::types::Ec2InstanceType::from(s.as_ref()))?)))
+                Ok(builder.set_instance_type(Some(decoder.string().map(|s| crate::types::Ec2InstanceType::from(s.as_str()))?)))
             })?,
             "InstanceCounts" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(

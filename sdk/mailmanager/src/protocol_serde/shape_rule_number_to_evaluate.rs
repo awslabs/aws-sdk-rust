@@ -35,7 +35,7 @@ pub(crate) fn de_rule_number_to_evaluate(
     ) -> ::std::result::Result<crate::types::RuleNumberToEvaluate, ::aws_smithy_cbor::decode::DeserializeError> {
         Ok(match decoder.str()?.as_ref() {
             "Attribute" => {
-                crate::types::RuleNumberToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleNumberEmailAttribute::from(s.as_ref()))?)
+                crate::types::RuleNumberToEvaluate::Attribute(decoder.string().map(|s| crate::types::RuleNumberEmailAttribute::from(s.as_str()))?)
             }
             _ => {
                 decoder.skip()?;

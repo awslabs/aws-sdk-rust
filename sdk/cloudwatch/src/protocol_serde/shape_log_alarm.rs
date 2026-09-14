@@ -41,7 +41,7 @@ pub(crate) fn de_log_alarm(
                 Ok(builder.set_insufficient_data_actions(Some(crate::protocol_serde::shape_resource_list::de_resource_list(decoder, depth + 1)?)))
             })?,
             "StateValue" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state_value(Some(decoder.string().map(|s| crate::types::StateValue::from(s.as_ref()))?)))
+                Ok(builder.set_state_value(Some(decoder.string().map(|s| crate::types::StateValue::from(s.as_str()))?)))
             })?,
             "StateReason" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_state_reason(Some(decoder.string()?))))?
@@ -67,7 +67,7 @@ pub(crate) fn de_log_alarm(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_threshold(Some(decoder.double()?))))?
             }
             "ComparisonOperator" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_comparison_operator(Some(decoder.string().map(|s| crate::types::ComparisonOperator::from(s.as_ref()))?)))
+                Ok(builder.set_comparison_operator(Some(decoder.string().map(|s| crate::types::ComparisonOperator::from(s.as_str()))?)))
             })?,
             "TreatMissingData" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_treat_missing_data(Some(decoder.string()?)))
@@ -76,7 +76,7 @@ pub(crate) fn de_log_alarm(
                 Ok(builder.set_state_transitioned_timestamp(Some(decoder.timestamp()?)))
             })?,
             "EvaluationState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_evaluation_state(Some(decoder.string().map(|s| crate::types::EvaluationState::from(s.as_ref()))?)))
+                Ok(builder.set_evaluation_state(Some(decoder.string().map(|s| crate::types::EvaluationState::from(s.as_str()))?)))
             })?,
             "ActionLogLineCount" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_action_log_line_count(Some(decoder.integer()?)))

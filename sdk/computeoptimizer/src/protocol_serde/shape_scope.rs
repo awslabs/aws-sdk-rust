@@ -32,7 +32,7 @@ pub(crate) fn de_scope(
     ) -> ::std::result::Result<crate::types::builders::ScopeBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "name" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_name(Some(decoder.string().map(|s| crate::types::ScopeName::from(s.as_ref()))?)))
+                Ok(builder.set_name(Some(decoder.string().map(|s| crate::types::ScopeName::from(s.as_str()))?)))
             })?,
             "value" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_value(Some(decoder.string()?))))?,
             _ => {

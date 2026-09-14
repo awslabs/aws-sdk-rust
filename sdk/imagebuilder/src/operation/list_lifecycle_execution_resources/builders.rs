@@ -22,7 +22,7 @@ impl crate::operation::list_lifecycle_execution_resources::builders::ListLifecyc
 }
 /// Fluent builder constructing a request to `ListLifecycleExecutionResources`.
 ///
-/// <p>List resources that the runtime instance of the image lifecycle identified for lifecycle actions.</p>
+/// <p>Lists resources that the runtime instance of the image lifecycle identified for lifecycle actions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListLifecycleExecutionResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl ListLifecycleExecutionResourcesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_lifecycle_execution_resources::paginator::ListLifecycleExecutionResourcesPaginator {
         crate::operation::list_lifecycle_execution_resources::paginator::ListLifecycleExecutionResourcesPaginator::new(self.handle, self.inner)
     }
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn lifecycle_execution_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.lifecycle_execution_id(input.into());
         self
     }
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn set_lifecycle_execution_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_lifecycle_execution_id(input);
         self
     }
-    /// <p>Use the unique identifier for a runtime instance of the lifecycle policy to get runtime details.</p>
+    /// <p>The unique identifier for a runtime instance of the lifecycle policy.</p>
     pub fn get_lifecycle_execution_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_lifecycle_execution_id()
     }
@@ -145,31 +145,31 @@ impl ListLifecycleExecutionResourcesFluentBuilder {
     pub fn get_parent_resource_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_parent_resource_id()
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specify the maximum number of items to return in a request.</p>
+    /// <p>The maximum number of items to return in a single request.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>A token to specify where to start paginating. This is the nextToken from a previously truncated response.</p>
+    /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

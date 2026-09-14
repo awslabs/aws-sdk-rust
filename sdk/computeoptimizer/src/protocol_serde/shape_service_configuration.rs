@@ -28,7 +28,7 @@ pub(crate) fn de_service_configuration(
                 })?
             }
             "autoScalingConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_auto_scaling_configuration(Some(decoder.string().map(|s| crate::types::AutoScalingConfiguration::from(s.as_ref()))?)))
+                Ok(builder.set_auto_scaling_configuration(Some(decoder.string().map(|s| crate::types::AutoScalingConfiguration::from(s.as_str()))?)))
             })?,
             "taskDefinitionArn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_task_definition_arn(Some(decoder.string()?)))

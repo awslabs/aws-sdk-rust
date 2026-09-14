@@ -22,7 +22,9 @@ pub fn ser_prompt_flow_node_inline_configuration(
         object_4.finish();
     }
     if let Some(var_5) = &input.additional_model_request_fields {
-        object.key("additionalModelRequestFields").document(var_5);
+        object
+            .key("additionalModelRequestFields")
+            .document(var_5, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

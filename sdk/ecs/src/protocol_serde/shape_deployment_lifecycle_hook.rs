@@ -22,7 +22,9 @@ pub fn ser_deployment_lifecycle_hook(
         array_5.finish();
     }
     if let Some(var_7) = &input.hook_details {
-        object.key("hookDetails").document(var_7);
+        object
+            .key("hookDetails")
+            .document(var_7, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     if let Some(var_8) = &input.timeout_configuration {
         #[allow(unused_mut)]

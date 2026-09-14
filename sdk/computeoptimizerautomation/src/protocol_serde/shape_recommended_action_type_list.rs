@@ -23,7 +23,7 @@ pub(crate) fn de_recommended_action_type_list(
                     decoder.position(),
                 ))
             }
-            _ => decoder.string().map(|s| crate::types::RecommendedActionType::from(s.as_ref()))?,
+            _ => decoder.string().map(|s| crate::types::RecommendedActionType::from(s.as_str()))?,
         };
         list.push(value);
         Ok(list)

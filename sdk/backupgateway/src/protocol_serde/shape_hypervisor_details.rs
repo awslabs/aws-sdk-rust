@@ -32,7 +32,7 @@ pub(crate) fn de_hypervisor_details(
                 )?
             }
             "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::HypervisorState::from(s.as_ref()))?)))
+                Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::HypervisorState::from(s.as_str()))?)))
             })?,
             "LastSuccessfulMetadataSyncTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_last_successful_metadata_sync_time(Some(decoder.timestamp()?)))
@@ -41,7 +41,7 @@ pub(crate) fn de_hypervisor_details(
                 Ok(builder.set_latest_metadata_sync_status_message(Some(decoder.string()?)))
             })?,
             "LatestMetadataSyncStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_latest_metadata_sync_status(Some(decoder.string().map(|s| crate::types::SyncMetadataStatus::from(s.as_ref()))?)))
+                Ok(builder.set_latest_metadata_sync_status(Some(decoder.string().map(|s| crate::types::SyncMetadataStatus::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

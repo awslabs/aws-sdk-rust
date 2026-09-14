@@ -23,9 +23,183 @@ impl UnlabelParameterVersionOutput {
         self.invalid_labels.as_deref().unwrap_or_default()
     }
 }
+static UNLABELPARAMETERVERSIONOUTPUT_MEMBER_REMOVED_LABELS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ParameterLabelList$member", "com.amazonaws.ssm", "ParameterLabelList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UNLABELPARAMETERVERSIONOUTPUT_MEMBER_REMOVED_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UnlabelParameterVersionOutput$RemovedLabels",
+        "com.amazonaws.ssm.synthetic",
+        "UnlabelParameterVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RemovedLabels",
+    0,
+)
+.with_list_member(&UNLABELPARAMETERVERSIONOUTPUT_MEMBER_REMOVED_LABELS_MEMBER);
+static UNLABELPARAMETERVERSIONOUTPUT_MEMBER_INVALID_LABELS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#ParameterLabelList$member", "com.amazonaws.ssm", "ParameterLabelList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static UNLABELPARAMETERVERSIONOUTPUT_MEMBER_INVALID_LABELS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UnlabelParameterVersionOutput$InvalidLabels",
+        "com.amazonaws.ssm.synthetic",
+        "UnlabelParameterVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "InvalidLabels",
+    1,
+)
+.with_list_member(&UNLABELPARAMETERVERSIONOUTPUT_MEMBER_INVALID_LABELS_MEMBER);
+static UNLABELPARAMETERVERSIONOUTPUT_MEMBER__REQUEST_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("synthetic#request_id", "synthetic", "request_id"),
+    ::aws_smithy_schema::ShapeType::String,
+    "request_id",
+    2,
+)
+.with_http_header("x-amzn-requestid");
+static UNLABELPARAMETERVERSIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UnlabelParameterVersionOutput",
+        "com.amazonaws.ssm.synthetic",
+        "UnlabelParameterVersionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &UNLABELPARAMETERVERSIONOUTPUT_MEMBER_REMOVED_LABELS,
+        &UNLABELPARAMETERVERSIONOUTPUT_MEMBER_INVALID_LABELS,
+        &UNLABELPARAMETERVERSIONOUTPUT_MEMBER__REQUEST_ID,
+    ],
+)
+.with_original_name("UnlabelParameterVersionResult");
+impl UnlabelParameterVersionOutput {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &UNLABELPARAMETERVERSIONOUTPUT_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for UnlabelParameterVersionOutput {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.removed_labels {
+            ser.write_list(
+                &UNLABELPARAMETERVERSIONOUTPUT_MEMBER_REMOVED_LABELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.invalid_labels {
+            ser.write_list(
+                &UNLABELPARAMETERVERSIONOUTPUT_MEMBER_INVALID_LABELS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        Ok(())
+    }
+}
+impl UnlabelParameterVersionOutput {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UNLABELPARAMETERVERSIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.removed_labels = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.invalid_labels = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    builder._request_id = Some(deser.read_string(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl UnlabelParameterVersionOutput {
+    /// Deserializes this structure from a body deserializer and HTTP response headers.
+    /// Header-bound members are read directly from headers, avoiding runtime
+    /// member iteration overhead. Body members are read via the deserializer.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        if let Some(val) = headers.get("x-amzn-requestid") {
+            builder._request_id = Some(val.to_string());
+        }
+
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&UNLABELPARAMETERVERSIONOUTPUT_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    builder.removed_labels = Some(deser.read_string_list(member)?);
+                }
+                Some(1) => {
+                    builder.invalid_labels = Some(deser.read_string_list(member)?);
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
 impl ::aws_types::request_id::RequestId for UnlabelParameterVersionOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
+    }
+}
+impl UnlabelParameterVersionOutput {
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
     }
 }
 impl UnlabelParameterVersionOutput {

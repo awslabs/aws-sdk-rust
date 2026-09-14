@@ -23,7 +23,7 @@ pub(crate) fn de_event(
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_resource_id(Some(decoder.string()?))))?
             }
             "EventCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_event_code(Some(decoder.string().map(|s| crate::types::EventCode::from(s.as_ref()))?)))
+                Ok(builder.set_event_code(Some(decoder.string().map(|s| crate::types::EventCode::from(s.as_str()))?)))
             })?,
             "Message" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_message(Some(decoder.string()?))))?

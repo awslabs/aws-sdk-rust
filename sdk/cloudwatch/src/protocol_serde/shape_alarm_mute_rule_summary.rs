@@ -23,7 +23,7 @@ pub(crate) fn de_alarm_mute_rule_summary(
                 Ok(builder.set_expire_date(Some(decoder.timestamp()?)))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::AlarmMuteRuleStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::AlarmMuteRuleStatus::from(s.as_str()))?)))
             })?,
             "MuteType" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_mute_type(Some(decoder.string()?))))?

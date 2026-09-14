@@ -20,7 +20,9 @@ pub fn ser_knowledge_base_orchestration_configuration(
         let mut object_6 = object.key("additionalModelRequestFields").start_object();
         for (key_7, value_8) in var_5 {
             {
-                object_6.key(key_7.as_str()).document(value_8);
+                object_6
+                    .key(key_7.as_str())
+                    .document(value_8, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
             }
         }
         object_6.finish();

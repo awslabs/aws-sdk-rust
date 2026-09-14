@@ -11,46 +11,51 @@
 use crate::{shape_id, Schema, ShapeType};
 
 /// Schema for `smithy.api#String`
-pub static STRING: Schema = Schema::new(shape_id!("smithy.api", "String"), ShapeType::String);
+pub static STRING: Schema<'static> =
+    Schema::new(shape_id!("smithy.api", "String"), ShapeType::String);
 
 /// Schema for `smithy.api#Boolean`
-pub static BOOLEAN: Schema = Schema::new(shape_id!("smithy.api", "Boolean"), ShapeType::Boolean);
+pub static BOOLEAN: Schema<'static> =
+    Schema::new(shape_id!("smithy.api", "Boolean"), ShapeType::Boolean);
 
 /// Schema for `smithy.api#Byte`
-pub static BYTE: Schema = Schema::new(shape_id!("smithy.api", "Byte"), ShapeType::Byte);
+pub static BYTE: Schema<'static> = Schema::new(shape_id!("smithy.api", "Byte"), ShapeType::Byte);
 
 /// Schema for `smithy.api#Short`
-pub static SHORT: Schema = Schema::new(shape_id!("smithy.api", "Short"), ShapeType::Short);
+pub static SHORT: Schema<'static> = Schema::new(shape_id!("smithy.api", "Short"), ShapeType::Short);
 
 /// Schema for `smithy.api#Integer`
-pub static INTEGER: Schema = Schema::new(shape_id!("smithy.api", "Integer"), ShapeType::Integer);
+pub static INTEGER: Schema<'static> =
+    Schema::new(shape_id!("smithy.api", "Integer"), ShapeType::Integer);
 
 /// Schema for `smithy.api#Long`
-pub static LONG: Schema = Schema::new(shape_id!("smithy.api", "Long"), ShapeType::Long);
+pub static LONG: Schema<'static> = Schema::new(shape_id!("smithy.api", "Long"), ShapeType::Long);
 
 /// Schema for `smithy.api#Float`
-pub static FLOAT: Schema = Schema::new(shape_id!("smithy.api", "Float"), ShapeType::Float);
+pub static FLOAT: Schema<'static> = Schema::new(shape_id!("smithy.api", "Float"), ShapeType::Float);
 
 /// Schema for `smithy.api#Double`
-pub static DOUBLE: Schema = Schema::new(shape_id!("smithy.api", "Double"), ShapeType::Double);
+pub static DOUBLE: Schema<'static> =
+    Schema::new(shape_id!("smithy.api", "Double"), ShapeType::Double);
 
 /// Schema for `smithy.api#BigInteger`
-pub static BIG_INTEGER: Schema =
+pub static BIG_INTEGER: Schema<'static> =
     Schema::new(shape_id!("smithy.api", "BigInteger"), ShapeType::BigInteger);
 
 /// Schema for `smithy.api#BigDecimal`
-pub static BIG_DECIMAL: Schema =
+pub static BIG_DECIMAL: Schema<'static> =
     Schema::new(shape_id!("smithy.api", "BigDecimal"), ShapeType::BigDecimal);
 
 /// Schema for `smithy.api#Blob`
-pub static BLOB: Schema = Schema::new(shape_id!("smithy.api", "Blob"), ShapeType::Blob);
+pub static BLOB: Schema<'static> = Schema::new(shape_id!("smithy.api", "Blob"), ShapeType::Blob);
 
 /// Schema for `smithy.api#Timestamp`
-pub static TIMESTAMP: Schema =
+pub static TIMESTAMP: Schema<'static> =
     Schema::new(shape_id!("smithy.api", "Timestamp"), ShapeType::Timestamp);
 
 /// Schema for `smithy.api#Document`
-pub static DOCUMENT: Schema = Schema::new(shape_id!("smithy.api", "Document"), ShapeType::Document);
+pub static DOCUMENT: Schema<'static> =
+    Schema::new(shape_id!("smithy.api", "Document"), ShapeType::Document);
 
 #[cfg(test)]
 mod tests {

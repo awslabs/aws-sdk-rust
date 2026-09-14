@@ -98,10 +98,10 @@ pub(crate) fn de_get_ingress_point(
                 Ok(builder.set_ingress_point_arn(Some(decoder.string()?)))
             })?,
             "Status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::IngressPointStatus::from(s.as_ref()))?)))
+                Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::IngressPointStatus::from(s.as_str()))?)))
             })?,
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::IngressPointType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::IngressPointType::from(s.as_str()))?)))
             })?,
             "ARecord" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_a_record(Some(decoder.string()?))))?
@@ -126,7 +126,7 @@ pub(crate) fn de_get_ingress_point(
                 )
             })?,
             "TlsPolicy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_tls_policy(Some(decoder.string().map(|s| crate::types::TlsPolicy::from(s.as_ref()))?)))
+                Ok(builder.set_tls_policy(Some(decoder.string().map(|s| crate::types::TlsPolicy::from(s.as_str()))?)))
             })?,
             "CreatedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_created_timestamp(Some(decoder.timestamp()?)))

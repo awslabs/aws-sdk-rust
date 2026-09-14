@@ -49,6 +49,210 @@ impl InventoryDeletionStatusItem {
         self.last_status_update_time.as_ref()
     }
 }
+static INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionStatusItem$DeletionId",
+        "com.amazonaws.ssm",
+        "InventoryDeletionStatusItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "DeletionId",
+    0,
+);
+static INVENTORYDELETIONSTATUSITEM_MEMBER_TYPE_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionStatusItem$TypeName",
+        "com.amazonaws.ssm",
+        "InventoryDeletionStatusItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TypeName",
+    1,
+);
+static INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionStatusItem$DeletionStartTime",
+        "com.amazonaws.ssm",
+        "InventoryDeletionStatusItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DeletionStartTime",
+    2,
+);
+static INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionStatusItem$LastStatus",
+        "com.amazonaws.ssm",
+        "InventoryDeletionStatusItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastStatus",
+    3,
+);
+static INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionStatusItem$LastStatusMessage",
+        "com.amazonaws.ssm",
+        "InventoryDeletionStatusItem",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastStatusMessage",
+    4,
+);
+static INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionStatusItem$DeletionSummary",
+        "com.amazonaws.ssm",
+        "InventoryDeletionStatusItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DeletionSummary",
+    5,
+);
+static INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS_UPDATE_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionStatusItem$LastStatusUpdateTime",
+        "com.amazonaws.ssm",
+        "InventoryDeletionStatusItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastStatusUpdateTime",
+    6,
+);
+static INVENTORYDELETIONSTATUSITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#InventoryDeletionStatusItem",
+        "com.amazonaws.ssm",
+        "InventoryDeletionStatusItem",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[
+        &INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_ID,
+        &INVENTORYDELETIONSTATUSITEM_MEMBER_TYPE_NAME,
+        &INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_START_TIME,
+        &INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS,
+        &INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS_MESSAGE,
+        &INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_SUMMARY,
+        &INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS_UPDATE_TIME,
+    ],
+);
+impl InventoryDeletionStatusItem {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &INVENTORYDELETIONSTATUSITEM_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for InventoryDeletionStatusItem {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.deletion_id {
+            ser.write_string(&INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_ID, val)?;
+        }
+        if let Some(ref val) = self.type_name {
+            ser.write_string(&INVENTORYDELETIONSTATUSITEM_MEMBER_TYPE_NAME, val)?;
+        }
+        if let Some(ref val) = self.deletion_start_time {
+            ser.write_timestamp(&INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_START_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_status {
+            ser.write_string(&INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_status_message {
+            ser.write_string(&INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.deletion_summary {
+            ser.write_struct(&INVENTORYDELETIONSTATUSITEM_MEMBER_DELETION_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.last_status_update_time {
+            ser.write_timestamp(&INVENTORYDELETIONSTATUSITEM_MEMBER_LAST_STATUS_UPDATE_TIME, val)?;
+        }
+        Ok(())
+    }
+}
+impl InventoryDeletionStatusItem {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&INVENTORYDELETIONSTATUSITEM_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.deletion_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.type_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.deletion_start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.last_status = Some(crate::types::InventoryDeletionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.last_status_message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.deletion_summary = Some(crate::types::InventoryDeletionSummary::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.last_status_update_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl InventoryDeletionStatusItem {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl InventoryDeletionStatusItem {
     /// Creates a new builder-style object to manufacture [`InventoryDeletionStatusItem`](crate::types::InventoryDeletionStatusItem).
     pub fn builder() -> crate::types::builders::InventoryDeletionStatusItemBuilder {

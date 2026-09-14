@@ -17,7 +17,7 @@ pub(crate) fn de_unmapped_attribute(
     ) -> ::std::result::Result<crate::types::builders::UnmappedAttributeBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Type" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_ref()))?)))
+                Ok(builder.set_type(Some(decoder.string().map(|s| crate::types::EntityType::from(s.as_str()))?)))
             })?,
             "Attribute" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_attribute(Some(crate::protocol_serde::shape_attribute::de_attribute(decoder, depth + 1)?)))

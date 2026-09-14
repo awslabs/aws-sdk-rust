@@ -33,12 +33,12 @@ pub(crate) fn de_customizable_metric_parameters(
         builder = match decoder.str()?.as_ref() {
             "threshold" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_threshold(Some(
-                    decoder.string().map(|s| crate::types::CustomizableMetricThreshold::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::CustomizableMetricThreshold::from(s.as_str()))?,
                 )))
             })?,
             "headroom" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_headroom(Some(
-                    decoder.string().map(|s| crate::types::CustomizableMetricHeadroom::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::CustomizableMetricHeadroom::from(s.as_str()))?,
                 )))
             })?,
             _ => {

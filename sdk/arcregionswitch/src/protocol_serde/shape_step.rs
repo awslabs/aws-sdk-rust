@@ -46,7 +46,7 @@ pub(crate) fn de_step(
                 crate::protocol_serde::shape_execution_block_configuration::de_execution_block_configuration(decoder, depth + 1)?,
             )),
             "executionBlockType" => {
-                builder.set_execution_block_type(Some(decoder.string().map(|s| crate::types::ExecutionBlockType::from(s.as_ref()))?))
+                builder.set_execution_block_type(Some(decoder.string().map(|s| crate::types::ExecutionBlockType::from(s.as_str()))?))
             }
             _ => {
                 decoder.skip()?;

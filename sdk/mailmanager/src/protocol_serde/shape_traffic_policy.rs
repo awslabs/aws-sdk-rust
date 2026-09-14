@@ -18,7 +18,7 @@ pub(crate) fn de_traffic_policy(
         builder = match decoder.str()?.as_ref() {
             "TrafficPolicyName" => builder.set_traffic_policy_name(Some(decoder.string()?)),
             "TrafficPolicyId" => builder.set_traffic_policy_id(Some(decoder.string()?)),
-            "DefaultAction" => builder.set_default_action(Some(decoder.string().map(|s| crate::types::AcceptAction::from(s.as_ref()))?)),
+            "DefaultAction" => builder.set_default_action(Some(decoder.string().map(|s| crate::types::AcceptAction::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

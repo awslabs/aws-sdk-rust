@@ -28,7 +28,9 @@ pub fn ser_prompt_configuration(
         object.key("foundationModel").string(var_8.as_str());
     }
     if let Some(var_9) = &input.additional_model_request_fields {
-        object.key("additionalModelRequestFields").document(var_9);
+        object
+            .key("additionalModelRequestFields")
+            .document(var_9, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
     }
     Ok(())
 }

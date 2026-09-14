@@ -13,6 +13,83 @@ impl ResourceDataSyncDestinationDataSharing {
         self.destination_data_sharing_type.as_deref()
     }
 }
+static RESOURCEDATASYNCDESTINATIONDATASHARING_MEMBER_DESTINATION_DATA_SHARING_TYPE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.ssm#ResourceDataSyncDestinationDataSharing$DestinationDataSharingType",
+            "com.amazonaws.ssm",
+            "ResourceDataSyncDestinationDataSharing",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "DestinationDataSharingType",
+        0,
+    );
+static RESOURCEDATASYNCDESTINATIONDATASHARING_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#ResourceDataSyncDestinationDataSharing",
+        "com.amazonaws.ssm",
+        "ResourceDataSyncDestinationDataSharing",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    &[&RESOURCEDATASYNCDESTINATIONDATASHARING_MEMBER_DESTINATION_DATA_SHARING_TYPE],
+);
+impl ResourceDataSyncDestinationDataSharing {
+    /// The schema for this shape.
+    pub const SCHEMA: &'static ::aws_smithy_schema::Schema<'static> = &RESOURCEDATASYNCDESTINATIONDATASHARING_SCHEMA;
+}
+impl ::aws_smithy_schema::serde::SerializableStruct for ResourceDataSyncDestinationDataSharing {
+    #[allow(unused_variables, clippy::diverging_sub_expression)]
+    fn serialize_members(
+        &self,
+        ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer,
+    ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
+        if let Some(ref val) = self.destination_data_sharing_type {
+            ser.write_string(&RESOURCEDATASYNCDESTINATIONDATASHARING_MEMBER_DESTINATION_DATA_SHARING_TYPE, val)?;
+        }
+        Ok(())
+    }
+}
+impl ResourceDataSyncDestinationDataSharing {
+    /// Deserializes this structure from a [`ShapeDeserializer`].
+    pub fn deserialize(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        #[allow(unused_variables, unused_mut)]
+        let mut builder = Self::builder();
+        #[allow(
+            unused_variables,
+            unreachable_code,
+            clippy::single_match,
+            clippy::match_single_binding,
+            clippy::diverging_sub_expression
+        )]
+        deserializer.read_struct(&RESOURCEDATASYNCDESTINATIONDATASHARING_SCHEMA, &mut |member, deser| {
+            match member.member_index() {
+                Some(0) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        builder.destination_data_sharing_type = Some(deser.read_string(member)?);
+                    }
+                }
+                _ => {}
+            }
+            Ok(())
+        })?;
+        Ok(builder.build())
+    }
+}
+impl ResourceDataSyncDestinationDataSharing {
+    /// Deserializes this structure from a body deserializer and HTTP response.
+    pub fn deserialize_with_response(
+        deserializer: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer,
+        _headers: &::aws_smithy_runtime_api::http::Headers,
+        _status: u16,
+        _body: &[u8],
+    ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
+        Self::deserialize(deserializer)
+    }
+}
 impl ResourceDataSyncDestinationDataSharing {
     /// Creates a new builder-style object to manufacture [`ResourceDataSyncDestinationDataSharing`](crate::types::ResourceDataSyncDestinationDataSharing).
     pub fn builder() -> crate::types::builders::ResourceDataSyncDestinationDataSharingBuilder {

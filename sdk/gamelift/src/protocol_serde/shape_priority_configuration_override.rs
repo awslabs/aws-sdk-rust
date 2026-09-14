@@ -39,7 +39,7 @@ pub(crate) fn de_priority_configuration_override(
         builder = match decoder.str()?.as_ref() {
             "PlacementFallbackStrategy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder
-                    .set_placement_fallback_strategy(Some(decoder.string().map(|s| crate::types::PlacementFallbackStrategy::from(s.as_ref()))?)))
+                    .set_placement_fallback_strategy(Some(decoder.string().map(|s| crate::types::PlacementFallbackStrategy::from(s.as_str()))?)))
             })?,
             "LocationOrder" => builder.set_location_order(Some(
                 crate::protocol_serde::shape_location_order_override_list::de_location_order_override_list(decoder, depth + 1)?,

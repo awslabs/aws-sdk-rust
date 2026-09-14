@@ -28,6 +28,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "CustomTiers" => {
+                            builder = builder.set_custom_tiers(crate::protocol_serde::shape_custom_tiers_list::de_custom_tiers_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -37,7 +44,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::tiering_correct_errors(builder).build()))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

@@ -18,7 +18,7 @@ pub(crate) fn de_image_state_change_reason(
         builder = match decoder.str()?.as_ref() {
             "Code" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_code(Some(
-                    decoder.string().map(|s| crate::types::ImageStateChangeReasonCode::from(s.as_ref()))?,
+                    decoder.string().map(|s| crate::types::ImageStateChangeReasonCode::from(s.as_str()))?,
                 )))
             })?,
             "Message" => {

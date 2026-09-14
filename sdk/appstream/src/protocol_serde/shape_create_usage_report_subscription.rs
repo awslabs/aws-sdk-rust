@@ -125,7 +125,7 @@ pub(crate) fn de_create_usage_report_subscription(
                 Ok(builder.set_s3_bucket_name(Some(decoder.string()?)))
             })?,
             "Schedule" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_schedule(Some(decoder.string().map(|s| crate::types::UsageReportSchedule::from(s.as_ref()))?)))
+                Ok(builder.set_schedule(Some(decoder.string().map(|s| crate::types::UsageReportSchedule::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

@@ -11,7 +11,7 @@ pub(crate) fn de_conflict_exception_cbor_err(
     ) -> ::std::result::Result<crate::types::error::builders::ConflictExceptionBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
         builder = match decoder.str()?.as_ref() {
             "Message" => builder.set_message(Some(decoder.string()?)),
-            "Reason" => builder.set_reason(Some(decoder.string().map(|s| crate::types::ConflictExceptionReason::from(s.as_ref()))?)),
+            "Reason" => builder.set_reason(Some(decoder.string().map(|s| crate::types::ConflictExceptionReason::from(s.as_str()))?)),
             _ => {
                 decoder.skip()?;
                 builder

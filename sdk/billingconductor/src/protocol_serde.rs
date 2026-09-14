@@ -257,6 +257,10 @@ pub(crate) mod shape_custom_line_item_percentage_charge_details;
 
 pub(crate) mod shape_custom_line_item_version_list_element;
 
+pub(crate) mod shape_custom_tier;
+
+pub(crate) mod shape_custom_tiers_list;
+
 pub(crate) mod shape_disassociate_resource_response_element;
 
 pub(crate) mod shape_line_item_filter;
