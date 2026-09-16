@@ -2783,6 +2783,10 @@ source_hash = 'a88494dcd2e168268b7077f87dc8b0288ab78d526c4664d6b7cd461429a5b2b7'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '24f072acb98fb818444b17a88cbfea13cf8e541558872ae8daf899b2034e2037'
+
+[release]
+tag = 'release-2026-09-16.2'
+
 [release.crates]
 aws-sdk-bedrockagentcorecontrol = '1.83.0'
 aws-sdk-connect = '1.204.0'
