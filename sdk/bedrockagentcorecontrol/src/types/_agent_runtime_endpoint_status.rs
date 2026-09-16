@@ -14,6 +14,7 @@
 /// match agentruntimeendpointstatus {
 ///     AgentRuntimeEndpointStatus::CreateFailed => { /* ... */ },
 ///     AgentRuntimeEndpointStatus::Creating => { /* ... */ },
+///     AgentRuntimeEndpointStatus::DeleteFailed => { /* ... */ },
 ///     AgentRuntimeEndpointStatus::Deleting => { /* ... */ },
 ///     AgentRuntimeEndpointStatus::Ready => { /* ... */ },
 ///     AgentRuntimeEndpointStatus::UpdateFailed => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum AgentRuntimeEndpointStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for AgentRuntimeEndpointStatus {
         match s {
             "CREATE_FAILED" => AgentRuntimeEndpointStatus::CreateFailed,
             "CREATING" => AgentRuntimeEndpointStatus::Creating,
+            "DELETE_FAILED" => AgentRuntimeEndpointStatus::DeleteFailed,
             "DELETING" => AgentRuntimeEndpointStatus::Deleting,
             "READY" => AgentRuntimeEndpointStatus::Ready,
             "UPDATE_FAILED" => AgentRuntimeEndpointStatus::UpdateFailed,
@@ -88,6 +92,7 @@ impl AgentRuntimeEndpointStatus {
         match self {
             AgentRuntimeEndpointStatus::CreateFailed => "CREATE_FAILED",
             AgentRuntimeEndpointStatus::Creating => "CREATING",
+            AgentRuntimeEndpointStatus::DeleteFailed => "DELETE_FAILED",
             AgentRuntimeEndpointStatus::Deleting => "DELETING",
             AgentRuntimeEndpointStatus::Ready => "READY",
             AgentRuntimeEndpointStatus::UpdateFailed => "UPDATE_FAILED",
@@ -97,7 +102,15 @@ impl AgentRuntimeEndpointStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_FAILED", "CREATING", "DELETING", "READY", "UPDATE_FAILED", "UPDATING"]
+        &[
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETE_FAILED",
+            "DELETING",
+            "READY",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AgentRuntimeEndpointStatus {
@@ -122,6 +135,7 @@ impl ::std::fmt::Display for AgentRuntimeEndpointStatus {
         match self {
             AgentRuntimeEndpointStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             AgentRuntimeEndpointStatus::Creating => write!(f, "CREATING"),
+            AgentRuntimeEndpointStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             AgentRuntimeEndpointStatus::Deleting => write!(f, "DELETING"),
             AgentRuntimeEndpointStatus::Ready => write!(f, "READY"),
             AgentRuntimeEndpointStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),

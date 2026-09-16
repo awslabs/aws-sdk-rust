@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::send) it.
     /// - On success, responds with [`DescribeAccountAttributesOutput`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput) with field(s):
-    ///   - [`resource_quotas(Option<ResourceQuotas>)`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput::resource_quotas): <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    ///   - [`resource_quotas(Option<ResourceQuotas>)`](crate::operation::describe_account_attributes::DescribeAccountAttributesOutput::resource_quotas): <p>The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services account.</p>
     /// - On failure, responds with [`SdkError<DescribeAccountAttributesError>`](crate::operation::describe_account_attributes::DescribeAccountAttributesError)
     pub fn describe_account_attributes(&self) -> crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder {
         crate::operation::describe_account_attributes::builders::DescribeAccountAttributesFluentBuilder::new(self.handle.clone())

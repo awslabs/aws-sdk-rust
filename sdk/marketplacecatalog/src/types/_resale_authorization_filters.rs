@@ -32,6 +32,10 @@ pub struct ResaleAuthorizationFilters {
     pub last_modified_date: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilter>,
     /// <p>Allows filtering on the <code>ResellerRole</code> of a ResaleAuthorization.</p>
     pub reseller_role: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleFilter>,
+    /// <p>Allows filtering on the <code>SourceAuthorization</code> of a ResaleAuthorization.</p>
+    pub source_authorization: ::std::option::Option<crate::types::ResaleAuthorizationSourceAuthorizationFilter>,
+    /// <p>Allows filtering on the <code>IssuerAccountId</code> of a ResaleAuthorization.</p>
+    pub issuer_account_id: ::std::option::Option<crate::types::ResaleAuthorizationIssuerAccountIdFilter>,
 }
 impl ResaleAuthorizationFilters {
     /// <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
@@ -90,6 +94,14 @@ impl ResaleAuthorizationFilters {
     pub fn reseller_role(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationResellerRoleFilter> {
         self.reseller_role.as_ref()
     }
+    /// <p>Allows filtering on the <code>SourceAuthorization</code> of a ResaleAuthorization.</p>
+    pub fn source_authorization(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationSourceAuthorizationFilter> {
+        self.source_authorization.as_ref()
+    }
+    /// <p>Allows filtering on the <code>IssuerAccountId</code> of a ResaleAuthorization.</p>
+    pub fn issuer_account_id(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationIssuerAccountIdFilter> {
+        self.issuer_account_id.as_ref()
+    }
 }
 impl ResaleAuthorizationFilters {
     /// Creates a new builder-style object to manufacture [`ResaleAuthorizationFilters`](crate::types::ResaleAuthorizationFilters).
@@ -116,6 +128,8 @@ pub struct ResaleAuthorizationFiltersBuilder {
     pub(crate) offer_extended_status: ::std::option::Option<crate::types::ResaleAuthorizationOfferExtendedStatusFilter>,
     pub(crate) last_modified_date: ::std::option::Option<crate::types::ResaleAuthorizationLastModifiedDateFilter>,
     pub(crate) reseller_role: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleFilter>,
+    pub(crate) source_authorization: ::std::option::Option<crate::types::ResaleAuthorizationSourceAuthorizationFilter>,
+    pub(crate) issuer_account_id: ::std::option::Option<crate::types::ResaleAuthorizationIssuerAccountIdFilter>,
 }
 impl ResaleAuthorizationFiltersBuilder {
     /// <p>Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.</p>
@@ -314,6 +328,34 @@ impl ResaleAuthorizationFiltersBuilder {
     pub fn get_reseller_role(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationResellerRoleFilter> {
         &self.reseller_role
     }
+    /// <p>Allows filtering on the <code>SourceAuthorization</code> of a ResaleAuthorization.</p>
+    pub fn source_authorization(mut self, input: crate::types::ResaleAuthorizationSourceAuthorizationFilter) -> Self {
+        self.source_authorization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows filtering on the <code>SourceAuthorization</code> of a ResaleAuthorization.</p>
+    pub fn set_source_authorization(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationSourceAuthorizationFilter>) -> Self {
+        self.source_authorization = input;
+        self
+    }
+    /// <p>Allows filtering on the <code>SourceAuthorization</code> of a ResaleAuthorization.</p>
+    pub fn get_source_authorization(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationSourceAuthorizationFilter> {
+        &self.source_authorization
+    }
+    /// <p>Allows filtering on the <code>IssuerAccountId</code> of a ResaleAuthorization.</p>
+    pub fn issuer_account_id(mut self, input: crate::types::ResaleAuthorizationIssuerAccountIdFilter) -> Self {
+        self.issuer_account_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Allows filtering on the <code>IssuerAccountId</code> of a ResaleAuthorization.</p>
+    pub fn set_issuer_account_id(mut self, input: ::std::option::Option<crate::types::ResaleAuthorizationIssuerAccountIdFilter>) -> Self {
+        self.issuer_account_id = input;
+        self
+    }
+    /// <p>Allows filtering on the <code>IssuerAccountId</code> of a ResaleAuthorization.</p>
+    pub fn get_issuer_account_id(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationIssuerAccountIdFilter> {
+        &self.issuer_account_id
+    }
     /// Consumes the builder and constructs a [`ResaleAuthorizationFilters`](crate::types::ResaleAuthorizationFilters).
     pub fn build(self) -> crate::types::ResaleAuthorizationFilters {
         crate::types::ResaleAuthorizationFilters {
@@ -331,6 +373,8 @@ impl ResaleAuthorizationFiltersBuilder {
             offer_extended_status: self.offer_extended_status,
             last_modified_date: self.last_modified_date,
             reseller_role: self.reseller_role,
+            source_authorization: self.source_authorization,
+            issuer_account_id: self.issuer_account_id,
         }
     }
 }

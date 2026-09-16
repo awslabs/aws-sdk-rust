@@ -6,7 +6,7 @@
 pub struct PlatformDescription {
     /// <p>The ARN of the platform version.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS account ID of the person who created the platform version.</p>
+    /// <p>The Amazon Web Services account ID of the person who created the platform version.</p>
     pub platform_owner: ::std::option::Option<::std::string::String>,
     /// <p>The name of the platform version.</p>
     pub platform_name: ::std::option::Option<::std::string::String>,
@@ -55,7 +55,7 @@ impl PlatformDescription {
     pub fn platform_arn(&self) -> ::std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
-    /// <p>The AWS account ID of the person who created the platform version.</p>
+    /// <p>The Amazon Web Services account ID of the person who created the platform version.</p>
     pub fn platform_owner(&self) -> ::std::option::Option<&str> {
         self.platform_owner.as_deref()
     }
@@ -197,17 +197,17 @@ impl PlatformDescriptionBuilder {
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_arn
     }
-    /// <p>The AWS account ID of the person who created the platform version.</p>
+    /// <p>The Amazon Web Services account ID of the person who created the platform version.</p>
     pub fn platform_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_owner = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS account ID of the person who created the platform version.</p>
+    /// <p>The Amazon Web Services account ID of the person who created the platform version.</p>
     pub fn set_platform_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_owner = input;
         self
     }
-    /// <p>The AWS account ID of the person who created the platform version.</p>
+    /// <p>The Amazon Web Services account ID of the person who created the platform version.</p>
     pub fn get_platform_owner(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_owner
     }

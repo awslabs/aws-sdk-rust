@@ -227,6 +227,8 @@ pub(crate) mod shape_put_segment_subscription;
 
 pub(crate) mod shape_search_profiles;
 
+pub(crate) mod shape_search_recommendations;
+
 pub(crate) mod shape_start_recommender;
 
 pub(crate) mod shape_start_upload_job;
@@ -346,6 +348,8 @@ pub(crate) mod shape_put_segment_subscription_input;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_search_profiles_input;
+
+pub(crate) mod shape_search_recommendations_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -497,7 +501,11 @@ pub(crate) mod shape_readiness;
 
 pub(crate) mod shape_recommendation_diversity_config;
 
+pub(crate) mod shape_recommendation_metadata;
+
 pub(crate) mod shape_recommendations;
+
+pub(crate) mod shape_recommender;
 
 pub(crate) mod shape_recommender_config;
 

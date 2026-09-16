@@ -133,17 +133,17 @@ impl ListServiceEventsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_event_types`](Self::set_event_types).
     ///
-    /// <p>Filter events by type.</p>
+    /// <p>The type of events to include in the results.</p>
     pub fn event_types(mut self, input: crate::types::ServiceEventType) -> Self {
         self.inner = self.inner.event_types(input);
         self
     }
-    /// <p>Filter events by type.</p>
+    /// <p>The type of events to include in the results.</p>
     pub fn set_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ServiceEventType>>) -> Self {
         self.inner = self.inner.set_event_types(input);
         self
     }
-    /// <p>Filter events by type.</p>
+    /// <p>The type of events to include in the results.</p>
     pub fn get_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ServiceEventType>> {
         self.inner.get_event_types()
     }

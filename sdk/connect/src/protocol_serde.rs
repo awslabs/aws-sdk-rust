@@ -2553,6 +2553,8 @@ pub(crate) mod shape_common_attribute_and_condition;
 
 pub(crate) mod shape_condition;
 
+pub(crate) mod shape_contact_analysis_reference;
+
 pub(crate) mod shape_contact_evaluation;
 
 pub(crate) mod shape_contact_evaluation_attribute_and_condition;

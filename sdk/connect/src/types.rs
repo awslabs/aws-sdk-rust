@@ -1139,6 +1139,8 @@ pub use crate::types::_date_reference::DateReference;
 
 pub use crate::types::_email_reference::EmailReference;
 
+pub use crate::types::_contact_analysis_reference::ContactAnalysisReference;
+
 pub use crate::types::_evaluation_form_ai_version_lifecycle::EvaluationFormAiVersionLifecycle;
 
 pub use crate::types::_real_time_contact_analysis_segment_transcript::RealTimeContactAnalysisSegmentTranscript;
@@ -1786,6 +1788,8 @@ mod _connection_data;
 mod _contact;
 
 mod _contact_analysis;
+
+mod _contact_analysis_reference;
 
 mod _contact_configuration;
 

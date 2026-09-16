@@ -291,6 +291,8 @@ pub(crate) mod shape_resale_authorization_created_date_filter;
 
 pub(crate) mod shape_resale_authorization_entity_id_filter;
 
+pub(crate) mod shape_resale_authorization_issuer_account_id_filter;
+
 pub(crate) mod shape_resale_authorization_last_modified_date_filter;
 
 pub(crate) mod shape_resale_authorization_manufacturer_account_id_filter;
@@ -310,6 +312,8 @@ pub(crate) mod shape_resale_authorization_reseller_account_id_filter;
 pub(crate) mod shape_resale_authorization_reseller_legal_name_filter;
 
 pub(crate) mod shape_resale_authorization_reseller_role_filter;
+
+pub(crate) mod shape_resale_authorization_source_authorization_filter;
 
 pub(crate) mod shape_resale_authorization_status_filter;
 

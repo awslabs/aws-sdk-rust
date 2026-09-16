@@ -125,19 +125,19 @@ impl UpdateApplicationFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>A new description for the application.</p>
-    /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
+    /// <p>Default: If not specified, Elastic Beanstalk does not update the description.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
     /// <p>A new description for the application.</p>
-    /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
+    /// <p>Default: If not specified, Elastic Beanstalk does not update the description.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
     /// <p>A new description for the application.</p>
-    /// <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
+    /// <p>Default: If not specified, Elastic Beanstalk does not update the description.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

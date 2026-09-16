@@ -321,7 +321,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeletePlatfor
 pub enum DeletePlatformVersionError {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::types::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more Amazon Web Services services.</p>
     InsufficientPrivilegesException(crate::types::error::InsufficientPrivilegesException),
     /// <p>Unable to perform the specified operation because another operation that effects an element in this activity is already in progress.</p>
     OperationInProgressException(crate::types::error::OperationInProgressException),

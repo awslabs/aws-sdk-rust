@@ -114,6 +114,20 @@ impl ListPoliciesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_policies::paginator::ListPoliciesPaginator {
         crate::operation::list_policies::paginator::ListPoliciesPaginator::new(self.handle, self.inner)
     }
+    /// <p>The identifier of the account that owns the policies to include in the results.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.account_id(input.into());
+        self
+    }
+    /// <p>The identifier of the account that owns the policies to include in the results.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_account_id(input);
+        self
+    }
+    /// <p>The identifier of the account that owns the policies to include in the results.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_account_id()
+    }
     /// <p>Pagination page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

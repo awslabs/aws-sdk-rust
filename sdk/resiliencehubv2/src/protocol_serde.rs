@@ -63,6 +63,8 @@ pub(crate) mod shape_delete_test_sources;
 
 pub(crate) mod shape_delete_user_journey;
 
+pub(crate) mod shape_get_dependency_insights;
+
 pub(crate) mod shape_get_failure_mode_finding;
 
 pub(crate) mod shape_get_policy;
@@ -94,6 +96,8 @@ pub(crate) mod shape_list_failure_mode_findings;
 pub(crate) mod shape_list_input_sources;
 
 pub(crate) mod shape_list_policies;
+
+pub(crate) mod shape_list_policy_events;
 
 pub(crate) mod shape_list_reports;
 
@@ -134,6 +138,8 @@ pub(crate) mod shape_list_tests;
 pub(crate) mod shape_list_user_journeys;
 
 pub(crate) mod shape_put_test_sources;
+
+pub(crate) mod shape_start_dependency_insights;
 
 pub(crate) mod shape_start_failure_mode_assessment;
 
@@ -227,6 +233,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_dependency_insights_input;
+
 pub(crate) mod shape_start_failure_mode_assessment_input;
 
 pub(crate) mod shape_start_test_run_input;
@@ -269,6 +277,8 @@ pub(crate) mod shape_availability_slo;
 
 pub(crate) mod shape_data_recovery_targets;
 
+pub(crate) mod shape_dependency_insights_list;
+
 pub(crate) mod shape_dependency_summary_list;
 
 pub(crate) mod shape_experiment_arn_list;
@@ -288,6 +298,8 @@ pub(crate) mod shape_multi_region_targets;
 pub(crate) mod shape_permission_model;
 
 pub(crate) mod shape_policy;
+
+pub(crate) mod shape_policy_event_list;
 
 pub(crate) mod shape_policy_summary_list;
 
@@ -369,6 +381,8 @@ pub(crate) mod shape_cross_account_role;
 
 pub(crate) mod shape_dependency_discovery_config;
 
+pub(crate) mod shape_dependency_insight;
+
 pub(crate) mod shape_dependency_summary;
 
 pub(crate) mod shape_effective_policy_values;
@@ -388,6 +402,8 @@ pub(crate) mod shape_input_source_summary;
 pub(crate) mod shape_observability_alarm_input;
 
 pub(crate) mod shape_observability_recommendations_list;
+
+pub(crate) mod shape_policy_event;
 
 pub(crate) mod shape_policy_summary;
 
@@ -473,6 +489,8 @@ pub(crate) mod shape_observability_alarm_summary;
 
 pub(crate) mod shape_observability_recommendation;
 
+pub(crate) mod shape_policy_event_details;
+
 pub(crate) mod shape_query_range;
 
 pub(crate) mod shape_report_output_configuration_list;
@@ -521,6 +539,8 @@ pub(crate) mod shape_eks_label_selector_requirement;
 
 pub(crate) mod shape_eks_namespace_list;
 
+pub(crate) mod shape_policy_event_metadata;
+
 pub(crate) mod shape_query_data_point_list;
 
 pub(crate) mod shape_service_event_metadata;
@@ -542,6 +562,14 @@ pub(crate) mod shape_assertion_updated_metadata;
 pub(crate) mod shape_eks_label_map;
 
 pub(crate) mod shape_eks_label_selector_requirement_list;
+
+pub(crate) mod shape_policy_attached_to_service_metadata;
+
+pub(crate) mod shape_policy_deleted_metadata;
+
+pub(crate) mod shape_policy_detached_from_service_metadata;
+
+pub(crate) mod shape_policy_sharing_revoked_metadata;
 
 pub(crate) mod shape_query_data_point;
 

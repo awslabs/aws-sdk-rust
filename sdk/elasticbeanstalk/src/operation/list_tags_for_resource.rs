@@ -319,7 +319,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTagsForRe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListTagsForResourceError {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more Amazon Web Services services.</p>
     InsufficientPrivilegesException(crate::types::error::InsufficientPrivilegesException),
     /// <p>A resource doesn't exist for the specified Amazon Resource Name (ARN).</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),

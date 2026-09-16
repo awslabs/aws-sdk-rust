@@ -18,6 +18,10 @@ pub struct Policy {
     pub multi_region: ::std::option::Option<crate::types::MultiRegionTargets>,
     /// <p>The data recovery targets defined in the policy.</p>
     pub data_recovery: ::std::option::Option<crate::types::DataRecoveryTargets>,
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub sharing_enabled: ::std::option::Option<bool>,
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>KMS key identifier — accepts key ID, key ARN, alias name, or alias ARN.</p>
     pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>Resource tags.</p>
@@ -60,6 +64,14 @@ impl Policy {
     pub fn data_recovery(&self) -> ::std::option::Option<&crate::types::DataRecoveryTargets> {
         self.data_recovery.as_ref()
     }
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub fn sharing_enabled(&self) -> ::std::option::Option<bool> {
+        self.sharing_enabled
+    }
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
     /// <p>KMS key identifier — accepts key ID, key ARN, alias name, or alias ARN.</p>
     pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
@@ -91,6 +103,8 @@ impl ::std::fmt::Debug for Policy {
         formatter.field("multi_az", &self.multi_az);
         formatter.field("multi_region", &self.multi_region);
         formatter.field("data_recovery", &self.data_recovery);
+        formatter.field("sharing_enabled", &self.sharing_enabled);
+        formatter.field("organization_id", &self.organization_id);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("associated_service_count", &self.associated_service_count);
@@ -117,6 +131,8 @@ pub struct PolicyBuilder {
     pub(crate) multi_az: ::std::option::Option<crate::types::MultiAzTargets>,
     pub(crate) multi_region: ::std::option::Option<crate::types::MultiRegionTargets>,
     pub(crate) data_recovery: ::std::option::Option<crate::types::DataRecoveryTargets>,
+    pub(crate) sharing_enabled: ::std::option::Option<bool>,
+    pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) associated_service_count: ::std::option::Option<i32>,
@@ -224,6 +240,34 @@ impl PolicyBuilder {
     pub fn get_data_recovery(&self) -> &::std::option::Option<crate::types::DataRecoveryTargets> {
         &self.data_recovery
     }
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub fn sharing_enabled(mut self, input: bool) -> Self {
+        self.sharing_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub fn set_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.sharing_enabled = input;
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub fn get_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sharing_enabled
+    }
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.organization_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input;
+        self
+    }
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>KMS key identifier — accepts key ID, key ARN, alias name, or alias ARN.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.kms_key_id = ::std::option::Option::Some(input.into());
@@ -323,6 +367,8 @@ impl PolicyBuilder {
             multi_az: self.multi_az,
             multi_region: self.multi_region,
             data_recovery: self.data_recovery,
+            sharing_enabled: self.sharing_enabled,
+            organization_id: self.organization_id,
             kms_key_id: self.kms_key_id,
             tags: self.tags,
             associated_service_count: self.associated_service_count,
@@ -341,6 +387,8 @@ impl ::std::fmt::Debug for PolicyBuilder {
         formatter.field("multi_az", &self.multi_az);
         formatter.field("multi_region", &self.multi_region);
         formatter.field("data_recovery", &self.data_recovery);
+        formatter.field("sharing_enabled", &self.sharing_enabled);
+        formatter.field("organization_id", &self.organization_id);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("associated_service_count", &self.associated_service_count);

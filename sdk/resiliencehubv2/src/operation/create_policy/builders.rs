@@ -192,6 +192,20 @@ impl CreatePolicyFluentBuilder {
     pub fn get_data_recovery(&self) -> &::std::option::Option<crate::types::DataRecoveryTargets> {
         self.inner.get_data_recovery()
     }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Only a delegated administrator or the management account can enable sharing.</p>
+    pub fn sharing_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.sharing_enabled(input);
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Only a delegated administrator or the management account can enable sharing.</p>
+    pub fn set_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_sharing_enabled(input);
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Only a delegated administrator or the management account can enable sharing.</p>
+    pub fn get_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_sharing_enabled()
+    }
     /// <p>KMS key identifier — accepts key ID, key ARN, alias name, or alias ARN.</p>
     pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());

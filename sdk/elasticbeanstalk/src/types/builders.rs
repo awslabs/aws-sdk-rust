@@ -9,6 +9,8 @@ pub use crate::types::_s3_location::S3LocationBuilder;
 
 pub use crate::types::_build_configuration::BuildConfigurationBuilder;
 
+pub use crate::types::_image_configuration::ImageConfigurationBuilder;
+
 pub use crate::types::_application_version_description::ApplicationVersionDescriptionBuilder;
 
 pub use crate::types::_source_configuration::SourceConfigurationBuilder;
@@ -37,6 +39,10 @@ pub use crate::types::_application_version_lifecycle_config::ApplicationVersionL
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_image_source::ImageSourceBuilder;
+
+pub use crate::types::_image_build_configuration::ImageBuildConfigurationBuilder;
+
 pub use crate::types::_configuration_option_setting::ConfigurationOptionSettingBuilder;
 
 pub use crate::types::_option_specification::OptionSpecificationBuilder;
@@ -58,6 +64,8 @@ pub use crate::types::_latency::LatencyBuilder;
 pub use crate::types::_managed_action_history_item::ManagedActionHistoryItemBuilder;
 
 pub use crate::types::_managed_action::ManagedActionBuilder;
+
+pub use crate::types::_cluster::ClusterBuilder;
 
 pub use crate::types::_event_description::EventDescriptionBuilder;
 

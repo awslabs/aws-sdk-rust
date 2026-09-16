@@ -5,7 +5,7 @@
 pub struct ListSystemEventsInput {
     /// <p>ARN identifier.</p>
     pub system_arn: ::std::option::Option<::std::string::String>,
-    /// <p>Filter events by type.</p>
+    /// <p>The type of events to include in the results.</p>
     pub event_types: ::std::option::Option<::std::vec::Vec<crate::types::SystemEventType>>,
     /// <p>The start time for filtering events.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -21,7 +21,7 @@ impl ListSystemEventsInput {
     pub fn system_arn(&self) -> ::std::option::Option<&str> {
         self.system_arn.as_deref()
     }
-    /// <p>Filter events by type.</p>
+    /// <p>The type of events to include in the results.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_types.is_none()`.
     pub fn event_types(&self) -> &[crate::types::SystemEventType] {
@@ -82,19 +82,19 @@ impl ListSystemEventsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_types`](Self::set_event_types).
     ///
-    /// <p>Filter events by type.</p>
+    /// <p>The type of events to include in the results.</p>
     pub fn event_types(mut self, input: crate::types::SystemEventType) -> Self {
         let mut v = self.event_types.unwrap_or_default();
         v.push(input);
         self.event_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filter events by type.</p>
+    /// <p>The type of events to include in the results.</p>
     pub fn set_event_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SystemEventType>>) -> Self {
         self.event_types = input;
         self
     }
-    /// <p>Filter events by type.</p>
+    /// <p>The type of events to include in the results.</p>
     pub fn get_event_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SystemEventType>> {
         &self.event_types
     }

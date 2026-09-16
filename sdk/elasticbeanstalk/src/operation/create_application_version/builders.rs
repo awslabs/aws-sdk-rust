@@ -22,10 +22,10 @@ impl crate::operation::create_application_version::builders::CreateApplicationVe
 }
 /// Fluent builder constructing a request to `CreateApplicationVersion`.
 ///
-/// <p>Creates an application version for the specified application. You can create an application version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output of an AWS CodeBuild build as follows:</p>
-/// <p>Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.</p>
-/// <p>Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.</p>
-/// <p>Specify a source bundle in S3 with <code>SourceBundle</code></p>
+/// <p>Creates an application version for the specified application. You can create an application version from a source bundle in Amazon S3, a commit in CodeCommit, or the output of an CodeBuild build as follows:</p>
+/// <p>Specify a commit in an CodeCommit repository with <code>SourceBuildInformation</code>.</p>
+/// <p>Specify a build in an CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.</p>
+/// <p>Specify a source bundle in Amazon S3 with <code>SourceBundle</code></p>
 /// <p>Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use the default sample application.</p><note>
 /// <p>After you create an application version with a specified Amazon S3 bucket and key location, you can't change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version.</p>
 /// </note>
@@ -129,19 +129,19 @@ impl CreateApplicationVersionFluentBuilder {
         self.inner.get_application_name()
     }
     /// <p>A label identifying this version.</p>
-    /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
     /// <p>A label identifying this version.</p>
-    /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }
     /// <p>A label identifying this version.</p>
-    /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
+    /// <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p>
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_label()
     }
@@ -159,54 +159,60 @@ impl CreateApplicationVersionFluentBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
+    /// <p>Specify a commit in an CodeCommit Git repository to use as the source code for the application version.</p>
     pub fn source_build_information(mut self, input: crate::types::SourceBuildInformation) -> Self {
         self.inner = self.inner.source_build_information(input);
         self
     }
-    /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
+    /// <p>Specify a commit in an CodeCommit Git repository to use as the source code for the application version.</p>
     pub fn set_source_build_information(mut self, input: ::std::option::Option<crate::types::SourceBuildInformation>) -> Self {
         self.inner = self.inner.set_source_build_information(input);
         self
     }
-    /// <p>Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.</p>
+    /// <p>Specify a commit in an CodeCommit Git repository to use as the source code for the application version.</p>
     pub fn get_source_build_information(&self) -> &::std::option::Option<crate::types::SourceBuildInformation> {
         self.inner.get_source_build_information()
     }
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p><note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
+    /// <p>Unless you're specifying a source bundle in the bucket that Elastic Beanstalk manages in your account, you must assign a custom policy to your user, and grant <code>Allow</code> permission to the <code>s3:Get*</code> actions on your S3 object resource, for example, <code>arn:aws:s3:::your-bucket/your-source-bundle-object</code>.</p>
     /// </note>
-    /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
+    /// <p>Specify a source bundle in Amazon S3 or a commit in an CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
     pub fn source_bundle(mut self, input: crate::types::S3Location) -> Self {
         self.inner = self.inner.source_bundle(input);
         self
     }
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p><note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
+    /// <p>Unless you're specifying a source bundle in the bucket that Elastic Beanstalk manages in your account, you must assign a custom policy to your user, and grant <code>Allow</code> permission to the <code>s3:Get*</code> actions on your S3 object resource, for example, <code>arn:aws:s3:::your-bucket/your-source-bundle-object</code>.</p>
     /// </note>
-    /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
+    /// <p>Specify a source bundle in Amazon S3 or a commit in an CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
     pub fn set_source_bundle(mut self, input: ::std::option::Option<crate::types::S3Location>) -> Self {
         self.inner = self.inner.set_source_bundle(input);
         self
     }
     /// <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p><note>
     /// <p>The Amazon S3 bucket must be in the same region as the environment.</p>
+    /// <p>Unless you're specifying a source bundle in the bucket that Elastic Beanstalk manages in your account, you must assign a custom policy to your user, and grant <code>Allow</code> permission to the <code>s3:Get*</code> actions on your S3 object resource, for example, <code>arn:aws:s3:::your-bucket/your-source-bundle-object</code>.</p>
     /// </note>
-    /// <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
+    /// <p>Specify a source bundle in Amazon S3 or a commit in an CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
     pub fn get_source_bundle(&self) -> &::std::option::Option<crate::types::S3Location> {
         self.inner.get_source_bundle()
     }
-    /// <p>Settings for an AWS CodeBuild build.</p>
+    /// <p>Settings for an CodeBuild build.</p>
+    /// <p>Don't specify <code>BuildConfiguration</code> together with <code>ImageConfiguration</code>, which configures a container image build instead.</p>
     pub fn build_configuration(mut self, input: crate::types::BuildConfiguration) -> Self {
         self.inner = self.inner.build_configuration(input);
         self
     }
-    /// <p>Settings for an AWS CodeBuild build.</p>
+    /// <p>Settings for an CodeBuild build.</p>
+    /// <p>Don't specify <code>BuildConfiguration</code> together with <code>ImageConfiguration</code>, which configures a container image build instead.</p>
     pub fn set_build_configuration(mut self, input: ::std::option::Option<crate::types::BuildConfiguration>) -> Self {
         self.inner = self.inner.set_build_configuration(input);
         self
     }
-    /// <p>Settings for an AWS CodeBuild build.</p>
+    /// <p>Settings for an CodeBuild build.</p>
+    /// <p>Don't specify <code>BuildConfiguration</code> together with <code>ImageConfiguration</code>, which configures a container image build instead.</p>
     pub fn get_build_configuration(&self) -> &::std::option::Option<crate::types::BuildConfiguration> {
         self.inner.get_build_configuration()
     }
@@ -225,7 +231,7 @@ impl CreateApplicationVersionFluentBuilder {
         self.inner.get_auto_create_application()
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
+    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn process(mut self, input: bool) -> Self {
@@ -233,7 +239,7 @@ impl CreateApplicationVersionFluentBuilder {
         self
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
+    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn set_process(mut self, input: ::std::option::Option<bool>) -> Self {
@@ -241,7 +247,7 @@ impl CreateApplicationVersionFluentBuilder {
         self
     }
     /// <p>Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle. Validating configuration files can identify issues prior to deploying the application version to an environment.</p>
-    /// <p>You must turn processing on for application versions that you create using AWS CodeBuild or AWS CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
+    /// <p>You must turn processing on for application versions that you create using CodeBuild or CodeCommit. For application versions built from a source bundle in Amazon S3, processing is optional.</p><note>
     /// <p>The <code>Process</code> option validates Elastic Beanstalk configuration files. It doesn't validate your application's configuration files, like proxy server or Docker configuration.</p>
     /// </note>
     pub fn get_process(&self) -> &::std::option::Option<bool> {
@@ -268,5 +274,22 @@ impl CreateApplicationVersionFluentBuilder {
     /// <p>Elastic Beanstalk applies these tags only to the application version. Environments that use the application version don't inherit the tags.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>The source of the container image for this application version. You can specify an image that you built and pushed to a container registry yourself, or settings for Elastic Beanstalk to build one from your source bundle. Specify exactly one of the <code>Source</code> and <code>Build</code> members.</p>
+    /// <p>Don't specify <code>ImageConfiguration</code> together with <code>BuildConfiguration</code>, which configures an CodeBuild build instead.</p>
+    pub fn image_configuration(mut self, input: crate::types::ImageConfiguration) -> Self {
+        self.inner = self.inner.image_configuration(input);
+        self
+    }
+    /// <p>The source of the container image for this application version. You can specify an image that you built and pushed to a container registry yourself, or settings for Elastic Beanstalk to build one from your source bundle. Specify exactly one of the <code>Source</code> and <code>Build</code> members.</p>
+    /// <p>Don't specify <code>ImageConfiguration</code> together with <code>BuildConfiguration</code>, which configures an CodeBuild build instead.</p>
+    pub fn set_image_configuration(mut self, input: ::std::option::Option<crate::types::ImageConfiguration>) -> Self {
+        self.inner = self.inner.set_image_configuration(input);
+        self
+    }
+    /// <p>The source of the container image for this application version. You can specify an image that you built and pushed to a container registry yourself, or settings for Elastic Beanstalk to build one from your source bundle. Specify exactly one of the <code>Source</code> and <code>Build</code> members.</p>
+    /// <p>Don't specify <code>ImageConfiguration</code> together with <code>BuildConfiguration</code>, which configures an CodeBuild build instead.</p>
+    pub fn get_image_configuration(&self) -> &::std::option::Option<crate::types::ImageConfiguration> {
+        self.inner.get_image_configuration()
     }
 }

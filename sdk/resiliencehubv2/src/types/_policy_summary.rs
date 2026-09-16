@@ -16,6 +16,10 @@ pub struct PolicySummary {
     pub multi_region: ::std::option::Option<crate::types::MultiRegionTargets>,
     /// <p>The data recovery targets defined in the policy.</p>
     pub data_recovery: ::std::option::Option<crate::types::DataRecoveryTargets>,
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub sharing_enabled: ::std::option::Option<bool>,
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub organization_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of services associated with this policy.</p>
     pub associated_service_count: ::std::option::Option<i32>,
     /// <p>The timestamp when the policy was created.</p>
@@ -50,6 +54,14 @@ impl PolicySummary {
     pub fn data_recovery(&self) -> ::std::option::Option<&crate::types::DataRecoveryTargets> {
         self.data_recovery.as_ref()
     }
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub fn sharing_enabled(&self) -> ::std::option::Option<bool> {
+        self.sharing_enabled
+    }
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub fn organization_id(&self) -> ::std::option::Option<&str> {
+        self.organization_id.as_deref()
+    }
     /// <p>The number of services associated with this policy.</p>
     pub fn associated_service_count(&self) -> ::std::option::Option<i32> {
         self.associated_service_count
@@ -80,6 +92,8 @@ pub struct PolicySummaryBuilder {
     pub(crate) multi_az: ::std::option::Option<crate::types::MultiAzTargets>,
     pub(crate) multi_region: ::std::option::Option<crate::types::MultiRegionTargets>,
     pub(crate) data_recovery: ::std::option::Option<crate::types::DataRecoveryTargets>,
+    pub(crate) sharing_enabled: ::std::option::Option<bool>,
+    pub(crate) organization_id: ::std::option::Option<::std::string::String>,
     pub(crate) associated_service_count: ::std::option::Option<i32>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -171,6 +185,34 @@ impl PolicySummaryBuilder {
     pub fn get_data_recovery(&self) -> &::std::option::Option<crate::types::DataRecoveryTargets> {
         &self.data_recovery
     }
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub fn sharing_enabled(mut self, input: bool) -> Self {
+        self.sharing_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub fn set_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.sharing_enabled = input;
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled.</p>
+    pub fn get_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sharing_enabled
+    }
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub fn organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.organization_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub fn set_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.organization_id = input;
+        self
+    }
+    /// <p>The identifier of the organization this policy is shared with.</p>
+    pub fn get_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.organization_id
+    }
     /// <p>The number of services associated with this policy.</p>
     pub fn associated_service_count(mut self, input: i32) -> Self {
         self.associated_service_count = ::std::option::Option::Some(input);
@@ -235,6 +277,8 @@ impl PolicySummaryBuilder {
             multi_az: self.multi_az,
             multi_region: self.multi_region,
             data_recovery: self.data_recovery,
+            sharing_enabled: self.sharing_enabled,
+            organization_id: self.organization_id,
             associated_service_count: self.associated_service_count,
             created_at: self.created_at,
             updated_at: self.updated_at,

@@ -8,9 +8,11 @@ pub struct EnvironmentTier {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based web server</i> – <code>WebServer</code></p></li>
     /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based backend application with Amazon SQS</i> – <code>Worker</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster-mode Amazon EKS-based applications</i> – <code>Cluster</code></p></li>
     /// </ul>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of this environment tier.</p>
@@ -20,6 +22,8 @@ pub struct EnvironmentTier {
     /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
     /// <li>
     /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster tier</i> – <code>EKS</code></p></li>
     /// </ul>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p><note>
@@ -32,9 +36,11 @@ impl EnvironmentTier {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based web server</i> – <code>WebServer</code></p></li>
     /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based backend application with Amazon SQS</i> – <code>Worker</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster-mode Amazon EKS-based applications</i> – <code>Cluster</code></p></li>
     /// </ul>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -46,6 +52,8 @@ impl EnvironmentTier {
     /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
     /// <li>
     /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster tier</i> – <code>EKS</code></p></li>
     /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
@@ -77,9 +85,11 @@ impl EnvironmentTierBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based web server</i> – <code>WebServer</code></p></li>
     /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based backend application with Amazon SQS</i> – <code>Worker</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster-mode Amazon EKS-based applications</i> – <code>Cluster</code></p></li>
     /// </ul>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
@@ -89,9 +99,11 @@ impl EnvironmentTierBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based web server</i> – <code>WebServer</code></p></li>
     /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based backend application with Amazon SQS</i> – <code>Worker</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster-mode Amazon EKS-based applications</i> – <code>Cluster</code></p></li>
     /// </ul>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
@@ -101,9 +113,11 @@ impl EnvironmentTierBuilder {
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
-    /// <p>For <i>Web server tier</i> – <code>WebServer</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based web server</i> – <code>WebServer</code></p></li>
     /// <li>
-    /// <p>For <i>Worker tier</i> – <code>Worker</code></p></li>
+    /// <p>For <i>Standard-mode EC2-based backend application with Amazon SQS</i> – <code>Worker</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster-mode Amazon EKS-based applications</i> – <code>Cluster</code></p></li>
     /// </ul>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
@@ -115,6 +129,8 @@ impl EnvironmentTierBuilder {
     /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
     /// <li>
     /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster tier</i> – <code>EKS</code></p></li>
     /// </ul>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
@@ -127,6 +143,8 @@ impl EnvironmentTierBuilder {
     /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
     /// <li>
     /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster tier</i> – <code>EKS</code></p></li>
     /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
@@ -139,6 +157,8 @@ impl EnvironmentTierBuilder {
     /// <p>For <i>Web server tier</i> – <code>Standard</code></p></li>
     /// <li>
     /// <p>For <i>Worker tier</i> – <code>SQS/HTTP</code></p></li>
+    /// <li>
+    /// <p>For <i>Cluster tier</i> – <code>EKS</code></p></li>
     /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type

@@ -185,6 +185,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListPoliciesT
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("accountId") {
+            if let ::std::option::Option::Some(value) = input.account_id.as_deref() {
+                captured.insert("accountId", value);
+            }
+        }
         if requested.should_capture("nextToken") {
             if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
                 captured.insert("nextToken", value);
@@ -248,14 +253,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPolicies
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_1) = &_input.max_results {
+                if let ::std::option::Option::Some(inner_1) = &_input.account_id {
                     {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
+                        query.push_kv("accountId", &::aws_smithy_http::query::fmt_string(inner_1));
                     }
                 }
-                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
+                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
                     {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_3) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_3));
                     }
                 }
                 ::std::result::Result::Ok(())

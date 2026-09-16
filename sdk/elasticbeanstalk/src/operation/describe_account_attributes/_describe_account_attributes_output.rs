@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAccountAttributesOutput {
-    /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    /// <p>The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services account.</p>
     pub resource_quotas: ::std::option::Option<crate::types::ResourceQuotas>,
     _request_id: Option<String>,
 }
 impl DescribeAccountAttributesOutput {
-    /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    /// <p>The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services account.</p>
     pub fn resource_quotas(&self) -> ::std::option::Option<&crate::types::ResourceQuotas> {
         self.resource_quotas.as_ref()
     }
@@ -33,17 +33,17 @@ pub struct DescribeAccountAttributesOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeAccountAttributesOutputBuilder {
-    /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    /// <p>The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services account.</p>
     pub fn resource_quotas(mut self, input: crate::types::ResourceQuotas) -> Self {
         self.resource_quotas = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    /// <p>The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services account.</p>
     pub fn set_resource_quotas(mut self, input: ::std::option::Option<crate::types::ResourceQuotas>) -> Self {
         self.resource_quotas = input;
         self
     }
-    /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
+    /// <p>The Elastic Beanstalk resource quotas associated with the calling Amazon Web Services account.</p>
     pub fn get_resource_quotas(&self) -> &::std::option::Option<crate::types::ResourceQuotas> {
         &self.resource_quotas
     }

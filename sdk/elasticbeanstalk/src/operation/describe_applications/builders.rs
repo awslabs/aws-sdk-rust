@@ -23,6 +23,9 @@ impl crate::operation::describe_applications::builders::DescribeApplicationsInpu
 /// Fluent builder constructing a request to `DescribeApplications`.
 ///
 /// <p>Returns the descriptions of existing applications.</p>
+/// <p>This action only returns information about applications that the calling principle has IAM permissions to access. For example, consider a case where a user only has permission to access two of three applications. When the user calls the <i>DescribeApplications</i> action, the response will only include the two applications that the user has permission to access instead of all three applications. If the user doesn’t have access to any of the applications an empty result is returned.</p><note>
+/// <p>The <i>AWSElasticBeanstalkReadOnly</i> managed policy allows operators to view information about resources related to Elastic Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html"> Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer Guide</i>. For detailed instructions to attach a policy to a user or group, see the section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed"> Controlling access with managed policies</a> in the same topic.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeApplicationsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -113,17 +116,17 @@ impl DescribeApplicationsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_application_names`](Self::set_application_names).
     ///
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     pub fn application_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_names(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     pub fn set_application_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_application_names(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     pub fn get_application_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_application_names()
     }

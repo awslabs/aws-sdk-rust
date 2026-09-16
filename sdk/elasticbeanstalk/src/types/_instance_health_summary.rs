@@ -4,9 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InstanceHealthSummary {
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     pub no_data: ::std::option::Option<i32>,
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     pub unknown: ::std::option::Option<i32>,
     /// <p><b>Grey.</b> An operation is in progress on an instance within the command timeout.</p>
     pub pending: ::std::option::Option<i32>,
@@ -22,11 +22,11 @@ pub struct InstanceHealthSummary {
     pub severe: ::std::option::Option<i32>,
 }
 impl InstanceHealthSummary {
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     pub fn no_data(&self) -> ::std::option::Option<i32> {
         self.no_data
     }
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     pub fn unknown(&self) -> ::std::option::Option<i32> {
         self.unknown
     }
@@ -76,31 +76,31 @@ pub struct InstanceHealthSummaryBuilder {
     pub(crate) severe: ::std::option::Option<i32>,
 }
 impl InstanceHealthSummaryBuilder {
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     pub fn no_data(mut self, input: i32) -> Self {
         self.no_data = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     pub fn set_no_data(mut self, input: ::std::option::Option<i32>) -> Self {
         self.no_data = input;
         self
     }
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting no data on an instance.</p>
     pub fn get_no_data(&self) -> &::std::option::Option<i32> {
         &self.no_data
     }
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     pub fn unknown(mut self, input: i32) -> Self {
         self.unknown = ::std::option::Option::Some(input);
         self
     }
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     pub fn set_unknown(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unknown = input;
         self
     }
-    /// <p><b>Grey.</b> AWS Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
+    /// <p><b>Grey.</b> Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an instance.</p>
     pub fn get_unknown(&self) -> &::std::option::Option<i32> {
         &self.unknown
     }

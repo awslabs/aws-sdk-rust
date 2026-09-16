@@ -91,6 +91,12 @@ where
                             crate::protocol_serde::shape_email_reference::de_email_reference(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'Email' cannot be null"))?,
                         )),
+                        "ContactAnalysis" => Some(crate::types::ReferenceSummary::ContactAnalysis(
+                            crate::protocol_serde::shape_contact_analysis_reference::de_contact_analysis_reference(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ContactAnalysis' cannot be null")
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::ReferenceSummary::Unknown)

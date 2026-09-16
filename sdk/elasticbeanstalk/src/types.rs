@@ -11,6 +11,8 @@ pub use crate::types::_s3_location::S3Location;
 
 pub use crate::types::_build_configuration::BuildConfiguration;
 
+pub use crate::types::_image_configuration::ImageConfiguration;
+
 pub use crate::types::_application_version_description::ApplicationVersionDescription;
 
 pub use crate::types::_source_configuration::SourceConfiguration;
@@ -59,6 +61,10 @@ pub use crate::types::_source_repository::SourceRepository;
 
 pub use crate::types::_compute_type::ComputeType;
 
+pub use crate::types::_image_source::ImageSource;
+
+pub use crate::types::_image_build_configuration::ImageBuildConfiguration;
+
 pub use crate::types::_application_version_status::ApplicationVersionStatus;
 
 pub use crate::types::_configuration_option_setting::ConfigurationOptionSetting;
@@ -87,6 +93,8 @@ pub use crate::types::_managed_action_history_item::ManagedActionHistoryItem;
 
 pub use crate::types::_managed_action::ManagedAction;
 
+pub use crate::types::_cluster::Cluster;
+
 pub use crate::types::_event_description::EventDescription;
 
 pub use crate::types::_instances_health_attribute::InstancesHealthAttribute;
@@ -108,6 +116,10 @@ pub use crate::types::_validation_message::ValidationMessage;
 pub use crate::types::_max_count_rule::MaxCountRule;
 
 pub use crate::types::_max_age_rule::MaxAgeRule;
+
+pub use crate::types::_image_build_type::ImageBuildType;
+
+pub use crate::types::_architecture_type::ArchitectureType;
 
 pub use crate::types::_configuration_option_value_type::ConfigurationOptionValueType;
 
@@ -165,11 +177,15 @@ mod _application_version_lifecycle_config;
 
 mod _application_version_status;
 
+mod _architecture_type;
+
 mod _auto_scaling_group;
 
 mod _build_configuration;
 
 mod _builder;
+
+mod _cluster;
 
 mod _compute_type;
 
@@ -216,6 +232,14 @@ mod _event_description;
 mod _event_severity;
 
 mod _failure_type;
+
+mod _image_build_configuration;
+
+mod _image_build_type;
+
+mod _image_configuration;
+
+mod _image_source;
 
 mod _instance;
 

@@ -14,6 +14,7 @@
 /// match agentruntimestatus {
 ///     AgentRuntimeStatus::CreateFailed => { /* ... */ },
 ///     AgentRuntimeStatus::Creating => { /* ... */ },
+///     AgentRuntimeStatus::DeleteFailed => { /* ... */ },
 ///     AgentRuntimeStatus::Deleting => { /* ... */ },
 ///     AgentRuntimeStatus::Ready => { /* ... */ },
 ///     AgentRuntimeStatus::UpdateFailed => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum AgentRuntimeStatus {
     #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for AgentRuntimeStatus {
         match s {
             "CREATE_FAILED" => AgentRuntimeStatus::CreateFailed,
             "CREATING" => AgentRuntimeStatus::Creating,
+            "DELETE_FAILED" => AgentRuntimeStatus::DeleteFailed,
             "DELETING" => AgentRuntimeStatus::Deleting,
             "READY" => AgentRuntimeStatus::Ready,
             "UPDATE_FAILED" => AgentRuntimeStatus::UpdateFailed,
@@ -88,6 +92,7 @@ impl AgentRuntimeStatus {
         match self {
             AgentRuntimeStatus::CreateFailed => "CREATE_FAILED",
             AgentRuntimeStatus::Creating => "CREATING",
+            AgentRuntimeStatus::DeleteFailed => "DELETE_FAILED",
             AgentRuntimeStatus::Deleting => "DELETING",
             AgentRuntimeStatus::Ready => "READY",
             AgentRuntimeStatus::UpdateFailed => "UPDATE_FAILED",
@@ -97,7 +102,15 @@ impl AgentRuntimeStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CREATE_FAILED", "CREATING", "DELETING", "READY", "UPDATE_FAILED", "UPDATING"]
+        &[
+            "CREATE_FAILED",
+            "CREATING",
+            "DELETE_FAILED",
+            "DELETING",
+            "READY",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AgentRuntimeStatus {
@@ -122,6 +135,7 @@ impl ::std::fmt::Display for AgentRuntimeStatus {
         match self {
             AgentRuntimeStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             AgentRuntimeStatus::Creating => write!(f, "CREATING"),
+            AgentRuntimeStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             AgentRuntimeStatus::Deleting => write!(f, "DELETING"),
             AgentRuntimeStatus::Ready => write!(f, "READY"),
             AgentRuntimeStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurationOptionDescription {
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration option.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ pub struct ConfigurationOptionDescription {
     /// <li>
     /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
     /// <li>
-    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all A resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
     /// <li>
     /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
@@ -54,7 +54,7 @@ pub struct ConfigurationOptionDescription {
     pub regex: ::std::option::Option<crate::types::OptionRestrictionRegex>,
 }
 impl ConfigurationOptionDescription {
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -71,7 +71,7 @@ impl ConfigurationOptionDescription {
     /// <li>
     /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
     /// <li>
-    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all A resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
     /// <li>
     /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
@@ -151,17 +151,17 @@ pub struct ConfigurationOptionDescriptionBuilder {
     pub(crate) regex: ::std::option::Option<crate::types::OptionRestrictionRegex>,
 }
 impl ConfigurationOptionDescriptionBuilder {
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }
@@ -198,7 +198,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li>
     /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
     /// <li>
-    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all A resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
     /// <li>
     /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
@@ -211,7 +211,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li>
     /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
     /// <li>
-    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all A resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
     /// <li>
     /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>
@@ -224,7 +224,7 @@ impl ConfigurationOptionDescriptionBuilder {
     /// <li>
     /// <p><code>NoInterruption</code> : There is no interruption to the environment or application availability.</p></li>
     /// <li>
-    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all AWS resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
+    /// <p><code>RestartEnvironment</code> : The environment is entirely restarted, all A resources are deleted and recreated, and the environment is unavailable during the process.</p></li>
     /// <li>
     /// <p><code>RestartApplicationServer</code> : The environment is available the entire time. However, a short application outage occurs when the application servers on the running Amazon EC2 instances are restarted.</p></li>
     /// </ul>

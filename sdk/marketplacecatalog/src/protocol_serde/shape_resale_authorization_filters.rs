@@ -111,5 +111,23 @@ pub fn ser_resale_authorization_filters(
         )?;
         object_28.finish();
     }
+    if let Some(var_29) = &input.source_authorization {
+        #[allow(unused_mut)]
+        let mut object_30 = object.key("SourceAuthorization").start_object();
+        crate::protocol_serde::shape_resale_authorization_source_authorization_filter::ser_resale_authorization_source_authorization_filter(
+            &mut object_30,
+            var_29,
+        )?;
+        object_30.finish();
+    }
+    if let Some(var_31) = &input.issuer_account_id {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("IssuerAccountId").start_object();
+        crate::protocol_serde::shape_resale_authorization_issuer_account_id_filter::ser_resale_authorization_issuer_account_id_filter(
+            &mut object_32,
+            var_31,
+        )?;
+        object_32.finish();
+    }
     Ok(())
 }

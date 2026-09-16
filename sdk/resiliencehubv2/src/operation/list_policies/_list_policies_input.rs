@@ -3,12 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPoliciesInput {
+    /// <p>The identifier of the account that owns the policies to include in the results.</p>
+    pub account_id: ::std::option::Option<::std::string::String>,
     /// <p>Pagination page size.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPoliciesInput {
+    /// <p>The identifier of the account that owns the policies to include in the results.</p>
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
+    }
     /// <p>Pagination page size.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -29,10 +35,25 @@ impl ListPoliciesInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListPoliciesInputBuilder {
+    pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListPoliciesInputBuilder {
+    /// <p>The identifier of the account that owns the policies to include in the results.</p>
+    pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the account that owns the policies to include in the results.</p>
+    pub fn set_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.account_id = input;
+        self
+    }
+    /// <p>The identifier of the account that owns the policies to include in the results.</p>
+    pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.account_id
+    }
     /// <p>Pagination page size.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -66,6 +87,7 @@ impl ListPoliciesInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::list_policies::ListPoliciesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_policies::ListPoliciesInput {
+            account_id: self.account_id,
             max_results: self.max_results,
             next_token: self.next_token,
         })

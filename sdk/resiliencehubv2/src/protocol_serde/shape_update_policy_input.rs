@@ -33,5 +33,8 @@ pub fn ser_update_policy_input_input(
     if let Some(var_10) = &input.policy_arn {
         object.key("policyArn").string(var_10.as_str());
     }
+    if let Some(var_11) = &input.sharing_enabled {
+        object.key("sharingEnabled").boolean(*var_11);
+    }
     Ok(())
 }

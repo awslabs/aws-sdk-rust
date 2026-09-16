@@ -321,7 +321,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribePlatf
 pub enum DescribePlatformVersionError {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::types::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more Amazon Web Services services.</p>
     InsufficientPrivilegesException(crate::types::error::InsufficientPrivilegesException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

@@ -324,7 +324,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ComposeEnviro
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ComposeEnvironmentsError {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more Amazon Web Services services.</p>
     InsufficientPrivilegesException(crate::types::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of environments.</p>
     TooManyEnvironmentsException(crate::types::error::TooManyEnvironmentsException),

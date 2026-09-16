@@ -367,6 +367,8 @@ mod put_segment_subscription;
 
 mod search_profiles;
 
+mod search_recommendations;
+
 mod start_recommender;
 
 mod start_upload_job;

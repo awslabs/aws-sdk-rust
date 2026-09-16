@@ -127,6 +127,10 @@ pub use crate::types::_flow_definition::FlowDefinition;
 
 pub use crate::types::_logical_operator::LogicalOperator;
 
+pub use crate::types::_recommender::Recommender;
+
+pub use crate::types::_recommendation_metadata::RecommendationMetadata;
+
 pub use crate::types::_update_address::UpdateAddress;
 
 pub use crate::types::_range_override::RangeOverride;
@@ -704,6 +708,10 @@ mod _readiness_status;
 mod _recommendation;
 
 mod _recommendation_diversity_config;
+
+mod _recommendation_metadata;
+
+mod _recommender;
 
 mod _recommender_config;
 

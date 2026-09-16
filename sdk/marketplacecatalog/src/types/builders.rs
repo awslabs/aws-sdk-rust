@@ -159,6 +159,10 @@ pub use crate::types::_resale_authorization_last_modified_date_filter::ResaleAut
 
 pub use crate::types::_resale_authorization_reseller_role_filter::ResaleAuthorizationResellerRoleFilterBuilder;
 
+pub use crate::types::_resale_authorization_source_authorization_filter::ResaleAuthorizationSourceAuthorizationFilterBuilder;
+
+pub use crate::types::_resale_authorization_issuer_account_id_filter::ResaleAuthorizationIssuerAccountIdFilterBuilder;
+
 pub use crate::types::_machine_learning_product_entity_id_filter::MachineLearningProductEntityIdFilterBuilder;
 
 pub use crate::types::_machine_learning_product_last_modified_date_filter::MachineLearningProductLastModifiedDateFilterBuilder;

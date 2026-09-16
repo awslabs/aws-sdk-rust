@@ -344,7 +344,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateConfigu
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateConfigurationTemplateError {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more Amazon Web Services services.</p>
     InsufficientPrivilegesException(crate::types::error::InsufficientPrivilegesException),
     /// <p>The specified account has reached its limit of Amazon S3 buckets.</p>
     TooManyBucketsException(crate::types::error::TooManyBucketsException),

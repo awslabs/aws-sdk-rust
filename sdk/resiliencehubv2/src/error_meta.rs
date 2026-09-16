@@ -670,6 +670,40 @@ impl From<crate::operation::delete_user_journey::DeleteUserJourneyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dependency_insights::GetDependencyInsightsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dependency_insights::GetDependencyInsightsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_dependency_insights::GetDependencyInsightsError> for Error {
+    fn from(err: crate::operation::get_dependency_insights::GetDependencyInsightsError) -> Self {
+        match err {
+            crate::operation::get_dependency_insights::GetDependencyInsightsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_dependency_insights::GetDependencyInsightsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_dependency_insights::GetDependencyInsightsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_dependency_insights::GetDependencyInsightsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_dependency_insights::GetDependencyInsightsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_dependency_insights::GetDependencyInsightsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_failure_mode_finding::GetFailureModeFindingError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1098,6 +1132,31 @@ impl From<crate::operation::list_policies::ListPoliciesError> for Error {
             crate::operation::list_policies::ListPoliciesError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_policies::ListPoliciesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_policies::ListPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_events::ListPolicyEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policy_events::ListPolicyEventsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_policy_events::ListPolicyEventsError> for Error {
+    fn from(err: crate::operation::list_policy_events::ListPolicyEventsError) -> Self {
+        match err {
+            crate::operation::list_policy_events::ListPolicyEventsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_policy_events::ListPolicyEventsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_policy_events::ListPolicyEventsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_policy_events::ListPolicyEventsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_policy_events::ListPolicyEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1666,6 +1725,46 @@ impl From<crate::operation::put_test_sources::PutTestSourcesError> for Error {
             }
             crate::operation::put_test_sources::PutTestSourcesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_test_sources::PutTestSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_dependency_insights::StartDependencyInsightsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_dependency_insights::StartDependencyInsightsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_dependency_insights::StartDependencyInsightsError> for Error {
+    fn from(err: crate::operation::start_dependency_insights::StartDependencyInsightsError) -> Self {
+        match err {
+            crate::operation::start_dependency_insights::StartDependencyInsightsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_dependency_insights::StartDependencyInsightsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_dependency_insights::StartDependencyInsightsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_dependency_insights::StartDependencyInsightsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_dependency_insights::StartDependencyInsightsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_dependency_insights::StartDependencyInsightsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_dependency_insights::StartDependencyInsightsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

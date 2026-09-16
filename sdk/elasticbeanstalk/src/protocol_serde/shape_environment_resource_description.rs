@@ -34,64 +34,74 @@ pub fn de_environment_resource_description(
                 builder = builder.set_auto_scaling_groups(var_2);
             }
             ,
-            s if s.matches("Instances") /* Instances com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Instances */ =>  {
+            s if s.matches("Cluster") /* Cluster com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Cluster */ =>  {
                 let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_cluster::de_cluster(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_cluster(var_3);
+            }
+            ,
+            s if s.matches("Instances") /* Instances com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Instances */ =>  {
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_instance_list::de_instance_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_instances(var_3);
+                builder = builder.set_instances(var_4);
             }
             ,
             s if s.matches("LaunchConfigurations") /* LaunchConfigurations com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LaunchConfigurations */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         crate::protocol_serde::shape_launch_configuration_list::de_launch_configuration_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_launch_configurations(var_4);
+                builder = builder.set_launch_configurations(var_5);
             }
             ,
             s if s.matches("LaunchTemplates") /* LaunchTemplates com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LaunchTemplates */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         crate::protocol_serde::shape_launch_template_list::de_launch_template_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_launch_templates(var_5);
+                builder = builder.set_launch_templates(var_6);
             }
             ,
             s if s.matches("LoadBalancers") /* LoadBalancers com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$LoadBalancers */ =>  {
-                let var_6 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_load_balancer_list::de_load_balancer_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_load_balancers(var_6);
+                builder = builder.set_load_balancers(var_7);
             }
             ,
             s if s.matches("Triggers") /* Triggers com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Triggers */ =>  {
-                let var_7 =
+                let var_8 =
                     Some(
                         crate::protocol_serde::shape_trigger_list::de_trigger_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_triggers(var_7);
+                builder = builder.set_triggers(var_8);
             }
             ,
             s if s.matches("Queues") /* Queues com.amazonaws.elasticbeanstalk#EnvironmentResourceDescription$Queues */ =>  {
-                let var_8 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_queue_list::de_queue_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_queues(var_8);
+                builder = builder.set_queues(var_9);
             }
             ,
             _ => {}

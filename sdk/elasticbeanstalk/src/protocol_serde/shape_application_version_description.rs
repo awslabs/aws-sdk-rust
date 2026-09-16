@@ -96,8 +96,43 @@ pub fn de_application_version_description(
                 builder = builder.set_source_bundle(var_7);
             }
             ,
-            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$DateCreated */ =>  {
+            s if s.matches("ImageSource") /* ImageSource com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$ImageSource */ =>  {
                 let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_image_source::de_image_source(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_image_source(var_8);
+            }
+            ,
+            s if s.matches("ImageBuildConfiguration") /* ImageBuildConfiguration com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$ImageBuildConfiguration */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_image_build_configuration::de_image_build_configuration(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_image_build_configuration(var_9);
+            }
+            ,
+            s if s.matches("Process") /* Process com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$Process */ =>  {
+                let var_10 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.elasticbeanstalk#ApplicationVersionProccess`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_process(var_10);
+            }
+            ,
+            s if s.matches("DateCreated") /* DateCreated com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$DateCreated */ =>  {
+                let var_11 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -107,11 +142,11 @@ pub fn de_application_version_description(
                         ?
                     )
                 ;
-                builder = builder.set_date_created(var_8);
+                builder = builder.set_date_created(var_11);
             }
             ,
             s if s.matches("DateUpdated") /* DateUpdated com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$DateUpdated */ =>  {
-                let var_9 =
+                let var_12 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -121,11 +156,11 @@ pub fn de_application_version_description(
                         ?
                     )
                 ;
-                builder = builder.set_date_updated(var_9);
+                builder = builder.set_date_updated(var_12);
             }
             ,
             s if s.matches("Status") /* Status com.amazonaws.elasticbeanstalk#ApplicationVersionDescription$Status */ =>  {
-                let var_10 =
+                let var_13 =
                     Some(
                         Result::<crate::types::ApplicationVersionStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::ApplicationVersionStatus::from(
@@ -135,7 +170,7 @@ pub fn de_application_version_description(
                         ?
                     )
                 ;
-                builder = builder.set_status(var_10);
+                builder = builder.set_status(var_13);
             }
             ,
             _ => {}

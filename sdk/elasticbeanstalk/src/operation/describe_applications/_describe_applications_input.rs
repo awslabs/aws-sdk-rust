@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeApplicationsInput {
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     pub application_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeApplicationsInput {
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_names.is_none()`.
     pub fn application_names(&self) -> &[::std::string::String] {
@@ -33,19 +33,19 @@ impl DescribeApplicationsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_application_names`](Self::set_application_names).
     ///
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     pub fn application_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.application_names.unwrap_or_default();
         v.push(input.into());
         self.application_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     pub fn set_application_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.application_names = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names.</p>
     pub fn get_application_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.application_names
     }

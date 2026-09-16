@@ -56,6 +56,11 @@ pub fn ser_create_application_version_input_input_input(
         }
         list_20.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_22 = writer.prefix("ImageConfiguration");
+    if let Some(var_23) = &input.image_configuration {
+        crate::protocol_serde::shape_image_configuration::ser_image_configuration(scope_22, var_23)?;
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

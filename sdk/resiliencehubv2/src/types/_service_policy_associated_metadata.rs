@@ -8,6 +8,16 @@ pub struct ServicePolicyAssociatedMetadata {
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>ARN identifier.</p>
     pub policy_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The account that owns the policy.</p>
+    pub policy_owner_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The source of the policy.</p>
+    /// <ul>
+    /// <li>
+    /// <p>SELF — the policy belongs to the account that owns the service.</p></li>
+    /// <li>
+    /// <p>CROSS_ACCOUNT — the policy belongs to another account and was shared with the organization.</p></li>
+    /// </ul>
+    pub policy_source: ::std::option::Option<crate::types::PolicyValueSource>,
 }
 impl ServicePolicyAssociatedMetadata {
     /// <p>The name of the associated policy.</p>
@@ -17,6 +27,20 @@ impl ServicePolicyAssociatedMetadata {
     /// <p>ARN identifier.</p>
     pub fn policy_arn(&self) -> ::std::option::Option<&str> {
         self.policy_arn.as_deref()
+    }
+    /// <p>The account that owns the policy.</p>
+    pub fn policy_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.policy_owner_account_id.as_deref()
+    }
+    /// <p>The source of the policy.</p>
+    /// <ul>
+    /// <li>
+    /// <p>SELF — the policy belongs to the account that owns the service.</p></li>
+    /// <li>
+    /// <p>CROSS_ACCOUNT — the policy belongs to another account and was shared with the organization.</p></li>
+    /// </ul>
+    pub fn policy_source(&self) -> ::std::option::Option<&crate::types::PolicyValueSource> {
+        self.policy_source.as_ref()
     }
 }
 impl ServicePolicyAssociatedMetadata {
@@ -32,6 +56,8 @@ impl ServicePolicyAssociatedMetadata {
 pub struct ServicePolicyAssociatedMetadataBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_owner_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_source: ::std::option::Option<crate::types::PolicyValueSource>,
 }
 impl ServicePolicyAssociatedMetadataBuilder {
     /// <p>The name of the associated policy.</p>
@@ -62,11 +88,59 @@ impl ServicePolicyAssociatedMetadataBuilder {
     pub fn get_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_arn
     }
+    /// <p>The account that owns the policy.</p>
+    pub fn policy_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The account that owns the policy.</p>
+    pub fn set_policy_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy_owner_account_id = input;
+        self
+    }
+    /// <p>The account that owns the policy.</p>
+    pub fn get_policy_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_owner_account_id
+    }
+    /// <p>The source of the policy.</p>
+    /// <ul>
+    /// <li>
+    /// <p>SELF — the policy belongs to the account that owns the service.</p></li>
+    /// <li>
+    /// <p>CROSS_ACCOUNT — the policy belongs to another account and was shared with the organization.</p></li>
+    /// </ul>
+    pub fn policy_source(mut self, input: crate::types::PolicyValueSource) -> Self {
+        self.policy_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source of the policy.</p>
+    /// <ul>
+    /// <li>
+    /// <p>SELF — the policy belongs to the account that owns the service.</p></li>
+    /// <li>
+    /// <p>CROSS_ACCOUNT — the policy belongs to another account and was shared with the organization.</p></li>
+    /// </ul>
+    pub fn set_policy_source(mut self, input: ::std::option::Option<crate::types::PolicyValueSource>) -> Self {
+        self.policy_source = input;
+        self
+    }
+    /// <p>The source of the policy.</p>
+    /// <ul>
+    /// <li>
+    /// <p>SELF — the policy belongs to the account that owns the service.</p></li>
+    /// <li>
+    /// <p>CROSS_ACCOUNT — the policy belongs to another account and was shared with the organization.</p></li>
+    /// </ul>
+    pub fn get_policy_source(&self) -> &::std::option::Option<crate::types::PolicyValueSource> {
+        &self.policy_source
+    }
     /// Consumes the builder and constructs a [`ServicePolicyAssociatedMetadata`](crate::types::ServicePolicyAssociatedMetadata).
     pub fn build(self) -> crate::types::ServicePolicyAssociatedMetadata {
         crate::types::ServicePolicyAssociatedMetadata {
             policy_name: self.policy_name,
             policy_arn: self.policy_arn,
+            policy_owner_account_id: self.policy_owner_account_id,
+            policy_source: self.policy_source,
         }
     }
 }

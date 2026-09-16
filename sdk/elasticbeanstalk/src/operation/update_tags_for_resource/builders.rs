@@ -22,9 +22,9 @@ impl crate::operation::update_tags_for_resource::builders::UpdateTagsForResource
 }
 /// Fluent builder constructing a request to `UpdateTagsForResource`.
 ///
-/// <p>Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.</p>
+/// <p>Update the list of tags applied to an Elastic Beanstalk resource. Two lists can be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.</p>
 /// <p>Elastic Beanstalk supports tagging of all of its resources. For details about resource tagging, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging Application Resources</a>.</p>
-/// <p>If you create a custom IAM user policy to control permission to this operation, specify one of the following two virtual actions (or both) instead of the API operation name:</p>
+/// <p>If you create a custom policy to control permission to this operation, specify one of the following two virtual actions (or both) instead of the API operation name:</p>
 /// <dl>
 /// <dt>
 /// elasticbeanstalk:AddTags

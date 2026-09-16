@@ -15,6 +15,7 @@
 ///     ResaleAuthorizationSortBy::AvailabilityEndDate => { /* ... */ },
 ///     ResaleAuthorizationSortBy::CreatedDate => { /* ... */ },
 ///     ResaleAuthorizationSortBy::EntityId => { /* ... */ },
+///     ResaleAuthorizationSortBy::IssuerAccountId => { /* ... */ },
 ///     ResaleAuthorizationSortBy::LastModifiedDate => { /* ... */ },
 ///     ResaleAuthorizationSortBy::ManufacturerAccountId => { /* ... */ },
 ///     ResaleAuthorizationSortBy::ManufacturerLegalName => { /* ... */ },
@@ -24,6 +25,8 @@
 ///     ResaleAuthorizationSortBy::ProductName => { /* ... */ },
 ///     ResaleAuthorizationSortBy::ResellerAccountId => { /* ... */ },
 ///     ResaleAuthorizationSortBy::ResellerLegalName => { /* ... */ },
+///     ResaleAuthorizationSortBy::ResellerRole => { /* ... */ },
+///     ResaleAuthorizationSortBy::SourceAuthorization => { /* ... */ },
 ///     ResaleAuthorizationSortBy::Status => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -60,6 +63,8 @@ pub enum ResaleAuthorizationSortBy {
     #[allow(missing_docs)] // documentation missing in model
     EntityId,
     #[allow(missing_docs)] // documentation missing in model
+    IssuerAccountId,
+    #[allow(missing_docs)] // documentation missing in model
     LastModifiedDate,
     #[allow(missing_docs)] // documentation missing in model
     ManufacturerAccountId,
@@ -78,6 +83,10 @@ pub enum ResaleAuthorizationSortBy {
     #[allow(missing_docs)] // documentation missing in model
     ResellerLegalName,
     #[allow(missing_docs)] // documentation missing in model
+    ResellerRole,
+    #[allow(missing_docs)] // documentation missing in model
+    SourceAuthorization,
+    #[allow(missing_docs)] // documentation missing in model
     Status,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -89,6 +98,7 @@ impl ::std::convert::From<&str> for ResaleAuthorizationSortBy {
             "AvailabilityEndDate" => ResaleAuthorizationSortBy::AvailabilityEndDate,
             "CreatedDate" => ResaleAuthorizationSortBy::CreatedDate,
             "EntityId" => ResaleAuthorizationSortBy::EntityId,
+            "IssuerAccountId" => ResaleAuthorizationSortBy::IssuerAccountId,
             "LastModifiedDate" => ResaleAuthorizationSortBy::LastModifiedDate,
             "ManufacturerAccountId" => ResaleAuthorizationSortBy::ManufacturerAccountId,
             "ManufacturerLegalName" => ResaleAuthorizationSortBy::ManufacturerLegalName,
@@ -98,6 +108,8 @@ impl ::std::convert::From<&str> for ResaleAuthorizationSortBy {
             "ProductName" => ResaleAuthorizationSortBy::ProductName,
             "ResellerAccountID" => ResaleAuthorizationSortBy::ResellerAccountId,
             "ResellerLegalName" => ResaleAuthorizationSortBy::ResellerLegalName,
+            "ResellerRole" => ResaleAuthorizationSortBy::ResellerRole,
+            "SourceAuthorization" => ResaleAuthorizationSortBy::SourceAuthorization,
             "Status" => ResaleAuthorizationSortBy::Status,
             other => ResaleAuthorizationSortBy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -117,6 +129,7 @@ impl ResaleAuthorizationSortBy {
             ResaleAuthorizationSortBy::AvailabilityEndDate => "AvailabilityEndDate",
             ResaleAuthorizationSortBy::CreatedDate => "CreatedDate",
             ResaleAuthorizationSortBy::EntityId => "EntityId",
+            ResaleAuthorizationSortBy::IssuerAccountId => "IssuerAccountId",
             ResaleAuthorizationSortBy::LastModifiedDate => "LastModifiedDate",
             ResaleAuthorizationSortBy::ManufacturerAccountId => "ManufacturerAccountId",
             ResaleAuthorizationSortBy::ManufacturerLegalName => "ManufacturerLegalName",
@@ -126,6 +139,8 @@ impl ResaleAuthorizationSortBy {
             ResaleAuthorizationSortBy::ProductName => "ProductName",
             ResaleAuthorizationSortBy::ResellerAccountId => "ResellerAccountID",
             ResaleAuthorizationSortBy::ResellerLegalName => "ResellerLegalName",
+            ResaleAuthorizationSortBy::ResellerRole => "ResellerRole",
+            ResaleAuthorizationSortBy::SourceAuthorization => "SourceAuthorization",
             ResaleAuthorizationSortBy::Status => "Status",
             ResaleAuthorizationSortBy::Unknown(value) => value.as_str(),
         }
@@ -136,6 +151,7 @@ impl ResaleAuthorizationSortBy {
             "AvailabilityEndDate",
             "CreatedDate",
             "EntityId",
+            "IssuerAccountId",
             "LastModifiedDate",
             "ManufacturerAccountId",
             "ManufacturerLegalName",
@@ -145,6 +161,8 @@ impl ResaleAuthorizationSortBy {
             "ProductName",
             "ResellerAccountID",
             "ResellerLegalName",
+            "ResellerRole",
+            "SourceAuthorization",
             "Status",
         ]
     }
@@ -172,6 +190,7 @@ impl ::std::fmt::Display for ResaleAuthorizationSortBy {
             ResaleAuthorizationSortBy::AvailabilityEndDate => write!(f, "AvailabilityEndDate"),
             ResaleAuthorizationSortBy::CreatedDate => write!(f, "CreatedDate"),
             ResaleAuthorizationSortBy::EntityId => write!(f, "EntityId"),
+            ResaleAuthorizationSortBy::IssuerAccountId => write!(f, "IssuerAccountId"),
             ResaleAuthorizationSortBy::LastModifiedDate => write!(f, "LastModifiedDate"),
             ResaleAuthorizationSortBy::ManufacturerAccountId => write!(f, "ManufacturerAccountId"),
             ResaleAuthorizationSortBy::ManufacturerLegalName => write!(f, "ManufacturerLegalName"),
@@ -181,6 +200,8 @@ impl ::std::fmt::Display for ResaleAuthorizationSortBy {
             ResaleAuthorizationSortBy::ProductName => write!(f, "ProductName"),
             ResaleAuthorizationSortBy::ResellerAccountId => write!(f, "ResellerAccountID"),
             ResaleAuthorizationSortBy::ResellerLegalName => write!(f, "ResellerLegalName"),
+            ResaleAuthorizationSortBy::ResellerRole => write!(f, "ResellerRole"),
+            ResaleAuthorizationSortBy::SourceAuthorization => write!(f, "SourceAuthorization"),
             ResaleAuthorizationSortBy::Status => write!(f, "Status"),
             ResaleAuthorizationSortBy::Unknown(value) => write!(f, "{value}"),
         }

@@ -4,25 +4,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEventsInput {
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
     pub application_name: ::std::option::Option<::std::string::String>,
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
     pub template_name: ::std::option::Option<::std::string::String>,
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub environment_id: ::std::option::Option<::std::string::String>,
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
-    /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
+    /// <p>The ARN of a custom platform version. If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
     pub platform_arn: ::std::option::Option<::std::string::String>,
-    /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
     pub request_id: ::std::option::Option<::std::string::String>,
     /// <p>If specified, limits the events returned from this call to include only those with the specified severity or higher.</p>
     pub severity: ::std::option::Option<crate::types::EventSeverity>,
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the maximum number of events that can be returned, beginning with the most recent event.</p>
     pub max_records: ::std::option::Option<i32>,
@@ -30,31 +30,31 @@ pub struct DescribeEventsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventsInput {
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
     pub fn application_name(&self) -> ::std::option::Option<&str> {
         self.application_name.as_deref()
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
     pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
     pub fn template_name(&self) -> ::std::option::Option<&str> {
         self.template_name.as_deref()
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn environment_id(&self) -> ::std::option::Option<&str> {
         self.environment_id.as_deref()
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn environment_name(&self) -> ::std::option::Option<&str> {
         self.environment_name.as_deref()
     }
-    /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
+    /// <p>The ARN of a custom platform version. If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
     pub fn platform_arn(&self) -> ::std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
     pub fn request_id(&self) -> ::std::option::Option<&str> {
         self.request_id.as_deref()
     }
@@ -62,11 +62,11 @@ impl DescribeEventsInput {
     pub fn severity(&self) -> ::std::option::Option<&crate::types::EventSeverity> {
         self.severity.as_ref()
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -104,101 +104,101 @@ pub struct DescribeEventsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEventsInputBuilder {
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.application_name = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_name
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
     pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.version_label = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
     pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version_label = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this application version.</p>
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_label
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
     pub fn template_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.template_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
     pub fn set_template_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.template_name = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_id = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_id
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.environment_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.environment_name = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this environment.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_name
     }
-    /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
+    /// <p>The ARN of a custom platform version. If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.platform_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
+    /// <p>The ARN of a custom platform version. If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.platform_arn = input;
         self
     }
-    /// <p>The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
+    /// <p>The ARN of a custom platform version. If specified, Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.</p>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.platform_arn
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
     pub fn request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.request_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
     pub fn set_request_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.request_id = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the described events to include only those associated with this request ID.</p>
     pub fn get_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_id
     }
@@ -216,31 +216,31 @@ impl DescribeEventsInputBuilder {
     pub fn get_severity(&self) -> &::std::option::Option<crate::types::EventSeverity> {
         &self.severity
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.start_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
     pub fn set_start_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.start_time = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }

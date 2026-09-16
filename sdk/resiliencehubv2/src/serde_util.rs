@@ -227,6 +227,15 @@ pub(crate) fn delete_user_journey_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_dependency_insights_output_output_correct_errors(
+    mut builder: crate::operation::get_dependency_insights::builders::GetDependencyInsightsOutputBuilder,
+) -> crate::operation::get_dependency_insights::builders::GetDependencyInsightsOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DependencyInsightsStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_policy_output_output_correct_errors(
     mut builder: crate::operation::get_policy::builders::GetPolicyOutputBuilder,
 ) -> crate::operation::get_policy::builders::GetPolicyOutputBuilder {
@@ -389,6 +398,15 @@ pub(crate) fn list_policies_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_policy_events_output_output_correct_errors(
+    mut builder: crate::operation::list_policy_events::builders::ListPolicyEventsOutputBuilder,
+) -> crate::operation::list_policy_events::builders::ListPolicyEventsOutputBuilder {
+    if builder.events.is_none() {
+        builder.events = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_reports_output_output_correct_errors(
     mut builder: crate::operation::list_reports::builders::ListReportsOutputBuilder,
 ) -> crate::operation::list_reports::builders::ListReportsOutputBuilder {
@@ -529,6 +547,15 @@ pub(crate) fn list_user_journeys_output_output_correct_errors(
 ) -> crate::operation::list_user_journeys::builders::ListUserJourneysOutputBuilder {
     if builder.user_journey_summaries.is_none() {
         builder.user_journey_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_dependency_insights_output_output_correct_errors(
+    mut builder: crate::operation::start_dependency_insights::builders::StartDependencyInsightsOutputBuilder,
+) -> crate::operation::start_dependency_insights::builders::StartDependencyInsightsOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DependencyInsightsStatus>().ok()
     }
     builder
 }
@@ -829,6 +856,18 @@ pub(crate) fn dependency_discovery_config_correct_errors(
     builder
 }
 
+pub(crate) fn dependency_insight_correct_errors(
+    mut builder: crate::types::builders::DependencyInsightBuilder,
+) -> crate::types::builders::DependencyInsightBuilder {
+    if builder.category.is_none() {
+        builder.category = "no value was set".parse::<crate::types::InsightsCategory>().ok()
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dependency_summary_correct_errors(
     mut builder: crate::types::builders::DependencySummaryBuilder,
 ) -> crate::types::builders::DependencySummaryBuilder {
@@ -879,6 +918,34 @@ pub(crate) fn permission_model_correct_errors(
 ) -> crate::types::builders::PermissionModelBuilder {
     if builder.invoker_role_name.is_none() {
         builder.invoker_role_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn policy_event_correct_errors(mut builder: crate::types::builders::PolicyEventBuilder) -> crate::types::builders::PolicyEventBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    if builder.timestamp.is_none() {
+        builder.timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.event_type.is_none() {
+        builder.event_type = "no value was set".parse::<crate::types::PolicyEventType>().ok()
+    }
+    if builder.policy_arn.is_none() {
+        builder.policy_arn = Some(Default::default())
+    }
+    if builder.actor.is_none() {
+        builder.actor = {
+            let builder = crate::types::builders::EventActorBuilder::default();
+            crate::serde_util::event_actor_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.event_details.is_none() {
+        builder.event_details = {
+            let builder = crate::types::builders::PolicyEventDetailsBuilder::default();
+            crate::serde_util::policy_event_details_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -1237,6 +1304,18 @@ pub(crate) fn observability_alarm_summary_correct_errors(
     }
     if builder.account_id.is_none() {
         builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn policy_event_details_correct_errors(
+    mut builder: crate::types::builders::PolicyEventDetailsBuilder,
+) -> crate::types::builders::PolicyEventDetailsBuilder {
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
     }
     builder
 }

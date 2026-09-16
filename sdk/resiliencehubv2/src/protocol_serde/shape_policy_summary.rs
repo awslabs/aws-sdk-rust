@@ -63,6 +63,16 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "sharingEnabled" => {
+                            builder = builder.set_sharing_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "organizationId" => {
+                            builder = builder.set_organization_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "associatedServiceCount" => {
                             builder = builder.set_associated_service_count(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

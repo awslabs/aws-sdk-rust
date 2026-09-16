@@ -6,7 +6,7 @@
 pub struct OptionSpecification {
     /// <p>A unique resource name for a time-based scaling configuration option.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub namespace: ::std::option::Option<::std::string::String>,
     /// <p>The name of the configuration option.</p>
     pub option_name: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl OptionSpecification {
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub fn namespace(&self) -> ::std::option::Option<&str> {
         self.namespace.as_deref()
     }
@@ -55,17 +55,17 @@ impl OptionSpecificationBuilder {
     pub fn get_resource_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_name
     }
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.namespace = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.namespace = input;
         self
     }
-    /// <p>A unique namespace identifying the option's associated AWS resource.</p>
+    /// <p>A unique namespace identifying the option's associated Amazon Web Services resource.</p>
     pub fn get_namespace(&self) -> &::std::option::Option<::std::string::String> {
         &self.namespace
     }

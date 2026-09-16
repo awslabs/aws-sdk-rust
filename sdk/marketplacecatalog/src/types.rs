@@ -183,6 +183,10 @@ pub use crate::types::_resale_authorization_last_modified_date_filter::ResaleAut
 
 pub use crate::types::_resale_authorization_reseller_role_filter::ResaleAuthorizationResellerRoleFilter;
 
+pub use crate::types::_resale_authorization_source_authorization_filter::ResaleAuthorizationSourceAuthorizationFilter;
+
+pub use crate::types::_resale_authorization_issuer_account_id_filter::ResaleAuthorizationIssuerAccountIdFilter;
+
 pub use crate::types::_machine_learning_product_entity_id_filter::MachineLearningProductEntityIdFilter;
 
 pub use crate::types::_machine_learning_product_last_modified_date_filter::MachineLearningProductLastModifiedDateFilter;
@@ -523,6 +527,8 @@ mod _resale_authorization_entity_id_filter;
 
 mod _resale_authorization_filters;
 
+mod _resale_authorization_issuer_account_id_filter;
+
 mod _resale_authorization_last_modified_date_filter;
 
 mod _resale_authorization_last_modified_date_filter_date_range;
@@ -550,6 +556,8 @@ mod _resale_authorization_reseller_role_string;
 mod _resale_authorization_sort;
 
 mod _resale_authorization_sort_by;
+
+mod _resale_authorization_source_authorization_filter;
 
 mod _resale_authorization_status_filter;
 

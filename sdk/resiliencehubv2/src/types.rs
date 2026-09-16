@@ -39,6 +39,10 @@ pub use crate::types::_test::Test;
 
 pub use crate::types::_user_journey::UserJourney;
 
+pub use crate::types::_dependency_insights_status::DependencyInsightsStatus;
+
+pub use crate::types::_dependency_insights_error_code::DependencyInsightsErrorCode;
+
 pub use crate::types::_finding::Finding;
 
 pub use crate::types::_test_run::TestRun;
@@ -101,6 +105,8 @@ pub use crate::types::_stop_condition::StopCondition;
 
 pub use crate::types::_test_source_input::TestSourceInput;
 
+pub use crate::types::_dependency_insight::DependencyInsight;
+
 pub use crate::types::_policy_component::PolicyComponent;
 
 pub use crate::types::_test_run_report_configuration::TestRunReportConfiguration;
@@ -118,6 +124,10 @@ pub use crate::types::_finding_summary::FindingSummary;
 pub use crate::types::_input_source_summary::InputSourceSummary;
 
 pub use crate::types::_policy_summary::PolicySummary;
+
+pub use crate::types::_policy_event_type::PolicyEventType;
+
+pub use crate::types::_policy_event::PolicyEvent;
 
 pub use crate::types::_resolved_target_resource::ResolvedTargetResource;
 
@@ -191,6 +201,8 @@ pub use crate::types::_success_criteria_alarm_input::SuccessCriteriaAlarmInput;
 
 pub use crate::types::_observability_alarm_input::ObservabilityAlarmInput;
 
+pub use crate::types::_insights_category::InsightsCategory;
+
 pub use crate::types::_infrastructure_and_code_recommendation::InfrastructureAndCodeRecommendation;
 
 pub use crate::types::_observability_recommendation::ObservabilityRecommendation;
@@ -207,11 +219,13 @@ pub use crate::types::_assessment_step::AssessmentStep;
 
 pub use crate::types::_assessment_error_code::AssessmentErrorCode;
 
+pub use crate::types::_event_actor::EventActor;
+
+pub use crate::types::_policy_event_details::PolicyEventDetails;
+
 pub use crate::types::_input_source::InputSource;
 
 pub use crate::types::_resource::Resource;
-
-pub use crate::types::_event_actor::EventActor;
 
 pub use crate::types::_service_event_details::ServiceEventDetails;
 
@@ -241,6 +255,8 @@ pub use crate::types::_parameter_type::ParameterType;
 
 pub use crate::types::_actor_type::ActorType;
 
+pub use crate::types::_policy_event_metadata::PolicyEventMetadata;
+
 pub use crate::types::_service_event_metadata::ServiceEventMetadata;
 
 pub use crate::types::_edge_property_summary::EdgePropertySummary;
@@ -256,6 +272,14 @@ pub use crate::types::_test_source_outcome::TestSourceOutcome;
 pub use crate::types::_eks_label_selector_requirement::EksLabelSelectorRequirement;
 
 pub use crate::types::_query_data_point::QueryDataPoint;
+
+pub use crate::types::_policy_attached_to_service_metadata::PolicyAttachedToServiceMetadata;
+
+pub use crate::types::_policy_detached_from_service_metadata::PolicyDetachedFromServiceMetadata;
+
+pub use crate::types::_policy_sharing_revoked_metadata::PolicySharingRevokedMetadata;
+
+pub use crate::types::_policy_deleted_metadata::PolicyDeletedMetadata;
 
 pub use crate::types::_service_created_metadata::ServiceCreatedMetadata;
 
@@ -321,6 +345,8 @@ pub use crate::types::_test_run_source_event_error_code::TestRunSourceEventError
 
 pub use crate::types::_eks_label_selector_operator::EksLabelSelectorOperator;
 
+pub use crate::types::_policy_disassociation_reason::PolicyDisassociationReason;
+
 pub use crate::types::_user_journey_changes::UserJourneyChanges;
 
 pub use crate::types::_service_reference::ServiceReference;
@@ -381,6 +407,12 @@ mod _dependency_discovery_input;
 
 mod _dependency_discovery_status;
 
+mod _dependency_insight;
+
+mod _dependency_insights_error_code;
+
+mod _dependency_insights_status;
+
 mod _dependency_summary;
 
 mod _disaster_recovery_source;
@@ -421,6 +453,8 @@ mod _input_source_summary;
 
 mod _input_source_type;
 
+mod _insights_category;
+
 mod _logging_configuration;
 
 mod _multi_az_disaster_recovery_approach;
@@ -443,7 +477,25 @@ mod _permission_model;
 
 mod _policy;
 
+mod _policy_attached_to_service_metadata;
+
 mod _policy_component;
+
+mod _policy_deleted_metadata;
+
+mod _policy_detached_from_service_metadata;
+
+mod _policy_disassociation_reason;
+
+mod _policy_event;
+
+mod _policy_event_details;
+
+mod _policy_event_metadata;
+
+mod _policy_event_type;
+
+mod _policy_sharing_revoked_metadata;
 
 mod _policy_summary;
 

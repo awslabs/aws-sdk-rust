@@ -270,7 +270,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateStorage
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateStorageLocationError {
-    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more Amazon Web Services services.</p>
     InsufficientPrivilegesException(crate::types::error::InsufficientPrivilegesException),
     /// <p>The specified account does not have a subscription to Amazon S3.</p>
     S3SubscriptionRequiredException(crate::types::error::S3SubscriptionRequiredException),

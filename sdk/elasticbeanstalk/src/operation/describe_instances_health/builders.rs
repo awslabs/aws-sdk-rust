@@ -22,7 +22,10 @@ impl crate::operation::describe_instances_health::builders::DescribeInstancesHea
 }
 /// Fluent builder constructing a request to `DescribeInstancesHealth`.
 ///
-/// <p>Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health reporting</a>.</p>
+/// <p>Retrieves detailed information about the health of instances in your Elastic Beanstalk environments. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health reporting</a>.</p>
+/// <p>This action only returns information about environments that the calling principle has IAM permissions to access. For example, consider a case where a user only has permission to access one of three environments. When the user calls this action, the response will only include the one environment that the user has permission to access instead of all three environments. If the user doesn’t have access to any of the environments an empty result is returned.</p><note>
+/// <p>The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a> managed policy allows operators to view information about resources related to Elastic Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html"> Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer Guide</i>. For detailed instructions to attach a policy to a user or group, see the section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed"> Controlling access with managed policies</a> in the same topic.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeInstancesHealthFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +111,31 @@ impl DescribeInstancesHealthFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+    /// <p>Specify the Elastic Beanstalk environment by name.</p>
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
-    /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+    /// <p>Specify the Elastic Beanstalk environment by name.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
-    /// <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+    /// <p>Specify the Elastic Beanstalk environment by name.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_name()
     }
-    /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+    /// <p>Specify the Elastic Beanstalk environment by ID.</p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+    /// <p>Specify the Elastic Beanstalk environment by ID.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+    /// <p>Specify the Elastic Beanstalk environment by ID.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }

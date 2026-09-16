@@ -23,6 +23,9 @@ impl crate::operation::describe_environments::builders::DescribeEnvironmentsInpu
 /// Fluent builder constructing a request to `DescribeEnvironments`.
 ///
 /// <p>Returns descriptions for existing environments.</p>
+/// <p>This action only returns information about environments that the calling principle has IAM permissions to access. For example, consider a case where a user only has permission to access one of three environments. When the user calls the <i>DescribeEnvironments</i> action, the response will only include the one environment that the user has permission to access instead of all three environments. If the user doesn’t have access to any of the environments an empty result is returned.</p><note>
+/// <p>The <a href="https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSElasticBeanstalkReadOnly.html">AWSElasticBeanstalkReadOnly</a> managed policy allows operators to view information about resources related to Elastic Beanstalk environments. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html"> Managing Elastic Beanstalk user policies</a> in the <i>Elastic Beanstalk Developer Guide</i>. For detailed instructions to attach a policy to a user or group, see the section <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#iam-userpolicies-managed"> Controlling access with managed policies</a> in the same topic.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,31 +111,31 @@ impl DescribeEnvironmentsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
     pub fn application_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
     pub fn set_application_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_application_name(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</p>
     pub fn get_application_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_application_name()
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
     pub fn version_label(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.version_label(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
     pub fn set_version_label(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_version_label(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</p>
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_version_label()
     }
@@ -141,17 +144,17 @@ impl DescribeEnvironmentsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_ids`](Self::set_environment_ids).
     ///
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
     pub fn environment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_ids(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
     pub fn set_environment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_environment_ids(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</p>
     pub fn get_environment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_environment_ids()
     }
@@ -160,17 +163,17 @@ impl DescribeEnvironmentsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_environment_names`](Self::set_environment_names).
     ///
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
     pub fn environment_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_names(input.into());
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
     pub fn set_environment_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_environment_names(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
+    /// <p>If specified, Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</p>
     pub fn get_environment_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_environment_names()
     }

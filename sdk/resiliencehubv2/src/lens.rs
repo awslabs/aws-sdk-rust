@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_policies_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_policy_events_output_output_next_token(
+    input: &crate::operation::list_policy_events::ListPolicyEventsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_reports_output_output_next_token(
     input: &crate::operation::list_reports::ListReportsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -268,6 +278,13 @@ pub(crate) fn lens_list_policies_output_output_policy_summaries(
     input: crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>> {
     let input = input.policy_summaries;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_policy_events_output_output_events(
+    input: crate::operation::list_policy_events::ListPolicyEventsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicyEvent>> {
+    let input = input.events;
     ::std::option::Option::Some(input)
 }
 

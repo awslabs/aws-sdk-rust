@@ -3416,6 +3416,38 @@ impl From<crate::operation::search_profiles::SearchProfilesError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_recommendations::SearchRecommendationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_recommendations::SearchRecommendationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_recommendations::SearchRecommendationsError> for Error {
+    fn from(err: crate::operation::search_recommendations::SearchRecommendationsError) -> Self {
+        match err {
+            crate::operation::search_recommendations::SearchRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_recommendations::SearchRecommendationsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::search_recommendations::SearchRecommendationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::search_recommendations::SearchRecommendationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_recommendations::SearchRecommendationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_recommendations::SearchRecommendationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_recommender::StartRecommenderError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

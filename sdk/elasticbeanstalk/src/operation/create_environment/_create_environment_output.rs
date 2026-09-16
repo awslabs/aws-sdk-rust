@@ -31,7 +31,13 @@ pub struct CreateEnvironmentOutput {
     /// <p>The current operational status of the environment:</p>
     /// <ul>
     /// <li>
+    /// <p><code>Aborting</code>: Environment is in the process of aborting a deployment.</p></li>
+    /// <li>
     /// <p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li>
+    /// <p><code>LinkingFrom</code>: Environment is in the process of being linked to by another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
+    /// <li>
+    /// <p><code>LinkingTo</code>: Environment is in the process of linking to another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
     /// <li>
     /// <p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
     /// <li>
@@ -46,7 +52,7 @@ pub struct CreateEnvironmentOutput {
     /// <p><code>true:</code> There is an update in progress.</p>
     /// <p><code>false:</code> There are no updates currently in progress.</p>
     pub abortable_operation_in_progress: ::std::option::Option<bool>,
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
     /// <li>
     /// <p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
@@ -61,7 +67,7 @@ pub struct CreateEnvironmentOutput {
     pub health: ::std::option::Option<crate::types::EnvironmentHealth>,
     /// <p>Returns the health status of the application running in your environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a>.</p>
     pub health_status: ::std::option::Option<crate::types::EnvironmentHealthStatus>,
-    /// <p>The description of the AWS resources used by this environment.</p>
+    /// <p>The description of the Amazon Web Services resources used by this environment.</p>
     pub resources: ::std::option::Option<crate::types::EnvironmentResourcesDescription>,
     /// <p>Describes the current tier of this environment.</p>
     pub tier: ::std::option::Option<crate::types::EnvironmentTier>,
@@ -69,7 +75,10 @@ pub struct CreateEnvironmentOutput {
     pub environment_links: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentLink>>,
     /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
     pub environment_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <important>
+    /// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+    /// </important>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role.</p>
     pub operations_role: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -125,7 +134,13 @@ impl CreateEnvironmentOutput {
     /// <p>The current operational status of the environment:</p>
     /// <ul>
     /// <li>
+    /// <p><code>Aborting</code>: Environment is in the process of aborting a deployment.</p></li>
+    /// <li>
     /// <p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li>
+    /// <p><code>LinkingFrom</code>: Environment is in the process of being linked to by another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
+    /// <li>
+    /// <p><code>LinkingTo</code>: Environment is in the process of linking to another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
     /// <li>
     /// <p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
     /// <li>
@@ -144,7 +159,7 @@ impl CreateEnvironmentOutput {
     pub fn abortable_operation_in_progress(&self) -> ::std::option::Option<bool> {
         self.abortable_operation_in_progress
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
     /// <li>
     /// <p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
@@ -163,7 +178,7 @@ impl CreateEnvironmentOutput {
     pub fn health_status(&self) -> ::std::option::Option<&crate::types::EnvironmentHealthStatus> {
         self.health_status.as_ref()
     }
-    /// <p>The description of the AWS resources used by this environment.</p>
+    /// <p>The description of the Amazon Web Services resources used by this environment.</p>
     pub fn resources(&self) -> ::std::option::Option<&crate::types::EnvironmentResourcesDescription> {
         self.resources.as_ref()
     }
@@ -181,7 +196,10 @@ impl CreateEnvironmentOutput {
     pub fn environment_arn(&self) -> ::std::option::Option<&str> {
         self.environment_arn.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <important>
+    /// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+    /// </important>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role.</p>
     pub fn operations_role(&self) -> ::std::option::Option<&str> {
         self.operations_role.as_deref()
     }
@@ -397,7 +415,13 @@ impl CreateEnvironmentOutputBuilder {
     /// <p>The current operational status of the environment:</p>
     /// <ul>
     /// <li>
+    /// <p><code>Aborting</code>: Environment is in the process of aborting a deployment.</p></li>
+    /// <li>
     /// <p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li>
+    /// <p><code>LinkingFrom</code>: Environment is in the process of being linked to by another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
+    /// <li>
+    /// <p><code>LinkingTo</code>: Environment is in the process of linking to another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
     /// <li>
     /// <p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
     /// <li>
@@ -414,7 +438,13 @@ impl CreateEnvironmentOutputBuilder {
     /// <p>The current operational status of the environment:</p>
     /// <ul>
     /// <li>
+    /// <p><code>Aborting</code>: Environment is in the process of aborting a deployment.</p></li>
+    /// <li>
     /// <p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li>
+    /// <p><code>LinkingFrom</code>: Environment is in the process of being linked to by another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
+    /// <li>
+    /// <p><code>LinkingTo</code>: Environment is in the process of linking to another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
     /// <li>
     /// <p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
     /// <li>
@@ -431,7 +461,13 @@ impl CreateEnvironmentOutputBuilder {
     /// <p>The current operational status of the environment:</p>
     /// <ul>
     /// <li>
+    /// <p><code>Aborting</code>: Environment is in the process of aborting a deployment.</p></li>
+    /// <li>
     /// <p><code>Launching</code>: Environment is in the process of initial deployment.</p></li>
+    /// <li>
+    /// <p><code>LinkingFrom</code>: Environment is in the process of being linked to by another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
+    /// <li>
+    /// <p><code>LinkingTo</code>: Environment is in the process of linking to another environment. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-links.html">Environment links</a> for details.</p></li>
     /// <li>
     /// <p><code>Updating</code>: Environment is in the process of updating its configuration settings or application version.</p></li>
     /// <li>
@@ -464,7 +500,7 @@ impl CreateEnvironmentOutputBuilder {
     pub fn get_abortable_operation_in_progress(&self) -> &::std::option::Option<bool> {
         &self.abortable_operation_in_progress
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
     /// <li>
     /// <p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
@@ -480,7 +516,7 @@ impl CreateEnvironmentOutputBuilder {
         self.health = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
     /// <li>
     /// <p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
@@ -496,7 +532,7 @@ impl CreateEnvironmentOutputBuilder {
         self.health = input;
         self
     }
-    /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
+    /// <p>Describes the health status of the environment. Elastic Beanstalk indicates the failure levels for a running environment:</p>
     /// <ul>
     /// <li>
     /// <p><code>Red</code>: Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</p></li>
@@ -525,17 +561,17 @@ impl CreateEnvironmentOutputBuilder {
     pub fn get_health_status(&self) -> &::std::option::Option<crate::types::EnvironmentHealthStatus> {
         &self.health_status
     }
-    /// <p>The description of the AWS resources used by this environment.</p>
+    /// <p>The description of the Amazon Web Services resources used by this environment.</p>
     pub fn resources(mut self, input: crate::types::EnvironmentResourcesDescription) -> Self {
         self.resources = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The description of the AWS resources used by this environment.</p>
+    /// <p>The description of the Amazon Web Services resources used by this environment.</p>
     pub fn set_resources(mut self, input: ::std::option::Option<crate::types::EnvironmentResourcesDescription>) -> Self {
         self.resources = input;
         self
     }
-    /// <p>The description of the AWS resources used by this environment.</p>
+    /// <p>The description of the Amazon Web Services resources used by this environment.</p>
     pub fn get_resources(&self) -> &::std::option::Option<crate::types::EnvironmentResourcesDescription> {
         &self.resources
     }
@@ -587,17 +623,26 @@ impl CreateEnvironmentOutputBuilder {
     pub fn get_environment_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.environment_arn
     }
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <important>
+    /// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+    /// </important>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role.</p>
     pub fn operations_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.operations_role = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <important>
+    /// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+    /// </important>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role.</p>
     pub fn set_operations_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.operations_role = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <important>
+    /// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+    /// </important>
+    /// <p>The Amazon Resource Name (ARN) of the environment's operations role.</p>
     pub fn get_operations_role(&self) -> &::std::option::Option<::std::string::String> {
         &self.operations_role
     }

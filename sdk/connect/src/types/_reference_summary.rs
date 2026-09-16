@@ -6,6 +6,8 @@
 pub enum ReferenceSummary {
     /// <p>Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>. Otherwise, null.</p>
     Attachment(crate::types::AttachmentReference),
+    /// <p>Information about a reference when the <code>referenceType</code> is <code>CONTACT_ANALYSIS</code>. Otherwise, null.</p>
+    ContactAnalysis(crate::types::ContactAnalysisReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>DATE</code>. Otherwise, null.</p>
     Date(crate::types::DateReference),
     /// <p>Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>. Otherwise, null.</p>
@@ -47,6 +49,19 @@ impl ReferenceSummary {
     /// Returns true if this is a [`Attachment`](crate::types::ReferenceSummary::Attachment).
     pub fn is_attachment(&self) -> bool {
         self.as_attachment().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ContactAnalysis`](crate::types::ReferenceSummary::ContactAnalysis), extracting the inner [`ContactAnalysisReference`](crate::types::ContactAnalysisReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_contact_analysis(&self) -> ::std::result::Result<&crate::types::ContactAnalysisReference, &Self> {
+        if let ReferenceSummary::ContactAnalysis(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ContactAnalysis`](crate::types::ReferenceSummary::ContactAnalysis).
+    pub fn is_contact_analysis(&self) -> bool {
+        self.as_contact_analysis().is_ok()
     }
     /// Tries to convert the enum instance into [`Date`](crate::types::ReferenceSummary::Date), extracting the inner [`DateReference`](crate::types::DateReference).
     /// Returns `Err(&Self)` if it can't be converted.

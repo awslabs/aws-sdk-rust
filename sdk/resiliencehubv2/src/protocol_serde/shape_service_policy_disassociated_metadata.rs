@@ -35,6 +35,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "policyOwnerAccountId" => {
+                            builder = builder.set_policy_owner_account_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "policySource" => {
+                            builder = builder.set_policy_source(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PolicyValueSource::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "reason" => {
+                            builder = builder.set_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::PolicyDisassociationReason::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

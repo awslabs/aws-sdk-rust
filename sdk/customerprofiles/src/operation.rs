@@ -307,6 +307,9 @@ pub mod put_segment_subscription;
 /// Types for the `SearchProfiles` operation.
 pub mod search_profiles;
 
+/// Types for the `SearchRecommendations` operation.
+pub mod search_recommendations;
+
 /// Types for the `StartRecommender` operation.
 pub mod start_recommender;
 

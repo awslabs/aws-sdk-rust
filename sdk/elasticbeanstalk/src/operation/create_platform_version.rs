@@ -331,7 +331,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreatePlatfor
 pub enum CreatePlatformVersionError {
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::types::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more Amazon Web Services services.</p>
     InsufficientPrivilegesException(crate::types::error::InsufficientPrivilegesException),
     /// <p>You have exceeded the maximum number of allowed platforms associated with the account.</p>
     TooManyPlatformsException(crate::types::error::TooManyPlatformsException),

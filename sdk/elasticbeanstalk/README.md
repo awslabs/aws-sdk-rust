@@ -1,12 +1,12 @@
 # aws-sdk-elasticbeanstalk
 
-AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services cloud.
+Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services Cloud.
 
-For more information about this product, go to the [AWS Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/) details page. The location of the latest AWS Elastic Beanstalk WSDL is [https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl](https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl). To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to [Tools for Amazon Web Services](http://aws.amazon.com/tools/).
+For more information about this product, go to the [Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/) details page. The location of the latest Elastic Beanstalk WSDL is [https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl](https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl). To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to [Tools for Amazon Web Services](http://aws.amazon.com/tools/).
 
 __Endpoints__
 
-For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region) in the _Amazon Web Services Glossary_.
+For a list of region-specific endpoints that Elastic Beanstalk supports, go to [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region) in the _Amazon Web Services Glossary_.
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-elasticbeanstalk = "1.113.0"
+aws-sdk-elasticbeanstalk = "1.114.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

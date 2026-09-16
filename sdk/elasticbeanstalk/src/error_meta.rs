@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>AWS CodeBuild is not available in the specified region.</p>
+    /// <p>CodeBuild is not available in the specified region.</p>
     CodeBuildNotInServiceRegionException(crate::types::error::CodeBuildNotInServiceRegionException),
     /// <p>A generic service exception has occurred.</p>
     ElasticBeanstalkServiceException(crate::types::error::ElasticBeanstalkServiceException),
-    /// <p>The specified account does not have sufficient privileges for one or more AWS services.</p>
+    /// <p>The specified account does not have sufficient privileges for one or more Amazon Web Services services.</p>
     InsufficientPrivilegesException(crate::types::error::InsufficientPrivilegesException),
     /// <p>One or more input parameters is not valid. Please correct the input parameters and try the operation again.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),

@@ -22,7 +22,10 @@ impl crate::operation::associate_environment_operations_role::builders::Associat
 }
 /// Fluent builder constructing a request to `AssociateEnvironmentOperationsRole`.
 ///
-/// <p>Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the associated operations role for permissions to downstream services during subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+/// <important>
+/// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+/// </important>
+/// <p>Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the associated operations role for permissions to downstream services during subsequent calls acting on this environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AssociateEnvironmentOperationsRoleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -15,6 +15,8 @@ pub struct UpdatePolicyInput {
     pub multi_region: ::std::option::Option<crate::types::MultiRegionTargets>,
     /// <p>The updated data recovery targets for the policy.</p>
     pub data_recovery: ::std::option::Option<crate::types::DataRecoveryTargets>,
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Disabling sharing stops member services from using the policy.</p>
+    pub sharing_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePolicyInput {
     /// <p>ARN identifier.</p>
@@ -41,6 +43,10 @@ impl UpdatePolicyInput {
     pub fn data_recovery(&self) -> ::std::option::Option<&crate::types::DataRecoveryTargets> {
         self.data_recovery.as_ref()
     }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Disabling sharing stops member services from using the policy.</p>
+    pub fn sharing_enabled(&self) -> ::std::option::Option<bool> {
+        self.sharing_enabled
+    }
 }
 impl UpdatePolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
@@ -59,6 +65,7 @@ pub struct UpdatePolicyInputBuilder {
     pub(crate) multi_az: ::std::option::Option<crate::types::MultiAzTargets>,
     pub(crate) multi_region: ::std::option::Option<crate::types::MultiRegionTargets>,
     pub(crate) data_recovery: ::std::option::Option<crate::types::DataRecoveryTargets>,
+    pub(crate) sharing_enabled: ::std::option::Option<bool>,
 }
 impl UpdatePolicyInputBuilder {
     /// <p>ARN identifier.</p>
@@ -146,6 +153,20 @@ impl UpdatePolicyInputBuilder {
     pub fn get_data_recovery(&self) -> &::std::option::Option<crate::types::DataRecoveryTargets> {
         &self.data_recovery
     }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Disabling sharing stops member services from using the policy.</p>
+    pub fn sharing_enabled(mut self, input: bool) -> Self {
+        self.sharing_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Disabling sharing stops member services from using the policy.</p>
+    pub fn set_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.sharing_enabled = input;
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Disabling sharing stops member services from using the policy.</p>
+    pub fn get_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        &self.sharing_enabled
+    }
     /// Consumes the builder and constructs a [`UpdatePolicyInput`](crate::operation::update_policy::UpdatePolicyInput).
     pub fn build(
         self,
@@ -157,6 +178,7 @@ impl UpdatePolicyInputBuilder {
             multi_az: self.multi_az,
             multi_region: self.multi_region,
             data_recovery: self.data_recovery,
+            sharing_enabled: self.sharing_enabled,
         })
     }
 }

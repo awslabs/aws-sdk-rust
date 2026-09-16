@@ -75,6 +75,10 @@ pub use crate::types::_field_source_profile_ids::FieldSourceProfileIdsBuilder;
 
 pub use crate::types::_flow_definition::FlowDefinitionBuilder;
 
+pub use crate::types::_recommender::RecommenderBuilder;
+
+pub use crate::types::_recommendation_metadata::RecommendationMetadataBuilder;
+
 pub use crate::types::_update_address::UpdateAddressBuilder;
 
 pub use crate::types::_range_override::RangeOverrideBuilder;

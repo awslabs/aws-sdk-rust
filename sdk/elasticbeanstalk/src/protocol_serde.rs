@@ -223,6 +223,8 @@ pub(crate) mod shape_elastic_beanstalk_service_exception;
 
 pub(crate) mod shape_environment_tier;
 
+pub(crate) mod shape_image_configuration;
+
 pub(crate) mod shape_insufficient_privileges_exception;
 
 pub(crate) mod shape_invalid_request_exception;
@@ -309,6 +311,10 @@ pub(crate) mod shape_environment_resources_description;
 
 pub(crate) mod shape_event_description_list;
 
+pub(crate) mod shape_image_build_configuration;
+
+pub(crate) mod shape_image_source;
+
 pub(crate) mod shape_instance_health_list;
 
 pub(crate) mod shape_instance_health_summary;
@@ -332,6 +338,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_validation_messages_list;
 
 pub(crate) mod shape_auto_scaling_group_list;
+
+pub(crate) mod shape_cluster;
 
 pub(crate) mod shape_configuration_option_description;
 

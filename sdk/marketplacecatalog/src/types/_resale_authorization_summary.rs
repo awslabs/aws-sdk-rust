@@ -28,6 +28,10 @@ pub struct ResaleAuthorizationSummary {
     pub availability_end_date: ::std::option::Option<::std::string::String>,
     /// <p>The reseller role of the ResaleAuthorization.</p>
     pub reseller_role: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleString>,
+    /// <p>The source authorization of the ResaleAuthorization.</p>
+    pub source_authorization: ::std::option::Option<::std::string::String>,
+    /// <p>The issuer account ID of the ResaleAuthorization.</p>
+    pub issuer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ResaleAuthorizationSummary {
     /// <p>The name of the ResaleAuthorization.</p>
@@ -78,6 +82,14 @@ impl ResaleAuthorizationSummary {
     pub fn reseller_role(&self) -> ::std::option::Option<&crate::types::ResaleAuthorizationResellerRoleString> {
         self.reseller_role.as_ref()
     }
+    /// <p>The source authorization of the ResaleAuthorization.</p>
+    pub fn source_authorization(&self) -> ::std::option::Option<&str> {
+        self.source_authorization.as_deref()
+    }
+    /// <p>The issuer account ID of the ResaleAuthorization.</p>
+    pub fn issuer_account_id(&self) -> ::std::option::Option<&str> {
+        self.issuer_account_id.as_deref()
+    }
 }
 impl ResaleAuthorizationSummary {
     /// Creates a new builder-style object to manufacture [`ResaleAuthorizationSummary`](crate::types::ResaleAuthorizationSummary).
@@ -102,6 +114,8 @@ pub struct ResaleAuthorizationSummaryBuilder {
     pub(crate) created_date: ::std::option::Option<::std::string::String>,
     pub(crate) availability_end_date: ::std::option::Option<::std::string::String>,
     pub(crate) reseller_role: ::std::option::Option<crate::types::ResaleAuthorizationResellerRoleString>,
+    pub(crate) source_authorization: ::std::option::Option<::std::string::String>,
+    pub(crate) issuer_account_id: ::std::option::Option<::std::string::String>,
 }
 impl ResaleAuthorizationSummaryBuilder {
     /// <p>The name of the ResaleAuthorization.</p>
@@ -272,6 +286,34 @@ impl ResaleAuthorizationSummaryBuilder {
     pub fn get_reseller_role(&self) -> &::std::option::Option<crate::types::ResaleAuthorizationResellerRoleString> {
         &self.reseller_role
     }
+    /// <p>The source authorization of the ResaleAuthorization.</p>
+    pub fn source_authorization(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.source_authorization = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The source authorization of the ResaleAuthorization.</p>
+    pub fn set_source_authorization(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.source_authorization = input;
+        self
+    }
+    /// <p>The source authorization of the ResaleAuthorization.</p>
+    pub fn get_source_authorization(&self) -> &::std::option::Option<::std::string::String> {
+        &self.source_authorization
+    }
+    /// <p>The issuer account ID of the ResaleAuthorization.</p>
+    pub fn issuer_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.issuer_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The issuer account ID of the ResaleAuthorization.</p>
+    pub fn set_issuer_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.issuer_account_id = input;
+        self
+    }
+    /// <p>The issuer account ID of the ResaleAuthorization.</p>
+    pub fn get_issuer_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.issuer_account_id
+    }
     /// Consumes the builder and constructs a [`ResaleAuthorizationSummary`](crate::types::ResaleAuthorizationSummary).
     pub fn build(self) -> crate::types::ResaleAuthorizationSummary {
         crate::types::ResaleAuthorizationSummary {
@@ -287,6 +329,8 @@ impl ResaleAuthorizationSummaryBuilder {
             created_date: self.created_date,
             availability_end_date: self.availability_end_date,
             reseller_role: self.reseller_role,
+            source_authorization: self.source_authorization,
+            issuer_account_id: self.issuer_account_id,
         }
     }
 }

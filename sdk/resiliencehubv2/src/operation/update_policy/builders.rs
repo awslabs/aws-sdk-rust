@@ -192,4 +192,18 @@ impl UpdatePolicyFluentBuilder {
     pub fn get_data_recovery(&self) -> &::std::option::Option<crate::types::DataRecoveryTargets> {
         self.inner.get_data_recovery()
     }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Disabling sharing stops member services from using the policy.</p>
+    pub fn sharing_enabled(mut self, input: bool) -> Self {
+        self.inner = self.inner.sharing_enabled(input);
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Disabling sharing stops member services from using the policy.</p>
+    pub fn set_sharing_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_sharing_enabled(input);
+        self
+    }
+    /// <p>Specifies whether cross-account sharing is enabled for the policy. Disabling sharing stops member services from using the policy.</p>
+    pub fn get_sharing_enabled(&self) -> &::std::option::Option<bool> {
+        self.inner.get_sharing_enabled()
+    }
 }

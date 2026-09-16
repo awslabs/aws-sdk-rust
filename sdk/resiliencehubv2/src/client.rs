@@ -255,6 +255,8 @@ mod delete_test_sources;
 
 mod delete_user_journey;
 
+mod get_dependency_insights;
+
 mod get_failure_mode_finding;
 
 mod get_policy;
@@ -286,6 +288,8 @@ mod list_failure_mode_findings;
 mod list_input_sources;
 
 mod list_policies;
+
+mod list_policy_events;
 
 mod list_reports;
 
@@ -326,6 +330,8 @@ mod list_tests;
 mod list_user_journeys;
 
 mod put_test_sources;
+
+mod start_dependency_insights;
 
 mod start_failure_mode_assessment;
 

@@ -53,6 +53,8 @@ pub use crate::types::_resource_discovery_status::ResourceDiscoveryStatusBuilder
 
 pub use crate::types::_stop_condition::StopConditionBuilder;
 
+pub use crate::types::_dependency_insight::DependencyInsightBuilder;
+
 pub use crate::types::_test_run_report_configuration::TestRunReportConfigurationBuilder;
 
 pub use crate::types::_test_run_policy_snapshot::TestRunPolicySnapshotBuilder;
@@ -66,6 +68,8 @@ pub use crate::types::_finding_summary::FindingSummaryBuilder;
 pub use crate::types::_input_source_summary::InputSourceSummaryBuilder;
 
 pub use crate::types::_policy_summary::PolicySummaryBuilder;
+
+pub use crate::types::_policy_event::PolicyEventBuilder;
 
 pub use crate::types::_resolved_target_resource::ResolvedTargetResourceBuilder;
 
@@ -129,11 +133,13 @@ pub use crate::types::_test_template_parameter::TestTemplateParameterBuilder;
 
 pub use crate::types::_query_range::QueryRangeBuilder;
 
+pub use crate::types::_event_actor::EventActorBuilder;
+
+pub use crate::types::_policy_event_details::PolicyEventDetailsBuilder;
+
 pub use crate::types::_input_source::InputSourceBuilder;
 
 pub use crate::types::_resource::ResourceBuilder;
-
-pub use crate::types::_event_actor::EventActorBuilder;
 
 pub use crate::types::_service_event_details::ServiceEventDetailsBuilder;
 
@@ -158,6 +164,14 @@ pub use crate::types::_test_run_source_event_error::TestRunSourceEventErrorBuild
 pub use crate::types::_eks_label_selector_requirement::EksLabelSelectorRequirementBuilder;
 
 pub use crate::types::_query_data_point::QueryDataPointBuilder;
+
+pub use crate::types::_policy_attached_to_service_metadata::PolicyAttachedToServiceMetadataBuilder;
+
+pub use crate::types::_policy_detached_from_service_metadata::PolicyDetachedFromServiceMetadataBuilder;
+
+pub use crate::types::_policy_sharing_revoked_metadata::PolicySharingRevokedMetadataBuilder;
+
+pub use crate::types::_policy_deleted_metadata::PolicyDeletedMetadataBuilder;
 
 pub use crate::types::_service_created_metadata::ServiceCreatedMetadataBuilder;
 

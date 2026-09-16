@@ -22,7 +22,7 @@ impl crate::operation::describe_environment_resources::builders::DescribeEnviron
 }
 /// Fluent builder constructing a request to `DescribeEnvironmentResources`.
 ///
-/// <p>Returns AWS resources for this environment.</p>
+/// <p>Returns Amazon Web Services resources for this environment.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEnvironmentResourcesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,37 +108,37 @@ impl DescribeEnvironmentResourcesFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
-    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    /// <p>The ID of the environment to retrieve Amazon Web Services resource usage data.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn environment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_id(input.into());
         self
     }
-    /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
-    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    /// <p>The ID of the environment to retrieve Amazon Web Services resource usage data.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn set_environment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_id(input);
         self
     }
-    /// <p>The ID of the environment to retrieve AWS resource usage data.</p>
-    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    /// <p>The ID of the environment to retrieve Amazon Web Services resource usage data.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn get_environment_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_id()
     }
-    /// <p>The name of the environment to retrieve AWS resource usage data.</p>
-    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    /// <p>The name of the environment to retrieve Amazon Web Services resource usage data.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn environment_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.environment_name(input.into());
         self
     }
-    /// <p>The name of the environment to retrieve AWS resource usage data.</p>
-    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    /// <p>The name of the environment to retrieve Amazon Web Services resource usage data.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn set_environment_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_environment_name(input);
         self
     }
-    /// <p>The name of the environment to retrieve AWS resource usage data.</p>
-    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
+    /// <p>The name of the environment to retrieve Amazon Web Services resource usage data.</p>
+    /// <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
     pub fn get_environment_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_environment_name()
     }

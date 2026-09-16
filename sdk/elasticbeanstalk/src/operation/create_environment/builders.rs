@@ -22,7 +22,7 @@ impl crate::operation::create_environment::builders::CreateEnvironmentInputBuild
 }
 /// Fluent builder constructing a request to `CreateEnvironment`.
 ///
-/// <p>Launches an AWS Elastic Beanstalk environment for the specified application using the specified configuration.</p>
+/// <p>Launches an Elastic Beanstalk environment for the specified application using the specified configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEnvironmentFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -184,17 +184,17 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_cname_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cname_prefix()
     }
-    /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
+    /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources on Amazon EC2 instances or on an Amazon EKS cluster, and, for Amazon EC2, whether the environment serves HTTP(S) requests or processes background tasks from a queue.</p>
     pub fn tier(mut self, input: crate::types::EnvironmentTier) -> Self {
         self.inner = self.inner.tier(input);
         self
     }
-    /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
+    /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources on Amazon EC2 instances or on an Amazon EKS cluster, and, for Amazon EC2, whether the environment serves HTTP(S) requests or processes background tasks from a queue.</p>
     pub fn set_tier(mut self, input: ::std::option::Option<crate::types::EnvironmentTier>) -> Self {
         self.inner = self.inner.set_tier(input);
         self
     }
-    /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.</p>
+    /// <p>Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources on Amazon EC2 instances or on an Amazon EKS cluster, and, for Amazon EC2, whether the environment serves HTTP(S) requests or processes background tasks from a queue.</p>
     pub fn get_tier(&self) -> &::std::option::Option<crate::types::EnvironmentTier> {
         self.inner.get_tier()
     }
@@ -254,41 +254,41 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_template_name()
     }
-    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p><note>
+    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>Elastic Beanstalk Platforms</i> guide.</p><note>
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
     /// </note>
     pub fn solution_stack_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.solution_stack_name(input.into());
         self
     }
-    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p><note>
+    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>Elastic Beanstalk Platforms</i> guide.</p><note>
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
     /// </note>
     pub fn set_solution_stack_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_solution_stack_name(input);
         self
     }
-    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p><note>
+    /// <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>Elastic Beanstalk Platforms</i> guide.</p><note>
     /// <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p>
     /// </note>
     pub fn get_solution_stack_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_solution_stack_name()
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p><note>
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
     /// </note>
     pub fn platform_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.platform_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p><note>
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
     /// </note>
     pub fn set_platform_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_platform_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p><note>
+    /// <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>Elastic Beanstalk Developer Guide</i>.</p><note>
     /// <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p>
     /// </note>
     pub fn get_platform_arn(&self) -> &::std::option::Option<::std::string::String> {
@@ -299,17 +299,17 @@ impl CreateEnvironmentFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
     ///
-    /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
+    /// <p>If specified, Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
     pub fn option_settings(mut self, input: crate::types::ConfigurationOptionSetting) -> Self {
         self.inner = self.inner.option_settings(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
+    /// <p>If specified, Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
     pub fn set_option_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>>) -> Self {
         self.inner = self.inner.set_option_settings(input);
         self
     }
-    /// <p>If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
+    /// <p>If specified, Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.</p>
     pub fn get_option_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigurationOptionSetting>> {
         self.inner.get_option_settings()
     }
@@ -332,17 +332,26 @@ impl CreateEnvironmentFluentBuilder {
     pub fn get_options_to_remove(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OptionSpecification>> {
         self.inner.get_options_to_remove()
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <important>
+    /// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+    /// </important>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role.</p>
     pub fn operations_role(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.operations_role(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <important>
+    /// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+    /// </important>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role.</p>
     pub fn set_operations_role(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_operations_role(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
+    /// <important>
+    /// <p>The operations role feature of Elastic Beanstalk is in beta release and is subject to change.</p>
+    /// </important>
+    /// <p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role.</p>
     pub fn get_operations_role(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_operations_role()
     }

@@ -61,6 +61,9 @@ pub mod delete_test_sources;
 /// Types for the `DeleteUserJourney` operation.
 pub mod delete_user_journey;
 
+/// Types for the `GetDependencyInsights` operation.
+pub mod get_dependency_insights;
+
 /// Types for the `GetFailureModeFinding` operation.
 pub mod get_failure_mode_finding;
 
@@ -108,6 +111,9 @@ pub mod list_input_sources;
 
 /// Types for the `ListPolicies` operation.
 pub mod list_policies;
+
+/// Types for the `ListPolicyEvents` operation.
+pub mod list_policy_events;
 
 /// Types for the `ListReports` operation.
 pub mod list_reports;
@@ -168,6 +174,9 @@ pub mod list_user_journeys;
 
 /// Types for the `PutTestSources` operation.
 pub mod put_test_sources;
+
+/// Types for the `StartDependencyInsights` operation.
+pub mod start_dependency_insights;
 
 /// Types for the `StartFailureModeAssessment` operation.
 pub mod start_failure_mode_assessment;

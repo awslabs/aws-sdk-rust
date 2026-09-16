@@ -3,8 +3,8 @@ resolver = "2"
 exclude = [
     "tests/webassembly-no-os",
     "tests/webassembly-wstd",
-    "tests/telemetry",
-    "tests/no-default-features"
+    "tests/no-default-features",
+    "tests/telemetry"
 ]
 members = [
     "sdk/accessanalyzer",

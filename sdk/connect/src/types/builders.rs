@@ -871,6 +871,8 @@ pub use crate::types::_date_reference::DateReferenceBuilder;
 
 pub use crate::types::_email_reference::EmailReferenceBuilder;
 
+pub use crate::types::_contact_analysis_reference::ContactAnalysisReferenceBuilder;
+
 pub use crate::types::_evaluation_form_ai_version_lifecycle::EvaluationFormAiVersionLifecycleBuilder;
 
 pub use crate::types::_real_time_contact_analysis_segment_transcript::RealTimeContactAnalysisSegmentTranscriptBuilder;

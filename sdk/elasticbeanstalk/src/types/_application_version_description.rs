@@ -12,12 +12,19 @@ pub struct ApplicationVersionDescription {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the application version.</p>
     pub version_label: ::std::option::Option<::std::string::String>,
-    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
+    /// <p>If the version's source code was retrieved from CodeCommit, the location of the source code for the application version.</p>
     pub source_build_information: ::std::option::Option<crate::types::SourceBuildInformation>,
-    /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
+    /// <p>Reference to the artifact from the CodeBuild build.</p>
     pub build_arn: ::std::option::Option<::std::string::String>,
     /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
     pub source_bundle: ::std::option::Option<crate::types::S3Location>,
+    /// <p>The location of the container image for the application version.</p>
+    /// <p>For an application version created from an image you provide, this is that image. For one that Elastic Beanstalk builds from your source bundle, Elastic Beanstalk fills this in with the image it pushed after the build succeeds.</p>
+    pub image_source: ::std::option::Option<crate::types::ImageSource>,
+    /// <p>The settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version. Not present for an application version created from an image you provide.</p>
+    pub image_build_configuration: ::std::option::Option<crate::types::ImageBuildConfiguration>,
+    /// <p>Indicates whether Elastic Beanstalk pre-processed and validated the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle of the application version.</p>
+    pub process: ::std::option::Option<bool>,
     /// <p>The creation date of the application version.</p>
     pub date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified date of the application version.</p>
@@ -29,11 +36,11 @@ pub struct ApplicationVersionDescription {
     /// <li>
     /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
     /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
+    /// <p><code>Building</code> – Application version is currently undergoing an CodeBuild build.</p></li>
     /// <li>
     /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
     /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <p><code>Failed</code> – Either the CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::ApplicationVersionStatus>,
 }
@@ -54,17 +61,30 @@ impl ApplicationVersionDescription {
     pub fn version_label(&self) -> ::std::option::Option<&str> {
         self.version_label.as_deref()
     }
-    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
+    /// <p>If the version's source code was retrieved from CodeCommit, the location of the source code for the application version.</p>
     pub fn source_build_information(&self) -> ::std::option::Option<&crate::types::SourceBuildInformation> {
         self.source_build_information.as_ref()
     }
-    /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
+    /// <p>Reference to the artifact from the CodeBuild build.</p>
     pub fn build_arn(&self) -> ::std::option::Option<&str> {
         self.build_arn.as_deref()
     }
     /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
     pub fn source_bundle(&self) -> ::std::option::Option<&crate::types::S3Location> {
         self.source_bundle.as_ref()
+    }
+    /// <p>The location of the container image for the application version.</p>
+    /// <p>For an application version created from an image you provide, this is that image. For one that Elastic Beanstalk builds from your source bundle, Elastic Beanstalk fills this in with the image it pushed after the build succeeds.</p>
+    pub fn image_source(&self) -> ::std::option::Option<&crate::types::ImageSource> {
+        self.image_source.as_ref()
+    }
+    /// <p>The settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version. Not present for an application version created from an image you provide.</p>
+    pub fn image_build_configuration(&self) -> ::std::option::Option<&crate::types::ImageBuildConfiguration> {
+        self.image_build_configuration.as_ref()
+    }
+    /// <p>Indicates whether Elastic Beanstalk pre-processed and validated the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle of the application version.</p>
+    pub fn process(&self) -> ::std::option::Option<bool> {
+        self.process
     }
     /// <p>The creation date of the application version.</p>
     pub fn date_created(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -81,11 +101,11 @@ impl ApplicationVersionDescription {
     /// <li>
     /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
     /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
+    /// <p><code>Building</code> – Application version is currently undergoing an CodeBuild build.</p></li>
     /// <li>
     /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
     /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <p><code>Failed</code> – Either the CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ApplicationVersionStatus> {
         self.status.as_ref()
@@ -109,6 +129,9 @@ pub struct ApplicationVersionDescriptionBuilder {
     pub(crate) source_build_information: ::std::option::Option<crate::types::SourceBuildInformation>,
     pub(crate) build_arn: ::std::option::Option<::std::string::String>,
     pub(crate) source_bundle: ::std::option::Option<crate::types::S3Location>,
+    pub(crate) image_source: ::std::option::Option<crate::types::ImageSource>,
+    pub(crate) image_build_configuration: ::std::option::Option<crate::types::ImageBuildConfiguration>,
+    pub(crate) process: ::std::option::Option<bool>,
     pub(crate) date_created: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) date_updated: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ApplicationVersionStatus>,
@@ -170,31 +193,31 @@ impl ApplicationVersionDescriptionBuilder {
     pub fn get_version_label(&self) -> &::std::option::Option<::std::string::String> {
         &self.version_label
     }
-    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
+    /// <p>If the version's source code was retrieved from CodeCommit, the location of the source code for the application version.</p>
     pub fn source_build_information(mut self, input: crate::types::SourceBuildInformation) -> Self {
         self.source_build_information = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
+    /// <p>If the version's source code was retrieved from CodeCommit, the location of the source code for the application version.</p>
     pub fn set_source_build_information(mut self, input: ::std::option::Option<crate::types::SourceBuildInformation>) -> Self {
         self.source_build_information = input;
         self
     }
-    /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
+    /// <p>If the version's source code was retrieved from CodeCommit, the location of the source code for the application version.</p>
     pub fn get_source_build_information(&self) -> &::std::option::Option<crate::types::SourceBuildInformation> {
         &self.source_build_information
     }
-    /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
+    /// <p>Reference to the artifact from the CodeBuild build.</p>
     pub fn build_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.build_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
+    /// <p>Reference to the artifact from the CodeBuild build.</p>
     pub fn set_build_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.build_arn = input;
         self
     }
-    /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
+    /// <p>Reference to the artifact from the CodeBuild build.</p>
     pub fn get_build_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.build_arn
     }
@@ -211,6 +234,51 @@ impl ApplicationVersionDescriptionBuilder {
     /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
     pub fn get_source_bundle(&self) -> &::std::option::Option<crate::types::S3Location> {
         &self.source_bundle
+    }
+    /// <p>The location of the container image for the application version.</p>
+    /// <p>For an application version created from an image you provide, this is that image. For one that Elastic Beanstalk builds from your source bundle, Elastic Beanstalk fills this in with the image it pushed after the build succeeds.</p>
+    pub fn image_source(mut self, input: crate::types::ImageSource) -> Self {
+        self.image_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The location of the container image for the application version.</p>
+    /// <p>For an application version created from an image you provide, this is that image. For one that Elastic Beanstalk builds from your source bundle, Elastic Beanstalk fills this in with the image it pushed after the build succeeds.</p>
+    pub fn set_image_source(mut self, input: ::std::option::Option<crate::types::ImageSource>) -> Self {
+        self.image_source = input;
+        self
+    }
+    /// <p>The location of the container image for the application version.</p>
+    /// <p>For an application version created from an image you provide, this is that image. For one that Elastic Beanstalk builds from your source bundle, Elastic Beanstalk fills this in with the image it pushed after the build succeeds.</p>
+    pub fn get_image_source(&self) -> &::std::option::Option<crate::types::ImageSource> {
+        &self.image_source
+    }
+    /// <p>The settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version. Not present for an application version created from an image you provide.</p>
+    pub fn image_build_configuration(mut self, input: crate::types::ImageBuildConfiguration) -> Self {
+        self.image_build_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version. Not present for an application version created from an image you provide.</p>
+    pub fn set_image_build_configuration(mut self, input: ::std::option::Option<crate::types::ImageBuildConfiguration>) -> Self {
+        self.image_build_configuration = input;
+        self
+    }
+    /// <p>The settings that Elastic Beanstalk uses to build a container image from the source bundle of the application version. Not present for an application version created from an image you provide.</p>
+    pub fn get_image_build_configuration(&self) -> &::std::option::Option<crate::types::ImageBuildConfiguration> {
+        &self.image_build_configuration
+    }
+    /// <p>Indicates whether Elastic Beanstalk pre-processed and validated the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle of the application version.</p>
+    pub fn process(mut self, input: bool) -> Self {
+        self.process = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Elastic Beanstalk pre-processed and validated the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle of the application version.</p>
+    pub fn set_process(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.process = input;
+        self
+    }
+    /// <p>Indicates whether Elastic Beanstalk pre-processed and validated the environment manifest (<code>env.yaml</code>) and configuration files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the source bundle of the application version.</p>
+    pub fn get_process(&self) -> &::std::option::Option<bool> {
+        &self.process
     }
     /// <p>The creation date of the application version.</p>
     pub fn date_created(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -247,11 +315,11 @@ impl ApplicationVersionDescriptionBuilder {
     /// <li>
     /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
     /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
+    /// <p><code>Building</code> – Application version is currently undergoing an CodeBuild build.</p></li>
     /// <li>
     /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
     /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <p><code>Failed</code> – Either the CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ApplicationVersionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -264,11 +332,11 @@ impl ApplicationVersionDescriptionBuilder {
     /// <li>
     /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
     /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
+    /// <p><code>Building</code> – Application version is currently undergoing an CodeBuild build.</p></li>
     /// <li>
     /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
     /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <p><code>Failed</code> – Either the CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ApplicationVersionStatus>) -> Self {
         self.status = input;
@@ -281,11 +349,11 @@ impl ApplicationVersionDescriptionBuilder {
     /// <li>
     /// <p><code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p></li>
     /// <li>
-    /// <p><code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p></li>
+    /// <p><code>Building</code> – Application version is currently undergoing an CodeBuild build.</p></li>
     /// <li>
     /// <p><code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p></li>
     /// <li>
-    /// <p><code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
+    /// <p><code>Failed</code> – Either the CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ApplicationVersionStatus> {
         &self.status
@@ -300,6 +368,9 @@ impl ApplicationVersionDescriptionBuilder {
             source_build_information: self.source_build_information,
             build_arn: self.build_arn,
             source_bundle: self.source_bundle,
+            image_source: self.image_source,
+            image_build_configuration: self.image_build_configuration,
+            process: self.process,
             date_created: self.date_created,
             date_updated: self.date_updated,
             status: self.status,
