@@ -35,6 +35,7 @@ impl super::Client {
     ///   - [`prefix_pool_size_ipv6(Option<i32>)`](crate::operation::update_connection::UpdateConnectionOutput::prefix_pool_size_ipv6): <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
     ///   - [`prefix_pool_unallocated_count_ipv4(Option<i32>)`](crate::operation::update_connection::UpdateConnectionOutput::prefix_pool_unallocated_count_ipv4): <p>The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
     ///   - [`prefix_pool_unallocated_count_ipv6(Option<i32>)`](crate::operation::update_connection::UpdateConnectionOutput::prefix_pool_unallocated_count_ipv6): <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    ///   - [`billing_mode(Option<BillingMode>)`](crate::operation::update_connection::UpdateConnectionOutput::billing_mode): <p>The billing mode of the connection.</p>
     /// - On failure, responds with [`SdkError<UpdateConnectionError>`](crate::operation::update_connection::UpdateConnectionError)
     pub fn update_connection(&self) -> crate::operation::update_connection::builders::UpdateConnectionFluentBuilder {
         crate::operation::update_connection::builders::UpdateConnectionFluentBuilder::new(self.handle.clone())

@@ -7,6 +7,8 @@ pub use crate::types::_has_logical_redundancy::HasLogicalRedundancy;
 
 pub use crate::types::_rate_limiter_status::RateLimiterStatus;
 
+pub use crate::types::_billing_mode::BillingMode;
+
 pub use crate::types::_new_private_virtual_interface_allocation::NewPrivateVirtualInterfaceAllocation;
 
 pub use crate::types::_address_family::AddressFamily;
@@ -21,6 +23,8 @@ pub use crate::types::_virtual_interface::VirtualInterface;
 
 pub use crate::types::_new_bgp_peer::NewBgpPeer;
 
+pub use crate::types::_request_billing_mode::RequestBillingMode;
+
 pub use crate::types::_direct_connect_gateway::DirectConnectGateway;
 
 pub use crate::types::_direct_connect_gateway_association_proposal::DirectConnectGatewayAssociationProposal;
@@ -32,6 +36,10 @@ pub use crate::types::_lag_state::LagState;
 pub use crate::types::_new_private_virtual_interface::NewPrivateVirtualInterface;
 
 pub use crate::types::_new_public_virtual_interface::NewPublicVirtualInterface;
+
+pub use crate::types::_resiliency_model::ResiliencyModel;
+
+pub use crate::types::_resiliency_group::ResiliencyGroup;
 
 pub use crate::types::_new_transit_virtual_interface::NewTransitVirtualInterface;
 
@@ -61,11 +69,17 @@ pub use crate::types::_mac_sec_key::MacSecKey;
 
 pub use crate::types::_bgp_peer::BgpPeer;
 
+pub use crate::types::_resiliency_group_association::ResiliencyGroupAssociation;
+
 pub use crate::types::_direct_connect_gateway_state::DirectConnectGatewayState;
 
 pub use crate::types::_direct_connect_gateway_association_proposal_state::DirectConnectGatewayAssociationProposalState;
 
 pub use crate::types::_connection::Connection;
+
+pub use crate::types::_resiliency_group_type::ResiliencyGroupType;
+
+pub use crate::types::_resiliency_group_state::ResiliencyGroupState;
 
 pub use crate::types::_customer_agreement::CustomerAgreement;
 
@@ -81,6 +95,8 @@ pub use crate::types::_resource_tag::ResourceTag;
 
 pub use crate::types::_virtual_gateway::VirtualGateway;
 
+pub use crate::types::_resiliency_group_summary::ResiliencyGroupSummary;
+
 pub use crate::types::_route_direction::RouteDirection;
 
 pub use crate::types::_route::Route;
@@ -91,9 +107,13 @@ pub use crate::types::_bgp_peer_state::BgpPeerState;
 
 pub use crate::types::_bgp_status::BgpStatus;
 
+pub use crate::types::_resiliency_group_association_state::ResiliencyGroupAssociationState;
+
 pub use crate::types::_direct_connect_gateway_attachment_state::DirectConnectGatewayAttachmentState;
 
 pub use crate::types::_direct_connect_gateway_attachment_type::DirectConnectGatewayAttachmentType;
+
+pub use crate::types::_available_billing_mode::AvailableBillingMode;
 
 pub use crate::types::_as_path_segment::AsPathSegment;
 
@@ -109,11 +129,15 @@ mod _associated_core_network;
 
 mod _associated_gateway;
 
+mod _available_billing_mode;
+
 mod _bgp_peer;
 
 mod _bgp_peer_state;
 
 mod _bgp_status;
+
+mod _billing_mode;
 
 mod _connection;
 
@@ -176,6 +200,22 @@ mod _new_transit_virtual_interface_allocation;
 mod _nni_partner_type;
 
 mod _rate_limiter_status;
+
+mod _request_billing_mode;
+
+mod _resiliency_group;
+
+mod _resiliency_group_association;
+
+mod _resiliency_group_association_state;
+
+mod _resiliency_group_state;
+
+mod _resiliency_group_summary;
+
+mod _resiliency_group_type;
+
+mod _resiliency_model;
 
 mod _resource_tag;
 

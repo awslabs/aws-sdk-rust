@@ -10,9 +10,7 @@ pub fn ser_connector_configuration(
         object.key("description").string(var_1.as_str());
     }
     if let Some(var_2) = &input.parameter_values {
-        object
-            .key("parameterValues")
-            .document(var_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("parameterValues").document(var_2);
     }
     if let Some(var_3) = &input.parameter_overrides {
         let mut array_4 = object.key("parameterOverrides").start_array();

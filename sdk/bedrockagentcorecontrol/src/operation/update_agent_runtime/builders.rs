@@ -307,6 +307,20 @@ impl UpdateAgentRuntimeFluentBuilder {
     pub fn get_capacity_provider_configuration(&self) -> &::std::option::Option<crate::types::CapacityProviderConfiguration> {
         self.inner.get_capacity_provider_configuration()
     }
+    /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.platform_version(input.into());
+        self
+    }
+    /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_platform_version(input);
+        self
+    }
+    /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_version()
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

@@ -67,20 +67,23 @@ pub fn ser_update_agent_runtime_input_input(
         crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_22, var_21)?;
         object_22.finish();
     }
-    if let Some(var_23) = &input.protocol_configuration {
-        #[allow(unused_mut)]
-        let mut object_24 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_24, var_23)?;
-        object_24.finish();
+    if let Some(var_23) = &input.platform_version {
+        object.key("platformVersion").string(var_23.as_str());
     }
-    if let Some(var_25) = &input.request_header_configuration {
+    if let Some(var_24) = &input.protocol_configuration {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("requestHeaderConfiguration").start_object();
-        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_25 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_25, var_24)?;
+        object_25.finish();
     }
-    if let Some(var_27) = &input.role_arn {
-        object.key("roleArn").string(var_27.as_str());
+    if let Some(var_26) = &input.request_header_configuration {
+        #[allow(unused_mut)]
+        let mut object_27 = object.key("requestHeaderConfiguration").start_object();
+        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_27, var_26)?;
+        object_27.finish();
+    }
+    if let Some(var_28) = &input.role_arn {
+        object.key("roleArn").string(var_28.as_str());
     }
     Ok(())
 }

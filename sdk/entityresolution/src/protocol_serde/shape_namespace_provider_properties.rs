@@ -7,9 +7,7 @@ pub fn ser_namespace_provider_properties(
         object.key("providerServiceArn").string(input.provider_service_arn.as_str());
     }
     if let Some(var_1) = &input.provider_configuration {
-        object
-            .key("providerConfiguration")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("providerConfiguration").document(var_1);
     }
     Ok(())
 }

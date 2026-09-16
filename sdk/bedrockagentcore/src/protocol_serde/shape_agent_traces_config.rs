@@ -99,9 +99,7 @@ pub fn ser_agent_traces_config(
             let mut array_1 = object_4.key("sessionSpans").start_array();
             for item_2 in inner {
                 {
-                    array_1
-                        .value()
-                        .document(item_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+                    array_1.value().document(item_2);
                 }
             }
             array_1.finish();

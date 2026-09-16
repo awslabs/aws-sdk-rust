@@ -7,9 +7,7 @@ pub fn ser_create_index_input_input(
         object.key("IndexName").string(var_1.as_str());
     }
     if let Some(var_2) = &input.index_schema {
-        object
-            .key("IndexSchema")
-            .document(var_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("IndexSchema").document(var_2);
     }
     Ok(())
 }

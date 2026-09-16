@@ -37,6 +37,8 @@ pub(crate) mod shape_allocate_transit_virtual_interface;
 
 pub(crate) mod shape_associate_connection_with_lag;
 
+pub(crate) mod shape_associate_connections_to_resiliency_group;
+
 pub(crate) mod shape_associate_hosted_connection;
 
 pub(crate) mod shape_associate_mac_sec_key;
@@ -71,6 +73,8 @@ pub(crate) mod shape_create_private_virtual_interface;
 
 pub(crate) mod shape_create_public_virtual_interface;
 
+pub(crate) mod shape_create_resiliency_group;
+
 pub(crate) mod shape_create_transit_virtual_interface;
 
 pub(crate) mod shape_delete_bgp_peer;
@@ -86,6 +90,8 @@ pub(crate) mod shape_delete_direct_connect_gateway_association_proposal;
 pub(crate) mod shape_delete_interconnect;
 
 pub(crate) mod shape_delete_lag;
+
+pub(crate) mod shape_delete_resiliency_group;
 
 pub(crate) mod shape_delete_virtual_interface;
 
@@ -127,7 +133,15 @@ pub(crate) mod shape_describe_virtual_interfaces;
 
 pub(crate) mod shape_disassociate_connection_from_lag;
 
+pub(crate) mod shape_disassociate_connections_from_resiliency_group;
+
 pub(crate) mod shape_disassociate_mac_sec_key;
+
+pub(crate) mod shape_get_resiliency_group;
+
+pub(crate) mod shape_list_resiliency_group_associations;
+
+pub(crate) mod shape_list_resiliency_groups;
 
 pub(crate) mod shape_list_virtual_interface_routes;
 
@@ -143,11 +157,15 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_connection;
 
+pub(crate) mod shape_update_connections_billing_mode;
+
 pub(crate) mod shape_update_direct_connect_gateway;
 
 pub(crate) mod shape_update_direct_connect_gateway_association;
 
 pub(crate) mod shape_update_lag;
+
+pub(crate) mod shape_update_resiliency_group;
 
 pub(crate) mod shape_update_virtual_interface_attributes;
 
@@ -172,6 +190,8 @@ pub(crate) mod shape_allocate_public_virtual_interface_input;
 pub(crate) mod shape_allocate_transit_virtual_interface_input;
 
 pub(crate) mod shape_associate_connection_with_lag_input;
+
+pub(crate) mod shape_associate_connections_to_resiliency_group_input;
 
 pub(crate) mod shape_associate_hosted_connection_input;
 
@@ -207,6 +227,8 @@ pub(crate) mod shape_create_private_virtual_interface_input;
 
 pub(crate) mod shape_create_public_virtual_interface_input;
 
+pub(crate) mod shape_create_resiliency_group_input;
+
 pub(crate) mod shape_create_transit_virtual_interface_input;
 
 pub(crate) mod shape_delete_bgp_peer_input;
@@ -222,6 +244,8 @@ pub(crate) mod shape_delete_direct_connect_gateway_input;
 pub(crate) mod shape_delete_interconnect_input;
 
 pub(crate) mod shape_delete_lag_input;
+
+pub(crate) mod shape_delete_resiliency_group_input;
 
 pub(crate) mod shape_delete_virtual_interface_input;
 
@@ -261,11 +285,19 @@ pub(crate) mod shape_direct_connect_server_exception;
 
 pub(crate) mod shape_disassociate_connection_from_lag_input;
 
+pub(crate) mod shape_disassociate_connections_from_resiliency_group_input;
+
 pub(crate) mod shape_disassociate_mac_sec_key_input;
 
 pub(crate) mod shape_duplicate_tag_keys_exception;
 
+pub(crate) mod shape_get_resiliency_group_input;
+
 pub(crate) mod shape_limit_exceeded_exception;
+
+pub(crate) mod shape_list_resiliency_group_associations_input;
+
+pub(crate) mod shape_list_resiliency_groups_input;
 
 pub(crate) mod shape_list_virtual_interface_routes_input;
 
@@ -283,11 +315,15 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_connection_input;
 
+pub(crate) mod shape_update_connections_billing_mode_input;
+
 pub(crate) mod shape_update_direct_connect_gateway_association_input;
 
 pub(crate) mod shape_update_direct_connect_gateway_input;
 
 pub(crate) mod shape_update_lag_input;
+
+pub(crate) mod shape_update_resiliency_group_input;
 
 pub(crate) mod shape_update_virtual_interface_attributes_input;
 
@@ -337,6 +373,12 @@ pub(crate) mod shape_new_transit_virtual_interface_allocation;
 
 pub(crate) mod shape_rate_limiter_status;
 
+pub(crate) mod shape_resiliency_group;
+
+pub(crate) mod shape_resiliency_group_association_list;
+
+pub(crate) mod shape_resiliency_group_summary_list;
+
 pub(crate) mod shape_resource_tag_list;
 
 pub(crate) mod shape_route_filter_prefix;
@@ -385,6 +427,10 @@ pub(crate) mod shape_location;
 
 pub(crate) mod shape_mac_sec_key;
 
+pub(crate) mod shape_resiliency_group_association;
+
+pub(crate) mod shape_resiliency_group_summary;
+
 pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_route;
@@ -392,6 +438,8 @@ pub(crate) mod shape_route;
 pub(crate) mod shape_virtual_gateway;
 
 pub(crate) mod shape_as_path_segment_list;
+
+pub(crate) mod shape_available_billing_mode_list;
 
 pub(crate) mod shape_available_mac_sec_port_speeds;
 
@@ -403,4 +451,8 @@ pub(crate) mod shape_provider_list;
 
 pub(crate) mod shape_as_path_segment;
 
+pub(crate) mod shape_available_billing_mode;
+
 pub(crate) mod shape_as_path_list;
+
+pub(crate) mod shape_included_region_list;

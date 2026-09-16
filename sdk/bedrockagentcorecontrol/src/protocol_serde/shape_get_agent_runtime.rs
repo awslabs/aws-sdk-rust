@@ -229,6 +229,13 @@ pub(crate) fn de_get_agent_runtime(
                         depth + 1,
                     )?);
                 }
+                "platformVersion" => {
+                    builder = builder.set_platform_version(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "protocolConfiguration" => {
                     builder = builder.set_protocol_configuration(crate::protocol_serde::shape_protocol_configuration::de_protocol_configuration(
                         tokens,

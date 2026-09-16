@@ -29,6 +29,8 @@ pub struct UpdateAgentRuntimeInput {
     pub filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     /// <p>The updated capacity provider configuration for the AgentCore Runtime.</p>
     pub capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
+    /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -87,6 +89,10 @@ impl UpdateAgentRuntimeInput {
     pub fn capacity_provider_configuration(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfiguration> {
         self.capacity_provider_configuration.as_ref()
     }
+    /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
@@ -108,6 +114,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInput {
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
+        formatter.field("platform_version", &self.platform_version);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -136,6 +143,7 @@ pub struct UpdateAgentRuntimeInputBuilder {
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     pub(crate) capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
+    pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateAgentRuntimeInputBuilder {
@@ -343,6 +351,20 @@ impl UpdateAgentRuntimeInputBuilder {
     pub fn get_capacity_provider_configuration(&self) -> &::std::option::Option<crate::types::CapacityProviderConfiguration> {
         &self.capacity_provider_configuration
     }
+    /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.platform_version = input;
+        self
+    }
+    /// <p>The updated version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
@@ -376,6 +398,7 @@ impl UpdateAgentRuntimeInputBuilder {
             environment_variables: self.environment_variables,
             filesystem_configurations: self.filesystem_configurations,
             capacity_provider_configuration: self.capacity_provider_configuration,
+            platform_version: self.platform_version,
             client_token: self.client_token,
         })
     }
@@ -396,6 +419,7 @@ impl ::std::fmt::Debug for UpdateAgentRuntimeInputBuilder {
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
+        formatter.field("platform_version", &self.platform_version);
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }

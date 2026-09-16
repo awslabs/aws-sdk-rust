@@ -4,8 +4,7 @@
  */
 
 use aws_smithy_cbor::decode::Decoder;
-use criterion::{criterion_group, criterion_main, Criterion};
-use std::hint::black_box;
+use criterion::{black_box, criterion_group, criterion_main, Criterion};
 
 pub fn blob_benchmark(c: &mut Criterion) {
     // Indefinite length blob containing bytes corresponding to `indefinite-byte, chunked, on each comma`.

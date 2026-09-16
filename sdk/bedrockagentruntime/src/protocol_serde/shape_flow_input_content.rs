@@ -5,9 +5,7 @@ pub fn ser_flow_input_content(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::FlowInputContent::Document(inner) => {
-            object_3
-                .key("document")
-                .document(inner, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+            object_3.key("document").document(inner);
         }
         crate::types::FlowInputContent::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

@@ -21,6 +21,8 @@ pub use crate::types::_new_private_virtual_interface::NewPrivateVirtualInterface
 
 pub use crate::types::_new_public_virtual_interface::NewPublicVirtualInterfaceBuilder;
 
+pub use crate::types::_resiliency_group::ResiliencyGroupBuilder;
+
 pub use crate::types::_new_transit_virtual_interface::NewTransitVirtualInterfaceBuilder;
 
 pub use crate::types::_loa::LoaBuilder;
@@ -43,6 +45,8 @@ pub use crate::types::_mac_sec_key::MacSecKeyBuilder;
 
 pub use crate::types::_bgp_peer::BgpPeerBuilder;
 
+pub use crate::types::_resiliency_group_association::ResiliencyGroupAssociationBuilder;
+
 pub use crate::types::_connection::ConnectionBuilder;
 
 pub use crate::types::_customer_agreement::CustomerAgreementBuilder;
@@ -59,6 +63,10 @@ pub use crate::types::_resource_tag::ResourceTagBuilder;
 
 pub use crate::types::_virtual_gateway::VirtualGatewayBuilder;
 
+pub use crate::types::_resiliency_group_summary::ResiliencyGroupSummaryBuilder;
+
 pub use crate::types::_route::RouteBuilder;
+
+pub use crate::types::_available_billing_mode::AvailableBillingModeBuilder;
 
 pub use crate::types::_as_path_segment::AsPathSegmentBuilder;

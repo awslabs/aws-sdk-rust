@@ -34,9 +34,7 @@ pub fn ser_harness_gemini_model_config(
         );
     }
     if let Some(var_5) = &input.additional_params {
-        object
-            .key("additionalParams")
-            .document(var_5, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("additionalParams").document(var_5);
     }
     Ok(())
 }

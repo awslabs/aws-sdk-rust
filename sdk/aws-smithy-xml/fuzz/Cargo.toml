@@ -45,15 +45,15 @@ xmlparser = "0.13.5"
 
 [dependencies.aws-smithy-xml]
 path = ".."
-version = "0.63.0"
+version = "0.62.1"
 
 [dependencies.aws-smithy-schema]
 path = "../../aws-smithy-schema"
-version = "0.3.0"
+version = "0.2.1"
 
 [dependencies.aws-smithy-types]
 path = "../../aws-smithy-types"
-version = "1.7.0"
+version = "1.6.4"
 
 [dependencies.arbitrary]
 version = "1"

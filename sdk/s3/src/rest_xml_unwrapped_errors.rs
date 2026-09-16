@@ -33,7 +33,6 @@ pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b
     Ok(scoped)
 }
 
-#[allow(unused)]
 pub fn parse_error_metadata(body: &[u8]) -> Result<ErrorMetadataBuilder, XmlDecodeError> {
     let mut doc = Document::try_from(body)?;
     let mut root = doc.root_element()?;

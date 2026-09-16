@@ -18,6 +18,8 @@ pub struct CreateConnectionInput {
     /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
     /// <p>MAC Security (MACsec) is unavailable on hosted connections. For information about MAC Security (MACsec) prerequisites, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/MACSec.html">MAC Security in Direct Connect</a> in the <i>Direct Connect User Guide</i>.</p>
     pub request_mac_sec: ::std::option::Option<bool>,
+    /// <p>The billing mode for the connection.</p>
+    pub billing_mode: ::std::option::Option<crate::types::RequestBillingMode>,
 }
 impl CreateConnectionInput {
     /// <p>The location of the connection.</p>
@@ -51,6 +53,10 @@ impl CreateConnectionInput {
     pub fn request_mac_sec(&self) -> ::std::option::Option<bool> {
         self.request_mac_sec
     }
+    /// <p>The billing mode for the connection.</p>
+    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::RequestBillingMode> {
+        self.billing_mode.as_ref()
+    }
 }
 impl CreateConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
@@ -70,6 +76,7 @@ pub struct CreateConnectionInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) request_mac_sec: ::std::option::Option<bool>,
+    pub(crate) billing_mode: ::std::option::Option<crate::types::RequestBillingMode>,
 }
 impl CreateConnectionInputBuilder {
     /// <p>The location of the connection.</p>
@@ -182,6 +189,20 @@ impl CreateConnectionInputBuilder {
     pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {
         &self.request_mac_sec
     }
+    /// <p>The billing mode for the connection.</p>
+    pub fn billing_mode(mut self, input: crate::types::RequestBillingMode) -> Self {
+        self.billing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The billing mode for the connection.</p>
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::RequestBillingMode>) -> Self {
+        self.billing_mode = input;
+        self
+    }
+    /// <p>The billing mode for the connection.</p>
+    pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::RequestBillingMode> {
+        &self.billing_mode
+    }
     /// Consumes the builder and constructs a [`CreateConnectionInput`](crate::operation::create_connection::CreateConnectionInput).
     pub fn build(
         self,
@@ -194,6 +215,7 @@ impl CreateConnectionInputBuilder {
             tags: self.tags,
             provider_name: self.provider_name,
             request_mac_sec: self.request_mac_sec,
+            billing_mode: self.billing_mode,
         })
     }
 }

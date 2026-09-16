@@ -448,6 +448,7 @@ mod tests {
     use aws_smithy_types::Document;
     use aws_types::region::SigningRegion;
     use aws_types::SigningName;
+    use std::collections::HashMap;
     use std::time::{Duration, SystemTime};
     use tracing_test::traced_test;
 
@@ -502,7 +503,7 @@ mod tests {
             ..Default::default()
         });
         let config = Document::Object({
-            let mut out = aws_smithy_types::document::DocumentObject::new();
+            let mut out = HashMap::new();
             out.insert("name".to_string(), "sigv4".to_string().into());
             out.insert(
                 "signingName".to_string(),

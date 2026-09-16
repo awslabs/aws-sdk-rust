@@ -31,6 +31,8 @@ pub struct CreateAgentRuntimeInput {
     pub capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     /// <p>A map of tag keys and values to assign to the agent runtime. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub platform_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateAgentRuntimeInput {
     /// <p>The name of the AgentCore Runtime.</p>
@@ -91,6 +93,10 @@ impl CreateAgentRuntimeInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateAgentRuntimeInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -109,6 +115,7 @@ impl ::std::fmt::Debug for CreateAgentRuntimeInput {
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("tags", &self.tags);
+        formatter.field("platform_version", &self.platform_version);
         formatter.finish()
     }
 }
@@ -137,6 +144,7 @@ pub struct CreateAgentRuntimeInputBuilder {
     pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     pub(crate) capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) platform_version: ::std::option::Option<::std::string::String>,
 }
 impl CreateAgentRuntimeInputBuilder {
     /// <p>The name of the AgentCore Runtime.</p>
@@ -363,6 +371,20 @@ impl CreateAgentRuntimeInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.platform_version = input;
+        self
+    }
+    /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     /// Consumes the builder and constructs a [`CreateAgentRuntimeInput`](crate::operation::create_agent_runtime::CreateAgentRuntimeInput).
     pub fn build(
         self,
@@ -383,6 +405,7 @@ impl CreateAgentRuntimeInputBuilder {
             filesystem_configurations: self.filesystem_configurations,
             capacity_provider_configuration: self.capacity_provider_configuration,
             tags: self.tags,
+            platform_version: self.platform_version,
         })
     }
 }
@@ -403,6 +426,7 @@ impl ::std::fmt::Debug for CreateAgentRuntimeInputBuilder {
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
         formatter.field("tags", &self.tags);
+        formatter.field("platform_version", &self.platform_version);
         formatter.finish()
     }
 }

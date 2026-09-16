@@ -7,9 +7,7 @@ pub fn ser_attribute_operation(
         object.key("AttributePath").string(input.attribute_path.as_str());
     }
     if let Some(var_1) = &input.attribute_value {
-        object
-            .key("AttributeValue")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("AttributeValue").document(var_1);
     }
     Ok(())
 }

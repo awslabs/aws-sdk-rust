@@ -15,6 +15,7 @@
 ///     ImageComputeType::Base => { /* ... */ },
 ///     ImageComputeType::GraphicsG4Dn => { /* ... */ },
 ///     ImageComputeType::GraphicsG6 => { /* ... */ },
+///     ImageComputeType::GraphicsG7 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum ImageComputeType {
     GraphicsG4Dn,
     #[allow(missing_docs)] // documentation missing in model
     GraphicsG6,
+    #[allow(missing_docs)] // documentation missing in model
+    GraphicsG7,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for ImageComputeType {
             "BASE" => ImageComputeType::Base,
             "GRAPHICS_G4DN" => ImageComputeType::GraphicsG4Dn,
             "GRAPHICS_G6" => ImageComputeType::GraphicsG6,
+            "GRAPHICS_G7" => ImageComputeType::GraphicsG7,
             other => ImageComputeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl ImageComputeType {
             ImageComputeType::Base => "BASE",
             ImageComputeType::GraphicsG4Dn => "GRAPHICS_G4DN",
             ImageComputeType::GraphicsG6 => "GRAPHICS_G6",
+            ImageComputeType::GraphicsG7 => "GRAPHICS_G7",
             ImageComputeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BASE", "GRAPHICS_G4DN", "GRAPHICS_G6"]
+        &["BASE", "GRAPHICS_G4DN", "GRAPHICS_G6", "GRAPHICS_G7"]
     }
 }
 impl ::std::convert::AsRef<str> for ImageComputeType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for ImageComputeType {
             ImageComputeType::Base => write!(f, "BASE"),
             ImageComputeType::GraphicsG4Dn => write!(f, "GRAPHICS_G4DN"),
             ImageComputeType::GraphicsG6 => write!(f, "GRAPHICS_G6"),
+            ImageComputeType::GraphicsG7 => write!(f, "GRAPHICS_G7"),
             ImageComputeType::Unknown(value) => write!(f, "{value}"),
         }
     }

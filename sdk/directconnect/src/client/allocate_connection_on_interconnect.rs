@@ -37,6 +37,7 @@ impl super::Client {
     ///   - [`prefix_pool_size_ipv6(Option<i32>)`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput::prefix_pool_size_ipv6): <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
     ///   - [`prefix_pool_unallocated_count_ipv4(Option<i32>)`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput::prefix_pool_unallocated_count_ipv4): <p>The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
     ///   - [`prefix_pool_unallocated_count_ipv6(Option<i32>)`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput::prefix_pool_unallocated_count_ipv6): <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    ///   - [`billing_mode(Option<BillingMode>)`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectOutput::billing_mode): <p>The billing mode of the connection.</p>
     /// - On failure, responds with [`SdkError<AllocateConnectionOnInterconnectError>`](crate::operation::allocate_connection_on_interconnect::AllocateConnectionOnInterconnectError)
     #[deprecated]
     pub fn allocate_connection_on_interconnect(

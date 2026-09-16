@@ -64,30 +64,33 @@ pub fn ser_create_agent_runtime_input_input(
         crate::protocol_serde::shape_network_configuration::ser_network_configuration(&mut object_21, var_20)?;
         object_21.finish();
     }
-    if let Some(var_22) = &input.protocol_configuration {
-        #[allow(unused_mut)]
-        let mut object_23 = object.key("protocolConfiguration").start_object();
-        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_23, var_22)?;
-        object_23.finish();
+    if let Some(var_22) = &input.platform_version {
+        object.key("platformVersion").string(var_22.as_str());
     }
-    if let Some(var_24) = &input.request_header_configuration {
+    if let Some(var_23) = &input.protocol_configuration {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("requestHeaderConfiguration").start_object();
-        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_24 = object.key("protocolConfiguration").start_object();
+        crate::protocol_serde::shape_protocol_configuration::ser_protocol_configuration(&mut object_24, var_23)?;
+        object_24.finish();
     }
-    if let Some(var_26) = &input.role_arn {
-        object.key("roleArn").string(var_26.as_str());
-    }
-    if let Some(var_27) = &input.tags {
+    if let Some(var_25) = &input.request_header_configuration {
         #[allow(unused_mut)]
-        let mut object_28 = object.key("tags").start_object();
-        for (key_29, value_30) in var_27 {
+        let mut object_26 = object.key("requestHeaderConfiguration").start_object();
+        crate::protocol_serde::shape_request_header_configuration::ser_request_header_configuration(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.role_arn {
+        object.key("roleArn").string(var_27.as_str());
+    }
+    if let Some(var_28) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_29 = object.key("tags").start_object();
+        for (key_30, value_31) in var_28 {
             {
-                object_28.key(key_29.as_str()).string(value_30.as_str());
+                object_29.key(key_30.as_str()).string(value_31.as_str());
             }
         }
-        object_28.finish();
+        object_29.finish();
     }
     Ok(())
 }

@@ -33,6 +33,8 @@ pub struct ProtocolDetails {
     pub set_stat_option: ::std::option::Option<crate::types::SetStatOption>,
     /// <p>Indicates the transport method for the AS2 messages. Currently, only HTTP is supported.</p>
     pub as2_transports: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
+    /// <p>The configuration for PROXY protocol version 2 (PPv2) support on the Transfer Family server. For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/working-with-nlb.html">Working with Network Load Balancers</a>.</p>
+    pub proxy_config: ::std::option::Option<crate::types::ProxyConfig>,
 }
 impl ProtocolDetails {
     /// <p>Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example:</p>
@@ -74,6 +76,10 @@ impl ProtocolDetails {
     pub fn as2_transports(&self) -> &[crate::types::As2Transport] {
         self.as2_transports.as_deref().unwrap_or_default()
     }
+    /// <p>The configuration for PROXY protocol version 2 (PPv2) support on the Transfer Family server. For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/working-with-nlb.html">Working with Network Load Balancers</a>.</p>
+    pub fn proxy_config(&self) -> ::std::option::Option<&crate::types::ProxyConfig> {
+        self.proxy_config.as_ref()
+    }
 }
 impl ProtocolDetails {
     /// Creates a new builder-style object to manufacture [`ProtocolDetails`](crate::types::ProtocolDetails).
@@ -90,6 +96,7 @@ pub struct ProtocolDetailsBuilder {
     pub(crate) tls_session_resumption_mode: ::std::option::Option<crate::types::TlsSessionResumptionMode>,
     pub(crate) set_stat_option: ::std::option::Option<crate::types::SetStatOption>,
     pub(crate) as2_transports: ::std::option::Option<::std::vec::Vec<crate::types::As2Transport>>,
+    pub(crate) proxy_config: ::std::option::Option<crate::types::ProxyConfig>,
 }
 impl ProtocolDetailsBuilder {
     /// <p>Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of a firewall, router, or load balancer. For example:</p>
@@ -217,6 +224,20 @@ impl ProtocolDetailsBuilder {
     pub fn get_as2_transports(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::As2Transport>> {
         &self.as2_transports
     }
+    /// <p>The configuration for PROXY protocol version 2 (PPv2) support on the Transfer Family server. For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/working-with-nlb.html">Working with Network Load Balancers</a>.</p>
+    pub fn proxy_config(mut self, input: crate::types::ProxyConfig) -> Self {
+        self.proxy_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for PROXY protocol version 2 (PPv2) support on the Transfer Family server. For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/working-with-nlb.html">Working with Network Load Balancers</a>.</p>
+    pub fn set_proxy_config(mut self, input: ::std::option::Option<crate::types::ProxyConfig>) -> Self {
+        self.proxy_config = input;
+        self
+    }
+    /// <p>The configuration for PROXY protocol version 2 (PPv2) support on the Transfer Family server. For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/working-with-nlb.html">Working with Network Load Balancers</a>.</p>
+    pub fn get_proxy_config(&self) -> &::std::option::Option<crate::types::ProxyConfig> {
+        &self.proxy_config
+    }
     /// Consumes the builder and constructs a [`ProtocolDetails`](crate::types::ProtocolDetails).
     pub fn build(self) -> crate::types::ProtocolDetails {
         crate::types::ProtocolDetails {
@@ -224,6 +245,7 @@ impl ProtocolDetailsBuilder {
             tls_session_resumption_mode: self.tls_session_resumption_mode,
             set_stat_option: self.set_stat_option,
             as2_transports: self.as2_transports,
+            proxy_config: self.proxy_config,
         }
     }
 }

@@ -21,6 +21,12 @@ pub fn ser_protocol_details(
         }
         array_5.finish();
     }
+    if let Some(var_7) = &input.proxy_config {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("ProxyConfig").start_object();
+        crate::protocol_serde::shape_proxy_config::ser_proxy_config(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }
 
@@ -73,6 +79,10 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "ProxyConfig" => {
+                            builder =
+                                builder.set_proxy_config(crate::protocol_serde::shape_proxy_config::de_proxy_config(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

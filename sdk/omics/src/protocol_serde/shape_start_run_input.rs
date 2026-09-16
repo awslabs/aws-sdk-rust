@@ -13,9 +13,7 @@ pub fn ser_start_run_input_input(
         object.key("configurationName").string(var_3.as_str());
     }
     if let Some(var_4) = &input.engine_settings {
-        object
-            .key("engineSettings")
-            .document(var_4, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("engineSettings").document(var_4);
     }
     if let Some(var_5) = &input.log_level {
         object.key("logLevel").string(var_5.as_str());
@@ -30,9 +28,7 @@ pub fn ser_start_run_input_input(
         object.key("outputUri").string(var_8.as_str());
     }
     if let Some(var_9) = &input.parameters {
-        object
-            .key("parameters")
-            .document(var_9, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("parameters").document(var_9);
     }
     if let Some(var_10) = &input.priority {
         object.key("priority").number(

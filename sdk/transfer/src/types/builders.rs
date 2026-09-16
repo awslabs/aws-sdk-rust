@@ -83,6 +83,8 @@ pub use crate::types::_listed_profile::ListedProfileBuilder;
 
 pub use crate::types::_listed_server::ListedServerBuilder;
 
+pub use crate::types::_proxy_config::ProxyConfigBuilder;
+
 pub use crate::types::_listed_user::ListedUserBuilder;
 
 pub use crate::types::_listed_web_app::ListedWebAppBuilder;

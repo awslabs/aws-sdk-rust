@@ -73,6 +73,8 @@ pub struct CreateLagOutput {
     pub prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
     /// <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
     pub rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
+    /// <p>The billing mode of the LAG.</p>
+    pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     _request_id: Option<String>,
 }
 impl CreateLagOutput {
@@ -203,6 +205,10 @@ impl CreateLagOutput {
     pub fn rate_limiter_status(&self) -> ::std::option::Option<&crate::types::RateLimiterStatus> {
         self.rate_limiter_status.as_ref()
     }
+    /// <p>The billing mode of the LAG.</p>
+    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
+        self.billing_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateLagOutput {
     fn request_id(&self) -> Option<&str> {
@@ -246,6 +252,7 @@ pub struct CreateLagOutputBuilder {
     pub(crate) prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
     pub(crate) prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
     pub(crate) rate_limiter_status: ::std::option::Option<crate::types::RateLimiterStatus>,
+    pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
     _request_id: Option<String>,
 }
 impl CreateLagOutputBuilder {
@@ -682,6 +689,20 @@ impl CreateLagOutputBuilder {
     pub fn get_rate_limiter_status(&self) -> &::std::option::Option<crate::types::RateLimiterStatus> {
         &self.rate_limiter_status
     }
+    /// <p>The billing mode of the LAG.</p>
+    pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
+        self.billing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The billing mode of the LAG.</p>
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
+        self.billing_mode = input;
+        self
+    }
+    /// <p>The billing mode of the LAG.</p>
+    pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
+        &self.billing_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -720,6 +741,7 @@ impl CreateLagOutputBuilder {
             prefix_pool_unallocated_count_ipv4: self.prefix_pool_unallocated_count_ipv4,
             prefix_pool_unallocated_count_ipv6: self.prefix_pool_unallocated_count_ipv6,
             rate_limiter_status: self.rate_limiter_status,
+            billing_mode: self.billing_mode,
             _request_id: self._request_id,
         }
     }

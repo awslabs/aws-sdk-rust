@@ -5,9 +5,7 @@ pub fn ser_tool_input_schema(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ToolInputSchema::Json(inner) => {
-            object_3
-                .key("json")
-                .document(inner, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+            object_3.key("json").document(inner);
         }
         crate::types::ToolInputSchema::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

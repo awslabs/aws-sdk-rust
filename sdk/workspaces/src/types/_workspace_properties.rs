@@ -24,7 +24,7 @@ pub struct WorkspaceProperties {
     /// <li>
     /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
-    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, and Graphics.g6).</p></li>
+    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, Graphics.g6, and Graphics.g7).</p></li>
     /// </ul>
     /// </note>
     pub protocols: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>,
@@ -67,7 +67,7 @@ impl WorkspaceProperties {
     /// <li>
     /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
-    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, and Graphics.g6).</p></li>
+    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, Graphics.g6, and Graphics.g7).</p></li>
     /// </ul>
     /// </note>
     ///
@@ -201,7 +201,7 @@ impl WorkspacePropertiesBuilder {
     /// <li>
     /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
-    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, and Graphics.g6).</p></li>
+    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, Graphics.g6, and Graphics.g7).</p></li>
     /// </ul>
     /// </note>
     pub fn protocols(mut self, input: crate::types::Protocol) -> Self {
@@ -217,7 +217,7 @@ impl WorkspacePropertiesBuilder {
     /// <li>
     /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
-    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, and Graphics.g6).</p></li>
+    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, Graphics.g6, and Graphics.g7).</p></li>
     /// </ul>
     /// </note>
     pub fn set_protocols(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Protocol>>) -> Self {
@@ -231,7 +231,7 @@ impl WorkspacePropertiesBuilder {
     /// <li>
     /// <p>The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code> or <code>DCV</code> (formerly WSP).</p></li>
     /// <li>
-    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, and Graphics.g6).</p></li>
+    /// <p>Unavailable for Windows 7 WorkSpaces and WorkSpaces using GPU-based bundles (Graphics, GraphicsPro, Graphics.g4dn, GraphicsPro.g4dn, Graphics.g6, and Graphics.g7).</p></li>
     /// </ul>
     /// </note>
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Protocol>> {

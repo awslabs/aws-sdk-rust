@@ -150,6 +150,8 @@ mod allocate_transit_virtual_interface;
 
 mod associate_connection_with_lag;
 
+mod associate_connections_to_resiliency_group;
+
 mod associate_hosted_connection;
 
 mod associate_mac_sec_key;
@@ -183,6 +185,8 @@ mod create_lag;
 mod create_private_virtual_interface;
 
 mod create_public_virtual_interface;
+
+mod create_resiliency_group;
 
 mod create_transit_virtual_interface;
 
@@ -227,6 +231,8 @@ mod delete_interconnect;
 
 mod delete_lag;
 
+mod delete_resiliency_group;
+
 mod delete_virtual_interface;
 
 mod describe_connection_loa;
@@ -267,7 +273,15 @@ mod describe_virtual_interfaces;
 
 mod disassociate_connection_from_lag;
 
+mod disassociate_connections_from_resiliency_group;
+
 mod disassociate_mac_sec_key;
+
+mod get_resiliency_group;
+
+mod list_resiliency_group_associations;
+
+mod list_resiliency_groups;
 
 mod list_virtual_interface_routes;
 
@@ -283,10 +297,14 @@ mod untag_resource;
 
 mod update_connection;
 
+mod update_connections_billing_mode;
+
 mod update_direct_connect_gateway;
 
 mod update_direct_connect_gateway_association;
 
 mod update_lag;
+
+mod update_resiliency_group;
 
 mod update_virtual_interface_attributes;

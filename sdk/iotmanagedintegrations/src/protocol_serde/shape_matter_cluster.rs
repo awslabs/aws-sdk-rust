@@ -7,18 +7,14 @@ pub fn ser_matter_cluster(
         object.key("id").string(var_1.as_str());
     }
     if let Some(var_2) = &input.attributes {
-        object
-            .key("attributes")
-            .document(var_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("attributes").document(var_2);
     }
     if let Some(var_3) = &input.commands {
         #[allow(unused_mut)]
         let mut object_4 = object.key("commands").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4
-                    .key(key_5.as_str())
-                    .document(value_6, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+                object_4.key(key_5.as_str()).document(value_6);
             }
         }
         object_4.finish();
@@ -28,9 +24,7 @@ pub fn ser_matter_cluster(
         let mut object_8 = object.key("events").start_object();
         for (key_9, value_10) in var_7 {
             {
-                object_8
-                    .key(key_9.as_str())
-                    .document(value_10, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+                object_8.key(key_9.as_str()).document(value_10);
             }
         }
         object_8.finish();

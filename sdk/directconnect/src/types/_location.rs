@@ -16,6 +16,8 @@ pub struct Location {
     pub available_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The available MAC Security (MACsec) port speeds for the location.</p>
     pub available_mac_sec_port_speeds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The billing modes available at the location, including the port speeds and Amazon Web Services Regions supported by each mode.</p>
+    pub available_billing_modes: ::std::option::Option<::std::vec::Vec<crate::types::AvailableBillingMode>>,
 }
 impl Location {
     /// <p>The code for the location.</p>
@@ -48,6 +50,12 @@ impl Location {
     pub fn available_mac_sec_port_speeds(&self) -> &[::std::string::String] {
         self.available_mac_sec_port_speeds.as_deref().unwrap_or_default()
     }
+    /// <p>The billing modes available at the location, including the port speeds and Amazon Web Services Regions supported by each mode.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.available_billing_modes.is_none()`.
+    pub fn available_billing_modes(&self) -> &[crate::types::AvailableBillingMode] {
+        self.available_billing_modes.as_deref().unwrap_or_default()
+    }
 }
 impl Location {
     /// Creates a new builder-style object to manufacture [`Location`](crate::types::Location).
@@ -66,6 +74,7 @@ pub struct LocationBuilder {
     pub(crate) available_port_speeds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) available_providers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) available_mac_sec_port_speeds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) available_billing_modes: ::std::option::Option<::std::vec::Vec<crate::types::AvailableBillingMode>>,
 }
 impl LocationBuilder {
     /// <p>The code for the location.</p>
@@ -170,6 +179,26 @@ impl LocationBuilder {
     pub fn get_available_mac_sec_port_speeds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.available_mac_sec_port_speeds
     }
+    /// Appends an item to `available_billing_modes`.
+    ///
+    /// To override the contents of this collection use [`set_available_billing_modes`](Self::set_available_billing_modes).
+    ///
+    /// <p>The billing modes available at the location, including the port speeds and Amazon Web Services Regions supported by each mode.</p>
+    pub fn available_billing_modes(mut self, input: crate::types::AvailableBillingMode) -> Self {
+        let mut v = self.available_billing_modes.unwrap_or_default();
+        v.push(input);
+        self.available_billing_modes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The billing modes available at the location, including the port speeds and Amazon Web Services Regions supported by each mode.</p>
+    pub fn set_available_billing_modes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AvailableBillingMode>>) -> Self {
+        self.available_billing_modes = input;
+        self
+    }
+    /// <p>The billing modes available at the location, including the port speeds and Amazon Web Services Regions supported by each mode.</p>
+    pub fn get_available_billing_modes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AvailableBillingMode>> {
+        &self.available_billing_modes
+    }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     pub fn build(self) -> crate::types::Location {
         crate::types::Location {
@@ -179,6 +208,7 @@ impl LocationBuilder {
             available_port_speeds: self.available_port_speeds,
             available_providers: self.available_providers,
             available_mac_sec_port_speeds: self.available_mac_sec_port_speeds,
+            available_billing_modes: self.available_billing_modes,
         }
     }
 }

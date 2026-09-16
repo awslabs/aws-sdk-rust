@@ -82,6 +82,8 @@ pub struct DeleteConnectionOutput {
     pub prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
     /// <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
     pub prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
+    /// <p>The billing mode of the connection.</p>
+    pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
     _request_id: Option<String>,
 }
 impl DeleteConnectionOutput {
@@ -223,6 +225,10 @@ impl DeleteConnectionOutput {
     pub fn prefix_pool_unallocated_count_ipv6(&self) -> ::std::option::Option<i32> {
         self.prefix_pool_unallocated_count_ipv6
     }
+    /// <p>The billing mode of the connection.</p>
+    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
+        self.billing_mode.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DeleteConnectionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -268,6 +274,7 @@ pub struct DeleteConnectionOutputBuilder {
     pub(crate) prefix_pool_size_ipv6: ::std::option::Option<i32>,
     pub(crate) prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
     pub(crate) prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
+    pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
     _request_id: Option<String>,
 }
 impl DeleteConnectionOutputBuilder {
@@ -741,6 +748,20 @@ impl DeleteConnectionOutputBuilder {
     pub fn get_prefix_pool_unallocated_count_ipv6(&self) -> &::std::option::Option<i32> {
         &self.prefix_pool_unallocated_count_ipv6
     }
+    /// <p>The billing mode of the connection.</p>
+    pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
+        self.billing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The billing mode of the connection.</p>
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
+        self.billing_mode = input;
+        self
+    }
+    /// <p>The billing mode of the connection.</p>
+    pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
+        &self.billing_mode
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -781,6 +802,7 @@ impl DeleteConnectionOutputBuilder {
             prefix_pool_size_ipv6: self.prefix_pool_size_ipv6,
             prefix_pool_unallocated_count_ipv4: self.prefix_pool_unallocated_count_ipv4,
             prefix_pool_unallocated_count_ipv6: self.prefix_pool_unallocated_count_ipv6,
+            billing_mode: self.billing_mode,
             _request_id: self._request_id,
         }
     }

@@ -4,9 +4,7 @@ pub fn ser_create_landing_zone_input_input(
     input: &crate::operation::create_landing_zone::CreateLandingZoneInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.manifest {
-        object
-            .key("manifest")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("manifest").document(var_1);
     }
     if let Some(var_2) = &input.remediation_types {
         let mut array_3 = object.key("remediationTypes").start_array();

@@ -13,9 +13,7 @@ pub fn ser_schema_v2_field(
         object.key("name").string(input.name.as_str());
     }
     {
-        object
-            .key("type")
-            .document(&input.r#type, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("type").document(&input.r#type);
     }
     {
         object.key("required").boolean(input.required);

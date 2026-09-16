@@ -248,4 +248,18 @@ impl CreateLagFluentBuilder {
     pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {
         self.inner.get_request_mac_sec()
     }
+    /// <p>The billing mode for the LAG.</p>
+    pub fn billing_mode(mut self, input: crate::types::RequestBillingMode) -> Self {
+        self.inner = self.inner.billing_mode(input);
+        self
+    }
+    /// <p>The billing mode for the LAG.</p>
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::RequestBillingMode>) -> Self {
+        self.inner = self.inner.set_billing_mode(input);
+        self
+    }
+    /// <p>The billing mode for the LAG.</p>
+    pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::RequestBillingMode> {
+        self.inner.get_billing_mode()
+    }
 }

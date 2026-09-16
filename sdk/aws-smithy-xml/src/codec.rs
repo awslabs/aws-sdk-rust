@@ -199,9 +199,9 @@ mod tests {
         use aws_smithy_schema::serde::{SerdeError, SerializableStruct, ShapeSerializer};
         use aws_smithy_schema::{shape_id, Schema, ShapeType};
 
-        static NAME: Schema<'static> =
+        static NAME: Schema =
             Schema::new_member(shape_id!("test", "X$name"), ShapeType::String, "name", 0);
-        static X_SCHEMA: Schema<'static> =
+        static X_SCHEMA: Schema =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[&NAME])
                 .with_xml_namespace("urn:test", None);
 
@@ -227,11 +227,11 @@ mod tests {
         use aws_smithy_schema::serde::ShapeDeserializer;
         use aws_smithy_schema::{shape_id, Schema, ShapeType};
 
-        static NAME: Schema<'static> =
+        static NAME: Schema =
             Schema::new_member(shape_id!("test", "X$name"), ShapeType::String, "name", 0);
-        static AGE: Schema<'static> =
+        static AGE: Schema =
             Schema::new_member(shape_id!("test", "X$age"), ShapeType::Integer, "age", 1);
-        static X_SCHEMA: Schema<'static> =
+        static X_SCHEMA: Schema =
             Schema::new_struct(shape_id!("test", "X"), ShapeType::Structure, &[&NAME, &AGE]);
 
         let codec = XmlCodec::default();

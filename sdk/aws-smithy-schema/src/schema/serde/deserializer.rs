@@ -7,8 +7,7 @@
 
 use super::error::SerdeError;
 use crate::Schema;
-use aws_smithy_types::Document;
-use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime};
+use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime, Document};
 
 /// Deserializes Smithy shapes from a serial format.
 ///
@@ -62,12 +61,6 @@ pub fn capped_container_size(raw: usize) -> usize {
     raw.min(MAX_CONTAINER_PREALLOC)
 }
 
-/// Reads values of the Smithy data model from a serialized source, guided by a
-/// [`Schema`].
-///
-/// This is the deserialization counterpart to
-/// [`ShapeSerializer`](crate::serde::ShapeSerializer): codecs implement it so a
-/// shape can be deserialized from any format without shape-specific code.
 pub trait ShapeDeserializer {
     /// Reads a structure from the deserializer.
     ///
@@ -77,8 +70,8 @@ pub trait ShapeDeserializer {
     /// transparently delegate without the consumer knowing the concrete type.
     fn read_struct(
         &mut self,
-        schema: &Schema<'_>,
-        state: &mut dyn FnMut(&Schema<'_>, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
+        schema: &Schema,
+        state: &mut dyn FnMut(&Schema, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError>;
 
     /// Reads a list from the deserializer.
@@ -86,7 +79,7 @@ pub trait ShapeDeserializer {
     /// The consumer is called for each element with a `&mut dyn ShapeDeserializer`.
     fn read_list(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
         state: &mut dyn FnMut(&mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError>;
 
@@ -95,52 +88,48 @@ pub trait ShapeDeserializer {
     /// The consumer is called for each entry with the key and a `&mut dyn ShapeDeserializer`.
     fn read_map(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
         state: &mut dyn FnMut(String, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError>;
 
     /// Reads a boolean value.
-    fn read_boolean(&mut self, schema: &Schema<'_>) -> Result<bool, SerdeError>;
+    fn read_boolean(&mut self, schema: &Schema) -> Result<bool, SerdeError>;
 
     /// Reads a byte (i8) value.
-    fn read_byte(&mut self, schema: &Schema<'_>) -> Result<i8, SerdeError>;
+    fn read_byte(&mut self, schema: &Schema) -> Result<i8, SerdeError>;
 
     /// Reads a short (i16) value.
-    fn read_short(&mut self, schema: &Schema<'_>) -> Result<i16, SerdeError>;
+    fn read_short(&mut self, schema: &Schema) -> Result<i16, SerdeError>;
 
     /// Reads an integer (i32) value.
-    fn read_integer(&mut self, schema: &Schema<'_>) -> Result<i32, SerdeError>;
+    fn read_integer(&mut self, schema: &Schema) -> Result<i32, SerdeError>;
 
     /// Reads a long (i64) value.
-    fn read_long(&mut self, schema: &Schema<'_>) -> Result<i64, SerdeError>;
+    fn read_long(&mut self, schema: &Schema) -> Result<i64, SerdeError>;
 
     /// Reads a float (f32) value.
-    fn read_float(&mut self, schema: &Schema<'_>) -> Result<f32, SerdeError>;
+    fn read_float(&mut self, schema: &Schema) -> Result<f32, SerdeError>;
 
     /// Reads a double (f64) value.
-    fn read_double(&mut self, schema: &Schema<'_>) -> Result<f64, SerdeError>;
+    fn read_double(&mut self, schema: &Schema) -> Result<f64, SerdeError>;
 
     /// Reads a big integer value.
-    fn read_big_integer(&mut self, schema: &Schema<'_>) -> Result<BigInteger, SerdeError>;
+    fn read_big_integer(&mut self, schema: &Schema) -> Result<BigInteger, SerdeError>;
 
     /// Reads a big decimal value.
-    fn read_big_decimal(&mut self, schema: &Schema<'_>) -> Result<BigDecimal, SerdeError>;
+    fn read_big_decimal(&mut self, schema: &Schema) -> Result<BigDecimal, SerdeError>;
 
     /// Reads a string value.
-    fn read_string(&mut self, schema: &Schema<'_>) -> Result<String, SerdeError>;
+    fn read_string(&mut self, schema: &Schema) -> Result<String, SerdeError>;
 
     /// Reads a blob (byte array) value.
-    fn read_blob(&mut self, schema: &Schema<'_>) -> Result<Blob, SerdeError>;
+    fn read_blob(&mut self, schema: &Schema) -> Result<Blob, SerdeError>;
 
     /// Reads a timestamp value.
-    fn read_timestamp(&mut self, schema: &Schema<'_>) -> Result<DateTime, SerdeError>;
+    fn read_timestamp(&mut self, schema: &Schema) -> Result<DateTime, SerdeError>;
 
     /// Reads a document value.
-    ///
-    /// Returns the [`aws_smithy_types::Document`] (fully owned,
-    /// no lifetime). Implementations construct the value from their
-    /// underlying source representation.
-    fn read_document(&mut self, schema: &Schema<'_>) -> Result<Document, SerdeError>;
+    fn read_document(&mut self, schema: &Schema) -> Result<Document, SerdeError>;
 
     /// Checks if the current value is null.
     ///
@@ -184,16 +173,10 @@ pub trait ShapeDeserializer {
     //    are called through `&mut dyn ShapeDeserializer` in generated code.
 
     /// Reads a list of strings.
-    fn read_string_list(&mut self, schema: &Schema<'_>) -> Result<Vec<String>, SerdeError> {
-        // Element reads receive the member (list element / map value) schema,
-        // not the container schema, so element-level traits (e.g.
-        // `@mediaType`, `@timestampFormat`) reach the codec — matching the
-        // serializer side. The prelude scalar is the fallback for a schema
-        // built without a member set.
-        let element = schema.member().unwrap_or(&crate::prelude::STRING);
+    fn read_string_list(&mut self, schema: &Schema) -> Result<Vec<String>, SerdeError> {
         let mut out = Vec::new();
         self.read_list(schema, &mut |deser| {
-            out.push(deser.read_string(element)?);
+            out.push(deser.read_string(schema)?);
             Ok(())
         })?;
         Ok(out)
@@ -202,34 +185,31 @@ pub trait ShapeDeserializer {
     /// Reads a list of blobs.
     fn read_blob_list(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
     ) -> Result<Vec<aws_smithy_types::Blob>, SerdeError> {
-        let element = schema.member().unwrap_or(&crate::prelude::BLOB);
         let mut out = Vec::new();
         self.read_list(schema, &mut |deser| {
-            out.push(deser.read_blob(element)?);
+            out.push(deser.read_blob(schema)?);
             Ok(())
         })?;
         Ok(out)
     }
 
     /// Reads a list of integers.
-    fn read_integer_list(&mut self, schema: &Schema<'_>) -> Result<Vec<i32>, SerdeError> {
-        let element = schema.member().unwrap_or(&crate::prelude::INTEGER);
+    fn read_integer_list(&mut self, schema: &Schema) -> Result<Vec<i32>, SerdeError> {
         let mut out = Vec::new();
         self.read_list(schema, &mut |deser| {
-            out.push(deser.read_integer(element)?);
+            out.push(deser.read_integer(schema)?);
             Ok(())
         })?;
         Ok(out)
     }
 
     /// Reads a list of longs.
-    fn read_long_list(&mut self, schema: &Schema<'_>) -> Result<Vec<i64>, SerdeError> {
-        let element = schema.member().unwrap_or(&crate::prelude::LONG);
+    fn read_long_list(&mut self, schema: &Schema) -> Result<Vec<i64>, SerdeError> {
         let mut out = Vec::new();
         self.read_list(schema, &mut |deser| {
-            out.push(deser.read_long(element)?);
+            out.push(deser.read_long(schema)?);
             Ok(())
         })?;
         Ok(out)
@@ -238,14 +218,11 @@ pub trait ShapeDeserializer {
     /// Reads a map with string values.
     fn read_string_string_map(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
     ) -> Result<std::collections::HashMap<String, String>, SerdeError> {
-        // `member()` returns the map *value* schema; the key is produced by
-        // `read_map` itself. Fall back to the prelude scalar when unset.
-        let value = schema.member().unwrap_or(&crate::prelude::STRING);
         let mut out = std::collections::HashMap::new();
         self.read_map(schema, &mut |key, deser| {
-            out.insert(key, deser.read_string(value)?);
+            out.insert(key, deser.read_string(schema)?);
             Ok(())
         })?;
         Ok(out)

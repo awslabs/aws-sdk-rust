@@ -22,6 +22,9 @@ pub mod allocate_transit_virtual_interface;
 /// Types for the `AssociateConnectionWithLag` operation.
 pub mod associate_connection_with_lag;
 
+/// Types for the `AssociateConnectionsToResiliencyGroup` operation.
+pub mod associate_connections_to_resiliency_group;
+
 /// Types for the `AssociateHostedConnection` operation.
 pub mod associate_hosted_connection;
 
@@ -73,6 +76,9 @@ pub mod create_private_virtual_interface;
 /// Types for the `CreatePublicVirtualInterface` operation.
 pub mod create_public_virtual_interface;
 
+/// Types for the `CreateResiliencyGroup` operation.
+pub mod create_resiliency_group;
+
 /// Types for the `CreateTransitVirtualInterface` operation.
 pub mod create_transit_virtual_interface;
 
@@ -96,6 +102,9 @@ pub mod delete_interconnect;
 
 /// Types for the `DeleteLag` operation.
 pub mod delete_lag;
+
+/// Types for the `DeleteResiliencyGroup` operation.
+pub mod delete_resiliency_group;
 
 /// Types for the `DeleteVirtualInterface` operation.
 pub mod delete_virtual_interface;
@@ -157,8 +166,20 @@ pub mod describe_virtual_interfaces;
 /// Types for the `DisassociateConnectionFromLag` operation.
 pub mod disassociate_connection_from_lag;
 
+/// Types for the `DisassociateConnectionsFromResiliencyGroup` operation.
+pub mod disassociate_connections_from_resiliency_group;
+
 /// Types for the `DisassociateMacSecKey` operation.
 pub mod disassociate_mac_sec_key;
+
+/// Types for the `GetResiliencyGroup` operation.
+pub mod get_resiliency_group;
+
+/// Types for the `ListResiliencyGroupAssociations` operation.
+pub mod list_resiliency_group_associations;
+
+/// Types for the `ListResiliencyGroups` operation.
+pub mod list_resiliency_groups;
 
 /// Types for the `ListVirtualInterfaceRoutes` operation.
 pub mod list_virtual_interface_routes;
@@ -181,6 +202,9 @@ pub mod untag_resource;
 /// Types for the `UpdateConnection` operation.
 pub mod update_connection;
 
+/// Types for the `UpdateConnectionsBillingMode` operation.
+pub mod update_connections_billing_mode;
+
 /// Types for the `UpdateDirectConnectGateway` operation.
 pub mod update_direct_connect_gateway;
 
@@ -189,6 +213,9 @@ pub mod update_direct_connect_gateway_association;
 
 /// Types for the `UpdateLag` operation.
 pub mod update_lag;
+
+/// Types for the `UpdateResiliencyGroup` operation.
+pub mod update_resiliency_group;
 
 /// Types for the `UpdateVirtualInterfaceAttributes` operation.
 pub mod update_virtual_interface_attributes;

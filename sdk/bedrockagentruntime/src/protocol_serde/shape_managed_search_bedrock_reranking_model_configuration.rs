@@ -11,9 +11,7 @@ pub fn ser_managed_search_bedrock_reranking_model_configuration(
         let mut object_2 = object.key("additionalModelRequestFields").start_object();
         for (key_3, value_4) in var_1 {
             {
-                object_2
-                    .key(key_3.as_str())
-                    .document(value_4, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+                object_2.key(key_3.as_str()).document(value_4);
             }
         }
         object_2.finish();

@@ -4,9 +4,7 @@ pub fn ser_action_execution_payload_field(
     input: &crate::types::ActionExecutionPayloadField,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
-        object
-            .key("value")
-            .document(&input.value, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("value").document(&input.value);
     }
     Ok(())
 }

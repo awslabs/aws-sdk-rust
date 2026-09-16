@@ -4,9 +4,7 @@ pub fn ser_memory_json_data(
     input: &crate::types::MemoryJsonData,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     {
-        object
-            .key("content")
-            .document(&input.content, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("content").document(&input.content);
     }
     Ok(())
 }

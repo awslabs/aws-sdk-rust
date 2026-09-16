@@ -4,9 +4,7 @@ pub fn ser_create_trigger_input_input(
     input: &crate::operation::create_trigger::CreateTriggerInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.action {
-        object
-            .key("action")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("action").document(var_1);
     }
     if let Some(var_2) = &input.client_token {
         object.key("clientToken").string(var_2.as_str());

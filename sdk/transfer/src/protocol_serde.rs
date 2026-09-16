@@ -485,6 +485,8 @@ pub(crate) mod shape_logging_configuration;
 
 pub(crate) mod shape_protocols;
 
+pub(crate) mod shape_proxy_config;
+
 pub(crate) mod shape_security_policy_options;
 
 pub(crate) mod shape_security_policy_protocols;

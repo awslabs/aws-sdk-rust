@@ -5,9 +5,7 @@ pub fn ser_tool_result_content_block(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::ToolResultContentBlock::Json(inner) => {
-            object_3
-                .key("json")
-                .document(inner, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+            object_3.key("json").document(inner);
         }
         crate::types::ToolResultContentBlock::Text(inner) => {
             object_3.key("text").string(inner.as_str());

@@ -31,9 +31,7 @@ pub fn ser_harness_lite_llm_model_config(
         );
     }
     if let Some(var_6) = &input.additional_params {
-        object
-            .key("additionalParams")
-            .document(var_6, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("additionalParams").document(var_6);
     }
     Ok(())
 }

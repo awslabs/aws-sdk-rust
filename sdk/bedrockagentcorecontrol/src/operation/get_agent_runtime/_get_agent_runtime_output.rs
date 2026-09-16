@@ -45,6 +45,8 @@ pub struct GetAgentRuntimeOutput {
     pub filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     /// <p>The capacity provider configuration for the AgentCore Runtime.</p>
     pub capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
+    /// <p>The version of the runtime platform used by the AgentCore Runtime.</p>
+    pub platform_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutput {
@@ -139,6 +141,10 @@ impl GetAgentRuntimeOutput {
     pub fn capacity_provider_configuration(&self) -> ::std::option::Option<&crate::types::CapacityProviderConfiguration> {
         self.capacity_provider_configuration.as_ref()
     }
+    /// <p>The version of the runtime platform used by the AgentCore Runtime.</p>
+    pub fn platform_version(&self) -> ::std::option::Option<&str> {
+        self.platform_version.as_deref()
+    }
 }
 impl ::std::fmt::Debug for GetAgentRuntimeOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -164,6 +170,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutput {
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
+        formatter.field("platform_version", &self.platform_version);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -205,6 +212,7 @@ pub struct GetAgentRuntimeOutputBuilder {
     pub(crate) metadata_configuration: ::std::option::Option<crate::types::RuntimeMetadataConfiguration>,
     pub(crate) filesystem_configurations: ::std::option::Option<::std::vec::Vec<crate::types::FilesystemConfiguration>>,
     pub(crate) capacity_provider_configuration: ::std::option::Option<crate::types::CapacityProviderConfiguration>,
+    pub(crate) platform_version: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetAgentRuntimeOutputBuilder {
@@ -530,6 +538,20 @@ impl GetAgentRuntimeOutputBuilder {
     pub fn get_capacity_provider_configuration(&self) -> &::std::option::Option<crate::types::CapacityProviderConfiguration> {
         &self.capacity_provider_configuration
     }
+    /// <p>The version of the runtime platform used by the AgentCore Runtime.</p>
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.platform_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The version of the runtime platform used by the AgentCore Runtime.</p>
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.platform_version = input;
+        self
+    }
+    /// <p>The version of the runtime platform used by the AgentCore Runtime.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.platform_version
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -614,6 +636,7 @@ impl GetAgentRuntimeOutputBuilder {
             metadata_configuration: self.metadata_configuration,
             filesystem_configurations: self.filesystem_configurations,
             capacity_provider_configuration: self.capacity_provider_configuration,
+            platform_version: self.platform_version,
             _request_id: self._request_id,
         })
     }
@@ -642,6 +665,7 @@ impl ::std::fmt::Debug for GetAgentRuntimeOutputBuilder {
         formatter.field("metadata_configuration", &self.metadata_configuration);
         formatter.field("filesystem_configurations", &self.filesystem_configurations);
         formatter.field("capacity_provider_configuration", &self.capacity_provider_configuration);
+        formatter.field("platform_version", &self.platform_version);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

@@ -51,5 +51,8 @@ pub fn ser_create_lag_input_input(
     if let Some(var_15) = &input.request_mac_sec {
         object.key("requestMACSec").boolean(*var_15);
     }
+    if let Some(var_16) = &input.billing_mode {
+        object.key("billingMode").string(var_16.as_str());
+    }
     Ok(())
 }

@@ -7,9 +7,9 @@
 
 use super::doc_error::DocError;
 use super::Document;
-use super::DocumentObject;
 use crate::Number;
 use serde::ser::{self, Impossible, Serialize};
+use std::collections::HashMap;
 use std::fmt::Display;
 
 /// Convert any `T: Serialize` into a [`Document`].
@@ -175,7 +175,7 @@ impl ser::Serializer for DocSerializer {
     where
         T: ?Sized + Serialize,
     {
-        let mut map = DocumentObject::new();
+        let mut map = HashMap::new();
         map.insert(String::from(variant), to_document(value)?);
         Ok(Document::Object(map))
     }
@@ -226,7 +226,7 @@ impl ser::Serializer for DocSerializer {
 
     fn serialize_map(self, len: Option<usize>) -> Result<Self::SerializeMap, DocError> {
         Ok(SerializeMap {
-            map: DocumentObject::with_capacity(len.unwrap_or(0)),
+            map: HashMap::with_capacity(len.unwrap_or(0)),
             next_key: None,
         })
     }
@@ -248,7 +248,7 @@ impl ser::Serializer for DocSerializer {
     ) -> Result<Self::SerializeStructVariant, DocError> {
         Ok(SerializeStructVariant {
             name: String::from(variant),
-            map: DocumentObject::new(),
+            map: HashMap::new(),
         })
     }
 
@@ -270,13 +270,13 @@ struct SerializeTupleVariant {
 }
 
 struct SerializeMap {
-    map: DocumentObject,
+    map: HashMap<String, Document>,
     next_key: Option<String>,
 }
 
 struct SerializeStructVariant {
     name: String,
-    map: DocumentObject,
+    map: HashMap<String, Document>,
 }
 
 impl ser::SerializeSeq for SerializeVec {
@@ -341,7 +341,7 @@ impl ser::SerializeTupleVariant for SerializeTupleVariant {
     }
 
     fn end(self) -> Result<Document, DocError> {
-        let mut object = DocumentObject::new();
+        let mut object = HashMap::new();
         object.insert(self.name, Document::Array(self.vec));
         Ok(Document::Object(object))
     }
@@ -405,7 +405,7 @@ impl ser::SerializeStructVariant for SerializeStructVariant {
     }
 
     fn end(self) -> Result<Document, DocError> {
-        let mut object = DocumentObject::new();
+        let mut object = HashMap::new();
         object.insert(self.name, Document::Object(self.map));
         Ok(Document::Object(object))
     }

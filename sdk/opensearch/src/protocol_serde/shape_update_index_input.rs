@@ -4,9 +4,7 @@ pub fn ser_update_index_input_input(
     input: &crate::operation::update_index::UpdateIndexInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.index_schema {
-        object
-            .key("IndexSchema")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("IndexSchema").document(var_1);
     }
     Ok(())
 }

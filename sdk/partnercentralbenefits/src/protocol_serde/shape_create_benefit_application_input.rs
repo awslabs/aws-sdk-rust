@@ -28,9 +28,7 @@ pub fn ser_create_benefit_application_input_input(
         array_7.finish();
     }
     if let Some(var_9) = &input.benefit_application_details {
-        object
-            .key("BenefitApplicationDetails")
-            .document(var_9, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("BenefitApplicationDetails").document(var_9);
     }
     if let Some(var_10) = &input.tags {
         let mut array_11 = object.key("Tags").start_array();

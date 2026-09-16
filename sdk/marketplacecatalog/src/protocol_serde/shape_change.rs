@@ -28,9 +28,7 @@ pub fn ser_change(
         object.key("Details").string(var_7.as_str());
     }
     if let Some(var_8) = &input.details_document {
-        object
-            .key("DetailsDocument")
-            .document(var_8, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("DetailsDocument").document(var_8);
     }
     if let Some(var_9) = &input.change_name {
         object.key("ChangeName").string(var_9.as_str());

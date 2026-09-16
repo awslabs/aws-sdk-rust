@@ -21,11 +21,11 @@ macro_rules! annotation_trait {
 
         impl $name {
             /// The Shape ID for this trait.
-            pub const TRAIT_ID: ShapeId<'static> = crate::shape_id!($ns, $trait_name);
+            pub const TRAIT_ID: ShapeId = crate::shape_id!($ns, $trait_name);
         }
 
         impl Trait for $name {
-            fn trait_id(&self) -> &ShapeId<'static> { &Self::TRAIT_ID }
+            fn trait_id(&self) -> &ShapeId { &Self::TRAIT_ID }
             fn as_any(&self) -> &dyn Any { self }
         }
     };
@@ -36,42 +36,28 @@ macro_rules! string_trait {
         $(#[$meta])*
         #[derive(Debug, Clone)]
         #[allow(dead_code)] // Used by generated schema code
-        pub struct $name<'a> {
-            value: &'a str,
+        pub struct $name {
+            value: &'static str,
         }
 
         #[allow(dead_code)] // Used by generated schema code
-        impl<'a> $name<'a> {
+        impl $name {
             /// The Shape ID for this trait.
-            pub const TRAIT_ID: ShapeId<'static> = crate::shape_id!($ns, $trait_name);
+            pub const TRAIT_ID: ShapeId = crate::shape_id!($ns, $trait_name);
 
             /// Creates a new instance.
-            ///
-            /// `value` is borrowed for `'a`. For codegen-emitted schemas this is
-            /// a string literal, so `'a` is `'static`; schemas materialized at
-            /// runtime borrow from storage the caller owns, such as an arena
-            /// holding the parsed model text.
-            pub const fn new(value: &'a str) -> Self {
+            pub const fn new(value: &'static str) -> Self {
                 Self { value }
             }
 
             /// Returns the trait value.
-            ///
-            /// Bound to the schema's data lifetime `'a`, not to `&self`, so the
-            /// value can be stored anywhere the schema's data is valid. For a
-            /// `'static` schema this is `&'static str`.
-            pub fn value(&self) -> &'a str {
+            pub fn value(&self) -> &'static str {
                 self.value
             }
         }
 
-        // Implemented only for the `'static` instantiation: `Trait` requires the
-        // `Any` supertrait, which requires `Self: 'static`. Runtime-lifetime
-        // wrappers are still readable through the typed accessors on `Schema`;
-        // only the `dyn Trait` fallback map is `'static`-only. See
-        // `trait_type.rs` for the `Any` constraint.
-        impl Trait for $name<'static> {
-            fn trait_id(&self) -> &ShapeId<'static> { &Self::TRAIT_ID }
+        impl Trait for $name {
+            fn trait_id(&self) -> &ShapeId { &Self::TRAIT_ID }
             fn as_any(&self) -> &dyn Any { self }
         }
     };
@@ -120,27 +106,23 @@ annotation_trait!(
 /// on the start tag of the element to which the trait applies.
 #[derive(Debug, Clone)]
 #[allow(dead_code)] // Used by generated schema code
-pub struct XmlNamespaceTrait<'a> {
-    uri: &'a str,
-    prefix: Option<&'a str>,
+pub struct XmlNamespaceTrait {
+    uri: &'static str,
+    prefix: Option<&'static str>,
 }
 
 #[allow(dead_code)] // Used by generated schema code
-impl<'a> XmlNamespaceTrait<'a> {
+impl XmlNamespaceTrait {
     /// The Shape ID for this trait.
-    pub const TRAIT_ID: ShapeId<'static> = crate::shape_id!("smithy.api", "xmlNamespace");
+    pub const TRAIT_ID: ShapeId = crate::shape_id!("smithy.api", "xmlNamespace");
 
     /// Creates a new `XmlNamespaceTrait`.
-    ///
-    /// `uri` and `prefix` are borrowed for `'a`; see
-    /// [`JsonNameTrait::new`](crate::traits::JsonNameTrait::new) for what that
-    /// means for codegen-emitted versus runtime-materialized schemas.
-    pub const fn new(uri: &'a str, prefix: Option<&'a str>) -> Self {
+    pub const fn new(uri: &'static str, prefix: Option<&'static str>) -> Self {
         Self { uri, prefix }
     }
 
     /// The namespace URI.
-    pub fn uri(&self) -> &'a str {
+    pub fn uri(&self) -> &'static str {
         self.uri
     }
 
@@ -148,13 +130,13 @@ impl<'a> XmlNamespaceTrait<'a> {
     ///
     /// When `Some(prefix)`, the namespace is declared as
     /// `xmlns:prefix="uri"`. When `None`, it is declared as `xmlns="uri"`.
-    pub fn prefix(&self) -> Option<&'a str> {
+    pub fn prefix(&self) -> Option<&'static str> {
         self.prefix
     }
 }
 
-impl Trait for XmlNamespaceTrait<'static> {
-    fn trait_id(&self) -> &ShapeId<'static> {
+impl Trait for XmlNamespaceTrait {
+    fn trait_id(&self) -> &ShapeId {
         &Self::TRAIT_ID
     }
     fn as_any(&self) -> &dyn Any {
@@ -185,7 +167,7 @@ pub enum TimestampFormat {
 #[allow(dead_code)] // Used by generated schema code
 impl TimestampFormatTrait {
     /// The Shape ID for this trait.
-    pub const TRAIT_ID: ShapeId<'static> = crate::shape_id!("smithy.api", "timestampFormat");
+    pub const TRAIT_ID: ShapeId = crate::shape_id!("smithy.api", "timestampFormat");
 
     /// Creates a new instance.
     pub const fn new(format: TimestampFormat) -> Self {
@@ -199,7 +181,7 @@ impl TimestampFormatTrait {
 }
 
 impl Trait for TimestampFormatTrait {
-    fn trait_id(&self) -> &ShapeId<'static> {
+    fn trait_id(&self) -> &ShapeId {
         &Self::TRAIT_ID
     }
     fn as_any(&self) -> &dyn Any {
@@ -209,97 +191,11 @@ impl Trait for TimestampFormatTrait {
 
 // --- HTTP binding traits ---
 
-// `@httpHeader` is hand-written rather than generated via `string_trait!`
-// because its value has two cases. Header names are inserted into `Headers`,
-// whose only allocation-free `AsHeaderComponent` impl is for `&'static str`
-// (`aws-smithy-runtime-api`'s `MaybeStatic = Cow<'static, str>`), so the binder
-// needs to recover a `'static` name from a schema whose lifetime is arbitrary.
-// Modelling that as a two-arm enum rather than pinning the type means relaxing
-// this trait later — to let runtime-materialized schemas borrow header names
-// from a model arena — is a purely additive change: add a `new_borrowed`
-// constructor and `value_static` starts returning `None`, with no signature
-// changed.
-//
-// Both arms are references, so the type has no drop glue and stays
-// `const fn`-constructible. That rules out `Cow<'static, str>` here: a
-// `const fn` body cannot run destructors, and generated schemas are
-// const-initialized statics.
-#[derive(Debug, Clone, Copy)]
-enum HeaderName<'a> {
-    /// A codegen-emitted literal, or a runtime name interned/leaked to `'static`.
-    Static(&'static str),
-    /// Reserved for runtime-materialized schemas that borrow the header name
-    /// from storage the caller owns. Not publicly constructible yet; adding a
-    /// constructor for it is backwards compatible.
-    #[allow(dead_code)]
-    Borrowed(&'a str),
-}
-
-/// The `@httpHeader` trait — binds a member to an HTTP header.
-#[derive(Debug, Clone)]
-#[allow(dead_code)] // Used by generated schema code
-pub struct HttpHeaderTrait<'a> {
-    value: HeaderName<'a>,
-}
-
-#[allow(dead_code)] // Used by generated schema code
-impl<'a> HttpHeaderTrait<'a> {
-    /// The Shape ID for this trait.
-    pub const TRAIT_ID: ShapeId<'static> = crate::shape_id!("smithy.api", "httpHeader");
-
-    /// Creates a new instance from a `'static` header name.
-    ///
-    /// Unlike the other wire-format traits this requires `'static`, so that
-    /// [`value_static`](Self::value_static) can hand the HTTP binder a name it
-    /// inserts into `Headers` without allocating. Schemas materialized at
-    /// runtime must intern or leak their header names; every other
-    /// wire-format trait accepts an arbitrary lifetime.
-    pub const fn new(value: &'static str) -> Self {
-        Self {
-            value: HeaderName::Static(value),
-        }
-    }
-
-    /// Returns the header name.
-    ///
-    /// Bound to the schema's data lifetime `'a`, matching the other trait
-    /// wrappers. Use [`value_static`](Self::value_static) when the name has to
-    /// outlive the schema, as it does for header insertion.
-    pub fn value(&self) -> &'a str {
-        match self.value {
-            HeaderName::Static(v) => v,
-            HeaderName::Borrowed(v) => v,
-        }
-    }
-
-    /// Returns the header name if it is `'static`.
-    ///
-    /// This is what `Headers::insert` needs for an allocation-free insert.
-    ///
-    /// Always `Some` today, because [`new`](Self::new) is the only constructor
-    /// and it requires `'static`. Callers must nonetheless handle `None` and
-    /// fall back to an owned string rather than unwrapping: relaxing this
-    /// trait to accept runtime-borrowed names is intended to be additive, and
-    /// at that point this returns `None` for arena-borrowed names.
-    pub fn value_static(&self) -> Option<&'static str> {
-        match self.value {
-            HeaderName::Static(v) => Some(v),
-            HeaderName::Borrowed(_) => None,
-        }
-    }
-}
-
-// Implemented only for the `'static` instantiation; see the note on the
-// `string_trait!` impl for why `Trait` requires `Self: 'static`.
-impl Trait for HttpHeaderTrait<'static> {
-    fn trait_id(&self) -> &ShapeId<'static> {
-        &Self::TRAIT_ID
-    }
-
-    fn as_any(&self) -> &dyn Any {
-        self
-    }
-}
+string_trait!(
+    /// The `@httpHeader` trait — binds a member to an HTTP header.
+    HttpHeaderTrait,
+    "smithy.api", "httpHeader"
+);
 
 string_trait!(
     /// The `@httpQuery` trait — binds a member to a query parameter.
@@ -346,19 +242,15 @@ annotation_trait!(
 /// The URI pattern may contain `{label}` placeholders that are substituted
 /// at serialization time with percent-encoded values from `@httpLabel` members.
 #[derive(Debug, Clone)]
-pub struct HttpTrait<'a> {
-    method: &'a str,
-    uri: &'a str,
+pub struct HttpTrait {
+    method: &'static str,
+    uri: &'static str,
     code: u16,
 }
 
-impl<'a> HttpTrait<'a> {
+impl HttpTrait {
     /// Creates a new `HttpTrait`. If `code` is `None`, defaults to `200`.
-    ///
-    /// `method` and `uri` are borrowed for `'a`. Without a non-`'static` `'a`, a
-    /// runtime-materialized schema has no method and no URI, so no request can
-    /// be constructed from it at all.
-    pub const fn new(method: &'a str, uri: &'a str, code: Option<u16>) -> Self {
+    pub const fn new(method: &'static str, uri: &'static str, code: Option<u16>) -> Self {
         Self {
             method,
             uri,
@@ -370,7 +262,7 @@ impl<'a> HttpTrait<'a> {
     }
 
     /// The HTTP method (e.g., `"GET"`, `"POST"`, `"PUT"`).
-    pub fn method(&self) -> &'a str {
+    pub fn method(&self) -> &str {
         self.method
     }
 
@@ -379,7 +271,7 @@ impl<'a> HttpTrait<'a> {
     /// May contain `{label}` placeholders that correspond to `@httpLabel` members.
     /// The protocol serializer substitutes these with percent-encoded values
     /// collected during member serialization.
-    pub fn uri(&self) -> &'a str {
+    pub fn uri(&self) -> &str {
         self.uri
     }
 
@@ -433,9 +325,7 @@ mod tests {
     fn downcast_json_name() {
         let t: Box<dyn Trait> = Box::new(JsonNameTrait::new("userName"));
         assert_eq!(t.trait_id().as_str(), "smithy.api#jsonName");
-        // The downcast target is the `'static` instantiation: `Trait` requires
-        // `Any`, which is only implemented for `JsonNameTrait<'static>`.
-        let json_name = t.as_any().downcast_ref::<JsonNameTrait<'static>>().unwrap();
+        let json_name = t.as_any().downcast_ref::<JsonNameTrait>().unwrap();
         assert_eq!(json_name.value(), "userName");
     }
 
@@ -444,18 +334,6 @@ mod tests {
         let t: Box<dyn Trait> = Box::new(SensitiveTrait);
         assert_eq!(t.trait_id().as_str(), "smithy.api#sensitive");
         assert!(t.as_any().downcast_ref::<SensitiveTrait>().is_some());
-    }
-
-    /// The HTTP binder's allocation-free header insert depends on
-    /// `value_static()` being `Some` for every `@httpHeader` a schema can
-    /// currently hold. If a `Borrowed` constructor is ever added, this test
-    /// keeps passing and the binder falls back to an owned name rather than
-    /// silently losing the header.
-    #[test]
-    fn http_header_value_static_is_some() {
-        const H: HttpHeaderTrait<'static> = HttpHeaderTrait::new("x-amz-request-id");
-        assert_eq!(H.value(), "x-amz-request-id");
-        assert_eq!(H.value_static(), Some("x-amz-request-id"));
     }
 
     #[test]

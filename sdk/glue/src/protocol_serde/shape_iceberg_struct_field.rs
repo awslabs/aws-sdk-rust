@@ -13,9 +13,7 @@ pub fn ser_iceberg_struct_field(
         object.key("Name").string(input.name.as_str());
     }
     {
-        object
-            .key("Type")
-            .document(&input.r#type, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("Type").document(&input.r#type);
     }
     {
         object.key("Required").boolean(input.required);
@@ -24,14 +22,10 @@ pub fn ser_iceberg_struct_field(
         object.key("Doc").string(var_1.as_str());
     }
     if let Some(var_2) = &input.initial_default {
-        object
-            .key("InitialDefault")
-            .document(var_2, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("InitialDefault").document(var_2);
     }
     if let Some(var_3) = &input.write_default {
-        object
-            .key("WriteDefault")
-            .document(var_3, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("WriteDefault").document(var_3);
     }
     Ok(())
 }

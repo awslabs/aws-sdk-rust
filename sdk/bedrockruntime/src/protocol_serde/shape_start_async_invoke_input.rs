@@ -10,9 +10,7 @@ pub fn ser_start_async_invoke_input_input(
         object.key("modelId").string(var_2.as_str());
     }
     if let Some(var_3) = &input.model_input {
-        object
-            .key("modelInput")
-            .document(var_3, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("modelInput").document(var_3);
     }
     if let Some(var_4) = &input.output_data_config {
         #[allow(unused_mut)]

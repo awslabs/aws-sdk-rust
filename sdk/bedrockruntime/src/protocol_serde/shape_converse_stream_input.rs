@@ -4,9 +4,7 @@ pub fn ser_converse_stream_input_input(
     input: &crate::operation::converse_stream::ConverseStreamInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.additional_model_request_fields {
-        object
-            .key("additionalModelRequestFields")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("additionalModelRequestFields").document(var_1);
     }
     if let Some(var_2) = &input.additional_model_response_field_paths {
         let mut array_3 = object.key("additionalModelResponseFieldPaths").start_array();

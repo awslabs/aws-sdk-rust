@@ -33,5 +33,8 @@ pub fn ser_create_connection_input_input(
     if let Some(var_10) = &input.request_mac_sec {
         object.key("requestMACSec").boolean(*var_10);
     }
+    if let Some(var_11) = &input.billing_mode {
+        object.key("billingMode").string(var_11.as_str());
+    }
     Ok(())
 }

@@ -13,9 +13,7 @@ pub fn ser_rerank_document(
         object_2.finish();
     }
     if let Some(var_3) = &input.json_document {
-        object
-            .key("jsonDocument")
-            .document(var_3, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("jsonDocument").document(var_3);
     }
     Ok(())
 }

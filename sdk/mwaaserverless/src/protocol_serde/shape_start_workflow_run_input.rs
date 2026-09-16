@@ -14,9 +14,7 @@ pub fn ser_start_workflow_run_input_input(
         let mut object_4 = object.key("OverrideParameters").start_object();
         for (key_5, value_6) in var_3 {
             {
-                object_4
-                    .key(key_5.as_str())
-                    .document(value_6, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+                object_4.key(key_5.as_str()).document(value_6);
             }
         }
         object_4.finish();

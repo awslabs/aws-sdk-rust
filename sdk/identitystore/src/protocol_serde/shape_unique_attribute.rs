@@ -7,9 +7,7 @@ pub fn ser_unique_attribute(
         object.key("AttributePath").string(input.attribute_path.as_str());
     }
     {
-        object
-            .key("AttributeValue")
-            .document(&input.attribute_value, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("AttributeValue").document(&input.attribute_value);
     }
     Ok(())
 }

@@ -8,9 +8,7 @@ pub fn ser_harness_tool_result_content_block(
             object_3.key("text").string(inner.as_str());
         }
         crate::types::HarnessToolResultContentBlock::Json(inner) => {
-            object_3
-                .key("json")
-                .document(inner, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+            object_3.key("json").document(inner);
         }
         crate::types::HarnessToolResultContentBlock::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(

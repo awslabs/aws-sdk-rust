@@ -309,6 +309,49 @@ impl From<crate::operation::allocate_transit_virtual_interface::AllocateTransitV
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_connections_to_resiliency_group::AssociateConnectionsToResiliencyGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_connections_to_resiliency_group::AssociateConnectionsToResiliencyGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_connections_to_resiliency_group::AssociateConnectionsToResiliencyGroupError> for Error {
+    fn from(err: crate::operation::associate_connections_to_resiliency_group::AssociateConnectionsToResiliencyGroupError) -> Self {
+        match err {
+            crate::operation::associate_connections_to_resiliency_group::AssociateConnectionsToResiliencyGroupError::DirectConnectClientException(
+                inner,
+            ) => Error::DirectConnectClientException(inner),
+            crate::operation::associate_connections_to_resiliency_group::AssociateConnectionsToResiliencyGroupError::DirectConnectServerException(
+                inner,
+            ) => Error::DirectConnectServerException(inner),
+            crate::operation::associate_connections_to_resiliency_group::AssociateConnectionsToResiliencyGroupError::LimitExceededException(
+                inner,
+            ) => Error::LimitExceededException(inner),
+            crate::operation::associate_connections_to_resiliency_group::AssociateConnectionsToResiliencyGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError, R>>
     for Error
 where
@@ -896,6 +939,42 @@ impl From<crate::operation::create_public_virtual_interface::CreatePublicVirtual
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_resiliency_group::CreateResiliencyGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_resiliency_group::CreateResiliencyGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_resiliency_group::CreateResiliencyGroupError> for Error {
+    fn from(err: crate::operation::create_resiliency_group::CreateResiliencyGroupError) -> Self {
+        match err {
+            crate::operation::create_resiliency_group::CreateResiliencyGroupError::DirectConnectClientException(inner) => {
+                Error::DirectConnectClientException(inner)
+            }
+            crate::operation::create_resiliency_group::CreateResiliencyGroupError::DirectConnectServerException(inner) => {
+                Error::DirectConnectServerException(inner)
+            }
+            crate::operation::create_resiliency_group::CreateResiliencyGroupError::DuplicateTagKeysException(inner) => {
+                Error::DuplicateTagKeysException(inner)
+            }
+            crate::operation::create_resiliency_group::CreateResiliencyGroupError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_resiliency_group::CreateResiliencyGroupError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_resiliency_group::CreateResiliencyGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError, R>,
@@ -1141,6 +1220,35 @@ impl From<crate::operation::delete_lag::DeleteLagError> for Error {
             crate::operation::delete_lag::DeleteLagError::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
             crate::operation::delete_lag::DeleteLagError::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
             crate::operation::delete_lag::DeleteLagError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resiliency_group::DeleteResiliencyGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resiliency_group::DeleteResiliencyGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resiliency_group::DeleteResiliencyGroupError> for Error {
+    fn from(err: crate::operation::delete_resiliency_group::DeleteResiliencyGroupError) -> Self {
+        match err {
+            crate::operation::delete_resiliency_group::DeleteResiliencyGroupError::DirectConnectClientException(inner) => {
+                Error::DirectConnectClientException(inner)
+            }
+            crate::operation::delete_resiliency_group::DeleteResiliencyGroupError::DirectConnectServerException(inner) => {
+                Error::DirectConnectServerException(inner)
+            }
+            crate::operation::delete_resiliency_group::DeleteResiliencyGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1748,6 +1856,40 @@ impl From<crate::operation::disassociate_connection_from_lag::DisassociateConnec
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_connections_from_resiliency_group::DisassociateConnectionsFromResiliencyGroupError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_connections_from_resiliency_group::DisassociateConnectionsFromResiliencyGroupError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_connections_from_resiliency_group::DisassociateConnectionsFromResiliencyGroupError> for Error {
+    fn from(err: crate::operation::disassociate_connections_from_resiliency_group::DisassociateConnectionsFromResiliencyGroupError) -> Self {
+        match err {
+            crate::operation::disassociate_connections_from_resiliency_group::DisassociateConnectionsFromResiliencyGroupError::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
+            crate::operation::disassociate_connections_from_resiliency_group::DisassociateConnectionsFromResiliencyGroupError::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
+            crate::operation::disassociate_connections_from_resiliency_group::DisassociateConnectionsFromResiliencyGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1774,6 +1916,98 @@ impl From<crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError
                 Error::DirectConnectServerException(inner)
             }
             crate::operation::disassociate_mac_sec_key::DisassociateMacSecKeyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resiliency_group::GetResiliencyGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_resiliency_group::GetResiliencyGroupError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_resiliency_group::GetResiliencyGroupError> for Error {
+    fn from(err: crate::operation::get_resiliency_group::GetResiliencyGroupError) -> Self {
+        match err {
+            crate::operation::get_resiliency_group::GetResiliencyGroupError::DirectConnectClientException(inner) => {
+                Error::DirectConnectClientException(inner)
+            }
+            crate::operation::get_resiliency_group::GetResiliencyGroupError::DirectConnectServerException(inner) => {
+                Error::DirectConnectServerException(inner)
+            }
+            crate::operation::get_resiliency_group::GetResiliencyGroupError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resiliency_group_associations::ListResiliencyGroupAssociationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resiliency_group_associations::ListResiliencyGroupAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resiliency_group_associations::ListResiliencyGroupAssociationsError> for Error {
+    fn from(err: crate::operation::list_resiliency_group_associations::ListResiliencyGroupAssociationsError) -> Self {
+        match err {
+            crate::operation::list_resiliency_group_associations::ListResiliencyGroupAssociationsError::DirectConnectClientException(inner) => {
+                Error::DirectConnectClientException(inner)
+            }
+            crate::operation::list_resiliency_group_associations::ListResiliencyGroupAssociationsError::DirectConnectServerException(inner) => {
+                Error::DirectConnectServerException(inner)
+            }
+            crate::operation::list_resiliency_group_associations::ListResiliencyGroupAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resiliency_groups::ListResiliencyGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resiliency_groups::ListResiliencyGroupsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resiliency_groups::ListResiliencyGroupsError> for Error {
+    fn from(err: crate::operation::list_resiliency_groups::ListResiliencyGroupsError) -> Self {
+        match err {
+            crate::operation::list_resiliency_groups::ListResiliencyGroupsError::DirectConnectClientException(inner) => {
+                Error::DirectConnectClientException(inner)
+            }
+            crate::operation::list_resiliency_groups::ListResiliencyGroupsError::DirectConnectServerException(inner) => {
+                Error::DirectConnectServerException(inner)
+            }
+            crate::operation::list_resiliency_groups::ListResiliencyGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1976,6 +2210,40 @@ impl From<crate::operation::update_connection::UpdateConnectionError> for Error 
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connections_billing_mode::UpdateConnectionsBillingModeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_connections_billing_mode::UpdateConnectionsBillingModeError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_connections_billing_mode::UpdateConnectionsBillingModeError> for Error {
+    fn from(err: crate::operation::update_connections_billing_mode::UpdateConnectionsBillingModeError) -> Self {
+        match err {
+            crate::operation::update_connections_billing_mode::UpdateConnectionsBillingModeError::DirectConnectClientException(inner) => {
+                Error::DirectConnectClientException(inner)
+            }
+            crate::operation::update_connections_billing_mode::UpdateConnectionsBillingModeError::DirectConnectServerException(inner) => {
+                Error::DirectConnectServerException(inner)
+            }
+            crate::operation::update_connections_billing_mode::UpdateConnectionsBillingModeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_direct_connect_gateway::UpdateDirectConnectGatewayError, R>>
     for Error
 where
@@ -2066,6 +2334,35 @@ impl From<crate::operation::update_lag::UpdateLagError> for Error {
             crate::operation::update_lag::UpdateLagError::DirectConnectClientException(inner) => Error::DirectConnectClientException(inner),
             crate::operation::update_lag::UpdateLagError::DirectConnectServerException(inner) => Error::DirectConnectServerException(inner),
             crate::operation::update_lag::UpdateLagError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_resiliency_group::UpdateResiliencyGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_resiliency_group::UpdateResiliencyGroupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_resiliency_group::UpdateResiliencyGroupError> for Error {
+    fn from(err: crate::operation::update_resiliency_group::UpdateResiliencyGroupError) -> Self {
+        match err {
+            crate::operation::update_resiliency_group::UpdateResiliencyGroupError::DirectConnectClientException(inner) => {
+                Error::DirectConnectClientException(inner)
+            }
+            crate::operation::update_resiliency_group::UpdateResiliencyGroupError::DirectConnectServerException(inner) => {
+                Error::DirectConnectServerException(inner)
+            }
+            crate::operation::update_resiliency_group::UpdateResiliencyGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

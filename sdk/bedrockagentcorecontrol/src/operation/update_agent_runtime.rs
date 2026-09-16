@@ -208,6 +208,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateAgentRu
                 captured.insert("roleArn", value);
             }
         }
+        if requested.should_capture("platformVersion") {
+            if let ::std::option::Option::Some(value) = input.platform_version.as_deref() {
+                captured.insert("platformVersion", value);
+            }
+        }
         if requested.should_capture("clientToken") {
             if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
                 captured.insert("clientToken", value);

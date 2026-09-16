@@ -31,6 +31,7 @@ impl super::Client {
     ///   - [`prefix_pool_unallocated_count_ipv4(Option<i32>)`](crate::operation::delete_lag::DeleteLagOutput::prefix_pool_unallocated_count_ipv4): <p>The number of inbound IPv4 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
     ///   - [`prefix_pool_unallocated_count_ipv6(Option<i32>)`](crate::operation::delete_lag::DeleteLagOutput::prefix_pool_unallocated_count_ipv6): <p>The number of inbound IPv6 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
     ///   - [`rate_limiter_status(Option<RateLimiterStatus>)`](crate::operation::delete_lag::DeleteLagOutput::rate_limiter_status): <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
+    ///   - [`billing_mode(Option<BillingMode>)`](crate::operation::delete_lag::DeleteLagOutput::billing_mode): <p>The billing mode of the LAG.</p>
     /// - On failure, responds with [`SdkError<DeleteLagError>`](crate::operation::delete_lag::DeleteLagError)
     pub fn delete_lag(&self) -> crate::operation::delete_lag::builders::DeleteLagFluentBuilder {
         crate::operation::delete_lag::builders::DeleteLagFluentBuilder::new(self.handle.clone())

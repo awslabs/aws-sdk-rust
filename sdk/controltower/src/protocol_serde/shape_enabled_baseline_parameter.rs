@@ -7,9 +7,7 @@ pub fn ser_enabled_baseline_parameter(
         object.key("key").string(input.key.as_str());
     }
     {
-        object
-            .key("value")
-            .document(&input.value, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("value").document(&input.value);
     }
     Ok(())
 }

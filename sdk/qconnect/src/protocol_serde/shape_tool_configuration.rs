@@ -49,14 +49,10 @@ pub fn ser_tool_configuration(
         array_11.finish();
     }
     if let Some(var_14) = &input.input_schema {
-        object
-            .key("inputSchema")
-            .document(var_14, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("inputSchema").document(var_14);
     }
     if let Some(var_15) = &input.output_schema {
-        object
-            .key("outputSchema")
-            .document(var_15, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("outputSchema").document(var_15);
     }
     if let Some(var_16) = &input.annotations {
         #[allow(unused_mut)]

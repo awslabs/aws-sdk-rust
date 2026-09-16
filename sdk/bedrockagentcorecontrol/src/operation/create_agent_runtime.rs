@@ -213,6 +213,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAgentRu
                 captured.insert("clientToken", value);
             }
         }
+        if requested.should_capture("platformVersion") {
+            if let ::std::option::Option::Some(value) = input.platform_version.as_deref() {
+                captured.insert("platformVersion", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

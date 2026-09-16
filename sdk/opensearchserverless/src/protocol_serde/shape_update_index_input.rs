@@ -10,9 +10,7 @@ pub fn ser_update_index_input_input(
         object.key("indexName").string(var_2.as_str());
     }
     if let Some(var_3) = &input.index_schema {
-        object
-            .key("indexSchema")
-            .document(var_3, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("indexSchema").document(var_3);
     }
     Ok(())
 }

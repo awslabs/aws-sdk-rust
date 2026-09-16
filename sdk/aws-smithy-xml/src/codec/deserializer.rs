@@ -10,9 +10,7 @@ use crate::decode::{self, Document};
 use aws_smithy_schema::serde::{SerdeError, ShapeDeserializer};
 use aws_smithy_schema::Schema;
 use aws_smithy_types::date_time::Format as TimestampFormat;
-use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime};
-
-use aws_smithy_types::Document as SmithyDocument;
+use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime, Document as SmithyDocument};
 use std::borrow::Cow;
 use std::sync::Arc;
 
@@ -46,6 +44,15 @@ pub struct XmlDeserializer<'a> {
     /// directly without re-parsing `input`; aggregate reads error.
     text: Option<Cow<'a, str>>,
     settings: Arc<XmlCodecSettings>,
+    /// Optional schema override consulted by the next aggregate read
+    /// (`read_struct` / `read_list` / `read_map`) when codegen passes a
+    /// shapeless placeholder schema (e.g. `prelude::DOCUMENT`) for an
+    /// inner aggregate. Used to thread the outer aggregate's
+    /// `value_schema` / `member_schema` (with its own
+    /// `with_map_members`/`with_list_member` chain) into nested reads so
+    /// nested element-name overrides (`@xmlName` on inner key/value) can
+    /// be honored.
+    schema_override: Option<&'static Schema>,
     /// Aggregate nesting depth. Incremented at the top of each
     /// `read_struct` / `read_list` / `read_map` and decremented before
     /// they return so sibling reads on the same deserializer don't
@@ -61,6 +68,7 @@ impl<'a> XmlDeserializer<'a> {
             input,
             text: None,
             settings,
+            schema_override: None,
             depth: 0,
         }
     }
@@ -75,6 +83,7 @@ impl<'a> XmlDeserializer<'a> {
             input: b"",
             text: Some(text),
             settings,
+            schema_override: None,
             depth: 0,
         }
     }
@@ -128,15 +137,22 @@ impl<'a> XmlDeserializer<'a> {
     }
 
     /// Run `f` against `self` after temporarily repointing it at a sub-slice
-    /// of the parent input. State (input, text) is saved on entry and
-    /// restored on return so the deserializer can be reused for sibling
-    /// dispatches without per-iteration allocation.
-    fn dispatch_subslice<R>(&mut self, sub: &'a [u8], f: impl FnOnce(&mut Self) -> R) -> R {
+    /// of the parent input. State (input, text, schema_override) is
+    /// saved on entry and restored on return so the deserializer can be
+    /// reused for sibling dispatches without per-iteration allocation.
+    fn dispatch_subslice<R>(
+        &mut self,
+        sub: &'a [u8],
+        schema_override: Option<&'static Schema>,
+        f: impl FnOnce(&mut Self) -> R,
+    ) -> R {
         let saved_input = std::mem::replace(&mut self.input, sub);
         let saved_text = self.text.take();
+        let saved_override = std::mem::replace(&mut self.schema_override, schema_override);
         let r = f(self);
         self.input = saved_input;
         self.text = saved_text;
+        self.schema_override = saved_override;
         r
     }
 
@@ -145,15 +161,17 @@ impl<'a> XmlDeserializer<'a> {
     fn dispatch_text<R>(&mut self, text: Cow<'a, str>, f: impl FnOnce(&mut Self) -> R) -> R {
         let saved_input = std::mem::replace(&mut self.input, b"");
         let saved_text = self.text.replace(text);
+        let saved_override = self.schema_override.take();
         let r = f(self);
         self.input = saved_input;
         self.text = saved_text;
+        self.schema_override = saved_override;
         r
     }
 
     /// Resolve a child element name to a member schema by matching against
     /// @xmlName (if present) or member_name.
-    fn resolve_member<'s>(schema: &'s Schema<'s>, element_name: &str) -> Option<&'s Schema<'s>> {
+    fn resolve_member<'s>(schema: &'s Schema, element_name: &str) -> Option<&'s Schema> {
         schema.members().iter().copied().find(|m| {
             if let Some(xml_name) = m.xml_name() {
                 xml_name.value() == element_name
@@ -265,7 +283,7 @@ impl<'a> XmlDeserializer<'a> {
         &input[el_start..]
     }
 
-    fn resolve_timestamp_format(&self, schema: &Schema<'_>) -> TimestampFormat {
+    fn resolve_timestamp_format(&self, schema: &Schema) -> TimestampFormat {
         schema
             .timestamp_format()
             .map(|t| match t.format() {
@@ -327,8 +345,8 @@ pub fn find_depth2_element_slice_by(
 impl ShapeDeserializer for XmlDeserializer<'_> {
     fn read_struct(
         &mut self,
-        schema: &Schema<'_>,
-        consumer: &mut dyn FnMut(&Schema<'_>, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
+        schema: &Schema,
+        consumer: &mut dyn FnMut(&Schema, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
         self.enter_aggregate()?;
         // IIFE: any `?` (or early `return`) inside falls through to
@@ -356,9 +374,9 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
                     .or_else(|| schema.member_name())
                     .unwrap_or_else(|| schema.shape_id().shape_name());
                 if !root.start_el().matches(expected) {
-                    return Err(SerdeError::invalid_input(format!(
-                        "expected XML root {expected}"
-                    )));
+                    return Err(SerdeError::InvalidInput {
+                        message: format!("expected XML root {expected}"),
+                    });
                 }
             }
 
@@ -393,7 +411,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
                 drop(root);
                 let _ = doc;
                 if let Some(member) = Self::resolve_member(schema, &local) {
-                    self.dispatch_subslice(sub, |this| consumer(member, this))?;
+                    self.dispatch_subslice(sub, None, |this| consumer(member, this))?;
                 }
                 return Ok(());
             }
@@ -416,7 +434,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
             // Track flattened-aggregate members: their wire format is repeated sibling
             // elements that must be accumulated and dispatched as a single read_list /
             // read_map call. Map: member_index -> (member_schema, accumulated XML bytes).
-            let mut flattened_groups: std::collections::HashMap<usize, (&Schema<'_>, Vec<u8>)> =
+            let mut flattened_groups: std::collections::HashMap<usize, (&Schema, Vec<u8>)> =
                 std::collections::HashMap::new();
 
             // Dispatch child elements.
@@ -437,7 +455,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
                     let el_local = child_scope.start_el().local();
                     let sub = Self::find_element_slice(input, el_local);
                     drop(child_scope);
-                    self.dispatch_subslice(sub, |this| consumer(member, this))?;
+                    self.dispatch_subslice(sub, None, |this| consumer(member, this))?;
                 } else if is_aggregate {
                     // Flattened aggregate: capture this sibling's slice; dispatch
                     // the merged group below.
@@ -480,7 +498,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
 
     fn read_list(
         &mut self,
-        _schema: &Schema<'_>,
+        _schema: &Schema,
         consumer: &mut dyn FnMut(&mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
         self.enter_aggregate()?;
@@ -505,7 +523,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
                 let el_local = child_scope.start_el().local();
                 let sub = Self::find_element_slice(input, el_local);
                 drop(child_scope);
-                self.dispatch_subslice(sub, |this| consumer(this))?;
+                self.dispatch_subslice(sub, None, |this| consumer(this))?;
             }
             Ok(())
         })();
@@ -515,13 +533,27 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
 
     fn read_map(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
         consumer: &mut dyn FnMut(String, &mut dyn ShapeDeserializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
         self.enter_aggregate()?;
         // IIFE: any `?` inside falls through to `leave_aggregate` below
         // (see `read_string_list` for rationale).
         let result = (|| -> Result<(), SerdeError> {
+            // If a parent aggregate read installed a `schema_override` on us, it
+            // takes priority. Codegen generates inner `read_map` calls reusing
+            // the outer `member` schema (closure variable shadowing) — so the
+            // arg here is the outer map's schema, not the inner's. The override
+            // carries the outer's `_VALUE` schema (which chains the inner map's
+            // `_KEY` / `_VALUE`) and is the right one for nested element-name
+            // resolution.
+            let effective_schema: &Schema =
+                self.schema_override.map(|s| s as &Schema).unwrap_or(schema);
+            // Once we've read this override, clear it so it doesn't leak to
+            // sibling reads on the same deserializer.
+            self.schema_override = None;
+            let schema = effective_schema;
+
             let input = self.input;
             let mut doc = self.document()?;
             let mut root = doc
@@ -544,6 +576,11 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
                 .member()
                 .map(|v| v.shape_type().is_aggregate())
                 .unwrap_or(false);
+            // For aggregate values, save the value member's `'static` schema so a
+            // nested inner aggregate read (which codegen invokes with
+            // `prelude::DOCUMENT`) can recover its own `_KEY`/`_VALUE`
+            // chain via the `schema_override` parameter on `dispatch_subslice`.
+            let value_schema_static = schema.member_static();
 
             // Each child tag is an entry (e.g. <entry><key>k</key><value>v</value></entry>).
             while let Some(mut entry_scope) = root.next_tag() {
@@ -574,7 +611,9 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
                 drop(entry_scope);
                 if let Some(k) = key {
                     if let Some(slice) = value_slice {
-                        self.dispatch_subslice(slice, |this| consumer(k, this))?;
+                        self.dispatch_subslice(slice, value_schema_static, |this| {
+                            consumer(k, this)
+                        })?;
                     } else if let Some(t) = value_text {
                         // Re-borrow t as 'a — the text was extracted from `doc`
                         // which borrows `self.input: &'a [u8]`, so its lifetime
@@ -590,7 +629,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
         result
     }
 
-    fn read_boolean(&mut self, _schema: &Schema<'_>) -> Result<bool, SerdeError> {
+    fn read_boolean(&mut self, _schema: &Schema) -> Result<bool, SerdeError> {
         let text = self.take_text()?;
         match text.as_ref() {
             "true" => Ok(true),
@@ -599,27 +638,27 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
         }
     }
 
-    fn read_byte(&mut self, _schema: &Schema<'_>) -> Result<i8, SerdeError> {
+    fn read_byte(&mut self, _schema: &Schema) -> Result<i8, SerdeError> {
         let text = self.take_text()?;
         text.parse().map_err(|e| SerdeError::custom(format!("{e}")))
     }
 
-    fn read_short(&mut self, _schema: &Schema<'_>) -> Result<i16, SerdeError> {
+    fn read_short(&mut self, _schema: &Schema) -> Result<i16, SerdeError> {
         let text = self.take_text()?;
         text.parse().map_err(|e| SerdeError::custom(format!("{e}")))
     }
 
-    fn read_integer(&mut self, _schema: &Schema<'_>) -> Result<i32, SerdeError> {
+    fn read_integer(&mut self, _schema: &Schema) -> Result<i32, SerdeError> {
         let text = self.take_text()?;
         text.parse().map_err(|e| SerdeError::custom(format!("{e}")))
     }
 
-    fn read_long(&mut self, _schema: &Schema<'_>) -> Result<i64, SerdeError> {
+    fn read_long(&mut self, _schema: &Schema) -> Result<i64, SerdeError> {
         let text = self.take_text()?;
         text.parse().map_err(|e| SerdeError::custom(format!("{e}")))
     }
 
-    fn read_float(&mut self, _schema: &Schema<'_>) -> Result<f32, SerdeError> {
+    fn read_float(&mut self, _schema: &Schema) -> Result<f32, SerdeError> {
         let text = self.take_text()?;
         match text.as_ref() {
             "NaN" => Ok(f32::NAN),
@@ -629,7 +668,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
         }
     }
 
-    fn read_double(&mut self, _schema: &Schema<'_>) -> Result<f64, SerdeError> {
+    fn read_double(&mut self, _schema: &Schema) -> Result<f64, SerdeError> {
         let text = self.take_text()?;
         match text.as_ref() {
             "NaN" => Ok(f64::NAN),
@@ -639,35 +678,35 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
         }
     }
 
-    fn read_big_integer(&mut self, _schema: &Schema<'_>) -> Result<BigInteger, SerdeError> {
+    fn read_big_integer(&mut self, _schema: &Schema) -> Result<BigInteger, SerdeError> {
         let text = self.take_text()?;
         text.parse().map_err(|e| SerdeError::custom(format!("{e}")))
     }
 
-    fn read_big_decimal(&mut self, _schema: &Schema<'_>) -> Result<BigDecimal, SerdeError> {
+    fn read_big_decimal(&mut self, _schema: &Schema) -> Result<BigDecimal, SerdeError> {
         let text = self.take_text()?;
         text.parse().map_err(|e| SerdeError::custom(format!("{e}")))
     }
 
-    fn read_string(&mut self, _schema: &Schema<'_>) -> Result<String, SerdeError> {
+    fn read_string(&mut self, _schema: &Schema) -> Result<String, SerdeError> {
         let text = self.take_text()?;
         Ok(text.into_owned())
     }
 
-    fn read_blob(&mut self, _schema: &Schema<'_>) -> Result<Blob, SerdeError> {
+    fn read_blob(&mut self, _schema: &Schema) -> Result<Blob, SerdeError> {
         let text = self.take_text()?;
         let bytes = aws_smithy_types::base64::decode(text.as_ref())
             .map_err(|e| SerdeError::custom(format!("{e}")))?;
         Ok(Blob::new(bytes))
     }
 
-    fn read_timestamp(&mut self, schema: &Schema<'_>) -> Result<DateTime, SerdeError> {
+    fn read_timestamp(&mut self, schema: &Schema) -> Result<DateTime, SerdeError> {
         let text = self.take_text()?;
         let format = self.resolve_timestamp_format(schema);
         DateTime::from_str(text.as_ref(), format).map_err(|e| SerdeError::custom(format!("{e}")))
     }
 
-    fn read_document(&mut self, _schema: &Schema<'_>) -> Result<SmithyDocument, SerdeError> {
+    fn read_document(&mut self, _schema: &Schema) -> Result<SmithyDocument, SerdeError> {
         Err(SerdeError::custom(
             "document types are not supported by REST XML",
         ))
@@ -684,7 +723,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
     //   2. one `&mut dyn ShapeDeserializer` virtual call,
     //   3. and — because the consumer goes through `dispatch_subslice` —
     //      a fresh `Document::try_from` over the element's sub-slice plus
-    //      a save/restore of (`input`, `text`).
+    //      a save/restore of (`input`, `text`, `schema_override`).
     //
     // The overrides below walk the existing tokenizer once and extract
     // text inline via `decode::try_data`, eliminating all three costs.
@@ -699,7 +738,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
     // `read_long_list` / `read_string_string_map` for non-sparse element
     // shapes (see SchemaGenerator.kt line ~1497).
 
-    fn read_string_list(&mut self, _schema: &Schema<'_>) -> Result<Vec<String>, SerdeError> {
+    fn read_string_list(&mut self, _schema: &Schema) -> Result<Vec<String>, SerdeError> {
         self.enter_aggregate()?;
         // IIFE so that any `?` short-circuit still falls through to
         // `leave_aggregate` below — preserving the depth counter on the
@@ -722,7 +761,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
         result
     }
 
-    fn read_blob_list(&mut self, _schema: &Schema<'_>) -> Result<Vec<Blob>, SerdeError> {
+    fn read_blob_list(&mut self, _schema: &Schema) -> Result<Vec<Blob>, SerdeError> {
         use aws_smithy_types::base64;
         self.enter_aggregate()?;
         let result = (|| -> Result<Vec<Blob>, SerdeError> {
@@ -744,7 +783,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
         result
     }
 
-    fn read_integer_list(&mut self, _schema: &Schema<'_>) -> Result<Vec<i32>, SerdeError> {
+    fn read_integer_list(&mut self, _schema: &Schema) -> Result<Vec<i32>, SerdeError> {
         self.enter_aggregate()?;
         let result = (|| -> Result<Vec<i32>, SerdeError> {
             let mut doc = self.document()?;
@@ -766,7 +805,7 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
         result
     }
 
-    fn read_long_list(&mut self, _schema: &Schema<'_>) -> Result<Vec<i64>, SerdeError> {
+    fn read_long_list(&mut self, _schema: &Schema) -> Result<Vec<i64>, SerdeError> {
         self.enter_aggregate()?;
         let result = (|| -> Result<Vec<i64>, SerdeError> {
             let mut doc = self.document()?;
@@ -790,8 +829,15 @@ impl ShapeDeserializer for XmlDeserializer<'_> {
 
     fn read_string_string_map(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
     ) -> Result<std::collections::HashMap<String, String>, SerdeError> {
+        // Mirror the schema_override / key-name / value-name resolution
+        // used by `read_map` so the override is a behavioral drop-in.
+        let effective_schema: &Schema =
+            self.schema_override.map(|s| s as &Schema).unwrap_or(schema);
+        self.schema_override = None;
+        let schema = effective_schema;
+
         let key_name = schema
             .key()
             .and_then(|k| k.xml_name().map(|t| t.value()))
@@ -849,24 +895,24 @@ mod tests {
     use super::*;
     use aws_smithy_schema::{shape_id, Schema, ShapeType};
 
-    static STRING_MEMBER: Schema<'static> =
+    static STRING_MEMBER: Schema =
         Schema::new_member(shape_id!("test", "S$v"), ShapeType::String, "v", 0);
 
     #[test]
     fn strict_roots_only_validate_document_boundary() {
-        static CHILD: Schema<'static> = Schema::new_struct(
+        static CHILD: Schema = Schema::new_struct(
             aws_smithy_schema::shape_id!("test", "Child"),
             aws_smithy_schema::ShapeType::Structure,
             &[],
         );
-        static RENAMED: Schema<'static> = Schema::new_member(
+        static RENAMED: Schema = Schema::new_member(
             aws_smithy_schema::shape_id!("test", "Root", "child"),
             aws_smithy_schema::ShapeType::Structure,
             "child",
             0,
         )
         .with_xml_name("Renamed");
-        static ROOT: Schema<'static> = Schema::new_struct(
+        static ROOT: Schema = Schema::new_struct(
             aws_smithy_schema::shape_id!("test", "Synthetic"),
             aws_smithy_schema::ShapeType::Structure,
             &[&RENAMED],
@@ -910,7 +956,7 @@ mod tests {
         // Verify a Doc-state deserializer can extract leaf text via the
         // public `read_string` API (which goes through `take_text` →
         // lazy Document construction over `self.input`).
-        static V_MEMBER: Schema<'static> =
+        static V_MEMBER: Schema =
             Schema::new_member(shape_id!("test", "X$v"), ShapeType::String, "v", 0);
         let xml = b"<root>world</root>";
         let settings = Arc::new(XmlCodecSettings::default());
@@ -928,15 +974,15 @@ mod tests {
 
     // Struct member dispatch by element name (`@xmlName` and member name).
 
-    static NAME_MEMBER: Schema<'static> = Schema::new_member(
+    static NAME_MEMBER: Schema = Schema::new_member(
         shape_id!("test", "Person$name"),
         ShapeType::String,
         "name",
         0,
     );
-    static AGE_MEMBER: Schema<'static> =
+    static AGE_MEMBER: Schema =
         Schema::new_member(shape_id!("test", "Person$age"), ShapeType::String, "age", 1);
-    static RENAMED_MEMBER: Schema<'static> = Schema::new_member(
+    static RENAMED_MEMBER: Schema = Schema::new_member(
         shape_id!("test", "Person$nick"),
         ShapeType::String,
         "nick",
@@ -944,7 +990,7 @@ mod tests {
     )
     .with_xml_name("Nickname");
 
-    static PERSON_SCHEMA: Schema<'static> = Schema::new_struct(
+    static PERSON_SCHEMA: Schema = Schema::new_struct(
         shape_id!("test", "Person"),
         ShapeType::Structure,
         &[&NAME_MEMBER, &AGE_MEMBER, &RENAMED_MEMBER],
@@ -1013,13 +1059,13 @@ mod tests {
 
     // `@xmlAttribute` dispatch from the start element's attributes.
 
-    static ATTR_MEMBER: Schema<'static> =
+    static ATTR_MEMBER: Schema =
         Schema::new_member(shape_id!("test", "X$id"), ShapeType::String, "id", 0)
             .with_xml_attribute();
-    static ELEM_MEMBER: Schema<'static> =
+    static ELEM_MEMBER: Schema =
         Schema::new_member(shape_id!("test", "X$name"), ShapeType::String, "name", 1);
 
-    static X_SCHEMA: Schema<'static> = Schema::new_struct(
+    static X_SCHEMA: Schema = Schema::new_struct(
         shape_id!("test", "X"),
         ShapeType::Structure,
         &[&ATTR_MEMBER, &ELEM_MEMBER],
@@ -1056,14 +1102,13 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static LIST_MEMBER: Schema<'static> = Schema::new_member(
+        static LIST_MEMBER: Schema = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
             0,
         );
-        static LIST_SCHEMA: Schema<'static> =
-            Schema::new_list(shape_id!("test", "L"), &LIST_MEMBER);
+        static LIST_SCHEMA: Schema = Schema::new_list(shape_id!("test", "L"), &LIST_MEMBER);
 
         let mut items = Vec::new();
         deser
@@ -1082,12 +1127,11 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static MAP_KEY: Schema<'static> =
+        static MAP_KEY: Schema =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0);
-        static MAP_VALUE: Schema<'static> =
+        static MAP_VALUE: Schema =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 0);
-        static MAP_SCHEMA: Schema<'static> =
-            Schema::new_map(shape_id!("test", "M"), &MAP_KEY, &MAP_VALUE);
+        static MAP_SCHEMA: Schema = Schema::new_map(shape_id!("test", "M"), &MAP_KEY, &MAP_VALUE);
 
         let mut entries = Vec::new();
         deser
@@ -1112,14 +1156,13 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static MAP_KEY: Schema<'static> =
+        static MAP_KEY: Schema =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0)
                 .with_xml_name("Attribute");
-        static MAP_VALUE: Schema<'static> =
+        static MAP_VALUE: Schema =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 0)
                 .with_xml_name("Setting");
-        static MAP_SCHEMA: Schema<'static> =
-            Schema::new_map(shape_id!("test", "M"), &MAP_KEY, &MAP_VALUE);
+        static MAP_SCHEMA: Schema = Schema::new_map(shape_id!("test", "M"), &MAP_KEY, &MAP_VALUE);
 
         let mut entries = Vec::new();
         deser
@@ -1141,13 +1184,13 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static S_NAME: Schema<'static> =
+        static S_NAME: Schema =
             Schema::new_member(shape_id!("test", "S$name"), ShapeType::String, "name", 0);
-        static S_ITEMS: Schema<'static> =
+        static S_ITEMS: Schema =
             Schema::new_member(shape_id!("test", "S$items"), ShapeType::List, "items", 1)
                 .with_xml_flattened()
                 .with_xml_name("item");
-        static S_SCHEMA: Schema<'static> = Schema::new_struct(
+        static S_SCHEMA: Schema = Schema::new_struct(
             shape_id!("test", "S"),
             ShapeType::Structure,
             &[&S_NAME, &S_ITEMS],
@@ -1180,13 +1223,13 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static S_NAME: Schema<'static> =
+        static S_NAME: Schema =
             Schema::new_member(shape_id!("test", "S$name"), ShapeType::String, "name", 0);
-        static S_ITEMS: Schema<'static> =
+        static S_ITEMS: Schema =
             Schema::new_member(shape_id!("test", "S$items"), ShapeType::List, "items", 1)
                 .with_xml_flattened()
                 .with_xml_name("item");
-        static S_SCHEMA: Schema<'static> = Schema::new_struct(
+        static S_SCHEMA: Schema = Schema::new_struct(
             shape_id!("test", "S"),
             ShapeType::Structure,
             &[&S_NAME, &S_ITEMS],
@@ -1314,9 +1357,9 @@ mod tests {
         // Self-referential schema: `R { r: R }`. Each `read_struct` with the
         // same schema increments depth and recurses one level via the
         // member dispatch.
-        static R_MEMBER_SELF: Schema<'static> =
+        static R_MEMBER_SELF: Schema =
             Schema::new_member(shape_id!("test", "R$r"), ShapeType::Structure, "r", 0);
-        static R_SCHEMA: Schema<'static> = Schema::new_struct(
+        static R_SCHEMA: Schema = Schema::new_struct(
             shape_id!("test", "R"),
             ShapeType::Structure,
             &[&R_MEMBER_SELF],
@@ -1328,7 +1371,7 @@ mod tests {
         let mut deser = XmlDeserializer::new(&xml, settings_with_max_depth(max));
 
         // Recursive consumer: each entry into `<r>` calls read_struct again.
-        fn consume(_m: &Schema<'_>, d: &mut dyn ShapeDeserializer) -> Result<(), SerdeError> {
+        fn consume(_m: &Schema, d: &mut dyn ShapeDeserializer) -> Result<(), SerdeError> {
             d.read_struct(&R_SCHEMA, &mut consume)
         }
         let err = deser
@@ -1346,9 +1389,9 @@ mod tests {
         // Walking the chain `max_depth` times consumes `max_depth` enter
         // calls (the outermost is the test's own call, inner consumer
         // recursions add one each).
-        static R_MEMBER_SELF: Schema<'static> =
+        static R_MEMBER_SELF: Schema =
             Schema::new_member(shape_id!("test", "R$r"), ShapeType::Structure, "r", 0);
-        static R_SCHEMA: Schema<'static> = Schema::new_struct(
+        static R_SCHEMA: Schema = Schema::new_struct(
             shape_id!("test", "R"),
             ShapeType::Structure,
             &[&R_MEMBER_SELF],
@@ -1363,7 +1406,7 @@ mod tests {
 
         let mut depth_seen = 0u32;
         fn consume(
-            _m: &Schema<'_>,
+            _m: &Schema,
             d: &mut dyn ShapeDeserializer,
             depth_seen: &mut u32,
         ) -> Result<(), SerdeError> {
@@ -1379,9 +1422,9 @@ mod tests {
     #[test]
     fn read_list_rejects_overdeep_payloads() {
         // Nested lists: `<l><l><l>...</l></l></l>` exceeds max_depth.
-        static L_MEMBER: Schema<'static> =
+        static L_MEMBER: Schema =
             Schema::new_member(shape_id!("test", "L$member"), ShapeType::List, "member", 0);
-        static L_SCHEMA: Schema<'static> = Schema::new_list(shape_id!("test", "L"), &L_MEMBER);
+        static L_SCHEMA: Schema = Schema::new_list(shape_id!("test", "L"), &L_MEMBER);
 
         let max = 3;
         // 5 levels of `<l>` — exceeds 3.
@@ -1404,9 +1447,9 @@ mod tests {
     fn depth_resets_between_sibling_reads() {
         // After a successful aggregate read, the depth counter must return
         // to its prior value so the next sibling read isn't poisoned.
-        static R_MEMBER_SELF: Schema<'static> =
+        static R_MEMBER_SELF: Schema =
             Schema::new_member(shape_id!("test", "R$r"), ShapeType::Structure, "r", 0);
-        static R_SCHEMA: Schema<'static> = Schema::new_struct(
+        static R_SCHEMA: Schema = Schema::new_struct(
             shape_id!("test", "R"),
             ShapeType::Structure,
             &[&R_MEMBER_SELF],
@@ -1446,13 +1489,13 @@ mod tests {
         // (rather than relying on a malformed XML payload — which would
         // also fail on the second read for the same wire-level reason
         // and so wouldn't isolate the depth-counter bug).
-        static L_MEMBER: Schema<'static> = Schema::new_member(
+        static L_MEMBER: Schema = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
             0,
         );
-        static L_SCHEMA: Schema<'static> = Schema::new_list(shape_id!("test", "L"), &L_MEMBER);
+        static L_SCHEMA: Schema = Schema::new_list(shape_id!("test", "L"), &L_MEMBER);
 
         // max_depth=2 means we can enter at most 2 levels of aggregates
         // before erroring. With the leak, after one errored aggregate
@@ -1507,13 +1550,13 @@ mod tests {
         // `input` to `find_element_slice`. The `debug_assert!` in
         // `find_element_slice` would also fire under the old code in
         // debug builds.
-        static MEMBER: Schema<'static> = Schema::new_member(
+        static MEMBER: Schema = Schema::new_member(
             shape_id!("test", "U$location"),
             ShapeType::String,
             "LocationConstraint",
             0,
         );
-        static SCHEMA: Schema<'static> =
+        static SCHEMA: Schema =
             Schema::new_struct(shape_id!("test", "U"), ShapeType::Structure, &[&MEMBER])
                 .with_xml_unwrapped_output();
 
@@ -1547,14 +1590,14 @@ mod tests {
         // map-key element. The exact wire form matches what `XmlSerializer`
         // emits for `StringStringMap([("Б", "")])` wrapped in
         // `WRAPPER_STRING_STRING_MAP_SCHEMA`.
-        static KEY_MEMBER: Schema<'static> =
+        static KEY_MEMBER: Schema =
             Schema::new_member(shape_id!("test", "Wrapper$k"), ShapeType::Map, "entries", 0);
-        static MAP_SCHEMA: Schema<'static> = Schema::new_map(
+        static MAP_SCHEMA: Schema = Schema::new_map(
             shape_id!("test", "MyMap"),
             &aws_smithy_schema::prelude::STRING,
             &aws_smithy_schema::prelude::STRING,
         );
-        static WRAPPER: Schema<'static> = Schema::new_struct(
+        static WRAPPER: Schema = Schema::new_struct(
             shape_id!("test", "Wrapper"),
             ShapeType::Structure,
             &[&KEY_MEMBER],
@@ -1628,14 +1671,13 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static LIST_MEMBER: Schema<'static> = Schema::new_member(
+        static LIST_MEMBER: Schema = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
             0,
         );
-        static LIST_SCHEMA: Schema<'static> =
-            Schema::new_list(shape_id!("test", "L"), &LIST_MEMBER);
+        static LIST_SCHEMA: Schema = Schema::new_list(shape_id!("test", "L"), &LIST_MEMBER);
 
         let out = deser.read_string_list(&LIST_SCHEMA).unwrap();
         assert_eq!(out, vec!["a".to_owned(), "b".to_owned(), String::new()]);
@@ -1651,14 +1693,13 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static LIST_MEMBER: Schema<'static> = Schema::new_member(
+        static LIST_MEMBER: Schema = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
             0,
         );
-        static LIST_SCHEMA: Schema<'static> =
-            Schema::new_list(shape_id!("test", "L"), &LIST_MEMBER);
+        static LIST_SCHEMA: Schema = Schema::new_list(shape_id!("test", "L"), &LIST_MEMBER);
 
         let out = deser.read_string_list(&LIST_SCHEMA).unwrap();
         assert_eq!(out, vec!["x".to_owned(), "y".to_owned()]);
@@ -1671,10 +1712,9 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static LIST_MEMBER: Schema<'static> =
+        static LIST_MEMBER: Schema =
             Schema::new_member(shape_id!("test", "B$member"), ShapeType::Blob, "member", 0);
-        static LIST_SCHEMA: Schema<'static> =
-            Schema::new_list(shape_id!("test", "B"), &LIST_MEMBER);
+        static LIST_SCHEMA: Schema = Schema::new_list(shape_id!("test", "B"), &LIST_MEMBER);
 
         let out = deser.read_blob_list(&LIST_SCHEMA).unwrap();
         assert_eq!(out.len(), 2);
@@ -1688,10 +1728,9 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static LIST_MEMBER: Schema<'static> =
+        static LIST_MEMBER: Schema =
             Schema::new_member(shape_id!("test", "B$member"), ShapeType::Blob, "member", 0);
-        static LIST_SCHEMA: Schema<'static> =
-            Schema::new_list(shape_id!("test", "B"), &LIST_MEMBER);
+        static LIST_SCHEMA: Schema = Schema::new_list(shape_id!("test", "B"), &LIST_MEMBER);
 
         let err = deser.read_blob_list(&LIST_SCHEMA).unwrap_err();
         assert!(format!("{err}").contains("base64"));
@@ -1703,14 +1742,13 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static LIST_MEMBER: Schema<'static> = Schema::new_member(
+        static LIST_MEMBER: Schema = Schema::new_member(
             shape_id!("test", "I$member"),
             ShapeType::Integer,
             "member",
             0,
         );
-        static LIST_SCHEMA: Schema<'static> =
-            Schema::new_list(shape_id!("test", "I"), &LIST_MEMBER);
+        static LIST_SCHEMA: Schema = Schema::new_list(shape_id!("test", "I"), &LIST_MEMBER);
 
         let out = deser.read_integer_list(&LIST_SCHEMA).unwrap();
         assert_eq!(out, vec![1i32, -42, 0]);
@@ -1722,10 +1760,9 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static LIST_MEMBER: Schema<'static> =
+        static LIST_MEMBER: Schema =
             Schema::new_member(shape_id!("test", "Lo$member"), ShapeType::Long, "member", 0);
-        static LIST_SCHEMA: Schema<'static> =
-            Schema::new_list(shape_id!("test", "Lo"), &LIST_MEMBER);
+        static LIST_SCHEMA: Schema = Schema::new_list(shape_id!("test", "Lo"), &LIST_MEMBER);
 
         let out = deser.read_long_list(&LIST_SCHEMA).unwrap();
         assert_eq!(out, vec![i64::MAX, -1]);
@@ -1738,12 +1775,11 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static MAP_KEY: Schema<'static> =
+        static MAP_KEY: Schema =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0);
-        static MAP_VALUE: Schema<'static> =
+        static MAP_VALUE: Schema =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 0);
-        static MAP_SCHEMA: Schema<'static> =
-            Schema::new_map(shape_id!("test", "M"), &MAP_KEY, &MAP_VALUE);
+        static MAP_SCHEMA: Schema = Schema::new_map(shape_id!("test", "M"), &MAP_KEY, &MAP_VALUE);
 
         let out = deser.read_string_string_map(&MAP_SCHEMA).unwrap();
         assert_eq!(out.len(), 2);
@@ -1759,14 +1795,13 @@ mod tests {
         let settings = Arc::new(XmlCodecSettings::default());
         let mut deser = XmlDeserializer::new(xml, settings);
 
-        static MAP_KEY: Schema<'static> =
+        static MAP_KEY: Schema =
             Schema::new_member(shape_id!("test", "M2$key"), ShapeType::String, "key", 0)
                 .with_xml_name("K");
-        static MAP_VALUE: Schema<'static> =
+        static MAP_VALUE: Schema =
             Schema::new_member(shape_id!("test", "M2$value"), ShapeType::String, "value", 0)
                 .with_xml_name("V");
-        static MAP_SCHEMA: Schema<'static> =
-            Schema::new_map(shape_id!("test", "M2"), &MAP_KEY, &MAP_VALUE);
+        static MAP_SCHEMA: Schema = Schema::new_map(shape_id!("test", "M2"), &MAP_KEY, &MAP_VALUE);
 
         let out = deser.read_string_string_map(&MAP_SCHEMA).unwrap();
         assert_eq!(out.get("a").map(String::as_str), Some("1"));
@@ -1783,27 +1818,27 @@ mod tests {
     // so neither bug should reproduce — these tests lock that in.
     #[test]
     fn nested_struct_three_levels_deep() {
-        static LEAF: Schema<'static> =
+        static LEAF: Schema =
             Schema::new_member(shape_id!("t", "Inner"), ShapeType::String, "Leaf", 0);
-        static INNER_SCHEMA: Schema<'static> =
+        static INNER_SCHEMA: Schema =
             Schema::new_struct(shape_id!("t", "Inner"), ShapeType::Structure, &[&LEAF]);
-        static INNER_MEMBER: Schema<'static> =
+        static INNER_MEMBER: Schema =
             Schema::new_member(shape_id!("t", "Middle"), ShapeType::Structure, "Inner", 0);
-        static MIDDLE_SCHEMA: Schema<'static> = Schema::new_struct(
+        static MIDDLE_SCHEMA: Schema = Schema::new_struct(
             shape_id!("t", "Middle"),
             ShapeType::Structure,
             &[&INNER_MEMBER],
         );
-        static MIDDLE_MEMBER: Schema<'static> =
+        static MIDDLE_MEMBER: Schema =
             Schema::new_member(shape_id!("t", "Outer"), ShapeType::Structure, "Middle", 0);
-        static OUTER_SCHEMA: Schema<'static> = Schema::new_struct(
+        static OUTER_SCHEMA: Schema = Schema::new_struct(
             shape_id!("t", "Outer"),
             ShapeType::Structure,
             &[&MIDDLE_MEMBER],
         );
-        static OUTER_MEMBER: Schema<'static> =
+        static OUTER_MEMBER: Schema =
             Schema::new_member(shape_id!("t", "Root"), ShapeType::Structure, "Outer", 0);
-        static ROOT: Schema<'static> = Schema::new_struct(
+        static ROOT: Schema = Schema::new_struct(
             shape_id!("t", "Root"),
             ShapeType::Structure,
             &[&OUTER_MEMBER],
@@ -1835,17 +1870,17 @@ mod tests {
 
     #[test]
     fn struct_member_with_escaped_text_round_trips() {
-        static VALUE: Schema<'static> =
+        static VALUE: Schema =
             Schema::new_member(shape_id!("t", "Body"), ShapeType::String, "value", 0);
-        static BODY_SCHEMA: Schema<'static> =
+        static BODY_SCHEMA: Schema =
             Schema::new_struct(shape_id!("t", "Body"), ShapeType::Structure, &[&VALUE]);
-        static PAYLOAD_MEMBER: Schema<'static> = Schema::new_member(
+        static PAYLOAD_MEMBER: Schema = Schema::new_member(
             shape_id!("t", "Envelope"),
             ShapeType::Structure,
             "payload",
             0,
         );
-        static ENVELOPE_SCHEMA: Schema<'static> = Schema::new_struct(
+        static ENVELOPE_SCHEMA: Schema = Schema::new_struct(
             shape_id!("t", "Envelope"),
             ShapeType::Structure,
             &[&PAYLOAD_MEMBER],
@@ -1877,11 +1912,11 @@ mod tests {
     fn read_map_preserves_empty_string_key() {
         // The PR's deserializer had a guard that dropped entries with empty
         // keys. Empty string is a valid map key per Smithy semantics.
-        static KEY: Schema<'static> =
+        static KEY: Schema =
             Schema::new_member(shape_id!("t", "M$key"), ShapeType::String, "key", 0);
-        static VALUE: Schema<'static> =
+        static VALUE: Schema =
             Schema::new_member(shape_id!("t", "M$value"), ShapeType::String, "value", 1);
-        static MAP: Schema<'static> = Schema::new_map(shape_id!("t", "M"), &KEY, &VALUE);
+        static MAP: Schema = Schema::new_map(shape_id!("t", "M"), &KEY, &VALUE);
 
         let xml = b"<Root><entry><key></key><value>v1</value></entry></Root>";
         let settings = Arc::new(XmlCodecSettings::default());
@@ -1896,126 +1931,5 @@ mod tests {
             })
             .expect("empty-key entry should be preserved");
         assert_eq!(got.get("").map(String::as_str), Some("v1"));
-    }
-
-    /// Outer map whose value member targets a map with `@xmlName` on
-    /// the inner key/value. Mirrors the wire format produced by the
-    /// serializer's `map_value_is_inner_map_with_renamed_inner_key_value`
-    /// test and verifies the nested read uses the inner map's renamed
-    /// element names.
-    #[test]
-    fn read_map_value_is_inner_map_with_renamed_inner_key_value() {
-        let xml = b"<outerMap><entry><key>ok</key><value><entry><InnerKey>ik</InnerKey><InnerVal>iv</InnerVal></entry></value></entry></outerMap>";
-        let settings = Arc::new(XmlCodecSettings::default());
-        let mut deser = XmlDeserializer::new(xml, settings);
-
-        static INNER_KEY: Schema<'static> = Schema::new_member(
-            shape_id!("test", "InnerMap$key"),
-            ShapeType::String,
-            "key",
-            0,
-        )
-        .with_xml_name("InnerKey");
-        static INNER_VAL: Schema<'static> = Schema::new_member(
-            shape_id!("test", "InnerMap$value"),
-            ShapeType::String,
-            "value",
-            1,
-        )
-        .with_xml_name("InnerVal");
-
-        // The outer map's value member, with its target's _KEY/_VALUE
-        // chain attached. This is what codegen now emits at the inner
-        // `read_map` call site.
-        static OUTER_VALUE: Schema<'static> = Schema::new_member(
-            shape_id!("test", "OuterMap$value"),
-            ShapeType::Map,
-            "value",
-            1,
-        )
-        .with_map_members(&INNER_KEY, &INNER_VAL);
-
-        static OUTER_KEY: Schema<'static> = Schema::new_member(
-            shape_id!("test", "OuterMap$key"),
-            ShapeType::String,
-            "key",
-            0,
-        );
-        static OUTER_MAP_SCHEMA: Schema<'static> =
-            Schema::new_map(shape_id!("test", "OuterMap"), &OUTER_KEY, &OUTER_VALUE);
-
-        let mut got: Vec<(String, Vec<(String, String)>)> = Vec::new();
-        deser
-            .read_map(&OUTER_MAP_SCHEMA, &mut |outer_key, d| {
-                let mut inner: Vec<(String, String)> = Vec::new();
-                d.read_map(&OUTER_VALUE, &mut |inner_key, d2| {
-                    let inner_val = d2.read_string(&INNER_VAL)?;
-                    inner.push((inner_key, inner_val));
-                    Ok(())
-                })?;
-                got.push((outer_key, inner));
-                Ok(())
-            })
-            .expect("nested map deserialization should succeed");
-
-        assert_eq!(
-            got,
-            vec![("ok".to_owned(), vec![("ik".to_owned(), "iv".to_owned())])]
-        );
-    }
-
-    /// List whose member targets a map with `@xmlName` on inner
-    /// key/value. Mirrors the serializer's
-    /// `list_member_is_inner_map_with_renamed_inner_key_value` wire
-    /// format.
-    #[test]
-    fn read_list_member_is_inner_map_with_renamed_inner_key_value() {
-        let xml = b"<items><member><entry><Attr>k1</Attr><Set>v1</Set></entry></member></items>";
-        let settings = Arc::new(XmlCodecSettings::default());
-        let mut deser = XmlDeserializer::new(xml, settings);
-
-        static INNER_KEY: Schema<'static> = Schema::new_member(
-            shape_id!("test", "InnerMap$key"),
-            ShapeType::String,
-            "key",
-            0,
-        )
-        .with_xml_name("Attr");
-        static INNER_VAL: Schema<'static> = Schema::new_member(
-            shape_id!("test", "InnerMap$value"),
-            ShapeType::String,
-            "value",
-            1,
-        )
-        .with_xml_name("Set");
-
-        // The list's member: target shape is InnerMap. Carries the
-        // chained inner map _KEY/_VALUE schemas.
-        static LIST_ITEM: Schema<'static> = Schema::new_member(
-            shape_id!("test", "OuterList$member"),
-            ShapeType::Map,
-            "member",
-            0,
-        )
-        .with_map_members(&INNER_KEY, &INNER_VAL);
-
-        static OUTER_LIST_SCHEMA: Schema<'static> =
-            Schema::new_list(shape_id!("test", "OuterList"), &LIST_ITEM);
-
-        let mut got: Vec<Vec<(String, String)>> = Vec::new();
-        deser
-            .read_list(&OUTER_LIST_SCHEMA, &mut |d| {
-                let mut entries: Vec<(String, String)> = Vec::new();
-                d.read_map(&LIST_ITEM, &mut |inner_key, d2| {
-                    let inner_val = d2.read_string(&INNER_VAL)?;
-                    entries.push((inner_key, inner_val));
-                    Ok(())
-                })?;
-                got.push(entries);
-                Ok(())
-            })
-            .expect("list-of-map deserialization should succeed");
-
-        assert_eq!(got, vec![vec![("k1".to_owned(), "v1".to_owned())]]);
     }
 }

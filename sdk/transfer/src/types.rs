@@ -157,6 +157,8 @@ pub use crate::types::_tls_session_resumption_mode::TlsSessionResumptionMode;
 
 pub use crate::types::_set_stat_option::SetStatOption;
 
+pub use crate::types::_proxy_config::ProxyConfig;
+
 pub use crate::types::_directory_listing_optimization::DirectoryListingOptimization;
 
 pub use crate::types::_state::State;
@@ -198,6 +200,8 @@ pub use crate::types::_transfer_table_status::TransferTableStatus;
 pub use crate::types::_described_connector_vpc_lattice_egress_config::DescribedConnectorVpcLatticeEgressConfig;
 
 pub use crate::types::_as2_transport::As2Transport;
+
+pub use crate::types::_proxy_mode::ProxyMode;
 
 pub use crate::types::_workflow_detail::WorkflowDetail;
 
@@ -402,6 +406,10 @@ mod _profile_type;
 mod _protocol;
 
 mod _protocol_details;
+
+mod _proxy_config;
+
+mod _proxy_mode;
 
 mod _s3_file_location;
 

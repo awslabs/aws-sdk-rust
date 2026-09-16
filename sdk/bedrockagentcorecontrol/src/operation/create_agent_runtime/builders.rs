@@ -326,4 +326,18 @@ impl CreateAgentRuntimeFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
+    /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.platform_version(input.into());
+        self
+    }
+    /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn set_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_platform_version(input);
+        self
+    }
+    /// <p>The version of the runtime platform to use for the AgentCore Runtime.</p>
+    pub fn get_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_platform_version()
+    }
 }

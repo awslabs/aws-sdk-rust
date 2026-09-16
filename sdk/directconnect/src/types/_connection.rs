@@ -82,6 +82,8 @@ pub struct Connection {
     pub prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
     /// <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
     pub prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
+    /// <p>The billing mode of the connection.</p>
+    pub billing_mode: ::std::option::Option<crate::types::BillingMode>,
 }
 impl Connection {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -222,6 +224,10 @@ impl Connection {
     pub fn prefix_pool_unallocated_count_ipv6(&self) -> ::std::option::Option<i32> {
         self.prefix_pool_unallocated_count_ipv6
     }
+    /// <p>The billing mode of the connection.</p>
+    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::BillingMode> {
+        self.billing_mode.as_ref()
+    }
 }
 impl Connection {
     /// Creates a new builder-style object to manufacture [`Connection`](crate::types::Connection).
@@ -262,6 +268,7 @@ pub struct ConnectionBuilder {
     pub(crate) prefix_pool_size_ipv6: ::std::option::Option<i32>,
     pub(crate) prefix_pool_unallocated_count_ipv4: ::std::option::Option<i32>,
     pub(crate) prefix_pool_unallocated_count_ipv6: ::std::option::Option<i32>,
+    pub(crate) billing_mode: ::std::option::Option<crate::types::BillingMode>,
 }
 impl ConnectionBuilder {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -734,6 +741,20 @@ impl ConnectionBuilder {
     pub fn get_prefix_pool_unallocated_count_ipv6(&self) -> &::std::option::Option<i32> {
         &self.prefix_pool_unallocated_count_ipv6
     }
+    /// <p>The billing mode of the connection.</p>
+    pub fn billing_mode(mut self, input: crate::types::BillingMode) -> Self {
+        self.billing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The billing mode of the connection.</p>
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::BillingMode>) -> Self {
+        self.billing_mode = input;
+        self
+    }
+    /// <p>The billing mode of the connection.</p>
+    pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::BillingMode> {
+        &self.billing_mode
+    }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {
         crate::types::Connection {
@@ -765,6 +786,7 @@ impl ConnectionBuilder {
             prefix_pool_size_ipv6: self.prefix_pool_size_ipv6,
             prefix_pool_unallocated_count_ipv4: self.prefix_pool_unallocated_count_ipv4,
             prefix_pool_unallocated_count_ipv6: self.prefix_pool_unallocated_count_ipv6,
+            billing_mode: self.billing_mode,
         }
     }
 }

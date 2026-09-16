@@ -4,9 +4,7 @@ pub fn ser_query_vectors_input_input(
     input: &crate::operation::query_vectors::QueryVectorsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.filter {
-        object
-            .key("filter")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("filter").document(var_1);
     }
     if let Some(var_2) = &input.index_arn {
         object.key("indexArn").string(var_2.as_str());

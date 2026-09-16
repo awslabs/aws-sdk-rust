@@ -6,21 +6,18 @@
 use aws_smithy_schema::codec::FinishSerializer;
 use aws_smithy_schema::serde::{SerdeError, SerializableStruct, ShapeSerializer};
 use aws_smithy_schema::Schema;
-use aws_smithy_types::{BigDecimal, BigInteger, Blob, DateTime, Document};
+use aws_smithy_types::{BigDecimal, BigInteger, DateTime, Document};
 use std::fmt::Write;
 use urlencoding::encode;
 
-/// A collection path segment.
+/// A collection path segment, kept `Copy` so it can be formatted directly into
+/// the output/prefix without an intermediate `String` allocation.
 /// - `Index(i)` — a list element: renders as `i`.
 /// - `Entry(i, name)` — a map key/value: renders as `i.name`.
-///
-/// Holds the map key/value name as an owned `String` because names are resolved
-/// from `&Schema<'_>` borrows (not `'static`) and are stashed across serializer
-/// calls; see [`CollectionContext`].
-#[derive(Clone)]
+#[derive(Clone, Copy)]
 enum Segment {
     Index(usize),
-    Entry(usize, String),
+    Entry(usize, &'static str),
 }
 
 impl std::fmt::Display for Segment {
@@ -35,27 +32,21 @@ impl std::fmt::Display for Segment {
 enum CollectionContext {
     List {
         index: usize,
-        /// Wire name to use for a nested aggregate element that arrives with a
-        /// member-less placeholder schema (codegen passes `prelude::DOCUMENT`
-        /// for nested aggregates). Resolved eagerly from this list's element
-        /// schema while the schema borrow is live and stored owned, mirroring
-        /// the XML serializer's `list_item_name`. `None` when the element is a
-        /// scalar or carries its own member info.
-        inherited_member_name: Option<String>,
-        /// As `inherited_member_name`, but the key name for a nested map value.
-        inherited_key_name: Option<String>,
+        /// Schema of this list's element member. When an element is itself a
+        /// nested aggregate, codegen invokes `write_list`/`write_map` with a
+        /// member-less placeholder (`prelude::DOCUMENT`); the child recovers its
+        /// own `@xmlName`/member chain from this stashed schema. `None` when the
+        /// element is a scalar.
+        member_schema: Option<&'static Schema>,
     },
     Map {
         index: usize,
         expecting_key: bool,
-        key_name: String,
-        value_name: String,
-        /// Wire name for a nested aggregate map value's element/value that
-        /// arrives member-less; see `List::inherited_member_name`.
-        inherited_member_name: Option<String>,
-        /// Wire name for a nested aggregate map value's key that arrives
-        /// member-less; see `List::inherited_key_name`.
-        inherited_key_name: Option<String>,
+        key_name: &'static str,
+        value_name: &'static str,
+        /// Schema of this map's value member — used by a nested inner aggregate
+        /// value the same way as `List::member_schema`. `None` for scalar values.
+        value_schema: Option<&'static Schema>,
     },
 }
 
@@ -89,7 +80,7 @@ impl QueryShapeSerializer {
         }
     }
 
-    fn wire_name<'a>(&self, schema: &'a Schema<'_>) -> &'a str {
+    fn wire_name<'a>(&self, schema: &'a Schema) -> &'a str {
         schema
             .xml_name()
             .map(|t| t.value())
@@ -97,52 +88,41 @@ impl QueryShapeSerializer {
             .unwrap_or("")
     }
 
-    /// The resolved wire name of an (optional) member schema: `@xmlName`, then
-    /// the member's Smithy name. `None` if the schema is absent or carries
-    /// neither. Returned owned because it is stashed across serializer calls.
-    fn member_wire_name(member: Option<&Schema<'_>>) -> Option<String> {
-        member.and_then(|m| {
-            m.xml_name()
-                .map(|n| n.value().to_string())
-                .or_else(|| m.member_name().map(|s| s.to_string()))
-        })
+    /// Resolves the wire element name for a nested collection member schema,
+    /// mirroring the AWS REST XML serializer's resolution order:
+    /// `@xmlName` on the member, then the member's smithy name, then `default`
+    /// (e.g. `"member"`/`"key"`/`"value"`). The member-name info lives in the
+    /// nested member schemas emitted by codegen's `emitAggregateMemberChain`
+    /// (list member, map key, map value), so no protocol-specific schema
+    /// fields are required.
+    fn collection_member_name(member: Option<&Schema>, default: &'static str) -> &'static str {
+        member
+            .and_then(|m| m.xml_name().map(|n| n.value()))
+            .or_else(|| member.and_then(|m| m.member_name()))
+            .unwrap_or(default)
     }
 
-    /// Resolves the wire element name for a collection member schema, mirroring
-    /// the AWS REST XML serializer's resolution order: `@xmlName` on the member,
-    /// then the member's Smithy name, then `default` (e.g.
-    /// `"member"`/`"key"`/`"value"`). The member-name info lives in the nested
-    /// member schemas emitted by codegen's `emitAggregateMemberChain`.
-    fn collection_member_name(member: Option<&Schema<'_>>, default: &str) -> String {
-        Self::member_wire_name(member).unwrap_or_else(|| default.to_string())
-    }
-
-    /// Names to hand a nested aggregate element/value that arrives with a
-    /// member-less placeholder schema (codegen passes `prelude::DOCUMENT` for
-    /// nested aggregates). The immediate parent collection resolves these from
-    /// its element/value schema while it still holds the schema borrow and
-    /// stashes them owned, so a nested `write_list`/`write_map` can recover its
-    /// `@xmlName`/member names one level down. This mirrors the one-level
-    /// recovery the XML serializer performs via its owned `list_item_name`.
-    ///
-    /// Returns `(inherited_member_name, inherited_key_name)` from the current
-    /// top-of-stack collection, but only at a map's value position
-    /// (`expecting_key == false`); map keys are always scalars.
-    fn inherited_child_names(&self) -> (Option<String>, Option<String>) {
-        match self.context_stack.last() {
-            Some(CollectionContext::List {
-                inherited_member_name,
-                inherited_key_name,
-                ..
-            })
-            | Some(CollectionContext::Map {
-                expecting_key: false,
-                inherited_member_name,
-                inherited_key_name,
-                ..
-            }) => (inherited_member_name.clone(), inherited_key_name.clone()),
-            _ => (None, None),
+    /// Resolves the schema to use for a nested aggregate's own element-name
+    /// resolution. Codegen emits nested list/map values with a member-less
+    /// placeholder (`prelude::DOCUMENT`), so when `schema` carries no member
+    /// info we substitute the real inner schema the enclosing collection stashed
+    /// (`List::member_schema` for a list element, `Map::value_schema` for a map
+    /// value). Mirrors the XML serializer's `effective_schema`. Falls back to
+    /// `schema` when there's nothing to inherit.
+    fn effective_collection_schema<'a>(&self, schema: &'a Schema) -> &'a Schema {
+        if schema.member().is_some() || schema.key().is_some() {
+            return schema;
         }
+        let inherited = match self.context_stack.last() {
+            Some(CollectionContext::List { member_schema, .. }) => *member_schema,
+            Some(CollectionContext::Map {
+                expecting_key: false,
+                value_schema,
+                ..
+            }) => *value_schema,
+            _ => None,
+        };
+        inherited.unwrap_or(schema)
     }
 
     fn push_prefix(&mut self, segment: &str) {
@@ -193,11 +173,11 @@ impl QueryShapeSerializer {
                 ..
             } => {
                 if *expecting_key {
-                    let seg = Segment::Entry(*index, key_name.clone());
+                    let seg = Segment::Entry(*index, key_name);
                     *expecting_key = false;
                     seg
                 } else {
-                    let seg = Segment::Entry(*index, value_name.clone());
+                    let seg = Segment::Entry(*index, value_name);
                     *expecting_key = true;
                     *index += 1;
                     seg
@@ -209,7 +189,7 @@ impl QueryShapeSerializer {
     /// Appends `&<param>=<value>` to the output, where `<param>` is `prefix` joined
     /// with either the collection segment (for an anonymous element) or the scalar's
     /// own wire name.
-    fn write_scalar(&mut self, schema: &Schema<'_>, value: &str) -> Result<(), SerdeError> {
+    fn write_scalar(&mut self, schema: &Schema, value: &str) -> Result<(), SerdeError> {
         let segment = if schema.member_name().is_none() {
             self.next_collection_segment()
         } else {
@@ -254,7 +234,7 @@ impl FinishSerializer for QueryShapeSerializer {
 impl ShapeSerializer for QueryShapeSerializer {
     fn write_struct(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
         value: &dyn SerializableStruct,
     ) -> Result<(), SerdeError> {
         let is_member = schema.member_name().is_some();
@@ -276,14 +256,13 @@ impl ShapeSerializer for QueryShapeSerializer {
 
     fn write_list(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
         write_elements: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
-        // Read any name inherited from the enclosing collection BEFORE
-        // `next_collection_segment` mutates its cursor (a nested list arrives with
-        // a member-less `prelude::DOCUMENT`; its real `@xmlName`/member name is
-        // recovered from the parent here).
-        let (inherited_member, _inherited_key) = self.inherited_child_names();
+        // Resolve the inner schema BEFORE `next_collection_segment` mutates the
+        // enclosing collection's cursor (a nested list arrives with a member-less
+        // `prelude::DOCUMENT`; recover its real `@xmlName`/member chain here).
+        let effective = self.effective_collection_schema(schema);
         let flat = schema.xml_flattened();
         let is_member = schema.member_name().is_some();
         let pushed_index = if is_member {
@@ -296,21 +275,12 @@ impl ShapeSerializer for QueryShapeSerializer {
             false
         };
         if !flat {
-            // This list's element name: its own member info, else the name
-            // inherited from the parent (member-less placeholder), else `member`.
-            let member_name = if schema.member().is_some() {
-                Self::collection_member_name(schema.member(), "member")
-            } else {
-                inherited_member.unwrap_or_else(|| "member".to_string())
-            };
-            self.push_prefix(&member_name);
+            let member_name = Self::collection_member_name(effective.member(), "member");
+            self.push_prefix(member_name);
         }
-        // Names to stash for a nested aggregate element (recovered one level down).
-        let elem = schema.member();
         self.context_stack.push(CollectionContext::List {
             index: 1,
-            inherited_member_name: Self::member_wire_name(elem.and_then(|e| e.member())),
-            inherited_key_name: Self::member_wire_name(elem.and_then(|e| e.key())),
+            member_schema: effective.member_static(),
         });
         let output_len_before = self.output.len();
         write_elements(self)?;
@@ -332,13 +302,13 @@ impl ShapeSerializer for QueryShapeSerializer {
 
     fn write_map(
         &mut self,
-        schema: &Schema<'_>,
+        schema: &Schema,
         write_entries: &dyn Fn(&mut dyn ShapeSerializer) -> Result<(), SerdeError>,
     ) -> Result<(), SerdeError> {
-        // Read inherited names BEFORE `next_collection_segment` mutates the
-        // enclosing collection's cursor (a nested map arrives member-less;
-        // recover its key/value names from the parent here).
-        let (inherited_member, inherited_key) = self.inherited_child_names();
+        // Resolve the inner schema BEFORE `next_collection_segment` mutates the
+        // enclosing collection's cursor (a nested map arrives with a member-less
+        // `prelude::DOCUMENT`; recover its real key/value chain here).
+        let effective = self.effective_collection_schema(schema);
         let flat = schema.xml_flattened();
         let is_member = schema.member_name().is_some();
         let pushed_index = if is_member {
@@ -353,27 +323,14 @@ impl ShapeSerializer for QueryShapeSerializer {
         if !flat {
             self.push_prefix("entry");
         }
-        // Key/value names: own member info, else inherited (member-less
-        // placeholder), else the `key`/`value` defaults.
-        let key_name = if schema.key().is_some() {
-            Self::collection_member_name(schema.key(), "key")
-        } else {
-            inherited_key.unwrap_or_else(|| "key".to_string())
-        };
-        let value_name = if schema.member().is_some() {
-            Self::collection_member_name(schema.member(), "value")
-        } else {
-            inherited_member.unwrap_or_else(|| "value".to_string())
-        };
-        // Names to stash for a nested aggregate map value (recovered one level down).
-        let elem = schema.member();
+        let key_name = Self::collection_member_name(effective.key(), "key");
+        let value_name = Self::collection_member_name(effective.member(), "value");
         self.context_stack.push(CollectionContext::Map {
             index: 1,
             expecting_key: true,
             key_name,
             value_name,
-            inherited_member_name: Self::member_wire_name(elem.and_then(|e| e.member())),
-            inherited_key_name: Self::member_wire_name(elem.and_then(|e| e.key())),
+            value_schema: effective.member_static(),
         });
         write_entries(self)?;
         self.context_stack.pop();
@@ -386,31 +343,31 @@ impl ShapeSerializer for QueryShapeSerializer {
         Ok(())
     }
 
-    fn write_string(&mut self, schema: &Schema<'_>, value: &str) -> Result<(), SerdeError> {
+    fn write_string(&mut self, schema: &Schema, value: &str) -> Result<(), SerdeError> {
         self.write_scalar(schema, value)
     }
 
-    fn write_boolean(&mut self, schema: &Schema<'_>, value: bool) -> Result<(), SerdeError> {
+    fn write_boolean(&mut self, schema: &Schema, value: bool) -> Result<(), SerdeError> {
         self.write_scalar(schema, if value { "true" } else { "false" })
     }
 
-    fn write_byte(&mut self, schema: &Schema<'_>, value: i8) -> Result<(), SerdeError> {
+    fn write_byte(&mut self, schema: &Schema, value: i8) -> Result<(), SerdeError> {
         self.write_scalar(schema, &value.to_string())
     }
 
-    fn write_short(&mut self, schema: &Schema<'_>, value: i16) -> Result<(), SerdeError> {
+    fn write_short(&mut self, schema: &Schema, value: i16) -> Result<(), SerdeError> {
         self.write_scalar(schema, &value.to_string())
     }
 
-    fn write_integer(&mut self, schema: &Schema<'_>, value: i32) -> Result<(), SerdeError> {
+    fn write_integer(&mut self, schema: &Schema, value: i32) -> Result<(), SerdeError> {
         self.write_scalar(schema, &value.to_string())
     }
 
-    fn write_long(&mut self, schema: &Schema<'_>, value: i64) -> Result<(), SerdeError> {
+    fn write_long(&mut self, schema: &Schema, value: i64) -> Result<(), SerdeError> {
         self.write_scalar(schema, &value.to_string())
     }
 
-    fn write_float(&mut self, schema: &Schema<'_>, value: f32) -> Result<(), SerdeError> {
+    fn write_float(&mut self, schema: &Schema, value: f32) -> Result<(), SerdeError> {
         let s = if value.is_nan() {
             "NaN".to_string()
         } else if value == f32::INFINITY {
@@ -425,7 +382,7 @@ impl ShapeSerializer for QueryShapeSerializer {
         self.write_scalar(schema, &s)
     }
 
-    fn write_double(&mut self, schema: &Schema<'_>, value: f64) -> Result<(), SerdeError> {
+    fn write_double(&mut self, schema: &Schema, value: f64) -> Result<(), SerdeError> {
         let s = if value.is_nan() {
             "NaN".to_string()
         } else if value == f64::INFINITY {
@@ -440,27 +397,19 @@ impl ShapeSerializer for QueryShapeSerializer {
         self.write_scalar(schema, &s)
     }
 
-    fn write_big_integer(
-        &mut self,
-        schema: &Schema<'_>,
-        value: &BigInteger,
-    ) -> Result<(), SerdeError> {
+    fn write_big_integer(&mut self, schema: &Schema, value: &BigInteger) -> Result<(), SerdeError> {
         self.write_scalar(schema, value.as_ref())
     }
 
-    fn write_big_decimal(
-        &mut self,
-        schema: &Schema<'_>,
-        value: &BigDecimal,
-    ) -> Result<(), SerdeError> {
+    fn write_big_decimal(&mut self, schema: &Schema, value: &BigDecimal) -> Result<(), SerdeError> {
         self.write_scalar(schema, value.as_ref())
     }
 
-    fn write_blob(&mut self, schema: &Schema<'_>, value: Blob) -> Result<(), SerdeError> {
-        self.write_scalar(schema, &aws_smithy_types::base64::encode(value.as_ref()))
+    fn write_blob(&mut self, schema: &Schema, value: &[u8]) -> Result<(), SerdeError> {
+        self.write_scalar(schema, &aws_smithy_types::base64::encode(value))
     }
 
-    fn write_timestamp(&mut self, schema: &Schema<'_>, value: &DateTime) -> Result<(), SerdeError> {
+    fn write_timestamp(&mut self, schema: &Schema, value: &DateTime) -> Result<(), SerdeError> {
         let format = if let Some(ts_trait) = schema.timestamp_format() {
             match ts_trait.format() {
                 aws_smithy_schema::traits::TimestampFormat::EpochSeconds => {
@@ -482,13 +431,13 @@ impl ShapeSerializer for QueryShapeSerializer {
         self.write_scalar(schema, &formatted)
     }
 
-    fn write_document(&mut self, _: &Schema<'_>, _: &Document) -> Result<(), SerdeError> {
-        Err(SerdeError::unsupported(
-            "documents not supported in awsQuery",
-        ))
+    fn write_document(&mut self, _: &Schema, _: &Document) -> Result<(), SerdeError> {
+        Err(SerdeError::UnsupportedOperation {
+            message: "documents not supported in awsQuery".into(),
+        })
     }
 
-    fn write_null(&mut self, _: &Schema<'_>) -> Result<(), SerdeError> {
+    fn write_null(&mut self, _: &Schema) -> Result<(), SerdeError> {
         // awsQuery has no null representation: nulls are omitted. The collection
         // index is not advanced here (only emitted elements consume an index), so a
         // `@sparse` null is dropped rather than reserving a positional slot.
@@ -501,11 +450,11 @@ mod tests {
     use super::*;
     use aws_smithy_schema::{shape_id, ShapeType};
 
-    static NAME_MEMBER: Schema<'static> =
+    static NAME_MEMBER: Schema =
         Schema::new_member(shape_id!("test", "Input"), ShapeType::String, "Name", 0);
-    static AGE_MEMBER: Schema<'static> =
+    static AGE_MEMBER: Schema =
         Schema::new_member(shape_id!("test", "Input"), ShapeType::Integer, "Age", 1);
-    static INPUT_SCHEMA: Schema<'static> = Schema::new_struct(
+    static INPUT_SCHEMA: Schema = Schema::new_struct(
         shape_id!("test", "Input"),
         ShapeType::Structure,
         &[&NAME_MEMBER, &AGE_MEMBER],
@@ -532,7 +481,7 @@ mod tests {
 
     #[test]
     fn boolean_values() {
-        static M: Schema<'static> =
+        static M: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::Boolean, "Verbose", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_boolean(&M, true).unwrap();
@@ -544,7 +493,7 @@ mod tests {
 
     #[test]
     fn string_encoding() {
-        static M: Schema<'static> =
+        static M: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Message", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_string(&M, "hello world&foo=bar").unwrap();
@@ -556,9 +505,9 @@ mod tests {
 
     #[test]
     fn nested_struct() {
-        static INNER_FIELD: Schema<'static> =
+        static INNER_FIELD: Schema =
             Schema::new_member(shape_id!("test", "Inner"), ShapeType::String, "Value", 0);
-        static OUTER_MEMBER: Schema<'static> = Schema::new_member(
+        static OUTER_MEMBER: Schema = Schema::new_member(
             shape_id!("test", "Outer"),
             ShapeType::Structure,
             "Config",
@@ -582,8 +531,7 @@ mod tests {
 
     #[test]
     fn list_non_flat() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_list(&M, &|s| {
             s.write_string(&aws_smithy_schema::prelude::STRING, "foo")?;
@@ -598,9 +546,8 @@ mod tests {
 
     #[test]
     fn list_flat() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0)
-                .with_xml_flattened();
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0)
+            .with_xml_flattened();
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_list(&M, &|s| {
             s.write_string(&aws_smithy_schema::prelude::STRING, "A")?;
@@ -615,8 +562,7 @@ mod tests {
 
     #[test]
     fn list_of_integers() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Ids", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Ids", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_list(&M, &|s| {
             s.write_integer(&aws_smithy_schema::prelude::INTEGER, 10)?;
@@ -632,8 +578,7 @@ mod tests {
 
     #[test]
     fn map_non_flat() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "Tags", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "Tags", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_map(&M, &|s| {
             s.write_string(&aws_smithy_schema::prelude::STRING, "color")?;
@@ -656,16 +601,15 @@ mod tests {
         // with_list_member, exactly as codegen's emitAggregateMemberChain
         // does) drives the repeated element name — no protocol-specific
         // schema field required. Mirrors the AWS REST XML serializer.
-        static ITEM: Schema<'static> = Schema::new_member(
+        static ITEM: Schema = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
             0,
         )
         .with_xml_name("Item");
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0)
-                .with_list_member(&ITEM);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0)
+            .with_list_member(&ITEM);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_list(&M, &|s| {
             s.write_string(&aws_smithy_schema::prelude::STRING, "foo")?;
@@ -682,15 +626,14 @@ mod tests {
     fn map_non_flat_uses_renamed_key_value_names() {
         // @xmlName on the map's key/value member schemas (attached via
         // with_map_members) drives the entry key/value element names.
-        static KEY: Schema<'static> =
+        static KEY: Schema =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0)
                 .with_xml_name("Attribute");
-        static VALUE: Schema<'static> =
+        static VALUE: Schema =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::String, "value", 1)
                 .with_xml_name("Setting");
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "Tags", 0)
-                .with_map_members(&KEY, &VALUE);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "Tags", 0)
+            .with_map_members(&KEY, &VALUE);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_map(&M, &|s| {
             s.write_string(&aws_smithy_schema::prelude::STRING, "color")?;
@@ -705,9 +648,8 @@ mod tests {
 
     #[test]
     fn map_flat() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "Tags", 0)
-                .with_xml_flattened();
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "Tags", 0)
+            .with_xml_flattened();
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_map(&M, &|s| {
             s.write_string(&aws_smithy_schema::prelude::STRING, "k1")?;
@@ -737,11 +679,11 @@ mod cross_validation {
             .number(aws_smithy_types::Number::PosInt(30));
         writer.finish();
 
-        static NAME: Schema<'static> =
+        static NAME: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Name", 0);
-        static AGE: Schema<'static> =
+        static AGE: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::Integer, "Age", 1);
-        static SCHEMA: Schema<'static> =
+        static SCHEMA: Schema =
             Schema::new_struct(shape_id!("test", "I"), ShapeType::Structure, &[&NAME, &AGE]);
         struct Input;
         impl SerializableStruct for Input {
@@ -767,7 +709,7 @@ mod cross_validation {
         list.finish();
         writer.finish();
 
-        static M: Schema<'static> =
+        static M: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::List, "ListArg", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_list(&M, &|s| {
@@ -789,7 +731,7 @@ mod cross_validation {
         list.finish();
         writer.finish();
 
-        static M: Schema<'static> =
+        static M: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::List, "FlatList", 0)
                 .with_xml_flattened();
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
@@ -811,8 +753,7 @@ mod cross_validation {
         map.finish();
         writer.finish();
 
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "MapArg", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "MapArg", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_map(&M, &|s| {
             s.write_string(&aws_smithy_schema::prelude::STRING, "bar")?;
@@ -831,9 +772,9 @@ mod cross_validation {
         writer.prefix("first").prefix("second").string("val");
         writer.finish();
 
-        static SECOND: Schema<'static> =
+        static SECOND: Schema =
             Schema::new_member(shape_id!("test", "Inner"), ShapeType::String, "second", 0);
-        static FIRST: Schema<'static> =
+        static FIRST: Schema =
             Schema::new_member(shape_id!("test", "Outer"), ShapeType::Structure, "first", 0);
 
         struct Inner;
@@ -853,10 +794,10 @@ mod cross_validation {
         // Regression: a `map<string, list<string>>` whose inner list member has
         // `@xmlName("item")`. Codegen invokes the inner `write_list` with a
         // member-less `prelude::DOCUMENT`, so the rename must be recovered from
-        // the outer map's value-member schema (stashed as an owned inherited
-        // name). Previously this fell back to "member"; now it must honor "item"
-        // and match the legacy `QueryWriter`.
-        static INNER_MEMBER: Schema<'static> = Schema::new_member(
+        // the outer map's value-member schema (threaded via `value_schema`).
+        // Previously this fell back to "member"; now it must honor "item" and
+        // match the legacy `QueryWriter`.
+        static INNER_MEMBER: Schema = Schema::new_member(
             shape_id!("test", "L$member"),
             ShapeType::String,
             "member",
@@ -864,12 +805,12 @@ mod cross_validation {
         )
         .with_xml_name("item");
         // The map's value member is a list carrying the renamed inner member.
-        static VALUE_LIST: Schema<'static> =
+        static VALUE_LIST: Schema =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::List, "value", 1)
                 .with_list_member(&INNER_MEMBER);
-        static KEY: Schema<'static> =
+        static KEY: Schema =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0);
-        static OUTER_MAP: Schema<'static> =
+        static OUTER_MAP: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "MapOfLists", 0)
                 .with_map_members(&KEY, &VALUE_LIST);
 
@@ -912,19 +853,19 @@ mod cross_validation {
         // `@xmlName` on its key/value members. The inner `write_map` gets
         // `prelude::DOCUMENT`; the key/value renames come from the outer map's
         // value-member schema.
-        static INNER_KEY: Schema<'static> =
+        static INNER_KEY: Schema =
             Schema::new_member(shape_id!("test", "IM$key"), ShapeType::String, "key", 0)
                 .with_xml_name("K");
-        static INNER_VALUE: Schema<'static> =
+        static INNER_VALUE: Schema =
             Schema::new_member(shape_id!("test", "IM$value"), ShapeType::String, "value", 1)
                 .with_xml_name("V");
         // Outer map value member is itself a map with renamed key/value.
-        static VALUE_MAP: Schema<'static> =
+        static VALUE_MAP: Schema =
             Schema::new_member(shape_id!("test", "M$value"), ShapeType::Map, "value", 1)
                 .with_map_members(&INNER_KEY, &INNER_VALUE);
-        static OUTER_KEY: Schema<'static> =
+        static OUTER_KEY: Schema =
             Schema::new_member(shape_id!("test", "M$key"), ShapeType::String, "key", 0);
-        static OUTER_MAP: Schema<'static> =
+        static OUTER_MAP: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "MapOfMaps", 0)
                 .with_map_members(&OUTER_KEY, &VALUE_MAP);
 
@@ -961,7 +902,7 @@ mod edge_cases {
         writer.prefix("Empty").string("");
         writer.finish();
 
-        static M: Schema<'static> =
+        static M: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Empty", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_string(&M, "").unwrap();
@@ -976,8 +917,7 @@ mod edge_cases {
         writer.prefix("myList").start_list(false, None).finish();
         writer.finish();
 
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::List, "myList", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::List, "myList", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_list(&M, &|_| Ok(())).unwrap();
         assert_eq!(String::from_utf8(ser.finish()).unwrap(), expected);
@@ -991,9 +931,8 @@ mod edge_cases {
         writer.prefix("myList").start_list(true, None).finish();
         writer.finish();
 
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::List, "myList", 0)
-                .with_xml_flattened();
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::List, "myList", 0)
+            .with_xml_flattened();
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_list(&M, &|_| Ok(())).unwrap();
         assert_eq!(String::from_utf8(ser.finish()).unwrap(), expected);
@@ -1005,13 +944,13 @@ mod edge_cases {
         // Guards the `wrote_elements` length-delta heuristic in `write_list`: an empty
         // list (`myList=`) must not produce the same output as a one-empty-string-element
         // list (`myList.member.1=`).
-        static EMPTY: Schema<'static> =
+        static EMPTY: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::List, "myList", 0);
         let mut empty_ser = QueryShapeSerializer::new("Op", "1.0");
         empty_ser.write_list(&EMPTY, &|_| Ok(())).unwrap();
         let empty_out = String::from_utf8(empty_ser.finish()).unwrap();
 
-        static ONE: Schema<'static> =
+        static ONE: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::List, "myList", 0);
         let mut one_ser = QueryShapeSerializer::new("Op", "1.0");
         one_ser
@@ -1030,8 +969,7 @@ mod edge_cases {
     fn sparse_null_list_element_is_dropped_and_index_reflects_emitted_only() {
         // A null element is dropped without consuming an index, so the next real
         // element takes `.2` rather than `.3`.
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_list(&M, &|s| {
             s.write_string(&aws_smithy_schema::prelude::STRING, "a")?;
@@ -1052,8 +990,7 @@ mod edge_cases {
         writer.prefix("Val").string("a=b&c<d>e\"f");
         writer.finish();
 
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Val", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Val", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_string(&M, "a=b&c<d>e\"f").unwrap();
         assert_eq!(String::from_utf8(ser.finish()).unwrap(), expected);
@@ -1066,8 +1003,7 @@ mod edge_cases {
         writer.prefix("Name").string("日本語");
         writer.finish();
 
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Name", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Name", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_string(&M, "日本語").unwrap();
         assert_eq!(String::from_utf8(ser.finish()).unwrap(), expected);
@@ -1086,7 +1022,7 @@ mod edge_cases {
             .unwrap();
         writer.finish();
 
-        static M: Schema<'static> =
+        static M: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::Timestamp, "Time", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_timestamp(&M, &aws_smithy_types::DateTime::from_secs(1700000000))
@@ -1101,11 +1037,10 @@ mod edge_cases {
         writer.prefix("A").prefix("B").prefix("C").string("deep");
         writer.finish();
 
-        static C_FIELD: Schema<'static> =
-            Schema::new_member(shape_id!("t", "C"), ShapeType::String, "C", 0);
-        static B_MEMBER: Schema<'static> =
+        static C_FIELD: Schema = Schema::new_member(shape_id!("t", "C"), ShapeType::String, "C", 0);
+        static B_MEMBER: Schema =
             Schema::new_member(shape_id!("t", "B"), ShapeType::Structure, "B", 0);
-        static A_MEMBER: Schema<'static> =
+        static A_MEMBER: Schema =
             Schema::new_member(shape_id!("t", "A"), ShapeType::Structure, "A", 0);
 
         struct CStruct;
@@ -1137,9 +1072,8 @@ mod edge_cases {
         list.finish();
         writer.finish();
 
-        static ITEMS: Schema<'static> =
-            Schema::new_member(shape_id!("t", "S"), ShapeType::List, "Items", 0);
-        static OUTER: Schema<'static> =
+        static ITEMS: Schema = Schema::new_member(shape_id!("t", "S"), ShapeType::List, "Items", 0);
+        static OUTER: Schema =
             Schema::new_member(shape_id!("t", "T"), ShapeType::Structure, "Outer", 0);
 
         struct Inner;
@@ -1171,13 +1105,10 @@ mod edge_cases {
             .number(aws_smithy_types::Number::PosInt(30));
         writer.finish();
 
-        static NAME: Schema<'static> =
-            Schema::new_member(shape_id!("t", "S"), ShapeType::String, "Name", 0);
-        static TAGS: Schema<'static> =
-            Schema::new_member(shape_id!("t", "S"), ShapeType::List, "Tags", 1);
-        static AGE: Schema<'static> =
-            Schema::new_member(shape_id!("t", "S"), ShapeType::Integer, "Age", 2);
-        static SCHEMA: Schema<'static> = Schema::new_struct(
+        static NAME: Schema = Schema::new_member(shape_id!("t", "S"), ShapeType::String, "Name", 0);
+        static TAGS: Schema = Schema::new_member(shape_id!("t", "S"), ShapeType::List, "Tags", 1);
+        static AGE: Schema = Schema::new_member(shape_id!("t", "S"), ShapeType::Integer, "Age", 2);
+        static SCHEMA: Schema = Schema::new_struct(
             shape_id!("t", "S"),
             ShapeType::Structure,
             &[&NAME, &TAGS, &AGE],
@@ -1202,11 +1133,11 @@ mod edge_cases {
 
     #[test]
     fn list_of_struct_emits_per_element_index() {
-        static NAME: Schema<'static> =
+        static NAME: Schema =
             Schema::new_member(shape_id!("test", "Item"), ShapeType::String, "Name", 0);
-        static ITEM_SCHEMA: Schema<'static> =
+        static ITEM_SCHEMA: Schema =
             Schema::new_struct(shape_id!("test", "Item"), ShapeType::Structure, &[&NAME]);
-        static ITEMS_LIST: Schema<'static> =
+        static ITEMS_LIST: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0);
 
         struct Item(&'static str);
@@ -1231,9 +1162,9 @@ mod edge_cases {
 
     #[test]
     fn list_of_list() {
-        static OUTER: Schema<'static> =
+        static OUTER: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Outer", 0);
-        static INNER_LIST: Schema<'static> = Schema::new_list(
+        static INNER_LIST: Schema = Schema::new_list(
             shape_id!("test", "InnerList"),
             &aws_smithy_schema::prelude::STRING,
         );
@@ -1261,11 +1192,11 @@ mod edge_cases {
 
     #[test]
     fn map_of_struct_emits_per_entry_index() {
-        static NAME: Schema<'static> =
+        static NAME: Schema =
             Schema::new_member(shape_id!("test", "Val"), ShapeType::String, "Name", 0);
-        static VAL_SCHEMA: Schema<'static> =
+        static VAL_SCHEMA: Schema =
             Schema::new_struct(shape_id!("test", "Val"), ShapeType::Structure, &[&NAME]);
-        static MAP_MEMBER: Schema<'static> =
+        static MAP_MEMBER: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::Map, "Things", 0);
 
         struct Val(&'static str);
@@ -1294,12 +1225,12 @@ mod edge_cases {
 
     #[test]
     fn map_nested_in_list() {
-        static MAP_SCHEMA: Schema<'static> = Schema::new_map(
+        static MAP_SCHEMA: Schema = Schema::new_map(
             shape_id!("test", "M"),
             &aws_smithy_schema::prelude::STRING,
             &aws_smithy_schema::prelude::STRING,
         );
-        static OUTER: Schema<'static> =
+        static OUTER: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::List, "Items", 0);
 
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
@@ -1325,8 +1256,7 @@ mod edge_cases {
 
     #[test]
     fn float_whole_number_keeps_decimal() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::Float, "Val", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::Float, "Val", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_double(&M, 5.0).unwrap();
         assert_eq!(
@@ -1337,8 +1267,7 @@ mod edge_cases {
 
     #[test]
     fn float_special_values() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::Float, "Val", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::Float, "Val", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_float(&M, f32::INFINITY).unwrap();
         assert_eq!(
@@ -1363,8 +1292,7 @@ mod edge_cases {
 
     #[test]
     fn double_special_values() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::Double, "Val", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::Double, "Val", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_double(&M, f64::INFINITY).unwrap();
         assert_eq!(
@@ -1382,11 +1310,9 @@ mod edge_cases {
 
     #[test]
     fn blob_base64_encoded() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::Blob, "Data", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::Blob, "Data", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
-        ser.write_blob(&M, aws_smithy_types::Blob::new(&b"hello"[..]))
-            .unwrap();
+        ser.write_blob(&M, b"hello").unwrap();
         assert_eq!(
             String::from_utf8(ser.finish()).unwrap(),
             "Action=Op&Version=1.0&Data=aGVsbG8%3D"
@@ -1395,7 +1321,7 @@ mod edge_cases {
 
     #[test]
     fn document_returns_error() {
-        static M: Schema<'static> =
+        static M: Schema =
             Schema::new_member(shape_id!("test", "I"), ShapeType::Document, "Doc", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         let result = ser.write_document(&M, &Document::Null);
@@ -1404,8 +1330,7 @@ mod edge_cases {
 
     #[test]
     fn write_null_is_noop() {
-        static M: Schema<'static> =
-            Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Val", 0);
+        static M: Schema = Schema::new_member(shape_id!("test", "I"), ShapeType::String, "Val", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_null(&M).unwrap();
         assert_eq!(
@@ -1416,12 +1341,9 @@ mod edge_cases {
 
     #[test]
     fn numeric_types() {
-        static B: Schema<'static> =
-            Schema::new_member(shape_id!("t", "S"), ShapeType::Byte, "B", 0);
-        static S: Schema<'static> =
-            Schema::new_member(shape_id!("t", "S"), ShapeType::Short, "S", 0);
-        static L: Schema<'static> =
-            Schema::new_member(shape_id!("t", "S"), ShapeType::Long, "L", 0);
+        static B: Schema = Schema::new_member(shape_id!("t", "S"), ShapeType::Byte, "B", 0);
+        static S: Schema = Schema::new_member(shape_id!("t", "S"), ShapeType::Short, "S", 0);
+        static L: Schema = Schema::new_member(shape_id!("t", "S"), ShapeType::Long, "L", 0);
         let mut ser = QueryShapeSerializer::new("Op", "1.0");
         ser.write_byte(&B, -1).unwrap();
         ser.write_short(&S, 32000).unwrap();

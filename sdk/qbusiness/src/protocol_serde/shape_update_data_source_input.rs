@@ -4,9 +4,7 @@ pub fn ser_update_data_source_input_input(
     input: &crate::operation::update_data_source::UpdateDataSourceInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.configuration {
-        object
-            .key("configuration")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("configuration").document(var_1);
     }
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());

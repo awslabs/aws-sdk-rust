@@ -23,6 +23,8 @@ pub struct CreateLagInput {
     /// <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     /// </note>
     pub request_mac_sec: ::std::option::Option<bool>,
+    /// <p>The billing mode for the LAG.</p>
+    pub billing_mode: ::std::option::Option<crate::types::RequestBillingMode>,
 }
 impl CreateLagInput {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
@@ -67,6 +69,10 @@ impl CreateLagInput {
     pub fn request_mac_sec(&self) -> ::std::option::Option<bool> {
         self.request_mac_sec
     }
+    /// <p>The billing mode for the LAG.</p>
+    pub fn billing_mode(&self) -> ::std::option::Option<&crate::types::RequestBillingMode> {
+        self.billing_mode.as_ref()
+    }
 }
 impl CreateLagInput {
     /// Creates a new builder-style object to manufacture [`CreateLagInput`](crate::operation::create_lag::CreateLagInput).
@@ -88,6 +94,7 @@ pub struct CreateLagInputBuilder {
     pub(crate) child_connection_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) request_mac_sec: ::std::option::Option<bool>,
+    pub(crate) billing_mode: ::std::option::Option<crate::types::RequestBillingMode>,
 }
 impl CreateLagInputBuilder {
     /// <p>The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.</p>
@@ -238,6 +245,20 @@ impl CreateLagInputBuilder {
     pub fn get_request_mac_sec(&self) -> &::std::option::Option<bool> {
         &self.request_mac_sec
     }
+    /// <p>The billing mode for the LAG.</p>
+    pub fn billing_mode(mut self, input: crate::types::RequestBillingMode) -> Self {
+        self.billing_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The billing mode for the LAG.</p>
+    pub fn set_billing_mode(mut self, input: ::std::option::Option<crate::types::RequestBillingMode>) -> Self {
+        self.billing_mode = input;
+        self
+    }
+    /// <p>The billing mode for the LAG.</p>
+    pub fn get_billing_mode(&self) -> &::std::option::Option<crate::types::RequestBillingMode> {
+        &self.billing_mode
+    }
     /// Consumes the builder and constructs a [`CreateLagInput`](crate::operation::create_lag::CreateLagInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::create_lag::CreateLagInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_lag::CreateLagInput {
@@ -250,6 +271,7 @@ impl CreateLagInputBuilder {
             child_connection_tags: self.child_connection_tags,
             provider_name: self.provider_name,
             request_mac_sec: self.request_mac_sec,
+            billing_mode: self.billing_mode,
         })
     }
 }

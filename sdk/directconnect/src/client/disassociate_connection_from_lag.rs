@@ -34,6 +34,7 @@ impl super::Client {
     ///   - [`prefix_pool_size_ipv6(Option<i32>)`](crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagOutput::prefix_pool_size_ipv6): <p>The total number of inbound IPv6 route prefixes you can allocate across the virtual interfaces on the connection. Not applicable to hosted connections or interconnects.</p>
     ///   - [`prefix_pool_unallocated_count_ipv4(Option<i32>)`](crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagOutput::prefix_pool_unallocated_count_ipv4): <p>The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
     ///   - [`prefix_pool_unallocated_count_ipv6(Option<i32>)`](crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagOutput::prefix_pool_unallocated_count_ipv6): <p>The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated to a virtual interface. Not applicable to hosted connections or interconnects.</p>
+    ///   - [`billing_mode(Option<BillingMode>)`](crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagOutput::billing_mode): <p>The billing mode of the connection.</p>
     /// - On failure, responds with [`SdkError<DisassociateConnectionFromLagError>`](crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError)
     pub fn disassociate_connection_from_lag(
         &self,

@@ -22,9 +22,7 @@ pub fn ser_update_benefit_application_input_input(
         object.key("Revision").string(var_6.as_str());
     }
     if let Some(var_7) = &input.benefit_application_details {
-        object
-            .key("BenefitApplicationDetails")
-            .document(var_7, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("BenefitApplicationDetails").document(var_7);
     }
     if let Some(var_8) = &input.partner_contacts {
         let mut array_9 = object.key("PartnerContacts").start_array();

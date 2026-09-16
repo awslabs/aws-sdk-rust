@@ -67,9 +67,7 @@ pub fn ser_provider_properties(
         object.key("providerServiceArn").string(input.provider_service_arn.as_str());
     }
     if let Some(var_1) = &input.provider_configuration {
-        object
-            .key("providerConfiguration")
-            .document(var_1, &::aws_smithy_json::codec::JsonCodecSettings::default())?;
+        object.key("providerConfiguration").document(var_1);
     }
     if let Some(var_2) = &input.intermediate_source_configuration {
         #[allow(unused_mut)]

@@ -34,6 +34,7 @@ impl super::Client {
     ///   - [`prefix_pool_unallocated_count_ipv4(Option<i32>)`](crate::operation::update_lag::UpdateLagOutput::prefix_pool_unallocated_count_ipv4): <p>The number of inbound IPv4 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
     ///   - [`prefix_pool_unallocated_count_ipv6(Option<i32>)`](crate::operation::update_lag::UpdateLagOutput::prefix_pool_unallocated_count_ipv6): <p>The number of inbound IPv6 route prefixes in the LAG prefix pool not yet allocated to a virtual interface. Not applicable to LAGs that are interconnects and support hosted connections.</p>
     ///   - [`rate_limiter_status(Option<RateLimiterStatus>)`](crate::operation::update_lag::UpdateLagOutput::rate_limiter_status): <p>The rate limiter status for the LAG, including how many rate limiters are in use and the maximum allowed.</p>
+    ///   - [`billing_mode(Option<BillingMode>)`](crate::operation::update_lag::UpdateLagOutput::billing_mode): <p>The billing mode of the LAG.</p>
     /// - On failure, responds with [`SdkError<UpdateLagError>`](crate::operation::update_lag::UpdateLagError)
     pub fn update_lag(&self) -> crate::operation::update_lag::builders::UpdateLagFluentBuilder {
         crate::operation::update_lag::builders::UpdateLagFluentBuilder::new(self.handle.clone())
